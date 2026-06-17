@@ -6,9 +6,11 @@ param(
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 Push-Location $repoRoot
 
+$resolvedRepo = if ([System.IO.Path]::IsPathRooted($RepoPath)) { $RepoPath } else { Join-Path $repoRoot $RepoPath }
+
 Write-Host "=== Step 1: Export wiki from EA model ==="
-Write-Host "Repository: $RepoPath"
-dotnet run --project src/EAxWiki -- --repo $RepoPath
+Write-Host "Repository: $resolvedRepo"
+dotnet run --project src/EAxWiki -- --repo $resolvedRepo
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Export failed (exit code $LASTEXITCODE)."
     Pop-Location
