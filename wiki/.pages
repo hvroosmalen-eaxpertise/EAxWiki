@@ -1,4 +1,3 @@
-title: Structure
 nav:
-  - ...
-  - types
+  - Structure: ''
+  - Types: types/
