@@ -144,7 +144,7 @@ public class EaReader : IEaReader, IDisposable
 
     private static EaDiagram MapDiagram(EA.Diagram eaDiagram)
     {
-        return new EaDiagram
+        var diagram = new EaDiagram
         {
             Id = eaDiagram.DiagramID,
             Name = eaDiagram.Name,
@@ -152,6 +152,20 @@ public class EaReader : IEaReader, IDisposable
             Notes = eaDiagram.Notes,
             PackageId = eaDiagram.PackageID
         };
+
+        var diagramObjects = (EA.Collection)eaDiagram.DiagramObjects;
+        for (short i = 0; i < diagramObjects.Count; i++)
+        {
+            var eaDO = (EA.DiagramObject)diagramObjects.GetAt(i);
+            diagram.DiagramObjects.Add(new EaDiagramObject
+            {
+                DiagramId = eaDO.DiagramID,
+                ElementId = eaDO.ElementID,
+                Sequence = eaDO.Sequence
+            });
+        }
+
+        return diagram;
     }
 
     public void Dispose()
