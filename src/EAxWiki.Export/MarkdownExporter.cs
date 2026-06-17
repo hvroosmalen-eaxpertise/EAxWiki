@@ -67,6 +67,12 @@ public class MarkdownExporter : IWikiExporter
                     ? elem.Type
                     : $"{elem.Stereotype} «{elem.Type}»";
                 indexLines.Add($"- [{elem.Name}]({elemFile}) — {typeLabel}");
+
+                if (!string.IsNullOrWhiteSpace(elem.Notes))
+                {
+                    var notesPreview = elem.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ");
+                    indexLines.Add($"  - *{notesPreview}*");
+                }
             }
 
             indexLines.Add(string.Empty);
@@ -80,6 +86,12 @@ public class MarkdownExporter : IWikiExporter
             foreach (var diag in package.Diagrams)
             {
                 indexLines.Add($"- {diag.Name} ({diag.Type})");
+
+                if (!string.IsNullOrWhiteSpace(diag.Notes))
+                {
+                    var notesPreview = diag.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ");
+                    indexLines.Add($"  - *{notesPreview}*");
+                }
             }
 
             indexLines.Add(string.Empty);
