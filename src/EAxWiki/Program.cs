@@ -68,7 +68,7 @@ static void ShowUsage()
     Console.WriteLine();
     Console.WriteLine("Options:");
     Console.WriteLine("  --repo, -r <path>     Path to the EA repository file");
-    Console.WriteLine("                        (default: M:\\EAWiki\\model\\EurSuRA.qea)");
+    Console.WriteLine("                        (default: M:\\EAxWiki\\model\\EurSuRA.qea)");
     Console.WriteLine("  --name, -n <name>     Display name for the repository");
     Console.WriteLine("  --output, -o <dir>    Output directory for the wiki");
     Console.WriteLine("                        (default: wiki)");
