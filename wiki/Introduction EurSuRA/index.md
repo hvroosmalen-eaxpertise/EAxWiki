@@ -29,4 +29,4 @@
 
 ## Diagrams
 
-- Introduction EDGY Presentation 13 May Event (Custom)
+- [Introduction EDGY Presentation 13 May Event](diagrams/Introduction EDGY Presentation 13 May Event.md) (Custom)

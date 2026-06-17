@@ -6,4 +6,4 @@
 
 ## Diagrams
 
-- ESRS Sector Classification (Logical)
+- [ESRS Sector Classification](diagrams/ESRS Sector Classification.md) (Logical)

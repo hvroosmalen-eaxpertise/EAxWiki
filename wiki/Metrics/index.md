@@ -4,15 +4,15 @@
 
 - [% Gerecycled materiaal = (gerecycled / totaal input) × 100](% Gerecycled materiaal = (gerecycled _ totaal input) × 100.md) — Outcome «Activity»
 - [% Hernieuwbare Energie = (opgewekte hernieuwbare energie / totaal verbruik) × 100](% Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik) × 100.md) — Outcome «Activity»
-- [Data-automatiseringsgraad = (# automatisch verzamelde datapunten / totaal) × 100%](Data-automatiseringsgraad = (# automatisch verzamelde datapunten _ totaal) × 100%.md) — Outcome «Activity»
+- [Data-automatiseringsgraad = (# automatisch verzamelde datapunten / totaal) × 100%](Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal) × 100%.md) — Outcome «Activity»
 - [Emissiereductie (%) = ((baseline – huidig) / baseline) × 100](Emissiereductie (%) = ((baseline – huidig) _ baseline) × 100.md) — Outcome «Activity»
 - [Product Carbon Footprint = totale CO₂e / aantal eenheden geproduceerd](Product Carbon Footprint = totale CO₂e _ aantal eenheden geproduceerd.md) — Outcome «Activity»
 - [Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e)](Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e).md) — Outcome «Activity»
-- [ Levensduur product]( Levensduur product.md) — Metric «Requirement»
-- [ Productievolumes / normaliserende operationele data]( Productievolumes _ normaliserende operationele data.md) — Metric «Requirement»
-- [# bomen geplant / ha natuur hersteld](# bomen geplant _ ha natuur hersteld.md) — Metric «Requirement»
-- [# SDGs met meetbare KPI’s](# SDGs met meetbare KPI’s.md) — Metric «Requirement»
-- [# teruggenomen producten (per jaar)](# teruggenomen producten (per jaar).md) — Metric «Requirement»
+- [ Levensduur product](Levensduur product.md) — Metric «Requirement»
+- [ Productievolumes / normaliserende operationele data](Productievolumes _ normaliserende operationele data.md) — Metric «Requirement»
+- [# bomen geplant / ha natuur hersteld](_ bomen geplant _ ha natuur hersteld.md) — Metric «Requirement»
+- [# SDGs met meetbare KPI’s](_ SDGs met meetbare KPI’s.md) — Metric «Requirement»
+- [# teruggenomen producten (per jaar)](_ teruggenomen producten (per jaar).md) — Metric «Requirement»
 - [% energie uit hernieuwbare bronnen](% energie uit hernieuwbare bronnen.md) — Metric «Requirement»
 - [% gerecyclede materialen in producten](% gerecyclede materialen in producten.md) — Metric «Requirement»
 - [% hernieuwbare grondstoffen](% hernieuwbare grondstoffen.md) — Metric «Requirement»
@@ -77,4 +77,4 @@
 
 ## Diagrams
 
-- Metrics (Custom)
+- [Metrics](diagrams/Metrics.md) (Custom)

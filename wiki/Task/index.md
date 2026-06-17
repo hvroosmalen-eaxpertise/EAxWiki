@@ -5,6 +5,7 @@
 - [Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen.](Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen..md) — Task «Activity»
 - [Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar.](Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..md) — Task «Activity»
 - [Green Customer Task](Green Customer Task.md) — Task «Activity»
+  - *Wat klanten duurzaam willen bereiken met hulp van het bedrijf. <ul> 	<li>IKEA Buy Back – https://www.ikea.com – Stimuleert klanten om meubels terug te verkopen i.p.v. weggooien.</li> 	<li>Vinted – https://www.vinted.com – Helpt klanten kleding tweedehands te kopen en verkopen.</li> </ul>*
 - [Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen.](Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen..md) — Task «Activity»
 - [Implementeer dashboards voor monitoring van CO₂, afval en energie.](Implementeer dashboards voor monitoring van CO₂, afval en energie..md) — Task «Activity»
 - [Installeer zonnepanelen of stap over op groene energie en elektrische voertuigen.](Installeer zonnepanelen of stap over op groene energie en elektrische voertuigen..md) — Task «Activity»
@@ -21,6 +22,7 @@
 - [Optimaliseer processen voor minder energie/waterverbruik en minder restmateriaal.](Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md) — Task «Activity»
 - [Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie.](Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie..md) — Task «Activity»
 - [Stakeholder Sustainability Expectations](Stakeholder Sustainability Expectations.md) — Task «Activity»
+  - *Duurzaamheidsverwachtingen van stakeholders. <ul> 	<li>Interface – https://www.interface.com – Betrekt medewerkers in duurzaamheidsprogramma's.</li> 	<li>Fairphone – https://www.fairphone.com – Integreert wensen van bewuste consumenten in duurzaam ontwerp.</li> </ul>*
 - [Start projecten voor energiebesparing, transportoptimalisatie en circulariteit.](Start projecten voor energiebesparing, transportoptimalisatie en circulariteit..md) — Task «Activity»
 - [Stel Science-Based Targets op en rapporteer jaarlijks voortgang.](Stel Science-Based Targets op en rapporteer jaarlijks voortgang..md) — Task «Activity»
 - [Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval.](Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval..md) — Task «Activity»

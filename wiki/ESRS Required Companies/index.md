@@ -2,4 +2,5 @@
 
 ## Diagrams
 
-- ESRS Required Companies (Custom)
+- [ESRS Required Companies](diagrams/ESRS Required Companies.md) (Custom)
+  - *Not all companies are subjected to report according to the ESRS.*

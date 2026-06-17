@@ -2,11 +2,11 @@
 
 47 element(s) with this stereotype:
 
-- [ Levensduur product](../Metrics/ Levensduur product.md)
-- [ Productievolumes / normaliserende operationele data](../Metrics/ Productievolumes _ normaliserende operationele data.md)
-- [# bomen geplant / ha natuur hersteld](../Metrics/# bomen geplant _ ha natuur hersteld.md)
-- [# SDGs met meetbare KPI’s](../Metrics/# SDGs met meetbare KPI’s.md)
-- [# teruggenomen producten (per jaar)](../Metrics/# teruggenomen producten (per jaar).md)
+- [ Levensduur product](../Metrics/Levensduur product.md)
+- [ Productievolumes / normaliserende operationele data](../Metrics/Productievolumes _ normaliserende operationele data.md)
+- [# bomen geplant / ha natuur hersteld](../Metrics/_ bomen geplant _ ha natuur hersteld.md)
+- [# SDGs met meetbare KPI’s](../Metrics/_ SDGs met meetbare KPI’s.md)
+- [# teruggenomen producten (per jaar)](../Metrics/_ teruggenomen producten (per jaar).md)
 - [% energie uit hernieuwbare bronnen](../Metrics/% energie uit hernieuwbare bronnen.md)
 - [% gerecyclede materialen in producten](../Metrics/% gerecyclede materialen in producten.md)
 - [% hernieuwbare grondstoffen](../Metrics/% hernieuwbare grondstoffen.md)

@@ -2,4 +2,4 @@
 
 ## Diagrams
 
-- ERSR S2 Workers in the Value Chain - People (Custom)
+- [ERSR S2 Workers in the Value Chain - People](diagrams/ERSR S2 Workers in the Value Chain - People.md) (Custom)

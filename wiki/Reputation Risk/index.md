@@ -2,4 +2,4 @@
 
 ## Diagrams
 
-- Reputation Risk (Logical)
+- [Reputation Risk](diagrams/Reputation Risk.md) (Logical)

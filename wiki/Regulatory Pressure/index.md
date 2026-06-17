@@ -2,4 +2,4 @@
 
 ## Diagrams
 
-- Regulatory Pressure (Logical)
+- [Regulatory Pressure](diagrams/Regulatory Pressure.md) (Logical)

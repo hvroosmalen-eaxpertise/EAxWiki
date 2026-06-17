@@ -2,4 +2,4 @@
 
 ## Diagrams
 
-- Market Differentiation Pressure (Logical)
+- [Market Differentiation Pressure](diagrams/Market Differentiation Pressure.md) (Logical)

@@ -2,4 +2,4 @@
 
 ## Sub-packages
 
-- [People](People/index.md)
+- [People](../People/index.md)

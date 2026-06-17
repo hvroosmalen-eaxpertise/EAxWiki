@@ -2,4 +2,4 @@
 
 ## Diagrams
 
-- Stakeholder Expectations (Logical)
+- [Stakeholder Expectations](diagrams/Stakeholder Expectations.md) (Logical)

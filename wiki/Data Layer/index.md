@@ -2,4 +2,4 @@
 
 ## Sub-packages
 
-- [Open Footprint Data Model LDM](Open Footprint Data Model LDM/index.md)
+- [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md)

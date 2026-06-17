@@ -2,4 +2,4 @@
 
 ## Diagrams
 
-- Climate Risk (Logical)
+- [Climate Risk](diagrams/Climate Risk.md) (Logical)

@@ -2,4 +2,4 @@
 
 ## Sub-packages
 
-- [ESRS Sector Classification](ESRS Sector Classification/index.md)
+- [ESRS Sector Classification](../ESRS Sector Classification/index.md)

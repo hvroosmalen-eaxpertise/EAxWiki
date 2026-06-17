@@ -28,4 +28,4 @@
 
 ## Diagrams
 
-- Information Collection and Model Creation (Custom)
+- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md) (Custom)

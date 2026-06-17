@@ -2,4 +2,4 @@
 
 ## Diagrams
 
-- Mapping SDG to Main (Custom)
+- [Mapping SDG to Main](diagrams/Mapping SDG to Main.md) (Custom)
