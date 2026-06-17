@@ -294,6 +294,7 @@ public class MarkdownExporter : IWikiExporter
 
     private static string SanitizeName(string name)
     {
+        name = name.Trim();
         var invalid = Path.GetInvalidFileNameChars().Append('#').ToArray();
         var sanitized = new string(name.Select(ch => invalid.Contains(ch) ? '_' : ch).ToArray());
         return string.IsNullOrWhiteSpace(sanitized) ? "unnamed" : sanitized;
