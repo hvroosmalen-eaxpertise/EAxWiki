@@ -49,3 +49,13 @@ BenchmarkDotNet.Artifacts/
 
 ## MkDocs output
 site/
+
+# Repo-local temp and cache used by scripts
+.mkdocs_temp/
+.pip_cache/
+
+# Local backup created by automation
+src/EAxWiki/EAxWiki.csproj.bak
+
+# Python virtual environment
+.venv/
