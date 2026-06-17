@@ -18,8 +18,20 @@ Quick start (PowerShell):
    .\.venv\Scripts\Activate.ps1
 3. Install dependencies:
    pip install -r requirements.txt
-4. Serve the site:
+4. Run the full export pipeline (generates wiki from EA model + serves locally):
+   .\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea"
+
+   Or just serve an already-exported wiki:
    .\scripts\serve-mkdocs.ps1 -Port 8000
+
+## Wiki navigation
+
+The wiki has two navigation views:
+
+- **Structure** — a top-down tree of packages and their elements, following the EA model hierarchy
+- **Types** — elements grouped by stereotype (e.g. Task, Process, Metric, ArchiMate_Goal)
+
+Both views are generated automatically by the exporter and configured via the awesome-pages MkDocs plugin.
 
 Troubleshooting
 
