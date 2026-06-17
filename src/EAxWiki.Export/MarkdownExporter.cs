@@ -12,7 +12,7 @@ public class MarkdownExporter : IWikiExporter
         _writer = writer;
     }
 
-    public async Task ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath)
+    public async Task ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath, IEaReader? reader = null)
     {
         if (Directory.Exists(outputPath))
         {
@@ -33,6 +33,11 @@ public class MarkdownExporter : IWikiExporter
         await WriteRootIndexAsync(packages, outputPath);
         await GenerateTypesPagesAsync(elements, outputPath);
         await WritePagesFileAsync(outputPath);
+
+        if (reader != null)
+        {
+            await ExportDiagramsAsync(packages, elements, outputPath, reader);
+        }
     }
 
     private async Task ExportPackageAsync(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements)
@@ -85,7 +90,8 @@ public class MarkdownExporter : IWikiExporter
 
             foreach (var diag in package.Diagrams)
             {
-                indexLines.Add($"- {diag.Name} ({diag.Type})");
+                var diagFile = $"diagrams/{SanitizeName(diag.Name)}.md";
+                indexLines.Add($"- [{diag.Name}]({diagFile}) ({diag.Type})");
 
                 if (!string.IsNullOrWhiteSpace(diag.Notes))
                 {
@@ -302,6 +308,93 @@ public class MarkdownExporter : IWikiExporter
 
         var filePath = Path.Combine(dir, $"{SanitizeName(element.Name)}.md");
         await _writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines));
+    }
+
+    private async Task ExportDiagramsAsync(List<EaPackage> rootPackages, List<(EaElement Element, string PackageDir)> elements, string outputDir, IEaReader reader)
+    {
+        var elementLookup = elements
+            .GroupBy(e => e.Element.Id)
+            .ToDictionary(g => g.Key, g => g.First());
+
+        var diagrams = CollectDiagrams(rootPackages, outputDir);
+
+        foreach (var (diagram, pkgDir) in diagrams)
+        {
+            var diagramsDir = Path.Combine(pkgDir, "diagrams");
+            await _writer.CreateDirectoryAsync(diagramsDir);
+
+            var fileName = SanitizeName(diagram.Name);
+            var pngPath = Path.Combine(diagramsDir, $"{fileName}.png");
+            var mdPath = Path.Combine(diagramsDir, $"{fileName}.md");
+
+            reader.ExportDiagramImage(diagram.Guid, pngPath);
+
+            var lines = new List<string>
+            {
+                $"# {diagram.Name}",
+                string.Empty,
+            };
+
+            if (!string.IsNullOrWhiteSpace(diagram.Notes))
+            {
+                lines.Add(diagram.Notes);
+                lines.Add(string.Empty);
+            }
+
+            if (File.Exists(pngPath))
+            {
+                lines.Add($"![{diagram.Name}]({fileName}.png)");
+                lines.Add(string.Empty);
+            }
+
+            var diagramElements = new List<(EaElement Element, string PackageDir)>();
+            foreach (var dob in diagram.DiagramObjects)
+            {
+                if (elementLookup.TryGetValue(dob.ElementId, out var elem))
+                    diagramElements.Add(elem);
+            }
+
+            if (diagramElements.Count > 0)
+            {
+                lines.Add("## Elements");
+                lines.Add(string.Empty);
+
+                foreach (var (elemEa, _) in diagramElements)
+                {
+                    var elemLink = Path.GetRelativePath(diagramsDir, Path.Combine(pkgDir, $"{SanitizeName(elemEa.Name)}.md")).Replace('\\', '/');
+                    lines.Add($"- [{elemEa.Name}]({elemLink})");
+                }
+
+                lines.Add(string.Empty);
+            }
+
+            await _writer.WriteFileAsync(mdPath, string.Join(Environment.NewLine, lines));
+        }
+    }
+
+    private static List<(EaDiagram Diagram, string PackageDir)> CollectDiagrams(List<EaPackage> packages, string outputDir)
+    {
+        var result = new List<(EaDiagram, string)>();
+        foreach (var pkg in packages)
+        {
+            CollectDiagramsRecursive(pkg, outputDir, result);
+        }
+        return result;
+    }
+
+    private static void CollectDiagramsRecursive(EaPackage package, string outputDir, List<(EaDiagram, string)> result)
+    {
+        var pkgDir = Path.Combine(outputDir, SanitizeName(package.Name));
+
+        foreach (var diagram in package.Diagrams)
+        {
+            result.Add((diagram, pkgDir));
+        }
+
+        foreach (var child in package.Children)
+        {
+            CollectDiagramsRecursive(child, outputDir, result);
+        }
     }
 
     private static string SanitizeName(string name)

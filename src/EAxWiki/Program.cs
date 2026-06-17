@@ -38,7 +38,7 @@ try
             Console.WriteLine($"Warning: Package '{config.PackageFilter}' not found. Exporting entire repository.");
     }
 
-    await exporter.ExportAsync(repository, startPackage, outputPath);
+    await exporter.ExportAsync(repository, startPackage, outputPath, reader);
     Console.WriteLine($"Done. Wiki generated at: {outputPath}");
 }
 catch (Exception ex)
