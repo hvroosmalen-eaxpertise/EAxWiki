@@ -14,6 +14,11 @@ public class MarkdownExporter : IWikiExporter
 
     public async Task ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath)
     {
+        if (Directory.Exists(outputPath))
+        {
+            Directory.Delete(outputPath, recursive: true);
+        }
+
         var packages = startPackage != null
             ? new List<EaPackage> { startPackage }
             : repository.RootPackages;
