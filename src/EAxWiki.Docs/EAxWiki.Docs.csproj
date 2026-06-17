@@ -14,5 +14,9 @@
     <None Include="..\\..\\wiki\\**\\*.md">
       <Link>wiki\\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </None>
+    <!-- Include scripts folder so IDE shows scripts in the Docs project -->
+    <None Include="..\\..\\scripts\\**\\*">
+      <Link>scripts\\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </None>
   </ItemGroup>
 </Project>
