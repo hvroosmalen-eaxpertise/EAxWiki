@@ -92,7 +92,9 @@ public class MarkdownExporter : IWikiExporter
 
             foreach (var child in package.Children)
             {
-                indexLines.Add($"- [{child.Name}]({SanitizeName(child.Name)}/index.md)");
+                var childDir = Path.Combine(outputDir, SanitizeName(child.Name));
+                var childRelPath = Path.GetRelativePath(dir, Path.Combine(childDir, "index.md")).Replace('\\', '/');
+                indexLines.Add($"- [{child.Name}]({childRelPath})");
             }
 
             indexLines.Add(string.Empty);
@@ -292,7 +294,7 @@ public class MarkdownExporter : IWikiExporter
 
     private static string SanitizeName(string name)
     {
-        var invalid = Path.GetInvalidFileNameChars();
+        var invalid = Path.GetInvalidFileNameChars().Append('#').ToArray();
         var sanitized = new string(name.Select(ch => invalid.Contains(ch) ? '_' : ch).ToArray());
         return string.IsNullOrWhiteSpace(sanitized) ? "unnamed" : sanitized;
     }
