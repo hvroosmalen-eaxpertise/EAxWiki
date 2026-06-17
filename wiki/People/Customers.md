@@ -1,0 +1,16 @@
+# Customers
+
+**Type:** Actor  
+**Stereotype:** People  
+
+Direct business customers
+
+## Relationships
+
+| Type | Stereotype | Source → Target |
+|------|------------|-----------------|
+| Abstraction | trace | 274 → 516 |
+| Association | Link | 516 → 517 |
+| Aggregation | Tree | 516 → 519 |
+| Aggregation | Tree | 516 → 515 |
+| Association | Link | 510 → 516 |

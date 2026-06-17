@@ -1,0 +1,27 @@
+# Equipment
+
+**Type:** Class  
+**Stereotype:** master-data  
+
+Equipment describes a device used in an operation or activity that is located or installed at a particular Facility. It is a manufactured, non-consumable object delivering the required functionality of facilities. Examples include Natural Gas Pneumatic Devices, Blowdown Vent Stacks, Flare Stacks, Centrifugal Compressors, Reciprocating Compressors, Atmospheric Storage Tanks, and Combustion Equipment, as catalogued in the US EPA Subpart W reference. A self-referential parent relationship allows the modelling of equipment assemblies. Both Facility and Equipment may be assigned an EmissionActivityParameter and an associated EmissionActivityParameterValue at a given point in time.
+
+## Attributes
+
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| id | Key |  | The unique system-assigned identifier for the Equipment record. It serves as the primary key referenced by EmissionInventory and EmissionActivityParameter when associating records with a specific equipment item. It must be globally unique and stable across equipment moves or renames. |
+| name | String |  | The operational name or asset tag description of the equipment item, such as "Centrifugal Compressor C-001" or "Flare Stack F-002". The name is used in inventory reports, maintenance records, and asset dashboards to identify the specific physical asset associated with a given emission measurement. |
+| parent_id | String |  | A foreign key referencing the parent Equipment record in the equipment assembly hierarchy, enabling the modelling of sub-components that roll up to a parent asset for aggregated emission reporting. Implementations must enforce acyclicity. |
+
+## Tagged Values
+
+| Name | Value | Notes |
+|------|-------|-------|
+| description | Equipment describes a device used in an operation or activity that is located or installed at a particular Facility. |  |
+
+## Relationships
+
+| Type | Stereotype | Source → Target |
+|------|------------|-----------------|
+| Association |  | 756 → 756 |
+| Association |  | 756 → 761 |

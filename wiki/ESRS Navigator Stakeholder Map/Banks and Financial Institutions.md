@@ -1,0 +1,19 @@
+# Banks and Financial Institutions
+
+**Type:** Class  
+**Stereotype:** ArchiMate_Stakeholder  
+
+Financial service providers and creditors
+
+## Tagged Values
+
+| Name | Value | Notes |
+|------|-------|-------|
+| archimate_element_identifier | id-fin-002 |  |
+
+## Relationships
+
+| Type | Stereotype | Source → Target |
+|------|------------|-----------------|
+| Association | ArchiMate_Association | 292 → 331 |
+| Abstraction | trace | 292 → 506 |

@@ -1,0 +1,19 @@
+# COO
+
+**Type:** Class  
+**Stereotype:** ArchiMate_BusinessRole  
+
+Chief Operating Officer
+
+## Tagged Values
+
+| Name | Value | Notes |
+|------|-------|-------|
+| archimate_element_identifier | id-gov-004 |  |
+
+## Relationships
+
+| Type | Stereotype | Source → Target |
+|------|------------|-----------------|
+| Association | ArchiMate_Composition | 266 → 268 |
+| Abstraction | trace | 268 → 498 |

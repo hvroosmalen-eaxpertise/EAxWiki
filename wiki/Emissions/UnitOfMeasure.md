@@ -1,0 +1,43 @@
+# UnitOfMeasure
+
+**Type:** Class  
+**Stereotype:** reference-data  
+
+UnitOfMeasure is a reference entity that provides the controlled vocabulary of measurement units used throughout the model for quantities, emission factors, parameter values, and product footprint attributes. It supports unit conversion through conversion factor attributes and is linked to a PhysicalQuantityType to enable dimensional analysis. The entity allows the model to be system-of-units-agnostic while maintaining the traceability required for rigorous scientific and regulatory reporting.
+
+## Attributes
+
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| id | Key |  | The unique identifier for this UnitOfMeasure record, typically a UN/CEFACT or QUDT unit code such as MTQ for cubic metres or TNE for metric tonnes, ensuring unambiguous cross-system interoperability. |
+| system_of_units_id | String |  | Foreign key to the SystemOfUnits record that this unit belongs to, such as SI, Imperial, or US Customary, enabling validation and conversion path determination. |
+| physical_quantity_type_id | String |  | Foreign key to the PhysicalQuantityType that this unit measures, such as Mass, Energy, or Volume, supporting dimensional consistency checks in calculation models. |
+| unit_of_measure_source_reference_id | String |  | Foreign key to the UnitOfMeasureSourceReference that is the authoritative registry for this unit definition, such as the UN/CEFACT Common Codes or QUDT ontology. |
+| name | String |  | The full human-readable name of the unit, such as Metric Tonne or Kilowatt-hour, used in labels and documentation. |
+| symbol | String |  | The standard symbol for the unit, such as t, kWh, or m3, used in quantity displays and report tables. |
+| conversion_factor_a | String |  | The multiplicative factor A in the linear conversion formula: target_value = (source_value x A) + B, enabling conversion from this unit to a defined base unit of the same physical quantity. |
+| conversion_factor_b | String |  | The additive constant B in the linear conversion formula: target_value = (source_value x A) + B, required for units with a non-zero offset such as degrees Celsius to Kelvin. |
+| conversion_factor_c | String |  | An optional third conversion parameter for non-linear or two-stage unit conversions, reserved for future use where the A+B formula is insufficient. |
+| conversion_factor_d | String |  | An optional fourth conversion parameter providing additional flexibility for complex unit conversion formulae requiring more than two coefficients. |
+
+## Tagged Values
+
+| Name | Value | Notes |
+|------|-------|-------|
+| description | UnitOfMeasure is a reference entity that provides the controlled vocabulary of measurement units used throughout the model for quantities, emission factors, parameter values, and product footprint attributes. |  |
+
+## Relationships
+
+| Type | Stereotype | Source → Target |
+|------|------------|-----------------|
+| Association |  | 779 → 783 |
+| Association |  | 798 → 779 |
+| Association |  | 797 → 779 |
+| Association |  | 796 → 779 |
+| Association |  | 775 → 779 |
+| Association |  | 779 → 812 |
+| Association |  | 779 → 763 |
+| Association |  | 779 → 780 |
+| Association |  | 779 → 780 |
+| Association |  | 779 → 778 |
+| Association |  | 779 → 776 |

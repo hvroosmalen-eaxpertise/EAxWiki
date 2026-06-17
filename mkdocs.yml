@@ -1,0 +1,9 @@
+site_name: "EurSuRA Wiki"
+docs_dir: wiki
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+use_directory_urls: false

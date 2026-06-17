@@ -46,3 +46,6 @@ bld/
 
 ## Benchmark/Profiling results
 BenchmarkDotNet.Artifacts/
+
+## MkDocs output
+site/

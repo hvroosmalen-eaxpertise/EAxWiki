@@ -1,0 +1,25 @@
+# Sustainable Processes
+
+**Type:** Interface  
+**Stereotype:** Process  
+
+Activiteiten die bijdragen aan verduurzaming.
+<ul>
+	<li>New Belgium Brewing – https://www.newbelgium.com – Hergebruikt bierbostel en bespaart energie.</li>
+	<li>Toyota Lean Manufacturing – https://www.toyota-global.com – Zero-waste procesaanpak.</li>
+</ul>
+
+## Tagged Values
+
+| Name | Value | Notes |
+|------|-------|-------|
+| EDGY::TextAlign | Center | Default: Center
+ |
+
+## Relationships
+
+| Type | Stereotype | Source → Target |
+|------|------------|-----------------|
+| ControlFlow | Flow | 130 → 150 |
+| Association | Link | 14 → 130 |
+| Association | Link | 15 → 130 |

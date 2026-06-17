@@ -1,0 +1,42 @@
+# Emissions
+
+## Elements
+
+- [EmissionInventory](EmissionInventory.md) — master-data «Class»
+- [EmissionScopeType](EmissionScopeType.md) — reference-data «Class»
+- [EmissionActivity](EmissionActivity.md) — master-data «Class»
+- [EmissionActivityCategory](EmissionActivityCategory.md) — reference-data «Class»
+- [EmissionParameterType](EmissionParameterType.md) — master-data «Class»
+- [EmissionStatement](EmissionStatement.md) — work-product-component «Class»
+- [EmissionCalculationModel](EmissionCalculationModel.md) — master-data «Class»
+- [EmissionComponent](EmissionComponent.md) — reference-data «Class»
+- [UnitOfMeasure](UnitOfMeasure.md) — reference-data «Class»
+- [EmissionFactor](EmissionFactor.md) — master-data «Class»
+- [EmissionFactorSource](EmissionFactorSource.md) — master-data «Class»
+- [EmissionReport](EmissionReport.md) — work-product-component «Class»
+- [EmissionReportPeriod](EmissionReportPeriod.md) — master-data «Class»
+- [EmissionSource](EmissionSource.md) — reference-data «Class»
+- [EmissionSink](EmissionSink.md) — reference-data «Class»
+- [EmissionActivityType](EmissionActivityType.md) — reference-data «Class»
+- [EmissionCategoryStandardAssociation](EmissionCategoryStandardAssociation.md) — reference-data «Class»
+- [EmissionStatementPerStandard](EmissionStatementPerStandard.md) — work-product-component «Class»
+- [EmissionComponentPerStandard](EmissionComponentPerStandard.md) — reference-data «Class»
+- [EmissionCalculationFormula](EmissionCalculationFormula.md) — work-product-component «Class»
+- [EmissionCalculationMethodType](EmissionCalculationMethodType.md) — reference-data «Class»
+- [EmissionComponentCategory](EmissionComponentCategory.md) — reference-data «Class»
+- [EmissionActivityFactor](EmissionActivityFactor.md) — work-product-component «Class»
+- [StandardSourceAssociation](StandardSourceAssociation.md) — master-data «Class»
+- [EmissionComponentCategoryGroup](EmissionComponentCategoryGroup.md) — reference-data «Class»
+- [SystemOfUnits](SystemOfUnits.md) — reference-data «Class»
+- [PhysicalQuantityType](PhysicalQuantityType.md) — reference-data «Class»
+- [UnitOfMeasureSourceReference](UnitOfMeasureSourceReference.md) — reference-data «Class»
+- [EmissionRecordingMethodType](EmissionRecordingMethodType.md) — reference-data «Class»
+- [RecordingUncertaintyAssessment](RecordingUncertaintyAssessment.md) — work-product-component «Class»
+- [OrganizationEmissionAllocation](OrganizationEmissionAllocation.md) — work-product-component «Class»
+- [ActivityEmissionAllocation](ActivityEmissionAllocation.md) — work-product-component «Class»
+- [EmissionCalculationFormulaComponent](EmissionCalculationFormulaComponent.md) — work-product-component «Class»
+- [EmissionCalculationModelFactorArgument](EmissionCalculationModelFactorArgument.md) — work-product-component «Class»
+- [EmissionCalculationModelParameterArgument](EmissionCalculationModelParameterArgument.md) — work-product-component «Class»
+- [EmissionActivityParameterRecordingTemplate](EmissionActivityParameterRecordingTemplate.md) — master-data «Class»
+- [EmissionActivityTypeParameterTypeAssignment](EmissionActivityTypeParameterTypeAssignment.md) — master-data «Class»
+- [EmissionReportingBoundary](EmissionReportingBoundary.md) — master-data «Class»
