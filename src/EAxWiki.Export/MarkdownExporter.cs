@@ -25,6 +25,7 @@ public class MarkdownExporter : IWikiExporter
             await ExportPackageAsync(pkg, outputPath, elements);
         }
 
+        await WriteRootIndexAsync(packages, outputPath);
         await GenerateTypesPagesAsync(elements, outputPath);
         await WritePagesFileAsync(outputPath);
     }
@@ -98,6 +99,26 @@ public class MarkdownExporter : IWikiExporter
         {
             await ExportPackageAsync(child, outputDir, elements);
         }
+    }
+
+    private async Task WriteRootIndexAsync(List<EaPackage> rootPackages, string outputDir)
+    {
+        var lines = new List<string>
+        {
+            "# EurSuRA Wiki",
+            string.Empty,
+            "## Structure",
+            string.Empty,
+        };
+
+        foreach (var pkg in rootPackages)
+        {
+            var dir = SanitizeName(pkg.Name);
+            lines.Add($"- [{pkg.Name}]({dir}/index.md)");
+        }
+
+        lines.Add(string.Empty);
+        await _writer.WriteFileAsync(Path.Combine(outputDir, "index.md"), string.Join(Environment.NewLine, lines));
     }
 
     private async Task GenerateTypesPagesAsync(List<(EaElement Element, string PackageDir)> elements, string outputDir)
