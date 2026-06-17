@@ -147,6 +147,7 @@ public class EaReader : IEaReader, IDisposable
         var diagram = new EaDiagram
         {
             Id = eaDiagram.DiagramID,
+            Guid = eaDiagram.DiagramGUID,
             Name = eaDiagram.Name,
             Type = eaDiagram.Type,
             Notes = eaDiagram.Notes,
@@ -166,6 +167,21 @@ public class EaReader : IEaReader, IDisposable
         }
 
         return diagram;
+    }
+
+    public bool ExportDiagramImage(string diagramGuid, string filePath)
+    {
+        if (_repository == null) return false;
+        try
+        {
+            var project = _repository.GetProjectInterface();
+            project.PutDiagramImageToFile(diagramGuid, filePath, 1);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
     }
 
     public void Dispose()
