@@ -6,6 +6,20 @@ param(
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 Push-Location $repoRoot
 
+# Prefer repo-local temp/cache directories so systems with small C: drives do not fill up.
+$mkdocsTemp = Join-Path $repoRoot ".mkdocs_temp"
+if (-not (Test-Path $mkdocsTemp)) {
+	New-Item -ItemType Directory -Path $mkdocsTemp | Out-Null
+}
+$env:TEMP = $mkdocsTemp
+$env:TMP = $mkdocsTemp
+
+$pipCache = Join-Path $repoRoot ".pip_cache"
+if (-not (Test-Path $pipCache)) {
+	New-Item -ItemType Directory -Path $pipCache | Out-Null
+}
+$env:PIP_CACHE_DIR = $pipCache
+
 $venvDir = Join-Path $repoRoot ".venv"
 if (-not (Test-Path $venvDir)) {
 	Write-Host "Creating virtual environment at $venvDir..."
