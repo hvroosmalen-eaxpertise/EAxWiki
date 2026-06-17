@@ -180,10 +180,9 @@ public class MarkdownExporter : IWikiExporter
         var pagesPath = Path.Combine(outputDir, ".pages");
         var content = new List<string>
         {
-            "title: Structure",
             "nav:",
-            "  - ...",
-            "  - types",
+            "  - Structure: ''",
+            "  - Types: types/",
             string.Empty,
         };
         await _writer.WriteFileAsync(pagesPath, string.Join(Environment.NewLine, content));
