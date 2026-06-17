@@ -4,20 +4,18 @@ using EAxWiki.Core.Models;
 
 namespace EAxWiki.EA;
 
+using EA = global::EA;
+
 [System.Runtime.Versioning.SupportedOSPlatform("windows")]
 public class EaReader : IEaReader, IDisposable
 {
-    private dynamic? _repository;
+    private EA.Repository? _repository;
     private bool _disposed;
 
     public EaRepository Open(string connectionString)
     {
-        var repoType = Type.GetTypeFromProgID("EA.Repository")
-            ?? throw new InvalidOperationException("EA.Repository COM type not found. Ensure Enterprise Architect is installed.");
-
-        _repository = Activator.CreateInstance(repoType)
-            ?? throw new InvalidOperationException("Failed to create EA.Repository instance.");
-        _repository.Open(connectionString);
+        _repository = new EA.Repository();
+        _repository.OpenFile(connectionString);
 
         var model = new EaRepository
         {
@@ -25,14 +23,11 @@ public class EaReader : IEaReader, IDisposable
             Name = connectionString
         };
 
-        dynamic models = _repository.Models;
-        int count = models.Count;
-
-        for (int i = 0; i < count; i++)
+        var eaModels = (EA.Collection)_repository.Models;
+        for (short i = 0; i < eaModels.Count; i++)
         {
-            dynamic eaModel = models.GetAt((short)i);
-            var rootPkg = eaModel.Package;
-            model.RootPackages.Add(MapPackage(rootPkg));
+            var eaModel = (EA.Package)eaModels.GetAt(i);
+            model.RootPackages.Add(MapPackage(eaModel));
         }
 
         return model;
@@ -42,12 +37,12 @@ public class EaReader : IEaReader, IDisposable
     {
         if (_repository != null)
         {
-            _repository.Close();
+            _repository.CloseFile();
             _repository = null;
         }
     }
 
-    private EaPackage MapPackage(dynamic eaPkg)
+    private EaPackage MapPackage(EA.Package eaPkg)
     {
         var pkg = new EaPackage
         {
@@ -57,31 +52,28 @@ public class EaReader : IEaReader, IDisposable
             ParentId = eaPkg.ParentID
         };
 
-        dynamic elements = eaPkg.Elements;
-        int elemCount = elements.Count;
-        for (int i = 0; i < elemCount; i++)
+        var elements = (EA.Collection)eaPkg.Elements;
+        for (short i = 0; i < elements.Count; i++)
         {
-            pkg.Elements.Add(MapElement(elements.GetAt((short)i)));
+            pkg.Elements.Add(MapElement((EA.Element)elements.GetAt(i)));
         }
 
-        dynamic diagrams = eaPkg.Diagrams;
-        int diagCount = diagrams.Count;
-        for (int i = 0; i < diagCount; i++)
+        var diagrams = (EA.Collection)eaPkg.Diagrams;
+        for (short i = 0; i < diagrams.Count; i++)
         {
-            pkg.Diagrams.Add(MapDiagram(diagrams.GetAt((short)i)));
+            pkg.Diagrams.Add(MapDiagram((EA.Diagram)diagrams.GetAt(i)));
         }
 
-        dynamic packages = eaPkg.Packages;
-        int childCount = packages.Count;
-        for (int i = 0; i < childCount; i++)
+        var packages = (EA.Collection)eaPkg.Packages;
+        for (short i = 0; i < packages.Count; i++)
         {
-            pkg.Children.Add(MapPackage(packages.GetAt((short)i)));
+            pkg.Children.Add(MapPackage((EA.Package)packages.GetAt(i)));
         }
 
         return pkg;
     }
 
-    private EaElement MapElement(dynamic eaElement)
+    private static EaElement MapElement(EA.Element eaElement)
     {
         var elem = new EaElement
         {
@@ -93,11 +85,10 @@ public class EaReader : IEaReader, IDisposable
             PackageId = eaElement.PackageID
         };
 
-        dynamic attrs = eaElement.Attributes;
-        int attrCount = attrs.Count;
-        for (int i = 0; i < attrCount; i++)
+        var attrs = (EA.Collection)eaElement.Attributes;
+        for (short i = 0; i < attrs.Count; i++)
         {
-            dynamic eaAttr = attrs.GetAt((short)i);
+            var eaAttr = (EA.Attribute)attrs.GetAt(i);
             elem.Attributes.Add(new EaAttribute
             {
                 Name = eaAttr.Name,
@@ -107,11 +98,10 @@ public class EaReader : IEaReader, IDisposable
             });
         }
 
-        dynamic methods = eaElement.Methods;
-        int methodCount = methods.Count;
-        for (int i = 0; i < methodCount; i++)
+        var methods = (EA.Collection)eaElement.Methods;
+        for (short i = 0; i < methods.Count; i++)
         {
-            dynamic eaMethod = methods.GetAt((short)i);
+            var eaMethod = (EA.Method)methods.GetAt(i);
             elem.Methods.Add(new EaMethod
             {
                 Name = eaMethod.Name,
@@ -121,11 +111,10 @@ public class EaReader : IEaReader, IDisposable
             });
         }
 
-        dynamic taggedValues = eaElement.TaggedValues;
-        int tvCount = taggedValues.Count;
-        for (int i = 0; i < tvCount; i++)
+        var taggedValues = (EA.Collection)eaElement.TaggedValues;
+        for (short i = 0; i < taggedValues.Count; i++)
         {
-            dynamic eaTv = taggedValues.GetAt((short)i);
+            var eaTv = (EA.TaggedValue)taggedValues.GetAt(i);
             elem.TaggedValues.Add(new EaTaggedValue
             {
                 Name = eaTv.Name,
@@ -134,11 +123,10 @@ public class EaReader : IEaReader, IDisposable
             });
         }
 
-        dynamic connectors = eaElement.Connectors;
-        int connCount = connectors.Count;
-        for (int i = 0; i < connCount; i++)
+        var connectors = (EA.Collection)eaElement.Connectors;
+        for (short i = 0; i < connectors.Count; i++)
         {
-            dynamic eaConn = connectors.GetAt((short)i);
+            var eaConn = (EA.Connector)connectors.GetAt(i);
             elem.Connectors.Add(new EaConnector
             {
                 Id = eaConn.ConnectorID,
@@ -154,7 +142,7 @@ public class EaReader : IEaReader, IDisposable
         return elem;
     }
 
-    private static EaDiagram MapDiagram(dynamic eaDiagram)
+    private static EaDiagram MapDiagram(EA.Diagram eaDiagram)
     {
         return new EaDiagram
         {

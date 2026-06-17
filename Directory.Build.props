@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <EAPath Condition="'$(EAPath)' == '' And '$(EA_PATH)' != ''">$(EA_PATH)</EAPath>
+    <EAPath Condition="'$(EAPath)' == '' And '$([MSBuild]::IsOSPlatform(Windows))'">E:\Program Files\Sparx Systems\EA\</EAPath>
+  </PropertyGroup>
+</Project>

@@ -1,13 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\EAxWiki.Core\EAxWiki.Core.csproj" />
-  </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EAxWiki.Core\EAxWiki.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Interop.EA">
+      <HintPath>$(EAPath)Interop.EA.dll</HintPath>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
 
 </Project>
