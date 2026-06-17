@@ -18,13 +18,17 @@ public class MarkdownExporter : IWikiExporter
             ? new List<EaPackage> { startPackage }
             : repository.RootPackages;
 
+        var elements = new List<(EaElement Element, string PackageDir)>();
+
         foreach (var pkg in packages)
         {
-            await ExportPackageAsync(pkg, outputPath);
+            await ExportPackageAsync(pkg, outputPath, elements);
         }
+
+        await GenerateTypesPagesAsync(elements, outputPath);
     }
 
-    private async Task ExportPackageAsync(EaPackage package, string outputDir)
+    private async Task ExportPackageAsync(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements)
     {
         var dir = Path.Combine(outputDir, SanitizeName(package.Name));
         await _writer.CreateDirectoryAsync(dir);
@@ -50,6 +54,7 @@ public class MarkdownExporter : IWikiExporter
             {
                 var elemFile = $"{SanitizeName(elem.Name)}.md";
                 await WriteElementAsync(elem, dir);
+                elements.Add((elem, dir));
 
                 var typeLabel = string.IsNullOrEmpty(elem.Stereotype)
                     ? elem.Type
@@ -90,7 +95,61 @@ public class MarkdownExporter : IWikiExporter
 
         foreach (var child in package.Children)
         {
-            await ExportPackageAsync(child, outputDir);
+            await ExportPackageAsync(child, outputDir, elements);
+        }
+    }
+
+    private async Task GenerateTypesPagesAsync(List<(EaElement Element, string PackageDir)> elements, string outputDir)
+    {
+        var typesDir = Path.Combine(outputDir, "types");
+        await _writer.CreateDirectoryAsync(typesDir);
+
+        var stereotypes = elements
+            .Select(e => string.IsNullOrWhiteSpace(e.Element.Stereotype) ? "Uncategorized" : e.Element.Stereotype)
+            .Distinct()
+            .OrderBy(s => s)
+            .ToList();
+
+        var indexLines = new List<string>
+        {
+            "# Types",
+            string.Empty,
+            "Elements grouped by stereotype:",
+            string.Empty,
+        };
+
+        foreach (var stereo in stereotypes)
+        {
+            indexLines.Add($"- [{stereo}]({SanitizeName(stereo)}.md)");
+        }
+
+        indexLines.Add(string.Empty);
+        await _writer.WriteFileAsync(Path.Combine(typesDir, "index.md"), string.Join(Environment.NewLine, indexLines));
+
+        foreach (var stereo in stereotypes)
+        {
+            var matching = elements
+                .Where(e => (string.IsNullOrWhiteSpace(e.Element.Stereotype) ? "Uncategorized" : e.Element.Stereotype) == stereo)
+                .ToList();
+
+            var lines = new List<string>
+            {
+                $"# {stereo}",
+                string.Empty,
+                $"{matching.Count} element(s) with this stereotype:",
+                string.Empty,
+            };
+
+            foreach (var (elem, pkgDir) in matching)
+            {
+                var elemName = SanitizeName(elem.Name);
+                var relativeDir = Path.GetRelativePath(outputDir, pkgDir);
+                var relativePath = $"../{relativeDir}/{elemName}.md".Replace('\\', '/');
+                lines.Add($"- [{elem.Name}]({relativePath})");
+            }
+
+            lines.Add(string.Empty);
+            await _writer.WriteFileAsync(Path.Combine(typesDir, $"{SanitizeName(stereo)}.md"), string.Join(Environment.NewLine, lines));
         }
     }
 
