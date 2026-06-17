@@ -26,6 +26,7 @@ public class MarkdownExporter : IWikiExporter
         }
 
         await GenerateTypesPagesAsync(elements, outputPath);
+        await WritePagesFileAsync(outputPath);
     }
 
     private async Task ExportPackageAsync(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements)
@@ -151,6 +152,19 @@ public class MarkdownExporter : IWikiExporter
             lines.Add(string.Empty);
             await _writer.WriteFileAsync(Path.Combine(typesDir, $"{SanitizeName(stereo)}.md"), string.Join(Environment.NewLine, lines));
         }
+    }
+
+    private async Task WritePagesFileAsync(string outputDir)
+    {
+        var pagesPath = Path.Combine(outputDir, ".pages");
+        var content = new List<string>
+        {
+            "nav:",
+            "  - Structure: ''",
+            "  - Types: types/",
+            string.Empty,
+        };
+        await _writer.WriteFileAsync(pagesPath, string.Join(Environment.NewLine, content));
     }
 
     private async Task WriteElementAsync(EaElement element, string dir)
