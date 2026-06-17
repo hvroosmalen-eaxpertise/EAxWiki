@@ -1,0 +1,7 @@
+mkdocs>=1.5
+mkdocs-material>=9.0
+pymdown-extensions>=8.0
+# Optional plugins:
+# mkdocs-awesome-pages-plugin>=2.0
+# Enable directory-based navigation ordering and nicer nav control
+mkdocs-awesome-pages-plugin>=2.0

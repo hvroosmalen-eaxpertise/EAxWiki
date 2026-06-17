@@ -1,4 +1,5 @@
 site_name: "EurSuRA Wiki"
+site_description: EAxWiki / EurSuRA documentation
 docs_dir: wiki
 theme:
   name: material
@@ -6,4 +7,20 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.indexes
+
 use_directory_urls: false
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.betterem
+  - pymdownx.highlight
+
+plugins:
+  - search
+  - awesome-pages
+
+# If you want an explicit navigation order, uncomment and adjust 'nav'
+# nav:
+#   - Home: index.md
+#   - Architecture:
+#     - Overview: Architecture/index.md
