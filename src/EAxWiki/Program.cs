@@ -9,16 +9,9 @@ Console.WriteLine();
 var config = new EAxWiki.Config();
 config.Load(args);
 
-if (string.IsNullOrEmpty(config.RepositoryPath))
+if (config.HelpRequested)
 {
-    Console.WriteLine("Usage: EAxWiki --repo <path-to-eap|.qeax|.feap> [options]");
-    Console.WriteLine();
-    Console.WriteLine("Options:");
-    Console.WriteLine("  --repo, -r <path>     Path to the EA repository file");
-    Console.WriteLine("  --name, -n <name>     Display name for the repository");
-    Console.WriteLine("  --output, -o <dir>    Output directory for the wiki (default: wiki)");
-    Console.WriteLine("  --package, -p <name>  Only export a specific package (by name)");
-    Console.WriteLine();
+    ShowUsage();
     return;
 }
 
@@ -27,6 +20,7 @@ Console.WriteLine($"Repository: {config.RepositoryPath}");
 Console.WriteLine($"Output:     {outputPath}");
 if (!string.IsNullOrEmpty(config.PackageFilter))
     Console.WriteLine($"Package:    {config.PackageFilter}");
+Console.WriteLine();
 
 IEaReader reader = new EaReader();
 IOutputWriter writer = new FileOutputWriter();
@@ -66,4 +60,18 @@ static EaPackage? FindPackage(List<EaPackage> packages, string name)
         if (found != null) return found;
     }
     return null;
+}
+
+static void ShowUsage()
+{
+    Console.WriteLine("Usage: EAxWiki [options]");
+    Console.WriteLine();
+    Console.WriteLine("Options:");
+    Console.WriteLine("  --repo, -r <path>     Path to the EA repository file");
+    Console.WriteLine("                        (default: M:\\EAWiki\\model\\EurSuRA.qea)");
+    Console.WriteLine("  --name, -n <name>     Display name for the repository");
+    Console.WriteLine("  --output, -o <dir>    Output directory for the wiki");
+    Console.WriteLine("                        (default: wiki)");
+    Console.WriteLine("  --package, -p <name>  Only export a specific package (by name)");
+    Console.WriteLine("  --help, -h            Show this help message");
 }

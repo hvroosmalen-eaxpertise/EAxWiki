@@ -2,10 +2,11 @@ namespace EAxWiki;
 
 public class Config
 {
-    public string? RepositoryPath { get; set; }
+    public string RepositoryPath { get; set; } = "M:\\EAWiki\\model\\EurSuRA.qea";
     public string? RepositoryName { get; set; }
     public string OutputPath { get; set; } = "wiki";
     public string? PackageFilter { get; set; }
+    public bool HelpRequested { get; set; }
 
     public void Load(string[] args)
     {
@@ -28,6 +29,11 @@ public class Config
                 case "--package":
                 case "-p":
                     PackageFilter = args[++i];
+                    break;
+                case "--help":
+                case "/?":
+                case "-h":
+                    HelpRequested = true;
                     break;
             }
         }
