@@ -1,5 +1,8 @@
 <Solution>
   <Folder Name="/src/">
+    <Project Path="src/EAxWiki.Core/EAxWiki.Core.csproj" />
+    <Project Path="src/EAxWiki.EA/EAxWiki.EA.csproj" />
+    <Project Path="src/EAxWiki.Export/EAxWiki.Export.csproj" />
     <Project Path="src/EAxWiki/EAxWiki.csproj" />
   </Folder>
 </Solution>

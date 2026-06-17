@@ -3,6 +3,7 @@ namespace EAxWiki;
 public class Config
 {
     public string? RepositoryPath { get; set; }
+    public string? RepositoryName { get; set; }
     public string OutputPath { get; set; } = "wiki";
     public string? PackageFilter { get; set; }
 
@@ -15,6 +16,10 @@ public class Config
                 case "--repo":
                 case "-r":
                     RepositoryPath = args[++i];
+                    break;
+                case "--name":
+                case "-n":
+                    RepositoryName = args[++i];
                     break;
                 case "--output":
                 case "-o":
