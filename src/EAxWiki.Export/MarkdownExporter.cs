@@ -412,11 +412,9 @@ public class MarkdownExporter : IWikiExporter
                 lines.Add(BuildBreadcrumb(diagram.PackageId, diagramsDir, outputDir, packageLookup));
                 lines.Add(string.Empty);
 
-                if (!string.IsNullOrWhiteSpace(diagram.Notes))
-                {
-                    lines.Add(diagram.Notes);
-                    lines.Add(string.Empty);
-                }
+                lines.Add($"**Description:** {diagram.Notes ?? "-"}");
+                lines.Add($"**Status:** {diagram.Status ?? "-"}");
+                lines.Add(string.Empty);
 
                 if (File.Exists(pngPath))
                 {
