@@ -180,7 +180,7 @@ public class EaReader : IEaReader, IDisposable
         if (_repository == null) return null;
         try
         {
-            var sql = $"SELECT Status FROM t_diagram WHERE Diagram_ID = {diagramId}";
+            var sql = $"SELECT * FROM t_diagram WHERE Diagram_ID = {diagramId}";
             var xml = _repository.SQLQuery(sql);
             var doc = XDocument.Parse(xml);
             var status = doc.Descendants("Status").FirstOrDefault()?.Value;
