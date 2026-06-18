@@ -10,9 +10,8 @@ public class FileOutputWriter : IOutputWriter
         return Task.CompletedTask;
     }
 
-    public Task WriteFileAsync(string filePath, string content)
+    public async Task WriteFileAsync(string filePath, string content)
     {
-        File.WriteAllText(filePath, content);
-        return Task.CompletedTask;
+        await File.WriteAllTextAsync(filePath, content);
     }
 }
