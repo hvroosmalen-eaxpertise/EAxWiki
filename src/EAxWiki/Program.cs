@@ -1,4 +1,5 @@
-﻿using EAxWiki.Core.Interfaces;
+﻿using Microsoft.Extensions.Logging;
+using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.EA;
 using EAxWiki.Export;
@@ -22,9 +23,16 @@ if (!string.IsNullOrEmpty(config.PackageFilter))
     Console.WriteLine($"Package:    {config.PackageFilter}");
 Console.WriteLine();
 
+using var loggerFactory = LoggerFactory.Create(builder =>
+{
+    builder.AddConsole();
+    builder.SetMinimumLevel(config.Verbose ? LogLevel.Debug : LogLevel.Information);
+});
+
 IEaReader reader = new EaReader();
 IOutputWriter writer = new FileOutputWriter();
-IWikiExporter exporter = new MarkdownExporter(writer);
+var logger = loggerFactory.CreateLogger<MarkdownExporter>();
+IWikiExporter exporter = new MarkdownExporter(writer, logger);
 
 try
 {
@@ -73,5 +81,6 @@ static void ShowUsage()
     Console.WriteLine("  --output, -o <dir>    Output directory for the wiki");
     Console.WriteLine("                        (default: wiki)");
     Console.WriteLine("  --package, -p <name>  Only export a specific package (by name)");
+    Console.WriteLine("  --verbose, -v         Enable verbose logging per-element timing");
     Console.WriteLine("  --help, -h            Show this help message");
 }

@@ -7,6 +7,7 @@ public class Config
     public string OutputPath { get; set; } = "wiki";
     public string? PackageFilter { get; set; }
     public bool HelpRequested { get; set; }
+    public bool Verbose { get; set; }
 
     public void Load(string[] args)
     {
@@ -29,6 +30,10 @@ public class Config
                 case "--package":
                 case "-p":
                     PackageFilter = args[++i];
+                    break;
+                case "--verbose":
+                case "-v":
+                    Verbose = true;
                     break;
                 case "--help":
                 case "/?":
