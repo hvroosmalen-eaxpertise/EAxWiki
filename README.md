@@ -25,7 +25,12 @@ pip install -r requirements.txt
 .\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea" -Verbose
 ```
 
-Runs the .NET exporter against the `.qea` file, then serves the output. The `-Verbose` flag enables debug-level logging. The script also cleans up any orphaned EA.exe processes after the export finishes.
+Or equivalently:
+```powershell
+.\scripts\serve-mkdocs.ps1 -Export -Verbose
+```
+
+Runs the .NET exporter against the `.qea` file, then serves the output. The `-Verbose` flag enables debug-level logging. The `export-and-serve.ps1` script also cleans up any orphaned EA.exe processes after the export finishes.
 
 ### Incremental vs full export
 
@@ -41,9 +46,8 @@ Use the `-Force` flag when the Markdown template changes (new sections, reordere
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/export-and-serve.ps1` | Full pipeline: export + MkDocs serve, with EA.exe cleanup |
-| `scripts/serve-mkdocs.ps1` | Serve an already-exported wiki locally |
-| `scripts/export.ps1` | Export only (no server) |
+| `scripts/export-and-serve.ps1` | Full pipeline: export + MkDocs serve, with EA.exe cleanup and `-Force` support |
+| `scripts/serve-mkdocs.ps1` | Serve an already-exported wiki locally; add `-Export` to run the export first, `-Force` for full regeneration |
 
 ## Wiki navigation
 

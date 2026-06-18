@@ -1,5 +1,7 @@
 param(
-	[int]$Port = 8000
+	[int]$Port = 8000,
+	[switch]$Export,
+	[switch]$Force
 )
 
 # Run from repository root. Creates a .venv and starts mkdocs serve.
@@ -39,6 +41,22 @@ if (-Not (Test-Path $activate)) {
 Write-Host "Upgrading pip and installing requirements..."
 python -m pip install --upgrade pip
 python -m pip install -r (Join-Path $repoRoot "requirements.txt")
+
+if ($Export) {
+	Write-Host "=== Running export ==="
+	$runArgs = @("--repo", (Join-Path $repoRoot "model/EurSuRA.qea"))
+	if ($Force) { $runArgs += "--force" }
+	Push-Location $repoRoot
+	dotnet run --project src/EAxWiki -- $runArgs
+	if ($LASTEXITCODE -ne 0) {
+		Write-Error "Export failed (exit code $LASTEXITCODE)."
+		Pop-Location
+		Pop-Location
+		exit $LASTEXITCODE
+	}
+	Pop-Location
+	Write-Host "Export complete." -ForegroundColor Green
+}
 
 Write-Host "Preparing to start MkDocs on port $Port..."
 
