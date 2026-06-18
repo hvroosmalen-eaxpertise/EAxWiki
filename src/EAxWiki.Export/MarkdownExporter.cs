@@ -1,3 +1,5 @@
+using System.Collections.Concurrent;
+using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 
@@ -6,10 +8,14 @@ namespace EAxWiki.Export;
 public class MarkdownExporter : IWikiExporter
 {
     private readonly IOutputWriter _writer;
+    private readonly ILogger<MarkdownExporter> _logger;
+    private static readonly char[] _invalidChars = Path.GetInvalidFileNameChars().Append('#').ToArray();
+    private static readonly ConcurrentDictionary<string, string> _sanitizeCache = new();
 
-    public MarkdownExporter(IOutputWriter writer)
+    public MarkdownExporter(IOutputWriter writer, ILogger<MarkdownExporter> logger)
     {
         _writer = writer;
+        _logger = logger;
     }
 
     public async Task ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath, IEaReader? reader = null)
@@ -400,8 +406,11 @@ public class MarkdownExporter : IWikiExporter
     private static string SanitizeName(string name)
     {
         name = name.Trim();
-        var invalid = Path.GetInvalidFileNameChars().Append('#').ToArray();
-        var sanitized = new string(name.Select(ch => invalid.Contains(ch) ? '_' : ch).ToArray());
-        return string.IsNullOrWhiteSpace(sanitized) ? "unnamed" : sanitized;
+        if (_sanitizeCache.TryGetValue(name, out var cached))
+            return cached;
+        var sanitized = new string(name.Select(ch => _invalidChars.Contains(ch) ? '_' : ch).ToArray());
+        var result = string.IsNullOrWhiteSpace(sanitized) ? "unnamed" : sanitized;
+        _sanitizeCache[name] = result;
+        return result;
     }
 }
