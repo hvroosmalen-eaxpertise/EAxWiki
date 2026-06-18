@@ -410,9 +410,9 @@ public class MarkdownExporter : IWikiExporter
                     lines.Add("## Elements");
                     lines.Add(string.Empty);
 
-                    foreach (var (elemEa, _) in diagramElements)
+                    foreach (var (elemEa, elemDir) in diagramElements)
                     {
-                        var elemLink = Path.GetRelativePath(diagramsDir, Path.Combine(pkgDir, $"{SanitizeName(elemEa.Name)}.md")).Replace('\\', '/');
+                        var elemLink = Path.GetRelativePath(diagramsDir, Path.Combine(elemDir, $"{SanitizeName(elemEa.Name)}.md")).Replace('\\', '/');
                         lines.Add($"- [{elemEa.Name}]({elemLink})");
                     }
 
