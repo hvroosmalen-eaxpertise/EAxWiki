@@ -119,10 +119,11 @@ public class MarkdownExporter : IWikiExporter
             indexLines.Add("## Elements");
             indexLines.Add(string.Empty);
 
+            var elementTasks = new List<Task>();
             foreach (var elem in package.Elements)
             {
                 var elemFile = $"{SanitizeName(elem.Name)}.md";
-                await WriteElementAsync(elem, dir, outputDir, packageLookup);
+                elementTasks.Add(WriteElementAsync(elem, dir, outputDir, packageLookup));
                 elements.Add((elem, dir));
 
                 var typeLabel = string.IsNullOrEmpty(elem.Stereotype)
@@ -135,6 +136,16 @@ public class MarkdownExporter : IWikiExporter
                     var notesPreview = elem.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ");
                     indexLines.Add($"  - *{notesPreview}*");
                 }
+            }
+
+            try
+            {
+                await Task.WhenAll(elementTasks);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to write one or more element pages in package {PackageName}", package.Name);
+                throw;
             }
 
             indexLines.Add(string.Empty);
