@@ -22,32 +22,29 @@ pip install -r requirements.txt
 ## Full export + serve
 
 ```powershell
-.\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea" -Verbose
+.\scripts\serve.ps1
 ```
 
-Or equivalently:
+Or with verbose logging:
 ```powershell
-.\scripts\serve-mkdocs.ps1 -Export -Verbose
+.\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea" -Verbose
 ```
 
 Runs the .NET exporter against the `.qea` file, then serves the output. The `-Verbose` flag enables debug-level logging. The `export-and-serve.ps1` script also cleans up any orphaned EA.exe processes after the export finishes.
 
-### Incremental vs full export
+## Incremental vs full export
 
-By default the exporter skips element pages whose `.md` file is newer than the element's last-modified date in EA. This makes repeated exports faster — only changed elements are regenerated.
-
-Use the `-Force` flag when the Markdown template changes (new sections, reordered layout, etc.) to force full regeneration of all files:
-
-```powershell
-.\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea" -Force
-```
+- `.\scripts\serve.ps1` — incremental (skip unchanged elements)
+- `.\scripts\serve-full.ps1` — full regeneration (use after template changes)
 
 ## Scripts
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/export-and-serve.ps1` | Full pipeline: export + MkDocs serve, with EA.exe cleanup and `-Force` support |
-| `scripts/serve-mkdocs.ps1` | Serve an already-exported wiki locally; add `-Export` to run the export first, `-Force` for full regeneration |
+| `scripts/serve.ps1` | Incremental export then MkDocs serve (default) |
+| `scripts/serve-full.ps1` | Full regeneration then MkDocs serve |
+| `scripts/export-and-serve.ps1` | Full pipeline with flags: `-Verbose`, `-Force`, `-RepoPath`, `-Port` |
+| `scripts/serve-mkdocs.ps1` | Serve an already-exported wiki locally (no export) |
 
 ## Wiki navigation
 
