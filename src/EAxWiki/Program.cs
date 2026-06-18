@@ -25,7 +25,7 @@ Console.WriteLine();
 
 using var loggerFactory = LoggerFactory.Create(builder =>
 {
-    builder.AddConsole();
+    builder.AddSimpleConsole(options => options.TimestampFormat = "HH:mm:ss.fff ");
     builder.SetMinimumLevel(config.Verbose ? LogLevel.Debug : LogLevel.Information);
 });
 
@@ -55,7 +55,14 @@ catch (Exception ex)
 }
 finally
 {
-    if (reader is IDisposable d) d.Dispose();
+    try
+    {
+        if (reader is IDisposable d) d.Dispose();
+    }
+    catch
+    {
+        // Ignore cleanup errors from EA COM
+    }
 }
 
 static EaPackage? FindPackage(List<EaPackage> packages, string name)

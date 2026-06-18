@@ -360,7 +360,9 @@ public class MarkdownExporter : IWikiExporter
             var mdPath = Path.Combine(diagramsDir, $"{fileName}.md");
             var diagramStopwatch = Stopwatch.StartNew();
 
-            reader.ExportDiagramImage(diagram.Guid, pngPath);
+            var pngSuccess = reader.ExportDiagramImage(diagram.Guid, pngPath);
+            if (!pngSuccess)
+                _logger.LogWarning("Failed to export PNG for diagram {DiagramName}", diagram.Name);
 
             var lines = new List<string>
             {
