@@ -21,42 +21,49 @@ public class MarkdownExporter : IWikiExporter
 
     public async Task ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath, IEaReader? reader = null)
     {
-        if (Directory.Exists(outputPath))
+        try
         {
-            Directory.Delete(outputPath, recursive: true);
-        }
-
-        var totalStopwatch = Stopwatch.StartNew();
-
-        var packages = startPackage != null
-            ? new List<EaPackage> { startPackage }
-            : repository.RootPackages;
-
-        var elements = new List<(EaElement Element, string PackageDir)>();
-
-        foreach (var pkg in packages)
-        {
-            await ExportPackageAsync(pkg, outputPath, elements);
-        }
-
-        await WriteRootIndexAsync(packages, outputPath);
-        await GenerateTypesPagesAsync(elements, outputPath);
-        await WritePagesFileAsync(outputPath);
-
-        if (reader != null)
-        {
-            try
+            if (Directory.Exists(outputPath))
             {
-                await ExportDiagramsAsync(packages, elements, outputPath, reader);
+                Directory.Delete(outputPath, recursive: true);
             }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Diagram export failed");
-            }
-        }
 
-        totalStopwatch.Stop();
-        _logger.LogInformation("Export complete: {TotalElapsedMs}ms total", totalStopwatch.ElapsedMilliseconds);
+            var totalStopwatch = Stopwatch.StartNew();
+
+            var packages = startPackage != null
+                ? new List<EaPackage> { startPackage }
+                : repository.RootPackages;
+
+            var elements = new List<(EaElement Element, string PackageDir)>();
+
+            foreach (var pkg in packages)
+            {
+                await ExportPackageAsync(pkg, outputPath, elements);
+            }
+
+            await WriteRootIndexAsync(packages, outputPath);
+            await GenerateTypesPagesAsync(elements, outputPath);
+            await WritePagesFileAsync(outputPath);
+
+            if (reader != null)
+            {
+                try
+                {
+                    await ExportDiagramsAsync(packages, elements, outputPath, reader);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Diagram export failed");
+                }
+            }
+
+            totalStopwatch.Stop();
+            _logger.LogInformation("Export complete: {TotalElapsedMs}ms total", totalStopwatch.ElapsedMilliseconds);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Export failed unexpectedly");
+        }
     }
 
     private async Task ExportPackageAsync(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements)
