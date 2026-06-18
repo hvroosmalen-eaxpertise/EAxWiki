@@ -148,6 +148,7 @@ public class MarkdownExporter : IWikiExporter
             indexLines.Add(string.Empty);
         }
 
+        indexLines.Add(FormatTimestamp());
         await _writer.WriteFileAsync(Path.Combine(dir, "index.md"), string.Join(Environment.NewLine, indexLines));
 
         pkgStopwatch.Stop();
@@ -177,6 +178,7 @@ public class MarkdownExporter : IWikiExporter
         }
 
         lines.Add(string.Empty);
+        lines.Add(FormatTimestamp());
         await _writer.WriteFileAsync(Path.Combine(outputDir, "index.md"), string.Join(Environment.NewLine, lines));
     }
 
@@ -213,6 +215,7 @@ public class MarkdownExporter : IWikiExporter
         }
 
         indexLines.Add(string.Empty);
+        indexLines.Add(FormatTimestamp());
         await _writer.WriteFileAsync(Path.Combine(typesDir, "index.md"), string.Join(Environment.NewLine, indexLines));
 
         foreach (var stereo in stereotypes)
@@ -236,6 +239,7 @@ public class MarkdownExporter : IWikiExporter
             }
 
             lines.Add(string.Empty);
+            lines.Add(FormatTimestamp());
             await _writer.WriteFileAsync(Path.Combine(typesDir, $"{SanitizeName(stereo)}.md"), string.Join(Environment.NewLine, lines));
         }
 
@@ -352,6 +356,7 @@ public class MarkdownExporter : IWikiExporter
         }
 
         var filePath = Path.Combine(dir, $"{SanitizeName(element.Name)}.md");
+        lines.Add(FormatTimestamp());
         await _writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines));
     }
 
@@ -419,6 +424,7 @@ public class MarkdownExporter : IWikiExporter
                     lines.Add(string.Empty);
                 }
 
+                lines.Add(FormatTimestamp());
                 await _writer.WriteFileAsync(mdPath, string.Join(Environment.NewLine, lines));
 
                 diagramStopwatch.Stop();
@@ -455,6 +461,11 @@ public class MarkdownExporter : IWikiExporter
         {
             CollectDiagramsRecursive(child, outputDir, result);
         }
+    }
+
+    private static string FormatTimestamp()
+    {
+        return $"---\n\n*Generated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}*";
     }
 
     private static string SanitizeName(string name)
