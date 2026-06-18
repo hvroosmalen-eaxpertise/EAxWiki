@@ -18,5 +18,9 @@
     <None Include="..\\..\\scripts\\**\\*">
       <Link>scripts\\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </None>
+    <!-- Include docs folder (design decisions, specs, plans) -->
+    <None Include="..\\..\\docs\\**\\*.md">
+      <Link>docs\\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </None>
   </ItemGroup>
 </Project>

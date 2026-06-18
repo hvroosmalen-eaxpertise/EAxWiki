@@ -1,45 +1,64 @@
-EAxWiki — Run the wiki locally with MkDocs
+EAxWiki — Export EA model to Markdown wiki, served with MkDocs
 
-This repository contains a `wiki/` folder with Markdown content. Use MkDocs to serve and preview the wiki locally.
+This repository exports an Enterprise Architect `.qea` model to a `wiki/` folder of Markdown pages, then serves them locally with MkDocs. The site is also deployed to GitHub Pages on push.
 
-Important note about the URL shown by MkDocs
+**Live site:** https://hvroosmalen-eaxpertise.github.io/EAxWiki/
 
-When MkDocs starts it may show "Serving on http://0.0.0.0:8000". The address 0.0.0.0 is a listen address and is not usable in a browser. Use one of the following instead:
+## Prerequisites
 
-- http://localhost:8000
-- http://127.0.0.1:8000
-- http://<your-machine-ip>:8000  (if you need to access the server from another device and your firewall allows it)
+- **Python 3.x** (for MkDocs)
+- **.NET 10 SDK** (for the C# exporter)
+- **Enterprise Architect** (for COM-based model reading; Windows only)
 
-Quick start (PowerShell):
+## Quick start (MkDocs only)
 
-1. Ensure Python 3.x is installed and `python` is available on PATH.
-2. In repo root, create a virtual environment and activate it:
-   python -m venv .venv
-   .\.venv\Scripts\Activate.ps1
-3. Install dependencies:
-   pip install -r requirements.txt
-4. Run the full export pipeline (generates wiki from EA model + serves locally):
-   .\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea"
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+.\scripts\serve-mkdocs.ps1 -Port 8000
+```
 
-   Or just serve an already-exported wiki:
-   .\scripts\serve-mkdocs.ps1 -Port 8000
+## Full export + serve
+
+```powershell
+.\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea" -Verbose
+```
+
+Runs the .NET exporter against the `.qea` file, then serves the output. The `-Verbose` flag enables debug-level logging. The script also cleans up any orphaned EA.exe processes after the export finishes.
+
+## Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/export-and-serve.ps1` | Full pipeline: export + MkDocs serve, with EA.exe cleanup |
+| `scripts/serve-mkdocs.ps1` | Serve an already-exported wiki locally |
+| `scripts/export.ps1` | Export only (no server) |
 
 ## Wiki navigation
 
-The wiki has two navigation views:
+The wiki has three navigation views:
 
 - **Structure** — a top-down tree of packages and their elements, following the EA model hierarchy
 - **Types** — elements grouped by stereotype (e.g. Task, Process, Metric, ArchiMate_Goal)
+- **Diagrams** — an alphabetically sorted global index of all diagrams with modified date and description
 
-Both views are generated automatically by the exporter and configured via the awesome-pages MkDocs plugin.
+All views are generated automatically by the exporter and configured via the awesome-pages MkDocs plugin.
 
-Troubleshooting
+## Design decisions
 
-- If the browser can't connect but `localhost` works on the host machine, check Windows Firewall inbound rules for the port used (8000 by default).
-- If you need the server to only be accessible locally, change the script to call `mkdocs serve --dev-addr 127.0.0.1:8000` or run `mkdocs serve` without `--dev-addr`.
+See [docs/design-decisions.md](docs/design-decisions.md) for a full summary of architecture, naming, navigation, export, error handling, and deployment decisions.
 
-CI / Deployment
+## Notes
 
-A GitHub Actions workflow is present at `.github/workflows/mkdocs-deploy.yml` that builds the site and publishes it to the `gh-pages` branch on pushes to `master`.
+- The URL shown by `mkdocs serve` (`http://0.0.0.0:8000`) is a listen address and not usable in a browser. Use `http://localhost:8000` or `http://127.0.0.1:8000` instead.
+- If the browser can't connect, check Windows Firewall inbound rules for the port (8000 by default).
+- The exporter uses EA COM Interop and only runs on Windows. It cannot run in CI/generic build environments.
+- Element page export is parallelized for performance. Duplicate sanitized filenames (e.g. `unnamed.md`) are handled with per-file locking.
+- The `--verbose` / `-v` flag enables per-element debug-level logging during export.
+
+## CI / Deployment
+
+A GitHub Actions workflow (`.github/workflows/mkdocs-deploy.yml`) builds the site and publishes it to the `gh-pages` branch on pushes to `master`. The repo must be public (or have a paid GitHub plan) for Pages to work.
 
 
