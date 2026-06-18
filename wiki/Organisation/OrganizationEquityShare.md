@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+
 OrganizationEquityShare records the percentage equity stake that an organisation holds in a specific OrganizationalBoundary, supporting the equity-share consolidation approach for GHG accounting as defined in the GHG Protocol. Under the equity share approach, an organisation accounts for GHG emissions from operations in proportion to its equity share, regardless of operational control. This entity enables accurate attribution of partial ownership stakes to the correct boundary and also supports Scope 3 Category 15 (Investments) reporting under the GHG Protocol.
 
 ## Attributes
@@ -25,3 +28,7 @@ OrganizationEquityShare records the percentage equity stake that an organisation
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 735 → 751 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

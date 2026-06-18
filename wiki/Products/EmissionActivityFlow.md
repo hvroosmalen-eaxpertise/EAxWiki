@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+
 EmissionActivityFlow is an intersection entity that links an EmissionActivity to a specific ProductLifeCycle, representing the flow of emissions associated with a particular life-cycle stage process. It enables the model to disaggregate a product carbon footprint into its contributing emission activities, providing the activity-level transparency required for hotspot analysis, supplier engagement, and data quality improvement roadmaps.
 
 ## Attributes
@@ -27,3 +30,7 @@ EmissionActivityFlow is an intersection entity that links an EmissionActivity to
 |------|------------|-----------------|
 | Association |  | 813 → 814 |
 | Association |  | 773 → 814 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

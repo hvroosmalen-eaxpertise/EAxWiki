@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+
 Achieve gender equality and empower all women and girls.
 
 
@@ -12,3 +15,7 @@ Achieve gender equality and empower all women and girls.
 |------|-------|-------|
 | EDGY::TextAlign | Center | Default: Center
  |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

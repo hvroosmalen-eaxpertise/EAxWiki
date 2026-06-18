@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+
 Product is a master-data entity that represents a physical good or service whose carbon footprint can be measured and declared. It acts as the anchor for all product-level sustainability data, linking the product to its classification codes (CentralProductClassificationCode), its product carbon footprint records (ProductFootprint), and the life-cycle stages used to structure its footprint assessment. In a supply-chain context, Product enables data exchange between buyer and supplier organisations under the WBCSD PACT framework.
 
 ## Attributes
@@ -30,3 +33,7 @@ Product is a master-data entity that represents a physical good or service whose
 | Association |  | 810 → 815 |
 | Association |  | 810 → 813 |
 | Association |  | 810 → 811 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

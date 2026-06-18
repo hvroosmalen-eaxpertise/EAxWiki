@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Logistics and transportation providers
 
 ## Relationships
@@ -10,3 +13,7 @@ Logistics and transportation providers
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Abstraction | trace | 294 → 530 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

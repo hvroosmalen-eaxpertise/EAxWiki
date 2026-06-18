@@ -1,5 +1,11 @@
 # Information Collection and Model Creation
 
+[Model Creation](../Model Creation/index.md) / [Information Collection and Model Creation](index.md)
+
+## Diagrams
+
+- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md) (Custom)
+
 ## Elements
 
 - [AI - LLM](AI - LLM.md) — Capability «Activity»
@@ -26,6 +32,6 @@
 - [Compile Information Sources](Compile Information Sources.md) — Process «Interface»
 - [Constureren MD to XMI Convertor](Constureren MD to XMI Convertor.md) — Process «Interface»
 
-## Diagrams
+---
 
-- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md) (Custom)
+*Generated: 2026-06-18 12:23:55*

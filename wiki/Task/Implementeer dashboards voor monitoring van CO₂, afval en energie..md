@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Task  
 
+
+[Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Task](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -16,3 +19,7 @@
 |------|------------|-----------------|
 | ControlFlow | Flow | 136 → 157 |
 | Association | Link | 157 → 183 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

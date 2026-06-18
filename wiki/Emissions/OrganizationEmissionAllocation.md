@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 OrganizationEmissionAllocation is a work-product-component that records the share of an EmissionStatement total quantity allocated to a specific Organisation when equity-share or financial-control consolidation requires that group emissions be apportioned across multiple legal entities or subsidiaries. The allocation percentage and method are stored alongside the allocated quantity to maintain a complete audit trail from group total to entity share.
 
 ## Attributes
@@ -29,3 +32,7 @@ OrganizationEmissionAllocation is a work-product-component that records the shar
 |------|------------|-----------------|
 | Association |  | 801 → 735 |
 | Association |  | 801 → 776 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

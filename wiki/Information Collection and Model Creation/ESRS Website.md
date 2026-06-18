@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Channel  
 
+
+[Model Creation](../Model Creation/index.md) / [Information Collection and Model Creation](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -15,3 +18,7 @@
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | ControlFlow | Flow | 590 → 578 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+
 Ensure access to affordable, reliable, sustainable and modern energy for all.
 
 ## Tagged Values
@@ -18,3 +21,7 @@ Ensure access to affordable, reliable, sustainable and modern energy for all.
 |------|------------|-----------------|
 | Association | Link | 9 → 131 |
 | Association | Link | 9 → 138 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

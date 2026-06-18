@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Purpose](index.md)
+
 De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en milieudoelen.
 <ul>
 	<li>Patagonia – https://www.patagonia.com – Purpose volledig gericht op klimaat en natuurbehoud.</li>
@@ -23,3 +26,7 @@ De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en mili
 | Association | Link | 110 → 17 |
 | Association | Link | 110 → 15 |
 | ControlFlow | Flow | 110 → 112 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

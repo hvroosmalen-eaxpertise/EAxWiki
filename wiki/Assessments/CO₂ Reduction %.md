@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Assessment  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
+
 Key performance indicator measuring the percentage reduction in carbon dioxide emissions relative to a baseline year.         
 Typically covers Scope 1, 2, and ideally Scope 3 emissions.         
 Critical metric for climate change mitigation efforts and alignment with Paris Agreement targets.
@@ -19,3 +22,7 @@ Critical metric for climate change mitigation efforts and alignment with Paris A
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 462 → 457 |
 | Association | ArchiMate_Association | 462 → 445 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 BusinessArea represents a location that is identified and defined by an organisation in which business is done by that organisation. It can be used to refer to the location of an office, a plant, a port, or any other operationally significant geographic area defined from the organisation's operational perspective. Unlike formal geopolitical entities, a business area is a master-data concept owned by the reporting organisation. Temporal validity attributes allow the business area definition to be tracked over time as the organisation's operational structure evolves.
 
 ## Attributes
@@ -26,3 +29,7 @@ BusinessArea represents a location that is identified and defined by an organisa
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 767 → 755 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+
 Standard represents a formal specification, protocol, methodology, or regulatory framework that governs how an organisation measures, calculates, or reports its greenhouse gas emissions. Examples include the GHG Protocol Corporate Standard, ISO 14064, and TCFD recommendations. Each Standard provides a named reference that can be cited in emission inventories or organisational boundary definitions, ensuring traceability between reported data and the methodology used to produce it. The Standard entity also carries a descriptive text and a URL so that consumers of the data can navigate directly to the authoritative source of the referenced specification.
 
 ## Attributes
@@ -33,3 +36,7 @@ Standard represents a formal specification, protocol, methodology, or regulatory
 | Association |  | 734 → 740 |
 | Association |  | 734 → 777 |
 | Association |  | 734 → 771 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

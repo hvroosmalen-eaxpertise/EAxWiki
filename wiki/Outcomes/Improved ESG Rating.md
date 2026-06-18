@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Outcome  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Outcomes](index.md)
+
 Enhanced scores and rankings in external ESG assessments by rating agencies (e.g., MSCI, Sustainalytics, CDP).         
 Signals improved sustainability performance to investors and stakeholders.        
 Facilitates access to sustainable finance and enhances corporate reputation.
@@ -22,3 +25,7 @@ Facilitates access to sustainable finance and enhances corporate reputation.
 | Dependency | ArchiMate_Realization | 458 → 438 |
 | Dependency | ArchiMate_Realization | 458 → 435 |
 | Association | ArchiMate_Association | 463 → 458 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

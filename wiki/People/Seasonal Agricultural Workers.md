@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Seasonal workers at supplier farms
 
 ## Relationships
@@ -11,3 +14,7 @@ Seasonal workers at supplier farms
 |------|------------|-----------------|
 | Abstraction | trace | 284 → 533 |
 | Aggregation | Tree | 532 → 533 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

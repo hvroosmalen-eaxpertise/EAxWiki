@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessRole  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Oversight and quarterly reporting on sustainability
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Oversight and quarterly reporting on sustainability
 |------|------------|-----------------|
 | Association | ArchiMate_Assignment | 337 → 331 |
 | Abstraction | trace | 337 → 504 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 FacilityActivityParticipation records the fact that a specific Facility participates in a specific EmissionActivity. This intersection entity supports cases where a single emission activity spans multiple facilities, or where multiple emission activities are associated with the same facility, enabling accurate physical attribution of GHG-generating processes to the sites at which they occur.
 
 ## Attributes
@@ -25,3 +28,7 @@ FacilityActivityParticipation records the fact that a specific Facility particip
 |------|------------|-----------------|
 | Association |  | 773 → 760 |
 | Association |  | 753 → 760 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessObject  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Water and marine resources standard
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Water and marine resources standard
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 331 → 244 |
 | Abstraction | trace | 244 → 38 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -1,5 +1,7 @@
 # People
 
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 ## Elements
 
 - [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) — People «Actor»
@@ -107,3 +109,7 @@
 ## Sub-packages
 
 - [Private Parties](../Private Parties/index.md)
+
+---
+
+*Generated: 2026-06-18 12:23:53*

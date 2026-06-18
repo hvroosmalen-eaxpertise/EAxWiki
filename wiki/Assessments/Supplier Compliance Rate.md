@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Assessment  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
+
 Percentage of suppliers meeting defined environmental and social standards based on audits and assessments.         
 Measures effectiveness of sustainable supply chain management programs.         
 Indicates level of control over value chain sustainability impacts.
@@ -19,3 +22,7 @@ Indicates level of control over value chain sustainability impacts.
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 464 → 459 |
 | Association | ArchiMate_Association | 464 → 447 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

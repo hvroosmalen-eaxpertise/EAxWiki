@@ -19,3 +19,7 @@
 - [Openfootprint Data Model](../Information Collection and Model Creation/Openfootprint Data Model.md)
 - [SDG](../Information Collection and Model Creation/SDG.md)
 - [XMI Import Definition](../Information Collection and Model Creation/XMI Import Definition.md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

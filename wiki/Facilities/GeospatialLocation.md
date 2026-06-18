@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 GeospatialLocation provides a spatial representation of a Location, defined by coordinate values and an EPSG coordinate reference system code. It can represent a point on the earth such as a latitude/longitude coordinate pair, or may capture the polygon outline of a location. Both original and normalised coordinate values are stored to preserve the source data while enabling consistent geographic comparison. Geospatial information may be either master data specific to a company location or reference data obtained from a third-party dataset.
 
 ## Attributes
@@ -31,3 +34,7 @@ GeospatialLocation provides a spatial representation of a Location, defined by c
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 768 → 755 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

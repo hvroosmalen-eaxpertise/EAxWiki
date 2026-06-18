@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Sector-specific organizations like FNLI
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Sector-specific organizations like FNLI
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 331 → 263 |
 | Abstraction | trace | 263 → 507 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

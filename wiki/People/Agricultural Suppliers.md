@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Tomato growers, grain producers, vegetable suppliers
 
 ## Relationships
@@ -11,3 +14,7 @@ Tomato growers, grain producers, vegetable suppliers
 |------|------------|-----------------|
 | Abstraction | trace | 334 → 527 |
 | Aggregation | Tree | 529 → 527 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

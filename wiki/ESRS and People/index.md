@@ -1,5 +1,7 @@
 # ESRS and People
 
+[Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [ESRS and People](index.md)
+
 ## Diagrams
 
 - [ESRS Stakeholder Map](diagrams/ESRS Stakeholder Map.md) (Custom)
@@ -11,3 +13,7 @@
 - [ESRS S1 Own Workforce - People](../ESRS S1 Own Workforce - People/index.md)
 - [ERSR S2 Workers in the Value Chain - People](../ERSR S2 Workers in the Value Chain - People/index.md)
 - [ESRS S3 Affected Communities - People](../ESRS S3 Affected Communities - People/index.md)
+
+---
+
+*Generated: 2026-06-18 12:23:53*

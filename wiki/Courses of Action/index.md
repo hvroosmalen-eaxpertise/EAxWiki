@@ -1,5 +1,7 @@
 # Courses of Action
 
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
+
 ## Elements
 
 - [Integrate Sustainability into Corporate Strategy](Integrate Sustainability into Corporate Strategy.md) — ArchiMate_CourseOfAction «Class»
@@ -24,3 +26,7 @@
   - *Establishment of formal governance mechanisms to anchor sustainability at the board and executive management level.          Creates sustainability committees, defines board member responsibilities, and integrates ESG into executive compensation.          Ensures top-level commitment and strategic oversight of sustainability performance.*
 - [Carbon Footprint Reduction Program](Carbon Footprint Reduction Program.md) — ArchiMate_CourseOfAction «Class»
   - *Comprehensive initiative to measure, reduce, and offset organizational carbon emissions (Scope 1, 2, and 3).         Implements energy efficiency measures, renewable energy sourcing, and decarbonization roadmaps.         Targets science-based emissions reduction in line with climate commitments.*
+
+---
+
+*Generated: 2026-06-18 12:23:54*

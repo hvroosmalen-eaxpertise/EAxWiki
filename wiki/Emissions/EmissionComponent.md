@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionComponent is a work-product-component that disaggregates an EmissionStatement into its constituent greenhouse gas contributions, recording the quantity of each individual gas (CO2, CH4, N2O, HFCs, PFCs, SF6, NF3) or aggregate measure separately. This granularity supports characterisation factor application, gas-specific disclosure requirements, and cross-protocol comparability beyond CO2-equivalent totals alone.
 
 ## Attributes
@@ -29,3 +32,7 @@ EmissionComponent is a work-product-component that disaggregates an EmissionStat
 | Association |  | 779 → 778 |
 | Association |  | 792 → 778 |
 | Association |  | 776 → 778 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

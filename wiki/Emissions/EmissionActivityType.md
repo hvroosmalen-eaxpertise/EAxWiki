@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionActivityType is a reference entity that classifies the technical nature of an emission-generating or emission-removing process, providing a finer-grained taxonomy than EmissionActivityCategory. Examples include Stationary Combustion, Mobile Combustion, Process Emissions, Fugitive Emissions, and Land Use Change. The type is used in calculation model selection and in parameter recording template assignment to determine which measurement parameters are required for a given activity.
 
 ## Attributes
@@ -26,3 +29,7 @@ EmissionActivityType is a reference entity that classifies the technical nature 
 | Association |  | 806 → 786 |
 | Association |  | 793 → 786 |
 | Association |  | 786 → 773 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

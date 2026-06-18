@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Financial service providers and creditors
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Financial service providers and creditors
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 292 → 331 |
 | Abstraction | trace | 292 → 506 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

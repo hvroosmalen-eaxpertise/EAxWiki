@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Product  
 
+
+[Model Creation](../Model Creation/index.md) / [Information Collection and Model Creation](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -21,3 +24,7 @@
 | ControlFlow | Flow | 595 → 576 |
 | Aggregation | Tree | 576 → 629 |
 | ControlFlow | Flow | 628 → 576 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

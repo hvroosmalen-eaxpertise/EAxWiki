@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Asset  
 
+
+[Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -21,3 +24,7 @@
 | Aggregation | Tree | 613 → 617 |
 | Aggregation | Tree | 613 → 621 |
 | ControlFlow | Flow | 622 → 613 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

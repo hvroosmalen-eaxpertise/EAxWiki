@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 EmissionActivityParameterValue records the actual measured or estimated value of an EmissionActivityParameter at a specific moment in time. This entity provides the time-series data that feeds into emission calculation models, capturing how activity data values evolve across reporting periods. The datetime attribute records the precise moment the value was measured or estimated, enabling time-series analysis and period-level aggregation in inventory calculations.
 
 ## Attributes
@@ -29,3 +32,7 @@ EmissionActivityParameterValue records the actual measured or estimated value of
 |------|------------|-----------------|
 | Association |  | 779 → 763 |
 | Association |  | 762 → 763 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

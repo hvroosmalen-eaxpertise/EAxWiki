@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Goal  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
+
 Fully embed sustainability principles and practices into all core business processes, decision-making frameworks, and organizational culture.         
 Move beyond peripheral CSR initiatives toward strategic integration throughout the enterprise.
 
@@ -20,3 +23,7 @@ Move beyond peripheral CSR initiatives toward strategic integration throughout t
 | ControlFlow | ArchiMate_Influence | 433 → 437 |
 | Dependency | ArchiMate_Realization | 439 → 437 |
 | Dependency | ArchiMate_Realization | 457 → 437 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

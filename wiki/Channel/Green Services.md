@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Channel  
 
+
+[Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Channel](index.md)
+
 Duurzame producten en diensten.
 <ul>
 	<li>Too Good To Go – https://toogoodtogo.com – Helpt voedselverspilling te voorkomen.</li>
@@ -23,3 +26,7 @@ Duurzame producten en diensten.
 | ControlFlow | Flow | 128 → 148 |
 | Association | Link | 14 → 128 |
 | Association | Link | 15 → 128 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

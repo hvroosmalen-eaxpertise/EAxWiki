@@ -49,3 +49,7 @@
 - [Totale Scope 1-3 uitstoot (ton CO₂e/jaar)](../Metrics/Totale Scope 1-3 uitstoot (ton CO₂e_jaar).md)
 - [Uitstoot NOₓ/SOₓ (kg/jaar)](../Metrics/Uitstoot NOₓ_SOₓ (kg_jaar).md)
 - [Vermeden CO₂ door maatregelen (ton/jaar)](../Metrics/Vermeden CO₂ door maatregelen (ton_jaar).md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

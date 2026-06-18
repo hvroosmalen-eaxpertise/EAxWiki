@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 High-level view of all stakeholders in ESRS reporting ecosystem
 
 ## Relationships
@@ -11,3 +14,7 @@ High-level view of all stakeholders in ESRS reporting ecosystem
 |------|------------|-----------------|
 | Abstraction | trace | 312 → 508 |
 | Association | Link | 508 → 510 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+
 Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all.
 
 
@@ -12,3 +15,7 @@ Promote sustained, inclusive and sustainable economic growth, full and productiv
 |------|-------|-------|
 | EDGY::TextAlign | Center | Default: Center
  |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

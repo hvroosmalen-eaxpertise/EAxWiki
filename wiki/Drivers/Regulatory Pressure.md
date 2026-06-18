@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Driver  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
+
 External pressure from government regulations, environmental laws, and mandatory sustainability reporting requirements (e.g., CSRD, EU Taxonomy).         
 Forces organizations to comply with evolving environmental and social standards.
 
@@ -18,3 +21,7 @@ Forces organizations to comply with evolving environmental and social standards.
 |------|------------|-----------------|
 | ControlFlow | ArchiMate_Influence | 429 → 436 |
 | ControlFlow | ArchiMate_Influence | 429 → 437 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

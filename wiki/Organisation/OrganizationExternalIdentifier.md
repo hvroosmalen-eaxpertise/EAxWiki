@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+
 OrganizationExternalIdentifier records a specific external code assigned to an organisation by an external registry or authority, such as a tax registration number, DUNS number, or Chamber of Commerce registration number. An organisation may carry multiple external identifiers from different registries simultaneously, each classified by an OrganizationExternalIdentifierType. This supports cross-system reconciliation and supply chain data exchange, particularly in contexts where trading partners reference the organisation by different external codes.
 
 ## Attributes
@@ -26,3 +29,7 @@ OrganizationExternalIdentifier records a specific external code assigned to an o
 |------|------------|-----------------|
 | Association |  | 749 → 748 |
 | Association |  | 735 → 748 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

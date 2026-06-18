@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+
 OrganizationIndustrySector is the intersection entity that classifies an Organisation into an IndustrySectorType. An organisation may operate across multiple industry sectors, so this entity allows multiple sector classifications to be recorded without modifying the Organisation entity itself. It supports sector-level benchmarking and the selection of sector-appropriate emission factors, and enables regulatory groupings that aggregate organisations by industry for sector-level disclosure obligations.
 
 ## Attributes
@@ -25,3 +28,7 @@ OrganizationIndustrySector is the intersection entity that classifies an Organis
 |------|------------|-----------------|
 | Association |  | 735 → 750 |
 | Association |  | 739 → 750 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

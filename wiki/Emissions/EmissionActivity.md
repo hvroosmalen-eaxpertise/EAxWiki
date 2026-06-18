@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionActivity is a master-data entity that represents a discrete operational process or event that generates, absorbs, or transfers greenhouse gas emissions. Each activity is linked to an EmissionActivityType and an EmissionActivityCategory, enabling aggregation and scope attribution. The entity supports a self-referential hierarchy through parent_id, allowing complex multi-level activity structures to be modelled without loss of granularity.
 
 ## Attributes
@@ -35,3 +38,7 @@ EmissionActivity is a master-data entity that represents a discrete operational 
 | Association |  | 786 → 773 |
 | Association |  | 773 → 773 |
 | Association |  | 773 → 776 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

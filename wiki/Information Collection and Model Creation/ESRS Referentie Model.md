@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Product  
 
+
+[Model Creation](../Model Creation/index.md) / [Information Collection and Model Creation](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -15,3 +18,7 @@
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Aggregation | Tree | 576 → 580 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

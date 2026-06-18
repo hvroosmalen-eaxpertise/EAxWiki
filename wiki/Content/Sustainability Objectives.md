@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Content  
 
+
+[Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Content](index.md)
+
 Meetbare duurzaamheidsprestaties (CO₂-reductie, circulariteit, energieneutraliteit).
 <ul>
 	<li>Seventh Generation – https://www.seventhgeneration.com – Publiceert concrete klimaatdoelen.</li>
@@ -23,3 +26,7 @@ Meetbare duurzaamheidsprestaties (CO₂-reductie, circulariteit, energieneutrali
 | ControlFlow | Flow | 116 → 119 |
 | Association | Link | 14 → 116 |
 | Association | Link | 15 → 116 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

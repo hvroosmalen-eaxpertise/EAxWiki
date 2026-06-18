@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionFactorSource is a reference entity that identifies the authoritative database, publication, or programme from which emission factors are drawn. Examples include the UK DESNZ Conversion Factors, the US EPA Emission Factors Hub, the IPCC Assessment Report factor sets, and the ecoinvent database. Registering sources as a reference entity ensures that every factor used in a calculation can be traced to its origin, supporting third-party verification and regulatory acceptance.
 
 ## Attributes
@@ -31,3 +34,7 @@ EmissionFactorSource is a reference entity that identifies the authoritative dat
 | Association |  | 781 → 818 |
 | Association |  | 794 → 781 |
 | Association |  | 780 → 781 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

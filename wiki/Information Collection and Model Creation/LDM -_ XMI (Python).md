@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Capability  
 
+
+[Model Creation](../Model Creation/index.md) / [Information Collection and Model Creation](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -16,3 +19,7 @@
 |------|------------|-----------------|
 | ControlFlow | Flow | 585 → 627 |
 | ControlFlow | Flow | 627 → 628 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

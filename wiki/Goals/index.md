@@ -1,5 +1,7 @@
 # Goals
 
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
+
 ## Elements
 
 - [Long-term Value Creation](Long-term Value Creation.md) — ArchiMate_Goal «Class»
@@ -12,3 +14,7 @@
   - *Fully embed sustainability principles and practices into all core business processes, decision-making frameworks, and organizational culture.          Move beyond peripheral CSR initiatives toward strategic integration throughout the enterprise.*
 - [ESG Performance Improvement](ESG Performance Improvement.md) — ArchiMate_Goal «Class»
   - *Systematically improve performance across Environmental, Social, and Governance dimensions based on recognized standards and frameworks.          Achieve measurable progress in ESG ratings and benchmarks relevant to the industry.*
+
+---
+
+*Generated: 2026-06-18 12:23:54*

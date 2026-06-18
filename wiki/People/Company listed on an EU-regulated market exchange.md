@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Required to report:
 Any companies listed on an EU-regulated market exchange - except for listed ‘micro undertakings’ -that fail to meet two of these three criteria on consecutive balance sheet dates:
 <ol>
@@ -16,3 +19,7 @@ Any companies listed on an EU-regulated market exchange - except for listed ‘m
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Aggregation | Tree | 510 → 556 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

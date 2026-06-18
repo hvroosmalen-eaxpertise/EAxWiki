@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 External advisors and food safety experts
 
 ## Tagged Values
@@ -17,3 +20,7 @@ External advisors and food safety experts
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 319 → 331 |
 | Abstraction | trace | 319 → 518 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

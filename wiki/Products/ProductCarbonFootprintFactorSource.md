@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+
 ProductCarbonFootprintFactorSource is an intersection entity that records which emission factor databases were used as secondary or background data sources in calculating a specific ProductCarbonFootprint. This entity provides the structured traceability required by the PACT technical specification secondary_emission_factor_sources field, capturing not just the database name but also the version and applicable life-cycle stage, enabling systematic data quality assessment by receivers.
 
 ## Attributes
@@ -27,3 +30,7 @@ ProductCarbonFootprintFactorSource is an intersection entity that records which 
 |------|------------|-----------------|
 | Association |  | 812 → 818 |
 | Association |  | 781 → 818 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+
 OrganizationAddressType provides the controlled vocabulary of address categories applicable to an organisation, such as "Visiting Address", "Goods Return Address", "Mail Address", "Delivery Address", or "Statutory Address". Classifying address types ensures that consuming systems can select the appropriate address for a given operational purpose without manual disambiguation. The code attribute supports alignment with external postal classification systems used by logistics providers.
 
 ## Attributes
@@ -24,3 +27,7 @@ OrganizationAddressType provides the controlled vocabulary of address categories
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 744 → 743 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

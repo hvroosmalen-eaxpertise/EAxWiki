@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessObject  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Affected communities standard
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Affected communities standard
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 251 → 344 |
 | Abstraction | trace | 344 → 43 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

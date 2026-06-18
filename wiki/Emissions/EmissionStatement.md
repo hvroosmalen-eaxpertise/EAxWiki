@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionStatement is the central work-product-component that records a single quantified emission result: the GHG emissions or removals attributable to one EmissionActivity within one reporting period. It links the activity, the organisational boundary, the scope type, the calculation model used, and the resulting emission quantity and unit, forming the atomic building block of an emission inventory. Multiple statements are aggregated into an EmissionInventory to produce total scope-level and entity-level disclosures.
 
 ## Attributes
@@ -43,3 +46,7 @@ EmissionStatement is the central work-product-component that records a single qu
 | Association |  | 772 → 776 |
 | Association |  | 773 → 776 |
 | Association |  | 771 → 776 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

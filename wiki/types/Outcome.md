@@ -13,3 +13,7 @@
 - [Emissiereductie (%) = ((baseline – huidig) / baseline) × 100](../Metrics/Emissiereductie (%) = ((baseline – huidig) _ baseline) × 100.md)
 - [Product Carbon Footprint = totale CO₂e / aantal eenheden geproduceerd](../Metrics/Product Carbon Footprint = totale CO₂e _ aantal eenheden geproduceerd.md)
 - [Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e)](../Metrics/Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e).md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

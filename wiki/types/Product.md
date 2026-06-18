@@ -8,3 +8,7 @@
 - [Logical Data Model](../Information Collection and Model Creation/Logical Data Model.md)
 - [SDG Referentie Model](../Information Collection and Model Creation/SDG Referentie Model.md)
 - [Stakeholder Map](../Information Collection and Model Creation/Stakeholder Map.md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

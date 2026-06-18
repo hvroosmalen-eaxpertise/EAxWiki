@@ -3,6 +3,9 @@
 **Type:** Requirement  
 **Stereotype:** Metric  
 
+
+[Edgy](../Edgy/index.md) / [Metrics](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -18,3 +21,7 @@
 |------|------------|-----------------|
 | Aggregation | Tree | 183 → 208 |
 | Association | Link | 208 → 228 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionFactor is a master-data entity that records a single quantified coefficient expressing the amount of greenhouse gas emitted per unit of an activity parameter, drawn from a recognised emission factor source. Factors are typed by the component category they represent (e.g. CO2 fossil, CH4), scoped by applicability (geography, activity type, technology, time period), and versioned to support year-over-year comparability. They form the primary input to activity-based calculation models.
 
 ## Attributes
@@ -37,3 +40,7 @@ EmissionFactor is a master-data entity that records a single quantified coeffici
 | Association |  | 779 → 780 |
 | Association |  | 792 → 780 |
 | Association |  | 780 → 781 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

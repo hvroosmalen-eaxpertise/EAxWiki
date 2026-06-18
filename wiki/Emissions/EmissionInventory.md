@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionInventory is the top-level work-product-component that represents a single, bounded GHG emissions accounting exercise performed by an Organisation for a defined reporting period. It groups all EmissionStatement records that together constitute a complete inventory of an organisation's greenhouse gas emissions, organised by scope, source, and boundary. The inventory record holds the metadata required for formal reporting, including the applicable standard, the organisational boundary method, and audit trail information.
 
 ## Attributes
@@ -34,3 +37,7 @@ EmissionInventory is the top-level work-product-component that represents a sing
 | Association |  | 771 → 776 |
 | Association |  | 735 → 771 |
 | Association |  | 734 → 771 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

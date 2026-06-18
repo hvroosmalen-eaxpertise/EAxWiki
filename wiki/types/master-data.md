@@ -38,3 +38,7 @@
 - [EmissionActivityParameterRecordingTemplate](../Emissions/EmissionActivityParameterRecordingTemplate.md)
 - [EmissionActivityTypeParameterTypeAssignment](../Emissions/EmissionActivityTypeParameterTypeAssignment.md)
 - [EmissionReportingBoundary](../Emissions/EmissionReportingBoundary.md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

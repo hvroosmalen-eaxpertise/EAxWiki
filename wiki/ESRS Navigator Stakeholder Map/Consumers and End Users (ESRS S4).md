@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Final consumers - focus on food safety and product information
 
 ## Tagged Values
@@ -18,3 +21,7 @@ Final consumers - focus on food safety and product information
 | Association | ArchiMate_Association | 280 → 310 |
 | Association | ArchiMate_Association | 274 → 280 |
 | Abstraction | trace | 280 → 517 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

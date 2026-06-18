@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Capability  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
+
 Capability to identify, assess, and manage sustainability-related risks and ensure regulatory compliance.         
 Integrates ESG risks into enterprise risk management and implements compliance monitoring systems.         
 Prevents legal violations, reputational damage, and operational disruptions from sustainability issues.
@@ -18,3 +21,7 @@ Prevents legal violations, reputational damage, and operational disruptions from
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Dependency | ArchiMate_Realization | 450 → 443 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

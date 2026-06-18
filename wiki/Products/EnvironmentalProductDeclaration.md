@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+
 EnvironmentalProductDeclaration is a work-product-component that represents a formal Type III environmental declaration published under a recognised EPD programme, such as those governed by ISO 14025. An EPD discloses the life-cycle environmental impacts of a product across multiple impact categories, of which the global warming potential (GWP) impact category is directly comparable to a product carbon footprint. Linking an EPD record to a product enables organisations to reference externally verified declarations alongside internally calculated footprints in their supply-chain disclosures.
 
 ## Attributes
@@ -30,3 +33,7 @@ EnvironmentalProductDeclaration is a work-product-component that represents a fo
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 810 → 819 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

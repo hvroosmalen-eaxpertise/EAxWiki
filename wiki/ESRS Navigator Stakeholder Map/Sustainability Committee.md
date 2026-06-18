@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessRole  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Committee supporting sustainability initiatives
 
 ## Tagged Values
@@ -16,3 +19,7 @@ Committee supporting sustainability initiatives
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Abstraction | trace | 243 → 503 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

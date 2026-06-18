@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessRole  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Chief Executive Officer
 
 ## Tagged Values
@@ -18,3 +21,7 @@ Chief Executive Officer
 | Association | ArchiMate_Association | 269 → 265 |
 | Association | ArchiMate_Composition | 266 → 265 |
 | Abstraction | trace | 265 → 495 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

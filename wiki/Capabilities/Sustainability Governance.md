@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Capability  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
+
 Organizational capability to establish and maintain effective governance structures for sustainability management.         
 Includes board-level oversight, clear accountability frameworks, sustainability committees, and integration into corporate governance codes.         
 Essential for strategic steering and ensuring sustainability is anchored at the highest decision-making level.
@@ -20,3 +23,7 @@ Essential for strategic steering and ensuring sustainability is anchored at the 
 | Dependency | ArchiMate_Realization | 444 → 439 |
 | Dependency | ArchiMate_Realization | 444 → 452 |
 | Dependency | ArchiMate_Realization | 444 → 455 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Purpose](index.md)
+
 Hoe het bedrijf zichzelf positioneert rond duurzaamheid.
 <ul>
 	<li>Allbirds – https://www.allbirds.com – Toont CO₂-voetafdruk transparant op elk product.</li>
@@ -22,3 +25,7 @@ Hoe het bedrijf zichzelf positioneert rond duurzaamheid.
 |------|------------|-----------------|
 | ControlFlow | Flow | 123 → 143 |
 | Association | Link | 15 → 123 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

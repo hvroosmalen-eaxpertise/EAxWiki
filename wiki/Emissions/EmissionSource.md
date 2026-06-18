@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionSource is a reference entity that classifies the physical origin from which greenhouse gas emissions are released, such as natural gas combustion, diesel combustion, refrigerant leakage, or wastewater treatment. Emission sources provide a more granular technical classification than the EmissionActivityType and are used in calculation model selection and emission factor lookup to narrow the applicable factor set to the correct physical process.
 
 ## Attributes
@@ -24,3 +27,7 @@ EmissionSource is a reference entity that classifies the physical origin from wh
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 784 → 773 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

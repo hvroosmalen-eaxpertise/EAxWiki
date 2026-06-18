@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 SMEs that voluntarily report (future VSME standard).
 Required to report:
 Any non-listed companies that meet two of the following three criteria on any two consecutive balance sheet dates:
@@ -21,3 +24,7 @@ Any non-listed companies that meet two of the following three criteria on any tw
 | Abstraction | trace | 270 → 501 |
 | Aggregation | Tree | 510 → 501 |
 | ControlFlow | Flow | 609 → 501 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

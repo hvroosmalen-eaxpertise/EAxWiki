@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 ISO certifications and verification services
 
 ## Relationships
@@ -11,3 +14,7 @@ ISO certifications and verification services
 |------|------------|-----------------|
 | Abstraction | trace | 255 → 512 |
 | Association | Link | 512 → 510 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

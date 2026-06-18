@@ -21,3 +21,7 @@
 - [Slimme meters, energienota’s](../Metrics/Slimme meters, energienota’s.md)
 - [Telematica / fleetbeheer](../Metrics/Telematica _ fleetbeheer.md)
 - [Validatie via energienota’s](../Metrics/Validatie via energienota’s.md)
+
+---
+
+*Generated: 2026-06-18 12:23:56*

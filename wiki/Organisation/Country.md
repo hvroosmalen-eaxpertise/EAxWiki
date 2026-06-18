@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+
 Country represents an area of land or territory of a nation or state, identified by its ISO alpha-3 country code and geopolitical entity name. The Country entity serves as a reference point for linking addresses and geopolitical entities to a standardised country identifier, enabling geographic analysis and cross-border data alignment across the model. Country is modelled as a subtype of GeopoliticalEntity in the standard's conceptual model, distinguished by GeopoliticalEntityType, but is represented as a dedicated reference entity here to support direct foreign key relationships from Address and other entities that specifically require a country reference.
 
 ## Attributes
@@ -29,3 +32,7 @@ Country represents an area of land or territory of a nation or state, identified
 |------|------------|-----------------|
 | Association |  | 745 → 766 |
 | Association |  | 745 → 737 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

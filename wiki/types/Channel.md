@@ -11,3 +11,7 @@
 - [Intersection Group](../Information Collection and Model Creation/Intersection Group.md)
 - [SDG Website](../Information Collection and Model Creation/SDG Website.md)
 - [The Open Group Website](../Information Collection and Model Creation/The Open Group Website.md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

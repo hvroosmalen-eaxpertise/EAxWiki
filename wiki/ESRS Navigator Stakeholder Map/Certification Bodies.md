@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 ISO certifications and verification services
 
 ## Tagged Values
@@ -17,3 +20,7 @@ ISO certifications and verification services
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 255 → 331 |
 | Abstraction | trace | 255 → 512 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

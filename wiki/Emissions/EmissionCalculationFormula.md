@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionCalculationFormula is a master-data entity that encodes the mathematical expression used by an EmissionCalculationModel to derive an emission quantity from input parameter and factor values. A formula belongs to one calculation model and may be decomposed into multiple EmissionCalculationFormulaComponent records that capture the individual multiplicative terms. Storing formulas as structured data rather than code allows them to be audited, versioned, and applied consistently by calculation engines without custom programming per model.
 
 ## Attributes
@@ -27,3 +30,7 @@ EmissionCalculationFormula is a master-data entity that encodes the mathematical
 |------|------------|-----------------|
 | Association |  | 803 → 790 |
 | Association |  | 777 → 790 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

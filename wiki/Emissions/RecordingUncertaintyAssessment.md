@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 RecordingUncertaintyAssessment is a work-product-component that captures the quantitative or qualitative uncertainty associated with a specific EmissionStatement, as required by ISO 14064-1 for first-party assurance. It records the uncertainty range, the assessment methodology, and the primary uncertainty drivers identified for that emission quantity. Systematic uncertainty documentation supports both the GHG Protocol accuracy principle and the assurance engagement process for third-party verification.
 
 ## Attributes
@@ -27,3 +30,7 @@ RecordingUncertaintyAssessment is a work-product-component that captures the qua
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 800 → 776 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

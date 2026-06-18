@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Content  
 
+
+[Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS E1](index.md)
+
 For more information:
 https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F08%2520Draft%2520ESRS%2520E1%2520Climate%2520Change%2520November%25202022.pdf
 
@@ -50,3 +53,7 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 | Abstraction | trace | 350 → 36 |
 | Association | Link | 531 → 36 |
 | Aggregation | Tree | 555 → 36 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

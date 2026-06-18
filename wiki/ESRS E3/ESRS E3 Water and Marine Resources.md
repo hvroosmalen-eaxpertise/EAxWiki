@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Content  
 
+
+[Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS E3](index.md)
+
 For more information:
 https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F10%2520Draft%2520ESRS%2520E3%2520Water%2520and%2520marine%2520resources%2520November%25202022.pdf
 
@@ -29,3 +32,7 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 | Abstraction | trace | 244 → 38 |
 | Association | Link | 531 → 38 |
 | Aggregation | Tree | 555 → 38 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

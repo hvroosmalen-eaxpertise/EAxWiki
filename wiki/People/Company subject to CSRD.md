@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Companies required to report under CSRD from 2025
 
 ## Relationships
@@ -38,3 +41,7 @@ Companies required to report under CSRD from 2025
 | Association | Link | 510 → 516 |
 | Association | Link | 510 → 529 |
 | Association | Link | 521 → 510 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

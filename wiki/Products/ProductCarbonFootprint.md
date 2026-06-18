@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+
 ProductCarbonFootprint is a work-product-component that records the quantified greenhouse gas emissions associated with a product within a defined system boundary, expressed per declared unit. The entity carries the full set of attributes required for WBCSD PACT-compliant data exchange, including biogenic carbon flows, land-use emissions, fossil carbon content, geography of production, allocation rules, assurance information, and cross-sectoral standards applied. It is the primary technical vehicle for sharing product-level Scope 3 emission data between organisations in a value chain.
 
 ## Attributes
@@ -57,3 +60,7 @@ ProductCarbonFootprint is a work-product-component that records the quantified g
 | Association |  | 812 → 817 |
 | Association |  | 811 → 812 |
 | Association |  | 779 → 812 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

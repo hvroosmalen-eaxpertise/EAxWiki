@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Committee supporting sustainability initiatives
 
 ## Relationships
@@ -11,3 +14,7 @@ Committee supporting sustainability initiatives
 |------|------------|-----------------|
 | Abstraction | trace | 243 → 503 |
 | Association | Link | 503 → 510 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

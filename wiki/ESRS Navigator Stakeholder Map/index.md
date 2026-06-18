@@ -1,6 +1,13 @@
 # ESRS Navigator Stakeholder Map
 
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Stakeholder map based on the ESRS Navigator document for sustainability reporting under CSRD
+
+## Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md) (Logical)
+  - *High-level view of all stakeholders in ESRS reporting ecosystem*
 
 ## Elements
 
@@ -123,7 +130,6 @@ Stakeholder map based on the ESRS Navigator document for sustainability reportin
 - [ESRS G1 - Business Conduct](ESRS G1 - Business Conduct.md) — ArchiMate_BusinessObject «Class»
   - *Business conduct standard*
 
-## Diagrams
+---
 
-- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md) (Logical)
-  - *High-level view of all stakeholders in ESRS reporting ecosystem*
+*Generated: 2026-06-18 12:23:55*

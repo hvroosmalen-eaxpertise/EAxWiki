@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessObject  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Workers in the value chain standard
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Workers in the value chain standard
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 267 → 282 |
 | Abstraction | trace | 282 → 42 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

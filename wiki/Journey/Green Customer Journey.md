@@ -3,6 +3,9 @@
 **Type:** Interface  
 **Stereotype:** Journey  
 
+
+[Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Journey](index.md)
+
 De duurzame ervaring van een klant door de klantreis heen.
 <ul>
 	<li>Original Unverpackt – https://original-unverpackt.de – Volledig verpakkingsvrije klantreis.</li>
@@ -22,3 +25,7 @@ De duurzame ervaring van een klant door de klantreis heen.
 |------|------------|-----------------|
 | ControlFlow | Flow | 126 → 146 |
 | Association | Link | 14 → 126 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

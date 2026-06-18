@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_CourseOfAction  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
+
 Systematic program to assess and verify supplier compliance with environmental and social standards.         
 Conducts on-site audits, evaluates supplier practices, and implements corrective action programs.         
 Ensures supply chain transparency and responsible sourcing practices.
@@ -19,3 +22,7 @@ Ensures supply chain transparency and responsible sourcing practices.
 |------|------------|-----------------|
 | Dependency | ArchiMate_Realization | 447 → 454 |
 | ControlFlow | ArchiMate_Influence | 454 → 459 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Responsible for water policy and production facilities
 
 ## Relationships
@@ -11,3 +14,7 @@ Responsible for water policy and production facilities
 |------|------------|-----------------|
 | Abstraction | trace | 309 → 502 |
 | Association | Link | 502 → 510 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

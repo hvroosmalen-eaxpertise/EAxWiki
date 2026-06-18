@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+
 CentralProductClassificationCode is a reference entity that provides a classification code from the United Nations Central Product Classification (UN CPC) or another recognised product taxonomy used to categorise a product for regulatory, statistical, or supply-chain matching purposes. Linking a product to its CPC code supports automated mapping to applicable product category rules, sector-specific emission factors, and ESRS sector-classification requirements.
 
 ## Attributes
@@ -26,3 +29,7 @@ CentralProductClassificationCode is a reference entity that provides a classific
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 810 → 815 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

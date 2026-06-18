@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Small and medium enterprises with stock exchange listing (future LSME standard)
 Required to report: 
 Any listed companies that meet two of the following three criteria on any two consecutive balance sheet dates:
@@ -19,3 +22,7 @@ Any listed companies that meet two of the following three criteria on any two co
 | Abstraction | trace | 349 → 500 |
 | Aggregation | Tree | 510 → 500 |
 | ControlFlow | Flow | 609 → 500 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

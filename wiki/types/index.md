@@ -34,3 +34,7 @@ Elements grouped by stereotype:
 - [Task](Task.md)
 - [Uncategorized](Uncategorized.md)
 - [work-product-component](work-product-component.md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Content  
 
+
+[Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS E2](index.md)
+
 For more information:
 https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F09%2520Draft%2520ESRS%2520E2%2520Pollution%2520November%25202022.pdf
 
@@ -31,3 +34,7 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 | Abstraction | trace | 248 → 37 |
 | Association | Link | 531 → 37 |
 | Aggregation | Tree | 555 → 37 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

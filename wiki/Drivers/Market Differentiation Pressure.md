@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Driver  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
+
 Competitive pressure to differentiate through sustainability leadership and eco-innovation.         
 Sustainable products and services increasingly become market differentiators and customer preferences shift toward responsible brands.
 
@@ -17,3 +20,7 @@ Sustainable products and services increasingly become market differentiators and
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | ControlFlow | ArchiMate_Influence | 432 → 435 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

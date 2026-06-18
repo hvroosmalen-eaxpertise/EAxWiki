@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 FacilityEmissionAllocation records the allocation of a specific emission quantity to a specific Facility, expressed as a percentage of the total emission quantity in the linked EmissionStatement. This entity supports scenarios where an emission source or activity is shared between multiple facilities, enabling the portion of the emission attributable to each site to be recorded separately for site-level inventory and regulatory reporting purposes. This is of particular relevance to US EPA Subpart W reporting for Petroleum and Natural Gas Systems.
 
 ## Attributes
@@ -26,3 +29,7 @@ FacilityEmissionAllocation records the allocation of a specific emission quantit
 |------|------------|-----------------|
 | Association |  | 776 → 764 |
 | Association |  | 753 → 764 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

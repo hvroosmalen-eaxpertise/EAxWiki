@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+
 ProductLifeCycleFootprint is a work-product-component that records the GHG emission contribution of a specific ProductLifeCycleStage to the total ProductCarbonFootprint. By disaggregating the PCF total into stage-level contributions, this entity enables hotspot analysis, targeted supplier engagement, and the stage-by-stage breakdowns required by ISO 14067 and increasingly expected by frameworks such as ESRS E1 Appendix A.
 
 ## Attributes
@@ -28,3 +31,7 @@ ProductLifeCycleFootprint is a work-product-component that records the GHG emiss
 | Association |  | 816 → 817 |
 | Association |  | 816 → 817 |
 | Association |  | 812 → 817 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

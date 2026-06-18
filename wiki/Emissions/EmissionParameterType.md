@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionParameterType is a reference entity that defines a named, typed slot for measurement or operational data used in emission calculation. Examples include fuel quantity consumed (MWh), vehicle distance travelled (km), and refrigerant charge (kg). Each EmissionActivityParameter value recorded against a Facility references an EmissionParameterType to establish what was measured and in what unit, enabling calculation engines to apply the correct emission factor formula.
 
 ## Attributes
@@ -30,3 +33,7 @@ EmissionParameterType is a reference entity that defines a named, typed slot for
 | Association |  | 803 → 775 |
 | Association |  | 775 → 779 |
 | Association |  | 775 → 762 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

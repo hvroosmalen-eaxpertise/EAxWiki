@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Providers of packaging materials
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Providers of packaging materials
 |------|------------|-----------------|
 | Generalization | ArchiMate_Specialization | 300 → 335 |
 | Abstraction | trace | 300 → 528 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

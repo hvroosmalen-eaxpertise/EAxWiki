@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+
 IndustrySectorType provides a hierarchical classification of industry sectors used to categorise organisations for benchmarking, regulatory grouping, and sector-specific emissions factor selection. Common sector classification systems include NACE (European), SIC (US), NAICS (North American), and ISIC (International). A self-referential parent relationship allows the construction of multi-level sector hierarchies, enabling both high-level sector summaries and granular sub-sector analysis. The code attribute supports direct alignment with external classification system codes, enabling automated crosswalk with reference datasets.
 
 ## Attributes
@@ -26,3 +29,7 @@ IndustrySectorType provides a hierarchical classification of industry sectors us
 |------|------------|-----------------|
 | Association |  | 739 → 739 |
 | Association |  | 739 → 750 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

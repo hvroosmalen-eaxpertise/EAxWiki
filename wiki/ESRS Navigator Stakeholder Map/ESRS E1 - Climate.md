@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessObject  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Climate change reporting standard
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Climate change reporting standard
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 331 → 350 |
 | Abstraction | trace | 350 → 36 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

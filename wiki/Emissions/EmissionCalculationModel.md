@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionCalculationModel is a master-data entity that defines the methodological approach used to convert activity data into an emission quantity. A model links a set of EmissionCalculationFormulas and specifies the method type (spend-based, activity-based, supplier-specific, and so on) and the applicable standard. Models may be versioned and associated with specific jurisdictions or industry sectors, allowing a calculation engine to select the most appropriate model for a given emission activity and reporting context.
 
 ## Attributes
@@ -35,3 +38,7 @@ EmissionCalculationModel is a master-data entity that defines the methodological
 | Association |  | 777 → 790 |
 | Association |  | 777 → 776 |
 | Association |  | 734 → 777 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 FacilityLocationAssociation is the temporal intersection entity that assigns a Facility to a Location at a specific point in time. Because facilities can be relocated or their location assignment can change over time, this entity carries effective and termination datetimes to capture the full history of facility-location associations. The FacilityLocationAssociation can be used to determine the geographic location that a physical emission record belongs to, and is particularly important for mobile facilities such as fleets of shipping tankers that operate across multiple locations in sequence.
 
 ## Attributes
@@ -28,3 +31,7 @@ FacilityLocationAssociation is the temporal intersection entity that assigns a F
 | Association |  | 769 → 758 |
 | Association |  | 755 → 758 |
 | Association |  | 753 → 758 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

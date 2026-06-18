@@ -1,5 +1,11 @@
 # Stories
 
+[Edgy](../Edgy/index.md) / [Stories](index.md)
+
+## Diagrams
+
+- [Stories Voorbeelden](diagrams/Stories Voorbeelden.md) (Custom)
+
 ## Elements
 
 - [Duurzaamsheidsvisie](Duurzaamsheidsvisie.md) — Story «Interface»
@@ -9,6 +15,6 @@
 - [Reparatie](Reparatie.md) — Story «Interface»
   - *In een ontwerpafdeling van een technologiebedrijf viel het een medewerker op dat er een stapel afgedankte proefmodellen lag. Hij stelde voor om elke vrijdag een “repareeruur” in te lassen waarin collega’s kapotte apparaten samen herstellen in plaats van weggooien. Het werd een geliefde routine. Het team ging ook dagelijks op de fiets naar kantoor, aangemoedigd door een interne competitie. Deze duurzame gewoonten gaven medewerkers trots en betrokkenheid.*
 
-## Diagrams
+---
 
-- [Stories Voorbeelden](diagrams/Stories Voorbeelden.md) (Custom)
+*Generated: 2026-06-18 12:23:54*

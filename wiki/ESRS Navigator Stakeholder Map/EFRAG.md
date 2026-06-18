@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 European Financial Reporting Advisory Group - develops ESRS standards
 
 ## Tagged Values
@@ -17,3 +20,7 @@ European Financial Reporting Advisory Group - develops ESRS standards
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 345 → 326 |
 | Abstraction | trace | 345 → 534 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

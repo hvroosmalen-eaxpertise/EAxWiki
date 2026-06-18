@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 GeopoliticalEntityType provides the controlled vocabulary used to classify geopolitical entities, with examples including "Country", "Nature Reserve", "State", and "Region". Classifying geopolitical entities by type enables geographic analysis at multiple administrative levels and supports regulatory jurisdiction mapping in emissions reporting. The code attribute supports alignment with external geopolitical classification systems such as those maintained by the United Nations.
 
 ## Attributes
@@ -24,3 +27,7 @@ GeopoliticalEntityType provides the controlled vocabulary used to classify geopo
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 765 → 766 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

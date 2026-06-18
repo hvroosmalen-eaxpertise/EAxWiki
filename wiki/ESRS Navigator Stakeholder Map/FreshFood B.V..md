@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Example company: 450 employees, food production, two facilities in Netherlands
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Example company: 450 employees, food production, two facilities in Netherlands
 |------|------------|-----------------|
 | Generalization | ArchiMate_Specialization | 250 → 331 |
 | Abstraction | trace | 250 → 499 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

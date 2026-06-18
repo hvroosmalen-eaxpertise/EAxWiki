@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessObject  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Own workforce standard
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Own workforce standard
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 329 → 321 |
 | Abstraction | trace | 321 → 41 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

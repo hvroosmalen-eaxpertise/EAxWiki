@@ -1,5 +1,7 @@
 # Elements
 
+[Archimate](../Archimate/index.md) / [Elements](index.md)
+
 ## Sub-packages
 
 - [Assessments](../Assessments/index.md)
@@ -8,3 +10,7 @@
 - [Drivers](../Drivers/index.md)
 - [Goals](../Goals/index.md)
 - [Outcomes](../Outcomes/index.md)
+
+---
+
+*Generated: 2026-06-18 12:23:54*

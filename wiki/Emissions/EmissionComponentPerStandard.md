@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionComponentPerStandard is an intersection entity analogous to EmissionStatementPerStandard but at the component (individual gas) level, recording the gas-specific emission quantity as it must be disclosed under a particular standard. Different standards apply different global-warming-potential assessment reports (AR4, AR5, AR6) which change the CO2-equivalent values of non-CO2 gases, meaning the same physical emission quantity may produce different tCO2e results across frameworks.
 
 ## Attributes
@@ -27,3 +30,7 @@ EmissionComponentPerStandard is an intersection entity analogous to EmissionStat
 |------|------------|-----------------|
 | Association |  | 789 → 734 |
 | Association |  | 789 → 778 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

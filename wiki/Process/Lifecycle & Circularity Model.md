@@ -3,6 +3,9 @@
 **Type:** Interface  
 **Stereotype:** Process  
 
+
+[Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Process](index.md)
+
 Beschrijving van productlevenscyclus.
 <ul>
 	<li>Ellen MacArthur Foundation – https://ellenmacarthurfoundation.org – Expertisecentrum circulariteit.</li>
@@ -22,3 +25,7 @@ Beschrijving van productlevenscyclus.
 |------|------------|-----------------|
 | ControlFlow | Flow | 135 → 156 |
 | Association | Link | 14 → 135 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+
 ProductCategoryRule is a master-data entity that represents a product category rule (PCR) document that provides specific methodological requirements for conducting life-cycle assessments and producing EPDs or PCF declarations for a defined product category. PCRs constrain the methodological choices practitioners can make when calculating a PCF, specifying system boundary, allocation rules, data quality requirements, and declared unit definitions for the product type. Linking a PCR to a ProductCarbonFootprint provides essential methodological context for comparison across competing products.
 
 ## Attributes
@@ -29,3 +32,7 @@ ProductCategoryRule is a master-data entity that represents a product category r
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 812 → 820 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

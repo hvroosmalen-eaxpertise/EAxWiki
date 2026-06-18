@@ -7,3 +7,7 @@
 - [Supplier Compliance Rate](../Assessments/Supplier Compliance Rate.md)
 - [Energy Efficiency Index](../Assessments/Energy Efficiency Index.md)
 - [Sustainable Revenue Ratio](../Assessments/Sustainable Revenue Ratio.md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

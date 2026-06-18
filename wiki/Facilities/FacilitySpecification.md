@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 FacilitySpecification is the work-product entity that assigns a specific value to an EmissionParameterType for a given Facility through a FacilityStructure link. It enables flexible, configurable specification of facility-level parameters such as energy efficiency ratings, capacity figures, temperature operating ranges, or process-specific constants without requiring schema extensions. The name-value pair is typed by the EmissionParameterType, which defines the dimension and expected units of the value.
 
 ## Attributes
@@ -26,3 +29,7 @@ FacilitySpecification is the work-product entity that assigns a specific value t
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 753 → 759 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionCalculationFormulaComponent is a master-data entity that decomposes an EmissionCalculationFormula into its individual multiplicative or additive terms, each term referencing either an EmissionFactor, an activity parameter type, or a constant. This decomposition enables calculation engines to evaluate formulas programmatically from structured data rather than parsed strings, and supports formula-level audit trails that show exactly which factors and parameters contributed to an emission result.
 
 ## Attributes
@@ -31,3 +34,7 @@ EmissionCalculationFormulaComponent is a master-data entity that decomposes an E
 | Association |  | 803 → 775 |
 | Association |  | 803 → 780 |
 | Association |  | 803 → 790 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

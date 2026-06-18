@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+
 End poverty in all its forms everywhere.
 
 ## Tagged Values
@@ -11,3 +14,7 @@ End poverty in all its forms everywhere.
 |------|-------|-------|
 | EDGY::TextAlign | Center | Default: Center
  |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

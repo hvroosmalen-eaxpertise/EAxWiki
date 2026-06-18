@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionCalculationModelParameterArgument is a master-data entity that binds a named argument slot in an EmissionCalculationModel to the EmissionParameterType whose recorded values are used as the activity data input for that argument during calculation. This entity complements EmissionCalculationModelFactorArgument by declaring the activity-data inputs alongside the factor inputs, giving a complete specification of what a calculation model needs to execute.
 
 ## Attributes
@@ -27,3 +30,7 @@ EmissionCalculationModelParameterArgument is a master-data entity that binds a n
 |------|------------|-----------------|
 | Association |  | 805 → 775 |
 | Association |  | 805 → 777 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

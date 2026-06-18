@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 FacilityType provides a controlled vocabulary of facility classifications, sourced from references such as ISO 15926-4 for non-moving oil and gas facilities and the US EPA Subpart W classification for petroleum and natural gas systems. Examples include "Compressor Station", "Gas Plant", "Offshore Production", "Natural Gas Processing", and "LNG storage". Classifying facilities by type enables sector-appropriate emissions factor selection, benchmarking against industry peers, and consistent aggregation of site-level data in portfolio analyses.
 
 ## Attributes
@@ -24,3 +27,7 @@ FacilityType provides a controlled vocabulary of facility classifications, sourc
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 753 → 754 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

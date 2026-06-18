@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Local and regional communities impacted by operations
 
 ## Tagged Values
@@ -20,3 +23,7 @@ Local and regional communities impacted by operations
 | Generalization | ArchiMate_Specialization | 249 → 251 |
 | Generalization | ArchiMate_Specialization | 314 → 251 |
 | Abstraction | trace | 251 → 523 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

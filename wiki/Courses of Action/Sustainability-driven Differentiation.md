@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_CourseOfAction  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
+
 Strategic approach to achieve competitive differentiation through superior sustainability performance and communication.         
 Positions the organization as a sustainability leader in its industry to attract conscious consumers and investors.
 
@@ -19,3 +22,7 @@ Positions the organization as a sustainability leader in its industry to attract
 | Dependency | ArchiMate_Realization | 440 → 435 |
 | Dependency | ArchiMate_Realization | 446 → 440 |
 | Dependency | ArchiMate_Realization | 449 → 440 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

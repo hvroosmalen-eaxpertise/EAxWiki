@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionStatementPerStandard is an intersection entity that records the emission quantity attributed to a specific EmissionStatement as it must be reported under a particular Standard or reporting framework. Different frameworks may require different consolidation rules, boundary definitions, or GWP factors, so the same underlying activity data may yield different disclosed quantities depending on the framework applied. This entity preserves each framework-specific result without duplicating the underlying statement.
 
 ## Attributes
@@ -27,3 +30,7 @@ EmissionStatementPerStandard is an intersection entity that records the emission
 |------|------------|-----------------|
 | Association |  | 788 → 734 |
 | Association |  | 788 → 776 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

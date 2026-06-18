@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionReport is a work-product-component that represents a formal, structured output document produced from one or more EmissionInventory records for disclosure to regulators, investors, or the public. It carries the report metadata, including the applicable reporting framework, the consolidation boundary, and the sign-off status. The entity acts as an envelope that groups EmissionReportPeriod records and drives the generation of summary tables and narrative sections in published disclosures.
 
 ## Attributes
@@ -30,3 +33,7 @@ EmissionReport is a work-product-component that represents a formal, structured 
 | Association |  | 782 → 783 |
 | Association |  | 734 → 782 |
 | Association |  | 735 → 782 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

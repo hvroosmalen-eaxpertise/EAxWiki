@@ -1,5 +1,11 @@
 # Metrics
 
+[Edgy](../Edgy/index.md) / [Metrics](index.md)
+
+## Diagrams
+
+- [Metrics](diagrams/Metrics.md) (Custom)
+
 ## Elements
 
 - [% Gerecycled materiaal = (gerecycled / totaal input) × 100](% Gerecycled materiaal = (gerecycled _ totaal input) × 100.md) — Outcome «Activity»
@@ -75,6 +81,6 @@
 - [Validatie via energienota’s](Validatie via energienota’s.md) — Tag «Requirement»
 - [Vermeden CO₂ door maatregelen (ton/jaar)](Vermeden CO₂ door maatregelen (ton_jaar).md) — Metric «Requirement»
 
-## Diagrams
+---
 
-- [Metrics](diagrams/Metrics.md) (Custom)
+*Generated: 2026-06-18 12:23:54*

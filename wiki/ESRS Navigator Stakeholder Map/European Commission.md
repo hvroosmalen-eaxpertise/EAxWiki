@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Issues CSRD directive and ESRS regulations
 
 ## Tagged Values
@@ -18,3 +21,7 @@ Issues CSRD directive and ESRS regulations
 | Association | ArchiMate_Association | 326 → 331 |
 | Association | ArchiMate_Association | 345 → 326 |
 | Abstraction | trace | 326 → 531 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

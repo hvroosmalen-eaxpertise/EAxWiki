@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Capability  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
+
 Capability to systematically measure, monitor, and manage Environmental, Social, and Governance performance.         
 Encompasses KPI frameworks, data collection systems, performance analysis, and continuous improvement methodologies.         
 Enables evidence-based sustainability management and transparent reporting to stakeholders.
@@ -23,3 +26,7 @@ Enables evidence-based sustainability management and transparent reporting to st
 | Association | ArchiMate_Association | 462 → 445 |
 | Association | ArchiMate_Association | 463 → 445 |
 | Association | ArchiMate_Association | 465 → 445 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionComponentCategoryGroup is a reference entity that provides a higher-level grouping of EmissionComponentCategory records, enabling roll-up from individual gas categories to broad gas families for summary disclosures. Typical groups include Carbon dioxide, Methane and nitrous oxide, Fluorinated gases (F-gases), Biogenic CO2, and Aggregate CO2-equivalent. This grouping is required by several reporting frameworks that present emission totals at the gas-group level in addition to individual gas breakdowns.
 
 ## Attributes
@@ -25,3 +28,7 @@ EmissionComponentCategoryGroup is a reference entity that provides a higher-leve
 |------|------------|-----------------|
 | Association |  | 792 → 795 |
 | Association |  | 795 → 792 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

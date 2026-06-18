@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Tomato growers, grain producers, vegetable suppliers
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Tomato growers, grain producers, vegetable suppliers
 |------|------------|-----------------|
 | Generalization | ArchiMate_Specialization | 334 → 335 |
 | Abstraction | trace | 334 → 527 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

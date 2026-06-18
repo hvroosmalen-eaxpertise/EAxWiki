@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Issues CSRD directive and ESRS regulations
 
 ## Relationships
@@ -24,3 +27,7 @@ Issues CSRD directive and ESRS regulations
 | Association | Link | 531 → 42 |
 | Association | Link | 531 → 43 |
 | Association | Link | 531 → 44 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Provides information and webinars on CSRD/ESRS
 
 ## Tagged Values
@@ -16,3 +19,7 @@ Provides information and webinars on CSRD/ESRS
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Abstraction | trace | 252 → 520 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

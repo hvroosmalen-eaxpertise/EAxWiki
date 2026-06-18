@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Small and medium enterprises with stock exchange listing (future LSME standard)
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Small and medium enterprises with stock exchange listing (future LSME standard)
 |------|------------|-----------------|
 | Generalization | ArchiMate_Specialization | 349 → 331 |
 | Abstraction | trace | 349 → 500 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

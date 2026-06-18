@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 B2B foodservice customers
 
 ## Tagged Values
@@ -17,3 +20,7 @@ B2B foodservice customers
 |------|------------|-----------------|
 | Generalization | ArchiMate_Specialization | 253 → 274 |
 | Abstraction | trace | 253 → 519 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

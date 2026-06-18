@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Driver  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
+
 Physical and transition risks associated with climate change, including extreme weather events, resource scarcity, and carbon pricing.         
 Poses material financial risks that require strategic risk management and adaptation measures.
 
@@ -18,3 +21,7 @@ Poses material financial risks that require strategic risk management and adapta
 |------|------------|-----------------|
 | ControlFlow | ArchiMate_Influence | 431 → 436 |
 | ControlFlow | ArchiMate_Influence | 431 → 434 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

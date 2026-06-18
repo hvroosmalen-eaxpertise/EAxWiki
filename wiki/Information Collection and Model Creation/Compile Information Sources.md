@@ -3,6 +3,9 @@
 **Type:** Interface  
 **Stereotype:** Process  
 
+
+[Model Creation](../Model Creation/index.md) / [Information Collection and Model Creation](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -21,3 +24,7 @@
 | Association | Link | 594 → 585 |
 | ControlFlow | Flow | 625 → 585 |
 | ControlFlow | Flow | 585 → 627 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

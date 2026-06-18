@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Outcome  
 
+
+[Edgy](../Edgy/index.md) / [Metrics](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -15,3 +18,7 @@
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | ControlFlow | Flow | 180 → 233 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

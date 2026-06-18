@@ -28,3 +28,7 @@
 - [Voer een volledige LCA uit op product- en procesniveau.](../Task/Voer een volledige LCA uit op product- en procesniveau..md)
 - [Voer stakeholderdialogen en integreer duurzaamheidsverwachtingen in de strategie.](../Task/Voer stakeholderdialogen en integreer duurzaamheidsverwachtingen in de strategie..md)
 - [Werk samen met ketenpartners voor gezamenlijke reductiedoelen.](../Task/Werk samen met ketenpartners voor gezamenlijke reductiedoelen..md)
+
+---
+
+*Generated: 2026-06-18 12:23:56*

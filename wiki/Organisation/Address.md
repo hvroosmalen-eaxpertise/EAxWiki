@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+
 Address captures the postal or physical address associated with a contact person, facility, or organisational unit. A structured address representation is preferred over a free-text field because it enables geographic analysis, regulatory jurisdiction mapping, and integration with postal validation services. The Address entity is deliberately kept simple, covering the most commonly required address components, and is linked to a Location entity that provides ISO country coding. A single contact or organisation may have multiple address records representing, for example, registered, trading, and correspondence addresses.
 
 ## Attributes
@@ -29,3 +32,7 @@ Address captures the postal or physical address associated with a contact person
 |------|------------|-----------------|
 | Association |  | 745 → 737 |
 | Association |  | 737 → 743 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

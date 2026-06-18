@@ -3,6 +3,9 @@
 **Type:** Requirement  
 **Stereotype:** Metric  
 
+
+[Edgy](../Edgy/index.md) / [Metrics](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -18,3 +21,7 @@
 |------|------------|-----------------|
 | ControlFlow | Flow | 36 → 169 |
 | Association | Link | 143 → 169 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

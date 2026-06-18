@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Asset  
 
+
+[Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Asset](index.md)
+
 Duurzaamheidsdata voor monitoring.
 <ul>
 	<li>GHG Protocol – https://ghgprotocol.org – Data-standaarden voor emissiemetingen.</li>
@@ -22,3 +25,7 @@ Duurzaamheidsdata voor monitoring.
 |------|------------|-----------------|
 | ControlFlow | Flow | 136 → 157 |
 | Association | Link | 15 → 136 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

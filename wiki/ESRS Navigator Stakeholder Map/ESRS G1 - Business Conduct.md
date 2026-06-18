@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessObject  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Business conduct standard
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Business conduct standard
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 331 → 299 |
 | Abstraction | trace | 299 → 45 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

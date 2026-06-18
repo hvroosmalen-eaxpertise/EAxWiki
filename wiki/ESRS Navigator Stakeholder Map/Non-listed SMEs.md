@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 SMEs that voluntarily report (future VSME standard)
 
 ## Tagged Values
@@ -17,3 +20,7 @@ SMEs that voluntarily report (future VSME standard)
 |------|------------|-----------------|
 | Generalization | ArchiMate_Specialization | 270 → 331 |
 | Abstraction | trace | 270 → 501 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

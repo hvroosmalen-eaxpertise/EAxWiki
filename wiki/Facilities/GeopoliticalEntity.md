@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 GeopoliticalEntity represents a named geographical area that is defined and administered by an official entity, such as countries, nature reserves, states, regions, or provinces. It is classified by a GeopoliticalEntityType and optionally linked to a Country. Examples include "USA", "Canada", "United Kingdom", "Yellow Stone National Park", "Alberta", and "North Sea". Geopolitical entities provide the administrative geographic context required for regulatory jurisdiction mapping, reporting by jurisdiction, and alignment with country-level emission factor datasets.
 
 ## Attributes
@@ -31,3 +34,7 @@ GeopoliticalEntity represents a named geographical area that is defined and admi
 | Association |  | 765 → 766 |
 | Association |  | 766 → 755 |
 | Association |  | 745 → 766 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

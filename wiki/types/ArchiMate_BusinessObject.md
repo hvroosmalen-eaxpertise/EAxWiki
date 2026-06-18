@@ -12,3 +12,7 @@
 - [ESRS S3 - Communities](../ESRS Navigator Stakeholder Map/ESRS S3 - Communities.md)
 - [ESRS S4 - Consumers](../ESRS Navigator Stakeholder Map/ESRS S4 - Consumers.md)
 - [ESRS G1 - Business Conduct](../ESRS Navigator Stakeholder Map/ESRS G1 - Business Conduct.md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

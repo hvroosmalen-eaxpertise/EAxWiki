@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 ActivityEmissionAllocation is a work-product-component that records the portion of a shared or joint emission activity total emission quantity assigned to a specific EmissionActivity when multiple activities share a common emission source. This entity is used, for example, when a shared boiler serves multiple processes and its total emissions must be apportioned across each process emission activity record in proportion to energy consumed, production output, or another allocation base.
 
 ## Attributes
@@ -29,3 +32,7 @@ ActivityEmissionAllocation is a work-product-component that records the portion 
 |------|------------|-----------------|
 | Association |  | 802 → 773 |
 | Association |  | 802 → 776 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

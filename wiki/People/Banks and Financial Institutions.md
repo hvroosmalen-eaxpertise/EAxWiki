@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Financial service providers and creditors
 
 ## Relationships
@@ -11,3 +14,7 @@ Financial service providers and creditors
 |------|------------|-----------------|
 | Abstraction | trace | 292 → 506 |
 | Association | Link | 506 → 510 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

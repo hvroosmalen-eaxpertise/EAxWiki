@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Providers of packaging materials
 
 ## Relationships
@@ -11,3 +14,7 @@ Providers of packaging materials
 |------|------------|-----------------|
 | Abstraction | trace | 300 → 528 |
 | Aggregation | Tree | 529 → 528 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

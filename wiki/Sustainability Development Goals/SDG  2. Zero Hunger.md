@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+
 End hunger, achieve food security and improved nutrition, and promote sustainable agriculture.
 
 
@@ -12,3 +15,7 @@ End hunger, achieve food security and improved nutrition, and promote sustainabl
 |------|-------|-------|
 | EDGY::TextAlign | Center | Default: Center
  |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

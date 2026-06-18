@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+
 OrganizationAddress is the intersection entity that associates an Organisation with a physical or postal Address at a specific address type (e.g., visiting, correspondence, statutory). It acts as a bridge between the Organisation, the Address, and the OrganizationAddressType, allowing an organisation to maintain multiple categorised addresses simultaneously without ambiguity. This design supports the full range of address types required by legal, regulatory, and operational contexts.
 
 ## Attributes
@@ -27,3 +30,7 @@ OrganizationAddress is the intersection entity that associates an Organisation w
 | Association |  | 744 → 743 |
 | Association |  | 737 → 743 |
 | Association |  | 735 → 743 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

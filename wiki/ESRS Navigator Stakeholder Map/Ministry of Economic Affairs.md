@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Commissioned the ESRS Navigator
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Commissioned the ESRS Navigator
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 332 → 338 |
 | Abstraction | trace | 332 → 535 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

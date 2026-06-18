@@ -3,6 +3,9 @@
 **Type:** Interface  
 **Stereotype:** Process  
 
+
+[Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Process](index.md)
+
 Projecten gericht op emissiereductie.
 <ul>
 	<li>SME Climate Hub – https://smeclimatehub.org – Mobiliseert mkb voor emissiereductie.</li>
@@ -22,3 +25,7 @@ Projecten gericht op emissiereductie.
 |------|------------|-----------------|
 | ControlFlow | Flow | 134 → 155 |
 | Association | Link | 15 → 134 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

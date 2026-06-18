@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+
 Reduce inequality within and among countries.
 
 
@@ -12,3 +15,7 @@ Reduce inequality within and among countries.
 |------|-------|-------|
 | EDGY::TextAlign | Center | Default: Center
  |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

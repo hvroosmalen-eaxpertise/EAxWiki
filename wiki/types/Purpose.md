@@ -24,3 +24,7 @@
 - [Sustainability Identity](../Purpose/Sustainability Identity.md)
 - [Building a EU Reporting Community](../Introduction EurSuRA/Building a EU Reporting Community.md)
 - [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

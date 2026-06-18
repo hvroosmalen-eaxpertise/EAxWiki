@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionActivityCategory is a reference entity that provides the formal taxonomy of GHG emission activity categories as defined by the GHG Protocol or ISO 14064-1. For Scope 3, this includes the fifteen upstream and downstream categories such as purchased goods and services, capital goods, fuel and energy-related activities, and so on. The category drives which reporting lines an emission activity contributes to and enables cross-organisation comparability.
 
 ## Attributes
@@ -27,3 +30,7 @@ EmissionActivityCategory is a reference entity that provides the formal taxonomy
 | Association |  | 787 → 774 |
 | Association |  | 772 → 774 |
 | Association |  | 774 → 773 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

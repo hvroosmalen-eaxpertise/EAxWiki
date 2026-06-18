@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+
 ProductFootprintDataQualityIndicator is a work-product-component that records a structured assessment of the data quality dimensions for a specific ProductCarbonFootprint, using the five DQI dimensions defined in the PACT technical specification: completeness, geographical representativeness, reliability, technological representativeness, and temporal representativeness. Each dimension is rated on a scale of 1 (very good) to 3 (acceptable) as a minimum, enabling systematic data quality scoring, disclosure, and improvement prioritisation across PCF datasets.
 
 ## Attributes
@@ -28,3 +31,7 @@ ProductFootprintDataQualityIndicator is a work-product-component that records a 
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 812 → 821 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Content  
 
+
+[Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](index.md)
+
 The European Sustainability Reporting Standards (ESRS) oblige all companies subject to the Corporate Sustainability Reporting Directive (CSRD) of the European Union to report both on their impacts on people and the environment, and on how social and environmental issues create financial risks and opportunities for the company.
 
 ## Tagged Values
@@ -29,3 +32,7 @@ The European Sustainability Reporting Standards (ESRS) oblige all companies subj
 | Aggregation | Tree | 555 → 42 |
 | Aggregation | Tree | 555 → 43 |
 | Aggregation | Tree | 555 → 44 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

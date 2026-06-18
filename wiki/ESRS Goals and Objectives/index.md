@@ -1,6 +1,12 @@
 # ESRS Goals and Objectives
 
+[Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS Goals and Objectives](index.md)
+
 The purpose of the ESRS is to achieve certain goals and objectives concerning sustainability.
+
+## Diagrams
+
+- [Goals and Objectives](diagrams/Goals and Objectives.md) (Custom)
 
 ## Elements
 
@@ -15,6 +21,6 @@ The purpose of the ESRS is to achieve certain goals and objectives concerning su
 - [Standardize ESG reporting and enhance transparency and comparability in Europe. ](Standardize ESG reporting and enhance transparency and comparability in Europe..md) — Outcome «Activity»
   - *The ESRS align the EU reporting system to the International Sustainability Standards Board (ISSB) and the Global Reporting Initiative (GRI), ensuring a high degree of interoperability between EU and global standards and prevent unnecessary double reporting by companies.*
 
-## Diagrams
+---
 
-- [Goals and Objectives](diagrams/Goals and Objectives.md) (Custom)
+*Generated: 2026-06-18 12:23:53*

@@ -1,5 +1,7 @@
 # Assessments
 
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
+
 ## Elements
 
 - [CO₂ Reduction %](CO₂ Reduction %.md) — ArchiMate_Assessment «Class»
@@ -12,3 +14,7 @@
   - *Metric measuring energy consumption per unit of output, tracking improvements in operational energy efficiency.          Monitors progress in reducing energy intensity and optimizing resource use.          Links environmental performance to operational excellence and cost management.*
 - [Sustainable Revenue Ratio](Sustainable Revenue Ratio.md) — ArchiMate_Assessment «Class»
   - *Percentage of total revenue derived from products and services classified as sustainable according to defined criteria.          Measures the organization''s transition toward a sustainable business portfolio.          Indicates strategic alignment between commercial success and sustainability objectives.*
+
+---
+
+*Generated: 2026-06-18 12:23:54*

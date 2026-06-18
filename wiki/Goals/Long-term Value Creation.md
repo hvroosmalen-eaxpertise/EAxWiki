@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Goal  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
+
 Create sustainable economic value over the long term by balancing financial performance with environmental and social responsibility.         
 Integrates sustainability into value creation logic rather than treating it as a cost factor.
 
@@ -21,3 +24,7 @@ Integrates sustainability into value creation logic rather than treating it as a
 | Dependency | ArchiMate_Realization | 439 → 434 |
 | Dependency | ArchiMate_Realization | 441 → 434 |
 | Dependency | ArchiMate_Realization | 461 → 434 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

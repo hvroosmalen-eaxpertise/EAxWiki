@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Asset  
 
+
+[Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Asset](index.md)
+
 Locaties of activiteiten die emissies genereren.
 <ul>
 	<li>Science Based Targets – https://sciencebasedtargets.org – Identificeert uitstootbronnen voor reductie.</li>
@@ -22,3 +25,7 @@ Locaties of activiteiten die emissies genereren.
 |------|------------|-----------------|
 | ControlFlow | Flow | 133 → 154 |
 | Association | Link | 15 → 133 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

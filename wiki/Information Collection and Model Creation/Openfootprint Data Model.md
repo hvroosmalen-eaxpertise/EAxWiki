@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Asset  
 
+
+[Model Creation](../Model Creation/index.md) / [Information Collection and Model Creation](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -16,3 +19,7 @@
 |------|------------|-----------------|
 | ControlFlow | Flow | 626 → 625 |
 | ControlFlow | Flow | 625 → 585 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

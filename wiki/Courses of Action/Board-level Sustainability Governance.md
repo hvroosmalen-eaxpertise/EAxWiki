@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_CourseOfAction  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
+
 Establishment of formal governance mechanisms to anchor sustainability at the board and executive management level.        
  Creates sustainability committees, defines board member responsibilities, and integrates ESG into executive compensation.         
 Ensures top-level commitment and strategic oversight of sustainability performance.
@@ -19,3 +22,7 @@ Ensures top-level commitment and strategic oversight of sustainability performan
 |------|------------|-----------------|
 | Dependency | ArchiMate_Realization | 444 → 455 |
 | ControlFlow | ArchiMate_Influence | 455 → 458 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

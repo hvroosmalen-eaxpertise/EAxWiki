@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+
 Promote peaceful and inclusive societies, provide access to justice for all, and build effective, accountable institutions.
 
 ## Tagged Values
@@ -11,3 +14,7 @@ Promote peaceful and inclusive societies, provide access to justice for all, and
 |------|-------|-------|
 | EDGY::TextAlign | Center | Default: Center
  |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

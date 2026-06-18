@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** Content  
 
+
+[Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Content](index.md)
+
 Documentatie die elementen koppelt aan SDG’s.
 <ul>
 	<li>UN SDG Portal – https://sdgs.un.org – Centrale bron voor SDG-informatie.</li>
@@ -26,3 +29,7 @@ Documentatie die elementen koppelt aan SDG’s.
 | Association | Link | 15 → 138 |
 | Association | Link | 16 → 138 |
 | Association | Link | 17 → 138 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

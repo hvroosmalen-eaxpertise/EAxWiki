@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Task  
 
+
+[Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Task](index.md)
+
 Duurzaamheidsverwachtingen van stakeholders.
 <ul>
 	<li>Interface – https://www.interface.com – Betrekt medewerkers in duurzaamheidsprogramma's.</li>
@@ -23,3 +26,7 @@ Duurzaamheidsverwachtingen van stakeholders.
 | ControlFlow | Flow | 124 → 144 |
 | Association | Link | 14 → 124 |
 | Association | Link | 15 → 124 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

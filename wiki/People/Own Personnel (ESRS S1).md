@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 All employees of the reporting organization
 
 ## Relationships
@@ -17,3 +20,7 @@ All employees of the reporting organization
 | Association | Link | 537 → 489 |
 | Association | Link | 489 → 510 |
 | Association | Link | 489 → 41 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

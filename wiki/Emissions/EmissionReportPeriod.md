@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionReportPeriod is a work-product-component that holds the aggregated emission totals for a specific time period within an EmissionReport, broken down by scope and boundary. It carries the period dates and may record the period at year, quarter, or month granularity. Multiple period records within a single report support multi-year trend disclosures and interim reporting required by frameworks such as CDP or ESRS E1.
 
 ## Attributes
@@ -34,3 +37,7 @@ EmissionReportPeriod is a work-product-component that holds the aggregated emiss
 |------|------------|-----------------|
 | Association |  | 779 → 783 |
 | Association |  | 782 → 783 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

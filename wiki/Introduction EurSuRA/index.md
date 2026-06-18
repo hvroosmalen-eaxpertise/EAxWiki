@@ -1,5 +1,11 @@
 # Introduction EurSuRA
 
+[Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
+
+## Diagrams
+
+- [Introduction EDGY Presentation 13 May Event](diagrams/Introduction EDGY Presentation 13 May Event.md) (Custom)
+
 ## Elements
 
 - [Building a EU Reporting Community](Building a EU Reporting Community.md) — Purpose «Activity»
@@ -27,6 +33,6 @@
 - [M:\EurSuRA\Information\Climate Timeline EDGY.md](M__EurSuRA_Information_Climate Timeline EDGY.md.md) — Text
 - [M:\EurSuRA\Information\Climate Timeline.md](M__EurSuRA_Information_Climate Timeline.md.md) — Text
 
-## Diagrams
+---
 
-- [Introduction EDGY Presentation 13 May Event](diagrams/Introduction EDGY Presentation 13 May Event.md) (Custom)
+*Generated: 2026-06-18 12:23:55*

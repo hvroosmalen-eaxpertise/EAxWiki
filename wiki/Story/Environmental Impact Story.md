@@ -3,6 +3,9 @@
 **Type:** Interface  
 **Stereotype:** Story  
 
+
+[Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Story](index.md)
+
 Hoe het bedrijf haar milieu-impact begrijpt en communiceert.
 <ul>
 	<li>Seventh Generation – https://www.seventhgeneration.com – Verbindt merkverhaal aan klimaatbewustzijn.</li>
@@ -23,3 +26,7 @@ Hoe het bedrijf haar milieu-impact begrijpt en communiceert.
 | ControlFlow | Flow | 122 → 142 |
 | Association | Link | 14 → 122 |
 | Association | Link | 15 → 122 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

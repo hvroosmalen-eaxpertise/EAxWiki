@@ -1,5 +1,7 @@
 # Emissions
 
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 ## Elements
 
 - [EmissionInventory](EmissionInventory.md) — master-data «Class»
@@ -78,3 +80,7 @@
   - *EmissionActivityTypeParameterTypeAssignment is a master-data entity that records a single parameter type requirement within an EmissionActivityParameterRecordingTemplate, specifying which EmissionParameterType must be recorded and whether the measurement is mandatory or optional. Each template is composed of one or more of these assignment records, forming the complete parameter checklist for the associated activity type and jurisdiction.*
 - [EmissionReportingBoundary](EmissionReportingBoundary.md) — master-data «Class»
   - *EmissionReportingBoundary is a work-product-component that defines and documents the organisational, operational, and geographic boundary applied to a specific EmissionInventory or EmissionReport. It records the boundary-setting methodology, the entities included and excluded, and the rationale for any exclusions, providing the complete boundary documentation required by GHG Protocol and ISO 14064-1 first-party assertions and supporting the assurance engagement.*
+
+---
+
+*Generated: 2026-06-18 12:23:55*

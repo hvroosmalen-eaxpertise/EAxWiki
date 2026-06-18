@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 EmissionActivityParameter identifies a specific instance of an EmissionParameterType that is applicable to a facility or equipment item for use in emission calculations. It links a Facility and optionally an Equipment item to an EmissionParameterType and to the EmissionActivity it monitors, providing the structural metadata that describes what is being measured or estimated for a given activity. Parameter values over time are recorded in the associated EmissionActivityParameterValue entity.
 
 ## Attributes
@@ -30,3 +33,7 @@ EmissionActivityParameter identifies a specific instance of an EmissionParameter
 | Association |  | 775 → 762 |
 | Association |  | 762 → 763 |
 | Association |  | 753 → 762 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

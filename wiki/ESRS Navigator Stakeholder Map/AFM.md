@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Autoriteit Financiële Markten - Financial market supervision
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Autoriteit Financiële Markten - Financial market supervision
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 305 → 331 |
 | Abstraction | trace | 305 → 509 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Companies required to report under CSRD from 2025
 
 ## Tagged Values
@@ -44,3 +47,7 @@ Companies required to report under CSRD from 2025
 | Association | ArchiMate_Association | 331 → 244 |
 | Generalization | ArchiMate_Specialization | 349 → 331 |
 | Abstraction | trace | 331 → 510 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

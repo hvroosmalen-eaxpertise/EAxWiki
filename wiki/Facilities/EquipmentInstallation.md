@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 EquipmentInstallation captures the temporal fact of a piece of Equipment being installed at a Facility to perform specific operational activities. The effective and termination datetimes allow the history of equipment deployments to be tracked, supporting accurate attribution of equipment-level emissions to the facility and period in which the equipment was operational. An Emission Inventory can be associated with a particular piece of equipment through this relationship, and the link to Equipment is optional for an Emission Inventory but required for a Facility.
 
 ## Attributes
@@ -27,3 +30,7 @@ EquipmentInstallation captures the temporal fact of a piece of Equipment being i
 |------|------------|-----------------|
 | Association |  | 753 → 761 |
 | Association |  | 756 → 761 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

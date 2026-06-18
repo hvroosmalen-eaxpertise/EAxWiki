@@ -1,5 +1,7 @@
 # Asset
 
+[Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Asset](index.md)
+
 ## Elements
 
 - [Emission Sources](Emission Sources.md) — Asset «Class»
@@ -14,3 +16,7 @@
   - *Interne beleidslijnen rondom duurzaamheid. <ul> 	<li>SME Climate Hub – https://smeclimatehub.org – Helpt mkb interne duurzaamheidsregels te implementeren.</li> 	<li>Patagonia – https://www.patagonia.com – Zeer strikte interne duurzaamheidsregels.</li> </ul>*
 - [Sustainable Resources / Assets](Sustainable Resources _ Assets.md) — Asset «Class»
   - *Middelen zoals zonnepanelen, elektrische voertuigen en tooling. <ul> 	<li>New Belgium Brewing – https://www.newbelgium.com – 200 kW zonnepanelen, windenergie.</li> 	<li>IKEA zonnepanelenproject – https://www.ikea.com – Gebruikt grootschalig duurzame energie.</li> </ul>*
+
+---
+
+*Generated: 2026-06-18 12:23:53*

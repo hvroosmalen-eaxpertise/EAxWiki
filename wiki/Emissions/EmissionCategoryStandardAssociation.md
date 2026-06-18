@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionCategoryStandardAssociation is an intersection entity that records which emission category classifications are recognised by a particular Standard. It enables the model to represent the fact that GHG Protocol, ISO 14064-1, and ESRS each define overlapping but not identical category taxonomies, and it allows emission statements to be classified under the correct category hierarchy for each applicable standard without duplicating the statement records themselves.
 
 ## Attributes
@@ -26,3 +29,7 @@ EmissionCategoryStandardAssociation is an intersection entity that records which
 |------|------------|-----------------|
 | Association |  | 787 → 734 |
 | Association |  | 787 → 774 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

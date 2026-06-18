@@ -9,3 +9,7 @@
 - [Sustainability Data and Reporting](../Capabilities/Sustainability Data and Reporting.md)
 - [Stakeholder Engagement Management](../Capabilities/Stakeholder Engagement Management.md)
 - [Risk and Compliance Management](../Capabilities/Risk and Compliance Management.md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

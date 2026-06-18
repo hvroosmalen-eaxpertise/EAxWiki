@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Commissioned the ESRS Navigator
 
 ## Relationships
@@ -16,3 +19,7 @@ Commissioned the ESRS Navigator
 | Aggregation | Tree | 535 → 520 |
 | Aggregation | Tree | 535 → 521 |
 | Aggregation | Tree | 535 → 509 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

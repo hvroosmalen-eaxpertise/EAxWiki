@@ -42,3 +42,7 @@
 - [Research and Analysis Firms](../ESRS Navigator Stakeholder Map/Research and Analysis Firms.md)
 - [Chamber of Commerce/Kamer van Koophandel](../ESRS Navigator Stakeholder Map/Chamber of Commerce_Kamer van Koophandel.md)
 - [Training Providers](../ESRS Navigator Stakeholder Map/Training Providers.md)
+
+---
+
+*Generated: 2026-06-18 12:23:55*

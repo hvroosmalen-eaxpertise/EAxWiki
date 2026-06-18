@@ -1,5 +1,7 @@
 # Capabilities
 
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
+
 ## Elements
 
 - [Sustainability Governance](Sustainability Governance.md) — ArchiMate_Capability «Class»
@@ -16,3 +18,7 @@
   - *Capability to identify, engage, and maintain dialogue with key sustainability stakeholders.         Includes materiality assessments, stakeholder consultations, and responsive communication strategies.         Ensures alignment between organizational sustainability priorities and stakeholder expectations.*
 - [Risk and Compliance Management](Risk and Compliance Management.md) — ArchiMate_Capability «Class»
   - *Capability to identify, assess, and manage sustainability-related risks and ensure regulatory compliance.          Integrates ESG risks into enterprise risk management and implements compliance monitoring systems.          Prevents legal violations, reputational damage, and operational disruptions from sustainability issues.*
+
+---
+
+*Generated: 2026-06-18 12:23:54*

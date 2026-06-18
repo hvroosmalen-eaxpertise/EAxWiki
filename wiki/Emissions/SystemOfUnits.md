@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 SystemOfUnits is a reference entity that identifies the measurement system to which a UnitOfMeasure belongs, such as the International System of Units (SI), the Imperial system, or US Customary units. Recording the system of units as a reference entity enables validation rules that prevent mixing incompatible unit systems in a single calculation and supports conversion path determination by identifying a common base for inter-system conversions.
 
 ## Attributes
@@ -24,3 +27,7 @@ SystemOfUnits is a reference entity that identifies the measurement system to wh
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 796 → 779 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

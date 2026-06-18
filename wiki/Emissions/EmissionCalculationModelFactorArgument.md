@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** work-product-component  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionCalculationModelFactorArgument is a master-data entity that binds a named argument slot in an EmissionCalculationModel to the specific EmissionFactor that should be used to fill that slot during calculation. A model may reference multiple factors; for example, a Scope 2 market-based model may require both an electricity emission factor and a transmission-and-distribution loss factor. Defining factor arguments as data rather than code enables model configuration without software deployment and supports systematic factor update workflows.
 
 ## Attributes
@@ -27,3 +30,7 @@ EmissionCalculationModelFactorArgument is a master-data entity that binds a name
 |------|------------|-----------------|
 | Association |  | 804 → 780 |
 | Association |  | 804 → 777 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

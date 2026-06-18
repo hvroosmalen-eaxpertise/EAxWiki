@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+
 Make cities and human settlements inclusive, safe, resilient and sustainable.
 
 
@@ -12,3 +15,7 @@ Make cities and human settlements inclusive, safe, resilient and sustainable.
 |------|-------|-------|
 | EDGY::TextAlign | Center | Default: Center
  |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

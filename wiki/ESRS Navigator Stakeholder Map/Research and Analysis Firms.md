@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Verification bureaus for water, energy, CO2 data
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Verification bureaus for water, energy, CO2 data
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 260 → 331 |
 | Abstraction | trace | 260 → 526 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

@@ -29,3 +29,7 @@
 - [PhysicalQuantityType](../Emissions/PhysicalQuantityType.md)
 - [UnitOfMeasureSourceReference](../Emissions/UnitOfMeasureSourceReference.md)
 - [EmissionRecordingMethodType](../Emissions/EmissionRecordingMethodType.md)
+
+---
+
+*Generated: 2026-06-18 12:23:56*

@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Full-time permanent staff
 
 ## Relationships
@@ -11,3 +14,7 @@ Full-time permanent staff
 |------|------------|-----------------|
 | Abstraction | trace | 277 → 490 |
 | Aggregation | Tree | 489 → 490 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

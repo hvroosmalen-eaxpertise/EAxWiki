@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+
 OrganizationAssociationType provides the controlled vocabulary of association types that can exist between two organisations, such as "Auditor", "Department", "Subsidiary", "Verifier", "Branch", or "Affiliate". Classifying association types enables structured querying of organisational networks and supports automated determination of consolidation scope in GHG inventories. This is not a hierarchical association and can have many-to-many relationships, so the same organisation may be classified as both a subsidiary of one entity and a verifier for another simultaneously.
 
 ## Attributes
@@ -23,3 +26,7 @@ OrganizationAssociationType provides the controlled vocabulary of association ty
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 742 → 741 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

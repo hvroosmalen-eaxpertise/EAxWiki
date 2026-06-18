@@ -1,5 +1,7 @@
 # Drivers
 
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
+
 ## Elements
 
 - [Stakeholder Expectations](Stakeholder Expectations.md) — ArchiMate_Driver «Class»
@@ -12,3 +14,7 @@
   - *Competitive pressure to differentiate through sustainability leadership and eco-innovation.          Sustainable products and services increasingly become market differentiators and customer preferences shift toward responsible brands.*
 - [Reputation Risk](Reputation Risk.md) — ArchiMate_Driver «Class»
   - *Risk to corporate reputation from poor environmental or social performance, greenwashing accusations, or supply chain controversies.          Negative sustainability incidents can significantly impact brand value and stakeholder trust.*
+
+---
+
+*Generated: 2026-06-18 12:23:54*

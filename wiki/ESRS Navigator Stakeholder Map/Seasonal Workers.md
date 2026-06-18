@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Temporary/seasonal employees
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Temporary/seasonal employees
 |------|------------|-----------------|
 | Generalization | ArchiMate_Specialization | 318 → 329 |
 | Abstraction | trace | 318 → 491 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

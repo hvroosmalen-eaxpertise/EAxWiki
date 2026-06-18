@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessRole  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Chief Financial Officer - Often responsible for compliance
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Chief Financial Officer - Often responsible for compliance
 |------|------------|-----------------|
 | Association | ArchiMate_Composition | 266 → 293 |
 | Abstraction | trace | 293 → 497 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

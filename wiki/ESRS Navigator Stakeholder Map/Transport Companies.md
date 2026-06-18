@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Logistics and transportation providers
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Logistics and transportation providers
 |------|------------|-----------------|
 | Generalization | ArchiMate_Specialization | 294 → 335 |
 | Abstraction | trace | 294 → 530 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

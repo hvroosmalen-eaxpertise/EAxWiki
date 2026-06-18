@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Outcome  
 
+
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Outcomes](index.md)
+
 Measurable reduction in the organization''s environmental footprint across key indicators such as emissions, waste, water use, and resource consumption.         
 Represents tangible environmental performance improvement resulting from sustainability initiatives.         
 Contributes to corporate sustainability goals and regulatory compliance.
@@ -22,3 +25,7 @@ Contributes to corporate sustainability goals and regulatory compliance.
 | Dependency | ArchiMate_Realization | 457 → 437 |
 | Association | ArchiMate_Association | 462 → 457 |
 | Association | ArchiMate_Association | 465 → 457 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

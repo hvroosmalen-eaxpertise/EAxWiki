@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Communities around production facilities and supplier regions
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Communities around production facilities and supplier regions
 |------|------------|-----------------|
 | Generalization | ArchiMate_Specialization | 249 → 251 |
 | Abstraction | trace | 249 → 524 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

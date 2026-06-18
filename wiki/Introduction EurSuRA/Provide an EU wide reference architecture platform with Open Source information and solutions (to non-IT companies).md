@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -19,3 +22,7 @@
 | ControlFlow | Flow | 609 → 557 |
 | Association | Link | 609 → 613 |
 | Association | Link | 620 → 609 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

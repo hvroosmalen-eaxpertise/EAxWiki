@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessObject  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Pollution reporting standard
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Pollution reporting standard
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 331 → 248 |
 | Abstraction | trace | 248 → 37 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

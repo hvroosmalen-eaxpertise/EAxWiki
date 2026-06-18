@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Indigenous communities where applicable
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Indigenous communities where applicable
 |------|------------|-----------------|
 | Generalization | ArchiMate_Specialization | 314 → 251 |
 | Abstraction | trace | 314 → 525 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

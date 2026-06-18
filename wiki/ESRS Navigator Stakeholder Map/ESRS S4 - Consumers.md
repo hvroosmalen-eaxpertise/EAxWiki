@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessObject  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Consumers and end-users standard
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Consumers and end-users standard
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 280 → 310 |
 | Abstraction | trace | 44 → 310 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

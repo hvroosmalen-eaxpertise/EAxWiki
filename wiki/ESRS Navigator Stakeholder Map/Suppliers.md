@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 All upstream suppliers in the value chain
 
 ## Tagged Values
@@ -21,3 +24,7 @@ All upstream suppliers in the value chain
 | Generalization | ArchiMate_Specialization | 300 → 335 |
 | Association | ArchiMate_Association | 335 → 331 |
 | Abstraction | trace | 335 → 529 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

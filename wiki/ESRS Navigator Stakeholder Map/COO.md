@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_BusinessRole  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Chief Operating Officer
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Chief Operating Officer
 |------|------------|-----------------|
 | Association | ArchiMate_Composition | 266 → 268 |
 | Abstraction | trace | 268 → 498 |
+
+---
+
+*Generated: 2026-06-18 12:23:54*

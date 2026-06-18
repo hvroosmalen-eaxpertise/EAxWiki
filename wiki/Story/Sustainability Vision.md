@@ -3,6 +3,9 @@
 **Type:** Interface  
 **Stereotype:** Story  
 
+
+[Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Story](index.md)
+
 Toekomstbeeld van de onderneming in 2030/2050 gericht op klimaatneutraliteit en circulariteit.
 <ul>
 	<li>Seventh Generation – https://www.seventhgeneration.com – Vision gebaseerd op 7-generaties principe.</li>
@@ -23,3 +26,7 @@ Toekomstbeeld van de onderneming in 2030/2050 gericht op klimaatneutraliteit en 
 | ControlFlow | Flow | 113 → 114 |
 | Association | Link | 14 → 113 |
 | Association | Link | 15 → 113 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

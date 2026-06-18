@@ -1,5 +1,7 @@
 # Outcomes
 
+[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Outcomes](index.md)
+
 ## Elements
 
 - [Reduced Environmental Impact](Reduced Environmental Impact.md) — ArchiMate_Outcome «Class»
@@ -12,3 +14,7 @@
   - *Enhanced stakeholder trust and brand reputation resulting from transparent and credible sustainability performance.          Strengthens relationships with customers, employees, investors, and communities.          Provides competitive advantage in markets where sustainability drives purchasing decisions.*
 - [Improved Long-term Profitability](Improved Long-term Profitability.md) — ArchiMate_Outcome «Class»
   - *Enhanced financial performance over the long term through sustainability-driven efficiency gains, innovation, and risk mitigation.          Demonstrates the business case for sustainability beyond short-term costs.          Supports sustainable value creation and investor returns.*
+
+---
+
+*Generated: 2026-06-18 12:23:54*

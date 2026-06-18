@@ -1,5 +1,7 @@
 # Task
 
+[Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Task](index.md)
+
 ## Elements
 
 - [Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen.](Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen..md) — Task «Activity»
@@ -30,3 +32,7 @@
 - [Voer een volledige LCA uit op product- en procesniveau.](Voer een volledige LCA uit op product- en procesniveau..md) — Task «Activity»
 - [Voer stakeholderdialogen en integreer duurzaamheidsverwachtingen in de strategie.](Voer stakeholderdialogen en integreer duurzaamheidsverwachtingen in de strategie..md) — Task «Activity»
 - [Werk samen met ketenpartners voor gezamenlijke reductiedoelen.](Werk samen met ketenpartners voor gezamenlijke reductiedoelen..md) — Task «Activity»
+
+---
+
+*Generated: 2026-06-18 12:23:53*

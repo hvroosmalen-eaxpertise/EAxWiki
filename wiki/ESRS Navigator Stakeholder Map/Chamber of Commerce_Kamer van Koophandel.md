@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Chamber of Commerce - provides CSRD guidance
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Chamber of Commerce - provides CSRD guidance
 |------|------------|-----------------|
 | Abstraction | trace | 304 → 521 |
 | Aggregation | Tree | 535 → 304 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

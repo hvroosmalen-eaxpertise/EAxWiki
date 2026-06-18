@@ -3,6 +3,9 @@
 **Type:** Interface  
 **Stereotype:** Story  
 
+
+[Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -15,3 +18,7 @@
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association | Link | 624 → 623 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

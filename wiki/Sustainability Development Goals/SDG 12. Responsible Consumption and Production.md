@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+
 Ensure sustainable consumption and production patterns.
 
 
@@ -32,3 +35,7 @@ Ensure sustainable consumption and production patterns.
 | Association | Link | 14 → 135 |
 | Association | Link | 14 → 138 |
 | Association | Link | 14 → 140 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

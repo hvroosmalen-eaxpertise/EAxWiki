@@ -3,6 +3,9 @@
 **Type:** Activity  
 **Stereotype:** Purpose  
 
+
+[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+
 Take urgent action to combat climate change and its impacts.
 
 
@@ -38,3 +41,7 @@ Take urgent action to combat climate change and its impacts.
 | Association | Link | 15 → 139 |
 | Association | Link | 15 → 140 |
 | Association | Link | 15 → 122 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

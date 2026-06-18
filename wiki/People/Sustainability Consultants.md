@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 External advisors and food safety experts
 
 ## Relationships
@@ -11,3 +14,7 @@ External advisors and food safety experts
 |------|------------|-----------------|
 | Abstraction | trace | 319 → 518 |
 | Association | Link | 518 → 510 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

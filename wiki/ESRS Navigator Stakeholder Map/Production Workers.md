@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Workers in production facilities
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Workers in production facilities
 |------|------------|-----------------|
 | Generalization | ArchiMate_Specialization | 323 → 329 |
 | Abstraction | trace | 323 → 492 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

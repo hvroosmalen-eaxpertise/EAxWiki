@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Direct business customers
 
 ## Tagged Values
@@ -20,3 +23,7 @@ Direct business customers
 | Association | ArchiMate_Association | 331 → 274 |
 | Association | ArchiMate_Association | 274 → 280 |
 | Abstraction | trace | 274 → 516 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

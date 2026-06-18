@@ -1,5 +1,7 @@
 # Edgy
 
+[Edgy](index.md)
+
 ## Sub-packages
 
 - [SDGs](../SDGs/index.md)
@@ -10,3 +12,7 @@
 - [Experience](../Experience/index.md)
 - [Metrics](../Metrics/index.md)
 - [Stories](../Stories/index.md)
+
+---
+
+*Generated: 2026-06-18 12:23:53*

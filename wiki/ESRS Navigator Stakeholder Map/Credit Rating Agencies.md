@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Agencies assessing creditworthiness including ESG factors
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Agencies assessing creditworthiness including ESG factors
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 312 → 331 |
 | Abstraction | trace | 312 → 508 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

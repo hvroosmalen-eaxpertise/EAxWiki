@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 All employees of the reporting organization
 
 ## Tagged Values
@@ -23,3 +26,7 @@ All employees of the reporting organization
 | Association | ArchiMate_Association | 329 → 321 |
 | Generalization | ArchiMate_Specialization | 318 → 329 |
 | Abstraction | trace | 329 → 489 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

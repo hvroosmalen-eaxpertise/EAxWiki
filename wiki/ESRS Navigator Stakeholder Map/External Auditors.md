@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** ArchiMate_Stakeholder  
 
+
+[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
 Must approve sustainability reporting
 
 ## Tagged Values
@@ -17,3 +20,7 @@ Must approve sustainability reporting
 |------|------------|-----------------|
 | Association | ArchiMate_Association | 325 → 331 |
 | Abstraction | trace | 325 → 511 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

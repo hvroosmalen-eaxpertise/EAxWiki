@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+
 OrganizationalBoundary defines the scope boundary used to determine which emission sources are included in an organisation's GHG inventory. The GHG Protocol specifies three common approaches: equity share, financial control, and operational control. A boundary record links a named boundary definition to the organisation it applies to, enabling an organisation to maintain multiple concurrent boundary definitions for different reporting frameworks or stakeholder requirements. The boundary concept is foundational to GHG accounting because it determines which emission activities are attributed to the reporting organisation.
 
 ## Attributes
@@ -25,3 +28,7 @@ OrganizationalBoundary defines the scope boundary used to determine which emissi
 |------|------------|-----------------|
 | Association |  | 734 → 740 |
 | Association |  | 740 → 735 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

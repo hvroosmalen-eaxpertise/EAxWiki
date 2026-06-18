@@ -3,6 +3,9 @@
 **Type:** Actor  
 **Stereotype:** People  
 
+
+[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+
 Direct business customers
 
 ## Relationships
@@ -14,3 +17,7 @@ Direct business customers
 | Aggregation | Tree | 516 → 519 |
 | Aggregation | Tree | 516 → 515 |
 | Association | Link | 510 → 516 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*

@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** master-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+
 FacilityStructure records the fact that one facility is a structural component of another facility — for example, one facility is mounted on, connected to, or dependent upon another. This parent-child composition allows complex facility assemblies to be modelled as hierarchies, enabling aggregation of emissions from sub-facilities to parent facilities and supporting site-level reporting that reflects the physical dependencies between operational units. Most likely only the parent Facility in the FacilityStructure would be assigned to the lowest level of the Location hierarchy.
 
 ## Attributes
@@ -25,3 +28,7 @@ FacilityStructure records the fact that one facility is a structural component o
 |------|------------|-----------------|
 | Association |  | 757 → 757 |
 | Association |  | 753 → 757 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

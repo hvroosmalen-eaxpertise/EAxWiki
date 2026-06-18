@@ -3,6 +3,9 @@
 **Type:** Class  
 **Stereotype:** reference-data  
 
+
+[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
 EmissionCalculationMethodType is a reference entity that classifies the high-level methodological approach applied in an EmissionCalculationModel. The WBCSD PACT technical specification defines four primary method types: supplier-specific, hybrid, activity-based, and spend-based, each with different data quality implications and applicability conditions. Registering these types as reference data enables transparent method disclosure and drives data quality scoring in product carbon footprint assessments.
 
 ## Attributes
@@ -24,3 +27,7 @@ EmissionCalculationMethodType is a reference entity that classifies the high-lev
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association |  | 791 → 777 |
+
+---
+
+*Generated: 2026-06-18 12:23:55*

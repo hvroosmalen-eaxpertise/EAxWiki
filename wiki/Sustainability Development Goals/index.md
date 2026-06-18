@@ -1,5 +1,11 @@
 # Sustainability Development Goals
 
+[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+
+## Diagrams
+
+- [Sustainability Development Goals](diagrams/Sustainability Development Goals.md) (Custom)
+
 ## Elements
 
 - [Sustainability Development Goals](Sustainability Development Goals.md) — Purpose «Activity»
@@ -45,6 +51,6 @@
 - [](unnamed.md) — NavigationCell «Text»
 - [](unnamed.md) — NavigationCell «Text»
 
-## Diagrams
+---
 
-- [Sustainability Development Goals](diagrams/Sustainability Development Goals.md) (Custom)
+*Generated: 2026-06-18 12:23:53*

@@ -3,6 +3,9 @@
 **Type:** Interface  
 **Stereotype:** Story  
 
+
+[Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Story](index.md)
+
 Gedragsroutines die duurzaam werken ondersteunen.
 <ul>
 	<li>Patagonia Worn Wear – https://wornwear.patagonia.com – Reparatiecultuur vermindert verspilling.</li>
@@ -23,3 +26,7 @@ Gedragsroutines die duurzaam werken ondersteunen.
 | ControlFlow | Flow | 140 → 161 |
 | Association | Link | 14 → 140 |
 | Association | Link | 15 → 140 |
+
+---
+
+*Generated: 2026-06-18 12:23:53*
