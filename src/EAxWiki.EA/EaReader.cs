@@ -1,5 +1,4 @@
 using System.Runtime.InteropServices;
-using System.Xml.Linq;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 
@@ -147,7 +146,7 @@ public class EaReader : IEaReader, IDisposable
         return elem;
     }
 
-    private EaDiagram MapDiagram(EA.Diagram eaDiagram)
+    private static EaDiagram MapDiagram(EA.Diagram eaDiagram)
     {
         var diagram = new EaDiagram
         {
@@ -157,7 +156,6 @@ public class EaReader : IEaReader, IDisposable
             Type = eaDiagram.Type,
             Notes = eaDiagram.Notes,
             PackageId = eaDiagram.PackageID,
-            Status = QueryDiagramStatus(eaDiagram.DiagramID),
         };
 
         var diagramObjects = (EA.Collection)eaDiagram.DiagramObjects;
@@ -173,23 +171,6 @@ public class EaReader : IEaReader, IDisposable
         }
 
         return diagram;
-    }
-
-    private string? QueryDiagramStatus(int diagramId)
-    {
-        if (_repository == null) return null;
-        try
-        {
-            var sql = $"SELECT * FROM t_diagram WHERE Diagram_ID = {diagramId}";
-            var xml = _repository.SQLQuery(sql);
-            var doc = XDocument.Parse(xml);
-            var status = doc.Descendants("Status").FirstOrDefault()?.Value;
-            return string.IsNullOrWhiteSpace(status) ? null : status;
-        }
-        catch
-        {
-            return null;
-        }
     }
 
     public bool ExportDiagramImage(string diagramGuid, string filePath)

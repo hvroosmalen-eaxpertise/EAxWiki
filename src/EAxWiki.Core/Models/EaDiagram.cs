@@ -9,5 +9,4 @@ public class EaDiagram
     public string? Notes { get; set; }
     public int PackageId { get; set; }
     public List<EaDiagramObject> DiagramObjects { get; set; } = new();
-    public string? Status { get; set; }
 }
