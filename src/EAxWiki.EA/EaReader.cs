@@ -10,12 +10,16 @@ using EA = global::EA;
 public class EaReader : IEaReader, IDisposable
 {
     private EA.Repository? _repository;
+    private string _repositoryPath = string.Empty;
     private bool _disposed;
+
+    public string RepositoryPath => _repositoryPath;
 
     public EaRepository Open(string connectionString)
     {
         _repository = new EA.Repository();
         _repository.OpenFile(connectionString);
+        _repositoryPath = connectionString;
 
         var model = new EaRepository
         {
