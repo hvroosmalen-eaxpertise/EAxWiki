@@ -45,7 +45,14 @@ public class MarkdownExporter : IWikiExporter
 
         if (reader != null)
         {
-            await ExportDiagramsAsync(packages, elements, outputPath, reader);
+            try
+            {
+                await ExportDiagramsAsync(packages, elements, outputPath, reader);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Diagram export failed");
+            }
         }
 
         totalStopwatch.Stop();
@@ -352,62 +359,69 @@ public class MarkdownExporter : IWikiExporter
 
         foreach (var (diagram, pkgDir) in diagrams)
         {
-            var diagramsDir = Path.Combine(pkgDir, "diagrams");
-            await _writer.CreateDirectoryAsync(diagramsDir);
-
-            var fileName = SanitizeName(diagram.Name);
-            var pngPath = Path.Combine(diagramsDir, $"{fileName}.png");
-            var mdPath = Path.Combine(diagramsDir, $"{fileName}.md");
-            var diagramStopwatch = Stopwatch.StartNew();
-
-            var pngSuccess = reader.ExportDiagramImage(diagram.Guid, pngPath);
-            if (!pngSuccess)
-                _logger.LogWarning("Failed to export PNG for diagram {DiagramName}", diagram.Name);
-
-            var lines = new List<string>
+            try
             {
-                $"# {diagram.Name}",
-                string.Empty,
-            };
+                var diagramsDir = Path.Combine(pkgDir, "diagrams");
+                await _writer.CreateDirectoryAsync(diagramsDir);
 
-            if (!string.IsNullOrWhiteSpace(diagram.Notes))
-            {
-                lines.Add(diagram.Notes);
-                lines.Add(string.Empty);
-            }
+                var fileName = SanitizeName(diagram.Name);
+                var pngPath = Path.Combine(diagramsDir, $"{fileName}.png");
+                var mdPath = Path.Combine(diagramsDir, $"{fileName}.md");
+                var diagramStopwatch = Stopwatch.StartNew();
 
-            if (File.Exists(pngPath))
-            {
-                lines.Add($"![{diagram.Name}]({fileName}.png)");
-                lines.Add(string.Empty);
-            }
+                var pngSuccess = reader.ExportDiagramImage(diagram.Guid, pngPath);
+                if (!pngSuccess)
+                    _logger.LogWarning("Failed to export PNG for diagram {DiagramName}", diagram.Name);
 
-            var diagramElements = new List<(EaElement Element, string PackageDir)>();
-            foreach (var dob in diagram.DiagramObjects)
-            {
-                if (elementLookup.TryGetValue(dob.ElementId, out var elem))
-                    diagramElements.Add(elem);
-            }
-
-            if (diagramElements.Count > 0)
-            {
-                lines.Add("## Elements");
-                lines.Add(string.Empty);
-
-                foreach (var (elemEa, _) in diagramElements)
+                var lines = new List<string>
                 {
-                    var elemLink = Path.GetRelativePath(diagramsDir, Path.Combine(pkgDir, $"{SanitizeName(elemEa.Name)}.md")).Replace('\\', '/');
-                    lines.Add($"- [{elemEa.Name}]({elemLink})");
+                    $"# {diagram.Name}",
+                    string.Empty,
+                };
+
+                if (!string.IsNullOrWhiteSpace(diagram.Notes))
+                {
+                    lines.Add(diagram.Notes);
+                    lines.Add(string.Empty);
                 }
 
-                lines.Add(string.Empty);
+                if (File.Exists(pngPath))
+                {
+                    lines.Add($"![{diagram.Name}]({fileName}.png)");
+                    lines.Add(string.Empty);
+                }
+
+                var diagramElements = new List<(EaElement Element, string PackageDir)>();
+                foreach (var dob in diagram.DiagramObjects)
+                {
+                    if (elementLookup.TryGetValue(dob.ElementId, out var elem))
+                        diagramElements.Add(elem);
+                }
+
+                if (diagramElements.Count > 0)
+                {
+                    lines.Add("## Elements");
+                    lines.Add(string.Empty);
+
+                    foreach (var (elemEa, _) in diagramElements)
+                    {
+                        var elemLink = Path.GetRelativePath(diagramsDir, Path.Combine(pkgDir, $"{SanitizeName(elemEa.Name)}.md")).Replace('\\', '/');
+                        lines.Add($"- [{elemEa.Name}]({elemLink})");
+                    }
+
+                    lines.Add(string.Empty);
+                }
+
+                await _writer.WriteFileAsync(mdPath, string.Join(Environment.NewLine, lines));
+
+                diagramStopwatch.Stop();
+                _logger.LogInformation("Exported diagram {DiagramName} in {ElapsedMs}ms",
+                    diagram.Name, diagramStopwatch.ElapsedMilliseconds);
             }
-
-            await _writer.WriteFileAsync(mdPath, string.Join(Environment.NewLine, lines));
-
-            diagramStopwatch.Stop();
-            _logger.LogInformation("Exported diagram {DiagramName} in {ElapsedMs}ms",
-                diagram.Name, diagramStopwatch.ElapsedMilliseconds);
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "Failed to export diagram {DiagramName}", diagram.Name);
+            }
         }
     }
 
