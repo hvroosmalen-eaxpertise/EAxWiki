@@ -43,7 +43,7 @@ public class MarkdownExporter : IWikiExporter
                 await ExportPackageAsync(pkg, outputPath, elements, packageLookup);
             }
 
-            await WriteRootIndexAsync(packages, outputPath);
+            await WriteRootIndexAsync(packages, outputPath, repository.ConnectionString);
             await GenerateTypesPagesAsync(elements, outputPath);
             await WritePagesFileAsync(outputPath);
 
@@ -166,7 +166,7 @@ public class MarkdownExporter : IWikiExporter
         }
     }
 
-    private async Task WriteRootIndexAsync(List<EaPackage> rootPackages, string outputDir)
+    private async Task WriteRootIndexAsync(List<EaPackage> rootPackages, string outputDir, string repositoryPath)
     {
         var lines = new List<string>
         {
@@ -180,6 +180,14 @@ public class MarkdownExporter : IWikiExporter
         {
             var dir = SanitizeName(pkg.Name);
             lines.Add($"- [{pkg.Name}]({dir}/index.md)");
+        }
+
+        if (!string.IsNullOrEmpty(repositoryPath))
+        {
+            lines.Add("## Repository");
+            lines.Add(string.Empty);
+            lines.Add(repositoryPath);
+            lines.Add(string.Empty);
         }
 
         lines.Add(string.Empty);
