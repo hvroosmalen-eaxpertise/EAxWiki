@@ -30,4 +30,4 @@ GeopoliticalEntityType provides the controlled vocabulary used to classify geopo
 
 ---
 
-*Generated: 2026-06-18 13:26:10*
+*Generated: 2026-06-18 13:54:45*
