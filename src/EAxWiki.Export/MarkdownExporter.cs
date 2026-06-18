@@ -412,14 +412,14 @@ public class MarkdownExporter : IWikiExporter
                 lines.Add(BuildBreadcrumb(diagram.PackageId, diagramsDir, outputDir, packageLookup));
                 lines.Add(string.Empty);
 
-                lines.Add($"**Description:** {diagram.Notes ?? "-"}");
-                lines.Add(string.Empty);
-
                 if (File.Exists(pngPath))
                 {
                     lines.Add($"![{diagram.Name}]({fileName}.png)");
                     lines.Add(string.Empty);
                 }
+
+                lines.Add($"**Description:** {diagram.Notes ?? "-"}");
+                lines.Add(string.Empty);
 
                 var diagramElements = new List<(EaElement Element, string PackageDir)>();
                 foreach (var dob in diagram.DiagramObjects)
