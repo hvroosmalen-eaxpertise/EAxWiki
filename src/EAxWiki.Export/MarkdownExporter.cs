@@ -87,6 +87,26 @@ public class MarkdownExporter : IWikiExporter
             indexLines.Add(string.Empty);
         }
 
+        if (package.Diagrams.Count > 0)
+        {
+            indexLines.Add("## Diagrams");
+            indexLines.Add(string.Empty);
+
+            foreach (var diag in package.Diagrams)
+            {
+                var diagFile = $"diagrams/{SanitizeName(diag.Name)}.md";
+                indexLines.Add($"- [{diag.Name}]({diagFile}) ({diag.Type})");
+
+                if (!string.IsNullOrWhiteSpace(diag.Notes))
+                {
+                    var notesPreview = diag.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ");
+                    indexLines.Add($"  - *{notesPreview}*");
+                }
+            }
+
+            indexLines.Add(string.Empty);
+        }
+
         if (package.Elements.Count > 0)
         {
             indexLines.Add("## Elements");
@@ -106,26 +126,6 @@ public class MarkdownExporter : IWikiExporter
                 if (!string.IsNullOrWhiteSpace(elem.Notes))
                 {
                     var notesPreview = elem.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ");
-                    indexLines.Add($"  - *{notesPreview}*");
-                }
-            }
-
-            indexLines.Add(string.Empty);
-        }
-
-        if (package.Diagrams.Count > 0)
-        {
-            indexLines.Add("## Diagrams");
-            indexLines.Add(string.Empty);
-
-            foreach (var diag in package.Diagrams)
-            {
-                var diagFile = $"diagrams/{SanitizeName(diag.Name)}.md";
-                indexLines.Add($"- [{diag.Name}]({diagFile}) ({diag.Type})");
-
-                if (!string.IsNullOrWhiteSpace(diag.Notes))
-                {
-                    var notesPreview = diag.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ");
                     indexLines.Add($"  - *{notesPreview}*");
                 }
             }
