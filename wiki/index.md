@@ -1,6 +1,6 @@
 # EurSuRA Wiki
 
-## Structure
+## Repository Structure
 
 - [Edgy](Edgy/index.md)
 - [Archimate](Archimate/index.md)
@@ -13,4 +13,4 @@ E:\Users\Han\Repos\EAxWiki\model\EurSuRA.qea
 
 ---
 
-*Generated: 2026-06-18 12:23:55*
+*Generated: 2026-06-18 13:08:26*

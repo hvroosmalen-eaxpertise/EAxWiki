@@ -172,15 +172,7 @@ public class MarkdownExporter : IWikiExporter
         {
             "# EurSuRA Wiki",
             string.Empty,
-            "## Structure",
-            string.Empty,
         };
-
-        foreach (var pkg in rootPackages)
-        {
-            var dir = SanitizeName(pkg.Name);
-            lines.Add($"- [{pkg.Name}]({dir}/index.md)");
-        }
 
         if (!string.IsNullOrEmpty(repositoryPath))
         {
@@ -188,6 +180,15 @@ public class MarkdownExporter : IWikiExporter
             lines.Add(string.Empty);
             lines.Add(repositoryPath);
             lines.Add(string.Empty);
+        }
+
+        lines.Add("## Repository Structure");
+        lines.Add(string.Empty);
+
+        foreach (var pkg in rootPackages)
+        {
+            var dir = SanitizeName(pkg.Name);
+            lines.Add($"- [{pkg.Name}]({dir}/index.md)");
         }
 
         lines.Add(string.Empty);
