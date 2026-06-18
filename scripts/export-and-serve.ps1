@@ -9,17 +9,35 @@ Push-Location $repoRoot
 
 $resolvedRepo = if ([System.IO.Path]::IsPathRooted($RepoPath)) { $RepoPath } else { Join-Path $repoRoot $RepoPath }
 
+# Track EA processes to kill orphans after export
+$eaPidsBefore = @(Get-Process EA -ErrorAction SilentlyContinue | ForEach-Object { $_.Id })
+
+function Cleanup-EAProcesses {
+    $eaProcesses = Get-Process EA -ErrorAction SilentlyContinue
+    $orphans = $eaProcesses | Where-Object { $_.Id -notin $eaPidsBefore }
+    if ($orphans) {
+        $orphans | Stop-Process -Force -ErrorAction SilentlyContinue
+        Write-Host "Cleaned up $($orphans.Count) orphaned EA process(es)." -ForegroundColor DarkYellow
+    }
+}
+
 Write-Host "=== Step 1: Export wiki from EA model ==="
 Write-Host "Repository: $resolvedRepo"
 $runArgs = @("--repo", $resolvedRepo)
 if ($Verbose) { $runArgs += "--verbose" }
-dotnet run --project src/EAxWiki -- $runArgs
-if ($LASTEXITCODE -ne 0) {
-    Write-Error "Export failed (exit code $LASTEXITCODE)."
-    Pop-Location
-    exit $LASTEXITCODE
+try {
+    dotnet run --project src/EAxWiki -- $runArgs
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "Export failed (exit code $LASTEXITCODE)."
+        Cleanup-EAProcesses
+        Pop-Location
+        exit $LASTEXITCODE
+    }
+    Write-Host "Export complete." -ForegroundColor Green
 }
-Write-Host "Export complete." -ForegroundColor Green
+finally {
+    Cleanup-EAProcesses
+}
 
 Write-Host "=== Step 2: Serve MkDocs ==="
 
