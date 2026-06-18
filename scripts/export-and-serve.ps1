@@ -1,6 +1,7 @@
 param(
     [string]$RepoPath = "model/EurSuRA.qea",
-    [int]$Port = 8000
+    [int]$Port = 8000,
+    [switch]$Verbose
 )
 
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
@@ -10,7 +11,9 @@ $resolvedRepo = if ([System.IO.Path]::IsPathRooted($RepoPath)) { $RepoPath } els
 
 Write-Host "=== Step 1: Export wiki from EA model ==="
 Write-Host "Repository: $resolvedRepo"
-dotnet run --project src/EAxWiki -- --repo $resolvedRepo
+$runArgs = @("--repo", $resolvedRepo)
+if ($Verbose) { $runArgs += "--verbose" }
+dotnet run --project src/EAxWiki -- $runArgs
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Export failed (exit code $LASTEXITCODE)."
     Pop-Location
