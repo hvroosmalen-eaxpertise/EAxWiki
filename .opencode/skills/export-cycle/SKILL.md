@@ -35,9 +35,9 @@ Use `-Force` for full regeneration (required after template/markdown structure c
 
 Review the served wiki in the browser at `http://localhost:8000` to verify the output looks correct.
 
-### Step 3: Commit Wiki Diff (me)
+### Step 3: Commit Code + Update README (me)
 
-After you confirm the export looks good and you've committed the wiki changes, I review the diff, commit the code changes and push everything.
+I review the wiki diff, update the README if the export behavior or flags changed, and then commit the code changes and push everything.
 
 ### Step 4: Close Issue (me)
 

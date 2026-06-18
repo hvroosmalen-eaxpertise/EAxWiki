@@ -27,6 +27,16 @@ pip install -r requirements.txt
 
 Runs the .NET exporter against the `.qea` file, then serves the output. The `-Verbose` flag enables debug-level logging. The script also cleans up any orphaned EA.exe processes after the export finishes.
 
+### Incremental vs full export
+
+By default the exporter skips element pages whose `.md` file is newer than the element's last-modified date in EA. This makes repeated exports faster — only changed elements are regenerated.
+
+Use the `-Force` flag when the Markdown template changes (new sections, reordered layout, etc.) to force full regeneration of all files:
+
+```powershell
+.\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea" -Force
+```
+
 ## Scripts
 
 | Script | Purpose |
