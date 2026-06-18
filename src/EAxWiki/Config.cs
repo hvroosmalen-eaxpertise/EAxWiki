@@ -8,6 +8,7 @@ public class Config
     public string? PackageFilter { get; set; }
     public bool HelpRequested { get; set; }
     public bool Verbose { get; set; }
+    public bool Force { get; set; }
 
     public void Load(string[] args)
     {
@@ -34,6 +35,10 @@ public class Config
                 case "--verbose":
                 case "-v":
                     Verbose = true;
+                    break;
+                case "--force":
+                case "-f":
+                    Force = true;
                     break;
                 case "--help":
                 case "/?":

@@ -66,9 +66,14 @@ Render the field in the relevant exporter method.
 After all three layers are updated:
 
 1. Build: `dotnet build` on the user's machine
-2. Export: `.\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea"` on the user's machine
+2. Export with `--force` flag to regenerate all files (existing files are skipped by default to speed up incremental exports, but template changes require full regeneration):
+   ```powershell
+   .\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea" -Force
+   ```
 3. Inspect the generated wiki output for the new field
 4. Export requires EA COM and only runs on Windows
+
+**Note:** After changing the Markdown template (adding new sections, changing layout), always use `--force` to regenerate all pages. Without `--force`, only elements whose data has changed since the last export are updated.
 
 ## Common Mistakes
 

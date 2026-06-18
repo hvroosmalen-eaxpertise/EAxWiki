@@ -31,6 +31,7 @@ dotnet build
 ```
 
 Use `-Verbose` for debug-level logging during export.
+Use `-Force` for full regeneration (required after template/markdown structure changes — otherwise only data-changed elements are updated).
 
 Review the served wiki in the browser at `http://localhost:8000` to verify the output looks correct.
 

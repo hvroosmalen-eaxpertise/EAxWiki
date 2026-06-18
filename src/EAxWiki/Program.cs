@@ -46,7 +46,7 @@ try
             Console.WriteLine($"Warning: Package '{config.PackageFilter}' not found. Exporting entire repository.");
     }
 
-    await exporter.ExportAsync(repository, startPackage, outputPath, reader);
+    await exporter.ExportAsync(repository, startPackage, outputPath, reader, config.Force);
     Console.WriteLine($"Done. Wiki generated at: {outputPath}");
 }
 catch (Exception ex)
@@ -89,5 +89,6 @@ static void ShowUsage()
     Console.WriteLine("                        (default: wiki)");
     Console.WriteLine("  --package, -p <name>  Only export a specific package (by name)");
     Console.WriteLine("  --verbose, -v         Enable verbose logging per-element timing");
+    Console.WriteLine("  --force, -f            Force full regeneration (rebuild all files)");
     Console.WriteLine("  --help, -h            Show this help message");
 }

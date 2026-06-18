@@ -8,6 +8,7 @@ public class EaElement
     public string Stereotype { get; set; } = string.Empty;
     public string? Notes { get; set; }
     public int PackageId { get; set; }
+    public DateTime ModifiedDate { get; set; }
     public List<EaAttribute> Attributes { get; set; } = new();
     public List<EaMethod> Methods { get; set; } = new();
     public List<EaTaggedValue> TaggedValues { get; set; } = new();

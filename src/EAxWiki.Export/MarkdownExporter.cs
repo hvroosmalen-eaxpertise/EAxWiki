@@ -19,14 +19,15 @@ public class MarkdownExporter : IWikiExporter
         _logger = logger;
     }
 
-    public async Task ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath, IEaReader? reader = null)
+    public async Task ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath, IEaReader? reader = null, bool force = false)
     {
         try
         {
-            if (Directory.Exists(outputPath))
+            if (force && Directory.Exists(outputPath))
             {
                 Directory.Delete(outputPath, recursive: true);
             }
+            Directory.CreateDirectory(outputPath);
 
             var totalStopwatch = Stopwatch.StartNew();
 
@@ -60,6 +61,8 @@ public class MarkdownExporter : IWikiExporter
             }
 
             await WriteDiagramsIndexAsync(packages, outputPath, packageLookup);
+
+            await CleanupOrphanedFilesAsync(elements);
 
             totalStopwatch.Stop();
             _logger.LogInformation("Export complete: {TotalElapsedMs}ms total", totalStopwatch.ElapsedMilliseconds);
@@ -311,6 +314,20 @@ public class MarkdownExporter : IWikiExporter
 
     private async Task WriteElementAsync(EaElement element, string dir, string outputDir, Dictionary<int, (string Name, int? ParentId)> packageLookup)
     {
+        var filePath = Path.Combine(dir, $"{SanitizeName(element.Name)}.md");
+        if (element.ModifiedDate != DateTime.MinValue && File.Exists(filePath))
+        {
+            var fileTime = File.GetLastWriteTimeUtc(filePath);
+            var elementTime = element.ModifiedDate.Kind == DateTimeKind.Utc
+                ? element.ModifiedDate
+                : element.ModifiedDate.ToUniversalTime();
+            if (fileTime >= elementTime)
+            {
+                _logger.LogDebug("Skipping unchanged element {ElementName}", element.Name);
+                return;
+            }
+        }
+
         _logger.LogDebug("Writing element {ElementName}", element.Name);
         var lines = new List<string>
         {
@@ -397,7 +414,6 @@ public class MarkdownExporter : IWikiExporter
             lines.Add(string.Empty);
         }
 
-        var filePath = Path.Combine(dir, $"{SanitizeName(element.Name)}.md");
         lines.Add(FormatTimestamp());
         await _writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines));
     }
@@ -553,6 +569,31 @@ public class MarkdownExporter : IWikiExporter
         lines.Add(string.Empty);
         lines.Add(FormatTimestamp());
         await _writer.WriteFileAsync(Path.Combine(diagramsDir, "index.md"), string.Join(Environment.NewLine, lines));
+    }
+
+    private static async Task CleanupOrphanedFilesAsync(List<(EaElement Element, string PackageDir)> elements)
+    {
+        var expectedFiles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var (element, pkgDir) in elements)
+        {
+            expectedFiles.Add(Path.Combine(pkgDir, $"{SanitizeName(element.Name)}.md"));
+        }
+
+        var packageDirs = elements.Select(e => e.PackageDir).Distinct().ToList();
+        foreach (var dir in packageDirs)
+        {
+            if (!Directory.Exists(dir)) continue;
+            foreach (var file in Directory.EnumerateFiles(dir, "*.md"))
+            {
+                if (Path.GetFileName(file).Equals("index.md", StringComparison.OrdinalIgnoreCase))
+                    continue;
+                if (!expectedFiles.Contains(file))
+                {
+                    File.Delete(file);
+                }
+            }
+        }
+        await Task.CompletedTask;
     }
 
     private static string FormatTimestamp()
