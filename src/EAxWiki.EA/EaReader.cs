@@ -155,6 +155,7 @@ public class EaReader : IEaReader, IDisposable
             Name = eaDiagram.Name,
             Type = eaDiagram.Type,
             Notes = eaDiagram.Notes,
+            ModifiedDate = eaDiagram.ModifiedDate.ToString("yyyy-MM-dd HH:mm:ss"),
             PackageId = eaDiagram.PackageID,
         };
 

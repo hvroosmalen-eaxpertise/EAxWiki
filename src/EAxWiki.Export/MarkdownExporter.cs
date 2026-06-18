@@ -59,6 +59,8 @@ public class MarkdownExporter : IWikiExporter
                 }
             }
 
+            await WriteDiagramsIndexAsync(packages, outputPath, packageLookup);
+
             totalStopwatch.Stop();
             _logger.LogInformation("Export complete: {TotalElapsedMs}ms total", totalStopwatch.ElapsedMilliseconds);
         }
@@ -269,10 +271,21 @@ public class MarkdownExporter : IWikiExporter
         {
             "nav:",
             "  - Structure: ''",
+            "  - Diagrams: diagrams/",
             "  - Types: types/",
             string.Empty,
         };
         await _writer.WriteFileAsync(pagesPath, string.Join(Environment.NewLine, content));
+
+        var diagramsPagesDir = Path.Combine(outputDir, "diagrams");
+        await _writer.CreateDirectoryAsync(diagramsPagesDir);
+        var diagramsPagesPath = Path.Combine(diagramsPagesDir, ".pages");
+        var diagramsContent = new List<string>
+        {
+            "title: Diagrams",
+            string.Empty,
+        };
+        await _writer.WriteFileAsync(diagramsPagesPath, string.Join(Environment.NewLine, diagramsContent));
 
         var typesPagesDir = Path.Combine(outputDir, "types");
         await _writer.CreateDirectoryAsync(typesPagesDir);
@@ -480,6 +493,55 @@ public class MarkdownExporter : IWikiExporter
         {
             CollectDiagramsRecursive(child, outputDir, result);
         }
+    }
+
+    private async Task WriteDiagramsIndexAsync(List<EaPackage> rootPackages, string outputDir, Dictionary<int, (string Name, int? ParentId)> packageLookup)
+    {
+        var diagramsDir = Path.Combine(outputDir, "diagrams");
+        await _writer.CreateDirectoryAsync(diagramsDir);
+
+        var allDiagrams = CollectDiagrams(rootPackages, outputDir);
+
+        var sorted = allDiagrams
+            .Select(d => (d.Diagram, d.PackageDir, Path: BuildBreadcrumb(d.Diagram.PackageId, diagramsDir, outputDir, packageLookup)))
+            .OrderBy(d => d.Path)
+            .ThenBy(d => d.Diagram.Name)
+            .ToList();
+
+        var lines = new List<string>
+        {
+            "# Diagrams",
+            string.Empty,
+        };
+
+        if (sorted.Count == 0)
+        {
+            lines.Add("No diagrams found in model.");
+        }
+        else
+        {
+            lines.Add("| Diagram | Modified | Description | Path |");
+            lines.Add("|---------|----------|-------------|------|");
+
+            foreach (var (diagram, pkgDir, path) in sorted)
+            {
+                var diagramPage = Path.GetRelativePath(diagramsDir, Path.Combine(pkgDir, "diagrams", $"{SanitizeName(diagram.Name)}.md")).Replace('\\', '/');
+                var link = $"[{diagram.Name}]({diagramPage})";
+
+                var modified = !string.IsNullOrWhiteSpace(diagram.ModifiedDate) && DateTime.TryParse(diagram.ModifiedDate, out var dt)
+                    ? dt.ToString("yyyy-MM-dd")
+                    : "-";
+
+                var desc = string.IsNullOrWhiteSpace(diagram.Notes) ? "-" : diagram.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ").Trim();
+                if (desc.Length > 100) desc = desc[..100] + "...";
+
+                lines.Add($"| {link} | {modified} | {desc} | {path} |");
+            }
+        }
+
+        lines.Add(string.Empty);
+        lines.Add(FormatTimestamp());
+        await _writer.WriteFileAsync(Path.Combine(diagramsDir, "index.md"), string.Join(Environment.NewLine, lines));
     }
 
     private static string FormatTimestamp()
