@@ -323,12 +323,13 @@ public class MarkdownExporter : IWikiExporter
                 : element.ModifiedDate.ToUniversalTime();
             if (fileTime >= elementTime)
             {
-                _logger.LogDebug("Skipping unchanged element {ElementName}", element.Name);
+                _logger.LogDebug("Skipped {ElementName}", element.Name);
                 return;
             }
         }
 
-        _logger.LogDebug("Writing element {ElementName}", element.Name);
+        var isNew = !File.Exists(filePath);
+        _logger.LogInformation("{Action} {ElementName}", isNew ? "Created" : "Updated", element.Name);
         var lines = new List<string>
         {
             $"# {element.Name}",
