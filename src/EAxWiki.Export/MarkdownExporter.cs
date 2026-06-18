@@ -173,11 +173,15 @@ public class MarkdownExporter : IWikiExporter
 
         var typesStopwatch = Stopwatch.StartNew();
 
-        var stereotypes = elements
-            .Select(e => string.IsNullOrWhiteSpace(e.Element.Stereotype) ? "Uncategorized" : e.Element.Stereotype)
-            .Distinct()
-            .OrderBy(s => s)
-            .ToList();
+        var groups = elements
+            .Select(e => (
+                Element: e.Element,
+                PackageDir: e.PackageDir,
+                Stereo: string.IsNullOrWhiteSpace(e.Element.Stereotype) ? "Uncategorized" : e.Element.Stereotype
+            ))
+            .ToLookup(x => x.Stereo, x => (x.Element, x.PackageDir));
+
+        var stereotypes = groups.Select(g => g.Key).OrderBy(s => s).ToList();
 
         _logger.LogInformation("Generating {StereotypeCount} type pages", stereotypes.Count);
 
@@ -199,9 +203,7 @@ public class MarkdownExporter : IWikiExporter
 
         foreach (var stereo in stereotypes)
         {
-            var matching = elements
-                .Where(e => (string.IsNullOrWhiteSpace(e.Element.Stereotype) ? "Uncategorized" : e.Element.Stereotype) == stereo)
-                .ToList();
+            var matching = groups[stereo].ToList();
 
             var lines = new List<string>
             {
