@@ -1,0 +1,444 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="EAxWiki / EurSuRA documentation">
+      
+      
+      
+      
+        <link rel="prev" href="../_%20teruggenomen%20producten%20%28per%20jaar%29.html">
+      
+      
+        <link rel="next" href="../../Model%20Creation/index.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Metrics - EurSuRA Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#metrics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EurSuRA Wiki" class="md-header__button md-logo" aria-label="EurSuRA Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EurSuRA Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Metrics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EurSuRA Wiki" class="md-nav__button md-logo" aria-label="EurSuRA Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    EurSuRA Wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Structure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elements
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="metrics">Metrics</h1>
+<p><a href="../../Edgy/index.html">Edgy</a> / <a href="../index.html">Metrics</a></p>
+<p><strong>Description:</strong> </p>
+<p><img alt="Metrics" src="Metrics.png" /></p>
+<h2 id="elements">Elements</h2>
+<ul>
+<li><a href="../Totale%20Scope%201-3%20uitstoot%20%28ton%20CO%E2%82%82e_jaar%29.html">Totale Scope 1-3 uitstoot (ton CO₂e/jaar)</a></li>
+<li><a href="../%25%20hernieuwbare%20grondstoffen.html">% hernieuwbare grondstoffen</a></li>
+<li><a href="../Herstelde%20natuur%20%28ha%29.html">Herstelde natuur (ha)</a></li>
+<li><a href="../Jaarlijkse%20CO%E2%82%82-reductie%20%28%25%29.html">Jaarlijkse CO₂-reductie (%)</a></li>
+<li><a href="../Reductiedoel%20CO%E2%82%82%20%28%25%20t.o.v.%20basisjaar%29.html">Reductiedoel CO₂ (% t.o.v. basisjaar)</a></li>
+<li><a href="../%25%20producten%20met%20circulair%20ontwerp.html">% producten met circulair ontwerp</a></li>
+<li><a href="../../ESRS%20E5/ESRS%20E5%20Resource%20Use%20and%20Circular%20Economy.html">ESRS E5 Resource Use and Circular Economy</a></li>
+<li><a href="../Uitstoot%20NO%E2%82%93_SO%E2%82%93%20%28kg_jaar%29.html">Uitstoot NOₓ/SOₓ (kg/jaar)</a></li>
+<li><a href="../../ESRS%20E2/ESRS%20E2%20Pollution.html">ESRS E2 Pollution</a></li>
+<li><a href="../CO%E2%82%82-intensiteit%20per%20%E2%82%AC%20omzet.html">CO₂-intensiteit per € omzet</a></li>
+<li><a href="../../ESRS%20E1/ESRS%20E1%20Climate%20Change.html">ESRS E1 Climate Change</a></li>
+<li><a href="../%25%20minder%20plasticverpakkingen.html">% minder plasticverpakkingen</a></li>
+<li><a href="../_%20teruggenomen%20producten%20%28per%20jaar%29.html"># teruggenomen producten (per jaar)</a></li>
+<li><a href="../CO%E2%82%82%20per%20klanttransactie%20%28kg%29.html">CO₂ per klanttransactie (kg)</a></li>
+<li><a href="../CO%E2%82%82%20bespaard%20door%20digitalisering%20%28ton%29.html">CO₂ bespaard door digitalisering (ton)</a></li>
+<li><a href="../%25%20omzet%20uit%20duurzame%20producten.html">% omzet uit duurzame producten</a></li>
+<li><a href="../%25%20R%26D%20naar%20duurzame%20innovatie.html">% R&amp;D naar duurzame innovatie</a></li>
+<li><a href="../Energieverbruik%20en%20waterverbruik%20per%20eenheid.html">Energieverbruik en waterverbruik per eenheid</a></li>
+<li><a href="../../ESRS%20E3/ESRS%20E3%20Water%20and%20Marine%20Resources.html">ESRS E3 Water and Marine Resources</a></li>
+<li><a href="../%25%20energie%20uit%20hernieuwbare%20bronnen.html">% energie uit hernieuwbare bronnen</a></li>
+<li><a href="../%25%20reductie%20reisgerelateerde%20CO%E2%82%82.html">% reductie reisgerelateerde CO₂</a></li>
+<li><a href="../Totaal%20afval%20%28ton_jaar%29.html">Totaal afval (ton/jaar)</a></li>
+<li><a href="../Scope%201%20uitstoot%20per%20bron%20%28ton%20CO%E2%82%82e%29.html">Scope 1 uitstoot per bron (ton CO₂e)</a></li>
+<li><a href="../Vermeden%20CO%E2%82%82%20door%20maatregelen%20%28ton_jaar%29.html">Vermeden CO₂ door maatregelen (ton/jaar)</a></li>
+<li><a href="../%25%20gerecyclede%20materialen%20in%20producten.html">% gerecyclede materialen in producten</a></li>
+<li><a href="../%25%20scope%203%20emissies%20met%20gemeten%20data.html">% scope 3 emissies met gemeten data</a></li>
+<li><a href="../_%20bomen%20geplant%20_%20ha%20natuur%20hersteld.html"># bomen geplant / ha natuur hersteld</a></li>
+<li><a href="../../ESRS%20E4/ESRS%20E4%20Biodiversity%20and%20Ecosystems.html">ESRS E4 Biodiversity and Ecosystems</a></li>
+<li><a href="../_%20SDGs%20met%20meetbare%20KPI%E2%80%99s.html"># SDGs met meetbare KPI’s</a></li>
+<li><a href="../Energie%20%28MWh_jaar%29.html">Energie (MWh/jaar)</a></li>
+<li><a href="../Recycling%20%25%20van%20afval.html">Recycling % van afval</a></li>
+<li><a href="../Restafval%20per%20medewerker%20%28kg_jaar%29.html">Restafval per medewerker (kg/jaar)</a></li>
+<li><a href="../Energieverbruik%20%28kWh%29.html">Energieverbruik (kWh)</a></li>
+<li><a href="../Hernieuwbare%20energieopwekking%20%28kWh%29.html">Hernieuwbare energieopwekking (kWh)</a></li>
+<li><a href="../Brandstofverbruik%20voertuigen_machines.html">Brandstofverbruik voertuigen/machines</a></li>
+<li><a href="../Aantal%20duurzame%20assets%20%28bv.%20EV%27s%2C%20zonnepanelen%29.html">Aantal duurzame assets (bv. EV's, zonnepanelen)</a></li>
+<li><a href="../Energie%2C%20materiaal%2C%20water%2C%20afval%20per%20eenheid.html">Energie, materiaal, water, afval per eenheid</a></li>
+<li><a href="../CO%E2%82%82e%20per%20processtap%20of%20productlevensfase.html">CO₂e per processtap of productlevensfase</a></li>
+<li><a href="../Outputvolumes%20voor%20normalisatie.html">Outputvolumes voor normalisatie</a></li>
+<li><a href="../Brandstofgebruik%20%28Scope%201%29.html">Brandstofgebruik (Scope 1)</a></li>
+<li><a href="../Elektriciteitsverbruik%20%28Scope%202%29.html">Elektriciteitsverbruik (Scope 2)</a></li>
+<li><a href="../Leveranciers-%2C%20transport-%2C%20gebruiksdata%20%28Scope%203%29.html">Leveranciers-, transport-, gebruiksdata (Scope 3)</a></li>
+<li><a href="../Energieverbruik%20v%C3%B3%C3%B3r_na%20project.html">Energieverbruik vóór/na project</a></li>
+<li><a href="../Emissie%20v%C3%B3%C3%B3r_na%20project.html">Emissie vóór/na project</a></li>
+<li><a href="../Projectgegevens%20en%20tech%20specs.html">Projectgegevens en tech specs</a></li>
+<li><a href="../Massa%20gerecycled%20materiaal%20%28kg_%25%20input%29.html">Massa gerecycled materiaal (kg/% input)</a></li>
+<li><a href="../Retourpercentages%20producten.html">Retourpercentages producten</a></li>
+<li><a href="../Afval%20per%20fase%20%2B%20recycleerbaar%20aandeel.html">Afval per fase + recycleerbaar aandeel</a></li>
+<li><a href="../Levensduur%20product.html"> Levensduur product</a></li>
+<li><a href="../CO%E2%82%82e%2C%20energie%2C%20afval%2C%20water%20per%20proces.html">CO₂e, energie, afval, water per proces</a></li>
+<li><a href="../Productievolumes%20_%20normaliserende%20operationele%20data.html"> Productievolumes / normaliserende operationele data</a></li>
+<li><a href="../Datakwaliteit_%20beschikbaarheid%20_%20updatefrequentie.html">Datakwaliteit: beschikbaarheid / updatefrequentie</a></li>
+<li><a href="../Slimme%20meters%20_%20EMS.html">Slimme meters / EMS</a></li>
+<li><a href="../BMS%20%28HVAC_lighting%29.html">BMS (HVAC/lighting)</a></li>
+<li><a href="../Telematica%20_%20fleetbeheer.html">Telematica / fleetbeheer</a></li>
+<li><a href="../Assetmanagementsysteem.html">Assetmanagementsysteem</a></li>
+<li><a href="../IoT%20op%20apparatuur.html">IoT op apparatuur</a></li>
+<li><a href="../Productiesoftware%20%28SCADA%2C%20MES%29.html">Productiesoftware (SCADA, MES)</a></li>
+<li><a href="../LCA-software%20%2B%20leveranciersdata.html">LCA-software + leveranciersdata</a></li>
+<li><a href="../Brandstofsensoren_logboeken.html">Brandstofsensoren/logboeken</a></li>
+<li><a href="../Slimme%20meters%2C%20energienota%E2%80%99s.html">Slimme meters, energienota’s</a></li>
+<li><a href="../ERP%20%2B%20Scope%203-calculatietools.html">ERP + Scope 3-calculatietools</a></li>
+<li><a href="../EMS-trends%2C%20IoT-logs.html">EMS-trends, IoT-logs</a></li>
+<li><a href="../CMMS%20_%20projectenregistratie.html">CMMS / projectenregistratie</a></li>
+<li><a href="../Validatie%20via%20energienota%E2%80%99s.html">Validatie via energienota’s</a></li>
+<li><a href="../ERP_BOM%20met%20herkomst%20info.html">ERP/BOM met herkomst info</a></li>
+<li><a href="../Retourlogistiek.html">Retourlogistiek</a></li>
+<li><a href="../Slimme%20afvalweegschalen%2C%20product-IoT.html">Slimme afvalweegschalen, product-IoT</a></li>
+<li><a href="../ERP%2C%20IoT-sensoren%2C%20utility%20meters.html">ERP, IoT-sensoren, utility meters</a></li>
+<li><a href="../Duurzaamheidsdataplatform%20met%20ETL_APIs.html">Duurzaamheidsdataplatform met ETL/APIs</a></li>
+<li><a href="../Kwaliteitscontroles%20via%20dashboards_logica.html">Kwaliteitscontroles via dashboards/logica</a></li>
+<li><a href="../%25%20Hernieuwbare%20Energie%20%3D%20%28opgewekte%20hernieuwbare%20energie%20_%20totaal%20verbruik%29%20%C3%97%20100.html">% Hernieuwbare Energie = (opgewekte hernieuwbare energie / totaal verbruik) × 100</a></li>
+<li><a href="../Product%20Carbon%20Footprint%20%3D%20totale%20CO%E2%82%82e%20_%20aantal%20eenheden%20geproduceerd.html">Product Carbon Footprint = totale CO₂e / aantal eenheden geproduceerd</a></li>
+<li><a href="../Totale%20uitstoot%20%3D%20Scope%201%20%2B%20Scope%202%20%2B%20Scope%203%20%28in%20ton%20CO%E2%82%82e%29.html">Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e)</a></li>
+<li><a href="../Emissiereductie%20%28%25%29%20%3D%20%28%28baseline%20%E2%80%93%20huidig%29%20_%20baseline%29%20%C3%97%20100.html">Emissiereductie (%) = ((baseline – huidig) / baseline) × 100</a></li>
+<li><a href="../%25%20Gerecycled%20materiaal%20%3D%20%28gerecycled%20_%20totaal%20input%29%20%C3%97%20100.html">% Gerecycled materiaal = (gerecycled / totaal input) × 100</a></li>
+<li><a href="../Data-automatiseringsgraad%20%3D%20%28_%20automatisch%20verzamelde%20datapunten%20_%20totaal%29%20%C3%97%20100%25.html">Data-automatiseringsgraad = (# automatisch verzamelde datapunten / totaal) × 100%</a></li>
+</ul>
+<hr />
+<p><em>Generated: 2026-06-18 12:24:13</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
