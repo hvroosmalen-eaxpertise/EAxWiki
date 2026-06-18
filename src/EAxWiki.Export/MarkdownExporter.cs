@@ -36,9 +36,11 @@ public class MarkdownExporter : IWikiExporter
 
             var elements = new List<(EaElement Element, string PackageDir)>();
 
+            var packageLookup = BuildPackageLookup(packages);
+
             foreach (var pkg in packages)
             {
-                await ExportPackageAsync(pkg, outputPath, elements);
+                await ExportPackageAsync(pkg, outputPath, elements, packageLookup);
             }
 
             await WriteRootIndexAsync(packages, outputPath);
@@ -49,7 +51,7 @@ public class MarkdownExporter : IWikiExporter
             {
                 try
                 {
-                    await ExportDiagramsAsync(packages, elements, outputPath, reader);
+                    await ExportDiagramsAsync(packages, elements, outputPath, reader, packageLookup);
                 }
                 catch (Exception ex)
                 {
@@ -66,7 +68,7 @@ public class MarkdownExporter : IWikiExporter
         }
     }
 
-    private async Task ExportPackageAsync(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements)
+    private async Task ExportPackageAsync(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements, Dictionary<int, (string Name, int? ParentId)> packageLookup)
     {
         var pkgStopwatch = Stopwatch.StartNew();
         _logger.LogInformation("Exporting package {PackageName} ({ElementCount} elements, {DiagramCount} diagrams)",
@@ -80,6 +82,9 @@ public class MarkdownExporter : IWikiExporter
             $"# {package.Name}",
             string.Empty
         };
+
+        indexLines.Add(BuildBreadcrumb(package.Id, dir, outputDir, packageLookup));
+        indexLines.Add(string.Empty);
 
         if (!string.IsNullOrWhiteSpace(package.Notes))
         {
@@ -115,7 +120,7 @@ public class MarkdownExporter : IWikiExporter
             foreach (var elem in package.Elements)
             {
                 var elemFile = $"{SanitizeName(elem.Name)}.md";
-                await WriteElementAsync(elem, dir);
+                await WriteElementAsync(elem, dir, outputDir, packageLookup);
                 elements.Add((elem, dir));
 
                 var typeLabel = string.IsNullOrEmpty(elem.Stereotype)
@@ -157,7 +162,7 @@ public class MarkdownExporter : IWikiExporter
 
         foreach (var child in package.Children)
         {
-            await ExportPackageAsync(child, outputDir, elements);
+            await ExportPackageAsync(child, outputDir, elements, packageLookup);
         }
     }
 
@@ -271,7 +276,7 @@ public class MarkdownExporter : IWikiExporter
         await _writer.WriteFileAsync(typesPagesPath, string.Join(Environment.NewLine, typesContent));
     }
 
-    private async Task WriteElementAsync(EaElement element, string dir)
+    private async Task WriteElementAsync(EaElement element, string dir, string outputDir, Dictionary<int, (string Name, int? ParentId)> packageLookup)
     {
         _logger.LogDebug("Writing element {ElementName}", element.Name);
         var lines = new List<string>
@@ -282,6 +287,10 @@ public class MarkdownExporter : IWikiExporter
             $"**Stereotype:** {element.Stereotype}  ",
             string.Empty
         };
+
+        lines.Add(string.Empty);
+        lines.Add(BuildBreadcrumb(element.PackageId, dir, outputDir, packageLookup));
+        lines.Add(string.Empty);
 
         if (!string.IsNullOrWhiteSpace(element.Notes))
         {
@@ -360,7 +369,7 @@ public class MarkdownExporter : IWikiExporter
         await _writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines));
     }
 
-    private async Task ExportDiagramsAsync(List<EaPackage> rootPackages, List<(EaElement Element, string PackageDir)> elements, string outputDir, IEaReader reader)
+    private async Task ExportDiagramsAsync(List<EaPackage> rootPackages, List<(EaElement Element, string PackageDir)> elements, string outputDir, IEaReader reader, Dictionary<int, (string Name, int? ParentId)> packageLookup)
     {
         var elementLookup = elements
             .GroupBy(e => e.Element.Id)
@@ -390,6 +399,10 @@ public class MarkdownExporter : IWikiExporter
                     $"# {diagram.Name}",
                     string.Empty,
                 };
+
+                lines.Add(string.Empty);
+                lines.Add(BuildBreadcrumb(diagram.PackageId, diagramsDir, outputDir, packageLookup));
+                lines.Add(string.Empty);
 
                 if (!string.IsNullOrWhiteSpace(diagram.Notes))
                 {
@@ -477,5 +490,45 @@ public class MarkdownExporter : IWikiExporter
         var result = string.IsNullOrWhiteSpace(sanitized) ? "unnamed" : sanitized;
         _sanitizeCache[name] = result;
         return result;
+    }
+
+    private static Dictionary<int, (string Name, int? ParentId)> BuildPackageLookup(List<EaPackage> packages)
+    {
+        var lookup = new Dictionary<int, (string Name, int? ParentId)>();
+        foreach (var pkg in packages)
+        {
+            BuildPackageLookupRecursive(pkg, lookup);
+        }
+        return lookup;
+    }
+
+    private static void BuildPackageLookupRecursive(EaPackage package, Dictionary<int, (string Name, int? ParentId)> lookup)
+    {
+        lookup[package.Id] = (package.Name, package.ParentId);
+        foreach (var child in package.Children)
+        {
+            BuildPackageLookupRecursive(child, lookup);
+        }
+    }
+
+    private static string BuildBreadcrumb(int packageId, string currentPageDir, string outputDir, Dictionary<int, (string Name, int? ParentId)> packageLookup)
+    {
+        var segments = new List<(string Name, int Id)>();
+        var id = packageId;
+        while (id != 0 && packageLookup.TryGetValue(id, out var info))
+        {
+            segments.Add((info.Name, id));
+            id = info.ParentId ?? 0;
+        }
+        segments.Reverse();
+
+        var breadcrumbParts = new List<string>();
+        foreach (var (name, _) in segments)
+        {
+            var pkgDir = Path.Combine(outputDir, SanitizeName(name));
+            var relPath = Path.GetRelativePath(currentPageDir, Path.Combine(pkgDir, "index.md")).Replace('\\', '/');
+            breadcrumbParts.Add($"[{name}]({relPath})");
+        }
+        return string.Join(" / ", breadcrumbParts);
     }
 }
