@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Collections.Concurrent;
 using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
@@ -25,6 +26,8 @@ public class MarkdownExporter : IWikiExporter
             Directory.Delete(outputPath, recursive: true);
         }
 
+        var totalStopwatch = Stopwatch.StartNew();
+
         var packages = startPackage != null
             ? new List<EaPackage> { startPackage }
             : repository.RootPackages;
@@ -44,10 +47,17 @@ public class MarkdownExporter : IWikiExporter
         {
             await ExportDiagramsAsync(packages, elements, outputPath, reader);
         }
+
+        totalStopwatch.Stop();
+        _logger.LogInformation("Export complete: {TotalElapsedMs}ms total", totalStopwatch.ElapsedMilliseconds);
     }
 
     private async Task ExportPackageAsync(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements)
     {
+        var pkgStopwatch = Stopwatch.StartNew();
+        _logger.LogInformation("Exporting package {PackageName} ({ElementCount} elements, {DiagramCount} diagrams)",
+            package.Name, package.Elements.Count, package.Diagrams.Count);
+
         var dir = Path.Combine(outputDir, SanitizeName(package.Name));
         await _writer.CreateDirectoryAsync(dir);
 
@@ -126,6 +136,10 @@ public class MarkdownExporter : IWikiExporter
 
         await _writer.WriteFileAsync(Path.Combine(dir, "index.md"), string.Join(Environment.NewLine, indexLines));
 
+        pkgStopwatch.Stop();
+        _logger.LogInformation("Exported package {PackageName} in {ElapsedMs}ms",
+            package.Name, pkgStopwatch.ElapsedMilliseconds);
+
         foreach (var child in package.Children)
         {
             await ExportPackageAsync(child, outputDir, elements);
@@ -157,11 +171,15 @@ public class MarkdownExporter : IWikiExporter
         var typesDir = Path.Combine(outputDir, "types");
         await _writer.CreateDirectoryAsync(typesDir);
 
+        var typesStopwatch = Stopwatch.StartNew();
+
         var stereotypes = elements
             .Select(e => string.IsNullOrWhiteSpace(e.Element.Stereotype) ? "Uncategorized" : e.Element.Stereotype)
             .Distinct()
             .OrderBy(s => s)
             .ToList();
+
+        _logger.LogInformation("Generating {StereotypeCount} type pages", stereotypes.Count);
 
         var indexLines = new List<string>
         {
@@ -204,6 +222,10 @@ public class MarkdownExporter : IWikiExporter
             lines.Add(string.Empty);
             await _writer.WriteFileAsync(Path.Combine(typesDir, $"{SanitizeName(stereo)}.md"), string.Join(Environment.NewLine, lines));
         }
+
+        typesStopwatch.Stop();
+        _logger.LogInformation("Generated {StereotypeCount} type pages in {ElapsedMs}ms",
+            stereotypes.Count, typesStopwatch.ElapsedMilliseconds);
     }
 
     private async Task WritePagesFileAsync(string outputDir)
@@ -231,6 +253,7 @@ public class MarkdownExporter : IWikiExporter
 
     private async Task WriteElementAsync(EaElement element, string dir)
     {
+        _logger.LogDebug("Writing element {ElementName}", element.Name);
         var lines = new List<string>
         {
             $"# {element.Name}",
@@ -323,6 +346,7 @@ public class MarkdownExporter : IWikiExporter
             .ToDictionary(g => g.Key, g => g.First());
 
         var diagrams = CollectDiagrams(rootPackages, outputDir);
+        _logger.LogInformation("Exporting {DiagramCount} diagrams with PNG images", diagrams.Count);
 
         foreach (var (diagram, pkgDir) in diagrams)
         {
@@ -332,6 +356,7 @@ public class MarkdownExporter : IWikiExporter
             var fileName = SanitizeName(diagram.Name);
             var pngPath = Path.Combine(diagramsDir, $"{fileName}.png");
             var mdPath = Path.Combine(diagramsDir, $"{fileName}.md");
+            var diagramStopwatch = Stopwatch.StartNew();
 
             reader.ExportDiagramImage(diagram.Guid, pngPath);
 
@@ -375,6 +400,10 @@ public class MarkdownExporter : IWikiExporter
             }
 
             await _writer.WriteFileAsync(mdPath, string.Join(Environment.NewLine, lines));
+
+            diagramStopwatch.Stop();
+            _logger.LogInformation("Exported diagram {DiagramName} in {ElapsedMs}ms",
+                diagram.Name, diagramStopwatch.ElapsedMilliseconds);
         }
     }
 
