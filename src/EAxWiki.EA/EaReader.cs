@@ -151,7 +151,8 @@ public class EaReader : IEaReader, IDisposable
             Name = eaDiagram.Name,
             Type = eaDiagram.Type,
             Notes = eaDiagram.Notes,
-            PackageId = eaDiagram.PackageID
+            PackageId = eaDiagram.PackageID,
+            Status = ((dynamic)eaDiagram).Status,
         };
 
         var diagramObjects = (EA.Collection)eaDiagram.DiagramObjects;
