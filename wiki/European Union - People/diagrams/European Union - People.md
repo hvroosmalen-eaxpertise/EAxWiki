@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [ESRS and People](../../ESRS and People/index.md) / [European Union - People](../index.md)
 
-**Description:** In this diagram the political structure is shown between the EU and the government of each individual European country. 
-
 ![European Union - People](European Union - People.png)
+
+**Description:** In this diagram the political structure is shown between the EU and the government of each individual European country. 
 
 ## Elements
 
@@ -31,4 +31,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:07*
+*Generated: 2026-06-18 13:11:47*

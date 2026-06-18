@@ -3,9 +3,9 @@
 
 [Archimate](../../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Regulatory Pressure](../index.md)
 
-**Description:** 
-
 ![Regulatory Pressure](Regulatory Pressure.png)
+
+**Description:** 
 
 ## Elements
 
@@ -32,4 +32,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:24*
+*Generated: 2026-06-18 13:12:01*

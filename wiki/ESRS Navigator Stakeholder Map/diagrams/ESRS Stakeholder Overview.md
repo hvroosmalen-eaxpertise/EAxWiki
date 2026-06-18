@@ -3,9 +3,9 @@
 
 [Archimate](../../Archimate/index.md) / [ESRS Navigator Stakeholder Map](../index.md)
 
-**Description:** High-level view of all stakeholders in ESRS reporting ecosystem
-
 ![ESRS Stakeholder Overview](ESRS Stakeholder Overview.png)
+
+**Description:** High-level view of all stakeholders in ESRS reporting ecosystem
 
 ## Elements
 
@@ -130,4 +130,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:19*
+*Generated: 2026-06-18 13:11:58*

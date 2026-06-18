@@ -3,9 +3,9 @@
 
 [Archimate](../../Archimate/index.md) / [Reference Material](../../Reference Material/index.md) / [Reference Websites](../index.md)
 
-**Description:** 
-
 ![Reference Websites](Reference Websites.png)
+
+**Description:** 
 
 ## Elements
 
@@ -13,4 +13,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:15*
+*Generated: 2026-06-18 13:11:55*

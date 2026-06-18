@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [Experience](../index.md)
 
-**Description:** 
-
 ![Experience](Experience.png)
+
+**Description:** 
 
 ## Elements
 
@@ -30,4 +30,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:12*
+*Generated: 2026-06-18 13:11:53*

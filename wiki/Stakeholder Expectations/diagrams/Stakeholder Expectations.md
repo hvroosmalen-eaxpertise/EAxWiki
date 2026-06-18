@@ -3,9 +3,9 @@
 
 [Archimate](../../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Stakeholder Expectations](../index.md)
 
-**Description:** 
-
 ![Stakeholder Expectations](Stakeholder Expectations.png)
+
+**Description:** 
 
 ## Elements
 
@@ -30,4 +30,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:22*
+*Generated: 2026-06-18 13:11:59*

@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [Architecture](../index.md)
 
-**Description:** 
-
 ![Architecture](Architecture.png)
+
+**Description:** 
 
 ## Elements
 
@@ -43,4 +43,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:11*
+*Generated: 2026-06-18 13:11:52*

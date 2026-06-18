@@ -3,9 +3,9 @@
 
 [Model Creation](../../Model Creation/index.md) / [Information Collection and Model Creation](../index.md)
 
-**Description:** 
-
 ![Information Collection and Model Creation](Information Collection and Model Creation.png)
+
+**Description:** 
 
 ## Elements
 
@@ -35,4 +35,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:29*
+*Generated: 2026-06-18 13:12:04*

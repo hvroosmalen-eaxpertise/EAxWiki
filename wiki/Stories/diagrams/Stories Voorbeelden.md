@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [Stories](../index.md)
 
-**Description:** 
-
 ![Stories Voorbeelden](Stories Voorbeelden.png)
+
+**Description:** 
 
 ## Elements
 
@@ -15,4 +15,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:14*
+*Generated: 2026-06-18 13:11:54*

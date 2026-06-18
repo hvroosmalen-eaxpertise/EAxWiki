@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [SDGs](../../SDGs/index.md) / [Mapping SDG to Main](../index.md)
 
-**Description:** 
-
 ![Mapping SDG to Main](Mapping SDG to Main.png)
+
+**Description:** 
 
 ## Elements
 
@@ -53,4 +53,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:23:59*
+*Generated: 2026-06-18 13:11:41*

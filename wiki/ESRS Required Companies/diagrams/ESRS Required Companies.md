@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS Required Companies](../index.md)
 
-**Description:** Not all companies are subjected to report according to the ESRS.
-
 ![ESRS Required Companies](ESRS Required Companies.png)
+
+**Description:** Not all companies are subjected to report according to the ESRS.
 
 ## Elements
 
@@ -17,4 +17,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:04*
+*Generated: 2026-06-18 13:11:44*

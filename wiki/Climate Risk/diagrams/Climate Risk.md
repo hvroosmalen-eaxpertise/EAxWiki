@@ -3,9 +3,9 @@
 
 [Archimate](../../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Climate Risk](../index.md)
 
-**Description:** 
-
 ![Climate Risk](Climate Risk.png)
+
+**Description:** 
 
 ## Elements
 
@@ -31,4 +31,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:23*
+*Generated: 2026-06-18 13:12:00*

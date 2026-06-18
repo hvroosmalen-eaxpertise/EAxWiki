@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [ESRS and People](../../ESRS and People/index.md) / [ESRS S1 Own Workforce - People](../index.md)
 
-**Description:** 
-
 ![ESRS S1 Own Workforce - People](ESRS S1 Own Workforce - People.png)
+
+**Description:** 
 
 ## Elements
 
@@ -20,4 +20,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:08*
+*Generated: 2026-06-18 13:11:49*

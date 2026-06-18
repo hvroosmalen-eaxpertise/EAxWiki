@@ -3,9 +3,9 @@
 
 [Data Layer](../../Data Layer/index.md) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.md) / [Organisation](../index.md)
 
-**Description:** 
-
 ![Organisation](Organisation.png)
+
+**Description:** 
 
 ## Elements
 
@@ -30,4 +30,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:30*
+*Generated: 2026-06-18 13:12:05*

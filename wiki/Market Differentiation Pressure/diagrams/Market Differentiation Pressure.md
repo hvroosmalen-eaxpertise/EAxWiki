@@ -3,9 +3,9 @@
 
 [Archimate](../../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Market Differentiation Pressure](../index.md)
 
-**Description:** 
-
 ![Market Differentiation Pressure](Market Differentiation Pressure.png)
+
+**Description:** 
 
 ## Elements
 
@@ -24,4 +24,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:24*
+*Generated: 2026-06-18 13:12:02*

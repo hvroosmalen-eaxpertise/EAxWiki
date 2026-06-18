@@ -3,9 +3,9 @@
 
 [Model Creation](../../Model Creation/index.md) / [Introduction EurSuRA](../index.md)
 
-**Description:** 
-
 ![Introduction EDGY Presentation 13 May Event](Introduction EDGY Presentation 13 May Event.png)
+
+**Description:** 
 
 ## Elements
 
@@ -41,4 +41,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:27*
+*Generated: 2026-06-18 13:12:03*

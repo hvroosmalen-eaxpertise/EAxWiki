@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [SDGs](../../SDGs/index.md) / [Sustainability Development Goals](../index.md)
 
-**Description:** 
-
 ![Sustainability Development Goals](Sustainability Development Goals.png)
+
+**Description:** 
 
 ## Elements
 
@@ -37,4 +37,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:23:58*
+*Generated: 2026-06-18 13:11:40*

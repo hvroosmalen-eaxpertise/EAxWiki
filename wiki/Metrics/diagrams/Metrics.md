@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [Metrics](../index.md)
 
-**Description:** 
-
 ![Metrics](Metrics.png)
+
+**Description:** 
 
 ## Elements
 
@@ -89,4 +89,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:13*
+*Generated: 2026-06-18 13:11:54*

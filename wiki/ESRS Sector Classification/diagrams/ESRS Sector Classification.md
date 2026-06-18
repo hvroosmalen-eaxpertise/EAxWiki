@@ -3,9 +3,9 @@
 
 [Archimate](../../Archimate/index.md) / [ESRS Classification](../../ESRS Classification/index.md) / [ESRS Sector Classification](../index.md)
 
-**Description:** 
-
 ![ESRS Sector Classification](ESRS Sector Classification.png)
+
+**Description:** 
 
 ## Elements
 
@@ -13,4 +13,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:14*
+*Generated: 2026-06-18 13:11:55*

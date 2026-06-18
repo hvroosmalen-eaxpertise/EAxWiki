@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [ESRS and People](../../ESRS and People/index.md) / [ERSR S2 Workers in the Value Chain - People](../index.md)
 
-**Description:** 
-
 ![ERSR S2 Workers in the Value Chain - People](ERSR S2 Workers in the Value Chain - People.png)
+
+**Description:** 
 
 ## Elements
 
@@ -18,4 +18,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:09*
+*Generated: 2026-06-18 13:11:50*

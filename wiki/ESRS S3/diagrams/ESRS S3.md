@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS S3](../index.md)
 
-**Description:** 
-
 ![ESRS S3](ESRS S3.png)
+
+**Description:** 
 
 ## Elements
 
@@ -13,4 +13,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:03*
+*Generated: 2026-06-18 13:11:44*

@@ -36,4 +36,4 @@ EmissionReport is a work-product-component that represents a formal, structured 
 
 ---
 
-*Generated: 2026-06-18 12:23:55*
+*Generated: 2026-06-18 13:11:38*

@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [ESRS and People](../index.md)
 
-**Description:** 
-
 ![ESRS Stakeholder Map](ESRS Stakeholder Map.png)
+
+**Description:** 
 
 ## Elements
 
@@ -63,4 +63,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:06*
+*Generated: 2026-06-18 13:11:46*

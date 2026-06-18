@@ -3,9 +3,9 @@
 
 [Archimate](../../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../index.md)
 
-**Description:** This diagram shows the contents of the book in a visual way. The following sections contain the structure per Driver.
-
 ![Strategic Sustainability Management Model (Bodenstein)](Strategic Sustainability Management Model (Bodenstein).png)
+
+**Description:** This diagram shows the contents of the book in a visual way. The following sections contain the structure per Driver.
 
 ## Elements
 
@@ -50,4 +50,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:21*
+*Generated: 2026-06-18 13:11:59*

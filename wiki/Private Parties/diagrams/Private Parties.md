@@ -3,9 +3,9 @@
 
 [Edgy](../../Edgy/index.md) / [Base](../../Base/index.md) / [People](../../People/index.md) / [Private Parties](../index.md)
 
-**Description:** 
-
 ![Private Parties](Private Parties.png)
+
+**Description:** 
 
 ## Elements
 
@@ -14,4 +14,4 @@
 
 ---
 
-*Generated: 2026-06-18 12:24:09*
+*Generated: 2026-06-18 13:11:50*
