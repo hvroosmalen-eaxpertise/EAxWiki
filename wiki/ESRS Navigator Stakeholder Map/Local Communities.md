@@ -23,4 +23,4 @@ Communities around production facilities and supplier regions
 
 ---
 
-*Generated: 2026-06-18 13:11:38*
+*Generated: 2026-06-18 13:26:10*

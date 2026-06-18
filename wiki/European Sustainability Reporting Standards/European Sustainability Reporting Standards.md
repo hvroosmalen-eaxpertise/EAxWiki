@@ -35,4 +35,4 @@ The European Sustainability Reporting Standards (ESRS) oblige all companies subj
 
 ---
 
-*Generated: 2026-06-18 13:11:36*
+*Generated: 2026-06-18 13:26:09*

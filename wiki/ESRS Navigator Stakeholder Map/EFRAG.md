@@ -23,4 +23,4 @@ European Financial Reporting Advisory Group - develops ESRS standards
 
 ---
 
-*Generated: 2026-06-18 13:11:38*
+*Generated: 2026-06-18 13:26:10*

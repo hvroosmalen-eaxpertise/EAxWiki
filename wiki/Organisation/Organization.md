@@ -44,4 +44,4 @@ Organization is the central anchor entity for emissions reporting. It represents
 
 ---
 
-*Generated: 2026-06-18 13:11:38*
+*Generated: 2026-06-18 13:26:10*
