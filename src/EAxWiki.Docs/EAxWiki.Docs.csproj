@@ -22,5 +22,9 @@
     <None Include="..\\..\\docs\\**\\*.md">
       <Link>docs\\%(RecursiveDir)%(Filename)%(Extension)</Link>
     </None>
+    <!-- Include opencode skills folder -->
+    <None Include="..\\..\\.opencode\\skills\\**\\*">
+      <Link>skills\\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </None>
   </ItemGroup>
 </Project>
