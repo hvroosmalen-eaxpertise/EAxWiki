@@ -247,63 +247,102 @@ public class MarkdownExporter : IWikiExporter
 
         var typesStopwatch = Stopwatch.StartNew();
 
-        var groups = elements
-            .Select(e => (
-                Element: e.Element,
-                PackageDir: e.PackageDir,
-                Stereo: string.IsNullOrWhiteSpace(e.Element.Stereotype) ? "Uncategorized" : e.Element.Stereotype
-            ))
-            .ToLookup(x => x.Stereo, x => (x.Element, x.PackageDir));
+        var parsed = elements
+            .Select(e =>
+            {
+                var (language, type) = ParseStereotype(e.Element.Stereotype);
+                return (e.Element, e.PackageDir, Language: language, Type: type);
+            })
+            .ToList();
 
-        var stereotypes = groups.Select(g => g.Key).OrderBy(s => s).ToList();
+        var languages = parsed.Select(x => x.Language).Distinct().OrderBy(l => l).ToList();
 
-        _logger.LogInformation("Generating {StereotypeCount} type pages", stereotypes.Count);
+        _logger.LogInformation("Generating type pages across {LanguageCount} languages", languages.Count);
 
+        // Root types/index.md — list languages
         var indexLines = new List<string>
         {
             "# Types",
             string.Empty,
-            "Elements grouped by stereotype:",
+            "Elements grouped by modelling language:",
             string.Empty,
         };
 
-        foreach (var stereo in stereotypes)
+        foreach (var lang in languages)
         {
-            indexLines.Add($"- [{stereo}]({SanitizeName(stereo)}.md)");
+            indexLines.Add($"- [{lang}]({SanitizeName(lang)}/index.md)");
         }
 
         indexLines.Add(string.Empty);
         indexLines.Add(FormatTimestamp());
         await _writer.WriteFileAsync(Path.Combine(typesDir, "index.md"), string.Join(Environment.NewLine, indexLines));
 
-        foreach (var stereo in stereotypes)
+        // Per-language pages
+        foreach (var lang in languages)
         {
-            var matching = groups[stereo].ToList();
+            var langDir = Path.Combine(typesDir, SanitizeName(lang));
+            await _writer.CreateDirectoryAsync(langDir);
 
-            var lines = new List<string>
+            // .pages for this language
+            var langPages = new List<string>
             {
-                $"# {stereo}",
+                $"title: {lang}",
                 string.Empty,
-                $"{matching.Count} element(s) with this stereotype:",
+            };
+            await _writer.WriteFileAsync(Path.Combine(langDir, ".pages"), string.Join(Environment.NewLine, langPages));
+
+            var typeGroups = parsed
+                .Where(x => x.Language == lang)
+                .GroupBy(x => x.Type)
+                .OrderBy(g => g.Key)
+                .ToList();
+
+            // Language index.md — list types
+            var langIndexLines = new List<string>
+            {
+                $"# {lang}",
+                string.Empty,
+                $"{typeGroups.Sum(g => g.Count())} element(s) across {typeGroups.Count} type(s):",
                 string.Empty,
             };
 
-            foreach (var (elem, pkgDir) in matching)
+            foreach (var group in typeGroups)
             {
-                var elemName = SanitizeName(elem.Name);
-                var relativeDir = Path.GetRelativePath(outputDir, pkgDir);
-                var relativePath = $"../{relativeDir}/{elemName}.md".Replace('\\', '/');
-                lines.Add($"- [{elem.Name}]({relativePath})");
+                langIndexLines.Add($"- [{group.Key}]({SanitizeName(group.Key)}.md)");
             }
 
-            lines.Add(string.Empty);
-            lines.Add(FormatTimestamp());
-            await _writer.WriteFileAsync(Path.Combine(typesDir, $"{SanitizeName(stereo)}.md"), string.Join(Environment.NewLine, lines));
+            langIndexLines.Add(string.Empty);
+            langIndexLines.Add(FormatTimestamp());
+            await _writer.WriteFileAsync(Path.Combine(langDir, "index.md"), string.Join(Environment.NewLine, langIndexLines));
+
+            // Per-type pages
+            foreach (var group in typeGroups)
+            {
+                var lines = new List<string>
+                {
+                    $"# {group.Key}",
+                    string.Empty,
+                    $"{group.Count()} element(s):",
+                    string.Empty,
+                };
+
+                foreach (var item in group)
+                {
+                    var elemName = SanitizeName(item.Element.Name);
+                    var relativeDir = Path.GetRelativePath(outputDir, item.PackageDir);
+                    var relativePath = $"../../{relativeDir}/{elemName}.md".Replace('\\', '/');
+                    lines.Add($"- [{item.Element.Name}]({relativePath})");
+                }
+
+                lines.Add(string.Empty);
+                lines.Add(FormatTimestamp());
+                await _writer.WriteFileAsync(Path.Combine(langDir, $"{SanitizeName(group.Key)}.md"), string.Join(Environment.NewLine, lines));
+            }
         }
 
         typesStopwatch.Stop();
-        _logger.LogInformation("Generated {StereotypeCount} type pages in {ElapsedMs}ms",
-            stereotypes.Count, typesStopwatch.ElapsedMilliseconds);
+        _logger.LogInformation("Generated type pages across {LanguageCount} languages in {ElapsedMs}ms",
+            languages.Count, typesStopwatch.ElapsedMilliseconds);
     }
 
     private async Task WritePagesFileAsync(string outputDir)
