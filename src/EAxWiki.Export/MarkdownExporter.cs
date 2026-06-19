@@ -212,6 +212,34 @@ public class MarkdownExporter : IWikiExporter
         await _writer.WriteFileAsync(Path.Combine(outputDir, "index.md"), string.Join(Environment.NewLine, lines));
     }
 
+    private static (string Language, string Type) ParseStereotype(string stereotype)
+    {
+        if (string.IsNullOrWhiteSpace(stereotype))
+            return ("UML", "Uncategorized");
+
+        string language, type;
+
+        var separatorIndex = stereotype.IndexOf("::", StringComparison.Ordinal);
+        if (separatorIndex >= 0)
+        {
+            language = stereotype[..separatorIndex];
+            type = stereotype[(separatorIndex + 2)..];
+        }
+        else
+        {
+            language = "UML";
+            type = stereotype;
+        }
+
+        var baseName = new string(language.TakeWhile(c => !char.IsDigit(c)).ToArray());
+        if (!string.IsNullOrEmpty(baseName) && type.StartsWith(baseName + "_", StringComparison.OrdinalIgnoreCase))
+        {
+            type = type[(baseName.Length + 1)..];
+        }
+
+        return (language, type);
+    }
+
     private async Task GenerateTypesPagesAsync(List<(EaElement Element, string PackageDir)> elements, string outputDir)
     {
         var typesDir = Path.Combine(outputDir, "types");
