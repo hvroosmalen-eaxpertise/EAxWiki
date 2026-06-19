@@ -50,4 +50,4 @@ Companies required to report under CSRD from 2025
 
 ---
 
-*Generated: 2026-06-19 12:59:13*
+*Generated: 2026-06-19 13:04:05*

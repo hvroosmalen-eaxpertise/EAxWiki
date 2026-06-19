@@ -287,7 +287,11 @@ public class MarkdownExporter : IWikiExporter
         var parsed = elements
             .Select(e =>
             {
-                var stereotypeSrc = !string.IsNullOrWhiteSpace(e.Element.StereotypeEx) ? e.Element.StereotypeEx : e.Element.Stereotype;
+                var fq = e.Element.FQStereotype;
+                var ex = e.Element.StereotypeEx;
+                var stereotypeSrc = !string.IsNullOrWhiteSpace(fq) ? fq
+                    : !string.IsNullOrWhiteSpace(ex) ? ex
+                    : e.Element.Stereotype;
                 var (language, type) = ParseStereotype(stereotypeSrc);
                 return (e.Element, e.PackageDir, Language: language, Type: type);
             })

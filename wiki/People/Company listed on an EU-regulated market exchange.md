@@ -22,4 +22,4 @@ Any companies listed on an EU-regulated market exchange - except for listed ‘m
 
 ---
 
-*Generated: 2026-06-19 12:59:13*
+*Generated: 2026-06-19 13:04:04*

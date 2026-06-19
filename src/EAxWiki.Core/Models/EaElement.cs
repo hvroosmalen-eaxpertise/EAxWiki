@@ -7,6 +7,7 @@ public class EaElement
     public string Type { get; set; } = string.Empty;
     public string Stereotype { get; set; } = string.Empty;
     public string? StereotypeEx { get; set; }
+    public string? FQStereotype { get; set; }
     public string? Notes { get; set; }
     public int PackageId { get; set; }
     public DateTime ModifiedDate { get; set; }

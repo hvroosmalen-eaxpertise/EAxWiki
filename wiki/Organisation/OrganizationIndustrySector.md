@@ -31,4 +31,4 @@ OrganizationIndustrySector is the intersection entity that classifies an Organis
 
 ---
 
-*Generated: 2026-06-19 12:59:14*
+*Generated: 2026-06-19 13:04:05*

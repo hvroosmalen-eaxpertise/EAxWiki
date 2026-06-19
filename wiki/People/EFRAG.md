@@ -19,4 +19,4 @@ The ESRS were developed by the EFRAG (previously known as the European Financial
 
 ---
 
-*Generated: 2026-06-19 12:59:13*
+*Generated: 2026-06-19 13:04:04*
