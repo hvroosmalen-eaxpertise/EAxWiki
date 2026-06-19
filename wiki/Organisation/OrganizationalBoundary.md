@@ -31,4 +31,4 @@ OrganizationalBoundary defines the scope boundary used to determine which emissi
 
 ---
 
-*Generated: 2026-06-18 13:54:45*
+*Generated: 2026-06-19 11:58:39*

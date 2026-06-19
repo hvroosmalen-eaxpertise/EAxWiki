@@ -1,7 +1,7 @@
 # EurSuRA
 
 **Type:** Activity  
-**Stereotype:** Organisation  
+**Stereotype:** Brand  
 
 
 [Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
@@ -18,12 +18,11 @@
 | Type | Stereotype | Source → Target |
 |------|------------|-----------------|
 | Association | Link | 601 → 600 |
-| Association | Link | 601 → 602 |
-| Association | Link | 601 → 603 |
-| Association | Link | 601 → 604 |
-| Association | Link | 601 → 605 |
-| Association | Link | 601 → 618 |
+| Association | Link | 600 → 608 |
+| Association | Link | 606 → 600 |
+| Association | Link | 607 → 600 |
+| Association | Link | 600 → 620 |
 
 ---
 
-*Generated: 2026-06-18 13:54:45*
+*Generated: 2026-06-19 11:58:39*

@@ -217,8 +217,10 @@ public class MarkdownExporter : IWikiExporter
         if (string.IsNullOrWhiteSpace(stereotype))
             return ("UML", "Uncategorized");
 
-        string language, type;
+        string language;
+        string type;
 
+        // Qualified format: Language::Type
         var separatorIndex = stereotype.IndexOf("::", StringComparison.Ordinal);
         if (separatorIndex >= 0)
         {
@@ -227,17 +229,52 @@ public class MarkdownExporter : IWikiExporter
         }
         else
         {
-            language = "UML";
-            type = stereotype;
+            // Flat format: Language_Type (e.g. ArchiMate3_ApplicationComponent)
+            var underscoreIndex = stereotype.IndexOf('_');
+            if (underscoreIndex > 0 && LooksLikeLanguageName(stereotype[..underscoreIndex]))
+            {
+                language = stereotype[..underscoreIndex];
+                type = stereotype[(underscoreIndex + 1)..];
+            }
+            else
+            {
+                language = "UML";
+                type = stereotype;
+            }
         }
 
-        var baseName = new string(language.TakeWhile(c => !char.IsDigit(c)).ToArray());
-        if (!string.IsNullOrEmpty(baseName) && type.StartsWith(baseName + "_", StringComparison.OrdinalIgnoreCase))
-        {
-            type = type[(baseName.Length + 1)..];
-        }
+        // Strip language prefix from type (try full name first, then base name)
+        type = StripLanguagePrefix(type, language);
 
         return (language, type);
+    }
+
+    private static bool LooksLikeLanguageName(string name)
+    {
+        if (string.IsNullOrEmpty(name))
+            return false;
+        if (!char.IsUpper(name[0]))
+            return false;
+        for (var i = 1; i < name.Length; i++)
+        {
+            if (!char.IsLetterOrDigit(name[i]))
+                return false;
+        }
+        return name.Any(char.IsLetter);
+    }
+
+    private static string StripLanguagePrefix(string type, string language)
+    {
+        // Try full language name first (e.g. ArchiMate3_)
+        if (type.StartsWith(language + "_", StringComparison.OrdinalIgnoreCase))
+            return type[(language.Length + 1)..];
+
+        // Try base name (non-digit part) (e.g. ArchiMate_)
+        var baseName = new string(language.TakeWhile(c => !char.IsDigit(c)).ToArray());
+        if (!string.IsNullOrEmpty(baseName) && type.StartsWith(baseName + "_", StringComparison.OrdinalIgnoreCase))
+            return type[(baseName.Length + 1)..];
+
+        return type;
     }
 
     private async Task GenerateTypesPagesAsync(List<(EaElement Element, string PackageDir)> elements, string outputDir)
