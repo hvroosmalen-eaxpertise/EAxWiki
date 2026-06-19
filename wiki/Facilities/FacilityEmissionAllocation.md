@@ -32,4 +32,4 @@ FacilityEmissionAllocation records the allocation of a specific emission quantit
 
 ---
 
-*Generated: 2026-06-19 11:58:40*
+*Generated: 2026-06-19 12:59:14*

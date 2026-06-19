@@ -1,17 +1,7 @@
 # UML
 
-452 element(s) across 32 type(s):
+352 element(s) across 22 type(s):
 
-- [ArchiMate_Assessment](ArchiMate_Assessment.md)
-- [ArchiMate_BusinessObject](ArchiMate_BusinessObject.md)
-- [ArchiMate_BusinessRole](ArchiMate_BusinessRole.md)
-- [ArchiMate_Capability](ArchiMate_Capability.md)
-- [ArchiMate_CourseOfAction](ArchiMate_CourseOfAction.md)
-- [ArchiMate_Driver](ArchiMate_Driver.md)
-- [ArchiMate_Goal](ArchiMate_Goal.md)
-- [ArchiMate_Outcome](ArchiMate_Outcome.md)
-- [ArchiMate_Resource](ArchiMate_Resource.md)
-- [ArchiMate_Stakeholder](ArchiMate_Stakeholder.md)
 - [Asset](Asset.md)
 - [Brand](Brand.md)
 - [Capability](Capability.md)
@@ -37,4 +27,4 @@
 
 ---
 
-*Generated: 2026-06-19 11:58:40*
+*Generated: 2026-06-19 12:59:14*

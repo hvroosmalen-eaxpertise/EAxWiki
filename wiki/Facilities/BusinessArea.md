@@ -32,4 +32,4 @@ BusinessArea represents a location that is identified and defined by an organisa
 
 ---
 
-*Generated: 2026-06-19 11:58:40*
+*Generated: 2026-06-19 12:59:14*

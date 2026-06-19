@@ -85,6 +85,7 @@ public class EaReader : IEaReader, IDisposable
             Name = eaElement.Name,
             Type = eaElement.Type,
             Stereotype = eaElement.Stereotype,
+            StereotypeEx = eaElement.StereotypeEx,
             Notes = eaElement.Notes,
             PackageId = eaElement.PackageID,
             ModifiedDate = (DateTime)eaElement.Modified
