@@ -77,6 +77,7 @@ public class MarkdownExporter : IWikiExporter
 
             await WriteRootIndexAsync(packages, outputPath, repository.ConnectionString);
             await GenerateTypesPagesAsync(elements, outputPath);
+            await GenerateGlossaryAsync(elements, outputPath);
             await WritePagesFileAsync(outputPath);
 
             if (reader != null)
@@ -434,6 +435,76 @@ public class MarkdownExporter : IWikiExporter
             languages.Count, typesStopwatch.ElapsedMilliseconds);
     }
 
+    private async Task GenerateGlossaryAsync(List<(EaElement Element, string PackageDir)> elements, string outputDir)
+    {
+        var glossaryDir = Path.Combine(outputDir, "glossary");
+        await _writer.CreateDirectoryAsync(glossaryDir);
+
+        var entries = new List<(string Term, string Definition, List<(string Name, string Link)> Sources)>();
+
+        foreach (var (elem, pkgDir) in elements)
+        {
+            foreach (var tv in elem.TaggedValues)
+            {
+                if (!string.IsNullOrWhiteSpace(tv.Value) &&
+                    (string.Equals(tv.Name, "Definition", StringComparison.OrdinalIgnoreCase) ||
+                     string.Equals(tv.Name, "Glossary", StringComparison.OrdinalIgnoreCase)))
+                {
+                    var link = CreateElementLink(elem, pkgDir, glossaryDir);
+                    entries.Add((elem.Name, tv.Value, new List<(string, string)> { (elem.Name, link) }));
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(elem.Notes))
+            {
+                var firstDot = elem.Notes.IndexOf('.');
+                var sentence = firstDot >= 0
+                    ? elem.Notes[..firstDot].Trim()
+                    : elem.Notes.Trim();
+                if (sentence.Length >= 20)
+                {
+                    var link = CreateElementLink(elem, pkgDir, glossaryDir);
+                    entries.Add((elem.Name, sentence, new List<(string, string)> { (elem.Name, link) }));
+                }
+            }
+        }
+
+        var grouped = entries
+            .GroupBy(e => e.Term, StringComparer.OrdinalIgnoreCase)
+            .ToList();
+
+        var lines = new List<string>
+        {
+            "# Glossary",
+            string.Empty,
+        };
+
+        if (grouped.Count > 0)
+        {
+            lines.Add("| Term | Definition | Source |");
+            lines.Add("|------|------------|--------|");
+
+            foreach (var group in grouped.OrderBy(g => g.Key))
+            {
+                var term = group.Key;
+                var definition = group.First().Definition;
+                var sources = group.SelectMany(g => g.Sources)
+                                   .DistinctBy(s => s.Link)
+                                   .ToList();
+                var sourceCol = string.Join(", ", sources.Select(s => $"[{s.Name}]({s.Link})"));
+                lines.Add($"| {term} | {definition} | {sourceCol} |");
+            }
+        }
+        else
+        {
+            lines.Add("No glossary terms found.");
+        }
+
+        lines.Add(string.Empty);
+        lines.Add(FormatTimestamp());
+        await _writer.WriteFileAsync(Path.Combine(glossaryDir, "index.md"), string.Join(Environment.NewLine, lines));
+    }
+
     private async Task WritePagesFileAsync(string outputDir)
     {
         var pagesPath = Path.Combine(outputDir, ".pages");
@@ -443,6 +514,7 @@ public class MarkdownExporter : IWikiExporter
             "  - Structure: ''",
             "  - Diagrams: diagrams/",
             "  - Types: types/",
+            "  - Glossary: glossary/",
             string.Empty,
         };
         await _writer.WriteFileAsync(pagesPath, string.Join(Environment.NewLine, content));
@@ -819,6 +891,12 @@ public class MarkdownExporter : IWikiExporter
     private static string FormatTimestamp()
     {
         return $"---\n\n*Generated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}*";
+    }
+
+    private static string CreateElementLink(EaElement element, string pkgDir, string fromDir)
+    {
+        var elemName = SanitizeName(element.Name);
+        return Path.GetRelativePath(fromDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
     }
 
     private static string SanitizeName(string name)
