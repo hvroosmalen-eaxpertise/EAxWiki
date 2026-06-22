@@ -15,6 +15,10 @@
 | CCE, Construction and Engineering, Construction |  |  |  |
 | UPE, Power Production and Energy Utilities, Utilities |  |  |  |
 
+### Appears on Diagrams
+
+- [ESRS Sector Classification](diagrams/ESRS Sector Classification.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

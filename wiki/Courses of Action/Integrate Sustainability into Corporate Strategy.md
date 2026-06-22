@@ -26,6 +26,25 @@ According to Bodenstein, this represents the fundamental strategic choice to mak
 | Dependency | ArchiMate_Realization | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
 | Dependency | ArchiMate_Realization | [Sustainability Data and Reporting](../Capabilities/Sustainability Data and Reporting.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Dependency | ArchiMate_Realization | [Sustainability Governance](../Capabilities/Sustainability Governance.md) |
+| Dependency | ArchiMate_Realization | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
+| Dependency | ArchiMate_Realization | [Sustainability Data and Reporting](../Capabilities/Sustainability Data and Reporting.md) |
+| Dependency | ArchiMate_Realization | [Sustainability Governance](../Capabilities/Sustainability Governance.md) |
+| Dependency | ArchiMate_Realization | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
+| Dependency | ArchiMate_Realization | [Sustainability Data and Reporting](../Capabilities/Sustainability Data and Reporting.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

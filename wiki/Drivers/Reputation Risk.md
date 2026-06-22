@@ -22,6 +22,11 @@ Negative sustainability incidents can significantly impact brand value and stake
 | ControlFlow | ArchiMate_Influence | [Risk Reduction](../Goals/Risk Reduction.md) |
 | ControlFlow | ArchiMate_Influence | [Corporate Sustainability Integration](../Goals/Corporate Sustainability Integration.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

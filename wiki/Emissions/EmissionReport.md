@@ -34,6 +34,15 @@ EmissionReport is a work-product-component that represents a formal, structured 
 | Association |  | [Standard](../Organisation/Standard.md) |
 | Association |  | [Organization](../Organisation/Organization.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Standard](../Organisation/Standard.md) |
+| Association |  | [Organization](../Organisation/Organization.md) |
+| Association |  | [Standard](../Organisation/Standard.md) |
+| Association |  | [Organization](../Organisation/Organization.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

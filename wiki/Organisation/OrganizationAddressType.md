@@ -28,6 +28,10 @@ OrganizationAddressType provides the controlled vocabulary of address categories
 |------|------------|-------------|
 | Association |  | [OrganizationAddress](OrganizationAddress.md) |
 
+### Appears on Diagrams
+
+- [Organisation](diagrams/Organisation.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

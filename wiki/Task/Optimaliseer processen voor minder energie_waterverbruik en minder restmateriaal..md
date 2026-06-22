@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Sustainable Processes](../Process/Sustainable Processes.md) |
 | Association | Link | [Energieverbruik en waterverbruik per eenheid](../Metrics/Energieverbruik en waterverbruik per eenheid.md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Sustainable Processes](../Process/Sustainable Processes.md) |
+| ControlFlow | Flow | [Sustainable Processes](../Process/Sustainable Processes.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

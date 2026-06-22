@@ -29,6 +29,12 @@ Equipment describes a device used in an operation or activity that is located or
 | Association |  | [Equipment](Equipment.md) |
 | Association |  | [EquipmentInstallation](EquipmentInstallation.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Equipment](Equipment.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

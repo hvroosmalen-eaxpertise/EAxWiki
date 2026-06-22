@@ -21,6 +21,10 @@ Oversight and quarterly reporting on sustainability
 | Association | ArchiMate_Assignment | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
 | Abstraction | trace | [Supervisory Board (RvC)](../People/Supervisory Board (RvC).md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

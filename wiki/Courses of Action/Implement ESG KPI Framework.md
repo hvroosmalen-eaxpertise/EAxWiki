@@ -23,6 +23,19 @@ Operationalizes sustainability performance management through structured measure
 | Dependency | ArchiMate_Realization | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
 | ControlFlow | ArchiMate_Influence | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Market Differentiation Pressure](../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Dependency | ArchiMate_Realization | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
+| Dependency | ArchiMate_Realization | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

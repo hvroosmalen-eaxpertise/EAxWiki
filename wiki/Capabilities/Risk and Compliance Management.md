@@ -22,6 +22,14 @@ Prevents legal violations, reputational damage, and operational disruptions from
 |------|------------|-------------|
 | Dependency | ArchiMate_Realization | [ESG-based Risk Management](../Courses of Action/ESG-based Risk Management.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

@@ -24,6 +24,15 @@ Essential for strategic steering and ensuring sustainability is anchored at the 
 | Dependency | ArchiMate_Realization | [Embed Sustainability in Investment Portfolio](../Courses of Action/Embed Sustainability in Investment Portfolio.md) |
 | Dependency | ArchiMate_Realization | [Board-level Sustainability Governance](../Courses of Action/Board-level Sustainability Governance.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+- [Market Differentiation Pressure](../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

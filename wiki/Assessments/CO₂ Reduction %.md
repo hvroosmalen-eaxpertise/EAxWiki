@@ -23,6 +23,12 @@ Critical metric for climate change mitigation efforts and alignment with Paris A
 | Association | ArchiMate_Association | [Reduced Environmental Impact](../Outcomes/Reduced Environmental Impact.md) |
 | Association | ArchiMate_Association | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

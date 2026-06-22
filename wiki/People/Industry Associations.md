@@ -14,6 +14,18 @@ Sector-specific organizations like FNLI
 |------|------------|-------------|
 | Abstraction | trace | [Industry Associations](../ESRS Navigator Stakeholder Map/Industry Associations.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Abstraction | trace | [Industry Associations](../ESRS Navigator Stakeholder Map/Industry Associations.md) |
+| Abstraction | trace | [Industry Associations](../ESRS Navigator Stakeholder Map/Industry Associations.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

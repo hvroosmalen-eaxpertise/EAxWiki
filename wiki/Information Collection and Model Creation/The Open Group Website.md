@@ -19,6 +19,10 @@
 |------|------------|-------------|
 | ControlFlow | Flow | [Openfootprint Data Model](Openfootprint Data Model.md) |
 
+### Appears on Diagrams
+
+- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

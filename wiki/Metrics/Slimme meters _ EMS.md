@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [Energieverbruik (kWh)](Energieverbruik (kWh).md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Energieverbruik (kWh)](Energieverbruik (kWh).md) |
+| Association | Link | [Energieverbruik (kWh)](Energieverbruik (kWh).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

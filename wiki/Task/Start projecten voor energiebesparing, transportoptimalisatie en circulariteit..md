@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Reduction Initiatives](../Process/Reduction Initiatives.md) |
 | Association | Link | [Vermeden CO₂ door maatregelen (ton/jaar)](../Metrics/Vermeden CO₂ door maatregelen (ton_jaar).md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Reduction Initiatives](../Process/Reduction Initiatives.md) |
+| ControlFlow | Flow | [Reduction Initiatives](../Process/Reduction Initiatives.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

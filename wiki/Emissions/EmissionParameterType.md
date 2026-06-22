@@ -34,6 +34,17 @@ EmissionParameterType is a reference entity that defines a named, typed slot for
 | Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
 | Association |  | [EmissionActivityParameter](../Facilities/EmissionActivityParameter.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionActivityTypeParameterTypeAssignment](EmissionActivityTypeParameterTypeAssignment.md) |
+| Association |  | [EmissionCalculationModelParameterArgument](EmissionCalculationModelParameterArgument.md) |
+| Association |  | [EmissionCalculationFormulaComponent](EmissionCalculationFormulaComponent.md) |
+| Association |  | [EmissionCalculationFormulaComponent](EmissionCalculationFormulaComponent.md) |
+| Association |  | [EmissionCalculationModelParameterArgument](EmissionCalculationModelParameterArgument.md) |
+| Association |  | [EmissionActivityTypeParameterTypeAssignment](EmissionActivityTypeParameterTypeAssignment.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

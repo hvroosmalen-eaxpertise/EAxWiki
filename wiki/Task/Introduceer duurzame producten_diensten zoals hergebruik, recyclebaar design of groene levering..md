@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Green Services](../Channel/Green Services.md) |
 | Association | Link | [% omzet uit duurzame producten](../Metrics/% omzet uit duurzame producten.md) |
 
+### Appears on Diagrams
+
+- [Experience](../Experience/diagrams/Experience.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Green Services](../Channel/Green Services.md) |
+| ControlFlow | Flow | [Green Services](../Channel/Green Services.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

@@ -23,6 +23,17 @@ Employees of suppliers and partners
 | Association | ArchiMate_Association | [ESRS S2 - Value Chain Workers](ESRS S2 - Value Chain Workers.md) |
 | Abstraction | trace | [Workers in Value Chain (ESRS S2)](../People/Workers in Value Chain (ESRS S2).md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Generalization | ArchiMate_Specialization | [Seasonal Agricultural Workers](Seasonal Agricultural Workers.md) |
+| Generalization | ArchiMate_Specialization | [Seasonal Agricultural Workers](Seasonal Agricultural Workers.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

@@ -25,6 +25,19 @@
 | Aggregation | Tree | [Logical Data Model](Logical Data Model.md) |
 | ControlFlow | Flow | [ERD Model](ERD Model.md) |
 
+### Appears on Diagrams
+
+- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [EDGY Model Elementen en Relaties](EDGY Model Elementen en Relaties.md) |
+| ControlFlow | Flow | [ERD Model](ERD Model.md) |
+| ControlFlow | Flow | [EDGY Model Elementen en Relaties](EDGY Model Elementen en Relaties.md) |
+| ControlFlow | Flow | [ERD Model](ERD Model.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

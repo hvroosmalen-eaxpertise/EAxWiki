@@ -6,6 +6,10 @@
 
 [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
 
+### Appears on Diagrams
+
+- [Sustainability Development Goals](diagrams/Sustainability Development Goals.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

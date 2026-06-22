@@ -22,6 +22,17 @@
 | Aggregation | Tree | [% energie uit hernieuwbare bronnen](% energie uit hernieuwbare bronnen.md) |
 | Association | Link | [Telematica / fleetbeheer](Telematica _ fleetbeheer.md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [% energie uit hernieuwbare bronnen](% energie uit hernieuwbare bronnen.md) |
+| Aggregation | Tree | [% energie uit hernieuwbare bronnen](% energie uit hernieuwbare bronnen.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

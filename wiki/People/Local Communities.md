@@ -15,6 +15,21 @@ Communities around production facilities and supplier regions
 | Abstraction | trace | [Local Communities](../ESRS Navigator Stakeholder Map/Local Communities.md) |
 | Aggregation | Tree | [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ESRS S3 Affected Communities - People](../ESRS S3 Affected Communities - People/diagrams/ESRS S3 Affected Communities - People.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) |
+| Abstraction | trace | [Local Communities](../ESRS Navigator Stakeholder Map/Local Communities.md) |
+| Aggregation | Tree | [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) |
+| Abstraction | trace | [Local Communities](../ESRS Navigator Stakeholder Map/Local Communities.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

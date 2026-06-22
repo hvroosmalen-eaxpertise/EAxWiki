@@ -18,6 +18,20 @@ Direct business customers
 | Aggregation | Tree | [Supermarket Chains](Supermarket Chains.md) |
 | Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
+| Abstraction | trace | [Customers](../ESRS Navigator Stakeholder Map/Customers.md) |
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
+| Abstraction | trace | [Customers](../ESRS Navigator Stakeholder Map/Customers.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

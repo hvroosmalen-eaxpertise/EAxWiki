@@ -15,6 +15,10 @@ In een ontwerpafdeling van een technologiebedrijf viel het een medewerker op dat
 | EDGY::TextAlign | Center | Default: Center
  |
 
+### Appears on Diagrams
+
+- [Stories Voorbeelden](diagrams/Stories Voorbeelden.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

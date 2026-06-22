@@ -22,6 +22,17 @@
 | Aggregation | Tree | [% scope 3 emissies met gemeten data](% scope 3 emissies met gemeten data.md) |
 | Association | Link | [Duurzaamheidsdataplatform met ETL/APIs](Duurzaamheidsdataplatform met ETL_APIs.md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [% scope 3 emissies met gemeten data](% scope 3 emissies met gemeten data.md) |
+| Aggregation | Tree | [% scope 3 emissies met gemeten data](% scope 3 emissies met gemeten data.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

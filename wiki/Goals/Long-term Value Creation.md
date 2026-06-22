@@ -25,6 +25,27 @@ Integrates sustainability into value creation logic rather than treating it as a
 | Dependency | ArchiMate_Realization | [Operational Eco-efficiency](../Courses of Action/Operational Eco-efficiency.md) |
 | Dependency | ArchiMate_Realization | [Improved Long-term Profitability](../Outcomes/Improved Long-term Profitability.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Dependency | ArchiMate_Realization | [Integrate Sustainability into Corporate Strategy](../Courses of Action/Integrate Sustainability into Corporate Strategy.md) |
+| Dependency | ArchiMate_Realization | [Operational Eco-efficiency](../Courses of Action/Operational Eco-efficiency.md) |
+| ControlFlow | ArchiMate_Influence | [Stakeholder Expectations](../Drivers/Stakeholder Expectations.md) |
+| ControlFlow | ArchiMate_Influence | [Climate Risk](../Drivers/Climate Risk.md) |
+| ControlFlow | ArchiMate_Influence | [Stakeholder Expectations](../Drivers/Stakeholder Expectations.md) |
+| ControlFlow | ArchiMate_Influence | [Climate Risk](../Drivers/Climate Risk.md) |
+| Dependency | ArchiMate_Realization | [Integrate Sustainability into Corporate Strategy](../Courses of Action/Integrate Sustainability into Corporate Strategy.md) |
+| Dependency | ArchiMate_Realization | [Operational Eco-efficiency](../Courses of Action/Operational Eco-efficiency.md) |
+| Dependency | ArchiMate_Realization | [Improved Long-term Profitability](../Outcomes/Improved Long-term Profitability.md) |
+| Dependency | ArchiMate_Realization | [Improved Long-term Profitability](../Outcomes/Improved Long-term Profitability.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

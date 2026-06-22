@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Sustainable Resources / Assets](../Asset/Sustainable Resources _ Assets.md) |
 | Association | Link | [% energie uit hernieuwbare bronnen](../Metrics/% energie uit hernieuwbare bronnen.md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Sustainable Resources / Assets](../Asset/Sustainable Resources _ Assets.md) |
+| ControlFlow | Flow | [Sustainable Resources / Assets](../Asset/Sustainable Resources _ Assets.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

@@ -21,6 +21,17 @@ Own workforce standard
 | Association | ArchiMate_Association | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
 | Abstraction | trace | [ESRS S1 Own Workforce](../ESRS S1/ESRS S1 Own Workforce.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | ArchiMate_Association | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
+| Association | ArchiMate_Association | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

@@ -31,6 +31,13 @@ StandardSourceAssociation is an intersection entity that records which emission 
 | Association |  | [EmissionFactorSource](EmissionFactorSource.md) |
 | Association |  | [Standard](../Organisation/Standard.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionFactorSource](EmissionFactorSource.md) |
+| Association |  | [EmissionFactorSource](EmissionFactorSource.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

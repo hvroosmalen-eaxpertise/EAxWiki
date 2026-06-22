@@ -22,6 +22,20 @@
 | ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
 | Association | Link | [Introduceer duurzame producten/diensten zoals hergebruik, recyclebaar design of groene levering.](../Task/Introduceer duurzame producten_diensten zoals hergebruik, recyclebaar design of groene levering..md) |
 
+### Appears on Diagrams
+
+- [Experience](../Experience/diagrams/Experience.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Introduceer duurzame producten/diensten zoals hergebruik, recyclebaar design of groene levering.](../Task/Introduceer duurzame producten_diensten zoals hergebruik, recyclebaar design of groene levering..md) |
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Introduceer duurzame producten/diensten zoals hergebruik, recyclebaar design of groene levering.](../Task/Introduceer duurzame producten_diensten zoals hergebruik, recyclebaar design of groene levering..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

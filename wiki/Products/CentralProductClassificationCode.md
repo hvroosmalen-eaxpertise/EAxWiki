@@ -30,6 +30,13 @@ CentralProductClassificationCode is a reference entity that provides a classific
 |------|------------|-------------|
 | Association |  | [Product](Product.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Product](Product.md) |
+| Association |  | [Product](Product.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

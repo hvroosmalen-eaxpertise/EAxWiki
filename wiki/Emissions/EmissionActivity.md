@@ -39,6 +39,22 @@ EmissionActivity is a master-data entity that represents a discrete operational 
 | Association |  | [EmissionActivity](EmissionActivity.md) |
 | Association |  | [EmissionStatement](EmissionStatement.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [ActivityEmissionAllocation](ActivityEmissionAllocation.md) |
+| Association |  | [EmissionSink](EmissionSink.md) |
+| Association |  | [EmissionSource](EmissionSource.md) |
+| Association |  | [EmissionActivityCategory](EmissionActivityCategory.md) |
+| Association |  | [EmissionActivityType](EmissionActivityType.md) |
+| Association |  | [EmissionActivity](EmissionActivity.md) |
+| Association |  | [EmissionActivityCategory](EmissionActivityCategory.md) |
+| Association |  | [EmissionSource](EmissionSource.md) |
+| Association |  | [EmissionSink](EmissionSink.md) |
+| Association |  | [EmissionActivityType](EmissionActivityType.md) |
+| Association |  | [ActivityEmissionAllocation](ActivityEmissionAllocation.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

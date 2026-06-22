@@ -42,6 +42,23 @@ Organization is the central anchor entity for emissions reporting. It represents
 | Association |  | [OrganizationType](OrganizationType.md) |
 | Association |  | [EmissionInventory](../Emissions/EmissionInventory.md) |
 
+### Appears on Diagrams
+
+- [Organisation](diagrams/Organisation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [OrganizationEmissionAllocation](../Emissions/OrganizationEmissionAllocation.md) |
+| Association |  | [OrganizationalBoundary](OrganizationalBoundary.md) |
+| Association |  | [OrganizationPersonAssociation](OrganizationPersonAssociation.md) |
+| Association |  | [ContactPerson](ContactPerson.md) |
+| Association |  | [ContactPerson](ContactPerson.md) |
+| Association |  | [OrganizationalBoundary](OrganizationalBoundary.md) |
+| Association |  | [OrganizationPersonAssociation](OrganizationPersonAssociation.md) |
+| Association |  | [OrganizationEmissionAllocation](../Emissions/OrganizationEmissionAllocation.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

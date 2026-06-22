@@ -23,6 +23,12 @@ Provides aggregate view of sustainability performance for management and investo
 | Association | ArchiMate_Association | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
 | Association | ArchiMate_Association | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Market Differentiation Pressure](../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

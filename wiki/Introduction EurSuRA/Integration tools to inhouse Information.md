@@ -19,6 +19,17 @@
 |------|------------|-------------|
 | Aggregation | Tree | [Reference Architecture Framework for ESRS Reporting](Reference Architecture Framework for ESRS Reporting.md) |
 
+### Appears on Diagrams
+
+- [Introduction EDGY Presentation 13 May Event](diagrams/Introduction EDGY Presentation 13 May Event.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [Reference Architecture Framework for ESRS Reporting](Reference Architecture Framework for ESRS Reporting.md) |
+| Aggregation | Tree | [Reference Architecture Framework for ESRS Reporting](Reference Architecture Framework for ESRS Reporting.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

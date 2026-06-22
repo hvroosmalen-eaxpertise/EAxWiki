@@ -21,6 +21,10 @@ Temporary/seasonal employees
 | Generalization | ArchiMate_Specialization | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
 | Abstraction | trace | [Seasonal Workers](../People/Seasonal Workers.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

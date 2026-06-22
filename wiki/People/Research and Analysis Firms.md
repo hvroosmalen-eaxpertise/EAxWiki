@@ -14,6 +14,18 @@ Verification bureaus for water, energy, CO2 data
 |------|------------|-------------|
 | Abstraction | trace | [Research and Analysis Firms](../ESRS Navigator Stakeholder Map/Research and Analysis Firms.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Abstraction | trace | [Research and Analysis Firms](../ESRS Navigator Stakeholder Map/Research and Analysis Firms.md) |
+| Abstraction | trace | [Research and Analysis Firms](../ESRS Navigator Stakeholder Map/Research and Analysis Firms.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

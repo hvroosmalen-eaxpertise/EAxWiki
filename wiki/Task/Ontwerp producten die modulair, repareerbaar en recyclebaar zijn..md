@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Lifecycle & Circularity Model](../Process/Lifecycle & Circularity Model.md) |
 | Association | Link | [% gerecyclede materialen in producten](../Metrics/% gerecyclede materialen in producten.md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Lifecycle & Circularity Model](../Process/Lifecycle & Circularity Model.md) |
+| ControlFlow | Flow | [Lifecycle & Circularity Model](../Process/Lifecycle & Circularity Model.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

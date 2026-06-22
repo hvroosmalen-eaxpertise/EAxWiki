@@ -42,6 +42,19 @@ Take urgent action to combat climate change and its impacts.
 | Association | Link | [Sustainable Work Practices](../Story/Sustainable Work Practices.md) |
 | Association | Link | [Environmental Impact Story](../Story/Environmental Impact Story.md) |
 
+### Appears on Diagrams
+
+- [Sustainability Development Goals](diagrams/Sustainability Development Goals.md)
+- [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
+- [Identity](../Identity/diagrams/Identity.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Enterprise Purpose](../Purpose/Enterprise Purpose.md) |
+| Association | Link | [Enterprise Purpose](../Purpose/Enterprise Purpose.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

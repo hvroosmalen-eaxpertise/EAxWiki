@@ -33,6 +33,19 @@ The European Sustainability Reporting Standards (ESRS) oblige all companies subj
 | Aggregation | Tree | [ESRS S3 Affected Communities](../ESRS S3/ESRS S3 Affected Communities.md) |
 | Aggregation | Tree | [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.md) |
 
+### Appears on Diagrams
+
+- [ESRS](diagrams/ESRS.md)
+- [European Union - People](../European Union - People/diagrams/European Union - People.md)
+- [Introduction EDGY Presentation 13 May Event](../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [EFRAG](../People/EFRAG.md) |
+| Association | Link | [EFRAG](../People/EFRAG.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

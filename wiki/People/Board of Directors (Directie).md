@@ -19,6 +19,20 @@ High-level view of all stakeholders in ESRS reporting ecosystem
 | Aggregation | Tree | [CEO](CEO.md) |
 | Aggregation | Tree | [Supervisory Board (RvC)](Supervisory Board (RvC).md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Abstraction | trace | [Board of Directors (Directie)](../ESRS Navigator Stakeholder Map/Board of Directors (Directie).md) |
+| Aggregation | Tree | [Supervisory Board (RvC)](Supervisory Board (RvC).md) |
+| Aggregation | Tree | [Supervisory Board (RvC)](Supervisory Board (RvC).md) |
+| Abstraction | trace | [Board of Directors (Directie)](../ESRS Navigator Stakeholder Map/Board of Directors (Directie).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

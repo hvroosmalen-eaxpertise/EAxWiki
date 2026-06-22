@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [Brandstofverbruik voertuigen/machines](Brandstofverbruik voertuigen_machines.md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Brandstofverbruik voertuigen/machines](Brandstofverbruik voertuigen_machines.md) |
+| Association | Link | [Brandstofverbruik voertuigen/machines](Brandstofverbruik voertuigen_machines.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

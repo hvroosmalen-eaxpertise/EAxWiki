@@ -21,6 +21,10 @@ Logistics and transportation providers
 | Generalization | ArchiMate_Specialization | [Suppliers](Suppliers.md) |
 | Abstraction | trace | [Transport Companies](../People/Transport Companies.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

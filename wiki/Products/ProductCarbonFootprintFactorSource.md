@@ -31,6 +31,15 @@ ProductCarbonFootprintFactorSource is an intersection entity that records which 
 | Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
 | Association |  | [EmissionFactorSource](../Emissions/EmissionFactorSource.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
+| Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
+| Association |  | [EmissionFactorSource](../Emissions/EmissionFactorSource.md) |
+| Association |  | [EmissionFactorSource](../Emissions/EmissionFactorSource.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

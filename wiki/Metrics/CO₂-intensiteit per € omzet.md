@@ -22,6 +22,20 @@
 | ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
 | Association | Link | [Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie.](../Task/Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie..md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie.](../Task/Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie..md) |
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie.](../Task/Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

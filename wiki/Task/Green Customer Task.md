@@ -26,6 +26,18 @@ Wat klanten duurzaam willen bereiken met hulp van het bedrijf.
 | ControlFlow | Flow | [Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma).](Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma)..md) |
 | Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
 
+### Appears on Diagrams
+
+- [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
+- [Experience](../Experience/diagrams/Experience.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

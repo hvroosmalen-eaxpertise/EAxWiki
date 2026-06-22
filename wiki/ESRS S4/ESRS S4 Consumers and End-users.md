@@ -28,6 +28,24 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 | Association | Link | [European Commission](../People/European Commission.md) |
 | Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
+### Appears on Diagrams
+
+- [ESRS](../European Sustainability Reporting Standards/diagrams/ESRS.md)
+- [ESRS S4](diagrams/ESRS S4.md)
+- [European Union - People](../European Union - People/diagrams/European Union - People.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
+| Association | Link | [Consumers and End Users (ESRS S4)](../People/Consumers and End Users (ESRS S4).md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
+| Association | Link | [Consumers and End Users (ESRS S4)](../People/Consumers and End Users (ESRS S4).md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

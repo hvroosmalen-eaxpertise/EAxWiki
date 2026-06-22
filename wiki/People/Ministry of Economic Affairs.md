@@ -20,6 +20,24 @@ Commissioned the ESRS Navigator
 | Aggregation | Tree | [Chamber of Commerce (Kamer van Koophandel)](Chamber of Commerce (Kamer van Koophandel).md) |
 | Aggregation | Tree | [AFM](AFM.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [European Union - People](../European Union - People/diagrams/European Union - People.md)
+- [ESRS E1, E2, E3, E4, E5, G1 - People](../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [European Commission](European Commission.md) |
+| Abstraction | trace | [Ministry of Economic Affairs](../ESRS Navigator Stakeholder Map/Ministry of Economic Affairs.md) |
+| Association | Link | [Rijksdienst voor Ondernemend Nederland (RVO)](Rijksdienst voor Ondernemend Nederland (RVO).md) |
+| Association | Link | [European Commission](European Commission.md) |
+| Association | Link | [Rijksdienst voor Ondernemend Nederland (RVO)](Rijksdienst voor Ondernemend Nederland (RVO).md) |
+| Abstraction | trace | [Ministry of Economic Affairs](../ESRS Navigator Stakeholder Map/Ministry of Economic Affairs.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

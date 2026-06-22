@@ -30,6 +30,27 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 | Association | Link | [European Commission](../People/European Commission.md) |
 | Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
+### Appears on Diagrams
+
+- [ESRS](../European Sustainability Reporting Standards/diagrams/ESRS.md)
+- [ESRS G1](diagrams/ESRS G1.md)
+- [European Union - People](../European Union - People/diagrams/European Union - People.md)
+- [ESRS E1, E2, E3, E4, E5, G1 - People](../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
+| Association | Link | [Company subject to CSRD](../People/Company subject to CSRD.md) |
+| Abstraction | trace | [ESRS G1 - Business Conduct](../ESRS Navigator Stakeholder Map/ESRS G1 - Business Conduct.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
+| Association | Link | [Company subject to CSRD](../People/Company subject to CSRD.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Abstraction | trace | [ESRS G1 - Business Conduct](../ESRS Navigator Stakeholder Map/ESRS G1 - Business Conduct.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

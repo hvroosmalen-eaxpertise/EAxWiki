@@ -9,9 +9,9 @@
 
 ## Elements
 
-- [Strategic Sustainability Management](../Strategic Sustainability Management.md)
 - [Road to Net Zero](../Road to Net Zero.md)
+- [Strategic Sustainability Management](../Strategic Sustainability Management.md)
 
 ---
 
-*Generated: 2026-06-22 17:27:50*
+*Generated: 2026-06-22 17:43:31*

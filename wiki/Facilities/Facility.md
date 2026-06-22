@@ -36,6 +36,13 @@ Facility represents the capability of an organisation to perform a particular bu
 | Association |  | [FacilityType](FacilityType.md) |
 | Association |  | [Organization](../Organisation/Organization.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Organization](../Organisation/Organization.md) |
+| Association |  | [Organization](../Organisation/Organization.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

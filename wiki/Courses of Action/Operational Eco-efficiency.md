@@ -22,6 +22,19 @@ Implements circular economy principles, resource optimization, and waste reducti
 | Dependency | ArchiMate_Realization | [Long-term Value Creation](../Goals/Long-term Value Creation.md) |
 | Dependency | ArchiMate_Realization | [Sustainable Innovation Management](../Capabilities/Sustainable Innovation Management.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Dependency | ArchiMate_Realization | [Sustainable Innovation Management](../Capabilities/Sustainable Innovation Management.md) |
+| Dependency | ArchiMate_Realization | [Sustainable Innovation Management](../Capabilities/Sustainable Innovation Management.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

@@ -13,6 +13,11 @@
 | EDGY::TextAlign | Center | Default: Center
  |
 
+### Appears on Diagrams
+
+- [Sustainability Development Goals](diagrams/Sustainability Development Goals.md)
+- [Introduction EDGY Presentation 13 May Event](../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

@@ -6,6 +6,10 @@
 
 [Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
 
+### Appears on Diagrams
+
+- [Introduction EDGY Presentation 13 May Event](diagrams/Introduction EDGY Presentation 13 May Event.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

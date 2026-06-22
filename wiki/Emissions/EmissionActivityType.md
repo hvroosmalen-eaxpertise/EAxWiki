@@ -30,6 +30,15 @@ EmissionActivityType is a reference entity that classifies the technical nature 
 | Association |  | [EmissionActivityFactor](EmissionActivityFactor.md) |
 | Association |  | [EmissionActivity](EmissionActivity.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionActivityParameterRecordingTemplate](EmissionActivityParameterRecordingTemplate.md) |
+| Association |  | [EmissionActivityFactor](EmissionActivityFactor.md) |
+| Association |  | [EmissionActivityFactor](EmissionActivityFactor.md) |
+| Association |  | [EmissionActivityParameterRecordingTemplate](EmissionActivityParameterRecordingTemplate.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

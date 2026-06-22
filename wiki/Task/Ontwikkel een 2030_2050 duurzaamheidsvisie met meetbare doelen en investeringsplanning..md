@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Sustainability Vision](../Story/Sustainability Vision.md) |
 | Association | Link | [Reductiedoel CO₂ (% t.o.v. basisjaar)](../Metrics/Reductiedoel CO₂ (% t.o.v. basisjaar).md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Sustainability Vision](../Story/Sustainability Vision.md) |
+| ControlFlow | Flow | [Sustainability Vision](../Story/Sustainability Vision.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

@@ -23,6 +23,22 @@
 | ControlFlow | Flow | [ESRS E3 Water and Marine Resources](../ESRS E3/ESRS E3 Water and Marine Resources.md) |
 | Association | Link | [Optimaliseer processen voor minder energie/waterverbruik en minder restmateriaal.](../Task/Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| ControlFlow | Flow | [ESRS E3 Water and Marine Resources](../ESRS E3/ESRS E3 Water and Marine Resources.md) |
+| Association | Link | [Optimaliseer processen voor minder energie/waterverbruik en minder restmateriaal.](../Task/Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md) |
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| ControlFlow | Flow | [ESRS E3 Water and Marine Resources](../ESRS E3/ESRS E3 Water and Marine Resources.md) |
+| Association | Link | [Optimaliseer processen voor minder energie/waterverbruik en minder restmateriaal.](../Task/Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

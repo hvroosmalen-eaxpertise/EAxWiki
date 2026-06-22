@@ -24,6 +24,21 @@ Direct business customers
 | Association | ArchiMate_Association | [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md) |
 | Abstraction | trace | [Customers](../People/Customers.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Generalization | ArchiMate_Specialization | [Supermarket Chains](Supermarket Chains.md) |
+| Generalization | ArchiMate_Specialization | [Foodservice Companies](Foodservice Companies.md) |
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Generalization | ArchiMate_Specialization | [Supermarket Chains](Supermarket Chains.md) |
+| Generalization | ArchiMate_Specialization | [Foodservice Companies](Foodservice Companies.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [Elektriciteitsverbruik (Scope 2)](Elektriciteitsverbruik (Scope 2).md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Elektriciteitsverbruik (Scope 2)](Elektriciteitsverbruik (Scope 2).md) |
+| Association | Link | [Elektriciteitsverbruik (Scope 2)](Elektriciteitsverbruik (Scope 2).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

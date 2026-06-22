@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Green Customer Journey](../Journey/Green Customer Journey.md) |
 | Association | Link | [CO₂ per klanttransactie (kg)](../Metrics/CO₂ per klanttransactie (kg).md) |
 
+### Appears on Diagrams
+
+- [Experience](../Experience/diagrams/Experience.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Green Customer Journey](../Journey/Green Customer Journey.md) |
+| ControlFlow | Flow | [Green Customer Journey](../Journey/Green Customer Journey.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

@@ -38,6 +38,19 @@ EmissionInventory is the top-level work-product-component that represents a sing
 | Association |  | [Organization](../Organisation/Organization.md) |
 | Association |  | [Standard](../Organisation/Standard.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Standard](../Organisation/Standard.md) |
+| Association |  | [Organization](../Organisation/Organization.md) |
+| Association |  | [EmissionReport](EmissionReport.md) |
+| Association |  | [EmissionReportingBoundary](EmissionReportingBoundary.md) |
+| Association |  | [Organization](../Organisation/Organization.md) |
+| Association |  | [Standard](../Organisation/Standard.md) |
+| Association |  | [EmissionReport](EmissionReport.md) |
+| Association |  | [EmissionReportingBoundary](EmissionReportingBoundary.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

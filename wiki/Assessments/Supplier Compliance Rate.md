@@ -23,6 +23,13 @@ Indicates level of control over value chain sustainability impacts.
 | Association | ArchiMate_Association | [Lower Operational Risk](../Outcomes/Lower Operational Risk.md) |
 | Association | ArchiMate_Association | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

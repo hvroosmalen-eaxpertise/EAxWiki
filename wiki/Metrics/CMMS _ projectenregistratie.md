@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [Emissie vóór/na project](Emissie vóór_na project.md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Emissie vóór/na project](Emissie vóór_na project.md) |
+| Association | Link | [Emissie vóór/na project](Emissie vóór_na project.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

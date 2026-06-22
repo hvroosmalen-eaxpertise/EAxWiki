@@ -23,6 +23,20 @@ For more information: <a href="$inet://https://www.efrag.org/Assets/Download?ass
 | Association | Link | [European Commission](../People/European Commission.md) |
 | Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
+### Appears on Diagrams
+
+- [ESRS](../European Sustainability Reporting Standards/diagrams/ESRS.md)
+- [European Union - People](../European Union - People/diagrams/European Union - People.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

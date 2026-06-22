@@ -25,6 +25,19 @@
 | Aggregation | Tree | [Integration tools to inhouse Information](Integration tools to inhouse Information.md) |
 | ControlFlow | Flow | [Collecting Information and Create EDGY Diagrams/Model](Collecting Information and Create EDGY Diagrams_Model.md) |
 
+### Appears on Diagrams
+
+- [Introduction EDGY Presentation 13 May Event](diagrams/Introduction EDGY Presentation 13 May Event.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).md) |
+| Association | Link | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).md) |
+| ControlFlow | Flow | [Collecting Information and Create EDGY Diagrams/Model](Collecting Information and Create EDGY Diagrams_Model.md) |
+| ControlFlow | Flow | [Collecting Information and Create EDGY Diagrams/Model](Collecting Information and Create EDGY Diagrams_Model.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

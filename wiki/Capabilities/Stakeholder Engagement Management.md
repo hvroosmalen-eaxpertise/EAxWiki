@@ -22,6 +22,11 @@ Capability to identify, engage, and maintain dialogue with key sustainability st
 |------|------------|-------------|
 | Dependency | ArchiMate_Realization | [Sustainability-driven Differentiation](../Courses of Action/Sustainability-driven Differentiation.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Market Differentiation Pressure](../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [SDG Mapping Content](../Content/SDG Mapping Content.md) |
 | Association | Link | [# SDGs met meetbare KPI’s](../Metrics/_ SDGs met meetbare KPI’s.md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [SDG Mapping Content](../Content/SDG Mapping Content.md) |
+| ControlFlow | Flow | [SDG Mapping Content](../Content/SDG Mapping Content.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

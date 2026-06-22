@@ -8,6 +8,10 @@
 
 SDG Academy provides a number of applicable resources and provides free training material, see https://sdgacademy.org/ for more information.
 
+### Appears on Diagrams
+
+- [Reference Websites](diagrams/Reference Websites.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

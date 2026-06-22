@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [Energie, materiaal, water, afval per eenheid](Energie, materiaal, water, afval per eenheid.md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Energie, materiaal, water, afval per eenheid](Energie, materiaal, water, afval per eenheid.md) |
+| Association | Link | [Energie, materiaal, water, afval per eenheid](Energie, materiaal, water, afval per eenheid.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

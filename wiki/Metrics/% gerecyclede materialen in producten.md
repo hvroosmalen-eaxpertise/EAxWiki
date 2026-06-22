@@ -27,6 +27,20 @@
 | Aggregation | Tree | [ Levensduur product](Levensduur product.md) |
 | ControlFlow | Flow | [% Gerecycled materiaal = (gerecycled / totaal input) × 100](% Gerecycled materiaal = (gerecycled _ totaal input) × 100.md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Ontwerp producten die modulair, repareerbaar en recyclebaar zijn.](../Task/Ontwerp producten die modulair, repareerbaar en recyclebaar zijn..md) |
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Ontwerp producten die modulair, repareerbaar en recyclebaar zijn.](../Task/Ontwerp producten die modulair, repareerbaar en recyclebaar zijn..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

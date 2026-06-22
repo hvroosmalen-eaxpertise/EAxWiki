@@ -21,6 +21,10 @@ Coordinates implementation of sustainability measures, reports to CEO
 | Association | ArchiMate_Association | [CEO](CEO.md) |
 | Abstraction | trace | [Sustainability Manager/Director](../People/Sustainability Manager_Director.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

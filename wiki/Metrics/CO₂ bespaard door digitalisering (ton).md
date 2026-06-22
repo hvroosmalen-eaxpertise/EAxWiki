@@ -22,6 +22,20 @@
 | ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
 | Association | Link | [Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen.](../Task/Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen..md) |
 
+### Appears on Diagrams
+
+- [Experience](../Experience/diagrams/Experience.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen.](../Task/Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen..md) |
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen.](../Task/Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

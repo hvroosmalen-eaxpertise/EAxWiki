@@ -26,6 +26,20 @@
 | Aggregation | Tree | [Projectgegevens en tech specs](Projectgegevens en tech specs.md) |
 | ControlFlow | Flow | [Emissiereductie (%) = ((baseline – huidig) / baseline) × 100](Emissiereductie (%) = ((baseline – huidig) _ baseline) × 100.md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Start projecten voor energiebesparing, transportoptimalisatie en circulariteit.](../Task/Start projecten voor energiebesparing, transportoptimalisatie en circulariteit..md) |
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Start projecten voor energiebesparing, transportoptimalisatie en circulariteit.](../Task/Start projecten voor energiebesparing, transportoptimalisatie en circulariteit..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

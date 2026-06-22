@@ -9,6 +9,10 @@
 https://www.impactacademyproject.eu/
 IMPACT ACADEMY has the main objective to offer a free, multilingual, high level education and training on the subject of the Impact Economy. It is addressed to university students who desire to acquire expertise about the impact skills needed to lead an entrepreneurship aware of its environmental and social responsibilities. 
 
+### Appears on Diagrams
+
+- [Private Parties](diagrams/Private Parties.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [Brandstofgebruik (Scope 1)](Brandstofgebruik (Scope 1).md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Brandstofgebruik (Scope 1)](Brandstofgebruik (Scope 1).md) |
+| Association | Link | [Brandstofgebruik (Scope 1)](Brandstofgebruik (Scope 1).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

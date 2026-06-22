@@ -23,6 +23,21 @@ Identifies, assesses, and mitigates sustainability-related risks with the same r
 | Dependency | ArchiMate_Realization | [ESG Performance Improvement](../Goals/ESG Performance Improvement.md) |
 | Dependency | ArchiMate_Realization | [Risk and Compliance Management](../Capabilities/Risk and Compliance Management.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Dependency | ArchiMate_Realization | [Risk and Compliance Management](../Capabilities/Risk and Compliance Management.md) |
+| Dependency | ArchiMate_Realization | [Risk and Compliance Management](../Capabilities/Risk and Compliance Management.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

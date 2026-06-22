@@ -22,6 +22,20 @@
 | ControlFlow | Flow | [ESRS E2 Pollution](../ESRS E2/ESRS E2 Pollution.md) |
 | Association | Link | [Maak een publiek impactrapport over emissies, afval, water en circulariteit.](../Task/Maak een publiek impactrapport over emissies, afval, water en circulariteit..md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E2 Pollution](../ESRS E2/ESRS E2 Pollution.md) |
+| Association | Link | [Maak een publiek impactrapport over emissies, afval, water en circulariteit.](../Task/Maak een publiek impactrapport over emissies, afval, water en circulariteit..md) |
+| ControlFlow | Flow | [ESRS E2 Pollution](../ESRS E2/ESRS E2 Pollution.md) |
+| Association | Link | [Maak een publiek impactrapport over emissies, afval, water en circulariteit.](../Task/Maak een publiek impactrapport over emissies, afval, water en circulariteit..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

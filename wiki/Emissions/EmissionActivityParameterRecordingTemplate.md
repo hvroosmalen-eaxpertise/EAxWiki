@@ -32,6 +32,13 @@ EmissionActivityParameterRecordingTemplate is a master-data entity that defines 
 | Association |  | [GeopoliticalEntity](../Facilities/GeopoliticalEntity.md) |
 | Association |  | [EmissionActivityType](EmissionActivityType.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionActivityTypeParameterTypeAssignment](EmissionActivityTypeParameterTypeAssignment.md) |
+| Association |  | [EmissionActivityTypeParameterTypeAssignment](EmissionActivityTypeParameterTypeAssignment.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

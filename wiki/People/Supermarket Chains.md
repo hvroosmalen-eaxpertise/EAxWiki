@@ -15,6 +15,20 @@ Retail customers
 | Abstraction | trace | [Supermarket Chains](../ESRS Navigator Stakeholder Map/Supermarket Chains.md) |
 | Aggregation | Tree | [Customers](Customers.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [Customers](Customers.md) |
+| Abstraction | trace | [Supermarket Chains](../ESRS Navigator Stakeholder Map/Supermarket Chains.md) |
+| Aggregation | Tree | [Customers](Customers.md) |
+| Abstraction | trace | [Supermarket Chains](../ESRS Navigator Stakeholder Map/Supermarket Chains.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

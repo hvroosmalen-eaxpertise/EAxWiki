@@ -22,6 +22,11 @@ Poses material financial risks that require strategic risk management and adapta
 | ControlFlow | ArchiMate_Influence | [Risk Reduction](../Goals/Risk Reduction.md) |
 | ControlFlow | ArchiMate_Influence | [Long-term Value Creation](../Goals/Long-term Value Creation.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

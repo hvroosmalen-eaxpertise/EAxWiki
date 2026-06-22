@@ -33,6 +33,10 @@ Country represents an area of land or territory of a nation or state, identified
 | Association |  | [GeopoliticalEntity](../Facilities/GeopoliticalEntity.md) |
 | Association |  | [Address](Address.md) |
 
+### Appears on Diagrams
+
+- [Organisation](diagrams/Organisation.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

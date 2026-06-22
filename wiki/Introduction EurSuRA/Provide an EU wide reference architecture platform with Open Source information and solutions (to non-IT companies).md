@@ -23,6 +23,17 @@
 | Association | Link | [Reference Architecture Framework for ESRS Reporting](Reference Architecture Framework for ESRS Reporting.md) |
 | Association | Link | [Building a EU Reporting Community](Building a EU Reporting Community.md) |
 
+### Appears on Diagrams
+
+- [Introduction EDGY Presentation 13 May Event](diagrams/Introduction EDGY Presentation 13 May Event.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Building a EU Reporting Community](Building a EU Reporting Community.md) |
+| Association | Link | [Building a EU Reporting Community](Building a EU Reporting Community.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

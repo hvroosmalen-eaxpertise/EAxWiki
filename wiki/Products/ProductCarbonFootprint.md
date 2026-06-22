@@ -61,6 +61,15 @@ ProductCarbonFootprint is a work-product-component that records the quantified g
 | Association |  | [ProductFootprint](ProductFootprint.md) |
 | Association |  | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [ProductFootprint](ProductFootprint.md) |
+| Association |  | [ProductFootprint](ProductFootprint.md) |
+| Association |  | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) |
+| Association |  | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

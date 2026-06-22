@@ -31,6 +31,15 @@ EmissionCalculationFormula is a master-data entity that encodes the mathematical
 | Association |  | [EmissionCalculationFormulaComponent](EmissionCalculationFormulaComponent.md) |
 | Association |  | [EmissionCalculationModel](EmissionCalculationModel.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionCalculationModel](EmissionCalculationModel.md) |
+| Association |  | [EmissionCalculationFormulaComponent](EmissionCalculationFormulaComponent.md) |
+| Association |  | [EmissionCalculationModel](EmissionCalculationModel.md) |
+| Association |  | [EmissionCalculationFormulaComponent](EmissionCalculationFormulaComponent.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

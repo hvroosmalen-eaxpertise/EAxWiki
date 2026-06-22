@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Green Customer Task](Green Customer Task.md) |
 | Association | Link | [# teruggenomen producten (per jaar)](../Metrics/_ teruggenomen producten (per jaar).md) |
 
+### Appears on Diagrams
+
+- [Experience](../Experience/diagrams/Experience.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Green Customer Task](Green Customer Task.md) |
+| ControlFlow | Flow | [Green Customer Task](Green Customer Task.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

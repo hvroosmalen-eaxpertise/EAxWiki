@@ -21,6 +21,17 @@ Sector-specific organizations like FNLI
 | Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
 | Abstraction | trace | [Industry Associations](../People/Industry Associations.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

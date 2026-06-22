@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [Hernieuwbare energieopwekking (kWh)](Hernieuwbare energieopwekking (kWh).md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Hernieuwbare energieopwekking (kWh)](Hernieuwbare energieopwekking (kWh).md) |
+| Association | Link | [Hernieuwbare energieopwekking (kWh)](Hernieuwbare energieopwekking (kWh).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

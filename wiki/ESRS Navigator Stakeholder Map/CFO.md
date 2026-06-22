@@ -21,6 +21,17 @@ Chief Financial Officer - Often responsible for compliance
 | Association | ArchiMate_Composition | [Board of Directors (Directie)](Board of Directors (Directie).md) |
 | Abstraction | trace | [Chief Financial Officer](../People/Chief Financial Officer.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | ArchiMate_Composition | [Board of Directors (Directie)](Board of Directors (Directie).md) |
+| Association | ArchiMate_Composition | [Board of Directors (Directie)](Board of Directors (Directie).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

@@ -30,6 +30,16 @@ IndustrySectorType provides a hierarchical classification of industry sectors us
 | Association |  | [IndustrySectorType](IndustrySectorType.md) |
 | Association |  | [OrganizationIndustrySector](OrganizationIndustrySector.md) |
 
+### Appears on Diagrams
+
+- [Organisation](diagrams/Organisation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [IndustrySectorType](IndustrySectorType.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

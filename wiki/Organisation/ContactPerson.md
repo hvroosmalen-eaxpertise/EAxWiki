@@ -34,6 +34,17 @@ ContactPerson represents an individual who is designated as the primary or secon
 | Association |  | [OrganizationPersonAssociation](OrganizationPersonAssociation.md) |
 | Association |  | [Organization](Organization.md) |
 
+### Appears on Diagrams
+
+- [Organisation](diagrams/Organisation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [OrganizationPersonAssociation](OrganizationPersonAssociation.md) |
+| Association |  | [OrganizationPersonAssociation](OrganizationPersonAssociation.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

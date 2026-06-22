@@ -24,6 +24,20 @@ Ensures responsible sourcing and addresses upstream environmental and social imp
 | Dependency | ArchiMate_Realization | [Supplier Sustainability Audits](../Courses of Action/Supplier Sustainability Audits.md) |
 | Association | ArchiMate_Association | [Supplier Compliance Rate](../Assessments/Supplier Compliance Rate.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | ArchiMate_Association | [Supplier Compliance Rate](../Assessments/Supplier Compliance Rate.md) |
+| Association | ArchiMate_Association | [Supplier Compliance Rate](../Assessments/Supplier Compliance Rate.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

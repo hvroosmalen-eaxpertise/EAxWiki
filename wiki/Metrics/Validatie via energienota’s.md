@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [Projectgegevens en tech specs](Projectgegevens en tech specs.md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Projectgegevens en tech specs](Projectgegevens en tech specs.md) |
+| Association | Link | [Projectgegevens en tech specs](Projectgegevens en tech specs.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

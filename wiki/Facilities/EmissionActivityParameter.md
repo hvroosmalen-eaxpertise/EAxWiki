@@ -34,6 +34,15 @@ EmissionActivityParameter identifies a specific instance of an EmissionParameter
 | Association |  | [EmissionActivityParameterValue](EmissionActivityParameterValue.md) |
 | Association |  | [Facility](Facility.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Facility](Facility.md) |
+| Association |  | [EmissionParameterType](../Emissions/EmissionParameterType.md) |
+| Association |  | [Facility](Facility.md) |
+| Association |  | [EmissionParameterType](../Emissions/EmissionParameterType.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

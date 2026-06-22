@@ -32,6 +32,17 @@ ProductLifeCycleFootprint is a work-product-component that records the GHG emiss
 | Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
 | Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
+| Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
+| Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
+| Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
+| Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
+| Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

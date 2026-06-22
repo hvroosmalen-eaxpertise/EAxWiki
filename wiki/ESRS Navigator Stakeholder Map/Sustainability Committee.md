@@ -20,6 +20,10 @@ Committee supporting sustainability initiatives
 |------|------------|-------------|
 | Abstraction | trace | [Sustainability Committee](../People/Sustainability Committee.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

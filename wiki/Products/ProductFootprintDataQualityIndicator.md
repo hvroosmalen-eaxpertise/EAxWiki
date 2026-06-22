@@ -32,6 +32,13 @@ ProductFootprintDataQualityIndicator is a work-product-component that records a 
 |------|------------|-------------|
 | Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
+| Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

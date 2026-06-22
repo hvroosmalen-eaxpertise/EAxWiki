@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Emission Sources](../Asset/Emission Sources.md) |
 | Association | Link | [Scope 1 uitstoot per bron (ton CO₂e)](../Metrics/Scope 1 uitstoot per bron (ton CO₂e).md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Emission Sources](../Asset/Emission Sources.md) |
+| ControlFlow | Flow | [Emission Sources](../Asset/Emission Sources.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

@@ -21,6 +21,19 @@
 | ControlFlow | Flow | [ESRS Website](ESRS Website.md) |
 | ControlFlow | Flow | [EFRAG Website](EFRAG Website.md) |
 
+### Appears on Diagrams
+
+- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [EFRAG Website](EFRAG Website.md) |
+| ControlFlow | Flow | [ESRS Website](ESRS Website.md) |
+| ControlFlow | Flow | [EFRAG Website](EFRAG Website.md) |
+| ControlFlow | Flow | [ESRS Website](ESRS Website.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

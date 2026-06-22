@@ -20,6 +20,18 @@ Any companies listed on an EU-regulated market exchange - except for listed ‘m
 |------|------------|-------------|
 | Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.md) |
 
+### Appears on Diagrams
+
+- [ESRS Required Companies](../ESRS Required Companies/diagrams/ESRS Required Companies.md)
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.md) |
+| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

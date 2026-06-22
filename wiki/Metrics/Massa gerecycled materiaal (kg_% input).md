@@ -22,6 +22,17 @@
 | Aggregation | Tree | [% gerecyclede materialen in producten](% gerecyclede materialen in producten.md) |
 | Association | Link | [ERP/BOM met herkomst info](ERP_BOM met herkomst info.md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [% gerecyclede materialen in producten](% gerecyclede materialen in producten.md) |
+| Aggregation | Tree | [% gerecyclede materialen in producten](% gerecyclede materialen in producten.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

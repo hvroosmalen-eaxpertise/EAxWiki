@@ -21,6 +21,17 @@
 | Association | Link | [Totale Scope 1-3 uitstoot (ton CO₂e/jaar)](../Metrics/Totale Scope 1-3 uitstoot (ton CO₂e_jaar).md) |
 | Association | Link | [Herstelde natuur (ha)](../Metrics/Herstelde natuur (ha).md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Enterprise Purpose](../Purpose/Enterprise Purpose.md) |
+| ControlFlow | Flow | [Enterprise Purpose](../Purpose/Enterprise Purpose.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

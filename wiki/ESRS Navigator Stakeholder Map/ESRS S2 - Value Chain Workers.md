@@ -21,6 +21,17 @@ Workers in the value chain standard
 | Association | ArchiMate_Association | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
 | Abstraction | trace | [ESRS S2 Workers in the Value Chain](../ESRS S2/ESRS S2 Workers in the Value Chain.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | ArchiMate_Association | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
+| Association | ArchiMate_Association | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

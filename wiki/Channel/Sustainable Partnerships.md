@@ -27,6 +27,20 @@ Externe partners die duurzaamheid versterken.
 | Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 | Association | Link | [SDG 15. Life on Land](../Sustainability Development Goals/SDG 15. Life on Land.md) |
 
+### Appears on Diagrams
+
+- [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
+- [Experience](../Experience/diagrams/Experience.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
+| Association | Link | [SDG 15. Life on Land](../Sustainability Development Goals/SDG 15. Life on Land.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
+| Association | Link | [SDG 15. Life on Land](../Sustainability Development Goals/SDG 15. Life on Land.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

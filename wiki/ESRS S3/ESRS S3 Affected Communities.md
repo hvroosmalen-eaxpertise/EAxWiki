@@ -28,6 +28,27 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 | Association | Link | [European Commission](../People/European Commission.md) |
 | Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
+### Appears on Diagrams
+
+- [ESRS](../European Sustainability Reporting Standards/diagrams/ESRS.md)
+- [ESRS S3](diagrams/ESRS S3.md)
+- [European Union - People](../European Union - People/diagrams/European Union - People.md)
+- [ESRS S3 Affected Communities - People](../ESRS S3 Affected Communities - People/diagrams/ESRS S3 Affected Communities - People.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
+| Association | Link | [Affected Communities (ESRS S3)](../People/Affected Communities (ESRS S3).md) |
+| Abstraction | trace | [ESRS S3 - Communities](../ESRS Navigator Stakeholder Map/ESRS S3 - Communities.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
+| Association | Link | [Affected Communities (ESRS S3)](../People/Affected Communities (ESRS S3).md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Abstraction | trace | [ESRS S3 - Communities](../ESRS Navigator Stakeholder Map/ESRS S3 - Communities.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

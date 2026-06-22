@@ -25,6 +25,23 @@ All upstream suppliers in the value chain
 | Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
 | Abstraction | trace | [Suppliers](../People/Suppliers.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Generalization | ArchiMate_Specialization | [Transport Companies](Transport Companies.md) |
+| Association | ArchiMate_Assignment | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
+| Generalization | ArchiMate_Specialization | [Agricultural Suppliers](Agricultural Suppliers.md) |
+| Generalization | ArchiMate_Specialization | [Packaging Suppliers](Packaging Suppliers.md) |
+| Generalization | ArchiMate_Specialization | [Agricultural Suppliers](Agricultural Suppliers.md) |
+| Generalization | ArchiMate_Specialization | [Packaging Suppliers](Packaging Suppliers.md) |
+| Generalization | ArchiMate_Specialization | [Transport Companies](Transport Companies.md) |
+| Association | ArchiMate_Assignment | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

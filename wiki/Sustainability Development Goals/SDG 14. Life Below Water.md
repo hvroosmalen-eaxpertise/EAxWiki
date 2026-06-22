@@ -22,6 +22,11 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 |------|------------|-------------|
 | Association | Link | [SDG Mapping Content](../Content/SDG Mapping Content.md) |
 
+### Appears on Diagrams
+
+- [Sustainability Development Goals](diagrams/Sustainability Development Goals.md)
+- [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

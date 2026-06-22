@@ -23,6 +23,19 @@ Ensures top-level commitment and strategic oversight of sustainability performan
 | Dependency | ArchiMate_Realization | [Sustainability Governance](../Capabilities/Sustainability Governance.md) |
 | ControlFlow | ArchiMate_Influence | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Market Differentiation Pressure](../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Dependency | ArchiMate_Realization | [Sustainability Governance](../Capabilities/Sustainability Governance.md) |
+| Dependency | ArchiMate_Realization | [Sustainability Governance](../Capabilities/Sustainability Governance.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

@@ -29,6 +29,19 @@ OrganizationIndustrySector is the intersection entity that classifies an Organis
 | Association |  | [Organization](Organization.md) |
 | Association |  | [IndustrySectorType](IndustrySectorType.md) |
 
+### Appears on Diagrams
+
+- [Organisation](diagrams/Organisation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Organization](Organization.md) |
+| Association |  | [IndustrySectorType](IndustrySectorType.md) |
+| Association |  | [Organization](Organization.md) |
+| Association |  | [IndustrySectorType](IndustrySectorType.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

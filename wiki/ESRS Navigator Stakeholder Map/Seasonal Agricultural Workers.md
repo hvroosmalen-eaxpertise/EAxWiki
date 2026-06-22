@@ -21,6 +21,10 @@ Seasonal workers at supplier farms
 | Generalization | ArchiMate_Specialization | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
 | Abstraction | trace | [Seasonal Agricultural Workers](../People/Seasonal Agricultural Workers.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

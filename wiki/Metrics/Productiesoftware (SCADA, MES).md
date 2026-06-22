@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [CO₂e per processtap of productlevensfase](CO₂e per processtap of productlevensfase.md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [CO₂e per processtap of productlevensfase](CO₂e per processtap of productlevensfase.md) |
+| Association | Link | [CO₂e per processtap of productlevensfase](CO₂e per processtap of productlevensfase.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

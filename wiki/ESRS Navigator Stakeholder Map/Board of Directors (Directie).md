@@ -24,6 +24,10 @@ CEO, CFO, COO - Final responsibility for sustainability policy
 | Association | ArchiMate_Assignment | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
 | Abstraction | trace | [Board of Directors (Directie)](../People/Board of Directors (Directie).md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

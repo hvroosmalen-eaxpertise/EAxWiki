@@ -22,6 +22,20 @@
 | ControlFlow | Flow | [ESRS E4 Biodiversity and Ecosystems](../ESRS E4/ESRS E4 Biodiversity and Ecosystems.md) |
 | Association | Link | [Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar.](../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E4 Biodiversity and Ecosystems](../ESRS E4/ESRS E4 Biodiversity and Ecosystems.md) |
+| Association | Link | [Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar.](../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..md) |
+| ControlFlow | Flow | [ESRS E4 Biodiversity and Ecosystems](../ESRS E4/ESRS E4 Biodiversity and Ecosystems.md) |
+| Association | Link | [Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar.](../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

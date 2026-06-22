@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Compile Information Sources](Compile Information Sources.md) |
 | ControlFlow | Flow | [ERD Model](ERD Model.md) |
 
+### Appears on Diagrams
+
+- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Compile Information Sources](Compile Information Sources.md) |
+| ControlFlow | Flow | [Compile Information Sources](Compile Information Sources.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

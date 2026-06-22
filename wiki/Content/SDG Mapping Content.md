@@ -30,6 +30,26 @@ Documentatie die elementen koppelt aan SDG’s.
 | Association | Link | [SDG 14. Life Below Water](../Sustainability Development Goals/SDG 14. Life Below Water.md) |
 | Association | Link | [SDG 15. Life on Land](../Sustainability Development Goals/SDG 15. Life on Land.md) |
 
+### Appears on Diagrams
+
+- [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
+- [Identity](../Identity/diagrams/Identity.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [SDG  7. Affordable and Clean Energy](../Sustainability Development Goals/SDG  7. Affordable and Clean Energy.md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
+| Association | Link | [SDG 14. Life Below Water](../Sustainability Development Goals/SDG 14. Life Below Water.md) |
+| Association | Link | [SDG 15. Life on Land](../Sustainability Development Goals/SDG 15. Life on Land.md) |
+| Association | Link | [SDG  7. Affordable and Clean Energy](../Sustainability Development Goals/SDG  7. Affordable and Clean Energy.md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
+| Association | Link | [SDG 14. Life Below Water](../Sustainability Development Goals/SDG 14. Life Below Water.md) |
+| Association | Link | [SDG 15. Life on Land](../Sustainability Development Goals/SDG 15. Life on Land.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

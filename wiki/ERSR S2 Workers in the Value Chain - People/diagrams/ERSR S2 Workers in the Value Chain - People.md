@@ -9,13 +9,13 @@
 
 ## Elements
 
-- [ESRS S2 Workers in the Value Chain](../../ESRS S2/ESRS S2 Workers in the Value Chain.md)
-- [Workers in Value Chain (ESRS S2)](../../People/Workers in Value Chain (ESRS S2).md)
-- [Suppliers](../../People/Suppliers.md)
-- [Seasonal Agricultural Workers](../../People/Seasonal Agricultural Workers.md)
 - [Agricultural Suppliers](../../People/Agricultural Suppliers.md)
+- [ESRS S2 Workers in the Value Chain](../../ESRS S2/ESRS S2 Workers in the Value Chain.md)
 - [Packaging Suppliers](../../People/Packaging Suppliers.md)
+- [Seasonal Agricultural Workers](../../People/Seasonal Agricultural Workers.md)
+- [Suppliers](../../People/Suppliers.md)
+- [Workers in Value Chain (ESRS S2)](../../People/Workers in Value Chain (ESRS S2).md)
 
 ---
 
-*Generated: 2026-06-22 17:27:47*
+*Generated: 2026-06-22 17:43:29*

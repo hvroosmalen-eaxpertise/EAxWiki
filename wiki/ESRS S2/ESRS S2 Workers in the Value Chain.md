@@ -28,6 +28,27 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 | Association | Link | [European Commission](../People/European Commission.md) |
 | Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
+### Appears on Diagrams
+
+- [ESRS](../European Sustainability Reporting Standards/diagrams/ESRS.md)
+- [ESRS S2](diagrams/ESRS S2.md)
+- [European Union - People](../European Union - People/diagrams/European Union - People.md)
+- [ERSR S2 Workers in the Value Chain - People](../ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
+| Association | Link | [Workers in Value Chain (ESRS S2)](../People/Workers in Value Chain (ESRS S2).md) |
+| Abstraction | trace | [ESRS S2 - Value Chain Workers](../ESRS Navigator Stakeholder Map/ESRS S2 - Value Chain Workers.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Association | Link | [Workers in Value Chain (ESRS S2)](../People/Workers in Value Chain (ESRS S2).md) |
+| Abstraction | trace | [ESRS S2 - Value Chain Workers](../ESRS Navigator Stakeholder Map/ESRS S2 - Value Chain Workers.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

@@ -15,6 +15,10 @@ Een productiemanager van een textielfabriek wandelde op een ochtend langs de riv
 | EDGY::TextAlign | Center | Default: Center
  |
 
+### Appears on Diagrams
+
+- [Stories Voorbeelden](diagrams/Stories Voorbeelden.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

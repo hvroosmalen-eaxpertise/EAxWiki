@@ -21,6 +21,10 @@ SMEs that voluntarily report (future VSME standard)
 | Generalization | ArchiMate_Specialization | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
 | Abstraction | trace | [Non-listed SMEs](../People/Non-listed SMEs.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

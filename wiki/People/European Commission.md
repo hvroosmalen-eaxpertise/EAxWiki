@@ -28,6 +28,21 @@ Issues CSRD directive and ESRS regulations
 | Association | Link | [ESRS S3 Affected Communities](../ESRS S3/ESRS S3 Affected Communities.md) |
 | Association | Link | [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [European Union - People](../European Union - People/diagrams/European Union - People.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [EFRAG](EFRAG.md) |
+| Abstraction | trace | [European Commission](../ESRS Navigator Stakeholder Map/European Commission.md) |
+| Association | Link | [EFRAG](EFRAG.md) |
+| Abstraction | trace | [European Commission](../ESRS Navigator Stakeholder Map/European Commission.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

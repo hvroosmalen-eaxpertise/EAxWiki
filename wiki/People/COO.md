@@ -15,6 +15,20 @@ Chief Operating Officer
 | Abstraction | trace | [COO](../ESRS Navigator Stakeholder Map/COO.md) |
 | Aggregation | Tree | [Board of Directors (Directie)](Board of Directors (Directie).md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [Board of Directors (Directie)](Board of Directors (Directie).md) |
+| Abstraction | trace | [COO](../ESRS Navigator Stakeholder Map/COO.md) |
+| Aggregation | Tree | [Board of Directors (Directie)](Board of Directors (Directie).md) |
+| Abstraction | trace | [COO](../ESRS Navigator Stakeholder Map/COO.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

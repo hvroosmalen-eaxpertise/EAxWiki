@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [Aantal duurzame assets (bv. EV's, zonnepanelen)](Aantal duurzame assets (bv. EV's, zonnepanelen).md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Aantal duurzame assets (bv. EV's, zonnepanelen)](Aantal duurzame assets (bv. EV's, zonnepanelen).md) |
+| Association | Link | [Aantal duurzame assets (bv. EV's, zonnepanelen)](Aantal duurzame assets (bv. EV's, zonnepanelen).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

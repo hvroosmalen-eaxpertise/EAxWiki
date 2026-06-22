@@ -37,6 +37,23 @@ Standard represents a formal specification, protocol, methodology, or regulatory
 | Association |  | [EmissionCalculationModel](../Emissions/EmissionCalculationModel.md) |
 | Association |  | [EmissionInventory](../Emissions/EmissionInventory.md) |
 
+### Appears on Diagrams
+
+- [Organisation](diagrams/Organisation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionComponentPerStandard](../Emissions/EmissionComponentPerStandard.md) |
+| Association |  | [EmissionStatementPerStandard](../Emissions/EmissionStatementPerStandard.md) |
+| Association |  | [EmissionCategoryStandardAssociation](../Emissions/EmissionCategoryStandardAssociation.md) |
+| Association |  | [StandardSourceAssociation](../Emissions/StandardSourceAssociation.md) |
+| Association |  | [EmissionCategoryStandardAssociation](../Emissions/EmissionCategoryStandardAssociation.md) |
+| Association |  | [EmissionStatementPerStandard](../Emissions/EmissionStatementPerStandard.md) |
+| Association |  | [EmissionComponentPerStandard](../Emissions/EmissionComponentPerStandard.md) |
+| Association |  | [StandardSourceAssociation](../Emissions/StandardSourceAssociation.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

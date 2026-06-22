@@ -15,6 +15,10 @@ Ensure that investors and other stakeholders have access to the information they
 | EDGY::TextAlign | Center | Default: Center
  |
 
+### Appears on Diagrams
+
+- [Goals and Objectives](diagrams/Goals and Objectives.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

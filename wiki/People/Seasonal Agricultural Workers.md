@@ -15,6 +15,21 @@ Seasonal workers at supplier farms
 | Abstraction | trace | [Seasonal Agricultural Workers](../ESRS Navigator Stakeholder Map/Seasonal Agricultural Workers.md) |
 | Aggregation | Tree | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ERSR S2 Workers in the Value Chain - People](../ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Abstraction | trace | [Seasonal Agricultural Workers](../ESRS Navigator Stakeholder Map/Seasonal Agricultural Workers.md) |
+| Aggregation | Tree | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
+| Aggregation | Tree | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
+| Abstraction | trace | [Seasonal Agricultural Workers](../ESRS Navigator Stakeholder Map/Seasonal Agricultural Workers.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

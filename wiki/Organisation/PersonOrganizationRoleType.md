@@ -27,6 +27,10 @@ PersonOrganizationRoleType provides the controlled vocabulary of roles that a pe
 |------|------------|-------------|
 | Association |  | [OrganizationPersonAssociation](OrganizationPersonAssociation.md) |
 
+### Appears on Diagrams
+
+- [Organisation](diagrams/Organisation.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

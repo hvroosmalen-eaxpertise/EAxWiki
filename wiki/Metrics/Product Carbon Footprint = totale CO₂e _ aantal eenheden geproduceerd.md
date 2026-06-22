@@ -19,6 +19,17 @@
 |------|------------|-------------|
 | ControlFlow | Flow | [Totaal afval (ton/jaar)](Totaal afval (ton_jaar).md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Totaal afval (ton/jaar)](Totaal afval (ton_jaar).md) |
+| ControlFlow | Flow | [Totaal afval (ton/jaar)](Totaal afval (ton_jaar).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

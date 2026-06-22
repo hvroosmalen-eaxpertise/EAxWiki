@@ -39,6 +39,21 @@ EmissionCalculationModel is a master-data entity that defines the methodological
 | Association |  | [EmissionStatement](EmissionStatement.md) |
 | Association |  | [Standard](../Organisation/Standard.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Standard](../Organisation/Standard.md) |
+| Association |  | [EmissionCalculationModelParameterArgument](EmissionCalculationModelParameterArgument.md) |
+| Association |  | [EmissionCalculationModelFactorArgument](EmissionCalculationModelFactorArgument.md) |
+| Association |  | [EmissionActivityFactor](EmissionActivityFactor.md) |
+| Association |  | [EmissionCalculationMethodType](EmissionCalculationMethodType.md) |
+| Association |  | [Standard](../Organisation/Standard.md) |
+| Association |  | [EmissionCalculationMethodType](EmissionCalculationMethodType.md) |
+| Association |  | [EmissionActivityFactor](EmissionActivityFactor.md) |
+| Association |  | [EmissionCalculationModelFactorArgument](EmissionCalculationModelFactorArgument.md) |
+| Association |  | [EmissionCalculationModelParameterArgument](EmissionCalculationModelParameterArgument.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

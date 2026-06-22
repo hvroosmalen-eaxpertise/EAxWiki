@@ -22,6 +22,20 @@ Extends sustainability requirements to suppliers and partners, managing upstream
 | Dependency | ArchiMate_Realization | [Risk Reduction](../Goals/Risk Reduction.md) |
 | Dependency | ArchiMate_Realization | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Dependency | ArchiMate_Realization | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
+| Dependency | ArchiMate_Realization | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

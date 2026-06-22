@@ -26,6 +26,20 @@
 | Aggregation | Tree | [Datakwaliteit: beschikbaarheid / updatefrequentie](Datakwaliteit_ beschikbaarheid _ updatefrequentie.md) |
 | ControlFlow | Flow | [Data-automatiseringsgraad = (# automatisch verzamelde datapunten / totaal) × 100%](Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal) × 100%.md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Implementeer dashboards voor monitoring van CO₂, afval en energie.](../Task/Implementeer dashboards voor monitoring van CO₂, afval en energie..md) |
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Implementeer dashboards voor monitoring van CO₂, afval en energie.](../Task/Implementeer dashboards voor monitoring van CO₂, afval en energie..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

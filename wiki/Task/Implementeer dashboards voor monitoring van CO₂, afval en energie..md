@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Sustainable Data Assets](../Asset/Sustainable Data Assets.md) |
 | Association | Link | [% scope 3 emissies met gemeten data](../Metrics/% scope 3 emissies met gemeten data.md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Sustainable Data Assets](../Asset/Sustainable Data Assets.md) |
+| ControlFlow | Flow | [Sustainable Data Assets](../Asset/Sustainable Data Assets.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

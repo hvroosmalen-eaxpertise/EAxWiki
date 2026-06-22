@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Stakeholder Sustainability Expectations](Stakeholder Sustainability Expectations.md) |
 | Association | Link | [% minder plasticverpakkingen](../Metrics/% minder plasticverpakkingen.md) |
 
+### Appears on Diagrams
+
+- [Experience](../Experience/diagrams/Experience.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Stakeholder Sustainability Expectations](Stakeholder Sustainability Expectations.md) |
+| ControlFlow | Flow | [Stakeholder Sustainability Expectations](Stakeholder Sustainability Expectations.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

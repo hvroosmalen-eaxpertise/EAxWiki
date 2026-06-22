@@ -22,6 +22,17 @@ Issues CSRD directive and ESRS regulations
 | Association | ArchiMate_Association | [EFRAG](EFRAG.md) |
 | Abstraction | trace | [European Commission](../People/European Commission.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | ArchiMate_Association | [EFRAG](EFRAG.md) |
+| Association | ArchiMate_Association | [EFRAG](EFRAG.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

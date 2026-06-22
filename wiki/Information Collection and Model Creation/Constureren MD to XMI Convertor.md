@@ -21,6 +21,19 @@
 | ControlFlow | Flow | [EDGY -> XMI (Python)](EDGY -_ XMI (Python).md) |
 | Association | Link | [AI - LLM](AI - LLM.md) |
 
+### Appears on Diagrams
+
+- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [AI - LLM](AI - LLM.md) |
+| ControlFlow | Flow | [XMI Import Definition](XMI Import Definition.md) |
+| ControlFlow | Flow | [XMI Import Definition](XMI Import Definition.md) |
+| Association | Link | [AI - LLM](AI - LLM.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

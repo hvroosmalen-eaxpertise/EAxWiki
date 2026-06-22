@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Sustainability Identity](../Purpose/Sustainability Identity.md) |
 | Association | Link | [CO₂-intensiteit per € omzet](../Metrics/CO₂-intensiteit per € omzet.md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Sustainability Identity](../Purpose/Sustainability Identity.md) |
+| ControlFlow | Flow | [Sustainability Identity](../Purpose/Sustainability Identity.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

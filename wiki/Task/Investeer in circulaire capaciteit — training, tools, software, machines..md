@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Green Capabilities](../Capability/Green Capabilities.md) |
 | Association | Link | [% R&D naar duurzame innovatie](../Metrics/% R&D naar duurzame innovatie.md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Green Capabilities](../Capability/Green Capabilities.md) |
+| ControlFlow | Flow | [Green Capabilities](../Capability/Green Capabilities.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

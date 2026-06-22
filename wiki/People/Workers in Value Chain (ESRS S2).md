@@ -17,6 +17,21 @@ Employees of suppliers and partners
 | Aggregation | Tree | [Seasonal Agricultural Workers](Seasonal Agricultural Workers.md) |
 | Aggregation | Tree | [Suppliers](Suppliers.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ERSR S2 Workers in the Value Chain - People](../ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [Suppliers](Suppliers.md) |
+| Abstraction | trace | [Workers in Value Chain (ESRS S2)](../ESRS Navigator Stakeholder Map/Workers in Value Chain (ESRS S2).md) |
+| Aggregation | Tree | [Suppliers](Suppliers.md) |
+| Abstraction | trace | [Workers in Value Chain (ESRS S2)](../ESRS Navigator Stakeholder Map/Workers in Value Chain (ESRS S2).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

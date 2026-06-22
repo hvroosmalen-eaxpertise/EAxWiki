@@ -14,6 +14,18 @@ Example company: 450 employees, food production, two facilities in Netherlands
 |------|------------|-------------|
 | Abstraction | trace | [FreshFood B.V.](../ESRS Navigator Stakeholder Map/FreshFood B.V..md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Abstraction | trace | [FreshFood B.V.](../ESRS Navigator Stakeholder Map/FreshFood B.V..md) |
+| Abstraction | trace | [FreshFood B.V.](../ESRS Navigator Stakeholder Map/FreshFood B.V..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

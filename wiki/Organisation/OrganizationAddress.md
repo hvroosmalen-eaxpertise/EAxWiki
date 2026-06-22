@@ -31,6 +31,21 @@ OrganizationAddress is the intersection entity that associates an Organisation w
 | Association |  | [Address](Address.md) |
 | Association |  | [Organization](Organization.md) |
 
+### Appears on Diagrams
+
+- [Organisation](diagrams/Organisation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Organization](Organization.md) |
+| Association |  | [Address](Address.md) |
+| Association |  | [OrganizationAddressType](OrganizationAddressType.md) |
+| Association |  | [Address](Address.md) |
+| Association |  | [Organization](Organization.md) |
+| Association |  | [OrganizationAddressType](OrganizationAddressType.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

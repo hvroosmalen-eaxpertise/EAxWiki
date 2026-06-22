@@ -14,6 +14,18 @@ Logistics and transportation providers
 |------|------------|-------------|
 | Abstraction | trace | [Transport Companies](../ESRS Navigator Stakeholder Map/Transport Companies.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Abstraction | trace | [Transport Companies](../ESRS Navigator Stakeholder Map/Transport Companies.md) |
+| Abstraction | trace | [Transport Companies](../ESRS Navigator Stakeholder Map/Transport Companies.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

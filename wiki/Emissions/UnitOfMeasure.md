@@ -45,6 +45,19 @@ UnitOfMeasure is a reference entity that provides the controlled vocabulary of m
 | Association |  | [EmissionComponent](EmissionComponent.md) |
 | Association |  | [EmissionStatement](EmissionStatement.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionParameterType](EmissionParameterType.md) |
+| Association |  | [UnitOfMeasureSourceReference](UnitOfMeasureSourceReference.md) |
+| Association |  | [PhysicalQuantityType](PhysicalQuantityType.md) |
+| Association |  | [SystemOfUnits](SystemOfUnits.md) |
+| Association |  | [EmissionParameterType](EmissionParameterType.md) |
+| Association |  | [SystemOfUnits](SystemOfUnits.md) |
+| Association |  | [PhysicalQuantityType](PhysicalQuantityType.md) |
+| Association |  | [UnitOfMeasureSourceReference](UnitOfMeasureSourceReference.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

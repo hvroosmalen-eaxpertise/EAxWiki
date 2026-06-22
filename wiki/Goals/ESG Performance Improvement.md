@@ -23,6 +23,22 @@ Achieve measurable progress in ESG ratings and benchmarks relevant to the indust
 | Dependency | ArchiMate_Realization | [ESG-based Risk Management](../Courses of Action/ESG-based Risk Management.md) |
 | Dependency | ArchiMate_Realization | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Dependency | ArchiMate_Realization | [ESG-based Risk Management](../Courses of Action/ESG-based Risk Management.md) |
+| ControlFlow | ArchiMate_Influence | [Stakeholder Expectations](../Drivers/Stakeholder Expectations.md) |
+| ControlFlow | ArchiMate_Influence | [Stakeholder Expectations](../Drivers/Stakeholder Expectations.md) |
+| Dependency | ArchiMate_Realization | [ESG-based Risk Management](../Courses of Action/ESG-based Risk Management.md) |
+| Dependency | ArchiMate_Realization | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
+| Dependency | ArchiMate_Realization | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

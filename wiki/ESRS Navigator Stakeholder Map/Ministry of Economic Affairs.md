@@ -21,6 +21,10 @@ Commissioned the ESRS Navigator
 | Association | ArchiMate_Association | [Rijksdienst voor Ondernemen (RVO)](Rijksdienst voor Ondernemen (RVO).md) |
 | Abstraction | trace | [Ministry of Economic Affairs](../People/Ministry of Economic Affairs.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

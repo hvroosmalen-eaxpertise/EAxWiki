@@ -9,19 +9,19 @@
 
 ## Elements
 
-- [Market Differentiation Pressure](../../Drivers/Market Differentiation Pressure.md)
-- [Sustainable Competitive Advantage](../../Goals/Sustainable Competitive Advantage.md)
-- [Sustainability-driven Differentiation](../../Courses of Action/Sustainability-driven Differentiation.md)
+- [Board-level Sustainability Governance](../../Courses of Action/Board-level Sustainability Governance.md)
+- [ESG Performance Management](../../Capabilities/ESG Performance Management.md)
+- [ESG Score](../../Assessments/ESG Score.md)
+- [Implement ESG KPI Framework](../../Courses of Action/Implement ESG KPI Framework.md)
 - [Improved ESG Rating](../../Outcomes/Improved ESG Rating.md)
 - [Increased Brand Trust](../../Outcomes/Increased Brand Trust.md)
-- [Implement ESG KPI Framework](../../Courses of Action/Implement ESG KPI Framework.md)
-- [Board-level Sustainability Governance](../../Courses of Action/Board-level Sustainability Governance.md)
-- [ESG Score](../../Assessments/ESG Score.md)
-- [ESG Performance Management](../../Capabilities/ESG Performance Management.md)
-- [Sustainability Governance](../../Capabilities/Sustainability Governance.md)
-- [Sustainable Innovation Management](../../Capabilities/Sustainable Innovation Management.md)
+- [Market Differentiation Pressure](../../Drivers/Market Differentiation Pressure.md)
 - [Stakeholder Engagement Management](../../Capabilities/Stakeholder Engagement Management.md)
+- [Sustainability Governance](../../Capabilities/Sustainability Governance.md)
+- [Sustainability-driven Differentiation](../../Courses of Action/Sustainability-driven Differentiation.md)
+- [Sustainable Competitive Advantage](../../Goals/Sustainable Competitive Advantage.md)
+- [Sustainable Innovation Management](../../Capabilities/Sustainable Innovation Management.md)
 
 ---
 
-*Generated: 2026-06-22 17:27:55*
+*Generated: 2026-06-22 17:43:36*

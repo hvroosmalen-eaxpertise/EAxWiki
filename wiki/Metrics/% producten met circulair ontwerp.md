@@ -22,6 +22,20 @@
 | ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
 | Association | Link | [Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling.](../Task/Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling..md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling.](../Task/Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling..md) |
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling.](../Task/Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

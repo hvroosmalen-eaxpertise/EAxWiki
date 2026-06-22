@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [The Open Group Website](The Open Group Website.md) |
 | ControlFlow | Flow | [Compile Information Sources](Compile Information Sources.md) |
 
+### Appears on Diagrams
+
+- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [The Open Group Website](The Open Group Website.md) |
+| ControlFlow | Flow | [The Open Group Website](The Open Group Website.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

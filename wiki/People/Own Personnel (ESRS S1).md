@@ -21,6 +21,23 @@ All employees of the reporting organization
 | Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
 | Association | Link | [ESRS S1 Own Workforce](../ESRS S1/ESRS S1 Own Workforce.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+- [ESRS S1 Own Workforce - People](../ESRS S1 Own Workforce - People/diagrams/ESRS S1 Own Workforce - People.md)
+- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Abstraction | trace | [Own Personnel (ESRS S1)](../ESRS Navigator Stakeholder Map/Own Personnel (ESRS S1).md) |
+| Association | Link | [Trade Unions](Trade Unions.md) |
+| Association | Link | [Works Council (Ondernemingsraad)](Works Council (Ondernemingsraad).md) |
+| Association | Link | [Trade Unions](Trade Unions.md) |
+| Association | Link | [Works Council (Ondernemingsraad)](Works Council (Ondernemingsraad).md) |
+| Abstraction | trace | [Own Personnel (ESRS S1)](../ESRS Navigator Stakeholder Map/Own Personnel (ESRS S1).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

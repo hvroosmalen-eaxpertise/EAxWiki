@@ -23,6 +23,19 @@ Comprehensive initiative to measure, reduce, and offset organizational carbon em
 | Dependency | ArchiMate_Realization | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
 | ControlFlow | ArchiMate_Influence | [Reduced Environmental Impact](../Outcomes/Reduced Environmental Impact.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Dependency | ArchiMate_Realization | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
+| Dependency | ArchiMate_Realization | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

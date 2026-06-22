@@ -21,6 +21,10 @@ Communities around production facilities and supplier regions
 | Generalization | ArchiMate_Specialization | [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) |
 | Abstraction | trace | [Local Communities](../People/Local Communities.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

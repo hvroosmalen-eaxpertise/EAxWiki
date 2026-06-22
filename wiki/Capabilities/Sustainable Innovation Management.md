@@ -25,6 +25,22 @@ Drives eco-design, circular economy solutions, and sustainability-driven value p
 | Dependency | ArchiMate_Realization | [Introduce Sustainable Product Design Process](../Courses of Action/Introduce Sustainable Product Design Process.md) |
 | Association | ArchiMate_Association | [Sustainable Revenue Ratio](../Assessments/Sustainable Revenue Ratio.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+- [Market Differentiation Pressure](../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | ArchiMate_Association | [Sustainable Revenue Ratio](../Assessments/Sustainable Revenue Ratio.md) |
+| Association | ArchiMate_Association | [Sustainable Revenue Ratio](../Assessments/Sustainable Revenue Ratio.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

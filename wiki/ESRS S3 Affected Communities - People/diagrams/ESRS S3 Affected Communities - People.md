@@ -9,11 +9,11 @@
 
 ## Elements
 
-- [ESRS S3 Affected Communities](../../ESRS S3/ESRS S3 Affected Communities.md)
 - [Affected Communities (ESRS S3)](../../People/Affected Communities (ESRS S3).md)
-- [Local Communities](../../People/Local Communities.md)
+- [ESRS S3 Affected Communities](../../ESRS S3/ESRS S3 Affected Communities.md)
 - [Indigenous Peoples](../../People/Indigenous Peoples.md)
+- [Local Communities](../../People/Local Communities.md)
 
 ---
 
-*Generated: 2026-06-22 17:27:47*
+*Generated: 2026-06-22 17:43:29*

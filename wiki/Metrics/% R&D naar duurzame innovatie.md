@@ -22,6 +22,20 @@
 | ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
 | Association | Link | [Investeer in circulaire capaciteit — training, tools, software, machines.](../Task/Investeer in circulaire capaciteit — training, tools, software, machines..md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Investeer in circulaire capaciteit — training, tools, software, machines.](../Task/Investeer in circulaire capaciteit — training, tools, software, machines..md) |
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Investeer in circulaire capaciteit — training, tools, software, machines.](../Task/Investeer in circulaire capaciteit — training, tools, software, machines..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

@@ -34,6 +34,13 @@ EmissionComponentCategory is a reference entity that classifies the greenhouse g
 | Association |  | [EmissionFactor](EmissionFactor.md) |
 | Association |  | [EmissionComponent](EmissionComponent.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionComponentCategoryGroup](EmissionComponentCategoryGroup.md) |
+| Association |  | [EmissionComponentCategoryGroup](EmissionComponentCategoryGroup.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

@@ -21,6 +21,17 @@ Chamber of Commerce - provides CSRD guidance
 | Abstraction | trace | [Chamber of Commerce (Kamer van Koophandel)](../People/Chamber of Commerce (Kamer van Koophandel).md) |
 | Aggregation | Tree | [Ministry of Economic Affairs](../People/Ministry of Economic Affairs.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [Ministry of Economic Affairs](../People/Ministry of Economic Affairs.md) |
+| Aggregation | Tree | [Ministry of Economic Affairs](../People/Ministry of Economic Affairs.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

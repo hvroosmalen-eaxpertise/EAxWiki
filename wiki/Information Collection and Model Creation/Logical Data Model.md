@@ -19,6 +19,17 @@
 |------|------------|-------------|
 | Aggregation | Tree | [EurSuRA Model](EurSuRA Model.md) |
 
+### Appears on Diagrams
+
+- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Aggregation | Tree | [EurSuRA Model](EurSuRA Model.md) |
+| Aggregation | Tree | [EurSuRA Model](EurSuRA Model.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

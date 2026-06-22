@@ -15,6 +15,10 @@ The ESRS align the EU reporting system to the International Sustainability Stand
 | EDGY::TextAlign | Center | Default: Center
  |
 
+### Appears on Diagrams
+
+- [Goals and Objectives](diagrams/Goals and Objectives.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

@@ -35,6 +35,15 @@ EmissionFactorSource is a reference entity that identifies the authoritative dat
 | Association |  | [StandardSourceAssociation](StandardSourceAssociation.md) |
 | Association |  | [EmissionFactor](EmissionFactor.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionFactor](EmissionFactor.md) |
+| Association |  | [StandardSourceAssociation](StandardSourceAssociation.md) |
+| Association |  | [EmissionFactor](EmissionFactor.md) |
+| Association |  | [StandardSourceAssociation](StandardSourceAssociation.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

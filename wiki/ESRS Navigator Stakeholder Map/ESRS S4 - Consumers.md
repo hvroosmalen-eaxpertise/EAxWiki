@@ -21,6 +21,19 @@ Consumers and end-users standard
 | Association | ArchiMate_Association | [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md) |
 | Abstraction | trace | [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Abstraction | trace | [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.md) |
+| Association | ArchiMate_Association | [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md) |
+| Association | ArchiMate_Association | [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md) |
+| Abstraction | trace | [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

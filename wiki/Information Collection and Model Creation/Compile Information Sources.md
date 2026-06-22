@@ -25,6 +25,25 @@
 | ControlFlow | Flow | [Openfootprint Data Model](Openfootprint Data Model.md) |
 | ControlFlow | Flow | [LDM -> XMI (Python)](LDM -_ XMI (Python).md) |
 
+### Appears on Diagrams
+
+- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [AI - LLM](AI - LLM.md) |
+| ControlFlow | Flow | [EDGY 23 Language Foundation](EDGY 23 Language Foundation.md) |
+| ControlFlow | Flow | [ESRS](ESRS.md) |
+| ControlFlow | Flow | [Openfootprint Data Model](Openfootprint Data Model.md) |
+| ControlFlow | Flow | [SDG](SDG.md) |
+| ControlFlow | Flow | [SDG](SDG.md) |
+| ControlFlow | Flow | [ESRS](ESRS.md) |
+| ControlFlow | Flow | [EDGY 23 Language Foundation](EDGY 23 Language Foundation.md) |
+| Association | Link | [AI - LLM](AI - LLM.md) |
+| ControlFlow | Flow | [Openfootprint Data Model](Openfootprint Data Model.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

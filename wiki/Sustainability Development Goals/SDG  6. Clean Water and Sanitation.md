@@ -16,6 +16,11 @@ Ensure availability and sustainable management of water and sanitation for all.
 | EDGY::TextAlign | Center | Default: Center
  |
 
+### Appears on Diagrams
+
+- [Sustainability Development Goals](diagrams/Sustainability Development Goals.md)
+- [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

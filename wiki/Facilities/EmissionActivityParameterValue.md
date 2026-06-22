@@ -33,6 +33,15 @@ EmissionActivityParameterValue records the actual measured or estimated value of
 | Association |  | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) |
 | Association |  | [EmissionActivityParameter](EmissionActivityParameter.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionActivityParameter](EmissionActivityParameter.md) |
+| Association |  | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) |
+| Association |  | [EmissionActivityParameter](EmissionActivityParameter.md) |
+| Association |  | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

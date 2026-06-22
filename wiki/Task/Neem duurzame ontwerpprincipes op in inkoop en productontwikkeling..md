@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Sustainability Principles](../Content/Sustainability Principles.md) |
 | Association | Link | [% producten met circulair ontwerp](../Metrics/% producten met circulair ontwerp.md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Sustainability Principles](../Content/Sustainability Principles.md) |
+| ControlFlow | Flow | [Sustainability Principles](../Content/Sustainability Principles.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

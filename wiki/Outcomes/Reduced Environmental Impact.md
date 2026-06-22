@@ -26,6 +26,25 @@ Contributes to corporate sustainability goals and regulatory compliance.
 | Association | ArchiMate_Association | [CO₂ Reduction %](../Assessments/CO₂ Reduction %.md) |
 | Association | ArchiMate_Association | [Energy Efficiency Index](../Assessments/Energy Efficiency Index.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | ArchiMate_Association | [CO₂ Reduction %](../Assessments/CO₂ Reduction %.md) |
+| Association | ArchiMate_Association | [Energy Efficiency Index](../Assessments/Energy Efficiency Index.md) |
+| ControlFlow | ArchiMate_Influence | [Introduce Sustainable Product Design Process](../Courses of Action/Introduce Sustainable Product Design Process.md) |
+| ControlFlow | ArchiMate_Influence | [Carbon Footprint Reduction Program](../Courses of Action/Carbon Footprint Reduction Program.md) |
+| ControlFlow | ArchiMate_Influence | [Introduce Sustainable Product Design Process](../Courses of Action/Introduce Sustainable Product Design Process.md) |
+| ControlFlow | ArchiMate_Influence | [Carbon Footprint Reduction Program](../Courses of Action/Carbon Footprint Reduction Program.md) |
+| Association | ArchiMate_Association | [CO₂ Reduction %](../Assessments/CO₂ Reduction %.md) |
+| Association | ArchiMate_Association | [Energy Efficiency Index](../Assessments/Energy Efficiency Index.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

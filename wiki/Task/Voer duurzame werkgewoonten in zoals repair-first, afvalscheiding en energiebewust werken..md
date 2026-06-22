@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Sustainable Work Practices](../Story/Sustainable Work Practices.md) |
 | Association | Link | [Restafval per medewerker (kg/jaar)](../Metrics/Restafval per medewerker (kg_jaar).md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Sustainable Work Practices](../Story/Sustainable Work Practices.md) |
+| ControlFlow | Flow | [Sustainable Work Practices](../Story/Sustainable Work Practices.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

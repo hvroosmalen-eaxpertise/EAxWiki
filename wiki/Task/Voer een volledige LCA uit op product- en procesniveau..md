@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Environmental Impact Map](../Asset/Environmental Impact Map.md) |
 | Association | Link | [Totaal afval (ton/jaar)](../Metrics/Totaal afval (ton_jaar).md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Environmental Impact Map](../Asset/Environmental Impact Map.md) |
+| ControlFlow | Flow | [Environmental Impact Map](../Asset/Environmental Impact Map.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

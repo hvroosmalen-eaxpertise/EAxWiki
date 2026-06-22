@@ -9,12 +9,12 @@
 
 ## Elements
 
-- [Non-EU company](../../People/Non-EU company.md)
 - [Company listed on an EU-regulated market exchange](../../People/Company listed on an EU-regulated market exchange.md)
 - [Company subject to CSRD](../../People/Company subject to CSRD.md)
 - [Listed SMEs](../../People/Listed SMEs.md)
+- [Non-EU company](../../People/Non-EU company.md)
 - [Non-listed SMEs](../../People/Non-listed SMEs.md)
 
 ---
 
-*Generated: 2026-06-22 17:27:44*
+*Generated: 2026-06-22 17:43:26*

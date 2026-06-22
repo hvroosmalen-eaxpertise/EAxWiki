@@ -31,6 +31,15 @@ EmissionActivityCategory is a reference entity that provides the formal taxonomy
 | Association |  | [EmissionScopeType](EmissionScopeType.md) |
 | Association |  | [EmissionActivity](EmissionActivity.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionScopeType](EmissionScopeType.md) |
+| Association |  | [EmissionCategoryStandardAssociation](EmissionCategoryStandardAssociation.md) |
+| Association |  | [EmissionScopeType](EmissionScopeType.md) |
+| Association |  | [EmissionCategoryStandardAssociation](EmissionCategoryStandardAssociation.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

@@ -21,6 +21,17 @@
 | Association | Link | [Jaarlijkse CO₂-reductie (%)](../Metrics/Jaarlijkse CO₂-reductie (%).md) |
 | Association | Link | [% hernieuwbare grondstoffen](../Metrics/% hernieuwbare grondstoffen.md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Sustainability Objectives](../Content/Sustainability Objectives.md) |
+| ControlFlow | Flow | [Sustainability Objectives](../Content/Sustainability Objectives.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

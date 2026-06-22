@@ -23,6 +23,12 @@ Indicates strategic alignment between commercial success and sustainability obje
 | Association | ArchiMate_Association | [Improved Long-term Profitability](../Outcomes/Improved Long-term Profitability.md) |
 | Association | ArchiMate_Association | [Sustainable Innovation Management](../Capabilities/Sustainable Innovation Management.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

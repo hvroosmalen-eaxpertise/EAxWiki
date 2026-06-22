@@ -15,6 +15,10 @@ Tijdens een personeelsbijeenkomst deelde de directeur een persoonlijk moment: zi
 | EDGY::TextAlign | Center | Default: Center
  |
 
+### Appears on Diagrams
+
+- [Stories Voorbeelden](diagrams/Stories Voorbeelden.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

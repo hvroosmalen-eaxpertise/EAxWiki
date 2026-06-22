@@ -22,6 +22,17 @@ Dutch government agency - MVO-steunpunt provides CSR guidance
 | Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
 | Abstraction | trace | [Rijksdienst voor Ondernemend Nederland (RVO)](../People/Rijksdienst voor Ondernemend Nederland (RVO).md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | ArchiMate_Association | [Ministry of Economic Affairs](Ministry of Economic Affairs.md) |
+| Association | ArchiMate_Association | [Ministry of Economic Affairs](Ministry of Economic Affairs.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

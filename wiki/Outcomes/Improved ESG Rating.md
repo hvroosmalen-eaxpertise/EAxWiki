@@ -26,6 +26,23 @@ Facilitates access to sustainable finance and enhances corporate reputation.
 | Dependency | ArchiMate_Realization | [Sustainable Competitive Advantage](../Goals/Sustainable Competitive Advantage.md) |
 | Association | ArchiMate_Association | [ESG Score](../Assessments/ESG Score.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+- [Market Differentiation Pressure](../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | ArchiMate_Association | [ESG Score](../Assessments/ESG Score.md) |
+| ControlFlow | ArchiMate_Influence | [Implement ESG KPI Framework](../Courses of Action/Implement ESG KPI Framework.md) |
+| ControlFlow | ArchiMate_Influence | [Board-level Sustainability Governance](../Courses of Action/Board-level Sustainability Governance.md) |
+| ControlFlow | ArchiMate_Influence | [Implement ESG KPI Framework](../Courses of Action/Implement ESG KPI Framework.md) |
+| ControlFlow | ArchiMate_Influence | [Board-level Sustainability Governance](../Courses of Action/Board-level Sustainability Governance.md) |
+| Association | ArchiMate_Association | [ESG Score](../Assessments/ESG Score.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

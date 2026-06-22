@@ -38,6 +38,15 @@ EmissionReportPeriod is a work-product-component that holds the aggregated emiss
 | Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
 | Association |  | [EmissionReport](EmissionReport.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
+| Association |  | [EmissionReport](EmissionReport.md) |
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
+| Association |  | [EmissionReport](EmissionReport.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

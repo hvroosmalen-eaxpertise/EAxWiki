@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Environmental Impact Story](../Story/Environmental Impact Story.md) |
 | Association | Link | [Uitstoot NOₓ/SOₓ (kg/jaar)](../Metrics/Uitstoot NOₓ_SOₓ (kg_jaar).md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Environmental Impact Story](../Story/Environmental Impact Story.md) |
+| ControlFlow | Flow | [Environmental Impact Story](../Story/Environmental Impact Story.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

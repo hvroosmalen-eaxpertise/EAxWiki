@@ -31,6 +31,15 @@ EmissionActivityFlow is an intersection entity that links an EmissionActivity to
 | Association |  | [ProductLifeCycle](ProductLifeCycle.md) |
 | Association |  | [EmissionActivity](../Emissions/EmissionActivity.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [ProductLifeCycle](ProductLifeCycle.md) |
+| Association |  | [ProductLifeCycle](ProductLifeCycle.md) |
+| Association |  | [EmissionActivity](../Emissions/EmissionActivity.md) |
+| Association |  | [EmissionActivity](../Emissions/EmissionActivity.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

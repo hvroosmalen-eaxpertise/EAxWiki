@@ -22,6 +22,20 @@
 | ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
 | Association | Link | [Ontwikkel een 2030/2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning.](../Task/Ontwikkel een 2030_2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning..md) |
 
+### Appears on Diagrams
+
+- [Identity](../Identity/diagrams/Identity.md)
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Ontwikkel een 2030/2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning.](../Task/Ontwikkel een 2030_2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning..md) |
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Ontwikkel een 2030/2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning.](../Task/Ontwikkel een 2030_2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning..md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

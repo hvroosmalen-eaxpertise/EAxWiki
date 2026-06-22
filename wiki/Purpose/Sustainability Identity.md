@@ -26,6 +26,18 @@ Hoe het bedrijf zichzelf positioneert rond duurzaamheid.
 | ControlFlow | Flow | [Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie.](../Task/Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie..md) |
 | Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
+### Appears on Diagrams
+
+- [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
+- [Identity](../Identity/diagrams/Identity.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

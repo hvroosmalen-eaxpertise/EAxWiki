@@ -21,6 +21,19 @@
 | ControlFlow | Flow | [Compile Information Sources](Compile Information Sources.md) |
 | ControlFlow | Flow | [Constureren MD to XMI Convertor](Constureren MD to XMI Convertor.md) |
 
+### Appears on Diagrams
+
+- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Compile Information Sources](Compile Information Sources.md) |
+| ControlFlow | Flow | [Constureren MD to XMI Convertor](Constureren MD to XMI Convertor.md) |
+| ControlFlow | Flow | [Compile Information Sources](Compile Information Sources.md) |
+| ControlFlow | Flow | [Constureren MD to XMI Convertor](Constureren MD to XMI Convertor.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

@@ -21,6 +21,10 @@ Example company: 450 employees, food production, two facilities in Netherlands
 | Generalization | ArchiMate_Specialization | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
 | Abstraction | trace | [FreshFood B.V.](../People/FreshFood B.V..md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

@@ -20,6 +20,17 @@
 | ControlFlow | Flow | [Sustainable Policies](../Asset/Sustainable Policies.md) |
 | Association | Link | [% reductie reisgerelateerde CO₂](../Metrics/% reductie reisgerelateerde CO₂.md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Sustainable Policies](../Asset/Sustainable Policies.md) |
+| ControlFlow | Flow | [Sustainable Policies](../Asset/Sustainable Policies.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

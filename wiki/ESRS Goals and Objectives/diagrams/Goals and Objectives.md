@@ -10,11 +10,11 @@
 ## Elements
 
 - [Align sustainability reporting](../Align sustainability reporting.md)
-- [Standardize ESG reporting and enhance transparency and comparability in Europe. ](../Standardize ESG reporting and enhance transparency and comparability in Europe..md)
-- [Implement a double materiality approach](../Implement a double materiality approach.md)
-- [Ensure that investors and other stakeholders have access to the information](../Ensure that investors and other stakeholders have access to the information.md)
 - [Allow investors to assess financial risks and opportunities ](../Allow investors to assess financial risks and opportunities.md)
+- [Ensure that investors and other stakeholders have access to the information](../Ensure that investors and other stakeholders have access to the information.md)
+- [Implement a double materiality approach](../Implement a double materiality approach.md)
+- [Standardize ESG reporting and enhance transparency and comparability in Europe. ](../Standardize ESG reporting and enhance transparency and comparability in Europe..md)
 
 ---
 
-*Generated: 2026-06-22 17:27:44*
+*Generated: 2026-06-22 17:43:26*

@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [Massa gerecycled materiaal (kg/% input)](Massa gerecycled materiaal (kg_% input).md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [Massa gerecycled materiaal (kg/% input)](Massa gerecycled materiaal (kg_% input).md) |
+| Association | Link | [Massa gerecycled materiaal (kg/% input)](Massa gerecycled materiaal (kg_% input).md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

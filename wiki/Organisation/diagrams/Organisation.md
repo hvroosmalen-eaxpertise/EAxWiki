@@ -9,25 +9,25 @@
 
 ## Elements
 
-- [OrganizationEquityShare](../OrganizationEquityShare.md)
-- [Standard](../Standard.md)
-- [Organization](../Organization.md)
-- [OrganizationType](../OrganizationType.md)
 - [Address](../Address.md)
 - [ContactPerson](../ContactPerson.md)
+- [Country](../Country.md)
 - [IndustrySectorType](../IndustrySectorType.md)
+- [Organization](../Organization.md)
+- [OrganizationAddress](../OrganizationAddress.md)
+- [OrganizationAddressType](../OrganizationAddressType.md)
 - [OrganizationalBoundary](../OrganizationalBoundary.md)
 - [OrganizationAssociation](../OrganizationAssociation.md)
 - [OrganizationAssociationType](../OrganizationAssociationType.md)
-- [OrganizationAddress](../OrganizationAddress.md)
-- [OrganizationAddressType](../OrganizationAddressType.md)
-- [Country](../Country.md)
-- [PersonOrganizationRoleType](../PersonOrganizationRoleType.md)
-- [OrganizationPersonAssociation](../OrganizationPersonAssociation.md)
+- [OrganizationEquityShare](../OrganizationEquityShare.md)
 - [OrganizationExternalIdentifier](../OrganizationExternalIdentifier.md)
 - [OrganizationExternalIdentifierType](../OrganizationExternalIdentifierType.md)
 - [OrganizationIndustrySector](../OrganizationIndustrySector.md)
+- [OrganizationPersonAssociation](../OrganizationPersonAssociation.md)
+- [OrganizationType](../OrganizationType.md)
+- [PersonOrganizationRoleType](../PersonOrganizationRoleType.md)
+- [Standard](../Standard.md)
 
 ---
 
-*Generated: 2026-06-22 17:27:58*
+*Generated: 2026-06-22 17:43:38*

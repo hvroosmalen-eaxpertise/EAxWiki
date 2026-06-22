@@ -32,6 +32,17 @@ FacilityLocationAssociation is the temporal intersection entity that assigns a F
 | Association |  | [Location](Location.md) |
 | Association |  | [Facility](Facility.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Facility](Facility.md) |
+| Association |  | [Location](Location.md) |
+| Association |  | [FacilityLocationType](FacilityLocationType.md) |
+| Association |  | [Location](Location.md) |
+| Association |  | [Facility](Facility.md) |
+| Association |  | [FacilityLocationType](FacilityLocationType.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

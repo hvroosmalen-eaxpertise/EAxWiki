@@ -12,6 +12,17 @@
 |------|------------|-------------|
 | Association | Link | [CO₂e, energie, afval, water per proces](CO₂e, energie, afval, water per proces.md) |
 
+### Appears on Diagrams
+
+- [Metrics](diagrams/Metrics.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [CO₂e, energie, afval, water per proces](CO₂e, energie, afval, water per proces.md) |
+| Association | Link | [CO₂e, energie, afval, water per proces](CO₂e, energie, afval, water per proces.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

@@ -31,6 +31,15 @@ EquipmentInstallation captures the temporal fact of a piece of Equipment being i
 | Association |  | [Facility](Facility.md) |
 | Association |  | [Equipment](Equipment.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Facility](Facility.md) |
+| Association |  | [Equipment](Equipment.md) |
+| Association |  | [Facility](Facility.md) |
+| Association |  | [Equipment](Equipment.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

@@ -21,6 +21,10 @@ Users of sustainability statements for investment decisions
 | Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
 | Abstraction | trace | [Investors/Shareholders](../People/Investors_Shareholders.md) |
 
+### Appears on Diagrams
+
+- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

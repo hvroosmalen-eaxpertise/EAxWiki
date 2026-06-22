@@ -24,6 +24,24 @@ Leverage sustainability as a strategic differentiator in the marketplace.
 | Dependency | ArchiMate_Realization | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
 | Dependency | ArchiMate_Realization | [Increased Brand Trust](../Outcomes/Increased Brand Trust.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Market Differentiation Pressure](../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Dependency | ArchiMate_Realization | [Sustainability-driven Differentiation](../Courses of Action/Sustainability-driven Differentiation.md) |
+| ControlFlow | ArchiMate_Influence | [Market Differentiation Pressure](../Drivers/Market Differentiation Pressure.md) |
+| ControlFlow | ArchiMate_Influence | [Market Differentiation Pressure](../Drivers/Market Differentiation Pressure.md) |
+| Dependency | ArchiMate_Realization | [Sustainability-driven Differentiation](../Courses of Action/Sustainability-driven Differentiation.md) |
+| Dependency | ArchiMate_Realization | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
+| Dependency | ArchiMate_Realization | [Increased Brand Trust](../Outcomes/Increased Brand Trust.md) |
+| Dependency | ArchiMate_Realization | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
+| Dependency | ArchiMate_Realization | [Increased Brand Trust](../Outcomes/Increased Brand Trust.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

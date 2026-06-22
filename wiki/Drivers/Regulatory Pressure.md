@@ -22,6 +22,11 @@ Forces organizations to comply with evolving environmental and social standards.
 | ControlFlow | ArchiMate_Influence | [Risk Reduction](../Goals/Risk Reduction.md) |
 | ControlFlow | ArchiMate_Influence | [Corporate Sustainability Integration](../Goals/Corporate Sustainability Integration.md) |
 
+### Appears on Diagrams
+
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
+- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:22*

@@ -9,7 +9,6 @@
 
 ## Elements
 
-- [Works Council (Ondernemingsraad)](../../People/Works Council (Ondernemingsraad).md)
 - [Affected Communities (ESRS S3)](../../People/Affected Communities (ESRS S3).md)
 - [AFM](../../People/AFM.md)
 - [Agricultural Suppliers](../../People/Agricultural Suppliers.md)
@@ -60,7 +59,8 @@
 - [Training Providers](../../People/Training Providers.md)
 - [Transport Companies](../../People/Transport Companies.md)
 - [Workers in Value Chain (ESRS S2)](../../People/Workers in Value Chain (ESRS S2).md)
+- [Works Council (Ondernemingsraad)](../../People/Works Council (Ondernemingsraad).md)
 
 ---
 
-*Generated: 2026-06-22 17:27:46*
+*Generated: 2026-06-22 17:43:27*

@@ -30,6 +30,15 @@ FacilityEmissionAllocation records the allocation of a specific emission quantit
 | Association |  | [EmissionStatement](../Emissions/EmissionStatement.md) |
 | Association |  | [Facility](Facility.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Facility](Facility.md) |
+| Association |  | [EmissionStatement](../Emissions/EmissionStatement.md) |
+| Association |  | [Facility](Facility.md) |
+| Association |  | [EmissionStatement](../Emissions/EmissionStatement.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

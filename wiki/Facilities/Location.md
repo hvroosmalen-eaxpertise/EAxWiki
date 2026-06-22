@@ -36,6 +36,22 @@ Location represents a place where a person or thing is located. It can describe 
 | Association |  | [FacilityLocationType](FacilityLocationType.md) |
 | Association |  | [FacilityLocationAssociation](FacilityLocationAssociation.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [ProductCarbonFootprint](../Products/ProductCarbonFootprint.md) |
+| Association |  | [ProductCarbonFootprint](../Products/ProductCarbonFootprint.md) |
+| Association |  | [Location](Location.md) |
+| Association |  | [BusinessArea](BusinessArea.md) |
+| Association |  | [GeospatialLocation](GeospatialLocation.md) |
+| Association |  | [GeopoliticalEntity](GeopoliticalEntity.md) |
+| Association |  | [FacilityLocationType](FacilityLocationType.md) |
+| Association |  | [GeopoliticalEntity](GeopoliticalEntity.md) |
+| Association |  | [BusinessArea](BusinessArea.md) |
+| Association |  | [GeospatialLocation](GeospatialLocation.md) |
+| Association |  | [FacilityLocationType](FacilityLocationType.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

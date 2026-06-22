@@ -21,6 +21,17 @@
 | Association | Link | [Energie (MWh/jaar)](../Metrics/Energie (MWh_jaar).md) |
 | Association | Link | [Recycling % van afval](../Metrics/Recycling % van afval.md) |
 
+### Appears on Diagrams
+
+- [Architecture](../Architecture/diagrams/Architecture.md)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| ControlFlow | Flow | [Sustainability Metrics](../Asset/Sustainability Metrics.md) |
+| ControlFlow | Flow | [Sustainability Metrics](../Asset/Sustainability Metrics.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*

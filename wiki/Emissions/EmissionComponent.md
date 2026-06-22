@@ -33,6 +33,19 @@ EmissionComponent is a work-product-component that disaggregates an EmissionStat
 | Association |  | [EmissionComponentCategory](EmissionComponentCategory.md) |
 | Association |  | [EmissionStatement](EmissionStatement.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionStatement](EmissionStatement.md) |
+| Association |  | [EmissionComponentPerStandard](EmissionComponentPerStandard.md) |
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
+| Association |  | [EmissionComponentCategory](EmissionComponentCategory.md) |
+| Association |  | [EmissionStatement](EmissionStatement.md) |
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
+| Association |  | [EmissionComponentPerStandard](EmissionComponentPerStandard.md) |
+| Association |  | [EmissionComponentCategory](EmissionComponentCategory.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

@@ -47,6 +47,31 @@ EmissionStatement is the central work-product-component that records a single qu
 | Association |  | [EmissionActivity](EmissionActivity.md) |
 | Association |  | [EmissionInventory](EmissionInventory.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [EmissionInventory](EmissionInventory.md) |
+| Association |  | [EmissionScopeType](EmissionScopeType.md) |
+| Association |  | [EmissionActivity](EmissionActivity.md) |
+| Association |  | [ActivityEmissionAllocation](ActivityEmissionAllocation.md) |
+| Association |  | [OrganizationEmissionAllocation](OrganizationEmissionAllocation.md) |
+| Association |  | [RecordingUncertaintyAssessment](RecordingUncertaintyAssessment.md) |
+| Association |  | [EmissionRecordingMethodType](EmissionRecordingMethodType.md) |
+| Association |  | [EmissionStatementPerStandard](EmissionStatementPerStandard.md) |
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
+| Association |  | [EmissionCalculationModel](EmissionCalculationModel.md) |
+| Association |  | [EmissionScopeType](EmissionScopeType.md) |
+| Association |  | [EmissionActivity](EmissionActivity.md) |
+| Association |  | [EmissionInventory](EmissionInventory.md) |
+| Association |  | [EmissionCalculationModel](EmissionCalculationModel.md) |
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
+| Association |  | [EmissionStatementPerStandard](EmissionStatementPerStandard.md) |
+| Association |  | [EmissionRecordingMethodType](EmissionRecordingMethodType.md) |
+| Association |  | [RecordingUncertaintyAssessment](RecordingUncertaintyAssessment.md) |
+| Association |  | [OrganizationEmissionAllocation](OrganizationEmissionAllocation.md) |
+| Association |  | [ActivityEmissionAllocation](ActivityEmissionAllocation.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

@@ -35,6 +35,18 @@ GeopoliticalEntity represents a named geographical area that is defined and admi
 | Association |  | [Location](Location.md) |
 | Association |  | [Country](../Organisation/Country.md) |
 
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association |  | [Country](../Organisation/Country.md) |
+| Association |  | [GeopoliticalEntityType](GeopoliticalEntityType.md) |
+| Association |  | [EmissionActivityParameterRecordingTemplate](../Emissions/EmissionActivityParameterRecordingTemplate.md) |
+| Association |  | [GeopoliticalEntity](GeopoliticalEntity.md) |
+| Association |  | [GeopoliticalEntityType](GeopoliticalEntityType.md) |
+| Association |  | [Country](../Organisation/Country.md) |
+| Association |  | [EmissionActivityParameterRecordingTemplate](../Emissions/EmissionActivityParameterRecordingTemplate.md) |
+
 ---
 
-*Generated: 2026-06-22 17:27:40*
+*Generated: 2026-06-22 17:43:22*

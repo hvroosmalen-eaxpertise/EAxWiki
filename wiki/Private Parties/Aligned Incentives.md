@@ -8,6 +8,10 @@
 
 https://alignedincentives.com/our-story/
 
+### Appears on Diagrams
+
+- [Private Parties](diagrams/Private Parties.md)
+
 ---
 
-*Generated: 2026-06-22 17:27:39*
+*Generated: 2026-06-22 17:43:21*
