@@ -15,6 +15,9 @@ markdown_extensions:
   - pymdownx.betterem
   - pymdownx.highlight
 
+extra_css:
+  - ../extra.css
+
 plugins:
   - search
   - awesome-pages
