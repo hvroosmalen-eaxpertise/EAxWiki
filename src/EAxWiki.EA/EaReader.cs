@@ -91,7 +91,7 @@ public class EaReader : IEaReader, IDisposable
             PackageId = eaElement.PackageID,
             Status = eaElement.Status ?? string.Empty,
             ModifiedDate = (DateTime)eaElement.Modified,
-            CreatedDate = eaElement.CreatedDate as DateTime?
+            CreatedDate = eaElement.Created as DateTime?
         };
 
         var attrs = (EA.Collection)eaElement.Attributes;
