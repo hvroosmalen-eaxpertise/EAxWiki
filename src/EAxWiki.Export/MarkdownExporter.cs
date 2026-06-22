@@ -39,6 +39,13 @@ public class MarkdownExporter : IWikiExporter
 
             var packageLookup = BuildPackageLookup(packages);
 
+            // Phase 1: collect all elements before writing pages
+            foreach (var pkg in packages)
+            {
+                CollectElements(pkg, outputPath, elements);
+            }
+
+            // Phase 2: write pages with complete lookup
             foreach (var pkg in packages)
             {
                 await ExportPackageAsync(pkg, outputPath, elements, packageLookup);
@@ -126,7 +133,6 @@ public class MarkdownExporter : IWikiExporter
             foreach (var elem in package.Elements)
             {
                 var elemFile = $"{SanitizeName(elem.Name)}.md";
-                elements.Add((elem, dir));
                 elementTasks.Add(WriteElementAsync(elem, dir, outputDir, elements, packageLookup));
 
                 var typeLabel = string.IsNullOrEmpty(elem.Stereotype)
@@ -179,6 +185,23 @@ public class MarkdownExporter : IWikiExporter
         foreach (var child in package.Children)
         {
             await ExportPackageAsync(child, outputDir, elements, packageLookup);
+        }
+    }
+
+    private static void CollectElements(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements)
+    {
+        if (package.Elements.Count > 0)
+        {
+            var dir = Path.Combine(outputDir, SanitizeName(package.Name));
+            foreach (var elem in package.Elements)
+            {
+                elements.Add((elem, dir));
+            }
+        }
+
+        foreach (var child in package.Children)
+        {
+            CollectElements(child, outputDir, elements);
         }
     }
 
