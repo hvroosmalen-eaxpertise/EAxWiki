@@ -30,4 +30,4 @@ EmissionRecordingMethodType is a reference entity that classifies how an emissio
 
 ---
 
-*Generated: 2026-06-22 21:50:29*
+*Generated: 2026-06-22 22:08:54*

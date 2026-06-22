@@ -19,4 +19,4 @@ The book is enriched with practical tools, including checklists and insights int
 
 ---
 
-*Generated: 2026-06-22 21:50:28*
+*Generated: 2026-06-22 22:08:54*

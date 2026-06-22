@@ -23,4 +23,4 @@ The purpose of the ESRS is to achieve certain goals and objectives concerning su
 
 ---
 
-*Generated: 2026-06-22 21:50:27*
+*Generated: 2026-06-22 22:08:53*

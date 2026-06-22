@@ -42,4 +42,4 @@ ProductCategoryRule is a master-data entity that represents a product category r
 
 ---
 
-*Generated: 2026-06-22 21:50:29*
+*Generated: 2026-06-22 22:08:54*

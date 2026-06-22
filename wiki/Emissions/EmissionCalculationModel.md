@@ -56,4 +56,4 @@ EmissionCalculationModel is a master-data entity that defines the methodological
 
 ---
 
-*Generated: 2026-06-22 21:50:29*
+*Generated: 2026-06-22 22:08:54*

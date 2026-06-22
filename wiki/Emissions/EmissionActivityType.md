@@ -41,4 +41,4 @@ EmissionActivityType is a reference entity that classifies the technical nature 
 
 ---
 
-*Generated: 2026-06-22 21:50:29*
+*Generated: 2026-06-22 22:08:54*
