@@ -79,6 +79,7 @@ public class MarkdownExporter : IWikiExporter
             await GenerateTypesPagesAsync(elements, outputPath);
             await GenerateGlossaryAsync(elements, outputPath);
             await WritePagesFileAsync(outputPath);
+            await WriteExtraCssAsync(outputPath);
 
             if (reader != null)
             {
@@ -539,6 +540,35 @@ public class MarkdownExporter : IWikiExporter
             string.Empty,
         };
         await _writer.WriteFileAsync(typesPagesPath, string.Join(Environment.NewLine, typesContent));
+    }
+
+    private async Task WriteExtraCssAsync(string outputDir)
+    {
+        var cssPath = Path.Combine(outputDir, "extra.css");
+        var content = @".md-grid {
+  max-width: 75rem;
+}
+
+.md-typeset table:not([class]) th:nth-child(1),
+.md-typeset table:not([class]) td:nth-child(1) {
+  width: 22%;
+}
+
+.md-typeset table:not([class]) th:nth-child(2),
+.md-typeset table:not([class]) td:nth-child(2) {
+  width: 50%;
+}
+
+.md-typeset table:not([class]) th:nth-child(3),
+.md-typeset table:not([class]) td:nth-child(3) {
+  width: 28%;
+}
+
+.md-typeset table:not([class]) td {
+  word-break: break-word;
+}
+";
+        await _writer.WriteFileAsync(cssPath, content);
     }
 
     private async Task WriteElementAsync(EaElement element, string dir, string outputDir, List<(EaElement Element, string PackageDir)> elements, Dictionary<int, (string Name, int? ParentId)> packageLookup, Dictionary<int, List<(EaDiagram Diagram, string PkgDir)>> diagramIndex, Dictionary<int, List<(EaConnector Connector, int SourceId)>> incomingIndex)
