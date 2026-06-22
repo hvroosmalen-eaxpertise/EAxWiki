@@ -126,8 +126,8 @@ public class MarkdownExporter : IWikiExporter
             foreach (var elem in package.Elements)
             {
                 var elemFile = $"{SanitizeName(elem.Name)}.md";
-                elementTasks.Add(WriteElementAsync(elem, dir, outputDir, packageLookup));
                 elements.Add((elem, dir));
+                elementTasks.Add(WriteElementAsync(elem, dir, outputDir, elements, packageLookup));
 
                 var typeLabel = string.IsNullOrEmpty(elem.Stereotype)
                     ? elem.Type
@@ -421,7 +421,7 @@ public class MarkdownExporter : IWikiExporter
         await _writer.WriteFileAsync(typesPagesPath, string.Join(Environment.NewLine, typesContent));
     }
 
-    private async Task WriteElementAsync(EaElement element, string dir, string outputDir, Dictionary<int, (string Name, int? ParentId)> packageLookup)
+    private async Task WriteElementAsync(EaElement element, string dir, string outputDir, List<(EaElement Element, string PackageDir)> elements, Dictionary<int, (string Name, int? ParentId)> packageLookup)
     {
         var filePath = Path.Combine(dir, $"{SanitizeName(element.Name)}.md");
         if (element.ModifiedDate != DateTime.MinValue && File.Exists(filePath))
@@ -513,12 +513,30 @@ public class MarkdownExporter : IWikiExporter
         {
             lines.Add("## Relationships");
             lines.Add(string.Empty);
-            lines.Add("| Type | Stereotype | Source → Target |");
-            lines.Add("|------|------------|-----------------|");
+            lines.Add("| Type | Stereotype | Connected To |");
+            lines.Add("|------|------------|-------------|");
+
+            var lookup = elements.ToDictionary(e => e.Element.Id, e => e);
 
             foreach (var conn in element.Connectors)
             {
-                lines.Add($"| {conn.Type} | {conn.Stereotype} | {conn.SourceId} → {conn.TargetId} |");
+                var otherId = conn.SourceId == element.Id ? conn.TargetId
+                    : conn.TargetId == element.Id ? conn.SourceId
+                    : -1;
+
+                string connectedTo;
+                if (lookup.TryGetValue(otherId, out var other))
+                {
+                    var otherName = SanitizeName(other.Element.Name);
+                    var relativePath = Path.GetRelativePath(dir, Path.Combine(other.PackageDir, $"{otherName}.md")).Replace('\\', '/');
+                    connectedTo = $"[{other.Element.Name}]({relativePath})";
+                }
+                else
+                {
+                    connectedTo = $"Element ID {otherId} (not in export)";
+                }
+
+                lines.Add($"| {conn.Type} | {conn.Stereotype} | {connectedTo} |");
             }
 
             lines.Add(string.Empty);
