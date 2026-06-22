@@ -516,13 +516,16 @@ public class MarkdownExporter : IWikiExporter
             lines.Add("| Type | Stereotype | Connected To |");
             lines.Add("|------|------------|-------------|");
 
-            var lookup = elements.ToDictionary(e => e.Element.Id, e => e);
+            var lookup = elements.GroupBy(e => e.Element.Id)
+                                 .ToDictionary(g => g.Key, g => g.First());
 
             foreach (var conn in element.Connectors)
             {
                 var otherId = conn.SourceId == element.Id ? conn.TargetId
                     : conn.TargetId == element.Id ? conn.SourceId
                     : -1;
+
+                if (otherId <= 0) continue;
 
                 string connectedTo;
                 if (lookup.TryGetValue(otherId, out var other))
