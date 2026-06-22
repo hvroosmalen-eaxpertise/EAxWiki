@@ -462,12 +462,15 @@ public class MarkdownExporter : IWikiExporter
 
         var isNew = !File.Exists(filePath);
         _logger.LogInformation("{Action} {ElementName}", isNew ? "Created" : "Updated", element.Name);
+        var createdStr = element.CreatedDate?.ToString("yyyy-MM-dd") ?? "-";
+        var modifiedStr = element.ModifiedDate == DateTime.MinValue ? "-" : element.ModifiedDate.ToString("yyyy-MM-dd");
         var lines = new List<string>
         {
             $"# {element.Name}",
             string.Empty,
             $"**Type:** {element.Type}  ",
             $"**Stereotype:** {element.Stereotype}  ",
+            $"**Created:** {createdStr}  **Modified:** {modifiedStr}",
             string.Empty
         };
 

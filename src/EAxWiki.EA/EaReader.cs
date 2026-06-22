@@ -89,7 +89,8 @@ public class EaReader : IEaReader, IDisposable
             FQStereotype = eaElement.FQStereotype,
             Notes = eaElement.Notes,
             PackageId = eaElement.PackageID,
-            ModifiedDate = (DateTime)eaElement.Modified
+            ModifiedDate = (DateTime)eaElement.Modified,
+            CreatedDate = eaElement.CreatedDate as DateTime?
         };
 
         var attrs = (EA.Collection)eaElement.Attributes;
