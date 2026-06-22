@@ -45,10 +45,34 @@ public class MarkdownExporter : IWikiExporter
                 CollectElements(pkg, outputPath, elements);
             }
 
+            // Build diagram index: element ID → list of (diagram, package dir)
+            var diagramIndex = new Dictionary<int, List<(EaDiagram Diagram, string PkgDir)>>();
+            foreach (var (diagram, pkgDir) in CollectDiagrams(packages, outputPath))
+            {
+                foreach (var dob in diagram.DiagramObjects)
+                {
+                    if (!diagramIndex.ContainsKey(dob.ElementId))
+                        diagramIndex[dob.ElementId] = new List<(EaDiagram, string)>();
+                    diagramIndex[dob.ElementId].Add((diagram, pkgDir));
+                }
+            }
+
+            // Build incoming connector index: element ID → list of (connector, source element ID)
+            var incomingIndex = new Dictionary<int, List<(EaConnector Connector, int SourceId)>>();
+            foreach (var (elem, _) in elements)
+            {
+                foreach (var conn in elem.Connectors)
+                {
+                    if (!incomingIndex.ContainsKey(conn.TargetId))
+                        incomingIndex[conn.TargetId] = new List<(EaConnector, int)>();
+                    incomingIndex[conn.TargetId].Add((conn, conn.SourceId));
+                }
+            }
+
             // Phase 2: write pages with complete lookup
             foreach (var pkg in packages)
             {
-                await ExportPackageAsync(pkg, outputPath, elements, packageLookup);
+                await ExportPackageAsync(pkg, outputPath, elements, packageLookup, diagramIndex, incomingIndex);
             }
 
             await WriteRootIndexAsync(packages, outputPath, repository.ConnectionString);
@@ -80,7 +104,7 @@ public class MarkdownExporter : IWikiExporter
         }
     }
 
-    private async Task ExportPackageAsync(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements, Dictionary<int, (string Name, int? ParentId)> packageLookup)
+    private async Task ExportPackageAsync(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements, Dictionary<int, (string Name, int? ParentId)> packageLookup, Dictionary<int, List<(EaDiagram Diagram, string PkgDir)>> diagramIndex, Dictionary<int, List<(EaConnector Connector, int SourceId)>> incomingIndex)
     {
         var pkgStopwatch = Stopwatch.StartNew();
         _logger.LogInformation("Exporting package {PackageName} ({ElementCount} elements, {DiagramCount} diagrams)",
@@ -133,7 +157,7 @@ public class MarkdownExporter : IWikiExporter
             foreach (var elem in package.Elements)
             {
                 var elemFile = $"{SanitizeName(elem.Name)}.md";
-                elementTasks.Add(WriteElementAsync(elem, dir, outputDir, elements, packageLookup));
+                elementTasks.Add(WriteElementAsync(elem, dir, outputDir, elements, packageLookup, diagramIndex, incomingIndex));
 
                 var typeLabel = string.IsNullOrEmpty(elem.Stereotype)
                     ? elem.Type
@@ -184,7 +208,7 @@ public class MarkdownExporter : IWikiExporter
 
         foreach (var child in package.Children)
         {
-            await ExportPackageAsync(child, outputDir, elements, packageLookup);
+            await ExportPackageAsync(child, outputDir, elements, packageLookup, diagramIndex, incomingIndex);
         }
     }
 
@@ -444,7 +468,7 @@ public class MarkdownExporter : IWikiExporter
         await _writer.WriteFileAsync(typesPagesPath, string.Join(Environment.NewLine, typesContent));
     }
 
-    private async Task WriteElementAsync(EaElement element, string dir, string outputDir, List<(EaElement Element, string PackageDir)> elements, Dictionary<int, (string Name, int? ParentId)> packageLookup)
+    private async Task WriteElementAsync(EaElement element, string dir, string outputDir, List<(EaElement Element, string PackageDir)> elements, Dictionary<int, (string Name, int? ParentId)> packageLookup, Dictionary<int, List<(EaDiagram Diagram, string PkgDir)>> diagramIndex, Dictionary<int, List<(EaConnector Connector, int SourceId)>> incomingIndex)
     {
         var filePath = Path.Combine(dir, $"{SanitizeName(element.Name)}.md");
         if (element.ModifiedDate != DateTime.MinValue && File.Exists(filePath))
@@ -568,6 +592,45 @@ public class MarkdownExporter : IWikiExporter
                 lines.Add($"| {conn.Type} | {conn.Stereotype} | {connectedTo} |");
             }
 
+            lines.Add(string.Empty);
+        }
+
+        if (diagramIndex.TryGetValue(element.Id, out var elementDiagrams))
+        {
+            lines.Add("### Appears on Diagrams");
+            lines.Add(string.Empty);
+            foreach (var (diagram, pkgDir) in elementDiagrams)
+            {
+                var diagDir = Path.Combine(pkgDir, "diagrams");
+                var diagLink = Path.GetRelativePath(dir, Path.Combine(diagDir, $"{SanitizeName(diagram.Name)}.md")).Replace('\\', '/');
+                lines.Add($"- [{diagram.Name}]({diagLink})");
+            }
+            lines.Add(string.Empty);
+        }
+
+        if (incomingIndex.TryGetValue(element.Id, out var incomingConns))
+        {
+            lines.Add("### Referenced By");
+            lines.Add(string.Empty);
+            lines.Add("| Type | Stereotype | Source |");
+            lines.Add("|------|------------|--------|");
+            var lookup = elements.GroupBy(e => e.Element.Id)
+                                 .ToDictionary(g => g.Key, g => g.First());
+            foreach (var (conn, sourceId) in incomingConns)
+            {
+                string source;
+                if (lookup.TryGetValue(sourceId, out var srcElem))
+                {
+                    var srcName = SanitizeName(srcElem.Element.Name);
+                    var relativePath = Path.GetRelativePath(dir, Path.Combine(srcElem.PackageDir, $"{srcName}.md")).Replace('\\', '/');
+                    source = $"[{srcElem.Element.Name}]({relativePath})";
+                }
+                else
+                {
+                    source = $"Element ID {sourceId} (not in export)";
+                }
+                lines.Add($"| {conn.Type} | {conn.Stereotype} | {source} |");
+            }
             lines.Add(string.Empty);
         }
 
