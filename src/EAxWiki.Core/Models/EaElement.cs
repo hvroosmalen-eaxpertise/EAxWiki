@@ -10,6 +10,7 @@ public class EaElement
     public string? FQStereotype { get; set; }
     public string? Notes { get; set; }
     public int PackageId { get; set; }
+    public string Status { get; set; } = string.Empty;
     public DateTime ModifiedDate { get; set; }
     public DateTime? CreatedDate { get; set; }
     public List<EaAttribute> Attributes { get; set; } = new();

@@ -468,8 +468,8 @@ public class MarkdownExporter : IWikiExporter
         {
             $"# {element.Name}",
             string.Empty,
-            $"**Type:** {element.Type}  ",
-            $"**Stereotype:** {element.Stereotype}  ",
+            $"**Type:** {element.Type}  **Stereotype:** {element.Stereotype}  " +
+            (string.IsNullOrEmpty(element.Status) ? "" : $"**Status:** {element.Status}  "),
             $"**Created:** {createdStr}  **Modified:** {modifiedStr}",
             string.Empty
         };
