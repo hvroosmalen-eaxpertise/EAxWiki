@@ -1,7 +1,7 @@
 # Implement a double materiality approach
 
-**Type:** Activity  
-**Stereotype:** Outcome  
+**Type:** Activity  **Stereotype:** Outcome  **Status:** Proposed  
+**Created:** 2025-12-15  **Modified:** 2025-12-16
 
 
 [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS Goals and Objectives](index.md)
@@ -17,4 +17,4 @@ Implement a double materiality approach, necessitating companies to report on bo
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*

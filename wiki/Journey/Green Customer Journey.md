@@ -1,7 +1,7 @@
 # Green Customer Journey
 
-**Type:** Interface  
-**Stereotype:** Journey  
+**Type:** Interface  **Stereotype:** Journey  **Status:** Proposed  
+**Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
 [Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Journey](index.md)
@@ -28,4 +28,4 @@ De duurzame ervaring van een klant door de klantreis heen.
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*

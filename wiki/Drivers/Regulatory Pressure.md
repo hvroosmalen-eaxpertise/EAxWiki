@@ -1,7 +1,7 @@
 # Regulatory Pressure
 
-**Type:** Class  
-**Stereotype:** ArchiMate_Driver  
+**Type:** Class  **Stereotype:** ArchiMate_Driver  
+**Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
@@ -24,4 +24,4 @@ Forces organizations to comply with evolving environmental and social standards.
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

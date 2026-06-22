@@ -1,7 +1,7 @@
 # Sustainable Supply Chain Management
 
-**Type:** Class  
-**Stereotype:** ArchiMate_Capability  
+**Type:** Class  **Stereotype:** ArchiMate_Capability  
+**Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
@@ -26,4 +26,4 @@ Ensures responsible sourcing and addresses upstream environmental and social imp
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

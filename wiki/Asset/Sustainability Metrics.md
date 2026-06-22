@@ -1,7 +1,7 @@
 # Sustainability Metrics
 
-**Type:** Class  
-**Stereotype:** Asset  
+**Type:** Class  **Stereotype:** Asset  **Status:** Proposed  
+**Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
 [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Asset](index.md)
@@ -28,4 +28,4 @@ KPI’s voor duurzaamheid.
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*

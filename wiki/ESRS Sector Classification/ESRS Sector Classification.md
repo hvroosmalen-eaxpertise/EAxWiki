@@ -1,7 +1,7 @@
 # ESRS Sector Classification
 
-**Type:** Enumeration  
-**Stereotype:**   
+**Type:** Enumeration  **Stereotype:**   **Status:** Proposed  
+**Created:** 2026-01-06  **Modified:** 2026-01-06
 
 
 [Archimate](../Archimate/index.md) / [ESRS Classification](../ESRS Classification/index.md) / [ESRS Sector Classification](index.md)
@@ -17,4 +17,4 @@
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

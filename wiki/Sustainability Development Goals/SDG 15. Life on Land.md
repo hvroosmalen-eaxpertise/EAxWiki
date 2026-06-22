@@ -1,7 +1,7 @@
 # SDG 15. Life on Land
 
-**Type:** Activity  
-**Stereotype:** Purpose  
+**Type:** Activity  **Stereotype:** Purpose  **Status:** Proposed  
+**Created:** 2025-12-02  **Modified:** 2025-12-02
 
 
 [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
@@ -25,4 +25,4 @@ Protect, restore and promote sustainable use of terrestrial ecosystems.
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*

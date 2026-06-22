@@ -1,7 +1,7 @@
 # Non-EU company
 
-**Type:** Actor  
-**Stereotype:** People  
+**Type:** Actor  **Stereotype:** People  **Status:** Proposed  
+**Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
 [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
@@ -18,4 +18,4 @@ Non-EU companies, which generate over EUR 150 million on the EU market.
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*

@@ -1,7 +1,7 @@
 # ESRS S3 Affected Communities
 
-**Type:** Class  
-**Stereotype:** Content  
+**Type:** Class  **Stereotype:** Content  **Status:** Proposed  
+**Created:** 2025-12-02  **Modified:** 2026-05-13
 
 
 [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS S3](index.md)
@@ -30,4 +30,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*

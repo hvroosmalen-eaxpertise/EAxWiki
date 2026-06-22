@@ -1,7 +1,7 @@
 # Reparatie
 
-**Type:** Interface  
-**Stereotype:** Story  
+**Type:** Interface  **Stereotype:** Story  **Status:** Proposed  
+**Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
 [Edgy](../Edgy/index.md) / [Stories](index.md)
@@ -17,4 +17,4 @@ In een ontwerpafdeling van een technologiebedrijf viel het een medewerker op dat
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

@@ -1,7 +1,7 @@
 # Large Companies (>250 employees)
 
-**Type:** Class  
-**Stereotype:** ArchiMate_Stakeholder  
+**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
+**Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
 [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
@@ -50,4 +50,4 @@ Companies required to report under CSRD from 2025
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

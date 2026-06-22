@@ -1,7 +1,7 @@
 # GeopoliticalEntity
 
-**Type:** Class  
-**Stereotype:** master-data  
+**Type:** Class  **Stereotype:** master-data  
+**Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
 [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
@@ -37,4 +37,4 @@ GeopoliticalEntity represents a named geographical area that is defined and admi
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:40*

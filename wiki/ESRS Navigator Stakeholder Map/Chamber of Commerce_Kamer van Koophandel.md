@@ -1,7 +1,7 @@
 # Chamber of Commerce/Kamer van Koophandel
 
-**Type:** Class  
-**Stereotype:** ArchiMate_Stakeholder  
+**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
+**Created:** 2025-11-14  **Modified:** 2025-12-15
 
 
 [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
@@ -23,4 +23,4 @@ Chamber of Commerce - provides CSRD guidance
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:40*

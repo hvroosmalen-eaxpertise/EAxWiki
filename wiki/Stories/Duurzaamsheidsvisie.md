@@ -1,7 +1,7 @@
 # Duurzaamsheidsvisie
 
-**Type:** Interface  
-**Stereotype:** Story  
+**Type:** Interface  **Stereotype:** Story  **Status:** Proposed  
+**Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
 [Edgy](../Edgy/index.md) / [Stories](index.md)
@@ -17,4 +17,4 @@ Tijdens een personeelsbijeenkomst deelde de directeur een persoonlijk moment: zi
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

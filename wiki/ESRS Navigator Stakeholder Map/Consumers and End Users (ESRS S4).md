@@ -1,7 +1,7 @@
 # Consumers and End Users (ESRS S4)
 
-**Type:** Class  
-**Stereotype:** ArchiMate_Stakeholder  
+**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
+**Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
 [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
@@ -24,4 +24,4 @@ Final consumers - focus on food safety and product information
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

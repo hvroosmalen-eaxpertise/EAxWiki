@@ -1,7 +1,7 @@
 # SDG  3. Good Health and Well-Being
 
-**Type:** Activity  
-**Stereotype:** Purpose  
+**Type:** Activity  **Stereotype:** Purpose  **Status:** Proposed  
+**Created:** 2025-12-02  **Modified:** 2025-12-02
 
 
 [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
@@ -18,4 +18,4 @@ Ensure healthy lives and promote well-being for all at all ages.
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*

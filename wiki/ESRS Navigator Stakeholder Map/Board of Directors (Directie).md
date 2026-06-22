@@ -1,7 +1,7 @@
 # Board of Directors (Directie)
 
-**Type:** Class  
-**Stereotype:** ArchiMate_BusinessRole  
+**Type:** Class  **Stereotype:** ArchiMate_BusinessRole  
+**Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
 [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
@@ -26,4 +26,4 @@ CEO, CFO, COO - Final responsibility for sustainability policy
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

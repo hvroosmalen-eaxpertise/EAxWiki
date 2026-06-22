@@ -1,7 +1,7 @@
 # ESRS E2 - Pollution
 
-**Type:** Class  
-**Stereotype:** ArchiMate_BusinessObject  
+**Type:** Class  **Stereotype:** ArchiMate_BusinessObject  
+**Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
 [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
@@ -23,4 +23,4 @@ Pollution reporting standard
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:40*

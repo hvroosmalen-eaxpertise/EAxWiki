@@ -1,7 +1,7 @@
 # ESG-based Risk Management
 
-**Type:** Class  
-**Stereotype:** ArchiMate_CourseOfAction  
+**Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  
+**Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
@@ -25,4 +25,4 @@ Identifies, assesses, and mitigates sustainability-related risks with the same r
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

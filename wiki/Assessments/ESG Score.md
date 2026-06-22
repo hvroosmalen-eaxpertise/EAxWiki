@@ -1,7 +1,7 @@
 # ESG Score
 
-**Type:** Class  
-**Stereotype:** ArchiMate_Assessment  
+**Type:** Class  **Stereotype:** ArchiMate_Assessment  
+**Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
@@ -25,4 +25,4 @@ Provides aggregate view of sustainability performance for management and investo
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

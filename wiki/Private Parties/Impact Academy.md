@@ -1,7 +1,7 @@
 # Impact Academy
 
-**Type:** Actor  
-**Stereotype:** People  
+**Type:** Actor  **Stereotype:** People  **Status:** Proposed  
+**Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
 [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](../People/index.md) / [Private Parties](index.md)
@@ -11,4 +11,4 @@ IMPACT ACADEMY has the main objective to offer a free, multilingual, high level 
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*

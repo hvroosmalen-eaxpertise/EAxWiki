@@ -1,7 +1,7 @@
 # Company subject to CSRD
 
-**Type:** Actor  
-**Stereotype:** People  
+**Type:** Actor  **Stereotype:** People  **Status:** Proposed  
+**Created:** 2025-12-12  **Modified:** 2025-12-16
 
 
 [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
@@ -44,4 +44,4 @@ Companies required to report under CSRD from 2025
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*

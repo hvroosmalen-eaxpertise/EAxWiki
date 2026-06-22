@@ -1,7 +1,7 @@
 # Corporate Sustainability Integration
 
-**Type:** Class  
-**Stereotype:** ArchiMate_Goal  
+**Type:** Class  **Stereotype:** ArchiMate_Goal  
+**Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
@@ -26,4 +26,4 @@ Move beyond peripheral CSR initiatives toward strategic integration throughout t
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

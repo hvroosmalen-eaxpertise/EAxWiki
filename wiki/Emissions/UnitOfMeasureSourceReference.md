@@ -1,7 +1,7 @@
 # UnitOfMeasureSourceReference
 
-**Type:** Class  
-**Stereotype:** reference-data  
+**Type:** Class  **Stereotype:** reference-data  
+**Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
 [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
@@ -31,4 +31,4 @@ UnitOfMeasureSourceReference is a reference entity that identifies the authorita
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:40*

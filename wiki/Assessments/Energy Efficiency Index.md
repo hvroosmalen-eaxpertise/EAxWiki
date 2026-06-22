@@ -1,7 +1,7 @@
 # Energy Efficiency Index
 
-**Type:** Class  
-**Stereotype:** ArchiMate_Assessment  
+**Type:** Class  **Stereotype:** ArchiMate_Assessment  
+**Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
@@ -25,4 +25,4 @@ Links environmental performance to operational excellence and cost management.
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

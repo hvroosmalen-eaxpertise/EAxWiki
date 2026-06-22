@@ -1,7 +1,7 @@
 # Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e)
 
-**Type:** Activity  
-**Stereotype:** Outcome  
+**Type:** Activity  **Stereotype:** Outcome  **Status:** Proposed  
+**Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
 [Edgy](../Edgy/index.md) / [Metrics](index.md)
@@ -21,4 +21,4 @@
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

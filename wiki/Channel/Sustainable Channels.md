@@ -1,7 +1,7 @@
 # Sustainable Channels
 
-**Type:** Class  
-**Stereotype:** Channel  
+**Type:** Class  **Stereotype:** Channel  **Status:** Proposed  
+**Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
 [Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Channel](index.md)
@@ -28,4 +28,4 @@ Manieren van duurzame interactie met het bedrijf.
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*

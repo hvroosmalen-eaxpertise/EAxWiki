@@ -1,7 +1,7 @@
 # Reference Architecture Framework for ESRS Reporting
 
-**Type:** Class  
-**Stereotype:** Asset  
+**Type:** Class  **Stereotype:** Asset  **Status:** Proposed  
+**Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
 [Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
@@ -27,4 +27,4 @@
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:40*

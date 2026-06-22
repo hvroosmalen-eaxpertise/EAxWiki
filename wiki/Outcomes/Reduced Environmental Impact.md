@@ -1,7 +1,7 @@
 # Reduced Environmental Impact
 
-**Type:** Class  
-**Stereotype:** ArchiMate_Outcome  
+**Type:** Class  **Stereotype:** ArchiMate_Outcome  
+**Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Outcomes](index.md)
@@ -28,4 +28,4 @@ Contributes to corporate sustainability goals and regulatory compliance.
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:39*

@@ -1,7 +1,7 @@
 # SDG 13. Climate Action
 
-**Type:** Activity  
-**Stereotype:** Purpose  
+**Type:** Activity  **Stereotype:** Purpose  **Status:** Proposed  
+**Created:** 2025-12-02  **Modified:** 2025-12-02
 
 
 [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
@@ -44,4 +44,4 @@ Take urgent action to combat climate change and its impacts.
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*

@@ -1,7 +1,7 @@
 # EurSuRA Model
 
-**Type:** Activity  
-**Stereotype:** Product  
+**Type:** Activity  **Stereotype:** Product  **Status:** Proposed  
+**Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
 [Model Creation](../Model Creation/index.md) / [Information Collection and Model Creation](index.md)
@@ -27,4 +27,4 @@
 
 ---
 
-*Generated: 2026-06-22 16:50:36*
+*Generated: 2026-06-22 17:27:40*

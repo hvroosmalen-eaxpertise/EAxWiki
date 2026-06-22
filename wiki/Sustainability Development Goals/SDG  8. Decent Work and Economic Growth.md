@@ -1,7 +1,7 @@
 # SDG  8. Decent Work and Economic Growth
 
-**Type:** Activity  
-**Stereotype:** Purpose  
+**Type:** Activity  **Stereotype:** Purpose  **Status:** Proposed  
+**Created:** 2025-12-02  **Modified:** 2025-12-02
 
 
 [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
@@ -18,4 +18,4 @@ Promote sustained, inclusive and sustainable economic growth, full and productiv
 
 ---
 
-*Generated: 2026-06-22 16:50:35*
+*Generated: 2026-06-22 17:27:39*
