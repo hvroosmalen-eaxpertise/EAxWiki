@@ -694,7 +694,7 @@ public class MarkdownExporter : IWikiExporter
                     lines.Add("## Elements");
                     lines.Add(string.Empty);
 
-                    foreach (var (elemEa, elemDir) in diagramElements)
+                    foreach (var (elemEa, elemDir) in diagramElements.OrderBy(e => e.Element.Name))
                     {
                         var elemLink = Path.GetRelativePath(diagramsDir, Path.Combine(elemDir, $"{SanitizeName(elemEa.Name)}.md")).Replace('\\', '/');
                         lines.Add($"- [{elemEa.Name}]({elemLink})");
