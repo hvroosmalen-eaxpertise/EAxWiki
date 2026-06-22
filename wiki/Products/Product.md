@@ -36,4 +36,4 @@ Product is a master-data entity that represents a physical good or service whose
 
 ---
 
-*Generated: 2026-06-22 17:43:22*
+*Generated: 2026-06-22 21:50:28*

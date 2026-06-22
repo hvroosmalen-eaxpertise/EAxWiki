@@ -31,4 +31,4 @@ Provides aggregate view of sustainability performance for management and investo
 
 ---
 
-*Generated: 2026-06-22 17:43:22*
+*Generated: 2026-06-22 21:50:28*

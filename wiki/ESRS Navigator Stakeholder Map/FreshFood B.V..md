@@ -27,4 +27,4 @@ Example company: 450 employees, food production, two facilities in Netherlands
 
 ---
 
-*Generated: 2026-06-22 17:43:22*
+*Generated: 2026-06-22 21:50:28*
