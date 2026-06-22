@@ -78,6 +78,7 @@ public class MarkdownExporter : IWikiExporter
             await WriteRootIndexAsync(packages, outputPath, repository.ConnectionString);
             await GenerateTypesPagesAsync(elements, outputPath);
             await GenerateGlossaryAsync(elements, outputPath);
+            await GenerateRecentChangesAsync(packages, elements, outputPath, packageLookup);
             await WritePagesFileAsync(outputPath);
             await WriteExtraCssAsync(outputPath);
 
@@ -507,6 +508,72 @@ public class MarkdownExporter : IWikiExporter
         await _writer.WriteFileAsync(Path.Combine(glossaryDir, "index.md"), string.Join(Environment.NewLine, lines));
     }
 
+    private async Task GenerateRecentChangesAsync(
+        List<EaPackage> rootPackages,
+        List<(EaElement Element, string PackageDir)> elements,
+        string outputDir,
+        Dictionary<int, (string Name, int? ParentId)> packageLookup)
+    {
+        var recentDir = Path.Combine(outputDir, "recent");
+        await _writer.CreateDirectoryAsync(recentDir);
+
+        const int topN = 50;
+
+        var entries = new List<(string Name, string Type, DateTime? ModifiedDate, string Path)>();
+
+        foreach (var (elem, pkgDir) in elements)
+        {
+            var elemName = SanitizeName(elem.Name);
+            var link = Path.GetRelativePath(recentDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
+            var path = BuildBreadcrumb(elem.PackageId, recentDir, outputDir, packageLookup);
+            var modified = elem.ModifiedDate == DateTime.MinValue ? (DateTime?)null : elem.ModifiedDate;
+            entries.Add(($"[{elem.Name}]({link})", elem.Type, modified, path));
+        }
+
+        var diagrams = CollectDiagrams(rootPackages, outputDir);
+        foreach (var (diagram, pkgDir) in diagrams)
+        {
+            var diagramPage = Path.GetRelativePath(recentDir, Path.Combine(pkgDir, "diagrams", $"{SanitizeName(diagram.Name)}.md")).Replace('\\', '/');
+            var path = BuildBreadcrumb(diagram.PackageId, recentDir, outputDir, packageLookup);
+            DateTime? modified = null;
+            if (!string.IsNullOrWhiteSpace(diagram.ModifiedDate) && DateTime.TryParse(diagram.ModifiedDate, out var dt))
+                modified = dt;
+            entries.Add(($"[{diagram.Name}]({diagramPage})", "Diagram", modified, path));
+        }
+
+        var sorted = entries
+            .OrderByDescending(e => e.ModifiedDate.HasValue)
+            .ThenByDescending(e => e.ModifiedDate)
+            .Take(topN)
+            .ToList();
+
+        var lines = new List<string>
+        {
+            "# Recent Changes",
+            string.Empty,
+        };
+
+        if (sorted.Count > 0)
+        {
+            lines.Add("| Name | Type | Modified | Path |");
+            lines.Add("|------|------|----------|------|");
+
+            foreach (var (name, type, modified, path) in sorted)
+            {
+                var modifiedStr = modified?.ToString("yyyy-MM-dd") ?? "-";
+                lines.Add($"| {name} | {type} | {modifiedStr} | {path} |");
+            }
+        }
+        else
+        {
+            lines.Add("No recent changes found.");
+        }
+
+        lines.Add(string.Empty);
+        lines.Add(FormatTimestamp());
+        await _writer.WriteFileAsync(Path.Combine(recentDir, "index.md"), string.Join(Environment.NewLine, lines));
+    }
+
     private async Task WritePagesFileAsync(string outputDir)
     {
         var pagesPath = Path.Combine(outputDir, ".pages");
@@ -517,6 +584,7 @@ public class MarkdownExporter : IWikiExporter
             "  - Diagrams: diagrams/",
             "  - Types: types/",
             "  - Glossary: glossary/",
+            "  - Recent: recent/",
             string.Empty,
         };
         await _writer.WriteFileAsync(pagesPath, string.Join(Environment.NewLine, content));
