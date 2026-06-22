@@ -48,11 +48,29 @@ Runs the .NET exporter against the `.qea` file, then serves the output. The `-Ve
 
 ## Wiki navigation
 
-The wiki has three navigation views:
+The wiki has five navigation views:
 
 - **Structure** — a top-down tree of packages and their elements, following the EA model hierarchy
-- **Types** — elements grouped by stereotype (e.g. Task, Process, Metric, ArchiMate_Goal)
+- **Types** — elements grouped by modelling language and type (e.g. ArchiMate3 BusinessRole, UML Metric)
 - **Diagrams** — an alphabetically sorted global index of all diagrams with modified date and description
+- **Glossary** — terms extracted from "Definition"/"Glossary" tagged values and first sentences from element notes
+- **Recent** — top 50 most recently modified elements and diagrams, sorted by date descending
+
+## Element page features
+
+- **Breadcrumb** — hierarchical path from root to the element's package
+- **Dates** — shows CreatedDate and ModifiedDate beneath the breadcrumb
+- **Status** — displays element Status (Proposed, Approved, Implemented, etc.) inline with Type and Stereotype
+- **Relationships** — outgoing connectors with linked target element names
+- **Referenced By** — incoming connectors from other elements with links
+- **Appears on Diagrams** — list of diagrams containing this element with links
+- **Attributes, Methods, Tagged Values** — detailed tabs where present
+
+## Diagram page features
+
+- **PNG image** — exported directly from EA
+- **Interactive zoom** — click the image for a full-size overlay (via mkdocs-glightbox)
+- **Elements list** — all elements on the diagram, alphabetically sorted, with links
 
 All views are generated automatically by the exporter and configured via the awesome-pages MkDocs plugin.
 
