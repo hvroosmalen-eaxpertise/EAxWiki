@@ -21,6 +21,7 @@ extra_css:
 plugins:
   - search
   - awesome-pages
+  - glightbox
 
 # If you want an explicit navigation order, uncomment and adjust 'nav'
 # nav:
