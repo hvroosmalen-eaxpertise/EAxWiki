@@ -16,11 +16,11 @@ Employee representation with quarterly management consultation
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 279 → 329 |
-| Abstraction | trace | 279 → 537 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
+| Abstraction | trace | [Works Council (Ondernemingsraad)](../People/Works Council (Ondernemingsraad).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

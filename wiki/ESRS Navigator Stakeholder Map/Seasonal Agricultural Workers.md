@@ -16,11 +16,11 @@ Seasonal workers at supplier farms
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 284 → 267 |
-| Abstraction | trace | 284 → 533 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
+| Abstraction | trace | [Seasonal Agricultural Workers](../People/Seasonal Agricultural Workers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

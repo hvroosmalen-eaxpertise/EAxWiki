@@ -1,0 +1,48 @@
+# Stakeholder
+
+40 element(s):
+
+- [Large Companies (>250 employees)](../../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md)
+- [FreshFood B.V.](../../ESRS Navigator Stakeholder Map/FreshFood B.V..md)
+- [Listed SMEs](../../ESRS Navigator Stakeholder Map/Listed SMEs.md)
+- [Non-listed SMEs](../../ESRS Navigator Stakeholder Map/Non-listed SMEs.md)
+- [Own Personnel (ESRS S1)](../../ESRS Navigator Stakeholder Map/Own Personnel (ESRS S1).md)
+- [Permanent Employees](../../ESRS Navigator Stakeholder Map/Permanent Employees.md)
+- [Seasonal Workers](../../ESRS Navigator Stakeholder Map/Seasonal Workers.md)
+- [Production Workers](../../ESRS Navigator Stakeholder Map/Production Workers.md)
+- [Suppliers](../../ESRS Navigator Stakeholder Map/Suppliers.md)
+- [Agricultural Suppliers](../../ESRS Navigator Stakeholder Map/Agricultural Suppliers.md)
+- [Packaging Suppliers](../../ESRS Navigator Stakeholder Map/Packaging Suppliers.md)
+- [Transport Companies](../../ESRS Navigator Stakeholder Map/Transport Companies.md)
+- [Workers in Value Chain (ESRS S2)](../../ESRS Navigator Stakeholder Map/Workers in Value Chain (ESRS S2).md)
+- [Seasonal Agricultural Workers](../../ESRS Navigator Stakeholder Map/Seasonal Agricultural Workers.md)
+- [Customers](../../ESRS Navigator Stakeholder Map/Customers.md)
+- [Supermarket Chains](../../ESRS Navigator Stakeholder Map/Supermarket Chains.md)
+- [Foodservice Companies](../../ESRS Navigator Stakeholder Map/Foodservice Companies.md)
+- [Consumers and End Users (ESRS S4)](../../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4).md)
+- [Affected Communities (ESRS S3)](../../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).md)
+- [Local Communities](../../ESRS Navigator Stakeholder Map/Local Communities.md)
+- [Indigenous Peoples](../../ESRS Navigator Stakeholder Map/Indigenous Peoples.md)
+- [Investors/Shareholders](../../ESRS Navigator Stakeholder Map/Investors_Shareholders.md)
+- [Banks and Financial Institutions](../../ESRS Navigator Stakeholder Map/Banks and Financial Institutions.md)
+- [Credit Rating Agencies](../../ESRS Navigator Stakeholder Map/Credit Rating Agencies.md)
+- [European Commission](../../ESRS Navigator Stakeholder Map/European Commission.md)
+- [EFRAG](../../ESRS Navigator Stakeholder Map/EFRAG.md)
+- [Rijksdienst voor Ondernemen (RVO)](../../ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO).md)
+- [AFM](../../ESRS Navigator Stakeholder Map/AFM.md)
+- [Ministry of Economic Affairs](../../ESRS Navigator Stakeholder Map/Ministry of Economic Affairs.md)
+- [Sociaal Economische Raad (SER)](../../ESRS Navigator Stakeholder Map/Sociaal Economische Raad (SER).md)
+- [External Auditors](../../ESRS Navigator Stakeholder Map/External Auditors.md)
+- [Certification Bodies](../../ESRS Navigator Stakeholder Map/Certification Bodies.md)
+- [Industry Associations](../../ESRS Navigator Stakeholder Map/Industry Associations.md)
+- [NGOs and Civil Society](../../ESRS Navigator Stakeholder Map/NGOs and Civil Society.md)
+- [Trade Unions](../../ESRS Navigator Stakeholder Map/Trade Unions.md)
+- [Legal Design Agencies](../../ESRS Navigator Stakeholder Map/Legal Design Agencies.md)
+- [Sustainability Consultants](../../ESRS Navigator Stakeholder Map/Sustainability Consultants.md)
+- [Research and Analysis Firms](../../ESRS Navigator Stakeholder Map/Research and Analysis Firms.md)
+- [Chamber of Commerce/Kamer van Koophandel](../../ESRS Navigator Stakeholder Map/Chamber of Commerce_Kamer van Koophandel.md)
+- [Training Providers](../../ESRS Navigator Stakeholder Map/Training Providers.md)
+
+---
+
+*Generated: 2026-06-22 16:50:37*

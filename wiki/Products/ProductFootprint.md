@@ -30,12 +30,12 @@ ProductFootprint is a work-product-component that serves as the versioned envelo
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 811 → 811 |
-| Association |  | 811 → 812 |
-| Association |  | 810 → 811 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [ProductFootprint](ProductFootprint.md) |
+| Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
+| Association |  | [Product](Product.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

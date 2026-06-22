@@ -21,12 +21,12 @@ Duurzame producten en diensten.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 128 → 148 |
-| Association | Link | 14 → 128 |
-| Association | Link | 15 → 128 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Introduceer duurzame producten/diensten zoals hergebruik, recyclebaar design of groene levering.](../Task/Introduceer duurzame producten_diensten zoals hergebruik, recyclebaar design of groene levering..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

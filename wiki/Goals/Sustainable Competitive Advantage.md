@@ -17,13 +17,13 @@ Leverage sustainability as a strategic differentiator in the marketplace.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 432 → 435 |
-| Dependency | ArchiMate_Realization | 440 → 435 |
-| Dependency | ArchiMate_Realization | 458 → 435 |
-| Dependency | ArchiMate_Realization | 460 → 435 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Market Differentiation Pressure](../Drivers/Market Differentiation Pressure.md) |
+| Dependency | ArchiMate_Realization | [Sustainability-driven Differentiation](../Courses of Action/Sustainability-driven Differentiation.md) |
+| Dependency | ArchiMate_Realization | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
+| Dependency | ArchiMate_Realization | [Increased Brand Trust](../Outcomes/Increased Brand Trust.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

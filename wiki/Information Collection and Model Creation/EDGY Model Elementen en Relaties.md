@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 577 → 595 |
-| ControlFlow | Flow | 595 → 576 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [EDGY -> XMI (Python)](EDGY -_ XMI (Python).md) |
+| ControlFlow | Flow | [EurSuRA Model](EurSuRA Model.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

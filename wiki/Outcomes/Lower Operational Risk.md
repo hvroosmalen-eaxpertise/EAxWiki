@@ -18,12 +18,12 @@ Enhances business resilience and operational continuity.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 454 → 459 |
-| Dependency | ArchiMate_Realization | 459 → 436 |
-| Association | ArchiMate_Association | 464 → 459 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Supplier Sustainability Audits](../Courses of Action/Supplier Sustainability Audits.md) |
+| Dependency | ArchiMate_Realization | [Risk Reduction](../Goals/Risk Reduction.md) |
+| Association | ArchiMate_Association | [Supplier Compliance Rate](../Assessments/Supplier Compliance Rate.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

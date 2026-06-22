@@ -26,11 +26,11 @@ EmissionCalculationFormula is a master-data entity that encodes the mathematical
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 803 → 790 |
-| Association |  | 777 → 790 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionCalculationFormulaComponent](EmissionCalculationFormulaComponent.md) |
+| Association |  | [EmissionCalculationModel](EmissionCalculationModel.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -16,11 +16,11 @@ ISO certifications and verification services
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 255 → 331 |
-| Abstraction | trace | 255 → 512 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Abstraction | trace | [Certification Bodies](../People/Certification Bodies.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

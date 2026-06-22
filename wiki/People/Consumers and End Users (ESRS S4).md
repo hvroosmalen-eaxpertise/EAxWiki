@@ -10,12 +10,12 @@ Final consumers - focus on food safety and product information
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 280 → 517 |
-| Association | Link | 516 → 517 |
-| Association | Link | 517 → 44 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Consumers and End Users (ESRS S4)](../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4).md) |
+| Association | Link | [Customers](Customers.md) |
+| Association | Link | [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

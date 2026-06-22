@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 40 → 188 |
-| Association | Link | 161 → 188 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Voer duurzame werkgewoonten in zoals repair-first, afvalscheiding en energiebewust werken.](../Task/Voer duurzame werkgewoonten in zoals repair-first, afvalscheiding en energiebewust werken..md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

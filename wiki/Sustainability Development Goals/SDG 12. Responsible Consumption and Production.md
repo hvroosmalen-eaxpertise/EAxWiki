@@ -18,24 +18,24 @@ Ensure sustainable consumption and production patterns.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 14 → 113 |
-| Association | Link | 14 → 116 |
-| Association | Link | 14 → 121 |
-| Association | Link | 14 → 122 |
-| Association | Link | 14 → 124 |
-| Association | Link | 14 → 125 |
-| Association | Link | 14 → 126 |
-| Association | Link | 14 → 128 |
-| Association | Link | 14 → 129 |
-| Association | Link | 14 → 130 |
-| Association | Link | 14 → 164 |
-| Association | Link | 14 → 132 |
-| Association | Link | 14 → 135 |
-| Association | Link | 14 → 138 |
-| Association | Link | 14 → 140 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Sustainability Vision](../Story/Sustainability Vision.md) |
+| Association | Link | [Sustainability Objectives](../Content/Sustainability Objectives.md) |
+| Association | Link | [Sustainability Principles](../Content/Sustainability Principles.md) |
+| Association | Link | [Environmental Impact Story](../Story/Environmental Impact Story.md) |
+| Association | Link | [Stakeholder Sustainability Expectations](../Task/Stakeholder Sustainability Expectations.md) |
+| Association | Link | [Green Customer Task](../Task/Green Customer Task.md) |
+| Association | Link | [Green Customer Journey](../Journey/Green Customer Journey.md) |
+| Association | Link | [Green Services](../Channel/Green Services.md) |
+| Association | Link | [Green Capabilities](../Capability/Green Capabilities.md) |
+| Association | Link | [Sustainable Processes](../Process/Sustainable Processes.md) |
+| Association | Link | [Sustainable Policies](../Asset/Sustainable Policies.md) |
+| Association | Link | [Environmental Impact Map](../Asset/Environmental Impact Map.md) |
+| Association | Link | [Lifecycle & Circularity Model](../Process/Lifecycle & Circularity Model.md) |
+| Association | Link | [SDG Mapping Content](../Content/SDG Mapping Content.md) |
+| Association | Link | [Sustainable Work Practices](../Story/Sustainable Work Practices.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

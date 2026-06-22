@@ -21,12 +21,12 @@ Hoe het bedrijf haar milieu-impact begrijpt en communiceert.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 122 → 142 |
-| Association | Link | 14 → 122 |
-| Association | Link | 15 → 122 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Maak een publiek impactrapport over emissies, afval, water en circulariteit.](../Task/Maak een publiek impactrapport over emissies, afval, water en circulariteit..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

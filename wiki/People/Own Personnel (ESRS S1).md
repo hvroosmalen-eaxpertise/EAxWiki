@@ -10,17 +10,17 @@ All employees of the reporting organization
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 329 → 489 |
-| Association | Link | 493 → 489 |
-| Aggregation | Tree | 489 → 492 |
-| Aggregation | Tree | 489 → 491 |
-| Aggregation | Tree | 489 → 490 |
-| Association | Link | 537 → 489 |
-| Association | Link | 489 → 510 |
-| Association | Link | 489 → 41 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Own Personnel (ESRS S1)](../ESRS Navigator Stakeholder Map/Own Personnel (ESRS S1).md) |
+| Association | Link | [Trade Unions](Trade Unions.md) |
+| Aggregation | Tree | [Production Workers](Production Workers.md) |
+| Aggregation | Tree | [Seasonal Workers](Seasonal Workers.md) |
+| Aggregation | Tree | [Permanent Employees](Permanent Employees.md) |
+| Association | Link | [Works Council (Ondernemingsraad)](Works Council (Ondernemingsraad).md) |
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
+| Association | Link | [ESRS S1 Own Workforce](../ESRS S1/ESRS S1 Own Workforce.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

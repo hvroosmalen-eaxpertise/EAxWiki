@@ -25,11 +25,11 @@ EmissionCategoryStandardAssociation is an intersection entity that records which
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 787 → 734 |
-| Association |  | 787 → 774 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Standard](../Organisation/Standard.md) |
+| Association |  | [EmissionActivityCategory](EmissionActivityCategory.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 36 → 115 |
-| Association | Link | 114 → 115 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Ontwikkel een 2030/2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning.](../Task/Ontwikkel een 2030_2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning..md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

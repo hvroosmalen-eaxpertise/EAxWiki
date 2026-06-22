@@ -24,11 +24,11 @@ FacilityStructure records the fact that one facility is a structural component o
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 757 → 757 |
-| Association |  | 753 → 757 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [FacilityStructure](FacilityStructure.md) |
+| Association |  | [Facility](Facility.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

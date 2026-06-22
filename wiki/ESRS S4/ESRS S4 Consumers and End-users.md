@@ -18,16 +18,16 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 44 → 101 |
-| Aggregation | Tree | 44 → 102 |
-| Aggregation | Tree | 44 → 103 |
-| Association | Link | 517 → 44 |
-| Abstraction | trace | 44 → 310 |
-| Association | Link | 531 → 44 |
-| Aggregation | Tree | 555 → 44 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | Element ID 101 (not in export) |
+| Aggregation | Tree | Element ID 102 (not in export) |
+| Aggregation | Tree | Element ID 103 (not in export) |
+| Association | Link | [Consumers and End Users (ESRS S4)](../People/Consumers and End Users (ESRS S4).md) |
+| Abstraction | trace | [ESRS S4 - Consumers](../ESRS Navigator Stakeholder Map/ESRS S4 - Consumers.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

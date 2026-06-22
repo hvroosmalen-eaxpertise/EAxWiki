@@ -8,10 +8,10 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 200 → 221 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Energieverbruik vóór/na project](Energieverbruik vóór_na project.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

@@ -16,11 +16,11 @@ European Financial Reporting Advisory Group - develops ESRS standards
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 345 → 326 |
-| Abstraction | trace | 345 → 534 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [European Commission](European Commission.md) |
+| Abstraction | trace | [EFRAG](../People/EFRAG.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

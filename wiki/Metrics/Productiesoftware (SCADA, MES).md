@@ -8,10 +8,10 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 195 → 215 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [CO₂e per processtap of productlevensfase](CO₂e per processtap of productlevensfase.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

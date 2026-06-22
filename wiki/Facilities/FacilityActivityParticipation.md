@@ -24,11 +24,11 @@ FacilityActivityParticipation records the fact that a specific Facility particip
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 773 → 760 |
-| Association |  | 753 → 760 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionActivity](../Emissions/EmissionActivity.md) |
+| Association |  | [Facility](Facility.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

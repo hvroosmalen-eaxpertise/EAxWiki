@@ -24,11 +24,11 @@ OrganizationIndustrySector is the intersection entity that classifies an Organis
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 735 → 750 |
-| Association |  | 739 → 750 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Organization](Organization.md) |
+| Association |  | [IndustrySectorType](IndustrySectorType.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

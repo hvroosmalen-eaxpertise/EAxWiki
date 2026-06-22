@@ -17,11 +17,11 @@ Poses material financial risks that require strategic risk management and adapta
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 431 → 436 |
-| ControlFlow | ArchiMate_Influence | 431 → 434 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Risk Reduction](../Goals/Risk Reduction.md) |
+| ControlFlow | ArchiMate_Influence | [Long-term Value Creation](../Goals/Long-term Value Creation.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

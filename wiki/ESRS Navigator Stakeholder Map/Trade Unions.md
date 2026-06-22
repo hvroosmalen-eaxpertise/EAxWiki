@@ -16,11 +16,11 @@ Worker unions in production regions
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 287 → 329 |
-| Abstraction | trace | 287 → 493 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
+| Abstraction | trace | [Trade Unions](../People/Trade Unions.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

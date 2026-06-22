@@ -15,16 +15,16 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 574 → 585 |
-| ControlFlow | Flow | 578 → 585 |
-| ControlFlow | Flow | 582 → 585 |
-| ControlFlow | Flow | 585 → 577 |
-| Association | Link | 594 → 585 |
-| ControlFlow | Flow | 625 → 585 |
-| ControlFlow | Flow | 585 → 627 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [SDG](SDG.md) |
+| ControlFlow | Flow | [ESRS](ESRS.md) |
+| ControlFlow | Flow | [EDGY 23 Language Foundation](EDGY 23 Language Foundation.md) |
+| ControlFlow | Flow | [EDGY -> XMI (Python)](EDGY -_ XMI (Python).md) |
+| Association | Link | [AI - LLM](AI - LLM.md) |
+| ControlFlow | Flow | [Openfootprint Data Model](Openfootprint Data Model.md) |
+| ControlFlow | Flow | [LDM -> XMI (Python)](LDM -_ XMI (Python).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

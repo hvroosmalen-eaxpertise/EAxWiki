@@ -10,12 +10,12 @@ Oversight and quarterly reporting on sustainability
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 337 → 504 |
-| Association | Link | 504 → 510 |
-| Aggregation | Tree | 504 → 496 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Supervisory Board (RvC)](../ESRS Navigator Stakeholder Map/Supervisory Board (RvC).md) |
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
+| Aggregation | Tree | [Board of Directors (Directie)](Board of Directors (Directie).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

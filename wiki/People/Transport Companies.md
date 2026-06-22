@@ -10,10 +10,10 @@ Logistics and transportation providers
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 294 → 530 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Transport Companies](../ESRS Navigator Stakeholder Map/Transport Companies.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

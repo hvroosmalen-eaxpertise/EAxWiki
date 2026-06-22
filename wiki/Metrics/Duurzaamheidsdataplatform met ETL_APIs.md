@@ -8,10 +8,10 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 208 → 228 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [ Productievolumes / normaliserende operationele data](Productievolumes _ normaliserende operationele data.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

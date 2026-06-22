@@ -16,12 +16,12 @@ Final consumers - focus on food safety and product information
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 280 → 310 |
-| Association | ArchiMate_Association | 274 → 280 |
-| Abstraction | trace | 280 → 517 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [ESRS S4 - Consumers](ESRS S4 - Consumers.md) |
+| Association | ArchiMate_Association | [Customers](Customers.md) |
+| Abstraction | trace | [Consumers and End Users (ESRS S4)](../People/Consumers and End Users (ESRS S4).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

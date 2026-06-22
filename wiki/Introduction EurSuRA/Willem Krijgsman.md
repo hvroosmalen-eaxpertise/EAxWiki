@@ -8,10 +8,10 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 601 → 603 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [EurSuRA](EurSuRA.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

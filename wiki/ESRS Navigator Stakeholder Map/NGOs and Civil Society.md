@@ -16,11 +16,11 @@ Non-governmental organizations providing consultation
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 275 → 331 |
-| Abstraction | trace | 275 → 513 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Abstraction | trace | [NGOs and Civil Society](../People/NGOs and Civil Society.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

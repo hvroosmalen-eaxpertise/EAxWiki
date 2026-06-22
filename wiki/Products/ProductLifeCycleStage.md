@@ -25,11 +25,11 @@ ProductLifeCycleStage is a reference entity that enumerates the individual stage
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 816 → 817 |
-| Association |  | 816 → 817 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [ProductLifeCycleFootprint](ProductLifeCycleFootprint.md) |
+| Association |  | [ProductLifeCycleFootprint](ProductLifeCycleFootprint.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

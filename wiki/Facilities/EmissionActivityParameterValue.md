@@ -28,11 +28,11 @@ EmissionActivityParameterValue records the actual measured or estimated value of
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 779 → 763 |
-| Association |  | 762 → 763 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) |
+| Association |  | [EmissionActivityParameter](EmissionActivityParameter.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

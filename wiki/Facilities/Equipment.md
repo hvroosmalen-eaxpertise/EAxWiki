@@ -24,11 +24,11 @@ Equipment describes a device used in an operation or activity that is located or
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 756 → 756 |
-| Association |  | 756 → 761 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Equipment](Equipment.md) |
+| Association |  | [EquipmentInstallation](EquipmentInstallation.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

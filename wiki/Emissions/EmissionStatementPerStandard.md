@@ -26,11 +26,11 @@ EmissionStatementPerStandard is an intersection entity that records the emission
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 788 → 734 |
-| Association |  | 788 → 776 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Standard](../Organisation/Standard.md) |
+| Association |  | [EmissionStatement](EmissionStatement.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

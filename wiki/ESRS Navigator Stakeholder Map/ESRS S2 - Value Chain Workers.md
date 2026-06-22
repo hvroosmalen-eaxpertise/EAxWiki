@@ -16,11 +16,11 @@ Workers in the value chain standard
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 267 → 282 |
-| Abstraction | trace | 282 → 42 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
+| Abstraction | trace | [ESRS S2 Workers in the Value Chain](../ESRS S2/ESRS S2 Workers in the Value Chain.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -16,11 +16,11 @@ SMEs that voluntarily report (future VSME standard)
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 270 → 331 |
-| Abstraction | trace | 270 → 501 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Abstraction | trace | [Non-listed SMEs](../People/Non-listed SMEs.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -16,15 +16,15 @@ All upstream suppliers in the value chain
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 294 → 335 |
-| Association | ArchiMate_Assignment | 267 → 335 |
-| Generalization | ArchiMate_Specialization | 334 → 335 |
-| Generalization | ArchiMate_Specialization | 300 → 335 |
-| Association | ArchiMate_Association | 335 → 331 |
-| Abstraction | trace | 335 → 529 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Transport Companies](Transport Companies.md) |
+| Association | ArchiMate_Assignment | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
+| Generalization | ArchiMate_Specialization | [Agricultural Suppliers](Agricultural Suppliers.md) |
+| Generalization | ArchiMate_Specialization | [Packaging Suppliers](Packaging Suppliers.md) |
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Abstraction | trace | [Suppliers](../People/Suppliers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

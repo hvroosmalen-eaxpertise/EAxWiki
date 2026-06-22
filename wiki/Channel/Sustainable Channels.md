@@ -21,11 +21,11 @@ Manieren van duurzame interactie met het bedrijf.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 127 → 147 |
-| Association | Link | 15 → 127 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen.](../Task/Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen..md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

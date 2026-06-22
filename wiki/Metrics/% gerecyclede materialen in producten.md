@@ -17,16 +17,16 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 40 → 182 |
-| Association | Link | 156 → 182 |
-| Aggregation | Tree | 182 → 203 |
-| Aggregation | Tree | 182 → 204 |
-| Aggregation | Tree | 182 → 205 |
-| Aggregation | Tree | 182 → 206 |
-| ControlFlow | Flow | 182 → 235 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Ontwerp producten die modulair, repareerbaar en recyclebaar zijn.](../Task/Ontwerp producten die modulair, repareerbaar en recyclebaar zijn..md) |
+| Aggregation | Tree | [Massa gerecycled materiaal (kg/% input)](Massa gerecycled materiaal (kg_% input).md) |
+| Aggregation | Tree | [Retourpercentages producten](Retourpercentages producten.md) |
+| Aggregation | Tree | [Afval per fase + recycleerbaar aandeel](Afval per fase + recycleerbaar aandeel.md) |
+| Aggregation | Tree | [ Levensduur product](Levensduur product.md) |
+| ControlFlow | Flow | [% Gerecycled materiaal = (gerecycled / totaal input) × 100](% Gerecycled materiaal = (gerecycled _ totaal input) × 100.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

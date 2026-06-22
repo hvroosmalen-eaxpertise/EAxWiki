@@ -18,22 +18,22 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 39 → 120 |
-| ControlFlow | Flow | 39 → 184 |
-| ControlFlow | Flow | 39 → 185 |
-| Aggregation | Tree | 39 → 76 |
-| Aggregation | Tree | 39 → 77 |
-| Aggregation | Tree | 39 → 78 |
-| Aggregation | Tree | 39 → 79 |
-| Aggregation | Tree | 39 → 80 |
-| Aggregation | Tree | 39 → 81 |
-| Association | Link | 510 → 39 |
-| Abstraction | trace | 341 → 39 |
-| Association | Link | 531 → 39 |
-| Aggregation | Tree | 555 → 39 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Herstelde natuur (ha)](../Metrics/Herstelde natuur (ha).md) |
+| ControlFlow | Flow | [# bomen geplant / ha natuur hersteld](../Metrics/_ bomen geplant _ ha natuur hersteld.md) |
+| ControlFlow | Flow | [# SDGs met meetbare KPI’s](../Metrics/_ SDGs met meetbare KPI’s.md) |
+| Aggregation | Tree | Element ID 76 (not in export) |
+| Aggregation | Tree | Element ID 77 (not in export) |
+| Aggregation | Tree | Element ID 78 (not in export) |
+| Aggregation | Tree | Element ID 79 (not in export) |
+| Aggregation | Tree | Element ID 80 (not in export) |
+| Aggregation | Tree | Element ID 81 (not in export) |
+| Association | Link | [Company subject to CSRD](../People/Company subject to CSRD.md) |
+| Abstraction | trace | [ESRS E4 - Biodiversity](../ESRS Navigator Stakeholder Map/ESRS E4 - Biodiversity.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

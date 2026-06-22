@@ -16,11 +16,11 @@ Example company: 450 employees, food production, two facilities in Netherlands
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 250 → 331 |
-| Abstraction | trace | 250 → 499 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Abstraction | trace | [FreshFood B.V.](../People/FreshFood B.V..md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

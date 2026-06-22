@@ -27,18 +27,18 @@ EmissionActivity is a master-data entity that represents a discrete operational 
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 802 → 773 |
-| Association |  | 773 → 814 |
-| Association |  | 785 → 773 |
-| Association |  | 784 → 773 |
-| Association |  | 773 → 760 |
-| Association |  | 774 → 773 |
-| Association |  | 786 → 773 |
-| Association |  | 773 → 773 |
-| Association |  | 773 → 776 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [ActivityEmissionAllocation](ActivityEmissionAllocation.md) |
+| Association |  | [EmissionActivityFlow](../Products/EmissionActivityFlow.md) |
+| Association |  | [EmissionSink](EmissionSink.md) |
+| Association |  | [EmissionSource](EmissionSource.md) |
+| Association |  | [FacilityActivityParticipation](../Facilities/FacilityActivityParticipation.md) |
+| Association |  | [EmissionActivityCategory](EmissionActivityCategory.md) |
+| Association |  | [EmissionActivityType](EmissionActivityType.md) |
+| Association |  | [EmissionActivity](EmissionActivity.md) |
+| Association |  | [EmissionStatement](EmissionStatement.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

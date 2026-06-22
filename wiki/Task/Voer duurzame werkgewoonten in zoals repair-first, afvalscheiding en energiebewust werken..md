@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 140 → 161 |
-| Association | Link | 161 → 188 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainable Work Practices](../Story/Sustainable Work Practices.md) |
+| Association | Link | [Restafval per medewerker (kg/jaar)](../Metrics/Restafval per medewerker (kg_jaar).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

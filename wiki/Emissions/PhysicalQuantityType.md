@@ -24,10 +24,10 @@ PhysicalQuantityType is a reference entity that classifies what physical propert
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 797 → 779 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

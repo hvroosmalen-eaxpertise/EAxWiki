@@ -21,12 +21,12 @@ Activiteiten die bijdragen aan verduurzaming.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 130 → 150 |
-| Association | Link | 14 → 130 |
-| Association | Link | 15 → 130 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Optimaliseer processen voor minder energie/waterverbruik en minder restmateriaal.](../Task/Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

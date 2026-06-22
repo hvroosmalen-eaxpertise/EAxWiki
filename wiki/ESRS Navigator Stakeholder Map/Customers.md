@@ -16,14 +16,14 @@ Direct business customers
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 246 → 274 |
-| Generalization | ArchiMate_Specialization | 253 → 274 |
-| Association | ArchiMate_Association | 331 → 274 |
-| Association | ArchiMate_Association | 274 → 280 |
-| Abstraction | trace | 274 → 516 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Supermarket Chains](Supermarket Chains.md) |
+| Generalization | ArchiMate_Specialization | [Foodservice Companies](Foodservice Companies.md) |
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Association | ArchiMate_Association | [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md) |
+| Abstraction | trace | [Customers](../People/Customers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

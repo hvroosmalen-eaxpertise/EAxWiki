@@ -16,11 +16,11 @@ Workers in production facilities
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 323 → 329 |
-| Abstraction | trace | 323 → 492 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
+| Abstraction | trace | [Production Workers](../People/Production Workers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -27,13 +27,13 @@ EmissionReport is a work-product-component that represents a formal, structured 
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 782 → 771 |
-| Association |  | 782 → 783 |
-| Association |  | 734 → 782 |
-| Association |  | 735 → 782 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionInventory](EmissionInventory.md) |
+| Association |  | [EmissionReportPeriod](EmissionReportPeriod.md) |
+| Association |  | [Standard](../Organisation/Standard.md) |
+| Association |  | [Organization](../Organisation/Organization.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -24,10 +24,10 @@ EmissionSource is a reference entity that classifies the physical origin from wh
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 784 → 773 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionActivity](EmissionActivity.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

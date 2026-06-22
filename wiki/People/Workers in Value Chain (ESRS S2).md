@@ -10,13 +10,13 @@ Employees of suppliers and partners
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 267 → 532 |
-| Association | Link | 532 → 42 |
-| Aggregation | Tree | 532 → 533 |
-| Aggregation | Tree | 529 → 532 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Workers in Value Chain (ESRS S2)](../ESRS Navigator Stakeholder Map/Workers in Value Chain (ESRS S2).md) |
+| Association | Link | [ESRS S2 Workers in the Value Chain](../ESRS S2/ESRS S2 Workers in the Value Chain.md) |
+| Aggregation | Tree | [Seasonal Agricultural Workers](Seasonal Agricultural Workers.md) |
+| Aggregation | Tree | [Suppliers](Suppliers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

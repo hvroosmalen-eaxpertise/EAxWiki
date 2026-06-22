@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 182 → 203 |
-| Association | Link | 203 → 224 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | [% gerecyclede materialen in producten](% gerecyclede materialen in producten.md) |
+| Association | Link | [ERP/BOM met herkomst info](ERP_BOM met herkomst info.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

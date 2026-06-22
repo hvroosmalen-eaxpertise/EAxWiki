@@ -10,12 +10,12 @@ Chief Executive Officer
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 265 → 495 |
-| Aggregation | Tree | 496 → 495 |
-| Association | Link | 494 → 495 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [CEO](../ESRS Navigator Stakeholder Map/CEO.md) |
+| Aggregation | Tree | [Board of Directors (Directie)](Board of Directors (Directie).md) |
+| Association | Link | [Sustainability Manager/Director](Sustainability Manager_Director.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -21,12 +21,12 @@ Interne beleidslijnen rondom duurzaamheid.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 164 → 152 |
-| Association | Link | 14 → 164 |
-| Association | Link | 15 → 164 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval.](../Task/Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

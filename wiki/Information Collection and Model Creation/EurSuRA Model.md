@@ -15,16 +15,16 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 576 → 579 |
-| Aggregation | Tree | 576 → 580 |
-| Aggregation | Tree | 576 → 587 |
-| Aggregation | Tree | 576 → 591 |
-| ControlFlow | Flow | 595 → 576 |
-| Aggregation | Tree | 576 → 629 |
-| ControlFlow | Flow | 628 → 576 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | [SDG Referentie Model](SDG Referentie Model.md) |
+| Aggregation | Tree | [ESRS Referentie Model](ESRS Referentie Model.md) |
+| Aggregation | Tree | [Stakeholder Map](Stakeholder Map.md) |
+| Aggregation | Tree | [Identity Map](Identity Map.md) |
+| ControlFlow | Flow | [EDGY Model Elementen en Relaties](EDGY Model Elementen en Relaties.md) |
+| Aggregation | Tree | [Logical Data Model](Logical Data Model.md) |
+| ControlFlow | Flow | [ERD Model](ERD Model.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

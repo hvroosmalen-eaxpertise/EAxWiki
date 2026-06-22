@@ -29,12 +29,12 @@ EmissionCalculationFormulaComponent is a master-data entity that decomposes an E
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 803 → 775 |
-| Association |  | 803 → 780 |
-| Association |  | 803 → 790 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionParameterType](EmissionParameterType.md) |
+| Association |  | [EmissionFactor](EmissionFactor.md) |
+| Association |  | [EmissionCalculationFormula](EmissionCalculationFormula.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

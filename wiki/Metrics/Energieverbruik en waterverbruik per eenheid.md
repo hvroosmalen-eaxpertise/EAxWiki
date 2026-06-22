@@ -17,12 +17,12 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 36 → 176 |
-| ControlFlow | Flow | 38 → 176 |
-| Association | Link | 150 → 176 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| ControlFlow | Flow | [ESRS E3 Water and Marine Resources](../ESRS E3/ESRS E3 Water and Marine Resources.md) |
+| Association | Link | [Optimaliseer processen voor minder energie/waterverbruik en minder restmateriaal.](../Task/Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

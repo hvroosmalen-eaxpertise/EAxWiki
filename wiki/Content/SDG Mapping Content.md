@@ -21,15 +21,15 @@ Documentatie die elementen koppelt aan SDG’s.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 138 → 159 |
-| Association | Link | 9 → 138 |
-| Association | Link | 14 → 138 |
-| Association | Link | 15 → 138 |
-| Association | Link | 16 → 138 |
-| Association | Link | 17 → 138 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Map bedrijfsactiviteiten op SDG’s en publiceer de bijdrage.](../Task/Map bedrijfsactiviteiten op SDG’s en publiceer de bijdrage..md) |
+| Association | Link | [SDG  7. Affordable and Clean Energy](../Sustainability Development Goals/SDG  7. Affordable and Clean Energy.md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
+| Association | Link | [SDG 14. Life Below Water](../Sustainability Development Goals/SDG 14. Life Below Water.md) |
+| Association | Link | [SDG 15. Life on Land](../Sustainability Development Goals/SDG 15. Life on Land.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -16,11 +16,11 @@ Providers of packaging materials
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 300 → 335 |
-| Abstraction | trace | 300 → 528 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Suppliers](Suppliers.md) |
+| Abstraction | trace | [Packaging Suppliers](../People/Packaging Suppliers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -18,20 +18,20 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 41 → 88 |
-| Aggregation | Tree | 41 → 89 |
-| Aggregation | Tree | 41 → 90 |
-| Aggregation | Tree | 41 → 91 |
-| Aggregation | Tree | 41 → 92 |
-| Aggregation | Tree | 41 → 93 |
-| Aggregation | Tree | 41 → 94 |
-| Association | Link | 489 → 41 |
-| Abstraction | trace | 321 → 41 |
-| Association | Link | 531 → 41 |
-| Aggregation | Tree | 555 → 41 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | Element ID 88 (not in export) |
+| Aggregation | Tree | Element ID 89 (not in export) |
+| Aggregation | Tree | Element ID 90 (not in export) |
+| Aggregation | Tree | Element ID 91 (not in export) |
+| Aggregation | Tree | Element ID 92 (not in export) |
+| Aggregation | Tree | Element ID 93 (not in export) |
+| Aggregation | Tree | Element ID 94 (not in export) |
+| Association | Link | [Own Personnel (ESRS S1)](../People/Own Personnel (ESRS S1).md) |
+| Abstraction | trace | [ESRS S1 - Own Personnel](../ESRS Navigator Stakeholder Map/ESRS S1 - Own Personnel.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

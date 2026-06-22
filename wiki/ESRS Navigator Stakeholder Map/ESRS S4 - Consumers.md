@@ -16,11 +16,11 @@ Consumers and end-users standard
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 280 → 310 |
-| Abstraction | trace | 44 → 310 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md) |
+| Abstraction | trace | [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

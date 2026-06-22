@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 164 → 152 |
-| Association | Link | 152 → 178 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainable Policies](../Asset/Sustainable Policies.md) |
+| Association | Link | [% reductie reisgerelateerde CO₂](../Metrics/% reductie reisgerelateerde CO₂.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

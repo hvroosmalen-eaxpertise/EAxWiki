@@ -16,11 +16,11 @@ Communities around production facilities and supplier regions
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 249 → 251 |
-| Abstraction | trace | 249 → 524 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) |
+| Abstraction | trace | [Local Communities](../People/Local Communities.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

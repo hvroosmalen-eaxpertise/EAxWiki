@@ -18,11 +18,11 @@ Implementation of eco-design principles and life cycle thinking into product dev
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 446 → 453 |
-| ControlFlow | ArchiMate_Influence | 453 → 457 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Sustainable Innovation Management](../Capabilities/Sustainable Innovation Management.md) |
+| ControlFlow | ArchiMate_Influence | [Reduced Environmental Impact](../Outcomes/Reduced Environmental Impact.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 129 → 149 |
-| Association | Link | 149 → 175 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Green Capabilities](../Capability/Green Capabilities.md) |
+| Association | Link | [% R&D naar duurzame innovatie](../Metrics/% R&D naar duurzame innovatie.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

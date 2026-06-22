@@ -17,14 +17,14 @@ Integrates sustainability into value creation logic rather than treating it as a
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 430 → 434 |
-| ControlFlow | ArchiMate_Influence | 431 → 434 |
-| Dependency | ArchiMate_Realization | 439 → 434 |
-| Dependency | ArchiMate_Realization | 441 → 434 |
-| Dependency | ArchiMate_Realization | 461 → 434 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Stakeholder Expectations](../Drivers/Stakeholder Expectations.md) |
+| ControlFlow | ArchiMate_Influence | [Climate Risk](../Drivers/Climate Risk.md) |
+| Dependency | ArchiMate_Realization | [Integrate Sustainability into Corporate Strategy](../Courses of Action/Integrate Sustainability into Corporate Strategy.md) |
+| Dependency | ArchiMate_Realization | [Operational Eco-efficiency](../Courses of Action/Operational Eco-efficiency.md) |
+| Dependency | ArchiMate_Realization | [Improved Long-term Profitability](../Outcomes/Improved Long-term Profitability.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

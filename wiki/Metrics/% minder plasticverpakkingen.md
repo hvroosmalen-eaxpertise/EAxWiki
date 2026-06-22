@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 40 → 170 |
-| Association | Link | 144 → 170 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Voer stakeholderdialogen en integreer duurzaamheidsverwachtingen in de strategie.](../Task/Voer stakeholderdialogen en integreer duurzaamheidsverwachtingen in de strategie..md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

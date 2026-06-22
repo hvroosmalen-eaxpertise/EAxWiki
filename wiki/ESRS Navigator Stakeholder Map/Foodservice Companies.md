@@ -16,11 +16,11 @@ B2B foodservice customers
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 253 → 274 |
-| Abstraction | trace | 253 → 519 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Customers](Customers.md) |
+| Abstraction | trace | [Foodservice Companies](../People/Foodservice Companies.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

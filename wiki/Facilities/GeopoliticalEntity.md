@@ -27,14 +27,14 @@ GeopoliticalEntity represents a named geographical area that is defined and admi
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 806 → 766 |
-| Association |  | 766 → 766 |
-| Association |  | 765 → 766 |
-| Association |  | 766 → 755 |
-| Association |  | 745 → 766 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionActivityParameterRecordingTemplate](../Emissions/EmissionActivityParameterRecordingTemplate.md) |
+| Association |  | [GeopoliticalEntity](GeopoliticalEntity.md) |
+| Association |  | [GeopoliticalEntityType](GeopoliticalEntityType.md) |
+| Association |  | [Location](Location.md) |
+| Association |  | [Country](../Organisation/Country.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

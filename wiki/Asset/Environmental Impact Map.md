@@ -21,12 +21,12 @@ Overzicht van milieu-impact.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 132 → 153 |
-| Association | Link | 14 → 132 |
-| Association | Link | 15 → 132 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Voer een volledige LCA uit op product- en procesniveau.](../Task/Voer een volledige LCA uit op product- en procesniveau..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

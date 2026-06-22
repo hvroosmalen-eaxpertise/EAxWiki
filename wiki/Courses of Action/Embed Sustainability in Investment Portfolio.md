@@ -18,11 +18,11 @@ Ensures financial resources support strategic sustainability objectives.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 444 → 452 |
-| ControlFlow | ArchiMate_Influence | 452 → 461 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Sustainability Governance](../Capabilities/Sustainability Governance.md) |
+| ControlFlow | ArchiMate_Influence | [Improved Long-term Profitability](../Outcomes/Improved Long-term Profitability.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

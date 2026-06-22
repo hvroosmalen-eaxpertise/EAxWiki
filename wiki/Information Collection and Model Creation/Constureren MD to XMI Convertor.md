@@ -15,12 +15,12 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 586 → 589 |
-| ControlFlow | Flow | 589 → 577 |
-| Association | Link | 594 → 589 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [XMI Import Definition](XMI Import Definition.md) |
+| ControlFlow | Flow | [EDGY -> XMI (Python)](EDGY -_ XMI (Python).md) |
+| Association | Link | [AI - LLM](AI - LLM.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -27,13 +27,13 @@ Product is a master-data entity that represents a physical good or service whose
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 810 → 819 |
-| Association |  | 810 → 815 |
-| Association |  | 810 → 813 |
-| Association |  | 810 → 811 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EnvironmentalProductDeclaration](EnvironmentalProductDeclaration.md) |
+| Association |  | [CentralProductClassificationCode](CentralProductClassificationCode.md) |
+| Association |  | [ProductLifeCycle](ProductLifeCycle.md) |
+| Association |  | [ProductFootprint](ProductFootprint.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -17,15 +17,15 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 40 → 179 |
-| Association | Link | 153 → 179 |
-| Aggregation | Tree | 179 → 194 |
-| Aggregation | Tree | 179 → 195 |
-| Aggregation | Tree | 179 → 196 |
-| ControlFlow | Flow | 179 → 232 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Association | Link | [Voer een volledige LCA uit op product- en procesniveau.](../Task/Voer een volledige LCA uit op product- en procesniveau..md) |
+| Aggregation | Tree | [Energie, materiaal, water, afval per eenheid](Energie, materiaal, water, afval per eenheid.md) |
+| Aggregation | Tree | [CO₂e per processtap of productlevensfase](CO₂e per processtap of productlevensfase.md) |
+| Aggregation | Tree | [Outputvolumes voor normalisatie](Outputvolumes voor normalisatie.md) |
+| ControlFlow | Flow | [Product Carbon Footprint = totale CO₂e / aantal eenheden geproduceerd](Product Carbon Footprint = totale CO₂e _ aantal eenheden geproduceerd.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

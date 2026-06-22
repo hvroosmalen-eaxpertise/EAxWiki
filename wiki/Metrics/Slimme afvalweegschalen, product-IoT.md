@@ -8,10 +8,10 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 205 → 226 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Afval per fase + recycleerbaar aandeel](Afval per fase + recycleerbaar aandeel.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

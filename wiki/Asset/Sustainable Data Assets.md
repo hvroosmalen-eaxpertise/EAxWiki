@@ -21,11 +21,11 @@ Duurzaamheidsdata voor monitoring.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 136 → 157 |
-| Association | Link | 15 → 136 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Implementeer dashboards voor monitoring van CO₂, afval en energie.](../Task/Implementeer dashboards voor monitoring van CO₂, afval en energie..md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

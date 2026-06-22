@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 36 → 178 |
-| Association | Link | 152 → 178 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval.](../Task/Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval..md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

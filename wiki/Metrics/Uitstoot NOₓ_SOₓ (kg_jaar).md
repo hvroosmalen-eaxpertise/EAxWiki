@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 37 → 168 |
-| Association | Link | 142 → 168 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E2 Pollution](../ESRS E2/ESRS E2 Pollution.md) |
+| Association | Link | [Maak een publiek impactrapport over emissies, afval, water en circulariteit.](../Task/Maak een publiek impactrapport over emissies, afval, water en circulariteit..md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

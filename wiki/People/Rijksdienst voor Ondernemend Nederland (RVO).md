@@ -10,12 +10,12 @@ Dutch government agency - MVO-steunpunt provides CSR guidance
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 338 → 536 |
-| Association | Link | 536 → 535 |
-| Association | Link | 536 → 510 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Rijksdienst voor Ondernemen (RVO)](../ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO).md) |
+| Association | Link | [Ministry of Economic Affairs](Ministry of Economic Affairs.md) |
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 138 → 159 |
-| Association | Link | 159 → 185 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [SDG Mapping Content](../Content/SDG Mapping Content.md) |
+| Association | Link | [# SDGs met meetbare KPI’s](../Metrics/_ SDGs met meetbare KPI’s.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

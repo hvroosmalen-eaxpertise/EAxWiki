@@ -25,11 +25,11 @@ OrganizationAssociation represents a typed relationship between two organisation
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 742 → 741 |
-| Association |  | 735 → 741 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [OrganizationAssociationType](OrganizationAssociationType.md) |
+| Association |  | [Organization](Organization.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

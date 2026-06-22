@@ -24,10 +24,10 @@ SystemOfUnits is a reference entity that identifies the measurement system to wh
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 796 → 779 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

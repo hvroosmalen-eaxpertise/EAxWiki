@@ -28,13 +28,13 @@ EmissionFactorSource is a reference entity that identifies the authoritative dat
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 781 → 794 |
-| Association |  | 781 → 818 |
-| Association |  | 794 → 781 |
-| Association |  | 780 → 781 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [StandardSourceAssociation](StandardSourceAssociation.md) |
+| Association |  | [ProductCarbonFootprintFactorSource](../Products/ProductCarbonFootprintFactorSource.md) |
+| Association |  | [StandardSourceAssociation](StandardSourceAssociation.md) |
+| Association |  | [EmissionFactor](EmissionFactor.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -17,15 +17,15 @@ Proactively manage sustainability-related risks before they materialize into cri
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 429 → 436 |
-| ControlFlow | ArchiMate_Influence | 431 → 436 |
-| ControlFlow | ArchiMate_Influence | 433 → 436 |
-| Dependency | ArchiMate_Realization | 442 → 436 |
-| Dependency | ArchiMate_Realization | 443 → 436 |
-| Dependency | ArchiMate_Realization | 459 → 436 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Regulatory Pressure](../Drivers/Regulatory Pressure.md) |
+| ControlFlow | ArchiMate_Influence | [Climate Risk](../Drivers/Climate Risk.md) |
+| ControlFlow | ArchiMate_Influence | [Reputation Risk](../Drivers/Reputation Risk.md) |
+| Dependency | ArchiMate_Realization | [Responsible Supply Chain Strategy](../Courses of Action/Responsible Supply Chain Strategy.md) |
+| Dependency | ArchiMate_Realization | [ESG-based Risk Management](../Courses of Action/ESG-based Risk Management.md) |
+| Dependency | ArchiMate_Realization | [Lower Operational Risk](../Outcomes/Lower Operational Risk.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -30,14 +30,14 @@ EmissionInventory is the top-level work-product-component that represents a sing
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 782 → 771 |
-| Association |  | 808 → 771 |
-| Association |  | 771 → 776 |
-| Association |  | 735 → 771 |
-| Association |  | 734 → 771 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionReport](EmissionReport.md) |
+| Association |  | [EmissionReportingBoundary](EmissionReportingBoundary.md) |
+| Association |  | [EmissionStatement](EmissionStatement.md) |
+| Association |  | [Organization](../Organisation/Organization.md) |
+| Association |  | [Standard](../Organisation/Standard.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 36 → 172 |
-| Association | Link | 146 → 172 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Ontwerp een klantreis met minimale afvalproductie en transparante impactcommunicatie.](../Task/Ontwerp een klantreis met minimale afvalproductie en transparante impactcommunicatie..md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

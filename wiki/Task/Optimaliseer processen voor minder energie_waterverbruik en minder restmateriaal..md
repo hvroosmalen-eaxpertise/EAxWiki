@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 130 → 150 |
-| Association | Link | 150 → 176 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainable Processes](../Process/Sustainable Processes.md) |
+| Association | Link | [Energieverbruik en waterverbruik per eenheid](../Metrics/Energieverbruik en waterverbruik per eenheid.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

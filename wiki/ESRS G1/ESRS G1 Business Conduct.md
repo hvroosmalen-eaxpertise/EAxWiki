@@ -18,18 +18,18 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 45 → 104 |
-| Aggregation | Tree | 45 → 105 |
-| Aggregation | Tree | 45 → 106 |
-| Aggregation | Tree | 45 → 107 |
-| Aggregation | Tree | 45 → 108 |
-| Association | Link | 510 → 45 |
-| Abstraction | trace | 299 → 45 |
-| Association | Link | 531 → 45 |
-| Aggregation | Tree | 555 → 45 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | Element ID 104 (not in export) |
+| Aggregation | Tree | Element ID 105 (not in export) |
+| Aggregation | Tree | Element ID 106 (not in export) |
+| Aggregation | Tree | Element ID 107 (not in export) |
+| Aggregation | Tree | Element ID 108 (not in export) |
+| Association | Link | [Company subject to CSRD](../People/Company subject to CSRD.md) |
+| Abstraction | trace | [ESRS G1 - Business Conduct](../ESRS Navigator Stakeholder Map/ESRS G1 - Business Conduct.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 136 → 157 |
-| Association | Link | 157 → 183 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainable Data Assets](../Asset/Sustainable Data Assets.md) |
+| Association | Link | [% scope 3 emissies met gemeten data](../Metrics/% scope 3 emissies met gemeten data.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

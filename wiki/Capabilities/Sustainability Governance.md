@@ -18,12 +18,12 @@ Essential for strategic steering and ensuring sustainability is anchored at the 
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 444 → 439 |
-| Dependency | ArchiMate_Realization | 444 → 452 |
-| Dependency | ArchiMate_Realization | 444 → 455 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Integrate Sustainability into Corporate Strategy](../Courses of Action/Integrate Sustainability into Corporate Strategy.md) |
+| Dependency | ArchiMate_Realization | [Embed Sustainability in Investment Portfolio](../Courses of Action/Embed Sustainability in Investment Portfolio.md) |
+| Dependency | ArchiMate_Realization | [Board-level Sustainability Governance](../Courses of Action/Board-level Sustainability Governance.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 181 → 200 |
-| Association | Link | 200 → 221 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | [Vermeden CO₂ door maatregelen (ton/jaar)](Vermeden CO₂ door maatregelen (ton_jaar).md) |
+| Association | Link | [EMS-trends, IoT-logs](EMS-trends, IoT-logs.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

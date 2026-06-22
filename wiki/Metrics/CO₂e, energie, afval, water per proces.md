@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 183 → 207 |
-| Association | Link | 207 → 227 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | [% scope 3 emissies met gemeten data](% scope 3 emissies met gemeten data.md) |
+| Association | Link | [ERP, IoT-sensoren, utility meters](ERP, IoT-sensoren, utility meters.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

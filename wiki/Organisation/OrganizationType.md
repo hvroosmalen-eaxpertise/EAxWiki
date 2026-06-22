@@ -23,10 +23,10 @@ OrganizationType provides a controlled vocabulary of organisational classificati
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 735 → 736 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Organization](Organization.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

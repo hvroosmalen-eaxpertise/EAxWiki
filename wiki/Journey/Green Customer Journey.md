@@ -21,11 +21,11 @@ De duurzame ervaring van een klant door de klantreis heen.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 126 → 146 |
-| Association | Link | 14 → 126 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Ontwerp een klantreis met minimale afvalproductie en transparante impactcommunicatie.](../Task/Ontwerp een klantreis met minimale afvalproductie en transparante impactcommunicatie..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -8,10 +8,10 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 209 → 229 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Datakwaliteit: beschikbaarheid / updatefrequentie](Datakwaliteit_ beschikbaarheid _ updatefrequentie.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

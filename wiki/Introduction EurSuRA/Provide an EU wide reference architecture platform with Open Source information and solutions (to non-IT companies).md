@@ -15,14 +15,14 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 609 → 500 |
-| ControlFlow | Flow | 609 → 501 |
-| ControlFlow | Flow | 609 → 557 |
-| Association | Link | 609 → 613 |
-| Association | Link | 620 → 609 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Listed SMEs](../People/Listed SMEs.md) |
+| ControlFlow | Flow | [Non-listed SMEs](../People/Non-listed SMEs.md) |
+| ControlFlow | Flow | [Non-EU company](../People/Non-EU company.md) |
+| Association | Link | [Reference Architecture Framework for ESRS Reporting](Reference Architecture Framework for ESRS Reporting.md) |
+| Association | Link | [Building a EU Reporting Community](Building a EU Reporting Community.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

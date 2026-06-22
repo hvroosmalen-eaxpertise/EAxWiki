@@ -18,10 +18,10 @@ Provides competitive advantage in markets where sustainability drives purchasing
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 460 → 435 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Sustainable Competitive Advantage](../Goals/Sustainable Competitive Advantage.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

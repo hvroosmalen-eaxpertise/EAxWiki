@@ -28,11 +28,11 @@ OrganizationEmissionAllocation is a work-product-component that records the shar
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 801 → 735 |
-| Association |  | 801 → 776 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Organization](../Organisation/Organization.md) |
+| Association |  | [EmissionStatement](EmissionStatement.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -11,11 +11,11 @@ Non-EU companies, which generate over EUR 150 million on the EU market.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 510 → 557 |
-| ControlFlow | Flow | 609 → 557 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.md) |
+| ControlFlow | Flow | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

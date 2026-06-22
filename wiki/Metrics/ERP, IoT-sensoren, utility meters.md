@@ -8,10 +8,10 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 207 → 227 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [CO₂e, energie, afval, water per proces](CO₂e, energie, afval, water per proces.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

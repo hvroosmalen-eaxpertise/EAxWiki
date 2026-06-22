@@ -16,12 +16,12 @@ Issues CSRD directive and ESRS regulations
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 326 → 331 |
-| Association | ArchiMate_Association | 345 → 326 |
-| Abstraction | trace | 326 → 531 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Association | ArchiMate_Association | [EFRAG](EFRAG.md) |
+| Abstraction | trace | [European Commission](../People/European Commission.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -15,12 +15,12 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 116 → 119 |
-| Association | Link | 119 → 117 |
-| Association | Link | 119 → 118 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainability Objectives](../Content/Sustainability Objectives.md) |
+| Association | Link | [Jaarlijkse CO₂-reductie (%)](../Metrics/Jaarlijkse CO₂-reductie (%).md) |
+| Association | Link | [% hernieuwbare grondstoffen](../Metrics/% hernieuwbare grondstoffen.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

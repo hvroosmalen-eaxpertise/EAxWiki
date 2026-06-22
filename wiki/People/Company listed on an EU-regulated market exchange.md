@@ -16,10 +16,10 @@ Any companies listed on an EU-regulated market exchange - except for listed ‘m
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 510 → 556 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -8,10 +8,10 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 197 → 218 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Brandstofgebruik (Scope 1)](Brandstofgebruik (Scope 1).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

@@ -10,11 +10,11 @@ Agencies like Patroon Legal Design
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 291 → 514 |
-| Association | Link | 514 → 510 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Legal Design Agencies](../ESRS Navigator Stakeholder Map/Legal Design Agencies.md) |
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

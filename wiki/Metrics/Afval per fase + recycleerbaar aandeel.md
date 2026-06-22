@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 182 → 205 |
-| Association | Link | 205 → 226 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | [% gerecyclede materialen in producten](% gerecyclede materialen in producten.md) |
+| Association | Link | [Slimme afvalweegschalen, product-IoT](Slimme afvalweegschalen, product-IoT.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

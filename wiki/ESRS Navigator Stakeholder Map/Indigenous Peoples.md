@@ -16,11 +16,11 @@ Indigenous communities where applicable
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 314 → 251 |
-| Abstraction | trace | 314 → 525 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) |
+| Abstraction | trace | [Indigenous Peoples](../People/Indigenous Peoples.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

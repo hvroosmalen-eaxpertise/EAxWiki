@@ -18,16 +18,16 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 42 → 95 |
-| Aggregation | Tree | 42 → 96 |
-| Aggregation | Tree | 42 → 97 |
-| Association | Link | 532 → 42 |
-| Abstraction | trace | 282 → 42 |
-| Association | Link | 531 → 42 |
-| Aggregation | Tree | 555 → 42 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | Element ID 95 (not in export) |
+| Aggregation | Tree | Element ID 96 (not in export) |
+| Aggregation | Tree | Element ID 97 (not in export) |
+| Association | Link | [Workers in Value Chain (ESRS S2)](../People/Workers in Value Chain (ESRS S2).md) |
+| Abstraction | trace | [ESRS S2 - Value Chain Workers](../ESRS Navigator Stakeholder Map/ESRS S2 - Value Chain Workers.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

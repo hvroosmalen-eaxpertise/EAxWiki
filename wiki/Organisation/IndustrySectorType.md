@@ -25,11 +25,11 @@ IndustrySectorType provides a hierarchical classification of industry sectors us
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 739 → 739 |
-| Association |  | 739 → 750 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [IndustrySectorType](IndustrySectorType.md) |
+| Association |  | [OrganizationIndustrySector](OrganizationIndustrySector.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

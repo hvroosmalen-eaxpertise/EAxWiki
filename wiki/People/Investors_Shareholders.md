@@ -10,11 +10,11 @@ High-level view of all stakeholders in ESRS reporting ecosystem
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 315 → 505 |
-| Association | Link | 505 → 510 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Investors/Shareholders](../ESRS Navigator Stakeholder Map/Investors_Shareholders.md) |
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -18,11 +18,11 @@ Ensures top-level commitment and strategic oversight of sustainability performan
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 444 → 455 |
-| ControlFlow | ArchiMate_Influence | 455 → 458 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Sustainability Governance](../Capabilities/Sustainability Governance.md) |
+| ControlFlow | ArchiMate_Influence | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

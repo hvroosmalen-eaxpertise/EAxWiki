@@ -10,11 +10,11 @@ High-level view of all stakeholders in ESRS reporting ecosystem
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 252 → 520 |
-| Aggregation | Tree | 535 → 520 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Sociaal Economische Raad (SER)](../ESRS Navigator Stakeholder Map/Sociaal Economische Raad (SER).md) |
+| Aggregation | Tree | [Ministry of Economic Affairs](Ministry of Economic Affairs.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

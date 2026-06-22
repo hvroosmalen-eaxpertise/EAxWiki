@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 125 → 145 |
-| Association | Link | 145 → 171 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Green Customer Task](Green Customer Task.md) |
+| Association | Link | [# teruggenomen producten (per jaar)](../Metrics/_ teruggenomen producten (per jaar).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

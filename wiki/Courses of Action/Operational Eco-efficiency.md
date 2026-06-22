@@ -17,11 +17,11 @@ Implements circular economy principles, resource optimization, and waste reducti
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 441 → 434 |
-| Dependency | ArchiMate_Realization | 446 → 441 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Long-term Value Creation](../Goals/Long-term Value Creation.md) |
+| Dependency | ArchiMate_Realization | [Sustainable Innovation Management](../Capabilities/Sustainable Innovation Management.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

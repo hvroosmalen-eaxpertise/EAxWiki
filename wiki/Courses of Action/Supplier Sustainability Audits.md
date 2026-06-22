@@ -18,11 +18,11 @@ Ensures supply chain transparency and responsible sourcing practices.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 447 → 454 |
-| ControlFlow | ArchiMate_Influence | 454 → 459 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
+| ControlFlow | ArchiMate_Influence | [Lower Operational Risk](../Outcomes/Lower Operational Risk.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

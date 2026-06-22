@@ -11,12 +11,12 @@ The ESRS were developed by the EFRAG (previously known as the European Financial
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 345 → 534 |
-| Association | Link | 534 → 531 |
-| Association | Link | 534 → 555 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [EFRAG](../ESRS Navigator Stakeholder Map/EFRAG.md) |
+| Association | Link | [European Commission](European Commission.md) |
+| Association | Link | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

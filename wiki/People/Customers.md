@@ -10,14 +10,14 @@ Direct business customers
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 274 → 516 |
-| Association | Link | 516 → 517 |
-| Aggregation | Tree | 516 → 519 |
-| Aggregation | Tree | 516 → 515 |
-| Association | Link | 510 → 516 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Customers](../ESRS Navigator Stakeholder Map/Customers.md) |
+| Association | Link | [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md) |
+| Aggregation | Tree | [Foodservice Companies](Foodservice Companies.md) |
+| Aggregation | Tree | [Supermarket Chains](Supermarket Chains.md) |
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

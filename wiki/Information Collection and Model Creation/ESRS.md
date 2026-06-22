@@ -15,12 +15,12 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 578 → 585 |
-| ControlFlow | Flow | 590 → 578 |
-| ControlFlow | Flow | 592 → 578 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Compile Information Sources](Compile Information Sources.md) |
+| ControlFlow | Flow | [ESRS Website](ESRS Website.md) |
+| ControlFlow | Flow | [EFRAG Website](EFRAG Website.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

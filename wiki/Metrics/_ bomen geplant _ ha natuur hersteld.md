@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 39 → 184 |
-| Association | Link | 158 → 184 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E4 Biodiversity and Ecosystems](../ESRS E4/ESRS E4 Biodiversity and Ecosystems.md) |
+| Association | Link | [Werk samen met ketenpartners voor gezamenlijke reductiedoelen.](../Task/Werk samen met ketenpartners voor gezamenlijke reductiedoelen..md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

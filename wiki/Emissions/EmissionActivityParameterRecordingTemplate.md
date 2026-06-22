@@ -26,12 +26,12 @@ EmissionActivityParameterRecordingTemplate is a master-data entity that defines 
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 807 → 806 |
-| Association |  | 806 → 766 |
-| Association |  | 806 → 786 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionActivityTypeParameterTypeAssignment](EmissionActivityTypeParameterTypeAssignment.md) |
+| Association |  | [GeopoliticalEntity](../Facilities/GeopoliticalEntity.md) |
+| Association |  | [EmissionActivityType](EmissionActivityType.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

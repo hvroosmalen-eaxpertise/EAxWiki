@@ -27,10 +27,10 @@ RecordingUncertaintyAssessment is a work-product-component that captures the qua
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 800 → 776 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionStatement](EmissionStatement.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

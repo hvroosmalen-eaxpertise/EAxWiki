@@ -21,12 +21,12 @@ Duurzaamheidsverwachtingen van stakeholders.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 124 → 144 |
-| Association | Link | 14 → 124 |
-| Association | Link | 15 → 124 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Voer stakeholderdialogen en integreer duurzaamheidsverwachtingen in de strategie.](Voer stakeholderdialogen en integreer duurzaamheidsverwachtingen in de strategie..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

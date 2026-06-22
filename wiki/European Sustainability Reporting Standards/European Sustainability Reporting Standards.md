@@ -17,22 +17,22 @@ The European Sustainability Reporting Standards (ESRS) oblige all companies subj
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 534 → 555 |
-| Aggregation | Tree | 555 → 45 |
-| Aggregation | Tree | 555 → 34 |
-| Aggregation | Tree | 555 → 35 |
-| Aggregation | Tree | 555 → 36 |
-| Aggregation | Tree | 555 → 37 |
-| Aggregation | Tree | 555 → 38 |
-| Aggregation | Tree | 555 → 39 |
-| Aggregation | Tree | 555 → 40 |
-| Aggregation | Tree | 555 → 41 |
-| Aggregation | Tree | 555 → 42 |
-| Aggregation | Tree | 555 → 43 |
-| Aggregation | Tree | 555 → 44 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [EFRAG](../People/EFRAG.md) |
+| Aggregation | Tree | [ESRS G1 Business Conduct](../ESRS G1/ESRS G1 Business Conduct.md) |
+| Aggregation | Tree | [ESRS 1 General Requirements](../ESRS 1/ESRS 1 General Requirements.md) |
+| Aggregation | Tree | [ESRS 2 General Disclosures](../ESRS 2/ESRS 2 General Disclosures.md) |
+| Aggregation | Tree | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Aggregation | Tree | [ESRS E2 Pollution](../ESRS E2/ESRS E2 Pollution.md) |
+| Aggregation | Tree | [ESRS E3 Water and Marine Resources](../ESRS E3/ESRS E3 Water and Marine Resources.md) |
+| Aggregation | Tree | [ESRS E4 Biodiversity and Ecosystems](../ESRS E4/ESRS E4 Biodiversity and Ecosystems.md) |
+| Aggregation | Tree | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
+| Aggregation | Tree | [ESRS S1 Own Workforce](../ESRS S1/ESRS S1 Own Workforce.md) |
+| Aggregation | Tree | [ESRS S2 Workers in the Value Chain](../ESRS S2/ESRS S2 Workers in the Value Chain.md) |
+| Aggregation | Tree | [ESRS S3 Affected Communities](../ESRS S3/ESRS S3 Affected Communities.md) |
+| Aggregation | Tree | [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

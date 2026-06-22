@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 121 → 141 |
-| Association | Link | 141 → 167 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainability Principles](../Content/Sustainability Principles.md) |
+| Association | Link | [% producten met circulair ontwerp](../Metrics/% producten met circulair ontwerp.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

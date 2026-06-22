@@ -17,15 +17,15 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 36 → 181 |
-| Association | Link | 155 → 181 |
-| Aggregation | Tree | 181 → 200 |
-| Aggregation | Tree | 181 → 201 |
-| Aggregation | Tree | 181 → 202 |
-| ControlFlow | Flow | 181 → 234 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Start projecten voor energiebesparing, transportoptimalisatie en circulariteit.](../Task/Start projecten voor energiebesparing, transportoptimalisatie en circulariteit..md) |
+| Aggregation | Tree | [Energieverbruik vóór/na project](Energieverbruik vóór_na project.md) |
+| Aggregation | Tree | [Emissie vóór/na project](Emissie vóór_na project.md) |
+| Aggregation | Tree | [Projectgegevens en tech specs](Projectgegevens en tech specs.md) |
+| ControlFlow | Flow | [Emissiereductie (%) = ((baseline – huidig) / baseline) × 100](Emissiereductie (%) = ((baseline – huidig) _ baseline) × 100.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

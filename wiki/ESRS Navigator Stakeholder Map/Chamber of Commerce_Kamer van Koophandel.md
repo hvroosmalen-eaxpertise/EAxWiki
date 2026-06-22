@@ -16,11 +16,11 @@ Chamber of Commerce - provides CSRD guidance
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 304 → 521 |
-| Aggregation | Tree | 535 → 304 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Chamber of Commerce (Kamer van Koophandel)](../People/Chamber of Commerce (Kamer van Koophandel).md) |
+| Aggregation | Tree | [Ministry of Economic Affairs](../People/Ministry of Economic Affairs.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

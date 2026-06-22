@@ -28,11 +28,11 @@ Country represents an area of land or territory of a nation or state, identified
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 745 → 766 |
-| Association |  | 745 → 737 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [GeopoliticalEntity](../Facilities/GeopoliticalEntity.md) |
+| Association |  | [Address](Address.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

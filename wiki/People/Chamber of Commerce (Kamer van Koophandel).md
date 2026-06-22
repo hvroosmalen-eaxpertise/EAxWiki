@@ -10,12 +10,12 @@ Chamber of Commerce - provides CSRD guidance
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 304 → 521 |
-| Aggregation | Tree | 535 → 521 |
-| Association | Link | 521 → 510 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Chamber of Commerce/Kamer van Koophandel](../ESRS Navigator Stakeholder Map/Chamber of Commerce_Kamer van Koophandel.md) |
+| Aggregation | Tree | [Ministry of Economic Affairs](Ministry of Economic Affairs.md) |
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

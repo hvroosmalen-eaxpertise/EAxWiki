@@ -25,12 +25,12 @@ EmissionActivityFactor is an intersection entity that associates a specific Emis
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 793 → 777 |
-| Association |  | 793 → 780 |
-| Association |  | 793 → 786 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionCalculationModel](EmissionCalculationModel.md) |
+| Association |  | [EmissionFactor](EmissionFactor.md) |
+| Association |  | [EmissionActivityType](EmissionActivityType.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

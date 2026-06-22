@@ -16,11 +16,11 @@ Full-time permanent staff
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 277 → 329 |
-| Abstraction | trace | 277 → 490 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
+| Abstraction | trace | [Permanent Employees](../People/Permanent Employees.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

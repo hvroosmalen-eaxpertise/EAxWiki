@@ -10,11 +10,11 @@ Non-governmental organizations providing consultation
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 275 → 513 |
-| Association | Link | 513 → 510 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [NGOs and Civil Society](../ESRS Navigator Stakeholder Map/NGOs and Civil Society.md) |
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

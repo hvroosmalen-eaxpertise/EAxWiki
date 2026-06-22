@@ -17,11 +17,11 @@ Ensure access to affordable, reliable, sustainable and modern energy for all.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 9 → 131 |
-| Association | Link | 9 → 138 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Sustainable Resources / Assets](../Asset/Sustainable Resources _ Assets.md) |
+| Association | Link | [SDG Mapping Content](../Content/SDG Mapping Content.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -18,11 +18,11 @@ For more information: <a href="$inet://https://www.efrag.org/Assets/Download?ass
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 531 → 34 |
-| Aggregation | Tree | 555 → 34 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

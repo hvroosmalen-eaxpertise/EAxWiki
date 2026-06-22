@@ -10,12 +10,12 @@ Autoriteit Financi&#235;le Markten - Financial market supervision
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 305 → 509 |
-| Association | Link | 509 → 510 |
-| Aggregation | Tree | 535 → 509 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [AFM](../ESRS Navigator Stakeholder Map/AFM.md) |
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
+| Aggregation | Tree | [Ministry of Economic Affairs](Ministry of Economic Affairs.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

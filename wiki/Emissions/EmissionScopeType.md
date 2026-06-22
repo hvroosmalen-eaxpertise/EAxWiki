@@ -24,11 +24,11 @@ EmissionScopeType is a reference entity that codifies the three GHG Protocol emi
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 772 → 774 |
-| Association |  | 772 → 776 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionActivityCategory](EmissionActivityCategory.md) |
+| Association |  | [EmissionStatement](EmissionStatement.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

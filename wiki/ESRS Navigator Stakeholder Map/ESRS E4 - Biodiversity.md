@@ -16,11 +16,11 @@ Biodiversity and ecosystems standard
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 331 → 341 |
-| Abstraction | trace | 341 → 39 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Abstraction | trace | [ESRS E4 Biodiversity and Ecosystems](../ESRS E4/ESRS E4 Biodiversity and Ecosystems.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

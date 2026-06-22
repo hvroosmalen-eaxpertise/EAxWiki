@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 133 → 154 |
-| Association | Link | 154 → 180 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Emission Sources](../Asset/Emission Sources.md) |
+| Association | Link | [Scope 1 uitstoot per bron (ton CO₂e)](../Metrics/Scope 1 uitstoot per bron (ton CO₂e).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

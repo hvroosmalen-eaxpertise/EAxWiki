@@ -10,11 +10,11 @@ Retail customers
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 246 → 515 |
-| Aggregation | Tree | 516 → 515 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Supermarket Chains](../ESRS Navigator Stakeholder Map/Supermarket Chains.md) |
+| Aggregation | Tree | [Customers](Customers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

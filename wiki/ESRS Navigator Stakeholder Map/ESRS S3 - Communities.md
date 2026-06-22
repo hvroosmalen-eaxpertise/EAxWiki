@@ -16,11 +16,11 @@ Affected communities standard
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 251 → 344 |
-| Abstraction | trace | 344 → 43 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) |
+| Abstraction | trace | [ESRS S3 Affected Communities](../ESRS S3/ESRS S3 Affected Communities.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

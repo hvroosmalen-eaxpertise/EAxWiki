@@ -21,12 +21,12 @@ Ontwerp- en besluitregels die duurzame keuzes sturen.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 121 → 141 |
-| Association | Link | 14 → 121 |
-| Association | Link | 15 → 121 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling.](../Task/Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

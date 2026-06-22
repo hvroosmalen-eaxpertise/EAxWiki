@@ -28,11 +28,11 @@ Address captures the postal or physical address associated with a contact person
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 745 → 737 |
-| Association |  | 737 → 743 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Country](Country.md) |
+| Association |  | [OrganizationAddress](OrganizationAddress.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

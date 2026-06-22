@@ -26,12 +26,12 @@ ProductLifeCycleFootprint is a work-product-component that records the GHG emiss
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 816 → 817 |
-| Association |  | 816 → 817 |
-| Association |  | 812 → 817 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
+| Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
+| Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

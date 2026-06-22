@@ -21,12 +21,12 @@ Externe partners die duurzaamheid versterken.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 137 → 158 |
-| Association | Link | 15 → 137 |
-| Association | Link | 17 → 137 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Werk samen met ketenpartners voor gezamenlijke reductiedoelen.](../Task/Werk samen met ketenpartners voor gezamenlijke reductiedoelen..md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
+| Association | Link | [SDG 15. Life on Land](../Sustainability Development Goals/SDG 15. Life on Land.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

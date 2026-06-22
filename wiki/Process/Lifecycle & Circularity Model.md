@@ -21,11 +21,11 @@ Beschrijving van productlevenscyclus.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 135 → 156 |
-| Association | Link | 14 → 135 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Ontwerp producten die modulair, repareerbaar en recyclebaar zijn.](../Task/Ontwerp producten die modulair, repareerbaar en recyclebaar zijn..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

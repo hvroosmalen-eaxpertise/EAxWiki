@@ -21,11 +21,11 @@ Locaties of activiteiten die emissies genereren.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 133 → 154 |
-| Association | Link | 15 → 133 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen.](../Task/Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen..md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

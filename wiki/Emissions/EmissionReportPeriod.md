@@ -33,11 +33,11 @@ EmissionReportPeriod is a work-product-component that holds the aggregated emiss
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 779 → 783 |
-| Association |  | 782 → 783 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
+| Association |  | [EmissionReport](EmissionReport.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

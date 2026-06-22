@@ -18,11 +18,11 @@ Indicates strategic alignment between commercial success and sustainability obje
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 466 → 461 |
-| Association | ArchiMate_Association | 466 → 446 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Improved Long-term Profitability](../Outcomes/Improved Long-term Profitability.md) |
+| Association | ArchiMate_Association | [Sustainable Innovation Management](../Capabilities/Sustainable Innovation Management.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

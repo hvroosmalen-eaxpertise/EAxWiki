@@ -8,10 +8,10 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 193 → 213 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Aantal duurzame assets (bv. EV's, zonnepanelen)](Aantal duurzame assets (bv. EV's, zonnepanelen).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

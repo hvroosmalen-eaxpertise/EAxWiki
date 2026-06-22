@@ -16,11 +16,11 @@ Coordinates implementation of sustainability measures, reports to CEO
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 269 → 265 |
-| Abstraction | trace | 269 → 494 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [CEO](CEO.md) |
+| Abstraction | trace | [Sustainability Manager/Director](../People/Sustainability Manager_Director.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

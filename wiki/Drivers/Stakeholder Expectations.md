@@ -17,11 +17,11 @@ Stakeholders increasingly demand ESG performance disclosure and sustainable busi
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 430 → 434 |
-| ControlFlow | ArchiMate_Influence | 430 → 438 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Long-term Value Creation](../Goals/Long-term Value Creation.md) |
+| ControlFlow | ArchiMate_Influence | [ESG Performance Improvement](../Goals/ESG Performance Improvement.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

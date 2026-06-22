@@ -17,12 +17,12 @@ Protect, restore and promote sustainable use of terrestrial ecosystems.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 110 → 17 |
-| Association | Link | 17 → 137 |
-| Association | Link | 17 → 138 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Enterprise Purpose](../Purpose/Enterprise Purpose.md) |
+| Association | Link | [Sustainable Partnerships](../Channel/Sustainable Partnerships.md) |
+| Association | Link | [SDG Mapping Content](../Content/SDG Mapping Content.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

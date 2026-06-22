@@ -18,11 +18,11 @@ Links environmental performance to operational excellence and cost management.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 465 → 457 |
-| Association | ArchiMate_Association | 465 → 445 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Reduced Environmental Impact](../Outcomes/Reduced Environmental Impact.md) |
+| Association | ArchiMate_Association | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

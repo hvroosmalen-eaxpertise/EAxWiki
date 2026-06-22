@@ -26,17 +26,17 @@ Standard represents a formal specification, protocol, methodology, or regulatory
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 789 → 734 |
-| Association |  | 788 → 734 |
-| Association |  | 787 → 734 |
-| Association |  | 794 → 734 |
-| Association |  | 734 → 782 |
-| Association |  | 734 → 740 |
-| Association |  | 734 → 777 |
-| Association |  | 734 → 771 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionComponentPerStandard](../Emissions/EmissionComponentPerStandard.md) |
+| Association |  | [EmissionStatementPerStandard](../Emissions/EmissionStatementPerStandard.md) |
+| Association |  | [EmissionCategoryStandardAssociation](../Emissions/EmissionCategoryStandardAssociation.md) |
+| Association |  | [StandardSourceAssociation](../Emissions/StandardSourceAssociation.md) |
+| Association |  | [EmissionReport](../Emissions/EmissionReport.md) |
+| Association |  | [OrganizationalBoundary](OrganizationalBoundary.md) |
+| Association |  | [EmissionCalculationModel](../Emissions/EmissionCalculationModel.md) |
+| Association |  | [EmissionInventory](../Emissions/EmissionInventory.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

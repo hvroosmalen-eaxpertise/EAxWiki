@@ -17,12 +17,12 @@ Positions the organization as a sustainability leader in its industry to attract
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 440 → 435 |
-| Dependency | ArchiMate_Realization | 446 → 440 |
-| Dependency | ArchiMate_Realization | 449 → 440 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Sustainable Competitive Advantage](../Goals/Sustainable Competitive Advantage.md) |
+| Dependency | ArchiMate_Realization | [Sustainable Innovation Management](../Capabilities/Sustainable Innovation Management.md) |
+| Dependency | ArchiMate_Realization | [Stakeholder Engagement Management](../Capabilities/Stakeholder Engagement Management.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

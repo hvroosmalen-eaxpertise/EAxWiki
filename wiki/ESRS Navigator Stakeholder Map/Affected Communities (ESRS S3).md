@@ -16,14 +16,14 @@ Local and regional communities impacted by operations
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 251 → 344 |
-| Association | ArchiMate_Association | 331 → 251 |
-| Generalization | ArchiMate_Specialization | 249 → 251 |
-| Generalization | ArchiMate_Specialization | 314 → 251 |
-| Abstraction | trace | 251 → 523 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [ESRS S3 - Communities](ESRS S3 - Communities.md) |
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Generalization | ArchiMate_Specialization | [Local Communities](Local Communities.md) |
+| Generalization | ArchiMate_Specialization | [Indigenous Peoples](Indigenous Peoples.md) |
+| Abstraction | trace | [Affected Communities (ESRS S3)](../People/Affected Communities (ESRS S3).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

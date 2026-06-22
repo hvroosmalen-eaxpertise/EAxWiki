@@ -26,11 +26,11 @@ ProductCarbonFootprintFactorSource is an intersection entity that records which 
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 812 → 818 |
-| Association |  | 781 → 818 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
+| Association |  | [EmissionFactorSource](../Emissions/EmissionFactorSource.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

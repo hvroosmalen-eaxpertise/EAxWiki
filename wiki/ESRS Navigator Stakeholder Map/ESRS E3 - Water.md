@@ -16,11 +16,11 @@ Water and marine resources standard
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 331 → 244 |
-| Abstraction | trace | 244 → 38 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Abstraction | trace | [ESRS E3 Water and Marine Resources](../ESRS E3/ESRS E3 Water and Marine Resources.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

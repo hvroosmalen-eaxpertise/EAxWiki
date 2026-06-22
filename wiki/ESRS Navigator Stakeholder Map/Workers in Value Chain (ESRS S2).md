@@ -16,13 +16,13 @@ Employees of suppliers and partners
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 284 → 267 |
-| Association | ArchiMate_Assignment | 267 → 335 |
-| Association | ArchiMate_Association | 267 → 282 |
-| Abstraction | trace | 267 → 532 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Seasonal Agricultural Workers](Seasonal Agricultural Workers.md) |
+| Association | ArchiMate_Assignment | [Suppliers](Suppliers.md) |
+| Association | ArchiMate_Association | [ESRS S2 - Value Chain Workers](ESRS S2 - Value Chain Workers.md) |
+| Abstraction | trace | [Workers in Value Chain (ESRS S2)](../People/Workers in Value Chain (ESRS S2).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

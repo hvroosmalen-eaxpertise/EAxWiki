@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 126 → 146 |
-| Association | Link | 146 → 172 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Green Customer Journey](../Journey/Green Customer Journey.md) |
+| Association | Link | [CO₂ per klanttransactie (kg)](../Metrics/CO₂ per klanttransactie (kg).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

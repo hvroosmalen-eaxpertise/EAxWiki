@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 131 → 151 |
-| Association | Link | 151 → 177 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainable Resources / Assets](../Asset/Sustainable Resources _ Assets.md) |
+| Association | Link | [% energie uit hernieuwbare bronnen](../Metrics/% energie uit hernieuwbare bronnen.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

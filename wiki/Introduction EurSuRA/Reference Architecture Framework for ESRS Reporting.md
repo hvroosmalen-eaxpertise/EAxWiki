@@ -15,16 +15,16 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 609 → 613 |
-| Aggregation | Tree | 613 → 615 |
-| Aggregation | Tree | 613 → 614 |
-| Aggregation | Tree | 613 → 616 |
-| Aggregation | Tree | 613 → 617 |
-| Aggregation | Tree | 613 → 621 |
-| ControlFlow | Flow | 622 → 613 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).md) |
+| Aggregation | Tree | [Semantic Model](Semantic Model.md) |
+| Aggregation | Tree | [Logical Data Model](Logical Data Model.md) |
+| Aggregation | Tree | [Reporting Framework](Reporting Framework.md) |
+| Aggregation | Tree | [Calculation Engine(s)](Calculation Engine(s).md) |
+| Aggregation | Tree | [Integration tools to inhouse Information](Integration tools to inhouse Information.md) |
+| ControlFlow | Flow | [Collecting Information and Create EDGY Diagrams/Model](Collecting Information and Create EDGY Diagrams_Model.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

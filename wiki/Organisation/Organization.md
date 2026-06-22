@@ -26,22 +26,22 @@ Organization is the central anchor entity for emissions reporting. It represents
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 801 → 735 |
-| Association |  | 735 → 782 |
-| Association |  | 735 → 753 |
-| Association |  | 740 → 735 |
-| Association |  | 735 → 751 |
-| Association |  | 735 → 750 |
-| Association |  | 735 → 748 |
-| Association |  | 747 → 735 |
-| Association |  | 738 → 735 |
-| Association |  | 735 → 743 |
-| Association |  | 735 → 741 |
-| Association |  | 735 → 736 |
-| Association |  | 735 → 771 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [OrganizationEmissionAllocation](../Emissions/OrganizationEmissionAllocation.md) |
+| Association |  | [EmissionReport](../Emissions/EmissionReport.md) |
+| Association |  | [Facility](../Facilities/Facility.md) |
+| Association |  | [OrganizationalBoundary](OrganizationalBoundary.md) |
+| Association |  | [OrganizationEquityShare](OrganizationEquityShare.md) |
+| Association |  | [OrganizationIndustrySector](OrganizationIndustrySector.md) |
+| Association |  | [OrganizationExternalIdentifier](OrganizationExternalIdentifier.md) |
+| Association |  | [OrganizationPersonAssociation](OrganizationPersonAssociation.md) |
+| Association |  | [ContactPerson](ContactPerson.md) |
+| Association |  | [OrganizationAddress](OrganizationAddress.md) |
+| Association |  | [OrganizationAssociation](OrganizationAssociation.md) |
+| Association |  | [OrganizationType](OrganizationType.md) |
+| Association |  | [EmissionInventory](../Emissions/EmissionInventory.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

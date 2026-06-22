@@ -18,30 +18,30 @@ Take urgent action to combat climate change and its impacts.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 110 → 15 |
-| Association | Link | 15 → 113 |
-| Association | Link | 15 → 116 |
-| Association | Link | 15 → 121 |
-| Association | Link | 15 → 123 |
-| Association | Link | 15 → 124 |
-| Association | Link | 15 → 127 |
-| Association | Link | 15 → 128 |
-| Association | Link | 15 → 129 |
-| Association | Link | 15 → 130 |
-| Association | Link | 15 → 131 |
-| Association | Link | 15 → 164 |
-| Association | Link | 15 → 132 |
-| Association | Link | 15 → 133 |
-| Association | Link | 15 → 134 |
-| Association | Link | 15 → 136 |
-| Association | Link | 15 → 137 |
-| Association | Link | 15 → 138 |
-| Association | Link | 15 → 139 |
-| Association | Link | 15 → 140 |
-| Association | Link | 15 → 122 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Enterprise Purpose](../Purpose/Enterprise Purpose.md) |
+| Association | Link | [Sustainability Vision](../Story/Sustainability Vision.md) |
+| Association | Link | [Sustainability Objectives](../Content/Sustainability Objectives.md) |
+| Association | Link | [Sustainability Principles](../Content/Sustainability Principles.md) |
+| Association | Link | [Sustainability Identity](../Purpose/Sustainability Identity.md) |
+| Association | Link | [Stakeholder Sustainability Expectations](../Task/Stakeholder Sustainability Expectations.md) |
+| Association | Link | [Sustainable Channels](../Channel/Sustainable Channels.md) |
+| Association | Link | [Green Services](../Channel/Green Services.md) |
+| Association | Link | [Green Capabilities](../Capability/Green Capabilities.md) |
+| Association | Link | [Sustainable Processes](../Process/Sustainable Processes.md) |
+| Association | Link | [Sustainable Resources / Assets](../Asset/Sustainable Resources _ Assets.md) |
+| Association | Link | [Sustainable Policies](../Asset/Sustainable Policies.md) |
+| Association | Link | [Environmental Impact Map](../Asset/Environmental Impact Map.md) |
+| Association | Link | [Emission Sources](../Asset/Emission Sources.md) |
+| Association | Link | [Reduction Initiatives](../Process/Reduction Initiatives.md) |
+| Association | Link | [Sustainable Data Assets](../Asset/Sustainable Data Assets.md) |
+| Association | Link | [Sustainable Partnerships](../Channel/Sustainable Partnerships.md) |
+| Association | Link | [SDG Mapping Content](../Content/SDG Mapping Content.md) |
+| Association | Link | [Sustainability Metrics](../Asset/Sustainability Metrics.md) |
+| Association | Link | [Sustainable Work Practices](../Story/Sustainable Work Practices.md) |
+| Association | Link | [Environmental Impact Story](../Story/Environmental Impact Story.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

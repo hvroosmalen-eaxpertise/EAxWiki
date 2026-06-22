@@ -16,11 +16,11 @@ Logistics and transportation providers
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 294 → 335 |
-| Abstraction | trace | 294 → 530 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Suppliers](Suppliers.md) |
+| Abstraction | trace | [Transport Companies](../People/Transport Companies.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

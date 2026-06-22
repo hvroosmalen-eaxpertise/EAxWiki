@@ -26,10 +26,10 @@ FacilitySpecification is the work-product entity that assigns a specific value t
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 753 → 759 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Facility](Facility.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

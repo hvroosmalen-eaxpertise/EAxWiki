@@ -15,12 +15,12 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 139 → 160 |
-| Association | Link | 160 → 186 |
-| Association | Link | 160 → 187 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainability Metrics](../Asset/Sustainability Metrics.md) |
+| Association | Link | [Energie (MWh/jaar)](../Metrics/Energie (MWh_jaar).md) |
+| Association | Link | [Recycling % van afval](../Metrics/Recycling % van afval.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

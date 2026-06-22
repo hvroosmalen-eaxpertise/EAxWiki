@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 179 → 196 |
-| Association | Link | 196 → 216 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | [Totaal afval (ton/jaar)](Totaal afval (ton_jaar).md) |
+| Association | Link | [LCA-software + leveranciersdata](LCA-software + leveranciersdata.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

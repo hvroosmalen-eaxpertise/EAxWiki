@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 39 → 120 |
-| Association | Link | 112 → 120 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E4 Biodiversity and Ecosystems](../ESRS E4/ESRS E4 Biodiversity and Ecosystems.md) |
+| Association | Link | [Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar.](../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

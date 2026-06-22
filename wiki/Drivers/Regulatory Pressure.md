@@ -17,11 +17,11 @@ Forces organizations to comply with evolving environmental and social standards.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 429 → 436 |
-| ControlFlow | ArchiMate_Influence | 429 → 437 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Risk Reduction](../Goals/Risk Reduction.md) |
+| ControlFlow | ArchiMate_Influence | [Corporate Sustainability Integration](../Goals/Corporate Sustainability Integration.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

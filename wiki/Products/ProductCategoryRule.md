@@ -29,10 +29,10 @@ ProductCategoryRule is a master-data entity that represents a product category r
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 812 → 820 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

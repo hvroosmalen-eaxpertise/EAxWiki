@@ -17,16 +17,16 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 36 → 177 |
-| Association | Link | 151 → 177 |
-| Aggregation | Tree | 177 → 190 |
-| Aggregation | Tree | 177 → 191 |
-| Aggregation | Tree | 177 → 192 |
-| Aggregation | Tree | 177 → 193 |
-| ControlFlow | Flow | 177 → 230 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Installeer zonnepanelen of stap over op groene energie en elektrische voertuigen.](../Task/Installeer zonnepanelen of stap over op groene energie en elektrische voertuigen..md) |
+| Aggregation | Tree | [Energieverbruik (kWh)](Energieverbruik (kWh).md) |
+| Aggregation | Tree | [Hernieuwbare energieopwekking (kWh)](Hernieuwbare energieopwekking (kWh).md) |
+| Aggregation | Tree | [Brandstofverbruik voertuigen/machines](Brandstofverbruik voertuigen_machines.md) |
+| Aggregation | Tree | [Aantal duurzame assets (bv. EV's, zonnepanelen)](Aantal duurzame assets (bv. EV's, zonnepanelen).md) |
+| ControlFlow | Flow | [% Hernieuwbare Energie = (opgewekte hernieuwbare energie / totaal verbruik) × 100](% Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik) × 100.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

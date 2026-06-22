@@ -24,10 +24,10 @@ GeopoliticalEntityType provides the controlled vocabulary used to classify geopo
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 765 → 766 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [GeopoliticalEntity](GeopoliticalEntity.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

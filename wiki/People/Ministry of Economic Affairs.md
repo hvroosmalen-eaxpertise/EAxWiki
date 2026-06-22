@@ -10,16 +10,16 @@ Commissioned the ESRS Navigator
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 332 → 535 |
-| Association | Link | 536 → 535 |
-| Association | Link | 531 → 535 |
-| Aggregation | Tree | 535 → 304 |
-| Aggregation | Tree | 535 → 520 |
-| Aggregation | Tree | 535 → 521 |
-| Aggregation | Tree | 535 → 509 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Ministry of Economic Affairs](../ESRS Navigator Stakeholder Map/Ministry of Economic Affairs.md) |
+| Association | Link | [Rijksdienst voor Ondernemend Nederland (RVO)](Rijksdienst voor Ondernemend Nederland (RVO).md) |
+| Association | Link | [European Commission](European Commission.md) |
+| Aggregation | Tree | [Chamber of Commerce/Kamer van Koophandel](../ESRS Navigator Stakeholder Map/Chamber of Commerce_Kamer van Koophandel.md) |
+| Aggregation | Tree | [Sociaal Economische Raad (SER)](Sociaal Economische Raad (SER).md) |
+| Aggregation | Tree | [Chamber of Commerce (Kamer van Koophandel)](Chamber of Commerce (Kamer van Koophandel).md) |
+| Aggregation | Tree | [AFM](AFM.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

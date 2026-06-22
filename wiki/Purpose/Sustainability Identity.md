@@ -21,11 +21,11 @@ Hoe het bedrijf zichzelf positioneert rond duurzaamheid.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 123 → 143 |
-| Association | Link | 15 → 123 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie.](../Task/Positioneer het merk expliciet rond duurzaamheid via producten, marketing en transparantie..md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

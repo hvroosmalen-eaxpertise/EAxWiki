@@ -10,11 +10,11 @@ Providers of packaging materials
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 300 → 528 |
-| Aggregation | Tree | 529 → 528 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Packaging Suppliers](../ESRS Navigator Stakeholder Map/Packaging Suppliers.md) |
+| Aggregation | Tree | [Suppliers](Suppliers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

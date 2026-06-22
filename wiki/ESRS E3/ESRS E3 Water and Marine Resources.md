@@ -18,21 +18,21 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 38 → 176 |
-| ControlFlow | Flow | 38 → 185 |
-| Aggregation | Tree | 38 → 70 |
-| Aggregation | Tree | 38 → 71 |
-| Aggregation | Tree | 38 → 72 |
-| Aggregation | Tree | 38 → 73 |
-| Aggregation | Tree | 38 → 74 |
-| Aggregation | Tree | 38 → 75 |
-| Association | Link | 510 → 38 |
-| Abstraction | trace | 244 → 38 |
-| Association | Link | 531 → 38 |
-| Aggregation | Tree | 555 → 38 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Energieverbruik en waterverbruik per eenheid](../Metrics/Energieverbruik en waterverbruik per eenheid.md) |
+| ControlFlow | Flow | [# SDGs met meetbare KPI’s](../Metrics/_ SDGs met meetbare KPI’s.md) |
+| Aggregation | Tree | Element ID 70 (not in export) |
+| Aggregation | Tree | Element ID 71 (not in export) |
+| Aggregation | Tree | Element ID 72 (not in export) |
+| Aggregation | Tree | Element ID 73 (not in export) |
+| Aggregation | Tree | Element ID 74 (not in export) |
+| Aggregation | Tree | Element ID 75 (not in export) |
+| Association | Link | [Company subject to CSRD](../People/Company subject to CSRD.md) |
+| Abstraction | trace | [ESRS E3 - Water](../ESRS Navigator Stakeholder Map/ESRS E3 - Water.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

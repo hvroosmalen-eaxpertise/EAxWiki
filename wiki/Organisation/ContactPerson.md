@@ -29,11 +29,11 @@ ContactPerson represents an individual who is designated as the primary or secon
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 747 → 738 |
-| Association |  | 738 → 735 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [OrganizationPersonAssociation](OrganizationPersonAssociation.md) |
+| Association |  | [Organization](Organization.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

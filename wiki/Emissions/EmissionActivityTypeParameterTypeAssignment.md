@@ -26,11 +26,11 @@ EmissionActivityTypeParameterTypeAssignment is a master-data entity that records
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 807 → 775 |
-| Association |  | 807 → 806 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionParameterType](EmissionParameterType.md) |
+| Association |  | [EmissionActivityParameterRecordingTemplate](EmissionActivityParameterRecordingTemplate.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

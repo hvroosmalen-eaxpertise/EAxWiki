@@ -16,11 +16,11 @@ Oversight and quarterly reporting on sustainability
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Assignment | 337 → 331 |
-| Abstraction | trace | 337 → 504 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Assignment | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Abstraction | trace | [Supervisory Board (RvC)](../People/Supervisory Board (RvC).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

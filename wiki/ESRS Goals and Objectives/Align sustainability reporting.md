@@ -17,4 +17,4 @@ Align sustainability reporting for businesses operating within the European Unio
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

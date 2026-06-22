@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 132 → 153 |
-| Association | Link | 153 → 179 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Environmental Impact Map](../Asset/Environmental Impact Map.md) |
+| Association | Link | [Totaal afval (ton/jaar)](../Metrics/Totaal afval (ton_jaar).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 128 → 148 |
-| Association | Link | 148 → 174 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Green Services](../Channel/Green Services.md) |
+| Association | Link | [% omzet uit duurzame producten](../Metrics/% omzet uit duurzame producten.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

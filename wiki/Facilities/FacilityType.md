@@ -24,10 +24,10 @@ FacilityType provides a controlled vocabulary of facility classifications, sourc
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 753 → 754 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Facility](Facility.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -16,11 +16,11 @@ Tomato growers, grain producers, vegetable suppliers
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 334 → 335 |
-| Abstraction | trace | 334 → 527 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Suppliers](Suppliers.md) |
+| Abstraction | trace | [Agricultural Suppliers](../People/Agricultural Suppliers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

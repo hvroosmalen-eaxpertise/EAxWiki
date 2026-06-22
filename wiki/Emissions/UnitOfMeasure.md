@@ -31,20 +31,20 @@ UnitOfMeasure is a reference entity that provides the controlled vocabulary of m
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 779 → 783 |
-| Association |  | 798 → 779 |
-| Association |  | 797 → 779 |
-| Association |  | 796 → 779 |
-| Association |  | 775 → 779 |
-| Association |  | 779 → 812 |
-| Association |  | 779 → 763 |
-| Association |  | 779 → 780 |
-| Association |  | 779 → 780 |
-| Association |  | 779 → 778 |
-| Association |  | 779 → 776 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionReportPeriod](EmissionReportPeriod.md) |
+| Association |  | [UnitOfMeasureSourceReference](UnitOfMeasureSourceReference.md) |
+| Association |  | [PhysicalQuantityType](PhysicalQuantityType.md) |
+| Association |  | [SystemOfUnits](SystemOfUnits.md) |
+| Association |  | [EmissionParameterType](EmissionParameterType.md) |
+| Association |  | [ProductCarbonFootprint](../Products/ProductCarbonFootprint.md) |
+| Association |  | [EmissionActivityParameterValue](../Facilities/EmissionActivityParameterValue.md) |
+| Association |  | [EmissionFactor](EmissionFactor.md) |
+| Association |  | [EmissionFactor](EmissionFactor.md) |
+| Association |  | [EmissionComponent](EmissionComponent.md) |
+| Association |  | [EmissionStatement](EmissionStatement.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

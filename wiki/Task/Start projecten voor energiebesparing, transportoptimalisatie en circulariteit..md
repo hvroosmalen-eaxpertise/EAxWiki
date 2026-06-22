@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 134 → 155 |
-| Association | Link | 155 → 181 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Reduction Initiatives](../Process/Reduction Initiatives.md) |
+| Association | Link | [Vermeden CO₂ door maatregelen (ton/jaar)](../Metrics/Vermeden CO₂ door maatregelen (ton_jaar).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

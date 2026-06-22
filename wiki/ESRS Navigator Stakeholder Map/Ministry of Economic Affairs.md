@@ -16,11 +16,11 @@ Commissioned the ESRS Navigator
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 332 → 338 |
-| Abstraction | trace | 332 → 535 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Rijksdienst voor Ondernemen (RVO)](Rijksdienst voor Ondernemen (RVO).md) |
+| Abstraction | trace | [Ministry of Economic Affairs](../People/Ministry of Economic Affairs.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

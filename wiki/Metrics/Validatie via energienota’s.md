@@ -8,10 +8,10 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 202 → 223 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Projectgegevens en tech specs](Projectgegevens en tech specs.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

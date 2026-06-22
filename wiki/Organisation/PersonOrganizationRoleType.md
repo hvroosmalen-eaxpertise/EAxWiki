@@ -23,10 +23,10 @@ PersonOrganizationRoleType provides the controlled vocabulary of roles that a pe
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 746 → 747 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [OrganizationPersonAssociation](OrganizationPersonAssociation.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

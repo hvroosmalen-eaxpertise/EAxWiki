@@ -27,10 +27,10 @@ EmissionReportingBoundary is a work-product-component that defines and documents
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 808 → 771 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionInventory](EmissionInventory.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

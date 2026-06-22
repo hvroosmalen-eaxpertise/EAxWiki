@@ -17,12 +17,12 @@ Identifies, assesses, and mitigates sustainability-related risks with the same r
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 443 → 436 |
-| Dependency | ArchiMate_Realization | 443 → 438 |
-| Dependency | ArchiMate_Realization | 450 → 443 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Risk Reduction](../Goals/Risk Reduction.md) |
+| Dependency | ArchiMate_Realization | [ESG Performance Improvement](../Goals/ESG Performance Improvement.md) |
+| Dependency | ArchiMate_Realization | [Risk and Compliance Management](../Capabilities/Risk and Compliance Management.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

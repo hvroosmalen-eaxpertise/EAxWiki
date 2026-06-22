@@ -15,12 +15,12 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 110 → 112 |
-| Association | Link | 112 → 111 |
-| Association | Link | 112 → 120 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Enterprise Purpose](../Purpose/Enterprise Purpose.md) |
+| Association | Link | [Totale Scope 1-3 uitstoot (ton CO₂e/jaar)](../Metrics/Totale Scope 1-3 uitstoot (ton CO₂e_jaar).md) |
+| Association | Link | [Herstelde natuur (ha)](../Metrics/Herstelde natuur (ha).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

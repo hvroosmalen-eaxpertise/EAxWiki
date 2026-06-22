@@ -16,11 +16,11 @@ Temporary/seasonal employees
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 318 → 329 |
-| Abstraction | trace | 318 → 491 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
+| Abstraction | trace | [Seasonal Workers](../People/Seasonal Workers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

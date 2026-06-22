@@ -18,12 +18,12 @@ Supports sustainable value creation and investor returns.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 452 → 461 |
-| Dependency | ArchiMate_Realization | 461 → 434 |
-| Association | ArchiMate_Association | 466 → 461 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Embed Sustainability in Investment Portfolio](../Courses of Action/Embed Sustainability in Investment Portfolio.md) |
+| Dependency | ArchiMate_Realization | [Long-term Value Creation](../Goals/Long-term Value Creation.md) |
+| Association | ArchiMate_Association | [Sustainable Revenue Ratio](../Assessments/Sustainable Revenue Ratio.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -10,10 +10,10 @@ Example company: 450 employees, food production, two facilities in Netherlands
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 250 → 499 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [FreshFood B.V.](../ESRS Navigator Stakeholder Map/FreshFood B.V..md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

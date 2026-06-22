@@ -26,11 +26,11 @@ EmissionCalculationModelFactorArgument is a master-data entity that binds a name
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 804 → 780 |
-| Association |  | 804 → 777 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionFactor](EmissionFactor.md) |
+| Association |  | [EmissionCalculationModel](EmissionCalculationModel.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

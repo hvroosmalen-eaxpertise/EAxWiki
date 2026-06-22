@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 124 → 144 |
-| Association | Link | 144 → 170 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Stakeholder Sustainability Expectations](Stakeholder Sustainability Expectations.md) |
+| Association | Link | [% minder plasticverpakkingen](../Metrics/% minder plasticverpakkingen.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

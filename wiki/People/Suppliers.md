@@ -10,14 +10,14 @@ All upstream suppliers in the value chain
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 335 → 529 |
-| Aggregation | Tree | 529 → 528 |
-| Aggregation | Tree | 529 → 527 |
-| Association | Link | 510 → 529 |
-| Aggregation | Tree | 529 → 532 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Suppliers](../ESRS Navigator Stakeholder Map/Suppliers.md) |
+| Aggregation | Tree | [Packaging Suppliers](Packaging Suppliers.md) |
+| Aggregation | Tree | [Agricultural Suppliers](Agricultural Suppliers.md) |
+| Association | Link | [Company subject to CSRD](Company subject to CSRD.md) |
+| Aggregation | Tree | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -25,12 +25,12 @@ OrganizationPersonAssociation is the intersection entity that links a ContactPer
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 747 → 738 |
-| Association |  | 747 → 735 |
-| Association |  | 746 → 747 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [ContactPerson](ContactPerson.md) |
+| Association |  | [Organization](Organization.md) |
+| Association |  | [PersonOrganizationRoleType](PersonOrganizationRoleType.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

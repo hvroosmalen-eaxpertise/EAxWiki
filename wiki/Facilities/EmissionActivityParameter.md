@@ -28,12 +28,12 @@ EmissionActivityParameter identifies a specific instance of an EmissionParameter
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 775 → 762 |
-| Association |  | 762 → 763 |
-| Association |  | 753 → 762 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionParameterType](../Emissions/EmissionParameterType.md) |
+| Association |  | [EmissionActivityParameterValue](EmissionActivityParameterValue.md) |
+| Association |  | [Facility](Facility.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

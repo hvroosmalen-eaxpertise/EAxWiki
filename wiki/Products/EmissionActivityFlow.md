@@ -26,11 +26,11 @@ EmissionActivityFlow is an intersection entity that links an EmissionActivity to
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 813 → 814 |
-| Association |  | 773 → 814 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [ProductLifeCycle](ProductLifeCycle.md) |
+| Association |  | [EmissionActivity](../Emissions/EmissionActivity.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

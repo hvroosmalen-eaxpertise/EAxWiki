@@ -21,12 +21,12 @@ Middelen zoals zonnepanelen, elektrische voertuigen en tooling.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 131 → 151 |
-| Association | Link | 9 → 131 |
-| Association | Link | 15 → 131 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Installeer zonnepanelen of stap over op groene energie en elektrische voertuigen.](../Task/Installeer zonnepanelen of stap over op groene energie en elektrische voertuigen..md) |
+| Association | Link | [SDG  7. Affordable and Clean Energy](../Sustainability Development Goals/SDG  7. Affordable and Clean Energy.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

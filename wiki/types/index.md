@@ -2,9 +2,10 @@
 
 Elements grouped by modelling language:
 
-- [ArchiMate](ArchiMate/index.md)
+- [ArchiMate3](ArchiMate3/index.md)
+- [EDGY](EDGY/index.md)
 - [UML](UML/index.md)
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

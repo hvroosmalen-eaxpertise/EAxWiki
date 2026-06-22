@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 113 → 114 |
-| Association | Link | 114 → 115 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainability Vision](../Story/Sustainability Vision.md) |
+| Association | Link | [Reductiedoel CO₂ (% t.o.v. basisjaar)](../Metrics/Reductiedoel CO₂ (% t.o.v. basisjaar).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 119 → 117 |
-| ControlFlow | Flow | 36 → 117 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Stel Science-Based Targets op en rapporteer jaarlijks voortgang.](../Task/Stel Science-Based Targets op en rapporteer jaarlijks voortgang..md) |
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

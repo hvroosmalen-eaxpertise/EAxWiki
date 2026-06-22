@@ -8,11 +8,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 323 → 492 |
-| Aggregation | Tree | 489 → 492 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Production Workers](../ESRS Navigator Stakeholder Map/Production Workers.md) |
+| Aggregation | Tree | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

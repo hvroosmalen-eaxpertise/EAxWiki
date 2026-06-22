@@ -10,12 +10,12 @@ Coordinates implementation of sustainability measures, reports to CEO
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 269 → 494 |
-| Aggregation | Tree | 496 → 494 |
-| Association | Link | 494 → 495 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Sustainability Manager/Director](../ESRS Navigator Stakeholder Map/Sustainability Manager_Director.md) |
+| Aggregation | Tree | [Board of Directors (Directie)](Board of Directors (Directie).md) |
+| Association | Link | [CEO](CEO.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

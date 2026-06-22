@@ -16,38 +16,38 @@ Companies required to report under CSRD from 2025
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 250 → 331 |
-| Association | ArchiMate_Association | 331 → 341 |
-| Association | ArchiMate_Association | 315 → 331 |
-| Association | ArchiMate_Assignment | 329 → 331 |
-| Association | ArchiMate_Association | 291 → 331 |
-| Association | ArchiMate_Association | 326 → 331 |
-| Association | ArchiMate_Association | 331 → 299 |
-| Association | ArchiMate_Association | 331 → 263 |
-| Association | ArchiMate_Association | 331 → 274 |
-| Association | ArchiMate_Association | 331 → 251 |
-| Association | ArchiMate_Association | 331 → 295 |
-| Association | ArchiMate_Association | 305 → 331 |
-| Association | ArchiMate_Assignment | 337 → 331 |
-| Association | ArchiMate_Association | 260 → 331 |
-| Association | ArchiMate_Association | 331 → 350 |
-| Association | ArchiMate_Association | 331 → 248 |
-| Association | ArchiMate_Association | 338 → 331 |
-| Association | ArchiMate_Association | 275 → 331 |
-| Generalization | ArchiMate_Specialization | 270 → 331 |
-| Association | ArchiMate_Association | 319 → 331 |
-| Association | ArchiMate_Assignment | 266 → 331 |
-| Association | ArchiMate_Association | 325 → 331 |
-| Association | ArchiMate_Association | 335 → 331 |
-| Association | ArchiMate_Association | 255 → 331 |
-| Association | ArchiMate_Association | 312 → 331 |
-| Association | ArchiMate_Association | 292 → 331 |
-| Association | ArchiMate_Association | 331 → 244 |
-| Generalization | ArchiMate_Specialization | 349 → 331 |
-| Abstraction | trace | 331 → 510 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [FreshFood B.V.](FreshFood B.V..md) |
+| Association | ArchiMate_Association | [ESRS E4 - Biodiversity](ESRS E4 - Biodiversity.md) |
+| Association | ArchiMate_Association | [Investors/Shareholders](Investors_Shareholders.md) |
+| Association | ArchiMate_Assignment | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
+| Association | ArchiMate_Association | [Legal Design Agencies](Legal Design Agencies.md) |
+| Association | ArchiMate_Association | [European Commission](European Commission.md) |
+| Association | ArchiMate_Association | [ESRS G1 - Business Conduct](ESRS G1 - Business Conduct.md) |
+| Association | ArchiMate_Association | [Industry Associations](Industry Associations.md) |
+| Association | ArchiMate_Association | [Customers](Customers.md) |
+| Association | ArchiMate_Association | [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) |
+| Association | ArchiMate_Association | [ESRS E5 - Circular Economy](ESRS E5 - Circular Economy.md) |
+| Association | ArchiMate_Association | [AFM](AFM.md) |
+| Association | ArchiMate_Assignment | [Supervisory Board (RvC)](Supervisory Board (RvC).md) |
+| Association | ArchiMate_Association | [Research and Analysis Firms](Research and Analysis Firms.md) |
+| Association | ArchiMate_Association | [ESRS E1 - Climate](ESRS E1 - Climate.md) |
+| Association | ArchiMate_Association | [ESRS E2 - Pollution](ESRS E2 - Pollution.md) |
+| Association | ArchiMate_Association | [Rijksdienst voor Ondernemen (RVO)](Rijksdienst voor Ondernemen (RVO).md) |
+| Association | ArchiMate_Association | [NGOs and Civil Society](NGOs and Civil Society.md) |
+| Generalization | ArchiMate_Specialization | [Non-listed SMEs](Non-listed SMEs.md) |
+| Association | ArchiMate_Association | [Sustainability Consultants](Sustainability Consultants.md) |
+| Association | ArchiMate_Assignment | [Board of Directors (Directie)](Board of Directors (Directie).md) |
+| Association | ArchiMate_Association | [External Auditors](External Auditors.md) |
+| Association | ArchiMate_Association | [Suppliers](Suppliers.md) |
+| Association | ArchiMate_Association | [Certification Bodies](Certification Bodies.md) |
+| Association | ArchiMate_Association | [Credit Rating Agencies](Credit Rating Agencies.md) |
+| Association | ArchiMate_Association | [Banks and Financial Institutions](Banks and Financial Institutions.md) |
+| Association | ArchiMate_Association | [ESRS E3 - Water](ESRS E3 - Water.md) |
+| Generalization | ArchiMate_Specialization | [Listed SMEs](Listed SMEs.md) |
+| Abstraction | trace | [Company subject to CSRD](../People/Company subject to CSRD.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

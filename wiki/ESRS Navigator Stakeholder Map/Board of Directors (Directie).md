@@ -16,14 +16,14 @@ CEO, CFO, COO - Final responsibility for sustainability policy
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Composition | 266 → 268 |
-| Association | ArchiMate_Composition | 266 → 265 |
-| Association | ArchiMate_Composition | 266 → 293 |
-| Association | ArchiMate_Assignment | 266 → 331 |
-| Abstraction | trace | 266 → 496 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Composition | [COO](COO.md) |
+| Association | ArchiMate_Composition | [CEO](CEO.md) |
+| Association | ArchiMate_Composition | [CFO](CFO.md) |
+| Association | ArchiMate_Assignment | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Abstraction | trace | [Board of Directors (Directie)](../People/Board of Directors (Directie).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

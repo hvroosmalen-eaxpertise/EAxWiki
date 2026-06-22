@@ -18,11 +18,11 @@ Comprehensive initiative to measure, reduce, and offset organizational carbon em
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 445 → 456 |
-| ControlFlow | ArchiMate_Influence | 456 → 457 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
+| ControlFlow | ArchiMate_Influence | [Reduced Environmental Impact](../Outcomes/Reduced Environmental Impact.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

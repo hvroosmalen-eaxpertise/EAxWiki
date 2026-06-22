@@ -32,21 +32,21 @@ EmissionStatement is the central work-product-component that records a single qu
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 802 → 776 |
-| Association |  | 801 → 776 |
-| Association |  | 800 → 776 |
-| Association |  | 799 → 776 |
-| Association |  | 776 → 764 |
-| Association |  | 788 → 776 |
-| Association |  | 779 → 776 |
-| Association |  | 776 → 778 |
-| Association |  | 777 → 776 |
-| Association |  | 772 → 776 |
-| Association |  | 773 → 776 |
-| Association |  | 771 → 776 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [ActivityEmissionAllocation](ActivityEmissionAllocation.md) |
+| Association |  | [OrganizationEmissionAllocation](OrganizationEmissionAllocation.md) |
+| Association |  | [RecordingUncertaintyAssessment](RecordingUncertaintyAssessment.md) |
+| Association |  | [EmissionRecordingMethodType](EmissionRecordingMethodType.md) |
+| Association |  | [FacilityEmissionAllocation](../Facilities/FacilityEmissionAllocation.md) |
+| Association |  | [EmissionStatementPerStandard](EmissionStatementPerStandard.md) |
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
+| Association |  | [EmissionComponent](EmissionComponent.md) |
+| Association |  | [EmissionCalculationModel](EmissionCalculationModel.md) |
+| Association |  | [EmissionScopeType](EmissionScopeType.md) |
+| Association |  | [EmissionActivity](EmissionActivity.md) |
+| Association |  | [EmissionInventory](EmissionInventory.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

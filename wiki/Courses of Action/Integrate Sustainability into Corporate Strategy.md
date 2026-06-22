@@ -18,14 +18,14 @@ According to Bodenstein, this represents the fundamental strategic choice to mak
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 439 → 437 |
-| Dependency | ArchiMate_Realization | 439 → 434 |
-| Dependency | ArchiMate_Realization | 444 → 439 |
-| Dependency | ArchiMate_Realization | 445 → 439 |
-| Dependency | ArchiMate_Realization | 448 → 439 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Corporate Sustainability Integration](../Goals/Corporate Sustainability Integration.md) |
+| Dependency | ArchiMate_Realization | [Long-term Value Creation](../Goals/Long-term Value Creation.md) |
+| Dependency | ArchiMate_Realization | [Sustainability Governance](../Capabilities/Sustainability Governance.md) |
+| Dependency | ArchiMate_Realization | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
+| Dependency | ArchiMate_Realization | [Sustainability Data and Reporting](../Capabilities/Sustainability Data and Reporting.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

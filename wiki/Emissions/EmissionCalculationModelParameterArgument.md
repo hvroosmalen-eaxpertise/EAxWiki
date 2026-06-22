@@ -26,11 +26,11 @@ EmissionCalculationModelParameterArgument is a master-data entity that binds a n
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 805 → 775 |
-| Association |  | 805 → 777 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionParameterType](EmissionParameterType.md) |
+| Association |  | [EmissionCalculationModel](EmissionCalculationModel.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

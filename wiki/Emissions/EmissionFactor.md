@@ -31,16 +31,16 @@ EmissionFactor is a master-data entity that records a single quantified coeffici
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 804 → 780 |
-| Association |  | 803 → 780 |
-| Association |  | 793 → 780 |
-| Association |  | 779 → 780 |
-| Association |  | 779 → 780 |
-| Association |  | 792 → 780 |
-| Association |  | 780 → 781 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionCalculationModelFactorArgument](EmissionCalculationModelFactorArgument.md) |
+| Association |  | [EmissionCalculationFormulaComponent](EmissionCalculationFormulaComponent.md) |
+| Association |  | [EmissionActivityFactor](EmissionActivityFactor.md) |
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
+| Association |  | [EmissionComponentCategory](EmissionComponentCategory.md) |
+| Association |  | [EmissionFactorSource](EmissionFactorSource.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -18,42 +18,42 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 36 → 47 |
-| Aggregation | Tree | 36 → 48 |
-| Aggregation | Tree | 36 → 49 |
-| Aggregation | Tree | 36 → 61 |
-| Aggregation | Tree | 36 → 51 |
-| Aggregation | Tree | 36 → 52 |
-| Aggregation | Tree | 36 → 53 |
-| Aggregation | Tree | 36 → 54 |
-| Aggregation | Tree | 36 → 55 |
-| Aggregation | Tree | 36 → 56 |
-| Aggregation | Tree | 36 → 57 |
-| Aggregation | Tree | 36 → 58 |
-| Aggregation | Tree | 36 → 59 |
-| Aggregation | Tree | 36 → 60 |
-| ControlFlow | Flow | 36 → 111 |
-| ControlFlow | Flow | 36 → 115 |
-| ControlFlow | Flow | 36 → 117 |
-| ControlFlow | Flow | 36 → 169 |
-| ControlFlow | Flow | 36 → 172 |
-| ControlFlow | Flow | 36 → 173 |
-| ControlFlow | Flow | 36 → 176 |
-| ControlFlow | Flow | 36 → 177 |
-| ControlFlow | Flow | 36 → 178 |
-| ControlFlow | Flow | 36 → 180 |
-| ControlFlow | Flow | 36 → 181 |
-| ControlFlow | Flow | 36 → 183 |
-| ControlFlow | Flow | 36 → 185 |
-| ControlFlow | Flow | 36 → 186 |
-| ControlFlow | Flow | 36 → 187 |
-| Association | Link | 510 → 36 |
-| Abstraction | trace | 350 → 36 |
-| Association | Link | 531 → 36 |
-| Aggregation | Tree | 555 → 36 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | Element ID 47 (not in export) |
+| Aggregation | Tree | Element ID 48 (not in export) |
+| Aggregation | Tree | Element ID 49 (not in export) |
+| Aggregation | Tree | Element ID 61 (not in export) |
+| Aggregation | Tree | Element ID 51 (not in export) |
+| Aggregation | Tree | Element ID 52 (not in export) |
+| Aggregation | Tree | Element ID 53 (not in export) |
+| Aggregation | Tree | Element ID 54 (not in export) |
+| Aggregation | Tree | Element ID 55 (not in export) |
+| Aggregation | Tree | Element ID 56 (not in export) |
+| Aggregation | Tree | Element ID 57 (not in export) |
+| Aggregation | Tree | Element ID 58 (not in export) |
+| Aggregation | Tree | Element ID 59 (not in export) |
+| Aggregation | Tree | Element ID 60 (not in export) |
+| ControlFlow | Flow | [Totale Scope 1-3 uitstoot (ton CO₂e/jaar)](../Metrics/Totale Scope 1-3 uitstoot (ton CO₂e_jaar).md) |
+| ControlFlow | Flow | [Reductiedoel CO₂ (% t.o.v. basisjaar)](../Metrics/Reductiedoel CO₂ (% t.o.v. basisjaar).md) |
+| ControlFlow | Flow | [Jaarlijkse CO₂-reductie (%)](../Metrics/Jaarlijkse CO₂-reductie (%).md) |
+| ControlFlow | Flow | [CO₂-intensiteit per € omzet](../Metrics/CO₂-intensiteit per € omzet.md) |
+| ControlFlow | Flow | [CO₂ per klanttransactie (kg)](../Metrics/CO₂ per klanttransactie (kg).md) |
+| ControlFlow | Flow | [CO₂ bespaard door digitalisering (ton)](../Metrics/CO₂ bespaard door digitalisering (ton).md) |
+| ControlFlow | Flow | [Energieverbruik en waterverbruik per eenheid](../Metrics/Energieverbruik en waterverbruik per eenheid.md) |
+| ControlFlow | Flow | [% energie uit hernieuwbare bronnen](../Metrics/% energie uit hernieuwbare bronnen.md) |
+| ControlFlow | Flow | [% reductie reisgerelateerde CO₂](../Metrics/% reductie reisgerelateerde CO₂.md) |
+| ControlFlow | Flow | [Scope 1 uitstoot per bron (ton CO₂e)](../Metrics/Scope 1 uitstoot per bron (ton CO₂e).md) |
+| ControlFlow | Flow | [Vermeden CO₂ door maatregelen (ton/jaar)](../Metrics/Vermeden CO₂ door maatregelen (ton_jaar).md) |
+| ControlFlow | Flow | [% scope 3 emissies met gemeten data](../Metrics/% scope 3 emissies met gemeten data.md) |
+| ControlFlow | Flow | [# SDGs met meetbare KPI’s](../Metrics/_ SDGs met meetbare KPI’s.md) |
+| ControlFlow | Flow | [Energie (MWh/jaar)](../Metrics/Energie (MWh_jaar).md) |
+| ControlFlow | Flow | [Recycling % van afval](../Metrics/Recycling % van afval.md) |
+| Association | Link | [Company subject to CSRD](../People/Company subject to CSRD.md) |
+| Abstraction | trace | [ESRS E1 - Climate](../ESRS Navigator Stakeholder Map/ESRS E1 - Climate.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

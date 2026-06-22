@@ -17,12 +17,12 @@ Any listed companies that meet two of the following three criteria on any two co
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 349 → 500 |
-| Aggregation | Tree | 510 → 500 |
-| ControlFlow | Flow | 609 → 500 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Listed SMEs](../ESRS Navigator Stakeholder Map/Listed SMEs.md) |
+| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.md) |
+| ControlFlow | Flow | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

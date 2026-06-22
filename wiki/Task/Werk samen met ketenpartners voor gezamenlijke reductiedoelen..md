@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 137 → 158 |
-| Association | Link | 158 → 184 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainable Partnerships](../Channel/Sustainable Partnerships.md) |
+| Association | Link | [# bomen geplant / ha natuur hersteld](../Metrics/_ bomen geplant _ ha natuur hersteld.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

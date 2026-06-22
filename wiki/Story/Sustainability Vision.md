@@ -21,12 +21,12 @@ Toekomstbeeld van de onderneming in 2030/2050 gericht op klimaatneutraliteit en 
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 113 → 114 |
-| Association | Link | 14 → 113 |
-| Association | Link | 15 → 113 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Ontwikkel een 2030/2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning.](../Task/Ontwikkel een 2030_2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

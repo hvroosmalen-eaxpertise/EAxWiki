@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 179 → 194 |
-| Association | Link | 194 → 214 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | [Totaal afval (ton/jaar)](Totaal afval (ton_jaar).md) |
+| Association | Link | [IoT op apparatuur](IoT op apparatuur.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

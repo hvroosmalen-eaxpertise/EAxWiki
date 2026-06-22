@@ -23,11 +23,11 @@ FacilityLocationType is a reference entity that classifies how a facility locati
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 769 → 758 |
-| Association |  | 769 → 755 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [FacilityLocationAssociation](FacilityLocationAssociation.md) |
+| Association |  | [Location](Location.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

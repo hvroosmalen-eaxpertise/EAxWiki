@@ -16,11 +16,11 @@ Small and medium enterprises with stock exchange listing (future LSME standard)
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Generalization | ArchiMate_Specialization | 349 → 331 |
-| Abstraction | trace | 349 → 500 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Generalization | ArchiMate_Specialization | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Abstraction | trace | [Listed SMEs](../People/Listed SMEs.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

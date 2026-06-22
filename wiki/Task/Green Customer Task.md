@@ -21,11 +21,11 @@ Wat klanten duurzaam willen bereiken met hulp van het bedrijf.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 125 → 145 |
-| Association | Link | 14 → 125 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma).](Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma)..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

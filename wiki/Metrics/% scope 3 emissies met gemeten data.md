@@ -17,15 +17,15 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 36 → 183 |
-| Association | Link | 157 → 183 |
-| Aggregation | Tree | 183 → 207 |
-| Aggregation | Tree | 183 → 208 |
-| Aggregation | Tree | 183 → 209 |
-| ControlFlow | Flow | 183 → 236 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Implementeer dashboards voor monitoring van CO₂, afval en energie.](../Task/Implementeer dashboards voor monitoring van CO₂, afval en energie..md) |
+| Aggregation | Tree | [CO₂e, energie, afval, water per proces](CO₂e, energie, afval, water per proces.md) |
+| Aggregation | Tree | [ Productievolumes / normaliserende operationele data](Productievolumes _ normaliserende operationele data.md) |
+| Aggregation | Tree | [Datakwaliteit: beschikbaarheid / updatefrequentie](Datakwaliteit_ beschikbaarheid _ updatefrequentie.md) |
+| ControlFlow | Flow | [Data-automatiseringsgraad = (# automatisch verzamelde datapunten / totaal) × 100%](Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal) × 100%.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

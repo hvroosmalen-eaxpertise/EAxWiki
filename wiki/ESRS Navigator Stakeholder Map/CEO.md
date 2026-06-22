@@ -16,12 +16,12 @@ Chief Executive Officer
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 269 → 265 |
-| Association | ArchiMate_Composition | 266 → 265 |
-| Abstraction | trace | 265 → 495 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Sustainability Manager/Director](Sustainability Manager_Director.md) |
+| Association | ArchiMate_Composition | [Board of Directors (Directie)](Board of Directors (Directie).md) |
+| Abstraction | trace | [CEO](../People/CEO.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Aggregation | Tree | 177 → 193 |
-| Association | Link | 193 → 213 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Aggregation | Tree | [% energie uit hernieuwbare bronnen](% energie uit hernieuwbare bronnen.md) |
+| Association | Link | [Assetmanagementsysteem](Assetmanagementsysteem.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

@@ -19,12 +19,12 @@ Any non-listed companies that meet two of the following three criteria on any tw
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 270 → 501 |
-| Aggregation | Tree | 510 → 501 |
-| ControlFlow | Flow | 609 → 501 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Non-listed SMEs](../ESRS Navigator Stakeholder Map/Non-listed SMEs.md) |
+| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.md) |
+| ControlFlow | Flow | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

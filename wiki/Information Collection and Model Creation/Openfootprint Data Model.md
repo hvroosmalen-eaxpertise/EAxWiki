@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 626 → 625 |
-| ControlFlow | Flow | 625 → 585 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [The Open Group Website](The Open Group Website.md) |
+| ControlFlow | Flow | [Compile Information Sources](Compile Information Sources.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

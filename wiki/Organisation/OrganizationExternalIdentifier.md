@@ -25,11 +25,11 @@ OrganizationExternalIdentifier records a specific external code assigned to an o
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 749 → 748 |
-| Association |  | 735 → 748 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [OrganizationExternalIdentifierType](OrganizationExternalIdentifierType.md) |
+| Association |  | [Organization](Organization.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

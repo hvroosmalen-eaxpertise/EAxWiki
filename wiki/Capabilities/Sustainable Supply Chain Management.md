@@ -18,12 +18,12 @@ Ensures responsible sourcing and addresses upstream environmental and social imp
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 447 → 442 |
-| Dependency | ArchiMate_Realization | 447 → 454 |
-| Association | ArchiMate_Association | 464 → 447 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Responsible Supply Chain Strategy](../Courses of Action/Responsible Supply Chain Strategy.md) |
+| Dependency | ArchiMate_Realization | [Supplier Sustainability Audits](../Courses of Action/Supplier Sustainability Audits.md) |
+| Association | ArchiMate_Association | [Supplier Compliance Rate](../Assessments/Supplier Compliance Rate.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

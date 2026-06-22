@@ -10,11 +10,11 @@ B2B foodservice customers
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 253 → 519 |
-| Aggregation | Tree | 516 → 519 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Foodservice Companies](../ESRS Navigator Stakeholder Map/Foodservice Companies.md) |
+| Aggregation | Tree | [Customers](Customers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

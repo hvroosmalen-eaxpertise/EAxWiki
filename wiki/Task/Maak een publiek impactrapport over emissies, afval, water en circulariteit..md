@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 122 → 142 |
-| Association | Link | 142 → 168 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Environmental Impact Story](../Story/Environmental Impact Story.md) |
+| Association | Link | [Uitstoot NOₓ/SOₓ (kg/jaar)](../Metrics/Uitstoot NOₓ_SOₓ (kg_jaar).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

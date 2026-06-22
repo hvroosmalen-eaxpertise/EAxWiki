@@ -18,10 +18,10 @@ Capability to identify, engage, and maintain dialogue with key sustainability st
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 449 → 440 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Sustainability-driven Differentiation](../Courses of Action/Sustainability-driven Differentiation.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

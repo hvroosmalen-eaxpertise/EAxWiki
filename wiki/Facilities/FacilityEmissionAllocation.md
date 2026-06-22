@@ -25,11 +25,11 @@ FacilityEmissionAllocation records the allocation of a specific emission quantit
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 776 → 764 |
-| Association |  | 753 → 764 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionStatement](../Emissions/EmissionStatement.md) |
+| Association |  | [Facility](Facility.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -17,12 +17,12 @@ Achieve measurable progress in ESG ratings and benchmarks relevant to the indust
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 430 → 438 |
-| Dependency | ArchiMate_Realization | 443 → 438 |
-| Dependency | ArchiMate_Realization | 458 → 438 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Stakeholder Expectations](../Drivers/Stakeholder Expectations.md) |
+| Dependency | ArchiMate_Realization | [ESG-based Risk Management](../Courses of Action/ESG-based Risk Management.md) |
+| Dependency | ArchiMate_Realization | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

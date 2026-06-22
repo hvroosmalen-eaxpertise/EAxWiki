@@ -26,16 +26,16 @@ Location represents a place where a person or thing is located. It can describe 
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 812 → 755 |
-| Association |  | 755 → 755 |
-| Association |  | 767 → 755 |
-| Association |  | 768 → 755 |
-| Association |  | 766 → 755 |
-| Association |  | 769 → 755 |
-| Association |  | 755 → 758 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [ProductCarbonFootprint](../Products/ProductCarbonFootprint.md) |
+| Association |  | [Location](Location.md) |
+| Association |  | [BusinessArea](BusinessArea.md) |
+| Association |  | [GeospatialLocation](GeospatialLocation.md) |
+| Association |  | [GeopoliticalEntity](GeopoliticalEntity.md) |
+| Association |  | [FacilityLocationType](FacilityLocationType.md) |
+| Association |  | [FacilityLocationAssociation](FacilityLocationAssociation.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

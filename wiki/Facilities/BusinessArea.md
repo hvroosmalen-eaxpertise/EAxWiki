@@ -26,10 +26,10 @@ BusinessArea represents a location that is identified and defined by an organisa
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 767 → 755 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Location](Location.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 123 → 143 |
-| Association | Link | 143 → 169 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainability Identity](../Purpose/Sustainability Identity.md) |
+| Association | Link | [CO₂-intensiteit per € omzet](../Metrics/CO₂-intensiteit per € omzet.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

@@ -10,11 +10,11 @@ Tomato growers, grain producers, vegetable suppliers
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 334 → 527 |
-| Aggregation | Tree | 529 → 527 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Agricultural Suppliers](../ESRS Navigator Stakeholder Map/Agricultural Suppliers.md) |
+| Aggregation | Tree | [Suppliers](Suppliers.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

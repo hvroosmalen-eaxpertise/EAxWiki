@@ -10,13 +10,13 @@ Local and regional communities impacted by operations
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Abstraction | trace | 251 → 523 |
-| Aggregation | Tree | 523 → 525 |
-| Aggregation | Tree | 523 → 524 |
-| Association | Link | 523 → 43 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Abstraction | trace | [Affected Communities (ESRS S3)](../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).md) |
+| Aggregation | Tree | [Indigenous Peoples](Indigenous Peoples.md) |
+| Aggregation | Tree | [Local Communities](Local Communities.md) |
+| Association | Link | [ESRS S3 Affected Communities](../ESRS S3/ESRS S3 Affected Communities.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

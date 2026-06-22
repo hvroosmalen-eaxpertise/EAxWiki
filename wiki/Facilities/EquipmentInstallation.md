@@ -26,11 +26,11 @@ EquipmentInstallation captures the temporal fact of a piece of Equipment being i
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 753 → 761 |
-| Association |  | 756 → 761 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Facility](Facility.md) |
+| Association |  | [Equipment](Equipment.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

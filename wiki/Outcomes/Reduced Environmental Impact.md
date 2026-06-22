@@ -18,14 +18,14 @@ Contributes to corporate sustainability goals and regulatory compliance.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 453 → 457 |
-| ControlFlow | ArchiMate_Influence | 456 → 457 |
-| Dependency | ArchiMate_Realization | 457 → 437 |
-| Association | ArchiMate_Association | 462 → 457 |
-| Association | ArchiMate_Association | 465 → 457 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Introduce Sustainable Product Design Process](../Courses of Action/Introduce Sustainable Product Design Process.md) |
+| ControlFlow | ArchiMate_Influence | [Carbon Footprint Reduction Program](../Courses of Action/Carbon Footprint Reduction Program.md) |
+| Dependency | ArchiMate_Realization | [Corporate Sustainability Integration](../Goals/Corporate Sustainability Integration.md) |
+| Association | ArchiMate_Association | [CO₂ Reduction %](../Assessments/CO₂ Reduction %.md) |
+| Association | ArchiMate_Association | [Energy Efficiency Index](../Assessments/Energy Efficiency Index.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

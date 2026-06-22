@@ -18,11 +18,11 @@ Indicates level of control over value chain sustainability impacts.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 464 → 459 |
-| Association | ArchiMate_Association | 464 → 447 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Lower Operational Risk](../Outcomes/Lower Operational Risk.md) |
+| Association | ArchiMate_Association | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

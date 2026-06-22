@@ -24,12 +24,12 @@ EmissionActivityType is a reference entity that classifies the technical nature 
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 806 → 786 |
-| Association |  | 793 → 786 |
-| Association |  | 786 → 773 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionActivityParameterRecordingTemplate](EmissionActivityParameterRecordingTemplate.md) |
+| Association |  | [EmissionActivityFactor](EmissionActivityFactor.md) |
+| Association |  | [EmissionActivity](EmissionActivity.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

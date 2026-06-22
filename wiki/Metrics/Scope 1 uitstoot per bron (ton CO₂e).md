@@ -17,15 +17,15 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 36 → 180 |
-| Association | Link | 154 → 180 |
-| Aggregation | Tree | 180 → 197 |
-| Aggregation | Tree | 180 → 198 |
-| Aggregation | Tree | 180 → 199 |
-| ControlFlow | Flow | 180 → 233 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.md) |
+| Association | Link | [Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen.](../Task/Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen..md) |
+| Aggregation | Tree | [Brandstofgebruik (Scope 1)](Brandstofgebruik (Scope 1).md) |
+| Aggregation | Tree | [Elektriciteitsverbruik (Scope 2)](Elektriciteitsverbruik (Scope 2).md) |
+| Aggregation | Tree | [Leveranciers-, transport-, gebruiksdata (Scope 3)](Leveranciers-, transport-, gebruiksdata (Scope 3).md) |
+| ControlFlow | Flow | [Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e)](Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

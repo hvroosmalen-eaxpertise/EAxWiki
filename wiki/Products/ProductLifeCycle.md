@@ -25,11 +25,11 @@ ProductLifeCycle is a master-data entity that defines the set of life-cycle stag
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 813 → 814 |
-| Association |  | 810 → 813 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionActivityFlow](EmissionActivityFlow.md) |
+| Association |  | [Product](Product.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

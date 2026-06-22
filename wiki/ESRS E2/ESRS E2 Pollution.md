@@ -18,23 +18,23 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 37 → 168 |
-| ControlFlow | Flow | 37 → 185 |
-| Aggregation | Tree | 37 → 62 |
-| Aggregation | Tree | 37 → 63 |
-| Aggregation | Tree | 37 → 64 |
-| Aggregation | Tree | 37 → 65 |
-| Aggregation | Tree | 37 → 66 |
-| Aggregation | Tree | 37 → 67 |
-| Aggregation | Tree | 37 → 68 |
-| Aggregation | Tree | 37 → 69 |
-| Association | Link | 510 → 37 |
-| Abstraction | trace | 248 → 37 |
-| Association | Link | 531 → 37 |
-| Aggregation | Tree | 555 → 37 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Uitstoot NOₓ/SOₓ (kg/jaar)](../Metrics/Uitstoot NOₓ_SOₓ (kg_jaar).md) |
+| ControlFlow | Flow | [# SDGs met meetbare KPI’s](../Metrics/_ SDGs met meetbare KPI’s.md) |
+| Aggregation | Tree | Element ID 62 (not in export) |
+| Aggregation | Tree | Element ID 63 (not in export) |
+| Aggregation | Tree | Element ID 64 (not in export) |
+| Aggregation | Tree | Element ID 65 (not in export) |
+| Aggregation | Tree | Element ID 66 (not in export) |
+| Aggregation | Tree | Element ID 67 (not in export) |
+| Aggregation | Tree | Element ID 68 (not in export) |
+| Aggregation | Tree | Element ID 69 (not in export) |
+| Association | Link | [Company subject to CSRD](../People/Company subject to CSRD.md) |
+| Abstraction | trace | [ESRS E2 - Pollution](../ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

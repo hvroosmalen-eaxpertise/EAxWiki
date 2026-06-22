@@ -24,18 +24,18 @@ Facility represents the capability of an organisation to perform a particular bu
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 753 → 764 |
-| Association |  | 753 → 762 |
-| Association |  | 753 → 761 |
-| Association |  | 753 → 760 |
-| Association |  | 753 → 759 |
-| Association |  | 753 → 758 |
-| Association |  | 753 → 757 |
-| Association |  | 753 → 754 |
-| Association |  | 735 → 753 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [FacilityEmissionAllocation](FacilityEmissionAllocation.md) |
+| Association |  | [EmissionActivityParameter](EmissionActivityParameter.md) |
+| Association |  | [EquipmentInstallation](EquipmentInstallation.md) |
+| Association |  | [FacilityActivityParticipation](FacilityActivityParticipation.md) |
+| Association |  | [FacilitySpecification](FacilitySpecification.md) |
+| Association |  | [FacilityLocationAssociation](FacilityLocationAssociation.md) |
+| Association |  | [FacilityStructure](FacilityStructure.md) |
+| Association |  | [FacilityType](FacilityType.md) |
+| Association |  | [Organization](../Organisation/Organization.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

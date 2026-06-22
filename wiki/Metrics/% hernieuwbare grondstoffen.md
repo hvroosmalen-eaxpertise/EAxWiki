@@ -17,11 +17,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 119 → 118 |
-| ControlFlow | Flow | 40 → 118 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [Stel Science-Based Targets op en rapporteer jaarlijks voortgang.](../Task/Stel Science-Based Targets op en rapporteer jaarlijks voortgang..md) |
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:36*

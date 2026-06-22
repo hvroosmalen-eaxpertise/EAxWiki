@@ -17,11 +17,11 @@ Extends sustainability requirements to suppliers and partners, managing upstream
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 442 → 436 |
-| Dependency | ArchiMate_Realization | 447 → 442 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Risk Reduction](../Goals/Risk Reduction.md) |
+| Dependency | ArchiMate_Realization | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

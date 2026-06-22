@@ -18,31 +18,31 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 40 → 118 |
-| ControlFlow | Flow | 40 → 167 |
-| ControlFlow | Flow | 40 → 170 |
-| ControlFlow | Flow | 40 → 171 |
-| ControlFlow | Flow | 40 → 174 |
-| ControlFlow | Flow | 40 → 175 |
-| ControlFlow | Flow | 40 → 179 |
-| ControlFlow | Flow | 40 → 182 |
-| ControlFlow | Flow | 40 → 185 |
-| ControlFlow | Flow | 40 → 186 |
-| ControlFlow | Flow | 40 → 187 |
-| ControlFlow | Flow | 40 → 188 |
-| Aggregation | Tree | 40 → 82 |
-| Aggregation | Tree | 40 → 83 |
-| Aggregation | Tree | 40 → 84 |
-| Aggregation | Tree | 40 → 85 |
-| Aggregation | Tree | 40 → 86 |
-| Aggregation | Tree | 40 → 87 |
-| Association | Link | 510 → 40 |
-| Abstraction | trace | 295 → 40 |
-| Association | Link | 531 → 40 |
-| Aggregation | Tree | 555 → 40 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [% hernieuwbare grondstoffen](../Metrics/% hernieuwbare grondstoffen.md) |
+| ControlFlow | Flow | [% producten met circulair ontwerp](../Metrics/% producten met circulair ontwerp.md) |
+| ControlFlow | Flow | [% minder plasticverpakkingen](../Metrics/% minder plasticverpakkingen.md) |
+| ControlFlow | Flow | [# teruggenomen producten (per jaar)](../Metrics/_ teruggenomen producten (per jaar).md) |
+| ControlFlow | Flow | [% omzet uit duurzame producten](../Metrics/% omzet uit duurzame producten.md) |
+| ControlFlow | Flow | [% R&D naar duurzame innovatie](../Metrics/% R&D naar duurzame innovatie.md) |
+| ControlFlow | Flow | [Totaal afval (ton/jaar)](../Metrics/Totaal afval (ton_jaar).md) |
+| ControlFlow | Flow | [% gerecyclede materialen in producten](../Metrics/% gerecyclede materialen in producten.md) |
+| ControlFlow | Flow | [# SDGs met meetbare KPI’s](../Metrics/_ SDGs met meetbare KPI’s.md) |
+| ControlFlow | Flow | [Energie (MWh/jaar)](../Metrics/Energie (MWh_jaar).md) |
+| ControlFlow | Flow | [Recycling % van afval](../Metrics/Recycling % van afval.md) |
+| ControlFlow | Flow | [Restafval per medewerker (kg/jaar)](../Metrics/Restafval per medewerker (kg_jaar).md) |
+| Aggregation | Tree | Element ID 82 (not in export) |
+| Aggregation | Tree | Element ID 83 (not in export) |
+| Aggregation | Tree | Element ID 84 (not in export) |
+| Aggregation | Tree | Element ID 85 (not in export) |
+| Aggregation | Tree | Element ID 86 (not in export) |
+| Aggregation | Tree | Element ID 87 (not in export) |
+| Association | Link | [Company subject to CSRD](../People/Company subject to CSRD.md) |
+| Abstraction | trace | [ESRS E5 - Circular Economy](../ESRS Navigator Stakeholder Map/ESRS E5 - Circular Economy.md) |
+| Association | Link | [European Commission](../People/European Commission.md) |
+| Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

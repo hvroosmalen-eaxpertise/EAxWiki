@@ -18,15 +18,15 @@ Enables evidence-based sustainability management and transparent reporting to st
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Dependency | ArchiMate_Realization | 445 → 439 |
-| Dependency | ArchiMate_Realization | 445 → 451 |
-| Dependency | ArchiMate_Realization | 445 → 456 |
-| Association | ArchiMate_Association | 462 → 445 |
-| Association | ArchiMate_Association | 463 → 445 |
-| Association | ArchiMate_Association | 465 → 445 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Dependency | ArchiMate_Realization | [Integrate Sustainability into Corporate Strategy](../Courses of Action/Integrate Sustainability into Corporate Strategy.md) |
+| Dependency | ArchiMate_Realization | [Implement ESG KPI Framework](../Courses of Action/Implement ESG KPI Framework.md) |
+| Dependency | ArchiMate_Realization | [Carbon Footprint Reduction Program](../Courses of Action/Carbon Footprint Reduction Program.md) |
+| Association | ArchiMate_Association | [CO₂ Reduction %](../Assessments/CO₂ Reduction %.md) |
+| Association | ArchiMate_Association | [ESG Score](../Assessments/ESG Score.md) |
+| Association | ArchiMate_Association | [Energy Efficiency Index](../Assessments/Energy Efficiency Index.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

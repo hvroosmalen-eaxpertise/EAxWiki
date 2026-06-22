@@ -26,13 +26,13 @@ EmissionComponent is a work-product-component that disaggregates an EmissionStat
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 789 → 778 |
-| Association |  | 779 → 778 |
-| Association |  | 792 → 778 |
-| Association |  | 776 → 778 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [EmissionComponentPerStandard](EmissionComponentPerStandard.md) |
+| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
+| Association |  | [EmissionComponentCategory](EmissionComponentCategory.md) |
+| Association |  | [EmissionStatement](EmissionStatement.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

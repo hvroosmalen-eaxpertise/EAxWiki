@@ -31,10 +31,10 @@ GeospatialLocation provides a spatial representation of a Location, defined by c
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 768 → 755 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Location](Location.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

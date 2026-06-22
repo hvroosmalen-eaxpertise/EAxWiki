@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 127 → 147 |
-| Association | Link | 147 → 173 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Sustainable Channels](../Channel/Sustainable Channels.md) |
+| Association | Link | [CO₂ bespaard door digitalisering (ton)](../Metrics/CO₂ bespaard door digitalisering (ton).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

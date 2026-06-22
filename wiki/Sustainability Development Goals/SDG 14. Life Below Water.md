@@ -18,10 +18,10 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | Link | 16 → 138 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | Link | [SDG Mapping Content](../Content/SDG Mapping Content.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

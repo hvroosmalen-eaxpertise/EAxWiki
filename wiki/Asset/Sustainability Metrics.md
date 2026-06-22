@@ -21,11 +21,11 @@ KPI’s voor duurzaamheid.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 139 → 160 |
-| Association | Link | 15 → 139 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Meet CO₂, circulariteit, energiegebruik en stel KPI’s op.](../Task/Meet CO₂, circulariteit, energiegebruik en stel KPI’s op..md) |
+| Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

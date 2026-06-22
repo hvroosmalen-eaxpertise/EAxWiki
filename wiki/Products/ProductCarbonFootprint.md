@@ -51,16 +51,16 @@ ProductCarbonFootprint is a work-product-component that records the quantified g
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 812 → 755 |
-| Association |  | 812 → 821 |
-| Association |  | 812 → 820 |
-| Association |  | 812 → 818 |
-| Association |  | 812 → 817 |
-| Association |  | 811 → 812 |
-| Association |  | 779 → 812 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Location](../Facilities/Location.md) |
+| Association |  | [ProductFootprintDataQualityIndicator](ProductFootprintDataQualityIndicator.md) |
+| Association |  | [ProductCategoryRule](ProductCategoryRule.md) |
+| Association |  | [ProductCarbonFootprintFactorSource](ProductCarbonFootprintFactorSource.md) |
+| Association |  | [ProductLifeCycleFootprint](ProductLifeCycleFootprint.md) |
+| Association |  | [ProductFootprint](ProductFootprint.md) |
+| Association |  | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

@@ -26,11 +26,11 @@ EmissionComponentPerStandard is an intersection entity analogous to EmissionStat
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 789 → 734 |
-| Association |  | 789 → 778 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [Standard](../Organisation/Standard.md) |
+| Association |  | [EmissionComponent](EmissionComponent.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

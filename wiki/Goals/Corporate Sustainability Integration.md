@@ -17,13 +17,13 @@ Move beyond peripheral CSR initiatives toward strategic integration throughout t
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 429 → 437 |
-| ControlFlow | ArchiMate_Influence | 433 → 437 |
-| Dependency | ArchiMate_Realization | 439 → 437 |
-| Dependency | ArchiMate_Realization | 457 → 437 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Regulatory Pressure](../Drivers/Regulatory Pressure.md) |
+| ControlFlow | ArchiMate_Influence | [Reputation Risk](../Drivers/Reputation Risk.md) |
+| Dependency | ArchiMate_Realization | [Integrate Sustainability into Corporate Strategy](../Courses of Action/Integrate Sustainability into Corporate Strategy.md) |
+| Dependency | ArchiMate_Realization | [Reduced Environmental Impact](../Outcomes/Reduced Environmental Impact.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

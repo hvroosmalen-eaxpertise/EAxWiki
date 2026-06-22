@@ -15,11 +15,11 @@
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | Flow | 135 → 156 |
-| Association | Link | 156 → 182 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Lifecycle & Circularity Model](../Process/Lifecycle & Circularity Model.md) |
+| Association | Link | [% gerecyclede materialen in producten](../Metrics/% gerecyclede materialen in producten.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:04*
+*Generated: 2026-06-22 16:50:35*

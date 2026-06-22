@@ -16,11 +16,11 @@ Chief Operating Officer
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Composition | 266 → 268 |
-| Abstraction | trace | 268 → 498 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Composition | [Board of Directors (Directie)](Board of Directors (Directie).md) |
+| Abstraction | trace | [COO](../People/COO.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

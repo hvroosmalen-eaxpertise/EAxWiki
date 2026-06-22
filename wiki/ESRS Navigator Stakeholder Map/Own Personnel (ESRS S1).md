@@ -16,17 +16,17 @@ All employees of the reporting organization
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Assignment | 329 → 331 |
-| Generalization | ArchiMate_Specialization | 323 → 329 |
-| Association | ArchiMate_Association | 287 → 329 |
-| Generalization | ArchiMate_Specialization | 277 → 329 |
-| Association | ArchiMate_Association | 279 → 329 |
-| Association | ArchiMate_Association | 329 → 321 |
-| Generalization | ArchiMate_Specialization | 318 → 329 |
-| Abstraction | trace | 329 → 489 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Assignment | [Large Companies (>250 employees)](Large Companies (_250 employees).md) |
+| Generalization | ArchiMate_Specialization | [Production Workers](Production Workers.md) |
+| Association | ArchiMate_Association | [Trade Unions](Trade Unions.md) |
+| Generalization | ArchiMate_Specialization | [Permanent Employees](Permanent Employees.md) |
+| Association | ArchiMate_Association | [Works Council (Ondernemingsraad)](Works Council (Ondernemingsraad).md) |
+| Association | ArchiMate_Association | [ESRS S1 - Own Personnel](ESRS S1 - Own Personnel.md) |
+| Generalization | ArchiMate_Specialization | [Seasonal Workers](Seasonal Workers.md) |
+| Abstraction | trace | [Own Personnel (ESRS S1)](../People/Own Personnel (ESRS S1).md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

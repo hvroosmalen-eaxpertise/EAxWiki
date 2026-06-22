@@ -18,11 +18,11 @@ Provides aggregate view of sustainability performance for management and investo
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association | ArchiMate_Association | 463 → 458 |
-| Association | ArchiMate_Association | 463 → 445 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association | ArchiMate_Association | [Improved ESG Rating](../Outcomes/Improved ESG Rating.md) |
+| Association | ArchiMate_Association | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

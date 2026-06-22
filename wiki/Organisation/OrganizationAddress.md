@@ -25,12 +25,12 @@ OrganizationAddress is the intersection entity that associates an Organisation w
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| Association |  | 744 → 743 |
-| Association |  | 737 → 743 |
-| Association |  | 735 → 743 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| Association |  | [OrganizationAddressType](OrganizationAddressType.md) |
+| Association |  | [Address](Address.md) |
+| Association |  | [Organization](Organization.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*

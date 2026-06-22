@@ -18,14 +18,14 @@ Facilitates access to sustainable finance and enhances corporate reputation.
 
 ## Relationships
 
-| Type | Stereotype | Source → Target |
-|------|------------|-----------------|
-| ControlFlow | ArchiMate_Influence | 451 → 458 |
-| ControlFlow | ArchiMate_Influence | 455 → 458 |
-| Dependency | ArchiMate_Realization | 458 → 438 |
-| Dependency | ArchiMate_Realization | 458 → 435 |
-| Association | ArchiMate_Association | 463 → 458 |
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | ArchiMate_Influence | [Implement ESG KPI Framework](../Courses of Action/Implement ESG KPI Framework.md) |
+| ControlFlow | ArchiMate_Influence | [Board-level Sustainability Governance](../Courses of Action/Board-level Sustainability Governance.md) |
+| Dependency | ArchiMate_Realization | [ESG Performance Improvement](../Goals/ESG Performance Improvement.md) |
+| Dependency | ArchiMate_Realization | [Sustainable Competitive Advantage](../Goals/Sustainable Competitive Advantage.md) |
+| Association | ArchiMate_Association | [ESG Score](../Assessments/ESG Score.md) |
 
 ---
 
-*Generated: 2026-06-19 13:04:05*
+*Generated: 2026-06-22 16:50:36*
