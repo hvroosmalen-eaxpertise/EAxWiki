@@ -440,6 +440,7 @@ public class MarkdownExporter : IWikiExporter
         var glossaryDir = Path.Combine(outputDir, "glossary");
         await _writer.CreateDirectoryAsync(glossaryDir);
 
+        string EscapeCell(string raw) => raw.Replace("|", "\\|").Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ");
         var entries = new List<(string Term, string Definition, List<(string Name, string Link)> Sources)>();
 
         foreach (var (elem, pkgDir) in elements)
@@ -451,7 +452,7 @@ public class MarkdownExporter : IWikiExporter
                      string.Equals(tv.Name, "Glossary", StringComparison.OrdinalIgnoreCase)))
                 {
                     var link = CreateElementLink(elem, pkgDir, glossaryDir);
-                    entries.Add((elem.Name, tv.Value, new List<(string, string)> { (elem.Name, link) }));
+                    entries.Add((elem.Name, tv.Value, new List<(string Name, string Link)> { (elem.Name, link) }));
                 }
             }
 
@@ -464,7 +465,7 @@ public class MarkdownExporter : IWikiExporter
                 if (sentence.Length >= 20)
                 {
                     var link = CreateElementLink(elem, pkgDir, glossaryDir);
-                    entries.Add((elem.Name, sentence, new List<(string, string)> { (elem.Name, link) }));
+                    entries.Add((elem.Name, sentence, new List<(string Name, string Link)> { (elem.Name, link) }));
                 }
             }
         }
@@ -486,12 +487,12 @@ public class MarkdownExporter : IWikiExporter
 
             foreach (var group in grouped.OrderBy(g => g.Key))
             {
-                var term = group.Key;
-                var definition = group.First().Definition;
+                var term = EscapeCell(group.Key);
+                var definition = EscapeCell(group.First().Definition);
                 var sources = group.SelectMany(g => g.Sources)
                                    .DistinctBy(s => s.Link)
                                    .ToList();
-                var sourceCol = string.Join(", ", sources.Select(s => $"[{s.Name}]({s.Link})"));
+                var sourceCol = string.Join(", ", sources.Select(s => $"[{EscapeCell(s.Name)}]({s.Link})"));
                 lines.Add($"| {term} | {definition} | {sourceCol} |");
             }
         }
