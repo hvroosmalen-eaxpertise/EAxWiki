@@ -545,29 +545,7 @@ public class MarkdownExporter : IWikiExporter
     private async Task WriteExtraCssAsync(string outputDir)
     {
         var cssPath = Path.Combine(outputDir, "extra.css");
-        var content = @".md-grid {
-  max-width: 75rem;
-}
-
-.md-typeset table:not([class]) th:nth-child(1),
-.md-typeset table:not([class]) td:nth-child(1) {
-  width: 22%;
-}
-
-.md-typeset table:not([class]) th:nth-child(2),
-.md-typeset table:not([class]) td:nth-child(2) {
-  width: 50%;
-}
-
-.md-typeset table:not([class]) th:nth-child(3),
-.md-typeset table:not([class]) td:nth-child(3) {
-  width: 28%;
-}
-
-.md-typeset table:not([class]) td {
-  word-break: break-word;
-}
-";
+        var content = ".md-grid {\n  max-width: 75rem;\n}\n\n.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(1),\n.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(1) {\n  width: 22%;\n}\n\n.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(2),\n.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(2) {\n  width: 50%;\n}\n\n.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(3),\n.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(3) {\n  width: 28%;\n}\n\n.md-typeset table:not([class]):has(th:nth-child(4)) th:nth-child(2),\n.md-typeset table:not([class]):has(td:nth-child(4)) td:nth-child(2) {\n  width: 8%;\n}\n\n.md-typeset table:not([class]) td {\n  word-break: break-word;\n}\n";
         await _writer.WriteFileAsync(cssPath, content);
     }
 
