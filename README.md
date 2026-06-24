@@ -30,6 +30,11 @@ Or with verbose logging:
 .\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea" -Verbose
 ```
 
+Or including JSON export:
+```powershell
+.\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea" -Json
+```
+
 Runs the .NET exporter against the `.qea` file, then serves the output. The `-Verbose` flag enables debug-level logging. The `export-and-serve.ps1` script also cleans up any orphaned EA.exe processes after the export finishes.
 
 ## Incremental vs full export
@@ -43,7 +48,7 @@ Runs the .NET exporter against the `.qea` file, then serves the output. The `-Ve
 |--------|---------|
 | `scripts/serve.ps1` | Incremental export then MkDocs serve (default) |
 | `scripts/serve-full.ps1` | Full regeneration then MkDocs serve |
-| `scripts/export-and-serve.ps1` | Full pipeline with flags: `-Verbose`, `-Force`, `-RepoPath`, `-Port` |
+| `scripts/export-and-serve.ps1` | Full pipeline with flags: `-Verbose`, `-Force`, `-Json`, `-RepoPath`, `-Port` |
 | `scripts/serve-mkdocs.ps1` | Serve an already-exported wiki locally (no export) |
 
 ## Wiki navigation
@@ -85,6 +90,7 @@ See [docs/design-decisions.md](docs/design-decisions.md) for a full summary of a
 - The exporter uses EA COM Interop and only runs on Windows. It cannot run in CI/generic build environments.
 - Element page export is parallelized for performance. Duplicate sanitized filenames (e.g. `unnamed.md`) are handled with per-file locking.
 - The `--verbose` / `-v` flag enables per-element debug-level logging during export.
+- The `--json` / `-j` flag writes `model.json` alongside the markdown pages with the full model as a machine-readable JSON document.
 
 ## CI / Deployment
 
