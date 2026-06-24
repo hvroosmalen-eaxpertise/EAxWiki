@@ -39,4 +39,4 @@ ProductLifeCycle is a master-data entity that defines the set of life-cycle stag
 
 ---
 
-*Generated: 2026-06-22 22:08:54*
+*Generated: 2026-06-24 10:33:17*

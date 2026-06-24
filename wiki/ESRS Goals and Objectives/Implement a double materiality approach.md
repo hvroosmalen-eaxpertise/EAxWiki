@@ -21,4 +21,4 @@ Implement a double materiality approach, necessitating companies to report on bo
 
 ---
 
-*Generated: 2026-06-22 22:08:53*
+*Generated: 2026-06-24 10:33:16*

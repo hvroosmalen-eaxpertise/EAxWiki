@@ -72,4 +72,4 @@ ProductCarbonFootprint is a work-product-component that records the quantified g
 
 ---
 
-*Generated: 2026-06-22 22:08:54*
+*Generated: 2026-06-24 10:33:17*

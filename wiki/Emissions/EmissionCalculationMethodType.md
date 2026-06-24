@@ -30,4 +30,4 @@ EmissionCalculationMethodType is a reference entity that classifies the high-lev
 
 ---
 
-*Generated: 2026-06-22 22:08:54*
+*Generated: 2026-06-24 10:33:17*
