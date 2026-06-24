@@ -21,6 +21,7 @@ public class MarkdownExporter : IWikiExporter
 
     public async Task ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath, IEaReader? reader = null, bool force = false)
     {
+        _sanitizeCache.Clear();
         try
         {
             if (force && Directory.Exists(outputPath))
