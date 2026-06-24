@@ -8,6 +8,8 @@ namespace EAxWiki.Export.Exporters;
 
 internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 {
+    /// <summary>Maximum length of diagram descriptions in the index table. Longer descriptions are truncated.</summary>
+    private const int MaxDescriptionLength = 100;
     public async Task ExportPagesAsync(ExportContext ctx, IEaReader reader)
     {
         logger.LogInformation("Exporting {DiagramCount} diagrams with PNG images", ctx.AllDiagrams.Count);
@@ -112,7 +114,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     : "-";
 
                 var desc = string.IsNullOrWhiteSpace(diagram.Notes) ? "-" : MarkdownHelpers.EscapeCell(diagram.Notes.Trim());
-                if (desc.Length > 100) desc = desc[..100] + "...";
+                if (desc.Length > MaxDescriptionLength) desc = desc[..MaxDescriptionLength] + "...";
 
                 lines.Add($"| {link} | {modified} | {desc} | {path} |");
             }

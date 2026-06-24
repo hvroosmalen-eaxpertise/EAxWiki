@@ -5,6 +5,7 @@ namespace EAxWiki.Export.Exporters;
 
 internal class RecentChangesExporter(IOutputWriter writer)
 {
+    /// <summary>Maximum entries shown in the Recent Changes view. Adjust to show more or fewer.</summary>
     private const int TopN = 50;
 
     public async Task ExportAsync(ExportContext ctx)
