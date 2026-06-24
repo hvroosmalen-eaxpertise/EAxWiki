@@ -19,18 +19,26 @@ public class Config
             {
                 case "--repo":
                 case "-r":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
                     RepositoryPath = args[++i];
                     break;
                 case "--name":
                 case "-n":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
                     RepositoryName = args[++i];
                     break;
                 case "--output":
                 case "-o":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
                     OutputPath = args[++i];
                     break;
                 case "--package":
                 case "-p":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
                     PackageFilter = args[++i];
                     break;
                 case "--verbose":
