@@ -19,6 +19,7 @@ public class FileOutputWriter : IOutputWriter
         await fileLock.WaitAsync();
         try
         {
+            Directory.CreateDirectory(Path.GetDirectoryName(filePath)!);
             await File.WriteAllTextAsync(filePath, content);
         }
         finally
