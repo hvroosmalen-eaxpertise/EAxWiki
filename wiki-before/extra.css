@@ -1,0 +1,27 @@
+.md-grid {
+  max-width: 75rem;
+}
+
+.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(1),
+.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(1) {
+  width: 22%;
+}
+
+.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(2),
+.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(2) {
+  width: 50%;
+}
+
+.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(3),
+.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(3) {
+  width: 28%;
+}
+
+.md-typeset table:not([class]):has(th:nth-child(4)) th:nth-child(2),
+.md-typeset table:not([class]):has(td:nth-child(4)) td:nth-child(2) {
+  width: 8%;
+}
+
+.md-typeset table:not([class]) td {
+  word-break: break-word;
+}

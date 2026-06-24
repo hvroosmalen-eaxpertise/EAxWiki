@@ -41,8 +41,21 @@ public class MarkdownExporter : IWikiExporter
             var ctx = ContextBuilder.Build(packages, outputPath);
 
             var packageExporter = new PackageExporter(_writer, _logger);
+            var totalElements = ctx.Elements.Count;
+            var processedElements = 0;
+            const int progressInterval = 50;
+            void OnElementsWritten(int count)
+            {
+                var previous = processedElements;
+                processedElements += count;
+                var previousMilestone = previous / progressInterval;
+                var currentMilestone = processedElements / progressInterval;
+                if (currentMilestone > previousMilestone && totalElements > 0)
+                    _logger.LogInformation("[Export] Processing element {Processed} / {Total}...", processedElements, totalElements);
+            }
+
             foreach (var pkg in packages)
-                await packageExporter.ExportAsync(pkg, ctx);
+                await packageExporter.ExportAsync(pkg, ctx, OnElementsWritten);
 
             await WriteRootIndexAsync(packages, outputPath, repository.ConnectionString);
 

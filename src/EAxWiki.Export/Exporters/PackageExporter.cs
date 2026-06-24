@@ -8,7 +8,7 @@ namespace EAxWiki.Export.Exporters;
 
 internal class PackageExporter(IOutputWriter writer, ILogger logger)
 {
-    public async Task ExportAsync(EaPackage package, ExportContext ctx)
+    public async Task ExportAsync(EaPackage package, ExportContext ctx, Action<int>? onElementsWritten = null)
     {
         var pkgStopwatch = Stopwatch.StartNew();
         logger.LogInformation("Exporting package {PackageName} ({ElementCount} elements, {DiagramCount} diagrams)",
@@ -80,6 +80,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
             try
             {
                 await Task.WhenAll(elementTasks);
+                onElementsWritten?.Invoke(package.Elements.Count);
             }
             catch (Exception ex)
             {
@@ -112,6 +113,6 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
         logger.LogInformation("Exported package {PackageName} in {ElapsedMs}ms", package.Name, pkgStopwatch.ElapsedMilliseconds);
 
         foreach (var child in package.Children)
-            await ExportAsync(child, ctx);
+            await ExportAsync(child, ctx, onElementsWritten);
     }
 }
