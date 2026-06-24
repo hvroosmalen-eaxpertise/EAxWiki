@@ -48,6 +48,13 @@ try
 
     await exporter.ExportAsync(repository, startPackage, outputPath, reader, config.Force);
     Console.WriteLine($"Done. Wiki generated at: {outputPath}");
+
+    if (config.JsonExport)
+    {
+        var jsonExporter = new JsonExporter(writer);
+        await jsonExporter.ExportAsync(repository, outputPath);
+        Console.WriteLine($"JSON export: {Path.Combine(outputPath, "model.json")}");
+    }
 }
 catch (Exception ex)
 {
@@ -89,6 +96,7 @@ static void ShowUsage()
     Console.WriteLine("                        (default: wiki)");
     Console.WriteLine("  --package, -p <name>  Only export a specific package (by name)");
     Console.WriteLine("  --verbose, -v         Enable verbose logging per-element timing");
-    Console.WriteLine("  --force, -f            Force full regeneration (rebuild all files)");
+    Console.WriteLine("  --force, -f           Force full regeneration (rebuild all files)");
+    Console.WriteLine("  --json, -j            Also export model.json alongside markdown");
     Console.WriteLine("  --help, -h            Show this help message");
 }

@@ -9,6 +9,7 @@ public class Config
     public bool HelpRequested { get; set; }
     public bool Verbose { get; set; }
     public bool Force { get; set; }
+    public bool JsonExport { get; set; }
 
     public void Load(string[] args)
     {
@@ -39,6 +40,10 @@ public class Config
                 case "--force":
                 case "-f":
                     Force = true;
+                    break;
+                case "--json":
+                case "-j":
+                    JsonExport = true;
                     break;
                 case "--help":
                 case "/?":
