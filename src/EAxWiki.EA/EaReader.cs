@@ -1,6 +1,7 @@
 using System.Runtime.InteropServices;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
+using Microsoft.Extensions.Logging;
 
 namespace EAxWiki.EA;
 
@@ -12,6 +13,14 @@ public class EaReader : IEaReader, IDisposable
     private EA.Repository? _repository;
     private string _repositoryPath = string.Empty;
     private bool _disposed;
+    private readonly ILogger<EaReader>? _logger;
+
+    public EaReader(ILogger<EaReader>? logger = null)
+    {
+        _logger = logger;
+    }
+
+    public EaReader() : this(null) { }
 
     public string RepositoryPath => _repositoryPath;
 
@@ -188,8 +197,9 @@ public class EaReader : IEaReader, IDisposable
             project.PutDiagramImageToFile(diagramGuid, filePath, 1);
             return true;
         }
-        catch
+        catch (Exception ex)
         {
+            _logger?.LogWarning(ex, "Failed to export PNG for diagram '{DiagramGuid}' to '{FilePath}'", diagramGuid, filePath);
             return false;
         }
     }

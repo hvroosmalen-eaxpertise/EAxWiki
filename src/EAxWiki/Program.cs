@@ -29,7 +29,7 @@ using var loggerFactory = LoggerFactory.Create(builder =>
     builder.SetMinimumLevel(config.Verbose ? LogLevel.Debug : LogLevel.Information);
 });
 
-IEaReader reader = new EaReader();
+IEaReader reader = new EaReader(loggerFactory.CreateLogger<EaReader>());
 IOutputWriter writer = new FileOutputWriter();
 var logger = loggerFactory.CreateLogger<MarkdownExporter>();
 IWikiExporter exporter = new MarkdownExporter(writer, logger);
