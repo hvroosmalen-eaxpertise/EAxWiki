@@ -16,7 +16,28 @@ if (config.HelpRequested)
     return;
 }
 
+if (string.IsNullOrWhiteSpace(config.RepositoryPath))
+{
+    Console.Error.WriteLine("Error: repository path is required. Use --repo <path> or set a default.");
+    return;
+}
+
+if (!File.Exists(config.RepositoryPath))
+{
+    Console.Error.WriteLine($"Error: repository file not found: {config.RepositoryPath}");
+    return;
+}
+
 var outputPath = Path.GetFullPath(config.OutputPath);
+
+// Verify the output parent directory is reachable before doing anything destructive.
+var outputParent = Path.GetDirectoryName(outputPath) ?? outputPath;
+if (!string.IsNullOrEmpty(outputParent) && !Directory.Exists(outputParent))
+{
+    Console.Error.WriteLine($"Error: output parent directory does not exist: {outputParent}");
+    return;
+}
+
 Console.WriteLine($"Repository: {config.RepositoryPath}");
 Console.WriteLine($"Output:     {outputPath}");
 if (!string.IsNullOrEmpty(config.PackageFilter))
@@ -30,7 +51,7 @@ using var loggerFactory = LoggerFactory.Create(builder =>
 });
 
 IEaReader reader = new EaReader(loggerFactory.CreateLogger<EaReader>());
-IOutputWriter writer = new FileOutputWriter();
+using var writer = new FileOutputWriter();
 var logger = loggerFactory.CreateLogger<MarkdownExporter>();
 IWikiExporter exporter = new MarkdownExporter(writer, logger);
 
@@ -68,9 +89,9 @@ finally
     {
         if (reader is IDisposable d) d.Dispose();
     }
-    catch
+    catch (Exception ex)
     {
-        // Ignore cleanup errors from EA COM
+        Console.Error.WriteLine($"Warning: EA cleanup failed: {ex.Message}");
     }
 }
 

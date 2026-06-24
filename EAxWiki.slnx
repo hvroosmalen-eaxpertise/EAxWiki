@@ -4,6 +4,7 @@
     <Project Path="src/EAxWiki.Docs/EAxWiki.Docs.csproj" />
     <Project Path="src/EAxWiki.EA/EAxWiki.EA.csproj" />
     <Project Path="src/EAxWiki.Export/EAxWiki.Export.csproj" />
+    <Project Path="src/EAxWiki.Tests/EAxWiki.Tests.csproj" />
     <Project Path="src/EAxWiki/EAxWiki.csproj" />
   </Folder>
 </Solution>

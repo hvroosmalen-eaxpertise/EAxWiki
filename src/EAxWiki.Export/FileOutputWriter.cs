@@ -3,9 +3,10 @@ using EAxWiki.Core.Interfaces;
 
 namespace EAxWiki.Export;
 
-public class FileOutputWriter : IOutputWriter
+public class FileOutputWriter : IOutputWriter, IDisposable
 {
     private readonly ConcurrentDictionary<string, SemaphoreSlim> _fileLocks = new();
+    private bool _disposed;
 
     public Task CreateDirectoryAsync(string path)
     {
@@ -26,5 +27,15 @@ public class FileOutputWriter : IOutputWriter
         {
             fileLock.Release();
         }
+    }
+
+    public void Dispose()
+    {
+        if (_disposed) return;
+        _disposed = true;
+        foreach (var sem in _fileLocks.Values)
+            sem.Dispose();
+        _fileLocks.Clear();
+        GC.SuppressFinalize(this);
     }
 }

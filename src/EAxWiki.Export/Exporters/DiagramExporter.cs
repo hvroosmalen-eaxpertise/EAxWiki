@@ -14,6 +14,8 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
     {
         logger.LogInformation("Exporting {DiagramCount} diagrams with PNG images", ctx.AllDiagrams.Count);
 
+        var failures = new List<string>();
+
         foreach (var (diagram, pkgDir) in ctx.AllDiagrams)
         {
             try
@@ -78,8 +80,13 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
             catch (Exception ex)
             {
                 logger.LogWarning(ex, "Failed to export diagram {DiagramName}", diagram.Name);
+                failures.Add(diagram.Name);
             }
         }
+
+        if (failures.Count > 0)
+            logger.LogWarning("[Export] {FailureCount} diagram(s) failed to export: {DiagramNames}",
+                failures.Count, string.Join(", ", failures));
     }
 
     public async Task WriteIndexAsync(ExportContext ctx)

@@ -26,8 +26,22 @@ public class EaReader : IEaReader, IDisposable
 
     public EaRepository Open(string connectionString)
     {
+        if (string.IsNullOrWhiteSpace(connectionString))
+            throw new ArgumentException("Repository path must not be empty.", nameof(connectionString));
+
+        if (!File.Exists(connectionString))
+            throw new FileNotFoundException($"EA repository file not found: {connectionString}", connectionString);
+
         _repository = new EA.Repository();
-        _repository.OpenFile(connectionString);
+        try
+        {
+            _repository.OpenFile(connectionString);
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogError(ex, "EA COM failed to open repository '{Path}'", connectionString);
+            throw new InvalidOperationException($"Failed to open EA repository '{connectionString}': {ex.Message}", ex);
+        }
         _repositoryPath = connectionString;
 
         var model = new EaRepository
