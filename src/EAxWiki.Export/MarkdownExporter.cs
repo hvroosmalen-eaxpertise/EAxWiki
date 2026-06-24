@@ -446,7 +446,6 @@ public class MarkdownExporter : IWikiExporter
         var glossaryDir = Path.Combine(outputDir, "glossary");
         await _writer.CreateDirectoryAsync(glossaryDir);
 
-        string EscapeCell(string raw) => raw.Replace("|", "\\|").Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ");
         var entries = new List<(string Term, string Definition, List<(string Name, string Link)> Sources)>();
 
         foreach (var (elem, pkgDir) in elements)
@@ -531,7 +530,7 @@ public class MarkdownExporter : IWikiExporter
             var link = Path.GetRelativePath(recentDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
             var path = BuildBreadcrumb(elem.PackageId, recentDir, outputDir, packageLookup);
             var modified = elem.ModifiedDate == DateTime.MinValue ? (DateTime?)null : elem.ModifiedDate;
-            entries.Add(($"[{elem.Name}]({link})", elem.Type, modified, path));
+            entries.Add(($"[{EscapeCell(elem.Name)}]({link})", EscapeCell(elem.Type), modified, path));
         }
 
         var diagrams = CollectDiagrams(rootPackages, outputDir);
@@ -542,7 +541,7 @@ public class MarkdownExporter : IWikiExporter
             DateTime? modified = null;
             if (!string.IsNullOrWhiteSpace(diagram.ModifiedDate) && DateTime.TryParse(diagram.ModifiedDate, out var dt))
                 modified = dt;
-            entries.Add(($"[{diagram.Name}]({diagramPage})", "Diagram", modified, path));
+            entries.Add(($"[{EscapeCell(diagram.Name)}]({diagramPage})", "Diagram", modified, path));
         }
 
         var sorted = entries
@@ -670,8 +669,8 @@ public class MarkdownExporter : IWikiExporter
 
             foreach (var attr in element.Attributes)
             {
-                var desc = attr.Notes?.Replace("\n", "<br/>") ?? "";
-                lines.Add($"| {attr.Name} | {attr.Type} | {attr.DefaultValue} | {desc} |");
+                var desc = (attr.Notes ?? "").Replace("|", "\\|").Replace("\n", "<br/>");
+                lines.Add($"| {EscapeCell(attr.Name)} | {EscapeCell(attr.Type)} | {EscapeCell(attr.DefaultValue ?? "")} | {desc} |");
             }
 
             lines.Add(string.Empty);
@@ -706,7 +705,7 @@ public class MarkdownExporter : IWikiExporter
 
             foreach (var tv in element.TaggedValues)
             {
-                lines.Add($"| {tv.Name} | {tv.Value} | {tv.Notes} |");
+                lines.Add($"| {EscapeCell(tv.Name)} | {EscapeCell(tv.Value)} | {EscapeCell(tv.Notes ?? "")} |");
             }
 
             lines.Add(string.Empty);
@@ -735,14 +734,14 @@ public class MarkdownExporter : IWikiExporter
                 {
                     var otherName = SanitizeName(other.Element.Name);
                     var relativePath = Path.GetRelativePath(dir, Path.Combine(other.PackageDir, $"{otherName}.md")).Replace('\\', '/');
-                    connectedTo = $"[{other.Element.Name}]({relativePath})";
+                    connectedTo = $"[{EscapeCell(other.Element.Name)}]({relativePath})";
                 }
                 else
                 {
                     connectedTo = $"Element ID {otherId} (not in export)";
                 }
 
-                lines.Add($"| {conn.Type} | {conn.Stereotype} | {connectedTo} |");
+                lines.Add($"| {EscapeCell(conn.Type)} | {EscapeCell(conn.Stereotype)} | {connectedTo} |");
             }
 
             lines.Add(string.Empty);
@@ -776,13 +775,13 @@ public class MarkdownExporter : IWikiExporter
                 {
                     var srcName = SanitizeName(srcElem.Element.Name);
                     var relativePath = Path.GetRelativePath(dir, Path.Combine(srcElem.PackageDir, $"{srcName}.md")).Replace('\\', '/');
-                    source = $"[{srcElem.Element.Name}]({relativePath})";
+                    source = $"[{EscapeCell(srcElem.Element.Name)}]({relativePath})";
                 }
                 else
                 {
                     source = $"Element ID {sourceId} (not in export)";
                 }
-                lines.Add($"| {conn.Type} | {conn.Stereotype} | {source} |");
+                lines.Add($"| {EscapeCell(conn.Type)} | {EscapeCell(conn.Stereotype)} | {source} |");
             }
             lines.Add(string.Empty);
         }
@@ -926,13 +925,13 @@ public class MarkdownExporter : IWikiExporter
             foreach (var (diagram, pkgDir, path) in sorted)
             {
                 var diagramPage = Path.GetRelativePath(diagramsDir, Path.Combine(pkgDir, "diagrams", $"{SanitizeName(diagram.Name)}.md")).Replace('\\', '/');
-                var link = $"[{diagram.Name}]({diagramPage})";
+                var link = $"[{EscapeCell(diagram.Name)}]({diagramPage})";
 
                 var modified = !string.IsNullOrWhiteSpace(diagram.ModifiedDate) && DateTime.TryParse(diagram.ModifiedDate, out var dt)
                     ? dt.ToString("yyyy-MM-dd")
                     : "-";
 
-                var desc = string.IsNullOrWhiteSpace(diagram.Notes) ? "-" : diagram.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ").Trim();
+                var desc = string.IsNullOrWhiteSpace(diagram.Notes) ? "-" : EscapeCell(diagram.Notes.Trim());
                 if (desc.Length > 100) desc = desc[..100] + "...";
 
                 lines.Add($"| {link} | {modified} | {desc} | {path} |");
@@ -972,6 +971,11 @@ public class MarkdownExporter : IWikiExporter
     private static string FormatTimestamp()
     {
         return $"---\n\n*Generated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}*";
+    }
+
+    private static string EscapeCell(string raw)
+    {
+        return raw.Replace("|", "\\|").ReplaceLineEndings(" ");
     }
 
     private static string CreateElementLink(EaElement element, string pkgDir, string fromDir)
