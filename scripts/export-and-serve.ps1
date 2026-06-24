@@ -2,7 +2,8 @@ param(
     [string]$RepoPath = "model/EurSuRA.qea",
     [int]$Port = 8000,
     [switch]$Verbose,
-    [switch]$Force
+    [switch]$Force,
+    [switch]$Json
 )
 
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
@@ -27,6 +28,7 @@ Write-Host "Repository: $resolvedRepo"
 $runArgs = @("--repo", $resolvedRepo)
 if ($Verbose) { $runArgs += "--verbose" }
 if ($Force) { $runArgs += "--force" }
+if ($Json) { $runArgs += "--json" }
 try {
     dotnet run --project src/EAxWiki -- $runArgs
     if ($LASTEXITCODE -ne 0) {
