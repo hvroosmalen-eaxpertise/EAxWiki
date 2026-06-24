@@ -89,6 +89,8 @@ See [docs/design-decisions.md](docs/design-decisions.md) for a full summary of a
 - If the browser can't connect, check Windows Firewall inbound rules for the port (8000 by default).
 - The exporter uses EA COM Interop and only runs on Windows. It cannot run in CI/generic build environments.
 - Element page export is parallelized for performance. Duplicate sanitized filenames (e.g. `unnamed.md`) are handled with per-file locking.
+- View generation (Types, Glossary, Recent Changes, Diagrams index) runs in parallel after the structural export completes, reducing total export time on large models.
+- All indexes (element lookup, diagram index, incoming connector index) are built once at the start of export and shared across all phases — no redundant traversals.
 - The `--verbose` / `-v` flag enables per-element debug-level logging during export.
 - The `--json` / `-j` flag writes `model.json` alongside the markdown pages with the full model as a machine-readable JSON document.
 

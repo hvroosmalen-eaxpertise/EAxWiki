@@ -40,68 +40,33 @@ public class MarkdownExporter : IWikiExporter
                 ? new List<EaPackage> { startPackage }
                 : repository.RootPackages;
 
-            var elements = new List<(EaElement Element, string PackageDir)>();
-
-            var packageLookup = BuildPackageLookup(packages);
-
-            // Phase 1: collect all elements before writing pages
-            foreach (var pkg in packages)
-            {
-                CollectElements(pkg, outputPath, elements);
-            }
-
-            // Build diagram index: element ID → list of (diagram, package dir)
-            var diagramIndex = new Dictionary<int, List<(EaDiagram Diagram, string PkgDir)>>();
-            foreach (var (diagram, pkgDir) in CollectDiagrams(packages, outputPath))
-            {
-                foreach (var dob in diagram.DiagramObjects)
-                {
-                    if (!diagramIndex.ContainsKey(dob.ElementId))
-                        diagramIndex[dob.ElementId] = new List<(EaDiagram, string)>();
-                    diagramIndex[dob.ElementId].Add((diagram, pkgDir));
-                }
-            }
-
-            // Build incoming connector index: element ID → list of (connector, source element ID)
-            var incomingIndex = new Dictionary<int, List<(EaConnector Connector, int SourceId)>>();
-            foreach (var (elem, _) in elements)
-            {
-                foreach (var conn in elem.Connectors)
-                {
-                    if (!incomingIndex.ContainsKey(conn.TargetId))
-                        incomingIndex[conn.TargetId] = new List<(EaConnector, int)>();
-                    incomingIndex[conn.TargetId].Add((conn, conn.SourceId));
-                }
-            }
+            var ctx = BuildContext(packages, outputPath);
 
             // Phase 2: write pages with complete lookup
             foreach (var pkg in packages)
             {
-                await ExportPackageAsync(pkg, outputPath, elements, packageLookup, diagramIndex, incomingIndex);
+                await ExportPackageAsync(pkg, ctx);
             }
 
             await WriteRootIndexAsync(packages, outputPath, repository.ConnectionString);
-            await GenerateTypesPagesAsync(elements, outputPath);
-            await GenerateGlossaryAsync(elements, outputPath);
-            await GenerateRecentChangesAsync(packages, elements, outputPath, packageLookup);
-            await WritePagesFileAsync(outputPath);
-            await WriteExtraCssAsync(outputPath);
+
+            // View generators are independent — run them in parallel
+            var viewTasks = new List<Task>
+            {
+                GenerateTypesPagesAsync(ctx),
+                GenerateGlossaryAsync(ctx),
+                GenerateRecentChangesAsync(ctx),
+                WriteDiagramsIndexAsync(ctx),
+                WritePagesFileAsync(outputPath),
+                WriteExtraCssAsync(outputPath),
+            };
 
             if (reader != null)
-            {
-                try
-                {
-                    await ExportDiagramsAsync(packages, elements, outputPath, reader, packageLookup);
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, "Diagram export failed");
-                }
-            }
+                viewTasks.Add(ExportDiagramsAsync(ctx, reader));
 
-            await WriteDiagramsIndexAsync(packages, outputPath, packageLookup);
+            await Task.WhenAll(viewTasks);
 
-            await CleanupOrphanedFilesAsync(elements);
+            await CleanupOrphanedFilesAsync(ctx.Elements);
 
             totalStopwatch.Stop();
             _logger.LogInformation("Export complete: {TotalElapsedMs}ms total", totalStopwatch.ElapsedMilliseconds);
@@ -112,12 +77,53 @@ public class MarkdownExporter : IWikiExporter
         }
     }
 
-    private async Task ExportPackageAsync(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements, Dictionary<int, (string Name, int? ParentId)> packageLookup, Dictionary<int, List<(EaDiagram Diagram, string PkgDir)>> diagramIndex, Dictionary<int, List<(EaConnector Connector, int SourceId)>> incomingIndex)
+    private static ExportContext BuildContext(List<EaPackage> packages, string outputPath)
+    {
+        // Phase 1: collect all elements and diagrams once
+        var elements = new List<(EaElement Element, string PackageDir)>();
+        foreach (var pkg in packages)
+            CollectElements(pkg, outputPath, elements);
+
+        var allDiagrams = CollectDiagrams(packages, outputPath);
+
+        var elementLookup = elements
+            .GroupBy(e => e.Element.Id)
+            .ToDictionary(g => g.Key, g => g.First());
+
+        var packageLookup = BuildPackageLookup(packages);
+
+        var diagramIndex = new Dictionary<int, List<(EaDiagram Diagram, string PkgDir)>>();
+        foreach (var (diagram, pkgDir) in allDiagrams)
+        {
+            foreach (var dob in diagram.DiagramObjects)
+            {
+                if (!diagramIndex.ContainsKey(dob.ElementId))
+                    diagramIndex[dob.ElementId] = new List<(EaDiagram, string)>();
+                diagramIndex[dob.ElementId].Add((diagram, pkgDir));
+            }
+        }
+
+        var incomingIndex = new Dictionary<int, List<(EaConnector Connector, int SourceId)>>();
+        foreach (var (elem, _) in elements)
+        {
+            foreach (var conn in elem.Connectors)
+            {
+                if (!incomingIndex.ContainsKey(conn.TargetId))
+                    incomingIndex[conn.TargetId] = new List<(EaConnector, int)>();
+                incomingIndex[conn.TargetId].Add((conn, conn.SourceId));
+            }
+        }
+
+        return new ExportContext(outputPath, elements, elementLookup, allDiagrams, diagramIndex, incomingIndex, packageLookup);
+    }
+
+    private async Task ExportPackageAsync(EaPackage package, ExportContext ctx)
     {
         var pkgStopwatch = Stopwatch.StartNew();
         _logger.LogInformation("Exporting package {PackageName} ({ElementCount} elements, {DiagramCount} diagrams)",
             package.Name, package.Elements.Count, package.Diagrams.Count);
 
+        var outputDir = ctx.OutputPath;
         var dir = Path.Combine(outputDir, SanitizeName(package.Name));
         await _writer.CreateDirectoryAsync(dir);
 
@@ -127,7 +133,7 @@ public class MarkdownExporter : IWikiExporter
             string.Empty
         };
 
-        indexLines.Add(BuildBreadcrumb(package.Id, dir, outputDir, packageLookup));
+        indexLines.Add(BuildBreadcrumb(package.Id, dir, outputDir, ctx.PackageLookup));
         indexLines.Add(string.Empty);
 
         if (!string.IsNullOrWhiteSpace(package.Notes))
@@ -165,7 +171,7 @@ public class MarkdownExporter : IWikiExporter
             foreach (var elem in package.Elements)
             {
                 var elemFile = $"{SanitizeName(elem.Name)}.md";
-                elementTasks.Add(WriteElementAsync(elem, dir, outputDir, elements, packageLookup, diagramIndex, incomingIndex));
+                elementTasks.Add(WriteElementAsync(elem, dir, ctx));
 
                 var typeLabel = string.IsNullOrEmpty(elem.Stereotype)
                     ? elem.Type
@@ -216,7 +222,7 @@ public class MarkdownExporter : IWikiExporter
 
         foreach (var child in package.Children)
         {
-            await ExportPackageAsync(child, outputDir, elements, packageLookup, diagramIndex, incomingIndex);
+            await ExportPackageAsync(child, ctx);
         }
     }
 
@@ -332,14 +338,15 @@ public class MarkdownExporter : IWikiExporter
         return type;
     }
 
-    private async Task GenerateTypesPagesAsync(List<(EaElement Element, string PackageDir)> elements, string outputDir)
+    private async Task GenerateTypesPagesAsync(ExportContext ctx)
     {
+        var outputDir = ctx.OutputPath;
         var typesDir = Path.Combine(outputDir, "types");
         await _writer.CreateDirectoryAsync(typesDir);
 
         var typesStopwatch = Stopwatch.StartNew();
 
-        var parsed = elements
+        var parsed = ctx.Elements
             .Select(e =>
             {
                 var fq = e.Element.FQStereotype;
@@ -442,14 +449,15 @@ public class MarkdownExporter : IWikiExporter
             languages.Count, typesStopwatch.ElapsedMilliseconds);
     }
 
-    private async Task GenerateGlossaryAsync(List<(EaElement Element, string PackageDir)> elements, string outputDir)
+    private async Task GenerateGlossaryAsync(ExportContext ctx)
     {
+        var outputDir = ctx.OutputPath;
         var glossaryDir = Path.Combine(outputDir, "glossary");
         await _writer.CreateDirectoryAsync(glossaryDir);
 
         var entries = new List<(string Term, string Definition, List<(string Name, string Link)> Sources)>();
 
-        foreach (var (elem, pkgDir) in elements)
+        foreach (var (elem, pkgDir) in ctx.Elements)
         {
             foreach (var tv in elem.TaggedValues)
             {
@@ -512,12 +520,9 @@ public class MarkdownExporter : IWikiExporter
         await _writer.WriteFileAsync(Path.Combine(glossaryDir, "index.md"), string.Join(Environment.NewLine, lines));
     }
 
-    private async Task GenerateRecentChangesAsync(
-        List<EaPackage> rootPackages,
-        List<(EaElement Element, string PackageDir)> elements,
-        string outputDir,
-        Dictionary<int, (string Name, int? ParentId)> packageLookup)
+    private async Task GenerateRecentChangesAsync(ExportContext ctx)
     {
+        var outputDir = ctx.OutputPath;
         var recentDir = Path.Combine(outputDir, "recent");
         await _writer.CreateDirectoryAsync(recentDir);
 
@@ -525,20 +530,19 @@ public class MarkdownExporter : IWikiExporter
 
         var entries = new List<(string Name, string Type, DateTime? ModifiedDate, string Path)>();
 
-        foreach (var (elem, pkgDir) in elements)
+        foreach (var (elem, pkgDir) in ctx.Elements)
         {
             var elemName = SanitizeName(elem.Name);
             var link = Path.GetRelativePath(recentDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
-            var path = BuildBreadcrumb(elem.PackageId, recentDir, outputDir, packageLookup);
+            var path = BuildBreadcrumb(elem.PackageId, recentDir, outputDir, ctx.PackageLookup);
             var modified = elem.ModifiedDate == DateTime.MinValue ? (DateTime?)null : elem.ModifiedDate;
             entries.Add(($"[{EscapeCell(elem.Name)}]({link})", EscapeCell(elem.Type), modified, path));
         }
 
-        var diagrams = CollectDiagrams(rootPackages, outputDir);
-        foreach (var (diagram, pkgDir) in diagrams)
+        foreach (var (diagram, pkgDir) in ctx.AllDiagrams)
         {
             var diagramPage = Path.GetRelativePath(recentDir, Path.Combine(pkgDir, "diagrams", $"{SanitizeName(diagram.Name)}.md")).Replace('\\', '/');
-            var path = BuildBreadcrumb(diagram.PackageId, recentDir, outputDir, packageLookup);
+            var path = BuildBreadcrumb(diagram.PackageId, recentDir, outputDir, ctx.PackageLookup);
             DateTime? modified = null;
             if (!string.IsNullOrWhiteSpace(diagram.ModifiedDate) && DateTime.TryParse(diagram.ModifiedDate, out var dt))
                 modified = dt;
@@ -621,8 +625,9 @@ public class MarkdownExporter : IWikiExporter
         await _writer.WriteFileAsync(cssPath, content);
     }
 
-    private async Task WriteElementAsync(EaElement element, string dir, string outputDir, List<(EaElement Element, string PackageDir)> elements, Dictionary<int, (string Name, int? ParentId)> packageLookup, Dictionary<int, List<(EaDiagram Diagram, string PkgDir)>> diagramIndex, Dictionary<int, List<(EaConnector Connector, int SourceId)>> incomingIndex)
+    private async Task WriteElementAsync(EaElement element, string dir, ExportContext ctx)
     {
+        var outputDir = ctx.OutputPath;
         var filePath = Path.Combine(dir, $"{SanitizeName(element.Name)}.md");
         if (element.ModifiedDate != DateTime.MinValue && File.Exists(filePath))
         {
@@ -652,7 +657,7 @@ public class MarkdownExporter : IWikiExporter
         };
 
         lines.Add(string.Empty);
-        lines.Add(BuildBreadcrumb(element.PackageId, dir, outputDir, packageLookup));
+        lines.Add(BuildBreadcrumb(element.PackageId, dir, outputDir, ctx.PackageLookup));
         lines.Add(string.Empty);
 
         if (!string.IsNullOrWhiteSpace(element.Notes))
@@ -719,9 +724,6 @@ public class MarkdownExporter : IWikiExporter
             lines.Add("| Type | Stereotype | Connected To |");
             lines.Add("|------|------------|-------------|");
 
-            var lookup = elements.GroupBy(e => e.Element.Id)
-                                 .ToDictionary(g => g.Key, g => g.First());
-
             foreach (var conn in element.Connectors)
             {
                 var otherId = conn.SourceId == element.Id ? conn.TargetId
@@ -731,7 +733,7 @@ public class MarkdownExporter : IWikiExporter
                 if (otherId <= 0) continue;
 
                 string connectedTo;
-                if (lookup.TryGetValue(otherId, out var other))
+                if (ctx.ElementLookup.TryGetValue(otherId, out var other))
                 {
                     var otherName = SanitizeName(other.Element.Name);
                     var relativePath = Path.GetRelativePath(dir, Path.Combine(other.PackageDir, $"{otherName}.md")).Replace('\\', '/');
@@ -748,7 +750,7 @@ public class MarkdownExporter : IWikiExporter
             lines.Add(string.Empty);
         }
 
-        if (diagramIndex.TryGetValue(element.Id, out var elementDiagrams))
+        if (ctx.DiagramIndex.TryGetValue(element.Id, out var elementDiagrams))
         {
             lines.Add("### Appears on Diagrams");
             lines.Add(string.Empty);
@@ -761,18 +763,16 @@ public class MarkdownExporter : IWikiExporter
             lines.Add(string.Empty);
         }
 
-        if (incomingIndex.TryGetValue(element.Id, out var incomingConns))
+        if (ctx.IncomingIndex.TryGetValue(element.Id, out var incomingConns))
         {
             lines.Add("### Referenced By");
             lines.Add(string.Empty);
             lines.Add("| Type | Stereotype | Source |");
             lines.Add("|------|------------|--------|");
-            var lookup = elements.GroupBy(e => e.Element.Id)
-                                 .ToDictionary(g => g.Key, g => g.First());
             foreach (var (conn, sourceId) in incomingConns)
             {
                 string source;
-                if (lookup.TryGetValue(sourceId, out var srcElem))
+                if (ctx.ElementLookup.TryGetValue(sourceId, out var srcElem))
                 {
                     var srcName = SanitizeName(srcElem.Element.Name);
                     var relativePath = Path.GetRelativePath(dir, Path.Combine(srcElem.PackageDir, $"{srcName}.md")).Replace('\\', '/');
@@ -791,16 +791,12 @@ public class MarkdownExporter : IWikiExporter
         await _writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines));
     }
 
-    private async Task ExportDiagramsAsync(List<EaPackage> rootPackages, List<(EaElement Element, string PackageDir)> elements, string outputDir, IEaReader reader, Dictionary<int, (string Name, int? ParentId)> packageLookup)
+    private async Task ExportDiagramsAsync(ExportContext ctx, IEaReader reader)
     {
-        var elementLookup = elements
-            .GroupBy(e => e.Element.Id)
-            .ToDictionary(g => g.Key, g => g.First());
+        var outputDir = ctx.OutputPath;
+        _logger.LogInformation("Exporting {DiagramCount} diagrams with PNG images", ctx.AllDiagrams.Count);
 
-        var diagrams = CollectDiagrams(rootPackages, outputDir);
-        _logger.LogInformation("Exporting {DiagramCount} diagrams with PNG images", diagrams.Count);
-
-        foreach (var (diagram, pkgDir) in diagrams)
+        foreach (var (diagram, pkgDir) in ctx.AllDiagrams)
         {
             try
             {
@@ -823,7 +819,7 @@ public class MarkdownExporter : IWikiExporter
                 };
 
                 lines.Add(string.Empty);
-                lines.Add(BuildBreadcrumb(diagram.PackageId, diagramsDir, outputDir, packageLookup));
+                lines.Add(BuildBreadcrumb(diagram.PackageId, diagramsDir, outputDir, ctx.PackageLookup));
                 lines.Add(string.Empty);
 
                 if (File.Exists(pngPath))
@@ -838,7 +834,7 @@ public class MarkdownExporter : IWikiExporter
                 var diagramElements = new List<(EaElement Element, string PackageDir)>();
                 foreach (var dob in diagram.DiagramObjects)
                 {
-                    if (elementLookup.TryGetValue(dob.ElementId, out var elem))
+                    if (ctx.ElementLookup.TryGetValue(dob.ElementId, out var elem))
                         diagramElements.Add(elem);
                 }
 
@@ -895,15 +891,14 @@ public class MarkdownExporter : IWikiExporter
         }
     }
 
-    private async Task WriteDiagramsIndexAsync(List<EaPackage> rootPackages, string outputDir, Dictionary<int, (string Name, int? ParentId)> packageLookup)
+    private async Task WriteDiagramsIndexAsync(ExportContext ctx)
     {
+        var outputDir = ctx.OutputPath;
         var diagramsDir = Path.Combine(outputDir, "diagrams");
         await _writer.CreateDirectoryAsync(diagramsDir);
 
-        var allDiagrams = CollectDiagrams(rootPackages, outputDir);
-
-        var sorted = allDiagrams
-            .Select(d => (d.Diagram, d.PackageDir, Path: BuildBreadcrumb(d.Diagram.PackageId, diagramsDir, outputDir, packageLookup)))
+        var sorted = ctx.AllDiagrams
+            .Select(d => (d.Diagram, d.PackageDir, Path: BuildBreadcrumb(d.Diagram.PackageId, diagramsDir, outputDir, ctx.PackageLookup)))
             .OrderBy(d => d.Path)
             .ThenBy(d => d.Diagram.Name)
             .ToList();
