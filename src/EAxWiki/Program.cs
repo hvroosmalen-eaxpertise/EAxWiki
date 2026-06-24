@@ -58,7 +58,9 @@ try
 }
 catch (Exception ex)
 {
-    Console.WriteLine($"Error: {ex.Message}");
+    Console.WriteLine(ex.ToString());
+    if (ex.InnerException != null)
+        Console.WriteLine(ex.InnerException.ToString());
 }
 finally
 {
