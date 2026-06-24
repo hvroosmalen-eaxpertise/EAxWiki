@@ -29,6 +29,10 @@ public class MarkdownExporter : IWikiExporter
             }
             Directory.CreateDirectory(outputPath);
 
+            var testFile = Path.Combine(outputPath, ".write-test");
+            try { File.WriteAllText(testFile, ""); File.Delete(testFile); }
+            catch (Exception ex) { throw new InvalidOperationException($"Output path is not writable: {outputPath}", ex); }
+
             var totalStopwatch = Stopwatch.StartNew();
 
             var packages = startPackage != null
