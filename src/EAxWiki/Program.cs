@@ -43,7 +43,7 @@ if (!string.IsNullOrEmpty(outputParent) && !Directory.Exists(outputParent))
     return;
 }
 
-Console.WriteLine($"Repository: {config.RepositoryPath}");
+Console.WriteLine($"Repository: {EaRepository.Redact(config.RepositoryPath)}");
 Console.WriteLine($"Output:     {outputPath}");
 if (!string.IsNullOrEmpty(config.PackageFilter))
     Console.WriteLine($"Package:    {config.PackageFilter}");

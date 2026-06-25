@@ -95,16 +95,6 @@ public class MarkdownExporter : IWikiExporter
         }
     }
 
-    // Removes credential key=value pairs from EA connection strings before writing to wiki.
-    private static string RedactConnectionString(string connectionString)
-    {
-        if (!connectionString.Contains('=')) return connectionString; // plain file path
-        return System.Text.RegularExpressions.Regex.Replace(
-            connectionString,
-            @"(?i)(Password|Pwd|User\s*Id|Uid|User\s*Name|Username)\s*=[^;]*",
-            m => m.Groups[1].Value + "=***");
-    }
-
     private async Task WriteRootIndexAsync(List<EaPackage> rootPackages, string outputDir, string repositoryPath)
     {
         var siteName = !string.IsNullOrEmpty(repositoryPath)
@@ -116,7 +106,7 @@ public class MarkdownExporter : IWikiExporter
         {
             lines.Add("## Repository");
             lines.Add(string.Empty);
-            lines.Add(RedactConnectionString(repositoryPath));
+            lines.Add(EaRepository.Redact(repositoryPath));
             lines.Add(string.Empty);
         }
 

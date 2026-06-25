@@ -35,7 +35,8 @@ if ($RepoPath) {
                     elseif ([System.IO.Path]::IsPathRooted($RepoPath)) { $RepoPath }
                     else { Join-Path $repoRoot $RepoPath }
     $runArgs += "--repo", $resolvedRepo
-    Write-Host "Repository: $resolvedRepo"
+    $displayRepo = $resolvedRepo -replace '(?i)(Password|Pwd|User\s*Id|Uid|UserName|Username)\s*=[^;]*', '$1=***'
+    Write-Host "Repository: $displayRepo"
 }
 if ($Force)   { $runArgs += "--force" }
 if ($Verbose) { $runArgs += "--verbose" }

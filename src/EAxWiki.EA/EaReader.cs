@@ -42,8 +42,8 @@ public class EaReader : IEaReader, IDisposable
         }
         catch (Exception ex)
         {
-            _logger?.LogError(ex, "EA COM failed to open repository '{Path}'", connectionString);
-            throw new InvalidOperationException($"Failed to open EA repository '{connectionString}': {ex.Message}", ex);
+            _logger?.LogError(ex, "EA COM failed to open repository '{Path}'", EaRepository.Redact(connectionString));
+            throw new InvalidOperationException($"Failed to open EA repository '{EaRepository.Redact(connectionString)}': {ex.Message}", ex);
         }
         _repositoryPath = connectionString;
 
