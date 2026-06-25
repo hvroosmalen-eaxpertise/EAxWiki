@@ -26,7 +26,7 @@ The exporter runs **incrementally** by default — it compares each element's `M
 
 The serve step runs [MkDocs](https://www.mkdocs.org/) with the [Material theme](https://squidfunk.github.io/mkdocs-material/) against the `wiki/` folder produced by the exporter. MkDocs renders the Markdown into a fully navigable website and serves it locally on a port of your choice.
 
-Because the serve step only needs Python and the `wiki/` folder, it works on any platform — including Linux and Mac. If the `wiki/` folder was exported on a Windows machine and committed to git, a Linux user can `git pull` and serve it immediately.
+Because the serve step only needs Python and the `wiki/` folder, it works on any platform — including Linux and Mac. The `wiki/` folder just needs to be accessible on the serving machine, whether via a shared filesystem, git, or any other means.
 
 ### Pipeline overview
 
@@ -82,15 +82,19 @@ The script installs PowerShell Core (`pwsh`) if missing (via apt/dnf/Homebrew), 
 
 ### How Windows and Linux work together
 
-Sparx Enterprise Architect is Windows-only, so the export step can only run on Windows. The exported output — the `wiki/` folder of Markdown files — is committed to git and shared with Linux machines, which can then serve it with MkDocs.
+Sparx Enterprise Architect is Windows-only, so the export step can only run on Windows. The exported output — the `wiki/` folder of Markdown files — needs to be accessible on the machine running MkDocs. How you share it is up to you:
+
+- **Shared filesystem** (NAS, network drive, mapped drive) — point `--output` at a shared path; the Linux machine reads the same folder directly.
+- **Git** — commit `wiki/` and push; the Linux machine pulls to get the latest.
+- **Any other file sync** (rsync, SCP, Dropbox, OneDrive, etc.)
 
 ```
-Windows machine                       Linux / Mac machine
-─────────────────────                 ──────────────────────────────
-1. Open EA model                      1. git pull  (gets latest wiki/)
-2. scripts/export.ps1                 2. pwsh scripts/serve.ps1
-   └─ writes wiki/ to git ──push──►  3. open http://localhost:8000
-3. git push
+Windows machine                         Linux / Mac machine
+──────────────────────                  ──────────────────────────────
+1. Open EA model
+2. scripts/export.ps1
+   └─ writes wiki/ ──── shared path ──► pwsh scripts/serve.ps1
+                       (or sync/push)   └─ http://localhost:8000
 ```
 
 | Step | Windows | Linux / Mac |
