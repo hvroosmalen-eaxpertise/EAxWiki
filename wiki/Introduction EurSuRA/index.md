@@ -10,7 +10,7 @@
 
 - [Building a EU Reporting Community](Building a EU Reporting Community.md) — Purpose «Activity»
 - [EurSuRA](EurSuRA.md) — Brand «Activity»
-- [EurSuRA](EurSuRA.md) — Organisation «Activity»
+- [EurSuRA](EurSuRA_601.md) — Organisation «Activity»
 - [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).md) — Purpose «Activity»
 - [Deutsche Bahn (Marco Dillenburg)](Deutsche Bahn (Marco Dillenburg).md) — People «Actor»
 - [Han van Roosmalen](Han van Roosmalen.md) — People «Actor»
@@ -35,4 +35,4 @@
 
 ---
 
-*Generated: 2026-06-24 15:15:03*
+*Generated: 2026-06-25 10:55:58*

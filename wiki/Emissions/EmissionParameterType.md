@@ -47,4 +47,4 @@ EmissionParameterType is a reference entity that defines a named, typed slot for
 
 ---
 
-*Generated: 2026-06-24 10:33:17*
+*Generated: 2026-06-25 10:51:16*

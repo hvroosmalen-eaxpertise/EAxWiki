@@ -10,10 +10,8 @@
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::MetricStatus | Good | Default: Good
- |
-| EDGY::MetricValue | <VALUE> | Default: <VALUE>
- |
+| EDGY::MetricStatus | Good | Default: Good  |
+| EDGY::MetricValue | <VALUE> | Default: <VALUE>  |
 
 ## Relationships
 
@@ -43,4 +41,4 @@
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:16*

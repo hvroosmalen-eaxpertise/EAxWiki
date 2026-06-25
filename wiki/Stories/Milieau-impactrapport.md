@@ -12,8 +12,7 @@ Een productiemanager van een textielfabriek wandelde op een ochtend langs de riv
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ### Appears on Diagrams
 
@@ -21,4 +20,4 @@ Een productiemanager van een textielfabriek wandelde op een ochtend langs de riv
 
 ---
 
-*Generated: 2026-06-24 10:33:17*
+*Generated: 2026-06-25 10:51:16*

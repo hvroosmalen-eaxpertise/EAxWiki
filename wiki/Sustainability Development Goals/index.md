@@ -44,13 +44,13 @@
 - [SDG 17. Partnerships for the Goals](SDG 17. Partnerships for the Goals.md) — Purpose «Activity»
   - *Strengthen the means of implementation and revitalize the global partnership for sustainable development.*
 - [](unnamed.md) — Boundary
-- [](unnamed.md) — NavigationCell «Text»
-- [](unnamed.md) — NavigationCell «Text»
-- [](unnamed.md) — NavigationCell «Text»
-- [](unnamed.md) — NavigationCell «Text»
-- [](unnamed.md) — NavigationCell «Text»
-- [](unnamed.md) — NavigationCell «Text»
+- [](unnamed_634.md) — NavigationCell «Text»
+- [](unnamed_635.md) — NavigationCell «Text»
+- [](unnamed_636.md) — NavigationCell «Text»
+- [](unnamed_637.md) — NavigationCell «Text»
+- [](unnamed_638.md) — NavigationCell «Text»
+- [](unnamed_640.md) — NavigationCell «Text»
 
 ---
 
-*Generated: 2026-06-24 15:15:03*
+*Generated: 2026-06-25 10:55:58*

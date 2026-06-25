@@ -16,8 +16,7 @@ De duurzame ervaring van een klant door de klantreis heen.
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ## Relationships
 
@@ -40,4 +39,4 @@ De duurzame ervaring van een klant door de klantreis heen.
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:16*

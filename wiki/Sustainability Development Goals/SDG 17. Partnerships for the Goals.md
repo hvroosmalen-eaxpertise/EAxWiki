@@ -12,8 +12,7 @@ Strengthen the means of implementation and revitalize the global partnership for
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ### Appears on Diagrams
 
@@ -22,4 +21,4 @@ Strengthen the means of implementation and revitalize the global partnership for
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:15*

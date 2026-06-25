@@ -12,8 +12,7 @@ Protect, restore and promote sustainable use of terrestrial ecosystems.
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ## Relationships
 
@@ -38,4 +37,4 @@ Protect, restore and promote sustainable use of terrestrial ecosystems.
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:15*

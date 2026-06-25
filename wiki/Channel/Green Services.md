@@ -16,8 +16,7 @@ Duurzame producten en diensten.
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ## Relationships
 
@@ -43,4 +42,4 @@ Duurzame producten en diensten.
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:16*

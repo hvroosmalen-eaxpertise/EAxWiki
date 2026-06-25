@@ -13,8 +13,7 @@ Build resilient infrastructure, promote inclusive and sustainable industrializat
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ### Appears on Diagrams
 
@@ -23,4 +22,4 @@ Build resilient infrastructure, promote inclusive and sustainable industrializat
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:15*

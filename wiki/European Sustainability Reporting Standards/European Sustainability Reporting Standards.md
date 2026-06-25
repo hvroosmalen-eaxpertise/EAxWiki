@@ -12,8 +12,7 @@ The European Sustainability Reporting Standards (ESRS) oblige all companies subj
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ## Relationships
 
@@ -48,4 +47,4 @@ The European Sustainability Reporting Standards (ESRS) oblige all companies subj
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:15*

@@ -16,8 +16,7 @@ Toekomstbeeld van de onderneming in 2030/2050 gericht op klimaatneutraliteit en 
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ## Relationships
 
@@ -43,4 +42,4 @@ Toekomstbeeld van de onderneming in 2030/2050 gericht op klimaatneutraliteit en 
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:16*

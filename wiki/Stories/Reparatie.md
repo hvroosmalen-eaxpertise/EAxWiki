@@ -12,8 +12,7 @@ In een ontwerpafdeling van een technologiebedrijf viel het een medewerker op dat
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ### Appears on Diagrams
 
@@ -21,4 +20,4 @@ In een ontwerpafdeling van een technologiebedrijf viel het een medewerker op dat
 
 ---
 
-*Generated: 2026-06-24 10:33:17*
+*Generated: 2026-06-25 10:51:16*

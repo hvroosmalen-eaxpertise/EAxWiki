@@ -13,8 +13,7 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ## Relationships
 
@@ -29,4 +28,4 @@ Conserve and sustainably use the oceans, seas and marine resources for sustainab
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:15*

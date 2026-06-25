@@ -12,8 +12,7 @@ Align sustainability reporting for businesses operating within the European Unio
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ### Appears on Diagrams
 
@@ -21,4 +20,4 @@ Align sustainability reporting for businesses operating within the European Unio
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:16*

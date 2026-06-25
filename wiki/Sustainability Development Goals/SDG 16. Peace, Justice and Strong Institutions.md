@@ -12,8 +12,7 @@ Promote peaceful and inclusive societies, provide access to justice for all, and
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ### Appears on Diagrams
 
@@ -22,4 +21,4 @@ Promote peaceful and inclusive societies, provide access to justice for all, and
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:15*

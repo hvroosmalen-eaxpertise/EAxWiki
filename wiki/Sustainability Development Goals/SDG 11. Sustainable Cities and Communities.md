@@ -13,8 +13,7 @@ Make cities and human settlements inclusive, safe, resilient and sustainable.
 
 | Name | Value | Notes |
 |------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center
- |
+| EDGY::TextAlign | Center | Default: Center  |
 
 ### Appears on Diagrams
 
@@ -23,4 +22,4 @@ Make cities and human settlements inclusive, safe, resilient and sustainable.
 
 ---
 
-*Generated: 2026-06-24 10:33:16*
+*Generated: 2026-06-25 10:51:15*
