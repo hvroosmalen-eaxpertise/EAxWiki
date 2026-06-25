@@ -13,7 +13,10 @@ if (-not $IsWindows) {
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 Push-Location $repoRoot
 
-$resolvedRepo = if ([System.IO.Path]::IsPathRooted($RepoPath)) { $RepoPath } else { Join-Path $repoRoot $RepoPath }
+# Connection strings contain '=' (e.g. "DBType=1;Connect=...") — pass through as-is.
+$resolvedRepo = if ($RepoPath -match '=') { $RepoPath }
+                elseif ([System.IO.Path]::IsPathRooted($RepoPath)) { $RepoPath }
+                else { Join-Path $repoRoot $RepoPath }
 
 $eaPidsBefore = @(Get-Process EA -ErrorAction SilentlyContinue | ForEach-Object { $_.Id })
 

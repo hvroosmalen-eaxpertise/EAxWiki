@@ -121,10 +121,31 @@ Linux only needs Python and PowerShell Core (`pwsh`). The `install.sh` script in
 
 ```powershell
 .\scripts\export.ps1
-.\scripts\export.ps1 -Force          # full regeneration (skip nothing)
-.\scripts\export.ps1 -Verbose        # debug-level per-element logging
+.\scripts\export.ps1 -Force                    # full regeneration (skip nothing)
+.\scripts\export.ps1 -Verbose                  # debug-level per-element logging
 .\scripts\export.ps1 -RepoPath "path/to/model.qea"
 ```
+
+`-RepoPath` also accepts a database connection string. If the value contains `=` it is passed directly to EA without any path resolution:
+
+```powershell
+# SQL Server (Windows auth)
+.\scripts\export.ps1 -RepoPath "DBType=1;Connect=Provider=SQLOLEDB.1;Data Source=MYSERVER;Initial Catalog=EA;Integrated Security=SSPI;"
+
+# SQL Server (SQL auth)
+.\scripts\export.ps1 -RepoPath "DBType=1;Connect=Provider=SQLOLEDB.1;Data Source=MYSERVER;Initial Catalog=EA;User Id=sa;Password=secret;"
+
+# MySQL / MariaDB
+.\scripts\export.ps1 -RepoPath "DBType=3;Connect=Server=localhost;Database=EA;Uid=user;Pwd=pass;"
+
+# Oracle
+.\scripts\export.ps1 -RepoPath "DBType=2;Connect=Data Source=TNSNAME;User Id=user;Password=pass;"
+
+# PostgreSQL
+.\scripts\export.ps1 -RepoPath "DBType=7;Connect=Server=localhost;Database=EA;User Id=user;Password=pass;"
+```
+
+If `--repo` is omitted when running the app directly, an interactive prompt walks through DB type, server, database, and credentials.
 
 ### Serve only (wiki already exported)
 

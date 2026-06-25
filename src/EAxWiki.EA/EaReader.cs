@@ -24,12 +24,15 @@ public class EaReader : IEaReader, IDisposable
 
     public string RepositoryPath => _repositoryPath;
 
+    // Connection strings contain '=' (e.g. "DBType=1;Connect=..."); file paths do not.
+    private static bool IsConnectionString(string value) => value.Contains('=');
+
     public EaRepository Open(string connectionString)
     {
         if (string.IsNullOrWhiteSpace(connectionString))
-            throw new ArgumentException("Repository path must not be empty.", nameof(connectionString));
+            throw new ArgumentException("Repository path or connection string must not be empty.", nameof(connectionString));
 
-        if (!File.Exists(connectionString))
+        if (!IsConnectionString(connectionString) && !File.Exists(connectionString))
             throw new FileNotFoundException($"EA repository file not found: {connectionString}", connectionString);
 
         _repository = new EA.Repository();
