@@ -4,52 +4,90 @@ This repository exports an Enterprise Architect `.qea` model to a `wiki/` folder
 
 **Live site:** https://hvroosmalen-eaxpertise.github.io/EAxWiki/
 
+## Installation
+
+Clone the repo and run the installer once. It checks prerequisites, builds the .NET project, and sets up the Python environment.
+
+**Windows** (PowerShell 7+):
+```powershell
+pwsh ./install.ps1
+```
+
+**Linux / Mac**:
+```bash
+bash ./install.sh
+```
+The shell script installs `pwsh` if missing (via apt/dnf/Homebrew), then delegates to `install.ps1`.
+
+### How Windows and Linux work together
+
+Sparx Enterprise Architect is Windows-only, so the export step can only run on Windows. The exported output — the `wiki/` folder of Markdown files — is committed to git and shared with Linux machines, which can then serve it with MkDocs.
+
+```
+Windows machine                       Linux / Mac machine
+─────────────────────                 ──────────────────────────────
+1. Open EA model                      1. git pull  (gets latest wiki/)
+2. scripts/export.ps1                 2. pwsh scripts/serve.ps1
+   └─ writes wiki/ to git ──push──►  3. open http://localhost:8000
+3. git push
+```
+
+| Step | Windows | Linux / Mac |
+|------|---------|-------------|
+| Export (EA → Markdown) | ✓ | ✗ requires EA |
+| Serve (MkDocs)         | ✓ | ✓ |
+
+Linux only needs Python and PowerShell Core (`pwsh`). The `install.sh` script installs `pwsh` automatically if it is not present.
+
 ## Prerequisites
 
-- **Python 3.x** (for MkDocs)
-- **.NET 10 SDK** (for the C# exporter)
-- **Enterprise Architect** (for COM-based model reading; Windows only)
-
-## Quick start (MkDocs only)
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-.\scripts\serve-mkdocs.ps1 -Port 8000
-```
-
-## Full export + serve
-
-```powershell
-.\scripts\serve.ps1
-```
-
-Or with verbose logging:
-```powershell
-.\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea" -Verbose
-```
-
-Or including JSON export:
-```powershell
-.\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea" -Json
-```
-
-Runs the .NET exporter against the `.qea` file, then serves the output. The `-Verbose` flag enables debug-level logging. The `export-and-serve.ps1` script also cleans up any orphaned EA.exe processes after the export finishes.
-
-## Incremental vs full export
-
-- `.\scripts\serve.ps1` — incremental (skip unchanged elements)
-- `.\scripts\serve-full.ps1` — full regeneration (use after template changes)
+| Prerequisite | Windows | Linux/Mac |
+|---|---|---|
+| Python 3.x | required | required |
+| .NET 10 SDK | required | not needed |
+| Enterprise Architect | required for export | not needed |
+| PowerShell 7+ (`pwsh`) | recommended | required (`install.sh` installs it) |
 
 ## Scripts
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/serve.ps1` | Incremental export then MkDocs serve (default) |
-| `scripts/serve-full.ps1` | Full regeneration then MkDocs serve |
-| `scripts/export-and-serve.ps1` | Full pipeline with flags: `-Verbose`, `-Force`, `-Json`, `-RepoPath`, `-Port` |
-| `scripts/serve-mkdocs.ps1` | Serve an already-exported wiki locally (no export) |
+| `scripts/export.ps1` | Export EA model to Markdown only |
+| `scripts/serve.ps1` | Start MkDocs on an already-exported wiki |
+| `scripts/export-and-serve.ps1` | Export then serve (calls the two above) |
+
+### Export only
+
+```powershell
+.\scripts\export.ps1
+.\scripts\export.ps1 -Force          # full regeneration (skip nothing)
+.\scripts\export.ps1 -Verbose        # debug-level per-element logging
+.\scripts\export.ps1 -RepoPath "path/to/model.qea"
+```
+
+### Serve only (wiki already exported)
+
+```powershell
+.\scripts\serve.ps1
+.\scripts\serve.ps1 -Port 8001
+```
+
+The serve script creates a `.venv` if needed, installs MkDocs requirements, and starts `mkdocs serve`.
+
+### Export + serve
+
+```powershell
+.\scripts\export-and-serve.ps1                    # incremental export, then serve
+.\scripts\export-and-serve.ps1 -Force             # full regeneration, then serve
+.\scripts\export-and-serve.ps1 -Verbose -Force    # full regeneration with verbose logging
+.\scripts\export-and-serve.ps1 -RepoPath "path/to/model.qea" -Port 8001
+```
+
+The export step cleans up any orphaned EA.exe processes when it finishes.
+
+## Incremental vs full export
+
+By default the exporter skips elements and diagrams whose output file is newer than the source's `ModifiedDate` in EA. Pass `-Force` to regenerate everything — useful after template changes or when timestamps are unreliable.
 
 ## Wiki navigation
 

@@ -2,8 +2,8 @@
 
 ## Architecture
 
-- **Export pipeline**: C# .NET 10 console app reads EA model via COM Interop, writes Markdown + PNG files, then MkDocs serves the result. Three separate scripts for flexibility.
-- **No test project**: The project doesn't include automated tests. Verification is done by inspecting the generated wiki.
+- **Export pipeline**: C# .NET 10 console app reads EA model via COM Interop, writes Markdown + PNG files, then MkDocs serves the result. Three scripts for flexibility: `export.ps1`, `serve.ps1`, `export-and-serve.ps1`.
+- **Test project** (`EAxWiki.Tests`): 19 unit tests for `MarkdownHelpers` and 6 integration tests using an `InMemoryWriter` stub. Tests run with xUnit and access internal types via `InternalsVisibleTo`.
 
 ## File Naming
 
@@ -13,16 +13,19 @@
 
 ## Navigation
 
-- **Three views**: Structure (tree hierarchy), Types (grouped by stereotype), Diagrams (global alphabetical index).
+- **Five views**: Structure (tree hierarchy), Types (grouped by stereotype), Diagrams (global alphabetical index), Glossary (terms from tagged values and element notes), Recent Changes (top 50 most recently modified elements and diagrams).
 - **awesome-pages MkDocs plugin** controls the nav. Root `.pages` uses `Structure: ''` + `Diagrams: diagrams/` + `Types: types/` format.
-- **Breadcrumb** is shown on element pages using parent-package links.
+- **Breadcrumb** is shown on element and diagram pages using parent-package links.
 
 ## Export
 
-- **Output directory is cleaned** before each export run (`Directory.Delete(recursive: true)`). No incremental/differential export.
+- **Incremental export** (default): elements and diagrams whose output file is newer than the EA `ModifiedDate` are skipped. Pass `--force` to regenerate everything — useful after template changes.
+- **Full regeneration with `--force`**: deletes and recreates the output directory before writing, then bypasses all timestamp checks.
+- **Write-test probe** before directory deletion: verifies the output path is writable before doing anything destructive.
 - **Relative links** use `../` prefix and forward slashes, computed via `Path.GetRelativePath`.
-- **Parallel element page export**: `Task.WhenAll` over the element loop, with sequential index line building (safe since `List.Add` on the same thread). Biggest performance gain with minimal code change.
-- **Duplicate sanitized filenames** (e.g. `unnamed.md` when multiple elements have empty names) are handled by per-file `SemaphoreSlim` locking in `FileOutputWriter` to prevent `IOException`.
+- **Parallel view generation**: `Task.WhenAll` runs Types, Glossary, Recent Changes, Diagrams index, and infrastructure writes concurrently after the structural export completes.
+- **Duplicate sanitized filenames** (e.g. `unnamed.md`) get a `_{id}` suffix (e.g. `unnamed_634.md`). The actual written path is registered in `ExportContext.RegisteredElementFiles` so the orphan cleanup step knows the real filename and does not delete it.
+- **`ExportContext`**: built once at the start of export, holds all indexes (element lookup, diagram index, incoming connector index, package lookup) and the `Force` flag. Shared across all export phases — no redundant model traversals.
 
 ## Diagrams
 
@@ -36,7 +39,7 @@
 
 ## Error Handling
 
-- **Three-layer COM isolation**: per-diagram try-catch → per-package `ExportDiagramsAsync` call → entire `ExportAsync` body.
+- **Per-diagram failure isolation**: each diagram export is wrapped in try-catch; failures are collected and summarised in a single warning at the end rather than aborting the run.
 - **`Dispose` is wrapped in try-catch** to prevent COM teardown crashes from propagating at exit.
 - **EA.exe orphan cleanup** is done in the PowerShell script (not C#) by recording PIDs before/after export and killing only new PIDs in a `finally` block. This prevents locking build DLLs after a crash or aborted run.
 
@@ -62,5 +65,6 @@
 ## Infrastructure
 
 - **`FileOutputWriter`** implements `IOutputWriter` interface, writes files asynchronously with per-file `SemaphoreSlim` locking.
-- **`Config` class** exposes a `Verbose` property bound to the `--verbose` / `-v` command-line flag.
-- **`EaReader`** reads the EA model via COM, exposing `MapDiagram`, `ExportDiagramImage`, and `RepositoryPath` methods.
+- **`Config` class** parses command-line flags: `--verbose` / `-v`, `--force` / `-f`, `--json` / `-j`, `--repo`.
+- **`EaReader`** reads the EA model via COM, exposing `MapDiagram`, `ExportDiagramImage`, and `RepositoryPath` methods. Validates the repository path before opening and uses `is` pattern matching over all COM collection loops to avoid hard casts.
+- **`FileOutputWriter`** implements `IDisposable` and disposes all `SemaphoreSlim` instances on cleanup.
