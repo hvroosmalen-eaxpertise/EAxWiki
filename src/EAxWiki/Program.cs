@@ -16,8 +16,28 @@ if (config.HelpRequested)
     return;
 }
 
+const string LocalConfig = ".eaxwiki";
+
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
-    config.RepositoryPath = BuildConnectionStringInteractively();
+{
+    if (File.Exists(LocalConfig))
+    {
+        config.RepositoryPath = File.ReadAllText(LocalConfig).Trim();
+        Console.WriteLine($"Using saved repository: {EaRepository.Redact(config.RepositoryPath)}");
+        Console.WriteLine($"(Pass --repo to override, or delete {LocalConfig} to re-enter interactively.)");
+        Console.WriteLine();
+    }
+    else
+    {
+        config.RepositoryPath = BuildConnectionStringInteractively();
+        if (!string.IsNullOrWhiteSpace(config.RepositoryPath))
+        {
+            File.WriteAllText(LocalConfig, config.RepositoryPath);
+            Console.WriteLine($"Saved to {LocalConfig} — future runs will use this automatically.");
+            Console.WriteLine();
+        }
+    }
+}
 
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
 {

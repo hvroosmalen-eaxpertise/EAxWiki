@@ -207,6 +207,38 @@ The serve script creates a `.venv` if needed, installs MkDocs requirements, and 
 
 The export step cleans up any orphaned EA.exe processes when it finishes.
 
+## Saved connection config
+
+On first run without `--repo`, the interactive prompt saves your connection string to a `.eaxwiki` file in the project root. Subsequent runs load it automatically — no re-entry needed.
+
+```
+First run:   interactive prompt → saved to .eaxwiki
+Later runs:  loads .eaxwiki automatically
+Override:    .\scripts\export.ps1 --repo "other_connection_string"
+Reset:       delete .eaxwiki to re-enter interactively
+```
+
+> **Security:** `.eaxwiki` contains your credentials in plaintext. It is gitignored and never committed. Keep it on a private or access-controlled machine.
+
+## Scheduling exports
+
+Because the connection is saved in `.eaxwiki`, the scripts run unattended and are suitable for scheduling.
+
+### Windows Task Scheduler
+
+```powershell
+$action  = New-ScheduledTaskAction -Execute "pwsh" -Argument "-ExecutionPolicy Bypass -File C:\EAxWiki\scripts\export.ps1"
+$trigger = New-ScheduledTaskTrigger -Daily -At "02:00"
+Register-ScheduledTask -TaskName "EAxWiki Export" -Action $action -Trigger $trigger -RunLevel Highest
+```
+
+### Linux / Mac cron (serve only — export requires Windows)
+
+```cron
+# Restart the wiki server daily at 03:00
+0 3 * * * pwsh /opt/EAxWiki/scripts/serve.ps1 >> /var/log/eaxwiki.log 2>&1
+```
+
 ## Incremental vs full export
 
 By default the exporter skips elements and diagrams whose output file is newer than the source's `ModifiedDate` in EA. Pass `-Force` to regenerate everything — useful after template changes or when timestamps are unreliable.

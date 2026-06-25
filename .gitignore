@@ -59,3 +59,6 @@ src/EAxWiki/EAxWiki.csproj.bak
 
 # Python virtual environment
 .venv/
+
+# Local connection config — contains credentials, never commit
+.eaxwiki
