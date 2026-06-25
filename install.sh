@@ -76,7 +76,22 @@ fi
 
 echo ""
 
+# ── Fetch install.ps1 if not present (standalone download scenario) ───────────
+
+INSTALL_PS1="$REPO_ROOT/install.ps1"
+if [ ! -f "$INSTALL_PS1" ]; then
+    info "install.ps1 not found locally — downloading from GitHub..."
+    if command -v curl &>/dev/null; then
+        curl -fsSL "https://raw.githubusercontent.com/hvroosmalen-eaxpertise/EAxWiki/master/install.ps1" -o "$INSTALL_PS1"
+    elif command -v wget &>/dev/null; then
+        wget -q "https://raw.githubusercontent.com/hvroosmalen-eaxpertise/EAxWiki/master/install.ps1" -O "$INSTALL_PS1"
+    else
+        error "Neither curl nor wget found. Cannot download install.ps1."
+    fi
+    ok "Downloaded install.ps1"
+fi
+
 # ── Delegate to install.ps1 ───────────────────────────────────────────────────
 
 info "Running install.ps1..."
-pwsh -NoLogo "$REPO_ROOT/install.ps1" "$@"
+pwsh -NoLogo "$INSTALL_PS1" "$@"

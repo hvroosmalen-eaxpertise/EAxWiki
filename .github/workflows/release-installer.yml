@@ -1,0 +1,45 @@
+name: Release Installer
+
+on:
+  push:
+    branches: [master]
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build installer zip
+        run: |
+          mkdir -p dist
+          zip dist/EAxWiki-installer.zip install.ps1 install.sh requirements.txt
+
+      - name: Update latest release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest Installer
+          body: |
+            Installer package, updated automatically on every push to master.
+
+            **Windows** — download `EAxWiki-installer.zip`, extract, then run:
+            ```powershell
+            pwsh ./install.ps1
+            ```
+
+            **Linux / Mac** — download `install.sh` directly and run:
+            ```bash
+            bash ./install.sh
+            ```
+            `install.sh` downloads `install.ps1` automatically if it is not present.
+
+            For a full clone with the EA model and scripts, see the [repository](https://github.com/hvroosmalen-eaxpertise/EAxWiki).
+          files: |
+            dist/EAxWiki-installer.zip
+            install.sh
+          prerelease: false
+          make_latest: true

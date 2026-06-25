@@ -104,6 +104,20 @@ if ($IsWindows -and -not $SkipDotnet) {
 if (-not $SkipPython) {
     Write-Host "Setting up Python environment..." -ForegroundColor Yellow
 
+    # If run as a standalone download (not from a repo clone), fetch requirements.txt
+    $requirementsFile = Join-Path $repoRoot "requirements.txt"
+    if (-not (Test-Path $requirementsFile)) {
+        Write-Host "$info requirements.txt not found locally — downloading from GitHub..."
+        $rawUrl = "https://raw.githubusercontent.com/hvroosmalen-eaxpertise/EAxWiki/master/requirements.txt"
+        try {
+            Invoke-WebRequest -Uri $rawUrl -OutFile $requirementsFile -UseBasicParsing
+            Write-Host "$ok  Downloaded requirements.txt"
+        } catch {
+            Write-Host "$err Failed to download requirements.txt: $_"
+            exit 1
+        }
+    }
+
     $venvDir  = Join-Path $repoRoot ".venv"
     $activate = if ($IsWindows) {
         Join-Path $venvDir "Scripts\Activate.ps1"
@@ -122,7 +136,7 @@ if (-not $SkipPython) {
     . $activate
 
     python -m pip install --upgrade pip --quiet
-    python -m pip install -r (Join-Path $repoRoot "requirements.txt") --quiet
+    python -m pip install -r $requirementsFile --quiet
     Write-Host "$ok  MkDocs and requirements installed."
     Write-Host ""
 }
