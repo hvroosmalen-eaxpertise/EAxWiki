@@ -155,41 +155,43 @@ Linux only needs Python and PowerShell Core (`pwsh`). The `install.sh` script in
 | `scripts/serve.ps1` | Start MkDocs on an already-exported wiki |
 | `scripts/export-and-serve.ps1` | Export then serve (calls the two above) |
 
+All scripts accept both PowerShell (`-Flag`) and Unix-style (`--flag`) syntax interchangeably, e.g. `--force`, `--verbose`, `--repo`.
+
 ### Export only
 
 ```powershell
 .\scripts\export.ps1
-.\scripts\export.ps1 -Force                    # full regeneration (skip nothing)
-.\scripts\export.ps1 -Verbose                  # debug-level per-element logging
-.\scripts\export.ps1 -RepoPath "path/to/model.qea"
+.\scripts\export.ps1 --force                   # full regeneration (skip nothing)
+.\scripts\export.ps1 --verbose                 # debug-level per-element logging
+.\scripts\export.ps1 --repo "path/to/model.qea"
 ```
 
-`-RepoPath` also accepts a database connection string. If the value contains `=` it is passed directly to EA without any path resolution:
+`--repo` also accepts a database connection string. If the value contains `=` it is passed directly to EA without any path resolution:
 
 ```powershell
 # SQL Server (Windows auth)
-.\scripts\export.ps1 -RepoPath "DBType=1;Connect=Provider=SQLOLEDB.1;Data Source=MYSERVER;Initial Catalog=EA;Integrated Security=SSPI;"
+.\scripts\export.ps1 --repo "DBType=1;Connect=Provider=SQLOLEDB.1;Data Source=MYSERVER;Initial Catalog=EA;Integrated Security=SSPI;"
 
 # SQL Server (SQL auth)
-.\scripts\export.ps1 -RepoPath "DBType=1;Connect=Provider=SQLOLEDB.1;Data Source=MYSERVER;Initial Catalog=EA;User Id=sa;Password=secret;"
+.\scripts\export.ps1 --repo "DBType=1;Connect=Provider=SQLOLEDB.1;Data Source=MYSERVER;Initial Catalog=EA;User Id=sa;Password=secret;"
 
 # MySQL / MariaDB
-.\scripts\export.ps1 -RepoPath "DBType=3;Connect=Server=localhost;Database=EA;Uid=user;Pwd=pass;"
+.\scripts\export.ps1 --repo "DBType=3;Connect=Server=localhost;Database=EA;Uid=user;Pwd=pass;"
 
 # Oracle
-.\scripts\export.ps1 -RepoPath "DBType=2;Connect=Data Source=TNSNAME;User Id=user;Password=pass;"
+.\scripts\export.ps1 --repo "DBType=2;Connect=Data Source=TNSNAME;User Id=user;Password=pass;"
 
 # PostgreSQL
-.\scripts\export.ps1 -RepoPath "DBType=7;Connect=Server=localhost;Database=EA;User Id=user;Password=pass;"
+.\scripts\export.ps1 --repo "DBType=7;Connect=Server=localhost;Database=EA;User Id=user;Password=pass;"
 ```
 
-If `--repo` is omitted when running the app directly, an interactive prompt walks through DB type, server, database, and credentials.
+If `--repo` is omitted, an interactive prompt walks through DB type, server, optional port, database, and credentials (password is masked).
 
 ### Serve only (wiki already exported)
 
 ```powershell
 .\scripts\serve.ps1
-.\scripts\serve.ps1 -Port 8001
+.\scripts\serve.ps1 --port 8001
 ```
 
 The serve script creates a `.venv` if needed, installs MkDocs requirements, and starts `mkdocs serve`.
@@ -197,10 +199,10 @@ The serve script creates a `.venv` if needed, installs MkDocs requirements, and 
 ### Export + serve
 
 ```powershell
-.\scripts\export-and-serve.ps1                    # incremental export, then serve
-.\scripts\export-and-serve.ps1 -Force             # full regeneration, then serve
-.\scripts\export-and-serve.ps1 -Verbose -Force    # full regeneration with verbose logging
-.\scripts\export-and-serve.ps1 -RepoPath "path/to/model.qea" -Port 8001
+.\scripts\export-and-serve.ps1                              # incremental export, then serve
+.\scripts\export-and-serve.ps1 --force                      # full regeneration, then serve
+.\scripts\export-and-serve.ps1 --verbose --force            # full regeneration with verbose logging
+.\scripts\export-and-serve.ps1 --repo "path/to/model.qea" --port 8001
 ```
 
 The export step cleans up any orphaned EA.exe processes when it finishes.
@@ -249,8 +251,9 @@ See [docs/design-decisions.md](docs/design-decisions.md) for a full summary of a
 - Element page export is parallelized for performance. Duplicate sanitized filenames (e.g. `unnamed.md`) are handled with per-file locking.
 - View generation (Types, Glossary, Recent Changes, Diagrams index) runs in parallel after the structural export completes, reducing total export time on large models.
 - All indexes (element lookup, diagram index, incoming connector index) are built once at the start of export and shared across all phases — no redundant traversals.
-- The `--verbose` / `-v` flag enables per-element debug-level logging during export.
+- The `--verbose` / `-v` flag enables per-element debug-level logging during export. When used with a DB connection string it also logs the full (unredacted) connection string sent to EA, which is useful for diagnosing connection errors.
 - The `--json` / `-j` flag writes `model.json` alongside the markdown pages with the full model as a machine-readable JSON document.
+- The wiki home page title shows the database name (from `Database=` / `Initial Catalog=`) for DB connections, or the filename for `.qea` files. Credentials are never shown in the wiki output.
 
 ## CI / Deployment
 
