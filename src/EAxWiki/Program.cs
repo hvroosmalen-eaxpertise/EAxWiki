@@ -158,6 +158,9 @@ static string BuildConnectionStringInteractively()
     Console.Write("Server / host: ");
     var server = Console.ReadLine()?.Trim() ?? string.Empty;
 
+    Console.Write("Port (leave blank for default): ");
+    var port = Console.ReadLine()?.Trim() ?? string.Empty;
+
     Console.Write("Database name: ");
     var database = Console.ReadLine()?.Trim() ?? string.Empty;
 
@@ -167,12 +170,17 @@ static string BuildConnectionStringInteractively()
     Console.Write("Password: ");
     var password = ReadPassword();
 
+    // SQL Server appends port with a comma: "SERVER,1433"
+    var sqlServerHost = string.IsNullOrEmpty(port) ? server : $"{server},{port}";
+    // MySQL / PostgreSQL use a separate Port= key
+    var portSegment = string.IsNullOrEmpty(port) ? "" : $"Port={port};";
+
     return choice switch
     {
-        "2" => $"DBType=1;Connect=Provider=SQLOLEDB.1;Data Source={server};Initial Catalog={database};User Id={user};Password={password};",
-        "3" => $"DBType=3;Connect=Server={server};Database={database};Uid={user};Pwd={password};",
+        "2" => $"DBType=1;Connect=Provider=SQLOLEDB.1;Data Source={sqlServerHost};Initial Catalog={database};User Id={user};Password={password};",
+        "3" => $"DBType=3;Connect=Server={server};{portSegment}Database={database};Uid={user};Pwd={password};",
         "4" => $"DBType=2;Connect=Data Source={server};User Id={user};Password={password};",
-        "5" => $"DBType=7;Connect=Server={server};Database={database};User Id={user};Password={password};",
+        "5" => $"DBType=7;Connect=Server={server};{portSegment}Database={database};User Id={user};Password={password};",
         _   => string.Empty
     };
 }
