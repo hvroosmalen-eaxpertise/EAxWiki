@@ -2,7 +2,7 @@ namespace EAxWiki;
 
 public class Config
 {
-    public string RepositoryPath { get; set; } = "M:\\EAxWiki\\model\\EurSuRA.qea";
+    public string RepositoryPath { get; set; } = string.Empty;
     public string? RepositoryName { get; set; }
     public string OutputPath { get; set; } = "wiki";
     public string? PackageFilter { get; set; }

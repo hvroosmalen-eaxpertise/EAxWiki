@@ -97,7 +97,10 @@ public class MarkdownExporter : IWikiExporter
 
     private async Task WriteRootIndexAsync(List<EaPackage> rootPackages, string outputDir, string repositoryPath)
     {
-        var lines = new List<string> { "# EurSuRA Wiki", string.Empty };
+        var siteName = !string.IsNullOrEmpty(repositoryPath)
+            ? Path.GetFileNameWithoutExtension(repositoryPath)
+            : "Wiki";
+        var lines = new List<string> { $"# {siteName}", string.Empty };
 
         if (!string.IsNullOrEmpty(repositoryPath))
         {

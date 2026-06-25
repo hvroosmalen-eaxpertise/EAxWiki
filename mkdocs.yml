@@ -1,5 +1,5 @@
-site_name: "EurSuRA Wiki"
-site_description: EAxWiki / EurSuRA documentation
+site_name: "Wiki"
+site_description: EAxWiki — EA model wiki
 docs_dir: wiki
 theme:
   name: material
