@@ -1,6 +1,14 @@
-param(
-    [int]$Port = 8000
-)
+# Support both PowerShell -Port and Unix-style --port syntax.
+$Port = 8000
+
+$i = 0
+while ($i -lt $args.Count) {
+    switch -Regex ($args[$i]) {
+        '^(-p|--port|-Port)$' { $i++; if ($i -lt $args.Count) { $Port = [int]$args[$i] } }
+        default               { if ($args[$i] -match '^\d+$') { $Port = [int]$args[$i] } }
+    }
+    $i++
+}
 
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 Push-Location $repoRoot

@@ -1,9 +1,20 @@
-param(
-    [string]$RepoPath = "",
-    [switch]$Force,
-    [switch]$Verbose,
-    [switch]$Json
-)
+# Support both PowerShell -Flag and Unix-style --flag syntax.
+$RepoPath = ""
+$Force    = $false
+$Verbose  = $false
+$Json     = $false
+
+$i = 0
+while ($i -lt $args.Count) {
+    switch -Regex ($args[$i]) {
+        '^(-f|--force|-Force)$'              { $Force   = $true }
+        '^(-v|--verbose|-Verbose)$'          { $Verbose = $true }
+        '^(-j|--json|-Json)$'                { $Json    = $true }
+        '^(-r|--repo|-RepoPath|-r:.*)$'      { $i++; if ($i -lt $args.Count) { $RepoPath = $args[$i] } }
+        default                              { if (-not $args[$i].StartsWith('-')) { $RepoPath = $args[$i] } }
+    }
+    $i++
+}
 
 if (-not $IsWindows) {
     Write-Error "Export requires Sparx Enterprise Architect, which is only available on Windows."

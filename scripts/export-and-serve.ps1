@@ -1,17 +1,30 @@
-param(
-    [string]$RepoPath = "",
-    [int]$Port = 8000,
-    [switch]$Force,
-    [switch]$Verbose,
-    [switch]$Json
-)
+# Support both PowerShell -Flag and Unix-style --flag syntax.
+$RepoPath = ""
+$Port     = 8000
+$Force    = $false
+$Verbose  = $false
+$Json     = $false
 
-$exportArgs = @{ RepoPath = $RepoPath }
-if ($Force)   { $exportArgs.Force   = $true }
-if ($Verbose) { $exportArgs.Verbose = $true }
-if ($Json)    { $exportArgs.Json    = $true }
+$i = 0
+while ($i -lt $args.Count) {
+    switch -Regex ($args[$i]) {
+        '^(-f|--force|-Force)$'         { $Force   = $true }
+        '^(-v|--verbose|-Verbose)$'     { $Verbose = $true }
+        '^(-j|--json|-Json)$'           { $Json    = $true }
+        '^(-p|--port|-Port)$'           { $i++; if ($i -lt $args.Count) { $Port = [int]$args[$i] } }
+        '^(-r|--repo|-RepoPath)$'       { $i++; if ($i -lt $args.Count) { $RepoPath = $args[$i] } }
+        default                         { if (-not $args[$i].StartsWith('-')) { $RepoPath = $args[$i] } }
+    }
+    $i++
+}
+
+$exportArgs = @()
+if ($RepoPath) { $exportArgs += "--repo", $RepoPath }
+if ($Force)    { $exportArgs += "--force" }
+if ($Verbose)  { $exportArgs += "--verbose" }
+if ($Json)     { $exportArgs += "--json" }
 
 & $PSScriptRoot\export.ps1 @exportArgs
 if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
-& $PSScriptRoot\serve.ps1 -Port $Port
+& $PSScriptRoot\serve.ps1 --port $Port
