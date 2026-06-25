@@ -2,7 +2,9 @@ EAxWiki — Export EA model to Markdown wiki, served with MkDocs
 
 This repository exports an Enterprise Architect `.qea` model to a `wiki/` folder of Markdown pages, then serves them locally with MkDocs. The site is also deployed to GitHub Pages on push.
 
-**Live site:** https://hvroosmalen-eaxpertise.github.io/EAxWiki/
+> **Note — test data only:** The `wiki/` folder, `model/` folder, and the live site in this repository contain the **EurSuRA** model, which is used exclusively for development and testing of EAxWiki itself. They are not part of the tool and have no relation to any installation. When you use EAxWiki with your own EA model, it will write to a `wiki/` folder in your own repository.
+
+**Live site (test data):** https://hvroosmalen-eaxpertise.github.io/EAxWiki/
 
 ## Installation
 

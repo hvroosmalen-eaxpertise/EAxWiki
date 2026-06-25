@@ -41,6 +41,8 @@ jobs:
           body: |
             Installer packages, updated automatically on every push to master.
 
+            > **Note — test data:** The `wiki/` folder and `model/` in the EAxWiki repository contain the EurSuRA model used for development and testing only. They are not part of the tool. When you install EAxWiki, you point it at your own EA model and it writes to a `wiki/` folder in your own repository.
+
             ---
 
             ### Windows (export + serve)
@@ -50,7 +52,7 @@ jobs:
             ```powershell
             pwsh ./install.ps1
             ```
-            The installer auto-detects your Sparx EA installation and builds the .NET exporter.
+            The installer auto-detects your Sparx EA installation by scanning all drives for `Program Files (x86)\Sparx Systems\EA` and `Program Files\Sparx Systems\EA`, then builds the .NET exporter.
             If EA is installed in a non-standard location, pass the path explicitly:
             ```powershell
             pwsh ./install.ps1 -EAPath "D:\Tools\Sparx\EA"
@@ -65,11 +67,11 @@ jobs:
             bash ./install.sh
             ```
             `install.sh` installs PowerShell Core (`pwsh`) if missing, then sets up MkDocs.
-            EA export is not available on Linux/Mac — export on Windows and commit `wiki/` to git.
+            EA export is not available on Linux/Mac — export on Windows and commit `wiki/` to your own git repository.
 
             ---
 
-            For the full source and EA model, clone the [repository](https://github.com/hvroosmalen-eaxpertise/EAxWiki).
+            For the full source, clone the [repository](https://github.com/hvroosmalen-eaxpertise/EAxWiki).
           files: |
             dist/EAxWiki-windows.zip
             dist/EAxWiki-linux.zip
