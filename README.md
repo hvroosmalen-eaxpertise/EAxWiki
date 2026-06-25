@@ -250,7 +250,7 @@ EAxWiki handles structural changes in EA automatically on the next export run:
 | Rename package | ✓ new folder created; old folder deleted | ✓ |
 | Delete element or package | ✓ file/folder removed | ✓ |
 
-**Note on moved elements:** When you move an element without editing it, EA does not update its `ModifiedDate`. The element page will be recreated at the new location, but its content will only refresh when you next edit the element in EA. Use `--force` if you want to guarantee all content is up to date after a structural reorganisation.
+**Note on moved elements:** When you move an element without editing it, EA does not update its `ModifiedDate`. The element page is recreated at the new location with current content. On subsequent incremental runs it will be skipped (no changes) until you next edit the element in EA — which is normal incremental behaviour.
 
 ## Incremental vs full export
 
