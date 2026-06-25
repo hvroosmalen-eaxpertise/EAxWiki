@@ -7,6 +7,10 @@
     Run this once on a new machine. On Windows it builds the .NET exporter and
     sets up MkDocs. On Linux/Mac it sets up MkDocs only (EA export requires Windows).
 
+.PARAMETER EAPath
+    Path to the Sparx EA installation folder (Windows only). Auto-detected if omitted.
+    Example: -EAPath "C:\Program Files (x86)\Sparx Systems\EA"
+
 .PARAMETER SkipDotnet
     Skip the .NET build step (Windows only).
 
@@ -15,8 +19,10 @@
 
 .EXAMPLE
     pwsh ./install.ps1
+    pwsh ./install.ps1 -EAPath "D:\Tools\Sparx\EA"
 #>
 param(
+    [string]$EAPath    = "",
     [switch]$SkipDotnet,
     [switch]$SkipPython
 )
@@ -25,8 +31,8 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 $repoRoot = $PSScriptRoot
-$ok  = "`e[32m[OK]`e[0m"
-$err = "`e[31m[ERROR]`e[0m"
+$ok   = "`e[32m[OK]`e[0m"
+$err  = "`e[31m[ERROR]`e[0m"
 $warn = "`e[33m[WARN]`e[0m"
 $info = "`e[36m[INFO]`e[0m"
 
@@ -53,7 +59,7 @@ if ($pythonCmd) {
     if (-not $SkipPython) { exit 1 }
 }
 
-# .NET (Windows only)
+# .NET and EA (Windows only)
 if ($IsWindows -and -not $SkipDotnet) {
     if (Test-Command "dotnet") {
         $dotnetVer = dotnet --version 2>&1
@@ -69,13 +75,27 @@ if ($IsWindows -and -not $SkipDotnet) {
         exit 1
     }
 
-    # Enterprise Architect
-    $eaInstalled = Test-Path "C:\Program Files (x86)\Sparx Systems\EA\EA.exe"
-    if ($eaInstalled) {
-        Write-Host "$ok  Enterprise Architect: found"
+    # Locate Enterprise Architect
+    $eaCandidates = @(
+        $EAPath,
+        $env:EA_PATH,
+        "C:\Program Files (x86)\Sparx Systems\EA",
+        "C:\Program Files\Sparx Systems\EA",
+        "D:\Program Files (x86)\Sparx Systems\EA",
+        "D:\Program Files\Sparx Systems\EA",
+        "E:\Program Files (x86)\Sparx Systems\EA",
+        "E:\Program Files\Sparx Systems\EA"
+    ) | Where-Object { $_ -and (Test-Path (Join-Path $_ "EA.exe")) }
+
+    if ($eaCandidates) {
+        $resolvedEAPath = $eaCandidates[0].TrimEnd('\') + '\'
+        Write-Host "$ok  Enterprise Architect: $resolvedEAPath"
+        $env:EA_PATH = $resolvedEAPath
     } else {
-        Write-Host "$warn Enterprise Architect not found at default location."
-        Write-Host "      Export will fail unless EA is installed and EAPath is configured."
+        Write-Host "$warn Enterprise Architect not found in common locations."
+        Write-Host "      Re-run with -EAPath to specify the folder containing EA.exe, or"
+        Write-Host "      set the EA_PATH environment variable before building."
+        Write-Host "      The .NET project will not build without it."
     }
 } elseif (-not $IsWindows) {
     Write-Host "$info .NET / Enterprise Architect: skipped (Linux/Mac — export is Windows-only)"
@@ -86,15 +106,19 @@ Write-Host ""
 # ── .NET build (Windows only) ──────────────────────────────────────────────────
 
 if ($IsWindows -and -not $SkipDotnet) {
+    $srcProject = Join-Path $repoRoot "src\EAxWiki\EAxWiki.csproj"
+    if (-not (Test-Path $srcProject)) {
+        Write-Host "$err Source not found at: $srcProject"
+        Write-Host "      Download the Windows installer zip from GitHub Releases — it includes the source."
+        exit 1
+    }
+
     Write-Host "Building .NET project..." -ForegroundColor Yellow
-    Push-Location $repoRoot
-    dotnet build src/EAxWiki/EAxWiki.csproj --configuration Release --nologo
+    dotnet build $srcProject --configuration Release --nologo
     if ($LASTEXITCODE -ne 0) {
         Write-Host "$err Build failed. Check output above for details."
-        Pop-Location
         exit $LASTEXITCODE
     }
-    Pop-Location
     Write-Host "$ok  Build succeeded."
     Write-Host ""
 }

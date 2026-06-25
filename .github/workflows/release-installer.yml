@@ -13,10 +13,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build installer zip
+      - name: Build Windows installer zip (includes source)
         run: |
           mkdir -p dist
-          zip dist/EAxWiki-installer.zip install.ps1 install.sh requirements.txt
+          zip -r dist/EAxWiki-windows.zip \
+            install.ps1 \
+            requirements.txt \
+            mkdocs.yml \
+            Directory.Build.props \
+            EAxWiki.slnx \
+            scripts/ \
+            src/ \
+            docs/
+
+      - name: Build Linux installer zip
+        run: |
+          zip dist/EAxWiki-linux.zip \
+            install.sh \
+            install.ps1 \
+            requirements.txt
 
       - name: Update latest release
         uses: softprops/action-gh-release@v2
@@ -24,22 +39,40 @@ jobs:
           tag_name: latest
           name: Latest Installer
           body: |
-            Installer package, updated automatically on every push to master.
+            Installer packages, updated automatically on every push to master.
 
-            **Windows** — download `EAxWiki-installer.zip`, extract, then run:
+            ---
+
+            ### Windows (export + serve)
+
+            1. Download **`EAxWiki-windows.zip`** and extract to a folder of your choice.
+            2. Open PowerShell 7+ in that folder and run:
             ```powershell
             pwsh ./install.ps1
             ```
+            The installer auto-detects your Sparx EA installation and builds the .NET exporter.
+            If EA is installed in a non-standard location, pass the path explicitly:
+            ```powershell
+            pwsh ./install.ps1 -EAPath "D:\Tools\Sparx\EA"
+            ```
 
-            **Linux / Mac** — download `install.sh` directly and run:
+            ---
+
+            ### Linux / Mac (serve only)
+
+            Download **`install.sh`** and run:
             ```bash
             bash ./install.sh
             ```
-            `install.sh` downloads `install.ps1` automatically if it is not present.
+            `install.sh` installs PowerShell Core (`pwsh`) if missing, then sets up MkDocs.
+            EA export is not available on Linux/Mac — export on Windows and commit `wiki/` to git.
 
-            For a full clone with the EA model and scripts, see the [repository](https://github.com/hvroosmalen-eaxpertise/EAxWiki).
+            ---
+
+            For the full source and EA model, clone the [repository](https://github.com/hvroosmalen-eaxpertise/EAxWiki).
           files: |
-            dist/EAxWiki-installer.zip
+            dist/EAxWiki-windows.zip
+            dist/EAxWiki-linux.zip
             install.sh
           prerelease: false
           make_latest: true
