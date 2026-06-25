@@ -19,4 +19,10 @@ internal record ExportContext(
     /// Populated by PackageExporter; consumed by cleanup.
     /// </summary>
     public ConcurrentBag<string> RegisteredElementFiles { get; } = new();
+
+    /// <summary>
+    /// Absolute paths of all package directories in the current model (including packages with no elements).
+    /// Used to detect orphaned directories left behind by package renames or moves.
+    /// </summary>
+    public HashSet<string> AllPackageDirs { get; init; } = new(StringComparer.OrdinalIgnoreCase);
 }

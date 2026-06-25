@@ -37,11 +37,38 @@ internal class InfrastructureWriter(IOutputWriter writer)
 
     public static async Task CleanupOrphanedFilesAsync(ExportContext ctx)
     {
+        if (!Directory.Exists(ctx.OutputPath))
+        {
+            await Task.CompletedTask;
+            return;
+        }
+
         var expectedFiles = new HashSet<string>(ctx.RegisteredElementFiles, StringComparer.OrdinalIgnoreCase);
 
-        foreach (var dir in ctx.Elements.Select(e => e.PackageDir).Distinct())
+        // Root-level dirs managed by infrastructure — never treated as orphans.
+        var specialDirs = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
-            if (!Directory.Exists(dir)) continue;
+            Path.Combine(ctx.OutputPath, "diagrams"),
+            Path.Combine(ctx.OutputPath, "types"),
+            Path.Combine(ctx.OutputPath, "glossary"),
+            Path.Combine(ctx.OutputPath, "recent"),
+        };
+
+        CleanupDirectory(ctx.OutputPath, ctx.AllPackageDirs, expectedFiles, specialDirs, isRoot: true);
+
+        await Task.CompletedTask;
+    }
+
+    private static void CleanupDirectory(
+        string dir,
+        HashSet<string> expectedDirs,
+        HashSet<string> expectedFiles,
+        HashSet<string> specialDirs,
+        bool isRoot)
+    {
+        // Clean up orphaned element .md files in this directory (skip index.md).
+        if (!isRoot)
+        {
             foreach (var file in Directory.EnumerateFiles(dir, "*.md"))
             {
                 if (Path.GetFileName(file).Equals("index.md", StringComparison.OrdinalIgnoreCase)) continue;
@@ -50,6 +77,20 @@ internal class InfrastructureWriter(IOutputWriter writer)
             }
         }
 
-        await Task.CompletedTask;
+        // Recurse into subdirectories; delete any that are not in the expected model dirs.
+        foreach (var subDir in Directory.EnumerateDirectories(dir))
+        {
+            if (specialDirs.Contains(subDir)) continue;
+
+            if (!expectedDirs.Contains(subDir))
+            {
+                // Orphaned package directory (renamed or emptied) — remove entirely.
+                Directory.Delete(subDir, recursive: true);
+            }
+            else
+            {
+                CleanupDirectory(subDir, expectedDirs, expectedFiles, specialDirs, isRoot: false);
+            }
+        }
     }
 }

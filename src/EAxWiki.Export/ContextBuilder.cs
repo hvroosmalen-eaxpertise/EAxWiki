@@ -41,7 +41,14 @@ internal static class ContextBuilder
             }
         }
 
-        return new ExportContext(outputPath, elements, elementLookup, allDiagrams, diagramIndex, incomingIndex, packageLookup, force);
+        var allPackageDirs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        foreach (var pkg in packages)
+            CollectPackageDirs(pkg, outputPath, allPackageDirs);
+
+        return new ExportContext(outputPath, elements, elementLookup, allDiagrams, diagramIndex, incomingIndex, packageLookup, force)
+        {
+            AllPackageDirs = allPackageDirs
+        };
     }
 
     private static void CollectElements(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements)
@@ -72,6 +79,13 @@ internal static class ContextBuilder
             result.Add((diagram, pkgDir));
         foreach (var child in package.Children)
             CollectDiagramsRecursive(child, outputDir, result);
+    }
+
+    private static void CollectPackageDirs(EaPackage package, string outputDir, HashSet<string> dirs)
+    {
+        dirs.Add(Path.Combine(outputDir, MarkdownHelpers.SanitizeName(package.Name)));
+        foreach (var child in package.Children)
+            CollectPackageDirs(child, outputDir, dirs);
     }
 
     private static Dictionary<int, (string Name, int? ParentId)> BuildPackageLookup(List<EaPackage> packages)
