@@ -100,6 +100,18 @@ if ($IsWindows -and -not $SkipDotnet) {
 
 Write-Host ""
 
+# ── Unblock scripts (Windows marks downloaded files as untrusted) ──────────────
+
+if ($IsWindows) {
+    $scriptsDir = Join-Path $repoRoot "scripts"
+    if (Test-Path $scriptsDir) {
+        Get-ChildItem "$scriptsDir\*.ps1" | ForEach-Object { Unblock-File -Path $_.FullName }
+        Write-Host "$ok  Scripts unblocked."
+    }
+}
+
+Write-Host ""
+
 # ── .NET build (Windows only) ──────────────────────────────────────────────────
 
 if ($IsWindows -and -not $SkipDotnet) {
