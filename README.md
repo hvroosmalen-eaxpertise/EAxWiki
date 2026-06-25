@@ -239,6 +239,19 @@ Register-ScheduledTask -TaskName "EAxWiki Export" -Action $action -Trigger $trig
 0 3 * * * pwsh /opt/EAxWiki/scripts/serve.ps1 >> /var/log/eaxwiki.log 2>&1
 ```
 
+## Changes to the model repository
+
+EAxWiki handles structural changes in EA automatically on the next export run:
+
+| Change in EA | Incremental run | `--force` run |
+|---|---|---|
+| Edit element content | ✓ updated (ModifiedDate changes) | ✓ updated |
+| Move element to another package | ✓ written to new location; old file removed | ✓ |
+| Rename package | ✓ new folder created; old folder deleted | ✓ |
+| Delete element or package | ✓ file/folder removed | ✓ |
+
+**Note on moved elements:** When you move an element without editing it, EA does not update its `ModifiedDate`. The element page will be recreated at the new location, but its content will only refresh when you next edit the element in EA. Use `--force` if you want to guarantee all content is up to date after a structural reorganisation.
+
 ## Incremental vs full export
 
 By default the exporter skips elements and diagrams whose output file is newer than the source's `ModifiedDate` in EA. Pass `-Force` to regenerate everything — useful after template changes or when timestamps are unreliable.
