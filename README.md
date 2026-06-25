@@ -6,18 +6,34 @@ This repository exports an Enterprise Architect `.qea` model to a `wiki/` folder
 
 ## Installation
 
-Clone the repo and run the installer once. It checks prerequisites, builds the .NET project, and sets up the Python environment.
+Installer packages are available on the [GitHub Releases page](https://github.com/hvroosmalen-eaxpertise/EAxWiki/releases/latest) and are updated automatically on every push to master.
 
-**Windows** (PowerShell 7+):
+### Windows (export + serve)
+
+1. Download **`EAxWiki-windows.zip`** from the [latest release](https://github.com/hvroosmalen-eaxpertise/EAxWiki/releases/latest) and extract it.
+2. Open PowerShell 7+ in the extracted folder and run:
 ```powershell
 pwsh ./install.ps1
 ```
 
-**Linux / Mac**:
+The installer will:
+- Check for .NET 10 SDK and Python
+- Auto-detect your Sparx EA installation by scanning all drives for `Program Files (x86)\Sparx Systems\EA` and `Program Files\Sparx Systems\EA`
+- Build the .NET exporter
+- Set up the Python venv and install MkDocs
+
+If EA is installed in a non-standard location, pass the path explicitly:
+```powershell
+pwsh ./install.ps1 -EAPath "D:\MyTools\Sparx\EA"
+```
+
+### Linux / Mac (serve only)
+
+Download **`install.sh`** from the [latest release](https://github.com/hvroosmalen-eaxpertise/EAxWiki/releases/latest) and run:
 ```bash
 bash ./install.sh
 ```
-The shell script installs `pwsh` if missing (via apt/dnf/Homebrew), then delegates to `install.ps1`.
+The script installs PowerShell Core (`pwsh`) if missing (via apt/dnf/Homebrew), then sets up MkDocs.
 
 ### How Windows and Linux work together
 
