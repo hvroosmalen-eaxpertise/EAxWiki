@@ -6,18 +6,21 @@ namespace EAxWiki.Export.Helpers;
 internal static class MarkdownHelpers
 {
     private static readonly char[] _invalidChars = Path.GetInvalidFileNameChars().Append('#').ToArray();
-    private static readonly ConcurrentDictionary<string, string> _sanitizeCache = new();
+    private static volatile ConcurrentDictionary<string, string> _sanitizeCache = new();
 
-    internal static void ClearCache() => _sanitizeCache.Clear();
+    // Replaces the cache atomically so concurrent readers always see a valid dictionary.
+    internal static void ClearCache() =>
+        Interlocked.Exchange(ref _sanitizeCache!, new ConcurrentDictionary<string, string>());
 
     internal static string SanitizeName(string name)
     {
         name = name.Trim();
-        if (_sanitizeCache.TryGetValue(name, out var cached))
+        var cache = _sanitizeCache;
+        if (cache.TryGetValue(name, out var cached))
             return cached;
         var sanitized = new string(name.Select(ch => _invalidChars.Contains(ch) ? '_' : ch).ToArray());
         var result = string.IsNullOrWhiteSpace(sanitized) ? "unnamed" : sanitized;
-        _sanitizeCache[name] = result;
+        cache[name] = result;
         return result;
     }
 
@@ -33,12 +36,17 @@ internal static class MarkdownHelpers
         return Path.GetRelativePath(fromDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
     }
 
-    internal static string BuildBreadcrumb(int packageId, string currentPageDir, string outputDir, Dictionary<int, (string Name, int? ParentId)> packageLookup)
+    internal static string BuildBreadcrumb(int packageId, string currentPageDir, string outputDir, Dictionary<int, (string Name, int? ParentId)> packageLookup, Action<string>? onMissingPackage = null)
     {
         var segments = new List<(string Name, int Id)>();
         var id = packageId;
-        while (id != 0 && packageLookup.TryGetValue(id, out var info))
+        while (id != 0)
         {
+            if (!packageLookup.TryGetValue(id, out var info))
+            {
+                onMissingPackage?.Invoke($"Package ID {id} not found in lookup — breadcrumb may be incomplete");
+                break;
+            }
             segments.Add((info.Name, id));
             id = info.ParentId ?? 0;
         }

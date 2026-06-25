@@ -7,25 +7,37 @@ namespace EAxWiki.Export.Exporters;
 
 internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
 {
-    public async Task WriteAsync(EaElement element, string dir, ExportContext ctx)
+    public async Task WriteAsync(EaElement element, string dir, ExportContext ctx, string? fileNameOverride = null)
     {
         var outputDir = ctx.OutputPath;
-        var filePath = Path.Combine(dir, $"{MarkdownHelpers.SanitizeName(element.Name)}.md");
+        var baseName = fileNameOverride ?? MarkdownHelpers.SanitizeName(element.Name);
+        var filePath = Path.Combine(dir, $"{baseName}.md");
 
-        if (element.ModifiedDate != DateTime.MinValue && File.Exists(filePath))
+        var isNew = true;
+        if (!ctx.Force && element.ModifiedDate != DateTime.MinValue)
         {
-            var fileTime = File.GetLastWriteTimeUtc(filePath);
-            var elementTime = element.ModifiedDate.Kind == DateTimeKind.Utc
-                ? element.ModifiedDate
-                : element.ModifiedDate.ToUniversalTime();
-            if (fileTime >= elementTime)
+            try
             {
-                logger.LogDebug("Skipped {ElementName}", element.Name);
-                return;
+                var fileTime = File.GetLastWriteTimeUtc(filePath);
+                // GetLastWriteTimeUtc returns 1601-01-01 when the file does not exist — treat that as "needs write"
+                if (fileTime > DateTime.UnixEpoch)
+                {
+                    isNew = false;
+                    var elementTime = element.ModifiedDate.Kind == DateTimeKind.Utc
+                        ? element.ModifiedDate
+                        : element.ModifiedDate.ToUniversalTime();
+                    if (fileTime >= elementTime)
+                    {
+                        logger.LogDebug("Skipped {ElementName}", element.Name);
+                        return;
+                    }
+                }
+            }
+            catch (IOException)
+            {
+                // File was removed between our check and the read — proceed with writing
             }
         }
-
-        var isNew = !File.Exists(filePath);
         logger.LogInformation("{Action} {ElementName}", isNew ? "Created" : "Updated", element.Name);
 
         var createdStr = element.CreatedDate?.ToString("yyyy-MM-dd") ?? "-";
@@ -40,7 +52,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             $"**Created:** {createdStr}  **Modified:** {modifiedStr}",
             string.Empty,
             string.Empty,
-            MarkdownHelpers.BuildBreadcrumb(element.PackageId, dir, outputDir, ctx.PackageLookup),
+            MarkdownHelpers.BuildBreadcrumb(element.PackageId, dir, outputDir, ctx.PackageLookup,
+                msg => logger.LogWarning("{Message} (element '{Name}')", msg, element.Name)),
             string.Empty,
         };
 

@@ -5,7 +5,7 @@ namespace EAxWiki.Export;
 
 internal static class ContextBuilder
 {
-    internal static ExportContext Build(List<EaPackage> packages, string outputPath)
+    internal static ExportContext Build(List<EaPackage> packages, string outputPath, bool force = false)
     {
         var elements = new List<(EaElement Element, string PackageDir)>();
         foreach (var pkg in packages)
@@ -41,7 +41,7 @@ internal static class ContextBuilder
             }
         }
 
-        return new ExportContext(outputPath, elements, elementLookup, allDiagrams, diagramIndex, incomingIndex, packageLookup);
+        return new ExportContext(outputPath, elements, elementLookup, allDiagrams, diagramIndex, incomingIndex, packageLookup, force);
     }
 
     private static void CollectElements(EaPackage package, string outputDir, List<(EaElement Element, string PackageDir)> elements)

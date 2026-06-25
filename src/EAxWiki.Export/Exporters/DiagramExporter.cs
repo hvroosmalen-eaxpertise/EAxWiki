@@ -8,8 +8,7 @@ namespace EAxWiki.Export.Exporters;
 
 internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 {
-    /// <summary>Maximum length of diagram descriptions in the index table. Longer descriptions are truncated.</summary>
-    private const int MaxDescriptionLength = 100;
+    private const int MaxIndexDescriptionLength = 100;
     public async Task ExportPagesAsync(ExportContext ctx, IEaReader reader)
     {
         logger.LogInformation("Exporting {DiagramCount} diagrams with PNG images", ctx.AllDiagrams.Count);
@@ -26,6 +25,13 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                 var fileName = MarkdownHelpers.SanitizeName(diagram.Name);
                 var pngPath = Path.Combine(diagramsDir, $"{fileName}.png");
                 var mdPath = Path.Combine(diagramsDir, $"{fileName}.md");
+
+                if (!ctx.Force && IsDiagramUpToDate(mdPath, diagram.ModifiedDate))
+                {
+                    logger.LogDebug("Skipped diagram {DiagramName}", diagram.Name);
+                    continue;
+                }
+
                 var sw = Stopwatch.StartNew();
 
                 var pngSuccess = reader.ExportDiagramImage(diagram.Guid, pngPath);
@@ -37,7 +43,8 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     $"# {diagram.Name}",
                     string.Empty,
                     string.Empty,
-                    MarkdownHelpers.BuildBreadcrumb(diagram.PackageId, diagramsDir, ctx.OutputPath, ctx.PackageLookup),
+                    MarkdownHelpers.BuildBreadcrumb(diagram.PackageId, diagramsDir, ctx.OutputPath, ctx.PackageLookup,
+                        msg => logger.LogWarning("{Message} (diagram '{Name}')", msg, diagram.Name)),
                     string.Empty,
                 };
 
@@ -121,7 +128,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     : "-";
 
                 var desc = string.IsNullOrWhiteSpace(diagram.Notes) ? "-" : MarkdownHelpers.EscapeCell(diagram.Notes.Trim());
-                if (desc.Length > MaxDescriptionLength) desc = desc[..MaxDescriptionLength] + "...";
+                if (desc.Length > MaxIndexDescriptionLength) desc = desc[..MaxIndexDescriptionLength] + "...";
 
                 lines.Add($"| {link} | {modified} | {desc} | {path} |");
             }
@@ -130,5 +137,17 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
         lines.Add(string.Empty);
         lines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(Path.Combine(diagramsDir, "index.md"), string.Join(Environment.NewLine, lines));
+    }
+
+    private static bool IsDiagramUpToDate(string mdPath, string? modifiedDateStr)
+    {
+        if (string.IsNullOrWhiteSpace(modifiedDateStr)) return false;
+        if (!DateTime.TryParse(modifiedDateStr, out var diagramTime)) return false;
+
+        var fileTime = File.GetLastWriteTimeUtc(mdPath);
+        if (fileTime <= DateTime.UnixEpoch) return false; // file does not exist
+
+        var diagramTimeUtc = diagramTime.Kind == DateTimeKind.Utc ? diagramTime : diagramTime.ToUniversalTime();
+        return fileTime >= diagramTimeUtc;
     }
 }

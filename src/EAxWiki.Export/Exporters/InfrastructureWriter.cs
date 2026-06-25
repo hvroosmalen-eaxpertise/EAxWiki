@@ -35,13 +35,11 @@ internal class InfrastructureWriter(IOutputWriter writer)
         await writer.WriteFileAsync(Path.Combine(outputDir, "extra.css"), content);
     }
 
-    public static async Task CleanupOrphanedFilesAsync(List<(EAxWiki.Core.Models.EaElement Element, string PackageDir)> elements)
+    public static async Task CleanupOrphanedFilesAsync(ExportContext ctx)
     {
-        var expectedFiles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        foreach (var (element, pkgDir) in elements)
-            expectedFiles.Add(Path.Combine(pkgDir, $"{MarkdownHelpers.SanitizeName(element.Name)}.md"));
+        var expectedFiles = new HashSet<string>(ctx.RegisteredElementFiles, StringComparer.OrdinalIgnoreCase);
 
-        foreach (var dir in elements.Select(e => e.PackageDir).Distinct())
+        foreach (var dir in ctx.Elements.Select(e => e.PackageDir).Distinct())
         {
             if (!Directory.Exists(dir)) continue;
             foreach (var file in Directory.EnumerateFiles(dir, "*.md"))

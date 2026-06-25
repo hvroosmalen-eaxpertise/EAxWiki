@@ -24,7 +24,8 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
             string.Empty,
         };
 
-        indexLines.Add(MarkdownHelpers.BuildBreadcrumb(package.Id, dir, outputDir, ctx.PackageLookup));
+        indexLines.Add(MarkdownHelpers.BuildBreadcrumb(package.Id, dir, outputDir, ctx.PackageLookup,
+            msg => logger.LogWarning("{Message} (package '{Name}')", msg, package.Name)));
         indexLines.Add(string.Empty);
 
         if (!string.IsNullOrWhiteSpace(package.Notes))
@@ -60,10 +61,30 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
 
             var elementWriter = new ElementPageWriter(writer, logger);
             var elementTasks = new List<Task>();
+
+            // Resolve file names once so collisions can be detected and disambiguated.
+            var seenNames = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+            var elementFileNames = new Dictionary<int, string>(package.Elements.Count);
             foreach (var elem in package.Elements)
             {
-                var elemFile = $"{MarkdownHelpers.SanitizeName(elem.Name)}.md";
-                elementTasks.Add(elementWriter.WriteAsync(elem, dir, ctx));
+                var sanitized = MarkdownHelpers.SanitizeName(elem.Name);
+                if (seenNames.TryGetValue(sanitized, out _))
+                {
+                    // Append element ID to make the name unique within this package.
+                    sanitized = $"{sanitized}_{elem.Id}";
+                    logger.LogWarning("Duplicate sanitized name in package '{Package}': element '{Name}' (ID {Id}) renamed to '{NewName}'",
+                        package.Name, elem.Name, elem.Id, sanitized);
+                }
+                seenNames[sanitized] = elem.Id;
+                elementFileNames[elem.Id] = sanitized;
+            }
+
+            foreach (var elem in package.Elements)
+            {
+                var baseName = elementFileNames[elem.Id];
+                var elemFile = $"{baseName}.md";
+                ctx.RegisteredElementFiles.Add(Path.Combine(dir, elemFile));
+                elementTasks.Add(elementWriter.WriteAsync(elem, dir, ctx, baseName));
 
                 var typeLabel = string.IsNullOrEmpty(elem.Stereotype)
                     ? elem.Type

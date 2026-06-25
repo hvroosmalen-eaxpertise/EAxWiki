@@ -50,10 +50,19 @@ public class EaReader : IEaReader, IDisposable
             Name = connectionString
         };
 
-        var eaModels = (EA.Collection)_repository.Models;
+        var eaModels = _repository.Models as EA.Collection;
+        if (eaModels == null)
+        {
+            _logger?.LogWarning("EA repository returned no models collection");
+            return model;
+        }
         for (short i = 0; i < eaModels.Count; i++)
         {
-            var eaModel = (EA.Package)eaModels.GetAt(i);
+            if (eaModels.GetAt(i) is not EA.Package eaModel)
+            {
+                _logger?.LogWarning("Unexpected type at model index {Index}, skipping", i);
+                continue;
+            }
             model.RootPackages.Add(MapPackage(eaModel));
         }
 
@@ -79,23 +88,32 @@ public class EaReader : IEaReader, IDisposable
             ParentId = eaPkg.ParentID
         };
 
-        var elements = (EA.Collection)eaPkg.Elements;
-        for (short i = 0; i < elements.Count; i++)
-        {
-            pkg.Elements.Add(MapElement((EA.Element)elements.GetAt(i)));
-        }
+        if (eaPkg.Elements is EA.Collection elements)
+            for (short i = 0; i < elements.Count; i++)
+            {
+                if (elements.GetAt(i) is EA.Element eaElem)
+                    pkg.Elements.Add(MapElement(eaElem));
+                else
+                    _logger?.LogWarning("Unexpected type in Elements of package '{Package}' at index {Index}, skipping", pkg.Name, i);
+            }
 
-        var diagrams = (EA.Collection)eaPkg.Diagrams;
-        for (short i = 0; i < diagrams.Count; i++)
-        {
-            pkg.Diagrams.Add(MapDiagram((EA.Diagram)diagrams.GetAt(i)));
-        }
+        if (eaPkg.Diagrams is EA.Collection diagrams)
+            for (short i = 0; i < diagrams.Count; i++)
+            {
+                if (diagrams.GetAt(i) is EA.Diagram eaDiag)
+                    pkg.Diagrams.Add(MapDiagram(eaDiag));
+                else
+                    _logger?.LogWarning("Unexpected type in Diagrams of package '{Package}' at index {Index}, skipping", pkg.Name, i);
+            }
 
-        var packages = (EA.Collection)eaPkg.Packages;
-        for (short i = 0; i < packages.Count; i++)
-        {
-            pkg.Children.Add(MapPackage((EA.Package)packages.GetAt(i)));
-        }
+        if (eaPkg.Packages is EA.Collection packages)
+            for (short i = 0; i < packages.Count; i++)
+            {
+                if (packages.GetAt(i) is EA.Package eaChild)
+                    pkg.Children.Add(MapPackage(eaChild));
+                else
+                    _logger?.LogWarning("Unexpected type in Packages of package '{Package}' at index {Index}, skipping", pkg.Name, i);
+            }
 
         return pkg;
     }
@@ -117,59 +135,51 @@ public class EaReader : IEaReader, IDisposable
             CreatedDate = eaElement.Created as DateTime?
         };
 
-        var attrs = (EA.Collection)eaElement.Attributes;
-        for (short i = 0; i < attrs.Count; i++)
-        {
-            var eaAttr = (EA.Attribute)attrs.GetAt(i);
-            elem.Attributes.Add(new EaAttribute
-            {
-                Name = eaAttr.Name,
-                Type = eaAttr.Type,
-                Notes = eaAttr.Notes,
-                DefaultValue = eaAttr.Default
-            });
-        }
+        if (eaElement.Attributes is EA.Collection attrs)
+            for (short i = 0; i < attrs.Count; i++)
+                if (attrs.GetAt(i) is EA.Attribute eaAttr)
+                    elem.Attributes.Add(new EaAttribute
+                    {
+                        Name = eaAttr.Name,
+                        Type = eaAttr.Type,
+                        Notes = eaAttr.Notes,
+                        DefaultValue = eaAttr.Default
+                    });
 
-        var methods = (EA.Collection)eaElement.Methods;
-        for (short i = 0; i < methods.Count; i++)
-        {
-            var eaMethod = (EA.Method)methods.GetAt(i);
-            elem.Methods.Add(new EaMethod
-            {
-                Name = eaMethod.Name,
-                Type = eaMethod.ReturnType,
-                Notes = eaMethod.Notes,
-                IsStatic = eaMethod.IsStatic
-            });
-        }
+        if (eaElement.Methods is EA.Collection methods)
+            for (short i = 0; i < methods.Count; i++)
+                if (methods.GetAt(i) is EA.Method eaMethod)
+                    elem.Methods.Add(new EaMethod
+                    {
+                        Name = eaMethod.Name,
+                        Type = eaMethod.ReturnType,
+                        Notes = eaMethod.Notes,
+                        IsStatic = eaMethod.IsStatic
+                    });
 
-        var taggedValues = (EA.Collection)eaElement.TaggedValues;
-        for (short i = 0; i < taggedValues.Count; i++)
-        {
-            var eaTv = (EA.TaggedValue)taggedValues.GetAt(i);
-            elem.TaggedValues.Add(new EaTaggedValue
-            {
-                Name = eaTv.Name,
-                Value = eaTv.Value,
-                Notes = eaTv.Notes
-            });
-        }
+        if (eaElement.TaggedValues is EA.Collection taggedValues)
+            for (short i = 0; i < taggedValues.Count; i++)
+                if (taggedValues.GetAt(i) is EA.TaggedValue eaTv)
+                    elem.TaggedValues.Add(new EaTaggedValue
+                    {
+                        Name = eaTv.Name,
+                        Value = eaTv.Value,
+                        Notes = eaTv.Notes
+                    });
 
-        var connectors = (EA.Collection)eaElement.Connectors;
-        for (short i = 0; i < connectors.Count; i++)
-        {
-            var eaConn = (EA.Connector)connectors.GetAt(i);
-            elem.Connectors.Add(new EaConnector
-            {
-                Id = eaConn.ConnectorID,
-                Name = eaConn.Name,
-                Type = eaConn.Type,
-                Stereotype = eaConn.Stereotype,
-                Notes = eaConn.Notes,
-                SourceId = eaConn.ClientID,
-                TargetId = eaConn.SupplierID
-            });
-        }
+        if (eaElement.Connectors is EA.Collection connectors)
+            for (short i = 0; i < connectors.Count; i++)
+                if (connectors.GetAt(i) is EA.Connector eaConn)
+                    elem.Connectors.Add(new EaConnector
+                    {
+                        Id = eaConn.ConnectorID,
+                        Name = eaConn.Name,
+                        Type = eaConn.Type,
+                        Stereotype = eaConn.Stereotype,
+                        Notes = eaConn.Notes,
+                        SourceId = eaConn.ClientID,
+                        TargetId = eaConn.SupplierID
+                    });
 
         return elem;
     }
@@ -187,17 +197,15 @@ public class EaReader : IEaReader, IDisposable
             PackageId = eaDiagram.PackageID,
         };
 
-        var diagramObjects = (EA.Collection)eaDiagram.DiagramObjects;
-        for (short i = 0; i < diagramObjects.Count; i++)
-        {
-            var eaDO = (EA.DiagramObject)diagramObjects.GetAt(i);
-            diagram.DiagramObjects.Add(new EaDiagramObject
-            {
-                DiagramId = eaDO.DiagramID,
-                ElementId = eaDO.ElementID,
-                Sequence = eaDO.Sequence
-            });
-        }
+        if (eaDiagram.DiagramObjects is EA.Collection diagramObjects)
+            for (short i = 0; i < diagramObjects.Count; i++)
+                if (diagramObjects.GetAt(i) is EA.DiagramObject eaDO)
+                    diagram.DiagramObjects.Add(new EaDiagramObject
+                    {
+                        DiagramId = eaDO.DiagramID,
+                        ElementId = eaDO.ElementID,
+                        Sequence = eaDO.Sequence
+                    });
 
         return diagram;
     }
@@ -220,15 +228,17 @@ public class EaReader : IEaReader, IDisposable
 
     public void Dispose()
     {
-        if (!_disposed)
+        if (_disposed) return;
+        _disposed = true;
+        try
         {
             Close();
             if (_repository != null)
-            {
                 Marshal.ReleaseComObject(_repository);
-            }
-            _disposed = true;
         }
-        GC.SuppressFinalize(this);
+        finally
+        {
+            GC.SuppressFinalize(this);
+        }
     }
 }
