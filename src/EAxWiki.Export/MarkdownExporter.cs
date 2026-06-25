@@ -95,11 +95,22 @@ public class MarkdownExporter : IWikiExporter
         }
     }
 
+    private static string GetFriendlyRepoName(string repositoryPath)
+    {
+        if (string.IsNullOrEmpty(repositoryPath)) return "Wiki";
+        if (!repositoryPath.Contains('=')) return Path.GetFileNameWithoutExtension(repositoryPath);
+        var m = System.Text.RegularExpressions.Regex.Match(
+            repositoryPath, @"(?i)(?:Database|Initial\s*Catalog)\s*=\s*([^;]+)");
+        if (m.Success) return m.Groups[1].Value.Trim();
+        m = System.Text.RegularExpressions.Regex.Match(
+            repositoryPath, @"(?i)Data\s*Source\s*=\s*([^;]+)");
+        if (m.Success) return m.Groups[1].Value.Trim();
+        return "Wiki";
+    }
+
     private async Task WriteRootIndexAsync(List<EaPackage> rootPackages, string outputDir, string repositoryPath)
     {
-        var siteName = !string.IsNullOrEmpty(repositoryPath)
-            ? Path.GetFileNameWithoutExtension(repositoryPath)
-            : "Wiki";
+        var siteName = GetFriendlyRepoName(repositoryPath);
         var lines = new List<string> { $"# {siteName}", string.Empty };
 
         if (!string.IsNullOrEmpty(repositoryPath))
