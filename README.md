@@ -6,6 +6,49 @@ This repository exports an Enterprise Architect `.qea` model to a `wiki/` folder
 
 **Live site (test data):** https://hvroosmalen-eaxpertise.github.io/EAxWiki/
 
+## How it works
+
+EAxWiki is a two-step pipeline: **export** turns your EA model into Markdown, **serve** renders it as a website.
+
+### Export
+
+The exporter is a .NET 10 console application that connects to a Sparx Enterprise Architect model (`.qea` file) via COM Interop and writes a `wiki/` folder of Markdown files. Because it uses EA's COM API, it can only run on Windows with EA installed.
+
+What the exporter produces:
+- One Markdown page per element, organised into the same package hierarchy as the EA model
+- PNG diagram images with a linked Markdown page per diagram
+- Five cross-cutting index views: **Structure**, **Types**, **Glossary**, **Diagrams**, **Recent Changes**
+- An `extra.css` and `.pages` navigation file for MkDocs
+
+The exporter runs **incrementally** by default — it compares each element's `ModifiedDate` in EA against the file's last-write time and skips anything that has not changed. Pass `-Force` to regenerate everything.
+
+### Serve
+
+The serve step runs [MkDocs](https://www.mkdocs.org/) with the [Material theme](https://squidfunk.github.io/mkdocs-material/) against the `wiki/` folder produced by the exporter. MkDocs renders the Markdown into a fully navigable website and serves it locally on a port of your choice.
+
+Because the serve step only needs Python and the `wiki/` folder, it works on any platform — including Linux and Mac. If the `wiki/` folder was exported on a Windows machine and committed to git, a Linux user can `git pull` and serve it immediately.
+
+### Pipeline overview
+
+```
+EA model (.qea)
+      │
+      ▼
+scripts/export.ps1          ← Windows only, requires EA
+  └─ EAxWiki.exe (C#/.NET)
+       ├─ reads EA via COM
+       ├─ writes wiki/*.md
+       └─ exports diagram PNGs
+              │
+              ▼
+         wiki/ folder (Markdown + PNG)
+              │
+              ▼
+scripts/serve.ps1           ← Windows, Linux, Mac
+  └─ mkdocs serve
+       └─ http://localhost:8000
+```
+
 ## Installation
 
 Installer packages are available on the [GitHub Releases page](https://github.com/hvroosmalen-eaxpertise/EAxWiki/releases/latest) and are updated automatically on every push to master.
