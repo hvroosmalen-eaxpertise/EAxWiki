@@ -28,25 +28,52 @@ The serve step runs [MkDocs](https://www.mkdocs.org/) with the [Material theme](
 
 Because the serve step only needs Python and the `wiki/` folder, it works on any platform — including Linux and Mac. The `wiki/` folder just needs to be accessible on the serving machine, whether via a shared filesystem, git, or any other means.
 
-### Pipeline overview
+### Windows — export and serve on the same machine
 
 ```
-EA model (.qea)
-      │
-      ▼
-scripts/export.ps1          ← Windows only, requires EA
-  └─ EAxWiki.exe (C#/.NET)
-       ├─ reads EA via COM
-       ├─ writes wiki/*.md
-       └─ exports diagram PNGs
-              │
-              ▼
-         wiki/ folder (Markdown + PNG)
-              │
-              ▼
-scripts/serve.ps1           ← Windows, Linux, Mac
-  └─ mkdocs serve
-       └─ http://localhost:8000
+┌─────────────────────────────┐   ┌─────────────────────────────┐
+│           EXPORT            │   │            SERVE            │
+│                             │   │                             │
+│  EA Model (.qea / DB)       │   │  wiki/                      │
+│  Sparx Enterprise Architect │   │  Markdown + PNG files       │
+│             │               │   │             │               │
+│          COM API            │   │             ▼               │
+│             │               │   │  MkDocs + Material          │
+│             ▼               │   │  scripts/serve.ps1          │
+│  EAxWiki.exe (.NET 10)      │   │             │               │
+│  scripts/export.ps1         │   │             ▼               │
+│             │               │   │  Browser                    │
+│             ▼               │   │  http://localhost:8000      │
+│  wiki/                      ├──►│                             │
+│  Markdown + PNG files       │   │                             │
+│                             │   │                             │
+│  Incremental by default;    │   │  export-and-serve.ps1       │
+│  use -Force to rebuild all  │   │  runs both steps at once    │
+└─────────────────────────────┘   └─────────────────────────────┘
+         Windows only                    Windows, Linux, Mac
+```
+
+### Windows + Linux — export on Windows, serve on Linux
+
+```
+┌──────────────────────────────────┐   ┌──────────────────────────────────┐
+│         WINDOWS MACHINE          │   │         LINUX / MAC MACHINE      │
+│                                  │   │                                  │
+│  EA Model (.qea / DB)            │   │                                  │
+│           │                      │   │                                  │
+│        COM API                   │   │                                  │
+│           │                      │   │                                  │
+│           ▼                      │   │  wiki/                           │
+│  EAxWiki.exe                     │   │  Markdown + PNG files            │
+│  scripts/export.ps1              │   │           │                      │
+│           │                      │   │           ▼                      │
+│           ▼                      │   │  MkDocs + Material               │
+│  wiki/  ──── shared filesystem ──┼──►│  scripts/serve.ps1               │
+│           (or git, rsync, etc.)  │   │           │                      │
+│                                  │   │           ▼                      │
+│                                  │   │  Browser                         │
+│                                  │   │  http://localhost:8000           │
+└──────────────────────────────────┘   └──────────────────────────────────┘
 ```
 
 ## Installation
