@@ -1,5 +1,5 @@
 param(
-    [string]$RepoPath = "model/EurSuRA.qea",
+    [string]$RepoPath = "",
     [int]$Port = 8000,
     [switch]$Force,
     [switch]$Verbose,

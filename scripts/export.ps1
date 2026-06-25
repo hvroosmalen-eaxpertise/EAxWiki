@@ -1,5 +1,5 @@
 param(
-    [string]$RepoPath = "model/EurSuRA.qea",
+    [string]$RepoPath = "",
     [switch]$Force,
     [switch]$Verbose,
     [switch]$Json
@@ -13,11 +13,6 @@ if (-not $IsWindows) {
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 Push-Location $repoRoot
 
-# Connection strings contain '=' (e.g. "DBType=1;Connect=...") — pass through as-is.
-$resolvedRepo = if ($RepoPath -match '=') { $RepoPath }
-                elseif ([System.IO.Path]::IsPathRooted($RepoPath)) { $RepoPath }
-                else { Join-Path $repoRoot $RepoPath }
-
 $eaPidsBefore = @(Get-Process EA -ErrorAction SilentlyContinue | ForEach-Object { $_.Id })
 
 function Cleanup-EAProcesses {
@@ -30,9 +25,18 @@ function Cleanup-EAProcesses {
 }
 
 Write-Host "=== Exporting wiki from EA model ===" -ForegroundColor Cyan
-Write-Host "Repository: $resolvedRepo"
 
-$runArgs = @("--repo", $resolvedRepo)
+# Build --repo argument: connection strings contain '=' and are passed as-is;
+# file paths are resolved relative to the repo root; empty = omitted so the
+# app prompts interactively.
+$runArgs = @()
+if ($RepoPath) {
+    $resolvedRepo = if ($RepoPath -match '=') { $RepoPath }
+                    elseif ([System.IO.Path]::IsPathRooted($RepoPath)) { $RepoPath }
+                    else { Join-Path $repoRoot $RepoPath }
+    $runArgs += "--repo", $resolvedRepo
+    Write-Host "Repository: $resolvedRepo"
+}
 if ($Force)   { $runArgs += "--force" }
 if ($Verbose) { $runArgs += "--verbose" }
 if ($Json)    { $runArgs += "--json" }
