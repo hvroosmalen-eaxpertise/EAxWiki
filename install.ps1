@@ -78,11 +78,13 @@ if ($IsWindows -and -not $SkipDotnet) {
     # Locate Enterprise Architect — drive letter may vary, path is always the same
     $eaRelPaths = @("Program Files (x86)\Sparx Systems\EA", "Program Files\Sparx Systems\EA")
     $drives = (Get-PSDrive -PSProvider FileSystem | Select-Object -ExpandProperty Root)
-    $eaCandidates = @($EAPath, $env:EA_PATH) + (
-        $drives | ForEach-Object { $drive = $_; $eaRelPaths | ForEach-Object { Join-Path $drive $_ } }
-    ) | Where-Object { $_ -and (Test-Path (Join-Path $_ "EA.exe")) }
+    $eaCandidates = @(
+        @($EAPath, $env:EA_PATH) + @(
+            $drives | ForEach-Object { $drive = $_; $eaRelPaths | ForEach-Object { Join-Path $drive $_ } }
+        ) | Where-Object { $_ -and (Test-Path (Join-Path $_ "EA.exe")) }
+    )
 
-    if ($eaCandidates) {
+    if ($eaCandidates.Count -gt 0) {
         $resolvedEAPath = $eaCandidates[0].TrimEnd('\') + '\'
         Write-Host "$ok  Enterprise Architect: $resolvedEAPath"
         $env:EA_PATH = $resolvedEAPath
