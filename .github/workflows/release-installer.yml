@@ -50,12 +50,18 @@ jobs:
             1. Download **`EAxWiki-windows.zip`** and extract to a folder of your choice.
             2. Open PowerShell 7+ in that folder and run:
             ```powershell
-            pwsh ./install.ps1
+            pwsh -ExecutionPolicy Bypass -File .\install.ps1
             ```
+            > **Execution policy:** Windows blocks unsigned scripts downloaded from the internet. The `-ExecutionPolicy Bypass` flag overrides this for this run only and does not change your system policy. Alternatively, unblock the files first:
+            > ```powershell
+            > Unblock-File -Path .\install.ps1; Unblock-File -Path .\scripts\*.ps1
+            > pwsh .\install.ps1
+            > ```
+
             The installer auto-detects your Sparx EA installation by scanning all drives for `Program Files (x86)\Sparx Systems\EA` and `Program Files\Sparx Systems\EA`, then builds the .NET exporter.
             If EA is installed in a non-standard location, pass the path explicitly:
             ```powershell
-            pwsh ./install.ps1 -EAPath "D:\Tools\Sparx\EA"
+            pwsh -ExecutionPolicy Bypass -File .\install.ps1 -EAPath "D:\Tools\Sparx\EA"
             ```
 
             ---

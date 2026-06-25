@@ -85,8 +85,15 @@ Installer packages are available on the [GitHub Releases page](https://github.co
 1. Download **`EAxWiki-windows.zip`** from the [latest release](https://github.com/hvroosmalen-eaxpertise/EAxWiki/releases/latest) and extract it.
 2. Open PowerShell 7+ in the extracted folder and run:
 ```powershell
-pwsh ./install.ps1
+pwsh -ExecutionPolicy Bypass -File .\install.ps1
 ```
+
+> **Note — execution policy:** Windows blocks unsigned scripts downloaded from the internet by default. The `-ExecutionPolicy Bypass` flag above overrides this for the installer only and does not change your system policy permanently. Alternatively, unblock the files first and then run normally:
+> ```powershell
+> Unblock-File -Path .\install.ps1
+> Unblock-File -Path .\scripts\*.ps1
+> pwsh .\install.ps1
+> ```
 
 The installer will:
 - Check for .NET 10 SDK and Python
@@ -96,7 +103,7 @@ The installer will:
 
 If EA is installed in a non-standard location, pass the path explicitly:
 ```powershell
-pwsh ./install.ps1 -EAPath "D:\MyTools\Sparx\EA"
+pwsh -ExecutionPolicy Bypass -File .\install.ps1 -EAPath "D:\MyTools\Sparx\EA"
 ```
 
 ### Linux / Mac (serve only)
