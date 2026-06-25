@@ -35,6 +35,8 @@ public class EaReader : IEaReader, IDisposable
         if (!IsConnectionString(connectionString) && !File.Exists(connectionString))
             throw new FileNotFoundException($"EA repository file not found: {connectionString}", connectionString);
 
+        _logger?.LogDebug("Opening EA repository with connection string: {ConnectionString}", connectionString);
+
         _repository = new EA.Repository();
         try
         {
