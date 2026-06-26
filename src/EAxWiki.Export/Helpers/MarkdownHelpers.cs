@@ -225,11 +225,20 @@ internal static class MarkdownHelpers
             : !string.IsNullOrWhiteSpace(element.StereotypeEx) ? element.StereotypeEx
             : element.Stereotype;
 
+        // Direct lookup on the raw stereotype string.
         if (!string.IsNullOrWhiteSpace(stereotype) && ArchiMateMap.TryGetValue(stereotype, out var entry))
             return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{entry.Code}</span>";
 
-        // EDGY types: parse the type name after the language prefix.
+        // Parse to handle versioned prefixes (ArchiMate3::BusinessActor → ArchiMate_BusinessActor).
         var (language, type) = ParseStereotype(stereotype);
+
+        var archiKey = language.StartsWith("ArchiMate", StringComparison.OrdinalIgnoreCase)
+            ? $"ArchiMate_{type}"
+            : null;
+        if (archiKey != null && ArchiMateMap.TryGetValue(archiKey, out entry))
+            return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{entry.Code}</span>";
+
+        // EDGY types.
         if (string.Equals(language, "EDGY", StringComparison.OrdinalIgnoreCase) &&
             EdgyMap.TryGetValue(type, out var edgyEntry))
             return $"<span class=\"sl\" data-layer=\"{edgyEntry.Layer}\">{edgyEntry.Code}</span>";
