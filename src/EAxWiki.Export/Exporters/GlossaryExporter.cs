@@ -21,14 +21,15 @@ internal class GlossaryExporter(IOutputWriter writer)
                      string.Equals(tv.Name, "Glossary", StringComparison.OrdinalIgnoreCase)))
                 {
                     var link = MarkdownHelpers.CreateElementLink(elem, pkgDir, glossaryDir);
-                    entries.Add((elem.Name, tv.Value, [(elem.Name, link)]));
+                    entries.Add((elem.Name, MarkdownHelpers.StripHtml(tv.Value), [(elem.Name, link)]));
                 }
             }
 
             if (!string.IsNullOrWhiteSpace(elem.Notes))
             {
-                var firstDot = elem.Notes.IndexOf('.');
-                var sentence = firstDot >= 0 ? elem.Notes[..firstDot].Trim() : elem.Notes.Trim();
+                var plain = MarkdownHelpers.StripHtml(elem.Notes);
+                var firstDot = plain.IndexOf('.');
+                var sentence = firstDot >= 0 ? plain[..firstDot].Trim() : plain.Trim();
                 if (sentence.Length >= 20)
                 {
                     var link = MarkdownHelpers.CreateElementLink(elem, pkgDir, glossaryDir);

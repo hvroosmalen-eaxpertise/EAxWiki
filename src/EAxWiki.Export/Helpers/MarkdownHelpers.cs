@@ -1,4 +1,6 @@
 using System.Collections.Concurrent;
+using System.Net;
+using System.Text.RegularExpressions;
 using EAxWiki.Core.Models;
 
 namespace EAxWiki.Export.Helpers;
@@ -221,6 +223,13 @@ internal static class MarkdownHelpers
             return type[(baseName.Length + 1)..];
 
         return type;
+    }
+
+    internal static string StripHtml(string html)
+    {
+        var text = Regex.Replace(html, "<[^>]*>", " ");
+        text = WebUtility.HtmlDecode(text);
+        return Regex.Replace(text, @"\s+", " ").Trim();
     }
 
     internal static string GetLayer(EaElement element)
