@@ -1,12 +1,33 @@
+var EA_LAYER_COLORS = {
+    'business':       '#D4A017',
+    'application':    '#2E86C1',
+    'technology':     '#27AE60',
+    'physical':       '#17A589',
+    'motivation':     '#8E44AD',
+    'strategy':       '#A0682B',
+    'implementation': '#D84B79',
+    'composite':      '#5D6D7E',
+    'uml':            '#7F8C8D',
+    'edgy-id':        '#75F0A5',
+    'edgy-ar':        '#9DB9F6',
+    'edgy-ex':        '#F985B4',
+    'edgy-ix':        '#4ECDC4',
+    'edgy-pe':        '#FFD93D',
+    'edgy-lb':        '#E8E8E8'
+};
+var EA_LAYER_DARK_TEXT = { 'edgy-id': true, 'edgy-pe': true, 'edgy-lb': true, 'business': true };
+
 function initEaGraph() {
     var container = document.getElementById('ea-graph-container');
-    if (!container || !window.eaGraphData || typeof cytoscape === 'undefined') return;
+    if (!container || typeof cytoscape === 'undefined') return;
+
+    var dataEl = document.getElementById('ea-graph-data');
+    if (!dataEl) return;
+    var data = JSON.parse(dataEl.textContent);
 
     // Remove any tooltip left over from a previous page navigation.
     var old = document.getElementById('ea-graph-tooltip');
     if (old) old.remove();
-
-    var data = window.eaGraphData;
     var cy = cytoscape({
         container: container,
         elements: {
@@ -27,8 +48,8 @@ function initEaGraph() {
                     'height': 'label',
                     'padding': '10px',
                     'shape': 'round-rectangle',
-                    'background-color': '#1565c0',
-                    'color': '#ffffff'
+                    'background-color': function (ele) { return EA_LAYER_COLORS[ele.data('layer')] || '#7F8C8D'; },
+                    'color': function (ele) { return EA_LAYER_DARK_TEXT[ele.data('layer')] ? '#1a1a1a' : '#ffffff'; }
                 }
             },
             {
@@ -42,7 +63,7 @@ function initEaGraph() {
             },
             {
                 selector: 'node[!hasUrl]',
-                style: { 'background-color': '#607d8b' }
+                style: { 'opacity': 0.55 }
             },
             {
                 selector: 'edge',
@@ -51,8 +72,8 @@ function initEaGraph() {
                     'font-size': '10px',
                     'curve-style': 'bezier',
                     'target-arrow-shape': 'triangle',
-                    'target-arrow-color': '#90a4ae',
-                    'line-color': '#90a4ae',
+                    'target-arrow-color': function (ele) { return EA_LAYER_COLORS[ele.data('sourceLayer')] || '#90a4ae'; },
+                    'line-color': function (ele) { return EA_LAYER_COLORS[ele.data('sourceLayer')] || '#90a4ae'; },
                     'color': '#555',
                     'text-background-opacity': 1,
                     'text-background-color': '#f5f5f5',
