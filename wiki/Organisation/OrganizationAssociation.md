@@ -1,10 +1,10 @@
-# OrganizationAssociation
+# <span class="sl" data-layer="uml">MAS</span> OrganizationAssociation
 
 **Type:** Class  **Stereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
 OrganizationAssociation represents a typed relationship between two organisations, such as a parent–subsidiary link, a joint-venture partnership, a verifier relationship, or a department association. It records which organisation is the parent and which is the child in the association, and is classified by an OrganizationAssociationType that describes the nature of the relationship. This entity enables the modelling of complex corporate structures without embedding hierarchy information directly in the Organization entity, and supports the non-hierarchical many-to-many relationships (e.g., Auditor, Affiliate) that are common in emissions reporting ecosystems.
 
@@ -17,11 +17,15 @@ OrganizationAssociation represents a typed relationship between two organisation
 | associated_organization_id | String |  | A foreign key identifying the associated (child or counterpart) Organisation in this relationship. For example, in a subsidiary association this would be the subsidiary organisation, and in a verifier association this would be the verifying body. |
 | organization_association_type_id | String |  | A foreign key referencing the OrganizationAssociationType that classifies the nature of this inter-organisational relationship. The type controls how the association is interpreted in boundary consolidation calculations and data exchange scenarios. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | OrganizationAssociation represents a typed relationship between two organisations, such as a parent–subsidiary link, a joint-venture partnership, a verifier relationship, or a department association. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -30,9 +34,13 @@ OrganizationAssociation represents a typed relationship between two organisation
 | Association |  | [OrganizationAssociationType](OrganizationAssociationType.md) |
 | Association |  | [Organization](Organization.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Organisation](diagrams/Organisation.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
@@ -40,9 +48,16 @@ OrganizationAssociation represents a typed relationship between two organisation
 |------|------------|--------|
 | Association |  | [Organization](Organization.md) |
 | Association |  | [OrganizationAssociationType](OrganizationAssociationType.md) |
-| Association |  | [Organization](Organization.md) |
-| Association |  | [OrganizationAssociationType](OrganizationAssociationType.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e742","label":"OrganizationAssociation…","fullName":"OrganizationAssociationType","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationAssociationType.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"Organization.html"},{"id":"e741","label":"OrganizationAssociation","fullName":"OrganizationAssociation","packageName":Organisation,"isFocal":true,"hasUrl":false,"url":""},{"id":"e801","label":"OrganizationEmissionAll…","fullName":"OrganizationEmissionAllocation","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/OrganizationEmissionAllocation.html"},{"id":"e782","label":"EmissionReport","fullName":"EmissionReport","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionReport.html"},{"id":"e753","label":"Facility","fullName":"Facility","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/Facility.html"},{"id":"e740","label":"OrganizationalBoundary","fullName":"OrganizationalBoundary","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationalBoundary.html"},{"id":"e751","label":"OrganizationEquityShare","fullName":"OrganizationEquityShare","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationEquityShare.html"},{"id":"e750","label":"OrganizationIndustrySec…","fullName":"OrganizationIndustrySector","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationIndustrySector.html"},{"id":"e748","label":"OrganizationExternalIde…","fullName":"OrganizationExternalIdentifier","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationExternalIdentifier.html"},{"id":"e747","label":"OrganizationPersonAssoc…","fullName":"OrganizationPersonAssociation","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationPersonAssociation.html"},{"id":"e738","label":"ContactPerson","fullName":"ContactPerson","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"ContactPerson.html"},{"id":"e743","label":"OrganizationAddress","fullName":"OrganizationAddress","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationAddress.html"},{"id":"e736","label":"OrganizationType","fullName":"OrganizationType","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationType.html"},{"id":"e771","label":"EmissionInventory","fullName":"EmissionInventory","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionInventory.html"}],"edges":[{"id":"c913","source":"e742","target":"e741","label":"Association"},{"id":"c824","source":"e801","target":"e735","label":"Association"},{"id":"c895","source":"e735","target":"e782","label":"Association"},{"id":"c896","source":"e735","target":"e753","label":"Association"},{"id":"c898","source":"e740","target":"e735","label":"Association"},{"id":"c899","source":"e735","target":"e751","label":"Association"},{"id":"c901","source":"e735","target":"e750","label":"Association"},{"id":"c904","source":"e735","target":"e748","label":"Association"},{"id":"c906","source":"e747","target":"e735","label":"Association"},{"id":"c908","source":"e738","target":"e735","label":"Association"},{"id":"c912","source":"e735","target":"e743","label":"Association"},{"id":"c914","source":"e735","target":"e741","label":"Association"},{"id":"c915","source":"e735","target":"e736","label":"Association"},{"id":"c917","source":"e735","target":"e771","label":"Association"},{"id":"c808","source":"e782","target":"e771","label":"Association"},{"id":"c905","source":"e747","target":"e738","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

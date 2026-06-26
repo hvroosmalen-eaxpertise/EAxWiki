@@ -1,6 +1,6 @@
 # Strategic Sustainability Management Model (Bodenstein)
 
-[Archimate](../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](index.md)
 
 Complete ArchiMate 3.2 model is based on the book: Strategic Sustainability Management, A Practical Approach for Companies Using the SDGs as a Framework by Robert Bodenstein.     
 This model integrates sustainability as a strategic variable into corporate strategy through a capability-based approach,  covering drivers, goals, strategies, capabilities, actions, outcomes and KPIs.
@@ -20,4 +20,4 @@ This model integrates sustainability as a strategic variable into corporate stra
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:49*

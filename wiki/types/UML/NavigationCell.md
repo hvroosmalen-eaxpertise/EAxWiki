@@ -2,13 +2,13 @@
 
 6 element(s):
 
-- [](../../Sustainability Development Goals/unnamed.md)
-- [](../../Sustainability Development Goals/unnamed.md)
-- [](../../Sustainability Development Goals/unnamed.md)
-- [](../../Sustainability Development Goals/unnamed.md)
-- [](../../Sustainability Development Goals/unnamed.md)
-- [](../../Sustainability Development Goals/unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../../Sustainability Development Goals/unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../../Sustainability Development Goals/unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../../Sustainability Development Goals/unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../../Sustainability Development Goals/unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../../Sustainability Development Goals/unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../../Sustainability Development Goals/unnamed.md)
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:50*

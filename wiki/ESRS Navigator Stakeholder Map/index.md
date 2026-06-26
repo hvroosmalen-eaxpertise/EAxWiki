@@ -1,6 +1,6 @@
 # ESRS Navigator Stakeholder Map
 
-[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
 Stakeholder map based on the ESRS Navigator document for sustainability reporting under CSRD
 
@@ -11,125 +11,125 @@ Stakeholder map based on the ESRS Navigator document for sustainability reportin
 
 ## Elements
 
-- [Large Companies (>250 employees)](Large Companies (_250 employees).md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Large Companies (>250 employees)](Large Companies (_250 employees).md)
   - *Companies required to report under CSRD from 2025*
-- [FreshFood B.V.](FreshFood B.V..md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [FreshFood B.V.](FreshFood B.V..md)
   - *Example company: 450 employees, food production, two facilities in Netherlands*
-- [Listed SMEs](Listed SMEs.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Listed SMEs](Listed SMEs.md)
   - *Small and medium enterprises with stock exchange listing (future LSME standard)*
-- [Non-listed SMEs](Non-listed SMEs.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Non-listed SMEs](Non-listed SMEs.md)
   - *SMEs that voluntarily report (future VSME standard)*
-- [Board of Directors (Directie)](Board of Directors (Directie).md) — ArchiMate_BusinessRole «Class»
+- <span class="sl" data-layer="uml">BUS</span> [Board of Directors (Directie)](Board of Directors (Directie).md)
   - *CEO, CFO, COO - Final responsibility for sustainability policy*
-- [CEO](CEO.md) — ArchiMate_BusinessRole «Class»
+- <span class="sl" data-layer="uml">BUS</span> [CEO](CEO.md)
   - *Chief Executive Officer*
-- [CFO](CFO.md) — ArchiMate_BusinessRole «Class»
+- <span class="sl" data-layer="uml">BUS</span> [CFO](CFO.md)
   - *Chief Financial Officer - Often responsible for compliance*
-- [COO](COO.md) — ArchiMate_BusinessRole «Class»
+- <span class="sl" data-layer="uml">BUS</span> [COO](COO.md)
   - *Chief Operating Officer*
-- [Supervisory Board (RvC)](Supervisory Board (RvC).md) — ArchiMate_BusinessRole «Class»
+- <span class="sl" data-layer="uml">BUS</span> [Supervisory Board (RvC)](Supervisory Board (RvC).md)
   - *Oversight and quarterly reporting on sustainability*
-- [Sustainability Manager/Director](Sustainability Manager_Director.md) — ArchiMate_BusinessRole «Class»
+- <span class="sl" data-layer="uml">BUS</span> [Sustainability Manager/Director](Sustainability Manager_Director.md)
   - *Coordinates implementation of sustainability measures, reports to CEO*
-- [Operations Manager](Operations Manager.md) — ArchiMate_BusinessRole «Class»
+- <span class="sl" data-layer="uml">BUS</span> [Operations Manager](Operations Manager.md)
   - *Responsible for water policy and production facilities*
-- [Sustainability Committee](Sustainability Committee.md) — ArchiMate_BusinessRole «Class»
+- <span class="sl" data-layer="uml">BUS</span> [Sustainability Committee](Sustainability Committee.md)
   - *Committee supporting sustainability initiatives*
-- [Works Council (Ondernemingsraad)](Works Council (Ondernemingsraad).md) — ArchiMate_BusinessRole «Class»
+- <span class="sl" data-layer="uml">BUS</span> [Works Council (Ondernemingsraad)](Works Council (Ondernemingsraad).md)
   - *Employee representation with quarterly management consultation*
-- [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md)
   - *All employees of the reporting organization*
-- [Permanent Employees](Permanent Employees.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Permanent Employees](Permanent Employees.md)
   - *Full-time permanent staff*
-- [Seasonal Workers](Seasonal Workers.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Seasonal Workers](Seasonal Workers.md)
   - *Temporary/seasonal employees*
-- [Production Workers](Production Workers.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Production Workers](Production Workers.md)
   - *Workers in production facilities*
-- [Suppliers](Suppliers.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Suppliers](Suppliers.md)
   - *All upstream suppliers in the value chain*
-- [Agricultural Suppliers](Agricultural Suppliers.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Agricultural Suppliers](Agricultural Suppliers.md)
   - *Tomato growers, grain producers, vegetable suppliers*
-- [Packaging Suppliers](Packaging Suppliers.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Packaging Suppliers](Packaging Suppliers.md)
   - *Providers of packaging materials*
-- [Transport Companies](Transport Companies.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Transport Companies](Transport Companies.md)
   - *Logistics and transportation providers*
-- [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md)
   - *Employees of suppliers and partners*
-- [Seasonal Agricultural Workers](Seasonal Agricultural Workers.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Seasonal Agricultural Workers](Seasonal Agricultural Workers.md)
   - *Seasonal workers at supplier farms*
-- [Customers](Customers.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Customers](Customers.md)
   - *Direct business customers*
-- [Supermarket Chains](Supermarket Chains.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Supermarket Chains](Supermarket Chains.md)
   - *Retail customers*
-- [Foodservice Companies](Foodservice Companies.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Foodservice Companies](Foodservice Companies.md)
   - *B2B foodservice customers*
-- [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md)
   - *Final consumers - focus on food safety and product information*
-- [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md)
   - *Local and regional communities impacted by operations*
-- [Local Communities](Local Communities.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Local Communities](Local Communities.md)
   - *Communities around production facilities and supplier regions*
-- [Indigenous Peoples](Indigenous Peoples.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Indigenous Peoples](Indigenous Peoples.md)
   - *Indigenous communities where applicable*
-- [Investors/Shareholders](Investors_Shareholders.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Investors/Shareholders](Investors_Shareholders.md)
   - *Users of sustainability statements for investment decisions*
-- [Banks and Financial Institutions](Banks and Financial Institutions.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Banks and Financial Institutions](Banks and Financial Institutions.md)
   - *Financial service providers and creditors*
-- [Credit Rating Agencies](Credit Rating Agencies.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Credit Rating Agencies](Credit Rating Agencies.md)
   - *Agencies assessing creditworthiness including ESG factors*
-- [European Commission](European Commission.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [European Commission](European Commission.md)
   - *Issues CSRD directive and ESRS regulations*
-- [EFRAG](EFRAG.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [EFRAG](EFRAG.md)
   - *European Financial Reporting Advisory Group - develops ESRS standards*
-- [Rijksdienst voor Ondernemen (RVO)](Rijksdienst voor Ondernemen (RVO).md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Rijksdienst voor Ondernemen (RVO)](Rijksdienst voor Ondernemen (RVO).md)
   - *Dutch government agency - MVO-steunpunt provides CSR guidance*
-- [AFM](AFM.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [AFM](AFM.md)
   - *Autoriteit Financiële Markten - Financial market supervision*
-- [Ministry of Economic Affairs](Ministry of Economic Affairs.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Ministry of Economic Affairs](Ministry of Economic Affairs.md)
   - *Commissioned the ESRS Navigator*
-- [Sociaal Economische Raad (SER)](Sociaal Economische Raad (SER).md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Sociaal Economische Raad (SER)](Sociaal Economische Raad (SER).md)
   - *Provides information and webinars on CSRD/ESRS*
-- [External Auditors](External Auditors.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [External Auditors](External Auditors.md)
   - *Must approve sustainability reporting*
-- [Certification Bodies](Certification Bodies.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Certification Bodies](Certification Bodies.md)
   - *ISO certifications and verification services*
-- [Industry Associations](Industry Associations.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Industry Associations](Industry Associations.md)
   - *Sector-specific organizations like FNLI*
-- [NGOs and Civil Society](NGOs and Civil Society.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [NGOs and Civil Society](NGOs and Civil Society.md)
   - *Non-governmental organizations providing consultation*
-- [Trade Unions](Trade Unions.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Trade Unions](Trade Unions.md)
   - *Worker unions in production regions*
-- [Legal Design Agencies](Legal Design Agencies.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Legal Design Agencies](Legal Design Agencies.md)
   - *Agencies like Patroon Legal Design*
-- [Sustainability Consultants](Sustainability Consultants.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Sustainability Consultants](Sustainability Consultants.md)
   - *External advisors and food safety experts*
-- [Research and Analysis Firms](Research and Analysis Firms.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Research and Analysis Firms](Research and Analysis Firms.md)
   - *Verification bureaus for water, energy, CO2 data*
-- [Chamber of Commerce/Kamer van Koophandel](Chamber of Commerce_Kamer van Koophandel.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Chamber of Commerce/Kamer van Koophandel](Chamber of Commerce_Kamer van Koophandel.md)
   - *Chamber of Commerce - provides CSRD guidance*
-- [Training Providers](Training Providers.md) — ArchiMate_Stakeholder «Class»
+- <span class="sl" data-layer="uml">STA</span> [Training Providers](Training Providers.md)
   - *Food safety, compliance, and sustainability training*
-- [ESRS E1 - Climate](ESRS E1 - Climate.md) — ArchiMate_BusinessObject «Class»
+- <span class="sl" data-layer="uml">BUS</span> [ESRS E1 - Climate](ESRS E1 - Climate.md)
   - *Climate change reporting standard*
-- [ESRS E2 - Pollution](ESRS E2 - Pollution.md) — ArchiMate_BusinessObject «Class»
+- <span class="sl" data-layer="uml">BUS</span> [ESRS E2 - Pollution](ESRS E2 - Pollution.md)
   - *Pollution reporting standard*
-- [ESRS E3 - Water](ESRS E3 - Water.md) — ArchiMate_BusinessObject «Class»
+- <span class="sl" data-layer="uml">BUS</span> [ESRS E3 - Water](ESRS E3 - Water.md)
   - *Water and marine resources standard*
-- [ESRS E4 - Biodiversity](ESRS E4 - Biodiversity.md) — ArchiMate_BusinessObject «Class»
+- <span class="sl" data-layer="uml">BUS</span> [ESRS E4 - Biodiversity](ESRS E4 - Biodiversity.md)
   - *Biodiversity and ecosystems standard*
-- [ESRS E5 - Circular Economy](ESRS E5 - Circular Economy.md) — ArchiMate_BusinessObject «Class»
+- <span class="sl" data-layer="uml">BUS</span> [ESRS E5 - Circular Economy](ESRS E5 - Circular Economy.md)
   - *Material use and circular economy standard*
-- [ESRS S1 - Own Personnel](ESRS S1 - Own Personnel.md) — ArchiMate_BusinessObject «Class»
+- <span class="sl" data-layer="uml">BUS</span> [ESRS S1 - Own Personnel](ESRS S1 - Own Personnel.md)
   - *Own workforce standard*
-- [ESRS S2 - Value Chain Workers](ESRS S2 - Value Chain Workers.md) — ArchiMate_BusinessObject «Class»
+- <span class="sl" data-layer="uml">BUS</span> [ESRS S2 - Value Chain Workers](ESRS S2 - Value Chain Workers.md)
   - *Workers in the value chain standard*
-- [ESRS S3 - Communities](ESRS S3 - Communities.md) — ArchiMate_BusinessObject «Class»
+- <span class="sl" data-layer="uml">BUS</span> [ESRS S3 - Communities](ESRS S3 - Communities.md)
   - *Affected communities standard*
-- [ESRS S4 - Consumers](ESRS S4 - Consumers.md) — ArchiMate_BusinessObject «Class»
+- <span class="sl" data-layer="uml">BUS</span> [ESRS S4 - Consumers](ESRS S4 - Consumers.md)
   - *Consumers and end-users standard*
-- [ESRS G1 - Business Conduct](ESRS G1 - Business Conduct.md) — ArchiMate_BusinessObject «Class»
+- <span class="sl" data-layer="uml">BUS</span> [ESRS G1 - Business Conduct](ESRS G1 - Business Conduct.md)
   - *Business conduct standard*
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:49*

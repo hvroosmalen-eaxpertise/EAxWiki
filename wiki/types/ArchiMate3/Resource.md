@@ -2,10 +2,10 @@
 
 3 element(s):
 
-- [Road to Net Zero](../../Reference Documents/Road to Net Zero.md)
-- [Strategic Sustainability Management](../../Reference Documents/Strategic Sustainability Management.md)
-- [SDG Academy](../../Reference Websites/SDG Academy.md)
+- <span class="sl" data-layer="uml">RES</span> [Road to Net Zero](../../Reference Documents/Road to Net Zero.md)
+- <span class="sl" data-layer="uml">RES</span> [Strategic Sustainability Management](../../Reference Documents/Strategic Sustainability Management.md)
+- <span class="sl" data-layer="uml">RES</span> [SDG Academy](../../Reference Websites/SDG Academy.md)
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:50*

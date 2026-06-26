@@ -1,10 +1,10 @@
-# Country
+# <span class="sl" data-layer="uml">REF</span> Country
 
 **Type:** Class  **Stereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
 Country represents an area of land or territory of a nation or state, identified by its ISO alpha-3 country code and geopolitical entity name. The Country entity serves as a reference point for linking addresses and geopolitical entities to a standardised country identifier, enabling geographic analysis and cross-border data alignment across the model. Country is modelled as a subtype of GeopoliticalEntity in the standard's conceptual model, distinguished by GeopoliticalEntityType, but is represented as a dedicated reference entity here to support direct foreign key relationships from Address and other entities that specifically require a country reference.
 
@@ -20,11 +20,15 @@ Country represents an area of land or territory of a nation or state, identified
 | parent_location_id | String |  | A foreign key referencing the parent Location record in the geographic hierarchy, used to build multi-level geographic structures where a country is nested within a larger region or grouping. |
 | effective_datetime | String |  | The date and time from which this country record is valid, in ISO 8601 format. This attribute supports the tracking of country code changes or the creation of new countries over time, preserving a historical record of geographic attribution. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | Country represents an area of land or territory of a nation or state, identified by its ISO alpha-3 country code and geopolitical entity name. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -33,10 +37,21 @@ Country represents an area of land or territory of a nation or state, identified
 | Association |  | [GeopoliticalEntity](../Facilities/GeopoliticalEntity.md) |
 | Association |  | [Address](Address.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Organisation](diagrams/Organisation.md)
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e766","label":"GeopoliticalEntity","fullName":"GeopoliticalEntity","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/GeopoliticalEntity.html"},{"id":"e737","label":"Address","fullName":"Address","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"Address.html"},{"id":"e745","label":"Country","fullName":"Country","packageName":Organisation,"isFocal":true,"hasUrl":false,"url":""},{"id":"e806","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameterRecordingTemplate","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionActivityParameterRecordingTemplate.html"},{"id":"e765","label":"GeopoliticalEntityType","fullName":"GeopoliticalEntityType","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/GeopoliticalEntityType.html"},{"id":"e755","label":"Location","fullName":"Location","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/Location.html"},{"id":"e743","label":"OrganizationAddress","fullName":"OrganizationAddress","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationAddress.html"}],"edges":[{"id":"c813","source":"e806","target":"e766","label":"Association"},{"id":"c884","source":"e766","target":"e766","label":"Association"},{"id":"c885","source":"e765","target":"e766","label":"Association"},{"id":"c886","source":"e766","target":"e755","label":"Association"},{"id":"c893","source":"e745","target":"e766","label":"Association"},{"id":"c909","source":"e745","target":"e737","label":"Association"},{"id":"c911","source":"e737","target":"e743","label":"Association"},{"id":"c881","source":"e755","target":"e755","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

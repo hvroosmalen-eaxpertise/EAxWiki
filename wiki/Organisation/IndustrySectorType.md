@@ -1,10 +1,10 @@
-# IndustrySectorType
+# <span class="sl" data-layer="uml">REF</span> IndustrySectorType
 
 **Type:** Class  **Stereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
 IndustrySectorType provides a hierarchical classification of industry sectors used to categorise organisations for benchmarking, regulatory grouping, and sector-specific emissions factor selection. Common sector classification systems include NACE (European), SIC (US), NAICS (North American), and ISIC (International). A self-referential parent relationship allows the construction of multi-level sector hierarchies, enabling both high-level sector summaries and granular sub-sector analysis. The code attribute supports direct alignment with external classification system codes, enabling automated crosswalk with reference datasets.
 
@@ -17,11 +17,15 @@ IndustrySectorType provides a hierarchical classification of industry sectors us
 | name | String |  | The human-readable name of the industry sector, such as "Oil and Gas" or "Iron and Steel". The name provides a user-friendly label for display in reports and selection interfaces and should match the official label used by the classification system referenced by the code attribute. |
 | parent_id | String |  | A foreign key referencing the parent IndustrySectorType record in the sector hierarchy, enabling multi-level classifications such as Chemical Manufacturing (325) as the parent of Petrochemical Manufacturing (32511). This attribute must not create cycles; implementations should enforce acyclicity. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | IndustrySectorType provides a hierarchical classification of industry sectors used to categorise organisations for benchmarking, regulatory grouping, and sector-specific emissions factor selection. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -30,9 +34,13 @@ IndustrySectorType provides a hierarchical classification of industry sectors us
 | Association |  | [IndustrySectorType](IndustrySectorType.md) |
 | Association |  | [OrganizationIndustrySector](OrganizationIndustrySector.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Organisation](diagrams/Organisation.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
@@ -40,6 +48,15 @@ IndustrySectorType provides a hierarchical classification of industry sectors us
 |------|------------|--------|
 | Association |  | [IndustrySectorType](IndustrySectorType.md) |
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e750","label":"OrganizationIndustrySec…","fullName":"OrganizationIndustrySector","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationIndustrySector.html"},{"id":"e739","label":"IndustrySectorType","fullName":"IndustrySectorType","packageName":Organisation,"isFocal":true,"hasUrl":false,"url":""},{"id":"e735","label":"Organization","fullName":"Organization","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c901","source":"e735","target":"e750","label":"Association"},{"id":"c902","source":"e739","target":"e750","label":"Association"},{"id":"c900","source":"e739","target":"e739","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

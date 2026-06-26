@@ -1,10 +1,10 @@
-# EnvironmentalProductDeclaration
+# <span class="sl" data-layer="uml">WOR</span> EnvironmentalProductDeclaration
 
 **Type:** Class  **Stereotype:** work-product-component  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
 EnvironmentalProductDeclaration is a work-product-component that represents a formal Type III environmental declaration published under a recognised EPD programme, such as those governed by ISO 14025. An EPD discloses the life-cycle environmental impacts of a product across multiple impact categories, of which the global warming potential (GWP) impact category is directly comparable to a product carbon footprint. Linking an EPD record to a product enables organisations to reference externally verified declarations alongside internally calculated footprints in their supply-chain disclosures.
 
@@ -22,11 +22,15 @@ EnvironmentalProductDeclaration is a work-product-component that represents a fo
 | gwp_unit_of_measure_id | String |  | Foreign key to the UnitOfMeasure in which the gwp_value is expressed, confirming the functional unit and enabling correct comparison with ProductCarbonFootprint records. |
 | url | String |  | A persistent URL to the published EPD document in the programme operator registry, enabling automated retrieval and verification of the declaration. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | EnvironmentalProductDeclaration is a work-product-component that represents a formal Type III environmental declaration published under a recognised EPD programme, such as those governed by ISO 14025. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -34,13 +38,23 @@ EnvironmentalProductDeclaration is a work-product-component that represents a fo
 |------|------------|-------------|
 | Association |  | [Product](Product.md) |
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association |  | [Product](Product.md) |
-| Association |  | [Product](Product.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e810","label":"Product","fullName":"Product","packageName":Products,"isFocal":false,"hasUrl":true,"url":"Product.html"},{"id":"e819","label":"EnvironmentalProductDec…","fullName":"EnvironmentalProductDeclaration","packageName":Products,"isFocal":true,"hasUrl":false,"url":""},{"id":"e815","label":"CentralProductClassific…","fullName":"CentralProductClassificationCode","packageName":Products,"isFocal":false,"hasUrl":true,"url":"CentralProductClassificationCode.html"},{"id":"e813","label":"ProductLifeCycle","fullName":"ProductLifeCycle","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductLifeCycle.html"},{"id":"e811","label":"ProductFootprint","fullName":"ProductFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductFootprint.html"}],"edges":[{"id":"c797","source":"e810","target":"e819","label":"Association"},{"id":"c799","source":"e810","target":"e815","label":"Association"},{"id":"c801","source":"e810","target":"e813","label":"Association"},{"id":"c805","source":"e810","target":"e811","label":"Association"},{"id":"c794","source":"e811","target":"e811","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

@@ -1,10 +1,10 @@
-# Supplier Sustainability Audits
+# <span class="sl" data-layer="uml">COU</span> Supplier Sustainability Audits
 
 **Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
-[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
 
 Systematic program to assess and verify supplier compliance with environmental and social standards.         
 Conducts on-site audits, evaluates supplier practices, and implements corrective action programs.         
@@ -16,12 +16,16 @@ Ensures supply chain transparency and responsible sourcing practices.
 |------|-------|-------|
 | archimate_element_identifier | action-004 |  |
 
+[↑ Back to top](#)
+
 ## Relationships
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
 | Dependency | ArchiMate_Realization | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
 | ControlFlow | ArchiMate_Influence | [Lower Operational Risk](../Outcomes/Lower Operational Risk.md) |
+
+[↑ Back to top](#)
 
 ### Appears on Diagrams
 
@@ -30,13 +34,23 @@ Ensures supply chain transparency and responsible sourcing practices.
 - [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
 - [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Dependency | ArchiMate_Realization | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
-| Dependency | ArchiMate_Realization | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e447","label":"Sustainable Supply Chai…","fullName":"Sustainable Supply Chain Management","packageName":Capabilities,"isFocal":false,"hasUrl":true,"url":"../Capabilities/Sustainable Supply Chain Management.html"},{"id":"e459","label":"Lower Operational Risk","fullName":"Lower Operational Risk","packageName":Outcomes,"isFocal":false,"hasUrl":true,"url":"../Outcomes/Lower Operational Risk.html"},{"id":"e454","label":"Supplier Sustainability…","fullName":"Supplier Sustainability Audits","packageName":Courses of Action,"isFocal":true,"hasUrl":false,"url":""},{"id":"e442","label":"Responsible Supply Chai…","fullName":"Responsible Supply Chain Strategy","packageName":Courses of Action,"isFocal":false,"hasUrl":true,"url":"Responsible Supply Chain Strategy.html"},{"id":"e464","label":"Supplier Compliance Rate","fullName":"Supplier Compliance Rate","packageName":Assessments,"isFocal":false,"hasUrl":true,"url":"../Assessments/Supplier Compliance Rate.html"},{"id":"e436","label":"Risk Reduction","fullName":"Risk Reduction","packageName":Goals,"isFocal":false,"hasUrl":true,"url":"../Goals/Risk Reduction.html"}],"edges":[{"id":"c430","source":"e447","target":"e442","label":"realizes"},{"id":"c437","source":"e447","target":"e454","label":"realizes"},{"id":"c457","source":"e464","target":"e447","label":"measures"},{"id":"c443","source":"e454","target":"e459","label":"influences"},{"id":"c449","source":"e459","target":"e436","label":"realizes"},{"id":"c456","source":"e464","target":"e459","label":"measures"},{"id":"c423","source":"e442","target":"e436","label":"realizes"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:48*

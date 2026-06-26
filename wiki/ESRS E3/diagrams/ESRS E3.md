@@ -1,16 +1,17 @@
 # ESRS E3
 
 
-[Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS E3](../index.md)
+[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS E3](../index.md)
 
 ![ESRS E3](ESRS E3.png)
 
-**Description:** 
+**Derived Description:** For more information:
+https://www
 
 ## Elements
 
-- [ESRS E3 Water and Marine Resources](../ESRS E3 Water and Marine Resources.md)
+- <span class="sl" data-layer="uml">CON</span> [ESRS E3 Water and Marine Resources](../ESRS E3 Water and Marine Resources.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:19*
+*Generated: 2026-06-26 09:44:54*

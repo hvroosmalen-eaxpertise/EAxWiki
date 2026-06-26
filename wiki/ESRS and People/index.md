@@ -1,6 +1,6 @@
 # ESRS and People
 
-[Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [ESRS and People](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [ESRS and People](index.md)
 
 ## Diagrams
 
@@ -16,4 +16,4 @@
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:47*

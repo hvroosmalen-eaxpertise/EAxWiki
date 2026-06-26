@@ -1,16 +1,16 @@
 # Reference Websites
 
 
-[Archimate](../../Archimate/index.md) / [Reference Material](../../Reference Material/index.md) / [Reference Websites](../index.md)
+[Home](../../index.md) / [Archimate](../../Archimate/index.md) / [Reference Material](../../Reference Material/index.md) / [Reference Websites](../index.md)
 
 ![Reference Websites](Reference Websites.png)
 
-**Description:** 
+**Derived Description:** SDG Academy provides a number of applicable resources and provides free training material, see https://sdgacademy
 
 ## Elements
 
-- [SDG Academy](../SDG Academy.md)
+- <span class="sl" data-layer="uml">RES</span> [SDG Academy](../SDG Academy.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:26*
+*Generated: 2026-06-26 09:45:03*

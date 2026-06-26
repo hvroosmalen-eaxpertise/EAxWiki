@@ -25,3 +25,46 @@
 .md-typeset table:not([class]) td {
   word-break: break-word;
 }
+
+#ea-graph-container {
+  height: 480px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  margin: 0.5rem 0 1rem;
+  background: var(--md-default-bg-color);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.15em 0.5em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.status-proposed { background: #fff3cd; color: #856404; }
+.status-approved { background: #d4edda; color: #155724; }
+.status-implemented { background: #cce5ff; color: #004085; }
+.status-mandatory { background: #f8d7da; color: #721c24; }
+.status-invalid { background: #e2e3e5; color: #383d41; }
+
+.sl {
+  display: inline-block;
+  padding: 0.1em 0.45em;
+  border-radius: 3px;
+  font-size: 0.72em;
+  font-weight: 600;
+  font-family: inherit;
+  vertical-align: middle;
+  margin-right: 0.3em;
+}
+
+.sl[data-layer="business"] { background: #005B8F; color: #fff; }
+.sl[data-layer="application"] { background: #007A3D; color: #fff; }
+.sl[data-layer="technology"] { background: #7B3F00; color: #fff; }
+.sl[data-layer="physical"] { background: #008080; color: #fff; }
+.sl[data-layer="motivation"] { background: #C62828; color: #fff; }
+.sl[data-layer="strategy"] { background: #6A1B9A; color: #fff; }
+.sl[data-layer="implementation"] { background: #BF360C; color: #fff; }
+.sl[data-layer="composite"] { background: #546E7A; color: #fff; }
+.sl[data-layer="uml"] { background: #7F8C8D; color: #fff; }

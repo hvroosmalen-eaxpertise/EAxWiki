@@ -1,6 +1,6 @@
 # Reputation Risk
 
-[Archimate](../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Reputation Risk](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Reputation Risk](index.md)
 
 ## Diagrams
 
@@ -8,4 +8,4 @@
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:49*

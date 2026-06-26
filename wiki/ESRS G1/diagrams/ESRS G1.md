@@ -1,16 +1,17 @@
 # ESRS G1
 
 
-[Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS G1](../index.md)
+[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS G1](../index.md)
 
 ![ESRS G1](ESRS G1.png)
 
-**Description:** 
+**Derived Description:** For more information:
+https://www
 
 ## Elements
 
-- [ESRS G1 Business Conduct](../ESRS G1 Business Conduct.md)
+- <span class="sl" data-layer="uml">CON</span> [ESRS G1 Business Conduct](../ESRS G1 Business Conduct.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:20*
+*Generated: 2026-06-26 09:44:55*

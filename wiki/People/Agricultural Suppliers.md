@@ -1,10 +1,10 @@
-# Agricultural Suppliers
+# <span class="sl" data-layer="uml">PEO</span> Agricultural Suppliers
 
-**Type:** Actor  **Stereotype:** People  **Status:** Proposed  
+**Type:** Actor  **Stereotype:** People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
 
 
-[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
 Tomato growers, grain producers, vegetable suppliers
 
@@ -15,11 +15,15 @@ Tomato growers, grain producers, vegetable suppliers
 | Abstraction | trace | [Agricultural Suppliers](../ESRS Navigator Stakeholder Map/Agricultural Suppliers.md) |
 | Aggregation | Tree | [Suppliers](Suppliers.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
 - [ERSR S2 Workers in the Value Chain - People](../ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.md)
 - [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
@@ -27,9 +31,16 @@ Tomato growers, grain producers, vegetable suppliers
 |------|------------|--------|
 | Abstraction | trace | [Agricultural Suppliers](../ESRS Navigator Stakeholder Map/Agricultural Suppliers.md) |
 | Aggregation | Tree | [Suppliers](Suppliers.md) |
-| Aggregation | Tree | [Suppliers](Suppliers.md) |
-| Abstraction | trace | [Agricultural Suppliers](../ESRS Navigator Stakeholder Map/Agricultural Suppliers.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e334","label":"Agricultural Suppliers","fullName":"Agricultural Suppliers","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Agricultural Suppliers.html"},{"id":"e529","label":"Suppliers","fullName":"Suppliers","packageName":People,"isFocal":false,"hasUrl":true,"url":"Suppliers.html"},{"id":"e527","label":"Agricultural Suppliers","fullName":"Agricultural Suppliers","packageName":People,"isFocal":true,"hasUrl":false,"url":""},{"id":"e335","label":"Suppliers","fullName":"Suppliers","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Suppliers.html"},{"id":"e528","label":"Packaging Suppliers","fullName":"Packaging Suppliers","packageName":People,"isFocal":false,"hasUrl":true,"url":"Packaging Suppliers.html"},{"id":"e510","label":"Company subject to CSRD","fullName":"Company subject to CSRD","packageName":People,"isFocal":false,"hasUrl":true,"url":"Company subject to CSRD.html"},{"id":"e532","label":"Workers in Value Chain …","fullName":"Workers in Value Chain (ESRS S2)","packageName":People,"isFocal":false,"hasUrl":true,"url":"Workers in Value Chain (ESRS S2).html"}],"edges":[{"id":"c287","source":"e334","target":"e335","label":"Generalization"},{"id":"c502","source":"e334","target":"e527","label":"Abstraction"},{"id":"c504","source":"e335","target":"e529","label":"Abstraction"},{"id":"c517","source":"e529","target":"e528","label":"Aggregation"},{"id":"c519","source":"e529","target":"e527","label":"Aggregation"},{"id":"c661","source":"e510","target":"e529","label":"Association"},{"id":"c662","source":"e529","target":"e532","label":"Aggregation"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:47*

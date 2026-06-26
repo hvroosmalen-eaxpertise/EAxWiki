@@ -1,34 +1,34 @@
 # Climate Risk
 
 
-[Archimate](../../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Climate Risk](../index.md)
+[Home](../../index.md) / [Archimate](../../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Climate Risk](../index.md)
 
 ![Climate Risk](Climate Risk.png)
 
-**Description:** 
+**Derived Description:** Physical and transition risks associated with climate change, including extreme weather events, resource scarcity, and carbon pricing
 
 ## Elements
 
-- [Climate Risk](../../Drivers/Climate Risk.md)
-- [Embed Sustainability in Investment Portfolio](../../Courses of Action/Embed Sustainability in Investment Portfolio.md)
-- [ESG Performance Management](../../Capabilities/ESG Performance Management.md)
-- [ESG-based Risk Management](../../Courses of Action/ESG-based Risk Management.md)
-- [Improved Long-term Profitability](../../Outcomes/Improved Long-term Profitability.md)
-- [Integrate Sustainability into Corporate Strategy](../../Courses of Action/Integrate Sustainability into Corporate Strategy.md)
-- [Long-term Value Creation](../../Goals/Long-term Value Creation.md)
-- [Lower Operational Risk](../../Outcomes/Lower Operational Risk.md)
-- [Operational Eco-efficiency](../../Courses of Action/Operational Eco-efficiency.md)
-- [Responsible Supply Chain Strategy](../../Courses of Action/Responsible Supply Chain Strategy.md)
-- [Risk and Compliance Management](../../Capabilities/Risk and Compliance Management.md)
-- [Risk Reduction](../../Goals/Risk Reduction.md)
-- [Supplier Compliance Rate](../../Assessments/Supplier Compliance Rate.md)
-- [Supplier Sustainability Audits](../../Courses of Action/Supplier Sustainability Audits.md)
-- [Sustainability Data and Reporting](../../Capabilities/Sustainability Data and Reporting.md)
-- [Sustainability Governance](../../Capabilities/Sustainability Governance.md)
-- [Sustainable Innovation Management](../../Capabilities/Sustainable Innovation Management.md)
-- [Sustainable Revenue Ratio](../../Assessments/Sustainable Revenue Ratio.md)
-- [Sustainable Supply Chain Management](../../Capabilities/Sustainable Supply Chain Management.md)
+- <span class="sl" data-layer="uml">DRI</span> [Climate Risk](../../Drivers/Climate Risk.md)
+- <span class="sl" data-layer="uml">COU</span> [Embed Sustainability in Investment Portfolio](../../Courses of Action/Embed Sustainability in Investment Portfolio.md)
+- <span class="sl" data-layer="uml">CAP</span> [ESG Performance Management](../../Capabilities/ESG Performance Management.md)
+- <span class="sl" data-layer="uml">COU</span> [ESG-based Risk Management](../../Courses of Action/ESG-based Risk Management.md)
+- <span class="sl" data-layer="uml">OUT</span> [Improved Long-term Profitability](../../Outcomes/Improved Long-term Profitability.md)
+- <span class="sl" data-layer="uml">COU</span> [Integrate Sustainability into Corporate Strategy](../../Courses of Action/Integrate Sustainability into Corporate Strategy.md)
+- <span class="sl" data-layer="uml">GOA</span> [Long-term Value Creation](../../Goals/Long-term Value Creation.md)
+- <span class="sl" data-layer="uml">OUT</span> [Lower Operational Risk](../../Outcomes/Lower Operational Risk.md)
+- <span class="sl" data-layer="uml">COU</span> [Operational Eco-efficiency](../../Courses of Action/Operational Eco-efficiency.md)
+- <span class="sl" data-layer="uml">COU</span> [Responsible Supply Chain Strategy](../../Courses of Action/Responsible Supply Chain Strategy.md)
+- <span class="sl" data-layer="uml">CAP</span> [Risk and Compliance Management](../../Capabilities/Risk and Compliance Management.md)
+- <span class="sl" data-layer="uml">GOA</span> [Risk Reduction](../../Goals/Risk Reduction.md)
+- <span class="sl" data-layer="uml">ASS</span> [Supplier Compliance Rate](../../Assessments/Supplier Compliance Rate.md)
+- <span class="sl" data-layer="uml">COU</span> [Supplier Sustainability Audits](../../Courses of Action/Supplier Sustainability Audits.md)
+- <span class="sl" data-layer="uml">CAP</span> [Sustainability Data and Reporting](../../Capabilities/Sustainability Data and Reporting.md)
+- <span class="sl" data-layer="uml">CAP</span> [Sustainability Governance](../../Capabilities/Sustainability Governance.md)
+- <span class="sl" data-layer="uml">CAP</span> [Sustainable Innovation Management](../../Capabilities/Sustainable Innovation Management.md)
+- <span class="sl" data-layer="uml">ASS</span> [Sustainable Revenue Ratio](../../Assessments/Sustainable Revenue Ratio.md)
+- <span class="sl" data-layer="uml">CAP</span> [Sustainable Supply Chain Management](../../Capabilities/Sustainable Supply Chain Management.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:30*
+*Generated: 2026-06-26 09:45:08*

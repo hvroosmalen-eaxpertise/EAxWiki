@@ -1,109 +1,109 @@
 # People
 
-[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
 ## Elements
 
-- [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md)
   - *Local and regional communities impacted by operations*
-- [AFM](AFM.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [AFM](AFM.md)
   - *Autoriteit Financi&#235;le Markten - Financial market supervision*
-- [Agricultural Suppliers](Agricultural Suppliers.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Agricultural Suppliers](Agricultural Suppliers.md)
   - *Tomato growers, grain producers, vegetable suppliers*
-- [Banks and Financial Institutions](Banks and Financial Institutions.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Banks and Financial Institutions](Banks and Financial Institutions.md)
   - *Financial service providers and creditors*
-- [Board of Directors (Directie)](Board of Directors (Directie).md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Board of Directors (Directie)](Board of Directors (Directie).md)
   - *High-level view of all stakeholders in ESRS reporting ecosystem*
-- [CEO](CEO.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [CEO](CEO.md)
   - *Chief Executive Officer*
-- [Certification Bodies](Certification Bodies.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Certification Bodies](Certification Bodies.md)
   - *ISO certifications and verification services*
-- [Chamber of Commerce (Kamer van Koophandel)](Chamber of Commerce (Kamer van Koophandel).md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Chamber of Commerce (Kamer van Koophandel)](Chamber of Commerce (Kamer van Koophandel).md)
   - *Chamber of Commerce - provides CSRD guidance*
-- [Chief Financial Officer](Chief Financial Officer.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Chief Financial Officer](Chief Financial Officer.md)
   - *Often responsible for compliance*
-- [Company listed on an EU-regulated market exchange](Company listed on an EU-regulated market exchange.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Company listed on an EU-regulated market exchange](Company listed on an EU-regulated market exchange.md)
   - *Required to report: Any companies listed on an EU-regulated market exchange - except for listed ‘micro undertakings’ -that fail to meet two of these three criteria on consecutive balance sheet dates: <ol> 	<li>at least EUR 450.000 in total assets</li> 	<li>at least EUR 900.000 in net turnover (revenue)</li> 	<li>at least 10 employees (average) throughout the year</li> </ol>*
-- [Company subject to CSRD](Company subject to CSRD.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Company subject to CSRD](Company subject to CSRD.md)
   - *Companies required to report under CSRD from 2025*
-- [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md)
   - *Final consumers - focus on food safety and product information*
-- [COO](COO.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [COO](COO.md)
   - *Chief Operating Officer*
-- [Credit Rating Agencies](Credit Rating Agencies.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Credit Rating Agencies](Credit Rating Agencies.md)
   - *High-level view of all stakeholders in ESRS reporting ecosystem*
-- [Customers](Customers.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Customers](Customers.md)
   - *Direct business customers*
-- [EFRAG](EFRAG.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [EFRAG](EFRAG.md)
   - *The ESRS were developed by the EFRAG (previously known as the European Financial Reporting Advisory Group) an independent body bringing together various different stakeholders. These standards allow companies to be compliant with the Corporate Sustainability Reporting Directive (CSRD), entered into force in January 2023 to strengthen the rules concerning the social and environmental information that companies have to report. The new reporting rules have to be applied for the first time in the 2024 financial year, for reports published in 2025. By June 2026, the European Commission will broaden the ESRS list by finalising and adopting new sector-specific standards. *
-- [European Commission](European Commission.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [European Commission](European Commission.md)
   - *Issues CSRD directive and ESRS regulations*
-- [External Auditors](External Auditors.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [External Auditors](External Auditors.md)
   - *Must approve sustainability reporting*
-- [Foodservice Companies](Foodservice Companies.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Foodservice Companies](Foodservice Companies.md)
   - *B2B foodservice customers*
-- [FreshFood B.V.](FreshFood B.V..md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [FreshFood B.V.](FreshFood B.V..md)
   - *Example company: 450 employees, food production, two facilities in Netherlands*
-- [Indigenous Peoples](Indigenous Peoples.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Indigenous Peoples](Indigenous Peoples.md)
   - *High-level view of all stakeholders in ESRS reporting ecosystem*
-- [Industry Associations](Industry Associations.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Industry Associations](Industry Associations.md)
   - *Sector-specific organizations like FNLI*
-- [Investors/Shareholders](Investors_Shareholders.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Investors/Shareholders](Investors_Shareholders.md)
   - *High-level view of all stakeholders in ESRS reporting ecosystem*
-- [Legal Design Agencies](Legal Design Agencies.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Legal Design Agencies](Legal Design Agencies.md)
   - *Agencies like Patroon Legal Design*
-- [Listed SMEs](Listed SMEs.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Listed SMEs](Listed SMEs.md)
   - *Small and medium enterprises with stock exchange listing (future LSME standard) Required to report:  Any listed companies that meet two of the following three criteria on any two consecutive balance sheet dates: <ol> 	<li>at least EUR 25 million in total assets</li> 	<li>at least EUR 50 million in net turnover</li> 	<li>at least 250 employees (average) during the year</li> </ol>*
-- [Local Communities](Local Communities.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Local Communities](Local Communities.md)
   - *Communities around production facilities and supplier regions*
-- [Ministry of Economic Affairs](Ministry of Economic Affairs.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Ministry of Economic Affairs](Ministry of Economic Affairs.md)
   - *Commissioned the ESRS Navigator*
-- [NGOs and Civil Society](NGOs and Civil Society.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [NGOs and Civil Society](NGOs and Civil Society.md)
   - *Non-governmental organizations providing consultation*
-- [Non-EU company](Non-EU company.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Non-EU company](Non-EU company.md)
   - *Required to report: Non-EU companies, which generate over EUR 150 million on the EU market.*
-- [Non-listed SMEs](Non-listed SMEs.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Non-listed SMEs](Non-listed SMEs.md)
   - *SMEs that voluntarily report (future VSME standard). Required to report: Any non-listed companies that meet two of the following three criteria on any two consecutive balance sheet dates: <ol> 	<li>at least EUR 25 million in total assets</li> 	<li>at least EUR 50 million in net turnover</li> 	<li>at least 250 employees (average) during the year</li> </ol>  *
-- [Operations Manager](Operations Manager.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Operations Manager](Operations Manager.md)
   - *Responsible for water policy and production facilities*
-- [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md)
   - *All employees of the reporting organization*
-- [Packaging Suppliers](Packaging Suppliers.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Packaging Suppliers](Packaging Suppliers.md)
   - *Providers of packaging materials*
-- [Permanent Employees](Permanent Employees.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Permanent Employees](Permanent Employees.md)
   - *Full-time permanent staff*
-- [Production Workers](Production Workers.md) — People «Actor»
-- [Research and Analysis Firms](Research and Analysis Firms.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Production Workers](Production Workers.md)
+- <span class="sl" data-layer="uml">PEO</span> [Research and Analysis Firms](Research and Analysis Firms.md)
   - *Verification bureaus for water, energy, CO2 data*
-- [Rijksdienst voor Ondernemend Nederland (RVO)](Rijksdienst voor Ondernemend Nederland (RVO).md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Rijksdienst voor Ondernemend Nederland (RVO)](Rijksdienst voor Ondernemend Nederland (RVO).md)
   - *Dutch government agency - MVO-steunpunt provides CSR guidance*
-- [Seasonal Agricultural Workers](Seasonal Agricultural Workers.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Seasonal Agricultural Workers](Seasonal Agricultural Workers.md)
   - *Seasonal workers at supplier farms*
-- [Seasonal Workers](Seasonal Workers.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Seasonal Workers](Seasonal Workers.md)
   - *Temporary/seasonal employees*
-- [Sociaal Economische Raad (SER)](Sociaal Economische Raad (SER).md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Sociaal Economische Raad (SER)](Sociaal Economische Raad (SER).md)
   - *High-level view of all stakeholders in ESRS reporting ecosystem*
-- [Supermarket Chains](Supermarket Chains.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Supermarket Chains](Supermarket Chains.md)
   - *Retail customers*
-- [Supervisory Board (RvC)](Supervisory Board (RvC).md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Supervisory Board (RvC)](Supervisory Board (RvC).md)
   - *Oversight and quarterly reporting on sustainability*
-- [Suppliers](Suppliers.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Suppliers](Suppliers.md)
   - *All upstream suppliers in the value chain*
-- [Sustainability Committee](Sustainability Committee.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Sustainability Committee](Sustainability Committee.md)
   - *Committee supporting sustainability initiatives*
-- [Sustainability Consultants](Sustainability Consultants.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Sustainability Consultants](Sustainability Consultants.md)
   - *External advisors and food safety experts*
-- [Sustainability Manager/Director](Sustainability Manager_Director.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Sustainability Manager/Director](Sustainability Manager_Director.md)
   - *Coordinates implementation of sustainability measures, reports to CEO*
-- [Trade Unions](Trade Unions.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Trade Unions](Trade Unions.md)
   - *Worker unions in production regions. *
-- [Training Providers](Training Providers.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Training Providers](Training Providers.md)
   - *Food safety, compliance, and sustainability training*
-- [Transport Companies](Transport Companies.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Transport Companies](Transport Companies.md)
   - *Logistics and transportation providers*
-- [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md)
   - *Employees of suppliers and partners*
-- [Works Council (Ondernemingsraad)](Works Council (Ondernemingsraad).md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Works Council (Ondernemingsraad)](Works Council (Ondernemingsraad).md)
   - *Employee representation with quarterly management consultation*
 
 ## Sub-packages
@@ -112,4 +112,4 @@
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:47*

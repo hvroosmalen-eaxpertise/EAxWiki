@@ -1,10 +1,10 @@
-# ESRS Sector Classification
+# <span class="sl" data-layer="uml">UNC</span> ESRS Sector Classification
 
-**Type:** Enumeration  **Stereotype:**   **Status:** Proposed  
+**Type:** Enumeration  **Stereotype:**   **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-01-06  **Modified:** 2026-01-06
 
 
-[Archimate](../Archimate/index.md) / [ESRS Classification](../ESRS Classification/index.md) / [ESRS Sector Classification](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Classification](../ESRS Classification/index.md) / [ESRS Sector Classification](index.md)
 
 ## Attributes
 
@@ -15,10 +15,14 @@
 | CCE, Construction and Engineering, Construction |  |  |  |
 | UPE, Power Production and Energy Utilities, Utilities |  |  |  |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [ESRS Sector Classification](diagrams/ESRS Sector Classification.md)
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+*Generated: 2026-06-26 09:44:48*

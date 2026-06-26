@@ -1,10 +1,10 @@
-# EmissionFactorSource
+# <span class="sl" data-layer="uml">MAS</span> EmissionFactorSource
 
 **Type:** Class  **Stereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
 EmissionFactorSource is a reference entity that identifies the authoritative database, publication, or programme from which emission factors are drawn. Examples include the UK DESNZ Conversion Factors, the US EPA Emission Factors Hub, the IPCC Assessment Report factor sets, and the ecoinvent database. Registering sources as a reference entity ensures that every factor used in a calculation can be traced to its origin, supporting third-party verification and regulatory acceptance.
 
@@ -20,11 +20,15 @@ EmissionFactorSource is a reference entity that identifies the authoritative dat
 | publication_date | String |  | The date on which this version of the source was published or made effective, used to determine which version was current during a given reporting period. |
 | url | String |  | A persistent URL or DOI pointing to the source publication or download location, enabling automated factor retrieval and supporting auditability. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | EmissionFactorSource is a reference entity that identifies the authoritative database, publication, or programme from which emission factors are drawn. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -35,15 +39,24 @@ EmissionFactorSource is a reference entity that identifies the authoritative dat
 | Association |  | [StandardSourceAssociation](StandardSourceAssociation.md) |
 | Association |  | [EmissionFactor](EmissionFactor.md) |
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association |  | [EmissionFactor](EmissionFactor.md) |
 | Association |  | [StandardSourceAssociation](StandardSourceAssociation.md) |
-| Association |  | [EmissionFactor](EmissionFactor.md) |
-| Association |  | [StandardSourceAssociation](StandardSourceAssociation.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e794","label":"StandardSourceAssociati…","fullName":"StandardSourceAssociation","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"StandardSourceAssociation.html"},{"id":"e818","label":"ProductCarbonFootprintF…","fullName":"ProductCarbonFootprintFactorSource","packageName":Products,"isFocal":false,"hasUrl":true,"url":"../Products/ProductCarbonFootprintFactorSource.html"},{"id":"e780","label":"EmissionFactor","fullName":"EmissionFactor","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionFactor.html"},{"id":"e781","label":"EmissionFactorSource","fullName":"EmissionFactorSource","packageName":Emissions,"isFocal":true,"hasUrl":false,"url":""},{"id":"e734","label":"Standard","fullName":"Standard","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Standard.html"},{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"../Products/ProductCarbonFootprint.html"},{"id":"e804","label":"EmissionCalculationMode…","fullName":"EmissionCalculationModelFactorArgument","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionCalculationModelFactorArgument.html"},{"id":"e803","label":"EmissionCalculationForm…","fullName":"EmissionCalculationFormulaComponent","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionCalculationFormulaComponent.html"},{"id":"e793","label":"EmissionActivityFactor","fullName":"EmissionActivityFactor","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionActivityFactor.html"},{"id":"e779","label":"UnitOfMeasure","fullName":"UnitOfMeasure","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"UnitOfMeasure.html"},{"id":"e792","label":"EmissionComponentCatego…","fullName":"EmissionComponentCategory","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionComponentCategory.html"}],"edges":[{"id":"c806","source":"e781","target":"e794","label":"Association"},{"id":"c849","source":"e794","target":"e781","label":"Association"},{"id":"c850","source":"e794","target":"e734","label":"Association"},{"id":"c798","source":"e812","target":"e818","label":"Association"},{"id":"c835","source":"e781","target":"e818","label":"Association"},{"id":"c817","source":"e804","target":"e780","label":"Association"},{"id":"c820","source":"e803","target":"e780","label":"Association"},{"id":"c852","source":"e793","target":"e780","label":"Association"},{"id":"c854","source":"e779","target":"e780","label":"Association"},{"id":"c855","source":"e779","target":"e780","label":"Association"},{"id":"c856","source":"e792","target":"e780","label":"Association"},{"id":"c857","source":"e780","target":"e781","label":"Association"},{"id":"c833","source":"e779","target":"e812","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

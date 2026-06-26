@@ -1,16 +1,17 @@
 # ESRS E5
 
 
-[Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS E5](../index.md)
+[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS E5](../index.md)
 
 ![ESRS E5](ESRS E5.png)
 
-**Description:** 
+**Derived Description:** For more information:
+https://www
 
 ## Elements
 
-- [ESRS E5 Resource Use and Circular Economy](../ESRS E5 Resource Use and Circular Economy.md)
+- <span class="sl" data-layer="uml">CON</span> [ESRS E5 Resource Use and Circular Economy](../ESRS E5 Resource Use and Circular Economy.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:20*
+*Generated: 2026-06-26 09:44:54*

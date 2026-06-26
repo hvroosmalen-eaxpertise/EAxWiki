@@ -1,6 +1,6 @@
 # ESRS S3
 
-[Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS S3](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS S3](index.md)
 
 ## Diagrams
 
@@ -8,9 +8,9 @@
 
 ## Elements
 
-- [ESRS S3 Affected Communities](ESRS S3 Affected Communities.md) — Content «Class»
+- <span class="sl" data-layer="uml">CON</span> [ESRS S3 Affected Communities](ESRS S3 Affected Communities.md)
   - *For more information: https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F15%2520Draft%2520ESRS%2520S3%2520Affected%2520communities%2520November%25202022.pdf*
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:47*

@@ -1,10 +1,10 @@
-# Risk Reduction
+# <span class="sl" data-layer="uml">GOA</span> Risk Reduction
 
 **Type:** Class  **Stereotype:** ArchiMate_Goal  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
-[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
 
 Systematically reduce environmental, social, and governance risks that could impact business continuity and financial performance.         
 Proactively manage sustainability-related risks before they materialize into crises.
@@ -14,6 +14,8 @@ Proactively manage sustainability-related risks before they materialize into cri
 | Name | Value | Notes |
 |------|-------|-------|
 | archimate_element_identifier | goal-003 |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -26,12 +28,16 @@ Proactively manage sustainability-related risks before they materialize into cri
 | Dependency | ArchiMate_Realization | [ESG-based Risk Management](../Courses of Action/ESG-based Risk Management.md) |
 | Dependency | ArchiMate_Realization | [Lower Operational Risk](../Outcomes/Lower Operational Risk.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
 - [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
 - [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
 - [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
@@ -42,14 +48,17 @@ Proactively manage sustainability-related risks before they materialize into cri
 | ControlFlow | ArchiMate_Influence | [Climate Risk](../Drivers/Climate Risk.md) |
 | ControlFlow | ArchiMate_Influence | [Regulatory Pressure](../Drivers/Regulatory Pressure.md) |
 | ControlFlow | ArchiMate_Influence | [Reputation Risk](../Drivers/Reputation Risk.md) |
-| ControlFlow | ArchiMate_Influence | [Regulatory Pressure](../Drivers/Regulatory Pressure.md) |
-| ControlFlow | ArchiMate_Influence | [Climate Risk](../Drivers/Climate Risk.md) |
-| ControlFlow | ArchiMate_Influence | [Reputation Risk](../Drivers/Reputation Risk.md) |
-| Dependency | ArchiMate_Realization | [Responsible Supply Chain Strategy](../Courses of Action/Responsible Supply Chain Strategy.md) |
-| Dependency | ArchiMate_Realization | [ESG-based Risk Management](../Courses of Action/ESG-based Risk Management.md) |
 | Dependency | ArchiMate_Realization | [Lower Operational Risk](../Outcomes/Lower Operational Risk.md) |
-| Dependency | ArchiMate_Realization | [Lower Operational Risk](../Outcomes/Lower Operational Risk.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e429","label":"Regulatory Pressure","fullName":"Regulatory Pressure","packageName":Drivers,"isFocal":false,"hasUrl":true,"url":"../Drivers/Regulatory Pressure.html"},{"id":"e431","label":"Climate Risk","fullName":"Climate Risk","packageName":Drivers,"isFocal":false,"hasUrl":true,"url":"../Drivers/Climate Risk.html"},{"id":"e433","label":"Reputation Risk","fullName":"Reputation Risk","packageName":Drivers,"isFocal":false,"hasUrl":true,"url":"../Drivers/Reputation Risk.html"},{"id":"e442","label":"Responsible Supply Chai…","fullName":"Responsible Supply Chain Strategy","packageName":Courses of Action,"isFocal":false,"hasUrl":true,"url":"../Courses of Action/Responsible Supply Chain Strategy.html"},{"id":"e443","label":"ESG-based Risk Manageme…","fullName":"ESG-based Risk Management","packageName":Courses of Action,"isFocal":false,"hasUrl":true,"url":"../Courses of Action/ESG-based Risk Management.html"},{"id":"e459","label":"Lower Operational Risk","fullName":"Lower Operational Risk","packageName":Outcomes,"isFocal":false,"hasUrl":true,"url":"../Outcomes/Lower Operational Risk.html"},{"id":"e436","label":"Risk Reduction","fullName":"Risk Reduction","packageName":Goals,"isFocal":true,"hasUrl":false,"url":""},{"id":"e437","label":"Corporate Sustainabilit…","fullName":"Corporate Sustainability Integration","packageName":Goals,"isFocal":false,"hasUrl":true,"url":"Corporate Sustainability Integration.html"},{"id":"e434","label":"Long-term Value Creation","fullName":"Long-term Value Creation","packageName":Goals,"isFocal":false,"hasUrl":true,"url":"Long-term Value Creation.html"},{"id":"e447","label":"Sustainable Supply Chai…","fullName":"Sustainable Supply Chain Management","packageName":Capabilities,"isFocal":false,"hasUrl":true,"url":"../Capabilities/Sustainable Supply Chain Management.html"},{"id":"e438","label":"ESG Performance Improve…","fullName":"ESG Performance Improvement","packageName":Goals,"isFocal":false,"hasUrl":true,"url":"ESG Performance Improvement.html"},{"id":"e450","label":"Risk and Compliance Man…","fullName":"Risk and Compliance Management","packageName":Capabilities,"isFocal":false,"hasUrl":true,"url":"../Capabilities/Risk and Compliance Management.html"},{"id":"e454","label":"Supplier Sustainability…","fullName":"Supplier Sustainability Audits","packageName":Courses of Action,"isFocal":false,"hasUrl":true,"url":"../Courses of Action/Supplier Sustainability Audits.html"},{"id":"e464","label":"Supplier Compliance Rate","fullName":"Supplier Compliance Rate","packageName":Assessments,"isFocal":false,"hasUrl":true,"url":"../Assessments/Supplier Compliance Rate.html"}],"edges":[{"id":"c410","source":"e429","target":"e436","label":"drives"},{"id":"c411","source":"e429","target":"e437","label":"drives"},{"id":"c414","source":"e431","target":"e436","label":"drives"},{"id":"c415","source":"e431","target":"e434","label":"drives"},{"id":"c417","source":"e433","target":"e436","label":"drives"},{"id":"c418","source":"e433","target":"e437","label":"drives"},{"id":"c423","source":"e442","target":"e436","label":"realizes"},{"id":"c430","source":"e447","target":"e442","label":"realizes"},{"id":"c424","source":"e443","target":"e436","label":"realizes"},{"id":"c425","source":"e443","target":"e438","label":"realizes"},{"id":"c433","source":"e450","target":"e443","label":"realizes"},{"id":"c443","source":"e454","target":"e459","label":"influences"},{"id":"c449","source":"e459","target":"e436","label":"realizes"},{"id":"c456","source":"e464","target":"e459","label":"measures"},{"id":"c437","source":"e447","target":"e454","label":"realizes"},{"id":"c457","source":"e464","target":"e447","label":"measures"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:48*

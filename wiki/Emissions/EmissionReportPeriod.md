@@ -1,10 +1,10 @@
-# EmissionReportPeriod
+# <span class="sl" data-layer="uml">MAS</span> EmissionReportPeriod
 
 **Type:** Class  **Stereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
 EmissionReportPeriod is a work-product-component that holds the aggregated emission totals for a specific time period within an EmissionReport, broken down by scope and boundary. It carries the period dates and may record the period at year, quarter, or month granularity. Multiple period records within a single report support multi-year trend disclosures and interim reporting required by frameworks such as CDP or ESRS E1.
 
@@ -25,11 +25,15 @@ EmissionReportPeriod is a work-product-component that holds the aggregated emiss
 | total_scope3_quantity | String |  | The aggregated Scope 3 indirect emission total across all categories for this period, expressed in tCO2e. |
 | quantity_unit_of_measure_id | String |  | Foreign key to the UnitOfMeasure record for the unit in which all scope totals in this period record are expressed. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | EmissionReportPeriod is a work-product-component that holds the aggregated emission totals for a specific time period within an EmissionReport, broken down by scope and boundary. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -38,15 +42,24 @@ EmissionReportPeriod is a work-product-component that holds the aggregated emiss
 | Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
 | Association |  | [EmissionReport](EmissionReport.md) |
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
 | Association |  | [EmissionReport](EmissionReport.md) |
-| Association |  | [UnitOfMeasure](UnitOfMeasure.md) |
-| Association |  | [EmissionReport](EmissionReport.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e779","label":"UnitOfMeasure","fullName":"UnitOfMeasure","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"UnitOfMeasure.html"},{"id":"e782","label":"EmissionReport","fullName":"EmissionReport","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionReport.html"},{"id":"e783","label":"EmissionReportPeriod","fullName":"EmissionReportPeriod","packageName":Emissions,"isFocal":true,"hasUrl":false,"url":""},{"id":"e798","label":"UnitOfMeasureSourceRefe…","fullName":"UnitOfMeasureSourceReference","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"UnitOfMeasureSourceReference.html"},{"id":"e797","label":"PhysicalQuantityType","fullName":"PhysicalQuantityType","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"PhysicalQuantityType.html"},{"id":"e796","label":"SystemOfUnits","fullName":"SystemOfUnits","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"SystemOfUnits.html"},{"id":"e775","label":"EmissionParameterType","fullName":"EmissionParameterType","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionParameterType.html"},{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"../Products/ProductCarbonFootprint.html"},{"id":"e763","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameterValue","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/EmissionActivityParameterValue.html"},{"id":"e780","label":"EmissionFactor","fullName":"EmissionFactor","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionFactor.html"},{"id":"e778","label":"EmissionComponent","fullName":"EmissionComponent","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionComponent.html"},{"id":"e776","label":"EmissionStatement","fullName":"EmissionStatement","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionStatement.html"},{"id":"e771","label":"EmissionInventory","fullName":"EmissionInventory","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionInventory.html"},{"id":"e734","label":"Standard","fullName":"Standard","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Standard.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Organization.html"}],"edges":[{"id":"c807","source":"e779","target":"e783","label":"Association"},{"id":"c828","source":"e798","target":"e779","label":"Association"},{"id":"c829","source":"e797","target":"e779","label":"Association"},{"id":"c830","source":"e796","target":"e779","label":"Association"},{"id":"c832","source":"e775","target":"e779","label":"Association"},{"id":"c833","source":"e779","target":"e812","label":"Association"},{"id":"c834","source":"e779","target":"e763","label":"Association"},{"id":"c854","source":"e779","target":"e780","label":"Association"},{"id":"c855","source":"e779","target":"e780","label":"Association"},{"id":"c864","source":"e779","target":"e778","label":"Association"},{"id":"c865","source":"e779","target":"e776","label":"Association"},{"id":"c808","source":"e782","target":"e771","label":"Association"},{"id":"c837","source":"e782","target":"e783","label":"Association"},{"id":"c894","source":"e734","target":"e782","label":"Association"},{"id":"c895","source":"e735","target":"e782","label":"Association"},{"id":"c867","source":"e776","target":"e778","label":"Association"},{"id":"c871","source":"e771","target":"e776","label":"Association"},{"id":"c917","source":"e735","target":"e771","label":"Association"},{"id":"c918","source":"e734","target":"e771","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

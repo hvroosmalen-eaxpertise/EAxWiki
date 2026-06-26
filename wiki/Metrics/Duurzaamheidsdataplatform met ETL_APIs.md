@@ -1,10 +1,10 @@
-# Duurzaamheidsdataplatform met ETL/APIs
+# <span class="sl" data-layer="uml">TAG</span> Duurzaamheidsdataplatform met ETL/APIs
 
-**Type:** Requirement  **Stereotype:** Tag  **Status:** Proposed  
+**Type:** Requirement  **Stereotype:** Tag  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
-[Edgy](../Edgy/index.md) / [Metrics](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [Metrics](index.md)
 
 ## Relationships
 
@@ -12,17 +12,29 @@
 |------|------------|-------------|
 | Association | Link | [ Productievolumes / normaliserende operationele data](Productievolumes _ normaliserende operationele data.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Metrics](diagrams/Metrics.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association | Link | [ Productievolumes / normaliserende operationele data](Productievolumes _ normaliserende operationele data.md) |
-| Association | Link | [ Productievolumes / normaliserende operationele data](Productievolumes _ normaliserende operationele data.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e208","label":" Productievolumes / nor…","fullName":" Productievolumes / normaliserende operationele data","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"Productievolumes _ normaliserende operationele data.html"},{"id":"e228","label":"Duurzaamheidsdataplatfo…","fullName":"Duurzaamheidsdataplatform met ETL/APIs","packageName":Metrics,"isFocal":true,"hasUrl":false,"url":""},{"id":"e183","label":"% scope 3 emissies met …","fullName":"% scope 3 emissies met gemeten data","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"% scope 3 emissies met gemeten data.html"}],"edges":[{"id":"c209","source":"e183","target":"e208","label":"Aggregation"},{"id":"c228","source":"e208","target":"e228","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:48*

@@ -1,10 +1,10 @@
-# Deutsche Bahn (Marco Dillenburg)
+# <span class="sl" data-layer="uml">PEO</span> Deutsche Bahn (Marco Dillenburg)
 
-**Type:** Actor  **Stereotype:** People  **Status:** Proposed  
+**Type:** Actor  **Stereotype:** People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
-[Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
+[Home](../index.md) / [Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
 
 ## Relationships
 
@@ -12,17 +12,29 @@
 |------|------------|-------------|
 | Association | Link | [Sidenote from Community Leads](Sidenote from Community Leads.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Introduction EDGY Presentation 13 May Event](diagrams/Introduction EDGY Presentation 13 May Event.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association | Link | [Sidenote from Community Leads](Sidenote from Community Leads.md) |
-| Association | Link | [Sidenote from Community Leads](Sidenote from Community Leads.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e624","label":"Sidenote from Community…","fullName":"Sidenote from Community Leads","packageName":Introduction EurSuRA,"isFocal":false,"hasUrl":true,"url":"Sidenote from Community Leads.html"},{"id":"e623","label":"Deutsche Bahn (Marco Di…","fullName":"Deutsche Bahn (Marco Dillenburg)","packageName":Introduction EurSuRA,"isFocal":true,"hasUrl":false,"url":""}],"edges":[{"id":"c652","source":"e624","target":"e623","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

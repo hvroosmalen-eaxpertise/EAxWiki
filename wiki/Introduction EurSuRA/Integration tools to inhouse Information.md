@@ -1,10 +1,10 @@
-# Integration tools to inhouse Information
+# <span class="sl" data-layer="uml">ASS</span> Integration tools to inhouse Information
 
-**Type:** Class  **Stereotype:** Asset  **Status:** Proposed  
+**Type:** Class  **Stereotype:** Asset  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
-[Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
+[Home](../index.md) / [Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
 
 ## Tagged Values
 
@@ -12,23 +12,37 @@
 |------|-------|-------|
 | EDGY::TextAlign | Center | Default: Center  |
 
+[↑ Back to top](#)
+
 ## Relationships
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
 | Aggregation | Tree | [Reference Architecture Framework for ESRS Reporting](Reference Architecture Framework for ESRS Reporting.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Introduction EDGY Presentation 13 May Event](diagrams/Introduction EDGY Presentation 13 May Event.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Aggregation | Tree | [Reference Architecture Framework for ESRS Reporting](Reference Architecture Framework for ESRS Reporting.md) |
-| Aggregation | Tree | [Reference Architecture Framework for ESRS Reporting](Reference Architecture Framework for ESRS Reporting.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e613","label":"Reference Architecture …","fullName":"Reference Architecture Framework for ESRS Reporting","packageName":Introduction EurSuRA,"isFocal":false,"hasUrl":true,"url":"Reference Architecture Framework for ESRS Reporting.html"},{"id":"e621","label":"Integration tools to in…","fullName":"Integration tools to inhouse Information","packageName":Introduction EurSuRA,"isFocal":true,"hasUrl":false,"url":""},{"id":"e609","label":"Provide an EU wide refe…","fullName":"Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)","packageName":Introduction EurSuRA,"isFocal":false,"hasUrl":true,"url":"Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).html"},{"id":"e615","label":"Semantic Model","fullName":"Semantic Model","packageName":Introduction EurSuRA,"isFocal":false,"hasUrl":true,"url":"Semantic Model.html"},{"id":"e614","label":"Logical Data Model","fullName":"Logical Data Model","packageName":Introduction EurSuRA,"isFocal":false,"hasUrl":true,"url":"Logical Data Model.html"},{"id":"e616","label":"Reporting Framework","fullName":"Reporting Framework","packageName":Introduction EurSuRA,"isFocal":false,"hasUrl":true,"url":"Reporting Framework.html"},{"id":"e617","label":"Calculation Engine(s)","fullName":"Calculation Engine(s)","packageName":Introduction EurSuRA,"isFocal":false,"hasUrl":true,"url":"Calculation Engine(s).html"},{"id":"e622","label":"Collecting Information …","fullName":"Collecting Information and Create EDGY Diagrams/Model","packageName":Introduction EurSuRA,"isFocal":false,"hasUrl":true,"url":"Collecting Information and Create EDGY Diagrams_Model.html"}],"edges":[{"id":"c643","source":"e609","target":"e613","label":"Association"},{"id":"c644","source":"e613","target":"e615","label":"Aggregation"},{"id":"c645","source":"e613","target":"e614","label":"Aggregation"},{"id":"c646","source":"e613","target":"e616","label":"Aggregation"},{"id":"c647","source":"e613","target":"e617","label":"Aggregation"},{"id":"c650","source":"e613","target":"e621","label":"Aggregation"},{"id":"c651","source":"e622","target":"e613","label":"ControlFlow"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

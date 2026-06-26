@@ -1,6 +1,6 @@
 # ESRS Sector Classification
 
-[Archimate](../Archimate/index.md) / [ESRS Classification](../ESRS Classification/index.md) / [ESRS Sector Classification](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Classification](../ESRS Classification/index.md) / [ESRS Sector Classification](index.md)
 
 ## Diagrams
 
@@ -8,8 +8,8 @@
 
 ## Elements
 
-- [ESRS Sector Classification](ESRS Sector Classification.md) — Enumeration
+- <span class="sl" data-layer="uml">UNC</span> [ESRS Sector Classification](ESRS Sector Classification.md)
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:48*

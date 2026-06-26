@@ -1,10 +1,10 @@
-# EmissionReportingBoundary
+# <span class="sl" data-layer="uml">MAS</span> EmissionReportingBoundary
 
 **Type:** Class  **Stereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
 EmissionReportingBoundary is a work-product-component that defines and documents the organisational, operational, and geographic boundary applied to a specific EmissionInventory or EmissionReport. It records the boundary-setting methodology, the entities included and excluded, and the rationale for any exclusions, providing the complete boundary documentation required by GHG Protocol and ISO 14064-1 first-party assertions and supporting the assurance engagement.
 
@@ -19,11 +19,15 @@ EmissionReportingBoundary is a work-product-component that defines and documents
 | excluded_entities | String |  | A structured or free-text list of organisational entities, facilities, or activities explicitly excluded from the inventory boundary, with the reason for each exclusion. |
 | excluded_entities_rationale | String |  | A narrative explanation of why the excluded entities fall outside the chosen boundary methodology, supporting the transparency and completeness principles required for credible GHG disclosures. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | EmissionReportingBoundary is a work-product-component that defines and documents the organisational, operational, and geographic boundary applied to a specific EmissionInventory or EmissionReport. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -31,6 +35,15 @@ EmissionReportingBoundary is a work-product-component that defines and documents
 |------|------------|-------------|
 | Association |  | [EmissionInventory](EmissionInventory.md) |
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e771","label":"EmissionInventory","fullName":"EmissionInventory","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionInventory.html"},{"id":"e808","label":"EmissionReportingBounda…","fullName":"EmissionReportingBoundary","packageName":Emissions,"isFocal":true,"hasUrl":false,"url":""},{"id":"e782","label":"EmissionReport","fullName":"EmissionReport","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionReport.html"},{"id":"e776","label":"EmissionStatement","fullName":"EmissionStatement","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionStatement.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Organization.html"},{"id":"e734","label":"Standard","fullName":"Standard","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Standard.html"}],"edges":[{"id":"c808","source":"e782","target":"e771","label":"Association"},{"id":"c810","source":"e808","target":"e771","label":"Association"},{"id":"c871","source":"e771","target":"e776","label":"Association"},{"id":"c917","source":"e735","target":"e771","label":"Association"},{"id":"c918","source":"e734","target":"e771","label":"Association"},{"id":"c894","source":"e734","target":"e782","label":"Association"},{"id":"c895","source":"e735","target":"e782","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

@@ -1,10 +1,10 @@
-# EmissionCalculationMethodType
+# <span class="sl" data-layer="uml">REF</span> EmissionCalculationMethodType
 
 **Type:** Class  **Stereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
 EmissionCalculationMethodType is a reference entity that classifies the high-level methodological approach applied in an EmissionCalculationModel. The WBCSD PACT technical specification defines four primary method types: supplier-specific, hybrid, activity-based, and spend-based, each with different data quality implications and applicability conditions. Registering these types as reference data enables transparent method disclosure and drives data quality scoring in product carbon footprint assessments.
 
@@ -16,11 +16,15 @@ EmissionCalculationMethodType is a reference entity that classifies the high-lev
 | name | String |  | The standard label for the method type, such as Activity-based, Spend-based, Supplier-specific, or Hybrid, as defined in the GHG Protocol or PACT technical specification. |
 | description | String |  | A description of the calculation approach, its data requirements, typical use cases, and the data quality tier it represents relative to other method types. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | EmissionCalculationMethodType is a reference entity that classifies the high-level methodological approach applied in an EmissionCalculationModel. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -28,6 +32,15 @@ EmissionCalculationMethodType is a reference entity that classifies the high-lev
 |------|------------|-------------|
 | Association |  | [EmissionCalculationModel](EmissionCalculationModel.md) |
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e777","label":"EmissionCalculationModel","fullName":"EmissionCalculationModel","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionCalculationModel.html"},{"id":"e791","label":"EmissionCalculationMeth…","fullName":"EmissionCalculationMethodType","packageName":Emissions,"isFocal":true,"hasUrl":false,"url":""},{"id":"e805","label":"EmissionCalculationMode…","fullName":"EmissionCalculationModelParameterArgument","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionCalculationModelParameterArgument.html"},{"id":"e804","label":"EmissionCalculationMode…","fullName":"EmissionCalculationModelFactorArgument","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionCalculationModelFactorArgument.html"},{"id":"e793","label":"EmissionActivityFactor","fullName":"EmissionActivityFactor","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionActivityFactor.html"},{"id":"e790","label":"EmissionCalculationForm…","fullName":"EmissionCalculationFormula","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionCalculationFormula.html"},{"id":"e776","label":"EmissionStatement","fullName":"EmissionStatement","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionStatement.html"},{"id":"e734","label":"Standard","fullName":"Standard","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Standard.html"}],"edges":[{"id":"c816","source":"e805","target":"e777","label":"Association"},{"id":"c818","source":"e804","target":"e777","label":"Association"},{"id":"c851","source":"e793","target":"e777","label":"Association"},{"id":"c858","source":"e791","target":"e777","label":"Association"},{"id":"c859","source":"e777","target":"e790","label":"Association"},{"id":"c868","source":"e777","target":"e776","label":"Association"},{"id":"c916","source":"e734","target":"e777","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

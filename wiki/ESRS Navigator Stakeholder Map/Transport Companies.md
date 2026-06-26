@@ -1,10 +1,10 @@
-# Transport Companies
+# <span class="sl" data-layer="uml">STA</span> Transport Companies
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
-[Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
 Logistics and transportation providers
 
@@ -14,6 +14,8 @@ Logistics and transportation providers
 |------|-------|-------|
 | archimate_element_identifier | id-up-004 |  |
 
+[↑ Back to top](#)
+
 ## Relationships
 
 | Type | Stereotype | Connected To |
@@ -21,10 +23,21 @@ Logistics and transportation providers
 | Generalization | ArchiMate_Specialization | [Suppliers](Suppliers.md) |
 | Abstraction | trace | [Transport Companies](../People/Transport Companies.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e335","label":"Suppliers","fullName":"Suppliers","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"Suppliers.html"},{"id":"e530","label":"Transport Companies","fullName":"Transport Companies","packageName":People,"isFocal":false,"hasUrl":true,"url":"../People/Transport Companies.html"},{"id":"e294","label":"Transport Companies","fullName":"Transport Companies","packageName":ESRS Navigator Stakeholder Map,"isFocal":true,"hasUrl":false,"url":""},{"id":"e267","label":"Workers in Value Chain …","fullName":"Workers in Value Chain (ESRS S2)","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"Workers in Value Chain (ESRS S2).html"},{"id":"e334","label":"Agricultural Suppliers","fullName":"Agricultural Suppliers","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"Agricultural Suppliers.html"},{"id":"e300","label":"Packaging Suppliers","fullName":"Packaging Suppliers","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"Packaging Suppliers.html"},{"id":"e331","label":"Large Companies (>250 e…","fullName":"Large Companies (>250 employees)","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"Large Companies (_250 employees).html"},{"id":"e529","label":"Suppliers","fullName":"Suppliers","packageName":People,"isFocal":false,"hasUrl":true,"url":"../People/Suppliers.html"}],"edges":[{"id":"c279","source":"e294","target":"e335","label":"Generalization"},{"id":"c282","source":"e267","target":"e335","label":"Association"},{"id":"c287","source":"e334","target":"e335","label":"Generalization"},{"id":"c327","source":"e300","target":"e335","label":"Generalization"},{"id":"c328","source":"e335","target":"e331","label":"supplies to"},{"id":"c504","source":"e335","target":"e529","label":"Abstraction"},{"id":"c505","source":"e294","target":"e530","label":"Abstraction"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

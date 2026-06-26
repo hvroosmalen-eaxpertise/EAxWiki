@@ -1,10 +1,10 @@
-# ProductLifeCycle
+# <span class="sl" data-layer="uml">MAS</span> ProductLifeCycle
 
 **Type:** Class  **Stereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
 ProductLifeCycle is a master-data entity that defines the set of life-cycle stages considered in a product carbon footprint assessment, establishing the system boundary for a given product and footprint scope. It groups the individual ProductLifeCycleStage records that enumerate each stage (raw material extraction, manufacturing, distribution, use, end-of-life) and anchors the ProductLifeCycleFootprint records that hold stage-level emission quantities. Defining the life cycle as a structured entity rather than a string field enables stage-level comparisons across products and supply-chain tiers.
 
@@ -17,11 +17,15 @@ ProductLifeCycle is a master-data entity that defines the set of life-cycle stag
 | name | String |  | A descriptive label for this life-cycle scope definition, such as Cradle-to-gate, Cradle-to-grave, or Gate-to-gate, indicating the extent of the boundary and enabling high-level comparison across products. |
 | description | String |  | A narrative description of the system boundary, listing the included and excluded life-cycle stages, the functional unit, and any allocation decisions that apply to the life cycle as a whole. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | ProductLifeCycle is a master-data entity that defines the set of life-cycle stages considered in a product carbon footprint assessment, establishing the system boundary for a given product and footprint scope. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -30,13 +34,23 @@ ProductLifeCycle is a master-data entity that defines the set of life-cycle stag
 | Association |  | [EmissionActivityFlow](EmissionActivityFlow.md) |
 | Association |  | [Product](Product.md) |
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association |  | [Product](Product.md) |
-| Association |  | [Product](Product.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e814","label":"EmissionActivityFlow","fullName":"EmissionActivityFlow","packageName":Products,"isFocal":false,"hasUrl":true,"url":"EmissionActivityFlow.html"},{"id":"e810","label":"Product","fullName":"Product","packageName":Products,"isFocal":false,"hasUrl":true,"url":"Product.html"},{"id":"e813","label":"ProductLifeCycle","fullName":"ProductLifeCycle","packageName":Products,"isFocal":true,"hasUrl":false,"url":""},{"id":"e773","label":"EmissionActivity","fullName":"EmissionActivity","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionActivity.html"},{"id":"e819","label":"EnvironmentalProductDec…","fullName":"EnvironmentalProductDeclaration","packageName":Products,"isFocal":false,"hasUrl":true,"url":"EnvironmentalProductDeclaration.html"},{"id":"e815","label":"CentralProductClassific…","fullName":"CentralProductClassificationCode","packageName":Products,"isFocal":false,"hasUrl":true,"url":"CentralProductClassificationCode.html"},{"id":"e811","label":"ProductFootprint","fullName":"ProductFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductFootprint.html"}],"edges":[{"id":"c800","source":"e813","target":"e814","label":"Association"},{"id":"c836","source":"e773","target":"e814","label":"Association"},{"id":"c797","source":"e810","target":"e819","label":"Association"},{"id":"c799","source":"e810","target":"e815","label":"Association"},{"id":"c801","source":"e810","target":"e813","label":"Association"},{"id":"c805","source":"e810","target":"e811","label":"Association"},{"id":"c863","source":"e773","target":"e773","label":"Association"},{"id":"c794","source":"e811","target":"e811","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

@@ -1,16 +1,17 @@
 # ESRS S1
 
 
-[Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS S1](../index.md)
+[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS S1](../index.md)
 
 ![ESRS S1](ESRS S1.png)
 
-**Description:** 
+**Derived Description:** For more information:
+https://www
 
 ## Elements
 
-- [ESRS S1 Own Workforce](../ESRS S1 Own Workforce.md)
+- <span class="sl" data-layer="uml">CON</span> [ESRS S1 Own Workforce](../ESRS S1 Own Workforce.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:20*
+*Generated: 2026-06-26 09:44:54*

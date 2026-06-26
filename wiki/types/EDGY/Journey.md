@@ -2,8 +2,8 @@
 
 1 element(s):
 
-- [Green Customer Journey](../../Journey/Green Customer Journey.md)
+- <span class="sl" data-layer="uml">JOU</span> [Green Customer Journey](../../Journey/Green Customer Journey.md)
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:50*

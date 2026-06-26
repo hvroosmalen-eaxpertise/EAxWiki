@@ -1,10 +1,10 @@
-# Strategic Sustainability Management
+# <span class="sl" data-layer="uml">RES</span> Strategic Sustainability Management
 
-**Type:** Class  **Stereotype:** ArchiMate_Resource  **Status:** Proposed  
+**Type:** Class  **Stereotype:** ArchiMate_Resource  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-12
 
 
-[Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Documents](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Documents](index.md)
 
 A Practical Approach for Companies Using the SDGs as a Framework, Bodenstein Robert, Herget Josef
 
@@ -17,6 +17,8 @@ The book is enriched with practical tools, including checklists and insights int
 
 - [Reference Documents](diagrams/Reference Documents.md)
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+*Generated: 2026-06-26 09:44:49*

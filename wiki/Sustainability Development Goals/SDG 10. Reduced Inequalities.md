@@ -1,10 +1,10 @@
-# SDG 10. Reduced Inequalities
+# <span class="sl" data-layer="uml">PUR</span> SDG 10. Reduced Inequalities
 
-**Type:** Activity  **Stereotype:** Purpose  **Status:** Proposed  
+**Type:** Activity  **Stereotype:** Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-02
 
 
-[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
 
 Reduce inequality within and among countries.
 
@@ -15,11 +15,15 @@ Reduce inequality within and among countries.
 |------|-------|-------|
 | EDGY::TextAlign | Center | Default: Center  |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Sustainability Development Goals](diagrams/Sustainability Development Goals.md)
 - [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:15*
+*Generated: 2026-06-26 09:44:47*

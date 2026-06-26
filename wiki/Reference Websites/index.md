@@ -1,6 +1,6 @@
 # Reference Websites
 
-[Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Websites](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Websites](index.md)
 
 ## Diagrams
 
@@ -8,9 +8,9 @@
 
 ## Elements
 
-- [SDG Academy](SDG Academy.md) — ArchiMate_Resource «Class»
+- <span class="sl" data-layer="uml">RES</span> [SDG Academy](SDG Academy.md)
   - *SDG Academy provides a number of applicable resources and provides free training material, see https://sdgacademy.org/ for more information.*
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:49*

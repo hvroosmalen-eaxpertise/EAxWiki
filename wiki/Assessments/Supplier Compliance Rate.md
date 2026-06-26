@@ -1,10 +1,10 @@
-# Supplier Compliance Rate
+# <span class="sl" data-layer="uml">ASS</span> Supplier Compliance Rate
 
 **Type:** Class  **Stereotype:** ArchiMate_Assessment  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
-[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
 
 Percentage of suppliers meeting defined environmental and social standards based on audits and assessments.         
 Measures effectiveness of sustainable supply chain management programs.         
@@ -16,12 +16,16 @@ Indicates level of control over value chain sustainability impacts.
 |------|-------|-------|
 | archimate_element_identifier | kpi-003 |  |
 
+[↑ Back to top](#)
+
 ## Relationships
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
 | Association | ArchiMate_Association | [Lower Operational Risk](../Outcomes/Lower Operational Risk.md) |
 | Association | ArchiMate_Association | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
+
+[↑ Back to top](#)
 
 ### Appears on Diagrams
 
@@ -30,6 +34,15 @@ Indicates level of control over value chain sustainability impacts.
 - [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
 - [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e459","label":"Lower Operational Risk","fullName":"Lower Operational Risk","packageName":Outcomes,"isFocal":false,"hasUrl":true,"url":"../Outcomes/Lower Operational Risk.html"},{"id":"e447","label":"Sustainable Supply Chai…","fullName":"Sustainable Supply Chain Management","packageName":Capabilities,"isFocal":false,"hasUrl":true,"url":"../Capabilities/Sustainable Supply Chain Management.html"},{"id":"e464","label":"Supplier Compliance Rate","fullName":"Supplier Compliance Rate","packageName":Assessments,"isFocal":true,"hasUrl":false,"url":""},{"id":"e454","label":"Supplier Sustainability…","fullName":"Supplier Sustainability Audits","packageName":Courses of Action,"isFocal":false,"hasUrl":true,"url":"../Courses of Action/Supplier Sustainability Audits.html"},{"id":"e436","label":"Risk Reduction","fullName":"Risk Reduction","packageName":Goals,"isFocal":false,"hasUrl":true,"url":"../Goals/Risk Reduction.html"},{"id":"e442","label":"Responsible Supply Chai…","fullName":"Responsible Supply Chain Strategy","packageName":Courses of Action,"isFocal":false,"hasUrl":true,"url":"../Courses of Action/Responsible Supply Chain Strategy.html"}],"edges":[{"id":"c443","source":"e454","target":"e459","label":"influences"},{"id":"c449","source":"e459","target":"e436","label":"realizes"},{"id":"c456","source":"e464","target":"e459","label":"measures"},{"id":"c430","source":"e447","target":"e442","label":"realizes"},{"id":"c437","source":"e447","target":"e454","label":"realizes"},{"id":"c457","source":"e464","target":"e447","label":"measures"},{"id":"c423","source":"e442","target":"e436","label":"realizes"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:48*

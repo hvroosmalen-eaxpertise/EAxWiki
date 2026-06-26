@@ -1,10 +1,10 @@
-# Reparatie
+# <span class="sl" data-layer="uml">STO</span> Reparatie
 
-**Type:** Interface  **Stereotype:** Story  **Status:** Proposed  
+**Type:** Interface  **Stereotype:** Story  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
-[Edgy](../Edgy/index.md) / [Stories](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [Stories](index.md)
 
 In een ontwerpafdeling van een technologiebedrijf viel het een medewerker op dat er een stapel afgedankte proefmodellen lag. Hij stelde voor om elke vrijdag een “repareeruur” in te lassen waarin collega’s kapotte apparaten samen herstellen in plaats van weggooien. Het werd een geliefde routine. Het team ging ook dagelijks op de fiets naar kantoor, aangemoedigd door een interne competitie. Deze duurzame gewoonten gaven medewerkers trots en betrokkenheid.
 
@@ -14,10 +14,14 @@ In een ontwerpafdeling van een technologiebedrijf viel het een medewerker op dat
 |------|-------|-------|
 | EDGY::TextAlign | Center | Default: Center  |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Stories Voorbeelden](diagrams/Stories Voorbeelden.md)
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+*Generated: 2026-06-26 09:44:48*

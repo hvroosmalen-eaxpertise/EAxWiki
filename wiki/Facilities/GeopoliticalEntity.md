@@ -1,10 +1,10 @@
-# GeopoliticalEntity
+# <span class="sl" data-layer="uml">MAS</span> GeopoliticalEntity
 
 **Type:** Class  **Stereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
 GeopoliticalEntity represents a named geographical area that is defined and administered by an official entity, such as countries, nature reserves, states, regions, or provinces. It is classified by a GeopoliticalEntityType and optionally linked to a Country. Examples include "USA", "Canada", "United Kingdom", "Yellow Stone National Park", "Alberta", and "North Sea". Geopolitical entities provide the administrative geographic context required for regulatory jurisdiction mapping, reporting by jurisdiction, and alignment with country-level emission factor datasets.
 
@@ -19,11 +19,15 @@ GeopoliticalEntity represents a named geographical area that is defined and admi
 | effective_datetime | String |  | The date and time from which this geopolitical entity record is valid, in ISO 8601 format. Supports tracking of boundary changes or the creation of new entities over time. |
 | termination_datetime | String |  | The date and time at which this geopolitical entity record is terminated, in ISO 8601 format. Null if the entity is currently active. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | GeopoliticalEntity represents a named geographical area that is defined and administered by an official entity, such as countries, nature reserves, states, regions, or provinces. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -35,6 +39,8 @@ GeopoliticalEntity represents a named geographical area that is defined and admi
 | Association |  | [Location](Location.md) |
 | Association |  | [Country](../Organisation/Country.md) |
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
@@ -43,10 +49,16 @@ GeopoliticalEntity represents a named geographical area that is defined and admi
 | Association |  | [GeopoliticalEntityType](GeopoliticalEntityType.md) |
 | Association |  | [EmissionActivityParameterRecordingTemplate](../Emissions/EmissionActivityParameterRecordingTemplate.md) |
 | Association |  | [GeopoliticalEntity](GeopoliticalEntity.md) |
-| Association |  | [GeopoliticalEntityType](GeopoliticalEntityType.md) |
-| Association |  | [Country](../Organisation/Country.md) |
-| Association |  | [EmissionActivityParameterRecordingTemplate](../Emissions/EmissionActivityParameterRecordingTemplate.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e806","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameterRecordingTemplate","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionActivityParameterRecordingTemplate.html"},{"id":"e765","label":"GeopoliticalEntityType","fullName":"GeopoliticalEntityType","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"GeopoliticalEntityType.html"},{"id":"e755","label":"Location","fullName":"Location","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"Location.html"},{"id":"e745","label":"Country","fullName":"Country","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Country.html"},{"id":"e766","label":"GeopoliticalEntity","fullName":"GeopoliticalEntity","packageName":Facilities,"isFocal":true,"hasUrl":false,"url":""},{"id":"e807","label":"EmissionActivityTypePar…","fullName":"EmissionActivityTypeParameterTypeAssignment","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionActivityTypeParameterTypeAssignment.html"},{"id":"e786","label":"EmissionActivityType","fullName":"EmissionActivityType","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionActivityType.html"},{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"../Products/ProductCarbonFootprint.html"},{"id":"e767","label":"BusinessArea","fullName":"BusinessArea","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"BusinessArea.html"},{"id":"e768","label":"GeospatialLocation","fullName":"GeospatialLocation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"GeospatialLocation.html"},{"id":"e769","label":"FacilityLocationType","fullName":"FacilityLocationType","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityLocationType.html"},{"id":"e758","label":"FacilityLocationAssocia…","fullName":"FacilityLocationAssociation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityLocationAssociation.html"},{"id":"e737","label":"Address","fullName":"Address","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Address.html"}],"edges":[{"id":"c812","source":"e807","target":"e806","label":"Association"},{"id":"c813","source":"e806","target":"e766","label":"Association"},{"id":"c814","source":"e806","target":"e786","label":"Association"},{"id":"c885","source":"e765","target":"e766","label":"Association"},{"id":"c792","source":"e812","target":"e755","label":"Association"},{"id":"c881","source":"e755","target":"e755","label":"Association"},{"id":"c882","source":"e767","target":"e755","label":"Association"},{"id":"c883","source":"e768","target":"e755","label":"Association"},{"id":"c886","source":"e766","target":"e755","label":"Association"},{"id":"c887","source":"e769","target":"e755","label":"Association"},{"id":"c888","source":"e755","target":"e758","label":"Association"},{"id":"c893","source":"e745","target":"e766","label":"Association"},{"id":"c909","source":"e745","target":"e737","label":"Association"},{"id":"c884","source":"e766","target":"e766","label":"Association"},{"id":"c872","source":"e769","target":"e758","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

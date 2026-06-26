@@ -1,40 +1,40 @@
 # Sustainability Development Goals
 
 
-[Edgy](../../Edgy/index.md) / [SDGs](../../SDGs/index.md) / [Sustainability Development Goals](../index.md)
+[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [SDGs](../../SDGs/index.md) / [Sustainability Development Goals](../index.md)
 
 ![Sustainability Development Goals](Sustainability Development Goals.png)
 
-**Description:** 
+**Derived Description:** End poverty in all its forms everywhere
 
 ## Elements
 
-- [](../unnamed.md)
-- [](../unnamed.md)
-- [](../unnamed.md)
-- [](../unnamed.md)
-- [](../unnamed.md)
-- [](../unnamed.md)
-- [](../unnamed.md)
-- [SDG  1. No Poverty](../SDG  1. No Poverty.md)
-- [SDG  2. Zero Hunger](../SDG  2. Zero Hunger.md)
-- [SDG  3. Good Health and Well-Being](../SDG  3. Good Health and Well-Being.md)
-- [SDG  4. Quality Education](../SDG  4. Quality Education.md)
-- [SDG  5. Gender Equality](../SDG  5. Gender Equality.md)
-- [SDG  6. Clean Water and Sanitation](../SDG  6. Clean Water and Sanitation.md)
-- [SDG  7. Affordable and Clean Energy](../SDG  7. Affordable and Clean Energy.md)
-- [SDG  8. Decent Work and Economic Growth](../SDG  8. Decent Work and Economic Growth.md)
-- [SDG  9. Industry, Innovation and Infrastructure](../SDG  9. Industry, Innovation and Infrastructure.md)
-- [SDG 10. Reduced Inequalities](../SDG 10. Reduced Inequalities.md)
-- [SDG 11. Sustainable Cities and Communities](../SDG 11. Sustainable Cities and Communities.md)
-- [SDG 12. Responsible Consumption and Production](../SDG 12. Responsible Consumption and Production.md)
-- [SDG 13. Climate Action](../SDG 13. Climate Action.md)
-- [SDG 14. Life Below Water](../SDG 14. Life Below Water.md)
-- [SDG 15. Life on Land](../SDG 15. Life on Land.md)
-- [SDG 16. Peace, Justice and Strong Institutions](../SDG 16. Peace, Justice and Strong Institutions.md)
-- [SDG 17. Partnerships for the Goals](../SDG 17. Partnerships for the Goals.md)
-- [Sustainability Development Goals](../Sustainability Development Goals.md)
+- <span class="sl" data-layer="uml">UNC</span> [](../unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../unnamed.md)
+- <span class="sl" data-layer="uml">NAV</span> [](../unnamed.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG  1. No Poverty](../SDG  1. No Poverty.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG  2. Zero Hunger](../SDG  2. Zero Hunger.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG  3. Good Health and Well-Being](../SDG  3. Good Health and Well-Being.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG  4. Quality Education](../SDG  4. Quality Education.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG  5. Gender Equality](../SDG  5. Gender Equality.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG  6. Clean Water and Sanitation](../SDG  6. Clean Water and Sanitation.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG  7. Affordable and Clean Energy](../SDG  7. Affordable and Clean Energy.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG  8. Decent Work and Economic Growth](../SDG  8. Decent Work and Economic Growth.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG  9. Industry, Innovation and Infrastructure](../SDG  9. Industry, Innovation and Infrastructure.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG 10. Reduced Inequalities](../SDG 10. Reduced Inequalities.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG 11. Sustainable Cities and Communities](../SDG 11. Sustainable Cities and Communities.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG 12. Responsible Consumption and Production](../SDG 12. Responsible Consumption and Production.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG 13. Climate Action](../SDG 13. Climate Action.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG 14. Life Below Water](../SDG 14. Life Below Water.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG 15. Life on Land](../SDG 15. Life on Land.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG 16. Peace, Justice and Strong Institutions](../SDG 16. Peace, Justice and Strong Institutions.md)
+- <span class="sl" data-layer="uml">PUR</span> [SDG 17. Partnerships for the Goals](../SDG 17. Partnerships for the Goals.md)
+- <span class="sl" data-layer="uml">PUR</span> [Sustainability Development Goals](../Sustainability Development Goals.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:18*
+*Generated: 2026-06-26 09:44:52*

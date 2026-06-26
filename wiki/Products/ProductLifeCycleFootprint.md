@@ -1,10 +1,10 @@
-# ProductLifeCycleFootprint
+# <span class="sl" data-layer="uml">WOR</span> ProductLifeCycleFootprint
 
 **Type:** Class  **Stereotype:** work-product-component  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
 ProductLifeCycleFootprint is a work-product-component that records the GHG emission contribution of a specific ProductLifeCycleStage to the total ProductCarbonFootprint. By disaggregating the PCF total into stage-level contributions, this entity enables hotspot analysis, targeted supplier engagement, and the stage-by-stage breakdowns required by ISO 14067 and increasingly expected by frameworks such as ESRS E1 Appendix A.
 
@@ -18,11 +18,15 @@ ProductLifeCycleFootprint is a work-product-component that records the GHG emiss
 | quantity | String |  | The GHG emission quantity attributable to this life-cycle stage per declared unit, expressed in the unit referenced by quantity_unit_of_measure_id, typically kgCO2e. |
 | quantity_unit_of_measure_id | String |  | Foreign key to the UnitOfMeasure in which the stage emission quantity is expressed, enabling correct aggregation with other stage records and comparison with the PCF total. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | ProductLifeCycleFootprint is a work-product-component that records the GHG emission contribution of a specific ProductLifeCycleStage to the total ProductCarbonFootprint. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -32,6 +36,8 @@ ProductLifeCycleFootprint is a work-product-component that records the GHG emiss
 | Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
 | Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
@@ -39,10 +45,16 @@ ProductLifeCycleFootprint is a work-product-component that records the GHG emiss
 | Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
 | Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
 | Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
-| Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
-| Association |  | [ProductLifeCycleStage](ProductLifeCycleStage.md) |
-| Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e816","label":"ProductLifeCycleStage","fullName":"ProductLifeCycleStage","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductLifeCycleStage.html"},{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductCarbonFootprint.html"},{"id":"e817","label":"ProductLifeCycleFootpri…","fullName":"ProductLifeCycleFootprint","packageName":Products,"isFocal":true,"hasUrl":false,"url":""},{"id":"e755","label":"Location","fullName":"Location","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/Location.html"},{"id":"e821","label":"ProductFootprintDataQua…","fullName":"ProductFootprintDataQualityIndicator","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductFootprintDataQualityIndicator.html"},{"id":"e820","label":"ProductCategoryRule","fullName":"ProductCategoryRule","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductCategoryRule.html"},{"id":"e818","label":"ProductCarbonFootprintF…","fullName":"ProductCarbonFootprintFactorSource","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductCarbonFootprintFactorSource.html"},{"id":"e811","label":"ProductFootprint","fullName":"ProductFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductFootprint.html"},{"id":"e779","label":"UnitOfMeasure","fullName":"UnitOfMeasure","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/UnitOfMeasure.html"}],"edges":[{"id":"c793","source":"e816","target":"e817","label":"Association"},{"id":"c802","source":"e816","target":"e817","label":"Association"},{"id":"c792","source":"e812","target":"e755","label":"Association"},{"id":"c795","source":"e812","target":"e821","label":"Association"},{"id":"c796","source":"e812","target":"e820","label":"Association"},{"id":"c798","source":"e812","target":"e818","label":"Association"},{"id":"c803","source":"e812","target":"e817","label":"Association"},{"id":"c804","source":"e811","target":"e812","label":"Association"},{"id":"c833","source":"e779","target":"e812","label":"Association"},{"id":"c881","source":"e755","target":"e755","label":"Association"},{"id":"c794","source":"e811","target":"e811","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

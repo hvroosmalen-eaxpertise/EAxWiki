@@ -1,10 +1,10 @@
-# ProductFootprint
+# <span class="sl" data-layer="uml">WOR</span> ProductFootprint
 
 **Type:** Class  **Stereotype:** work-product-component  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
 ProductFootprint is a work-product-component that serves as the versioned envelope record for a product carbon footprint declaration. It holds the declaration metadata including the status, version history, validity period, and preceding footprint reference, grouping one or more ProductCarbonFootprint records that carry the quantified GHG data. The ProductFootprint entity aligns with the PACT technical specification version 2 data model, where a footprint declaration can be updated or superseded while retaining the historical chain of prior versions.
 
@@ -22,11 +22,15 @@ ProductFootprint is a work-product-component that serves as the versioned envelo
 | validity_period_end | String |  | The last date for which this footprint declaration is valid; a null value indicates no defined expiry, while a populated date requires the receiver to obtain a refreshed declaration after this date. |
 | preceding_product_footprint_id | String |  | A self-referential foreign key pointing to the ProductFootprint record that this declaration supersedes or corrects, enabling receivers to navigate the revision history and always identify the latest active version. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | ProductFootprint is a work-product-component that serves as the versioned envelope record for a product carbon footprint declaration. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -36,14 +40,24 @@ ProductFootprint is a work-product-component that serves as the versioned envelo
 | Association |  | [ProductCarbonFootprint](ProductCarbonFootprint.md) |
 | Association |  | [Product](Product.md) |
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association |  | [Product](Product.md) |
 | Association |  | [ProductFootprint](ProductFootprint.md) |
-| Association |  | [Product](Product.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductCarbonFootprint.html"},{"id":"e810","label":"Product","fullName":"Product","packageName":Products,"isFocal":false,"hasUrl":true,"url":"Product.html"},{"id":"e811","label":"ProductFootprint","fullName":"ProductFootprint","packageName":Products,"isFocal":true,"hasUrl":false,"url":""},{"id":"e755","label":"Location","fullName":"Location","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/Location.html"},{"id":"e821","label":"ProductFootprintDataQua…","fullName":"ProductFootprintDataQualityIndicator","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductFootprintDataQualityIndicator.html"},{"id":"e820","label":"ProductCategoryRule","fullName":"ProductCategoryRule","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductCategoryRule.html"},{"id":"e818","label":"ProductCarbonFootprintF…","fullName":"ProductCarbonFootprintFactorSource","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductCarbonFootprintFactorSource.html"},{"id":"e817","label":"ProductLifeCycleFootpri…","fullName":"ProductLifeCycleFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductLifeCycleFootprint.html"},{"id":"e779","label":"UnitOfMeasure","fullName":"UnitOfMeasure","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/UnitOfMeasure.html"},{"id":"e819","label":"EnvironmentalProductDec…","fullName":"EnvironmentalProductDeclaration","packageName":Products,"isFocal":false,"hasUrl":true,"url":"EnvironmentalProductDeclaration.html"},{"id":"e815","label":"CentralProductClassific…","fullName":"CentralProductClassificationCode","packageName":Products,"isFocal":false,"hasUrl":true,"url":"CentralProductClassificationCode.html"},{"id":"e813","label":"ProductLifeCycle","fullName":"ProductLifeCycle","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductLifeCycle.html"}],"edges":[{"id":"c792","source":"e812","target":"e755","label":"Association"},{"id":"c795","source":"e812","target":"e821","label":"Association"},{"id":"c796","source":"e812","target":"e820","label":"Association"},{"id":"c798","source":"e812","target":"e818","label":"Association"},{"id":"c803","source":"e812","target":"e817","label":"Association"},{"id":"c804","source":"e811","target":"e812","label":"Association"},{"id":"c833","source":"e779","target":"e812","label":"Association"},{"id":"c797","source":"e810","target":"e819","label":"Association"},{"id":"c799","source":"e810","target":"e815","label":"Association"},{"id":"c801","source":"e810","target":"e813","label":"Association"},{"id":"c805","source":"e810","target":"e811","label":"Association"},{"id":"c794","source":"e811","target":"e811","label":"Association"},{"id":"c881","source":"e755","target":"e755","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

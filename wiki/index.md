@@ -1,4 +1,4 @@
-# EurSuRA Wiki
+# EurSuRA
 
 ## Repository
 
@@ -13,4 +13,4 @@ E:\Users\Han\Repos\EAxWiki\model\EurSuRA.qea
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:50*

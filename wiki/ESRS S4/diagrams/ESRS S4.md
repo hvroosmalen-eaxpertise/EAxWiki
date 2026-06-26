@@ -1,16 +1,17 @@
 # ESRS S4
 
 
-[Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS S4](../index.md)
+[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS S4](../index.md)
 
 ![ESRS S4](ESRS S4.png)
 
-**Description:** 
+**Derived Description:** For more information:
+https://www
 
 ## Elements
 
-- [ESRS S4 Consumers and End-users](../ESRS S4 Consumers and End-users.md)
+- <span class="sl" data-layer="uml">CON</span> [ESRS S4 Consumers and End-users](../ESRS S4 Consumers and End-users.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:20*
+*Generated: 2026-06-26 09:44:55*

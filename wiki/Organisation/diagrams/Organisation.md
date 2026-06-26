@@ -1,33 +1,33 @@
 # Organisation
 
 
-[Data Layer](../../Data Layer/index.md) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.md) / [Organisation](../index.md)
+[Home](../../index.md) / [Data Layer](../../Data Layer/index.md) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.md) / [Organisation](../index.md)
 
 ![Organisation](Organisation.png)
 
-**Description:** 
+**Derived Description:** OrganizationEquityShare records the percentage equity stake that an organisation holds in a specific OrganizationalBoundary, supporting the equity-share consolidation approach for GHG accounting as defined in the GHG Protocol
 
 ## Elements
 
-- [Address](../Address.md)
-- [ContactPerson](../ContactPerson.md)
-- [Country](../Country.md)
-- [IndustrySectorType](../IndustrySectorType.md)
-- [Organization](../Organization.md)
-- [OrganizationAddress](../OrganizationAddress.md)
-- [OrganizationAddressType](../OrganizationAddressType.md)
-- [OrganizationalBoundary](../OrganizationalBoundary.md)
-- [OrganizationAssociation](../OrganizationAssociation.md)
-- [OrganizationAssociationType](../OrganizationAssociationType.md)
-- [OrganizationEquityShare](../OrganizationEquityShare.md)
-- [OrganizationExternalIdentifier](../OrganizationExternalIdentifier.md)
-- [OrganizationExternalIdentifierType](../OrganizationExternalIdentifierType.md)
-- [OrganizationIndustrySector](../OrganizationIndustrySector.md)
-- [OrganizationPersonAssociation](../OrganizationPersonAssociation.md)
-- [OrganizationType](../OrganizationType.md)
-- [PersonOrganizationRoleType](../PersonOrganizationRoleType.md)
-- [Standard](../Standard.md)
+- <span class="sl" data-layer="uml">MAS</span> [Address](../Address.md)
+- <span class="sl" data-layer="uml">MAS</span> [ContactPerson](../ContactPerson.md)
+- <span class="sl" data-layer="uml">REF</span> [Country](../Country.md)
+- <span class="sl" data-layer="uml">REF</span> [IndustrySectorType](../IndustrySectorType.md)
+- <span class="sl" data-layer="uml">MAS</span> [Organization](../Organization.md)
+- <span class="sl" data-layer="uml">MAS</span> [OrganizationAddress](../OrganizationAddress.md)
+- <span class="sl" data-layer="uml">REF</span> [OrganizationAddressType](../OrganizationAddressType.md)
+- <span class="sl" data-layer="uml">MAS</span> [OrganizationalBoundary](../OrganizationalBoundary.md)
+- <span class="sl" data-layer="uml">MAS</span> [OrganizationAssociation](../OrganizationAssociation.md)
+- <span class="sl" data-layer="uml">REF</span> [OrganizationAssociationType](../OrganizationAssociationType.md)
+- <span class="sl" data-layer="uml">MAS</span> [OrganizationEquityShare](../OrganizationEquityShare.md)
+- <span class="sl" data-layer="uml">MAS</span> [OrganizationExternalIdentifier](../OrganizationExternalIdentifier.md)
+- <span class="sl" data-layer="uml">REF</span> [OrganizationExternalIdentifierType](../OrganizationExternalIdentifierType.md)
+- <span class="sl" data-layer="uml">MAS</span> [OrganizationIndustrySector](../OrganizationIndustrySector.md)
+- <span class="sl" data-layer="uml">MAS</span> [OrganizationPersonAssociation](../OrganizationPersonAssociation.md)
+- <span class="sl" data-layer="uml">REF</span> [OrganizationType](../OrganizationType.md)
+- <span class="sl" data-layer="uml">REF</span> [PersonOrganizationRoleType](../PersonOrganizationRoleType.md)
+- <span class="sl" data-layer="uml">MAS</span> [Standard](../Standard.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:34*
+*Generated: 2026-06-26 09:45:12*

@@ -1,16 +1,17 @@
 # ESRS S2
 
 
-[Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS S2](../index.md)
+[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS S2](../index.md)
 
 ![ESRS S2](ESRS S2.png)
 
-**Description:** 
+**Derived Description:** For more information:
+https://www
 
 ## Elements
 
-- [ESRS S2 Workers in the Value Chain](../ESRS S2 Workers in the Value Chain.md)
+- <span class="sl" data-layer="uml">CON</span> [ESRS S2 Workers in the Value Chain](../ESRS S2 Workers in the Value Chain.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:20*
+*Generated: 2026-06-26 09:44:54*

@@ -1,10 +1,10 @@
-# EmissionActivityParameterValue
+# <span class="sl" data-layer="uml">WOR</span> EmissionActivityParameterValue
 
 **Type:** Class  **Stereotype:** work-product-component  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
 EmissionActivityParameterValue records the actual measured or estimated value of an EmissionActivityParameter at a specific moment in time. This entity provides the time-series data that feeds into emission calculation models, capturing how activity data values evolve across reporting periods. The datetime attribute records the precise moment the value was measured or estimated, enabling time-series analysis and period-level aggregation in inventory calculations.
 
@@ -20,11 +20,15 @@ EmissionActivityParameterValue records the actual measured or estimated value of
 | emission_parameter_type_id | String |  | A foreign key referencing the EmissionParameterType of the parameter being recorded, enabling direct filtering of parameter values by type. |
 | equipment_id | String |  | An optional foreign key identifying the Equipment item from which this parameter value was measured, when the measurement is equipment-specific. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | EmissionActivityParameterValue records the actual measured or estimated value of an EmissionActivityParameter at a specific moment in time. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -33,15 +37,24 @@ EmissionActivityParameterValue records the actual measured or estimated value of
 | Association |  | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) |
 | Association |  | [EmissionActivityParameter](EmissionActivityParameter.md) |
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association |  | [EmissionActivityParameter](EmissionActivityParameter.md) |
 | Association |  | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) |
-| Association |  | [EmissionActivityParameter](EmissionActivityParameter.md) |
-| Association |  | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e779","label":"UnitOfMeasure","fullName":"UnitOfMeasure","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/UnitOfMeasure.html"},{"id":"e762","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameter","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"EmissionActivityParameter.html"},{"id":"e763","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameterValue","packageName":Facilities,"isFocal":true,"hasUrl":false,"url":""},{"id":"e783","label":"EmissionReportPeriod","fullName":"EmissionReportPeriod","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionReportPeriod.html"},{"id":"e798","label":"UnitOfMeasureSourceRefe…","fullName":"UnitOfMeasureSourceReference","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/UnitOfMeasureSourceReference.html"},{"id":"e797","label":"PhysicalQuantityType","fullName":"PhysicalQuantityType","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/PhysicalQuantityType.html"},{"id":"e796","label":"SystemOfUnits","fullName":"SystemOfUnits","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/SystemOfUnits.html"},{"id":"e775","label":"EmissionParameterType","fullName":"EmissionParameterType","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionParameterType.html"},{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"../Products/ProductCarbonFootprint.html"},{"id":"e780","label":"EmissionFactor","fullName":"EmissionFactor","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionFactor.html"},{"id":"e778","label":"EmissionComponent","fullName":"EmissionComponent","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionComponent.html"},{"id":"e776","label":"EmissionStatement","fullName":"EmissionStatement","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionStatement.html"},{"id":"e753","label":"Facility","fullName":"Facility","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"Facility.html"}],"edges":[{"id":"c807","source":"e779","target":"e783","label":"Association"},{"id":"c828","source":"e798","target":"e779","label":"Association"},{"id":"c829","source":"e797","target":"e779","label":"Association"},{"id":"c830","source":"e796","target":"e779","label":"Association"},{"id":"c832","source":"e775","target":"e779","label":"Association"},{"id":"c833","source":"e779","target":"e812","label":"Association"},{"id":"c834","source":"e779","target":"e763","label":"Association"},{"id":"c854","source":"e779","target":"e780","label":"Association"},{"id":"c855","source":"e779","target":"e780","label":"Association"},{"id":"c864","source":"e779","target":"e778","label":"Association"},{"id":"c865","source":"e779","target":"e776","label":"Association"},{"id":"c841","source":"e775","target":"e762","label":"Association"},{"id":"c874","source":"e762","target":"e763","label":"Association"},{"id":"c875","source":"e753","target":"e762","label":"Association"},{"id":"c867","source":"e776","target":"e778","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

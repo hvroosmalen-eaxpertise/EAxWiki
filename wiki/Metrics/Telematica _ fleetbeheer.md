@@ -1,10 +1,10 @@
-# Telematica / fleetbeheer
+# <span class="sl" data-layer="uml">TAG</span> Telematica / fleetbeheer
 
-**Type:** Requirement  **Stereotype:** Tag  **Status:** Proposed  
+**Type:** Requirement  **Stereotype:** Tag  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
-[Edgy](../Edgy/index.md) / [Metrics](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [Metrics](index.md)
 
 ## Relationships
 
@@ -12,17 +12,29 @@
 |------|------------|-------------|
 | Association | Link | [Brandstofverbruik voertuigen/machines](Brandstofverbruik voertuigen_machines.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Metrics](diagrams/Metrics.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association | Link | [Brandstofverbruik voertuigen/machines](Brandstofverbruik voertuigen_machines.md) |
-| Association | Link | [Brandstofverbruik voertuigen/machines](Brandstofverbruik voertuigen_machines.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e192","label":"Brandstofverbruik voert…","fullName":"Brandstofverbruik voertuigen/machines","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"Brandstofverbruik voertuigen_machines.html"},{"id":"e212","label":"Telematica / fleetbeheer","fullName":"Telematica / fleetbeheer","packageName":Metrics,"isFocal":true,"hasUrl":false,"url":""},{"id":"e177","label":"% energie uit hernieuwb…","fullName":"% energie uit hernieuwbare bronnen","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"% energie uit hernieuwbare bronnen.html"}],"edges":[{"id":"c193","source":"e177","target":"e192","label":"Aggregation"},{"id":"c213","source":"e192","target":"e212","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:48*

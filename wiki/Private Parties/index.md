@@ -1,6 +1,6 @@
 # Private Parties
 
-[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](../People/index.md) / [Private Parties](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](../People/index.md) / [Private Parties](index.md)
 
 ## Diagrams
 
@@ -8,11 +8,11 @@
 
 ## Elements
 
-- [Aligned Incentives](Aligned Incentives.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Aligned Incentives](Aligned Incentives.md)
   - *https://alignedincentives.com/our-story/*
-- [Impact Academy](Impact Academy.md) — People «Actor»
+- <span class="sl" data-layer="uml">PEO</span> [Impact Academy](Impact Academy.md)
   - *https://www.impactacademyproject.eu/ IMPACT ACADEMY has the main objective to offer a free, multilingual, high level education and training on the subject of the Impact Economy. It is addressed to university students who desire to acquire expertise about the impact skills needed to lead an entrepreneurship aware of its environmental and social responsibilities. *
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:48*

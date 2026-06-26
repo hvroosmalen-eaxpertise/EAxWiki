@@ -1,6 +1,6 @@
 # Elements
 
-[Archimate](../Archimate/index.md) / [Elements](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](index.md)
 
 ## Sub-packages
 
@@ -13,4 +13,4 @@
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:48*

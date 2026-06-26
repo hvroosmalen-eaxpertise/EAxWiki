@@ -1,10 +1,10 @@
-# Sustainable Innovation Management
+# <span class="sl" data-layer="uml">CAP</span> Sustainable Innovation Management
 
 **Type:** Class  **Stereotype:** ArchiMate_Capability  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
-[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
 
 Capability to develop and launch sustainable products, services, and business models.         
 Integrates sustainability criteria into innovation processes, R and D, and product lifecycle management.         
@@ -16,6 +16,8 @@ Drives eco-design, circular economy solutions, and sustainability-driven value p
 |------|-------|-------|
 | archimate_element_identifier | capability-003 |  |
 
+[↑ Back to top](#)
+
 ## Relationships
 
 | Type | Stereotype | Connected To |
@@ -24,6 +26,8 @@ Drives eco-design, circular economy solutions, and sustainability-driven value p
 | Dependency | ArchiMate_Realization | [Operational Eco-efficiency](../Courses of Action/Operational Eco-efficiency.md) |
 | Dependency | ArchiMate_Realization | [Introduce Sustainable Product Design Process](../Courses of Action/Introduce Sustainable Product Design Process.md) |
 | Association | ArchiMate_Association | [Sustainable Revenue Ratio](../Assessments/Sustainable Revenue Ratio.md) |
+
+[↑ Back to top](#)
 
 ### Appears on Diagrams
 
@@ -34,13 +38,23 @@ Drives eco-design, circular economy solutions, and sustainability-driven value p
 - [Market Differentiation Pressure](../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md)
 - [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association | ArchiMate_Association | [Sustainable Revenue Ratio](../Assessments/Sustainable Revenue Ratio.md) |
-| Association | ArchiMate_Association | [Sustainable Revenue Ratio](../Assessments/Sustainable Revenue Ratio.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e440","label":"Sustainability-driven D…","fullName":"Sustainability-driven Differentiation","packageName":Courses of Action,"isFocal":false,"hasUrl":true,"url":"../Courses of Action/Sustainability-driven Differentiation.html"},{"id":"e441","label":"Operational Eco-efficie…","fullName":"Operational Eco-efficiency","packageName":Courses of Action,"isFocal":false,"hasUrl":true,"url":"../Courses of Action/Operational Eco-efficiency.html"},{"id":"e453","label":"Introduce Sustainable P…","fullName":"Introduce Sustainable Product Design Process","packageName":Courses of Action,"isFocal":false,"hasUrl":true,"url":"../Courses of Action/Introduce Sustainable Product Design Process.html"},{"id":"e466","label":"Sustainable Revenue Rat…","fullName":"Sustainable Revenue Ratio","packageName":Assessments,"isFocal":false,"hasUrl":true,"url":"../Assessments/Sustainable Revenue Ratio.html"},{"id":"e446","label":"Sustainable Innovation …","fullName":"Sustainable Innovation Management","packageName":Capabilities,"isFocal":true,"hasUrl":false,"url":""},{"id":"e435","label":"Sustainable Competitive…","fullName":"Sustainable Competitive Advantage","packageName":Goals,"isFocal":false,"hasUrl":true,"url":"../Goals/Sustainable Competitive Advantage.html"},{"id":"e449","label":"Stakeholder Engagement …","fullName":"Stakeholder Engagement Management","packageName":Capabilities,"isFocal":false,"hasUrl":true,"url":"Stakeholder Engagement Management.html"},{"id":"e434","label":"Long-term Value Creation","fullName":"Long-term Value Creation","packageName":Goals,"isFocal":false,"hasUrl":true,"url":"../Goals/Long-term Value Creation.html"},{"id":"e457","label":"Reduced Environmental I…","fullName":"Reduced Environmental Impact","packageName":Outcomes,"isFocal":false,"hasUrl":true,"url":"../Outcomes/Reduced Environmental Impact.html"},{"id":"e461","label":"Improved Long-term Prof…","fullName":"Improved Long-term Profitability","packageName":Outcomes,"isFocal":false,"hasUrl":true,"url":"../Outcomes/Improved Long-term Profitability.html"}],"edges":[{"id":"c421","source":"e440","target":"e435","label":"realizes"},{"id":"c428","source":"e446","target":"e440","label":"realizes"},{"id":"c432","source":"e449","target":"e440","label":"realizes"},{"id":"c422","source":"e441","target":"e434","label":"realizes"},{"id":"c429","source":"e446","target":"e441","label":"realizes"},{"id":"c436","source":"e446","target":"e453","label":"realizes"},{"id":"c442","source":"e453","target":"e457","label":"influences"},{"id":"c460","source":"e466","target":"e461","label":"measures"},{"id":"c461","source":"e466","target":"e446","label":"measures"},{"id":"c451","source":"e461","target":"e434","label":"realizes"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:48*

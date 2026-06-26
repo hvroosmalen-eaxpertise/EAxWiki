@@ -1,17 +1,17 @@
 # Private Parties
 
 
-[Edgy](../../Edgy/index.md) / [Base](../../Base/index.md) / [People](../../People/index.md) / [Private Parties](../index.md)
+[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [Base](../../Base/index.md) / [People](../../People/index.md) / [Private Parties](../index.md)
 
 ![Private Parties](Private Parties.png)
 
-**Description:** 
+**Derived Description:** https://alignedincentives
 
 ## Elements
 
-- [Aligned Incentives](../Aligned Incentives.md)
-- [Impact Academy](../Impact Academy.md)
+- <span class="sl" data-layer="uml">PEO</span> [Aligned Incentives](../Aligned Incentives.md)
+- <span class="sl" data-layer="uml">PEO</span> [Impact Academy](../Impact Academy.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:23*
+*Generated: 2026-06-26 09:44:59*

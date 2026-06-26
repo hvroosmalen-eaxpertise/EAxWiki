@@ -1,10 +1,10 @@
-# FacilityType
+# <span class="sl" data-layer="uml">REF</span> FacilityType
 
 **Type:** Class  **Stereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
 FacilityType provides a controlled vocabulary of facility classifications, sourced from references such as ISO 15926-4 for non-moving oil and gas facilities and the US EPA Subpart W classification for petroleum and natural gas systems. Examples include "Compressor Station", "Gas Plant", "Offshore Production", "Natural Gas Processing", and "LNG storage". Classifying facilities by type enables sector-appropriate emissions factor selection, benchmarking against industry peers, and consistent aggregation of site-level data in portfolio analyses.
 
@@ -16,11 +16,15 @@ FacilityType provides a controlled vocabulary of facility classifications, sourc
 | code | String |  | The standardised classification code for the facility type, aligned with an external taxonomy such as ISO 15926-4 or EPA Subpart W where applicable. The code supports automated crosswalk with emissions factor databases and regulatory reporting schemas that classify facilities by type using structured codes. |
 | name | String |  | The human-readable label for the facility type, such as "Gas Plant" or "LNG Storage". The name is displayed in facility lists, dashboards, and reports, and should be drawn from a recognised taxonomy to ensure consistent interpretation across the organisation and its reporting partners. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | FacilityType provides a controlled vocabulary of facility classifications, sourced from references such as ISO 15926-4 for non-moving oil and gas facilities and the US EPA Subpart W classification for petroleum and natural gas systems. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -28,13 +32,23 @@ FacilityType provides a controlled vocabulary of facility classifications, sourc
 |------|------------|-------------|
 | Association |  | [Facility](Facility.md) |
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association |  | [Facility](Facility.md) |
-| Association |  | [Facility](Facility.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e753","label":"Facility","fullName":"Facility","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"Facility.html"},{"id":"e754","label":"FacilityType","fullName":"FacilityType","packageName":Facilities,"isFocal":true,"hasUrl":false,"url":""},{"id":"e764","label":"FacilityEmissionAllocat…","fullName":"FacilityEmissionAllocation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityEmissionAllocation.html"},{"id":"e762","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameter","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"EmissionActivityParameter.html"},{"id":"e761","label":"EquipmentInstallation","fullName":"EquipmentInstallation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"EquipmentInstallation.html"},{"id":"e760","label":"FacilityActivityPartici…","fullName":"FacilityActivityParticipation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityActivityParticipation.html"},{"id":"e759","label":"FacilitySpecification","fullName":"FacilitySpecification","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilitySpecification.html"},{"id":"e758","label":"FacilityLocationAssocia…","fullName":"FacilityLocationAssociation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityLocationAssociation.html"},{"id":"e757","label":"FacilityStructure","fullName":"FacilityStructure","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityStructure.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Organization.html"}],"edges":[{"id":"c873","source":"e753","target":"e764","label":"Association"},{"id":"c875","source":"e753","target":"e762","label":"Association"},{"id":"c877","source":"e753","target":"e761","label":"Association"},{"id":"c879","source":"e753","target":"e760","label":"Association"},{"id":"c880","source":"e753","target":"e759","label":"Association"},{"id":"c889","source":"e753","target":"e758","label":"Association"},{"id":"c891","source":"e753","target":"e757","label":"Association"},{"id":"c892","source":"e753","target":"e754","label":"Association"},{"id":"c896","source":"e735","target":"e753","label":"Association"},{"id":"c890","source":"e757","target":"e757","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

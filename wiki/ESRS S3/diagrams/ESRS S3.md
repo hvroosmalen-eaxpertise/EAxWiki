@@ -1,16 +1,17 @@
 # ESRS S3
 
 
-[Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS S3](../index.md)
+[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS S3](../index.md)
 
 ![ESRS S3](ESRS S3.png)
 
-**Description:** 
+**Derived Description:** For more information:
+https://www
 
 ## Elements
 
-- [ESRS S3 Affected Communities](../ESRS S3 Affected Communities.md)
+- <span class="sl" data-layer="uml">CON</span> [ESRS S3 Affected Communities](../ESRS S3 Affected Communities.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:20*
+*Generated: 2026-06-26 09:44:54*

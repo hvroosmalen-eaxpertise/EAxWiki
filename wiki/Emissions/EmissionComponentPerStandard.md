@@ -1,10 +1,10 @@
-# EmissionComponentPerStandard
+# <span class="sl" data-layer="uml">REF</span> EmissionComponentPerStandard
 
 **Type:** Class  **Stereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
 EmissionComponentPerStandard is an intersection entity analogous to EmissionStatementPerStandard but at the component (individual gas) level, recording the gas-specific emission quantity as it must be disclosed under a particular standard. Different standards apply different global-warming-potential assessment reports (AR4, AR5, AR6) which change the CO2-equivalent values of non-CO2 gases, meaning the same physical emission quantity may produce different tCO2e results across frameworks.
 
@@ -18,11 +18,15 @@ EmissionComponentPerStandard is an intersection entity analogous to EmissionStat
 | quantity | String |  | The gas-specific emission quantity as adjusted for the GWP factors mandated by the referenced standard, enabling cross-standard comparison of individual gas contributions. |
 | quantity_unit_of_measure_id | String |  | Foreign key to the UnitOfMeasure in which this per-standard component quantity is expressed, typically tCO2e using the GWP factor set of the referenced standard. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | EmissionComponentPerStandard is an intersection entity analogous to EmissionStatementPerStandard but at the component (individual gas) level, recording the gas-specific emission quantity as it must be disclosed under a particular standard. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -31,6 +35,15 @@ EmissionComponentPerStandard is an intersection entity analogous to EmissionStat
 | Association |  | [Standard](../Organisation/Standard.md) |
 | Association |  | [EmissionComponent](EmissionComponent.md) |
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e734","label":"Standard","fullName":"Standard","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Standard.html"},{"id":"e778","label":"EmissionComponent","fullName":"EmissionComponent","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionComponent.html"},{"id":"e789","label":"EmissionComponentPerSta…","fullName":"EmissionComponentPerStandard","packageName":Emissions,"isFocal":true,"hasUrl":false,"url":""},{"id":"e788","label":"EmissionStatementPerSta…","fullName":"EmissionStatementPerStandard","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionStatementPerStandard.html"},{"id":"e787","label":"EmissionCategoryStandar…","fullName":"EmissionCategoryStandardAssociation","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionCategoryStandardAssociation.html"},{"id":"e794","label":"StandardSourceAssociati…","fullName":"StandardSourceAssociation","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"StandardSourceAssociation.html"},{"id":"e782","label":"EmissionReport","fullName":"EmissionReport","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionReport.html"},{"id":"e740","label":"OrganizationalBoundary","fullName":"OrganizationalBoundary","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/OrganizationalBoundary.html"},{"id":"e777","label":"EmissionCalculationModel","fullName":"EmissionCalculationModel","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionCalculationModel.html"},{"id":"e771","label":"EmissionInventory","fullName":"EmissionInventory","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionInventory.html"},{"id":"e779","label":"UnitOfMeasure","fullName":"UnitOfMeasure","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"UnitOfMeasure.html"},{"id":"e792","label":"EmissionComponentCatego…","fullName":"EmissionComponentCategory","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionComponentCategory.html"},{"id":"e776","label":"EmissionStatement","fullName":"EmissionStatement","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionStatement.html"}],"edges":[{"id":"c843","source":"e789","target":"e734","label":"Association"},{"id":"c845","source":"e788","target":"e734","label":"Association"},{"id":"c847","source":"e787","target":"e734","label":"Association"},{"id":"c850","source":"e794","target":"e734","label":"Association"},{"id":"c894","source":"e734","target":"e782","label":"Association"},{"id":"c897","source":"e734","target":"e740","label":"Association"},{"id":"c916","source":"e734","target":"e777","label":"Association"},{"id":"c918","source":"e734","target":"e771","label":"Association"},{"id":"c844","source":"e789","target":"e778","label":"Association"},{"id":"c864","source":"e779","target":"e778","label":"Association"},{"id":"c866","source":"e792","target":"e778","label":"Association"},{"id":"c867","source":"e776","target":"e778","label":"Association"},{"id":"c846","source":"e788","target":"e776","label":"Association"},{"id":"c808","source":"e782","target":"e771","label":"Association"},{"id":"c868","source":"e777","target":"e776","label":"Association"},{"id":"c871","source":"e771","target":"e776","label":"Association"},{"id":"c865","source":"e779","target":"e776","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

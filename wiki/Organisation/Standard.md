@@ -1,10 +1,10 @@
-# Standard
+# <span class="sl" data-layer="uml">MAS</span> Standard
 
 **Type:** Class  **Stereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
 Standard represents a formal specification, protocol, methodology, or regulatory framework that governs how an organisation measures, calculates, or reports its greenhouse gas emissions. Examples include the GHG Protocol Corporate Standard, ISO 14064, and TCFD recommendations. Each Standard provides a named reference that can be cited in emission inventories or organisational boundary definitions, ensuring traceability between reported data and the methodology used to produce it. The Standard entity also carries a descriptive text and a URL so that consumers of the data can navigate directly to the authoritative source of the referenced specification.
 
@@ -18,11 +18,15 @@ Standard represents a formal specification, protocol, methodology, or regulatory
 | url_description | String |  | A resolvable URL pointing to the official publication, web page, or registry entry for the standard. The URL enables automated or manual retrieval of the full text and supporting documentation. It should be maintained and verified periodically to ensure it remains active and points to the current authoritative version. |
 | organization_id | String |  | A foreign key reference to the Organisation that governs or owns this standard. An organisation may define its own internal standards or act as the custodian of an industry standard, and this attribute records that governing relationship for traceability purposes. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | Standard represents a formal specification, protocol, methodology, or regulatory framework that governs how an organisation measures, calculates, or reports its greenhouse gas emissions. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -37,9 +41,13 @@ Standard represents a formal specification, protocol, methodology, or regulatory
 | Association |  | [EmissionCalculationModel](../Emissions/EmissionCalculationModel.md) |
 | Association |  | [EmissionInventory](../Emissions/EmissionInventory.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Organisation](diagrams/Organisation.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
@@ -49,11 +57,16 @@ Standard represents a formal specification, protocol, methodology, or regulatory
 | Association |  | [EmissionStatementPerStandard](../Emissions/EmissionStatementPerStandard.md) |
 | Association |  | [EmissionCategoryStandardAssociation](../Emissions/EmissionCategoryStandardAssociation.md) |
 | Association |  | [StandardSourceAssociation](../Emissions/StandardSourceAssociation.md) |
-| Association |  | [EmissionCategoryStandardAssociation](../Emissions/EmissionCategoryStandardAssociation.md) |
-| Association |  | [EmissionStatementPerStandard](../Emissions/EmissionStatementPerStandard.md) |
-| Association |  | [EmissionComponentPerStandard](../Emissions/EmissionComponentPerStandard.md) |
-| Association |  | [StandardSourceAssociation](../Emissions/StandardSourceAssociation.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e789","label":"EmissionComponentPerSta…","fullName":"EmissionComponentPerStandard","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionComponentPerStandard.html"},{"id":"e788","label":"EmissionStatementPerSta…","fullName":"EmissionStatementPerStandard","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionStatementPerStandard.html"},{"id":"e787","label":"EmissionCategoryStandar…","fullName":"EmissionCategoryStandardAssociation","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionCategoryStandardAssociation.html"},{"id":"e794","label":"StandardSourceAssociati…","fullName":"StandardSourceAssociation","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/StandardSourceAssociation.html"},{"id":"e782","label":"EmissionReport","fullName":"EmissionReport","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionReport.html"},{"id":"e740","label":"OrganizationalBoundary","fullName":"OrganizationalBoundary","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationalBoundary.html"},{"id":"e777","label":"EmissionCalculationModel","fullName":"EmissionCalculationModel","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionCalculationModel.html"},{"id":"e771","label":"EmissionInventory","fullName":"EmissionInventory","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionInventory.html"},{"id":"e734","label":"Standard","fullName":"Standard","packageName":Organisation,"isFocal":true,"hasUrl":false,"url":""},{"id":"e778","label":"EmissionComponent","fullName":"EmissionComponent","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionComponent.html"},{"id":"e776","label":"EmissionStatement","fullName":"EmissionStatement","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionStatement.html"},{"id":"e774","label":"EmissionActivityCategory","fullName":"EmissionActivityCategory","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionActivityCategory.html"},{"id":"e781","label":"EmissionFactorSource","fullName":"EmissionFactorSource","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionFactorSource.html"},{"id":"e783","label":"EmissionReportPeriod","fullName":"EmissionReportPeriod","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionReportPeriod.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"Organization.html"},{"id":"e805","label":"EmissionCalculationMode…","fullName":"EmissionCalculationModelParameterArgument","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionCalculationModelParameterArgument.html"},{"id":"e804","label":"EmissionCalculationMode…","fullName":"EmissionCalculationModelFactorArgument","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionCalculationModelFactorArgument.html"},{"id":"e793","label":"EmissionActivityFactor","fullName":"EmissionActivityFactor","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionActivityFactor.html"},{"id":"e791","label":"EmissionCalculationMeth…","fullName":"EmissionCalculationMethodType","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionCalculationMethodType.html"},{"id":"e790","label":"EmissionCalculationForm…","fullName":"EmissionCalculationFormula","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionCalculationFormula.html"},{"id":"e808","label":"EmissionReportingBounda…","fullName":"EmissionReportingBoundary","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionReportingBoundary.html"}],"edges":[{"id":"c843","source":"e789","target":"e734","label":"Association"},{"id":"c844","source":"e789","target":"e778","label":"Association"},{"id":"c845","source":"e788","target":"e734","label":"Association"},{"id":"c846","source":"e788","target":"e776","label":"Association"},{"id":"c847","source":"e787","target":"e734","label":"Association"},{"id":"c848","source":"e787","target":"e774","label":"Association"},{"id":"c806","source":"e781","target":"e794","label":"Association"},{"id":"c849","source":"e794","target":"e781","label":"Association"},{"id":"c850","source":"e794","target":"e734","label":"Association"},{"id":"c808","source":"e782","target":"e771","label":"Association"},{"id":"c837","source":"e782","target":"e783","label":"Association"},{"id":"c894","source":"e734","target":"e782","label":"Association"},{"id":"c895","source":"e735","target":"e782","label":"Association"},{"id":"c897","source":"e734","target":"e740","label":"Association"},{"id":"c898","source":"e740","target":"e735","label":"Association"},{"id":"c816","source":"e805","target":"e777","label":"Association"},{"id":"c818","source":"e804","target":"e777","label":"Association"},{"id":"c851","source":"e793","target":"e777","label":"Association"},{"id":"c858","source":"e791","target":"e777","label":"Association"},{"id":"c859","source":"e777","target":"e790","label":"Association"},{"id":"c868","source":"e777","target":"e776","label":"Association"},{"id":"c916","source":"e734","target":"e777","label":"Association"},{"id":"c810","source":"e808","target":"e771","label":"Association"},{"id":"c871","source":"e771","target":"e776","label":"Association"},{"id":"c917","source":"e735","target":"e771","label":"Association"},{"id":"c918","source":"e734","target":"e771","label":"Association"},{"id":"c867","source":"e776","target":"e778","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

@@ -1,10 +1,10 @@
-# EmissionSource
+# <span class="sl" data-layer="uml">REF</span> EmissionSource
 
 **Type:** Class  **Stereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
 EmissionSource is a reference entity that classifies the physical origin from which greenhouse gas emissions are released, such as natural gas combustion, diesel combustion, refrigerant leakage, or wastewater treatment. Emission sources provide a more granular technical classification than the EmissionActivityType and are used in calculation model selection and emission factor lookup to narrow the applicable factor set to the correct physical process.
 
@@ -16,11 +16,15 @@ EmissionSource is a reference entity that classifies the physical origin from wh
 | name | String |  | The human-readable name of the emission source, such as Stationary Combustion Natural Gas or Fugitive Emissions HFC-134a refrigerant, used in data entry forms and technical reports. |
 | description | String |  | A technical description of the emission mechanism and the physical or chemical process by which the GHG is released, supporting correct classification and factor selection by practitioners. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | EmissionSource is a reference entity that classifies the physical origin from which greenhouse gas emissions are released, such as natural gas combustion, diesel combustion, refrigerant leakage, or wastewater treatment. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -28,6 +32,15 @@ EmissionSource is a reference entity that classifies the physical origin from wh
 |------|------------|-------------|
 | Association |  | [EmissionActivity](EmissionActivity.md) |
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e773","label":"EmissionActivity","fullName":"EmissionActivity","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionActivity.html"},{"id":"e784","label":"EmissionSource","fullName":"EmissionSource","packageName":Emissions,"isFocal":true,"hasUrl":false,"url":""},{"id":"e802","label":"ActivityEmissionAllocat…","fullName":"ActivityEmissionAllocation","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"ActivityEmissionAllocation.html"},{"id":"e814","label":"EmissionActivityFlow","fullName":"EmissionActivityFlow","packageName":Products,"isFocal":false,"hasUrl":true,"url":"../Products/EmissionActivityFlow.html"},{"id":"e785","label":"EmissionSink","fullName":"EmissionSink","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionSink.html"},{"id":"e760","label":"FacilityActivityPartici…","fullName":"FacilityActivityParticipation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/FacilityActivityParticipation.html"},{"id":"e774","label":"EmissionActivityCategory","fullName":"EmissionActivityCategory","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionActivityCategory.html"},{"id":"e786","label":"EmissionActivityType","fullName":"EmissionActivityType","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionActivityType.html"},{"id":"e776","label":"EmissionStatement","fullName":"EmissionStatement","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionStatement.html"}],"edges":[{"id":"c822","source":"e802","target":"e773","label":"Association"},{"id":"c836","source":"e773","target":"e814","label":"Association"},{"id":"c838","source":"e785","target":"e773","label":"Association"},{"id":"c839","source":"e784","target":"e773","label":"Association"},{"id":"c842","source":"e773","target":"e760","label":"Association"},{"id":"c861","source":"e774","target":"e773","label":"Association"},{"id":"c862","source":"e786","target":"e773","label":"Association"},{"id":"c863","source":"e773","target":"e773","label":"Association"},{"id":"c870","source":"e773","target":"e776","label":"Association"},{"id":"c823","source":"e802","target":"e776","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

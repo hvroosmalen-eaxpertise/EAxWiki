@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Export.Helpers;
 
@@ -12,15 +11,6 @@ internal class GlossaryExporter(IOutputWriter writer)
         await writer.CreateDirectoryAsync(glossaryDir);
 
         var entries = new List<(string Term, string Definition, List<(string Name, string Link)> Sources)>();
-
-        // Build a map of element name → link for cross-linking glossary definitions.
-        var termLinkMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-        foreach (var (elem, pkgDir) in ctx.Elements)
-        {
-            if (!termLinkMap.ContainsKey(elem.Name))
-                termLinkMap[elem.Name] = MarkdownHelpers.CreateElementLink(elem, pkgDir, glossaryDir);
-        }
-        var sortedTerms = termLinkMap.Keys.OrderByDescending(t => t.Length).ToList();
 
         foreach (var (elem, pkgDir) in ctx.Elements)
         {
@@ -59,8 +49,7 @@ internal class GlossaryExporter(IOutputWriter writer)
             foreach (var group in grouped.OrderBy(g => g.Key))
             {
                 var term = MarkdownHelpers.EscapeCell(group.Key);
-                var definition = LinkTermsInDefinition(group.First().Definition, termLinkMap, sortedTerms);
-                definition = MarkdownHelpers.EscapeCell(definition);
+                var definition = MarkdownHelpers.EscapeCell(group.First().Definition);
                 var sources = group.SelectMany(g => g.Sources).DistinctBy(s => s.Link).ToList();
                 var sourceCol = string.Join(", ", sources.Select(s => $"[{MarkdownHelpers.EscapeCell(s.Name)}]({s.Link})"));
                 lines.Add($"| {term} | {definition} | {sourceCol} |");
@@ -74,17 +63,5 @@ internal class GlossaryExporter(IOutputWriter writer)
         lines.Add(string.Empty);
         lines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(Path.Combine(glossaryDir, "index.md"), string.Join(Environment.NewLine, lines));
-    }
-
-    private static string LinkTermsInDefinition(string text, Dictionary<string, string> termLinkMap, List<string> sortedTerms)
-    {
-        var result = text;
-        foreach (var term in sortedTerms)
-        {
-            var escapedTerm = Regex.Escape(term);
-            result = Regex.Replace(result, $@"\b{escapedTerm}\b",
-                m => $"[{MarkdownHelpers.EscapeCell(m.Value)}]({termLinkMap[term]})");
-        }
-        return result;
     }
 }

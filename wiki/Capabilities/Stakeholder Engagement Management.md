@@ -1,10 +1,10 @@
-# Stakeholder Engagement Management
+# <span class="sl" data-layer="uml">CAP</span> Stakeholder Engagement Management
 
 **Type:** Class  **Stereotype:** ArchiMate_Capability  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
-[Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
+[Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
 
 Capability to identify, engage, and maintain dialogue with key sustainability stakeholders.
         Includes materiality assessments, stakeholder consultations, and responsive communication strategies.
@@ -16,17 +16,30 @@ Capability to identify, engage, and maintain dialogue with key sustainability st
 |------|-------|-------|
 | archimate_element_identifier | capability-006 |  |
 
+[↑ Back to top](#)
+
 ## Relationships
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
 | Dependency | ArchiMate_Realization | [Sustainability-driven Differentiation](../Courses of Action/Sustainability-driven Differentiation.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
 - [Market Differentiation Pressure](../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md)
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e440","label":"Sustainability-driven D…","fullName":"Sustainability-driven Differentiation","packageName":Courses of Action,"isFocal":false,"hasUrl":true,"url":"../Courses of Action/Sustainability-driven Differentiation.html"},{"id":"e449","label":"Stakeholder Engagement …","fullName":"Stakeholder Engagement Management","packageName":Capabilities,"isFocal":true,"hasUrl":false,"url":""},{"id":"e435","label":"Sustainable Competitive…","fullName":"Sustainable Competitive Advantage","packageName":Goals,"isFocal":false,"hasUrl":true,"url":"../Goals/Sustainable Competitive Advantage.html"},{"id":"e446","label":"Sustainable Innovation …","fullName":"Sustainable Innovation Management","packageName":Capabilities,"isFocal":false,"hasUrl":true,"url":"Sustainable Innovation Management.html"}],"edges":[{"id":"c421","source":"e440","target":"e435","label":"realizes"},{"id":"c428","source":"e446","target":"e440","label":"realizes"},{"id":"c432","source":"e449","target":"e440","label":"realizes"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:48*

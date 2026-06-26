@@ -1,27 +1,27 @@
 # Market Differentiation Pressure
 
 
-[Archimate](../../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Market Differentiation Pressure](../index.md)
+[Home](../../index.md) / [Archimate](../../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Market Differentiation Pressure](../index.md)
 
 ![Market Differentiation Pressure](Market Differentiation Pressure.png)
 
-**Description:** 
+**Derived Description:** Competitive pressure to differentiate through sustainability leadership and eco-innovation
 
 ## Elements
 
-- [Board-level Sustainability Governance](../../Courses of Action/Board-level Sustainability Governance.md)
-- [ESG Performance Management](../../Capabilities/ESG Performance Management.md)
-- [ESG Score](../../Assessments/ESG Score.md)
-- [Implement ESG KPI Framework](../../Courses of Action/Implement ESG KPI Framework.md)
-- [Improved ESG Rating](../../Outcomes/Improved ESG Rating.md)
-- [Increased Brand Trust](../../Outcomes/Increased Brand Trust.md)
-- [Market Differentiation Pressure](../../Drivers/Market Differentiation Pressure.md)
-- [Stakeholder Engagement Management](../../Capabilities/Stakeholder Engagement Management.md)
-- [Sustainability Governance](../../Capabilities/Sustainability Governance.md)
-- [Sustainability-driven Differentiation](../../Courses of Action/Sustainability-driven Differentiation.md)
-- [Sustainable Competitive Advantage](../../Goals/Sustainable Competitive Advantage.md)
-- [Sustainable Innovation Management](../../Capabilities/Sustainable Innovation Management.md)
+- <span class="sl" data-layer="uml">COU</span> [Board-level Sustainability Governance](../../Courses of Action/Board-level Sustainability Governance.md)
+- <span class="sl" data-layer="uml">CAP</span> [ESG Performance Management](../../Capabilities/ESG Performance Management.md)
+- <span class="sl" data-layer="uml">ASS</span> [ESG Score](../../Assessments/ESG Score.md)
+- <span class="sl" data-layer="uml">COU</span> [Implement ESG KPI Framework](../../Courses of Action/Implement ESG KPI Framework.md)
+- <span class="sl" data-layer="uml">OUT</span> [Improved ESG Rating](../../Outcomes/Improved ESG Rating.md)
+- <span class="sl" data-layer="uml">OUT</span> [Increased Brand Trust](../../Outcomes/Increased Brand Trust.md)
+- <span class="sl" data-layer="uml">DRI</span> [Market Differentiation Pressure](../../Drivers/Market Differentiation Pressure.md)
+- <span class="sl" data-layer="uml">CAP</span> [Stakeholder Engagement Management](../../Capabilities/Stakeholder Engagement Management.md)
+- <span class="sl" data-layer="uml">CAP</span> [Sustainability Governance](../../Capabilities/Sustainability Governance.md)
+- <span class="sl" data-layer="uml">COU</span> [Sustainability-driven Differentiation](../../Courses of Action/Sustainability-driven Differentiation.md)
+- <span class="sl" data-layer="uml">GOA</span> [Sustainable Competitive Advantage](../../Goals/Sustainable Competitive Advantage.md)
+- <span class="sl" data-layer="uml">CAP</span> [Sustainable Innovation Management](../../Capabilities/Sustainable Innovation Management.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:31*
+*Generated: 2026-06-26 09:45:09*

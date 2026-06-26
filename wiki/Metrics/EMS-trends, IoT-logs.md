@@ -1,10 +1,10 @@
-# EMS-trends, IoT-logs
+# <span class="sl" data-layer="uml">TAG</span> EMS-trends, IoT-logs
 
-**Type:** Requirement  **Stereotype:** Tag  **Status:** Proposed  
+**Type:** Requirement  **Stereotype:** Tag  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
-[Edgy](../Edgy/index.md) / [Metrics](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [Metrics](index.md)
 
 ## Relationships
 
@@ -12,17 +12,29 @@
 |------|------------|-------------|
 | Association | Link | [Energieverbruik vóór/na project](Energieverbruik vóór_na project.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Metrics](diagrams/Metrics.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association | Link | [Energieverbruik vóór/na project](Energieverbruik vóór_na project.md) |
-| Association | Link | [Energieverbruik vóór/na project](Energieverbruik vóór_na project.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e200","label":"Energieverbruik vóór/na…","fullName":"Energieverbruik vóór/na project","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"Energieverbruik vóór_na project.html"},{"id":"e221","label":"EMS-trends, IoT-logs","fullName":"EMS-trends, IoT-logs","packageName":Metrics,"isFocal":true,"hasUrl":false,"url":""},{"id":"e181","label":"Vermeden CO₂ door maatr…","fullName":"Vermeden CO₂ door maatregelen (ton/jaar)","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"Vermeden CO₂ door maatregelen (ton_jaar).html"}],"edges":[{"id":"c201","source":"e181","target":"e200","label":"Aggregation"},{"id":"c221","source":"e200","target":"e221","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:48*

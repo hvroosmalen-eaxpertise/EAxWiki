@@ -1,6 +1,6 @@
 # European Sustainability Reporting Standards
 
-[Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](index.md)
 
 <b>What is the ESRS?</b>
 <b>Who developed the ESRS?</b>
@@ -12,7 +12,7 @@
 
 ## Elements
 
-- [European Sustainability Reporting Standards](European Sustainability Reporting Standards.md) — Content «Class»
+- <span class="sl" data-layer="uml">CON</span> [European Sustainability Reporting Standards](European Sustainability Reporting Standards.md)
   - *The European Sustainability Reporting Standards (ESRS) oblige all companies subject to the Corporate Sustainability Reporting Directive (CSRD) of the European Union to report both on their impacts on people and the environment, and on how social and environmental issues create financial risks and opportunities for the company.*
 
 ## Sub-packages
@@ -34,4 +34,4 @@
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:47*

@@ -1,18 +1,18 @@
 # Stories Voorbeelden
 
 
-[Edgy](../../Edgy/index.md) / [Stories](../index.md)
+[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [Stories](../index.md)
 
 ![Stories Voorbeelden](Stories Voorbeelden.png)
 
-**Description:** 
+**Derived Description:** Tijdens een personeelsbijeenkomst deelde de directeur een persoonlijk moment: zijn dochter had hem gevraagd: “Wat doen jullie eigenlijk voor de aarde?” Dat bleek de katalysator voor een ambitieuze duurzaamheidsvisie: klimaatneutraal in 2030 en volledig circulair in 2050
 
 ## Elements
 
-- [Duurzaamsheidsvisie](../Duurzaamsheidsvisie.md)
-- [Milieau-impactrapport](../Milieau-impactrapport.md)
-- [Reparatie](../Reparatie.md)
+- <span class="sl" data-layer="uml">STO</span> [Duurzaamsheidsvisie](../Duurzaamsheidsvisie.md)
+- <span class="sl" data-layer="uml">STO</span> [Milieau-impactrapport](../Milieau-impactrapport.md)
+- <span class="sl" data-layer="uml">STO</span> [Reparatie](../Reparatie.md)
 
 ---
 
-*Generated: 2026-06-25 10:51:25*
+*Generated: 2026-06-26 09:45:02*

@@ -1,10 +1,10 @@
-# Works Council (Ondernemingsraad)
+# <span class="sl" data-layer="uml">PEO</span> Works Council (Ondernemingsraad)
 
-**Type:** Actor  **Stereotype:** People  **Status:** Proposed  
+**Type:** Actor  **Stereotype:** People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
-[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
 Employee representation with quarterly management consultation
 
@@ -15,19 +15,31 @@ Employee representation with quarterly management consultation
 | Abstraction | trace | [Works Council (Ondernemingsraad)](../ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad).md) |
 | Association | Link | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
 - [ESRS S1 Own Workforce - People](../ESRS S1 Own Workforce - People/diagrams/ESRS S1 Own Workforce - People.md)
 - [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Abstraction | trace | [Works Council (Ondernemingsraad)](../ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad).md) |
-| Abstraction | trace | [Works Council (Ondernemingsraad)](../ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad).md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e279","label":"Works Council (Ondernem…","fullName":"Works Council (Ondernemingsraad)","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad).html"},{"id":"e489","label":"Own Personnel (ESRS S1)","fullName":"Own Personnel (ESRS S1)","packageName":People,"isFocal":false,"hasUrl":true,"url":"Own Personnel (ESRS S1).html"},{"id":"e537","label":"Works Council (Ondernem…","fullName":"Works Council (Ondernemingsraad)","packageName":People,"isFocal":true,"hasUrl":false,"url":""},{"id":"e329","label":"Own Personnel (ESRS S1)","fullName":"Own Personnel (ESRS S1)","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Own Personnel (ESRS S1).html"},{"id":"e493","label":"Trade Unions","fullName":"Trade Unions","packageName":People,"isFocal":false,"hasUrl":true,"url":"Trade Unions.html"},{"id":"e492","label":"Production Workers","fullName":"Production Workers","packageName":People,"isFocal":false,"hasUrl":true,"url":"Production Workers.html"},{"id":"e491","label":"Seasonal Workers","fullName":"Seasonal Workers","packageName":People,"isFocal":false,"hasUrl":true,"url":"Seasonal Workers.html"},{"id":"e490","label":"Permanent Employees","fullName":"Permanent Employees","packageName":People,"isFocal":false,"hasUrl":true,"url":"Permanent Employees.html"},{"id":"e510","label":"Company subject to CSRD","fullName":"Company subject to CSRD","packageName":People,"isFocal":false,"hasUrl":true,"url":"Company subject to CSRD.html"},{"id":"e41","label":"ESRS S1 Own Workforce","fullName":"ESRS S1 Own Workforce","packageName":ESRS S1,"isFocal":false,"hasUrl":true,"url":"../ESRS S1/ESRS S1 Own Workforce.html"}],"edges":[{"id":"c316","source":"e279","target":"e329","label":"represents"},{"id":"c548","source":"e279","target":"e537","label":"Abstraction"},{"id":"c463","source":"e329","target":"e489","label":"Abstraction"},{"id":"c544","source":"e493","target":"e489","label":"represents"},{"id":"c545","source":"e489","target":"e492","label":"Aggregation"},{"id":"c546","source":"e489","target":"e491","label":"Aggregation"},{"id":"c547","source":"e489","target":"e490","label":"Aggregation"},{"id":"c549","source":"e537","target":"e489","label":"represents"},{"id":"c550","source":"e489","target":"e510","label":"Association"},{"id":"c555","source":"e489","target":"e41","label":"covered by"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:47*

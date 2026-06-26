@@ -1,10 +1,10 @@
-# EmissionActivityCategory
+# <span class="sl" data-layer="uml">REF</span> EmissionActivityCategory
 
 **Type:** Class  **Stereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
 EmissionActivityCategory is a reference entity that provides the formal taxonomy of GHG emission activity categories as defined by the GHG Protocol or ISO 14064-1. For Scope 3, this includes the fifteen upstream and downstream categories such as purchased goods and services, capital goods, fuel and energy-related activities, and so on. The category drives which reporting lines an emission activity contributes to and enables cross-organisation comparability.
 
@@ -17,11 +17,15 @@ EmissionActivityCategory is a reference entity that provides the formal taxonomy
 | name | String |  | The standard name for the category, such as "Category 4 - Upstream transportation and distribution", used in disclosures and summary tables. |
 | description | String |  | A normative description of what activities and emission sources are included in this category per the applicable standard, providing boundary guidance for activity classification. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | EmissionActivityCategory is a reference entity that provides the formal taxonomy of GHG emission activity categories as defined by the GHG Protocol or ISO 14064-1. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -31,15 +35,24 @@ EmissionActivityCategory is a reference entity that provides the formal taxonomy
 | Association |  | [EmissionScopeType](EmissionScopeType.md) |
 | Association |  | [EmissionActivity](EmissionActivity.md) |
 
+[↑ Back to top](#)
+
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association |  | [EmissionScopeType](EmissionScopeType.md) |
 | Association |  | [EmissionCategoryStandardAssociation](EmissionCategoryStandardAssociation.md) |
-| Association |  | [EmissionScopeType](EmissionScopeType.md) |
-| Association |  | [EmissionCategoryStandardAssociation](EmissionCategoryStandardAssociation.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e787","label":"EmissionCategoryStandar…","fullName":"EmissionCategoryStandardAssociation","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionCategoryStandardAssociation.html"},{"id":"e772","label":"EmissionScopeType","fullName":"EmissionScopeType","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionScopeType.html"},{"id":"e773","label":"EmissionActivity","fullName":"EmissionActivity","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionActivity.html"},{"id":"e774","label":"EmissionActivityCategory","fullName":"EmissionActivityCategory","packageName":Emissions,"isFocal":true,"hasUrl":false,"url":""},{"id":"e734","label":"Standard","fullName":"Standard","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Standard.html"},{"id":"e776","label":"EmissionStatement","fullName":"EmissionStatement","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionStatement.html"},{"id":"e802","label":"ActivityEmissionAllocat…","fullName":"ActivityEmissionAllocation","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"ActivityEmissionAllocation.html"},{"id":"e814","label":"EmissionActivityFlow","fullName":"EmissionActivityFlow","packageName":Products,"isFocal":false,"hasUrl":true,"url":"../Products/EmissionActivityFlow.html"},{"id":"e785","label":"EmissionSink","fullName":"EmissionSink","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionSink.html"},{"id":"e784","label":"EmissionSource","fullName":"EmissionSource","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionSource.html"},{"id":"e760","label":"FacilityActivityPartici…","fullName":"FacilityActivityParticipation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/FacilityActivityParticipation.html"},{"id":"e786","label":"EmissionActivityType","fullName":"EmissionActivityType","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionActivityType.html"}],"edges":[{"id":"c847","source":"e787","target":"e734","label":"Association"},{"id":"c848","source":"e787","target":"e774","label":"Association"},{"id":"c860","source":"e772","target":"e774","label":"Association"},{"id":"c869","source":"e772","target":"e776","label":"Association"},{"id":"c822","source":"e802","target":"e773","label":"Association"},{"id":"c836","source":"e773","target":"e814","label":"Association"},{"id":"c838","source":"e785","target":"e773","label":"Association"},{"id":"c839","source":"e784","target":"e773","label":"Association"},{"id":"c842","source":"e773","target":"e760","label":"Association"},{"id":"c861","source":"e774","target":"e773","label":"Association"},{"id":"c862","source":"e786","target":"e773","label":"Association"},{"id":"c863","source":"e773","target":"e773","label":"Association"},{"id":"c870","source":"e773","target":"e776","label":"Association"},{"id":"c823","source":"e802","target":"e776","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

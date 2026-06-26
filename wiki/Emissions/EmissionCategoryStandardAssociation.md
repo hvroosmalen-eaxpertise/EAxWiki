@@ -1,10 +1,10 @@
-# EmissionCategoryStandardAssociation
+# <span class="sl" data-layer="uml">REF</span> EmissionCategoryStandardAssociation
 
 **Type:** Class  **Stereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
 EmissionCategoryStandardAssociation is an intersection entity that records which emission category classifications are recognised by a particular Standard. It enables the model to represent the fact that GHG Protocol, ISO 14064-1, and ESRS each define overlapping but not identical category taxonomies, and it allows emission statements to be classified under the correct category hierarchy for each applicable standard without duplicating the statement records themselves.
 
@@ -17,11 +17,15 @@ EmissionCategoryStandardAssociation is an intersection entity that records which
 | standard_id | String |  | Foreign key to the Standard that recognises this emission activity category, enabling category-to-standard traceability for multi-framework reporting. |
 | category_code_per_standard | String |  | The code or identifier that the referenced Standard uses for this category, which may differ from the category own identifier, supporting standards-specific labelling in disclosures. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | EmissionCategoryStandardAssociation is an intersection entity that records which emission category classifications are recognised by a particular Standard. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -30,6 +34,15 @@ EmissionCategoryStandardAssociation is an intersection entity that records which
 | Association |  | [Standard](../Organisation/Standard.md) |
 | Association |  | [EmissionActivityCategory](EmissionActivityCategory.md) |
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e734","label":"Standard","fullName":"Standard","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Standard.html"},{"id":"e774","label":"EmissionActivityCategory","fullName":"EmissionActivityCategory","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionActivityCategory.html"},{"id":"e787","label":"EmissionCategoryStandar…","fullName":"EmissionCategoryStandardAssociation","packageName":Emissions,"isFocal":true,"hasUrl":false,"url":""},{"id":"e789","label":"EmissionComponentPerSta…","fullName":"EmissionComponentPerStandard","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionComponentPerStandard.html"},{"id":"e788","label":"EmissionStatementPerSta…","fullName":"EmissionStatementPerStandard","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionStatementPerStandard.html"},{"id":"e794","label":"StandardSourceAssociati…","fullName":"StandardSourceAssociation","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"StandardSourceAssociation.html"},{"id":"e782","label":"EmissionReport","fullName":"EmissionReport","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionReport.html"},{"id":"e740","label":"OrganizationalBoundary","fullName":"OrganizationalBoundary","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/OrganizationalBoundary.html"},{"id":"e777","label":"EmissionCalculationModel","fullName":"EmissionCalculationModel","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionCalculationModel.html"},{"id":"e771","label":"EmissionInventory","fullName":"EmissionInventory","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionInventory.html"},{"id":"e772","label":"EmissionScopeType","fullName":"EmissionScopeType","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionScopeType.html"},{"id":"e773","label":"EmissionActivity","fullName":"EmissionActivity","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"EmissionActivity.html"}],"edges":[{"id":"c843","source":"e789","target":"e734","label":"Association"},{"id":"c845","source":"e788","target":"e734","label":"Association"},{"id":"c847","source":"e787","target":"e734","label":"Association"},{"id":"c850","source":"e794","target":"e734","label":"Association"},{"id":"c894","source":"e734","target":"e782","label":"Association"},{"id":"c897","source":"e734","target":"e740","label":"Association"},{"id":"c916","source":"e734","target":"e777","label":"Association"},{"id":"c918","source":"e734","target":"e771","label":"Association"},{"id":"c848","source":"e787","target":"e774","label":"Association"},{"id":"c860","source":"e772","target":"e774","label":"Association"},{"id":"c861","source":"e774","target":"e773","label":"Association"},{"id":"c808","source":"e782","target":"e771","label":"Association"},{"id":"c863","source":"e773","target":"e773","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

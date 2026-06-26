@@ -1,6 +1,6 @@
 # Edgy
 
-[Edgy](index.md)
+[Home](../index.md) / [Edgy](index.md)
 
 ## Sub-packages
 
@@ -15,4 +15,4 @@
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:47*

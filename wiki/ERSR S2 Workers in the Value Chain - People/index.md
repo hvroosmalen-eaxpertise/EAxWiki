@@ -1,6 +1,6 @@
 # ERSR S2 Workers in the Value Chain - People
 
-[Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [ESRS and People](../ESRS and People/index.md) / [ERSR S2 Workers in the Value Chain - People](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [ESRS and People](../ESRS and People/index.md) / [ERSR S2 Workers in the Value Chain - People](index.md)
 
 ## Diagrams
 
@@ -8,4 +8,4 @@
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:47*

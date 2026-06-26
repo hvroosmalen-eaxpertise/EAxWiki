@@ -1,10 +1,10 @@
-# COO
+# <span class="sl" data-layer="uml">PEO</span> COO
 
-**Type:** Actor  **Stereotype:** People  **Status:** Proposed  
+**Type:** Actor  **Stereotype:** People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
 
 
-[Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
 Chief Operating Officer
 
@@ -15,10 +15,14 @@ Chief Operating Officer
 | Abstraction | trace | [COO](../ESRS Navigator Stakeholder Map/COO.md) |
 | Aggregation | Tree | [Board of Directors (Directie)](Board of Directors (Directie).md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
 - [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
@@ -26,9 +30,16 @@ Chief Operating Officer
 |------|------------|--------|
 | Aggregation | Tree | [Board of Directors (Directie)](Board of Directors (Directie).md) |
 | Abstraction | trace | [COO](../ESRS Navigator Stakeholder Map/COO.md) |
-| Aggregation | Tree | [Board of Directors (Directie)](Board of Directors (Directie).md) |
-| Abstraction | trace | [COO](../ESRS Navigator Stakeholder Map/COO.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e268","label":"COO","fullName":"COO","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/COO.html"},{"id":"e496","label":"Board of Directors (Dir…","fullName":"Board of Directors (Directie)","packageName":People,"isFocal":false,"hasUrl":true,"url":"Board of Directors (Directie).html"},{"id":"e498","label":"COO","fullName":"COO","packageName":People,"isFocal":true,"hasUrl":false,"url":""},{"id":"e266","label":"Board of Directors (Dir…","fullName":"Board of Directors (Directie)","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Board of Directors (Directie).html"},{"id":"e497","label":"Chief Financial Officer","fullName":"Chief Financial Officer","packageName":People,"isFocal":false,"hasUrl":true,"url":"Chief Financial Officer.html"},{"id":"e494","label":"Sustainability Manager/…","fullName":"Sustainability Manager/Director","packageName":People,"isFocal":false,"hasUrl":true,"url":"Sustainability Manager_Director.html"},{"id":"e495","label":"CEO","fullName":"CEO","packageName":People,"isFocal":false,"hasUrl":true,"url":"CEO.html"},{"id":"e504","label":"Supervisory Board (RvC)","fullName":"Supervisory Board (RvC)","packageName":People,"isFocal":false,"hasUrl":true,"url":"Supervisory Board (RvC).html"}],"edges":[{"id":"c241","source":"e266","target":"e268","label":"Association"},{"id":"c472","source":"e268","target":"e498","label":"Abstraction"},{"id":"c470","source":"e266","target":"e496","label":"Abstraction"},{"id":"c539","source":"e496","target":"e498","label":"Aggregation"},{"id":"c540","source":"e496","target":"e497","label":"Aggregation"},{"id":"c541","source":"e496","target":"e494","label":"Aggregation"},{"id":"c542","source":"e496","target":"e495","label":"Aggregation"},{"id":"c659","source":"e504","target":"e496","label":"Aggregation"},{"id":"c543","source":"e494","target":"e495","label":"reports to"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:47*

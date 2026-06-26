@@ -1,10 +1,10 @@
-# Ensure that investors and other stakeholders have access to the information
+# <span class="sl" data-layer="uml">OUT</span> Ensure that investors and other stakeholders have access to the information
 
-**Type:** Activity  **Stereotype:** Outcome  **Status:** Proposed  
+**Type:** Activity  **Stereotype:** Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2026-04-29
 
 
-[Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS Goals and Objectives](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS Goals and Objectives](index.md)
 
 Ensure that investors and other stakeholders have access to the information they need to assess the impact of companies on people and the environment.
 
@@ -14,10 +14,14 @@ Ensure that investors and other stakeholders have access to the information they
 |------|-------|-------|
 | EDGY::TextAlign | Center | Default: Center  |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Goals and Objectives](diagrams/Goals and Objectives.md)
 
+[↑ Back to top](#)
+
 ---
 
-*Generated: 2026-06-25 10:51:16*
+*Generated: 2026-06-26 09:44:47*

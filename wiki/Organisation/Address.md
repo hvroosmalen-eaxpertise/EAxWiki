@@ -1,10 +1,10 @@
-# Address
+# <span class="sl" data-layer="uml">MAS</span> Address
 
 **Type:** Class  **Stereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
-[Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
+[Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
 Address captures the postal or physical address associated with a contact person, facility, or organisational unit. A structured address representation is preferred over a free-text field because it enables geographic analysis, regulatory jurisdiction mapping, and integration with postal validation services. The Address entity is deliberately kept simple, covering the most commonly required address components, and is linked to a Location entity that provides ISO country coding. A single contact or organisation may have multiple address records representing, for example, registered, trading, and correspondence addresses.
 
@@ -20,11 +20,15 @@ Address captures the postal or physical address associated with a contact person
 | geopolitical_entity_type_id | String |  | A foreign key referencing the GeopoliticalEntityType that classifies the geographic entity in which this address resides. This supports geographic analysis and regulatory jurisdiction mapping for emission reporting purposes. |
 | location_id | String |  | A foreign key identifying the Country or Location entity associated with this address. This attribute links the address to the standardised geographic reference hierarchy and enables alignment with country-level emission factor datasets and regulatory jurisdiction rules. |
 
+[↑ Back to top](#)
+
 ## Tagged Values
 
 | Name | Value | Notes |
 |------|-------|-------|
 | description | Address captures the postal or physical address associated with a contact person, facility, or organisational unit. |  |
+
+[↑ Back to top](#)
 
 ## Relationships
 
@@ -33,17 +37,29 @@ Address captures the postal or physical address associated with a contact person
 | Association |  | [Country](Country.md) |
 | Association |  | [OrganizationAddress](OrganizationAddress.md) |
 
+[↑ Back to top](#)
+
 ### Appears on Diagrams
 
 - [Organisation](diagrams/Organisation.md)
+
+[↑ Back to top](#)
 
 ### Referenced By
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association |  | [Country](Country.md) |
-| Association |  | [Country](Country.md) |
+
+[↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-25 10:51:16*
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e745","label":"Country","fullName":"Country","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"Country.html"},{"id":"e743","label":"OrganizationAddress","fullName":"OrganizationAddress","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationAddress.html"},{"id":"e737","label":"Address","fullName":"Address","packageName":Organisation,"isFocal":true,"hasUrl":false,"url":""},{"id":"e766","label":"GeopoliticalEntity","fullName":"GeopoliticalEntity","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/GeopoliticalEntity.html"},{"id":"e744","label":"OrganizationAddressType","fullName":"OrganizationAddressType","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationAddressType.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c893","source":"e745","target":"e766","label":"Association"},{"id":"c909","source":"e745","target":"e737","label":"Association"},{"id":"c910","source":"e744","target":"e743","label":"Association"},{"id":"c911","source":"e737","target":"e743","label":"Association"},{"id":"c912","source":"e735","target":"e743","label":"Association"},{"id":"c884","source":"e766","target":"e766","label":"Association"}]};</script>
+
+---
+
+*Generated: 2026-06-26 09:44:49*

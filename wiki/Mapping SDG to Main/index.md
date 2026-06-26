@@ -1,6 +1,6 @@
 # Mapping SDG to Main
 
-[Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Mapping SDG to Main](index.md)
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Mapping SDG to Main](index.md)
 
 ## Diagrams
 
@@ -8,4 +8,4 @@
 
 ---
 
-*Generated: 2026-06-25 10:55:58*
+*Generated: 2026-06-26 09:44:47*
