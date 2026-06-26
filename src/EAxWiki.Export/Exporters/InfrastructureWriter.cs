@@ -208,14 +208,14 @@ internal class InfrastructureWriter(IOutputWriter writer)
   margin-right: 0.3em;
 }
 
-.sl[data-layer="business"] { background: #005B8F; color: #fff; }
-.sl[data-layer="application"] { background: #007A3D; color: #fff; }
-.sl[data-layer="technology"] { background: #7B3F00; color: #fff; }
-.sl[data-layer="physical"] { background: #008080; color: #fff; }
-.sl[data-layer="motivation"] { background: #C62828; color: #fff; }
-.sl[data-layer="strategy"] { background: #6A1B9A; color: #fff; }
-.sl[data-layer="implementation"] { background: #BF360C; color: #fff; }
-.sl[data-layer="composite"] { background: #546E7A; color: #fff; }
+.sl[data-layer="business"] { background: #2E86C1; color: #fff; }
+.sl[data-layer="application"] { background: #27AE60; color: #fff; }
+.sl[data-layer="technology"] { background: #8E44AD; color: #fff; }
+.sl[data-layer="physical"] { background: #17A589; color: #fff; }
+.sl[data-layer="motivation"] { background: #C0392B; color: #fff; }
+.sl[data-layer="strategy"] { background: #D4AC0D; color: #fff; }
+.sl[data-layer="implementation"] { background: #E67E22; color: #fff; }
+.sl[data-layer="composite"] { background: #5D6D7E; color: #fff; }
 .sl[data-layer="uml"] { background: #7F8C8D; color: #fff; }
 
 /* EDGY facet colors — light backgrounds with dark text for readability */
