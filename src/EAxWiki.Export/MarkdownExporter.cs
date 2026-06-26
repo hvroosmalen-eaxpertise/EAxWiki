@@ -77,6 +77,7 @@ public class MarkdownExporter : IWikiExporter
                 diagramExporter.WriteIndexAsync(ctx),
                 infrastructure.WritePagesFileAsync(outputPath),
                 infrastructure.WriteExtraCssAsync(outputPath),
+                infrastructure.WriteGraphScriptsAsync(outputPath),
             };
 
             if (reader != null)

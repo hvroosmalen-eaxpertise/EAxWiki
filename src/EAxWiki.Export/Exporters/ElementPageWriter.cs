@@ -45,7 +45,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
 
         var lines = new List<string>
         {
-            $"# {element.Name}",
+            $"# {MarkdownHelpers.GetStereotypeLabel(element)} {element.Name}",
             string.Empty,
             $"**Type:** {element.Type}  **Stereotype:** {element.Stereotype}  " +
             (string.IsNullOrEmpty(element.Status) ? "" : $"**Status:** <span class=\"status-badge status-{element.Status.ToLowerInvariant()}\">{MarkdownHelpers.EscapeCell(element.Status)}</span>  "),
@@ -197,7 +197,93 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             lines.Add(string.Empty);
         }
 
+        var graphHtml = BuildGraphHtml(element, dir, ctx);
+        if (graphHtml.Length > 0)
+            lines.AddRange(["---", string.Empty, "## Relationship Graph", string.Empty, graphHtml, string.Empty]);
+
         lines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines));
     }
+
+    private static string BuildGraphHtml(EaElement focal, string focalPkgDir, ExportContext ctx)
+    {
+        // 1-hop: all elements directly connected to focal (both directions)
+        var hop1 = new HashSet<int>();
+        foreach (var conn in focal.Connectors)
+        {
+            var neighborId = conn.SourceId == focal.Id ? conn.TargetId : conn.SourceId;
+            if (neighborId != focal.Id && ctx.ElementLookup.ContainsKey(neighborId))
+                hop1.Add(neighborId);
+        }
+
+        if (hop1.Count == 0) return string.Empty;
+
+        // 2-hop: neighbors of neighbors not already in the set
+        var allIds = new HashSet<int>(hop1) { focal.Id };
+        foreach (var h1Id in hop1)
+        {
+            var (h1Elem, _) = ctx.ElementLookup[h1Id];
+            foreach (var conn in h1Elem.Connectors)
+            {
+                var neighborId = conn.SourceId == h1Id ? conn.TargetId : conn.SourceId;
+                if (neighborId != h1Id && ctx.ElementLookup.ContainsKey(neighborId))
+                    allIds.Add(neighborId);
+            }
+        }
+
+        // Nodes JSON
+        var nodes = new System.Text.StringBuilder();
+        var firstNode = true;
+        foreach (var id in allIds)
+        {
+            var (elem, pkgDir) = ctx.ElementLookup[id];
+            var isFocal = id == focal.Id;
+            var label = JsonEscape(elem.Name.Length > 24 ? elem.Name[..23] + "…" : elem.Name);
+            var fullName = JsonEscape(elem.Name);
+            var pkgName = ctx.PackageLookup.TryGetValue(elem.PackageId, out var pkg) ? JsonEscape(pkg.Name) : "\"\"";
+            string url;
+            if (isFocal)
+            {
+                url = "\"\"";
+            }
+            else
+            {
+                var targetFile = MarkdownHelpers.SanitizeName(elem.Name) + ".html";
+                var fromFolder = Path.GetFileName(focalPkgDir);
+                var toFolder = Path.GetFileName(pkgDir);
+                var rel = fromFolder.Equals(toFolder, StringComparison.OrdinalIgnoreCase)
+                    ? targetFile
+                    : $"../{toFolder}/{targetFile}";
+                url = JsonEscape(rel);
+            }
+            if (!firstNode) nodes.Append(',');
+            firstNode = false;
+            nodes.Append($"{{\"id\":\"e{id}\",\"label\":\"{label}\",\"fullName\":\"{fullName}\",\"packageName\":{pkgName},\"isFocal\":{(isFocal ? "true" : "false")},\"hasUrl\":{(!isFocal ? "true" : "false")},\"url\":\"{(isFocal ? "" : url.Trim('"'))}\"}}");
+        }
+
+        // Edges JSON — deduplicate by connector ID, both endpoints must be in allIds
+        var edges = new System.Text.StringBuilder();
+        var seenEdgeIds = new HashSet<int>();
+        var firstEdge = true;
+        foreach (var id in allIds)
+        {
+            var (elem, _) = ctx.ElementLookup[id];
+            foreach (var conn in elem.Connectors)
+            {
+                if (!seenEdgeIds.Add(conn.Id)) continue;
+                if (!allIds.Contains(conn.SourceId) || !allIds.Contains(conn.TargetId)) continue;
+                var edgeLabel = JsonEscape(!string.IsNullOrEmpty(conn.Name) ? conn.Name : conn.Type);
+                if (!firstEdge) edges.Append(',');
+                firstEdge = false;
+                edges.Append($"{{\"id\":\"c{conn.Id}\",\"source\":\"e{conn.SourceId}\",\"target\":\"e{conn.TargetId}\",\"label\":\"{edgeLabel}\"}}");
+            }
+        }
+
+        return
+            "<div id=\"ea-graph-container\"></div>\n" +
+            $"<script>window.eaGraphData={{\"nodes\":[{nodes}],\"edges\":[{edges}]}};</script>";
+    }
+
+    private static string JsonEscape(string s) =>
+        s.Replace("\\", "\\\\").Replace("\"", "\\\"").Replace("\r", "").Replace("\n", " ").Replace("\t", " ");
 }

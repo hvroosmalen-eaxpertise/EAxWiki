@@ -18,6 +18,10 @@ markdown_extensions:
 extra_css:
   - extra.css
 
+extra_javascript:
+  - cytoscape.min.js
+  - graph-init.js
+
 plugins:
   - search
   - awesome-pages
