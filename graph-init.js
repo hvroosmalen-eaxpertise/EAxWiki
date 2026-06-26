@@ -66,6 +66,14 @@ function initEaGraph() {
                 style: { 'opacity': 0.55 }
             },
             {
+                selector: 'node.expanded',
+                style: { 'border-width': 2, 'border-color': 'rgba(255,255,255,0.7)', 'border-style': 'dashed' }
+            },
+            {
+                selector: 'node.loading',
+                style: { 'opacity': 0.4 }
+            },
+            {
                 selector: 'edge',
                 style: {
                     'label': 'data(label)',
@@ -104,9 +112,11 @@ function initEaGraph() {
 
     cy.on('mouseover', 'node', function (evt) {
         var d = evt.target.data();
+        var expanded = evt.target.hasClass('expanded');
         var html = '<strong>' + d.fullName + '</strong>';
         if (d.packageName) html += '<br><span style="color:#777;font-size:11px">' + d.packageName + '</span>';
-        if (d.hasUrl) html += '<br><span style="color:#1565c0;font-size:11px">→ click to open</span>';
+        if (d.hasUrl && !expanded) html += '<br><span style="color:#1565c0;font-size:11px">click to expand · double-click to open</span>';
+        else if (d.hasUrl) html += '<br><span style="color:#1565c0;font-size:11px">double-click to open</span>';
         tooltip.innerHTML = html;
         tooltip.style.display = 'block';
     });
@@ -116,12 +126,70 @@ function initEaGraph() {
         tooltip.style.top = (evt.originalEvent.clientY - 10) + 'px';
     });
     cy.on('mouseout', 'node', function () { tooltip.style.display = 'none'; });
+
+    var tapTimer;
     cy.on('tap', 'node', function (evt) {
-        var url = evt.target.data('url');
-        if (url) window.location.href = url;
+        var node = evt.target;
+        clearTimeout(tapTimer);
+        tapTimer = setTimeout(function () { expandNode(node); }, 280);
     });
+    cy.on('dbltap', 'node', function (evt) {
+        clearTimeout(tapTimer);
+        var url = evt.target.data('url');
+        if (url) window.location.href = resolveUrl(url);
+    });
+
     cy.on('mouseover', 'node[?hasUrl]', function () { container.style.cursor = 'pointer'; });
     cy.on('mouseout', 'node', function () { container.style.cursor = 'default'; });
+
+    function resolveUrl(relUrl) {
+        var a = document.createElement('a');
+        a.href = relUrl;
+        return a.href;
+    }
+
+    var coseLayout = {
+        name: 'cose',
+        animate: true,
+        animationDuration: 500,
+        randomize: false,
+        nodeRepulsion: function () { return 400000; },
+        nodeOverlap: 20,
+        idealEdgeLength: function () { return 120; },
+        gravity: 80
+    };
+
+    function expandNode(node) {
+        var url = node.data('url');
+        if (!url || node.hasClass('expanded') || node.hasClass('loading')) return;
+        node.addClass('loading');
+        fetch(resolveUrl(url))
+            .then(function (r) { return r.text(); })
+            .then(function (html) {
+                var doc = new DOMParser().parseFromString(html, 'text/html');
+                var el = doc.getElementById('ea-graph-data');
+                if (!el) { node.removeClass('loading'); return; }
+                var pageData = JSON.parse(el.textContent);
+                var added = false;
+                pageData.nodes.forEach(function (n) {
+                    if (!cy.getElementById(n.id).length) {
+                        cy.add({ group: 'nodes', data: n });
+                        added = true;
+                    }
+                });
+                pageData.edges.forEach(function (e) {
+                    if (!cy.getElementById(e.id).length &&
+                        cy.getElementById(e.source).length &&
+                        cy.getElementById(e.target).length) {
+                        cy.add({ group: 'edges', data: e });
+                    }
+                });
+                node.removeClass('loading');
+                node.addClass('expanded');
+                if (added) cy.layout(coseLayout).run();
+            })
+            .catch(function () { node.removeClass('loading'); });
+    }
 }
 
 // MkDocs Material instant navigation fires document$ on every page load.
