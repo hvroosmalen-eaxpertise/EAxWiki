@@ -243,25 +243,25 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             var isFocal = id == focal.Id;
             var label = JsonEscape(elem.Name.Length > 24 ? elem.Name[..23] + "…" : elem.Name);
             var fullName = JsonEscape(elem.Name);
-            var pkgName = ctx.PackageLookup.TryGetValue(elem.PackageId, out var pkg) ? JsonEscape(pkg.Name) : "\"\"";
+            var pkgName = ctx.PackageLookup.TryGetValue(elem.PackageId, out var pkg) ? JsonEscape(pkg.Name) : "";
             string url;
             if (isFocal)
             {
-                url = "\"\"";
+                url = "";
             }
             else
             {
                 var targetFile = MarkdownHelpers.SanitizeName(elem.Name) + ".html";
                 var fromFolder = Path.GetFileName(focalPkgDir);
                 var toFolder = Path.GetFileName(pkgDir);
-                var rel = fromFolder.Equals(toFolder, StringComparison.OrdinalIgnoreCase)
+                url = fromFolder.Equals(toFolder, StringComparison.OrdinalIgnoreCase)
                     ? targetFile
                     : $"../{toFolder}/{targetFile}";
-                url = JsonEscape(rel);
+                url = JsonEscape(url);
             }
             if (!firstNode) nodes.Append(',');
             firstNode = false;
-            nodes.Append($"{{\"id\":\"e{id}\",\"label\":\"{label}\",\"fullName\":\"{fullName}\",\"packageName\":{pkgName},\"isFocal\":{(isFocal ? "true" : "false")},\"hasUrl\":{(!isFocal ? "true" : "false")},\"url\":\"{(isFocal ? "" : url.Trim('"'))}\"}}");
+            nodes.Append($"{{\"id\":\"e{id}\",\"label\":\"{label}\",\"fullName\":\"{fullName}\",\"packageName\":\"{pkgName}\",\"isFocal\":{(isFocal ? "true" : "false")},\"hasUrl\":{(!isFocal ? "true" : "false")},\"url\":\"{url}\"}}");
         }
 
         // Edges JSON — deduplicate by connector ID, both endpoints must be in allIds
