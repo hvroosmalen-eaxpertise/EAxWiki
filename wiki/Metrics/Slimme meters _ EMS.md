@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e190","label":"Energieverbruik (kWh)","fullName":"Energieverbruik (kWh)","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"Energieverbruik (kWh).html"},{"id":"e210","label":"Slimme meters / EMS","fullName":"Slimme meters / EMS","packageName":Metrics,"isFocal":true,"hasUrl":false,"url":""},{"id":"e177","label":"% energie uit hernieuwb…","fullName":"% energie uit hernieuwbare bronnen","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"% energie uit hernieuwbare bronnen.html"}],"edges":[{"id":"c191","source":"e177","target":"e190","label":"Aggregation"},{"id":"c211","source":"e190","target":"e210","label":"Association"}]};</script>
+<script>window.eaGraphData={"nodes":[{"id":"e190","label":"Energieverbruik (kWh)","fullName":"Energieverbruik (kWh)","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Energieverbruik (kWh).html"},{"id":"e210","label":"Slimme meters / EMS","fullName":"Slimme meters / EMS","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e177","label":"% energie uit hernieuwb…","fullName":"% energie uit hernieuwbare bronnen","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"% energie uit hernieuwbare bronnen.html"}],"edges":[{"id":"c191","source":"e177","target":"e190","label":"Aggregation"},{"id":"c211","source":"e190","target":"e210","label":"Association"}]};</script>
 
 ---
 
-*Generated: 2026-06-26 13:44:30*
+*Generated: 2026-06-26 15:09:22*

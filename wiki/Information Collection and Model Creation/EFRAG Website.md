@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e578","label":"ESRS","fullName":"ESRS","packageName":Information Collection and Model Creation,"isFocal":false,"hasUrl":true,"url":"ESRS.html"},{"id":"e592","label":"EFRAG Website","fullName":"EFRAG Website","packageName":Information Collection and Model Creation,"isFocal":true,"hasUrl":false,"url":""},{"id":"e585","label":"Compile Information Sou…","fullName":"Compile Information Sources","packageName":Information Collection and Model Creation,"isFocal":false,"hasUrl":true,"url":"Compile Information Sources.html"},{"id":"e590","label":"ESRS Website","fullName":"ESRS Website","packageName":Information Collection and Model Creation,"isFocal":false,"hasUrl":true,"url":"ESRS Website.html"}],"edges":[{"id":"c615","source":"e578","target":"e585","label":"ControlFlow"},{"id":"c624","source":"e590","target":"e578","label":"ControlFlow"},{"id":"c626","source":"e592","target":"e578","label":"ControlFlow"}]};</script>
+<script>window.eaGraphData={"nodes":[{"id":"e578","label":"ESRS","fullName":"ESRS","packageName":"Information Collection and Model Creation","isFocal":false,"hasUrl":true,"url":"ESRS.html"},{"id":"e592","label":"EFRAG Website","fullName":"EFRAG Website","packageName":"Information Collection and Model Creation","isFocal":true,"hasUrl":false,"url":""},{"id":"e585","label":"Compile Information Sou…","fullName":"Compile Information Sources","packageName":"Information Collection and Model Creation","isFocal":false,"hasUrl":true,"url":"Compile Information Sources.html"},{"id":"e590","label":"ESRS Website","fullName":"ESRS Website","packageName":"Information Collection and Model Creation","isFocal":false,"hasUrl":true,"url":"ESRS Website.html"}],"edges":[{"id":"c615","source":"e578","target":"e585","label":"ControlFlow"},{"id":"c624","source":"e590","target":"e578","label":"ControlFlow"},{"id":"c626","source":"e592","target":"e578","label":"ControlFlow"}]};</script>
 
 ---
 
-*Generated: 2026-06-26 13:44:31*
+*Generated: 2026-06-26 15:09:22*

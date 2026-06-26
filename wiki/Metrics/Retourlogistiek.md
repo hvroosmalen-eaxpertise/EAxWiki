@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e204","label":"Retourpercentages produ…","fullName":"Retourpercentages producten","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"Retourpercentages producten.html"},{"id":"e225","label":"Retourlogistiek","fullName":"Retourlogistiek","packageName":Metrics,"isFocal":true,"hasUrl":false,"url":""},{"id":"e182","label":"% gerecyclede materiale…","fullName":"% gerecyclede materialen in producten","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"% gerecyclede materialen in producten.html"}],"edges":[{"id":"c205","source":"e182","target":"e204","label":"Aggregation"},{"id":"c225","source":"e204","target":"e225","label":"Association"}]};</script>
+<script>window.eaGraphData={"nodes":[{"id":"e204","label":"Retourpercentages produ…","fullName":"Retourpercentages producten","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Retourpercentages producten.html"},{"id":"e225","label":"Retourlogistiek","fullName":"Retourlogistiek","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e182","label":"% gerecyclede materiale…","fullName":"% gerecyclede materialen in producten","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"% gerecyclede materialen in producten.html"}],"edges":[{"id":"c205","source":"e182","target":"e204","label":"Aggregation"},{"id":"c225","source":"e204","target":"e225","label":"Association"}]};</script>
 
 ---
 
-*Generated: 2026-06-26 13:44:30*
+*Generated: 2026-06-26 15:09:22*

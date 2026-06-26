@@ -35,8 +35,8 @@ Responsible for water policy and production facilities
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e502","label":"Operations Manager","fullName":"Operations Manager","packageName":People,"isFocal":false,"hasUrl":true,"url":"../People/Operations Manager.html"},{"id":"e309","label":"Operations Manager","fullName":"Operations Manager","packageName":ESRS Navigator Stakeholder Map,"isFocal":true,"hasUrl":false,"url":""},{"id":"e510","label":"Company subject to CSRD","fullName":"Company subject to CSRD","packageName":People,"isFocal":false,"hasUrl":true,"url":"../People/Company subject to CSRD.html"}],"edges":[{"id":"c476","source":"e309","target":"e502","label":"Abstraction"},{"id":"c551","source":"e502","target":"e510","label":"reports to"}]};</script>
+<script>window.eaGraphData={"nodes":[{"id":"e502","label":"Operations Manager","fullName":"Operations Manager","packageName":"People","isFocal":false,"hasUrl":true,"url":"../People/Operations Manager.html"},{"id":"e309","label":"Operations Manager","fullName":"Operations Manager","packageName":"ESRS Navigator Stakeholder Map","isFocal":true,"hasUrl":false,"url":""},{"id":"e510","label":"Company subject to CSRD","fullName":"Company subject to CSRD","packageName":"People","isFocal":false,"hasUrl":true,"url":"../People/Company subject to CSRD.html"}],"edges":[{"id":"c476","source":"e309","target":"e502","label":"Abstraction"},{"id":"c551","source":"e502","target":"e510","label":"reports to"}]};</script>
 
 ---
 
-*Generated: 2026-06-26 13:44:30*
+*Generated: 2026-06-26 15:09:22*

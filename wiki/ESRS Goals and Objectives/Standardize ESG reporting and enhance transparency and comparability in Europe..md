@@ -24,4 +24,4 @@ The ESRS align the EU reporting system to the International Sustainability Stand
 
 ---
 
-*Generated: 2026-06-26 13:44:29*
+*Generated: 2026-06-26 15:09:21*

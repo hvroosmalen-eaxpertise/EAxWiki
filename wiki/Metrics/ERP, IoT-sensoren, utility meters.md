@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e207","label":"CO₂e, energie, afval, w…","fullName":"CO₂e, energie, afval, water per proces","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"CO₂e, energie, afval, water per proces.html"},{"id":"e227","label":"ERP, IoT-sensoren, util…","fullName":"ERP, IoT-sensoren, utility meters","packageName":Metrics,"isFocal":true,"hasUrl":false,"url":""},{"id":"e183","label":"% scope 3 emissies met …","fullName":"% scope 3 emissies met gemeten data","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"% scope 3 emissies met gemeten data.html"}],"edges":[{"id":"c208","source":"e183","target":"e207","label":"Aggregation"},{"id":"c227","source":"e207","target":"e227","label":"Association"}]};</script>
+<script>window.eaGraphData={"nodes":[{"id":"e207","label":"CO₂e, energie, afval, w…","fullName":"CO₂e, energie, afval, water per proces","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"CO₂e, energie, afval, water per proces.html"},{"id":"e227","label":"ERP, IoT-sensoren, util…","fullName":"ERP, IoT-sensoren, utility meters","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e183","label":"% scope 3 emissies met …","fullName":"% scope 3 emissies met gemeten data","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"% scope 3 emissies met gemeten data.html"}],"edges":[{"id":"c208","source":"e183","target":"e207","label":"Aggregation"},{"id":"c227","source":"e207","target":"e227","label":"Association"}]};</script>
 
 ---
 
-*Generated: 2026-06-26 13:44:30*
+*Generated: 2026-06-26 15:09:22*

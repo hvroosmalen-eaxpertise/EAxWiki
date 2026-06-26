@@ -36,8 +36,8 @@ Logistics and transportation providers
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e294","label":"Transport Companies","fullName":"Transport Companies","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Transport Companies.html"},{"id":"e530","label":"Transport Companies","fullName":"Transport Companies","packageName":People,"isFocal":true,"hasUrl":false,"url":""},{"id":"e335","label":"Suppliers","fullName":"Suppliers","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Suppliers.html"}],"edges":[{"id":"c279","source":"e294","target":"e335","label":"Generalization"},{"id":"c505","source":"e294","target":"e530","label":"Abstraction"}]};</script>
+<script>window.eaGraphData={"nodes":[{"id":"e294","label":"Transport Companies","fullName":"Transport Companies","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Transport Companies.html"},{"id":"e530","label":"Transport Companies","fullName":"Transport Companies","packageName":"People","isFocal":true,"hasUrl":false,"url":""},{"id":"e335","label":"Suppliers","fullName":"Suppliers","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Suppliers.html"}],"edges":[{"id":"c279","source":"e294","target":"e335","label":"Generalization"},{"id":"c505","source":"e294","target":"e530","label":"Abstraction"}]};</script>
 
 ---
 
-*Generated: 2026-06-26 13:44:29*
+*Generated: 2026-06-26 15:09:21*

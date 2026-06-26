@@ -36,8 +36,8 @@ Verification bureaus for water, energy, CO2 data
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e260","label":"Research and Analysis F…","fullName":"Research and Analysis Firms","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Research and Analysis Firms.html"},{"id":"e526","label":"Research and Analysis F…","fullName":"Research and Analysis Firms","packageName":People,"isFocal":true,"hasUrl":false,"url":""},{"id":"e331","label":"Large Companies (>250 e…","fullName":"Large Companies (>250 employees)","packageName":ESRS Navigator Stakeholder Map,"isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).html"}],"edges":[{"id":"c301","source":"e260","target":"e331","label":"verifies data for"},{"id":"c501","source":"e260","target":"e526","label":"Abstraction"}]};</script>
+<script>window.eaGraphData={"nodes":[{"id":"e260","label":"Research and Analysis F…","fullName":"Research and Analysis Firms","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Research and Analysis Firms.html"},{"id":"e526","label":"Research and Analysis F…","fullName":"Research and Analysis Firms","packageName":"People","isFocal":true,"hasUrl":false,"url":""},{"id":"e331","label":"Large Companies (>250 e…","fullName":"Large Companies (>250 employees)","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).html"}],"edges":[{"id":"c301","source":"e260","target":"e331","label":"verifies data for"},{"id":"c501","source":"e260","target":"e526","label":"Abstraction"}]};</script>
 
 ---
 
-*Generated: 2026-06-26 13:44:29*
+*Generated: 2026-06-26 15:09:21*

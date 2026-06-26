@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e195","label":"CO₂e per processtap of …","fullName":"CO₂e per processtap of productlevensfase","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"CO₂e per processtap of productlevensfase.html"},{"id":"e215","label":"Productiesoftware (SCAD…","fullName":"Productiesoftware (SCADA, MES)","packageName":Metrics,"isFocal":true,"hasUrl":false,"url":""},{"id":"e179","label":"Totaal afval (ton/jaar)","fullName":"Totaal afval (ton/jaar)","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"Totaal afval (ton_jaar).html"}],"edges":[{"id":"c196","source":"e179","target":"e195","label":"Aggregation"},{"id":"c216","source":"e195","target":"e215","label":"Association"}]};</script>
+<script>window.eaGraphData={"nodes":[{"id":"e195","label":"CO₂e per processtap of …","fullName":"CO₂e per processtap of productlevensfase","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"CO₂e per processtap of productlevensfase.html"},{"id":"e215","label":"Productiesoftware (SCAD…","fullName":"Productiesoftware (SCADA, MES)","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e179","label":"Totaal afval (ton/jaar)","fullName":"Totaal afval (ton/jaar)","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Totaal afval (ton_jaar).html"}],"edges":[{"id":"c196","source":"e179","target":"e195","label":"Aggregation"},{"id":"c216","source":"e195","target":"e215","label":"Association"}]};</script>
 
 ---
 
-*Generated: 2026-06-26 13:44:30*
+*Generated: 2026-06-26 15:09:22*

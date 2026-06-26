@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e205","label":"Afval per fase + recycl…","fullName":"Afval per fase + recycleerbaar aandeel","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"Afval per fase + recycleerbaar aandeel.html"},{"id":"e226","label":"Slimme afvalweegschalen…","fullName":"Slimme afvalweegschalen, product-IoT","packageName":Metrics,"isFocal":true,"hasUrl":false,"url":""},{"id":"e182","label":"% gerecyclede materiale…","fullName":"% gerecyclede materialen in producten","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"% gerecyclede materialen in producten.html"}],"edges":[{"id":"c206","source":"e182","target":"e205","label":"Aggregation"},{"id":"c226","source":"e205","target":"e226","label":"Association"}]};</script>
+<script>window.eaGraphData={"nodes":[{"id":"e205","label":"Afval per fase + recycl…","fullName":"Afval per fase + recycleerbaar aandeel","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Afval per fase + recycleerbaar aandeel.html"},{"id":"e226","label":"Slimme afvalweegschalen…","fullName":"Slimme afvalweegschalen, product-IoT","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e182","label":"% gerecyclede materiale…","fullName":"% gerecyclede materialen in producten","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"% gerecyclede materialen in producten.html"}],"edges":[{"id":"c206","source":"e182","target":"e205","label":"Aggregation"},{"id":"c226","source":"e205","target":"e226","label":"Association"}]};</script>
 
 ---
 
-*Generated: 2026-06-26 13:44:30*
+*Generated: 2026-06-26 15:09:22*

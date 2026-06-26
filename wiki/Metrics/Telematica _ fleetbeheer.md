@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e192","label":"Brandstofverbruik voert…","fullName":"Brandstofverbruik voertuigen/machines","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"Brandstofverbruik voertuigen_machines.html"},{"id":"e212","label":"Telematica / fleetbeheer","fullName":"Telematica / fleetbeheer","packageName":Metrics,"isFocal":true,"hasUrl":false,"url":""},{"id":"e177","label":"% energie uit hernieuwb…","fullName":"% energie uit hernieuwbare bronnen","packageName":Metrics,"isFocal":false,"hasUrl":true,"url":"% energie uit hernieuwbare bronnen.html"}],"edges":[{"id":"c193","source":"e177","target":"e192","label":"Aggregation"},{"id":"c213","source":"e192","target":"e212","label":"Association"}]};</script>
+<script>window.eaGraphData={"nodes":[{"id":"e192","label":"Brandstofverbruik voert…","fullName":"Brandstofverbruik voertuigen/machines","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Brandstofverbruik voertuigen_machines.html"},{"id":"e212","label":"Telematica / fleetbeheer","fullName":"Telematica / fleetbeheer","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e177","label":"% energie uit hernieuwb…","fullName":"% energie uit hernieuwbare bronnen","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"% energie uit hernieuwbare bronnen.html"}],"edges":[{"id":"c193","source":"e177","target":"e192","label":"Aggregation"},{"id":"c213","source":"e192","target":"e212","label":"Association"}]};</script>
 
 ---
 
-*Generated: 2026-06-26 13:44:30*
+*Generated: 2026-06-26 15:09:22*

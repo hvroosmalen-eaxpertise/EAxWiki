@@ -44,8 +44,8 @@ OrganizationExternalIdentifierType provides the controlled vocabulary of externa
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e748","label":"OrganizationExternalIde…","fullName":"OrganizationExternalIdentifier","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationExternalIdentifier.html"},{"id":"e749","label":"OrganizationExternalIde…","fullName":"OrganizationExternalIdentifierType","packageName":Organisation,"isFocal":true,"hasUrl":false,"url":""},{"id":"e735","label":"Organization","fullName":"Organization","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c903","source":"e749","target":"e748","label":"Association"},{"id":"c904","source":"e735","target":"e748","label":"Association"}]};</script>
+<script>window.eaGraphData={"nodes":[{"id":"e748","label":"OrganizationExternalIde…","fullName":"OrganizationExternalIdentifier","packageName":"Organisation","isFocal":false,"hasUrl":true,"url":"OrganizationExternalIdentifier.html"},{"id":"e749","label":"OrganizationExternalIde…","fullName":"OrganizationExternalIdentifierType","packageName":"Organisation","isFocal":true,"hasUrl":false,"url":""},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c903","source":"e749","target":"e748","label":"Association"},{"id":"c904","source":"e735","target":"e748","label":"Association"}]};</script>
 
 ---
 
-*Generated: 2026-06-26 13:44:31*
+*Generated: 2026-06-26 15:09:22*
