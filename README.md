@@ -16,8 +16,9 @@ The exporter is a .NET 10 console application that connects to a Sparx Enterpris
 
 What the exporter produces:
 - One Markdown page per element, organised into the same package hierarchy as the EA model
-- PNG diagram images with a linked Markdown page per diagram
+- PNG diagram images with a linked Markdown page per diagram (clickable for zoom via glightbox)
 - Five cross-cutting index views: **Structure**, **Types**, **Glossary**, **Diagrams**, **Recent Changes**
+- A `model.json` file with the full model serialised as JSON (opt-in via `--json` / `-j`)
 - An `extra.css` and `.pages` navigation file for MkDocs
 
 The exporter runs **incrementally** by default — it compares each element's `ModifiedDate` in EA against the file's last-write time and skips anything that has not changed. Pass `-Force` to regenerate everything.
@@ -270,6 +271,7 @@ The wiki has five navigation views:
 
 - **Breadcrumb** — hierarchical path from root to the element's package
 - **Dates** — shows CreatedDate and ModifiedDate beneath the breadcrumb
+- **Stereotype labels** — each element heading is prefixed with a coloured label showing the full stereotype type name. ArchiMate elements use layer colours (Business=Yellow, Application=Blue, Technology=Green, Motivation=Purple, Strategy=Brown, Implementation=Pink). EDGY elements use facet colours. UML elements display in gray.
 - **Status** — displays element Status (Proposed, Approved, Implemented, etc.) inline with Type and Stereotype
 - **Relationships** — outgoing connectors with linked target element names
 - **Referenced By** — incoming connectors from other elements with links
