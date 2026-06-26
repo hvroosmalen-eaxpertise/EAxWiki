@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e201","label":"Emissie vóór/na project","fullName":"Emissie vóór/na project","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Emissie vóór_na project.html"},{"id":"e222","label":"CMMS / projectenregistr…","fullName":"CMMS / projectenregistratie","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e181","label":"Vermeden CO₂ door maatr…","fullName":"Vermeden CO₂ door maatregelen (ton/jaar)","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Vermeden CO₂ door maatregelen (ton_jaar).html"}],"edges":[{"id":"c202","source":"e181","target":"e201","label":"Aggregation"},{"id":"c222","source":"e201","target":"e222","label":"Association"}]};</script>
+<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e201","label":"Emissie vóór/na project","fullName":"Emissie vóór/na project","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Emissie vóór_na project.html"},{"id":"e222","label":"CMMS / projectenregistr…","fullName":"CMMS / projectenregistratie","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e181","label":"Vermeden CO₂ door maatr…","fullName":"Vermeden CO₂ door maatregelen (ton/jaar)","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Vermeden CO₂ door maatregelen (ton_jaar).html"}],"edges":[{"id":"c202","source":"e181","target":"e201","label":"Aggregation"},{"id":"c222","source":"e201","target":"e222","label":"Association"}]}</script>
 
 ---
 
-*Generated: 2026-06-26 15:09:22*
+*Generated: 2026-06-26 16:40:38*

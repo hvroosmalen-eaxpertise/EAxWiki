@@ -36,8 +36,8 @@ Example company: 450 employees, food production, two facilities in Netherlands
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e250","label":"FreshFood B.V.","fullName":"FreshFood B.V.","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/FreshFood B.V..html"},{"id":"e499","label":"FreshFood B.V.","fullName":"FreshFood B.V.","packageName":"People","isFocal":true,"hasUrl":false,"url":""},{"id":"e331","label":"Large Companies (>250 e…","fullName":"Large Companies (>250 employees)","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).html"}],"edges":[{"id":"c242","source":"e250","target":"e331","label":"Generalization"},{"id":"c473","source":"e250","target":"e499","label":"Abstraction"}]};</script>
+<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e250","label":"FreshFood B.V.","fullName":"FreshFood B.V.","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/FreshFood B.V..html"},{"id":"e499","label":"FreshFood B.V.","fullName":"FreshFood B.V.","packageName":"People","isFocal":true,"hasUrl":false,"url":""},{"id":"e331","label":"Large Companies (>250 e…","fullName":"Large Companies (>250 employees)","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).html"}],"edges":[{"id":"c242","source":"e250","target":"e331","label":"Generalization"},{"id":"c473","source":"e250","target":"e499","label":"Abstraction"}]}</script>
 
 ---
 
-*Generated: 2026-06-26 15:09:21*
+*Generated: 2026-06-26 16:40:38*

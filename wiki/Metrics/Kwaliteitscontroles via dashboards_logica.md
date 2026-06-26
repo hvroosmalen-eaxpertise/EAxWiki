@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e209","label":"Datakwaliteit: beschikb…","fullName":"Datakwaliteit: beschikbaarheid / updatefrequentie","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Datakwaliteit_ beschikbaarheid _ updatefrequentie.html"},{"id":"e229","label":"Kwaliteitscontroles via…","fullName":"Kwaliteitscontroles via dashboards/logica","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e183","label":"% scope 3 emissies met …","fullName":"% scope 3 emissies met gemeten data","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"% scope 3 emissies met gemeten data.html"}],"edges":[{"id":"c210","source":"e183","target":"e209","label":"Aggregation"},{"id":"c229","source":"e209","target":"e229","label":"Association"}]};</script>
+<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e209","label":"Datakwaliteit: beschikb…","fullName":"Datakwaliteit: beschikbaarheid / updatefrequentie","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Datakwaliteit_ beschikbaarheid _ updatefrequentie.html"},{"id":"e229","label":"Kwaliteitscontroles via…","fullName":"Kwaliteitscontroles via dashboards/logica","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e183","label":"% scope 3 emissies met …","fullName":"% scope 3 emissies met gemeten data","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"% scope 3 emissies met gemeten data.html"}],"edges":[{"id":"c210","source":"e183","target":"e209","label":"Aggregation"},{"id":"c229","source":"e209","target":"e229","label":"Association"}]}</script>
 
 ---
 
-*Generated: 2026-06-26 15:09:22*
+*Generated: 2026-06-26 16:40:38*

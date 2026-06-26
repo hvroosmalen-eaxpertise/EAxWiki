@@ -44,13 +44,15 @@ internal class InfrastructureWriter(IOutputWriter writer)
         const string graphInitJs = """
 function initEaGraph() {
     var container = document.getElementById('ea-graph-container');
-    if (!container || !window.eaGraphData || typeof cytoscape === 'undefined') return;
+    if (!container || typeof cytoscape === 'undefined') return;
+
+    var dataEl = document.getElementById('ea-graph-data');
+    if (!dataEl) return;
+    var data = JSON.parse(dataEl.textContent);
 
     // Remove any tooltip left over from a previous page navigation.
     var old = document.getElementById('ea-graph-tooltip');
     if (old) old.remove();
-
-    var data = window.eaGraphData;
     var cy = cytoscape({
         container: container,
         elements: {

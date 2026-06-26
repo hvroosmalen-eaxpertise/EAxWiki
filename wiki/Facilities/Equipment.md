@@ -48,8 +48,8 @@ Equipment describes a device used in an operation or activity that is located or
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e761","label":"EquipmentInstallation","fullName":"EquipmentInstallation","packageName":"Facilities","isFocal":false,"hasUrl":true,"url":"EquipmentInstallation.html"},{"id":"e756","label":"Equipment","fullName":"Equipment","packageName":"Facilities","isFocal":true,"hasUrl":false,"url":""},{"id":"e753","label":"Facility","fullName":"Facility","packageName":"Facilities","isFocal":false,"hasUrl":true,"url":"Facility.html"}],"edges":[{"id":"c877","source":"e753","target":"e761","label":"Association"},{"id":"c878","source":"e756","target":"e761","label":"Association"},{"id":"c876","source":"e756","target":"e756","label":"Association"}]};</script>
+<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e761","label":"EquipmentInstallation","fullName":"EquipmentInstallation","packageName":"Facilities","isFocal":false,"hasUrl":true,"url":"EquipmentInstallation.html"},{"id":"e756","label":"Equipment","fullName":"Equipment","packageName":"Facilities","isFocal":true,"hasUrl":false,"url":""},{"id":"e753","label":"Facility","fullName":"Facility","packageName":"Facilities","isFocal":false,"hasUrl":true,"url":"Facility.html"}],"edges":[{"id":"c877","source":"e753","target":"e761","label":"Association"},{"id":"c878","source":"e756","target":"e761","label":"Association"},{"id":"c876","source":"e756","target":"e756","label":"Association"}]}</script>
 
 ---
 
-*Generated: 2026-06-26 15:09:23*
+*Generated: 2026-06-26 16:40:39*

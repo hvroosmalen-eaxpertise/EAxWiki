@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e623","label":"Deutsche Bahn (Marco Di…","fullName":"Deutsche Bahn (Marco Dillenburg)","packageName":"Introduction EurSuRA","isFocal":false,"hasUrl":true,"url":"Deutsche Bahn (Marco Dillenburg).html"},{"id":"e624","label":"Sidenote from Community…","fullName":"Sidenote from Community Leads","packageName":"Introduction EurSuRA","isFocal":true,"hasUrl":false,"url":""}],"edges":[{"id":"c652","source":"e624","target":"e623","label":"Association"}]};</script>
+<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e623","label":"Deutsche Bahn (Marco Di…","fullName":"Deutsche Bahn (Marco Dillenburg)","packageName":"Introduction EurSuRA","isFocal":false,"hasUrl":true,"url":"Deutsche Bahn (Marco Dillenburg).html"},{"id":"e624","label":"Sidenote from Community…","fullName":"Sidenote from Community Leads","packageName":"Introduction EurSuRA","isFocal":true,"hasUrl":false,"url":""}],"edges":[{"id":"c652","source":"e624","target":"e623","label":"Association"}]}</script>
 
 ---
 
-*Generated: 2026-06-26 15:09:22*
+*Generated: 2026-06-26 16:40:39*

@@ -284,7 +284,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
 
         return
             "<div id=\"ea-graph-container\"></div>\n" +
-            $"<script>window.eaGraphData={{\"nodes\":[{nodes}],\"edges\":[{edges}]}};</script>";
+            $"<script type=\"application/json\" id=\"ea-graph-data\">{{\"nodes\":[{nodes}],\"edges\":[{edges}]}}</script>";
     }
 
     private static string JsonEscape(string s) =>

@@ -55,8 +55,8 @@ IndustrySectorType provides a hierarchical classification of industry sectors us
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e750","label":"OrganizationIndustrySec…","fullName":"OrganizationIndustrySector","packageName":"Organisation","isFocal":false,"hasUrl":true,"url":"OrganizationIndustrySector.html"},{"id":"e739","label":"IndustrySectorType","fullName":"IndustrySectorType","packageName":"Organisation","isFocal":true,"hasUrl":false,"url":""},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c901","source":"e735","target":"e750","label":"Association"},{"id":"c902","source":"e739","target":"e750","label":"Association"},{"id":"c900","source":"e739","target":"e739","label":"Association"}]};</script>
+<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e750","label":"OrganizationIndustrySec…","fullName":"OrganizationIndustrySector","packageName":"Organisation","isFocal":false,"hasUrl":true,"url":"OrganizationIndustrySector.html"},{"id":"e739","label":"IndustrySectorType","fullName":"IndustrySectorType","packageName":"Organisation","isFocal":true,"hasUrl":false,"url":""},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c901","source":"e735","target":"e750","label":"Association"},{"id":"c902","source":"e739","target":"e750","label":"Association"},{"id":"c900","source":"e739","target":"e739","label":"Association"}]}</script>
 
 ---
 
-*Generated: 2026-06-26 15:09:22*
+*Generated: 2026-06-26 16:40:39*

@@ -35,8 +35,8 @@ Committee supporting sustainability initiatives
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script>window.eaGraphData={"nodes":[{"id":"e503","label":"Sustainability Committee","fullName":"Sustainability Committee","packageName":"People","isFocal":false,"hasUrl":true,"url":"../People/Sustainability Committee.html"},{"id":"e243","label":"Sustainability Committee","fullName":"Sustainability Committee","packageName":"ESRS Navigator Stakeholder Map","isFocal":true,"hasUrl":false,"url":""},{"id":"e510","label":"Company subject to CSRD","fullName":"Company subject to CSRD","packageName":"People","isFocal":false,"hasUrl":true,"url":"../People/Company subject to CSRD.html"}],"edges":[{"id":"c477","source":"e243","target":"e503","label":"Abstraction"},{"id":"c552","source":"e503","target":"e510","label":"advises"}]};</script>
+<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e503","label":"Sustainability Committee","fullName":"Sustainability Committee","packageName":"People","isFocal":false,"hasUrl":true,"url":"../People/Sustainability Committee.html"},{"id":"e243","label":"Sustainability Committee","fullName":"Sustainability Committee","packageName":"ESRS Navigator Stakeholder Map","isFocal":true,"hasUrl":false,"url":""},{"id":"e510","label":"Company subject to CSRD","fullName":"Company subject to CSRD","packageName":"People","isFocal":false,"hasUrl":true,"url":"../People/Company subject to CSRD.html"}],"edges":[{"id":"c477","source":"e243","target":"e503","label":"Abstraction"},{"id":"c552","source":"e503","target":"e510","label":"advises"}]}</script>
 
 ---
 
-*Generated: 2026-06-26 15:09:22*
+*Generated: 2026-06-26 16:40:39*
