@@ -252,8 +252,8 @@ internal class InfrastructureWriter(IOutputWriter writer)
         HashSet<string> specialDirs,
         bool isRoot)
     {
-        // Clean up orphaned element .md files in this directory (skip index.md).
-        if (!isRoot)
+        // Clean up orphaned element .md files in this directory (skip index.md and diagrams/).
+        if (!isRoot && !string.Equals(Path.GetFileName(dir), "diagrams", StringComparison.OrdinalIgnoreCase))
         {
             foreach (var file in Directory.EnumerateFiles(dir, "*.md"))
             {
