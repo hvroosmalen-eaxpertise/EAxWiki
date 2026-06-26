@@ -31,7 +31,49 @@ internal class InfrastructureWriter(IOutputWriter writer)
 
     public async Task WriteExtraCssAsync(string outputDir)
     {
-        var content = ".md-grid {\n  max-width: 75rem;\n}\n\n.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(1),\n.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(1) {\n  width: 22%;\n}\n\n.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(2),\n.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(2) {\n  width: 50%;\n}\n\n.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(3),\n.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(3) {\n  width: 28%;\n}\n\n.md-typeset table:not([class]):has(th:nth-child(4)) th:nth-child(2),\n.md-typeset table:not([class]):has(td:nth-child(4)) td:nth-child(2) {\n  width: 8%;\n}\n\n.md-typeset table:not([class]) td {\n  word-break: break-word;\n}\n";
+        var content = """
+.md-grid {
+  max-width: 75rem;
+}
+
+.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(1),
+.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(1) {
+  width: 22%;
+}
+
+.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(2),
+.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(2) {
+  width: 50%;
+}
+
+.md-typeset table:not([class]):not(:has(th:nth-child(4))) th:nth-child(3),
+.md-typeset table:not([class]):not(:has(td:nth-child(4))) td:nth-child(3) {
+  width: 28%;
+}
+
+.md-typeset table:not([class]):has(th:nth-child(4)) th:nth-child(2),
+.md-typeset table:not([class]):has(td:nth-child(4)) td:nth-child(2) {
+  width: 8%;
+}
+
+.md-typeset table:not([class]) td {
+  word-break: break-word;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.15em 0.5em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.status-proposed { background: #fff3cd; color: #856404; }
+.status-approved { background: #d4edda; color: #155724; }
+.status-implemented { background: #cce5ff; color: #004085; }
+.status-mandatory { background: #f8d7da; color: #721c24; }
+.status-invalid { background: #e2e3e5; color: #383d41; }
+""";
         await writer.WriteFileAsync(Path.Combine(outputDir, "extra.css"), content);
     }
 

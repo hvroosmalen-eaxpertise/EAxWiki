@@ -48,7 +48,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             $"# {element.Name}",
             string.Empty,
             $"**Type:** {element.Type}  **Stereotype:** {element.Stereotype}  " +
-            (string.IsNullOrEmpty(element.Status) ? "" : $"**Status:** {element.Status}  "),
+            (string.IsNullOrEmpty(element.Status) ? "" : $"**Status:** <span class=\"status-badge status-{element.Status.ToLowerInvariant()}\">{MarkdownHelpers.EscapeCell(element.Status)}</span>  "),
             $"**Created:** {createdStr}  **Modified:** {modifiedStr}",
             string.Empty,
             string.Empty,
@@ -76,6 +76,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                 lines.Add($"| {MarkdownHelpers.EscapeCell(attr.Name)} | {MarkdownHelpers.EscapeCell(attr.Type)} | {MarkdownHelpers.EscapeCell(attr.DefaultValue ?? "")} | {desc} |");
             }
 
+            lines.Add(string.Empty);
+            lines.Add("[↑ Back to top](#)");
             lines.Add(string.Empty);
         }
 
@@ -110,6 +112,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                 lines.Add($"| {MarkdownHelpers.EscapeCell(tv.Name)} | {MarkdownHelpers.EscapeCell(tv.Value)} | {MarkdownHelpers.EscapeCell(tv.Notes ?? "")} |");
 
             lines.Add(string.Empty);
+            lines.Add("[↑ Back to top](#)");
+            lines.Add(string.Empty);
         }
 
         if (element.Connectors.Count > 0)
@@ -143,6 +147,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             }
 
             lines.Add(string.Empty);
+            lines.Add("[↑ Back to top](#)");
+            lines.Add(string.Empty);
         }
 
         if (ctx.DiagramIndex.TryGetValue(element.Id, out var elementDiagrams))
@@ -157,6 +163,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                 lines.Add($"- [{diagram.Name}]({diagLink})");
             }
 
+            lines.Add(string.Empty);
+            lines.Add("[↑ Back to top](#)");
             lines.Add(string.Empty);
         }
 
@@ -184,6 +192,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                 lines.Add($"| {MarkdownHelpers.EscapeCell(conn.Type)} | {MarkdownHelpers.EscapeCell(conn.Stereotype)} | {source} |");
             }
 
+            lines.Add(string.Empty);
+            lines.Add("[↑ Back to top](#)");
             lines.Add(string.Empty);
         }
 

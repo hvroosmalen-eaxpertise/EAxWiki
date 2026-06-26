@@ -53,6 +53,11 @@ internal static class MarkdownHelpers
         segments.Reverse();
 
         var breadcrumbParts = new List<string>();
+        if (segments.Count > 0)
+        {
+            var homeRelPath = Path.GetRelativePath(currentPageDir, Path.Combine(outputDir, "index.md")).Replace('\\', '/');
+            breadcrumbParts.Add($"[Home]({homeRelPath})");
+        }
         foreach (var (name, _) in segments)
         {
             var pkgDir = Path.Combine(outputDir, SanitizeName(name));
