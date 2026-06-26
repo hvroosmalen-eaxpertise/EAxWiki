@@ -41,8 +41,8 @@ ProductLifeCycleStage is a reference entity that enumerates the individual stage
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e817","label":"ProductLifeCycleFootpri…","fullName":"ProductLifeCycleFootprint","packageName":"Products","isFocal":false,"hasUrl":true,"url":"ProductLifeCycleFootprint.html"},{"id":"e816","label":"ProductLifeCycleStage","fullName":"ProductLifeCycleStage","packageName":"Products","isFocal":true,"hasUrl":false,"url":""},{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":"Products","isFocal":false,"hasUrl":true,"url":"ProductCarbonFootprint.html"}],"edges":[{"id":"c793","source":"e816","target":"e817","label":"Association"},{"id":"c802","source":"e816","target":"e817","label":"Association"},{"id":"c803","source":"e812","target":"e817","label":"Association"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e817","label":"ProductLifeCycleFootpri…","fullName":"ProductLifeCycleFootprint","packageName":"Products","layer":"uml","isFocal":false,"hasUrl":true,"url":"ProductLifeCycleFootprint.html"},{"id":"e816","label":"ProductLifeCycleStage","fullName":"ProductLifeCycleStage","packageName":"Products","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":"Products","layer":"uml","isFocal":false,"hasUrl":true,"url":"ProductCarbonFootprint.html"}],"edges":[{"id":"c793","source":"e816","target":"e817","label":"Association","sourceLayer":"uml"},{"id":"c802","source":"e816","target":"e817","label":"Association","sourceLayer":"uml"},{"id":"c803","source":"e812","target":"e817","label":"Association","sourceLayer":"uml"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:39*
+*Generated: 2026-06-26 17:02:52*

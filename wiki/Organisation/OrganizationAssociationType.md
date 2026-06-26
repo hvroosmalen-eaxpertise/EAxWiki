@@ -44,8 +44,8 @@ OrganizationAssociationType provides the controlled vocabulary of association ty
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e741","label":"OrganizationAssociation","fullName":"OrganizationAssociation","packageName":"Organisation","isFocal":false,"hasUrl":true,"url":"OrganizationAssociation.html"},{"id":"e742","label":"OrganizationAssociation…","fullName":"OrganizationAssociationType","packageName":"Organisation","isFocal":true,"hasUrl":false,"url":""},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c913","source":"e742","target":"e741","label":"Association"},{"id":"c914","source":"e735","target":"e741","label":"Association"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e741","label":"OrganizationAssociation","fullName":"OrganizationAssociation","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationAssociation.html"},{"id":"e742","label":"OrganizationAssociation…","fullName":"OrganizationAssociationType","packageName":"Organisation","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c913","source":"e742","target":"e741","label":"Association","sourceLayer":"uml"},{"id":"c914","source":"e735","target":"e741","label":"Association","sourceLayer":"uml"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:39*
+*Generated: 2026-06-26 17:02:52*

@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e195","label":"CO₂e per processtap of …","fullName":"CO₂e per processtap of productlevensfase","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"CO₂e per processtap of productlevensfase.html"},{"id":"e215","label":"Productiesoftware (SCAD…","fullName":"Productiesoftware (SCADA, MES)","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e179","label":"Totaal afval (ton/jaar)","fullName":"Totaal afval (ton/jaar)","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Totaal afval (ton_jaar).html"}],"edges":[{"id":"c196","source":"e179","target":"e195","label":"Aggregation"},{"id":"c216","source":"e195","target":"e215","label":"Association"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e195","label":"CO₂e per processtap of …","fullName":"CO₂e per processtap of productlevensfase","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"CO₂e per processtap of productlevensfase.html"},{"id":"e215","label":"Productiesoftware (SCAD…","fullName":"Productiesoftware (SCADA, MES)","packageName":"Metrics","layer":"edgy-lb","isFocal":true,"hasUrl":false,"url":""},{"id":"e179","label":"Totaal afval (ton/jaar)","fullName":"Totaal afval (ton/jaar)","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"Totaal afval (ton_jaar).html"}],"edges":[{"id":"c196","source":"e179","target":"e195","label":"Aggregation","sourceLayer":"edgy-lb"},{"id":"c216","source":"e195","target":"e215","label":"Association","sourceLayer":"edgy-lb"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:38*
+*Generated: 2026-06-26 17:02:52*

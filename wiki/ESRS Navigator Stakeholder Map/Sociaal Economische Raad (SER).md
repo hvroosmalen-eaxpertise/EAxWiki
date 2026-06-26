@@ -35,8 +35,8 @@ Provides information and webinars on CSRD/ESRS
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e520","label":"Sociaal Economische Raa…","fullName":"Sociaal Economische Raad (SER)","packageName":"People","isFocal":false,"hasUrl":true,"url":"../People/Sociaal Economische Raad (SER).html"},{"id":"e252","label":"Sociaal Economische Raa…","fullName":"Sociaal Economische Raad (SER)","packageName":"ESRS Navigator Stakeholder Map","isFocal":true,"hasUrl":false,"url":""},{"id":"e535","label":"Ministry of Economic Af…","fullName":"Ministry of Economic Affairs","packageName":"People","isFocal":false,"hasUrl":true,"url":"../People/Ministry of Economic Affairs.html"}],"edges":[{"id":"c495","source":"e252","target":"e520","label":"Abstraction"},{"id":"c580","source":"e535","target":"e520","label":"Aggregation"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e520","label":"Sociaal Economische Raa…","fullName":"Sociaal Economische Raad (SER)","packageName":"People","layer":"edgy-pe","isFocal":false,"hasUrl":true,"url":"../People/Sociaal Economische Raad (SER).html"},{"id":"e252","label":"Sociaal Economische Raa…","fullName":"Sociaal Economische Raad (SER)","packageName":"ESRS Navigator Stakeholder Map","layer":"motivation","isFocal":true,"hasUrl":false,"url":""},{"id":"e535","label":"Ministry of Economic Af…","fullName":"Ministry of Economic Affairs","packageName":"People","layer":"edgy-pe","isFocal":false,"hasUrl":true,"url":"../People/Ministry of Economic Affairs.html"}],"edges":[{"id":"c495","source":"e252","target":"e520","label":"Abstraction","sourceLayer":"motivation"},{"id":"c580","source":"e535","target":"e520","label":"Aggregation","sourceLayer":"edgy-pe"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:39*
+*Generated: 2026-06-26 17:02:52*

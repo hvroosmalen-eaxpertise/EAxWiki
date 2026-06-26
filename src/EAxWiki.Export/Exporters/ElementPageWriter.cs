@@ -236,6 +236,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
 
         // Nodes JSON
         var nodes = new System.Text.StringBuilder();
+        var nodeLayerMap = new Dictionary<int, string>();
         var firstNode = true;
         foreach (var id in allIds)
         {
@@ -244,6 +245,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             var label = JsonEscape(elem.Name.Length > 24 ? elem.Name[..23] + "…" : elem.Name);
             var fullName = JsonEscape(elem.Name);
             var pkgName = ctx.PackageLookup.TryGetValue(elem.PackageId, out var pkg) ? JsonEscape(pkg.Name) : "";
+            var layer = MarkdownHelpers.GetLayer(elem);
+            nodeLayerMap[id] = layer;
             string url;
             if (isFocal)
             {
@@ -261,7 +264,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             }
             if (!firstNode) nodes.Append(',');
             firstNode = false;
-            nodes.Append($"{{\"id\":\"e{id}\",\"label\":\"{label}\",\"fullName\":\"{fullName}\",\"packageName\":\"{pkgName}\",\"isFocal\":{(isFocal ? "true" : "false")},\"hasUrl\":{(!isFocal ? "true" : "false")},\"url\":\"{url}\"}}");
+            nodes.Append($"{{\"id\":\"e{id}\",\"label\":\"{label}\",\"fullName\":\"{fullName}\",\"packageName\":\"{pkgName}\",\"layer\":\"{layer}\",\"isFocal\":{(isFocal ? "true" : "false")},\"hasUrl\":{(!isFocal ? "true" : "false")},\"url\":\"{url}\"}}");
         }
 
         // Edges JSON — deduplicate by connector ID, both endpoints must be in allIds
@@ -276,17 +279,22 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                 if (!seenEdgeIds.Add(conn.Id)) continue;
                 if (!allIds.Contains(conn.SourceId) || !allIds.Contains(conn.TargetId)) continue;
                 var edgeLabel = JsonEscape(!string.IsNullOrEmpty(conn.Name) ? conn.Name : conn.Type);
+                var sourceLayer = nodeLayerMap.TryGetValue(conn.SourceId, out var sl) ? sl : "uml";
                 if (!firstEdge) edges.Append(',');
                 firstEdge = false;
-                edges.Append($"{{\"id\":\"c{conn.Id}\",\"source\":\"e{conn.SourceId}\",\"target\":\"e{conn.TargetId}\",\"label\":\"{edgeLabel}\"}}");
+                edges.Append($"{{\"id\":\"c{conn.Id}\",\"source\":\"e{conn.SourceId}\",\"target\":\"e{conn.TargetId}\",\"label\":\"{edgeLabel}\",\"sourceLayer\":\"{sourceLayer}\"}}");
             }
         }
 
+        var json = HtmlEscape($"{{\"nodes\":[{nodes}],\"edges\":[{edges}]}}");
         return
             "<div id=\"ea-graph-container\"></div>\n" +
-            $"<script type=\"application/json\" id=\"ea-graph-data\">{{\"nodes\":[{nodes}],\"edges\":[{edges}]}}</script>";
+            $"<div id=\"ea-graph-data\" style=\"display:none\">{json}</div>";
     }
 
     private static string JsonEscape(string s) =>
         s.Replace("\\", "\\\\").Replace("\"", "\\\"").Replace("\r", "").Replace("\n", " ").Replace("\t", " ");
+
+    private static string HtmlEscape(string s) =>
+        s.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;");
 }

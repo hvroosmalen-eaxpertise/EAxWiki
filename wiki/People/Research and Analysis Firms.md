@@ -36,8 +36,8 @@ Verification bureaus for water, energy, CO2 data
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e260","label":"Research and Analysis F…","fullName":"Research and Analysis Firms","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Research and Analysis Firms.html"},{"id":"e526","label":"Research and Analysis F…","fullName":"Research and Analysis Firms","packageName":"People","isFocal":true,"hasUrl":false,"url":""},{"id":"e331","label":"Large Companies (>250 e…","fullName":"Large Companies (>250 employees)","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).html"}],"edges":[{"id":"c301","source":"e260","target":"e331","label":"verifies data for"},{"id":"c501","source":"e260","target":"e526","label":"Abstraction"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e260","label":"Research and Analysis F…","fullName":"Research and Analysis Firms","packageName":"ESRS Navigator Stakeholder Map","layer":"motivation","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Research and Analysis Firms.html"},{"id":"e526","label":"Research and Analysis F…","fullName":"Research and Analysis Firms","packageName":"People","layer":"edgy-pe","isFocal":true,"hasUrl":false,"url":""},{"id":"e331","label":"Large Companies (&gt;250 e…","fullName":"Large Companies (&gt;250 employees)","packageName":"ESRS Navigator Stakeholder Map","layer":"motivation","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).html"}],"edges":[{"id":"c301","source":"e260","target":"e331","label":"verifies data for","sourceLayer":"motivation"},{"id":"c501","source":"e260","target":"e526","label":"Abstraction","sourceLayer":"motivation"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:38*
+*Generated: 2026-06-26 17:02:51*

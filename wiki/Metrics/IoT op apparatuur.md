@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e194","label":"Energie, materiaal, wat…","fullName":"Energie, materiaal, water, afval per eenheid","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Energie, materiaal, water, afval per eenheid.html"},{"id":"e214","label":"IoT op apparatuur","fullName":"IoT op apparatuur","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e179","label":"Totaal afval (ton/jaar)","fullName":"Totaal afval (ton/jaar)","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Totaal afval (ton_jaar).html"}],"edges":[{"id":"c195","source":"e179","target":"e194","label":"Aggregation"},{"id":"c215","source":"e194","target":"e214","label":"Association"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e194","label":"Energie, materiaal, wat…","fullName":"Energie, materiaal, water, afval per eenheid","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"Energie, materiaal, water, afval per eenheid.html"},{"id":"e214","label":"IoT op apparatuur","fullName":"IoT op apparatuur","packageName":"Metrics","layer":"edgy-lb","isFocal":true,"hasUrl":false,"url":""},{"id":"e179","label":"Totaal afval (ton/jaar)","fullName":"Totaal afval (ton/jaar)","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"Totaal afval (ton_jaar).html"}],"edges":[{"id":"c195","source":"e179","target":"e194","label":"Aggregation","sourceLayer":"edgy-lb"},{"id":"c215","source":"e194","target":"e214","label":"Association","sourceLayer":"edgy-lb"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:38*
+*Generated: 2026-06-26 17:02:52*

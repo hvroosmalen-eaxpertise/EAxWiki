@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e203","label":"Massa gerecycled materi…","fullName":"Massa gerecycled materiaal (kg/% input)","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Massa gerecycled materiaal (kg_% input).html"},{"id":"e224","label":"ERP/BOM met herkomst in…","fullName":"ERP/BOM met herkomst info","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e182","label":"% gerecyclede materiale…","fullName":"% gerecyclede materialen in producten","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"% gerecyclede materialen in producten.html"}],"edges":[{"id":"c204","source":"e182","target":"e203","label":"Aggregation"},{"id":"c224","source":"e203","target":"e224","label":"Association"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e203","label":"Massa gerecycled materi…","fullName":"Massa gerecycled materiaal (kg/% input)","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"Massa gerecycled materiaal (kg_% input).html"},{"id":"e224","label":"ERP/BOM met herkomst in…","fullName":"ERP/BOM met herkomst info","packageName":"Metrics","layer":"edgy-lb","isFocal":true,"hasUrl":false,"url":""},{"id":"e182","label":"% gerecyclede materiale…","fullName":"% gerecyclede materialen in producten","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"% gerecyclede materialen in producten.html"}],"edges":[{"id":"c204","source":"e182","target":"e203","label":"Aggregation","sourceLayer":"edgy-lb"},{"id":"c224","source":"e203","target":"e224","label":"Association","sourceLayer":"edgy-lb"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:38*
+*Generated: 2026-06-26 17:02:52*

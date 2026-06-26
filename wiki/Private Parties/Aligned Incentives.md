@@ -16,4 +16,4 @@ https://alignedincentives.com/our-story/
 
 ---
 
-*Generated: 2026-06-26 16:40:38*
+*Generated: 2026-06-26 17:02:51*

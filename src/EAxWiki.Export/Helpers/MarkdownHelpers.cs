@@ -223,7 +223,7 @@ internal static class MarkdownHelpers
         return type;
     }
 
-    internal static string GetStereotypeLabel(EaElement element)
+    internal static string GetLayer(EaElement element)
     {
         var stereotype = !string.IsNullOrWhiteSpace(element.FQStereotype) ? element.FQStereotype
             : !string.IsNullOrWhiteSpace(element.StereotypeEx) ? element.StereotypeEx
@@ -231,28 +231,34 @@ internal static class MarkdownHelpers
 
         var (language, type) = ParseStereotype(stereotype);
 
-        // 1. Direct lookup on raw stereotype (handles "ArchiMate_BusinessActor" exactly).
         if (!string.IsNullOrWhiteSpace(stereotype) && ArchiMateMap.TryGetValue(stereotype, out var entry))
-            return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{type}</span>";
+            return entry.Layer;
 
-        // 2. EDGY — check before ArchiMateTypeMap to avoid collisions (e.g. "Capability", "Outcome").
         if (string.Equals(language, "EDGY", StringComparison.OrdinalIgnoreCase) &&
             EdgyMap.TryGetValue(type, out var edgyEntry))
-            return $"<span class=\"sl\" data-layer=\"{edgyEntry.Layer}\">{type}</span>";
+            return edgyEntry.Layer;
 
-        // 3. Normalized ArchiMate key (ArchiMate3::BusinessActor → ArchiMate_BusinessActor).
         if (language.StartsWith("ArchiMate", StringComparison.OrdinalIgnoreCase))
         {
             var archiKey = $"ArchiMate_{type}";
             if (ArchiMateMap.TryGetValue(archiKey, out entry))
-                return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{type}</span>";
+                return entry.Layer;
         }
 
-        // 4. Bare type name in ArchiMateTypeMap (e.g. "BusinessActor" without prefix).
         if (!string.IsNullOrWhiteSpace(type) && ArchiMateTypeMap.TryGetValue(type, out entry))
-            return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{type}</span>";
+            return entry.Layer;
 
-        // Fallback: full type name in gray.
-        return $"<span class=\"sl\" data-layer=\"uml\">{type}</span>";
+        return "uml";
+    }
+
+    internal static string GetStereotypeLabel(EaElement element)
+    {
+        var stereotype = !string.IsNullOrWhiteSpace(element.FQStereotype) ? element.FQStereotype
+            : !string.IsNullOrWhiteSpace(element.StereotypeEx) ? element.StereotypeEx
+            : element.Stereotype;
+
+        var (_, type) = ParseStereotype(stereotype);
+        var layer = GetLayer(element);
+        return $"<span class=\"sl\" data-layer=\"{layer}\">{type}</span>";
     }
 }

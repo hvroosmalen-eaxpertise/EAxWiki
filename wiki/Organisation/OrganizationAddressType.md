@@ -45,8 +45,8 @@ OrganizationAddressType provides the controlled vocabulary of address categories
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e743","label":"OrganizationAddress","fullName":"OrganizationAddress","packageName":"Organisation","isFocal":false,"hasUrl":true,"url":"OrganizationAddress.html"},{"id":"e744","label":"OrganizationAddressType","fullName":"OrganizationAddressType","packageName":"Organisation","isFocal":true,"hasUrl":false,"url":""},{"id":"e737","label":"Address","fullName":"Address","packageName":"Organisation","isFocal":false,"hasUrl":true,"url":"Address.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c910","source":"e744","target":"e743","label":"Association"},{"id":"c911","source":"e737","target":"e743","label":"Association"},{"id":"c912","source":"e735","target":"e743","label":"Association"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e743","label":"OrganizationAddress","fullName":"OrganizationAddress","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationAddress.html"},{"id":"e744","label":"OrganizationAddressType","fullName":"OrganizationAddressType","packageName":"Organisation","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e737","label":"Address","fullName":"Address","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"Address.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c910","source":"e744","target":"e743","label":"Association","sourceLayer":"uml"},{"id":"c911","source":"e737","target":"e743","label":"Association","sourceLayer":"uml"},{"id":"c912","source":"e735","target":"e743","label":"Association","sourceLayer":"uml"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:39*
+*Generated: 2026-06-26 17:02:52*

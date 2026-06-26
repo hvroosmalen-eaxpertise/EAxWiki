@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e191","label":"Hernieuwbare energieopw…","fullName":"Hernieuwbare energieopwekking (kWh)","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Hernieuwbare energieopwekking (kWh).html"},{"id":"e211","label":"BMS (HVAC/lighting)","fullName":"BMS (HVAC/lighting)","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e177","label":"% energie uit hernieuwb…","fullName":"% energie uit hernieuwbare bronnen","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"% energie uit hernieuwbare bronnen.html"}],"edges":[{"id":"c192","source":"e177","target":"e191","label":"Aggregation"},{"id":"c212","source":"e191","target":"e211","label":"Association"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e191","label":"Hernieuwbare energieopw…","fullName":"Hernieuwbare energieopwekking (kWh)","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"Hernieuwbare energieopwekking (kWh).html"},{"id":"e211","label":"BMS (HVAC/lighting)","fullName":"BMS (HVAC/lighting)","packageName":"Metrics","layer":"edgy-lb","isFocal":true,"hasUrl":false,"url":""},{"id":"e177","label":"% energie uit hernieuwb…","fullName":"% energie uit hernieuwbare bronnen","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"% energie uit hernieuwbare bronnen.html"}],"edges":[{"id":"c192","source":"e177","target":"e191","label":"Aggregation","sourceLayer":"edgy-lb"},{"id":"c212","source":"e191","target":"e211","label":"Association","sourceLayer":"edgy-lb"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:38*
+*Generated: 2026-06-26 17:02:52*

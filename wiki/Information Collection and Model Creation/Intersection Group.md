@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e582","label":"EDGY 23 Language Founda…","fullName":"EDGY 23 Language Foundation","packageName":"Information Collection and Model Creation","isFocal":false,"hasUrl":true,"url":"EDGY 23 Language Foundation.html"},{"id":"e581","label":"Intersection Group","fullName":"Intersection Group","packageName":"Information Collection and Model Creation","isFocal":true,"hasUrl":false,"url":""},{"id":"e585","label":"Compile Information Sou…","fullName":"Compile Information Sources","packageName":"Information Collection and Model Creation","isFocal":false,"hasUrl":true,"url":"Compile Information Sources.html"}],"edges":[{"id":"c618","source":"e581","target":"e582","label":"ControlFlow"},{"id":"c619","source":"e582","target":"e585","label":"ControlFlow"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e582","label":"EDGY 23 Language Founda…","fullName":"EDGY 23 Language Foundation","packageName":"Information Collection and Model Creation","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"EDGY 23 Language Foundation.html"},{"id":"e581","label":"Intersection Group","fullName":"Intersection Group","packageName":"Information Collection and Model Creation","layer":"edgy-ex","isFocal":true,"hasUrl":false,"url":""},{"id":"e585","label":"Compile Information Sou…","fullName":"Compile Information Sources","packageName":"Information Collection and Model Creation","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"Compile Information Sources.html"}],"edges":[{"id":"c618","source":"e581","target":"e582","label":"ControlFlow","sourceLayer":"edgy-ex"},{"id":"c619","source":"e582","target":"e585","label":"ControlFlow","sourceLayer":"edgy-ar"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:39*
+*Generated: 2026-06-26 17:02:52*

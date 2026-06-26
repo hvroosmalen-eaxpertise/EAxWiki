@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e192","label":"Brandstofverbruik voert…","fullName":"Brandstofverbruik voertuigen/machines","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Brandstofverbruik voertuigen_machines.html"},{"id":"e212","label":"Telematica / fleetbeheer","fullName":"Telematica / fleetbeheer","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e177","label":"% energie uit hernieuwb…","fullName":"% energie uit hernieuwbare bronnen","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"% energie uit hernieuwbare bronnen.html"}],"edges":[{"id":"c193","source":"e177","target":"e192","label":"Aggregation"},{"id":"c213","source":"e192","target":"e212","label":"Association"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e192","label":"Brandstofverbruik voert…","fullName":"Brandstofverbruik voertuigen/machines","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"Brandstofverbruik voertuigen_machines.html"},{"id":"e212","label":"Telematica / fleetbeheer","fullName":"Telematica / fleetbeheer","packageName":"Metrics","layer":"edgy-lb","isFocal":true,"hasUrl":false,"url":""},{"id":"e177","label":"% energie uit hernieuwb…","fullName":"% energie uit hernieuwbare bronnen","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"% energie uit hernieuwbare bronnen.html"}],"edges":[{"id":"c193","source":"e177","target":"e192","label":"Aggregation","sourceLayer":"edgy-lb"},{"id":"c213","source":"e192","target":"e212","label":"Association","sourceLayer":"edgy-lb"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:38*
+*Generated: 2026-06-26 17:02:52*

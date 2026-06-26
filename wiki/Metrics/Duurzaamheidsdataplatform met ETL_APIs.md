@@ -33,8 +33,8 @@
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e208","label":" Productievolumes / nor…","fullName":" Productievolumes / normaliserende operationele data","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"Productievolumes _ normaliserende operationele data.html"},{"id":"e228","label":"Duurzaamheidsdataplatfo…","fullName":"Duurzaamheidsdataplatform met ETL/APIs","packageName":"Metrics","isFocal":true,"hasUrl":false,"url":""},{"id":"e183","label":"% scope 3 emissies met …","fullName":"% scope 3 emissies met gemeten data","packageName":"Metrics","isFocal":false,"hasUrl":true,"url":"% scope 3 emissies met gemeten data.html"}],"edges":[{"id":"c209","source":"e183","target":"e208","label":"Aggregation"},{"id":"c228","source":"e208","target":"e228","label":"Association"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e208","label":" Productievolumes / nor…","fullName":" Productievolumes / normaliserende operationele data","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"Productievolumes _ normaliserende operationele data.html"},{"id":"e228","label":"Duurzaamheidsdataplatfo…","fullName":"Duurzaamheidsdataplatform met ETL/APIs","packageName":"Metrics","layer":"edgy-lb","isFocal":true,"hasUrl":false,"url":""},{"id":"e183","label":"% scope 3 emissies met …","fullName":"% scope 3 emissies met gemeten data","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"% scope 3 emissies met gemeten data.html"}],"edges":[{"id":"c209","source":"e183","target":"e208","label":"Aggregation","sourceLayer":"edgy-lb"},{"id":"c228","source":"e208","target":"e228","label":"Association","sourceLayer":"edgy-lb"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:38*
+*Generated: 2026-06-26 17:02:52*

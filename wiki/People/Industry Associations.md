@@ -36,8 +36,8 @@ Sector-specific organizations like FNLI
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<script type="application/json" id="ea-graph-data">{"nodes":[{"id":"e263","label":"Industry Associations","fullName":"Industry Associations","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Industry Associations.html"},{"id":"e507","label":"Industry Associations","fullName":"Industry Associations","packageName":"People","isFocal":true,"hasUrl":false,"url":""},{"id":"e331","label":"Large Companies (>250 e…","fullName":"Large Companies (>250 employees)","packageName":"ESRS Navigator Stakeholder Map","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).html"}],"edges":[{"id":"c267","source":"e331","target":"e263","label":"member of"},{"id":"c481","source":"e263","target":"e507","label":"Abstraction"}]}</script>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e263","label":"Industry Associations","fullName":"Industry Associations","packageName":"ESRS Navigator Stakeholder Map","layer":"motivation","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Industry Associations.html"},{"id":"e507","label":"Industry Associations","fullName":"Industry Associations","packageName":"People","layer":"edgy-pe","isFocal":true,"hasUrl":false,"url":""},{"id":"e331","label":"Large Companies (&gt;250 e…","fullName":"Large Companies (&gt;250 employees)","packageName":"ESRS Navigator Stakeholder Map","layer":"motivation","isFocal":false,"hasUrl":true,"url":"../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).html"}],"edges":[{"id":"c267","source":"e331","target":"e263","label":"member of","sourceLayer":"motivation"},{"id":"c481","source":"e263","target":"e507","label":"Abstraction","sourceLayer":"motivation"}]}</div>
 
 ---
 
-*Generated: 2026-06-26 16:40:38*
+*Generated: 2026-06-26 17:02:51*
