@@ -49,4 +49,4 @@ Issues CSRD directive and ESRS regulations
 
 ---
 
-*Generated: 2026-06-26 17:02:52*
+*Generated: 2026-06-26 17:14:27*

@@ -42,4 +42,4 @@ High-level view of all stakeholders in ESRS reporting ecosystem
 
 ---
 
-*Generated: 2026-06-26 17:02:51*
+*Generated: 2026-06-26 17:14:26*

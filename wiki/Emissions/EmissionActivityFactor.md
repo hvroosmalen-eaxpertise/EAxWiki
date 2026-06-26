@@ -46,4 +46,4 @@ EmissionActivityFactor is an intersection entity that associates a specific Emis
 
 ---
 
-*Generated: 2026-06-26 17:02:52*
+*Generated: 2026-06-26 17:14:27*

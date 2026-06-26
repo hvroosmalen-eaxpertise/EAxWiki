@@ -44,4 +44,4 @@ EmissionScopeType is a reference entity that codifies the three GHG Protocol emi
 
 ---
 
-*Generated: 2026-06-26 17:02:52*
+*Generated: 2026-06-26 17:14:27*
