@@ -16,6 +16,7 @@ internal class InfrastructureWriter(IOutputWriter writer)
             "  - Types: types/",
             "  - Glossary: glossary/",
             "  - Recent: recent/",
+            "  - Status: status/",
             string.Empty,
         ]));
 
@@ -349,6 +350,7 @@ if (typeof document$ !== 'undefined') {
             Path.Combine(ctx.OutputPath, "types"),
             Path.Combine(ctx.OutputPath, "glossary"),
             Path.Combine(ctx.OutputPath, "recent"),
+            Path.Combine(ctx.OutputPath, "status"),
         };
 
         CleanupDirectory(ctx.OutputPath, ctx.AllPackageDirs, expectedFiles, specialDirs, isRoot: true);

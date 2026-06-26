@@ -74,6 +74,7 @@ public class MarkdownExporter : IWikiExporter
                 new TypesExporter(_writer, _logger).ExportAsync(ctx),
                 new GlossaryExporter(_writer).ExportAsync(ctx),
                 new RecentChangesExporter(_writer).ExportAsync(ctx),
+                new StatusDashboardExporter(_writer).ExportAsync(ctx),
                 diagramExporter.WriteIndexAsync(ctx),
                 infrastructure.WritePagesFileAsync(outputPath),
                 infrastructure.WriteExtraCssAsync(outputPath),
