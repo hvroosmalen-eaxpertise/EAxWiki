@@ -54,7 +54,10 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     lines.Add(string.Empty);
                 }
 
-                lines.Add($"**Description:** {diagram.Notes ?? "-"}");
+                var desc = !string.IsNullOrWhiteSpace(diagram.Notes)
+                    ? $"**Description:** {diagram.Notes}"
+                    : GetDerivedDescription(diagram, ctx);
+                lines.Add(desc);
                 lines.Add(string.Empty);
 
                 var diagramElements = new List<(EaElement Element, string PackageDir)>();
@@ -149,5 +152,21 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 
         var diagramTimeUtc = diagramTime.Kind == DateTimeKind.Utc ? diagramTime : diagramTime.ToUniversalTime();
         return fileTime >= diagramTimeUtc;
+    }
+
+    private static string GetDerivedDescription(EaDiagram diagram, ExportContext ctx)
+    {
+        foreach (var dob in diagram.DiagramObjects)
+        {
+            if (ctx.ElementLookup.TryGetValue(dob.ElementId, out var e) &&
+                !string.IsNullOrWhiteSpace(e.Element.Notes))
+            {
+                var firstDot = e.Element.Notes.IndexOf('.');
+                var sentence = firstDot >= 0 ? e.Element.Notes[..firstDot].Trim() : e.Element.Notes.Trim();
+                if (sentence.Length >= 20)
+                    return $"**Derived Description:** {sentence}";
+            }
+        }
+        return "**Description:** -";
     }
 }
