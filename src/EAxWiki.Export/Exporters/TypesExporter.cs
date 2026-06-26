@@ -87,7 +87,7 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
                     var elemName = MarkdownHelpers.SanitizeName(item.Element.Name);
                     var relativeDir = Path.GetRelativePath(outputDir, item.PackageDir);
                     var relativePath = $"../../{relativeDir}/{elemName}.md".Replace('\\', '/');
-                    lines.Add($"- [{item.Element.Name}]({relativePath})");
+                    lines.Add($"- {MarkdownHelpers.GetStereotypeLabel(item.Element)} [{item.Element.Name}]({relativePath})");
                 }
 
                 lines.Add(string.Empty);

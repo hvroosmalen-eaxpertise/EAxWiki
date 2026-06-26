@@ -8,6 +8,75 @@ internal static class MarkdownHelpers
     private static readonly char[] _invalidChars = Path.GetInvalidFileNameChars().Append('#').ToArray();
     private static volatile ConcurrentDictionary<string, string> _sanitizeCache = new();
 
+    // ArchiMate stereotype → (short code, layer) mapping.
+    private static readonly Dictionary<string, (string Code, string Layer)> ArchiMateMap = new(StringComparer.OrdinalIgnoreCase)
+    {
+        ["ArchiMate_BusinessActor"] = ("BA", "business"),
+        ["ArchiMate_BusinessRole"] = ("BR", "business"),
+        ["ArchiMate_BusinessCollaboration"] = ("BC", "business"),
+        ["ArchiMate_BusinessInterface"] = ("BI", "business"),
+        ["ArchiMate_BusinessProcess"] = ("BP", "business"),
+        ["ArchiMate_BusinessFunction"] = ("BF", "business"),
+        ["ArchiMate_BusinessInteraction"] = ("BIN", "business"),
+        ["ArchiMate_BusinessEvent"] = ("BE", "business"),
+        ["ArchiMate_BusinessService"] = ("BS", "business"),
+        ["ArchiMate_BusinessObject"] = ("BO", "business"),
+        ["ArchiMate_Contract"] = ("CTR", "business"),
+        ["ArchiMate_Product"] = ("PRD", "business"),
+        ["ArchiMate_Representation"] = ("REP", "application"),
+        ["ArchiMate_Meaning"] = ("MNG", "business"),
+        ["ArchiMate_Value"] = ("VAL", "business"),
+        ["ArchiMate_ApplicationComponent"] = ("AC", "application"),
+        ["ArchiMate_ApplicationCollaboration"] = ("APC", "application"),
+        ["ArchiMate_ApplicationInterface"] = ("AI", "application"),
+        ["ArchiMate_ApplicationFunction"] = ("AF", "application"),
+        ["ArchiMate_ApplicationInteraction"] = ("APIN", "application"),
+        ["ArchiMate_ApplicationProcess"] = ("APP", "application"),
+        ["ArchiMate_ApplicationEvent"] = ("AE", "application"),
+        ["ArchiMate_ApplicationService"] = ("AS", "application"),
+        ["ArchiMate_DataObject"] = ("DO", "application"),
+        ["ArchiMate_Node"] = ("ND", "technology"),
+        ["ArchiMate_Device"] = ("DV", "technology"),
+        ["ArchiMate_SystemSoftware"] = ("SS", "technology"),
+        ["ArchiMate_TechnologyCollaboration"] = ("TC", "technology"),
+        ["ArchiMate_TechnologyInterface"] = ("TI", "technology"),
+        ["ArchiMate_TechnologyProcess"] = ("TP", "technology"),
+        ["ArchiMate_TechnologyFunction"] = ("TF", "technology"),
+        ["ArchiMate_TechnologyInteraction"] = ("TIN", "technology"),
+        ["ArchiMate_TechnologyEvent"] = ("TE", "technology"),
+        ["ArchiMate_TechnologyService"] = ("TS", "technology"),
+        ["ArchiMate_Artifact"] = ("ART", "technology"),
+        ["ArchiMate_CommunicationNetwork"] = ("CNW", "technology"),
+        ["ArchiMate_Path"] = ("PTH", "technology"),
+        ["ArchiMate_InfrastructureInterface"] = ("II", "technology"),
+        ["ArchiMate_Network"] = ("NW", "technology"),
+        ["ArchiMate_Equipment"] = ("EQ", "physical"),
+        ["ArchiMate_Facility"] = ("FC", "physical"),
+        ["ArchiMate_Material"] = ("MT", "physical"),
+        ["ArchiMate_DistributionNetwork"] = ("DN", "physical"),
+        ["ArchiMate_Stakeholder"] = ("SH", "motivation"),
+        ["ArchiMate_Driver"] = ("DR", "motivation"),
+        ["ArchiMate_Assessment"] = ("AS", "motivation"),
+        ["ArchiMate_Goal"] = ("GL", "motivation"),
+        ["ArchiMate_Outcome"] = ("OC", "motivation"),
+        ["ArchiMate_Principle"] = ("PR", "motivation"),
+        ["ArchiMate_Requirement"] = ("RQ", "motivation"),
+        ["ArchiMate_Constraint"] = ("CN", "motivation"),
+        ["ArchiMate_Resource"] = ("RS", "strategy"),
+        ["ArchiMate_Capability"] = ("CAP", "strategy"),
+        ["ArchiMate_CourseOfAction"] = ("COA", "strategy"),
+        ["ArchiMate_ValueStream"] = ("VS", "strategy"),
+        ["ArchiMate_WorkPackage"] = ("WP", "implementation"),
+        ["ArchiMate_Deliverable"] = ("DLV", "implementation"),
+        ["ArchiMate_Plateau"] = ("PL", "implementation"),
+        ["ArchiMate_Gap"] = ("GP", "implementation"),
+        ["ArchiMate_Location"] = ("LC", "composite"),
+        ["ArchiMate_Grouping"] = ("GR", "composite"),
+        ["ArchiMate_Junction"] = ("JN", "composite"),
+        ["ArchiMate_AndJunction"] = ("AND", "composite"),
+        ["ArchiMate_OrJunction"] = ("OR", "composite"),
+    };
+
     // Replaces the cache atomically so concurrent readers always see a valid dictionary.
     internal static void ClearCache() =>
         Interlocked.Exchange(ref _sanitizeCache!, new ConcurrentDictionary<string, string>());
@@ -119,5 +188,20 @@ internal static class MarkdownHelpers
             return type[(baseName.Length + 1)..];
 
         return type;
+    }
+
+    internal static string GetStereotypeLabel(EaElement element)
+    {
+        var stereotype = !string.IsNullOrWhiteSpace(element.FQStereotype) ? element.FQStereotype
+            : !string.IsNullOrWhiteSpace(element.StereotypeEx) ? element.StereotypeEx
+            : element.Stereotype;
+
+        if (!string.IsNullOrWhiteSpace(stereotype) && ArchiMateMap.TryGetValue(stereotype, out var entry))
+            return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{entry.Code}</span>";
+
+        // Non-ArchiMate: use parsed type abbreviation.
+        var (_, type) = ParseStereotype(stereotype);
+        var code = type.Length <= 3 ? type.ToUpperInvariant() : type[..3].ToUpperInvariant();
+        return $"<span class=\"sl\" data-layer=\"uml\">{code}</span>";
     }
 }

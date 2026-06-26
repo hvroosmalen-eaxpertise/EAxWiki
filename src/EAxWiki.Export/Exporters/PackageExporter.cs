@@ -86,10 +86,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
                 ctx.RegisteredElementFiles.Add(Path.Combine(dir, elemFile));
                 elementTasks.Add(elementWriter.WriteAsync(elem, dir, ctx, baseName));
 
-                var typeLabel = string.IsNullOrEmpty(elem.Stereotype)
-                    ? elem.Type
-                    : $"{elem.Stereotype} «{elem.Type}»";
-                indexLines.Add($"- [{elem.Name}]({elemFile}) — {typeLabel}");
+                indexLines.Add($"- {MarkdownHelpers.GetStereotypeLabel(elem)} [{elem.Name}]({elemFile})");
 
                 if (!string.IsNullOrWhiteSpace(elem.Notes))
                 {

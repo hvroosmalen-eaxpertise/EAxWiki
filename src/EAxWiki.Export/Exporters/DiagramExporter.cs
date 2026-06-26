@@ -75,7 +75,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     foreach (var (elemEa, elemDir) in diagramElements.OrderBy(e => e.Element.Name))
                     {
                         var elemLink = Path.GetRelativePath(diagramsDir, Path.Combine(elemDir, $"{MarkdownHelpers.SanitizeName(elemEa.Name)}.md")).Replace('\\', '/');
-                        lines.Add($"- [{elemEa.Name}]({elemLink})");
+                        lines.Add($"- {MarkdownHelpers.GetStereotypeLabel(elemEa)} [{elemEa.Name}]({elemLink})");
                     }
 
                     lines.Add(string.Empty);
