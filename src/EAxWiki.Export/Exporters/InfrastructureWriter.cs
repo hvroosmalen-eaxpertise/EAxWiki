@@ -201,7 +201,7 @@ internal class InfrastructureWriter(IOutputWriter writer)
   display: inline-block;
   padding: 0.1em 0.45em;
   border-radius: 3px;
-  font-size: 0.72em;
+  font-size: 0.7em;
   font-weight: 600;
   font-family: inherit;
   vertical-align: middle;

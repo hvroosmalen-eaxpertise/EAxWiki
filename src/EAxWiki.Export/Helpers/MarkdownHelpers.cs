@@ -77,33 +77,33 @@ internal static class MarkdownHelpers
         ["ArchiMate_OrJunction"] = ("OR", "composite"),
     };
 
-    // EDGY element types → (short code, layer) mapping.
+    // EDGY element types → (full name, layer) mapping.
     private static readonly Dictionary<string, (string Code, string Layer)> EdgyMap = new(StringComparer.OrdinalIgnoreCase)
     {
         // Identity facet (green)
-        ["Purpose"] = ("PU", "edgy-id"),
-        ["Story"] = ("ST", "edgy-id"),
-        ["Content"] = ("CO", "edgy-id"),
+        ["Purpose"] = ("Purpose", "edgy-id"),
+        ["Story"] = ("Story", "edgy-id"),
+        ["Content"] = ("Content", "edgy-id"),
         // Architecture facet (blue)
-        ["Capability"] = ("CA", "edgy-ar"),
-        ["Process"] = ("PR", "edgy-ar"),
-        ["Asset"] = ("AS", "edgy-ar"),
+        ["Capability"] = ("Capability", "edgy-ar"),
+        ["Process"] = ("Process", "edgy-ar"),
+        ["Asset"] = ("Asset", "edgy-ar"),
         // Experience facet (pink)
-        ["Task"] = ("TA", "edgy-ex"),
-        ["Journey"] = ("JO", "edgy-ex"),
-        ["Channel"] = ("CH", "edgy-ex"),
+        ["Task"] = ("Task", "edgy-ex"),
+        ["Journey"] = ("Journey", "edgy-ex"),
+        ["Channel"] = ("Channel", "edgy-ex"),
         // Intersection elements
-        ["Organisation"] = ("OR", "edgy-ix"),
-        ["Product"] = ("PD", "edgy-ix"),
-        ["Brand"] = ("BR", "edgy-ix"),
+        ["Organisation"] = ("Organisation", "edgy-ix"),
+        ["Product"] = ("Product", "edgy-ix"),
+        ["Brand"] = ("Brand", "edgy-ix"),
         // Base element
-        ["People"] = ("PE", "edgy-pe"),
+        ["People"] = ("People", "edgy-pe"),
         // Labels / utilities
-        ["Metric"] = ("ME", "edgy-lb"),
-        ["Tag"] = ("TG", "edgy-lb"),
-        ["Object"] = ("OB", "edgy-lb"),
-        ["Outcome"] = ("OU", "edgy-lb"),
-        ["Activity"] = ("AC", "edgy-lb"),
+        ["Metric"] = ("Metric", "edgy-lb"),
+        ["Tag"] = ("Tag", "edgy-lb"),
+        ["Object"] = ("Object", "edgy-lb"),
+        ["Outcome"] = ("Outcome", "edgy-lb"),
+        ["Activity"] = ("Activity", "edgy-lb"),
     };
 
     // Replaces the cache atomically so concurrent readers always see a valid dictionary.
