@@ -25,3 +25,54 @@
 .md-typeset table:not([class]) td {
   word-break: break-word;
 }
+
+#ea-graph-container {
+  height: 480px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  margin: 0.5rem 0 1rem;
+  background: var(--md-default-bg-color);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.15em 0.5em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.status-proposed { background: #fff3cd; color: #856404; }
+.status-approved { background: #d4edda; color: #155724; }
+.status-implemented { background: #cce5ff; color: #004085; }
+.status-mandatory { background: #f8d7da; color: #721c24; }
+.status-invalid { background: #e2e3e5; color: #383d41; }
+
+.sl {
+  display: inline-block;
+  padding: 0.1em 0.45em;
+  border-radius: 3px;
+  font-size: 0.7em;
+  font-weight: 600;
+  font-family: inherit;
+  vertical-align: middle;
+  margin-right: 0.3em;
+}
+
+.sl[data-layer="business"] { background: #2E86C1; color: #fff; }
+.sl[data-layer="application"] { background: #27AE60; color: #fff; }
+.sl[data-layer="technology"] { background: #8E44AD; color: #fff; }
+.sl[data-layer="physical"] { background: #17A589; color: #fff; }
+.sl[data-layer="motivation"] { background: #C0392B; color: #fff; }
+.sl[data-layer="strategy"] { background: #D4AC0D; color: #fff; }
+.sl[data-layer="implementation"] { background: #E67E22; color: #fff; }
+.sl[data-layer="composite"] { background: #5D6D7E; color: #fff; }
+.sl[data-layer="uml"] { background: #7F8C8D; color: #fff; }
+
+/* EDGY facet colors — light backgrounds with dark text for readability */
+.sl[data-layer="edgy-id"] { background: #75F0A5; color: #1a3a2a; }
+.sl[data-layer="edgy-ar"] { background: #9DB9F6; color: #1a2a4a; }
+.sl[data-layer="edgy-ex"] { background: #F985B4; color: #4a1a2a; }
+.sl[data-layer="edgy-ix"] { background: #4ECDC4; color: #1a3a3a; }
+.sl[data-layer="edgy-pe"] { background: #FFD93D; color: #4a3a1a; }
+.sl[data-layer="edgy-lb"] { background: #E8E8E8; color: #555; }

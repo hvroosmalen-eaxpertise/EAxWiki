@@ -22,7 +22,7 @@
     
     
       
-        <title>GeopoliticalEntity - Wiki</title>
+        <title>MAS GeopoliticalEntity - Wiki</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#geopoliticalentity" class="md-skip">
+        <a href="#mas-geopoliticalentity" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GeopoliticalEntity
+              MAS GeopoliticalEntity
             
           </span>
         </div>
@@ -411,6 +411,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#relationship-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship Graph
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -428,10 +439,10 @@
 
 
 
-<h1 id="geopoliticalentity">GeopoliticalEntity</h1>
+<h1 id="mas-geopoliticalentity"><span class="sl" data-layer="uml">MAS</span> GeopoliticalEntity</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> master-data<br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
-<p><a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Facilities</a></p>
+<p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Facilities</a></p>
 <p>GeopoliticalEntity represents a named geographical area that is defined and administered by an official entity, such as countries, nature reserves, states, regions, or provinces. It is classified by a GeopoliticalEntityType and optionally linked to a Country. Examples include "USA", "Canada", "United Kingdom", "Yellow Stone National Park", "Alberta", and "North Sea". Geopolitical entities provide the administrative geographic context required for regulatory jurisdiction mapping, reporting by jurisdiction, and alignment with country-level emission factor datasets.</p>
 <h2 id="attributes">Attributes</h2>
 <table>
@@ -482,6 +493,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
 <thead>
@@ -499,6 +511,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
 <thead>
@@ -536,6 +549,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h3 id="referenced-by">Referenced By</h3>
 <table>
 <thead>
@@ -566,25 +580,16 @@
 <td></td>
 <td><a href="GeopoliticalEntity.html">GeopoliticalEntity</a></td>
 </tr>
-<tr>
-<td>Association</td>
-<td></td>
-<td><a href="GeopoliticalEntityType.html">GeopoliticalEntityType</a></td>
-</tr>
-<tr>
-<td>Association</td>
-<td></td>
-<td><a href="../Organisation/Country.html">Country</a></td>
-</tr>
-<tr>
-<td>Association</td>
-<td></td>
-<td><a href="../Emissions/EmissionActivityParameterRecordingTemplate.html">EmissionActivityParameterRecordingTemplate</a></td>
-</tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <hr>
-<p><em>Generated: 2026-06-25 10:51:16</em></p>
+<h2 id="relationship-graph">Relationship Graph</h2>
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e806","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameterRecordingTemplate","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionActivityParameterRecordingTemplate.html"},{"id":"e765","label":"GeopoliticalEntityType","fullName":"GeopoliticalEntityType","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"GeopoliticalEntityType.html"},{"id":"e755","label":"Location","fullName":"Location","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"Location.html"},{"id":"e745","label":"Country","fullName":"Country","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Country.html"},{"id":"e766","label":"GeopoliticalEntity","fullName":"GeopoliticalEntity","packageName":Facilities,"isFocal":true,"hasUrl":false,"url":""},{"id":"e807","label":"EmissionActivityTypePar…","fullName":"EmissionActivityTypeParameterTypeAssignment","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionActivityTypeParameterTypeAssignment.html"},{"id":"e786","label":"EmissionActivityType","fullName":"EmissionActivityType","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionActivityType.html"},{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"../Products/ProductCarbonFootprint.html"},{"id":"e767","label":"BusinessArea","fullName":"BusinessArea","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"BusinessArea.html"},{"id":"e768","label":"GeospatialLocation","fullName":"GeospatialLocation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"GeospatialLocation.html"},{"id":"e769","label":"FacilityLocationType","fullName":"FacilityLocationType","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityLocationType.html"},{"id":"e758","label":"FacilityLocationAssocia…","fullName":"FacilityLocationAssociation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityLocationAssociation.html"},{"id":"e737","label":"Address","fullName":"Address","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Address.html"}],"edges":[{"id":"c812","source":"e807","target":"e806","label":"Association"},{"id":"c813","source":"e806","target":"e766","label":"Association"},{"id":"c814","source":"e806","target":"e786","label":"Association"},{"id":"c885","source":"e765","target":"e766","label":"Association"},{"id":"c792","source":"e812","target":"e755","label":"Association"},{"id":"c881","source":"e755","target":"e755","label":"Association"},{"id":"c882","source":"e767","target":"e755","label":"Association"},{"id":"c883","source":"e768","target":"e755","label":"Association"},{"id":"c886","source":"e766","target":"e755","label":"Association"},{"id":"c887","source":"e769","target":"e755","label":"Association"},{"id":"c888","source":"e755","target":"e758","label":"Association"},{"id":"c893","source":"e745","target":"e766","label":"Association"},{"id":"c909","source":"e745","target":"e737","label":"Association"},{"id":"c884","source":"e766","target":"e766","label":"Association"},{"id":"c872","source":"e769","target":"e758","label":"Association"}]};</script>
+
+<hr>
+<p><em>Generated: 2026-06-26 13:25:36</em></p>
 
 
 

@@ -22,7 +22,7 @@
     
     
       
-        <title>ProductCategoryRule - Wiki</title>
+        <title>MAS ProductCategoryRule - Wiki</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#productcategoryrule" class="md-skip">
+        <a href="#mas-productcategoryrule" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ProductCategoryRule
+              MAS ProductCategoryRule
             
           </span>
         </div>
@@ -411,6 +411,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#relationship-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship Graph
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -428,10 +439,10 @@
 
 
 
-<h1 id="productcategoryrule">ProductCategoryRule</h1>
+<h1 id="mas-productcategoryrule"><span class="sl" data-layer="uml">MAS</span> ProductCategoryRule</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> master-data<br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
-<p><a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Products</a></p>
+<p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Products</a></p>
 <p>ProductCategoryRule is a master-data entity that represents a product category rule (PCR) document that provides specific methodological requirements for conducting life-cycle assessments and producing EPDs or PCF declarations for a defined product category. PCRs constrain the methodological choices practitioners can make when calculating a PCF, specifying system boundary, allocation rules, data quality requirements, and declared unit definitions for the product type. Linking a PCR to a ProductCarbonFootprint provides essential methodological context for comparison across competing products.</p>
 <h2 id="attributes">Attributes</h2>
 <table>
@@ -494,6 +505,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
 <thead>
@@ -511,6 +523,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
 <thead>
@@ -528,6 +541,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h3 id="referenced-by">Referenced By</h3>
 <table>
 <thead>
@@ -543,15 +557,16 @@
 <td></td>
 <td><a href="ProductCarbonFootprint.html">ProductCarbonFootprint</a></td>
 </tr>
-<tr>
-<td>Association</td>
-<td></td>
-<td><a href="ProductCarbonFootprint.html">ProductCarbonFootprint</a></td>
-</tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <hr>
-<p><em>Generated: 2026-06-25 10:51:16</em></p>
+<h2 id="relationship-graph">Relationship Graph</h2>
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductCarbonFootprint.html"},{"id":"e820","label":"ProductCategoryRule","fullName":"ProductCategoryRule","packageName":Products,"isFocal":true,"hasUrl":false,"url":""},{"id":"e755","label":"Location","fullName":"Location","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/Location.html"},{"id":"e821","label":"ProductFootprintDataQua…","fullName":"ProductFootprintDataQualityIndicator","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductFootprintDataQualityIndicator.html"},{"id":"e818","label":"ProductCarbonFootprintF…","fullName":"ProductCarbonFootprintFactorSource","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductCarbonFootprintFactorSource.html"},{"id":"e817","label":"ProductLifeCycleFootpri…","fullName":"ProductLifeCycleFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductLifeCycleFootprint.html"},{"id":"e811","label":"ProductFootprint","fullName":"ProductFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductFootprint.html"},{"id":"e779","label":"UnitOfMeasure","fullName":"UnitOfMeasure","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/UnitOfMeasure.html"}],"edges":[{"id":"c792","source":"e812","target":"e755","label":"Association"},{"id":"c795","source":"e812","target":"e821","label":"Association"},{"id":"c796","source":"e812","target":"e820","label":"Association"},{"id":"c798","source":"e812","target":"e818","label":"Association"},{"id":"c803","source":"e812","target":"e817","label":"Association"},{"id":"c804","source":"e811","target":"e812","label":"Association"},{"id":"c833","source":"e779","target":"e812","label":"Association"},{"id":"c881","source":"e755","target":"e755","label":"Association"},{"id":"c794","source":"e811","target":"e811","label":"Association"}]};</script>
+
+<hr>
+<p><em>Generated: 2026-06-26 13:25:36</em></p>
 
 
 

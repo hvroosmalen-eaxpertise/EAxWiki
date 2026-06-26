@@ -22,7 +22,7 @@
     
     
       
-        <title>ProductCarbonFootprintFactorSource - Wiki</title>
+        <title>WOR ProductCarbonFootprintFactorSource - Wiki</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#productcarbonfootprintfactorsource" class="md-skip">
+        <a href="#wor-productcarbonfootprintfactorsource" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ProductCarbonFootprintFactorSource
+              WOR ProductCarbonFootprintFactorSource
             
           </span>
         </div>
@@ -411,6 +411,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#relationship-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship Graph
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -428,10 +439,10 @@
 
 
 
-<h1 id="productcarbonfootprintfactorsource">ProductCarbonFootprintFactorSource</h1>
+<h1 id="wor-productcarbonfootprintfactorsource"><span class="sl" data-layer="uml">WOR</span> ProductCarbonFootprintFactorSource</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> work-product-component<br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
-<p><a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Products</a></p>
+<p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Products</a></p>
 <p>ProductCarbonFootprintFactorSource is an intersection entity that records which emission factor databases were used as secondary or background data sources in calculating a specific ProductCarbonFootprint. This entity provides the structured traceability required by the PACT technical specification secondary_emission_factor_sources field, capturing not just the database name but also the version and applicable life-cycle stage, enabling systematic data quality assessment by receivers.</p>
 <h2 id="attributes">Attributes</h2>
 <table>
@@ -476,6 +487,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
 <thead>
@@ -493,6 +505,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
 <thead>
@@ -515,6 +528,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h3 id="referenced-by">Referenced By</h3>
 <table>
 <thead>
@@ -533,22 +547,18 @@
 <tr>
 <td>Association</td>
 <td></td>
-<td><a href="ProductCarbonFootprint.html">ProductCarbonFootprint</a></td>
-</tr>
-<tr>
-<td>Association</td>
-<td></td>
-<td><a href="../Emissions/EmissionFactorSource.html">EmissionFactorSource</a></td>
-</tr>
-<tr>
-<td>Association</td>
-<td></td>
 <td><a href="../Emissions/EmissionFactorSource.html">EmissionFactorSource</a></td>
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <hr>
-<p><em>Generated: 2026-06-25 10:51:16</em></p>
+<h2 id="relationship-graph">Relationship Graph</h2>
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductCarbonFootprint.html"},{"id":"e781","label":"EmissionFactorSource","fullName":"EmissionFactorSource","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionFactorSource.html"},{"id":"e818","label":"ProductCarbonFootprintF…","fullName":"ProductCarbonFootprintFactorSource","packageName":Products,"isFocal":true,"hasUrl":false,"url":""},{"id":"e755","label":"Location","fullName":"Location","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/Location.html"},{"id":"e821","label":"ProductFootprintDataQua…","fullName":"ProductFootprintDataQualityIndicator","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductFootprintDataQualityIndicator.html"},{"id":"e820","label":"ProductCategoryRule","fullName":"ProductCategoryRule","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductCategoryRule.html"},{"id":"e817","label":"ProductLifeCycleFootpri…","fullName":"ProductLifeCycleFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductLifeCycleFootprint.html"},{"id":"e811","label":"ProductFootprint","fullName":"ProductFootprint","packageName":Products,"isFocal":false,"hasUrl":true,"url":"ProductFootprint.html"},{"id":"e779","label":"UnitOfMeasure","fullName":"UnitOfMeasure","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/UnitOfMeasure.html"},{"id":"e794","label":"StandardSourceAssociati…","fullName":"StandardSourceAssociation","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/StandardSourceAssociation.html"},{"id":"e780","label":"EmissionFactor","fullName":"EmissionFactor","packageName":Emissions,"isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionFactor.html"}],"edges":[{"id":"c792","source":"e812","target":"e755","label":"Association"},{"id":"c795","source":"e812","target":"e821","label":"Association"},{"id":"c796","source":"e812","target":"e820","label":"Association"},{"id":"c798","source":"e812","target":"e818","label":"Association"},{"id":"c803","source":"e812","target":"e817","label":"Association"},{"id":"c804","source":"e811","target":"e812","label":"Association"},{"id":"c833","source":"e779","target":"e812","label":"Association"},{"id":"c806","source":"e781","target":"e794","label":"Association"},{"id":"c835","source":"e781","target":"e818","label":"Association"},{"id":"c849","source":"e794","target":"e781","label":"Association"},{"id":"c857","source":"e780","target":"e781","label":"Association"},{"id":"c881","source":"e755","target":"e755","label":"Association"},{"id":"c794","source":"e811","target":"e811","label":"Association"},{"id":"c854","source":"e779","target":"e780","label":"Association"},{"id":"c855","source":"e779","target":"e780","label":"Association"}]};</script>
+
+<hr>
+<p><em>Generated: 2026-06-26 13:25:36</em></p>
 
 
 

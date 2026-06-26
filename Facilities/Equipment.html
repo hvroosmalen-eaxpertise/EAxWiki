@@ -22,7 +22,7 @@
     
     
       
-        <title>Equipment - Wiki</title>
+        <title>MAS Equipment - Wiki</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#equipment" class="md-skip">
+        <a href="#mas-equipment" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Equipment
+              MAS Equipment
             
           </span>
         </div>
@@ -411,6 +411,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#relationship-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship Graph
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -428,10 +439,10 @@
 
 
 
-<h1 id="equipment">Equipment</h1>
+<h1 id="mas-equipment"><span class="sl" data-layer="uml">MAS</span> Equipment</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> master-data<br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
-<p><a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Facilities</a></p>
+<p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Facilities</a></p>
 <p>Equipment describes a device used in an operation or activity that is located or installed at a particular Facility. It is a manufactured, non-consumable object delivering the required functionality of facilities. Examples include Natural Gas Pneumatic Devices, Blowdown Vent Stacks, Flare Stacks, Centrifugal Compressors, Reciprocating Compressors, Atmospheric Storage Tanks, and Combustion Equipment, as catalogued in the US EPA Subpart W reference. A self-referential parent relationship allows the modelling of equipment assemblies. Both Facility and Equipment may be assigned an EmissionActivityParameter and an associated EmissionActivityParameterValue at a given point in time.</p>
 <h2 id="attributes">Attributes</h2>
 <table>
@@ -464,6 +475,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
 <thead>
@@ -481,6 +493,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
 <thead>
@@ -503,6 +516,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h3 id="referenced-by">Referenced By</h3>
 <table>
 <thead>
@@ -520,8 +534,14 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <hr>
-<p><em>Generated: 2026-06-25 10:51:16</em></p>
+<h2 id="relationship-graph">Relationship Graph</h2>
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e761","label":"EquipmentInstallation","fullName":"EquipmentInstallation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"EquipmentInstallation.html"},{"id":"e756","label":"Equipment","fullName":"Equipment","packageName":Facilities,"isFocal":true,"hasUrl":false,"url":""},{"id":"e753","label":"Facility","fullName":"Facility","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"Facility.html"}],"edges":[{"id":"c877","source":"e753","target":"e761","label":"Association"},{"id":"c878","source":"e756","target":"e761","label":"Association"},{"id":"c876","source":"e756","target":"e756","label":"Association"}]};</script>
+
+<hr>
+<p><em>Generated: 2026-06-26 13:25:36</em></p>
 
 
 

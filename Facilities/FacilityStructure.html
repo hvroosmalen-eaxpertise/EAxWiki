@@ -22,7 +22,7 @@
     
     
       
-        <title>FacilityStructure - Wiki</title>
+        <title>MAS FacilityStructure - Wiki</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#facilitystructure" class="md-skip">
+        <a href="#mas-facilitystructure" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FacilityStructure
+              MAS FacilityStructure
             
           </span>
         </div>
@@ -411,6 +411,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#relationship-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship Graph
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -428,10 +439,10 @@
 
 
 
-<h1 id="facilitystructure">FacilityStructure</h1>
+<h1 id="mas-facilitystructure"><span class="sl" data-layer="uml">MAS</span> FacilityStructure</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> master-data<br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
-<p><a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Facilities</a></p>
+<p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Facilities</a></p>
 <p>FacilityStructure records the fact that one facility is a structural component of another facility — for example, one facility is mounted on, connected to, or dependent upon another. This parent-child composition allows complex facility assemblies to be modelled as hierarchies, enabling aggregation of emissions from sub-facilities to parent facilities and supporting site-level reporting that reflects the physical dependencies between operational units. Most likely only the parent Facility in the FacilityStructure would be assigned to the lowest level of the Location hierarchy.</p>
 <h2 id="attributes">Attributes</h2>
 <table>
@@ -464,6 +475,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
 <thead>
@@ -481,6 +493,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
 <thead>
@@ -503,6 +516,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h3 id="referenced-by">Referenced By</h3>
 <table>
 <thead>
@@ -523,15 +537,16 @@
 <td></td>
 <td><a href="FacilityStructure.html">FacilityStructure</a></td>
 </tr>
-<tr>
-<td>Association</td>
-<td></td>
-<td><a href="Facility.html">Facility</a></td>
-</tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <hr>
-<p><em>Generated: 2026-06-25 10:51:16</em></p>
+<h2 id="relationship-graph">Relationship Graph</h2>
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e753","label":"Facility","fullName":"Facility","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"Facility.html"},{"id":"e757","label":"FacilityStructure","fullName":"FacilityStructure","packageName":Facilities,"isFocal":true,"hasUrl":false,"url":""},{"id":"e764","label":"FacilityEmissionAllocat…","fullName":"FacilityEmissionAllocation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityEmissionAllocation.html"},{"id":"e762","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameter","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"EmissionActivityParameter.html"},{"id":"e761","label":"EquipmentInstallation","fullName":"EquipmentInstallation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"EquipmentInstallation.html"},{"id":"e760","label":"FacilityActivityPartici…","fullName":"FacilityActivityParticipation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityActivityParticipation.html"},{"id":"e759","label":"FacilitySpecification","fullName":"FacilitySpecification","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilitySpecification.html"},{"id":"e758","label":"FacilityLocationAssocia…","fullName":"FacilityLocationAssociation","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityLocationAssociation.html"},{"id":"e754","label":"FacilityType","fullName":"FacilityType","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"FacilityType.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"../Organisation/Organization.html"}],"edges":[{"id":"c873","source":"e753","target":"e764","label":"Association"},{"id":"c875","source":"e753","target":"e762","label":"Association"},{"id":"c877","source":"e753","target":"e761","label":"Association"},{"id":"c879","source":"e753","target":"e760","label":"Association"},{"id":"c880","source":"e753","target":"e759","label":"Association"},{"id":"c889","source":"e753","target":"e758","label":"Association"},{"id":"c891","source":"e753","target":"e757","label":"Association"},{"id":"c892","source":"e753","target":"e754","label":"Association"},{"id":"c896","source":"e735","target":"e753","label":"Association"},{"id":"c890","source":"e757","target":"e757","label":"Association"}]};</script>
+
+<hr>
+<p><em>Generated: 2026-06-26 13:25:36</em></p>
 
 
 

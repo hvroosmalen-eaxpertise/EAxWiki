@@ -22,7 +22,7 @@
     
     
       
-        <title>Address - Wiki</title>
+        <title>MAS Address - Wiki</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#address" class="md-skip">
+        <a href="#mas-address" class="md-skip">
           Skip to content
         </a>
       
@@ -111,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Address
+              MAS Address
             
           </span>
         </div>
@@ -422,6 +422,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#relationship-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship Graph
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -439,10 +450,10 @@
 
 
 
-<h1 id="address">Address</h1>
+<h1 id="mas-address"><span class="sl" data-layer="uml">MAS</span> Address</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> master-data<br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
-<p><a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Organisation</a></p>
+<p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Organisation</a></p>
 <p>Address captures the postal or physical address associated with a contact person, facility, or organisational unit. A structured address representation is preferred over a free-text field because it enables geographic analysis, regulatory jurisdiction mapping, and integration with postal validation services. The Address entity is deliberately kept simple, covering the most commonly required address components, and is linked to a Location entity that provides ISO country coding. A single contact or organisation may have multiple address records representing, for example, registered, trading, and correspondence addresses.</p>
 <h2 id="attributes">Attributes</h2>
 <table>
@@ -499,6 +510,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
 <thead>
@@ -516,6 +528,7 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
 <thead>
@@ -538,10 +551,12 @@
 </tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <h3 id="appears-on-diagrams">Appears on Diagrams</h3>
 <ul>
 <li><a href="diagrams/Organisation.html">Organisation</a></li>
 </ul>
+<p><a href="#">↑ Back to top</a></p>
 <h3 id="referenced-by">Referenced By</h3>
 <table>
 <thead>
@@ -557,15 +572,16 @@
 <td></td>
 <td><a href="Country.html">Country</a></td>
 </tr>
-<tr>
-<td>Association</td>
-<td></td>
-<td><a href="Country.html">Country</a></td>
-</tr>
 </tbody>
 </table>
+<p><a href="#">↑ Back to top</a></p>
 <hr>
-<p><em>Generated: 2026-06-25 10:51:16</em></p>
+<h2 id="relationship-graph">Relationship Graph</h2>
+<div id="ea-graph-container"></div>
+<script>window.eaGraphData={"nodes":[{"id":"e745","label":"Country","fullName":"Country","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"Country.html"},{"id":"e743","label":"OrganizationAddress","fullName":"OrganizationAddress","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationAddress.html"},{"id":"e737","label":"Address","fullName":"Address","packageName":Organisation,"isFocal":true,"hasUrl":false,"url":""},{"id":"e766","label":"GeopoliticalEntity","fullName":"GeopoliticalEntity","packageName":Facilities,"isFocal":false,"hasUrl":true,"url":"../Facilities/GeopoliticalEntity.html"},{"id":"e744","label":"OrganizationAddressType","fullName":"OrganizationAddressType","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"OrganizationAddressType.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":Organisation,"isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c893","source":"e745","target":"e766","label":"Association"},{"id":"c909","source":"e745","target":"e737","label":"Association"},{"id":"c910","source":"e744","target":"e743","label":"Association"},{"id":"c911","source":"e737","target":"e743","label":"Association"},{"id":"c912","source":"e735","target":"e743","label":"Association"},{"id":"c884","source":"e766","target":"e766","label":"Association"}]};</script>
+
+<hr>
+<p><em>Generated: 2026-06-26 13:25:36</em></p>
 
 
 
