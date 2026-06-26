@@ -5,7 +5,7 @@
 | ActivityEmissionAllocation | ActivityEmissionAllocation is a work-product-component that records the portion of a shared or joint emission activity total emission quantity assigned to a specific EmissionActivity when multiple activities share a common emission source | [ActivityEmissionAllocation](../Emissions/ActivityEmissionAllocation.md) |
 | Address | Address captures the postal or physical address associated with a contact person, facility, or organisational unit | [Address](../Organisation/Address.md) |
 | Affected Communities (ESRS S3) | Local and regional communities impacted by operations | [Affected Communities (ESRS S3)](../People/Affected Communities (ESRS S3).md), [Affected Communities (ESRS S3)](../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).md) |
-| AFM | Autoriteit Financi&#235;le Markten - Financial market supervision | [AFM](../People/AFM.md), [AFM](../ESRS Navigator Stakeholder Map/AFM.md) |
+| AFM | Autoriteit Financiële Markten - Financial market supervision | [AFM](../People/AFM.md), [AFM](../ESRS Navigator Stakeholder Map/AFM.md) |
 | Agricultural Suppliers | Tomato growers, grain producers, vegetable suppliers | [Agricultural Suppliers](../People/Agricultural Suppliers.md), [Agricultural Suppliers](../ESRS Navigator Stakeholder Map/Agricultural Suppliers.md) |
 | Align sustainability reporting | Align sustainability reporting for businesses operating within the European Union | [Align sustainability reporting](../ESRS Goals and Objectives/Align sustainability reporting.md) |
 | Aligned Incentives | https://alignedincentives | [Aligned Incentives](../Private Parties/Aligned Incentives.md) |
@@ -24,7 +24,7 @@
 | Chief Financial Officer | Often responsible for compliance | [Chief Financial Officer](../People/Chief Financial Officer.md) |
 | Climate Risk | Physical and transition risks associated with climate change, including extreme weather events, resource scarcity, and carbon pricing | [Climate Risk](../Drivers/Climate Risk.md) |
 | CO₂ Reduction % | Key performance indicator measuring the percentage reduction in carbon dioxide emissions relative to a baseline year | [CO₂ Reduction %](../Assessments/CO₂ Reduction %.md) |
-| Company listed on an EU-regulated market exchange | Required to report: Any companies listed on an EU-regulated market exchange - except for listed ‘micro undertakings’ -that fail to meet two of these three criteria on consecutive balance sheet dates: <ol> 	<li>at least EUR 450 | [Company listed on an EU-regulated market exchange](../People/Company listed on an EU-regulated market exchange.md) |
+| Company listed on an EU-regulated market exchange | Required to report: Any companies listed on an EU-regulated market exchange - except for listed ‘micro undertakings’ -that fail to meet two of these three criteria on consecutive balance sheet dates: at least EUR 450 | [Company listed on an EU-regulated market exchange](../People/Company listed on an EU-regulated market exchange.md) |
 | Company subject to CSRD | Companies required to report under CSRD from 2025 | [Company subject to CSRD](../People/Company subject to CSRD.md) |
 | Consumers and End Users (ESRS S4) | Final consumers - focus on food safety and product information | [Consumers and End Users (ESRS S4)](../People/Consumers and End Users (ESRS S4).md), [Consumers and End Users (ESRS S4)](../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4).md) |
 | ContactPerson | ContactPerson represents an individual who is designated as the primary or secondary contact for an organisation's emissions reporting activities | [ContactPerson](../Organisation/ContactPerson.md) |
@@ -138,7 +138,7 @@
 | Large Companies (>250 employees) | Companies required to report under CSRD from 2025 | [Large Companies (>250 employees)](../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md) |
 | Legal Design Agencies | Agencies like Patroon Legal Design | [Legal Design Agencies](../People/Legal Design Agencies.md), [Legal Design Agencies](../ESRS Navigator Stakeholder Map/Legal Design Agencies.md) |
 | Lifecycle & Circularity Model | Beschrijving van productlevenscyclus | [Lifecycle & Circularity Model](../Process/Lifecycle & Circularity Model.md) |
-| Listed SMEs | Small and medium enterprises with stock exchange listing (future LSME standard) Required to report:  Any listed companies that meet two of the following three criteria on any two consecutive balance sheet dates: <ol> 	<li>at least EUR 25 million in total assets</li> 	<li>at least EUR 50 million in net turnover</li> 	<li>at least 250 employees (average) during the year</li> </ol> | [Listed SMEs](../People/Listed SMEs.md), [Listed SMEs](../ESRS Navigator Stakeholder Map/Listed SMEs.md) |
+| Listed SMEs | Small and medium enterprises with stock exchange listing (future LSME standard) Required to report: Any listed companies that meet two of the following three criteria on any two consecutive balance sheet dates: at least EUR 25 million in total assets at least EUR 50 million in net turnover at least 250 employees (average) during the year | [Listed SMEs](../People/Listed SMEs.md), [Listed SMEs](../ESRS Navigator Stakeholder Map/Listed SMEs.md) |
 | Local Communities | Communities around production facilities and supplier regions | [Local Communities](../People/Local Communities.md), [Local Communities](../ESRS Navigator Stakeholder Map/Local Communities.md) |
 | Location | Location represents a place where a person or thing is located | [Location](../Facilities/Location.md) |
 | Long-term Value Creation | Create sustainable economic value over the long term by balancing financial performance with environmental and social responsibility | [Long-term Value Creation](../Goals/Long-term Value Creation.md) |
@@ -191,7 +191,7 @@
 | Rijksdienst voor Ondernemend Nederland (RVO) | Dutch government agency - MVO-steunpunt provides CSR guidance | [Rijksdienst voor Ondernemend Nederland (RVO)](../People/Rijksdienst voor Ondernemend Nederland (RVO).md) |
 | Risk and Compliance Management | Capability to identify, assess, and manage sustainability-related risks and ensure regulatory compliance | [Risk and Compliance Management](../Capabilities/Risk and Compliance Management.md) |
 | Risk Reduction | Systematically reduce environmental, social, and governance risks that could impact business continuity and financial performance | [Risk Reduction](../Goals/Risk Reduction.md) |
-| Road to Net Zero | <font color="#242021">Strategic Pathways for Sustainability Driven Business Transformation, Zipse Oliver, et | [Road to Net Zero](../Reference Documents/Road to Net Zero.md) |
+| Road to Net Zero | Strategic Pathways for Sustainability Driven Business Transformation, Zipse Oliver, et | [Road to Net Zero](../Reference Documents/Road to Net Zero.md) |
 | SDG  1. No Poverty | End poverty in all its forms everywhere | [SDG  1. No Poverty](../Sustainability Development Goals/SDG  1. No Poverty.md) |
 | SDG  2. Zero Hunger | End hunger, achieve food security and improved nutrition, and promote sustainable agriculture | [SDG  2. Zero Hunger](../Sustainability Development Goals/SDG  2. Zero Hunger.md) |
 | SDG  3. Good Health and Well-Being | Ensure healthy lives and promote well-being for all at all ages | [SDG  3. Good Health and Well-Being](../Sustainability Development Goals/SDG  3. Good Health and Well-Being.md) |
@@ -220,7 +220,7 @@
 | Standard | Standard represents a formal specification, protocol, methodology, or regulatory framework that governs how an organisation measures, calculates, or reports its greenhouse gas emissions | [Standard](../Organisation/Standard.md) |
 | Standardize ESG reporting and enhance transparency and comparability in Europe.  | The ESRS align the EU reporting system to the International Sustainability Standards Board (ISSB) and the Global Reporting Initiative (GRI), ensuring a high degree of interoperability between EU and global standards and prevent unnecessary double reporting by companies | [Standardize ESG reporting and enhance transparency and comparability in Europe. ](../ESRS Goals and Objectives/Standardize ESG reporting and enhance transparency and comparability in Europe..md) |
 | StandardSourceAssociation | StandardSourceAssociation is an intersection entity that records which emission factor databases or reference sources are recognised as appropriate inputs under a given Standard | [StandardSourceAssociation](../Emissions/StandardSourceAssociation.md) |
-| Strategic Sustainability Management | A Practical Approach for Companies Using the SDGs as a Framework, Bodenstein Robert, Herget Josef  This book provides a practical guide to implementing sustainability strategies within companies | [Strategic Sustainability Management](../Reference Documents/Strategic Sustainability Management.md) |
+| Strategic Sustainability Management | A Practical Approach for Companies Using the SDGs as a Framework, Bodenstein Robert, Herget Josef This book provides a practical guide to implementing sustainability strategies within companies | [Strategic Sustainability Management](../Reference Documents/Strategic Sustainability Management.md) |
 | Supervisory Board (RvC) | Oversight and quarterly reporting on sustainability | [Supervisory Board (RvC)](../People/Supervisory Board (RvC).md), [Supervisory Board (RvC)](../ESRS Navigator Stakeholder Map/Supervisory Board (RvC).md) |
 | Supplier Compliance Rate | Percentage of suppliers meeting defined environmental and social standards based on audits and assessments | [Supplier Compliance Rate](../Assessments/Supplier Compliance Rate.md) |
 | Supplier Sustainability Audits | Systematic program to assess and verify supplier compliance with environmental and social standards | [Supplier Sustainability Audits](../Courses of Action/Supplier Sustainability Audits.md) |
@@ -258,4 +258,4 @@
 
 ---
 
-*Generated: 2026-06-26 17:21:03*
+*Generated: 2026-06-26 17:43:17*
