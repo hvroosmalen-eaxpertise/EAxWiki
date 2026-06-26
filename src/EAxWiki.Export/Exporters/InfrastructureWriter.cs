@@ -42,9 +42,14 @@ internal class InfrastructureWriter(IOutputWriter writer)
         await writer.WriteFileAsync(Path.Combine(outputDir, "cytoscape.min.js"), cytoscapeJs);
 
         const string graphInitJs = """
-(function () {
+function initEaGraph() {
     var container = document.getElementById('ea-graph-container');
     if (!container || !window.eaGraphData || typeof cytoscape === 'undefined') return;
+
+    // Remove any tooltip left over from a previous page navigation.
+    var old = document.getElementById('ea-graph-tooltip');
+    if (old) old.remove();
+
     var data = window.eaGraphData;
     var cy = cytoscape({
         container: container,
@@ -116,6 +121,7 @@ internal class InfrastructureWriter(IOutputWriter writer)
     cy.fit(cy.elements(), 40);
 
     var tooltip = document.createElement('div');
+    tooltip.id = 'ea-graph-tooltip';
     tooltip.style.cssText = 'position:fixed;background:#fff;border:1px solid #ddd;border-radius:6px;padding:8px 12px;font-size:12px;pointer-events:none;display:none;box-shadow:0 4px 12px rgba(0,0,0,.15);z-index:9999;max-width:240px;line-height:1.6;';
     document.body.appendChild(tooltip);
 
@@ -139,7 +145,15 @@ internal class InfrastructureWriter(IOutputWriter writer)
     });
     cy.on('mouseover', 'node[?hasUrl]', function () { container.style.cursor = 'pointer'; });
     cy.on('mouseout', 'node', function () { container.style.cursor = 'default'; });
-})();
+}
+
+// MkDocs Material instant navigation fires document$ on every page load.
+// Without it, fall back to running once on DOMContentLoaded.
+if (typeof document$ !== 'undefined') {
+    document$.subscribe(function () { initEaGraph(); });
+} else {
+    document.addEventListener('DOMContentLoaded', initEaGraph);
+}
 """;
         await writer.WriteFileAsync(Path.Combine(outputDir, "graph-init.js"), graphInitJs);
     }
