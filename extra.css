@@ -59,13 +59,13 @@
   margin-right: 0.3em;
 }
 
-.sl[data-layer="business"] { background: #2E86C1; color: #fff; }
-.sl[data-layer="application"] { background: #27AE60; color: #fff; }
-.sl[data-layer="technology"] { background: #8E44AD; color: #fff; }
+.sl[data-layer="business"] { background: #D4A017; color: #fff; }
+.sl[data-layer="application"] { background: #2E86C1; color: #fff; }
+.sl[data-layer="technology"] { background: #27AE60; color: #fff; }
 .sl[data-layer="physical"] { background: #17A589; color: #fff; }
-.sl[data-layer="motivation"] { background: #C0392B; color: #fff; }
-.sl[data-layer="strategy"] { background: #D4AC0D; color: #fff; }
-.sl[data-layer="implementation"] { background: #E67E22; color: #fff; }
+.sl[data-layer="motivation"] { background: #8E44AD; color: #fff; }
+.sl[data-layer="strategy"] { background: #A0682B; color: #fff; }
+.sl[data-layer="implementation"] { background: #D84B79; color: #fff; }
 .sl[data-layer="composite"] { background: #5D6D7E; color: #fff; }
 .sl[data-layer="uml"] { background: #7F8C8D; color: #fff; }
 
