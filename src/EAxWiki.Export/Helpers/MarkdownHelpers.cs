@@ -77,6 +77,10 @@ internal static class MarkdownHelpers
         ["ArchiMate_OrJunction"] = ("OR", "composite"),
     };
 
+    // Reverse lookup: bare type name → (code, layer), e.g. "BusinessActor" → ("BA", "business")
+    private static readonly Dictionary<string, (string Code, string Layer)> ArchiMateTypeMap =
+        ArchiMateMap.ToDictionary(kvp => kvp.Key.Split('_', 2)[1], kvp => kvp.Value, StringComparer.OrdinalIgnoreCase);
+
     // EDGY element types → (full name, layer) mapping.
     private static readonly Dictionary<string, (string Code, string Layer)> EdgyMap = new(StringComparer.OrdinalIgnoreCase)
     {
@@ -236,6 +240,10 @@ internal static class MarkdownHelpers
             ? $"ArchiMate_{type}"
             : null;
         if (archiKey != null && ArchiMateMap.TryGetValue(archiKey, out entry))
+            return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{entry.Code}</span>";
+
+        // Try bare type name (cases where EA stores only "BusinessActor" without ArchiMate_ prefix).
+        if (!string.IsNullOrWhiteSpace(type) && ArchiMateTypeMap.TryGetValue(type, out entry))
             return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{entry.Code}</span>";
 
         // EDGY types.
