@@ -8,15 +8,15 @@
 
 ## Elements
 
-- <span class="sl" data-layer="strategy">CAP</span> [AI - LLM](AI - LLM.md)
-- <span class="sl" data-layer="strategy">CAP</span> [EDGY -> XMI (Python)](EDGY -_ XMI (Python).md)
-- <span class="sl" data-layer="business">PRD</span> [ESRS Referentie Model](ESRS Referentie Model.md)
-- <span class="sl" data-layer="business">PRD</span> [EurSuRA Model](EurSuRA Model.md)
-- <span class="sl" data-layer="business">PRD</span> [Identity Map](Identity Map.md)
-- <span class="sl" data-layer="strategy">CAP</span> [LDM -> XMI (Python)](LDM -_ XMI (Python).md)
-- <span class="sl" data-layer="business">PRD</span> [Logical Data Model](Logical Data Model.md)
-- <span class="sl" data-layer="business">PRD</span> [SDG Referentie Model](SDG Referentie Model.md)
-- <span class="sl" data-layer="business">PRD</span> [Stakeholder Map](Stakeholder Map.md)
+- <span class="sl" data-layer="edgy-ar">Capability</span> [AI - LLM](AI - LLM.md)
+- <span class="sl" data-layer="edgy-ar">Capability</span> [EDGY -> XMI (Python)](EDGY -_ XMI (Python).md)
+- <span class="sl" data-layer="edgy-ix">Product</span> [ESRS Referentie Model](ESRS Referentie Model.md)
+- <span class="sl" data-layer="edgy-ix">Product</span> [EurSuRA Model](EurSuRA Model.md)
+- <span class="sl" data-layer="edgy-ix">Product</span> [Identity Map](Identity Map.md)
+- <span class="sl" data-layer="edgy-ar">Capability</span> [LDM -> XMI (Python)](LDM -_ XMI (Python).md)
+- <span class="sl" data-layer="edgy-ix">Product</span> [Logical Data Model](Logical Data Model.md)
+- <span class="sl" data-layer="edgy-ix">Product</span> [SDG Referentie Model](SDG Referentie Model.md)
+- <span class="sl" data-layer="edgy-ix">Product</span> [Stakeholder Map](Stakeholder Map.md)
 - <span class="sl" data-layer="edgy-ar">Asset</span> [EDGY 23 Language Foundation](EDGY 23 Language Foundation.md)
 - <span class="sl" data-layer="edgy-lb">Object</span> [EDGY Model Elementen en Relaties](EDGY Model Elementen en Relaties.md)
 - <span class="sl" data-layer="edgy-ex">Channel</span> [EFRAG Website](EFRAG Website.md)
@@ -34,4 +34,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

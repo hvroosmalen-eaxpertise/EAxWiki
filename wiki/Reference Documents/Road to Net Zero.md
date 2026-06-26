@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="strategy">RS</span> Road to Net Zero
+# <span class="sl" data-layer="strategy">Resource</span> Road to Net Zero
 
-**Type:** Class  **Stereotype:** ArchiMate_Resource  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** ArchiMate_Resource  **StereotypeEx:** ArchiMate_Resource  **FQStereotype:** ArchiMate3::ArchiMate_Resource  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-12
 
 
@@ -16,4 +16,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

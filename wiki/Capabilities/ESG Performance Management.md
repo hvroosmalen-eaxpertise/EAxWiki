@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="strategy">CAP</span> ESG Performance Management
+# <span class="sl" data-layer="strategy">Capability</span> ESG Performance Management
 
-**Type:** Class  **Stereotype:** ArchiMate_Capability  
+**Type:** Class  **Stereotype:** ArchiMate_Capability  **StereotypeEx:** ArchiMate_Capability  **FQStereotype:** ArchiMate3::ArchiMate_Capability  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
@@ -61,4 +61,4 @@ Enables evidence-based sustainability management and transparent reporting to st
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

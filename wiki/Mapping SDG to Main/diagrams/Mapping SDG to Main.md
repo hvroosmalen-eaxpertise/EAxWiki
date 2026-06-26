@@ -13,7 +13,7 @@
 - <span class="sl" data-layer="edgy-id">Purpose</span> [Enterprise Purpose](../../Purpose/Enterprise Purpose.md)
 - <span class="sl" data-layer="edgy-ar">Asset</span> [Environmental Impact Map](../../Asset/Environmental Impact Map.md)
 - <span class="sl" data-layer="edgy-id">Story</span> [Environmental Impact Story](../../Story/Environmental Impact Story.md)
-- <span class="sl" data-layer="strategy">CAP</span> [Green Capabilities](../../Capability/Green Capabilities.md)
+- <span class="sl" data-layer="edgy-ar">Capability</span> [Green Capabilities](../../Capability/Green Capabilities.md)
 - <span class="sl" data-layer="edgy-ex">Journey</span> [Green Customer Journey](../../Journey/Green Customer Journey.md)
 - <span class="sl" data-layer="edgy-ex">Task</span> [Green Customer Task](../../Task/Green Customer Task.md)
 - <span class="sl" data-layer="edgy-ex">Channel</span> [Green Services](../../Channel/Green Services.md)
@@ -53,4 +53,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:38*
+*Generated: 2026-06-26 13:44:33*

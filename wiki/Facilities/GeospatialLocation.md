@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">MAS</span> GeospatialLocation
+# <span class="sl" data-layer="uml">master-data</span> GeospatialLocation
 
-**Type:** Class  **Stereotype:** master-data  
+**Type:** Class  **Stereotype:** master-data  **StereotypeEx:** master-data  **FQStereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -50,4 +50,4 @@ GeospatialLocation provides a spatial representation of a Location, defined by c
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

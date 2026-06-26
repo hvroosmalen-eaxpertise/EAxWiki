@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">SH</span> Affected Communities (ESRS S3)
+# <span class="sl" data-layer="motivation">Stakeholder</span> Affected Communities (ESRS S3)
 
-**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-11-14  **Modified:** 2025-12-12
 
 
@@ -53,4 +53,4 @@ Local and regional communities impacted by operations
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:30*

@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="strategy">COA</span> Board-level Sustainability Governance
+# <span class="sl" data-layer="strategy">CourseOfAction</span> Board-level Sustainability Governance
 
-**Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  
+**Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  **StereotypeEx:** ArchiMate_CourseOfAction  **FQStereotype:** ArchiMate3::ArchiMate_CourseOfAction  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
@@ -52,4 +52,4 @@ Ensures top-level commitment and strategic oversight of sustainability performan
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

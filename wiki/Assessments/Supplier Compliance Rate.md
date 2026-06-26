@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">AS</span> Supplier Compliance Rate
+# <span class="sl" data-layer="motivation">Assessment</span> Supplier Compliance Rate
 
-**Type:** Class  **Stereotype:** ArchiMate_Assessment  
+**Type:** Class  **Stereotype:** ArchiMate_Assessment  **StereotypeEx:** ArchiMate_Assessment  **FQStereotype:** ArchiMate3::ArchiMate_Assessment  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
@@ -45,4 +45,4 @@ Indicates level of control over value chain sustainability impacts.
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

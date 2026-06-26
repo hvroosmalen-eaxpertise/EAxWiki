@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="strategy">COA</span> Introduce Sustainable Product Design Process
+# <span class="sl" data-layer="strategy">CourseOfAction</span> Introduce Sustainable Product Design Process
 
-**Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  
+**Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  **StereotypeEx:** ArchiMate_CourseOfAction  **FQStereotype:** ArchiMate3::ArchiMate_CourseOfAction  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
@@ -52,4 +52,4 @@ Implementation of eco-design principles and life cycle thinking into product dev
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

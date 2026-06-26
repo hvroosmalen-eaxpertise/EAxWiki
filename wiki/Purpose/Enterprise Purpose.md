@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-id">Purpose</span> Enterprise Purpose
 
-**Type:** Activity  **Stereotype:** Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Activity  **Stereotype:** Purpose  **StereotypeEx:** Purpose  **FQStereotype:** EDGY::Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
@@ -46,4 +46,4 @@ De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en mili
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

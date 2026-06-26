@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">REF</span> FacilityType
+# <span class="sl" data-layer="uml">reference-data</span> FacilityType
 
-**Type:** Class  **Stereotype:** reference-data  
+**Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -51,4 +51,4 @@ FacilityType provides a controlled vocabulary of facility classifications, sourc
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

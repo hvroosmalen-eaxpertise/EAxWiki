@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-id">Purpose</span> Building a EU Reporting Community
 
-**Type:** Activity  **Stereotype:** Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Activity  **Stereotype:** Purpose  **StereotypeEx:** Purpose  **FQStereotype:** EDGY::Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
@@ -46,4 +46,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:30*

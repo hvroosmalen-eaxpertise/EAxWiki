@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">REF</span> EmissionCategoryStandardAssociation
+# <span class="sl" data-layer="uml">reference-data</span> EmissionCategoryStandardAssociation
 
-**Type:** Class  **Stereotype:** reference-data  
+**Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -45,4 +45,4 @@ EmissionCategoryStandardAssociation is an intersection entity that records which
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

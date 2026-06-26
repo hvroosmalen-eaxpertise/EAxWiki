@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-ex">Channel</span> Sustainable Channels
 
-**Type:** Class  **Stereotype:** Channel  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Channel  **StereotypeEx:** Channel  **FQStereotype:** EDGY::Channel  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
@@ -53,4 +53,4 @@ Manieren van duurzame interactie met het bedrijf.
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

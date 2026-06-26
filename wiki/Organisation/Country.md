@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">REF</span> Country
+# <span class="sl" data-layer="uml">reference-data</span> Country
 
-**Type:** Class  **Stereotype:** reference-data  
+**Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -54,4 +54,4 @@ Country represents an area of land or territory of a nation or state, identified
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

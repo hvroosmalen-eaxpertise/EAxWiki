@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">DR</span> Market Differentiation Pressure
+# <span class="sl" data-layer="motivation">Driver</span> Market Differentiation Pressure
 
-**Type:** Class  **Stereotype:** ArchiMate_Driver  
+**Type:** Class  **Stereotype:** ArchiMate_Driver  **StereotypeEx:** ArchiMate_Driver  **FQStereotype:** ArchiMate3::ArchiMate_Driver  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
@@ -41,4 +41,4 @@ Sustainable products and services increasingly become market differentiators and
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

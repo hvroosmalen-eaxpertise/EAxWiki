@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-ar">Asset</span> SDG
 
-**Type:** Class  **Stereotype:** Asset  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Asset  **StereotypeEx:** Asset  **FQStereotype:** EDGY::Asset  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
@@ -46,4 +46,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-lb">Tag</span> EMS-trends, IoT-logs
 
-**Type:** Requirement  **Stereotype:** Tag  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Requirement  **Stereotype:** Tag  **StereotypeEx:** Tag  **FQStereotype:** EDGY::Tag  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
@@ -37,4 +37,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

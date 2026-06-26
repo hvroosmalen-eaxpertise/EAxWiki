@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">SH</span> Own Personnel (ESRS S1)
+# <span class="sl" data-layer="motivation">Stakeholder</span> Own Personnel (ESRS S1)
 
-**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
+**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
@@ -58,4 +58,4 @@ All employees of the reporting organization
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

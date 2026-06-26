@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">MAS</span> EmissionActivity
+# <span class="sl" data-layer="uml">master-data</span> EmissionActivity
 
-**Type:** Class  **Stereotype:** master-data  
+**Type:** Class  **Stereotype:** master-data  **StereotypeEx:** master-data  **FQStereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -67,4 +67,4 @@ EmissionActivity is a master-data entity that represents a discrete operational 
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

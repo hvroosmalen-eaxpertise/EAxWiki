@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="strategy">CAP</span> Sustainable Supply Chain Management
+# <span class="sl" data-layer="strategy">Capability</span> Sustainable Supply Chain Management
 
-**Type:** Class  **Stereotype:** ArchiMate_Capability  
+**Type:** Class  **Stereotype:** ArchiMate_Capability  **StereotypeEx:** ArchiMate_Capability  **FQStereotype:** ArchiMate3::ArchiMate_Capability  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
@@ -54,4 +54,4 @@ Ensures responsible sourcing and addresses upstream environmental and social imp
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

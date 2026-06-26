@@ -8,8 +8,8 @@
 
 ## Elements
 
-- <span class="sl" data-layer="uml">UNC</span> [ESRS Sector Classification](ESRS Sector Classification.md)
+- <span class="sl" data-layer="uml">Uncategorized</span> [ESRS Sector Classification](ESRS Sector Classification.md)
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

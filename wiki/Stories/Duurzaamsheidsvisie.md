@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-id">Story</span> Duurzaamsheidsvisie
 
-**Type:** Interface  **Stereotype:** Story  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Interface  **Stereotype:** Story  **StereotypeEx:** Story  **FQStereotype:** EDGY::Story  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
@@ -24,4 +24,4 @@ Tijdens een personeelsbijeenkomst deelde de directeur een persoonlijk moment: zi
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

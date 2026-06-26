@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">NAV</span> 
+# <span class="sl" data-layer="uml">NavigationCell</span> 
 
-**Type:** Text  **Stereotype:** NavigationCell  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Text  **Stereotype:** NavigationCell  **StereotypeEx:** NavigationCell  **FQStereotype:** NavigationCell  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
@@ -14,4 +14,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

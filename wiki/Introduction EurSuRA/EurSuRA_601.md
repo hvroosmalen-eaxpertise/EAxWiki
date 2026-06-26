@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-ix">Organisation</span> EurSuRA
 
-**Type:** Activity  **Stereotype:** Organisation  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Activity  **Stereotype:** Organisation  **StereotypeEx:** Organisation  **FQStereotype:** EDGY::Organisation  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
@@ -42,4 +42,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:30*

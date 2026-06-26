@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">MAS</span> EmissionCalculationModel
+# <span class="sl" data-layer="uml">master-data</span> EmissionCalculationModel
 
-**Type:** Class  **Stereotype:** master-data  
+**Type:** Class  **Stereotype:** master-data  **StereotypeEx:** master-data  **FQStereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -66,4 +66,4 @@ EmissionCalculationModel is a master-data entity that defines the methodological
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

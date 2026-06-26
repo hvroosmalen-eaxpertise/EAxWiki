@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">SH</span> External Auditors
+# <span class="sl" data-layer="motivation">Stakeholder</span> External Auditors
 
-**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
+**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
@@ -40,4 +40,4 @@ Must approve sustainability reporting
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:30*

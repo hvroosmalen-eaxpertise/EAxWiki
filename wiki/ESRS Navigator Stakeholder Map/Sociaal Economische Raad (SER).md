@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">SH</span> Sociaal Economische Raad (SER)
+# <span class="sl" data-layer="motivation">Stakeholder</span> Sociaal Economische Raad (SER)
 
-**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
+**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
@@ -39,4 +39,4 @@ Provides information and webinars on CSRD/ESRS
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:30*

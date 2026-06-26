@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-pe">People</span> Non-listed SMEs
 
-**Type:** Actor  **Stereotype:** People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
 
 
@@ -56,4 +56,4 @@ Any non-listed companies that meet two of the following three criteria on any tw
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-ex">Journey</span> Green Customer Journey
 
-**Type:** Interface  **Stereotype:** Journey  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Interface  **Stereotype:** Journey  **StereotypeEx:** Journey  **FQStereotype:** EDGY::Journey  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
@@ -53,4 +53,4 @@ De duurzame ervaring van een klant door de klantreis heen.
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

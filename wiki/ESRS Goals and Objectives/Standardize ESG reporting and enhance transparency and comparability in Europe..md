@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">OC</span> Standardize ESG reporting and enhance transparency and comparability in Europe. 
+# <span class="sl" data-layer="edgy-lb">Outcome</span> Standardize ESG reporting and enhance transparency and comparability in Europe. 
 
-**Type:** Activity  **Stereotype:** Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Activity  **Stereotype:** Outcome  **StereotypeEx:** Outcome  **FQStereotype:** EDGY::Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
@@ -24,4 +24,4 @@ The ESRS align the EU reporting system to the International Sustainability Stand
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

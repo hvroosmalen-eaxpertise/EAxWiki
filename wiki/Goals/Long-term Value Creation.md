@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">GL</span> Long-term Value Creation
+# <span class="sl" data-layer="motivation">Goal</span> Long-term Value Creation
 
-**Type:** Class  **Stereotype:** ArchiMate_Goal  
+**Type:** Class  **Stereotype:** ArchiMate_Goal  **StereotypeEx:** ArchiMate_Goal  **FQStereotype:** ArchiMate3::ArchiMate_Goal  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
@@ -58,4 +58,4 @@ Integrates sustainability into value creation logic rather than treating it as a
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

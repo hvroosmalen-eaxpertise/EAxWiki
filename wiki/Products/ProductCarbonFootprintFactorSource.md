@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">WOR</span> ProductCarbonFootprintFactorSource
+# <span class="sl" data-layer="uml">work-product-component</span> ProductCarbonFootprintFactorSource
 
-**Type:** Class  **Stereotype:** work-product-component  
+**Type:** Class  **Stereotype:** work-product-component  **StereotypeEx:** work-product-component  **FQStereotype:** work-product-component  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -55,4 +55,4 @@ ProductCarbonFootprintFactorSource is an intersection entity that records which 
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

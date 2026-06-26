@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-ar">Process</span> Compile Information Sources
 
-**Type:** Interface  **Stereotype:** Process  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Interface  **Stereotype:** Process  **StereotypeEx:** Process  **FQStereotype:** EDGY::Process  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
@@ -55,4 +55,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

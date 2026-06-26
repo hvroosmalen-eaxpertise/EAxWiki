@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="business">BR</span> Sustainability Committee
+# <span class="sl" data-layer="business">BusinessRole</span> Sustainability Committee
 
-**Type:** Class  **Stereotype:** ArchiMate_BusinessRole  
+**Type:** Class  **Stereotype:** ArchiMate_BusinessRole  **StereotypeEx:** ArchiMate_BusinessRole  **FQStereotype:** ArchiMate3::ArchiMate_BusinessRole  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
@@ -39,4 +39,4 @@ Committee supporting sustainability initiatives
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

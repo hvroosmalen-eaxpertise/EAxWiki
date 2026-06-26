@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">MAS</span> OrganizationAssociation
+# <span class="sl" data-layer="uml">master-data</span> OrganizationAssociation
 
-**Type:** Class  **Stereotype:** master-data  
+**Type:** Class  **Stereotype:** master-data  **StereotypeEx:** master-data  **FQStereotype:** master-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -60,4 +60,4 @@ OrganizationAssociation represents a typed relationship between two organisation
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

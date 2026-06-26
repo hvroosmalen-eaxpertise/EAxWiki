@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="business">BO</span> ESRS S1 - Own Personnel
+# <span class="sl" data-layer="business">BusinessObject</span> ESRS S1 - Own Personnel
 
-**Type:** Class  **Stereotype:** ArchiMate_BusinessObject  
+**Type:** Class  **Stereotype:** ArchiMate_BusinessObject  **StereotypeEx:** ArchiMate_BusinessObject  **FQStereotype:** ArchiMate3::ArchiMate_BusinessObject  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
@@ -48,4 +48,4 @@ Own workforce standard
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:30*

@@ -8,12 +8,12 @@
 
 ## Elements
 
-- <span class="sl" data-layer="motivation">OC</span> [% Gerecycled materiaal = (gerecycled / totaal input) × 100](% Gerecycled materiaal = (gerecycled _ totaal input) × 100.md)
-- <span class="sl" data-layer="motivation">OC</span> [% Hernieuwbare Energie = (opgewekte hernieuwbare energie / totaal verbruik) × 100](% Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik) × 100.md)
-- <span class="sl" data-layer="motivation">OC</span> [Data-automatiseringsgraad = (# automatisch verzamelde datapunten / totaal) × 100%](Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal) × 100%.md)
-- <span class="sl" data-layer="motivation">OC</span> [Emissiereductie (%) = ((baseline – huidig) / baseline) × 100](Emissiereductie (%) = ((baseline – huidig) _ baseline) × 100.md)
-- <span class="sl" data-layer="motivation">OC</span> [Product Carbon Footprint = totale CO₂e / aantal eenheden geproduceerd](Product Carbon Footprint = totale CO₂e _ aantal eenheden geproduceerd.md)
-- <span class="sl" data-layer="motivation">OC</span> [Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e)](Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e).md)
+- <span class="sl" data-layer="edgy-lb">Outcome</span> [% Gerecycled materiaal = (gerecycled / totaal input) × 100](% Gerecycled materiaal = (gerecycled _ totaal input) × 100.md)
+- <span class="sl" data-layer="edgy-lb">Outcome</span> [% Hernieuwbare Energie = (opgewekte hernieuwbare energie / totaal verbruik) × 100](% Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik) × 100.md)
+- <span class="sl" data-layer="edgy-lb">Outcome</span> [Data-automatiseringsgraad = (# automatisch verzamelde datapunten / totaal) × 100%](Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal) × 100%.md)
+- <span class="sl" data-layer="edgy-lb">Outcome</span> [Emissiereductie (%) = ((baseline – huidig) / baseline) × 100](Emissiereductie (%) = ((baseline – huidig) _ baseline) × 100.md)
+- <span class="sl" data-layer="edgy-lb">Outcome</span> [Product Carbon Footprint = totale CO₂e / aantal eenheden geproduceerd](Product Carbon Footprint = totale CO₂e _ aantal eenheden geproduceerd.md)
+- <span class="sl" data-layer="edgy-lb">Outcome</span> [Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e)](Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e).md)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [ Levensduur product](Levensduur product.md)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [ Productievolumes / normaliserende operationele data](Productievolumes _ normaliserende operationele data.md)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [# bomen geplant / ha natuur hersteld](_ bomen geplant _ ha natuur hersteld.md)
@@ -83,4 +83,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

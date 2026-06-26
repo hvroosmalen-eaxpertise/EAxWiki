@@ -18,7 +18,7 @@
 - <span class="sl" data-layer="edgy-lb">Metric</span> [Energie (MWh/jaar)](../../Metrics/Energie (MWh_jaar).md)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [Energieverbruik en waterverbruik per eenheid](../../Metrics/Energieverbruik en waterverbruik per eenheid.md)
 - <span class="sl" data-layer="edgy-ar">Asset</span> [Environmental Impact Map](../../Asset/Environmental Impact Map.md)
-- <span class="sl" data-layer="strategy">CAP</span> [Green Capabilities](../../Capability/Green Capabilities.md)
+- <span class="sl" data-layer="edgy-ar">Capability</span> [Green Capabilities](../../Capability/Green Capabilities.md)
 - <span class="sl" data-layer="edgy-ex">Task</span> [Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen.](../../Task/Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen..md)
 - <span class="sl" data-layer="edgy-ex">Task</span> [Implementeer dashboards voor monitoring van CO₂, afval en energie.](../../Task/Implementeer dashboards voor monitoring van CO₂, afval en energie..md)
 - <span class="sl" data-layer="edgy-ex">Task</span> [Installeer zonnepanelen of stap over op groene energie en elektrische voertuigen.](../../Task/Installeer zonnepanelen of stap over op groene energie en elektrische voertuigen..md)
@@ -43,4 +43,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:44*
+*Generated: 2026-06-26 13:44:39*

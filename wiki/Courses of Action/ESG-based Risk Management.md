@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="strategy">COA</span> ESG-based Risk Management
+# <span class="sl" data-layer="strategy">CourseOfAction</span> ESG-based Risk Management
 
-**Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  
+**Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  **StereotypeEx:** ArchiMate_CourseOfAction  **FQStereotype:** ArchiMate3::ArchiMate_CourseOfAction  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
@@ -54,4 +54,4 @@ Identifies, assesses, and mitigates sustainability-related risks with the same r
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

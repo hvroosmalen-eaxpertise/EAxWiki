@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">DR</span> Regulatory Pressure
+# <span class="sl" data-layer="motivation">Driver</span> Regulatory Pressure
 
-**Type:** Class  **Stereotype:** ArchiMate_Driver  
+**Type:** Class  **Stereotype:** ArchiMate_Driver  **StereotypeEx:** ArchiMate_Driver  **FQStereotype:** ArchiMate3::ArchiMate_Driver  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
@@ -42,4 +42,4 @@ Forces organizations to comply with evolving environmental and social standards.
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

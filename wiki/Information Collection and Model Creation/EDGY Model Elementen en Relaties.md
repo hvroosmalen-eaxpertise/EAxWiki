@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-lb">Object</span> EDGY Model Elementen en Relaties
 
-**Type:** Class  **Stereotype:** Object  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Object  **StereotypeEx:** Object  **FQStereotype:** EDGY::Object  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
@@ -46,4 +46,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

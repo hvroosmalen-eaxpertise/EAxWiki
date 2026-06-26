@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="business">BO</span> ESRS S3 - Communities
+# <span class="sl" data-layer="business">BusinessObject</span> ESRS S3 - Communities
 
-**Type:** Class  **Stereotype:** ArchiMate_BusinessObject  
+**Type:** Class  **Stereotype:** ArchiMate_BusinessObject  **StereotypeEx:** ArchiMate_BusinessObject  **FQStereotype:** ArchiMate3::ArchiMate_BusinessObject  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
@@ -48,4 +48,4 @@ Affected communities standard
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:30*

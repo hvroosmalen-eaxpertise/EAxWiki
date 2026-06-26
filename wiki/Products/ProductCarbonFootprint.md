@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">WOR</span> ProductCarbonFootprint
+# <span class="sl" data-layer="uml">work-product-component</span> ProductCarbonFootprint
 
-**Type:** Class  **Stereotype:** work-product-component  
+**Type:** Class  **Stereotype:** work-product-component  **StereotypeEx:** work-product-component  **FQStereotype:** work-product-component  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -85,4 +85,4 @@ ProductCarbonFootprint is a work-product-component that records the quantified g
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-id">Purpose</span> SDG 15. Life on Land
 
-**Type:** Activity  **Stereotype:** Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Activity  **Stereotype:** Purpose  **StereotypeEx:** Purpose  **FQStereotype:** EDGY::Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-02
 
 
@@ -51,4 +51,4 @@ Protect, restore and promote sustainable use of terrestrial ecosystems.
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

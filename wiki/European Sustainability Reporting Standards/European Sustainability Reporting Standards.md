@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-id">Content</span> European Sustainability Reporting Standards
 
-**Type:** Class  **Stereotype:** Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2026-05-13
 
 
@@ -61,4 +61,4 @@ The European Sustainability Reporting Standards (ESRS) oblige all companies subj
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">OC</span> Allow investors to assess financial risks and opportunities 
+# <span class="sl" data-layer="edgy-lb">Outcome</span> Allow investors to assess financial risks and opportunities 
 
-**Type:** Activity  **Stereotype:** Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Activity  **Stereotype:** Outcome  **StereotypeEx:** Outcome  **FQStereotype:** EDGY::Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2026-04-29
 
 
@@ -24,4 +24,4 @@ Allow investors to assess financial risks and opportunities arising from climate
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">REF</span> OrganizationExternalIdentifierType
+# <span class="sl" data-layer="uml">reference-data</span> OrganizationExternalIdentifierType
 
-**Type:** Class  **Stereotype:** reference-data  
+**Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -48,4 +48,4 @@ OrganizationExternalIdentifierType provides the controlled vocabulary of externa
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

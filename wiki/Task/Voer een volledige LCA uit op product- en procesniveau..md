@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-ex">Task</span> Voer een volledige LCA uit op product- en procesniveau.
 
-**Type:** Activity  **Stereotype:** Task  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Activity  **Stereotype:** Task  **StereotypeEx:** Task  **FQStereotype:** EDGY::Task  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
@@ -46,4 +46,4 @@
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:30*

@@ -43,14 +43,14 @@
   - *Promote peaceful and inclusive societies, provide access to justice for all, and build effective, accountable institutions.*
 - <span class="sl" data-layer="edgy-id">Purpose</span> [SDG 17. Partnerships for the Goals](SDG 17. Partnerships for the Goals.md)
   - *Strengthen the means of implementation and revitalize the global partnership for sustainable development.*
-- <span class="sl" data-layer="uml">UNC</span> [](unnamed.md)
-- <span class="sl" data-layer="uml">NAV</span> [](unnamed_634.md)
-- <span class="sl" data-layer="uml">NAV</span> [](unnamed_635.md)
-- <span class="sl" data-layer="uml">NAV</span> [](unnamed_636.md)
-- <span class="sl" data-layer="uml">NAV</span> [](unnamed_637.md)
-- <span class="sl" data-layer="uml">NAV</span> [](unnamed_638.md)
-- <span class="sl" data-layer="uml">NAV</span> [](unnamed_640.md)
+- <span class="sl" data-layer="uml">Uncategorized</span> [](unnamed.md)
+- <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_634.md)
+- <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_635.md)
+- <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_636.md)
+- <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_637.md)
+- <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_638.md)
+- <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_640.md)
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

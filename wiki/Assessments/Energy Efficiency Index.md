@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">AS</span> Energy Efficiency Index
+# <span class="sl" data-layer="motivation">Assessment</span> Energy Efficiency Index
 
-**Type:** Class  **Stereotype:** ArchiMate_Assessment  
+**Type:** Class  **Stereotype:** ArchiMate_Assessment  **StereotypeEx:** ArchiMate_Assessment  **FQStereotype:** ArchiMate3::ArchiMate_Assessment  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
@@ -44,4 +44,4 @@ Links environmental performance to operational excellence and cost management.
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

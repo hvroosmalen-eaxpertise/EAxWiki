@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">REF</span> EmissionComponentCategoryGroup
+# <span class="sl" data-layer="uml">reference-data</span> EmissionComponentCategoryGroup
 
-**Type:** Class  **Stereotype:** reference-data  
+**Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -52,4 +52,4 @@ EmissionComponentCategoryGroup is a reference entity that provides a higher-leve
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

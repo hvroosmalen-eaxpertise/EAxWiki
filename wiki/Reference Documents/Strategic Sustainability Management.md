@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="strategy">RS</span> Strategic Sustainability Management
+# <span class="sl" data-layer="strategy">Resource</span> Strategic Sustainability Management
 
-**Type:** Class  **Stereotype:** ArchiMate_Resource  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** ArchiMate_Resource  **StereotypeEx:** ArchiMate_Resource  **FQStereotype:** ArchiMate3::ArchiMate_Resource  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-12
 
 
@@ -21,4 +21,4 @@ The book is enriched with practical tools, including checklists and insights int
 
 ---
 
-*Generated: 2026-06-26 13:25:35*
+*Generated: 2026-06-26 13:44:30*

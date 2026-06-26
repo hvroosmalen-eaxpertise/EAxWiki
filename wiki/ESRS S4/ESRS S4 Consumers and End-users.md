@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-id">Content</span> ESRS S4 Consumers and End-users
 
-**Type:** Class  **Stereotype:** Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2026-05-13
 
 
@@ -59,4 +59,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

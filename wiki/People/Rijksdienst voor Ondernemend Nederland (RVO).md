@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-pe">People</span> Rijksdienst voor Ondernemend Nederland (RVO)
 
-**Type:** Actor  **Stereotype:** People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
@@ -44,4 +44,4 @@ Dutch government agency - MVO-steunpunt provides CSR guidance
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

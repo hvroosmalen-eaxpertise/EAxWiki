@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="uml">WOR</span> EmissionStatementPerStandard
+# <span class="sl" data-layer="uml">work-product-component</span> EmissionStatementPerStandard
 
-**Type:** Class  **Stereotype:** work-product-component  
+**Type:** Class  **Stereotype:** work-product-component  **StereotypeEx:** work-product-component  **FQStereotype:** work-product-component  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
@@ -46,4 +46,4 @@ EmissionStatementPerStandard is an intersection entity that records the emission
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:31*

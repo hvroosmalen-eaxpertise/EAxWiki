@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">SH</span> Indigenous Peoples
+# <span class="sl" data-layer="motivation">Stakeholder</span> Indigenous Peoples
 
-**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
+**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
@@ -40,4 +40,4 @@ Indigenous communities where applicable
 
 ---
 
-*Generated: 2026-06-26 13:25:36*
+*Generated: 2026-06-26 13:44:30*

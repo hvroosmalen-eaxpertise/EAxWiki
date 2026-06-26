@@ -1,6 +1,6 @@
-# <span class="sl" data-layer="motivation">OC</span> Ensure that investors and other stakeholders have access to the information
+# <span class="sl" data-layer="edgy-lb">Outcome</span> Ensure that investors and other stakeholders have access to the information
 
-**Type:** Activity  **Stereotype:** Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Activity  **Stereotype:** Outcome  **StereotypeEx:** Outcome  **FQStereotype:** EDGY::Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2026-04-29
 
 
@@ -24,4 +24,4 @@ Ensure that investors and other stakeholders have access to the information they
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*

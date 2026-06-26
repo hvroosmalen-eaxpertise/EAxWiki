@@ -1,6 +1,6 @@
 # <span class="sl" data-layer="edgy-id">Content</span> Sustainability Objectives
 
-**Type:** Class  **Stereotype:** Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
@@ -55,4 +55,4 @@ Meetbare duurzaamheidsprestaties (CO₂-reductie, circulariteit, energieneutrali
 
 ---
 
-*Generated: 2026-06-26 13:25:34*
+*Generated: 2026-06-26 13:44:29*
