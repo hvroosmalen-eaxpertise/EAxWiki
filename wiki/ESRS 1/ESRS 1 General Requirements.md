@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">CON</span> ESRS 1 General Requirements
+# <span class="sl" data-layer="edgy-id">Content</span> ESRS 1 General Requirements
 
 **Type:** Class  **Stereotype:** Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-16
@@ -51,4 +51,4 @@ For more information: <a href="$inet://https://www.efrag.org/Assets/Download?ass
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

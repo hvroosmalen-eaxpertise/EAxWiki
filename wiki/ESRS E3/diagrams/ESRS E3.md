@@ -10,8 +10,8 @@ https://www
 
 ## Elements
 
-- <span class="sl" data-layer="uml">CON</span> [ESRS E3 Water and Marine Resources](../ESRS E3 Water and Marine Resources.md)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS E3 Water and Marine Resources](../ESRS E3 Water and Marine Resources.md)
 
 ---
 
-*Generated: 2026-06-26 09:44:54*
+*Generated: 2026-06-26 13:25:39*

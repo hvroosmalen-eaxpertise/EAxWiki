@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STA</span> Consumers and End Users (ESRS S4)
+# <span class="sl" data-layer="motivation">SH</span> Consumers and End Users (ESRS S4)
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -49,4 +49,4 @@ Final consumers - focus on food safety and product information
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

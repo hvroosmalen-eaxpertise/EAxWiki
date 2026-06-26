@@ -9,9 +9,9 @@
 
 ## Elements
 
-- <span class="sl" data-layer="uml">PEO</span> [Aligned Incentives](../Aligned Incentives.md)
-- <span class="sl" data-layer="uml">PEO</span> [Impact Academy](../Impact Academy.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Aligned Incentives](../Aligned Incentives.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Impact Academy](../Impact Academy.md)
 
 ---
 
-*Generated: 2026-06-26 09:44:59*
+*Generated: 2026-06-26 13:25:43*

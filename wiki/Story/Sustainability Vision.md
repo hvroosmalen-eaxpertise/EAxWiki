@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STO</span> Sustainability Vision
+# <span class="sl" data-layer="edgy-id">Story</span> Sustainability Vision
 
 **Type:** Interface  **Stereotype:** Story  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
@@ -55,4 +55,4 @@ Toekomstbeeld van de onderneming in 2030/2050 gericht op klimaatneutraliteit en 
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

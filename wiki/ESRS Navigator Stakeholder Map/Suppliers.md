@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STA</span> Suppliers
+# <span class="sl" data-layer="motivation">SH</span> Suppliers
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -55,4 +55,4 @@ All upstream suppliers in the value chain
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:35*

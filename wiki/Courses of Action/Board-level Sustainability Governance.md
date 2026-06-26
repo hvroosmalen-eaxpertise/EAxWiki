@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">COU</span> Board-level Sustainability Governance
+# <span class="sl" data-layer="strategy">COA</span> Board-level Sustainability Governance
 
 **Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -52,4 +52,4 @@ Ensures top-level commitment and strategic oversight of sustainability performan
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

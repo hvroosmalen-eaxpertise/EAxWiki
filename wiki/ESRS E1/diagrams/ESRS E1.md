@@ -10,8 +10,8 @@ https://www
 
 ## Elements
 
-- <span class="sl" data-layer="uml">CON</span> [ESRS E1 Climate Change](../ESRS E1 Climate Change.md)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS E1 Climate Change](../ESRS E1 Climate Change.md)
 
 ---
 
-*Generated: 2026-06-26 09:44:53*
+*Generated: 2026-06-26 13:25:39*

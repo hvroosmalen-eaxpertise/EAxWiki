@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STA</span> Certification Bodies
+# <span class="sl" data-layer="motivation">SH</span> Certification Bodies
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -40,4 +40,4 @@ ISO certifications and verification services
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

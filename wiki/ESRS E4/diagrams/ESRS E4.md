@@ -10,8 +10,8 @@ https://www
 
 ## Elements
 
-- <span class="sl" data-layer="uml">CON</span> [ESRS E4 Biodiversity and Ecosystems](../ESRS E4 Biodiversity and Ecosystems.md)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS E4 Biodiversity and Ecosystems](../ESRS E4 Biodiversity and Ecosystems.md)
 
 ---
 
-*Generated: 2026-06-26 09:44:54*
+*Generated: 2026-06-26 13:25:39*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PUR</span> SDG 11. Sustainable Cities and Communities
+# <span class="sl" data-layer="edgy-id">Purpose</span> SDG 11. Sustainable Cities and Communities
 
 **Type:** Activity  **Stereotype:** Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-02
@@ -26,4 +26,4 @@ Make cities and human settlements inclusive, safe, resilient and sustainable.
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

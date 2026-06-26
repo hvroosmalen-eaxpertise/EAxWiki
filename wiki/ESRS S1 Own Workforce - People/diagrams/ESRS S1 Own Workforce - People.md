@@ -10,15 +10,15 @@ https://www
 
 ## Elements
 
-- <span class="sl" data-layer="uml">PEO</span> [Company subject to CSRD](../../People/Company subject to CSRD.md)
-- <span class="sl" data-layer="uml">CON</span> [ESRS S1 Own Workforce](../../ESRS S1/ESRS S1 Own Workforce.md)
-- <span class="sl" data-layer="uml">PEO</span> [Own Personnel (ESRS S1)](../../People/Own Personnel (ESRS S1).md)
-- <span class="sl" data-layer="uml">PEO</span> [Permanent Employees](../../People/Permanent Employees.md)
-- <span class="sl" data-layer="uml">PEO</span> [Production Workers](../../People/Production Workers.md)
-- <span class="sl" data-layer="uml">PEO</span> [Seasonal Workers](../../People/Seasonal Workers.md)
-- <span class="sl" data-layer="uml">PEO</span> [Trade Unions](../../People/Trade Unions.md)
-- <span class="sl" data-layer="uml">PEO</span> [Works Council (Ondernemingsraad)](../../People/Works Council (Ondernemingsraad).md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Company subject to CSRD](../../People/Company subject to CSRD.md)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS S1 Own Workforce](../../ESRS S1/ESRS S1 Own Workforce.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Own Personnel (ESRS S1)](../../People/Own Personnel (ESRS S1).md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Permanent Employees](../../People/Permanent Employees.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Production Workers](../../People/Production Workers.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Seasonal Workers](../../People/Seasonal Workers.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Trade Unions](../../People/Trade Unions.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Works Council (Ondernemingsraad)](../../People/Works Council (Ondernemingsraad).md)
 
 ---
 
-*Generated: 2026-06-26 09:44:58*
+*Generated: 2026-06-26 13:25:42*

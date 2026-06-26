@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">OUT</span> Implement a double materiality approach
+# <span class="sl" data-layer="motivation">OC</span> Implement a double materiality approach
 
 **Type:** Activity  **Stereotype:** Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-16
@@ -24,4 +24,4 @@ Implement a double materiality approach, necessitating companies to report on bo
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

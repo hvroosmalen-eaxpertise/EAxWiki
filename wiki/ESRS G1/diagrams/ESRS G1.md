@@ -10,8 +10,8 @@ https://www
 
 ## Elements
 
-- <span class="sl" data-layer="uml">CON</span> [ESRS G1 Business Conduct](../ESRS G1 Business Conduct.md)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS G1 Business Conduct](../ESRS G1 Business Conduct.md)
 
 ---
 
-*Generated: 2026-06-26 09:44:55*
+*Generated: 2026-06-26 13:25:40*

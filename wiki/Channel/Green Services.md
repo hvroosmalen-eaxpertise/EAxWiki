@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">CHA</span> Green Services
+# <span class="sl" data-layer="edgy-ex">Channel</span> Green Services
 
 **Type:** Class  **Stereotype:** Channel  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
@@ -55,4 +55,4 @@ Duurzame producten en diensten.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

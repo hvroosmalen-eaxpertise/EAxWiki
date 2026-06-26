@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">ASS</span> Sustainable Data Assets
+# <span class="sl" data-layer="edgy-ar">Asset</span> Sustainable Data Assets
 
 **Type:** Class  **Stereotype:** Asset  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
@@ -53,4 +53,4 @@ Duurzaamheidsdata voor monitoring.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

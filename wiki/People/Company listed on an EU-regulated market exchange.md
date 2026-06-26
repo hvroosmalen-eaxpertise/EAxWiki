@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PEO</span> Company listed on an EU-regulated market exchange
+# <span class="sl" data-layer="edgy-pe">People</span> Company listed on an EU-regulated market exchange
 
 **Type:** Actor  **Stereotype:** People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
@@ -46,4 +46,4 @@ Any companies listed on an EU-regulated market exchange - except for listed ‘m
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

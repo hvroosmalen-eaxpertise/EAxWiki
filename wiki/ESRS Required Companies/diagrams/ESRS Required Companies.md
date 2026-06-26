@@ -9,12 +9,12 @@
 
 ## Elements
 
-- <span class="sl" data-layer="uml">PEO</span> [Company listed on an EU-regulated market exchange](../../People/Company listed on an EU-regulated market exchange.md)
-- <span class="sl" data-layer="uml">PEO</span> [Company subject to CSRD](../../People/Company subject to CSRD.md)
-- <span class="sl" data-layer="uml">PEO</span> [Listed SMEs](../../People/Listed SMEs.md)
-- <span class="sl" data-layer="uml">PEO</span> [Non-EU company](../../People/Non-EU company.md)
-- <span class="sl" data-layer="uml">PEO</span> [Non-listed SMEs](../../People/Non-listed SMEs.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Company listed on an EU-regulated market exchange](../../People/Company listed on an EU-regulated market exchange.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Company subject to CSRD](../../People/Company subject to CSRD.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Listed SMEs](../../People/Listed SMEs.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Non-EU company](../../People/Non-EU company.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Non-listed SMEs](../../People/Non-listed SMEs.md)
 
 ---
 
-*Generated: 2026-06-26 09:44:55*
+*Generated: 2026-06-26 13:25:40*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PRO</span> SDG Referentie Model
+# <span class="sl" data-layer="business">PRD</span> SDG Referentie Model
 
 **Type:** Activity  **Stereotype:** Product  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
@@ -45,4 +45,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

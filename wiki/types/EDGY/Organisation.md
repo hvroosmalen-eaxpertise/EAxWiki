@@ -2,8 +2,8 @@
 
 1 element(s):
 
-- <span class="sl" data-layer="uml">ORG</span> [EurSuRA](../../Introduction EurSuRA/EurSuRA.md)
+- <span class="sl" data-layer="edgy-ix">Organisation</span> [EurSuRA](../../Introduction EurSuRA/EurSuRA.md)
 
 ---
 
-*Generated: 2026-06-26 09:44:50*
+*Generated: 2026-06-26 13:25:37*

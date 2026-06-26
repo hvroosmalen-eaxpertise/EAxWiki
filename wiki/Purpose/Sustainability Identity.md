@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PUR</span> Sustainability Identity
+# <span class="sl" data-layer="edgy-id">Purpose</span> Sustainability Identity
 
 **Type:** Activity  **Stereotype:** Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
@@ -53,4 +53,4 @@ Hoe het bedrijf zichzelf positioneert rond duurzaamheid.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">OUT</span> Improved Long-term Profitability
+# <span class="sl" data-layer="motivation">OC</span> Improved Long-term Profitability
 
 **Type:** Class  **Stereotype:** ArchiMate_Outcome  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -54,4 +54,4 @@ Supports sustainable value creation and investor returns.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

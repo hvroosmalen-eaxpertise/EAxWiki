@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">MET</span> # SDGs met meetbare KPI’s
+# <span class="sl" data-layer="edgy-lb">Metric</span> # SDGs met meetbare KPI’s
 
 **Type:** Requirement  **Stereotype:** Metric  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
@@ -57,4 +57,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

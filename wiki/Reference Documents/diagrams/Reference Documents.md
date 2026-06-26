@@ -11,9 +11,9 @@ This book provides a practical guide to implementing sustainability strategies w
 
 ## Elements
 
-- <span class="sl" data-layer="uml">RES</span> [Road to Net Zero](../Road to Net Zero.md)
-- <span class="sl" data-layer="uml">RES</span> [Strategic Sustainability Management](../Strategic Sustainability Management.md)
+- <span class="sl" data-layer="strategy">RS</span> [Road to Net Zero](../Road to Net Zero.md)
+- <span class="sl" data-layer="strategy">RS</span> [Strategic Sustainability Management](../Strategic Sustainability Management.md)
 
 ---
 
-*Generated: 2026-06-26 09:45:03*
+*Generated: 2026-06-26 13:25:46*

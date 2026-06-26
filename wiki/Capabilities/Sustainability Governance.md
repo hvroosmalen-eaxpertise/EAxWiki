@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">CAP</span> Sustainability Governance
+# <span class="sl" data-layer="strategy">CAP</span> Sustainability Governance
 
 **Type:** Class  **Stereotype:** ArchiMate_Capability  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -48,4 +48,4 @@ Essential for strategic steering and ensuring sustainability is anchored at the 
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

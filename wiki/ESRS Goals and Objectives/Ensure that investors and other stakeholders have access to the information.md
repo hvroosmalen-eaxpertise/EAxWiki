@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">OUT</span> Ensure that investors and other stakeholders have access to the information
+# <span class="sl" data-layer="motivation">OC</span> Ensure that investors and other stakeholders have access to the information
 
 **Type:** Activity  **Stereotype:** Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2026-04-29
@@ -24,4 +24,4 @@ Ensure that investors and other stakeholders have access to the information they
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

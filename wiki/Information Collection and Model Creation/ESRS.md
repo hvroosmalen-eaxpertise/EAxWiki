@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">ASS</span> ESRS
+# <span class="sl" data-layer="edgy-ar">Asset</span> ESRS
 
 **Type:** Class  **Stereotype:** Asset  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
@@ -48,4 +48,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

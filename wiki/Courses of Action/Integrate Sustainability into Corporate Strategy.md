@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">COU</span> Integrate Sustainability into Corporate Strategy
+# <span class="sl" data-layer="strategy">COA</span> Integrate Sustainability into Corporate Strategy
 
 **Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -59,4 +59,4 @@ According to Bodenstein, this represents the fundamental strategic choice to mak
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

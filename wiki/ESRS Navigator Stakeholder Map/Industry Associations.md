@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STA</span> Industry Associations
+# <span class="sl" data-layer="motivation">SH</span> Industry Associations
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -48,4 +48,4 @@ Sector-specific organizations like FNLI
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

@@ -11,125 +11,125 @@ Stakeholder map based on the ESRS Navigator document for sustainability reportin
 
 ## Elements
 
-- <span class="sl" data-layer="uml">STA</span> [Large Companies (>250 employees)](Large Companies (_250 employees).md)
+- <span class="sl" data-layer="motivation">SH</span> [Large Companies (>250 employees)](Large Companies (_250 employees).md)
   - *Companies required to report under CSRD from 2025*
-- <span class="sl" data-layer="uml">STA</span> [FreshFood B.V.](FreshFood B.V..md)
+- <span class="sl" data-layer="motivation">SH</span> [FreshFood B.V.](FreshFood B.V..md)
   - *Example company: 450 employees, food production, two facilities in Netherlands*
-- <span class="sl" data-layer="uml">STA</span> [Listed SMEs](Listed SMEs.md)
+- <span class="sl" data-layer="motivation">SH</span> [Listed SMEs](Listed SMEs.md)
   - *Small and medium enterprises with stock exchange listing (future LSME standard)*
-- <span class="sl" data-layer="uml">STA</span> [Non-listed SMEs](Non-listed SMEs.md)
+- <span class="sl" data-layer="motivation">SH</span> [Non-listed SMEs](Non-listed SMEs.md)
   - *SMEs that voluntarily report (future VSME standard)*
-- <span class="sl" data-layer="uml">BUS</span> [Board of Directors (Directie)](Board of Directors (Directie).md)
+- <span class="sl" data-layer="business">BR</span> [Board of Directors (Directie)](Board of Directors (Directie).md)
   - *CEO, CFO, COO - Final responsibility for sustainability policy*
-- <span class="sl" data-layer="uml">BUS</span> [CEO](CEO.md)
+- <span class="sl" data-layer="business">BR</span> [CEO](CEO.md)
   - *Chief Executive Officer*
-- <span class="sl" data-layer="uml">BUS</span> [CFO](CFO.md)
+- <span class="sl" data-layer="business">BR</span> [CFO](CFO.md)
   - *Chief Financial Officer - Often responsible for compliance*
-- <span class="sl" data-layer="uml">BUS</span> [COO](COO.md)
+- <span class="sl" data-layer="business">BR</span> [COO](COO.md)
   - *Chief Operating Officer*
-- <span class="sl" data-layer="uml">BUS</span> [Supervisory Board (RvC)](Supervisory Board (RvC).md)
+- <span class="sl" data-layer="business">BR</span> [Supervisory Board (RvC)](Supervisory Board (RvC).md)
   - *Oversight and quarterly reporting on sustainability*
-- <span class="sl" data-layer="uml">BUS</span> [Sustainability Manager/Director](Sustainability Manager_Director.md)
+- <span class="sl" data-layer="business">BR</span> [Sustainability Manager/Director](Sustainability Manager_Director.md)
   - *Coordinates implementation of sustainability measures, reports to CEO*
-- <span class="sl" data-layer="uml">BUS</span> [Operations Manager](Operations Manager.md)
+- <span class="sl" data-layer="business">BR</span> [Operations Manager](Operations Manager.md)
   - *Responsible for water policy and production facilities*
-- <span class="sl" data-layer="uml">BUS</span> [Sustainability Committee](Sustainability Committee.md)
+- <span class="sl" data-layer="business">BR</span> [Sustainability Committee](Sustainability Committee.md)
   - *Committee supporting sustainability initiatives*
-- <span class="sl" data-layer="uml">BUS</span> [Works Council (Ondernemingsraad)](Works Council (Ondernemingsraad).md)
+- <span class="sl" data-layer="business">BR</span> [Works Council (Ondernemingsraad)](Works Council (Ondernemingsraad).md)
   - *Employee representation with quarterly management consultation*
-- <span class="sl" data-layer="uml">STA</span> [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md)
+- <span class="sl" data-layer="motivation">SH</span> [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md)
   - *All employees of the reporting organization*
-- <span class="sl" data-layer="uml">STA</span> [Permanent Employees](Permanent Employees.md)
+- <span class="sl" data-layer="motivation">SH</span> [Permanent Employees](Permanent Employees.md)
   - *Full-time permanent staff*
-- <span class="sl" data-layer="uml">STA</span> [Seasonal Workers](Seasonal Workers.md)
+- <span class="sl" data-layer="motivation">SH</span> [Seasonal Workers](Seasonal Workers.md)
   - *Temporary/seasonal employees*
-- <span class="sl" data-layer="uml">STA</span> [Production Workers](Production Workers.md)
+- <span class="sl" data-layer="motivation">SH</span> [Production Workers](Production Workers.md)
   - *Workers in production facilities*
-- <span class="sl" data-layer="uml">STA</span> [Suppliers](Suppliers.md)
+- <span class="sl" data-layer="motivation">SH</span> [Suppliers](Suppliers.md)
   - *All upstream suppliers in the value chain*
-- <span class="sl" data-layer="uml">STA</span> [Agricultural Suppliers](Agricultural Suppliers.md)
+- <span class="sl" data-layer="motivation">SH</span> [Agricultural Suppliers](Agricultural Suppliers.md)
   - *Tomato growers, grain producers, vegetable suppliers*
-- <span class="sl" data-layer="uml">STA</span> [Packaging Suppliers](Packaging Suppliers.md)
+- <span class="sl" data-layer="motivation">SH</span> [Packaging Suppliers](Packaging Suppliers.md)
   - *Providers of packaging materials*
-- <span class="sl" data-layer="uml">STA</span> [Transport Companies](Transport Companies.md)
+- <span class="sl" data-layer="motivation">SH</span> [Transport Companies](Transport Companies.md)
   - *Logistics and transportation providers*
-- <span class="sl" data-layer="uml">STA</span> [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md)
+- <span class="sl" data-layer="motivation">SH</span> [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md)
   - *Employees of suppliers and partners*
-- <span class="sl" data-layer="uml">STA</span> [Seasonal Agricultural Workers](Seasonal Agricultural Workers.md)
+- <span class="sl" data-layer="motivation">SH</span> [Seasonal Agricultural Workers](Seasonal Agricultural Workers.md)
   - *Seasonal workers at supplier farms*
-- <span class="sl" data-layer="uml">STA</span> [Customers](Customers.md)
+- <span class="sl" data-layer="motivation">SH</span> [Customers](Customers.md)
   - *Direct business customers*
-- <span class="sl" data-layer="uml">STA</span> [Supermarket Chains](Supermarket Chains.md)
+- <span class="sl" data-layer="motivation">SH</span> [Supermarket Chains](Supermarket Chains.md)
   - *Retail customers*
-- <span class="sl" data-layer="uml">STA</span> [Foodservice Companies](Foodservice Companies.md)
+- <span class="sl" data-layer="motivation">SH</span> [Foodservice Companies](Foodservice Companies.md)
   - *B2B foodservice customers*
-- <span class="sl" data-layer="uml">STA</span> [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md)
+- <span class="sl" data-layer="motivation">SH</span> [Consumers and End Users (ESRS S4)](Consumers and End Users (ESRS S4).md)
   - *Final consumers - focus on food safety and product information*
-- <span class="sl" data-layer="uml">STA</span> [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md)
+- <span class="sl" data-layer="motivation">SH</span> [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md)
   - *Local and regional communities impacted by operations*
-- <span class="sl" data-layer="uml">STA</span> [Local Communities](Local Communities.md)
+- <span class="sl" data-layer="motivation">SH</span> [Local Communities](Local Communities.md)
   - *Communities around production facilities and supplier regions*
-- <span class="sl" data-layer="uml">STA</span> [Indigenous Peoples](Indigenous Peoples.md)
+- <span class="sl" data-layer="motivation">SH</span> [Indigenous Peoples](Indigenous Peoples.md)
   - *Indigenous communities where applicable*
-- <span class="sl" data-layer="uml">STA</span> [Investors/Shareholders](Investors_Shareholders.md)
+- <span class="sl" data-layer="motivation">SH</span> [Investors/Shareholders](Investors_Shareholders.md)
   - *Users of sustainability statements for investment decisions*
-- <span class="sl" data-layer="uml">STA</span> [Banks and Financial Institutions](Banks and Financial Institutions.md)
+- <span class="sl" data-layer="motivation">SH</span> [Banks and Financial Institutions](Banks and Financial Institutions.md)
   - *Financial service providers and creditors*
-- <span class="sl" data-layer="uml">STA</span> [Credit Rating Agencies](Credit Rating Agencies.md)
+- <span class="sl" data-layer="motivation">SH</span> [Credit Rating Agencies](Credit Rating Agencies.md)
   - *Agencies assessing creditworthiness including ESG factors*
-- <span class="sl" data-layer="uml">STA</span> [European Commission](European Commission.md)
+- <span class="sl" data-layer="motivation">SH</span> [European Commission](European Commission.md)
   - *Issues CSRD directive and ESRS regulations*
-- <span class="sl" data-layer="uml">STA</span> [EFRAG](EFRAG.md)
+- <span class="sl" data-layer="motivation">SH</span> [EFRAG](EFRAG.md)
   - *European Financial Reporting Advisory Group - develops ESRS standards*
-- <span class="sl" data-layer="uml">STA</span> [Rijksdienst voor Ondernemen (RVO)](Rijksdienst voor Ondernemen (RVO).md)
+- <span class="sl" data-layer="motivation">SH</span> [Rijksdienst voor Ondernemen (RVO)](Rijksdienst voor Ondernemen (RVO).md)
   - *Dutch government agency - MVO-steunpunt provides CSR guidance*
-- <span class="sl" data-layer="uml">STA</span> [AFM](AFM.md)
+- <span class="sl" data-layer="motivation">SH</span> [AFM](AFM.md)
   - *Autoriteit Financiële Markten - Financial market supervision*
-- <span class="sl" data-layer="uml">STA</span> [Ministry of Economic Affairs](Ministry of Economic Affairs.md)
+- <span class="sl" data-layer="motivation">SH</span> [Ministry of Economic Affairs](Ministry of Economic Affairs.md)
   - *Commissioned the ESRS Navigator*
-- <span class="sl" data-layer="uml">STA</span> [Sociaal Economische Raad (SER)](Sociaal Economische Raad (SER).md)
+- <span class="sl" data-layer="motivation">SH</span> [Sociaal Economische Raad (SER)](Sociaal Economische Raad (SER).md)
   - *Provides information and webinars on CSRD/ESRS*
-- <span class="sl" data-layer="uml">STA</span> [External Auditors](External Auditors.md)
+- <span class="sl" data-layer="motivation">SH</span> [External Auditors](External Auditors.md)
   - *Must approve sustainability reporting*
-- <span class="sl" data-layer="uml">STA</span> [Certification Bodies](Certification Bodies.md)
+- <span class="sl" data-layer="motivation">SH</span> [Certification Bodies](Certification Bodies.md)
   - *ISO certifications and verification services*
-- <span class="sl" data-layer="uml">STA</span> [Industry Associations](Industry Associations.md)
+- <span class="sl" data-layer="motivation">SH</span> [Industry Associations](Industry Associations.md)
   - *Sector-specific organizations like FNLI*
-- <span class="sl" data-layer="uml">STA</span> [NGOs and Civil Society](NGOs and Civil Society.md)
+- <span class="sl" data-layer="motivation">SH</span> [NGOs and Civil Society](NGOs and Civil Society.md)
   - *Non-governmental organizations providing consultation*
-- <span class="sl" data-layer="uml">STA</span> [Trade Unions](Trade Unions.md)
+- <span class="sl" data-layer="motivation">SH</span> [Trade Unions](Trade Unions.md)
   - *Worker unions in production regions*
-- <span class="sl" data-layer="uml">STA</span> [Legal Design Agencies](Legal Design Agencies.md)
+- <span class="sl" data-layer="motivation">SH</span> [Legal Design Agencies](Legal Design Agencies.md)
   - *Agencies like Patroon Legal Design*
-- <span class="sl" data-layer="uml">STA</span> [Sustainability Consultants](Sustainability Consultants.md)
+- <span class="sl" data-layer="motivation">SH</span> [Sustainability Consultants](Sustainability Consultants.md)
   - *External advisors and food safety experts*
-- <span class="sl" data-layer="uml">STA</span> [Research and Analysis Firms](Research and Analysis Firms.md)
+- <span class="sl" data-layer="motivation">SH</span> [Research and Analysis Firms](Research and Analysis Firms.md)
   - *Verification bureaus for water, energy, CO2 data*
-- <span class="sl" data-layer="uml">STA</span> [Chamber of Commerce/Kamer van Koophandel](Chamber of Commerce_Kamer van Koophandel.md)
+- <span class="sl" data-layer="motivation">SH</span> [Chamber of Commerce/Kamer van Koophandel](Chamber of Commerce_Kamer van Koophandel.md)
   - *Chamber of Commerce - provides CSRD guidance*
-- <span class="sl" data-layer="uml">STA</span> [Training Providers](Training Providers.md)
+- <span class="sl" data-layer="motivation">SH</span> [Training Providers](Training Providers.md)
   - *Food safety, compliance, and sustainability training*
-- <span class="sl" data-layer="uml">BUS</span> [ESRS E1 - Climate](ESRS E1 - Climate.md)
+- <span class="sl" data-layer="business">BO</span> [ESRS E1 - Climate](ESRS E1 - Climate.md)
   - *Climate change reporting standard*
-- <span class="sl" data-layer="uml">BUS</span> [ESRS E2 - Pollution](ESRS E2 - Pollution.md)
+- <span class="sl" data-layer="business">BO</span> [ESRS E2 - Pollution](ESRS E2 - Pollution.md)
   - *Pollution reporting standard*
-- <span class="sl" data-layer="uml">BUS</span> [ESRS E3 - Water](ESRS E3 - Water.md)
+- <span class="sl" data-layer="business">BO</span> [ESRS E3 - Water](ESRS E3 - Water.md)
   - *Water and marine resources standard*
-- <span class="sl" data-layer="uml">BUS</span> [ESRS E4 - Biodiversity](ESRS E4 - Biodiversity.md)
+- <span class="sl" data-layer="business">BO</span> [ESRS E4 - Biodiversity](ESRS E4 - Biodiversity.md)
   - *Biodiversity and ecosystems standard*
-- <span class="sl" data-layer="uml">BUS</span> [ESRS E5 - Circular Economy](ESRS E5 - Circular Economy.md)
+- <span class="sl" data-layer="business">BO</span> [ESRS E5 - Circular Economy](ESRS E5 - Circular Economy.md)
   - *Material use and circular economy standard*
-- <span class="sl" data-layer="uml">BUS</span> [ESRS S1 - Own Personnel](ESRS S1 - Own Personnel.md)
+- <span class="sl" data-layer="business">BO</span> [ESRS S1 - Own Personnel](ESRS S1 - Own Personnel.md)
   - *Own workforce standard*
-- <span class="sl" data-layer="uml">BUS</span> [ESRS S2 - Value Chain Workers](ESRS S2 - Value Chain Workers.md)
+- <span class="sl" data-layer="business">BO</span> [ESRS S2 - Value Chain Workers](ESRS S2 - Value Chain Workers.md)
   - *Workers in the value chain standard*
-- <span class="sl" data-layer="uml">BUS</span> [ESRS S3 - Communities](ESRS S3 - Communities.md)
+- <span class="sl" data-layer="business">BO</span> [ESRS S3 - Communities](ESRS S3 - Communities.md)
   - *Affected communities standard*
-- <span class="sl" data-layer="uml">BUS</span> [ESRS S4 - Consumers](ESRS S4 - Consumers.md)
+- <span class="sl" data-layer="business">BO</span> [ESRS S4 - Consumers](ESRS S4 - Consumers.md)
   - *Consumers and end-users standard*
-- <span class="sl" data-layer="uml">BUS</span> [ESRS G1 - Business Conduct](ESRS G1 - Business Conduct.md)
+- <span class="sl" data-layer="business">BO</span> [ESRS G1 - Business Conduct](ESRS G1 - Business Conduct.md)
   - *Business conduct standard*
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

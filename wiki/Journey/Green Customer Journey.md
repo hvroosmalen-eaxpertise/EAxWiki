@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">JOU</span> Green Customer Journey
+# <span class="sl" data-layer="edgy-ex">Journey</span> Green Customer Journey
 
 **Type:** Interface  **Stereotype:** Journey  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
@@ -53,4 +53,4 @@ De duurzame ervaring van een klant door de klantreis heen.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">BUS</span> ESRS E5 - Circular Economy
+# <span class="sl" data-layer="business">BO</span> ESRS E5 - Circular Economy
 
 **Type:** Class  **Stereotype:** ArchiMate_BusinessObject  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -48,4 +48,4 @@ Material use and circular economy standard
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

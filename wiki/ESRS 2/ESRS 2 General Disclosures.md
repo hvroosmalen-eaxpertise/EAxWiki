@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">CON</span> ESRS 2 General Disclosures
+# <span class="sl" data-layer="edgy-id">Content</span> ESRS 2 General Disclosures
 
 **Type:** Class  **Stereotype:** Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-16
@@ -52,4 +52,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">DRI</span> Regulatory Pressure
+# <span class="sl" data-layer="motivation">DR</span> Regulatory Pressure
 
 **Type:** Class  **Stereotype:** ArchiMate_Driver  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -42,4 +42,4 @@ Forces organizations to comply with evolving environmental and social standards.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STA</span> Rijksdienst voor Ondernemen (RVO)
+# <span class="sl" data-layer="motivation">SH</span> Rijksdienst voor Ondernemen (RVO)
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -49,4 +49,4 @@ Dutch government agency - MVO-steunpunt provides CSR guidance
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

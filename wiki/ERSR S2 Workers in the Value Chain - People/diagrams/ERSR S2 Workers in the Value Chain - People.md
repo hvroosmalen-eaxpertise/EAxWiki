@@ -10,13 +10,13 @@ https://www
 
 ## Elements
 
-- <span class="sl" data-layer="uml">PEO</span> [Agricultural Suppliers](../../People/Agricultural Suppliers.md)
-- <span class="sl" data-layer="uml">CON</span> [ESRS S2 Workers in the Value Chain](../../ESRS S2/ESRS S2 Workers in the Value Chain.md)
-- <span class="sl" data-layer="uml">PEO</span> [Packaging Suppliers](../../People/Packaging Suppliers.md)
-- <span class="sl" data-layer="uml">PEO</span> [Seasonal Agricultural Workers](../../People/Seasonal Agricultural Workers.md)
-- <span class="sl" data-layer="uml">PEO</span> [Suppliers](../../People/Suppliers.md)
-- <span class="sl" data-layer="uml">PEO</span> [Workers in Value Chain (ESRS S2)](../../People/Workers in Value Chain (ESRS S2).md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Agricultural Suppliers](../../People/Agricultural Suppliers.md)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS S2 Workers in the Value Chain](../../ESRS S2/ESRS S2 Workers in the Value Chain.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Packaging Suppliers](../../People/Packaging Suppliers.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Seasonal Agricultural Workers](../../People/Seasonal Agricultural Workers.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Suppliers](../../People/Suppliers.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Workers in Value Chain (ESRS S2)](../../People/Workers in Value Chain (ESRS S2).md)
 
 ---
 
-*Generated: 2026-06-26 09:44:58*
+*Generated: 2026-06-26 13:25:43*

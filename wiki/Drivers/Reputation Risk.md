@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">DRI</span> Reputation Risk
+# <span class="sl" data-layer="motivation">DR</span> Reputation Risk
 
 **Type:** Class  **Stereotype:** ArchiMate_Driver  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -42,4 +42,4 @@ Negative sustainability incidents can significantly impact brand value and stake
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

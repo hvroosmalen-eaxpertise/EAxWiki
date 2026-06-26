@@ -10,8 +10,8 @@ https://www
 
 ## Elements
 
-- <span class="sl" data-layer="uml">CON</span> [ESRS S3 Affected Communities](../ESRS S3 Affected Communities.md)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS S3 Affected Communities](../ESRS S3 Affected Communities.md)
 
 ---
 
-*Generated: 2026-06-26 09:44:54*
+*Generated: 2026-06-26 13:25:40*

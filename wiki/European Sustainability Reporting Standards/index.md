@@ -12,7 +12,7 @@
 
 ## Elements
 
-- <span class="sl" data-layer="uml">CON</span> [European Sustainability Reporting Standards](European Sustainability Reporting Standards.md)
+- <span class="sl" data-layer="edgy-id">Content</span> [European Sustainability Reporting Standards](European Sustainability Reporting Standards.md)
   - *The European Sustainability Reporting Standards (ESRS) oblige all companies subject to the Corporate Sustainability Reporting Directive (CSRD) of the European Union to report both on their impacts on people and the environment, and on how social and environmental issues create financial risks and opportunities for the company.*
 
 ## Sub-packages
@@ -34,4 +34,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

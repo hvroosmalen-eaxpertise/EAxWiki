@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">COU</span> Implement ESG KPI Framework
+# <span class="sl" data-layer="strategy">COA</span> Implement ESG KPI Framework
 
 **Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -52,4 +52,4 @@ Operationalizes sustainability performance management through structured measure
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

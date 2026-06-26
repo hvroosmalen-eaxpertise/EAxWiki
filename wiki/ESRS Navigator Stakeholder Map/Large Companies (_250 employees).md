@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STA</span> Large Companies (>250 employees)
+# <span class="sl" data-layer="motivation">SH</span> Large Companies (>250 employees)
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -93,4 +93,4 @@ Companies required to report under CSRD from 2025
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:35*

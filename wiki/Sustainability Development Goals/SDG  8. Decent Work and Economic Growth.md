@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PUR</span> SDG  8. Decent Work and Economic Growth
+# <span class="sl" data-layer="edgy-id">Purpose</span> SDG  8. Decent Work and Economic Growth
 
 **Type:** Activity  **Stereotype:** Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-02
@@ -26,4 +26,4 @@ Promote sustained, inclusive and sustainable economic growth, full and productiv
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

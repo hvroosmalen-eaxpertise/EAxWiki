@@ -4,13 +4,13 @@
 
 ## Elements
 
-- <span class="sl" data-layer="uml">STO</span> [Environmental Impact Story](Environmental Impact Story.md)
+- <span class="sl" data-layer="edgy-id">Story</span> [Environmental Impact Story](Environmental Impact Story.md)
   - *Hoe het bedrijf haar milieu-impact begrijpt en communiceert. <ul> 	<li>Seventh Generation – https://www.seventhgeneration.com – Verbindt merkverhaal aan klimaatbewustzijn.</li> 	<li>Ben &amp; Jerry’s – https://www.benjerry.com – Communiceert actief hun klimaatimpact en acties.</li> </ul>*
-- <span class="sl" data-layer="uml">STO</span> [Sustainability Vision](Sustainability Vision.md)
+- <span class="sl" data-layer="edgy-id">Story</span> [Sustainability Vision](Sustainability Vision.md)
   - *Toekomstbeeld van de onderneming in 2030/2050 gericht op klimaatneutraliteit en circulariteit. <ul> 	<li>Seventh Generation – https://www.seventhgeneration.com – Vision gebaseerd op 7-generaties principe.</li> 	<li>&#216;rsted – https://orsted.com – Transformeerde van fossiel bedrijf naar wereldleider duurzame energie.</li> </ul>*
-- <span class="sl" data-layer="uml">STO</span> [Sustainable Work Practices](Sustainable Work Practices.md)
+- <span class="sl" data-layer="edgy-id">Story</span> [Sustainable Work Practices](Sustainable Work Practices.md)
   - *Gedragsroutines die duurzaam werken ondersteunen. <ul> 	<li>Patagonia Worn Wear – https://wornwear.patagonia.com – Reparatiecultuur vermindert verspilling.</li> 	<li>Ecover – https://www.ecover.com – Stimuleert medewerkers duurzame werkpraktijken.</li> </ul>*
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

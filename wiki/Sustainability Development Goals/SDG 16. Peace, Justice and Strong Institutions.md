@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PUR</span> SDG 16. Peace, Justice and Strong Institutions
+# <span class="sl" data-layer="edgy-id">Purpose</span> SDG 16. Peace, Justice and Strong Institutions
 
 **Type:** Activity  **Stereotype:** Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-02
@@ -25,4 +25,4 @@ Promote peaceful and inclusive societies, provide access to justice for all, and
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

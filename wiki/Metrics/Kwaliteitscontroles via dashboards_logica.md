@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">TAG</span> Kwaliteitscontroles via dashboards/logica
+# <span class="sl" data-layer="edgy-lb">Tag</span> Kwaliteitscontroles via dashboards/logica
 
 **Type:** Requirement  **Stereotype:** Tag  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
@@ -37,4 +37,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

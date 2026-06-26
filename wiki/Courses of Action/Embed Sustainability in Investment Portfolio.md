@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">COU</span> Embed Sustainability in Investment Portfolio
+# <span class="sl" data-layer="strategy">COA</span> Embed Sustainability in Investment Portfolio
 
 **Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -52,4 +52,4 @@ Ensures financial resources support strategic sustainability objectives.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

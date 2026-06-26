@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">CON</span> ESRS S2 Workers in the Value Chain
+# <span class="sl" data-layer="edgy-id">Content</span> ESRS S2 Workers in the Value Chain
 
 **Type:** Class  **Stereotype:** Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2026-05-13
@@ -61,4 +61,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

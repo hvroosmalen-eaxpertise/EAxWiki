@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STO</span> Milieau-impactrapport
+# <span class="sl" data-layer="edgy-id">Story</span> Milieau-impactrapport
 
 **Type:** Interface  **Stereotype:** Story  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
@@ -24,4 +24,4 @@ Een productiemanager van een textielfabriek wandelde op een ochtend langs de riv
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

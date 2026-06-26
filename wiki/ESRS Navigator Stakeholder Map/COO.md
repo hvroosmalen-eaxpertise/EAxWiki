@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">BUS</span> COO
+# <span class="sl" data-layer="business">BR</span> COO
 
 **Type:** Class  **Stereotype:** ArchiMate_BusinessRole  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -48,4 +48,4 @@ Chief Operating Officer
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:35*

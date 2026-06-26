@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">OUT</span> Improved ESG Rating
+# <span class="sl" data-layer="motivation">OC</span> Improved ESG Rating
 
 **Type:** Class  **Stereotype:** ArchiMate_Outcome  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -57,4 +57,4 @@ Facilitates access to sustainable finance and enhances corporate reputation.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

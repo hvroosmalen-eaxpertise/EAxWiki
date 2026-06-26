@@ -8,11 +8,11 @@
 
 ## Elements
 
-- <span class="sl" data-layer="uml">PEO</span> [Aligned Incentives](Aligned Incentives.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Aligned Incentives](Aligned Incentives.md)
   - *https://alignedincentives.com/our-story/*
-- <span class="sl" data-layer="uml">PEO</span> [Impact Academy](Impact Academy.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Impact Academy](Impact Academy.md)
   - *https://www.impactacademyproject.eu/ IMPACT ACADEMY has the main objective to offer a free, multilingual, high level education and training on the subject of the Impact Economy. It is addressed to university students who desire to acquire expertise about the impact skills needed to lead an entrepreneurship aware of its environmental and social responsibilities. *
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

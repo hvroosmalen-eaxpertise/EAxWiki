@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STO</span> Sidenote from Community Leads
+# <span class="sl" data-layer="edgy-id">Story</span> Sidenote from Community Leads
 
 **Type:** Interface  **Stereotype:** Story  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
@@ -37,4 +37,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

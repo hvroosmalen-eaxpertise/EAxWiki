@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">OUT</span> Reduced Environmental Impact
+# <span class="sl" data-layer="motivation">OC</span> Reduced Environmental Impact
 
 **Type:** Class  **Stereotype:** ArchiMate_Outcome  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -58,4 +58,4 @@ Contributes to corporate sustainability goals and regulatory compliance.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

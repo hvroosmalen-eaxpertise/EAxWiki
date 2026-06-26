@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">CHA</span> The Open Group Website
+# <span class="sl" data-layer="edgy-ex">Channel</span> The Open Group Website
 
 **Type:** Class  **Stereotype:** Channel  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
@@ -37,4 +37,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

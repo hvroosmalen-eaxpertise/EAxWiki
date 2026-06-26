@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">CON</span> SDG Mapping Content
+# <span class="sl" data-layer="edgy-id">Content</span> SDG Mapping Content
 
 **Type:** Class  **Stereotype:** Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
@@ -61,4 +61,4 @@ Documentatie die elementen koppelt aan SDG’s.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STA</span> Research and Analysis Firms
+# <span class="sl" data-layer="motivation">SH</span> Research and Analysis Firms
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -40,4 +40,4 @@ Verification bureaus for water, energy, CO2 data
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

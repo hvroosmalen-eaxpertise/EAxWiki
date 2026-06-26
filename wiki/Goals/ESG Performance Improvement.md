@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">GOA</span> ESG Performance Improvement
+# <span class="sl" data-layer="motivation">GL</span> ESG Performance Improvement
 
 **Type:** Class  **Stereotype:** ArchiMate_Goal  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -53,4 +53,4 @@ Achieve measurable progress in ESG ratings and benchmarks relevant to the indust
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

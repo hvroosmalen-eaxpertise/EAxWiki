@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">TAS</span> Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval.
+# <span class="sl" data-layer="edgy-ex">Task</span> Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval.
 
 **Type:** Activity  **Stereotype:** Task  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
@@ -46,4 +46,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

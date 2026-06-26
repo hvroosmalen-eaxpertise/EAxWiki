@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STA</span> Transport Companies
+# <span class="sl" data-layer="motivation">SH</span> Transport Companies
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -40,4 +40,4 @@ Logistics and transportation providers
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:35*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">CON</span> Sustainability Principles
+# <span class="sl" data-layer="edgy-id">Content</span> Sustainability Principles
 
 **Type:** Class  **Stereotype:** Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
@@ -55,4 +55,4 @@ Ontwerp- en besluitregels die duurzame keuzes sturen.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

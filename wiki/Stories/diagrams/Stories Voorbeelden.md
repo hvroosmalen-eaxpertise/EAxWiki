@@ -9,10 +9,10 @@
 
 ## Elements
 
-- <span class="sl" data-layer="uml">STO</span> [Duurzaamsheidsvisie](../Duurzaamsheidsvisie.md)
-- <span class="sl" data-layer="uml">STO</span> [Milieau-impactrapport](../Milieau-impactrapport.md)
-- <span class="sl" data-layer="uml">STO</span> [Reparatie](../Reparatie.md)
+- <span class="sl" data-layer="edgy-id">Story</span> [Duurzaamsheidsvisie](../Duurzaamsheidsvisie.md)
+- <span class="sl" data-layer="edgy-id">Story</span> [Milieau-impactrapport](../Milieau-impactrapport.md)
+- <span class="sl" data-layer="edgy-id">Story</span> [Reparatie](../Reparatie.md)
 
 ---
 
-*Generated: 2026-06-26 09:45:02*
+*Generated: 2026-06-26 13:25:45*

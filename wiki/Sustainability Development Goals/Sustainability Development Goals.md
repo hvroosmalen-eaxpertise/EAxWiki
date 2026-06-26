@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PUR</span> Sustainability Development Goals
+# <span class="sl" data-layer="edgy-id">Purpose</span> Sustainability Development Goals
 
 **Type:** Activity  **Stereotype:** Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
@@ -23,4 +23,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PUR</span> SDG  7. Affordable and Clean Energy
+# <span class="sl" data-layer="edgy-id">Purpose</span> SDG  7. Affordable and Clean Energy
 
 **Type:** Activity  **Stereotype:** Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-02
@@ -41,4 +41,4 @@ Ensure access to affordable, reliable, sustainable and modern energy for all.
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

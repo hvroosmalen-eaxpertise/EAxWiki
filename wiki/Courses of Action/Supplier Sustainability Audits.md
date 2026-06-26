@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">COU</span> Supplier Sustainability Audits
+# <span class="sl" data-layer="strategy">COA</span> Supplier Sustainability Audits
 
 **Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -53,4 +53,4 @@ Ensures supply chain transparency and responsible sourcing practices.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

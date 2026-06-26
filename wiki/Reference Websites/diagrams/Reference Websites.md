@@ -9,8 +9,8 @@
 
 ## Elements
 
-- <span class="sl" data-layer="uml">RES</span> [SDG Academy](../SDG Academy.md)
+- <span class="sl" data-layer="strategy">RS</span> [SDG Academy](../SDG Academy.md)
 
 ---
 
-*Generated: 2026-06-26 09:45:03*
+*Generated: 2026-06-26 13:25:46*

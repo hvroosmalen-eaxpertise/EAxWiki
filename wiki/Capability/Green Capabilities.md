@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">CAP</span> Green Capabilities
+# <span class="sl" data-layer="strategy">CAP</span> Green Capabilities
 
 **Type:** Activity  **Stereotype:** Capability  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
@@ -55,4 +55,4 @@ Vermogens die duurzaam opereren mogelijk maken.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

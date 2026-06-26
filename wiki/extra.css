@@ -52,19 +52,27 @@
   display: inline-block;
   padding: 0.1em 0.45em;
   border-radius: 3px;
-  font-size: 0.72em;
+  font-size: 0.7em;
   font-weight: 600;
   font-family: inherit;
   vertical-align: middle;
   margin-right: 0.3em;
 }
 
-.sl[data-layer="business"] { background: #005B8F; color: #fff; }
-.sl[data-layer="application"] { background: #007A3D; color: #fff; }
-.sl[data-layer="technology"] { background: #7B3F00; color: #fff; }
-.sl[data-layer="physical"] { background: #008080; color: #fff; }
-.sl[data-layer="motivation"] { background: #C62828; color: #fff; }
-.sl[data-layer="strategy"] { background: #6A1B9A; color: #fff; }
-.sl[data-layer="implementation"] { background: #BF360C; color: #fff; }
-.sl[data-layer="composite"] { background: #546E7A; color: #fff; }
+.sl[data-layer="business"] { background: #2E86C1; color: #fff; }
+.sl[data-layer="application"] { background: #27AE60; color: #fff; }
+.sl[data-layer="technology"] { background: #8E44AD; color: #fff; }
+.sl[data-layer="physical"] { background: #17A589; color: #fff; }
+.sl[data-layer="motivation"] { background: #C0392B; color: #fff; }
+.sl[data-layer="strategy"] { background: #D4AC0D; color: #fff; }
+.sl[data-layer="implementation"] { background: #E67E22; color: #fff; }
+.sl[data-layer="composite"] { background: #5D6D7E; color: #fff; }
 .sl[data-layer="uml"] { background: #7F8C8D; color: #fff; }
+
+/* EDGY facet colors — light backgrounds with dark text for readability */
+.sl[data-layer="edgy-id"] { background: #75F0A5; color: #1a3a2a; }
+.sl[data-layer="edgy-ar"] { background: #9DB9F6; color: #1a2a4a; }
+.sl[data-layer="edgy-ex"] { background: #F985B4; color: #4a1a2a; }
+.sl[data-layer="edgy-ix"] { background: #4ECDC4; color: #1a3a3a; }
+.sl[data-layer="edgy-pe"] { background: #FFD93D; color: #4a3a1a; }
+.sl[data-layer="edgy-lb"] { background: #E8E8E8; color: #555; }

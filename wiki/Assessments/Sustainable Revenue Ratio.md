@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">ASS</span> Sustainable Revenue Ratio
+# <span class="sl" data-layer="motivation">AS</span> Sustainable Revenue Ratio
 
 **Type:** Class  **Stereotype:** ArchiMate_Assessment  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -44,4 +44,4 @@ Indicates strategic alignment between commercial success and sustainability obje
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

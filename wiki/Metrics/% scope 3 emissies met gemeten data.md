@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">MET</span> % scope 3 emissies met gemeten data
+# <span class="sl" data-layer="edgy-lb">Metric</span> % scope 3 emissies met gemeten data
 
 **Type:** Requirement  **Stereotype:** Metric  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
@@ -53,4 +53,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

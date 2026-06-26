@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">BUS</span> Operations Manager
+# <span class="sl" data-layer="business">BR</span> Operations Manager
 
 **Type:** Class  **Stereotype:** ArchiMate_BusinessRole  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -39,4 +39,4 @@ Responsible for water policy and production facilities
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:35*

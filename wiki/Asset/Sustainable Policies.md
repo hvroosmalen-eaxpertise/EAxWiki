@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">ASS</span> Sustainable Policies
+# <span class="sl" data-layer="edgy-ar">Asset</span> Sustainable Policies
 
 **Type:** Class  **Stereotype:** Asset  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-15
@@ -55,4 +55,4 @@ Interne beleidslijnen rondom duurzaamheid.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

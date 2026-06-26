@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">OUT</span> Emissiereductie (%) = ((baseline – huidig) / baseline) × 100
+# <span class="sl" data-layer="motivation">OC</span> Emissiereductie (%) = ((baseline – huidig) / baseline) × 100
 
 **Type:** Activity  **Stereotype:** Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
@@ -45,4 +45,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STA</span> Customers
+# <span class="sl" data-layer="motivation">SH</span> Customers
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -53,4 +53,4 @@ Direct business customers
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:35*

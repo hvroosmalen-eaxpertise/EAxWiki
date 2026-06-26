@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PEO</span> Aligned Incentives
+# <span class="sl" data-layer="edgy-pe">People</span> Aligned Incentives
 
 **Type:** Actor  **Stereotype:** People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
@@ -16,4 +16,4 @@ https://alignedincentives.com/our-story/
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">ASS</span> CO₂ Reduction %
+# <span class="sl" data-layer="motivation">AS</span> CO₂ Reduction %
 
 **Type:** Class  **Stereotype:** ArchiMate_Assessment  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -44,4 +44,4 @@ Critical metric for climate change mitigation efforts and alignment with Paris A
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

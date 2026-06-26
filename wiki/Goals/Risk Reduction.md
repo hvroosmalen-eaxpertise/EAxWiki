@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">GOA</span> Risk Reduction
+# <span class="sl" data-layer="motivation">GL</span> Risk Reduction
 
 **Type:** Class  **Stereotype:** ArchiMate_Goal  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -61,4 +61,4 @@ Proactively manage sustainability-related risks before they materialize into cri
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

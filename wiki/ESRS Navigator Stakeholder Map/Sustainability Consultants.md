@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STA</span> Sustainability Consultants
+# <span class="sl" data-layer="motivation">SH</span> Sustainability Consultants
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -40,4 +40,4 @@ External advisors and food safety experts
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:36*

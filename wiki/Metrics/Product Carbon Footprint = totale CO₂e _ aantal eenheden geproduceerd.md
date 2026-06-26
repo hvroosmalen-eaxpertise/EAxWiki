@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">OUT</span> Product Carbon Footprint = totale CO₂e / aantal eenheden geproduceerd
+# <span class="sl" data-layer="motivation">OC</span> Product Carbon Footprint = totale CO₂e / aantal eenheden geproduceerd
 
 **Type:** Activity  **Stereotype:** Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
@@ -45,4 +45,4 @@
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">CAP</span> Risk and Compliance Management
+# <span class="sl" data-layer="strategy">CAP</span> Risk and Compliance Management
 
 **Type:** Class  **Stereotype:** ArchiMate_Capability  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -45,4 +45,4 @@ Prevents legal violations, reputational damage, and operational disruptions from
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

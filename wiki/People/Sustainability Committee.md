@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PEO</span> Sustainability Committee
+# <span class="sl" data-layer="edgy-pe">People</span> Sustainability Committee
 
 **Type:** Actor  **Stereotype:** People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
@@ -42,4 +42,4 @@ Committee supporting sustainability initiatives
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

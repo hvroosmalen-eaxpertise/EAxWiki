@@ -9,12 +9,12 @@
 
 ## Elements
 
-- <span class="sl" data-layer="uml">OUT</span> [Align sustainability reporting](../Align sustainability reporting.md)
-- <span class="sl" data-layer="uml">OUT</span> [Allow investors to assess financial risks and opportunities ](../Allow investors to assess financial risks and opportunities.md)
-- <span class="sl" data-layer="uml">OUT</span> [Ensure that investors and other stakeholders have access to the information](../Ensure that investors and other stakeholders have access to the information.md)
-- <span class="sl" data-layer="uml">OUT</span> [Implement a double materiality approach](../Implement a double materiality approach.md)
-- <span class="sl" data-layer="uml">OUT</span> [Standardize ESG reporting and enhance transparency and comparability in Europe. ](../Standardize ESG reporting and enhance transparency and comparability in Europe..md)
+- <span class="sl" data-layer="motivation">OC</span> [Align sustainability reporting](../Align sustainability reporting.md)
+- <span class="sl" data-layer="motivation">OC</span> [Allow investors to assess financial risks and opportunities ](../Allow investors to assess financial risks and opportunities.md)
+- <span class="sl" data-layer="motivation">OC</span> [Ensure that investors and other stakeholders have access to the information](../Ensure that investors and other stakeholders have access to the information.md)
+- <span class="sl" data-layer="motivation">OC</span> [Implement a double materiality approach](../Implement a double materiality approach.md)
+- <span class="sl" data-layer="motivation">OC</span> [Standardize ESG reporting and enhance transparency and comparability in Europe. ](../Standardize ESG reporting and enhance transparency and comparability in Europe..md)
 
 ---
 
-*Generated: 2026-06-26 09:44:55*
+*Generated: 2026-06-26 13:25:40*

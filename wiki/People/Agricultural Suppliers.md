@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PEO</span> Agricultural Suppliers
+# <span class="sl" data-layer="edgy-pe">People</span> Agricultural Suppliers
 
 **Type:** Actor  **Stereotype:** People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
@@ -43,4 +43,4 @@ Tomato growers, grain producers, vegetable suppliers
 
 ---
 
-*Generated: 2026-06-26 09:44:47*
+*Generated: 2026-06-26 13:25:34*

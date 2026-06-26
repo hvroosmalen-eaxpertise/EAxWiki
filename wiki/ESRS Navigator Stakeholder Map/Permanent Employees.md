@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STA</span> Permanent Employees
+# <span class="sl" data-layer="motivation">SH</span> Permanent Employees
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -40,4 +40,4 @@ Full-time permanent staff
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:35*

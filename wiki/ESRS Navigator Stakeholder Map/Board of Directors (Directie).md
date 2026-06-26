@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">BUS</span> Board of Directors (Directie)
+# <span class="sl" data-layer="business">BR</span> Board of Directors (Directie)
 
 **Type:** Class  **Stereotype:** ArchiMate_BusinessRole  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -43,4 +43,4 @@ CEO, CFO, COO - Final responsibility for sustainability policy
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:35*

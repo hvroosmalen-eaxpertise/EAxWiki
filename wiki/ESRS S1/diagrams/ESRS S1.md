@@ -10,8 +10,8 @@ https://www
 
 ## Elements
 
-- <span class="sl" data-layer="uml">CON</span> [ESRS S1 Own Workforce](../ESRS S1 Own Workforce.md)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS S1 Own Workforce](../ESRS S1 Own Workforce.md)
 
 ---
 
-*Generated: 2026-06-26 09:44:54*
+*Generated: 2026-06-26 13:25:39*

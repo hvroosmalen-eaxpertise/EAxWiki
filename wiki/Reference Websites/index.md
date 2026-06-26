@@ -8,9 +8,9 @@
 
 ## Elements
 
-- <span class="sl" data-layer="uml">RES</span> [SDG Academy](SDG Academy.md)
+- <span class="sl" data-layer="strategy">RS</span> [SDG Academy](SDG Academy.md)
   - *SDG Academy provides a number of applicable resources and provides free training material, see https://sdgacademy.org/ for more information.*
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:35*

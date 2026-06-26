@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">PRO</span> Lifecycle & Circularity Model
+# <span class="sl" data-layer="edgy-ar">Process</span> Lifecycle & Circularity Model
 
 **Type:** Interface  **Stereotype:** Process  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
@@ -53,4 +53,4 @@ Beschrijving van productlevenscyclus.
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:34*

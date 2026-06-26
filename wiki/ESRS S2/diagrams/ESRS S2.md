@@ -10,8 +10,8 @@ https://www
 
 ## Elements
 
-- <span class="sl" data-layer="uml">CON</span> [ESRS S2 Workers in the Value Chain](../ESRS S2 Workers in the Value Chain.md)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS S2 Workers in the Value Chain](../ESRS S2 Workers in the Value Chain.md)
 
 ---
 
-*Generated: 2026-06-26 09:44:54*
+*Generated: 2026-06-26 13:25:40*

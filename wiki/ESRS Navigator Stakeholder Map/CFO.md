@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">BUS</span> CFO
+# <span class="sl" data-layer="business">BR</span> CFO
 
 **Type:** Class  **Stereotype:** ArchiMate_BusinessRole  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
@@ -48,4 +48,4 @@ Chief Financial Officer - Often responsible for compliance
 
 ---
 
-*Generated: 2026-06-26 09:44:49*
+*Generated: 2026-06-26 13:25:35*

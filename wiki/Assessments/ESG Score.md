@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">ASS</span> ESG Score
+# <span class="sl" data-layer="motivation">AS</span> ESG Score
 
 **Type:** Class  **Stereotype:** ArchiMate_Assessment  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
@@ -44,4 +44,4 @@ Provides aggregate view of sustainability performance for management and investo
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*

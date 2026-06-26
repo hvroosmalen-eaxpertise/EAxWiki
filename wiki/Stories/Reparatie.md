@@ -1,4 +1,4 @@
-# <span class="sl" data-layer="uml">STO</span> Reparatie
+# <span class="sl" data-layer="edgy-id">Story</span> Reparatie
 
 **Type:** Interface  **Stereotype:** Story  **Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
@@ -24,4 +24,4 @@ In een ontwerpafdeling van een technologiebedrijf viel het een medewerker op dat
 
 ---
 
-*Generated: 2026-06-26 09:44:48*
+*Generated: 2026-06-26 13:25:35*
