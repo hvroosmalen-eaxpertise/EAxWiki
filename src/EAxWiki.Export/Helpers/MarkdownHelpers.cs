@@ -229,30 +229,30 @@ internal static class MarkdownHelpers
             : !string.IsNullOrWhiteSpace(element.StereotypeEx) ? element.StereotypeEx
             : element.Stereotype;
 
-        // Direct lookup on the raw stereotype string.
-        if (!string.IsNullOrWhiteSpace(stereotype) && ArchiMateMap.TryGetValue(stereotype, out var entry))
-            return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{entry.Code}</span>";
-
-        // Parse to handle versioned prefixes (ArchiMate3::BusinessActor → ArchiMate_BusinessActor).
         var (language, type) = ParseStereotype(stereotype);
 
-        var archiKey = language.StartsWith("ArchiMate", StringComparison.OrdinalIgnoreCase)
-            ? $"ArchiMate_{type}"
-            : null;
-        if (archiKey != null && ArchiMateMap.TryGetValue(archiKey, out entry))
-            return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{entry.Code}</span>";
+        // 1. Direct lookup on raw stereotype (handles "ArchiMate_BusinessActor" exactly).
+        if (!string.IsNullOrWhiteSpace(stereotype) && ArchiMateMap.TryGetValue(stereotype, out var entry))
+            return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{type}</span>";
 
-        // Try bare type name (cases where EA stores only "BusinessActor" without ArchiMate_ prefix).
-        if (!string.IsNullOrWhiteSpace(type) && ArchiMateTypeMap.TryGetValue(type, out entry))
-            return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{entry.Code}</span>";
-
-        // EDGY types.
+        // 2. EDGY — check before ArchiMateTypeMap to avoid collisions (e.g. "Capability", "Outcome").
         if (string.Equals(language, "EDGY", StringComparison.OrdinalIgnoreCase) &&
             EdgyMap.TryGetValue(type, out var edgyEntry))
-            return $"<span class=\"sl\" data-layer=\"{edgyEntry.Layer}\">{edgyEntry.Code}</span>";
+            return $"<span class=\"sl\" data-layer=\"{edgyEntry.Layer}\">{type}</span>";
 
-        // Fallback: abbreviated type in gray.
-        var code = type.Length <= 3 ? type.ToUpperInvariant() : type[..3].ToUpperInvariant();
-        return $"<span class=\"sl\" data-layer=\"uml\">{code}</span>";
+        // 3. Normalized ArchiMate key (ArchiMate3::BusinessActor → ArchiMate_BusinessActor).
+        if (language.StartsWith("ArchiMate", StringComparison.OrdinalIgnoreCase))
+        {
+            var archiKey = $"ArchiMate_{type}";
+            if (ArchiMateMap.TryGetValue(archiKey, out entry))
+                return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{type}</span>";
+        }
+
+        // 4. Bare type name in ArchiMateTypeMap (e.g. "BusinessActor" without prefix).
+        if (!string.IsNullOrWhiteSpace(type) && ArchiMateTypeMap.TryGetValue(type, out entry))
+            return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{type}</span>";
+
+        // Fallback: full type name in gray.
+        return $"<span class=\"sl\" data-layer=\"uml\">{type}</span>";
     }
 }

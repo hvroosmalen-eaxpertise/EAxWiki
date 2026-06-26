@@ -47,7 +47,10 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         {
             $"# {MarkdownHelpers.GetStereotypeLabel(element)} {element.Name}",
             string.Empty,
-            $"**Type:** {element.Type}  **Stereotype:** {element.Stereotype}  " +
+            $"**Type:** {element.Type}  " +
+            $"**Stereotype:** {MarkdownHelpers.EscapeCell(element.Stereotype)}  " +
+            (string.IsNullOrWhiteSpace(element.StereotypeEx) ? "" : $"**StereotypeEx:** {MarkdownHelpers.EscapeCell(element.StereotypeEx)}  ") +
+            (string.IsNullOrWhiteSpace(element.FQStereotype) ? "" : $"**FQStereotype:** {MarkdownHelpers.EscapeCell(element.FQStereotype)}  ") +
             (string.IsNullOrEmpty(element.Status) ? "" : $"**Status:** <span class=\"status-badge status-{element.Status.ToLowerInvariant()}\">{MarkdownHelpers.EscapeCell(element.Status)}</span>  "),
             $"**Created:** {createdStr}  **Modified:** {modifiedStr}",
             string.Empty,
