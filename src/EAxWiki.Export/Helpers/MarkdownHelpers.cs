@@ -77,6 +77,35 @@ internal static class MarkdownHelpers
         ["ArchiMate_OrJunction"] = ("OR", "composite"),
     };
 
+    // EDGY element types → (short code, layer) mapping.
+    private static readonly Dictionary<string, (string Code, string Layer)> EdgyMap = new(StringComparer.OrdinalIgnoreCase)
+    {
+        // Identity facet (green)
+        ["Purpose"] = ("PU", "edgy-id"),
+        ["Story"] = ("ST", "edgy-id"),
+        ["Content"] = ("CO", "edgy-id"),
+        // Architecture facet (blue)
+        ["Capability"] = ("CA", "edgy-ar"),
+        ["Process"] = ("PR", "edgy-ar"),
+        ["Asset"] = ("AS", "edgy-ar"),
+        // Experience facet (pink)
+        ["Task"] = ("TA", "edgy-ex"),
+        ["Journey"] = ("JO", "edgy-ex"),
+        ["Channel"] = ("CH", "edgy-ex"),
+        // Intersection elements
+        ["Organisation"] = ("OR", "edgy-ix"),
+        ["Product"] = ("PD", "edgy-ix"),
+        ["Brand"] = ("BR", "edgy-ix"),
+        // Base element
+        ["People"] = ("PE", "edgy-pe"),
+        // Labels / utilities
+        ["Metric"] = ("ME", "edgy-lb"),
+        ["Tag"] = ("TG", "edgy-lb"),
+        ["Object"] = ("OB", "edgy-lb"),
+        ["Outcome"] = ("OU", "edgy-lb"),
+        ["Activity"] = ("AC", "edgy-lb"),
+    };
+
     // Replaces the cache atomically so concurrent readers always see a valid dictionary.
     internal static void ClearCache() =>
         Interlocked.Exchange(ref _sanitizeCache!, new ConcurrentDictionary<string, string>());
@@ -199,8 +228,13 @@ internal static class MarkdownHelpers
         if (!string.IsNullOrWhiteSpace(stereotype) && ArchiMateMap.TryGetValue(stereotype, out var entry))
             return $"<span class=\"sl\" data-layer=\"{entry.Layer}\">{entry.Code}</span>";
 
-        // Non-ArchiMate: use parsed type abbreviation.
-        var (_, type) = ParseStereotype(stereotype);
+        // EDGY types: parse the type name after the language prefix.
+        var (language, type) = ParseStereotype(stereotype);
+        if (string.Equals(language, "EDGY", StringComparison.OrdinalIgnoreCase) &&
+            EdgyMap.TryGetValue(type, out var edgyEntry))
+            return $"<span class=\"sl\" data-layer=\"{edgyEntry.Layer}\">{edgyEntry.Code}</span>";
+
+        // Fallback: abbreviated type in gray.
         var code = type.Length <= 3 ? type.ToUpperInvariant() : type[..3].ToUpperInvariant();
         return $"<span class=\"sl\" data-layer=\"uml\">{code}</span>";
     }

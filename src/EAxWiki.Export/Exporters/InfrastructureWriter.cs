@@ -217,6 +217,14 @@ internal class InfrastructureWriter(IOutputWriter writer)
 .sl[data-layer="implementation"] { background: #BF360C; color: #fff; }
 .sl[data-layer="composite"] { background: #546E7A; color: #fff; }
 .sl[data-layer="uml"] { background: #7F8C8D; color: #fff; }
+
+/* EDGY facet colors — light backgrounds with dark text for readability */
+.sl[data-layer="edgy-id"] { background: #75F0A5; color: #1a3a2a; }
+.sl[data-layer="edgy-ar"] { background: #9DB9F6; color: #1a2a4a; }
+.sl[data-layer="edgy-ex"] { background: #F985B4; color: #4a1a2a; }
+.sl[data-layer="edgy-ix"] { background: #4ECDC4; color: #1a3a3a; }
+.sl[data-layer="edgy-pe"] { background: #FFD93D; color: #4a3a1a; }
+.sl[data-layer="edgy-lb"] { background: #E8E8E8; color: #555; }
 """;
         await writer.WriteFileAsync(Path.Combine(outputDir, "extra.css"), content);
     }
