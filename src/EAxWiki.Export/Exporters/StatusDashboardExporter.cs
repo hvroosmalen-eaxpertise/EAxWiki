@@ -124,7 +124,8 @@ internal class StatusDashboardExporter(IOutputWriter writer)
     private static string CreateElementLink(Core.Models.EaElement element, string pkgDir, string fromDir)
     {
         var elemName = MarkdownHelpers.SanitizeName(element.Name);
-        return Path.GetRelativePath(fromDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
+        var link = Path.GetRelativePath(fromDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
+        return link.EndsWith(".md", StringComparison.OrdinalIgnoreCase) ? link[..^3] : link;
     }
 
     private static string SanitizeForAnchor(string raw)
