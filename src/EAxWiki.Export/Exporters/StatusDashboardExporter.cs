@@ -188,8 +188,10 @@ internal class StatusDashboardExporter(IOutputWriter writer)
             lines.Add($"<details class=\"status-details\" id=\"{anchor}\">");
             lines.Add($"  <summary>{MarkdownHelpers.EscapeCell(pkgName)} &mdash; {MarkdownHelpers.EscapeCell(drillStatus)} ({elements.Count})</summary>");
             lines.Add(string.Empty);
+            lines.Add("<ul>");
             foreach (var (elemName, elemLink) in elements.OrderBy(e => e.Name, StringComparer.OrdinalIgnoreCase))
-                lines.Add($"- [{MarkdownHelpers.EscapeCell(elemName)}]({elemLink})");
+                lines.Add($"  <li><a href=\"{elemLink}\">{MarkdownHelpers.EscapeCell(elemName)}</a> <span class=\"status-badge status-{css}\">{MarkdownHelpers.EscapeCell(drillStatus)}</span></li>");
+            lines.Add("</ul>");
             lines.Add($"</details>");
         }
         lines.Add(string.Empty);
@@ -247,8 +249,10 @@ internal class StatusDashboardExporter(IOutputWriter writer)
             lines.Add($"<details class=\"status-details\" id=\"{anchor}\">");
             lines.Add($"  <summary>{MarkdownHelpers.EscapeCell(typeName)} &mdash; {MarkdownHelpers.EscapeCell(drillStatus)} ({elements.Count})</summary>");
             lines.Add(string.Empty);
+            lines.Add("<ul>");
             foreach (var (elemName, elemLink) in elements.OrderBy(e => e.Name, StringComparer.OrdinalIgnoreCase))
-                lines.Add($"- [{MarkdownHelpers.EscapeCell(elemName)}]({elemLink})");
+                lines.Add($"  <li><a href=\"{elemLink}\">{MarkdownHelpers.EscapeCell(elemName)}</a> <span class=\"status-badge status-{css}\">{MarkdownHelpers.EscapeCell(drillStatus)}</span></li>");
+            lines.Add("</ul>");
             lines.Add($"</details>");
         }
         lines.Add(string.Empty);
