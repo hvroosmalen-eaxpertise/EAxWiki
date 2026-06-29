@@ -162,7 +162,7 @@ internal class StatusDashboardExporter(IOutputWriter writer)
                 var c = row.Counts.TryGetValue(s, out var v) ? v : 0;
                 if (c <= 0) return " — ";
                 var anchor = SanitizeForAnchor($"pkg-{row.Name}-{s}");
-                return $" [{c}]({anchor}) ";
+                return $" <a href=\"#{anchor}\">{c}</a> ";
             });
             var total = row.Counts.Values.Sum();
             lines.Add($"| {nameCell} |{string.Join("|", cells)}| **{total}** |");
@@ -221,7 +221,7 @@ internal class StatusDashboardExporter(IOutputWriter writer)
                 var c = row.Counts.TryGetValue(s, out var v) ? v : 0;
                 if (c <= 0) return " — ";
                 var anchor = SanitizeForAnchor($"type-{row.Name}-{s}");
-                return $" [{c}]({anchor}) ";
+                return $" <a href=\"#{anchor}\">{c}</a> ";
             });
             var total = row.Counts.Values.Sum();
             lines.Add($"| {MarkdownHelpers.EscapeCell(row.Name)} |{string.Join("|", cells)}| **{total}** |");
