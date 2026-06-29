@@ -17,7 +17,7 @@ The exporter is a .NET 10 console application that connects to a Sparx Enterpris
 What the exporter produces:
 - One Markdown page per element, organised into the same package hierarchy as the EA model
 - PNG diagram images with a linked Markdown page per diagram (clickable for zoom via glightbox)
-- Five cross-cutting index views: **Structure**, **Types**, **Glossary**, **Diagrams**, **Recent Changes**
+- Six cross-cutting index views: **Structure**, **Types**, **Glossary**, **Diagrams**, **Recent Changes**, **Status Dashboard**
 - A `model.json` file with the full model serialised as JSON (opt-in via `--json` / `-j`)
 - An `extra.css` and `.pages` navigation file for MkDocs
 
@@ -259,20 +259,21 @@ By default the exporter skips elements and diagrams whose output file is newer t
 
 ## Wiki navigation
 
-The wiki has five navigation views:
+The wiki has six navigation views:
 
 - **Structure** — a top-down tree of packages and their elements, following the EA model hierarchy
 - **Types** — elements grouped by modelling language and type (e.g. ArchiMate3 BusinessRole, UML Metric)
 - **Diagrams** — an alphabetically sorted global index of all diagrams with modified date and description
 - **Glossary** — terms extracted from "Definition"/"Glossary" tagged values and first sentences from element notes
 - **Recent** — top 50 most recently modified elements and diagrams, sorted by date descending
+- **Status Dashboard** — a dashboard at `/status/` with summary bar charts, a **By Package** table with collapsible drill-down (clickable element links with status badges), and a **By Type** breakdown section
 
 ## Element page features
 
 - **Breadcrumb** — hierarchical path from root to the element's package
 - **Dates** — shows CreatedDate and ModifiedDate beneath the breadcrumb
 - **Stereotype labels** — each element heading is prefixed with a coloured label showing the full stereotype type name. ArchiMate elements use layer colours (Business=Yellow, Application=Blue, Technology=Green, Motivation=Purple, Strategy=Brown, Implementation=Pink). EDGY elements use facet colours. UML elements display in gray.
-- **Status** — displays element Status (Proposed, Approved, Implemented, etc.) inline with Type and Stereotype
+- **Status badges** — element Status (Proposed, Approved, Implemented, etc.) shown as a coloured badge next to the element title; used throughout element pages, type indices, and the Status Dashboard
 - **Relationships** — outgoing connectors with linked target element names
 - **Referenced By** — incoming connectors from other elements with links
 - **Appears on Diagrams** — list of diagrams containing this element with links
