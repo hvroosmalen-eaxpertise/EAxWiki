@@ -48,6 +48,49 @@
 .status-mandatory { background: #f8d7da; color: #721c24; }
 .status-invalid { background: #e2e3e5; color: #383d41; }
 
+.status-bar-container {
+  margin: 0.25em 0;
+}
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.15em 0.6em;
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  border-radius: 4px;
+  min-width: fit-content;
+  height: 1.6em;
+  box-sizing: border-box;
+}
+
+details.status-details {
+  margin: 0.3em 0;
+  padding: 0.15em 0.6em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+}
+details.status-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.15em 0;
+}
+details.status-details[open] summary {
+  margin-bottom: 0.15em;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: 0.3em;
+}
+details.status-details ul {
+  margin: 0.25em 0;
+  padding-left: 1.5em;
+}
+details.status-details li {
+  margin: 0.1em 0;
+}
+
 .sl {
   display: inline-block;
   padding: 0.1em 0.45em;

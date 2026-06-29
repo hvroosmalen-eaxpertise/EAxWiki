@@ -78,4 +78,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-26 17:14:26*
+*Generated: 2026-06-29 13:30:16*
