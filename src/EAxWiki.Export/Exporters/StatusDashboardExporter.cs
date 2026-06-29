@@ -125,7 +125,7 @@ internal class StatusDashboardExporter(IOutputWriter writer)
     {
         var elemName = MarkdownHelpers.SanitizeName(element.Name);
         var link = Path.GetRelativePath(fromDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
-        return link.EndsWith(".md", StringComparison.OrdinalIgnoreCase) ? link[..^3] : link;
+        return link.EndsWith(".md", StringComparison.OrdinalIgnoreCase) ? link[..^3] + ".html" : link;
     }
 
     private static string SanitizeForAnchor(string raw)
