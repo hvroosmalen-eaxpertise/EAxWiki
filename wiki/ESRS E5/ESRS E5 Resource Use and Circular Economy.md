@@ -48,13 +48,15 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ### Appears on Diagrams
 
-- [ESRS](../European Sustainability Reporting Standards/diagrams/ESRS.md)
-- [ESRS E5](diagrams/ESRS E5.md)
-- [European Union - People](../European Union - People/diagrams/European Union - People.md)
-- [ESRS E1, E2, E3, E4, E5, G1 - People](../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md)
-- [Identity](../Identity/diagrams/Identity.md)
-- [Metrics](../Metrics/diagrams/Metrics.md)
-- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+<div class="diagram-thumbs">
+  <a href="../European Sustainability Reporting Standards/diagrams/ESRS.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS</span></a>
+  <a href="diagrams/ESRS E5.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS E5</span></a>
+  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb diagram-thumb--noimg"><span>European Union - People</span></a>
+  <a href="../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS E1, E2, E3, E4, E5, G1 - People</span></a>
+  <a href="../Identity/diagrams/Identity.html" class="diagram-thumb diagram-thumb--noimg"><span>Identity</span></a>
+  <a href="../Metrics/diagrams/Metrics.html" class="diagram-thumb diagram-thumb--noimg"><span>Metrics</span></a>
+  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Overview</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -78,4 +80,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

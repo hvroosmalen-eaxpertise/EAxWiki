@@ -25,7 +25,9 @@
 
 ### Appears on Diagrams
 
-- [Architecture](../Architecture/diagrams/Architecture.md)
+<div class="diagram-thumbs">
+  <a href="../Architecture/diagrams/Architecture.html" class="diagram-thumb diagram-thumb--noimg"><span>Architecture</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -46,4 +48,4 @@
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:22*

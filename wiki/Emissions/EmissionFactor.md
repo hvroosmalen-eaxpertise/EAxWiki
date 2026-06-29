@@ -69,4 +69,4 @@ EmissionFactor is a master-data entity that records a single quantified coeffici
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:23*

@@ -28,8 +28,10 @@ Stakeholders increasingly demand ESG performance disclosure and sustainable busi
 
 ### Appears on Diagrams
 
-- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
-- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
+<div class="diagram-thumbs">
+  <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb diagram-thumb--noimg"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
+  <a href="../Stakeholder Expectations/diagrams/Stakeholder Expectations.html" class="diagram-thumb diagram-thumb--noimg"><span>Stakeholder Expectations</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -42,4 +44,4 @@ Stakeholders increasingly demand ESG performance disclosure and sustainable busi
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:22*

@@ -28,8 +28,10 @@ Negative sustainability incidents can significantly impact brand value and stake
 
 ### Appears on Diagrams
 
-- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
-- [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md)
+<div class="diagram-thumbs">
+  <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb diagram-thumb--noimg"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
+  <a href="../Reputation Risk/diagrams/Reputation Risk.html" class="diagram-thumb diagram-thumb--noimg"><span>Reputation Risk</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -42,4 +44,4 @@ Negative sustainability incidents can significantly impact brand value and stake
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:22*

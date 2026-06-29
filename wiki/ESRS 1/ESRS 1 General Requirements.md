@@ -28,8 +28,10 @@ For more information: <a href="$inet://https://www.efrag.org/Assets/Download?ass
 
 ### Appears on Diagrams
 
-- [ESRS](../European Sustainability Reporting Standards/diagrams/ESRS.md)
-- [European Union - People](../European Union - People/diagrams/European Union - People.md)
+<div class="diagram-thumbs">
+  <a href="../European Sustainability Reporting Standards/diagrams/ESRS.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS</span></a>
+  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb diagram-thumb--noimg"><span>European Union - People</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -51,4 +53,4 @@ For more information: <a href="$inet://https://www.efrag.org/Assets/Download?ass
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

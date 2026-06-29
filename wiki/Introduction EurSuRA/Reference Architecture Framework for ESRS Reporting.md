@@ -30,7 +30,9 @@
 
 ### Appears on Diagrams
 
-- [Introduction EDGY Presentation 13 May Event](diagrams/Introduction EDGY Presentation 13 May Event.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/Introduction EDGY Presentation 13 May Event.html" class="diagram-thumb diagram-thumb--noimg"><span>Introduction EDGY Presentation 13 May Event</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -52,4 +54,4 @@
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:22*

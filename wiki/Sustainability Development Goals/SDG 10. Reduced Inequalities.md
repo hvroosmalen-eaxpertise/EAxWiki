@@ -19,11 +19,13 @@ Reduce inequality within and among countries.
 
 ### Appears on Diagrams
 
-- [Sustainability Development Goals](diagrams/Sustainability Development Goals.md)
-- [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/Sustainability Development Goals.html" class="diagram-thumb diagram-thumb--noimg"><span>Sustainability Development Goals</span></a>
+  <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb diagram-thumb--noimg"><span>Mapping SDG to Main</span></a>
+</div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

@@ -10,10 +10,12 @@ SDG Academy provides a number of applicable resources and provides free training
 
 ### Appears on Diagrams
 
-- [Reference Websites](diagrams/Reference Websites.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/Reference Websites.html" class="diagram-thumb diagram-thumb--noimg"><span>Reference Websites</span></a>
+</div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:22*

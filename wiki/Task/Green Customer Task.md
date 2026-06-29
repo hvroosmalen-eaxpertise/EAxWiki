@@ -31,8 +31,10 @@ Wat klanten duurzaam willen bereiken met hulp van het bedrijf.
 
 ### Appears on Diagrams
 
-- [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
-- [Experience](../Experience/diagrams/Experience.md)
+<div class="diagram-thumbs">
+  <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb diagram-thumb--noimg"><span>Mapping SDG to Main</span></a>
+  <a href="../Experience/diagrams/Experience.html" class="diagram-thumb diagram-thumb--noimg"><span>Experience</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -53,4 +55,4 @@ Wat klanten duurzaam willen bereiken met hulp van het bedrijf.
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:22*

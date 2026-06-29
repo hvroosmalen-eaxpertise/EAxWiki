@@ -20,9 +20,11 @@ Non-EU companies, which generate over EUR 150 million on the EU market.
 
 ### Appears on Diagrams
 
-- [ESRS Required Companies](../ESRS Required Companies/diagrams/ESRS Required Companies.md)
-- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
-- [Introduction EDGY Presentation 13 May Event](../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md)
+<div class="diagram-thumbs">
+  <a href="../ESRS Required Companies/diagrams/ESRS Required Companies.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Required Companies</span></a>
+  <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Map</span></a>
+  <a href="../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.html" class="diagram-thumb diagram-thumb--noimg"><span>Introduction EDGY Presentation 13 May Event</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -44,4 +46,4 @@ Non-EU companies, which generate over EUR 150 million on the EU market.
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

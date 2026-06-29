@@ -28,8 +28,10 @@ Poses material financial risks that require strategic risk management and adapta
 
 ### Appears on Diagrams
 
-- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
-- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+<div class="diagram-thumbs">
+  <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb diagram-thumb--noimg"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
+  <a href="../Climate Risk/diagrams/Climate Risk.html" class="diagram-thumb diagram-thumb--noimg"><span>Climate Risk</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -42,4 +44,4 @@ Poses material financial risks that require strategic risk management and adapta
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:22*

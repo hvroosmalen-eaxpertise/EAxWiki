@@ -32,8 +32,10 @@ Vermogens die duurzaam opereren mogelijk maken.
 
 ### Appears on Diagrams
 
-- [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
-- [Architecture](../Architecture/diagrams/Architecture.md)
+<div class="diagram-thumbs">
+  <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb diagram-thumb--noimg"><span>Mapping SDG to Main</span></a>
+  <a href="../Architecture/diagrams/Architecture.html" class="diagram-thumb diagram-thumb--noimg"><span>Architecture</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -55,4 +57,4 @@ Vermogens die duurzaam opereren mogelijk maken.
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:22*

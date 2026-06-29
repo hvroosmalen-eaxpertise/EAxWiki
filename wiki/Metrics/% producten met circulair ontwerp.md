@@ -26,8 +26,10 @@
 
 ### Appears on Diagrams
 
-- [Identity](../Identity/diagrams/Identity.md)
-- [Metrics](diagrams/Metrics.md)
+<div class="diagram-thumbs">
+  <a href="../Identity/diagrams/Identity.html" class="diagram-thumb diagram-thumb--noimg"><span>Identity</span></a>
+  <a href="diagrams/Metrics.html" class="diagram-thumb diagram-thumb--noimg"><span>Metrics</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -49,4 +51,4 @@
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:22*

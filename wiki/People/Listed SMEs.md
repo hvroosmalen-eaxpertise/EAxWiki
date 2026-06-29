@@ -27,11 +27,13 @@ Any listed companies that meet two of the following three criteria on any two co
 
 ### Appears on Diagrams
 
-- [ESRS Required Companies](../ESRS Required Companies/diagrams/ESRS Required Companies.md)
-- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
-- [ESRS E1, E2, E3, E4, E5, G1 - People](../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md)
-- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
-- [Introduction EDGY Presentation 13 May Event](../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md)
+<div class="diagram-thumbs">
+  <a href="../ESRS Required Companies/diagrams/ESRS Required Companies.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Required Companies</span></a>
+  <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Map</span></a>
+  <a href="../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS E1, E2, E3, E4, E5, G1 - People</span></a>
+  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Overview</span></a>
+  <a href="../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.html" class="diagram-thumb diagram-thumb--noimg"><span>Introduction EDGY Presentation 13 May Event</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -54,4 +56,4 @@ Any listed companies that meet two of the following three criteria on any two co
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

@@ -29,9 +29,11 @@ Ensures financial resources support strategic sustainability objectives.
 
 ### Appears on Diagrams
 
-- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
-- [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md)
-- [Climate Risk](../Climate Risk/diagrams/Climate Risk.md)
+<div class="diagram-thumbs">
+  <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb diagram-thumb--noimg"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
+  <a href="../Stakeholder Expectations/diagrams/Stakeholder Expectations.html" class="diagram-thumb diagram-thumb--noimg"><span>Stakeholder Expectations</span></a>
+  <a href="../Climate Risk/diagrams/Climate Risk.html" class="diagram-thumb diagram-thumb--noimg"><span>Climate Risk</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -52,4 +54,4 @@ Ensures financial resources support strategic sustainability objectives.
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:22*

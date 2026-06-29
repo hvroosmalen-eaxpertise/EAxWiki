@@ -19,10 +19,12 @@
 
 ### Appears on Diagrams
 
-- [ESRS Sector Classification](diagrams/ESRS Sector Classification.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/ESRS Sector Classification.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Sector Classification</span></a>
+</div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:22*

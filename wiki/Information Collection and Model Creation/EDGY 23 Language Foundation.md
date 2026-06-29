@@ -25,7 +25,9 @@
 
 ### Appears on Diagrams
 
-- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/Information Collection and Model Creation.html" class="diagram-thumb diagram-thumb--noimg"><span>Information Collection and Model Creation</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -46,4 +48,4 @@
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:22*

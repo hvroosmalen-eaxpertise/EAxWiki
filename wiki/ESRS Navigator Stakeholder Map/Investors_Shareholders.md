@@ -27,7 +27,9 @@ Users of sustainability statements for investment decisions
 
 ### Appears on Diagrams
 
-- [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Overview</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -40,4 +42,4 @@ Users of sustainability statements for investment decisions
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:22*

@@ -46,11 +46,13 @@ Companies required to report under CSRD from 2025
 
 ### Appears on Diagrams
 
-- [ESRS Required Companies](../ESRS Required Companies/diagrams/ESRS Required Companies.md)
-- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
-- [ESRS E1, E2, E3, E4, E5, G1 - People](../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md)
-- [ESRS S1 Own Workforce - People](../ESRS S1 Own Workforce - People/diagrams/ESRS S1 Own Workforce - People.md)
-- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+<div class="diagram-thumbs">
+  <a href="../ESRS Required Companies/diagrams/ESRS Required Companies.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Required Companies</span></a>
+  <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Map</span></a>
+  <a href="../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS E1, E2, E3, E4, E5, G1 - People</span></a>
+  <a href="../ESRS S1 Own Workforce - People/diagrams/ESRS S1 Own Workforce - People.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS S1 Own Workforce - People</span></a>
+  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Overview</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -87,4 +89,4 @@ Companies required to report under CSRD from 2025
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

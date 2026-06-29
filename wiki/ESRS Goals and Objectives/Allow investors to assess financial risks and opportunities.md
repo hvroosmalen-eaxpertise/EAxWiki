@@ -18,10 +18,12 @@ Allow investors to assess financial risks and opportunities arising from climate
 
 ### Appears on Diagrams
 
-- [Goals and Objectives](diagrams/Goals and Objectives.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/Goals and Objectives.html" class="diagram-thumb diagram-thumb--noimg"><span>Goals and Objectives</span></a>
+</div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

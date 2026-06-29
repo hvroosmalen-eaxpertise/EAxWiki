@@ -16,11 +16,13 @@
 
 ### Appears on Diagrams
 
-- [Sustainability Development Goals](diagrams/Sustainability Development Goals.md)
-- [Introduction EDGY Presentation 13 May Event](../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/Sustainability Development Goals.html" class="diagram-thumb diagram-thumb--noimg"><span>Sustainability Development Goals</span></a>
+  <a href="../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.html" class="diagram-thumb diagram-thumb--noimg"><span>Introduction EDGY Presentation 13 May Event</span></a>
+</div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

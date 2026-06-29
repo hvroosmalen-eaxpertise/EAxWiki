@@ -24,8 +24,10 @@ Any companies listed on an EU-regulated market exchange - except for listed ‘m
 
 ### Appears on Diagrams
 
-- [ESRS Required Companies](../ESRS Required Companies/diagrams/ESRS Required Companies.md)
-- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
+<div class="diagram-thumbs">
+  <a href="../ESRS Required Companies/diagrams/ESRS Required Companies.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Required Companies</span></a>
+  <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Map</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -46,4 +48,4 @@ Any companies listed on an EU-regulated market exchange - except for listed ‘m
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

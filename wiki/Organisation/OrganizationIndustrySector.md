@@ -37,7 +37,9 @@ OrganizationIndustrySector is the intersection entity that classifies an Organis
 
 ### Appears on Diagrams
 
-- [Organisation](diagrams/Organisation.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/Organisation.html" class="diagram-thumb diagram-thumb--noimg"><span>Organisation</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -59,4 +61,4 @@ OrganizationIndustrySector is the intersection entity that classifies an Organis
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:23*

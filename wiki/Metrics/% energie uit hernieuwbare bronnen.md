@@ -31,8 +31,10 @@
 
 ### Appears on Diagrams
 
-- [Architecture](../Architecture/diagrams/Architecture.md)
-- [Metrics](diagrams/Metrics.md)
+<div class="diagram-thumbs">
+  <a href="../Architecture/diagrams/Architecture.html" class="diagram-thumb diagram-thumb--noimg"><span>Architecture</span></a>
+  <a href="diagrams/Metrics.html" class="diagram-thumb diagram-thumb--noimg"><span>Metrics</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -54,4 +56,4 @@
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:22*

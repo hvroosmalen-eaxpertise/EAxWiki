@@ -33,11 +33,13 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ### Appears on Diagrams
 
-- [ESRS](../European Sustainability Reporting Standards/diagrams/ESRS.md)
-- [ESRS S2](diagrams/ESRS S2.md)
-- [European Union - People](../European Union - People/diagrams/European Union - People.md)
-- [ERSR S2 Workers in the Value Chain - People](../ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.md)
-- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+<div class="diagram-thumbs">
+  <a href="../European Sustainability Reporting Standards/diagrams/ESRS.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS</span></a>
+  <a href="diagrams/ESRS S2.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS S2</span></a>
+  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb diagram-thumb--noimg"><span>European Union - People</span></a>
+  <a href="../ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.html" class="diagram-thumb diagram-thumb--noimg"><span>ERSR S2 Workers in the Value Chain - People</span></a>
+  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Overview</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -61,4 +63,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

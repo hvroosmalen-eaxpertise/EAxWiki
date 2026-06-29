@@ -38,7 +38,9 @@ OrganizationExternalIdentifier records a specific external code assigned to an o
 
 ### Appears on Diagrams
 
-- [Organisation](diagrams/Organisation.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/Organisation.html" class="diagram-thumb diagram-thumb--noimg"><span>Organisation</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -60,4 +62,4 @@ OrganizationExternalIdentifier records a specific external code assigned to an o
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:23*

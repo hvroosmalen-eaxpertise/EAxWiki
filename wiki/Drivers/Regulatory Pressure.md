@@ -28,8 +28,10 @@ Forces organizations to comply with evolving environmental and social standards.
 
 ### Appears on Diagrams
 
-- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
-- [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md)
+<div class="diagram-thumbs">
+  <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb diagram-thumb--noimg"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
+  <a href="../Regulatory Pressure/diagrams/Regulatory Pressure.html" class="diagram-thumb diagram-thumb--noimg"><span>Regulatory Pressure</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -42,4 +44,4 @@ Forces organizations to comply with evolving environmental and social standards.
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:22*

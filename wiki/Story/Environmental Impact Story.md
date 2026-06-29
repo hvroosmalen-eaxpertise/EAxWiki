@@ -32,8 +32,10 @@ Hoe het bedrijf haar milieu-impact begrijpt en communiceert.
 
 ### Appears on Diagrams
 
-- [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.md)
-- [Identity](../Identity/diagrams/Identity.md)
+<div class="diagram-thumbs">
+  <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb diagram-thumb--noimg"><span>Mapping SDG to Main</span></a>
+  <a href="../Identity/diagrams/Identity.html" class="diagram-thumb diagram-thumb--noimg"><span>Identity</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -55,4 +57,4 @@ Hoe het bedrijf haar milieu-impact begrijpt en communiceert.
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

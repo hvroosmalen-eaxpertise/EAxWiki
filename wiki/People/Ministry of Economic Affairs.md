@@ -24,10 +24,12 @@ Commissioned the ESRS Navigator
 
 ### Appears on Diagrams
 
-- [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md)
-- [European Union - People](../European Union - People/diagrams/European Union - People.md)
-- [ESRS E1, E2, E3, E4, E5, G1 - People](../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md)
-- [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md)
+<div class="diagram-thumbs">
+  <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Map</span></a>
+  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb diagram-thumb--noimg"><span>European Union - People</span></a>
+  <a href="../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS E1, E2, E3, E4, E5, G1 - People</span></a>
+  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Overview</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -50,4 +52,4 @@ Commissioned the ESRS Navigator
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

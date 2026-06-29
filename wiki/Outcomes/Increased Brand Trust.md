@@ -28,8 +28,10 @@ Provides competitive advantage in markets where sustainability drives purchasing
 
 ### Appears on Diagrams
 
-- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md)
-- [Market Differentiation Pressure](../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md)
+<div class="diagram-thumbs">
+  <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb diagram-thumb--noimg"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
+  <a href="../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.html" class="diagram-thumb diagram-thumb--noimg"><span>Market Differentiation Pressure</span></a>
+</div>
 
 [↑ Back to top](#)
 
@@ -42,4 +44,4 @@ Provides competitive advantage in markets where sustainability drives purchasing
 
 ---
 
-*Generated: 2026-06-29 13:30:17*
+*Generated: 2026-06-29 18:57:22*

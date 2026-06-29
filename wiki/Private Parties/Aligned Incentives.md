@@ -10,10 +10,12 @@ https://alignedincentives.com/our-story/
 
 ### Appears on Diagrams
 
-- [Private Parties](diagrams/Private Parties.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/Private Parties.html" class="diagram-thumb diagram-thumb--noimg"><span>Private Parties</span></a>
+</div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:21*

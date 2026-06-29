@@ -18,10 +18,12 @@ Tijdens een personeelsbijeenkomst deelde de directeur een persoonlijk moment: zi
 
 ### Appears on Diagrams
 
-- [Stories Voorbeelden](diagrams/Stories Voorbeelden.md)
+<div class="diagram-thumbs">
+  <a href="diagrams/Stories Voorbeelden.html" class="diagram-thumb diagram-thumb--noimg"><span>Stories Voorbeelden</span></a>
+</div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 13:30:16*
+*Generated: 2026-06-29 18:57:22*
