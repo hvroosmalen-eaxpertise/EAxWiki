@@ -287,6 +287,44 @@ if (typeof document$ !== 'undefined') {
   background: var(--md-default-bg-color);
 }
 
+.diagram-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 1em 0;
+}
+.diagram-thumb {
+  text-align: center;
+  text-decoration: none;
+  width: 220px;
+}
+.diagram-thumb img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+.diagram-thumb:hover img {
+  border-color: var(--md-primary-fg-color);
+}
+.diagram-thumb span {
+  display: block;
+  font-size: 0.85em;
+  margin-top: 0.35em;
+  color: var(--md-typeset-a-color);
+}
+.diagram-thumb--noimg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 120px;
+  border: 1px dashed var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  background: var(--md-code-bg-color);
+}
+
 .status-badge {
   display: inline-block;
   padding: 0.15em 0.5em;

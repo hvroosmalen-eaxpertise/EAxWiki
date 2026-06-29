@@ -158,14 +158,26 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         {
             lines.Add("### Appears on Diagrams");
             lines.Add(string.Empty);
+            lines.Add("<div class=\"diagram-thumbs\">");
 
             foreach (var (diagram, pkgDir) in elementDiagrams)
             {
                 var diagDir = Path.Combine(pkgDir, "diagrams");
-                var diagLink = Path.GetRelativePath(dir, Path.Combine(diagDir, $"{MarkdownHelpers.SanitizeName(diagram.Name)}.md")).Replace('\\', '/');
-                lines.Add($"- [{diagram.Name}]({diagLink})");
+                var sanitized = MarkdownHelpers.SanitizeName(diagram.Name);
+                var diagLink = Path.GetRelativePath(dir, Path.Combine(diagDir, $"{sanitized}.md")).Replace('\\', '/');
+                var diagLinkHtml = diagLink.EndsWith(".md", StringComparison.OrdinalIgnoreCase)
+                    ? diagLink[..^3] + ".html" : diagLink;
+
+                var pngRelPath = Path.GetRelativePath(dir, Path.Combine(diagDir, $"{sanitized}.png")).Replace('\\', '/');
+                var pngAbsPath = Path.Combine(outputDir, pngRelPath);
+
+                if (File.Exists(pngAbsPath))
+                    lines.Add($"  <a href=\"{diagLinkHtml}\" class=\"diagram-thumb\"><img src=\"{pngRelPath}\" alt=\"{diagram.Name}\" loading=\"lazy\"><span>{MarkdownHelpers.EscapeCell(diagram.Name)}</span></a>");
+                else
+                    lines.Add($"  <a href=\"{diagLinkHtml}\" class=\"diagram-thumb diagram-thumb--noimg\"><span>{MarkdownHelpers.EscapeCell(diagram.Name)}</span></a>");
             }
 
+            lines.Add("</div>");
             lines.Add(string.Empty);
             lines.Add("[↑ Back to top](#)");
             lines.Add(string.Empty);
