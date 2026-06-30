@@ -1,3 +1,10 @@
+---
+ea_id: 126
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-ex">Journey</span> Green Customer Journey
 
 **Type:** Interface  **Stereotype:** Journey  **StereotypeEx:** Journey  **FQStereotype:** EDGY::Journey  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -55,4 +62,4 @@ De duurzame ervaring van een klant door de klantreis heen.
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:47*

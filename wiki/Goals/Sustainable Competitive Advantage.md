@@ -1,3 +1,10 @@
+---
+ea_id: 435
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="motivation">Goal</span> Sustainable Competitive Advantage
 
 **Type:** Class  **Stereotype:** ArchiMate_Goal  **StereotypeEx:** ArchiMate_Goal  **FQStereotype:** ArchiMate3::ArchiMate_Goal  
@@ -57,4 +64,4 @@ Leverage sustainability as a strategic differentiator in the marketplace.
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

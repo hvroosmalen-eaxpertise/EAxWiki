@@ -1,3 +1,10 @@
+---
+ea_id: 565
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-lb">Outcome</span> Allow investors to assess financial risks and opportunities 
 
 **Type:** Activity  **Stereotype:** Outcome  **StereotypeEx:** Outcome  **FQStereotype:** EDGY::Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -26,4 +33,4 @@ Allow investors to assess financial risks and opportunities arising from climate
 
 ---
 
-*Generated: 2026-06-30 11:43:27*
+*Generated: 2026-06-30 14:47:47*

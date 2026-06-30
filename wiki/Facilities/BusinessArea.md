@@ -1,3 +1,10 @@
+---
+ea_id: 767
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">master-data</span> BusinessArea
 
 **Type:** Class  **Stereotype:** master-data  **StereotypeEx:** master-data  **FQStereotype:** master-data  
@@ -45,4 +52,4 @@ BusinessArea represents a location that is identified and defined by an organisa
 
 ---
 
-*Generated: 2026-06-30 11:43:29*
+*Generated: 2026-06-30 14:47:48*

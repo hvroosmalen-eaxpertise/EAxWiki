@@ -1,3 +1,10 @@
+---
+ea_id: 785
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">reference-data</span> EmissionSink
 
 **Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
@@ -43,4 +50,4 @@ EmissionSink is a reference entity that classifies a physical destination into w
 
 ---
 
-*Generated: 2026-06-30 11:43:29*
+*Generated: 2026-06-30 14:47:48*

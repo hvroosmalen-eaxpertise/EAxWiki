@@ -1,3 +1,10 @@
+---
+ea_id: 431
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="motivation">Driver</span> Climate Risk
 
 **Type:** Class  **Stereotype:** ArchiMate_Driver  **StereotypeEx:** ArchiMate_Driver  **FQStereotype:** ArchiMate3::ArchiMate_Driver  
@@ -44,4 +51,4 @@ Poses material financial risks that require strategic risk management and adapta
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

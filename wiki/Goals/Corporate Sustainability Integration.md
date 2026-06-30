@@ -1,3 +1,10 @@
+---
+ea_id: 437
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="motivation">Goal</span> Corporate Sustainability Integration
 
 **Type:** Class  **Stereotype:** ArchiMate_Goal  **StereotypeEx:** ArchiMate_Goal  **FQStereotype:** ArchiMate3::ArchiMate_Goal  
@@ -58,4 +65,4 @@ Move beyond peripheral CSR initiatives toward strategic integration throughout t
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

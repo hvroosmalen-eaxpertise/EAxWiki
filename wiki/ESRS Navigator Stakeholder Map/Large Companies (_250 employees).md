@@ -1,3 +1,10 @@
+---
+ea_id: 331
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="motivation">Stakeholder</span> Large Companies (>250 employees)
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
@@ -95,4 +102,4 @@ Companies required to report under CSRD from 2025
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

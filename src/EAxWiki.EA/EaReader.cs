@@ -215,6 +215,35 @@ public class EaReader : IEaReader, IDisposable
         return diagram;
     }
 
+    public IReadOnlyList<string> GetStatusTypes()
+    {
+        if (_repository == null) return [];
+        var xml = _repository.SQLQuery("SELECT Status FROM t_statustypes ORDER BY Status");
+        var statuses = new List<string>();
+        foreach (System.Xml.Linq.XElement row in
+            System.Xml.Linq.XDocument.Parse(xml)
+                .Descendants("Row"))
+        {
+            var val = row.Element("Status")?.Value;
+            if (!string.IsNullOrWhiteSpace(val))
+                statuses.Add(val.Trim());
+        }
+        return statuses;
+    }
+
+    public void UpdateElementStatus(int elementId, string newStatus)
+    {
+        if (_repository == null)
+            throw new InvalidOperationException("Repository is not open.");
+        var element = _repository.GetElementByID(elementId);
+        if (element == null)
+            throw new InvalidOperationException($"Element {elementId} not found in repository.");
+        element.Status = newStatus;
+        element.Update();
+        _repository.RefreshModelView(0);
+        _logger?.LogInformation("Updated element {ElementId} status to '{Status}'", elementId, newStatus);
+    }
+
     public bool ExportDiagramImage(string diagramGuid, string filePath)
     {
         if (_repository == null) return false;

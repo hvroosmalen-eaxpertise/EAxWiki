@@ -1,3 +1,10 @@
+---
+ea_id: 438
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="motivation">Goal</span> ESG Performance Improvement
 
 **Type:** Class  **Stereotype:** ArchiMate_Goal  **StereotypeEx:** ArchiMate_Goal  **FQStereotype:** ArchiMate3::ArchiMate_Goal  
@@ -55,4 +62,4 @@ Achieve measurable progress in ESG ratings and benchmarks relevant to the indust
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

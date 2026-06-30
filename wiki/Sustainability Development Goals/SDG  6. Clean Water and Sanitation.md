@@ -1,3 +1,10 @@
+---
+ea_id: 8
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-id">Purpose</span> SDG  6. Clean Water and Sanitation
 
 **Type:** Activity  **Stereotype:** Purpose  **StereotypeEx:** Purpose  **FQStereotype:** EDGY::Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -28,4 +35,4 @@ Ensure availability and sustainable management of water and sanitation for all.
 
 ---
 
-*Generated: 2026-06-30 11:43:27*
+*Generated: 2026-06-30 14:47:47*

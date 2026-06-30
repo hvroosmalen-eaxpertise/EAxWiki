@@ -1,3 +1,10 @@
+---
+ea_id: 748
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">master-data</span> OrganizationExternalIdentifier
 
 **Type:** Class  **Stereotype:** master-data  **StereotypeEx:** master-data  **FQStereotype:** master-data  
@@ -62,4 +69,4 @@ OrganizationExternalIdentifier records a specific external code assigned to an o
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

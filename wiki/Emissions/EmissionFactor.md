@@ -1,3 +1,10 @@
+---
+ea_id: 780
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">master-data</span> EmissionFactor
 
 **Type:** Class  **Stereotype:** master-data  **StereotypeEx:** master-data  **FQStereotype:** master-data  
@@ -69,4 +76,4 @@ EmissionFactor is a master-data entity that records a single quantified coeffici
 
 ---
 
-*Generated: 2026-06-30 11:43:29*
+*Generated: 2026-06-30 14:47:48*

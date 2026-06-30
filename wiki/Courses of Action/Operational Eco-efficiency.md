@@ -1,3 +1,10 @@
+---
+ea_id: 441
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Operational Eco-efficiency
 
 **Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  **StereotypeEx:** ArchiMate_CourseOfAction  **FQStereotype:** ArchiMate3::ArchiMate_CourseOfAction  
@@ -53,4 +60,4 @@ Implements circular economy principles, resource optimization, and waste reducti
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

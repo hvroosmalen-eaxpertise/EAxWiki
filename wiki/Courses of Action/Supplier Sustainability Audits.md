@@ -1,3 +1,10 @@
+---
+ea_id: 454
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Supplier Sustainability Audits
 
 **Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  **StereotypeEx:** ArchiMate_CourseOfAction  **FQStereotype:** ArchiMate3::ArchiMate_CourseOfAction  
@@ -55,4 +62,4 @@ Ensures supply chain transparency and responsible sourcing practices.
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

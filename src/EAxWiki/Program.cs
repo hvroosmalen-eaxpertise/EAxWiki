@@ -3,6 +3,7 @@ using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.EA;
 using EAxWiki.Export;
+using EAxWiki.Export.Exporters;
 
 Console.WriteLine("EAxWiki - Sparx EA Repository to Wiki Generator");
 Console.WriteLine();
@@ -67,6 +68,8 @@ Console.WriteLine($"Repository: {EaRepository.Redact(config.RepositoryPath)}");
 Console.WriteLine($"Output:     {outputPath}");
 if (!string.IsNullOrEmpty(config.PackageFilter))
     Console.WriteLine($"Package:    {config.PackageFilter}");
+if (config.WriteBack)
+    Console.WriteLine("Mode:       write-back enabled (wiki → EA)");
 Console.WriteLine();
 
 using var loggerFactory = LoggerFactory.Create(builder =>
@@ -83,6 +86,18 @@ IWikiExporter exporter = new MarkdownExporter(writer, logger);
 try
 {
     var repository = reader.Open(config.RepositoryPath);
+
+    if (config.WriteBack && Directory.Exists(outputPath))
+    {
+        Console.WriteLine("Running write-back scan...");
+        var scanner = new WriteBackScanner(reader, loggerFactory.CreateLogger<WriteBackScanner>());
+        var changes = scanner.Scan(outputPath);
+        if (changes.Count == 0)
+            Console.WriteLine("Write-back: no status changes detected.");
+        else
+            Console.WriteLine($"Write-back: applied {changes.Count} status change(s) to EA.");
+        Console.WriteLine();
+    }
 
     EaPackage? startPackage = null;
     if (!string.IsNullOrEmpty(config.PackageFilter))
@@ -145,6 +160,7 @@ static void ShowUsage()
     Console.WriteLine("  --verbose, -v         Enable verbose logging per-element timing");
     Console.WriteLine("  --force, -f           Force full regeneration (rebuild all files)");
     Console.WriteLine("  --json, -j            Also export model.json alongside markdown");
+    Console.WriteLine("  --writeback, -w       Scan wiki for status changes and write them back to EA via COM");
     Console.WriteLine("  --help, -h            Show this help message");
     Console.WriteLine();
     Console.WriteLine("Connection string examples:");

@@ -1,3 +1,10 @@
+---
+ea_id: 439
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Integrate Sustainability into Corporate Strategy
 
 **Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  **StereotypeEx:** ArchiMate_CourseOfAction  **FQStereotype:** ArchiMate3::ArchiMate_CourseOfAction  
@@ -61,4 +68,4 @@ According to Bodenstein, this represents the fundamental strategic choice to mak
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

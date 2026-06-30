@@ -1,3 +1,10 @@
+---
+ea_id: 560
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-lb">Outcome</span> Align sustainability reporting
 
 **Type:** Activity  **Stereotype:** Outcome  **StereotypeEx:** Outcome  **FQStereotype:** EDGY::Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -26,4 +33,4 @@ Align sustainability reporting for businesses operating within the European Unio
 
 ---
 
-*Generated: 2026-06-30 11:43:27*
+*Generated: 2026-06-30 14:47:47*

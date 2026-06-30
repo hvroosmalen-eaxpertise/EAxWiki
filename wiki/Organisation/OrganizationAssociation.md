@@ -1,3 +1,10 @@
+---
+ea_id: 741
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">master-data</span> OrganizationAssociation
 
 **Type:** Class  **Stereotype:** master-data  **StereotypeEx:** master-data  **FQStereotype:** master-data  
@@ -62,4 +69,4 @@ OrganizationAssociation represents a typed relationship between two organisation
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

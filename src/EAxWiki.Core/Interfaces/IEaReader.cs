@@ -8,4 +8,6 @@ public interface IEaReader
     void Close();
     bool ExportDiagramImage(string diagramGuid, string filePath);
     string RepositoryPath { get; }
+    IReadOnlyList<string> GetStatusTypes();
+    void UpdateElementStatus(int elementId, string newStatus);
 }

@@ -1,3 +1,10 @@
+---
+ea_id: 821
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">work-product-component</span> ProductFootprintDataQualityIndicator
 
 **Type:** Class  **Stereotype:** work-product-component  **StereotypeEx:** work-product-component  **FQStereotype:** work-product-component  
@@ -55,4 +62,4 @@ ProductFootprintDataQualityIndicator is a work-product-component that records a 
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

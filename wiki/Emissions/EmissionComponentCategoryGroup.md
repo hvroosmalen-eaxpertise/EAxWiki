@@ -1,3 +1,10 @@
+---
+ea_id: 795
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">reference-data</span> EmissionComponentCategoryGroup
 
 **Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
@@ -52,4 +59,4 @@ EmissionComponentCategoryGroup is a reference entity that provides a higher-leve
 
 ---
 
-*Generated: 2026-06-30 11:43:29*
+*Generated: 2026-06-30 14:47:48*

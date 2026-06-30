@@ -1,3 +1,10 @@
+---
+ea_id: 160
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-ex">Task</span> Meet CO₂, circulariteit, energiegebruik en stel KPI’s op.
 
 **Type:** Activity  **Stereotype:** Task  **StereotypeEx:** Task  **FQStereotype:** EDGY::Task  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -49,4 +56,4 @@
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:47*

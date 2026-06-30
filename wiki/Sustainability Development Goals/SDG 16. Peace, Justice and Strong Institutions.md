@@ -1,3 +1,10 @@
+---
+ea_id: 18
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-id">Purpose</span> SDG 16. Peace, Justice and Strong Institutions
 
 **Type:** Activity  **Stereotype:** Purpose  **StereotypeEx:** Purpose  **FQStereotype:** EDGY::Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -27,4 +34,4 @@ Promote peaceful and inclusive societies, provide access to justice for all, and
 
 ---
 
-*Generated: 2026-06-30 11:43:27*
+*Generated: 2026-06-30 14:47:47*

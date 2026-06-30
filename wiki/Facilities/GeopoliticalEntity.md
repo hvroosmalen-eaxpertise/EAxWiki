@@ -1,3 +1,10 @@
+---
+ea_id: 766
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">master-data</span> GeopoliticalEntity
 
 **Type:** Class  **Stereotype:** master-data  **StereotypeEx:** master-data  **FQStereotype:** master-data  
@@ -61,4 +68,4 @@ GeopoliticalEntity represents a named geographical area that is defined and admi
 
 ---
 
-*Generated: 2026-06-30 11:43:29*
+*Generated: 2026-06-30 14:47:48*

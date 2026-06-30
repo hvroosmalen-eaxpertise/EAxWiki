@@ -42,7 +42,8 @@ public class MarkdownExporter : IWikiExporter
                 ? new List<EaPackage> { startPackage }
                 : repository.RootPackages;
 
-            var ctx = ContextBuilder.Build(packages, outputPath, force);
+            var statusTypes = reader?.GetStatusTypes() ?? [];
+            var ctx = ContextBuilder.Build(packages, outputPath, force) with { StatusTypes = statusTypes };
 
             var packageExporter = new PackageExporter(_writer, _logger);
             var totalElements = ctx.Elements.Count;

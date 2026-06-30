@@ -1,3 +1,10 @@
+---
+ea_id: 269
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="business">BusinessRole</span> Sustainability Manager/Director
 
 **Type:** Class  **Stereotype:** ArchiMate_BusinessRole  **StereotypeEx:** ArchiMate_BusinessRole  **FQStereotype:** ArchiMate3::ArchiMate_BusinessRole  
@@ -42,4 +49,4 @@ Coordinates implementation of sustainability measures, reports to CEO
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

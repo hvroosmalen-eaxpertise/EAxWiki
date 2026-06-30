@@ -1,3 +1,10 @@
+---
+ea_id: 135
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-ar">Process</span> Lifecycle & Circularity Model
 
 **Type:** Interface  **Stereotype:** Process  **StereotypeEx:** Process  **FQStereotype:** EDGY::Process  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -55,4 +62,4 @@ Beschrijving van productlevenscyclus.
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:47*

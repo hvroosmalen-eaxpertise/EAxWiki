@@ -1,3 +1,10 @@
+---
+ea_id: 154
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-ex">Task</span> Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen.
 
 **Type:** Activity  **Stereotype:** Task  **StereotypeEx:** Task  **FQStereotype:** EDGY::Task  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -48,4 +55,4 @@
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:47*

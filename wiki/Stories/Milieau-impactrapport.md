@@ -1,3 +1,10 @@
+---
+ea_id: 239
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-id">Story</span> Milieau-impactrapport
 
 **Type:** Interface  **Stereotype:** Story  **StereotypeEx:** Story  **FQStereotype:** EDGY::Story  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -26,4 +33,4 @@ Een productiemanager van een textielfabriek wandelde op een ochtend langs de riv
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

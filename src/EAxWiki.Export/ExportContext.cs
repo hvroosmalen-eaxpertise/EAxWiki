@@ -14,6 +14,9 @@ internal record ExportContext(
     bool Force = false
 )
 {
+    /// <summary>Allowed Status values from t_statustypes, used to populate frontmatter status_options.</summary>
+    public IReadOnlyList<string> StatusTypes { get; init; } = [];
+
     /// <summary>
     /// Absolute paths of every element .md file as actually written (including collision-renamed files).
     /// Populated by PackageExporter; consumed by cleanup.

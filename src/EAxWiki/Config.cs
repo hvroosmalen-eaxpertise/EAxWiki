@@ -10,6 +10,7 @@ public class Config
     public bool Verbose { get; set; }
     public bool Force { get; set; }
     public bool JsonExport { get; set; }
+    public bool WriteBack { get; set; }
 
     public void Load(string[] args)
     {
@@ -52,6 +53,10 @@ public class Config
                 case "--json":
                 case "-j":
                     JsonExport = true;
+                    break;
+                case "--writeback":
+                case "-w":
+                    WriteBack = true;
                     break;
                 case "--help":
                 case "/?":

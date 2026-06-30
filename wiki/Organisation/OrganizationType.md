@@ -1,3 +1,10 @@
+---
+ea_id: 736
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">reference-data</span> OrganizationType
 
 **Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
@@ -58,4 +65,4 @@ OrganizationType provides a controlled vocabulary of organisational classificati
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

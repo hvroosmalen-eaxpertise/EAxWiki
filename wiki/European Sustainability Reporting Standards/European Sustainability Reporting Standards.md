@@ -1,3 +1,10 @@
+---
+ea_id: 555
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-id">Content</span> European Sustainability Reporting Standards
 
 **Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -63,4 +70,4 @@ The European Sustainability Reporting Standards (ESRS) oblige all companies subj
 
 ---
 
-*Generated: 2026-06-30 11:43:27*
+*Generated: 2026-06-30 14:47:47*

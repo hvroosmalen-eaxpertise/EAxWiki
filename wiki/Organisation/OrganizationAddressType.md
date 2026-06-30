@@ -1,3 +1,10 @@
+---
+ea_id: 744
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">reference-data</span> OrganizationAddressType
 
 **Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
@@ -51,4 +58,4 @@ OrganizationAddressType provides the controlled vocabulary of address categories
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

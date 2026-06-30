@@ -1,3 +1,10 @@
+---
+ea_id: 445
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="strategy">Capability</span> ESG Performance Management
 
 **Type:** Class  **Stereotype:** ArchiMate_Capability  **StereotypeEx:** ArchiMate_Capability  **FQStereotype:** ArchiMate3::ArchiMate_Capability  
@@ -63,4 +70,4 @@ Enables evidence-based sustainability management and transparent reporting to st
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

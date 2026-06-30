@@ -73,7 +73,7 @@ jobs:
             bash ./install.sh
             ```
             `install.sh` installs PowerShell Core (`pwsh`) if missing, then sets up MkDocs.
-            EA export is not available on Linux/Mac — export on Windows and commit `wiki/` to your own git repository.
+            EA export is not available on Linux/Mac — run the export on a Windows machine and copy or sync the `wiki/` output folder to the Linux/Mac server, then serve it there.
 
             ---
 

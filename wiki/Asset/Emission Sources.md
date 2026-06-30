@@ -1,3 +1,10 @@
+---
+ea_id: 133
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-ar">Asset</span> Emission Sources
 
 **Type:** Class  **Stereotype:** Asset  **StereotypeEx:** Asset  **FQStereotype:** EDGY::Asset  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -55,4 +62,4 @@ Locaties of activiteiten die emissies genereren.
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:47*

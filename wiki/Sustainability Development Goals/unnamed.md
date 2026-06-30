@@ -1,3 +1,10 @@
+---
+ea_id: 630
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="uml">Uncategorized</span> 
 
 **Type:** Boundary  **Stereotype:**   **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -16,4 +23,4 @@
 
 ---
 
-*Generated: 2026-06-30 11:43:27*
+*Generated: 2026-06-30 14:47:47*

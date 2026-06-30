@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using System.Text;
 using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
@@ -43,8 +45,21 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         var createdStr = element.CreatedDate?.ToString("yyyy-MM-dd") ?? "-";
         var modifiedStr = element.ModifiedDate == DateTime.MinValue ? "-" : element.ModifiedDate.ToString("yyyy-MM-dd");
 
+        var statusOptionsList = ctx.StatusTypes.Count > 0
+            ? ctx.StatusTypes
+            : (IReadOnlyList<string>)["Approved", "Implemented", "Mandatory", "Proposed", "Validated"];
+        var statusOptions = string.Join(", ", statusOptionsList);
+        var statusHash = ComputeStatusHash(element.Status);
+
         var lines = new List<string>
         {
+            "---",
+            $"ea_id: {element.Id}",
+            $"status: {element.Status}",
+            $"status_options: [{statusOptions}]",
+            $"ea_hash: {statusHash}",
+            "---",
+            string.Empty,
             $"# {MarkdownHelpers.GetStereotypeLabel(element)} {element.Name}",
             string.Empty,
             $"**Type:** {element.Type}  " +
@@ -298,6 +313,12 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         return
             "<div id=\"ea-graph-container\"></div>\n" +
             $"<div id=\"ea-graph-data\" style=\"display:none\">{json}</div>";
+    }
+
+    internal static string ComputeStatusHash(string status)
+    {
+        var bytes = SHA256.HashData(Encoding.UTF8.GetBytes(status ?? string.Empty));
+        return Convert.ToHexString(bytes)[..8].ToLowerInvariant();
     }
 
     private static string JsonEscape(string s) =>

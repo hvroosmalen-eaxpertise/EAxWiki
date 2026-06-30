@@ -1,3 +1,10 @@
+---
+ea_id: 4
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-id">Purpose</span> SDG  2. Zero Hunger
 
 **Type:** Activity  **Stereotype:** Purpose  **StereotypeEx:** Purpose  **FQStereotype:** EDGY::Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -28,4 +35,4 @@ End hunger, achieve food security and improved nutrition, and promote sustainabl
 
 ---
 
-*Generated: 2026-06-30 11:43:27*
+*Generated: 2026-06-30 14:47:47*

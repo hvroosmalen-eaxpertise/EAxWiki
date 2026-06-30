@@ -1,3 +1,10 @@
+---
+ea_id: 779
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">reference-data</span> UnitOfMeasure
 
 **Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
@@ -71,4 +78,4 @@ UnitOfMeasure is a reference entity that provides the controlled vocabulary of m
 
 ---
 
-*Generated: 2026-06-30 11:43:29*
+*Generated: 2026-06-30 14:47:48*

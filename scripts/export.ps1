@@ -1,15 +1,17 @@
 # Support both PowerShell -Flag and Unix-style --flag syntax.
-$RepoPath = ""
-$Force    = $false
-$Verbose  = $false
-$Json     = $false
+$RepoPath  = ""
+$Force     = $false
+$Verbose   = $false
+$Json      = $false
+$WriteBack = $false
 
 $i = 0
 while ($i -lt $args.Count) {
     switch -Regex ($args[$i]) {
-        '^(-f|--force|-Force)$'              { $Force   = $true }
-        '^(-v|--verbose|-Verbose)$'          { $Verbose = $true }
-        '^(-j|--json|-Json)$'                { $Json    = $true }
+        '^(-f|--force|-Force)$'              { $Force     = $true }
+        '^(-v|--verbose|-Verbose)$'          { $Verbose   = $true }
+        '^(-j|--json|-Json)$'                { $Json      = $true }
+        '^(-w|--writeback|-WriteBack)$'      { $WriteBack = $true }
         '^(-r|--repo|-RepoPath|-r:.*)$'      { $i++; if ($i -lt $args.Count) { $RepoPath = $args[$i] } }
         default                              { if (-not $args[$i].StartsWith('-')) { $RepoPath = $args[$i] } }
     }
@@ -49,9 +51,10 @@ if ($RepoPath) {
     $displayRepo = $resolvedRepo -replace '(?i)(Password|Pwd|User\s*Id|Uid|UserName|Username)\s*=[^;]*', '$1=***'
     Write-Host "Repository: $displayRepo"
 }
-if ($Force)   { $runArgs += "--force" }
-if ($Verbose) { $runArgs += "--verbose" }
-if ($Json)    { $runArgs += "--json" }
+if ($Force)     { $runArgs += "--force" }
+if ($Verbose)   { $runArgs += "--verbose" }
+if ($Json)      { $runArgs += "--json" }
+if ($WriteBack) { $runArgs += "--writeback" }
 
 try {
     dotnet run --project src/EAxWiki -- $runArgs

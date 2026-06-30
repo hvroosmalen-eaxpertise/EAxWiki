@@ -1,6 +1,6 @@
 EAxWiki — Export EA model to Markdown wiki, served with MkDocs
 
-This repository exports an Enterprise Architect `.qea` model to a `wiki/` folder of Markdown pages, then serves them locally with MkDocs. The site is also deployed to GitHub Pages on push.
+This repository exports an Enterprise Architect `.qea` model to a `wiki/` folder of Markdown pages, then serves them locally with MkDocs.
 
 > **Note — test data only:** The `wiki/` folder, `model/` folder, and the live site in this repository contain the **EurSuRA** model, which is used exclusively for development and testing of EAxWiki itself. They are not part of the tool and have no relation to any installation. When you use EAxWiki with your own EA model, it will write to a `wiki/` folder in your own repository.
 
@@ -136,6 +136,7 @@ Windows machine                         Linux / Mac machine
 |------|---------|-------------|
 | Export (EA → Markdown) | ✓ | ✗ requires EA |
 | Serve (MkDocs)         | ✓ | ✓ |
+| Write-back (wiki → EA) | ✓ | ✗ requires EA |
 
 Linux only needs Python and PowerShell Core (`pwsh`). The `install.sh` script installs `pwsh` automatically if it is not present.
 
@@ -155,6 +156,7 @@ Linux only needs Python and PowerShell Core (`pwsh`). The `install.sh` script in
 | `scripts/export.ps1` | Export EA model to Markdown only |
 | `scripts/serve.ps1` | Start MkDocs on an already-exported wiki |
 | `scripts/export-and-serve.ps1` | Export then serve (calls the two above) |
+| `scripts/writeback.ps1` | Scan wiki for status changes and write them back to EA via COM (**Windows only**) |
 
 All scripts accept both PowerShell (`-Flag`) and Unix-style (`--flag`) syntax interchangeably, e.g. `--force`, `--verbose`, `--repo`.
 
@@ -207,6 +209,21 @@ The serve script creates a `.venv` if needed, installs MkDocs requirements, and 
 ```
 
 The export step cleans up any orphaned EA.exe processes when it finishes.
+
+### Write-back (wiki → EA)
+
+Users can update element properties (currently: **Status**) by editing the YAML frontmatter at the top of any element page. Run `writeback.ps1` to detect those changes and write them back to the EA model via the EA COM API, then re-export to regenerate the wiki.
+
+```powershell
+# Edit wiki/SomePackage/SomeElement.md → change status: Proposed to status: Approved
+.\scripts\writeback.ps1                          # detect changes and write to EA
+.\scripts\export.ps1                             # regenerate wiki from updated EA model
+
+# Or combine write-back and re-export in one step:
+.\scripts\export.ps1 --writeback
+```
+
+> **Linux / Mac:** Write-back is **not supported** on Linux or Mac. The EA COM API requires Sparx Enterprise Architect, which is Windows-only. A wiki served on Linux is read-only with respect to the EA model — status changes must be made on a Windows machine with EA installed, or by editing the EA model directly in EA.
 
 ## Saved connection config
 
@@ -303,9 +320,4 @@ See [docs/design-decisions.md](docs/design-decisions.md) for a full summary of a
 - The `--verbose` / `-v` flag enables per-element debug-level logging during export. When used with a DB connection string it also logs the full (unredacted) connection string sent to EA, which is useful for diagnosing connection errors.
 - The `--json` / `-j` flag writes `model.json` alongside the markdown pages with the full model as a machine-readable JSON document.
 - The wiki home page title shows the database name (from `Database=` / `Initial Catalog=`) for DB connections, or the filename for `.qea` files. Credentials are never shown in the wiki output.
-
-## CI / Deployment
-
-A GitHub Actions workflow (`.github/workflows/mkdocs-deploy.yml`) builds the site and publishes it to the `gh-pages` branch on pushes to `master`. The repo must be public (or have a paid GitHub plan) for Pages to work.
-
 

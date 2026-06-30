@@ -1,3 +1,10 @@
+---
+ea_id: 594
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-ar">Capability</span> AI - LLM
 
 **Type:** Activity  **Stereotype:** Capability  **StereotypeEx:** Capability  **FQStereotype:** EDGY::Capability  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -40,4 +47,4 @@
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:48*

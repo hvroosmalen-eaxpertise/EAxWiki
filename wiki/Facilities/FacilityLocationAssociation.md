@@ -1,3 +1,10 @@
+---
+ea_id: 758
+status: 
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: e3b0c442
+---
+
 # <span class="sl" data-layer="uml">work-product-component</span> FacilityLocationAssociation
 
 **Type:** Class  **Stereotype:** work-product-component  **StereotypeEx:** work-product-component  **FQStereotype:** work-product-component  
@@ -57,4 +64,4 @@ FacilityLocationAssociation is the temporal intersection entity that assigns a F
 
 ---
 
-*Generated: 2026-06-30 11:43:29*
+*Generated: 2026-06-30 14:47:48*

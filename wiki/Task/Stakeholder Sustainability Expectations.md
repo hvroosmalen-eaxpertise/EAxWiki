@@ -1,3 +1,10 @@
+---
+ea_id: 124
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
 # <span class="sl" data-layer="edgy-ex">Task</span> Stakeholder Sustainability Expectations
 
 **Type:** Activity  **Stereotype:** Task  **StereotypeEx:** Task  **FQStereotype:** EDGY::Task  **Status:** <span class="status-badge status-proposed">Proposed</span>  
@@ -57,4 +64,4 @@ Duurzaamheidsverwachtingen van stakeholders.
 
 ---
 
-*Generated: 2026-06-30 11:43:28*
+*Generated: 2026-06-30 14:47:47*
