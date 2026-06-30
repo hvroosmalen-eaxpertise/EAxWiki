@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS Goals and Objectives](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="560" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Goals and Objectives/Align sustainability reporting.md" data-api-port="8001"></div>
+
 Align sustainability reporting for businesses operating within the European Union.
 
 ## Tagged Values
@@ -33,4 +35,4 @@ Align sustainability reporting for businesses operating within the European Unio
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

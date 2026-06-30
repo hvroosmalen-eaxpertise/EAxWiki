@@ -1,0 +1,48 @@
+# Stakeholder
+
+40 element(s):
+
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Large Companies (>250 employees)](../../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [FreshFood B.V.](../../ESRS Navigator Stakeholder Map/FreshFood B.V..md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Listed SMEs](../../ESRS Navigator Stakeholder Map/Listed SMEs.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Non-listed SMEs](../../ESRS Navigator Stakeholder Map/Non-listed SMEs.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Own Personnel (ESRS S1)](../../ESRS Navigator Stakeholder Map/Own Personnel (ESRS S1).md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Permanent Employees](../../ESRS Navigator Stakeholder Map/Permanent Employees.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Seasonal Workers](../../ESRS Navigator Stakeholder Map/Seasonal Workers.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Production Workers](../../ESRS Navigator Stakeholder Map/Production Workers.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Suppliers](../../ESRS Navigator Stakeholder Map/Suppliers.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Agricultural Suppliers](../../ESRS Navigator Stakeholder Map/Agricultural Suppliers.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Packaging Suppliers](../../ESRS Navigator Stakeholder Map/Packaging Suppliers.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Transport Companies](../../ESRS Navigator Stakeholder Map/Transport Companies.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Workers in Value Chain (ESRS S2)](../../ESRS Navigator Stakeholder Map/Workers in Value Chain (ESRS S2).md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Seasonal Agricultural Workers](../../ESRS Navigator Stakeholder Map/Seasonal Agricultural Workers.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Customers](../../ESRS Navigator Stakeholder Map/Customers.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Supermarket Chains](../../ESRS Navigator Stakeholder Map/Supermarket Chains.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Foodservice Companies](../../ESRS Navigator Stakeholder Map/Foodservice Companies.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Consumers and End Users (ESRS S4)](../../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4).md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Affected Communities (ESRS S3)](../../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Local Communities](../../ESRS Navigator Stakeholder Map/Local Communities.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Indigenous Peoples](../../ESRS Navigator Stakeholder Map/Indigenous Peoples.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Investors/Shareholders](../../ESRS Navigator Stakeholder Map/Investors_Shareholders.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Banks and Financial Institutions](../../ESRS Navigator Stakeholder Map/Banks and Financial Institutions.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Credit Rating Agencies](../../ESRS Navigator Stakeholder Map/Credit Rating Agencies.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [European Commission](../../ESRS Navigator Stakeholder Map/European Commission.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [EFRAG](../../ESRS Navigator Stakeholder Map/EFRAG.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Rijksdienst voor Ondernemen (RVO)](../../ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO).md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [AFM](../../ESRS Navigator Stakeholder Map/AFM.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Ministry of Economic Affairs](../../ESRS Navigator Stakeholder Map/Ministry of Economic Affairs.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Sociaal Economische Raad (SER)](../../ESRS Navigator Stakeholder Map/Sociaal Economische Raad (SER).md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [External Auditors](../../ESRS Navigator Stakeholder Map/External Auditors.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Certification Bodies](../../ESRS Navigator Stakeholder Map/Certification Bodies.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Industry Associations](../../ESRS Navigator Stakeholder Map/Industry Associations.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [NGOs and Civil Society](../../ESRS Navigator Stakeholder Map/NGOs and Civil Society.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Trade Unions](../../ESRS Navigator Stakeholder Map/Trade Unions.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Legal Design Agencies](../../ESRS Navigator Stakeholder Map/Legal Design Agencies.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Sustainability Consultants](../../ESRS Navigator Stakeholder Map/Sustainability Consultants.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Research and Analysis Firms](../../ESRS Navigator Stakeholder Map/Research and Analysis Firms.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Chamber of Commerce/Kamer van Koophandel](../../ESRS Navigator Stakeholder Map/Chamber of Commerce_Kamer van Koophandel.md)
+- <span class="sl" data-layer="motivation">Stakeholder</span> [Training Providers](../../ESRS Navigator Stakeholder Map/Training Providers.md)
+
+---
+
+*Generated: 2026-06-30 15:54:14*

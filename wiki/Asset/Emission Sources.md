@@ -1,17 +1,19 @@
 ---
 ea_id: 133
-status: Proposed
+status: Mandatory
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
-ea_hash: 9b0c660b
+ea_hash: 1a666d0d
 ---
 
 # <span class="sl" data-layer="edgy-ar">Asset</span> Emission Sources
 
-**Type:** Class  **Stereotype:** Asset  **StereotypeEx:** Asset  **FQStereotype:** EDGY::Asset  **Status:** <span class="status-badge status-proposed">Proposed</span>  
-**Created:** 2025-12-02  **Modified:** 2025-12-15
+**Type:** Class  **Stereotype:** Asset  **StereotypeEx:** Asset  **FQStereotype:** EDGY::Asset  **Status:** <span class="status-badge status-mandatory">Mandatory</span>  
+**Created:** 2025-12-02  **Modified:** 2026-06-30
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Asset](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="133" data-status="Mandatory" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Asset/Emission Sources.md" data-api-port="8001"></div>
 
 Locaties of activiteiten die emissies genereren.
 <ul>
@@ -62,4 +64,4 @@ Locaties of activiteiten die emissies genereren.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

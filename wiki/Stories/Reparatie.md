@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Stories](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="240" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Stories/Reparatie.md" data-api-port="8001"></div>
+
 In een ontwerpafdeling van een technologiebedrijf viel het een medewerker op dat er een stapel afgedankte proefmodellen lag. Hij stelde voor om elke vrijdag een “repareeruur” in te lassen waarin collega’s kapotte apparaten samen herstellen in plaats van weggooien. Het werd een geliefde routine. Het team ging ook dagelijks op de fiets naar kantoor, aangemoedigd door een interne competitie. Deze duurzame gewoonten gaven medewerkers trots en betrokkenheid.
 
 ## Tagged Values
@@ -33,4 +35,4 @@ In een ontwerpafdeling van een technologiebedrijf viel het een medewerker op dat
 
 ---
 
-*Generated: 2026-06-30 14:47:48*
+*Generated: 2026-06-30 17:14:22*

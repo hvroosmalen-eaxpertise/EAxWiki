@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="637" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/unnamed_637.md" data-api-port="8001"></div>
+
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
@@ -23,4 +25,4 @@ ea_hash: 9b0c660b
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

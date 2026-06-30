@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="17" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/SDG 15. Life on Land.md" data-api-port="8001"></div>
+
 Protect, restore and promote sustainable use of terrestrial ecosystems.
 
 ## Tagged Values
@@ -60,4 +62,4 @@ Protect, restore and promote sustainable use of terrestrial ecosystems.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

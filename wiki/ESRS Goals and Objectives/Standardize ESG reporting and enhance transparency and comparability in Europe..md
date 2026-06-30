@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS Goals and Objectives](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="562" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Goals and Objectives/Standardize ESG reporting and enhance transparency and comparability in Europe..md" data-api-port="8001"></div>
+
 The ESRS align the EU reporting system to the International Sustainability Standards Board (ISSB) and the Global Reporting Initiative (GRI), ensuring a high degree of interoperability between EU and global standards and prevent unnecessary double reporting by companies.
 
 ## Tagged Values
@@ -33,4 +35,4 @@ The ESRS align the EU reporting system to the International Sustainability Stand
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

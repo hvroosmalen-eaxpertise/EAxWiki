@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="556" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="People/Company listed on an EU-regulated market exchange.md" data-api-port="8001"></div>
+
 Required to report:
 Any companies listed on an EU-regulated market exchange - except for listed ‘micro undertakings’ -that fail to meet two of these three criteria on consecutive balance sheet dates:
 <ol>
@@ -55,4 +57,4 @@ Any companies listed on an EU-regulated market exchange - except for listed ‘m
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

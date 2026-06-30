@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="501" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="People/Non-listed SMEs.md" data-api-port="8001"></div>
+
 SMEs that voluntarily report (future VSME standard).
 Required to report:
 Any non-listed companies that meet two of the following three criteria on any two consecutive balance sheet dates:
@@ -65,4 +67,4 @@ Any non-listed companies that meet two of the following three criteria on any tw
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

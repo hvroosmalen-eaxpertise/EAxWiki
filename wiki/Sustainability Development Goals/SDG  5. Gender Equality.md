@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="7" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/SDG  5. Gender Equality.md" data-api-port="8001"></div>
+
 Achieve gender equality and empower all women and girls.
 
 
@@ -35,4 +37,4 @@ Achieve gender equality and empower all women and girls.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

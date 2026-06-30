@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Content](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="138" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Content/SDG Mapping Content.md" data-api-port="8001"></div>
+
 Documentatie die elementen koppelt aan SDG’s.
 <ul>
 	<li>UN SDG Portal – https://sdgs.un.org – Centrale bron voor SDG-informatie.</li>
@@ -70,4 +72,4 @@ Documentatie die elementen koppelt aan SDG’s.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

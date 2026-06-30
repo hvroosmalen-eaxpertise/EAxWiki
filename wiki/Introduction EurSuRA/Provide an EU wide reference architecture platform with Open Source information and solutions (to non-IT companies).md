@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="609" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).md" data-api-port="8001"></div>
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -58,4 +60,4 @@ ea_hash: 9b0c660b
 
 ---
 
-*Generated: 2026-06-30 14:47:48*
+*Generated: 2026-06-30 17:14:23*

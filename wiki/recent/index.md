@@ -2,6 +2,7 @@
 
 | Name | Type | Modified | Path |
 |------|------|----------|------|
+| [Emission Sources](../Asset/Emission Sources.md) | Class | 2026-06-30 | [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Asset](../Asset/index.md) |
 | [Organisation](../Organisation/diagrams/Organisation.md) | Diagram | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](../Organisation/index.md) |
 | [ProductFootprintDataQualityIndicator](../Products/ProductFootprintDataQualityIndicator.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](../Products/index.md) |
 | [CentralProductClassificationCode](../Products/CentralProductClassificationCode.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](../Products/index.md) |
@@ -51,8 +52,7 @@
 | [EmissionScopeType](../Emissions/EmissionScopeType.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
 | [EmissionActivity](../Emissions/EmissionActivity.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
 | [EmissionActivityCategory](../Emissions/EmissionActivityCategory.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
-| [EmissionParameterType](../Emissions/EmissionParameterType.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
 
 ---
 
-*Generated: 2026-06-30 14:47:48*
+*Generated: 2026-06-30 17:14:23*

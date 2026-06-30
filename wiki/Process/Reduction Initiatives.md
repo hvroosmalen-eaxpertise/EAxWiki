@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Process](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="134" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Process/Reduction Initiatives.md" data-api-port="8001"></div>
+
 Projecten gericht op emissiereductie.
 <ul>
 	<li>SME Climate Hub – https://smeclimatehub.org – Mobiliseert mkb voor emissiereductie.</li>
@@ -62,4 +64,4 @@ Projecten gericht op emissiereductie.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="489" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="People/Own Personnel (ESRS S1).md" data-api-port="8001"></div>
+
 All employees of the reporting organization
 
 ## Relationships
@@ -59,4 +61,4 @@ All employees of the reporting organization
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

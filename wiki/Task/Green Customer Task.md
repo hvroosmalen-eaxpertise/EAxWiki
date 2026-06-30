@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Task](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="125" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Task/Green Customer Task.md" data-api-port="8001"></div>
+
 Wat klanten duurzaam willen bereiken met hulp van het bedrijf.
 <ul>
 	<li>IKEA Buy Back – https://www.ikea.com – Stimuleert klanten om meubels terug te verkopen i.p.v. weggooien.</li>
@@ -62,4 +64,4 @@ Wat klanten duurzaam willen bereiken met hulp van het bedrijf.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

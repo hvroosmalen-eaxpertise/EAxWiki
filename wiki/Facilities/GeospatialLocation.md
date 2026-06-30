@@ -57,4 +57,4 @@ GeospatialLocation provides a spatial representation of a Location, defined by c
 
 ---
 
-*Generated: 2026-06-30 14:47:48*
+*Generated: 2026-06-30 17:14:23*

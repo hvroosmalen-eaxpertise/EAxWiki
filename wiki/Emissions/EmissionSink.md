@@ -50,4 +50,4 @@ EmissionSink is a reference entity that classifies a physical destination into w
 
 ---
 
-*Generated: 2026-06-30 14:47:48*
+*Generated: 2026-06-30 17:14:23*

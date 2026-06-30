@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Process](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="130" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Process/Sustainable Processes.md" data-api-port="8001"></div>
+
 Activiteiten die bijdragen aan verduurzaming.
 <ul>
 	<li>New Belgium Brewing – https://www.newbelgium.com – Hergebruikt bierbostel en bespaart energie.</li>
@@ -64,4 +66,4 @@ Activiteiten die bijdragen aan verduurzaming.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

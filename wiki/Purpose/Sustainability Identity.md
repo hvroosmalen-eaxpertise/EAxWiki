@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Purpose](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="123" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Purpose/Sustainability Identity.md" data-api-port="8001"></div>
+
 Hoe het bedrijf zichzelf positioneert rond duurzaamheid.
 <ul>
 	<li>Allbirds – https://www.allbirds.com – Toont CO₂-voetafdruk transparant op elk product.</li>
@@ -62,4 +64,4 @@ Hoe het bedrijf zichzelf positioneert rond duurzaamheid.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

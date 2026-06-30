@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Stories](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="239" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Stories/Milieau-impactrapport.md" data-api-port="8001"></div>
+
 Een productiemanager van een textielfabriek wandelde op een ochtend langs de rivier bij de fabriek en zag hoe afvalwater de oever vervuilde. Geschrokken deed ze haar verhaal nog diezelfde week tijdens een personeelsoverleg. Deze eerlijke confrontatie met hun milieueffect raakte een snaar. Het bedrijf besloot jaarlijks een open milieu-impactrapport te publiceren en concrete stappen te delen zoals 30% minder watergebruik en herbebossing langs de rivier.
 
 ## Tagged Values
@@ -33,4 +35,4 @@ Een productiemanager van een textielfabriek wandelde op een ochtend langs de riv
 
 ---
 
-*Generated: 2026-06-30 14:47:48*
+*Generated: 2026-06-30 17:14:22*

@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS Goals and Objectives](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="564" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Goals and Objectives/Ensure that investors and other stakeholders have access to the information.md" data-api-port="8001"></div>
+
 Ensure that investors and other stakeholders have access to the information they need to assess the impact of companies on people and the environment.
 
 ## Tagged Values
@@ -33,4 +35,4 @@ Ensure that investors and other stakeholders have access to the information they
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

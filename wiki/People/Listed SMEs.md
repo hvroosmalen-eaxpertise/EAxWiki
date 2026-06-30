@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="500" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="People/Listed SMEs.md" data-api-port="8001"></div>
+
 Small and medium enterprises with stock exchange listing (future LSME standard)
 Required to report: 
 Any listed companies that meet two of the following three criteria on any two consecutive balance sheet dates:
@@ -63,4 +65,4 @@ Any listed companies that meet two of the following three criteria on any two co
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

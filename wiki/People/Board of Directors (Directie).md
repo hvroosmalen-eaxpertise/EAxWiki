@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="496" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="People/Board of Directors (Directie).md" data-api-port="8001"></div>
+
 High-level view of all stakeholders in ESRS reporting ecosystem
 
 ## Relationships
@@ -55,4 +57,4 @@ High-level view of all stakeholders in ESRS reporting ecosystem
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="19" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/SDG 17. Partnerships for the Goals.md" data-api-port="8001"></div>
+
 Strengthen the means of implementation and revitalize the global partnership for sustainable development.
 
 ## Tagged Values
@@ -34,4 +36,4 @@ Strengthen the means of implementation and revitalize the global partnership for
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Purpose](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="110" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Purpose/Enterprise Purpose.md" data-api-port="8001"></div>
+
 De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en milieudoelen.
 <ul>
 	<li>Patagonia – https://www.patagonia.com – Purpose volledig gericht op klimaat en natuurbehoud.</li>
@@ -55,4 +57,4 @@ De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en mili
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

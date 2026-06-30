@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Story](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="113" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Story/Sustainability Vision.md" data-api-port="8001"></div>
+
 Toekomstbeeld van de onderneming in 2030/2050 gericht op klimaatneutraliteit en circulariteit.
 <ul>
 	<li>Seventh Generation – https://www.seventhgeneration.com – Vision gebaseerd op 7-generaties principe.</li>
@@ -64,4 +66,4 @@ Toekomstbeeld van de onderneming in 2030/2050 gericht op klimaatneutraliteit en 
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

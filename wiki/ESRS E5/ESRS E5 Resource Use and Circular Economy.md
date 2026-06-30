@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS E5](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="40" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS E5/ESRS E5 Resource Use and Circular Economy.md" data-api-port="8001"></div>
+
 For more information:
 https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F12%2520Draft%2520ESRS%2520E5%2520Resource%2520use%2520and%2520circular%2520economy.pdf
 
@@ -87,4 +89,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

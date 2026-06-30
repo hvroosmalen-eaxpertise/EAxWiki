@@ -16,4 +16,4 @@ This book provides a practical guide to implementing sustainability strategies w
 
 ---
 
-*Generated: 2026-06-30 14:47:58*
+*Generated: 2026-06-30 17:14:32*

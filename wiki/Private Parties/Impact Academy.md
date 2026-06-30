@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](../People/index.md) / [Private Parties](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="568" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Private Parties/Impact Academy.md" data-api-port="8001"></div>
+
 https://www.impactacademyproject.eu/
 IMPACT ACADEMY has the main objective to offer a free, multilingual, high level education and training on the subject of the Impact Economy. It is addressed to university students who desire to acquire expertise about the impact skills needed to lead an entrepreneurship aware of its environmental and social responsibilities. 
 
@@ -26,4 +28,4 @@ IMPACT ACADEMY has the main objective to offer a free, multilingual, high level 
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

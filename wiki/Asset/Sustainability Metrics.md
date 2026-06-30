@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Asset](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="139" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Asset/Sustainability Metrics.md" data-api-port="8001"></div>
+
 KPI’s voor duurzaamheid.
 <ul>
 	<li>CarbonNeutral&#174; – https://carbonneutral.com – Transparante emissiemetingen.</li>
@@ -62,4 +64,4 @@ KPI’s voor duurzaamheid.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Journey](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="126" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Journey/Green Customer Journey.md" data-api-port="8001"></div>
+
 De duurzame ervaring van een klant door de klantreis heen.
 <ul>
 	<li>Original Unverpackt – https://original-unverpackt.de – Volledig verpakkingsvrije klantreis.</li>
@@ -62,4 +64,4 @@ De duurzame ervaring van een klant door de klantreis heen.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

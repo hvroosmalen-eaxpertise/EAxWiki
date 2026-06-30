@@ -1,17 +1,19 @@
 ---
 ea_id: 251
-status: Proposed
+status: Approved
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
-ea_hash: 9b0c660b
+ea_hash: 87b42e40
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Affected Communities (ESRS S3)
 
-**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  **Status:** <span class="status-badge status-approved">Approved</span>  
 **Created:** 2025-11-14  **Modified:** 2025-12-12
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="251" data-status="Approved" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).md" data-api-port="8001"></div>
 
 Local and regional communities impacted by operations
 
@@ -62,4 +64,4 @@ Local and regional communities impacted by operations
 
 ---
 
-*Generated: 2026-06-30 14:47:48*
+*Generated: 2026-06-30 17:14:22*

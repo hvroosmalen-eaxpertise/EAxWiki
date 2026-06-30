@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="6" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/SDG  4. Quality Education.md" data-api-port="8001"></div>
+
 Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.
 
 
@@ -35,4 +37,4 @@ Ensure inclusive and equitable quality education and promote lifelong learning o
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

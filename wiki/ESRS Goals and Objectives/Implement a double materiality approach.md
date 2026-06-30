@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS Goals and Objectives](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="563" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Goals and Objectives/Implement a double materiality approach.md" data-api-port="8001"></div>
+
 Implement a double materiality approach, necessitating companies to report on both impact (social and environmental) and financial materiality (e.g., how cash flows, financial position and financial performance are affected).
 
 ## Tagged Values
@@ -33,4 +35,4 @@ Implement a double materiality approach, necessitating companies to report on bo
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

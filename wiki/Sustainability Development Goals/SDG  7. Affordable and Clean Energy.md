@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="9" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/SDG  7. Affordable and Clean Energy.md" data-api-port="8001"></div>
+
 Ensure access to affordable, reliable, sustainable and modern energy for all.
 
 ## Tagged Values
@@ -50,4 +52,4 @@ Ensure access to affordable, reliable, sustainable and modern energy for all.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

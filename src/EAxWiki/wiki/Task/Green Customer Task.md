@@ -1,0 +1,67 @@
+---
+ea_id: 125
+status: Proposed
+status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
+ea_hash: 9b0c660b
+---
+
+# <span class="sl" data-layer="edgy-ex">Task</span> Green Customer Task
+
+**Type:** Activity  **Stereotype:** Task  **StereotypeEx:** Task  **FQStereotype:** EDGY::Task  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Created:** 2025-12-02  **Modified:** 2025-12-15
+
+
+[Home](../index.md) / [Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Task](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="125" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Task/Green Customer Task.md" data-api-port="8001"></div>
+
+Wat klanten duurzaam willen bereiken met hulp van het bedrijf.
+<ul>
+	<li>IKEA Buy Back – https://www.ikea.com – Stimuleert klanten om meubels terug te verkopen i.p.v. weggooien.</li>
+	<li>Vinted – https://www.vinted.com – Helpt klanten kleding tweedehands te kopen en verkopen.</li>
+</ul>
+
+## Tagged Values
+
+| Name | Value | Notes |
+|------|-------|-------|
+| EDGY::TextAlign | Center | Default: Center  |
+
+[↑ Back to top](#)
+
+## Relationships
+
+| Type | Stereotype | Connected To |
+|------|------------|-------------|
+| ControlFlow | Flow | [Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma).](Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma)..md) |
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+
+[↑ Back to top](#)
+
+### Appears on Diagrams
+
+<div class="diagram-thumbs">
+  <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb"><img src="../Mapping SDG to Main/diagrams/Mapping SDG to Main.png" alt="Mapping SDG to Main" loading="lazy"><span>Mapping SDG to Main</span></a>
+  <a href="../Experience/diagrams/Experience.html" class="diagram-thumb"><img src="../Experience/diagrams/Experience.png" alt="Experience" loading="lazy"><span>Experience</span></a>
+</div>
+
+[↑ Back to top](#)
+
+### Referenced By
+
+| Type | Stereotype | Source |
+|------|------------|--------|
+| Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.md) |
+
+[↑ Back to top](#)
+
+---
+
+## Relationship Graph
+
+<div id="ea-graph-container"></div>
+<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e145","label":"Ondersteun klanten in d…","fullName":"Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma).","packageName":"Task","layer":"edgy-ex","isFocal":false,"hasUrl":true,"url":"Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma)..html"},{"id":"e14","label":"SDG 12. Responsible Con…","fullName":"SDG 12. Responsible Consumption and Production","packageName":"Sustainability Development Goals","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.html"},{"id":"e125","label":"Green Customer Task","fullName":"Green Customer Task","packageName":"Task","layer":"edgy-ex","isFocal":true,"hasUrl":false,"url":""},{"id":"e171","label":"# teruggenomen producte…","fullName":"# teruggenomen producten (per jaar)","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"../Metrics/_ teruggenomen producten (per jaar).html"},{"id":"e113","label":"Sustainability Vision","fullName":"Sustainability Vision","packageName":"Story","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"../Story/Sustainability Vision.html"},{"id":"e116","label":"Sustainability Objectiv…","fullName":"Sustainability Objectives","packageName":"Content","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"../Content/Sustainability Objectives.html"},{"id":"e121","label":"Sustainability Principl…","fullName":"Sustainability Principles","packageName":"Content","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"../Content/Sustainability Principles.html"},{"id":"e122","label":"Environmental Impact St…","fullName":"Environmental Impact Story","packageName":"Story","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"../Story/Environmental Impact Story.html"},{"id":"e124","label":"Stakeholder Sustainabil…","fullName":"Stakeholder Sustainability Expectations","packageName":"Task","layer":"edgy-ex","isFocal":false,"hasUrl":true,"url":"Stakeholder Sustainability Expectations.html"},{"id":"e126","label":"Green Customer Journey","fullName":"Green Customer Journey","packageName":"Journey","layer":"edgy-ex","isFocal":false,"hasUrl":true,"url":"../Journey/Green Customer Journey.html"},{"id":"e128","label":"Green Services","fullName":"Green Services","packageName":"Channel","layer":"edgy-ex","isFocal":false,"hasUrl":true,"url":"../Channel/Green Services.html"},{"id":"e129","label":"Green Capabilities","fullName":"Green Capabilities","packageName":"Capability","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"../Capability/Green Capabilities.html"},{"id":"e130","label":"Sustainable Processes","fullName":"Sustainable Processes","packageName":"Process","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"../Process/Sustainable Processes.html"},{"id":"e164","label":"Sustainable Policies","fullName":"Sustainable Policies","packageName":"Asset","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"../Asset/Sustainable Policies.html"},{"id":"e132","label":"Environmental Impact Map","fullName":"Environmental Impact Map","packageName":"Asset","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"../Asset/Environmental Impact Map.html"},{"id":"e135","label":"Lifecycle &amp; Circularity…","fullName":"Lifecycle &amp; Circularity Model","packageName":"Process","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"../Process/Lifecycle &amp; Circularity Model.html"},{"id":"e138","label":"SDG Mapping Content","fullName":"SDG Mapping Content","packageName":"Content","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"../Content/SDG Mapping Content.html"},{"id":"e140","label":"Sustainable Work Practi…","fullName":"Sustainable Work Practices","packageName":"Story","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"../Story/Sustainable Work Practices.html"}],"edges":[{"id":"c38","source":"e125","target":"e145","label":"ControlFlow","sourceLayer":"edgy-ex"},{"id":"c139","source":"e145","target":"e171","label":"Association","sourceLayer":"edgy-ex"},{"id":"c22","source":"e14","target":"e113","label":"Association","sourceLayer":"edgy-id"},{"id":"c30","source":"e14","target":"e116","label":"Association","sourceLayer":"edgy-id"},{"id":"c55","source":"e14","target":"e121","label":"Association","sourceLayer":"edgy-id"},{"id":"c57","source":"e14","target":"e122","label":"Association","sourceLayer":"edgy-id"},{"id":"c60","source":"e14","target":"e124","label":"Association","sourceLayer":"edgy-id"},{"id":"c62","source":"e14","target":"e125","label":"Association","sourceLayer":"edgy-id"},{"id":"c63","source":"e14","target":"e126","label":"Association","sourceLayer":"edgy-id"},{"id":"c65","source":"e14","target":"e128","label":"Association","sourceLayer":"edgy-id"},{"id":"c68","source":"e14","target":"e129","label":"Association","sourceLayer":"edgy-id"},{"id":"c69","source":"e14","target":"e130","label":"Association","sourceLayer":"edgy-id"},{"id":"c73","source":"e14","target":"e164","label":"Association","sourceLayer":"edgy-id"},{"id":"c75","source":"e14","target":"e132","label":"Association","sourceLayer":"edgy-id"},{"id":"c79","source":"e14","target":"e135","label":"Association","sourceLayer":"edgy-id"},{"id":"c84","source":"e14","target":"e138","label":"Association","sourceLayer":"edgy-id"},{"id":"c89","source":"e14","target":"e140","label":"Association","sourceLayer":"edgy-id"}]}</div>
+
+---
+
+*Generated: 2026-06-30 15:54:13*

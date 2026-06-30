@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="527" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="People/Agricultural Suppliers.md" data-api-port="8001"></div>
+
 Tomato growers, grain producers, vegetable suppliers
 
 ## Relationships
@@ -52,4 +54,4 @@ Tomato growers, grain producers, vegetable suppliers
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

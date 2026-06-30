@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Documents](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="483" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Reference Documents/Strategic Sustainability Management.md" data-api-port="8001"></div>
+
 A Practical Approach for Companies Using the SDGs as a Framework, Bodenstein Robert, Herget Josef
 
 This book provides a practical guide to implementing sustainability strategies within companies. It introduces a model-based approach that enables a comprehensive, yet focused strategy, ensuring that complexity doesn’t overshadow the core objectives. The concept of Sustainability Excellence offers a versatile methodology, designed to meet the needs of both large corporations and small businesses with limited resources. The approach is adaptable to various sustainability frameworks and strategies.
@@ -30,4 +32,4 @@ The book is enriched with practical tools, including checklists and insights int
 
 ---
 
-*Generated: 2026-06-30 14:47:48*
+*Generated: 2026-06-30 17:14:22*

@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Channel](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="137" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Channel/Sustainable Partnerships.md" data-api-port="8001"></div>
+
 Externe partners die duurzaamheid versterken.
 <ul>
 	<li>Patagonia Action Works – https://patagonia.com/actionworks – Verbindt mensen met milieuorganisaties.</li>
@@ -64,4 +66,4 @@ Externe partners die duurzaamheid versterken.
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Metrics](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="234" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Metrics/Emissiereductie (%) = ((baseline – huidig) _ baseline) × 100.md" data-api-port="8001"></div>
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -54,4 +56,4 @@ ea_hash: 9b0c660b
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

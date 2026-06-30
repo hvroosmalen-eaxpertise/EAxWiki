@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Metrics](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="219" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Metrics/Slimme meters, energienota’s.md" data-api-port="8001"></div>
+
 ## Relationships
 
 | Type | Stereotype | Connected To |
@@ -46,4 +48,4 @@ ea_hash: 9b0c660b
 
 ---
 
-*Generated: 2026-06-30 14:47:47*
+*Generated: 2026-06-30 17:14:22*

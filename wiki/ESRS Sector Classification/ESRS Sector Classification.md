@@ -13,6 +13,8 @@ ea_hash: 9b0c660b
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Classification](../ESRS Classification/index.md) / [ESRS Sector Classification](index.md)
 
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="571" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Sector Classification/ESRS Sector Classification.md" data-api-port="8001"></div>
+
 ## Attributes
 
 | Name | Type | Default | Description |
@@ -34,4 +36,4 @@ ea_hash: 9b0c660b
 
 ---
 
-*Generated: 2026-06-30 14:47:48*
+*Generated: 2026-06-30 17:14:22*
