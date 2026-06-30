@@ -39,12 +39,12 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="../European Sustainability Reporting Standards/diagrams/ESRS.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS</span></a>
-  <a href="diagrams/ESRS E3.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS E3</span></a>
-  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb diagram-thumb--noimg"><span>European Union - People</span></a>
-  <a href="../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS E1, E2, E3, E4, E5, G1 - People</span></a>
-  <a href="../Metrics/diagrams/Metrics.html" class="diagram-thumb diagram-thumb--noimg"><span>Metrics</span></a>
-  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Overview</span></a>
+  <a href="../European Sustainability Reporting Standards/diagrams/ESRS.html" class="diagram-thumb"><img src="../European Sustainability Reporting Standards/diagrams/ESRS.png" alt="ESRS" loading="lazy"><span>ESRS</span></a>
+  <a href="diagrams/ESRS E3.html" class="diagram-thumb"><img src="diagrams/ESRS E3.png" alt="ESRS E3" loading="lazy"><span>ESRS E3</span></a>
+  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb"><img src="../European Union - People/diagrams/European Union - People.png" alt="European Union - People" loading="lazy"><span>European Union - People</span></a>
+  <a href="../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.html" class="diagram-thumb"><img src="../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.png" alt="ESRS E1, E2, E3, E4, E5, G1 - People" loading="lazy"><span>ESRS E1, E2, E3, E4, E5, G1 - People</span></a>
+  <a href="../Metrics/diagrams/Metrics.html" class="diagram-thumb"><img src="../Metrics/diagrams/Metrics.png" alt="Metrics" loading="lazy"><span>Metrics</span></a>
+  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb"><img src="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.png" alt="ESRS Stakeholder Overview" loading="lazy"><span>ESRS Stakeholder Overview</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -69,4 +69,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-29 18:57:21*
+*Generated: 2026-06-30 11:43:27*

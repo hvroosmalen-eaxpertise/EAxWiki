@@ -61,4 +61,4 @@ GeopoliticalEntity represents a named geographical area that is defined and admi
 
 ---
 
-*Generated: 2026-06-29 18:57:23*
+*Generated: 2026-06-30 11:43:29*

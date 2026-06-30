@@ -33,9 +33,9 @@ Issues CSRD directive and ESRS regulations
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Map</span></a>
-  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb diagram-thumb--noimg"><span>European Union - People</span></a>
-  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Overview</span></a>
+  <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb"><img src="../ESRS and People/diagrams/ESRS Stakeholder Map.png" alt="ESRS Stakeholder Map" loading="lazy"><span>ESRS Stakeholder Map</span></a>
+  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb"><img src="../European Union - People/diagrams/European Union - People.png" alt="European Union - People" loading="lazy"><span>European Union - People</span></a>
+  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb"><img src="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.png" alt="ESRS Stakeholder Overview" loading="lazy"><span>ESRS Stakeholder Overview</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -58,4 +58,4 @@ Issues CSRD directive and ESRS regulations
 
 ---
 
-*Generated: 2026-06-29 18:57:21*
+*Generated: 2026-06-30 11:43:28*

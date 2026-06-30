@@ -47,11 +47,11 @@ Companies required to report under CSRD from 2025
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="../ESRS Required Companies/diagrams/ESRS Required Companies.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Required Companies</span></a>
-  <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Map</span></a>
-  <a href="../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS E1, E2, E3, E4, E5, G1 - People</span></a>
-  <a href="../ESRS S1 Own Workforce - People/diagrams/ESRS S1 Own Workforce - People.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS S1 Own Workforce - People</span></a>
-  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Overview</span></a>
+  <a href="../ESRS Required Companies/diagrams/ESRS Required Companies.html" class="diagram-thumb"><img src="../ESRS Required Companies/diagrams/ESRS Required Companies.png" alt="ESRS Required Companies" loading="lazy"><span>ESRS Required Companies</span></a>
+  <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb"><img src="../ESRS and People/diagrams/ESRS Stakeholder Map.png" alt="ESRS Stakeholder Map" loading="lazy"><span>ESRS Stakeholder Map</span></a>
+  <a href="../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.html" class="diagram-thumb"><img src="../ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.png" alt="ESRS E1, E2, E3, E4, E5, G1 - People" loading="lazy"><span>ESRS E1, E2, E3, E4, E5, G1 - People</span></a>
+  <a href="../ESRS S1 Own Workforce - People/diagrams/ESRS S1 Own Workforce - People.html" class="diagram-thumb"><img src="../ESRS S1 Own Workforce - People/diagrams/ESRS S1 Own Workforce - People.png" alt="ESRS S1 Own Workforce - People" loading="lazy"><span>ESRS S1 Own Workforce - People</span></a>
+  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb"><img src="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.png" alt="ESRS Stakeholder Overview" loading="lazy"><span>ESRS Stakeholder Overview</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -89,4 +89,4 @@ Companies required to report under CSRD from 2025
 
 ---
 
-*Generated: 2026-06-29 18:57:21*
+*Generated: 2026-06-30 11:43:28*

@@ -20,9 +20,9 @@ Communities around production facilities and supplier regions
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Map</span></a>
-  <a href="../ESRS S3 Affected Communities - People/diagrams/ESRS S3 Affected Communities - People.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS S3 Affected Communities - People</span></a>
-  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Overview</span></a>
+  <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb"><img src="../ESRS and People/diagrams/ESRS Stakeholder Map.png" alt="ESRS Stakeholder Map" loading="lazy"><span>ESRS Stakeholder Map</span></a>
+  <a href="../ESRS S3 Affected Communities - People/diagrams/ESRS S3 Affected Communities - People.html" class="diagram-thumb"><img src="../ESRS S3 Affected Communities - People/diagrams/ESRS S3 Affected Communities - People.png" alt="ESRS S3 Affected Communities - People" loading="lazy"><span>ESRS S3 Affected Communities - People</span></a>
+  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb"><img src="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.png" alt="ESRS Stakeholder Overview" loading="lazy"><span>ESRS Stakeholder Overview</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -45,4 +45,4 @@ Communities around production facilities and supplier regions
 
 ---
 
-*Generated: 2026-06-29 18:57:21*
+*Generated: 2026-06-30 11:43:28*

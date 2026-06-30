@@ -11,11 +11,11 @@
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="diagrams/Reference Documents.html" class="diagram-thumb diagram-thumb--noimg"><span>Reference Documents</span></a>
+  <a href="diagrams/Reference Documents.html" class="diagram-thumb"><img src="diagrams/Reference Documents.png" alt="Reference Documents" loading="lazy"><span>Reference Documents</span></a>
 </div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 18:57:22*
+*Generated: 2026-06-30 11:43:28*

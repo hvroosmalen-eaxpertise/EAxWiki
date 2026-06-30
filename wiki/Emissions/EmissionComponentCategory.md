@@ -57,4 +57,4 @@ EmissionComponentCategory is a reference entity that classifies the greenhouse g
 
 ---
 
-*Generated: 2026-06-29 18:57:23*
+*Generated: 2026-06-30 11:43:29*

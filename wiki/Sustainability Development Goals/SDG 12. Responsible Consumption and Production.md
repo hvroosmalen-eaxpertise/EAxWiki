@@ -42,9 +42,9 @@ Ensure sustainable consumption and production patterns.
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="diagrams/Sustainability Development Goals.html" class="diagram-thumb diagram-thumb--noimg"><span>Sustainability Development Goals</span></a>
-  <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb diagram-thumb--noimg"><span>Mapping SDG to Main</span></a>
-  <a href="../Identity/diagrams/Identity.html" class="diagram-thumb diagram-thumb--noimg"><span>Identity</span></a>
+  <a href="diagrams/Sustainability Development Goals.html" class="diagram-thumb"><img src="diagrams/Sustainability Development Goals.png" alt="Sustainability Development Goals" loading="lazy"><span>Sustainability Development Goals</span></a>
+  <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb"><img src="../Mapping SDG to Main/diagrams/Mapping SDG to Main.png" alt="Mapping SDG to Main" loading="lazy"><span>Mapping SDG to Main</span></a>
+  <a href="../Identity/diagrams/Identity.html" class="diagram-thumb"><img src="../Identity/diagrams/Identity.png" alt="Identity" loading="lazy"><span>Identity</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -58,4 +58,4 @@ Ensure sustainable consumption and production patterns.
 
 ---
 
-*Generated: 2026-06-29 18:57:21*
+*Generated: 2026-06-30 11:43:27*

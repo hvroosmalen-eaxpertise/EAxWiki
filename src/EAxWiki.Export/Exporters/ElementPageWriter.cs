@@ -169,12 +169,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                     ? diagLink[..^3] + ".html" : diagLink;
 
                 var pngRelPath = Path.GetRelativePath(dir, Path.Combine(diagDir, $"{sanitized}.png")).Replace('\\', '/');
-                var pngAbsPath = Path.Combine(diagDir, $"{sanitized}.png");
 
-                if (File.Exists(pngAbsPath))
-                    lines.Add($"  <a href=\"{diagLinkHtml}\" class=\"diagram-thumb\"><img src=\"{pngRelPath}\" alt=\"{diagram.Name}\" loading=\"lazy\"><span>{MarkdownHelpers.EscapeCell(diagram.Name)}</span></a>");
-                else
-                    lines.Add($"  <a href=\"{diagLinkHtml}\" class=\"diagram-thumb diagram-thumb--noimg\"><span>{MarkdownHelpers.EscapeCell(diagram.Name)}</span></a>");
+                lines.Add($"  <a href=\"{diagLinkHtml}\" class=\"diagram-thumb\"><img src=\"{pngRelPath}\" alt=\"{diagram.Name}\" loading=\"lazy\"><span>{MarkdownHelpers.EscapeCell(diagram.Name)}</span></a>");
             }
 
             lines.Add("</div>");

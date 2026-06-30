@@ -39,9 +39,9 @@ The European Sustainability Reporting Standards (ESRS) oblige all companies subj
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="diagrams/ESRS.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS</span></a>
-  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb diagram-thumb--noimg"><span>European Union - People</span></a>
-  <a href="../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.html" class="diagram-thumb diagram-thumb--noimg"><span>Introduction EDGY Presentation 13 May Event</span></a>
+  <a href="diagrams/ESRS.html" class="diagram-thumb"><img src="diagrams/ESRS.png" alt="ESRS" loading="lazy"><span>ESRS</span></a>
+  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb"><img src="../European Union - People/diagrams/European Union - People.png" alt="European Union - People" loading="lazy"><span>European Union - People</span></a>
+  <a href="../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.html" class="diagram-thumb"><img src="../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.png" alt="Introduction EDGY Presentation 13 May Event" loading="lazy"><span>Introduction EDGY Presentation 13 May Event</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -63,4 +63,4 @@ The European Sustainability Reporting Standards (ESRS) oblige all companies subj
 
 ---
 
-*Generated: 2026-06-29 18:57:21*
+*Generated: 2026-06-30 11:43:27*

@@ -12,11 +12,11 @@ IMPACT ACADEMY has the main objective to offer a free, multilingual, high level 
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="diagrams/Private Parties.html" class="diagram-thumb diagram-thumb--noimg"><span>Private Parties</span></a>
+  <a href="diagrams/Private Parties.html" class="diagram-thumb"><img src="diagrams/Private Parties.png" alt="Private Parties" loading="lazy"><span>Private Parties</span></a>
 </div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 18:57:21*
+*Generated: 2026-06-30 11:43:28*

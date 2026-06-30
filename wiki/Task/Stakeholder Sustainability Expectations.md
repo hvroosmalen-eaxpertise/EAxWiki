@@ -33,8 +33,8 @@ Duurzaamheidsverwachtingen van stakeholders.
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb diagram-thumb--noimg"><span>Mapping SDG to Main</span></a>
-  <a href="../Experience/diagrams/Experience.html" class="diagram-thumb diagram-thumb--noimg"><span>Experience</span></a>
+  <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb"><img src="../Mapping SDG to Main/diagrams/Mapping SDG to Main.png" alt="Mapping SDG to Main" loading="lazy"><span>Mapping SDG to Main</span></a>
+  <a href="../Experience/diagrams/Experience.html" class="diagram-thumb"><img src="../Experience/diagrams/Experience.png" alt="Experience" loading="lazy"><span>Experience</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -57,4 +57,4 @@ Duurzaamheidsverwachtingen van stakeholders.
 
 ---
 
-*Generated: 2026-06-29 18:57:22*
+*Generated: 2026-06-30 11:43:28*

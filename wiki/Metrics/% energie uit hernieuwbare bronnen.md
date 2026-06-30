@@ -32,8 +32,8 @@
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="../Architecture/diagrams/Architecture.html" class="diagram-thumb diagram-thumb--noimg"><span>Architecture</span></a>
-  <a href="diagrams/Metrics.html" class="diagram-thumb diagram-thumb--noimg"><span>Metrics</span></a>
+  <a href="../Architecture/diagrams/Architecture.html" class="diagram-thumb"><img src="../Architecture/diagrams/Architecture.png" alt="Architecture" loading="lazy"><span>Architecture</span></a>
+  <a href="diagrams/Metrics.html" class="diagram-thumb"><img src="diagrams/Metrics.png" alt="Metrics" loading="lazy"><span>Metrics</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -56,4 +56,4 @@
 
 ---
 
-*Generated: 2026-06-29 18:57:22*
+*Generated: 2026-06-30 11:43:28*

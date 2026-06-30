@@ -30,11 +30,11 @@ Identifies, assesses, and mitigates sustainability-related risks with the same r
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb diagram-thumb--noimg"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
-  <a href="../Stakeholder Expectations/diagrams/Stakeholder Expectations.html" class="diagram-thumb diagram-thumb--noimg"><span>Stakeholder Expectations</span></a>
-  <a href="../Climate Risk/diagrams/Climate Risk.html" class="diagram-thumb diagram-thumb--noimg"><span>Climate Risk</span></a>
-  <a href="../Regulatory Pressure/diagrams/Regulatory Pressure.html" class="diagram-thumb diagram-thumb--noimg"><span>Regulatory Pressure</span></a>
-  <a href="../Reputation Risk/diagrams/Reputation Risk.html" class="diagram-thumb diagram-thumb--noimg"><span>Reputation Risk</span></a>
+  <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb"><img src="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).png" alt="Strategic Sustainability Management Model (Bodenstein)" loading="lazy"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
+  <a href="../Stakeholder Expectations/diagrams/Stakeholder Expectations.html" class="diagram-thumb"><img src="../Stakeholder Expectations/diagrams/Stakeholder Expectations.png" alt="Stakeholder Expectations" loading="lazy"><span>Stakeholder Expectations</span></a>
+  <a href="../Climate Risk/diagrams/Climate Risk.html" class="diagram-thumb"><img src="../Climate Risk/diagrams/Climate Risk.png" alt="Climate Risk" loading="lazy"><span>Climate Risk</span></a>
+  <a href="../Regulatory Pressure/diagrams/Regulatory Pressure.html" class="diagram-thumb"><img src="../Regulatory Pressure/diagrams/Regulatory Pressure.png" alt="Regulatory Pressure" loading="lazy"><span>Regulatory Pressure</span></a>
+  <a href="../Reputation Risk/diagrams/Reputation Risk.html" class="diagram-thumb"><img src="../Reputation Risk/diagrams/Reputation Risk.png" alt="Reputation Risk" loading="lazy"><span>Reputation Risk</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -56,4 +56,4 @@ Identifies, assesses, and mitigates sustainability-related risks with the same r
 
 ---
 
-*Generated: 2026-06-29 18:57:22*
+*Generated: 2026-06-30 11:43:28*

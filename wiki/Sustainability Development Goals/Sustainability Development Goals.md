@@ -17,12 +17,12 @@
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="diagrams/Sustainability Development Goals.html" class="diagram-thumb diagram-thumb--noimg"><span>Sustainability Development Goals</span></a>
-  <a href="../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.html" class="diagram-thumb diagram-thumb--noimg"><span>Introduction EDGY Presentation 13 May Event</span></a>
+  <a href="diagrams/Sustainability Development Goals.html" class="diagram-thumb"><img src="diagrams/Sustainability Development Goals.png" alt="Sustainability Development Goals" loading="lazy"><span>Sustainability Development Goals</span></a>
+  <a href="../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.html" class="diagram-thumb"><img src="../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.png" alt="Introduction EDGY Presentation 13 May Event" loading="lazy"><span>Introduction EDGY Presentation 13 May Event</span></a>
 </div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 18:57:21*
+*Generated: 2026-06-30 11:43:27*

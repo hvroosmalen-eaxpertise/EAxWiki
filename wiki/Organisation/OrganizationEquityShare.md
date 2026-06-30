@@ -38,7 +38,7 @@ OrganizationEquityShare records the percentage equity stake that an organisation
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="diagrams/Organisation.html" class="diagram-thumb diagram-thumb--noimg"><span>Organisation</span></a>
+  <a href="diagrams/Organisation.html" class="diagram-thumb"><img src="diagrams/Organisation.png" alt="Organisation" loading="lazy"><span>Organisation</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -60,4 +60,4 @@ OrganizationEquityShare records the percentage equity stake that an organisation
 
 ---
 
-*Generated: 2026-06-29 18:57:23*
+*Generated: 2026-06-30 11:43:28*

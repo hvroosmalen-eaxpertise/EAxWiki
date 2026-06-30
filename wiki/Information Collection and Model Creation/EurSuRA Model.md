@@ -31,7 +31,7 @@
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="diagrams/Information Collection and Model Creation.html" class="diagram-thumb diagram-thumb--noimg"><span>Information Collection and Model Creation</span></a>
+  <a href="diagrams/Information Collection and Model Creation.html" class="diagram-thumb"><img src="diagrams/Information Collection and Model Creation.png" alt="Information Collection and Model Creation" loading="lazy"><span>Information Collection and Model Creation</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -54,4 +54,4 @@
 
 ---
 
-*Generated: 2026-06-29 18:57:22*
+*Generated: 2026-06-30 11:43:28*

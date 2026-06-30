@@ -9,11 +9,11 @@
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="diagrams/Sustainability Development Goals.html" class="diagram-thumb diagram-thumb--noimg"><span>Sustainability Development Goals</span></a>
+  <a href="diagrams/Sustainability Development Goals.html" class="diagram-thumb"><img src="diagrams/Sustainability Development Goals.png" alt="Sustainability Development Goals" loading="lazy"><span>Sustainability Development Goals</span></a>
 </div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 18:57:21*
+*Generated: 2026-06-30 11:43:27*

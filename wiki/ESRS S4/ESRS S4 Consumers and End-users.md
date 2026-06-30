@@ -34,10 +34,10 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="../European Sustainability Reporting Standards/diagrams/ESRS.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS</span></a>
-  <a href="diagrams/ESRS S4.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS S4</span></a>
-  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb diagram-thumb--noimg"><span>European Union - People</span></a>
-  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb diagram-thumb--noimg"><span>ESRS Stakeholder Overview</span></a>
+  <a href="../European Sustainability Reporting Standards/diagrams/ESRS.html" class="diagram-thumb"><img src="../European Sustainability Reporting Standards/diagrams/ESRS.png" alt="ESRS" loading="lazy"><span>ESRS</span></a>
+  <a href="diagrams/ESRS S4.html" class="diagram-thumb"><img src="diagrams/ESRS S4.png" alt="ESRS S4" loading="lazy"><span>ESRS S4</span></a>
+  <a href="../European Union - People/diagrams/European Union - People.html" class="diagram-thumb"><img src="../European Union - People/diagrams/European Union - People.png" alt="European Union - People" loading="lazy"><span>European Union - People</span></a>
+  <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb"><img src="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.png" alt="ESRS Stakeholder Overview" loading="lazy"><span>ESRS Stakeholder Overview</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -61,4 +61,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-29 18:57:21*
+*Generated: 2026-06-30 11:43:27*

@@ -276,7 +276,7 @@ The wiki has six navigation views:
 - **Status badges** — element Status (Proposed, Approved, Implemented, etc.) shown as a coloured badge next to the element title; used throughout element pages, type indices, and the Status Dashboard
 - **Relationships** — outgoing connectors with linked target element names
 - **Referenced By** — incoming connectors from other elements with links
-- **Appears on Diagrams** — list of diagrams containing this element with links
+- **Appears on Diagrams** — inline thumbnail gallery of diagrams containing this element; each thumbnail links to the diagram page
 - **Attributes, Methods, Tagged Values** — detailed tabs where present
 - **Relationship Graph** — interactive force-directed graph showing the element's 2-hop neighbourhood (all directly connected elements, plus their neighbours). Nodes and edges are coloured by ArchiMate layer or EDGY facet, matching the stereotype label colours used throughout the wiki. The focal element is highlighted in orange. Unreachable 2-hop nodes (not in the export) appear at reduced opacity. Hover a node to see its full name and package in a tooltip. **Single-click** a node to expand it — its own neighbourhood is fetched and merged into the graph live. **Double-click** a node to navigate to its element page. Cross-package relationships are shown.
 

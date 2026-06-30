@@ -27,7 +27,7 @@
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="../Identity/diagrams/Identity.html" class="diagram-thumb diagram-thumb--noimg"><span>Identity</span></a>
+  <a href="../Identity/diagrams/Identity.html" class="diagram-thumb"><img src="../Identity/diagrams/Identity.png" alt="Identity" loading="lazy"><span>Identity</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -49,4 +49,4 @@
 
 ---
 
-*Generated: 2026-06-29 18:57:22*
+*Generated: 2026-06-30 11:43:28*

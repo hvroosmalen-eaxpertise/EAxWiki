@@ -67,4 +67,4 @@ EmissionActivity is a master-data entity that represents a discrete operational 
 
 ---
 
-*Generated: 2026-06-29 18:57:23*
+*Generated: 2026-06-30 11:43:29*

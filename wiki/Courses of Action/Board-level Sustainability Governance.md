@@ -30,9 +30,9 @@ Ensures top-level commitment and strategic oversight of sustainability performan
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb diagram-thumb--noimg"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
-  <a href="../Stakeholder Expectations/diagrams/Stakeholder Expectations.html" class="diagram-thumb diagram-thumb--noimg"><span>Stakeholder Expectations</span></a>
-  <a href="../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.html" class="diagram-thumb diagram-thumb--noimg"><span>Market Differentiation Pressure</span></a>
+  <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb"><img src="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).png" alt="Strategic Sustainability Management Model (Bodenstein)" loading="lazy"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
+  <a href="../Stakeholder Expectations/diagrams/Stakeholder Expectations.html" class="diagram-thumb"><img src="../Stakeholder Expectations/diagrams/Stakeholder Expectations.png" alt="Stakeholder Expectations" loading="lazy"><span>Stakeholder Expectations</span></a>
+  <a href="../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.html" class="diagram-thumb"><img src="../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.png" alt="Market Differentiation Pressure" loading="lazy"><span>Market Differentiation Pressure</span></a>
 </div>
 
 [↑ Back to top](#)
@@ -54,4 +54,4 @@ Ensures top-level commitment and strategic oversight of sustainability performan
 
 ---
 
-*Generated: 2026-06-29 18:57:22*
+*Generated: 2026-06-30 11:43:28*

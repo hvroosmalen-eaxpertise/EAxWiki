@@ -19,11 +19,11 @@ Een productiemanager van een textielfabriek wandelde op een ochtend langs de riv
 ### Appears on Diagrams
 
 <div class="diagram-thumbs">
-  <a href="diagrams/Stories Voorbeelden.html" class="diagram-thumb diagram-thumb--noimg"><span>Stories Voorbeelden</span></a>
+  <a href="diagrams/Stories Voorbeelden.html" class="diagram-thumb"><img src="diagrams/Stories Voorbeelden.png" alt="Stories Voorbeelden" loading="lazy"><span>Stories Voorbeelden</span></a>
 </div>
 
 [↑ Back to top](#)
 
 ---
 
-*Generated: 2026-06-29 18:57:22*
+*Generated: 2026-06-30 11:43:28*
