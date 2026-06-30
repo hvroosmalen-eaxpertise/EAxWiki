@@ -50,6 +50,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             : (IReadOnlyList<string>)["Approved", "Implemented", "Mandatory", "Proposed", "Validated"];
         var statusOptions = string.Join(", ", statusOptionsList);
         var statusHash = ComputeStatusHash(element.Status);
+        var statusOptionsJson = "[" + string.Join(",", statusOptionsList.Select(s => $"\"{s}\"")) + "]";
+        var wikiRelPath = Path.GetRelativePath(outputDir, filePath).Replace('\\', '/');
 
         var lines = new List<string>
         {
@@ -74,6 +76,19 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                 msg => logger.LogWarning("{Message} (element '{Name}')", msg, element.Name)),
             string.Empty,
         };
+
+        if (!string.IsNullOrEmpty(element.Status) && ctx.ApiPort > 0)
+        {
+            lines.Add(
+                $"<div id=\"ea-status-editor\" class=\"ea-status-editor\"" +
+                $" data-ea-id=\"{element.Id}\"" +
+                $" data-status=\"{element.Status}\"" +
+                $" data-options='{statusOptionsJson}'" +
+                $" data-file-path=\"{wikiRelPath}\"" +
+                $" data-api-port=\"{ctx.ApiPort}\">" +
+                $"</div>");
+            lines.Add(string.Empty);
+        }
 
         if (!string.IsNullOrWhiteSpace(element.Notes))
         {

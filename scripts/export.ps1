@@ -1,9 +1,11 @@
 # Support both PowerShell -Flag and Unix-style --flag syntax.
 $RepoPath  = ""
+$OutputDir = ""   # defaults to <repo-root>\wiki when not specified
 $Force     = $false
 $Verbose   = $false
 $Json      = $false
 $WriteBack = $false
+$ApiPort   = 0
 
 $i = 0
 while ($i -lt $args.Count) {
@@ -12,8 +14,10 @@ while ($i -lt $args.Count) {
         '^(-v|--verbose|-Verbose)$'          { $Verbose   = $true }
         '^(-j|--json|-Json)$'                { $Json      = $true }
         '^(-w|--writeback|-WriteBack)$'      { $WriteBack = $true }
-        '^(-r|--repo|-RepoPath|-r:.*)$'      { $i++; if ($i -lt $args.Count) { $RepoPath = $args[$i] } }
-        default                              { if (-not $args[$i].StartsWith('-')) { $RepoPath = $args[$i] } }
+        '^(-r|--repo|-RepoPath)$'            { $i++; if ($i -lt $args.Count) { $RepoPath  = $args[$i] } }
+        '^(-o|--output|-OutputDir)$'         { $i++; if ($i -lt $args.Count) { $OutputDir = $args[$i] } }
+        '^(--api-port|-ApiPort)$'            { $i++; if ($i -lt $args.Count) { $ApiPort   = [int]$args[$i] } }
+        default                              { if (-not "$($args[$i])".StartsWith('-')) { $RepoPath = $args[$i] } }
     }
     $i++
 }
@@ -37,24 +41,29 @@ function Cleanup-EAProcesses {
     }
 }
 
+# Resolve output directory to an absolute path so it is unambiguous regardless
+# of the working directory that dotnet run assigns to the spawned process.
+$wikiDir = if ($OutputDir) {
+    if ([System.IO.Path]::IsPathRooted($OutputDir)) { $OutputDir }
+    else { Join-Path $repoRoot $OutputDir }
+} else {
+    Join-Path $repoRoot "wiki"
+}
+
 Write-Host "=== Exporting wiki from EA model ===" -ForegroundColor Cyan
 
-# Build --repo argument: connection strings contain '=' and are passed as-is;
-# file paths are resolved relative to the repo root; empty = omitted so the
-# app prompts interactively.
-$runArgs = @()
+$runArgs = @("--output", $wikiDir)
 if ($RepoPath) {
     $resolvedRepo = if ($RepoPath -match '=') { $RepoPath }
                     elseif ([System.IO.Path]::IsPathRooted($RepoPath)) { $RepoPath }
                     else { Join-Path $repoRoot $RepoPath }
     $runArgs += "--repo", $resolvedRepo
-    $displayRepo = $resolvedRepo -replace '(?i)(Password|Pwd|User\s*Id|Uid|UserName|Username)\s*=[^;]*', '$1=***'
-    Write-Host "Repository: $displayRepo"
 }
-if ($Force)     { $runArgs += "--force" }
-if ($Verbose)   { $runArgs += "--verbose" }
-if ($Json)      { $runArgs += "--json" }
-if ($WriteBack) { $runArgs += "--writeback" }
+if ($Force)          { $runArgs += "--force" }
+if ($Verbose)        { $runArgs += "--verbose" }
+if ($Json)           { $runArgs += "--json" }
+if ($WriteBack)      { $runArgs += "--writeback" }
+if ($ApiPort -gt 0)  { $runArgs += "--api-port", $ApiPort }
 
 try {
     dotnet run --project src/EAxWiki -- $runArgs

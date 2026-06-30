@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using EAxWiki;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.EA;
@@ -70,6 +71,8 @@ if (!string.IsNullOrEmpty(config.PackageFilter))
     Console.WriteLine($"Package:    {config.PackageFilter}");
 if (config.WriteBack)
     Console.WriteLine("Mode:       write-back enabled (wiki → EA)");
+if (config.ApiMode)
+    Console.WriteLine($"Mode:       wiki write-back server on port {config.ApiPort}");
 Console.WriteLine();
 
 using var loggerFactory = LoggerFactory.Create(builder =>
@@ -82,6 +85,15 @@ IEaReader reader = new EaReader(loggerFactory.CreateLogger<EaReader>());
 using var writer = new FileOutputWriter();
 var logger = loggerFactory.CreateLogger<MarkdownExporter>();
 IWikiExporter exporter = new MarkdownExporter(writer, logger);
+
+if (config.ApiMode)
+{
+    await WikiWritebackServer.RunAsync(config, outputPath, loggerFactory);
+    return;
+}
+
+// Expose API port to MarkdownExporter so the status-editor widget URL is embedded correctly.
+Environment.SetEnvironmentVariable("EAXWIKI_API_PORT", config.ApiPort.ToString());
 
 try
 {
@@ -161,6 +173,8 @@ static void ShowUsage()
     Console.WriteLine("  --force, -f           Force full regeneration (rebuild all files)");
     Console.WriteLine("  --json, -j            Also export model.json alongside markdown");
     Console.WriteLine("  --writeback, -w       Scan wiki for status changes and write them back to EA via COM");
+    Console.WriteLine("  --api                 Start wiki write-back server for in-wiki status editing");
+    Console.WriteLine("  --api-port <port>     Port for the wiki write-back server (default: 8001)");
     Console.WriteLine("  --help, -h            Show this help message");
     Console.WriteLine();
     Console.WriteLine("Connection string examples:");

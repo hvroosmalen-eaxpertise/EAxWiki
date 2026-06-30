@@ -1,17 +1,26 @@
-# Support both PowerShell -Port and Unix-style --port syntax.
-$Port = 8000
+# Support both PowerShell -Flag and Unix-style --flag syntax.
+$Port    = 8000
+$WikiDir = ""   # defaults to <repo-root>\wiki when not specified
 
 $i = 0
 while ($i -lt $args.Count) {
     switch -Regex ($args[$i]) {
-        '^(-p|--port|-Port)$' { $i++; if ($i -lt $args.Count) { $Port = [int]$args[$i] } }
-        default               { if ($args[$i] -match '^\d+$') { $Port = [int]$args[$i] } }
+        '^(-p|--port|-Port)$'           { $i++; if ($i -lt $args.Count) { $Port    = [int]$args[$i] } }
+        '^(-o|--wiki-dir|-WikiDir)$'    { $i++; if ($i -lt $args.Count) { $WikiDir = $args[$i] } }
+        default                         { if ($args[$i] -match '^\d+$') { $Port    = [int]$args[$i] } }
     }
     $i++
 }
 
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 Push-Location $repoRoot
+
+$resolvedWikiDir = if ($WikiDir) {
+    if ([System.IO.Path]::IsPathRooted($WikiDir)) { $WikiDir }
+    else { Join-Path $repoRoot $WikiDir }
+} else {
+    Join-Path $repoRoot "wiki"
+}
 
 $mkdocsTemp = Join-Path $repoRoot ".mkdocs_temp"
 if (-not (Test-Path $mkdocsTemp)) { New-Item -ItemType Directory -Path $mkdocsTemp | Out-Null }
@@ -29,7 +38,6 @@ if (-not (Test-Path $venvDir)) {
     if ($LASTEXITCODE -ne 0) { python -m venv $venvDir }
 }
 
-# venv activation path differs between Windows and Linux/Mac
 $activate = if ($IsWindows) {
     Join-Path $venvDir "Scripts\Activate.ps1"
 } else {
@@ -53,7 +61,7 @@ Write-Host "Wiki available at:"
 Write-Host "  http://localhost:$Port"
 
 try {
-    $hostName = [System.Net.Dns]::GetHostName()
+    $hostName  = [System.Net.Dns]::GetHostName()
     $addresses = [System.Net.Dns]::GetHostEntry($hostName).AddressList |
         Where-Object { $_.AddressFamily -eq 'InterNetwork' } |
         Select-Object -ExpandProperty IPAddressToString -Unique
@@ -61,7 +69,7 @@ try {
 } catch {}
 
 Write-Host ""
-Write-Host "Starting mkdocs..."
-mkdocs serve --dev-addr 0.0.0.0:$Port
+Write-Host "Starting mkdocs (docs: $resolvedWikiDir)..."
+mkdocs serve --dev-addr "0.0.0.0:$Port" --dirty
 
 Pop-Location

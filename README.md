@@ -202,28 +202,60 @@ The serve script creates a `.venv` if needed, installs MkDocs requirements, and 
 ### Export + serve
 
 ```powershell
-.\scripts\export-and-serve.ps1                              # incremental export, then serve
-.\scripts\export-and-serve.ps1 --force                      # full regeneration, then serve
-.\scripts\export-and-serve.ps1 --verbose --force            # full regeneration with verbose logging
-.\scripts\export-and-serve.ps1 --repo "path/to/model.qea" --port 8001
+.\scripts\export-and-serve.ps1                                           # incremental export, then serve
+.\scripts\export-and-serve.ps1 --force                                   # full regeneration, then serve
+.\scripts\export-and-serve.ps1 --verbose --force                         # full regeneration with verbose logging
+.\scripts\export-and-serve.ps1 --repo "path/to/model.qea" --port 8000
+.\scripts\export-and-serve.ps1 --repo "path/to/model.qea" --port 8000 --api-port 8001   # with live write-back
+.\scripts\export-and-serve.ps1 --output "D:\wikis\projectA" --port 8000 --api-port 8001  # custom output dir
 ```
 
 The export step cleans up any orphaned EA.exe processes when it finishes.
 
-### Write-back (wiki → EA)
+### Live write-back — change status directly from the wiki page
 
-Users can update element properties (currently: **Status**) by editing the YAML frontmatter at the top of any element page. Run `writeback.ps1` to detect those changes and write them back to the EA model via the EA COM API, then re-export to regenerate the wiki.
+When the wiki runs locally on Windows with EA installed, users can change an element's **Status** directly from the rendered wiki page. A dropdown and **Apply** button appear on every element page that has a status value set.
 
-```powershell
-# Edit wiki/SomePackage/SomeElement.md → change status: Proposed to status: Approved
-.\scripts\writeback.ps1                          # detect changes and write to EA
-.\scripts\export.ps1                             # regenerate wiki from updated EA model
-
-# Or combine write-back and re-export in one step:
-.\scripts\export.ps1 --writeback
+```
+┌────────────────────────────────────────────────────────────┐
+│  Browser (MkDocs :8000)                                    │
+│                                                            │
+│  Status: [ Approved ▼ ]  [ Apply ]                        │
+│                │                                           │
+│         POST /api/status                                   │
+│                ▼                                           │
+│  Wiki write-back server (:8001)                            │
+│    ├─ EA COM → element.Status = "Approved"                 │
+│    └─ Update .md frontmatter + status badge in-place       │
+└────────────────────────────────────────────────────────────┘
 ```
 
-> **Linux / Mac:** Write-back is **not supported** on Linux or Mac. The EA COM API requires Sparx Enterprise Architect, which is Windows-only. A wiki served on Linux is read-only with respect to the EA model — status changes must be made on a Windows machine with EA installed, or by editing the EA model directly in EA.
+Use `export-and-serve.ps1` with `--api-port` to start everything in one command:
+
+```powershell
+.\scripts\export-and-serve.ps1 --repo "model/file.qea" --port 8000 --api-port 8001
+.\scripts\export-and-serve.ps1 --repo "model/file.qea" --port 8000 --api-port 8001 --force
+```
+
+This exports the wiki (embedding the status-editor widget), starts the write-back server on port 8001 as a background job, and starts MkDocs on port 8000. When Apply is clicked the EA model is updated immediately via COM. MkDocs detects the `.md` change and hot-reloads the page within seconds.
+
+**Batch write-back** (for `.md` edits made while the server was not running):
+
+```powershell
+.\scripts\export.ps1 --writeback       # scan wiki/ for status changes, write to EA
+.\scripts\export.ps1                   # re-export to sync the wiki
+```
+
+**Status options** are read live from `t_statustypes` in the EA model — the dropdown always reflects the current valid set.
+
+> **Linux / Mac:** Write-back is **not supported** on Linux or Mac. The EA COM API requires Sparx Enterprise Architect, which is Windows-only. A wiki served on Linux is read-only.
+
+| Feature | Windows | Linux / Mac |
+|---|---|---|
+| Export (EA → wiki) | ✓ | ✗ requires EA |
+| Serve wiki (MkDocs) | ✓ | ✓ |
+| Live status write-back (wiki → EA) | ✓ | ✗ requires EA |
+| Batch write-back (`--writeback`) | ✓ | ✗ requires EA |
 
 ## Saved connection config
 

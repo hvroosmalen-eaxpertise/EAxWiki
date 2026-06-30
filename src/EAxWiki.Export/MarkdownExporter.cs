@@ -43,7 +43,12 @@ public class MarkdownExporter : IWikiExporter
                 : repository.RootPackages;
 
             var statusTypes = reader?.GetStatusTypes() ?? [];
-            var ctx = ContextBuilder.Build(packages, outputPath, force) with { StatusTypes = statusTypes };
+            int.TryParse(Environment.GetEnvironmentVariable("EAXWIKI_API_PORT"), out var apiPort);
+            var ctx = ContextBuilder.Build(packages, outputPath, force) with
+            {
+                StatusTypes = statusTypes,
+                ApiPort = apiPort,
+            };
 
             var packageExporter = new PackageExporter(_writer, _logger);
             var totalElements = ctx.Elements.Count;
@@ -80,6 +85,7 @@ public class MarkdownExporter : IWikiExporter
                 infrastructure.WritePagesFileAsync(outputPath),
                 infrastructure.WriteExtraCssAsync(outputPath),
                 infrastructure.WriteGraphScriptsAsync(outputPath),
+                infrastructure.WriteStatusEditorScriptAsync(outputPath),
             };
 
             if (reader != null)

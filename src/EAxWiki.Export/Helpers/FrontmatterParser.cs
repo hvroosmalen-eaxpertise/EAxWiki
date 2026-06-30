@@ -1,8 +1,9 @@
+using System.Text.RegularExpressions;
 using EAxWiki.Export.Exporters;
 
 namespace EAxWiki.Export.Helpers;
 
-internal static class FrontmatterParser
+public static class FrontmatterParser
 {
     /// <summary>
     /// Parses the YAML frontmatter block (between the first two --- delimiters) of a Markdown file.
@@ -35,8 +36,8 @@ internal static class FrontmatterParser
     }
 
     /// <summary>
-    /// Updates a single frontmatter key in a Markdown file in place.
-    /// Also updates ea_hash to the new hash of the written value.
+    /// Updates status in a Markdown file: frontmatter fields, status badge, and widget div.
+    /// Uses an atomic temp-file swap so MkDocs never reads a partially written file.
     /// </summary>
     public static void UpdateStatus(string filePath, string newStatus)
     {
@@ -50,6 +51,7 @@ internal static class FrontmatterParser
         }
         if (end < 0) return;
 
+        // 1. Update frontmatter
         var newHash = ElementPageWriter.ComputeStatusHash(newStatus);
         for (int i = 1; i < end; i++)
         {
@@ -62,6 +64,25 @@ internal static class FrontmatterParser
                 lines[i] = $"ea_hash: {newHash}";
         }
 
-        File.WriteAllLines(filePath, lines);
+        // 2. Update page body: status badge and widget data-status attribute
+        var badgePattern  = new Regex(@"class=""status-badge status-[^""]*"">[^<]*</span>");
+        var widgetPattern = new Regex(@"data-status=""[^""]*""");
+        var newClass = $"status-{newStatus.ToLowerInvariant()}";
+
+        for (int i = end + 1; i < lines.Count; i++)
+        {
+            if (lines[i].Contains("status-badge"))
+                lines[i] = badgePattern.Replace(lines[i],
+                    $"class=\"status-badge {newClass}\">{newStatus}</span>");
+
+            if (lines[i].Contains("id=\"ea-status-editor\""))
+                lines[i] = widgetPattern.Replace(lines[i],
+                    $"data-status=\"{newStatus}\"");
+        }
+
+        // 3. Atomic write — swap via temp file so MkDocs never sees a partial file
+        var tmp = filePath + ".tmp";
+        File.WriteAllLines(tmp, lines);
+        File.Move(tmp, filePath, overwrite: true);
     }
 }

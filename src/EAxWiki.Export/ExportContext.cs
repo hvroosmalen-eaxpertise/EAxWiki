@@ -17,6 +17,9 @@ internal record ExportContext(
     /// <summary>Allowed Status values from t_statustypes, used to populate frontmatter status_options.</summary>
     public IReadOnlyList<string> StatusTypes { get; init; } = [];
 
+    /// <summary>Port of the wiki write-back server. 0 means no server — widget is omitted.</summary>
+    public int ApiPort { get; init; } = 0;
+
     /// <summary>
     /// Absolute paths of every element .md file as actually written (including collision-renamed files).
     /// Populated by PackageExporter; consumed by cleanup.

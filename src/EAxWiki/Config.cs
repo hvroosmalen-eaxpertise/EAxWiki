@@ -11,6 +11,8 @@ public class Config
     public bool Force { get; set; }
     public bool JsonExport { get; set; }
     public bool WriteBack { get; set; }
+    public bool ApiMode { get; set; }
+    public int ApiPort { get; set; } = 0;
 
     public void Load(string[] args)
     {
@@ -57,6 +59,15 @@ public class Config
                 case "--writeback":
                 case "-w":
                     WriteBack = true;
+                    break;
+                case "--api":
+                    ApiMode = true;
+                    if (ApiPort == 0) ApiPort = 8001;
+                    break;
+                case "--api-port":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
+                    ApiPort = int.Parse(args[++i]);
                     break;
                 case "--help":
                 case "/?":
