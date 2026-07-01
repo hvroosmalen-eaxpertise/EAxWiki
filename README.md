@@ -32,27 +32,29 @@ Because the serve step only needs Python and the `wiki/` folder, it works on any
 ### Windows — export and serve on the same machine
 
 ```
-┌─────────────────────────────┐   ┌─────────────────────────────┐
-│           EXPORT            │   │            SERVE            │
-│                             │   │                             │
-│  EA Model (.qea / DB)       │   │  wiki/                      │
-│  Sparx Enterprise Architect │   │  Markdown + PNG files       │
-│             │               │   │             │               │
-│          COM API            │   │             ▼               │
-│             │               │   │  MkDocs + Material          │
-│             ▼               │   │  scripts/serve.ps1          │
-│  EAxWiki.exe (.NET 10)      │   │             │               │
-│  scripts/export.ps1         │   │             ▼               │
-│             │               │   │  Browser                    │
-│             ▼               │   │  http://localhost:8000      │
-│  wiki/                      ├──►│                             │
-│  Markdown + PNG files       │   │                             │
-│                             │   │                             │
-│  Incremental by default;    │   │  export-and-serve.ps1       │
-│  use -Force to rebuild all  │   │  runs both steps at once    │
-└─────────────────────────────┘   └─────────────────────────────┘
-         Windows only                    Windows, Linux, Mac
+┌─────────────────────────────┐   ┌─────────────────────────────┐   ┌─────────────────────────────┐
+│           EXPORT            │   │            SERVE            │   │         WRITE-BACK          │
+│                             │   │                             │   │                             │
+│  EA Model (.qea / DB)       │   │  wiki/                      │   │  Wiki write-back server     │
+│  Sparx Enterprise Architect │   │  Markdown + PNG files       │   │  EAxWiki.exe --api          │
+│             │               │   │             │               │   │  scripts/serve-api.ps1      │
+│          COM API            │   │             ▼               │   │                             │
+│             │               │   │  MkDocs + Material          │   │  http://localhost:8001      │
+│             ▼               │   │  scripts/serve.ps1          │   │                             │
+│  EAxWiki.exe (.NET 10)      │   │             │               │   │  Browser: click pencil      │
+│  scripts/export.ps1         │   │             ▼               │   │  POST /api/status, ...      │
+│             │               │   │  Browser                    │   │                             │
+│             ▼               │   │  http://localhost:8000      ├──►│  EA COM Update() +          │
+│  wiki/                      ├──►│                             │   │  patch wiki/ frontmatter    │
+│  Markdown + PNG files       │   │                             │   │                             │
+│                             │   │                             │   │  export-and-serve.ps1       │
+│  Incremental by default;    │   │  export-and-serve.ps1       │   │  --api-port starts this     │
+│  use -Force to rebuild all  │   │  runs both steps at once    │   │                             │
+└─────────────────────────────┘   └─────────────────────────────┘   └─────────────────────────────┘
+                        All three run together on one Windows machine
 ```
+
+MkDocs itself is cross-platform — only EXPORT and WRITE-BACK need EA COM, which is Windows-only. See the next diagram for running SERVE on a separate Linux/Mac machine instead.
 
 ### Windows + Linux — export on Windows, serve on Linux
 
@@ -107,6 +109,8 @@ If EA is installed in a non-standard location, pass the path explicitly:
 pwsh -ExecutionPolicy Bypass -File .\install.ps1 -EAPath "D:\MyTools\Sparx\EA"
 ```
 
+> **This installs the tool, not a copy of the demo wiki.** Neither `EAxWiki-windows.zip` nor `EAxWiki-linux.zip` contains the `wiki/` or `model/` folders from this repository — those exist here purely so you can see what EAxWiki produces before installing. Once installed, run the exporter against your own `.qea` file or database connection (see [Configuration](#configuration)) and it writes a fresh `wiki/` folder next to wherever you run it, containing *your* elements, diagrams, and packages. The EurSuRA content you see in this repo and on the [live demo site](https://hvroosmalen-eaxpertise.github.io/EAxWiki/) has no bearing on what you'll get.
+
 ### Linux / Mac (serve only)
 
 Download **`install.sh`** from the [latest release](https://github.com/hvroosmalen-eaxpertise/EAxWiki/releases/latest) and run:
@@ -148,6 +152,36 @@ Linux only needs Python and PowerShell Core (`pwsh`). The `install.sh` script in
 | .NET 10 SDK | required | not needed |
 | Enterprise Architect | required for export | not needed |
 | PowerShell 7+ (`pwsh`) | recommended | required (`install.sh` installs it) |
+
+## Configuration
+
+Every setting is passed as a command-line flag — there is no separate config file to edit, except the auto-saved `.eaxwiki` connection string (see [Saved connection config](#saved-connection-config)). All scripts accept both PowerShell (`-Flag`) and Unix-style (`--flag`) syntax, and forward unrecognized flags straight to the underlying `dotnet run -- ...` invocation.
+
+A typical first-time setup is just:
+
+```powershell
+.\scripts\export-and-serve.ps1 --repo "path\to\YourModel.qea"
+```
+
+— which exports incrementally to `wiki/`, then serves it at `http://localhost:8000`. No `--repo`? You'll get an interactive prompt (file path or DB connection wizard) the first time, and the answer is saved to `.eaxwiki` so every later run just works with no flags at all.
+
+| Flag | Short | Applies to | Description |
+|---|---|---|---|
+| `--repo <value>` | `-r` | export | Path to a `.qea` file, or a DB connection string. Omit to enter the interactive connection builder on first run. |
+| `--name <name>` | `-n` | export | Display name for the repository, shown on the wiki home page. |
+| `--output <dir>` | `-o` | export, serve | Output/input directory for the wiki (default: `wiki`). Give every instance its own to run several side by side — see [Running multiple wikis on one machine](#running-multiple-wikis-on-one-machine). |
+| `--package <name>` | `-p` | export | Only export a specific package (by name), instead of the whole repository. |
+| `--force` | `-f` | export | Full regeneration — rebuild every file instead of only changed ones. |
+| `--verbose` | `-v` | export | Debug-level logging with per-element timing. |
+| `--json` | `-j` | export | Also write `model.json` (the full model as JSON) alongside the Markdown. |
+| `--writeback` | `-w` | export | Batch mode: scan `wiki/` for manual status/notes edits made while `--api` wasn't running, and push them to EA via COM before exporting. |
+| `--api` | | write-back server | Start the wiki write-back server so the pencil-icon editors on the page work live. |
+| `--api-port <port>` | | write-back server | Port the write-back server listens on (default: `8001`). |
+| `--wiki-port <port>` | | write-back server | Port the *paired* `mkdocs serve` uses (default: `8000`). The write-back server only accepts requests whose `Origin` matches this port — see [Running multiple wikis on one machine](#running-multiple-wikis-on-one-machine). `export-and-serve.ps1` / `serve-api.ps1` set this automatically from `--port`; only pass it yourself if you call `dotnet run` directly. |
+| `--port <port>` | `-p`, but only in `serve.ps1`/`export-and-serve.ps1`/`serve-api.ps1` | serve | Port `mkdocs serve` listens on (default: `8000`). Careful: this `-p` is those scripts' own shorthand — `-p` passed to the exporter itself (`export.ps1`) means `--package`, not port. |
+| `--help` | `-h` | any | Show usage and exit. |
+
+`--port` and `--api-port`/`--wiki-port` are independent of each other by design — one is MkDocs' own flag, the others belong to the EAxWiki write-back server — which is exactly what makes running several isolated instances on one machine possible.
 
 ## Scripts
 
@@ -270,6 +304,17 @@ Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per 
 | Live diagram description write-back (wiki → EA) | ✓ | ✗ requires EA |
 | Live attribute/method/tagged value write-back (wiki → EA) | ✓ | ✗ requires EA |
 | Batch write-back (`--writeback`) | ✓ | ✗ requires EA |
+
+### Running multiple wikis on one machine
+
+Each export/serve/write-back triple is fully isolated by its `--output`, `--port`, and `--api-port` values, so you can run as many side by side as you like — for example, two different EA repositories served at once:
+
+```powershell
+.\scripts\export-and-serve.ps1 --repo "model/ProjectA.qea" --output "D:\wikis\A" --port 8000 --api-port 8001
+.\scripts\export-and-serve.ps1 --repo "model/ProjectB.qea" --output "D:\wikis\B" --port 8100 --api-port 8101
+```
+
+Each write-back server only accepts requests from its own paired wiki: it checks that the request's `Origin` matches its own hostname on the `--wiki-port` it was started with. `export-and-serve.ps1` and `serve-api.ps1` infer `--wiki-port` from `--port` automatically, so nothing extra to configure above — instance A's wiki page simply can't reach instance B's write-back server, even though both run on the same machine. If you invoke `dotnet run --project src/EAxWiki -- --api ...` directly instead of through the scripts, pass `--wiki-port` yourself to match whichever port `mkdocs serve` uses for that instance.
 
 ## Saved connection config
 
