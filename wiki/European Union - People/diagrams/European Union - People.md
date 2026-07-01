@@ -1,3 +1,8 @@
+---
+diagram_id: 37
+notes_hash: acc6783b
+---
+
 # European Union - People
 
 
@@ -5,7 +10,14 @@
 
 ![European Union - People](European Union - People.png)
 
-**Description:** In this diagram the political structure is shown between the EU and the government of each individual European country. 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="37" data-kind="diagram" data-file-path="European Union - People/diagrams/European Union - People.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>In this diagram the political structure is shown between the EU and the government of each individual European country.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -31,4 +43,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:30:00*
+*Generated: 2026-07-01 12:05:17*

@@ -1,16 +1,16 @@
 ---
 ea_id: 250
-status: 
+status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
-ea_hash: e3b0c442
+ea_hash: 9b0c660b
 notes_hash: 32d21cf0
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> FreshFood B.V.
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="250" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/FreshFood B.V..md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
-**Created:** 2025-11-14  **Modified:** 2025-11-14
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="250" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/FreshFood B.V..md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Created:** 2025-11-14  **Modified:** 2026-07-01
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
@@ -58,4 +58,4 @@ notes_hash: 32d21cf0
 
 ---
 
-*Generated: 2026-07-01 11:29:54*
+*Generated: 2026-07-01 12:05:09*

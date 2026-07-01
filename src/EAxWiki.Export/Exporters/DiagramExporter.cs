@@ -38,8 +38,21 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                 if (!pngSuccess)
                     logger.LogWarning("Failed to export PNG for diagram {DiagramName}", diagram.Name);
 
+                var derivedText = GetDerivedDescriptionText(diagram, ctx);
+                var hasOwnNotes = !string.IsNullOrWhiteSpace(diagram.Notes);
+                var seedValue = hasOwnNotes
+                    ? FrontmatterParser.NormalizeNotesHtml(diagram.Notes)
+                    : FrontmatterParser.NormalizeNotesHtml(derivedText);
+                var notesHash = ElementPageWriter.ComputeNotesHash(seedValue);
+                var wikiRelPath = Path.GetRelativePath(ctx.OutputPath, mdPath).Replace('\\', '/');
+
                 var lines = new List<string>
                 {
+                    "---",
+                    $"diagram_id: {diagram.Id}",
+                    $"notes_hash: {notesHash}",
+                    "---",
+                    string.Empty,
                     $"# {diagram.Name}",
                     string.Empty,
                     string.Empty,
@@ -54,10 +67,31 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     lines.Add(string.Empty);
                 }
 
-                var desc = !string.IsNullOrWhiteSpace(diagram.Notes)
-                    ? $"**Description:** {diagram.Notes}"
-                    : GetDerivedDescription(diagram, ctx);
-                lines.Add(desc);
+                if (ctx.ApiPort > 0)
+                {
+                    lines.Add(
+                        $"<div id=\"ea-notes-editor\" class=\"ea-notes-editor\"" +
+                        $" data-ea-id=\"{diagram.Id}\"" +
+                        $" data-kind=\"diagram\"" +
+                        $" data-file-path=\"{wikiRelPath}\"" +
+                        $" data-api-port=\"{ctx.ApiPort}\">");
+                    lines.Add("<button id=\"ea-notes-edit-btn\" class=\"ea-notes-edit-btn\" type=\"button\" aria-label=\"Edit description\">&#9998;</button>");
+                    if (!hasOwnNotes && !string.IsNullOrEmpty(derivedText))
+                        lines.Add("<span class=\"ea-notes-derived-hint\">(derived)</span>");
+                    lines.Add("<div class=\"ea-notes-content\">");
+                    lines.Add("<!--ea-notes-start-->");
+                    lines.Add(seedValue);
+                    lines.Add("<!--ea-notes-end-->");
+                    lines.Add("</div>");
+                    lines.Add("</div>");
+                }
+                else
+                {
+                    var desc = hasOwnNotes
+                        ? $"**Description:** {diagram.Notes}"
+                        : derivedText != null ? $"**Derived Description:** {derivedText}" : "**Description:** -";
+                    lines.Add(desc);
+                }
                 lines.Add(string.Empty);
 
                 var diagramElements = new List<(EaElement Element, string PackageDir)>();
@@ -154,7 +188,12 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
         return fileTime >= diagramTimeUtc;
     }
 
-    private static string GetDerivedDescription(EaDiagram diagram, ExportContext ctx)
+    /// <summary>
+    /// Returns the raw first-sentence text derived from an element on the diagram, or null if none
+    /// qualifies. Kept separate from display formatting so it can also seed the notes editor's
+    /// textarea without a "**Derived Description:**" label baked into the editable text.
+    /// </summary>
+    private static string? GetDerivedDescriptionText(EaDiagram diagram, ExportContext ctx)
     {
         foreach (var dob in diagram.DiagramObjects)
         {
@@ -164,9 +203,9 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                 var firstDot = e.Element.Notes.IndexOf('.');
                 var sentence = firstDot >= 0 ? e.Element.Notes[..firstDot].Trim() : e.Element.Notes.Trim();
                 if (sentence.Length >= 20)
-                    return $"**Derived Description:** {sentence}";
+                    return sentence;
             }
         }
-        return "**Description:** -";
+        return null;
     }
 }

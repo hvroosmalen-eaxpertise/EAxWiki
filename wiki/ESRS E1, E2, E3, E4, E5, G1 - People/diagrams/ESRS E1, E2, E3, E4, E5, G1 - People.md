@@ -1,3 +1,8 @@
+---
+diagram_id: 33
+notes_hash: fafc6797
+---
+
 # ESRS E1, E2, E3, E4, E5, G1 - People
 
 
@@ -5,8 +10,16 @@
 
 ![ESRS E1, E2, E3, E4, E5, G1 - People](ESRS E1, E2, E3, E4, E5, G1 - People.png)
 
-**Derived Description:** For more information:
-https://www
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="33" data-kind="diagram" data-file-path="ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>For more information:
+https://www</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -37,4 +50,4 @@ https://www
 
 ---
 
-*Generated: 2026-07-01 11:30:01*
+*Generated: 2026-07-01 12:05:17*

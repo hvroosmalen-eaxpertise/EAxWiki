@@ -1,3 +1,8 @@
+---
+diagram_id: 44
+notes_hash: 116564f3
+---
+
 # Introduction EDGY Presentation 13 May Event
 
 
@@ -5,7 +10,12 @@
 
 ![Introduction EDGY Presentation 13 May Event](Introduction EDGY Presentation 13 May Event.png)
 
-**Derived Description:** Small and medium enterprises with stock exchange listing (future LSME standard)
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="44" data-kind="diagram" data-file-path="Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+Small and medium enterprises with stock exchange listing (future LSME standard)
 Required to report: 
 Any listed companies that meet two of the following three criteria on any two consecutive balance sheet dates:
 <ol>
@@ -13,6 +23,9 @@ Any listed companies that meet two of the following three criteria on any two co
 	<li>at least EUR 50 million in net turnover</li>
 	<li>at least 250 employees (average) during the year</li>
 </ol>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -48,4 +61,4 @@ Any listed companies that meet two of the following three criteria on any two co
 
 ---
 
-*Generated: 2026-07-01 11:30:14*
+*Generated: 2026-07-01 12:05:31*

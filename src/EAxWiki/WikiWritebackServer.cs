@@ -14,6 +14,7 @@ internal static class WikiWritebackServer
 {
     internal record StatusChangeRequest(int ElementId, string NewStatus, string FilePath);
     internal record NotesChangeRequest(int ElementId, string NewNotes, string FilePath);
+    internal record DiagramNotesChangeRequest(int DiagramId, string NewNotes, string FilePath);
 
     public static async Task RunAsync(Config config, string outputPath, ILoggerFactory loggerFactory)
     {
@@ -104,6 +105,33 @@ internal static class WikiWritebackServer
             catch (Exception ex)
             {
                 logger.LogError(ex, "Notes write-back failed for element {Id}", req.ElementId);
+                return Results.Problem($"Write-back failed: {ex.Message}");
+            }
+        });
+
+        app.MapPost("/api/diagram-notes", ([FromBody] DiagramNotesChangeRequest req) =>
+        {
+            if (req.NewNotes == null)
+                return Results.BadRequest(new { success = false, message = "newNotes is required." });
+
+            var filePath = Path.GetFullPath(Path.Combine(outputPath, req.FilePath));
+            if (!filePath.StartsWith(Path.GetFullPath(outputPath), StringComparison.OrdinalIgnoreCase))
+                return Results.BadRequest(new { success = false, message = "Invalid file path." });
+
+            if (!File.Exists(filePath))
+                return Results.NotFound(new { success = false, message = $"File not found: {req.FilePath}" });
+
+            try
+            {
+                var normalized = FrontmatterParser.NormalizeNotesHtml(req.NewNotes);
+                reader.UpdateDiagramNotes(req.DiagramId, normalized);
+                FrontmatterParser.UpdateNotes(filePath, normalized);
+                logger.LogInformation("Notes updated for diagram {Id} ({File})", req.DiagramId, req.FilePath);
+                return Results.Ok(new { success = true, message = "Description updated.", html = normalized });
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Notes write-back failed for diagram {Id}", req.DiagramId);
                 return Results.Problem($"Write-back failed: {ex.Message}");
             }
         });

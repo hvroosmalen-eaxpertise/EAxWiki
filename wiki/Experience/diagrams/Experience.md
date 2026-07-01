@@ -1,3 +1,8 @@
+---
+diagram_id: 5
+notes_hash: 28123489
+---
+
 # Experience
 
 
@@ -5,7 +10,15 @@
 
 ![Experience](Experience.png)
 
-**Derived Description:** Duurzaamheidsverwachtingen van stakeholders
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="5" data-kind="diagram" data-file-path="Experience/diagrams/Experience.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Duurzaamheidsverwachtingen van stakeholders</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -30,4 +43,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:30:03*
+*Generated: 2026-07-01 12:05:20*

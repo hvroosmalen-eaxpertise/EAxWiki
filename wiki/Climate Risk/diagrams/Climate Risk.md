@@ -1,3 +1,8 @@
+---
+diagram_id: 24
+notes_hash: 03488edb
+---
+
 # Climate Risk
 
 
@@ -5,7 +10,15 @@
 
 ![Climate Risk](Climate Risk.png)
 
-**Derived Description:** Physical and transition risks associated with climate change, including extreme weather events, resource scarcity, and carbon pricing
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="24" data-kind="diagram" data-file-path="Climate Risk/diagrams/Climate Risk.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Physical and transition risks associated with climate change, including extreme weather events, resource scarcity, and carbon pricing</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -31,4 +44,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:30:11*
+*Generated: 2026-07-01 12:05:28*

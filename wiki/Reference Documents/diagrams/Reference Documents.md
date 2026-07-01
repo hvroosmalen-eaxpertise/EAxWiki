@@ -1,3 +1,8 @@
+---
+diagram_id: 30
+notes_hash: d4c7cf1b
+---
+
 # Reference Documents
 
 
@@ -5,9 +10,16 @@
 
 ![Reference Documents](Reference Documents.png)
 
-**Derived Description:** A Practical Approach for Companies Using the SDGs as a Framework, Bodenstein Robert, Herget Josef
-
-This book provides a practical guide to implementing sustainability strategies within companies
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="30" data-kind="diagram" data-file-path="Reference Documents/diagrams/Reference Documents.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>A Practical Approach for Companies Using the SDGs as a Framework, Bodenstein Robert, Herget Josef</p>
+<p>This book provides a practical guide to implementing sustainability strategies within companies</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -16,4 +28,4 @@ This book provides a practical guide to implementing sustainability strategies w
 
 ---
 
-*Generated: 2026-07-01 11:30:05*
+*Generated: 2026-07-01 12:05:23*

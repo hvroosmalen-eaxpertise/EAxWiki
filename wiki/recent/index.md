@@ -2,6 +2,9 @@
 
 | Name | Type | Modified | Path |
 |------|------|----------|------|
+| [FreshFood B.V.](../ESRS Navigator Stakeholder Map/FreshFood B.V..md) | Class | 2026-07-01 | [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) |
+| [ESRS E1 - Climate](../ESRS Navigator Stakeholder Map/ESRS E1 - Climate.md) | Class | 2026-07-01 | [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) |
+| [ESRS E2 - Pollution](../ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.md) | Class | 2026-07-01 | [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) |
 | [CO₂ Reduction %](../Assessments/CO₂ Reduction %.md) | Class | 2026-07-01 | [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](../Assessments/index.md) |
 | [Emission Sources](../Asset/Emission Sources.md) | Class | 2026-07-01 | [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Asset](../Asset/index.md) |
 | [Large Companies (>250 employees)](../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md) | Class | 2026-07-01 | [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) |
@@ -49,10 +52,7 @@
 | [EmissionSource](../Emissions/EmissionSource.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
 | [EmissionSink](../Emissions/EmissionSink.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
 | [EmissionCalculationModel](../Emissions/EmissionCalculationModel.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
-| [EmissionComponent](../Emissions/EmissionComponent.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
-| [UnitOfMeasure](../Emissions/UnitOfMeasure.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
-| [EmissionFactor](../Emissions/EmissionFactor.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
 
 ---
 
-*Generated: 2026-07-01 11:29:54*
+*Generated: 2026-07-01 12:05:10*

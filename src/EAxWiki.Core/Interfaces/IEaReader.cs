@@ -11,4 +11,5 @@ public interface IEaReader
     IReadOnlyList<string> GetStatusTypes();
     void UpdateElementStatus(int elementId, string newStatus);
     void UpdateElementNotes(int elementId, string newNotesHtml);
+    void UpdateDiagramNotes(int diagramId, string newNotesHtml);
 }

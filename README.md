@@ -214,10 +214,11 @@ The export step cleans up any orphaned EA.exe processes when it finishes.
 
 ### Live write-back — change status and notes directly from the wiki page
 
-When the wiki runs locally on Windows with EA installed, users can edit an element's **Status** and **Notes** directly from the rendered wiki page — no need to open EA. Both use the same two-step pattern: a small pencil icon next to the value, click to edit, **Apply**/**Save** or **Cancel** to close.
+When the wiki runs locally on Windows with EA installed, users can edit an element's **Status** and **Notes**, and a diagram's **Description**, directly from the rendered wiki page — no need to open EA. All three use the same two-step pattern: a small pencil icon next to the value, click to edit, **Apply**/**Save** or **Cancel** to close.
 
 - **Status** — sits on its own line. Clicking the pencil replaces the badge in place with a dropdown, Apply, and Cancel — no separate widget block elsewhere on the page. Elements with no status set show a "Not Set" badge and can be given one the same way.
 - **Notes** — a pencil icon next to the notes text. Clicking it swaps the rendered notes for a raw-HTML `<textarea>` with Save / Cancel.
+- **Diagram description** — same pencil-and-textarea editor as Notes, on the diagram page. If the diagram has no description of its own, the page shows one auto-derived from an element on the diagram (marked "(derived)"); editing pre-fills with that clean text (no label) so Save just promotes it into the diagram's own stored description. Diagrams with neither show "No description set." and start from a blank box.
 
 ```
 ┌────────────────────────────────────────────────────────────┐
@@ -248,7 +249,7 @@ Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per 
 **Batch write-back** (for `.md` edits made while the server was not running):
 
 ```powershell
-.\scripts\export.ps1 --writeback       # scan wiki/ for status and notes changes, write to EA
+.\scripts\export.ps1 --writeback       # scan wiki/ for status, notes, and diagram description changes, write to EA
 .\scripts\export.ps1                   # re-export to sync the wiki
 ```
 
@@ -262,6 +263,7 @@ Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per 
 | Serve wiki (MkDocs) | ✓ | ✓ |
 | Live status write-back (wiki → EA) | ✓ | ✗ requires EA |
 | Live notes write-back (wiki → EA) | ✓ | ✗ requires EA |
+| Live diagram description write-back (wiki → EA) | ✓ | ✗ requires EA |
 | Batch write-back (`--writeback`) | ✓ | ✗ requires EA |
 
 ## Saved connection config
@@ -341,6 +343,7 @@ The wiki has six navigation views:
 
 - **PNG image** — exported directly from EA
 - **Interactive zoom** — click the image for a full-size overlay (via mkdocs-glightbox)
+- **Description edit icon** — when `--api-port` is set, a pencil icon opens a live write-back editor for the diagram's description, same as the element Notes editor (see [Live write-back](#live-write-back--change-status-and-notes-directly-from-the-wiki-page))
 - **Elements list** — all elements on the diagram, alphabetically sorted, with links
 
 All views are generated automatically by the exporter and configured via the awesome-pages MkDocs plugin.

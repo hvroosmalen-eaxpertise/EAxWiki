@@ -375,22 +375,34 @@ if (typeof document$ !== 'undefined') {
     if (!widget || widget.dataset.initialized) return;
     widget.dataset.initialized = 'true';
 
-    var eaId = parseInt(widget.dataset.eaId, 10);
-    var file = widget.dataset.filePath;
-    var port = widget.dataset.apiPort || '8001';
+    var eaId    = parseInt(widget.dataset.eaId, 10);
+    var kind    = widget.dataset.kind || 'element';
+    var file    = widget.dataset.filePath;
+    var port    = widget.dataset.apiPort || '8001';
     var apiBase = 'http://localhost:' + port;
+    var endpoint = kind === 'diagram' ? '/api/diagram-notes' : '/api/notes';
+    var idField  = kind === 'diagram' ? 'diagramId' : 'elementId';
 
     var editBtn = document.getElementById('ea-notes-edit-btn');
     var contentDiv = widget.querySelector('.ea-notes-content');
+    var hint = widget.querySelector('.ea-notes-derived-hint');
     if (!editBtn || !contentDiv) return;
 
     var notesMarkerPattern = /<!--\s*ea-notes-(start|end)\s*-->/g;
+    var placeholderHtml = '<em class="ea-notes-placeholder">No description set.</em>';
+
+    if (contentDiv.innerHTML.replace(notesMarkerPattern, '').trim() === '') {
+      contentDiv.innerHTML = placeholderHtml;
+    }
+
     var textarea, controls, saveBtn, cancelBtn, msg;
 
     function enterEditMode() {
+      var isPlaceholder = !!contentDiv.querySelector('.ea-notes-placeholder');
+
       textarea = document.createElement('textarea');
       textarea.className = 'ea-notes-textarea';
-      textarea.value = contentDiv.innerHTML.replace(notesMarkerPattern, '').trim();
+      textarea.value = isPlaceholder ? '' : contentDiv.innerHTML.replace(notesMarkerPattern, '').trim();
 
       controls = document.createElement('div');
       controls.className = 'ea-notes-controls';
@@ -412,6 +424,7 @@ if (typeof document$ !== 'undefined') {
 
       contentDiv.style.display = 'none';
       editBtn.style.display = 'none';
+      if (hint) hint.style.display = 'none';
       widget.appendChild(textarea);
       widget.appendChild(controls);
       textarea.focus();
@@ -426,23 +439,29 @@ if (typeof document$ !== 'undefined') {
       textarea = controls = null;
       contentDiv.style.display = '';
       editBtn.style.display = '';
+      if (hint) hint.style.display = '';
     }
 
     function save() {
       var newNotes = textarea.value;
+      var body = { newNotes: newNotes, filePath: file };
+      body[idField] = eaId;
+
       saveBtn.disabled = true;
       cancelBtn.disabled = true;
       msg.textContent = 'Saving…';
 
-      fetch(apiBase + '/api/notes', {
+      fetch(apiBase + endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ elementId: eaId, newNotes: newNotes, filePath: file })
+        body: JSON.stringify(body)
       })
       .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
       .then(function (res) {
         if (res.ok) {
-          contentDiv.innerHTML = res.data.html;
+          contentDiv.innerHTML = res.data.html || placeholderHtml;
+          if (hint && hint.parentNode) hint.parentNode.removeChild(hint);
+          hint = null;
           exitEditMode();
         } else {
           msg.textContent = '✗ ' + (res.data.message || 'Error');
@@ -720,6 +739,16 @@ details.status-details li {
 .ea-notes-edit-btn:hover {
   background: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
+}
+.ea-notes-derived-hint {
+  display: block;
+  font-size: 0.8em;
+  font-style: italic;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 0.2em;
+}
+.ea-notes-placeholder {
+  color: var(--md-default-fg-color--light);
 }
 .ea-notes-textarea {
   width: 100%;

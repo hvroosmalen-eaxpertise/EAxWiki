@@ -1,3 +1,8 @@
+---
+diagram_id: 23
+notes_hash: 60a4cdc7
+---
+
 # Stakeholder Expectations
 
 
@@ -5,7 +10,15 @@
 
 ![Stakeholder Expectations](Stakeholder Expectations.png)
 
-**Derived Description:** Growing expectations from investors, customers, employees, and civil society for transparent and responsible corporate behavior
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="23" data-kind="diagram" data-file-path="Stakeholder Expectations/diagrams/Stakeholder Expectations.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Growing expectations from investors, customers, employees, and civil society for transparent and responsible corporate behavior</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -30,4 +43,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:30:10*
+*Generated: 2026-07-01 12:05:27*

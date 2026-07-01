@@ -1,3 +1,8 @@
+---
+diagram_id: 1
+notes_hash: 7d5c969f
+---
+
 # Sustainability Development Goals
 
 
@@ -5,7 +10,15 @@
 
 ![Sustainability Development Goals](Sustainability Development Goals.png)
 
-**Derived Description:** End poverty in all its forms everywhere
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="1" data-kind="diagram" data-file-path="Sustainability Development Goals/diagrams/Sustainability Development Goals.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>End poverty in all its forms everywhere</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -37,4 +50,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:29:56*
+*Generated: 2026-07-01 12:05:11*

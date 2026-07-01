@@ -1,3 +1,8 @@
+---
+diagram_id: 4
+notes_hash: 7f0e0cec
+---
+
 # Identity
 
 
@@ -5,7 +10,15 @@
 
 ![Identity](Identity.png)
 
-**Derived Description:** De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en milieudoelen
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="4" data-kind="diagram" data-file-path="Identity/diagrams/Identity.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en milieudoelen</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -45,4 +58,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:30:02*
+*Generated: 2026-07-01 12:05:19*

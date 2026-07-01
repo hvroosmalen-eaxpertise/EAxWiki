@@ -243,6 +243,16 @@ details.status-details li {
   background: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
 }
+.ea-notes-derived-hint {
+  display: block;
+  font-size: 0.8em;
+  font-style: italic;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 0.2em;
+}
+.ea-notes-placeholder {
+  color: var(--md-default-fg-color--light);
+}
 .ea-notes-textarea {
   width: 100%;
   min-height: 8em;

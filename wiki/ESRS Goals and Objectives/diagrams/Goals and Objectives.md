@@ -1,3 +1,8 @@
+---
+diagram_id: 40
+notes_hash: 0f551ff9
+---
+
 # Goals and Objectives
 
 
@@ -5,7 +10,15 @@
 
 ![Goals and Objectives](Goals and Objectives.png)
 
-**Derived Description:** Align sustainability reporting for businesses operating within the European Union
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="40" data-kind="diagram" data-file-path="ESRS Goals and Objectives/diagrams/Goals and Objectives.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Align sustainability reporting for businesses operating within the European Union</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -17,4 +30,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:29:58*
+*Generated: 2026-07-01 12:05:15*

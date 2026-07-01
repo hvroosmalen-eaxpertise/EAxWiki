@@ -1,3 +1,8 @@
+---
+diagram_id: 36
+notes_hash: fafc6797
+---
+
 # ERSR S2 Workers in the Value Chain - People
 
 
@@ -5,8 +10,16 @@
 
 ![ERSR S2 Workers in the Value Chain - People](ERSR S2 Workers in the Value Chain - People.png)
 
-**Derived Description:** For more information:
-https://www
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="36" data-kind="diagram" data-file-path="ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>For more information:
+https://www</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -19,4 +32,4 @@ https://www
 
 ---
 
-*Generated: 2026-07-01 11:30:01*
+*Generated: 2026-07-01 12:05:18*

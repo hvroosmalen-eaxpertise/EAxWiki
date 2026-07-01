@@ -257,6 +257,19 @@ public class EaReader : IEaReader, IDisposable
         _logger?.LogInformation("Updated element {ElementId} notes", elementId);
     }
 
+    public void UpdateDiagramNotes(int diagramId, string newNotesHtml)
+    {
+        if (_repository == null)
+            throw new InvalidOperationException("Repository is not open.");
+        var diagram = _repository.GetDiagramByID(diagramId);
+        if (diagram == null)
+            throw new InvalidOperationException($"Diagram {diagramId} not found in repository.");
+        diagram.Notes = newNotesHtml;
+        diagram.Update();
+        _repository.RefreshModelView(0);
+        _logger?.LogInformation("Updated diagram {DiagramId} notes", diagramId);
+    }
+
     public bool ExportDiagramImage(string diagramGuid, string filePath)
     {
         if (_repository == null) return false;

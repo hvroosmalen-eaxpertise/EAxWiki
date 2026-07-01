@@ -1,3 +1,8 @@
+---
+diagram_id: 43
+notes_hash: e3b0c442
+---
+
 # Information Collection and Model Creation
 
 
@@ -5,7 +10,14 @@
 
 ![Information Collection and Model Creation](Information Collection and Model Creation.png)
 
-**Description:** -
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="43" data-kind="diagram" data-file-path="Information Collection and Model Creation/diagrams/Information Collection and Model Creation.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -35,4 +47,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:30:15*
+*Generated: 2026-07-01 12:05:31*

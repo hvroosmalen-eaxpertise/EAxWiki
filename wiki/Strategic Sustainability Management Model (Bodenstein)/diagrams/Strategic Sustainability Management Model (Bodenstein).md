@@ -1,3 +1,8 @@
+---
+diagram_id: 22
+notes_hash: e0ea570d
+---
+
 # Strategic Sustainability Management Model (Bodenstein)
 
 
@@ -5,7 +10,14 @@
 
 ![Strategic Sustainability Management Model (Bodenstein)](Strategic Sustainability Management Model (Bodenstein).png)
 
-**Description:** This diagram shows the contents of the book in a visual way. The following sections contain the structure per Driver.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="22" data-kind="diagram" data-file-path="Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>This diagram shows the contents of the book in a visual way. The following sections contain the structure per Driver.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -50,4 +62,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:30:09*
+*Generated: 2026-07-01 12:05:26*

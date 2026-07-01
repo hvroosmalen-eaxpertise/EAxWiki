@@ -1,3 +1,8 @@
+---
+diagram_id: 7
+notes_hash: 1c17d89a
+---
+
 # Mapping SDG to Main
 
 
@@ -5,7 +10,15 @@
 
 ![Mapping SDG to Main](Mapping SDG to Main.png)
 
-**Derived Description:** Strengthen the means of implementation and revitalize the global partnership for sustainable development
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="7" data-kind="diagram" data-file-path="Mapping SDG to Main/diagrams/Mapping SDG to Main.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Strengthen the means of implementation and revitalize the global partnership for sustainable development</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -53,4 +66,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:29:56*
+*Generated: 2026-07-01 12:05:12*

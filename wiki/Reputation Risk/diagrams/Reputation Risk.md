@@ -1,3 +1,8 @@
+---
+diagram_id: 27
+notes_hash: 3b97211b
+---
+
 # Reputation Risk
 
 
@@ -5,7 +10,15 @@
 
 ![Reputation Risk](Reputation Risk.png)
 
-**Derived Description:** Risk to corporate reputation from poor environmental or social performance, greenwashing accusations, or supply chain controversies
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="27" data-kind="diagram" data-file-path="Reputation Risk/diagrams/Reputation Risk.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Risk to corporate reputation from poor environmental or social performance, greenwashing accusations, or supply chain controversies</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -32,4 +45,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:30:13*
+*Generated: 2026-07-01 12:05:30*

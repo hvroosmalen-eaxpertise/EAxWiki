@@ -6,16 +6,16 @@
   <div class="status-bar status-approved" style="width: 5%">Approved 1</div>
 </div>
 <div class="status-bar-container">
-  <div class="status-bar status-implemented" style="width: 5%">Implemented 2</div>
+  <div class="status-bar status-implemented" style="width: 5%">Implemented 3</div>
 </div>
 <div class="status-bar-container">
   <div class="status-bar status-mandatory" style="width: 5%">Mandatory 1</div>
 </div>
 <div class="status-bar-container">
-  <div class="status-bar status-proposed" style="width: 100%">Proposed 268</div>
+  <div class="status-bar status-proposed" style="width: 100%">Proposed 270</div>
 </div>
 
-*180 elements have no status set.*
+*177 elements have no status set.*
 
 
 ## By Package
@@ -36,7 +36,7 @@
 | [ESRS E5](../ESRS E5/index.md) | — | — | — | <a href="#pkg_esrs_e5_proposed">1</a> | **1** |
 | [ESRS G1](../ESRS G1/index.md) | — | — | — | <a href="#pkg_esrs_g1_proposed">1</a> | **1** |
 | [ESRS Goals and Objectives](../ESRS Goals and Objectives/index.md) | — | — | — | <a href="#pkg_esrs_goals_and_objectives_proposed">5</a> | **5** |
-| [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) | <a href="#pkg_esrs_navigator_stakeholder_map_approved">1</a> | — | — | — | **1** |
+| [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) | <a href="#pkg_esrs_navigator_stakeholder_map_approved">1</a> | <a href="#pkg_esrs_navigator_stakeholder_map_implemented">1</a> | — | <a href="#pkg_esrs_navigator_stakeholder_map_proposed">2</a> | **4** |
 | [ESRS S1](../ESRS S1/index.md) | — | — | — | <a href="#pkg_esrs_s1_proposed">1</a> | **1** |
 | [ESRS S2](../ESRS S2/index.md) | — | — | — | <a href="#pkg_esrs_s2_proposed">1</a> | **1** |
 | [ESRS S3](../ESRS S3/index.md) | — | — | — | <a href="#pkg_esrs_s3_proposed">1</a> | **1** |
@@ -57,7 +57,7 @@
 | [Story](../Story/index.md) | — | — | — | <a href="#pkg_story_proposed">3</a> | **3** |
 | [Sustainability Development Goals](../Sustainability Development Goals/index.md) | — | — | — | <a href="#pkg_sustainability_development_goals_proposed">25</a> | **25** |
 | [Task](../Task/index.md) | — | — | — | <a href="#pkg_task_proposed">26</a> | **26** |
-| **Total** | **1** | **2** | **1** | **268** | **272** |
+| **Total** | **1** | **3** | **1** | **270** | **275** |
 
 <details class="status-details" id="pkg_assessments_implemented">
   <summary>Assessments &mdash; Implemented (1)</summary>
@@ -181,6 +181,21 @@
 
 <ul>
   <li><a href="../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).html">Affected Communities (ESRS S3)</a> <span class="status-badge status-approved">Approved</span></li>
+</ul>
+</details>
+<details class="status-details" id="pkg_esrs_navigator_stakeholder_map_implemented">
+  <summary>ESRS Navigator Stakeholder Map &mdash; Implemented (1)</summary>
+
+<ul>
+  <li><a href="../ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.html">ESRS E2 - Pollution</a> <span class="status-badge status-implemented">Implemented</span></li>
+</ul>
+</details>
+<details class="status-details" id="pkg_esrs_navigator_stakeholder_map_proposed">
+  <summary>ESRS Navigator Stakeholder Map &mdash; Proposed (2)</summary>
+
+<ul>
+  <li><a href="../ESRS Navigator Stakeholder Map/ESRS E1 - Climate.html">ESRS E1 - Climate</a> <span class="status-badge status-proposed">Proposed</span></li>
+  <li><a href="../ESRS Navigator Stakeholder Map/FreshFood B.V..html">FreshFood B.V.</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
 <details class="status-details" id="pkg_esrs_s1_proposed">
@@ -561,6 +576,7 @@
 | Assessment | — | <a href="#type_assessment_implemented">1</a> | — | — | **1** |
 | Asset | — | — | <a href="#type_asset_mandatory">1</a> | <a href="#type_asset_proposed">16</a> | **17** |
 | Brand | — | — | — | <a href="#type_brand_proposed">1</a> | **1** |
+| BusinessObject | — | <a href="#type_businessobject_implemented">1</a> | — | <a href="#type_businessobject_proposed">1</a> | **2** |
 | Capability | — | — | — | <a href="#type_capability_proposed">4</a> | **4** |
 | Channel | — | — | — | <a href="#type_channel_proposed">9</a> | **9** |
 | Content | — | — | — | <a href="#type_content_proposed">16</a> | **16** |
@@ -575,12 +591,12 @@
 | Product | — | — | — | <a href="#type_product_proposed">6</a> | **6** |
 | Purpose | — | — | — | <a href="#type_purpose_proposed">22</a> | **22** |
 | Resource | — | <a href="#type_resource_implemented">1</a> | — | <a href="#type_resource_proposed">2</a> | **3** |
-| Stakeholder | <a href="#type_stakeholder_approved">1</a> | — | — | — | **1** |
+| Stakeholder | <a href="#type_stakeholder_approved">1</a> | — | — | <a href="#type_stakeholder_proposed">1</a> | **2** |
 | Story | — | — | — | <a href="#type_story_proposed">8</a> | **8** |
 | Tag | — | — | — | <a href="#type_tag_proposed">19</a> | **19** |
 | Task | — | — | — | <a href="#type_task_proposed">26</a> | **26** |
 | Uncategorized | — | — | — | <a href="#type_uncategorized_proposed">5</a> | **5** |
-| **Total** | **1** | **2** | **1** | **268** | **272** |
+| **Total** | **1** | **3** | **1** | **270** | **275** |
 
 <details class="status-details" id="type_assessment_implemented">
   <summary>Assessment &mdash; Implemented (1)</summary>
@@ -623,6 +639,20 @@
 
 <ul>
   <li><a href="../Introduction EurSuRA/EurSuRA.html">EurSuRA</a> <span class="status-badge status-proposed">Proposed</span></li>
+</ul>
+</details>
+<details class="status-details" id="type_businessobject_implemented">
+  <summary>BusinessObject &mdash; Implemented (1)</summary>
+
+<ul>
+  <li><a href="../ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.html">ESRS E2 - Pollution</a> <span class="status-badge status-implemented">Implemented</span></li>
+</ul>
+</details>
+<details class="status-details" id="type_businessobject_proposed">
+  <summary>BusinessObject &mdash; Proposed (1)</summary>
+
+<ul>
+  <li><a href="../ESRS Navigator Stakeholder Map/ESRS E1 - Climate.html">ESRS E1 - Climate</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
 <details class="status-details" id="type_capability_proposed">
@@ -916,6 +946,13 @@
   <li><a href="../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).html">Affected Communities (ESRS S3)</a> <span class="status-badge status-approved">Approved</span></li>
 </ul>
 </details>
+<details class="status-details" id="type_stakeholder_proposed">
+  <summary>Stakeholder &mdash; Proposed (1)</summary>
+
+<ul>
+  <li><a href="../ESRS Navigator Stakeholder Map/FreshFood B.V..html">FreshFood B.V.</a> <span class="status-badge status-proposed">Proposed</span></li>
+</ul>
+</details>
 <details class="status-details" id="type_story_proposed">
   <summary>Story &mdash; Proposed (8)</summary>
 
@@ -1001,4 +1038,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:29:54*
+*Generated: 2026-07-01 12:05:10*

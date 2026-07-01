@@ -1,3 +1,8 @@
+---
+diagram_id: 19
+notes_hash: 8694b769
+---
+
 # ESRS Stakeholder Overview
 
 
@@ -5,7 +10,14 @@
 
 ![ESRS Stakeholder Overview](ESRS Stakeholder Overview.png)
 
-**Description:** High-level view of all stakeholders in ESRS reporting ecosystem
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="19" data-kind="diagram" data-file-path="ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>High-level view of all stakeholders in ESRS reporting ecosystem</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -130,4 +142,4 @@
 
 ---
 
-*Generated: 2026-07-01 11:30:08*
+*Generated: 2026-07-01 12:05:25*
