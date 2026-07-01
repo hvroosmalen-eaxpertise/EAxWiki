@@ -15,6 +15,15 @@ notes_hash: e3b0c442
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Metrics](index.md)
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="181" data-file-path="Metrics/Vermeden CO₂ door maatregelen (ton_jaar).md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+
+<!--ea-notes-end-->
+</div>
+</div>
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -64,4 +73,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-01 12:05:09*
+*Generated: 2026-07-01 12:21:53*

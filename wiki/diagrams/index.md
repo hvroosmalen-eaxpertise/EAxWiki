@@ -2,7 +2,7 @@
 
 | Diagram | Modified | Description | Path |
 |---------|----------|-------------|------|
-| [ESRS Sector Classification](../ESRS Sector Classification/diagrams/ESRS Sector Classification.md) | 2026-01-13 | - | [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Classification](../ESRS Classification/index.md) / [ESRS Sector Classification](../ESRS Sector Classification/index.md) |
+| [ESRS Sector Classification](../ESRS Sector Classification/diagrams/ESRS Sector Classification.md) | 2026-01-13 | <p>The Sector Classification is important.</p> | [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Classification](../ESRS Classification/index.md) / [ESRS Sector Classification](../ESRS Sector Classification/index.md) |
 | [ESRS Stakeholder Overview](../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md) | 2026-05-13 | High-level view of all stakeholders in ESRS reporting ecosystem | [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) |
 | [Reference Documents](../Reference Documents/diagrams/Reference Documents.md) | 2026-01-13 | - | [Home](../index.md) / [Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Documents](../Reference Documents/index.md) |
 | [Reference Websites](../Reference Websites/diagrams/Reference Websites.md) | 2026-01-13 | - | [Home](../index.md) / [Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Websites](../Reference Websites/index.md) |
@@ -45,4 +45,4 @@
 
 ---
 
-*Generated: 2026-07-01 12:05:10*
+*Generated: 2026-07-01 12:21:54*

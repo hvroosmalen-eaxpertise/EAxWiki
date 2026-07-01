@@ -3,17 +3,26 @@ ea_id: 594
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
-notes_hash: e3b0c442
+notes_hash: 70e267e9
 ---
 
 # <span class="sl" data-layer="edgy-ar">Capability</span> AI - LLM
 
 **Type:** Activity  **Stereotype:** Capability  **StereotypeEx:** Capability  **FQStereotype:** EDGY::Capability  
 **Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="594" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Information Collection and Model Creation/AI - LLM.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
-**Created:** 2026-05-13  **Modified:** 2026-05-13
+**Created:** 2026-05-13  **Modified:** 2026-07-01
 
 
 [Home](../index.md) / [Model Creation](../Model Creation/index.md) / [Information Collection and Model Creation](index.md)
+
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="594" data-file-path="Information Collection and Model Creation/AI - LLM.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Test write-back for a previously empty notes element.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -49,4 +58,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-01 12:05:10*
+*Generated: 2026-07-01 12:21:53*

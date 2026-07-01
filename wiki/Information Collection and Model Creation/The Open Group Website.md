@@ -15,6 +15,15 @@ notes_hash: e3b0c442
 
 [Home](../index.md) / [Model Creation](../Model Creation/index.md) / [Information Collection and Model Creation](index.md)
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="626" data-file-path="Information Collection and Model Creation/The Open Group Website.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+
+<!--ea-notes-end-->
+</div>
+</div>
+
 ## Tagged Values
 
 | Name | Value | Notes |
@@ -48,4 +57,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-01 12:05:10*
+*Generated: 2026-07-01 12:21:53*

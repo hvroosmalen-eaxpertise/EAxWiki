@@ -15,6 +15,15 @@ notes_hash: e3b0c442
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="492" data-file-path="People/Production Workers.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+
+<!--ea-notes-end-->
+</div>
+</div>
+
 ## Relationships
 
 | Type | Stereotype | Connected To |
@@ -52,4 +61,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-01 12:05:09*
+*Generated: 2026-07-01 12:21:52*

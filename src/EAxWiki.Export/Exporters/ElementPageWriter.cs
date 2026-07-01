@@ -95,27 +95,25 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             string.Empty,
         };
 
-        if (!string.IsNullOrWhiteSpace(element.Notes))
+        if (ctx.ApiPort > 0)
         {
-            if (ctx.ApiPort > 0)
-            {
-                lines.Add(
-                    $"<div id=\"ea-notes-editor\" class=\"ea-notes-editor\"" +
-                    $" data-ea-id=\"{element.Id}\"" +
-                    $" data-file-path=\"{wikiRelPath}\"" +
-                    $" data-api-port=\"{ctx.ApiPort}\">");
-                lines.Add("<button id=\"ea-notes-edit-btn\" class=\"ea-notes-edit-btn\" type=\"button\" aria-label=\"Edit notes\">&#9998;</button>");
-                lines.Add("<div class=\"ea-notes-content\">");
-                lines.Add("<!--ea-notes-start-->");
-                lines.Add(normalizedNotes);
-                lines.Add("<!--ea-notes-end-->");
-                lines.Add("</div>");
-                lines.Add("</div>");
-            }
-            else
-            {
-                lines.Add(element.Notes);
-            }
+            lines.Add(
+                $"<div id=\"ea-notes-editor\" class=\"ea-notes-editor\"" +
+                $" data-ea-id=\"{element.Id}\"" +
+                $" data-file-path=\"{wikiRelPath}\"" +
+                $" data-api-port=\"{ctx.ApiPort}\">");
+            lines.Add("<button id=\"ea-notes-edit-btn\" class=\"ea-notes-edit-btn\" type=\"button\" aria-label=\"Edit notes\">&#9998;</button>");
+            lines.Add("<div class=\"ea-notes-content\">");
+            lines.Add("<!--ea-notes-start-->");
+            lines.Add(normalizedNotes);
+            lines.Add("<!--ea-notes-end-->");
+            lines.Add("</div>");
+            lines.Add("</div>");
+            lines.Add(string.Empty);
+        }
+        else if (!string.IsNullOrWhiteSpace(element.Notes))
+        {
+            lines.Add(element.Notes);
             lines.Add(string.Empty);
         }
 

@@ -15,6 +15,15 @@ notes_hash: e3b0c442
 
 [Home](../index.md) / [Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="603" data-file-path="Introduction EurSuRA/Willem Krijgsman.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+
+<!--ea-notes-end-->
+</div>
+</div>
+
 ## Relationships
 
 | Type | Stereotype | Connected To |
@@ -48,4 +57,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-01 12:05:10*
+*Generated: 2026-07-01 12:21:53*

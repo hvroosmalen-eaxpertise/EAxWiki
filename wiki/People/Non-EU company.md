@@ -62,4 +62,4 @@ Non-EU companies, which generate over EUR 150 million on the EU market.</p>
 
 ---
 
-*Generated: 2026-07-01 12:05:09*
+*Generated: 2026-07-01 12:21:52*
