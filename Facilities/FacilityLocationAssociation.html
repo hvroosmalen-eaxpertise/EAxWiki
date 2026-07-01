@@ -468,70 +468,45 @@
 
 <h1 id="work-product-component-facilitylocationassociation"><span class="sl" data-layer="uml">work-product-component</span> FacilityLocationAssociation</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> work-product-component  <strong>StereotypeEx:</strong> work-product-component  <strong>FQStereotype:</strong> work-product-component<br>
+<strong>Status:</strong> <span id="ea-status-editor" class="ea-status-editor" data-ea-id="758" data-status="" data-options="[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]" data-file-path="Facilities/FacilityLocationAssociation.md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">✎</button></span><br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
 <p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Facilities</a></p>
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="758" data-file-path="Facilities/FacilityLocationAssociation.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">✎</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 <p>FacilityLocationAssociation is the temporal intersection entity that assigns a Facility to a Location at a specific point in time. Because facilities can be relocated or their location assignment can change over time, this entity carries effective and termination datetimes to capture the full history of facility-location associations. The FacilityLocationAssociation can be used to determine the geographic location that a physical emission record belongs to, and is particularly important for mobile facilities such as fleets of shipping tankers that operate across multiple locations in sequence.</p>
+<!--ea-notes-end-->
+</div>
+</div>
+
 <h2 id="attributes">Attributes</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
 <tbody>
-<tr>
-<td>id</td>
-<td>Key</td>
-<td></td>
-<td>The unique system-assigned identifier for the FacilityLocationAssociation record. It must remain stable for the full period of the assignment to support geographic attribution of historical emission records.</td>
-</tr>
-<tr>
-<td>location_id</td>
-<td>String</td>
-<td></td>
-<td>A foreign key identifying the Location to which the facility is assigned during the validity period.</td>
-</tr>
-<tr>
-<td>facility_id</td>
-<td>String</td>
-<td></td>
-<td>A foreign key identifying the Facility that is assigned to the referenced location during this association period.</td>
-</tr>
-<tr>
-<td>effective_datetime</td>
-<td>String</td>
-<td></td>
-<td>The date and time from which the facility is assigned to the referenced location, in ISO 8601 format. Together with termination_datetime, this defines the precise temporal window of the geographic assignment.</td>
-</tr>
-<tr>
-<td>termination_datetime</td>
-<td>String</td>
-<td></td>
-<td>The date and time at which the facility-location assignment ends, in ISO 8601 format. Null indicates the assignment is currently active.</td>
-</tr>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the FacilityLocationAssociation record. It must remain stable for the full period of the assignment to support geographic attribution of historical emission records.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="dfd6b125" data-kind="attribute" data-el-id="758" data-attr-name="id" data-attr-type="Key" data-file-path="Facilities/FacilityLocationAssociation.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>location_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>A foreign key identifying the Location to which the facility is assigned during the validity period.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="c4215bfd" data-kind="attribute" data-el-id="758" data-attr-name="location_id" data-attr-type="String" data-file-path="Facilities/FacilityLocationAssociation.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+<tr><td>facility_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>A foreign key identifying the Facility that is assigned to the referenced location during this association period.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="f7edcbbb" data-kind="attribute" data-el-id="758" data-attr-name="facility_id" data-attr-type="String" data-file-path="Facilities/FacilityLocationAssociation.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
+<tr><td>effective_datetime</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-3--><p>The date and time from which the facility is assigned to the referenced location, in ISO 8601 format. Together with termination_datetime, this defines the precise temporal window of the geographic assignment.</p><!--ea-row-notes-end:attr-3--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-3" data-notes-hash="ba24786d" data-kind="attribute" data-el-id="758" data-attr-name="effective_datetime" data-attr-type="String" data-file-path="Facilities/FacilityLocationAssociation.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-3" style="display:none"><td colspan="4"></td></tr>
+<tr><td>termination_datetime</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-4--><p>The date and time at which the facility-location assignment ends, in ISO 8601 format. Null indicates the assignment is currently active.</p><!--ea-row-notes-end:attr-4--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-4" data-notes-hash="02db445b" data-kind="attribute" data-el-id="758" data-attr-name="termination_datetime" data-attr-type="String" data-file-path="Facilities/FacilityLocationAssociation.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-4" style="display:none"><td colspan="4"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Notes</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr>
-<td>description</td>
-<td>FacilityLocationAssociation is the temporal intersection entity that assigns a Facility to a Location at a specific point in time.</td>
-<td></td>
-</tr>
+<tr><td>description</td><td>FacilityLocationAssociation is the temporal intersection entity that assigns a Facility to a Location at a specific point in time.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="758" data-tag-name="description" data-tag-value="FacilityLocationAssociation is the temporal intersection entity that assigns a Facility to a Location at a specific point in time." data-file-path="Facilities/FacilityLocationAssociation.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
@@ -595,7 +570,7 @@
 <div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e769","label":"FacilityLocationType","fullName":"FacilityLocationType","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"FacilityLocationType.html"},{"id":"e755","label":"Location","fullName":"Location","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"Location.html"},{"id":"e753","label":"Facility","fullName":"Facility","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"Facility.html"},{"id":"e758","label":"FacilityLocationAssocia…","fullName":"FacilityLocationAssociation","packageName":"Facilities","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":"Products","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Products/ProductCarbonFootprint.html"},{"id":"e767","label":"BusinessArea","fullName":"BusinessArea","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"BusinessArea.html"},{"id":"e768","label":"GeospatialLocation","fullName":"GeospatialLocation","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"GeospatialLocation.html"},{"id":"e766","label":"GeopoliticalEntity","fullName":"GeopoliticalEntity","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"GeopoliticalEntity.html"},{"id":"e764","label":"FacilityEmissionAllocat…","fullName":"FacilityEmissionAllocation","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"FacilityEmissionAllocation.html"},{"id":"e762","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameter","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionActivityParameter.html"},{"id":"e761","label":"EquipmentInstallation","fullName":"EquipmentInstallation","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"EquipmentInstallation.html"},{"id":"e760","label":"FacilityActivityPartici…","fullName":"FacilityActivityParticipation","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"FacilityActivityParticipation.html"},{"id":"e759","label":"FacilitySpecification","fullName":"FacilitySpecification","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"FacilitySpecification.html"},{"id":"e757","label":"FacilityStructure","fullName":"FacilityStructure","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"FacilityStructure.html"},{"id":"e754","label":"FacilityType","fullName":"FacilityType","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"FacilityType.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/Organization.html"}],"edges":[{"id":"c872","source":"e769","target":"e758","label":"Association","sourceLayer":"uml"},{"id":"c887","source":"e769","target":"e755","label":"Association","sourceLayer":"uml"},{"id":"c792","source":"e812","target":"e755","label":"Association","sourceLayer":"uml"},{"id":"c881","source":"e755","target":"e755","label":"Association","sourceLayer":"uml"},{"id":"c882","source":"e767","target":"e755","label":"Association","sourceLayer":"uml"},{"id":"c883","source":"e768","target":"e755","label":"Association","sourceLayer":"uml"},{"id":"c886","source":"e766","target":"e755","label":"Association","sourceLayer":"uml"},{"id":"c888","source":"e755","target":"e758","label":"Association","sourceLayer":"uml"},{"id":"c873","source":"e753","target":"e764","label":"Association","sourceLayer":"uml"},{"id":"c875","source":"e753","target":"e762","label":"Association","sourceLayer":"uml"},{"id":"c877","source":"e753","target":"e761","label":"Association","sourceLayer":"uml"},{"id":"c879","source":"e753","target":"e760","label":"Association","sourceLayer":"uml"},{"id":"c880","source":"e753","target":"e759","label":"Association","sourceLayer":"uml"},{"id":"c889","source":"e753","target":"e758","label":"Association","sourceLayer":"uml"},{"id":"c891","source":"e753","target":"e757","label":"Association","sourceLayer":"uml"},{"id":"c892","source":"e753","target":"e754","label":"Association","sourceLayer":"uml"},{"id":"c896","source":"e735","target":"e753","label":"Association","sourceLayer":"uml"},{"id":"c884","source":"e766","target":"e766","label":"Association","sourceLayer":"uml"},{"id":"c890","source":"e757","target":"e757","label":"Association","sourceLayer":"uml"}]}</div>
 
 <hr>
-<p><em>Generated: 2026-06-30 14:47:48</em></p>
+<p><em>Generated: 2026-07-01 14:13:17</em></p>
 
 
 
@@ -658,6 +633,10 @@
         <script src="../graph-init.js"></script>
       
         <script src="../status-editor.js"></script>
+      
+        <script src="../notes-editor.js"></script>
+      
+        <script src="../row-notes-editor.js"></script>
       
     
   

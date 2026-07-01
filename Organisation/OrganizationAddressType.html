@@ -468,58 +468,41 @@
 
 <h1 id="reference-data-organizationaddresstype"><span class="sl" data-layer="uml">reference-data</span> OrganizationAddressType</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> reference-data  <strong>StereotypeEx:</strong> reference-data  <strong>FQStereotype:</strong> reference-data<br>
+<strong>Status:</strong> <span id="ea-status-editor" class="ea-status-editor" data-ea-id="744" data-status="" data-options="[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]" data-file-path="Organisation/OrganizationAddressType.md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">✎</button></span><br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
 <p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Organisation</a></p>
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="744" data-file-path="Organisation/OrganizationAddressType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">✎</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 <p>OrganizationAddressType provides the controlled vocabulary of address categories applicable to an organisation, such as "Visiting Address", "Goods Return Address", "Mail Address", "Delivery Address", or "Statutory Address". Classifying address types ensures that consuming systems can select the appropriate address for a given operational purpose without manual disambiguation. The code attribute supports alignment with external postal classification systems used by logistics providers.</p>
+<!--ea-notes-end-->
+</div>
+</div>
+
 <h2 id="attributes">Attributes</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
 <tbody>
-<tr>
-<td>id</td>
-<td>Key</td>
-<td></td>
-<td>The unique system-assigned identifier for the OrganizationAddressType record. It must be stable so that OrganizationAddress intersection records that reference it remain valid when the type vocabulary is extended.</td>
-</tr>
-<tr>
-<td>code</td>
-<td>String</td>
-<td></td>
-<td>A short alphanumeric code for the address type, such as "VISIT" or "STAT", used in data exchange messages and API responses where the full name would be verbose. The code should be drawn from a standardised address type taxonomy where one exists for the relevant industry or jurisdiction.</td>
-</tr>
-<tr>
-<td>name</td>
-<td>String</td>
-<td></td>
-<td>The descriptive label for the address type, such as "Visiting Address" or "Statutory Address". The name must unambiguously identify the intended use of the address and should be consistent with terminology used in the organisation's legal jurisdiction for formal correspondence and regulatory filings.</td>
-</tr>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the OrganizationAddressType record. It must be stable so that OrganizationAddress intersection records that reference it remain valid when the type vocabulary is extended.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="6276fb88" data-kind="attribute" data-el-id="744" data-attr-name="id" data-attr-type="Key" data-file-path="Organisation/OrganizationAddressType.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>code</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>A short alphanumeric code for the address type, such as "VISIT" or "STAT", used in data exchange messages and API responses where the full name would be verbose. The code should be drawn from a standardised address type taxonomy where one exists for the relevant industry or jurisdiction.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="1333df39" data-kind="attribute" data-el-id="744" data-attr-name="code" data-attr-type="String" data-file-path="Organisation/OrganizationAddressType.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>The descriptive label for the address type, such as "Visiting Address" or "Statutory Address". The name must unambiguously identify the intended use of the address and should be consistent with terminology used in the organisation's legal jurisdiction for formal correspondence and regulatory filings.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="ec10e633" data-kind="attribute" data-el-id="744" data-attr-name="name" data-attr-type="String" data-file-path="Organisation/OrganizationAddressType.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Notes</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr>
-<td>description</td>
-<td>OrganizationAddressType provides the controlled vocabulary of address categories applicable to an organisation, such as "Visiting Address", "Goods Return Address", "Mail Address", "Delivery Address", or "Statutory Address".</td>
-<td></td>
-</tr>
+<tr><td>description</td><td>OrganizationAddressType provides the controlled vocabulary of address categories applicable to an organisation, such as "Visiting Address", "Goods Return Address", "Mail Address", "Delivery Address", or "Statutory Address".</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="744" data-tag-name="description" data-tag-value="OrganizationAddressType provides the controlled vocabulary of address categories applicable to an organisation, such as &quot;Visiting Address&quot;, &quot;Goods Return Address&quot;, &quot;Mail Address&quot;, &quot;Delivery Address&quot;, or &quot;Statutory Address&quot;." data-file-path="Organisation/OrganizationAddressType.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
@@ -551,7 +534,7 @@
 <div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e743","label":"OrganizationAddress","fullName":"OrganizationAddress","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationAddress.html"},{"id":"e744","label":"OrganizationAddressType","fullName":"OrganizationAddressType","packageName":"Organisation","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e737","label":"Address","fullName":"Address","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"Address.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c910","source":"e744","target":"e743","label":"Association","sourceLayer":"uml"},{"id":"c911","source":"e737","target":"e743","label":"Association","sourceLayer":"uml"},{"id":"c912","source":"e735","target":"e743","label":"Association","sourceLayer":"uml"}]}</div>
 
 <hr>
-<p><em>Generated: 2026-06-30 14:47:48</em></p>
+<p><em>Generated: 2026-07-01 14:13:16</em></p>
 
 
 
@@ -614,6 +597,10 @@
         <script src="../graph-init.js"></script>
       
         <script src="../status-editor.js"></script>
+      
+        <script src="../notes-editor.js"></script>
+      
+        <script src="../row-notes-editor.js"></script>
       
     
   

@@ -468,94 +468,53 @@
 
 <h1 id="master-data-emissioninventory"><span class="sl" data-layer="uml">master-data</span> EmissionInventory</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> master-data  <strong>StereotypeEx:</strong> master-data  <strong>FQStereotype:</strong> master-data<br>
+<strong>Status:</strong> <span id="ea-status-editor" class="ea-status-editor" data-ea-id="771" data-status="" data-options="[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">✎</button></span><br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
 <p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Emissions</a></p>
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="771" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">✎</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 <p>EmissionInventory is the top-level work-product-component that represents a single, bounded GHG emissions accounting exercise performed by an Organisation for a defined reporting period. It groups all EmissionStatement records that together constitute a complete inventory of an organisation's greenhouse gas emissions, organised by scope, source, and boundary. The inventory record holds the metadata required for formal reporting, including the applicable standard, the organisational boundary method, and audit trail information.</p>
+<!--ea-notes-end-->
+</div>
+</div>
+
 <h2 id="attributes">Attributes</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
 <tbody>
-<tr>
-<td>id</td>
-<td>Key</td>
-<td></td>
-<td>The unique system identifier for this EmissionInventory record, used to associate all child emission statements and reporting artefacts with this specific inventory exercise.</td>
-</tr>
-<tr>
-<td>organisation_id</td>
-<td>String</td>
-<td></td>
-<td>Foreign key linking the inventory to the Organisation that owns and is responsible for the GHG data it contains.</td>
-</tr>
-<tr>
-<td>standard_id</td>
-<td>String</td>
-<td></td>
-<td>Foreign key to the Standard record that governs the methodology and boundary rules applied in this inventory, typically the GHG Protocol Corporate Standard or ISO 14064-1.</td>
-</tr>
-<tr>
-<td>name</td>
-<td>String</td>
-<td></td>
-<td>A human-readable label for the inventory, such as "FY2025 GHG Inventory Scope 1 and 2", used for identification and search in reporting systems.</td>
-</tr>
-<tr>
-<td>description</td>
-<td>String</td>
-<td></td>
-<td>A free-text narrative describing the scope, boundaries, and methodology choices made for this inventory, providing context for reviewers and auditors.</td>
-</tr>
-<tr>
-<td>reporting_period_start</td>
-<td>String</td>
-<td></td>
-<td>The first day of the reporting period covered by this inventory. Together with reporting_period_end it defines the temporal boundary against which emission activities are assessed.</td>
-</tr>
-<tr>
-<td>reporting_period_end</td>
-<td>String</td>
-<td></td>
-<td>The last day of the reporting period covered by this inventory. Emission activities with dates outside this window are excluded from the inventory totals.</td>
-</tr>
-<tr>
-<td>organisational_boundary_method</td>
-<td>String</td>
-<td></td>
-<td>The consolidation approach used to determine which entities and facilities fall within the inventory boundary, drawn from the GHG Protocol values: equity share, financial control, or operational control.</td>
-</tr>
-<tr>
-<td>status</td>
-<td>String</td>
-<td></td>
-<td>The lifecycle status of the inventory record, such as draft, under review, finalised, or audited, used to manage approval workflows and publication control.</td>
-</tr>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system identifier for this EmissionInventory record, used to associate all child emission statements and reporting artefacts with this specific inventory exercise.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="e41a2f84" data-kind="attribute" data-el-id="771" data-attr-name="id" data-attr-type="Key" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>organisation_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>Foreign key linking the inventory to the Organisation that owns and is responsible for the GHG data it contains.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="6e041cea" data-kind="attribute" data-el-id="771" data-attr-name="organisation_id" data-attr-type="String" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+<tr><td>standard_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>Foreign key to the Standard record that governs the methodology and boundary rules applied in this inventory, typically the GHG Protocol Corporate Standard or ISO 14064-1.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="958e599e" data-kind="attribute" data-el-id="771" data-attr-name="standard_id" data-attr-type="String" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
+<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-3--><p>A human-readable label for the inventory, such as "FY2025 GHG Inventory Scope 1 and 2", used for identification and search in reporting systems.</p><!--ea-row-notes-end:attr-3--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-3" data-notes-hash="b14f7cbe" data-kind="attribute" data-el-id="771" data-attr-name="name" data-attr-type="String" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-3" style="display:none"><td colspan="4"></td></tr>
+<tr><td>description</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-4--><p>A free-text narrative describing the scope, boundaries, and methodology choices made for this inventory, providing context for reviewers and auditors.</p><!--ea-row-notes-end:attr-4--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-4" data-notes-hash="3832fb94" data-kind="attribute" data-el-id="771" data-attr-name="description" data-attr-type="String" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-4" style="display:none"><td colspan="4"></td></tr>
+<tr><td>reporting_period_start</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-5--><p>The first day of the reporting period covered by this inventory. Together with reporting_period_end it defines the temporal boundary against which emission activities are assessed.</p><!--ea-row-notes-end:attr-5--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-5" data-notes-hash="91f669a9" data-kind="attribute" data-el-id="771" data-attr-name="reporting_period_start" data-attr-type="String" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-5" style="display:none"><td colspan="4"></td></tr>
+<tr><td>reporting_period_end</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-6--><p>The last day of the reporting period covered by this inventory. Emission activities with dates outside this window are excluded from the inventory totals.</p><!--ea-row-notes-end:attr-6--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-6" data-notes-hash="1dfce473" data-kind="attribute" data-el-id="771" data-attr-name="reporting_period_end" data-attr-type="String" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-6" style="display:none"><td colspan="4"></td></tr>
+<tr><td>organisational_boundary_method</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-7--><p>The consolidation approach used to determine which entities and facilities fall within the inventory boundary, drawn from the GHG Protocol values: equity share, financial control, or operational control.</p><!--ea-row-notes-end:attr-7--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-7" data-notes-hash="a1723522" data-kind="attribute" data-el-id="771" data-attr-name="organisational_boundary_method" data-attr-type="String" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-7" style="display:none"><td colspan="4"></td></tr>
+<tr><td>status</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-8--><p>The lifecycle status of the inventory record, such as draft, under review, finalised, or audited, used to manage approval workflows and publication control.</p><!--ea-row-notes-end:attr-8--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-8" data-notes-hash="492ffbad" data-kind="attribute" data-el-id="771" data-attr-name="status" data-attr-type="String" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-8" style="display:none"><td colspan="4"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Notes</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr>
-<td>description</td>
-<td>EmissionInventory is the top-level work-product-component that represents a single, bounded GHG emissions accounting exercise performed by an Organisation for a defined reporting period.</td>
-<td></td>
-</tr>
+<tr><td>description</td><td>EmissionInventory is the top-level work-product-component that represents a single, bounded GHG emissions accounting exercise performed by an Organisation for a defined reporting period.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="771" data-tag-name="description" data-tag-value="EmissionInventory is the top-level work-product-component that represents a single, bounded GHG emissions accounting exercise performed by an Organisation for a defined reporting period." data-file-path="Emissions/EmissionInventory.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
@@ -634,7 +593,7 @@
 <div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e782","label":"EmissionReport","fullName":"EmissionReport","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionReport.html"},{"id":"e808","label":"EmissionReportingBounda…","fullName":"EmissionReportingBoundary","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionReportingBoundary.html"},{"id":"e776","label":"EmissionStatement","fullName":"EmissionStatement","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionStatement.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/Organization.html"},{"id":"e734","label":"Standard","fullName":"Standard","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/Standard.html"},{"id":"e771","label":"EmissionInventory","fullName":"EmissionInventory","packageName":"Emissions","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e783","label":"EmissionReportPeriod","fullName":"EmissionReportPeriod","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionReportPeriod.html"},{"id":"e802","label":"ActivityEmissionAllocat…","fullName":"ActivityEmissionAllocation","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"ActivityEmissionAllocation.html"},{"id":"e801","label":"OrganizationEmissionAll…","fullName":"OrganizationEmissionAllocation","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationEmissionAllocation.html"},{"id":"e800","label":"RecordingUncertaintyAss…","fullName":"RecordingUncertaintyAssessment","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"RecordingUncertaintyAssessment.html"},{"id":"e799","label":"EmissionRecordingMethod…","fullName":"EmissionRecordingMethodType","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionRecordingMethodType.html"},{"id":"e764","label":"FacilityEmissionAllocat…","fullName":"FacilityEmissionAllocation","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Facilities/FacilityEmissionAllocation.html"},{"id":"e788","label":"EmissionStatementPerSta…","fullName":"EmissionStatementPerStandard","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionStatementPerStandard.html"},{"id":"e779","label":"UnitOfMeasure","fullName":"UnitOfMeasure","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"UnitOfMeasure.html"},{"id":"e778","label":"EmissionComponent","fullName":"EmissionComponent","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionComponent.html"},{"id":"e777","label":"EmissionCalculationModel","fullName":"EmissionCalculationModel","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionCalculationModel.html"},{"id":"e772","label":"EmissionScopeType","fullName":"EmissionScopeType","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionScopeType.html"},{"id":"e773","label":"EmissionActivity","fullName":"EmissionActivity","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionActivity.html"},{"id":"e753","label":"Facility","fullName":"Facility","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Facilities/Facility.html"},{"id":"e740","label":"OrganizationalBoundary","fullName":"OrganizationalBoundary","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/OrganizationalBoundary.html"},{"id":"e751","label":"OrganizationEquityShare","fullName":"OrganizationEquityShare","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/OrganizationEquityShare.html"},{"id":"e750","label":"OrganizationIndustrySec…","fullName":"OrganizationIndustrySector","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/OrganizationIndustrySector.html"},{"id":"e748","label":"OrganizationExternalIde…","fullName":"OrganizationExternalIdentifier","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/OrganizationExternalIdentifier.html"},{"id":"e747","label":"OrganizationPersonAssoc…","fullName":"OrganizationPersonAssociation","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/OrganizationPersonAssociation.html"},{"id":"e738","label":"ContactPerson","fullName":"ContactPerson","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/ContactPerson.html"},{"id":"e743","label":"OrganizationAddress","fullName":"OrganizationAddress","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/OrganizationAddress.html"},{"id":"e741","label":"OrganizationAssociation","fullName":"OrganizationAssociation","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/OrganizationAssociation.html"},{"id":"e736","label":"OrganizationType","fullName":"OrganizationType","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/OrganizationType.html"},{"id":"e789","label":"EmissionComponentPerSta…","fullName":"EmissionComponentPerStandard","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionComponentPerStandard.html"},{"id":"e787","label":"EmissionCategoryStandar…","fullName":"EmissionCategoryStandardAssociation","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionCategoryStandardAssociation.html"},{"id":"e794","label":"StandardSourceAssociati…","fullName":"StandardSourceAssociation","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"StandardSourceAssociation.html"}],"edges":[{"id":"c808","source":"e782","target":"e771","label":"Association","sourceLayer":"uml"},{"id":"c837","source":"e782","target":"e783","label":"Association","sourceLayer":"uml"},{"id":"c894","source":"e734","target":"e782","label":"Association","sourceLayer":"uml"},{"id":"c895","source":"e735","target":"e782","label":"Association","sourceLayer":"uml"},{"id":"c810","source":"e808","target":"e771","label":"Association","sourceLayer":"uml"},{"id":"c823","source":"e802","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c825","source":"e801","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c826","source":"e800","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c827","source":"e799","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c840","source":"e776","target":"e764","label":"Association","sourceLayer":"uml"},{"id":"c846","source":"e788","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c865","source":"e779","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c867","source":"e776","target":"e778","label":"Association","sourceLayer":"uml"},{"id":"c868","source":"e777","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c869","source":"e772","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c870","source":"e773","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c871","source":"e771","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c824","source":"e801","target":"e735","label":"Association","sourceLayer":"uml"},{"id":"c896","source":"e735","target":"e753","label":"Association","sourceLayer":"uml"},{"id":"c898","source":"e740","target":"e735","label":"Association","sourceLayer":"uml"},{"id":"c899","source":"e735","target":"e751","label":"Association","sourceLayer":"uml"},{"id":"c901","source":"e735","target":"e750","label":"Association","sourceLayer":"uml"},{"id":"c904","source":"e735","target":"e748","label":"Association","sourceLayer":"uml"},{"id":"c906","source":"e747","target":"e735","label":"Association","sourceLayer":"uml"},{"id":"c908","source":"e738","target":"e735","label":"Association","sourceLayer":"uml"},{"id":"c912","source":"e735","target":"e743","label":"Association","sourceLayer":"uml"},{"id":"c914","source":"e735","target":"e741","label":"Association","sourceLayer":"uml"},{"id":"c915","source":"e735","target":"e736","label":"Association","sourceLayer":"uml"},{"id":"c917","source":"e735","target":"e771","label":"Association","sourceLayer":"uml"},{"id":"c843","source":"e789","target":"e734","label":"Association","sourceLayer":"uml"},{"id":"c845","source":"e788","target":"e734","label":"Association","sourceLayer":"uml"},{"id":"c847","source":"e787","target":"e734","label":"Association","sourceLayer":"uml"},{"id":"c850","source":"e794","target":"e734","label":"Association","sourceLayer":"uml"},{"id":"c897","source":"e734","target":"e740","label":"Association","sourceLayer":"uml"},{"id":"c916","source":"e734","target":"e777","label":"Association","sourceLayer":"uml"},{"id":"c918","source":"e734","target":"e771","label":"Association","sourceLayer":"uml"},{"id":"c807","source":"e779","target":"e783","label":"Association","sourceLayer":"uml"},{"id":"c822","source":"e802","target":"e773","label":"Association","sourceLayer":"uml"},{"id":"c873","source":"e753","target":"e764","label":"Association","sourceLayer":"uml"},{"id":"c864","source":"e779","target":"e778","label":"Association","sourceLayer":"uml"},{"id":"c844","source":"e789","target":"e778","label":"Association","sourceLayer":"uml"},{"id":"c863","source":"e773","target":"e773","label":"Association","sourceLayer":"uml"},{"id":"c905","source":"e747","target":"e738","label":"Association","sourceLayer":"uml"}]}</div>
 
 <hr>
-<p><em>Generated: 2026-06-30 14:47:48</em></p>
+<p><em>Generated: 2026-07-01 14:13:17</em></p>
 
 
 
@@ -697,6 +656,10 @@
         <script src="../graph-init.js"></script>
       
         <script src="../status-editor.js"></script>
+      
+        <script src="../notes-editor.js"></script>
+      
+        <script src="../row-notes-editor.js"></script>
       
     
   

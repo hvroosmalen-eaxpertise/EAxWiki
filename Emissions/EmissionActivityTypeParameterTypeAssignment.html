@@ -451,70 +451,45 @@
 
 <h1 id="master-data-emissionactivitytypeparametertypeassignment"><span class="sl" data-layer="uml">master-data</span> EmissionActivityTypeParameterTypeAssignment</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> master-data  <strong>StereotypeEx:</strong> master-data  <strong>FQStereotype:</strong> master-data<br>
+<strong>Status:</strong> <span id="ea-status-editor" class="ea-status-editor" data-ea-id="807" data-status="" data-options="[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]" data-file-path="Emissions/EmissionActivityTypeParameterTypeAssignment.md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">✎</button></span><br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
 <p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Emissions</a></p>
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="807" data-file-path="Emissions/EmissionActivityTypeParameterTypeAssignment.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">✎</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 <p>EmissionActivityTypeParameterTypeAssignment is a master-data entity that records a single parameter type requirement within an EmissionActivityParameterRecordingTemplate, specifying which EmissionParameterType must be recorded and whether the measurement is mandatory or optional. Each template is composed of one or more of these assignment records, forming the complete parameter checklist for the associated activity type and jurisdiction.</p>
+<!--ea-notes-end-->
+</div>
+</div>
+
 <h2 id="attributes">Attributes</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
 <tbody>
-<tr>
-<td>id</td>
-<td>Key</td>
-<td></td>
-<td>The unique identifier for this parameter type assignment record, used to enumerate the complete list of required measurements within a recording template.</td>
-</tr>
-<tr>
-<td>emission_activity_parameter_recording_template_id</td>
-<td>String</td>
-<td></td>
-<td>Foreign key to the parent EmissionActivityParameterRecordingTemplate that this assignment belongs to, grouping all parameter requirements for a given activity type and jurisdiction.</td>
-</tr>
-<tr>
-<td>emission_parameter_type_id</td>
-<td>String</td>
-<td></td>
-<td>Foreign key to the EmissionParameterType that must be recorded, identifying the specific measurement slot that this assignment adds to the template.</td>
-</tr>
-<tr>
-<td>is_mandatory</td>
-<td>String</td>
-<td></td>
-<td>Indicates whether measurement of this parameter type is required (true) or optional (false) for the activity type and jurisdiction defined by the parent template, supporting data completeness validation.</td>
-</tr>
-<tr>
-<td>sequence_number</td>
-<td>String</td>
-<td></td>
-<td>The display order of this parameter assignment within the template, used to present data entry fields in a logical sequence to facility operators.</td>
-</tr>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique identifier for this parameter type assignment record, used to enumerate the complete list of required measurements within a recording template.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="9aa8b175" data-kind="attribute" data-el-id="807" data-attr-name="id" data-attr-type="Key" data-file-path="Emissions/EmissionActivityTypeParameterTypeAssignment.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>emission_activity_parameter_recording_template_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>Foreign key to the parent EmissionActivityParameterRecordingTemplate that this assignment belongs to, grouping all parameter requirements for a given activity type and jurisdiction.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="a2306d98" data-kind="attribute" data-el-id="807" data-attr-name="emission_activity_parameter_recording_template_id" data-attr-type="String" data-file-path="Emissions/EmissionActivityTypeParameterTypeAssignment.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+<tr><td>emission_parameter_type_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>Foreign key to the EmissionParameterType that must be recorded, identifying the specific measurement slot that this assignment adds to the template.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="ed353fa3" data-kind="attribute" data-el-id="807" data-attr-name="emission_parameter_type_id" data-attr-type="String" data-file-path="Emissions/EmissionActivityTypeParameterTypeAssignment.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
+<tr><td>is_mandatory</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-3--><p>Indicates whether measurement of this parameter type is required (true) or optional (false) for the activity type and jurisdiction defined by the parent template, supporting data completeness validation.</p><!--ea-row-notes-end:attr-3--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-3" data-notes-hash="1bbe796e" data-kind="attribute" data-el-id="807" data-attr-name="is_mandatory" data-attr-type="String" data-file-path="Emissions/EmissionActivityTypeParameterTypeAssignment.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-3" style="display:none"><td colspan="4"></td></tr>
+<tr><td>sequence_number</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-4--><p>The display order of this parameter assignment within the template, used to present data entry fields in a logical sequence to facility operators.</p><!--ea-row-notes-end:attr-4--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-4" data-notes-hash="77199061" data-kind="attribute" data-el-id="807" data-attr-name="sequence_number" data-attr-type="String" data-file-path="Emissions/EmissionActivityTypeParameterTypeAssignment.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-4" style="display:none"><td colspan="4"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Notes</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr>
-<td>description</td>
-<td>EmissionActivityTypeParameterTypeAssignment is a master-data entity that records a single parameter type requirement within an EmissionActivityParameterRecordingTemplate, specifying which EmissionParameterType must be recorded and whether the measurement</td>
-<td></td>
-</tr>
+<tr><td>description</td><td>EmissionActivityTypeParameterTypeAssignment is a master-data entity that records a single parameter type requirement within an EmissionActivityParameterRecordingTemplate, specifying which EmissionParameterType must be recorded and whether the measurement </td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="807" data-tag-name="description" data-tag-value="EmissionActivityTypeParameterTypeAssignment is a master-data entity that records a single parameter type requirement within an EmissionActivityParameterRecordingTemplate, specifying which EmissionParameterType must be recorded and whether the measurement " data-file-path="Emissions/EmissionActivityTypeParameterTypeAssignment.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
@@ -545,7 +520,7 @@
 <div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e775","label":"EmissionParameterType","fullName":"EmissionParameterType","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionParameterType.html"},{"id":"e806","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameterRecordingTemplate","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionActivityParameterRecordingTemplate.html"},{"id":"e807","label":"EmissionActivityTypePar…","fullName":"EmissionActivityTypeParameterTypeAssignment","packageName":"Emissions","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e805","label":"EmissionCalculationMode…","fullName":"EmissionCalculationModelParameterArgument","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionCalculationModelParameterArgument.html"},{"id":"e803","label":"EmissionCalculationForm…","fullName":"EmissionCalculationFormulaComponent","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionCalculationFormulaComponent.html"},{"id":"e779","label":"UnitOfMeasure","fullName":"UnitOfMeasure","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"UnitOfMeasure.html"},{"id":"e762","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameter","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Facilities/EmissionActivityParameter.html"},{"id":"e766","label":"GeopoliticalEntity","fullName":"GeopoliticalEntity","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Facilities/GeopoliticalEntity.html"},{"id":"e786","label":"EmissionActivityType","fullName":"EmissionActivityType","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionActivityType.html"}],"edges":[{"id":"c811","source":"e807","target":"e775","label":"Association","sourceLayer":"uml"},{"id":"c815","source":"e805","target":"e775","label":"Association","sourceLayer":"uml"},{"id":"c819","source":"e803","target":"e775","label":"Association","sourceLayer":"uml"},{"id":"c832","source":"e775","target":"e779","label":"Association","sourceLayer":"uml"},{"id":"c841","source":"e775","target":"e762","label":"Association","sourceLayer":"uml"},{"id":"c812","source":"e807","target":"e806","label":"Association","sourceLayer":"uml"},{"id":"c813","source":"e806","target":"e766","label":"Association","sourceLayer":"uml"},{"id":"c814","source":"e806","target":"e786","label":"Association","sourceLayer":"uml"},{"id":"c884","source":"e766","target":"e766","label":"Association","sourceLayer":"uml"}]}</div>
 
 <hr>
-<p><em>Generated: 2026-06-30 14:47:48</em></p>
+<p><em>Generated: 2026-07-01 14:13:17</em></p>
 
 
 
@@ -608,6 +583,10 @@
         <script src="../graph-init.js"></script>
       
         <script src="../status-editor.js"></script>
+      
+        <script src="../notes-editor.js"></script>
+      
+        <script src="../row-notes-editor.js"></script>
       
     
   

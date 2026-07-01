@@ -479,88 +479,51 @@
 
 <h1 id="master-data-contactperson"><span class="sl" data-layer="uml">master-data</span> ContactPerson</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> master-data  <strong>StereotypeEx:</strong> master-data  <strong>FQStereotype:</strong> master-data<br>
+<strong>Status:</strong> <span id="ea-status-editor" class="ea-status-editor" data-ea-id="738" data-status="" data-options="[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]" data-file-path="Organisation/ContactPerson.md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">✎</button></span><br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
 <p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Organisation</a></p>
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="738" data-file-path="Organisation/ContactPerson.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">✎</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 <p>ContactPerson represents an individual who is designated as the primary or secondary contact for an organisation's emissions reporting activities. Contact persons may include sustainability officers, environmental compliance managers, data stewards, or external auditors. The entity captures sufficient name components to support formal correspondence, including title, first, middle, last, and full name, as well as a phone number for direct communication. A contact person is associated with an address for postal or physical contact purposes.</p>
+<!--ea-notes-end-->
+</div>
+</div>
+
 <h2 id="attributes">Attributes</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
 <tbody>
-<tr>
-<td>id</td>
-<td>Key</td>
-<td></td>
-<td>The unique system-assigned identifier for the ContactPerson record. It serves as the primary key and is referenced when linking a contact person to an organisation or address. It must remain stable across name or contact detail changes to preserve the integrity of historical associations.</td>
-</tr>
-<tr>
-<td>title_name</td>
-<td>String</td>
-<td></td>
-<td>The professional or social title of the contact person, such as "Dr.", "Prof.", "Mr.", or "Ms.". The title is used in formal written correspondence and official reports, and should be drawn from a controlled vocabulary where possible to ensure consistent rendering across communication channels.</td>
-</tr>
-<tr>
-<td>first_name</td>
-<td>String</td>
-<td></td>
-<td>The given name or first name of the contact person as they prefer to be addressed in professional communications. It is used in conjunction with middle_name and last_name to construct the full name and to support personalised communication in notifications and correspondence.</td>
-</tr>
-<tr>
-<td>middle_name</td>
-<td>String</td>
-<td></td>
-<td>The middle name or initial of the contact person, where applicable. This field is optional and is included primarily to support disambiguation between persons with identical first and last names, and to meet formal identification requirements in certain jurisdictions.</td>
-</tr>
-<tr>
-<td>last_name</td>
-<td>String</td>
-<td></td>
-<td>The family name or surname of the contact person. Together with first_name and middle_name, it forms the complete personal name used in official correspondence, audit trails, and disclosure documents.</td>
-</tr>
-<tr>
-<td>full_name</td>
-<td>String</td>
-<td></td>
-<td>The complete rendered name of the contact person as it should appear in reports and communications, which may include title, all name components, and any post-nominal qualifications. This field may be derived from the component name fields or separately maintained where the standard concatenation does not produce the correct rendering.</td>
-</tr>
-<tr>
-<td>phone_number</td>
-<td>String</td>
-<td></td>
-<td>The telephone number at which the contact person can be reached for queries related to emissions reporting. The number should be stored in international format (E.164) to support cross-border communication and automated dialling integrations.</td>
-</tr>
-<tr>
-<td>address_id</td>
-<td>String</td>
-<td></td>
-<td>A foreign key identifying the Address record that represents this contact person's physical or postal contact location. This attribute enables automated generation of formal correspondence addressed to the contact person at their registered address.</td>
-</tr>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the ContactPerson record. It serves as the primary key and is referenced when linking a contact person to an organisation or address. It must remain stable across name or contact detail changes to preserve the integrity of historical associations.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="b1416343" data-kind="attribute" data-el-id="738" data-attr-name="id" data-attr-type="Key" data-file-path="Organisation/ContactPerson.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>title_name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The professional or social title of the contact person, such as "Dr.", "Prof.", "Mr.", or "Ms.". The title is used in formal written correspondence and official reports, and should be drawn from a controlled vocabulary where possible to ensure consistent rendering across communication channels.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="7edfa0d3" data-kind="attribute" data-el-id="738" data-attr-name="title_name" data-attr-type="String" data-file-path="Organisation/ContactPerson.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+<tr><td>first_name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>The given name or first name of the contact person as they prefer to be addressed in professional communications. It is used in conjunction with middle_name and last_name to construct the full name and to support personalised communication in notifications and correspondence.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="8cb795e9" data-kind="attribute" data-el-id="738" data-attr-name="first_name" data-attr-type="String" data-file-path="Organisation/ContactPerson.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
+<tr><td>middle_name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-3--><p>The middle name or initial of the contact person, where applicable. This field is optional and is included primarily to support disambiguation between persons with identical first and last names, and to meet formal identification requirements in certain jurisdictions.</p><!--ea-row-notes-end:attr-3--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-3" data-notes-hash="f94738c8" data-kind="attribute" data-el-id="738" data-attr-name="middle_name" data-attr-type="String" data-file-path="Organisation/ContactPerson.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-3" style="display:none"><td colspan="4"></td></tr>
+<tr><td>last_name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-4--><p>The family name or surname of the contact person. Together with first_name and middle_name, it forms the complete personal name used in official correspondence, audit trails, and disclosure documents.</p><!--ea-row-notes-end:attr-4--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-4" data-notes-hash="c47e15dc" data-kind="attribute" data-el-id="738" data-attr-name="last_name" data-attr-type="String" data-file-path="Organisation/ContactPerson.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-4" style="display:none"><td colspan="4"></td></tr>
+<tr><td>full_name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-5--><p>The complete rendered name of the contact person as it should appear in reports and communications, which may include title, all name components, and any post-nominal qualifications. This field may be derived from the component name fields or separately maintained where the standard concatenation does not produce the correct rendering.</p><!--ea-row-notes-end:attr-5--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-5" data-notes-hash="9201a52b" data-kind="attribute" data-el-id="738" data-attr-name="full_name" data-attr-type="String" data-file-path="Organisation/ContactPerson.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-5" style="display:none"><td colspan="4"></td></tr>
+<tr><td>phone_number</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-6--><p>The telephone number at which the contact person can be reached for queries related to emissions reporting. The number should be stored in international format (E.164) to support cross-border communication and automated dialling integrations.</p><!--ea-row-notes-end:attr-6--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-6" data-notes-hash="0b98b15f" data-kind="attribute" data-el-id="738" data-attr-name="phone_number" data-attr-type="String" data-file-path="Organisation/ContactPerson.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-6" style="display:none"><td colspan="4"></td></tr>
+<tr><td>address_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-7--><p>A foreign key identifying the Address record that represents this contact person's physical or postal contact location. This attribute enables automated generation of formal correspondence addressed to the contact person at their registered address.</p><!--ea-row-notes-end:attr-7--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-7" data-notes-hash="0b278b47" data-kind="attribute" data-el-id="738" data-attr-name="address_id" data-attr-type="String" data-file-path="Organisation/ContactPerson.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-7" style="display:none"><td colspan="4"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Notes</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr>
-<td>description</td>
-<td>ContactPerson represents an individual who is designated as the primary or secondary contact for an organisation's emissions reporting activities.</td>
-<td></td>
-</tr>
+<tr><td>description</td><td>ContactPerson represents an individual who is designated as the primary or secondary contact for an organisation's emissions reporting activities.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="738" data-tag-name="description" data-tag-value="ContactPerson represents an individual who is designated as the primary or secondary contact for an organisation's emissions reporting activities." data-file-path="Organisation/ContactPerson.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
@@ -615,7 +578,7 @@
 <div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e747","label":"OrganizationPersonAssoc…","fullName":"OrganizationPersonAssociation","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationPersonAssociation.html"},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"Organization.html"},{"id":"e738","label":"ContactPerson","fullName":"ContactPerson","packageName":"Organisation","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e746","label":"PersonOrganizationRoleT…","fullName":"PersonOrganizationRoleType","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"PersonOrganizationRoleType.html"},{"id":"e801","label":"OrganizationEmissionAll…","fullName":"OrganizationEmissionAllocation","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Emissions/OrganizationEmissionAllocation.html"},{"id":"e782","label":"EmissionReport","fullName":"EmissionReport","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionReport.html"},{"id":"e753","label":"Facility","fullName":"Facility","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Facilities/Facility.html"},{"id":"e740","label":"OrganizationalBoundary","fullName":"OrganizationalBoundary","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationalBoundary.html"},{"id":"e751","label":"OrganizationEquityShare","fullName":"OrganizationEquityShare","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationEquityShare.html"},{"id":"e750","label":"OrganizationIndustrySec…","fullName":"OrganizationIndustrySector","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationIndustrySector.html"},{"id":"e748","label":"OrganizationExternalIde…","fullName":"OrganizationExternalIdentifier","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationExternalIdentifier.html"},{"id":"e743","label":"OrganizationAddress","fullName":"OrganizationAddress","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationAddress.html"},{"id":"e741","label":"OrganizationAssociation","fullName":"OrganizationAssociation","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationAssociation.html"},{"id":"e736","label":"OrganizationType","fullName":"OrganizationType","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationType.html"},{"id":"e771","label":"EmissionInventory","fullName":"EmissionInventory","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionInventory.html"}],"edges":[{"id":"c905","source":"e747","target":"e738","label":"Association","sourceLayer":"uml"},{"id":"c906","source":"e747","target":"e735","label":"Association","sourceLayer":"uml"},{"id":"c907","source":"e746","target":"e747","label":"Association","sourceLayer":"uml"},{"id":"c824","source":"e801","target":"e735","label":"Association","sourceLayer":"uml"},{"id":"c895","source":"e735","target":"e782","label":"Association","sourceLayer":"uml"},{"id":"c896","source":"e735","target":"e753","label":"Association","sourceLayer":"uml"},{"id":"c898","source":"e740","target":"e735","label":"Association","sourceLayer":"uml"},{"id":"c899","source":"e735","target":"e751","label":"Association","sourceLayer":"uml"},{"id":"c901","source":"e735","target":"e750","label":"Association","sourceLayer":"uml"},{"id":"c904","source":"e735","target":"e748","label":"Association","sourceLayer":"uml"},{"id":"c908","source":"e738","target":"e735","label":"Association","sourceLayer":"uml"},{"id":"c912","source":"e735","target":"e743","label":"Association","sourceLayer":"uml"},{"id":"c914","source":"e735","target":"e741","label":"Association","sourceLayer":"uml"},{"id":"c915","source":"e735","target":"e736","label":"Association","sourceLayer":"uml"},{"id":"c917","source":"e735","target":"e771","label":"Association","sourceLayer":"uml"},{"id":"c808","source":"e782","target":"e771","label":"Association","sourceLayer":"uml"}]}</div>
 
 <hr>
-<p><em>Generated: 2026-06-30 14:47:48</em></p>
+<p><em>Generated: 2026-07-01 14:13:16</em></p>
 
 
 
@@ -678,6 +641,10 @@
         <script src="../graph-init.js"></script>
       
         <script src="../status-editor.js"></script>
+      
+        <script src="../notes-editor.js"></script>
+      
+        <script src="../row-notes-editor.js"></script>
       
     
   

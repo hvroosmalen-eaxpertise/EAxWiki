@@ -468,100 +468,55 @@
 
 <h1 id="master-data-emissionfactor"><span class="sl" data-layer="uml">master-data</span> EmissionFactor</h1>
 <p><strong>Type:</strong> Class  <strong>Stereotype:</strong> master-data  <strong>StereotypeEx:</strong> master-data  <strong>FQStereotype:</strong> master-data<br>
+<strong>Status:</strong> <span id="ea-status-editor" class="ea-status-editor" data-ea-id="780" data-status="" data-options="[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">✎</button></span><br>
 <strong>Created:</strong> 2026-02-27  <strong>Modified:</strong> 2026-05-20</p>
 <p><a href="../index.html">Home</a> / <a href="../Data%20Layer/index.html">Data Layer</a> / <a href="../Open%20Footprint%20Data%20Model%20LDM/index.html">Open Footprint Data Model LDM</a> / <a href="index.html">Emissions</a></p>
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="780" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">✎</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 <p>EmissionFactor is a master-data entity that records a single quantified coefficient expressing the amount of greenhouse gas emitted per unit of an activity parameter, drawn from a recognised emission factor source. Factors are typed by the component category they represent (e.g. CO2 fossil, CH4), scoped by applicability (geography, activity type, technology, time period), and versioned to support year-over-year comparability. They form the primary input to activity-based calculation models.</p>
+<!--ea-notes-end-->
+</div>
+</div>
+
 <h2 id="attributes">Attributes</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
 <tbody>
-<tr>
-<td>id</td>
-<td>Key</td>
-<td></td>
-<td>The unique identifier for this EmissionFactor record, referenced by EmissionActivityFactor associations to map an activity type to the factor applicable in a given context.</td>
-</tr>
-<tr>
-<td>emission_factor_source_id</td>
-<td>String</td>
-<td></td>
-<td>Foreign key to the EmissionFactorSource that published this factor, enabling traceability to the originating database or official publication.</td>
-</tr>
-<tr>
-<td>emission_component_category_id</td>
-<td>String</td>
-<td></td>
-<td>Foreign key to the EmissionComponentCategory that this factor applies to, such as CO2 fossil or CH4, determining which component category the factor quantity feeds.</td>
-</tr>
-<tr>
-<td>activity_unit_of_measure_id</td>
-<td>String</td>
-<td></td>
-<td>Foreign key to the UnitOfMeasure of the activity parameter denominator, such as MWh for an electricity emission factor, defining what one unit of activity produces.</td>
-</tr>
-<tr>
-<td>factor_unit_of_measure_id</td>
-<td>String</td>
-<td></td>
-<td>Foreign key to the UnitOfMeasure of the emission quantity numerator, typically kgCO2 or kgCH4, expressing the gas mass emitted per unit of activity.</td>
-</tr>
-<tr>
-<td>value</td>
-<td>String</td>
-<td></td>
-<td>The numeric emission factor coefficient: the quantity of greenhouse gas emitted per unit of activity.</td>
-</tr>
-<tr>
-<td>geography</td>
-<td>String</td>
-<td></td>
-<td>The geographic scope for which this factor is applicable, expressed as an ISO 3166-1 alpha-2 country code or a regional grouping such as EU27, used to select the correct factor for a given facility location.</td>
-</tr>
-<tr>
-<td>valid_from</td>
-<td>String</td>
-<td></td>
-<td>The start date of the period for which this factor is valid, used by calculation engines to select the factor appropriate to a specific reporting year.</td>
-</tr>
-<tr>
-<td>valid_to</td>
-<td>String</td>
-<td></td>
-<td>The end date of the factor applicability period. A null value indicates the factor remains current, while a populated date triggers selection of a more recent factor for periods after this date.</td>
-</tr>
-<tr>
-<td>version</td>
-<td>String</td>
-<td></td>
-<td>The version label of this factor within its source database, such as 2024 v1.0, supporting audit trails and reproducibility of historical calculations.</td>
-</tr>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique identifier for this EmissionFactor record, referenced by EmissionActivityFactor associations to map an activity type to the factor applicable in a given context.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="6a932182" data-kind="attribute" data-el-id="780" data-attr-name="id" data-attr-type="Key" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>emission_factor_source_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>Foreign key to the EmissionFactorSource that published this factor, enabling traceability to the originating database or official publication.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="e5152331" data-kind="attribute" data-el-id="780" data-attr-name="emission_factor_source_id" data-attr-type="String" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+<tr><td>emission_component_category_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>Foreign key to the EmissionComponentCategory that this factor applies to, such as CO2 fossil or CH4, determining which component category the factor quantity feeds.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="4ece7393" data-kind="attribute" data-el-id="780" data-attr-name="emission_component_category_id" data-attr-type="String" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
+<tr><td>activity_unit_of_measure_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-3--><p>Foreign key to the UnitOfMeasure of the activity parameter denominator, such as MWh for an electricity emission factor, defining what one unit of activity produces.</p><!--ea-row-notes-end:attr-3--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-3" data-notes-hash="65d5dabc" data-kind="attribute" data-el-id="780" data-attr-name="activity_unit_of_measure_id" data-attr-type="String" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-3" style="display:none"><td colspan="4"></td></tr>
+<tr><td>factor_unit_of_measure_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-4--><p>Foreign key to the UnitOfMeasure of the emission quantity numerator, typically kgCO2 or kgCH4, expressing the gas mass emitted per unit of activity.</p><!--ea-row-notes-end:attr-4--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-4" data-notes-hash="275c0c70" data-kind="attribute" data-el-id="780" data-attr-name="factor_unit_of_measure_id" data-attr-type="String" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-4" style="display:none"><td colspan="4"></td></tr>
+<tr><td>value</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-5--><p>The numeric emission factor coefficient: the quantity of greenhouse gas emitted per unit of activity.</p><!--ea-row-notes-end:attr-5--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-5" data-notes-hash="ba9866e1" data-kind="attribute" data-el-id="780" data-attr-name="value" data-attr-type="String" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-5" style="display:none"><td colspan="4"></td></tr>
+<tr><td>geography</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-6--><p>The geographic scope for which this factor is applicable, expressed as an ISO 3166-1 alpha-2 country code or a regional grouping such as EU27, used to select the correct factor for a given facility location.</p><!--ea-row-notes-end:attr-6--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-6" data-notes-hash="33ca319a" data-kind="attribute" data-el-id="780" data-attr-name="geography" data-attr-type="String" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-6" style="display:none"><td colspan="4"></td></tr>
+<tr><td>valid_from</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-7--><p>The start date of the period for which this factor is valid, used by calculation engines to select the factor appropriate to a specific reporting year.</p><!--ea-row-notes-end:attr-7--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-7" data-notes-hash="299502c3" data-kind="attribute" data-el-id="780" data-attr-name="valid_from" data-attr-type="String" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-7" style="display:none"><td colspan="4"></td></tr>
+<tr><td>valid_to</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-8--><p>The end date of the factor applicability period. A null value indicates the factor remains current, while a populated date triggers selection of a more recent factor for periods after this date.</p><!--ea-row-notes-end:attr-8--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-8" data-notes-hash="1401d6ca" data-kind="attribute" data-el-id="780" data-attr-name="valid_to" data-attr-type="String" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-8" style="display:none"><td colspan="4"></td></tr>
+<tr><td>version</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-9--><p>The version label of this factor within its source database, such as 2024 v1.0, supporting audit trails and reproducibility of historical calculations.</p><!--ea-row-notes-end:attr-9--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-9" data-notes-hash="fdf24409" data-kind="attribute" data-el-id="780" data-attr-name="version" data-attr-type="String" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-9" style="display:none"><td colspan="4"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="tagged-values">Tagged Values</h2>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value</th>
-<th>Notes</th>
-</tr>
-</thead>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr>
-<td>description</td>
-<td>EmissionFactor is a master-data entity that records a single quantified coefficient expressing the amount of greenhouse gas emitted per unit of an activity parameter, drawn from a recognised emission factor source.</td>
-<td></td>
-</tr>
+<tr><td>description</td><td>EmissionFactor is a master-data entity that records a single quantified coefficient expressing the amount of greenhouse gas emitted per unit of an activity parameter, drawn from a recognised emission factor source.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="780" data-tag-name="description" data-tag-value="EmissionFactor is a master-data entity that records a single quantified coefficient expressing the amount of greenhouse gas emitted per unit of an activity parameter, drawn from a recognised emission factor source." data-file-path="Emissions/EmissionFactor.md" data-api-port="8001" aria-label="Edit description">✎</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
+
 <p><a href="#">↑ Back to top</a></p>
 <h2 id="relationships">Relationships</h2>
 <table>
@@ -660,7 +615,7 @@
 <div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e804","label":"EmissionCalculationMode…","fullName":"EmissionCalculationModelFactorArgument","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionCalculationModelFactorArgument.html"},{"id":"e803","label":"EmissionCalculationForm…","fullName":"EmissionCalculationFormulaComponent","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionCalculationFormulaComponent.html"},{"id":"e793","label":"EmissionActivityFactor","fullName":"EmissionActivityFactor","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionActivityFactor.html"},{"id":"e779","label":"UnitOfMeasure","fullName":"UnitOfMeasure","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"UnitOfMeasure.html"},{"id":"e792","label":"EmissionComponentCatego…","fullName":"EmissionComponentCategory","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionComponentCategory.html"},{"id":"e781","label":"EmissionFactorSource","fullName":"EmissionFactorSource","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionFactorSource.html"},{"id":"e780","label":"EmissionFactor","fullName":"EmissionFactor","packageName":"Emissions","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e777","label":"EmissionCalculationModel","fullName":"EmissionCalculationModel","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionCalculationModel.html"},{"id":"e775","label":"EmissionParameterType","fullName":"EmissionParameterType","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionParameterType.html"},{"id":"e790","label":"EmissionCalculationForm…","fullName":"EmissionCalculationFormula","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionCalculationFormula.html"},{"id":"e786","label":"EmissionActivityType","fullName":"EmissionActivityType","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionActivityType.html"},{"id":"e783","label":"EmissionReportPeriod","fullName":"EmissionReportPeriod","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionReportPeriod.html"},{"id":"e798","label":"UnitOfMeasureSourceRefe…","fullName":"UnitOfMeasureSourceReference","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"UnitOfMeasureSourceReference.html"},{"id":"e797","label":"PhysicalQuantityType","fullName":"PhysicalQuantityType","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"PhysicalQuantityType.html"},{"id":"e796","label":"SystemOfUnits","fullName":"SystemOfUnits","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"SystemOfUnits.html"},{"id":"e812","label":"ProductCarbonFootprint","fullName":"ProductCarbonFootprint","packageName":"Products","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Products/ProductCarbonFootprint.html"},{"id":"e763","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameterValue","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Facilities/EmissionActivityParameterValue.html"},{"id":"e778","label":"EmissionComponent","fullName":"EmissionComponent","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionComponent.html"},{"id":"e776","label":"EmissionStatement","fullName":"EmissionStatement","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionStatement.html"},{"id":"e795","label":"EmissionComponentCatego…","fullName":"EmissionComponentCategoryGroup","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionComponentCategoryGroup.html"},{"id":"e794","label":"StandardSourceAssociati…","fullName":"StandardSourceAssociation","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"StandardSourceAssociation.html"},{"id":"e818","label":"ProductCarbonFootprintF…","fullName":"ProductCarbonFootprintFactorSource","packageName":"Products","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Products/ProductCarbonFootprintFactorSource.html"}],"edges":[{"id":"c817","source":"e804","target":"e780","label":"Association","sourceLayer":"uml"},{"id":"c818","source":"e804","target":"e777","label":"Association","sourceLayer":"uml"},{"id":"c819","source":"e803","target":"e775","label":"Association","sourceLayer":"uml"},{"id":"c820","source":"e803","target":"e780","label":"Association","sourceLayer":"uml"},{"id":"c821","source":"e803","target":"e790","label":"Association","sourceLayer":"uml"},{"id":"c851","source":"e793","target":"e777","label":"Association","sourceLayer":"uml"},{"id":"c852","source":"e793","target":"e780","label":"Association","sourceLayer":"uml"},{"id":"c853","source":"e793","target":"e786","label":"Association","sourceLayer":"uml"},{"id":"c807","source":"e779","target":"e783","label":"Association","sourceLayer":"uml"},{"id":"c828","source":"e798","target":"e779","label":"Association","sourceLayer":"uml"},{"id":"c829","source":"e797","target":"e779","label":"Association","sourceLayer":"uml"},{"id":"c830","source":"e796","target":"e779","label":"Association","sourceLayer":"uml"},{"id":"c832","source":"e775","target":"e779","label":"Association","sourceLayer":"uml"},{"id":"c833","source":"e779","target":"e812","label":"Association","sourceLayer":"uml"},{"id":"c834","source":"e779","target":"e763","label":"Association","sourceLayer":"uml"},{"id":"c854","source":"e779","target":"e780","label":"Association","sourceLayer":"uml"},{"id":"c855","source":"e779","target":"e780","label":"Association","sourceLayer":"uml"},{"id":"c864","source":"e779","target":"e778","label":"Association","sourceLayer":"uml"},{"id":"c865","source":"e779","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c809","source":"e792","target":"e795","label":"Association","sourceLayer":"uml"},{"id":"c831","source":"e795","target":"e792","label":"Association","sourceLayer":"uml"},{"id":"c856","source":"e792","target":"e780","label":"Association","sourceLayer":"uml"},{"id":"c866","source":"e792","target":"e778","label":"Association","sourceLayer":"uml"},{"id":"c806","source":"e781","target":"e794","label":"Association","sourceLayer":"uml"},{"id":"c835","source":"e781","target":"e818","label":"Association","sourceLayer":"uml"},{"id":"c849","source":"e794","target":"e781","label":"Association","sourceLayer":"uml"},{"id":"c857","source":"e780","target":"e781","label":"Association","sourceLayer":"uml"},{"id":"c859","source":"e777","target":"e790","label":"Association","sourceLayer":"uml"},{"id":"c868","source":"e777","target":"e776","label":"Association","sourceLayer":"uml"},{"id":"c798","source":"e812","target":"e818","label":"Association","sourceLayer":"uml"},{"id":"c867","source":"e776","target":"e778","label":"Association","sourceLayer":"uml"}]}</div>
 
 <hr>
-<p><em>Generated: 2026-06-30 14:47:48</em></p>
+<p><em>Generated: 2026-07-01 14:13:17</em></p>
 
 
 
@@ -723,6 +678,10 @@
         <script src="../graph-init.js"></script>
       
         <script src="../status-editor.js"></script>
+      
+        <script src="../notes-editor.js"></script>
+      
+        <script src="../row-notes-editor.js"></script>
       
     
   

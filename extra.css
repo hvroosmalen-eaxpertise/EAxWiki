@@ -85,6 +85,7 @@
 .status-implemented { background: #cce5ff; color: #004085; }
 .status-mandatory { background: #f8d7da; color: #721c24; }
 .status-invalid { background: #e2e3e5; color: #383d41; }
+.status-not-set { background: #e2e3e5; color: #6c757d; font-style: italic; }
 
 .status-bar-container {
   margin: 0.25em 0;
@@ -157,3 +158,194 @@ details.status-details li {
 .sl[data-layer="edgy-ix"] { background: #4ECDC4; color: #1a3a3a; }
 .sl[data-layer="edgy-pe"] { background: #FFD93D; color: #4a3a1a; }
 .sl[data-layer="edgy-lb"] { background: #E8E8E8; color: #555; }
+
+/* Status editor widget */
+.ea-status-editor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  vertical-align: middle;
+}
+.ea-status-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
+  padding: 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  font-size: 0.8em;
+  line-height: 1;
+  vertical-align: middle;
+}
+.ea-status-edit-btn:hover {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+.ea-status-select {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font-size: inherit;
+}
+.ea-status-btn {
+  padding: 0.2em 0.8em;
+  border: 1px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: 600;
+}
+.ea-status-cancel-btn {
+  padding: 0.2em 0.8em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+  font-size: inherit;
+}
+.ea-status-btn:disabled, .ea-status-cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.ea-status-msg { font-style: italic; font-size: 0.95em; }
+
+/* Notes editor widget */
+.ea-notes-editor {
+  position: relative;
+  margin: 0.6em 0 1em;
+}
+.ea-notes-content {
+  padding-right: 2em;
+}
+.ea-notes-edit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.8em;
+  height: 1.8em;
+  padding: 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  font-size: 0.9em;
+  line-height: 1;
+}
+.ea-notes-edit-btn:hover {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+.ea-notes-derived-hint {
+  display: block;
+  font-size: 0.8em;
+  font-style: italic;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 0.2em;
+}
+.ea-notes-placeholder {
+  color: var(--md-default-fg-color--light);
+}
+.ea-notes-textarea {
+  width: 100%;
+  min-height: 8em;
+  box-sizing: border-box;
+  padding: 0.5em;
+  font-family: var(--md-code-font-family, monospace);
+  font-size: 0.85em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+.ea-notes-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.4em;
+}
+.ea-notes-save-btn {
+  padding: 0.2em 0.8em;
+  border: 1px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+.ea-notes-cancel-btn {
+  padding: 0.2em 0.8em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+  font-size: 0.85em;
+}
+.ea-notes-save-btn:disabled, .ea-notes-cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.ea-notes-msg { font-style: italic; font-size: 0.85em; }
+
+/* Row-level notes editor (attribute / method / tagged-value descriptions) */
+.ea-row-notes-text {
+  color: var(--md-default-fg-color);
+}
+.ea-row-notes-placeholder {
+  color: var(--md-default-fg-color--light);
+}
+.ea-row-notes-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
+  padding: 0;
+  margin-left: 0.4em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  font-size: 0.8em;
+  line-height: 1;
+  vertical-align: middle;
+}
+.ea-row-notes-edit-btn:hover {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+.ea-row-notes-widget {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.4em;
+}
+tr.ea-row-edit td {
+  background: var(--md-code-bg-color);
+  padding: 0.6em 0.8em;
+}
+.ea-row-notes-textarea {
+  width: 100%;
+  min-height: 6em;
+  box-sizing: border-box;
+  padding: 0.5em;
+  font-family: var(--md-code-font-family, monospace);
+  font-size: 0.85em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+.ea-row-notes-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.4em;
+}
