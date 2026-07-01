@@ -8,13 +8,12 @@ notes_hash: 6cad19f6
 
 # <span class="sl" data-layer="edgy-id">Content</span> SDG Mapping Content
 
-**Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="138" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Content/SDG Mapping Content.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Content](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="138" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Content/SDG Mapping Content.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="138" data-file-path="Content/SDG Mapping Content.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -80,4 +79,4 @@ Documentatie die elementen koppelt aan SDG’s.
 
 ---
 
-*Generated: 2026-07-01 10:25:43*
+*Generated: 2026-07-01 11:29:53*

@@ -8,13 +8,12 @@ notes_hash: 29a4fe2f
 
 # <span class="sl" data-layer="edgy-ar">Asset</span> Sustainable Policies
 
-**Type:** Class  **Stereotype:** Asset  **StereotypeEx:** Asset  **FQStereotype:** EDGY::Asset  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Asset  **StereotypeEx:** Asset  **FQStereotype:** EDGY::Asset  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="164" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Asset/Sustainable Policies.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Asset](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="164" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Asset/Sustainable Policies.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="164" data-file-path="Asset/Sustainable Policies.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -74,4 +73,4 @@ Interne beleidslijnen rondom duurzaamheid.
 
 ---
 
-*Generated: 2026-07-01 10:25:43*
+*Generated: 2026-07-01 11:29:53*

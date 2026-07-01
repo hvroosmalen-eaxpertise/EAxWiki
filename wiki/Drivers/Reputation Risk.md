@@ -8,13 +8,12 @@ notes_hash: a9f4009a
 
 # <span class="sl" data-layer="motivation">Driver</span> Reputation Risk
 
-**Type:** Class  **Stereotype:** ArchiMate_Driver  **StereotypeEx:** ArchiMate_Driver  **FQStereotype:** ArchiMate3::ArchiMate_Driver  **Status:** <span class="status-badge status-not-set">Not Set</span>  
+**Type:** Class  **Stereotype:** ArchiMate_Driver  **StereotypeEx:** ArchiMate_Driver  **FQStereotype:** ArchiMate3::ArchiMate_Driver  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="433" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Drivers/Reputation Risk.md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="433" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Drivers/Reputation Risk.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="433" data-file-path="Drivers/Reputation Risk.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -61,4 +60,4 @@ Negative sustainability incidents can significantly impact brand value and stake
 
 ---
 
-*Generated: 2026-07-01 10:25:43*
+*Generated: 2026-07-01 11:29:53*

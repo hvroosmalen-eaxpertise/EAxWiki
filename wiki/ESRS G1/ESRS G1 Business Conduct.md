@@ -8,13 +8,12 @@ notes_hash: 1764a511
 
 # <span class="sl" data-layer="edgy-id">Content</span> ESRS G1 Business Conduct
 
-**Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="45" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS G1/ESRS G1 Business Conduct.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2026-05-13
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS G1](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="45" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS G1/ESRS G1 Business Conduct.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="45" data-file-path="ESRS G1/ESRS G1 Business Conduct.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -82,4 +81,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-07-01 10:25:42*
+*Generated: 2026-07-01 11:29:53*

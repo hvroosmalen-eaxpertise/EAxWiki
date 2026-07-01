@@ -8,13 +8,12 @@ notes_hash: 13dbdaab
 
 # <span class="sl" data-layer="business">BusinessObject</span> ESRS S4 - Consumers
 
-**Type:** Class  **Stereotype:** ArchiMate_BusinessObject  **StereotypeEx:** ArchiMate_BusinessObject  **FQStereotype:** ArchiMate3::ArchiMate_BusinessObject  **Status:** <span class="status-badge status-not-set">Not Set</span>  
+**Type:** Class  **Stereotype:** ArchiMate_BusinessObject  **StereotypeEx:** ArchiMate_BusinessObject  **FQStereotype:** ArchiMate3::ArchiMate_BusinessObject  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="310" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/ESRS S4 - Consumers.md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="310" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/ESRS S4 - Consumers.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="310" data-file-path="ESRS Navigator Stakeholder Map/ESRS S4 - Consumers.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -68,4 +67,4 @@ notes_hash: 13dbdaab
 
 ---
 
-*Generated: 2026-07-01 10:25:44*
+*Generated: 2026-07-01 11:29:54*

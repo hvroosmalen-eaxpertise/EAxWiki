@@ -55,6 +55,21 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         var statusOptionsJson = "[" + string.Join(",", statusOptionsList.Select(s => $"\"{s}\"")) + "]";
         var wikiRelPath = Path.GetRelativePath(outputDir, filePath).Replace('\\', '/');
 
+        var statusBadgeClass = string.IsNullOrEmpty(element.Status) ? "status-not-set" : $"status-{element.Status.ToLowerInvariant()}";
+        var statusBadgeLabel = string.IsNullOrEmpty(element.Status) ? "Not Set" : MarkdownHelpers.EscapeCell(element.Status);
+        var statusBadgeHtml = $"<span class=\"status-badge {statusBadgeClass}\">{statusBadgeLabel}</span>";
+        var statusFieldHtml = ctx.ApiPort > 0
+            ? $"<span id=\"ea-status-editor\" class=\"ea-status-editor\"" +
+              $" data-ea-id=\"{element.Id}\"" +
+              $" data-status=\"{element.Status}\"" +
+              $" data-options='{statusOptionsJson}'" +
+              $" data-file-path=\"{wikiRelPath}\"" +
+              $" data-api-port=\"{ctx.ApiPort}\">" +
+              statusBadgeHtml +
+              "<button class=\"ea-status-edit-btn\" type=\"button\" aria-label=\"Edit status\">&#9998;</button>" +
+              "</span>"
+            : statusBadgeHtml;
+
         var lines = new List<string>
         {
             "---",
@@ -70,8 +85,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             $"**Type:** {element.Type}  " +
             $"**Stereotype:** {MarkdownHelpers.EscapeCell(element.Stereotype)}  " +
             (string.IsNullOrWhiteSpace(element.StereotypeEx) ? "" : $"**StereotypeEx:** {MarkdownHelpers.EscapeCell(element.StereotypeEx)}  ") +
-            (string.IsNullOrWhiteSpace(element.FQStereotype) ? "" : $"**FQStereotype:** {MarkdownHelpers.EscapeCell(element.FQStereotype)}  ") +
-            $"**Status:** <span class=\"status-badge {(string.IsNullOrEmpty(element.Status) ? "status-not-set" : $"status-{element.Status.ToLowerInvariant()}")}\">{(string.IsNullOrEmpty(element.Status) ? "Not Set" : MarkdownHelpers.EscapeCell(element.Status))}</span>  ",
+            (string.IsNullOrWhiteSpace(element.FQStereotype) ? "" : $"**FQStereotype:** {MarkdownHelpers.EscapeCell(element.FQStereotype)}  "),
+            $"**Status:** {statusFieldHtml}  ",
             $"**Created:** {createdStr}  **Modified:** {modifiedStr}",
             string.Empty,
             string.Empty,
@@ -79,19 +94,6 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                 msg => logger.LogWarning("{Message} (element '{Name}')", msg, element.Name)),
             string.Empty,
         };
-
-        if (ctx.ApiPort > 0)
-        {
-            lines.Add(
-                $"<div id=\"ea-status-editor\" class=\"ea-status-editor\"" +
-                $" data-ea-id=\"{element.Id}\"" +
-                $" data-status=\"{element.Status}\"" +
-                $" data-options='{statusOptionsJson}'" +
-                $" data-file-path=\"{wikiRelPath}\"" +
-                $" data-api-port=\"{ctx.ApiPort}\">" +
-                $"</div>");
-            lines.Add(string.Empty);
-        }
 
         if (!string.IsNullOrWhiteSpace(element.Notes))
         {

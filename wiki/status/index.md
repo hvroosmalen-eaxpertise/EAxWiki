@@ -6,7 +6,7 @@
   <div class="status-bar status-approved" style="width: 5%">Approved 1</div>
 </div>
 <div class="status-bar-container">
-  <div class="status-bar status-implemented" style="width: 5%">Implemented 1</div>
+  <div class="status-bar status-implemented" style="width: 5%">Implemented 2</div>
 </div>
 <div class="status-bar-container">
   <div class="status-bar status-mandatory" style="width: 5%">Mandatory 1</div>
@@ -15,13 +15,14 @@
   <div class="status-bar status-proposed" style="width: 100%">Proposed 268</div>
 </div>
 
-*181 elements have no status set.*
+*180 elements have no status set.*
 
 
 ## By Package
 
 | Package | Approved | Implemented | Mandatory | Proposed | Total |
 |---|:---:|:---:|:---:|:---:|:---:|
+| [Assessments](../Assessments/index.md) | — | <a href="#pkg_assessments_implemented">1</a> | — | — | **1** |
 | [Asset](../Asset/index.md) | — | — | <a href="#pkg_asset_mandatory">1</a> | <a href="#pkg_asset_proposed">5</a> | **6** |
 | [Capability](../Capability/index.md) | — | — | — | <a href="#pkg_capability_proposed">1</a> | **1** |
 | [Channel](../Channel/index.md) | — | — | — | <a href="#pkg_channel_proposed">3</a> | **3** |
@@ -56,8 +57,15 @@
 | [Story](../Story/index.md) | — | — | — | <a href="#pkg_story_proposed">3</a> | **3** |
 | [Sustainability Development Goals](../Sustainability Development Goals/index.md) | — | — | — | <a href="#pkg_sustainability_development_goals_proposed">25</a> | **25** |
 | [Task](../Task/index.md) | — | — | — | <a href="#pkg_task_proposed">26</a> | **26** |
-| **Total** | **1** | **1** | **1** | **268** | **271** |
+| **Total** | **1** | **2** | **1** | **268** | **272** |
 
+<details class="status-details" id="pkg_assessments_implemented">
+  <summary>Assessments &mdash; Implemented (1)</summary>
+
+<ul>
+  <li><a href="../Assessments/CO₂ Reduction %.html">CO₂ Reduction %</a> <span class="status-badge status-implemented">Implemented</span></li>
+</ul>
+</details>
 <details class="status-details" id="pkg_asset_mandatory">
   <summary>Asset &mdash; Mandatory (1)</summary>
 
@@ -550,6 +558,7 @@
 
 | Type | Approved | Implemented | Mandatory | Proposed | Total |
 |---|:---:|:---:|:---:|:---:|:---:|
+| Assessment | — | <a href="#type_assessment_implemented">1</a> | — | — | **1** |
 | Asset | — | — | <a href="#type_asset_mandatory">1</a> | <a href="#type_asset_proposed">16</a> | **17** |
 | Brand | — | — | — | <a href="#type_brand_proposed">1</a> | **1** |
 | Capability | — | — | — | <a href="#type_capability_proposed">4</a> | **4** |
@@ -571,8 +580,15 @@
 | Tag | — | — | — | <a href="#type_tag_proposed">19</a> | **19** |
 | Task | — | — | — | <a href="#type_task_proposed">26</a> | **26** |
 | Uncategorized | — | — | — | <a href="#type_uncategorized_proposed">5</a> | **5** |
-| **Total** | **1** | **1** | **1** | **268** | **271** |
+| **Total** | **1** | **2** | **1** | **268** | **272** |
 
+<details class="status-details" id="type_assessment_implemented">
+  <summary>Assessment &mdash; Implemented (1)</summary>
+
+<ul>
+  <li><a href="../Assessments/CO₂ Reduction %.html">CO₂ Reduction %</a> <span class="status-badge status-implemented">Implemented</span></li>
+</ul>
+</details>
 <details class="status-details" id="type_asset_mandatory">
   <summary>Asset &mdash; Mandatory (1)</summary>
 
@@ -985,4 +1001,4 @@
 
 ---
 
-*Generated: 2026-07-01 10:25:44*
+*Generated: 2026-07-01 11:29:54*

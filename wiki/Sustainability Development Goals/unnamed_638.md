@@ -8,13 +8,12 @@ notes_hash: e3b0c442
 
 # <span class="sl" data-layer="uml">NavigationCell</span> 
 
-**Type:** Text  **Stereotype:** NavigationCell  **StereotypeEx:** NavigationCell  **FQStereotype:** NavigationCell  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Text  **Stereotype:** NavigationCell  **StereotypeEx:** NavigationCell  **FQStereotype:** NavigationCell  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="638" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/unnamed_638.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="638" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/unnamed_638.md" data-api-port="8001"></div>
 
 ### Appears on Diagrams
 
@@ -26,4 +25,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-01 10:25:42*
+*Generated: 2026-07-01 11:29:52*

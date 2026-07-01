@@ -8,13 +8,12 @@ notes_hash: dae08305
 
 # <span class="sl" data-layer="uml">reference-data</span> EmissionCalculationMethodType
 
-**Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  **Status:** <span class="status-badge status-not-set">Not Set</span>  
+**Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="791" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Emissions/EmissionCalculationMethodType.md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="791" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Emissions/EmissionCalculationMethodType.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="791" data-file-path="Emissions/EmissionCalculationMethodType.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -60,4 +59,4 @@ notes_hash: dae08305
 
 ---
 
-*Generated: 2026-07-01 10:25:44*
+*Generated: 2026-07-01 11:29:54*

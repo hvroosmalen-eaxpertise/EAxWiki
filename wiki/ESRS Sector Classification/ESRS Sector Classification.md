@@ -8,13 +8,12 @@ notes_hash: e3b0c442
 
 # <span class="sl" data-layer="uml">Uncategorized</span> ESRS Sector Classification
 
-**Type:** Enumeration  **Stereotype:**   **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Enumeration  **Stereotype:**   
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="571" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Sector Classification/ESRS Sector Classification.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2026-01-06  **Modified:** 2026-01-06
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Classification](../ESRS Classification/index.md) / [ESRS Sector Classification](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="571" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Sector Classification/ESRS Sector Classification.md" data-api-port="8001"></div>
 
 ## Attributes
 
@@ -37,4 +36,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-01 10:25:43*
+*Generated: 2026-07-01 11:29:53*

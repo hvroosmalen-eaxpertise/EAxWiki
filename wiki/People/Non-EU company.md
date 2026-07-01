@@ -8,13 +8,12 @@ notes_hash: 0bc9a3c2
 
 # <span class="sl" data-layer="edgy-pe">People</span> Non-EU company
 
-**Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="557" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="People/Non-EU company.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="557" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="People/Non-EU company.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="557" data-file-path="People/Non-EU company.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -63,4 +62,4 @@ Non-EU companies, which generate over EUR 150 million on the EU market.</p>
 
 ---
 
-*Generated: 2026-07-01 10:25:42*
+*Generated: 2026-07-01 11:29:53*

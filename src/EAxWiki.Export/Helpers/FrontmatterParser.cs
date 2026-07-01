@@ -79,6 +79,9 @@ public static class FrontmatterParser
             if (lines[i].Contains("id=\"ea-status-editor\""))
                 lines[i] = widgetPattern.Replace(lines[i],
                     $"data-status=\"{newStatus}\"");
+
+            if (lines[i].Contains("**Modified:**"))
+                lines[i] = PatchModifiedDate(lines[i]);
         }
 
         // 3. Atomic write — swap via temp file so MkDocs never sees a partial file
@@ -86,6 +89,18 @@ public static class FrontmatterParser
         File.WriteAllLines(tmp, lines);
         File.Move(tmp, filePath, overwrite: true);
     }
+
+    private static readonly Regex ModifiedDatePattern = new(@"(\*\*Modified:\*\*\s*)\d{4}-\d{2}-\d{2}", RegexOptions.Compiled);
+
+    /// <summary>
+    /// Bumps the "**Modified:**" date to today. EA stamps element.Modified on every COM Update()
+    /// call, but the exporter's incremental skip check compares the .md file's own write-time
+    /// against that EA-side date — since this write-back patch happens right after the COM call,
+    /// the file's write-time would otherwise permanently exceed EA's date, causing the page to be
+    /// skipped forever on future exports instead of just until the next run.
+    /// </summary>
+    private static string PatchModifiedDate(string line) =>
+        ModifiedDatePattern.Replace(line, $"${{1}}{DateTime.Now:yyyy-MM-dd}");
 
     private static readonly Regex NotesMarkerPattern = new(@"<!--\s*ea-notes-(start|end)\s*-->", RegexOptions.Compiled);
 
@@ -144,6 +159,8 @@ public static class FrontmatterParser
 
         var contentPattern = new Regex(@"(<!--ea-notes-start-->\n).*?(\n<!--ea-notes-end-->)", RegexOptions.Singleline);
         text = contentPattern.Replace(text, m => m.Groups[1].Value + newNotesHtml + m.Groups[2].Value, 1);
+
+        text = ModifiedDatePattern.Replace(text, $"${{1}}{DateTime.Now:yyyy-MM-dd}");
 
         if (usesCrlf) text = text.Replace("\n", "\r\n");
 

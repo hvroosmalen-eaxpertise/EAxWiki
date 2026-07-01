@@ -8,13 +8,12 @@ notes_hash: a26f92f5
 
 # <span class="sl" data-layer="edgy-id">Purpose</span> SDG 13. Climate Action
 
-**Type:** Activity  **Stereotype:** Purpose  **StereotypeEx:** Purpose  **FQStereotype:** EDGY::Purpose  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Activity  **Stereotype:** Purpose  **StereotypeEx:** Purpose  **FQStereotype:** EDGY::Purpose  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="15" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/SDG 13. Climate Action.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-02
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="15" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/SDG 13. Climate Action.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="15" data-file-path="Sustainability Development Goals/SDG 13. Climate Action.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -88,4 +87,4 @@ notes_hash: a26f92f5
 
 ---
 
-*Generated: 2026-07-01 10:25:42*
+*Generated: 2026-07-01 11:29:52*

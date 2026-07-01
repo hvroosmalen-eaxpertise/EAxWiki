@@ -8,13 +8,12 @@ notes_hash: a7577f1b
 
 # <span class="sl" data-layer="edgy-id">Content</span> European Sustainability Reporting Standards
 
-**Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="555" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="European Sustainability Reporting Standards/European Sustainability Reporting Standards.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-15  **Modified:** 2026-05-13
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="555" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="European Sustainability Reporting Standards/European Sustainability Reporting Standards.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="555" data-file-path="European Sustainability Reporting Standards/European Sustainability Reporting Standards.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -80,4 +79,4 @@ notes_hash: a7577f1b
 
 ---
 
-*Generated: 2026-07-01 10:25:42*
+*Generated: 2026-07-01 11:29:52*

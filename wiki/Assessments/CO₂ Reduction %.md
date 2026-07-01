@@ -1,27 +1,26 @@
 ---
 ea_id: 462
-status: Approved
+status: Implemented
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
-ea_hash: 87b42e40
-notes_hash: 2ca048de
+ea_hash: bf546638
+notes_hash: 9d4711c3
 ---
 
 # <span class="sl" data-layer="motivation">Assessment</span> CO₂ Reduction %
 
-**Type:** Class  **Stereotype:** ArchiMate_Assessment  **StereotypeEx:** ArchiMate_Assessment  **FQStereotype:** ArchiMate3::ArchiMate_Assessment  **Status:** <span class="status-badge status-approved">Approved</span>  
-**Created:** 2025-12-11  **Modified:** 2025-12-11
+**Type:** Class  **Stereotype:** ArchiMate_Assessment  **StereotypeEx:** ArchiMate_Assessment  **FQStereotype:** ArchiMate3::ArchiMate_Assessment  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="462" data-status="Implemented" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Assessments/CO₂ Reduction %.md" data-api-port="8001"><span class="status-badge status-implemented">Implemented</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Created:** 2025-12-11  **Modified:** 2026-07-01
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="462" data-status="Approved" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Assessments/CO₂ Reduction %.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="462" data-file-path="Assessments/CO₂ Reduction %.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
 <p>Key performance indicator measuring the percentage reduction in carbon dioxide emissions relative to a baseline year.         
-Typically covers Scope 1, 2, and ideally Scope 3 emissions.         
+Typically covers Scope 1, 2 and ideally Scope 3 emissions.         
 Critical metric for climate change mitigation efforts and alignment with Paris Agreement targets.</p>
 <!--ea-notes-end-->
 </div>
@@ -63,4 +62,4 @@ Critical metric for climate change mitigation efforts and alignment with Paris A
 
 ---
 
-*Generated: 2026-07-01 10:25:43*
+*Generated: 2026-07-01 11:29:53*

@@ -8,13 +8,12 @@ notes_hash: db816efd
 
 # <span class="sl" data-layer="motivation">Goal</span> ESG Performance Improvement
 
-**Type:** Class  **Stereotype:** ArchiMate_Goal  **StereotypeEx:** ArchiMate_Goal  **FQStereotype:** ArchiMate3::ArchiMate_Goal  **Status:** <span class="status-badge status-not-set">Not Set</span>  
+**Type:** Class  **Stereotype:** ArchiMate_Goal  **StereotypeEx:** ArchiMate_Goal  **FQStereotype:** ArchiMate3::ArchiMate_Goal  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="438" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Goals/ESG Performance Improvement.md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="438" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Goals/ESG Performance Improvement.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="438" data-file-path="Goals/ESG Performance Improvement.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -72,4 +71,4 @@ Achieve measurable progress in ESG ratings and benchmarks relevant to the indust
 
 ---
 
-*Generated: 2026-07-01 10:25:43*
+*Generated: 2026-07-01 11:29:53*

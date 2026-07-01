@@ -8,13 +8,12 @@ notes_hash: e3b0c442
 
 # <span class="sl" data-layer="edgy-id">Story</span> Sidenote from Community Leads
 
-**Type:** Interface  **Stereotype:** Story  **StereotypeEx:** Story  **FQStereotype:** EDGY::Story  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Interface  **Stereotype:** Story  **StereotypeEx:** Story  **FQStereotype:** EDGY::Story  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="624" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Introduction EurSuRA/Sidenote from Community Leads.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
 [Home](../index.md) / [Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="624" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Introduction EurSuRA/Sidenote from Community Leads.md" data-api-port="8001"></div>
 
 ## Tagged Values
 
@@ -49,4 +48,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-01 10:25:44*
+*Generated: 2026-07-01 11:29:54*

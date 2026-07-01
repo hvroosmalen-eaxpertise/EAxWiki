@@ -8,13 +8,12 @@ notes_hash: 52871cb8
 
 # <span class="sl" data-layer="edgy-lb">Outcome</span> Allow investors to assess financial risks and opportunities 
 
-**Type:** Activity  **Stereotype:** Outcome  **StereotypeEx:** Outcome  **FQStereotype:** EDGY::Outcome  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Activity  **Stereotype:** Outcome  **StereotypeEx:** Outcome  **FQStereotype:** EDGY::Outcome  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="565" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Goals and Objectives/Allow investors to assess financial risks and opportunities.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-15  **Modified:** 2026-04-29
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS Goals and Objectives](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="565" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Goals and Objectives/Allow investors to assess financial risks and opportunities.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="565" data-file-path="ESRS Goals and Objectives/Allow investors to assess financial risks and opportunities.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -43,4 +42,4 @@ notes_hash: 52871cb8
 
 ---
 
-*Generated: 2026-07-01 10:25:42*
+*Generated: 2026-07-01 11:29:53*

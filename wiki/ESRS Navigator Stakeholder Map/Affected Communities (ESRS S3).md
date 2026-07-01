@@ -8,13 +8,12 @@ notes_hash: 9b6a769b
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Affected Communities (ESRS S3)
 
-**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  **Status:** <span class="status-badge status-approved">Approved</span>  
+**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="251" data-status="Approved" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).md" data-api-port="8001"><span class="status-badge status-approved">Approved</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-11-14  **Modified:** 2026-06-30
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="251" data-status="Approved" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="251" data-file-path="ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -72,4 +71,4 @@ notes_hash: 9b6a769b
 
 ---
 
-*Generated: 2026-07-01 10:25:43*
+*Generated: 2026-07-01 11:29:54*

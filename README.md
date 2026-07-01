@@ -214,16 +214,16 @@ The export step cleans up any orphaned EA.exe processes when it finishes.
 
 ### Live write-back — change status and notes directly from the wiki page
 
-When the wiki runs locally on Windows with EA installed, users can edit an element's **Status** and **Notes** directly from the rendered wiki page — no need to open EA.
+When the wiki runs locally on Windows with EA installed, users can edit an element's **Status** and **Notes** directly from the rendered wiki page — no need to open EA. Both use the same two-step pattern: a small pencil icon next to the value, click to edit, **Apply**/**Save** or **Cancel** to close.
 
-- **Status** — a dropdown and **Apply** button appear on every element page that has a status value set.
-- **Notes** — a small pencil icon appears next to the notes text. Clicking it swaps the rendered notes for a raw-HTML `<textarea>` with **Save** / **Cancel** buttons (two-step edit, so notes aren't accidentally editable inline).
+- **Status** — sits on its own line. Clicking the pencil replaces the badge in place with a dropdown, Apply, and Cancel — no separate widget block elsewhere on the page. Elements with no status set show a "Not Set" badge and can be given one the same way.
+- **Notes** — a pencil icon next to the notes text. Clicking it swaps the rendered notes for a raw-HTML `<textarea>` with Save / Cancel.
 
 ```
 ┌────────────────────────────────────────────────────────────┐
 │  Browser (MkDocs :8000)                                    │
 │                                                            │
-│  Status: [ Approved ▼ ]  [ Apply ]                        │
+│  Status: Approved [✎]                                     │
 │  Notes:  Lorem ipsum...                            [✎]    │
 │                │                                           │
 │      POST /api/status or /api/notes                        │
@@ -241,7 +241,7 @@ Use `export-and-serve.ps1` with `--api-port` to start everything in one command:
 .\scripts\export-and-serve.ps1 --repo "model/file.qea" --port 8000 --api-port 8001 --force
 ```
 
-This exports the wiki (embedding the status and notes editor widgets), starts the write-back server on port 8001 as a background job, and starts MkDocs on port 8000. When Apply/Save is clicked the EA model is updated immediately via COM. MkDocs detects the `.md` change and hot-reloads the page within seconds.
+This exports the wiki (embedding the status and notes editor widgets), starts the write-back server on port 8001 as a background job, and starts MkDocs on port 8000. When Apply/Save is clicked the EA model is updated immediately via COM, the page's `**Modified:**` date is bumped to today to match, and MkDocs hot-reloads the page within seconds.
 
 Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per blank-line-separated paragraph before being sent to EA, so multi-paragraph notes don't collapse into a single line. If you do want lists, bold text, or links, just type the HTML directly — it's passed through untouched.
 
@@ -329,8 +329,8 @@ The wiki has six navigation views:
 - **Breadcrumb** — hierarchical path from root to the element's package
 - **Dates** — shows CreatedDate and ModifiedDate beneath the breadcrumb
 - **Stereotype labels** — each element heading is prefixed with a coloured label showing the full stereotype type name. ArchiMate elements use layer colours (Business=Yellow, Application=Blue, Technology=Green, Motivation=Purple, Strategy=Brown, Implementation=Pink). EDGY elements use facet colours. UML elements display in gray.
-- **Status badges** — element Status (Proposed, Approved, Implemented, etc.) shown as a coloured badge next to the element title; used throughout element pages, type indices, and the Status Dashboard
-- **Notes edit icon** — when `--api-port` is set, a pencil icon next to the notes text opens a raw-HTML editor for live write-back to EA (see [Live write-back](#live-write-back--change-status-and-notes-directly-from-the-wiki-page))
+- **Status badges** — element Status (Proposed, Approved, Implemented, "Not Set", etc.) shown as a coloured badge on its own line; used throughout element pages, type indices, and the Status Dashboard
+- **Status and Notes edit icons** — when `--api-port` is set, a pencil icon next to Status and next to Notes opens a live write-back editor for each, in place, without a page reload (see [Live write-back](#live-write-back--change-status-and-notes-directly-from-the-wiki-page))
 - **Relationships** — outgoing connectors with linked target element names
 - **Referenced By** — incoming connectors from other elements with links
 - **Appears on Diagrams** — inline thumbnail gallery of diagrams containing this element; each thumbnail links to the diagram page

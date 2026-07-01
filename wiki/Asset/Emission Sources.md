@@ -8,13 +8,12 @@ notes_hash: c81852f4
 
 # <span class="sl" data-layer="edgy-ar">Asset</span> Emission Sources
 
-**Type:** Class  **Stereotype:** Asset  **StereotypeEx:** Asset  **FQStereotype:** EDGY::Asset  **Status:** <span class="status-badge status-mandatory">Mandatory</span>  
-**Created:** 2025-12-02  **Modified:** 2026-06-30
+**Type:** Class  **Stereotype:** Asset  **StereotypeEx:** Asset  **FQStereotype:** EDGY::Asset  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="133" data-status="Mandatory" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Asset/Emission Sources.md" data-api-port="8001"><span class="status-badge status-mandatory">Mandatory</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Created:** 2025-12-02  **Modified:** 2026-07-01
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Asset](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="133" data-status="Mandatory" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Asset/Emission Sources.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="133" data-file-path="Asset/Emission Sources.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -72,4 +71,4 @@ Locaties of activiteiten die emissies genereren.
 
 ---
 
-*Generated: 2026-07-01 10:25:43*
+*Generated: 2026-07-01 11:29:53*

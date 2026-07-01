@@ -1,20 +1,19 @@
 ---
 ea_id: 248
-status: 
+status: Implemented
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
-ea_hash: e3b0c442
+ea_hash: bf546638
 notes_hash: d099d0b9
 ---
 
 # <span class="sl" data-layer="business">BusinessObject</span> ESRS E2 - Pollution
 
-**Type:** Class  **Stereotype:** ArchiMate_BusinessObject  **StereotypeEx:** ArchiMate_BusinessObject  **FQStereotype:** ArchiMate3::ArchiMate_BusinessObject  **Status:** <span class="status-badge status-not-set">Not Set</span>  
-**Created:** 2025-11-14  **Modified:** 2025-11-14
+**Type:** Class  **Stereotype:** ArchiMate_BusinessObject  **StereotypeEx:** ArchiMate_BusinessObject  **FQStereotype:** ArchiMate3::ArchiMate_BusinessObject  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="248" data-status="Implemented" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.md" data-api-port="8001"><span class="status-badge status-implemented">Implemented</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Created:** 2025-11-14  **Modified:** 2026-07-01
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="248" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="248" data-file-path="ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -67,4 +66,4 @@ notes_hash: d099d0b9
 
 ---
 
-*Generated: 2026-07-01 10:25:44*
+*Generated: 2026-07-01 11:29:54*

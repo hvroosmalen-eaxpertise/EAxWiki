@@ -8,13 +8,12 @@ notes_hash: 737001c1
 
 # <span class="sl" data-layer="edgy-id">Story</span> Environmental Impact Story
 
-**Type:** Interface  **Stereotype:** Story  **StereotypeEx:** Story  **FQStereotype:** EDGY::Story  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Interface  **Stereotype:** Story  **StereotypeEx:** Story  **FQStereotype:** EDGY::Story  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="122" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Story/Environmental Impact Story.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Story](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="122" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Story/Environmental Impact Story.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="122" data-file-path="Story/Environmental Impact Story.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -74,4 +73,4 @@ Hoe het bedrijf haar milieu-impact begrijpt en communiceert.
 
 ---
 
-*Generated: 2026-07-01 10:25:43*
+*Generated: 2026-07-01 11:29:53*

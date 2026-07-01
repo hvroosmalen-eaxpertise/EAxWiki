@@ -8,13 +8,12 @@ notes_hash: e3b0c442
 
 # <span class="sl" data-layer="edgy-ex">Channel</span> EFRAG Website
 
-**Type:** Class  **Stereotype:** Channel  **StereotypeEx:** Channel  **FQStereotype:** EDGY::Channel  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Channel  **StereotypeEx:** Channel  **FQStereotype:** EDGY::Channel  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="592" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Information Collection and Model Creation/EFRAG Website.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
 [Home](../index.md) / [Model Creation](../Model Creation/index.md) / [Information Collection and Model Creation](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="592" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Information Collection and Model Creation/EFRAG Website.md" data-api-port="8001"></div>
 
 ## Tagged Values
 
@@ -49,4 +48,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-01 10:25:44*
+*Generated: 2026-07-01 11:29:54*

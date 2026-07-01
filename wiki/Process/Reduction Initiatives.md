@@ -8,13 +8,12 @@ notes_hash: 4169c594
 
 # <span class="sl" data-layer="edgy-ar">Process</span> Reduction Initiatives
 
-**Type:** Interface  **Stereotype:** Process  **StereotypeEx:** Process  **FQStereotype:** EDGY::Process  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Interface  **Stereotype:** Process  **StereotypeEx:** Process  **FQStereotype:** EDGY::Process  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="134" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Process/Reduction Initiatives.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Process](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="134" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Process/Reduction Initiatives.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="134" data-file-path="Process/Reduction Initiatives.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -72,4 +71,4 @@ Projecten gericht op emissiereductie.
 
 ---
 
-*Generated: 2026-07-01 10:25:43*
+*Generated: 2026-07-01 11:29:53*

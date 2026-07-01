@@ -8,13 +8,12 @@ notes_hash: e5712f2d
 
 # <span class="sl" data-layer="edgy-id">Content</span> ESRS 1 General Requirements
 
-**Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  **Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="34" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS 1/ESRS 1 General Requirements.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-16
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS 1](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="34" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS 1/ESRS 1 General Requirements.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="34" data-file-path="ESRS 1/ESRS 1 General Requirements.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -70,4 +69,4 @@ For more information: <a href="$inet://https://www.efrag.org/Assets/Download?ass
 
 ---
 
-*Generated: 2026-07-01 10:25:42*
+*Generated: 2026-07-01 11:29:52*

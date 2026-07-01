@@ -163,15 +163,29 @@ details.status-details li {
 .ea-status-editor {
   display: inline-flex;
   align-items: center;
-  gap: 0.5em;
-  margin: 0.6em 0 0.4em;
-  padding: 0.4em 0.8em;
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 6px;
-  background: var(--md-code-bg-color);
-  font-size: 0.85em;
+  gap: 0.3em;
+  vertical-align: middle;
 }
-.ea-status-label { font-weight: 600; color: var(--md-default-fg-color--light); }
+.ea-status-edit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
+  padding: 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  font-size: 0.8em;
+  line-height: 1;
+  vertical-align: middle;
+}
+.ea-status-edit-btn:hover {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
 .ea-status-select {
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 4px;
@@ -190,7 +204,16 @@ details.status-details li {
   font-size: inherit;
   font-weight: 600;
 }
-.ea-status-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.ea-status-cancel-btn {
+  padding: 0.2em 0.8em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+  font-size: inherit;
+}
+.ea-status-btn:disabled, .ea-status-cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .ea-status-msg { font-style: italic; font-size: 0.95em; }
 
 /* Notes editor widget */

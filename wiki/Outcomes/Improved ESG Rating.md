@@ -8,13 +8,12 @@ notes_hash: 7d270c96
 
 # <span class="sl" data-layer="motivation">Outcome</span> Improved ESG Rating
 
-**Type:** Class  **Stereotype:** ArchiMate_Outcome  **StereotypeEx:** ArchiMate_Outcome  **FQStereotype:** ArchiMate3::ArchiMate_Outcome  **Status:** <span class="status-badge status-not-set">Not Set</span>  
+**Type:** Class  **Stereotype:** ArchiMate_Outcome  **StereotypeEx:** ArchiMate_Outcome  **FQStereotype:** ArchiMate3::ArchiMate_Outcome  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="458" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Outcomes/Improved ESG Rating.md" data-api-port="8001"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Outcomes](index.md)
-
-<div id="ea-status-editor" class="ea-status-editor" data-ea-id="458" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Outcomes/Improved ESG Rating.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="458" data-file-path="Outcomes/Improved ESG Rating.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -76,4 +75,4 @@ Facilitates access to sustainable finance and enhances corporate reputation.</p>
 
 ---
 
-*Generated: 2026-07-01 10:25:43*
+*Generated: 2026-07-01 11:29:53*
