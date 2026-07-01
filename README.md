@@ -156,7 +156,7 @@ Linux only needs Python and PowerShell Core (`pwsh`). The `install.sh` script in
 | `scripts/export.ps1` | Export EA model to Markdown only |
 | `scripts/serve.ps1` | Start MkDocs on an already-exported wiki |
 | `scripts/export-and-serve.ps1` | Export then serve (calls the two above) |
-| `scripts/writeback.ps1` | Scan wiki for status changes and write them back to EA via COM (**Windows only**) |
+| `scripts/writeback.ps1` | Scan wiki for status and notes changes and write them back to EA via COM (**Windows only**) |
 
 All scripts accept both PowerShell (`-Flag`) and Unix-style (`--flag`) syntax interchangeably, e.g. `--force`, `--verbose`, `--repo`.
 
@@ -212,21 +212,25 @@ The serve script creates a `.venv` if needed, installs MkDocs requirements, and 
 
 The export step cleans up any orphaned EA.exe processes when it finishes.
 
-### Live write-back — change status directly from the wiki page
+### Live write-back — change status and notes directly from the wiki page
 
-When the wiki runs locally on Windows with EA installed, users can change an element's **Status** directly from the rendered wiki page. A dropdown and **Apply** button appear on every element page that has a status value set.
+When the wiki runs locally on Windows with EA installed, users can edit an element's **Status** and **Notes** directly from the rendered wiki page — no need to open EA.
+
+- **Status** — a dropdown and **Apply** button appear on every element page that has a status value set.
+- **Notes** — a small pencil icon appears next to the notes text. Clicking it swaps the rendered notes for a raw-HTML `<textarea>` with **Save** / **Cancel** buttons (two-step edit, so notes aren't accidentally editable inline).
 
 ```
 ┌────────────────────────────────────────────────────────────┐
 │  Browser (MkDocs :8000)                                    │
 │                                                            │
 │  Status: [ Approved ▼ ]  [ Apply ]                        │
+│  Notes:  Lorem ipsum...                            [✎]    │
 │                │                                           │
-│         POST /api/status                                   │
+│      POST /api/status or /api/notes                        │
 │                ▼                                           │
 │  Wiki write-back server (:8001)                            │
-│    ├─ EA COM → element.Status = "Approved"                 │
-│    └─ Update .md frontmatter + status badge in-place       │
+│    ├─ EA COM → element.Status / element.Notes = "..."      │
+│    └─ Update .md frontmatter + page body in-place           │
 └────────────────────────────────────────────────────────────┘
 ```
 
@@ -237,12 +241,14 @@ Use `export-and-serve.ps1` with `--api-port` to start everything in one command:
 .\scripts\export-and-serve.ps1 --repo "model/file.qea" --port 8000 --api-port 8001 --force
 ```
 
-This exports the wiki (embedding the status-editor widget), starts the write-back server on port 8001 as a background job, and starts MkDocs on port 8000. When Apply is clicked the EA model is updated immediately via COM. MkDocs detects the `.md` change and hot-reloads the page within seconds.
+This exports the wiki (embedding the status and notes editor widgets), starts the write-back server on port 8001 as a background job, and starts MkDocs on port 8000. When Apply/Save is clicked the EA model is updated immediately via COM. MkDocs detects the `.md` change and hot-reloads the page within seconds.
+
+Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per blank-line-separated paragraph before being sent to EA, so multi-paragraph notes don't collapse into a single line. If you do want lists, bold text, or links, just type the HTML directly — it's passed through untouched.
 
 **Batch write-back** (for `.md` edits made while the server was not running):
 
 ```powershell
-.\scripts\export.ps1 --writeback       # scan wiki/ for status changes, write to EA
+.\scripts\export.ps1 --writeback       # scan wiki/ for status and notes changes, write to EA
 .\scripts\export.ps1                   # re-export to sync the wiki
 ```
 
@@ -255,6 +261,7 @@ This exports the wiki (embedding the status-editor widget), starts the write-bac
 | Export (EA → wiki) | ✓ | ✗ requires EA |
 | Serve wiki (MkDocs) | ✓ | ✓ |
 | Live status write-back (wiki → EA) | ✓ | ✗ requires EA |
+| Live notes write-back (wiki → EA) | ✓ | ✗ requires EA |
 | Batch write-back (`--writeback`) | ✓ | ✗ requires EA |
 
 ## Saved connection config
@@ -323,6 +330,7 @@ The wiki has six navigation views:
 - **Dates** — shows CreatedDate and ModifiedDate beneath the breadcrumb
 - **Stereotype labels** — each element heading is prefixed with a coloured label showing the full stereotype type name. ArchiMate elements use layer colours (Business=Yellow, Application=Blue, Technology=Green, Motivation=Purple, Strategy=Brown, Implementation=Pink). EDGY elements use facet colours. UML elements display in gray.
 - **Status badges** — element Status (Proposed, Approved, Implemented, etc.) shown as a coloured badge next to the element title; used throughout element pages, type indices, and the Status Dashboard
+- **Notes edit icon** — when `--api-port` is set, a pencil icon next to the notes text opens a raw-HTML editor for live write-back to EA (see [Live write-back](#live-write-back--change-status-and-notes-directly-from-the-wiki-page))
 - **Relationships** — outgoing connectors with linked target element names
 - **Referenced By** — incoming connectors from other elements with links
 - **Appears on Diagrams** — inline thumbnail gallery of diagrams containing this element; each thumbnail links to the diagram page

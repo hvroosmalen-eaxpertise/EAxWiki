@@ -18,7 +18,7 @@ Or run `mkdocs serve` directly if you have MkDocs installed globally.
 Notes:
 - The mkdocs configuration uses `docs_dir: wiki`, so MkDocs will serve files from the `wiki/` directory.
 - To regenerate the wiki from the EA repository using the .NET exporter, run the EAxWiki tool first so that `wiki/` contains up-to-date content.
-- To enable live status editing from the wiki (round-trip to EA), use `export-and-serve.ps1 --api-port 8001` instead of `serve.ps1`. This starts the wiki write-back server alongside MkDocs.
+- To enable live status and notes editing from the wiki (round-trip to EA), use `export-and-serve.ps1 --api-port 8001` instead of `serve.ps1`. This starts the wiki write-back server alongside MkDocs.
 
 Important note about the URL shown by MkDocs
 
