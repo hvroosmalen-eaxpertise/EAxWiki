@@ -26,12 +26,19 @@ notes_hash: 5c88c5f6
 
 ## Attributes
 
-| Name | Type | Default | Description |
-|------|------|---------|-------------|
-| AAF, Agriculture, Farming and Fishing, Agriculture |  |  |  |
-| AFW, Forestry and Wood Products, Agriculture |  |  |  |
-| CCE, Construction and Engineering, Construction |  |  |  |
-| UPE, Power Production and Energy Utilities, Utilities |  |  |  |
+<table>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>AAF, Agriculture, Farming and Fishing, Agriculture</td><td></td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="e3b0c442" data-kind="attribute" data-el-id="571" data-attr-name="AAF, Agriculture, Farming and Fishing, Agriculture" data-attr-type="" data-file-path="ESRS Sector Classification/ESRS Sector Classification.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>AFW, Forestry and Wood Products, Agriculture</td><td></td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="e3b0c442" data-kind="attribute" data-el-id="571" data-attr-name="AFW, Forestry and Wood Products, Agriculture" data-attr-type="" data-file-path="ESRS Sector Classification/ESRS Sector Classification.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+<tr><td>CCE, Construction and Engineering, Construction</td><td></td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="e3b0c442" data-kind="attribute" data-el-id="571" data-attr-name="CCE, Construction and Engineering, Construction" data-attr-type="" data-file-path="ESRS Sector Classification/ESRS Sector Classification.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
+<tr><td>UPE, Power Production and Energy Utilities, Utilities</td><td></td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-3--><!--ea-row-notes-end:attr-3--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-3" data-notes-hash="e3b0c442" data-kind="attribute" data-el-id="571" data-attr-name="UPE, Power Production and Energy Utilities, Utilities" data-attr-type="" data-file-path="ESRS Sector Classification/ESRS Sector Classification.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-3" style="display:none"><td colspan="4"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -45,4 +52,4 @@ notes_hash: 5c88c5f6
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

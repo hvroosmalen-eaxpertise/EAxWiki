@@ -270,6 +270,108 @@ public class EaReader : IEaReader, IDisposable
         _logger?.LogInformation("Updated diagram {DiagramId} notes", diagramId);
     }
 
+    // EA.Attribute/Method/TaggedValue COM objects expose no ID property (confirmed via reflection
+    // on IDualAttribute/IDualMethod/IDualTaggedValue) — the parent element's collection must be
+    // searched by a composite key instead. Duplicate names are legal in EA (method overloads,
+    // repeated tag names), so a tie is resolved by taking the first match and logging a warning.
+
+    public void UpdateAttributeNotes(int elementId, string attributeName, string attributeType, string newNotesHtml)
+    {
+        if (_repository == null)
+            throw new InvalidOperationException("Repository is not open.");
+        var element = _repository.GetElementByID(elementId);
+        if (element == null)
+            throw new InvalidOperationException($"Element {elementId} not found in repository.");
+        if (element.Attributes is not EA.Collection attrs)
+            throw new InvalidOperationException($"Element {elementId} has no attributes collection.");
+
+        EA.Attribute? match = null;
+        var matchCount = 0;
+        for (short i = 0; i < attrs.Count; i++)
+        {
+            if (attrs.GetAt(i) is not EA.Attribute attr) continue;
+            if (!string.Equals(attr.Name, attributeName, StringComparison.Ordinal)) continue;
+            if (!string.Equals(attr.Type, attributeType, StringComparison.Ordinal)) continue;
+            matchCount++;
+            match ??= attr;
+        }
+
+        if (match == null)
+            throw new InvalidOperationException($"Attribute '{attributeName}' ({attributeType}) not found on element {elementId}.");
+        if (matchCount > 1)
+            _logger?.LogWarning("Multiple attributes named '{Name}' of type '{Type}' found on element {ElementId}; updating the first match.", attributeName, attributeType, elementId);
+
+        match.Notes = newNotesHtml;
+        match.Update();
+        _repository.RefreshModelView(0);
+        _logger?.LogInformation("Updated attribute '{Name}' notes on element {ElementId}", attributeName, elementId);
+    }
+
+    public void UpdateMethodNotes(int elementId, string methodName, string returnType, bool isStatic, string newNotesHtml)
+    {
+        if (_repository == null)
+            throw new InvalidOperationException("Repository is not open.");
+        var element = _repository.GetElementByID(elementId);
+        if (element == null)
+            throw new InvalidOperationException($"Element {elementId} not found in repository.");
+        if (element.Methods is not EA.Collection methods)
+            throw new InvalidOperationException($"Element {elementId} has no methods collection.");
+
+        EA.Method? match = null;
+        var matchCount = 0;
+        for (short i = 0; i < methods.Count; i++)
+        {
+            if (methods.GetAt(i) is not EA.Method method) continue;
+            if (!string.Equals(method.Name, methodName, StringComparison.Ordinal)) continue;
+            if (!string.Equals(method.ReturnType, returnType, StringComparison.Ordinal)) continue;
+            if (method.IsStatic != isStatic) continue;
+            matchCount++;
+            match ??= method;
+        }
+
+        if (match == null)
+            throw new InvalidOperationException($"Method '{methodName}' ({returnType}) not found on element {elementId}.");
+        if (matchCount > 1)
+            _logger?.LogWarning("Multiple methods named '{Name}' ({ReturnType}) found on element {ElementId}; updating the first match.", methodName, returnType, elementId);
+
+        match.Notes = newNotesHtml;
+        match.Update();
+        _repository.RefreshModelView(0);
+        _logger?.LogInformation("Updated method '{Name}' notes on element {ElementId}", methodName, elementId);
+    }
+
+    public void UpdateTaggedValueNotes(int elementId, string tagName, string tagValue, string newNotesHtml)
+    {
+        if (_repository == null)
+            throw new InvalidOperationException("Repository is not open.");
+        var element = _repository.GetElementByID(elementId);
+        if (element == null)
+            throw new InvalidOperationException($"Element {elementId} not found in repository.");
+        if (element.TaggedValues is not EA.Collection taggedValues)
+            throw new InvalidOperationException($"Element {elementId} has no tagged values collection.");
+
+        EA.TaggedValue? match = null;
+        var matchCount = 0;
+        for (short i = 0; i < taggedValues.Count; i++)
+        {
+            if (taggedValues.GetAt(i) is not EA.TaggedValue tv) continue;
+            if (!string.Equals(tv.Name, tagName, StringComparison.Ordinal)) continue;
+            if (!string.Equals(tv.Value, tagValue, StringComparison.Ordinal)) continue;
+            matchCount++;
+            match ??= tv;
+        }
+
+        if (match == null)
+            throw new InvalidOperationException($"Tagged value '{tagName}' ({tagValue}) not found on element {elementId}.");
+        if (matchCount > 1)
+            _logger?.LogWarning("Multiple tagged values named '{Name}' with value '{Value}' found on element {ElementId}; updating the first match.", tagName, tagValue, elementId);
+
+        match.Notes = newNotesHtml;
+        match.Update();
+        _repository.RefreshModelView(0);
+        _logger?.LogInformation("Updated tagged value '{Name}' notes on element {ElementId}", tagName, elementId);
+    }
+
     public bool ExportDiagramImage(string diagramGuid, string filePath)
     {
         if (_repository == null) return false;

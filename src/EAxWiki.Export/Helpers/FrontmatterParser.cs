@@ -168,4 +168,53 @@ public static class FrontmatterParser
         File.WriteAllText(tmp, text);
         File.Move(tmp, filePath, overwrite: true);
     }
+
+    /// <summary>
+    /// Extracts the current notes body for one row-level editor (attribute/method/tagged-value
+    /// description), identified by <paramref name="rowId"/>, or null if no such marker pair exists.
+    /// Unlike element/diagram notes, a single page can contain many independent row editors, so
+    /// each marker pair is tagged with its own id rather than assuming there's only one per file.
+    /// </summary>
+    public static string? ExtractRowNotesContent(string filePath, string rowId)
+    {
+        string text;
+        try { text = File.ReadAllText(filePath).Replace("\r\n", "\n"); }
+        catch { return null; }
+
+        var match = Regex.Match(text,
+            $@"<!--ea-row-notes-start:{Regex.Escape(rowId)}-->(.*?)<!--ea-row-notes-end:{Regex.Escape(rowId)}-->",
+            RegexOptions.Singleline);
+        return match.Success ? match.Groups[1].Value : null;
+    }
+
+    /// <summary>
+    /// Updates one row-level notes block (attribute/method/tagged-value description) identified by
+    /// <paramref name="rowId"/>: the content between its ea-row-notes-start/end markers, the
+    /// data-notes-hash attribute on the row declaring that same id, and the page's Modified date.
+    /// Requires the emitted markup to place data-row-id before data-notes-hash on the same tag.
+    /// </summary>
+    public static void UpdateRowNotes(string filePath, string rowId, string newNotesHtml)
+    {
+        var original = File.ReadAllText(filePath);
+        var usesCrlf = original.Contains("\r\n");
+        var text = original.Replace("\r\n", "\n");
+
+        var newHash = ElementPageWriter.ComputeNotesHash(newNotesHtml);
+
+        var hashPattern = new Regex($"(data-row-id=\"{Regex.Escape(rowId)}\"[^>]*?data-notes-hash=\")[^\"]*(\")");
+        text = hashPattern.Replace(text, $"${{1}}{newHash}$2", 1);
+
+        var contentPattern = new Regex(
+            $@"(<!--ea-row-notes-start:{Regex.Escape(rowId)}-->).*?(<!--ea-row-notes-end:{Regex.Escape(rowId)}-->)",
+            RegexOptions.Singleline);
+        text = contentPattern.Replace(text, m => m.Groups[1].Value + newNotesHtml + m.Groups[2].Value, 1);
+
+        text = ModifiedDatePattern.Replace(text, $"${{1}}{DateTime.Now:yyyy-MM-dd}");
+
+        if (usesCrlf) text = text.Replace("\n", "\r\n");
+
+        var tmp = filePath + ".tmp";
+        File.WriteAllText(tmp, text);
+        File.Move(tmp, filePath, overwrite: true);
+    }
 }

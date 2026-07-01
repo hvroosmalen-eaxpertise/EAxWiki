@@ -26,18 +26,27 @@ notes_hash: 63616c0f
 
 ## Attributes
 
-| Name | Type | Default | Description |
-|------|------|---------|-------------|
-| id | Key |  | The unique system-assigned identifier for the OrganizationExternalIdentifierType record. It must be stable so that existing OrganizationExternalIdentifier records that reference it remain valid when the type vocabulary is extended. |
-| name | String |  | The descriptive label for the identifier type, such as "Legal Entity Identifier (LEI)" or "DUNS Number". The name must unambiguously identify the issuing registry or classification system to which the code belongs and should match the official name used by the issuing authority. |
+<table>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the OrganizationExternalIdentifierType record. It must be stable so that existing OrganizationExternalIdentifier records that reference it remain valid when the type vocabulary is extended.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="3cf9f857" data-kind="attribute" data-el-id="749" data-attr-name="id" data-attr-type="Key" data-file-path="Organisation/OrganizationExternalIdentifierType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The descriptive label for the identifier type, such as "Legal Entity Identifier (LEI)" or "DUNS Number". The name must unambiguously identify the issuing registry or classification system to which the code belongs and should match the official name used by the issuing authority.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="874577ed" data-kind="attribute" data-el-id="749" data-attr-name="name" data-attr-type="String" data-file-path="Organisation/OrganizationExternalIdentifierType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| description | OrganizationExternalIdentifierType provides the controlled vocabulary of external identifier schemes used to publicly identify organisations, such as "Federal Information Processing System (FIPS) Codes", "Data Universal Numbering System (DUNS)", "Employer |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>description</td><td>OrganizationExternalIdentifierType provides the controlled vocabulary of external identifier schemes used to publicly identify organisations, such as &quot;Federal Information Processing System (FIPS) Codes&quot;, &quot;Data Universal Numbering System (DUNS)&quot;, &quot;Employer</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="749" data-tag-name="description" data-tag-value="OrganizationExternalIdentifierType provides the controlled vocabulary of external identifier schemes used to publicly identify organisations, such as &quot;Federal Information Processing System (FIPS) Codes&quot;, &quot;Data Universal Numbering System (DUNS)&quot;, &quot;Employer" data-file-path="Organisation/OrganizationExternalIdentifierType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -62,8 +71,8 @@ notes_hash: 63616c0f
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e748","label":"OrganizationExternalIde…","fullName":"OrganizationExternalIdentifier","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationExternalIdentifier.html"},{"id":"e749","label":"OrganizationExternalIde…","fullName":"OrganizationExternalIdentifierType","packageName":"Organisation","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c903","source":"e749","target":"e748","label":"Association","sourceLayer":"uml"},{"id":"c904","source":"e735","target":"e748","label":"Association","sourceLayer":"uml"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e748&quot;,&quot;label&quot;:&quot;OrganizationExternalIde…&quot;,&quot;fullName&quot;:&quot;OrganizationExternalIdentifier&quot;,&quot;packageName&quot;:&quot;Organisation&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;OrganizationExternalIdentifier.html&quot;},{&quot;id&quot;:&quot;e749&quot;,&quot;label&quot;:&quot;OrganizationExternalIde…&quot;,&quot;fullName&quot;:&quot;OrganizationExternalIdentifierType&quot;,&quot;packageName&quot;:&quot;Organisation&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e735&quot;,&quot;label&quot;:&quot;Organization&quot;,&quot;fullName&quot;:&quot;Organization&quot;,&quot;packageName&quot;:&quot;Organisation&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Organization.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c903&quot;,&quot;source&quot;:&quot;e749&quot;,&quot;target&quot;:&quot;e748&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c904&quot;,&quot;source&quot;:&quot;e735&quot;,&quot;target&quot;:&quot;e748&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:17*

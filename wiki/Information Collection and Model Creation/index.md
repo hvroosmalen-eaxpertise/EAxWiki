@@ -9,6 +9,7 @@
 ## Elements
 
 - <span class="sl" data-layer="edgy-ar">Capability</span> [AI - LLM](AI - LLM.md)
+  - *<p>Test write-back for a previously empty notes element.</p>*
 - <span class="sl" data-layer="edgy-ar">Capability</span> [EDGY -> XMI (Python)](EDGY -_ XMI (Python).md)
 - <span class="sl" data-layer="edgy-ix">Product</span> [ESRS Referentie Model](ESRS Referentie Model.md)
 - <span class="sl" data-layer="edgy-ix">Product</span> [EurSuRA Model](EurSuRA Model.md)
@@ -34,4 +35,4 @@
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

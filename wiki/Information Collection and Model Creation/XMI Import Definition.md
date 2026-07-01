@@ -26,9 +26,13 @@ notes_hash: e3b0c442
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="586" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="Information Collection and Model Creation/XMI Import Definition.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -53,8 +57,8 @@ notes_hash: e3b0c442
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e589","label":"Constureren MD to XMI C…","fullName":"Constureren MD to XMI Convertor","packageName":"Information Collection and Model Creation","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"Constureren MD to XMI Convertor.html"},{"id":"e586","label":"XMI Import Definition","fullName":"XMI Import Definition","packageName":"Information Collection and Model Creation","layer":"edgy-ar","isFocal":true,"hasUrl":false,"url":""},{"id":"e577","label":"EDGY -&gt; XMI (Python)","fullName":"EDGY -&gt; XMI (Python)","packageName":"Information Collection and Model Creation","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"EDGY -_ XMI (Python).html"},{"id":"e594","label":"AI - LLM","fullName":"AI - LLM","packageName":"Information Collection and Model Creation","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"AI - LLM.html"}],"edges":[{"id":"c621","source":"e586","target":"e589","label":"ControlFlow","sourceLayer":"edgy-ar"},{"id":"c623","source":"e589","target":"e577","label":"ControlFlow","sourceLayer":"edgy-ar"},{"id":"c629","source":"e594","target":"e589","label":"Association","sourceLayer":"edgy-ar"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e589&quot;,&quot;label&quot;:&quot;Constureren MD to XMI C…&quot;,&quot;fullName&quot;:&quot;Constureren MD to XMI Convertor&quot;,&quot;packageName&quot;:&quot;Information Collection and Model Creation&quot;,&quot;layer&quot;:&quot;edgy-ar&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Constureren MD to XMI Convertor.html&quot;},{&quot;id&quot;:&quot;e586&quot;,&quot;label&quot;:&quot;XMI Import Definition&quot;,&quot;fullName&quot;:&quot;XMI Import Definition&quot;,&quot;packageName&quot;:&quot;Information Collection and Model Creation&quot;,&quot;layer&quot;:&quot;edgy-ar&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e577&quot;,&quot;label&quot;:&quot;EDGY -&gt; XMI (Python)&quot;,&quot;fullName&quot;:&quot;EDGY -&gt; XMI (Python)&quot;,&quot;packageName&quot;:&quot;Information Collection and Model Creation&quot;,&quot;layer&quot;:&quot;edgy-ar&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;EDGY -_ XMI (Python).html&quot;},{&quot;id&quot;:&quot;e594&quot;,&quot;label&quot;:&quot;AI - LLM&quot;,&quot;fullName&quot;:&quot;AI - LLM&quot;,&quot;packageName&quot;:&quot;Information Collection and Model Creation&quot;,&quot;layer&quot;:&quot;edgy-ar&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;AI - LLM.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c621&quot;,&quot;source&quot;:&quot;e586&quot;,&quot;target&quot;:&quot;e589&quot;,&quot;label&quot;:&quot;ControlFlow&quot;,&quot;sourceLayer&quot;:&quot;edgy-ar&quot;},{&quot;id&quot;:&quot;c623&quot;,&quot;source&quot;:&quot;e589&quot;,&quot;target&quot;:&quot;e577&quot;,&quot;label&quot;:&quot;ControlFlow&quot;,&quot;sourceLayer&quot;:&quot;edgy-ar&quot;},{&quot;id&quot;:&quot;c629&quot;,&quot;source&quot;:&quot;e594&quot;,&quot;target&quot;:&quot;e589&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;edgy-ar&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

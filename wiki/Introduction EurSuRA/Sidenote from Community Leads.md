@@ -26,9 +26,13 @@ notes_hash: e3b0c442
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="624" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="Introduction EurSuRA/Sidenote from Community Leads.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -53,8 +57,8 @@ notes_hash: e3b0c442
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e623","label":"Deutsche Bahn (Marco Di…","fullName":"Deutsche Bahn (Marco Dillenburg)","packageName":"Introduction EurSuRA","layer":"edgy-pe","isFocal":false,"hasUrl":true,"url":"Deutsche Bahn (Marco Dillenburg).html"},{"id":"e624","label":"Sidenote from Community…","fullName":"Sidenote from Community Leads","packageName":"Introduction EurSuRA","layer":"edgy-id","isFocal":true,"hasUrl":false,"url":""}],"edges":[{"id":"c652","source":"e624","target":"e623","label":"Association","sourceLayer":"edgy-id"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e623&quot;,&quot;label&quot;:&quot;Deutsche Bahn (Marco Di…&quot;,&quot;fullName&quot;:&quot;Deutsche Bahn (Marco Dillenburg)&quot;,&quot;packageName&quot;:&quot;Introduction EurSuRA&quot;,&quot;layer&quot;:&quot;edgy-pe&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Deutsche Bahn (Marco Dillenburg).html&quot;},{&quot;id&quot;:&quot;e624&quot;,&quot;label&quot;:&quot;Sidenote from Community…&quot;,&quot;fullName&quot;:&quot;Sidenote from Community Leads&quot;,&quot;packageName&quot;:&quot;Introduction EurSuRA&quot;,&quot;layer&quot;:&quot;edgy-id&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c652&quot;,&quot;source&quot;:&quot;e624&quot;,&quot;target&quot;:&quot;e623&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;edgy-id&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

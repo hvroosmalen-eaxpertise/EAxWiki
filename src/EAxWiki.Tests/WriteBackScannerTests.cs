@@ -14,6 +14,9 @@ internal class FakeEaReader : IEaReader
     public List<(int Id, string Status)> StatusUpdates { get; } = [];
     public List<(int Id, string Notes)> ElementNotesUpdates { get; } = [];
     public List<(int Id, string Notes)> DiagramNotesUpdates { get; } = [];
+    public List<(int ElementId, string Name, string Type, string Notes)> AttributeNotesUpdates { get; } = [];
+    public List<(int ElementId, string Name, string ReturnType, bool IsStatic, string Notes)> MethodNotesUpdates { get; } = [];
+    public List<(int ElementId, string Name, string Value, string Notes)> TaggedValueNotesUpdates { get; } = [];
 
     public EaRepository Open(string connectionString) => new();
     public void Close() { }
@@ -24,6 +27,12 @@ internal class FakeEaReader : IEaReader
     public void UpdateElementStatus(int elementId, string newStatus) => StatusUpdates.Add((elementId, newStatus));
     public void UpdateElementNotes(int elementId, string newNotesHtml) => ElementNotesUpdates.Add((elementId, newNotesHtml));
     public void UpdateDiagramNotes(int diagramId, string newNotesHtml) => DiagramNotesUpdates.Add((diagramId, newNotesHtml));
+    public void UpdateAttributeNotes(int elementId, string attributeName, string attributeType, string newNotesHtml) =>
+        AttributeNotesUpdates.Add((elementId, attributeName, attributeType, newNotesHtml));
+    public void UpdateMethodNotes(int elementId, string methodName, string returnType, bool isStatic, string newNotesHtml) =>
+        MethodNotesUpdates.Add((elementId, methodName, returnType, isStatic, newNotesHtml));
+    public void UpdateTaggedValueNotes(int elementId, string tagName, string tagValue, string newNotesHtml) =>
+        TaggedValueNotesUpdates.Add((elementId, tagName, tagValue, newNotesHtml));
 }
 
 /// <summary>
@@ -124,5 +133,43 @@ public class WriteBackScannerTests : IDisposable
 
         Assert.Empty(fakeReader.DiagramNotesUpdates);
         Assert.Empty(result.NotesChanges);
+    }
+
+    private const string ElementPageWithRowWidgets = """
+        ---
+        ea_id: 42
+        ---
+
+        # Widget Container
+
+        <table>
+        <tbody>
+        <tr><td>maxRetries</td><td>int</td><td>3</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0-->Edited attribute description directly in the .md file.<!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="deadbeef" data-kind="attribute" data-el-id="42" data-attr-name="maxRetries" data-attr-type="int" data-file-path="Widget Container.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+        <tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+        </tbody>
+        </table>
+
+        <div class="ea-row-notes-widget" data-row-id="method-0"><span class="ea-row-notes-text"><!--ea-row-notes-start:method-0-->UNCHANGED_HASH_MATCHES<!--ea-row-notes-end:method-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="inline" data-row-id="method-0" data-notes-hash="__METHOD_HASH__" data-kind="method" data-el-id="42" data-method-name="Retry" data-return-type="void" data-is-static="true" data-file-path="Widget Container.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></div>
+        """;
+
+    [Fact]
+    public void Scan_RoutesAttributeRowNotesToUpdateAttributeNotes()
+    {
+        var methodHash = ElementPageWriter.ComputeNotesHash("UNCHANGED_HASH_MATCHES");
+        var page = ElementPageWithRowWidgets.Replace("__METHOD_HASH__", methodHash);
+        File.WriteAllText(Path.Combine(_wikiDir, "Widget Container.md"), page);
+        var fakeReader = new FakeEaReader();
+        var scanner = new WriteBackScanner(fakeReader, NullLogger<WriteBackScanner>.Instance);
+
+        var result = scanner.Scan(_wikiDir);
+
+        Assert.Single(fakeReader.AttributeNotesUpdates);
+        Assert.Equal((42, "maxRetries", "int"), (fakeReader.AttributeNotesUpdates[0].ElementId, fakeReader.AttributeNotesUpdates[0].Name, fakeReader.AttributeNotesUpdates[0].Type));
+        Assert.Contains("Edited attribute description", fakeReader.AttributeNotesUpdates[0].Notes);
+
+        // Method row's hash already matches its content -> untouched
+        Assert.Empty(fakeReader.MethodNotesUpdates);
+
+        Assert.Single(result.NotesChanges);
     }
 }

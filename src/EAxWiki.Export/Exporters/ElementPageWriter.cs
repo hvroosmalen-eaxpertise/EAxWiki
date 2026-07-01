@@ -121,13 +121,34 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         {
             lines.Add("## Attributes");
             lines.Add(string.Empty);
-            lines.Add("| Name | Type | Default | Description |");
-            lines.Add("|------|------|---------|-------------|");
 
-            foreach (var attr in element.Attributes)
+            if (ctx.ApiPort > 0)
             {
-                var desc = (attr.Notes ?? "").Replace("|", "\\|").Replace("\n", "<br/>");
-                lines.Add($"| {MarkdownHelpers.EscapeCell(attr.Name)} | {MarkdownHelpers.EscapeCell(attr.Type)} | {MarkdownHelpers.EscapeCell(attr.DefaultValue ?? "")} | {desc} |");
+                lines.Add("<table>");
+                lines.Add("<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>");
+                lines.Add("<tbody>");
+                var attrIdx = 0;
+                foreach (var attr in element.Attributes)
+                {
+                    var rowId = $"attr-{attrIdx++}";
+                    var (viewHtml, editRowHtml) = BuildRowNotesWidget(
+                        rowId, attr.Notes, "attribute", "table-row", element.Id, wikiRelPath, ctx.ApiPort, 4,
+                        ("attr-name", attr.Name), ("attr-type", attr.Type));
+                    lines.Add($"<tr><td>{HtmlEscape(attr.Name)}</td><td>{HtmlEscape(attr.Type)}</td><td>{HtmlEscape(attr.DefaultValue ?? "")}</td><td>{viewHtml}</td></tr>");
+                    lines.Add(editRowHtml);
+                }
+                lines.Add("</tbody>");
+                lines.Add("</table>");
+            }
+            else
+            {
+                lines.Add("| Name | Type | Default | Description |");
+                lines.Add("|------|------|---------|-------------|");
+                foreach (var attr in element.Attributes)
+                {
+                    var desc = (attr.Notes ?? "").Replace("|", "\\|").Replace("\n", "<br/>");
+                    lines.Add($"| {MarkdownHelpers.EscapeCell(attr.Name)} | {MarkdownHelpers.EscapeCell(attr.Type)} | {MarkdownHelpers.EscapeCell(attr.DefaultValue ?? "")} | {desc} |");
+                }
             }
 
             lines.Add(string.Empty);
@@ -140,6 +161,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             lines.Add("## Methods");
             lines.Add(string.Empty);
 
+            var methodIdx = 0;
             foreach (var method in element.Methods)
             {
                 var staticTag = method.IsStatic ? " *(static)*" : "";
@@ -147,7 +169,17 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                 lines.Add(string.Empty);
                 lines.Add($"**Returns:** `{method.Type}`");
                 lines.Add(string.Empty);
-                if (!string.IsNullOrWhiteSpace(method.Notes))
+
+                if (ctx.ApiPort > 0)
+                {
+                    var rowId = $"method-{methodIdx++}";
+                    var (viewHtml, _) = BuildRowNotesWidget(
+                        rowId, method.Notes, "method", "inline", element.Id, wikiRelPath, ctx.ApiPort, 0,
+                        ("method-name", method.Name), ("return-type", method.Type), ("is-static", method.IsStatic ? "true" : "false"));
+                    lines.Add($"<div class=\"ea-row-notes-widget\" data-row-id=\"{rowId}\">{viewHtml}</div>");
+                    lines.Add(string.Empty);
+                }
+                else if (!string.IsNullOrWhiteSpace(method.Notes))
                 {
                     lines.Add(method.Notes);
                     lines.Add(string.Empty);
@@ -159,11 +191,32 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         {
             lines.Add("## Tagged Values");
             lines.Add(string.Empty);
-            lines.Add("| Name | Value | Notes |");
-            lines.Add("|------|-------|-------|");
 
-            foreach (var tv in element.TaggedValues)
-                lines.Add($"| {MarkdownHelpers.EscapeCell(tv.Name)} | {MarkdownHelpers.EscapeCell(tv.Value)} | {MarkdownHelpers.EscapeCell(tv.Notes ?? "")} |");
+            if (ctx.ApiPort > 0)
+            {
+                lines.Add("<table>");
+                lines.Add("<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>");
+                lines.Add("<tbody>");
+                var tvIdx = 0;
+                foreach (var tv in element.TaggedValues)
+                {
+                    var rowId = $"tag-{tvIdx++}";
+                    var (viewHtml, editRowHtml) = BuildRowNotesWidget(
+                        rowId, tv.Notes, "tagged-value", "table-row", element.Id, wikiRelPath, ctx.ApiPort, 3,
+                        ("tag-name", tv.Name), ("tag-value", tv.Value));
+                    lines.Add($"<tr><td>{HtmlEscape(tv.Name)}</td><td>{HtmlEscape(tv.Value)}</td><td>{viewHtml}</td></tr>");
+                    lines.Add(editRowHtml);
+                }
+                lines.Add("</tbody>");
+                lines.Add("</table>");
+            }
+            else
+            {
+                lines.Add("| Name | Value | Notes |");
+                lines.Add("|------|-------|-------|");
+                foreach (var tv in element.TaggedValues)
+                    lines.Add($"| {MarkdownHelpers.EscapeCell(tv.Name)} | {MarkdownHelpers.EscapeCell(tv.Value)} | {MarkdownHelpers.EscapeCell(tv.Notes ?? "")} |");
+            }
 
             lines.Add(string.Empty);
             lines.Add("[↑ Back to top](#)");
@@ -367,5 +420,36 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         s.Replace("\\", "\\\\").Replace("\"", "\\\"").Replace("\r", "").Replace("\n", " ").Replace("\t", " ");
 
     private static string HtmlEscape(string s) =>
-        s.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;");
+        (s ?? string.Empty).Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;");
+
+    /// <summary>
+    /// Builds the view span + hidden edit surface for one row-level description editor (attribute,
+    /// method, or tagged value). "surface" controls how notes-editor.js reveals the edit UI:
+    /// "table-row" expects a sibling &lt;tr class="ea-row-edit"&gt; (returned as editSurfaceHtml) for
+    /// callers rendering a table; "inline" builds the edit UI directly inside the view widget instead,
+    /// so editSurfaceHtml is empty and unused by the caller.
+    /// EA's Attribute/Method/TaggedValue COM objects expose no ID, so match* holds whatever composite
+    /// key (name plus other stable fields) EaReader needs to find the right child object at write-back time.
+    /// </summary>
+    private static (string ViewHtml, string EditSurfaceHtml) BuildRowNotesWidget(
+        string rowId, string? notesValue, string kind, string surface, int elementId,
+        string wikiRelPath, int apiPort, int colspan,
+        params (string Attr, string Value)[] matchAttrs)
+    {
+        var normalized = FrontmatterParser.NormalizeNotesHtml(notesValue);
+        var hash = ComputeNotesHash(normalized);
+        var matchAttrsHtml = string.Join(" ", matchAttrs.Select(a => $"data-{a.Attr}=\"{HtmlEscape(a.Value)}\""));
+
+        var viewHtml =
+            $"<span class=\"ea-row-notes-text\"><!--ea-row-notes-start:{rowId}-->{normalized}<!--ea-row-notes-end:{rowId}--></span>" +
+            $"<button class=\"ea-row-notes-edit-btn\" type=\"button\" data-surface=\"{surface}\" data-row-id=\"{rowId}\" data-notes-hash=\"{hash}\"" +
+            $" data-kind=\"{kind}\" data-el-id=\"{elementId}\" {matchAttrsHtml}" +
+            $" data-file-path=\"{wikiRelPath}\" data-api-port=\"{apiPort}\" aria-label=\"Edit description\">&#9998;</button>";
+
+        var editSurfaceHtml = surface == "table-row"
+            ? $"<tr class=\"ea-row-edit\" data-row-id=\"{rowId}\" style=\"display:none\"><td colspan=\"{colspan}\"></td></tr>"
+            : string.Empty;
+
+        return (viewHtml, editSurfaceHtml);
+    }
 }

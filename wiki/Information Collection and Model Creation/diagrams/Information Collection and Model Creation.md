@@ -1,6 +1,6 @@
 ---
 diagram_id: 43
-notes_hash: e3b0c442
+notes_hash: 1838bb11
 ---
 
 # Information Collection and Model Creation
@@ -12,9 +12,10 @@ notes_hash: e3b0c442
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="43" data-kind="diagram" data-file-path="Information Collection and Model Creation/diagrams/Information Collection and Model Creation.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
-
+<p>Test write-back for a previously empty notes element
 <!--ea-notes-end-->
 </div>
 </div>
@@ -47,4 +48,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-01 12:22:15*
+*Generated: 2026-07-01 14:13:40*

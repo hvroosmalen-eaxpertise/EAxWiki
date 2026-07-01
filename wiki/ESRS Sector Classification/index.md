@@ -10,7 +10,8 @@
 ## Elements
 
 - <span class="sl" data-layer="uml">Uncategorized</span> [ESRS Sector Classification](ESRS Sector Classification.md)
+  - *<p>Sector Classification determine the Sector of the organisation.</p>*
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

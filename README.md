@@ -219,6 +219,7 @@ When the wiki runs locally on Windows with EA installed, users can edit an eleme
 - **Status** — sits on its own line. Clicking the pencil replaces the badge in place with a dropdown, Apply, and Cancel — no separate widget block elsewhere on the page. Elements with no status set show a "Not Set" badge and can be given one the same way.
 - **Notes** — a pencil icon next to the notes text. Clicking it swaps the rendered notes for a raw-HTML `<textarea>` with Save / Cancel. Elements with no notes yet show "No description set." and can be given one the same way — the editor isn't gated on notes already existing.
 - **Diagram description** — same pencil-and-textarea editor as Notes, on the diagram page. If the diagram has no description of its own, the page shows one auto-derived from an element on the diagram (marked "(derived)"); editing pre-fills with that clean text (no label) so Save just promotes it into the diagram's own stored description. Diagrams with neither show "No description set." and start from a blank box.
+- **Attribute, method, and tagged value descriptions** — the same pencil pattern, one per row. For Attributes and Tagged Values (narrow table columns), clicking the pencil expands a full-width row below it for the textarea and Save/Cancel, instead of cramming them into the Description cell. Method descriptions have room to spare already, so the textarea swaps in inline where the description text was. Opening one editor closes any other that's open, anywhere on the page.
 
 ```
 ┌────────────────────────────────────────────────────────────┐
@@ -227,13 +228,16 @@ When the wiki runs locally on Windows with EA installed, users can edit an eleme
 │  Status: Approved [✎]                                     │
 │  Notes:  Lorem ipsum...                            [✎]    │
 │                │                                           │
-│      POST /api/status or /api/notes                        │
+│      POST /api/status, /api/notes,                          │
+│      /api/diagram-notes, or /api/row-notes                  │
 │                ▼                                           │
 │  Wiki write-back server (:8001)                            │
-│    ├─ EA COM → element.Status / element.Notes = "..."      │
-│    └─ Update .md frontmatter + page body in-place           │
+│    ├─ EA COM → element.Status / .Notes = "..."              │
+│    └─ Update .md frontmatter + page body in-place            │
 └────────────────────────────────────────────────────────────┘
 ```
+
+> **A caveat on attribute/method/tagged value editing:** EA's COM API exposes no ID for these child objects (unlike elements and diagrams), so write-back finds the right one within its parent element by matching name plus its other fields (type for attributes, return type and static-ness for methods, value for tagged values). EA does allow duplicate names — if a composite match is still ambiguous, the first match is used and a warning is logged, rather than the edit failing outright.
 
 Use `export-and-serve.ps1` with `--api-port` to start everything in one command:
 
@@ -242,14 +246,14 @@ Use `export-and-serve.ps1` with `--api-port` to start everything in one command:
 .\scripts\export-and-serve.ps1 --repo "model/file.qea" --port 8000 --api-port 8001 --force
 ```
 
-This exports the wiki (embedding the status and notes editor widgets), starts the write-back server on port 8001 as a background job, and starts MkDocs on port 8000. When Apply/Save is clicked the EA model is updated immediately via COM, the page's `**Modified:**` date is bumped to today to match, and MkDocs hot-reloads the page within seconds.
+This exports the wiki (embedding the status, notes, diagram, and row-level editor widgets), starts the write-back server on port 8001 as a background job, and starts MkDocs on port 8000. When Apply/Save is clicked the EA model is updated immediately via COM, the page's `**Modified:**` date is bumped to today to match, and MkDocs hot-reloads the page within seconds.
 
 Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per blank-line-separated paragraph before being sent to EA, so multi-paragraph notes don't collapse into a single line. If you do want lists, bold text, or links, just type the HTML directly — it's passed through untouched.
 
 **Batch write-back** (for `.md` edits made while the server was not running):
 
 ```powershell
-.\scripts\export.ps1 --writeback       # scan wiki/ for status, notes, and diagram description changes, write to EA
+.\scripts\export.ps1 --writeback       # scan wiki/ for status, notes, diagram, and row-level description changes, write to EA
 .\scripts\export.ps1                   # re-export to sync the wiki
 ```
 
@@ -264,6 +268,7 @@ Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per 
 | Live status write-back (wiki → EA) | ✓ | ✗ requires EA |
 | Live notes write-back (wiki → EA) | ✓ | ✗ requires EA |
 | Live diagram description write-back (wiki → EA) | ✓ | ✗ requires EA |
+| Live attribute/method/tagged value write-back (wiki → EA) | ✓ | ✗ requires EA |
 | Batch write-back (`--writeback`) | ✓ | ✗ requires EA |
 
 ## Saved connection config
@@ -336,7 +341,7 @@ The wiki has six navigation views:
 - **Relationships** — outgoing connectors with linked target element names
 - **Referenced By** — incoming connectors from other elements with links
 - **Appears on Diagrams** — inline thumbnail gallery of diagrams containing this element; each thumbnail links to the diagram page
-- **Attributes, Methods, Tagged Values** — detailed tabs where present
+- **Attributes, Methods, Tagged Values** — detailed tabs where present. Each description also gets a pencil edit icon when `--api-port` is set (see [Live write-back](#live-write-back--change-status-and-notes-directly-from-the-wiki-page))
 - **Relationship Graph** — interactive force-directed graph showing the element's 2-hop neighbourhood (all directly connected elements, plus their neighbours). Nodes and edges are coloured by ArchiMate layer or EDGY facet, matching the stereotype label colours used throughout the wiki. The focal element is highlighted in orange. Unreachable 2-hop nodes (not in the export) appear at reduced opacity. Hover a node to see its full name and package in a tooltip. **Single-click** a node to expand it — its own neighbourhood is fetched and merged into the graph live. **Double-click** a node to navigate to its element page. Cross-package relationships are shown.
 
 ## Diagram page features

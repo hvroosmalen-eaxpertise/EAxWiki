@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Export.Exporters;
 using EAxWiki.Export.Helpers;
@@ -58,6 +59,7 @@ public class WriteBackScanner(IEaReader reader, ILogger logger)
                 }
 
                 TryWriteBackNotes(fm, file, elementId, reader.UpdateElementNotes, notesChanges, "element");
+                TryWriteBackRowNotes(file, elementId, notesChanges);
             }
             else if (fm.TryGetValue("diagram_id", out var diagIdStr) && int.TryParse(diagIdStr, out var diagramId))
             {
@@ -66,6 +68,67 @@ public class WriteBackScanner(IEaReader reader, ILogger logger)
         }
 
         return new ScanResult(statusChanges, notesChanges);
+    }
+
+    private static readonly Regex RowWidgetPattern = new(@"<button class=""ea-row-notes-edit-btn""[^>]*>", RegexOptions.Compiled);
+    private static readonly Regex DataAttrPattern = new(@"data-([a-z-]+)=""([^""]*)""", RegexOptions.Compiled);
+
+    /// <summary>
+    /// Scans one element page's raw text for attribute/method/tagged-value description widgets
+    /// (identified by data-row-id/data-notes-hash/data-kind on the ea-row-notes-edit-btn button) and
+    /// writes back any whose current content no longer matches the stored hash.
+    /// </summary>
+    private void TryWriteBackRowNotes(string file, int elementId, List<NotesChangeResult> notesChanges)
+    {
+        string fileText;
+        try { fileText = File.ReadAllText(file); }
+        catch { return; }
+
+        foreach (Match buttonMatch in RowWidgetPattern.Matches(fileText))
+        {
+            var attrs = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            foreach (Match a in DataAttrPattern.Matches(buttonMatch.Value))
+                attrs[a.Groups[1].Value] = System.Net.WebUtility.HtmlDecode(a.Groups[2].Value);
+
+            if (!attrs.TryGetValue("row-id", out var rowId)) continue;
+            if (!attrs.TryGetValue("notes-hash", out var storedHash)) continue;
+            if (!attrs.TryGetValue("kind", out var kind)) continue;
+
+            var currentRowNotes = FrontmatterParser.ExtractRowNotesContent(file, rowId);
+            if (currentRowNotes == null) continue;
+
+            var expectedHash = ElementPageWriter.ComputeNotesHash(currentRowNotes);
+            if (string.Equals(expectedHash, storedHash, StringComparison.OrdinalIgnoreCase)) continue;
+
+            try
+            {
+                var normalized = FrontmatterParser.NormalizeNotesHtml(currentRowNotes);
+                switch (kind)
+                {
+                    case "attribute":
+                        reader.UpdateAttributeNotes(elementId, attrs.GetValueOrDefault("attr-name", ""), attrs.GetValueOrDefault("attr-type", ""), normalized);
+                        break;
+                    case "method":
+                        reader.UpdateMethodNotes(elementId, attrs.GetValueOrDefault("method-name", ""), attrs.GetValueOrDefault("return-type", ""), attrs.GetValueOrDefault("is-static", "") == "true", normalized);
+                        break;
+                    case "tagged-value":
+                        reader.UpdateTaggedValueNotes(elementId, attrs.GetValueOrDefault("tag-name", ""), attrs.GetValueOrDefault("tag-value", ""), normalized);
+                        break;
+                    default:
+                        logger.LogWarning("Skipping row '{RowId}' in {File}: unknown kind '{Kind}'", rowId, file, kind);
+                        continue;
+                }
+
+                FrontmatterParser.UpdateRowNotes(file, rowId, normalized);
+                notesChanges.Add(new NotesChangeResult(elementId, file));
+                logger.LogInformation("Write-back: {Kind} '{RowId}' notes updated on element {Id} ({File})",
+                    kind, rowId, elementId, Path.GetFileName(file));
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Row notes write-back failed for {Kind} '{RowId}' on element {Id} in {File}", kind, rowId, elementId, file);
+            }
+        }
     }
 
     private void TryWriteBackNotes(

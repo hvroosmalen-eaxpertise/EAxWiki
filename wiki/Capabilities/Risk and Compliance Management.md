@@ -28,9 +28,13 @@ Prevents legal violations, reputational damage, and operational disruptions from
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| archimate_element_identifier | capability-007 |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>archimate_element_identifier</td><td>capability-007</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="450" data-tag-name="archimate_element_identifier" data-tag-value="capability-007" data-file-path="Capabilities/Risk and Compliance Management.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -59,8 +63,8 @@ Prevents legal violations, reputational damage, and operational disruptions from
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e443","label":"ESG-based Risk Manageme…","fullName":"ESG-based Risk Management","packageName":"Courses of Action","layer":"strategy","isFocal":false,"hasUrl":true,"url":"../Courses of Action/ESG-based Risk Management.html"},{"id":"e450","label":"Risk and Compliance Man…","fullName":"Risk and Compliance Management","packageName":"Capabilities","layer":"strategy","isFocal":true,"hasUrl":false,"url":""},{"id":"e436","label":"Risk Reduction","fullName":"Risk Reduction","packageName":"Goals","layer":"motivation","isFocal":false,"hasUrl":true,"url":"../Goals/Risk Reduction.html"},{"id":"e438","label":"ESG Performance Improve…","fullName":"ESG Performance Improvement","packageName":"Goals","layer":"motivation","isFocal":false,"hasUrl":true,"url":"../Goals/ESG Performance Improvement.html"}],"edges":[{"id":"c424","source":"e443","target":"e436","label":"realizes","sourceLayer":"strategy"},{"id":"c425","source":"e443","target":"e438","label":"realizes","sourceLayer":"strategy"},{"id":"c433","source":"e450","target":"e443","label":"realizes","sourceLayer":"strategy"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e443&quot;,&quot;label&quot;:&quot;ESG-based Risk Manageme…&quot;,&quot;fullName&quot;:&quot;ESG-based Risk Management&quot;,&quot;packageName&quot;:&quot;Courses of Action&quot;,&quot;layer&quot;:&quot;strategy&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Courses of Action/ESG-based Risk Management.html&quot;},{&quot;id&quot;:&quot;e450&quot;,&quot;label&quot;:&quot;Risk and Compliance Man…&quot;,&quot;fullName&quot;:&quot;Risk and Compliance Management&quot;,&quot;packageName&quot;:&quot;Capabilities&quot;,&quot;layer&quot;:&quot;strategy&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e436&quot;,&quot;label&quot;:&quot;Risk Reduction&quot;,&quot;fullName&quot;:&quot;Risk Reduction&quot;,&quot;packageName&quot;:&quot;Goals&quot;,&quot;layer&quot;:&quot;motivation&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Goals/Risk Reduction.html&quot;},{&quot;id&quot;:&quot;e438&quot;,&quot;label&quot;:&quot;ESG Performance Improve…&quot;,&quot;fullName&quot;:&quot;ESG Performance Improvement&quot;,&quot;packageName&quot;:&quot;Goals&quot;,&quot;layer&quot;:&quot;motivation&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Goals/ESG Performance Improvement.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c424&quot;,&quot;source&quot;:&quot;e443&quot;,&quot;target&quot;:&quot;e436&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;strategy&quot;},{&quot;id&quot;:&quot;c425&quot;,&quot;source&quot;:&quot;e443&quot;,&quot;target&quot;:&quot;e438&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;strategy&quot;},{&quot;id&quot;:&quot;c433&quot;,&quot;source&quot;:&quot;e450&quot;,&quot;target&quot;:&quot;e443&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;strategy&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

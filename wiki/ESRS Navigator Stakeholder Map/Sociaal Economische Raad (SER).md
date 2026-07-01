@@ -26,9 +26,13 @@ notes_hash: 08256bdf
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| archimate_element_identifier | id-reg-006 |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>archimate_element_identifier</td><td>id-reg-006</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="252" data-tag-name="archimate_element_identifier" data-tag-value="id-reg-006" data-file-path="ESRS Navigator Stakeholder Map/Sociaal Economische Raad (SER).md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -53,8 +57,8 @@ notes_hash: 08256bdf
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e520","label":"Sociaal Economische Raa…","fullName":"Sociaal Economische Raad (SER)","packageName":"People","layer":"edgy-pe","isFocal":false,"hasUrl":true,"url":"../People/Sociaal Economische Raad (SER).html"},{"id":"e252","label":"Sociaal Economische Raa…","fullName":"Sociaal Economische Raad (SER)","packageName":"ESRS Navigator Stakeholder Map","layer":"motivation","isFocal":true,"hasUrl":false,"url":""},{"id":"e535","label":"Ministry of Economic Af…","fullName":"Ministry of Economic Affairs","packageName":"People","layer":"edgy-pe","isFocal":false,"hasUrl":true,"url":"../People/Ministry of Economic Affairs.html"}],"edges":[{"id":"c495","source":"e252","target":"e520","label":"Abstraction","sourceLayer":"motivation"},{"id":"c580","source":"e535","target":"e520","label":"Aggregation","sourceLayer":"edgy-pe"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e520&quot;,&quot;label&quot;:&quot;Sociaal Economische Raa…&quot;,&quot;fullName&quot;:&quot;Sociaal Economische Raad (SER)&quot;,&quot;packageName&quot;:&quot;People&quot;,&quot;layer&quot;:&quot;edgy-pe&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../People/Sociaal Economische Raad (SER).html&quot;},{&quot;id&quot;:&quot;e252&quot;,&quot;label&quot;:&quot;Sociaal Economische Raa…&quot;,&quot;fullName&quot;:&quot;Sociaal Economische Raad (SER)&quot;,&quot;packageName&quot;:&quot;ESRS Navigator Stakeholder Map&quot;,&quot;layer&quot;:&quot;motivation&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e535&quot;,&quot;label&quot;:&quot;Ministry of Economic Af…&quot;,&quot;fullName&quot;:&quot;Ministry of Economic Affairs&quot;,&quot;packageName&quot;:&quot;People&quot;,&quot;layer&quot;:&quot;edgy-pe&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../People/Ministry of Economic Affairs.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c495&quot;,&quot;source&quot;:&quot;e252&quot;,&quot;target&quot;:&quot;e520&quot;,&quot;label&quot;:&quot;Abstraction&quot;,&quot;sourceLayer&quot;:&quot;motivation&quot;},{&quot;id&quot;:&quot;c580&quot;,&quot;source&quot;:&quot;e535&quot;,&quot;target&quot;:&quot;e520&quot;,&quot;label&quot;:&quot;Aggregation&quot;,&quot;sourceLayer&quot;:&quot;edgy-pe&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

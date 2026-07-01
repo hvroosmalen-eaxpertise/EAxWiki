@@ -28,9 +28,13 @@ notes_hash: 53dd8899
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| archimate_element_identifier | capability-006 |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>archimate_element_identifier</td><td>capability-006</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="449" data-tag-name="archimate_element_identifier" data-tag-value="capability-006" data-file-path="Capabilities/Stakeholder Engagement Management.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -56,8 +60,8 @@ notes_hash: 53dd8899
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e440","label":"Sustainability-driven D…","fullName":"Sustainability-driven Differentiation","packageName":"Courses of Action","layer":"strategy","isFocal":false,"hasUrl":true,"url":"../Courses of Action/Sustainability-driven Differentiation.html"},{"id":"e449","label":"Stakeholder Engagement …","fullName":"Stakeholder Engagement Management","packageName":"Capabilities","layer":"strategy","isFocal":true,"hasUrl":false,"url":""},{"id":"e435","label":"Sustainable Competitive…","fullName":"Sustainable Competitive Advantage","packageName":"Goals","layer":"motivation","isFocal":false,"hasUrl":true,"url":"../Goals/Sustainable Competitive Advantage.html"},{"id":"e446","label":"Sustainable Innovation …","fullName":"Sustainable Innovation Management","packageName":"Capabilities","layer":"strategy","isFocal":false,"hasUrl":true,"url":"Sustainable Innovation Management.html"}],"edges":[{"id":"c421","source":"e440","target":"e435","label":"realizes","sourceLayer":"strategy"},{"id":"c428","source":"e446","target":"e440","label":"realizes","sourceLayer":"strategy"},{"id":"c432","source":"e449","target":"e440","label":"realizes","sourceLayer":"strategy"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e440&quot;,&quot;label&quot;:&quot;Sustainability-driven D…&quot;,&quot;fullName&quot;:&quot;Sustainability-driven Differentiation&quot;,&quot;packageName&quot;:&quot;Courses of Action&quot;,&quot;layer&quot;:&quot;strategy&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Courses of Action/Sustainability-driven Differentiation.html&quot;},{&quot;id&quot;:&quot;e449&quot;,&quot;label&quot;:&quot;Stakeholder Engagement …&quot;,&quot;fullName&quot;:&quot;Stakeholder Engagement Management&quot;,&quot;packageName&quot;:&quot;Capabilities&quot;,&quot;layer&quot;:&quot;strategy&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e435&quot;,&quot;label&quot;:&quot;Sustainable Competitive…&quot;,&quot;fullName&quot;:&quot;Sustainable Competitive Advantage&quot;,&quot;packageName&quot;:&quot;Goals&quot;,&quot;layer&quot;:&quot;motivation&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Goals/Sustainable Competitive Advantage.html&quot;},{&quot;id&quot;:&quot;e446&quot;,&quot;label&quot;:&quot;Sustainable Innovation …&quot;,&quot;fullName&quot;:&quot;Sustainable Innovation Management&quot;,&quot;packageName&quot;:&quot;Capabilities&quot;,&quot;layer&quot;:&quot;strategy&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Sustainable Innovation Management.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c421&quot;,&quot;source&quot;:&quot;e440&quot;,&quot;target&quot;:&quot;e435&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;strategy&quot;},{&quot;id&quot;:&quot;c428&quot;,&quot;source&quot;:&quot;e446&quot;,&quot;target&quot;:&quot;e440&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;strategy&quot;},{&quot;id&quot;:&quot;c432&quot;,&quot;source&quot;:&quot;e449&quot;,&quot;target&quot;:&quot;e440&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;strategy&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

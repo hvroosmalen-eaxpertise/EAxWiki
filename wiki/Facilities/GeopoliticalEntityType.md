@@ -26,19 +26,29 @@ notes_hash: 9b868291
 
 ## Attributes
 
-| Name | Type | Default | Description |
-|------|------|---------|-------------|
-| id | Key |  | The unique system-assigned identifier for the GeopoliticalEntityType record. It must be stable so that GeopoliticalEntity records that reference it remain valid when the type vocabulary is extended. |
-| code | String |  | A short alphanumeric code for the geopolitical entity type, such as "COUNTRY" or "STATE", drawn from an external geopolitical classification system where one exists. The code is provided by the source for Geopolitical Entity Names. |
-| name | String |  | The descriptive label for the geopolitical entity type, representing the types of geographical areas that can be used to identify the location of a facility, such as "Country", "Nature Reserve", "State", or "Region". |
+<table>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the GeopoliticalEntityType record. It must be stable so that GeopoliticalEntity records that reference it remain valid when the type vocabulary is extended.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="9217882b" data-kind="attribute" data-el-id="765" data-attr-name="id" data-attr-type="Key" data-file-path="Facilities/GeopoliticalEntityType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>code</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>A short alphanumeric code for the geopolitical entity type, such as "COUNTRY" or "STATE", drawn from an external geopolitical classification system where one exists. The code is provided by the source for Geopolitical Entity Names.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="4044b44b" data-kind="attribute" data-el-id="765" data-attr-name="code" data-attr-type="String" data-file-path="Facilities/GeopoliticalEntityType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>The descriptive label for the geopolitical entity type, representing the types of geographical areas that can be used to identify the location of a facility, such as "Country", "Nature Reserve", "State", or "Region".</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="bbb5c6cb" data-kind="attribute" data-el-id="765" data-attr-name="name" data-attr-type="String" data-file-path="Facilities/GeopoliticalEntityType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| description | GeopoliticalEntityType provides the controlled vocabulary used to classify geopolitical entities, with examples including "Country", "Nature Reserve", "State", and "Region". |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>description</td><td>GeopoliticalEntityType provides the controlled vocabulary used to classify geopolitical entities, with examples including &quot;Country&quot;, &quot;Nature Reserve&quot;, &quot;State&quot;, and &quot;Region&quot;.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="765" data-tag-name="description" data-tag-value="GeopoliticalEntityType provides the controlled vocabulary used to classify geopolitical entities, with examples including &quot;Country&quot;, &quot;Nature Reserve&quot;, &quot;State&quot;, and &quot;Region&quot;." data-file-path="Facilities/GeopoliticalEntityType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -55,8 +65,8 @@ notes_hash: 9b868291
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e766","label":"GeopoliticalEntity","fullName":"GeopoliticalEntity","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"GeopoliticalEntity.html"},{"id":"e765","label":"GeopoliticalEntityType","fullName":"GeopoliticalEntityType","packageName":"Facilities","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e806","label":"EmissionActivityParamet…","fullName":"EmissionActivityParameterRecordingTemplate","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Emissions/EmissionActivityParameterRecordingTemplate.html"},{"id":"e755","label":"Location","fullName":"Location","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"Location.html"},{"id":"e745","label":"Country","fullName":"Country","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"../Organisation/Country.html"}],"edges":[{"id":"c813","source":"e806","target":"e766","label":"Association","sourceLayer":"uml"},{"id":"c884","source":"e766","target":"e766","label":"Association","sourceLayer":"uml"},{"id":"c885","source":"e765","target":"e766","label":"Association","sourceLayer":"uml"},{"id":"c886","source":"e766","target":"e755","label":"Association","sourceLayer":"uml"},{"id":"c893","source":"e745","target":"e766","label":"Association","sourceLayer":"uml"},{"id":"c881","source":"e755","target":"e755","label":"Association","sourceLayer":"uml"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e766&quot;,&quot;label&quot;:&quot;GeopoliticalEntity&quot;,&quot;fullName&quot;:&quot;GeopoliticalEntity&quot;,&quot;packageName&quot;:&quot;Facilities&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;GeopoliticalEntity.html&quot;},{&quot;id&quot;:&quot;e765&quot;,&quot;label&quot;:&quot;GeopoliticalEntityType&quot;,&quot;fullName&quot;:&quot;GeopoliticalEntityType&quot;,&quot;packageName&quot;:&quot;Facilities&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e806&quot;,&quot;label&quot;:&quot;EmissionActivityParamet…&quot;,&quot;fullName&quot;:&quot;EmissionActivityParameterRecordingTemplate&quot;,&quot;packageName&quot;:&quot;Emissions&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Emissions/EmissionActivityParameterRecordingTemplate.html&quot;},{&quot;id&quot;:&quot;e755&quot;,&quot;label&quot;:&quot;Location&quot;,&quot;fullName&quot;:&quot;Location&quot;,&quot;packageName&quot;:&quot;Facilities&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Location.html&quot;},{&quot;id&quot;:&quot;e745&quot;,&quot;label&quot;:&quot;Country&quot;,&quot;fullName&quot;:&quot;Country&quot;,&quot;packageName&quot;:&quot;Organisation&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Organisation/Country.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c813&quot;,&quot;source&quot;:&quot;e806&quot;,&quot;target&quot;:&quot;e766&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c884&quot;,&quot;source&quot;:&quot;e766&quot;,&quot;target&quot;:&quot;e766&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c885&quot;,&quot;source&quot;:&quot;e765&quot;,&quot;target&quot;:&quot;e766&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c886&quot;,&quot;source&quot;:&quot;e766&quot;,&quot;target&quot;:&quot;e755&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c893&quot;,&quot;source&quot;:&quot;e745&quot;,&quot;target&quot;:&quot;e766&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c881&quot;,&quot;source&quot;:&quot;e755&quot;,&quot;target&quot;:&quot;e755&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:17*

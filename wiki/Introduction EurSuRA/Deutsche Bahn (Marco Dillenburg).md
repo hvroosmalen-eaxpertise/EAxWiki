@@ -53,8 +53,8 @@ notes_hash: e3b0c442
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e624","label":"Sidenote from Community…","fullName":"Sidenote from Community Leads","packageName":"Introduction EurSuRA","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"Sidenote from Community Leads.html"},{"id":"e623","label":"Deutsche Bahn (Marco Di…","fullName":"Deutsche Bahn (Marco Dillenburg)","packageName":"Introduction EurSuRA","layer":"edgy-pe","isFocal":true,"hasUrl":false,"url":""}],"edges":[{"id":"c652","source":"e624","target":"e623","label":"Association","sourceLayer":"edgy-id"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e624&quot;,&quot;label&quot;:&quot;Sidenote from Community…&quot;,&quot;fullName&quot;:&quot;Sidenote from Community Leads&quot;,&quot;packageName&quot;:&quot;Introduction EurSuRA&quot;,&quot;layer&quot;:&quot;edgy-id&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Sidenote from Community Leads.html&quot;},{&quot;id&quot;:&quot;e623&quot;,&quot;label&quot;:&quot;Deutsche Bahn (Marco Di…&quot;,&quot;fullName&quot;:&quot;Deutsche Bahn (Marco Dillenburg)&quot;,&quot;packageName&quot;:&quot;Introduction EurSuRA&quot;,&quot;layer&quot;:&quot;edgy-pe&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c652&quot;,&quot;source&quot;:&quot;e624&quot;,&quot;target&quot;:&quot;e623&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;edgy-id&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

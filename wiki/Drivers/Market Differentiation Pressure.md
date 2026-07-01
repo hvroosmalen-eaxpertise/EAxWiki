@@ -27,9 +27,13 @@ Sustainable products and services increasingly become market differentiators and
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| archimate_element_identifier | driver-004 |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>archimate_element_identifier</td><td>driver-004</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="432" data-tag-name="archimate_element_identifier" data-tag-value="driver-004" data-file-path="Drivers/Market Differentiation Pressure.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -55,8 +59,8 @@ Sustainable products and services increasingly become market differentiators and
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e435","label":"Sustainable Competitive…","fullName":"Sustainable Competitive Advantage","packageName":"Goals","layer":"motivation","isFocal":false,"hasUrl":true,"url":"../Goals/Sustainable Competitive Advantage.html"},{"id":"e432","label":"Market Differentiation …","fullName":"Market Differentiation Pressure","packageName":"Drivers","layer":"motivation","isFocal":true,"hasUrl":false,"url":""},{"id":"e440","label":"Sustainability-driven D…","fullName":"Sustainability-driven Differentiation","packageName":"Courses of Action","layer":"strategy","isFocal":false,"hasUrl":true,"url":"../Courses of Action/Sustainability-driven Differentiation.html"},{"id":"e458","label":"Improved ESG Rating","fullName":"Improved ESG Rating","packageName":"Outcomes","layer":"motivation","isFocal":false,"hasUrl":true,"url":"../Outcomes/Improved ESG Rating.html"},{"id":"e460","label":"Increased Brand Trust","fullName":"Increased Brand Trust","packageName":"Outcomes","layer":"motivation","isFocal":false,"hasUrl":true,"url":"../Outcomes/Increased Brand Trust.html"}],"edges":[{"id":"c416","source":"e432","target":"e435","label":"drives","sourceLayer":"motivation"},{"id":"c421","source":"e440","target":"e435","label":"realizes","sourceLayer":"strategy"},{"id":"c448","source":"e458","target":"e435","label":"realizes","sourceLayer":"motivation"},{"id":"c450","source":"e460","target":"e435","label":"realizes","sourceLayer":"motivation"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e435&quot;,&quot;label&quot;:&quot;Sustainable Competitive…&quot;,&quot;fullName&quot;:&quot;Sustainable Competitive Advantage&quot;,&quot;packageName&quot;:&quot;Goals&quot;,&quot;layer&quot;:&quot;motivation&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Goals/Sustainable Competitive Advantage.html&quot;},{&quot;id&quot;:&quot;e432&quot;,&quot;label&quot;:&quot;Market Differentiation …&quot;,&quot;fullName&quot;:&quot;Market Differentiation Pressure&quot;,&quot;packageName&quot;:&quot;Drivers&quot;,&quot;layer&quot;:&quot;motivation&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e440&quot;,&quot;label&quot;:&quot;Sustainability-driven D…&quot;,&quot;fullName&quot;:&quot;Sustainability-driven Differentiation&quot;,&quot;packageName&quot;:&quot;Courses of Action&quot;,&quot;layer&quot;:&quot;strategy&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Courses of Action/Sustainability-driven Differentiation.html&quot;},{&quot;id&quot;:&quot;e458&quot;,&quot;label&quot;:&quot;Improved ESG Rating&quot;,&quot;fullName&quot;:&quot;Improved ESG Rating&quot;,&quot;packageName&quot;:&quot;Outcomes&quot;,&quot;layer&quot;:&quot;motivation&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Outcomes/Improved ESG Rating.html&quot;},{&quot;id&quot;:&quot;e460&quot;,&quot;label&quot;:&quot;Increased Brand Trust&quot;,&quot;fullName&quot;:&quot;Increased Brand Trust&quot;,&quot;packageName&quot;:&quot;Outcomes&quot;,&quot;layer&quot;:&quot;motivation&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Outcomes/Increased Brand Trust.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c416&quot;,&quot;source&quot;:&quot;e432&quot;,&quot;target&quot;:&quot;e435&quot;,&quot;label&quot;:&quot;drives&quot;,&quot;sourceLayer&quot;:&quot;motivation&quot;},{&quot;id&quot;:&quot;c421&quot;,&quot;source&quot;:&quot;e440&quot;,&quot;target&quot;:&quot;e435&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;strategy&quot;},{&quot;id&quot;:&quot;c448&quot;,&quot;source&quot;:&quot;e458&quot;,&quot;target&quot;:&quot;e435&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;motivation&quot;},{&quot;id&quot;:&quot;c450&quot;,&quot;source&quot;:&quot;e460&quot;,&quot;target&quot;:&quot;e435&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;motivation&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

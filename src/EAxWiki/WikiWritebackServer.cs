@@ -15,6 +15,11 @@ internal static class WikiWritebackServer
     internal record StatusChangeRequest(int ElementId, string NewStatus, string FilePath);
     internal record NotesChangeRequest(int ElementId, string NewNotes, string FilePath);
     internal record DiagramNotesChangeRequest(int DiagramId, string NewNotes, string FilePath);
+    internal record RowNotesChangeRequest(
+        string Kind, int ElementId, string RowId, string NewNotes, string FilePath,
+        string? AttributeName, string? AttributeType,
+        string? MethodName, string? ReturnType, bool? IsStatic,
+        string? TagName, string? TagValue);
 
     public static async Task RunAsync(Config config, string outputPath, ILoggerFactory loggerFactory)
     {
@@ -132,6 +137,54 @@ internal static class WikiWritebackServer
             catch (Exception ex)
             {
                 logger.LogError(ex, "Notes write-back failed for diagram {Id}", req.DiagramId);
+                return Results.Problem($"Write-back failed: {ex.Message}");
+            }
+        });
+
+        app.MapPost("/api/row-notes", ([FromBody] RowNotesChangeRequest req) =>
+        {
+            if (req.NewNotes == null)
+                return Results.BadRequest(new { success = false, message = "newNotes is required." });
+
+            var filePath = Path.GetFullPath(Path.Combine(outputPath, req.FilePath));
+            if (!filePath.StartsWith(Path.GetFullPath(outputPath), StringComparison.OrdinalIgnoreCase))
+                return Results.BadRequest(new { success = false, message = "Invalid file path." });
+
+            if (!File.Exists(filePath))
+                return Results.NotFound(new { success = false, message = $"File not found: {req.FilePath}" });
+
+            try
+            {
+                var normalized = FrontmatterParser.NormalizeNotesHtml(req.NewNotes);
+
+                switch (req.Kind)
+                {
+                    case "attribute":
+                        if (req.AttributeName == null || req.AttributeType == null)
+                            return Results.BadRequest(new { success = false, message = "attributeName and attributeType are required." });
+                        reader.UpdateAttributeNotes(req.ElementId, req.AttributeName, req.AttributeType, normalized);
+                        break;
+                    case "method":
+                        if (req.MethodName == null || req.ReturnType == null || req.IsStatic == null)
+                            return Results.BadRequest(new { success = false, message = "methodName, returnType, and isStatic are required." });
+                        reader.UpdateMethodNotes(req.ElementId, req.MethodName, req.ReturnType, req.IsStatic.Value, normalized);
+                        break;
+                    case "tagged-value":
+                        if (req.TagName == null || req.TagValue == null)
+                            return Results.BadRequest(new { success = false, message = "tagName and tagValue are required." });
+                        reader.UpdateTaggedValueNotes(req.ElementId, req.TagName, req.TagValue, normalized);
+                        break;
+                    default:
+                        return Results.BadRequest(new { success = false, message = $"Unknown kind '{req.Kind}'." });
+                }
+
+                FrontmatterParser.UpdateRowNotes(filePath, req.RowId, normalized);
+                logger.LogInformation("Row notes updated: {Kind} on element {Id}, row {RowId} ({File})", req.Kind, req.ElementId, req.RowId, req.FilePath);
+                return Results.Ok(new { success = true, message = "Description updated.", html = normalized });
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Row notes write-back failed: {Kind} on element {Id}, row {RowId}", req.Kind, req.ElementId, req.RowId);
                 return Results.Problem($"Write-back failed: {ex.Message}");
             }
         });

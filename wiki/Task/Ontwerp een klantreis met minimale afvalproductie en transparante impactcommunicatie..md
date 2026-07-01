@@ -26,9 +26,13 @@ notes_hash: e3b0c442
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| EDGY::TextAlign | Top | Default: Center  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>EDGY::TextAlign</td><td>Top</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="146" data-tag-name="EDGY::TextAlign" data-tag-value="Top" data-file-path="Task/Ontwerp een klantreis met minimale afvalproductie en transparante impactcommunicatie..md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -62,8 +66,8 @@ notes_hash: e3b0c442
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e126","label":"Green Customer Journey","fullName":"Green Customer Journey","packageName":"Journey","layer":"edgy-ex","isFocal":false,"hasUrl":true,"url":"../Journey/Green Customer Journey.html"},{"id":"e172","label":"CO₂ per klanttransactie…","fullName":"CO₂ per klanttransactie (kg)","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"../Metrics/CO₂ per klanttransactie (kg).html"},{"id":"e146","label":"Ontwerp een klantreis m…","fullName":"Ontwerp een klantreis met minimale afvalproductie en transparante impactcommunicatie.","packageName":"Task","layer":"edgy-ex","isFocal":true,"hasUrl":false,"url":""},{"id":"e14","label":"SDG 12. Responsible Con…","fullName":"SDG 12. Responsible Consumption and Production","packageName":"Sustainability Development Goals","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.html"},{"id":"e36","label":"ESRS E1 Climate Change","fullName":"ESRS E1 Climate Change","packageName":"ESRS E1","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"../ESRS E1/ESRS E1 Climate Change.html"}],"edges":[{"id":"c39","source":"e126","target":"e146","label":"ControlFlow","sourceLayer":"edgy-ex"},{"id":"c63","source":"e14","target":"e126","label":"Association","sourceLayer":"edgy-id"},{"id":"c96","source":"e36","target":"e172","label":"ControlFlow","sourceLayer":"edgy-id"},{"id":"c140","source":"e146","target":"e172","label":"Association","sourceLayer":"edgy-ex"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e126&quot;,&quot;label&quot;:&quot;Green Customer Journey&quot;,&quot;fullName&quot;:&quot;Green Customer Journey&quot;,&quot;packageName&quot;:&quot;Journey&quot;,&quot;layer&quot;:&quot;edgy-ex&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Journey/Green Customer Journey.html&quot;},{&quot;id&quot;:&quot;e172&quot;,&quot;label&quot;:&quot;CO₂ per klanttransactie…&quot;,&quot;fullName&quot;:&quot;CO₂ per klanttransactie (kg)&quot;,&quot;packageName&quot;:&quot;Metrics&quot;,&quot;layer&quot;:&quot;edgy-lb&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Metrics/CO₂ per klanttransactie (kg).html&quot;},{&quot;id&quot;:&quot;e146&quot;,&quot;label&quot;:&quot;Ontwerp een klantreis m…&quot;,&quot;fullName&quot;:&quot;Ontwerp een klantreis met minimale afvalproductie en transparante impactcommunicatie.&quot;,&quot;packageName&quot;:&quot;Task&quot;,&quot;layer&quot;:&quot;edgy-ex&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e14&quot;,&quot;label&quot;:&quot;SDG 12. Responsible Con…&quot;,&quot;fullName&quot;:&quot;SDG 12. Responsible Consumption and Production&quot;,&quot;packageName&quot;:&quot;Sustainability Development Goals&quot;,&quot;layer&quot;:&quot;edgy-id&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.html&quot;},{&quot;id&quot;:&quot;e36&quot;,&quot;label&quot;:&quot;ESRS E1 Climate Change&quot;,&quot;fullName&quot;:&quot;ESRS E1 Climate Change&quot;,&quot;packageName&quot;:&quot;ESRS E1&quot;,&quot;layer&quot;:&quot;edgy-id&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../ESRS E1/ESRS E1 Climate Change.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c39&quot;,&quot;source&quot;:&quot;e126&quot;,&quot;target&quot;:&quot;e146&quot;,&quot;label&quot;:&quot;ControlFlow&quot;,&quot;sourceLayer&quot;:&quot;edgy-ex&quot;},{&quot;id&quot;:&quot;c63&quot;,&quot;source&quot;:&quot;e14&quot;,&quot;target&quot;:&quot;e126&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;edgy-id&quot;},{&quot;id&quot;:&quot;c96&quot;,&quot;source&quot;:&quot;e36&quot;,&quot;target&quot;:&quot;e172&quot;,&quot;label&quot;:&quot;ControlFlow&quot;,&quot;sourceLayer&quot;:&quot;edgy-id&quot;},{&quot;id&quot;:&quot;c140&quot;,&quot;source&quot;:&quot;e146&quot;,&quot;target&quot;:&quot;e172&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;edgy-ex&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

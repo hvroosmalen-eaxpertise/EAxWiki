@@ -26,9 +26,13 @@ notes_hash: 599d45f7
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| archimate_element_identifier | id-gov-007 |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>archimate_element_identifier</td><td>id-gov-007</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="309" data-tag-name="archimate_element_identifier" data-tag-value="id-gov-007" data-file-path="ESRS Navigator Stakeholder Map/Operations Manager.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -53,8 +57,8 @@ notes_hash: 599d45f7
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e502","label":"Operations Manager","fullName":"Operations Manager","packageName":"People","layer":"edgy-pe","isFocal":false,"hasUrl":true,"url":"../People/Operations Manager.html"},{"id":"e309","label":"Operations Manager","fullName":"Operations Manager","packageName":"ESRS Navigator Stakeholder Map","layer":"business","isFocal":true,"hasUrl":false,"url":""},{"id":"e510","label":"Company subject to CSRD","fullName":"Company subject to CSRD","packageName":"People","layer":"edgy-pe","isFocal":false,"hasUrl":true,"url":"../People/Company subject to CSRD.html"}],"edges":[{"id":"c476","source":"e309","target":"e502","label":"Abstraction","sourceLayer":"business"},{"id":"c551","source":"e502","target":"e510","label":"reports to","sourceLayer":"edgy-pe"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e502&quot;,&quot;label&quot;:&quot;Operations Manager&quot;,&quot;fullName&quot;:&quot;Operations Manager&quot;,&quot;packageName&quot;:&quot;People&quot;,&quot;layer&quot;:&quot;edgy-pe&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../People/Operations Manager.html&quot;},{&quot;id&quot;:&quot;e309&quot;,&quot;label&quot;:&quot;Operations Manager&quot;,&quot;fullName&quot;:&quot;Operations Manager&quot;,&quot;packageName&quot;:&quot;ESRS Navigator Stakeholder Map&quot;,&quot;layer&quot;:&quot;business&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e510&quot;,&quot;label&quot;:&quot;Company subject to CSRD&quot;,&quot;fullName&quot;:&quot;Company subject to CSRD&quot;,&quot;packageName&quot;:&quot;People&quot;,&quot;layer&quot;:&quot;edgy-pe&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../People/Company subject to CSRD.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c476&quot;,&quot;source&quot;:&quot;e309&quot;,&quot;target&quot;:&quot;e502&quot;,&quot;label&quot;:&quot;Abstraction&quot;,&quot;sourceLayer&quot;:&quot;business&quot;},{&quot;id&quot;:&quot;c551&quot;,&quot;source&quot;:&quot;e502&quot;,&quot;target&quot;:&quot;e510&quot;,&quot;label&quot;:&quot;reports to&quot;,&quot;sourceLayer&quot;:&quot;edgy-pe&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

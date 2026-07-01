@@ -26,19 +26,29 @@ notes_hash: 1146d900
 
 ## Attributes
 
-| Name | Type | Default | Description |
-|------|------|---------|-------------|
-| id | Key |  | The unique identifier for this EmissionComponentCategoryGroup record, referenced by EmissionComponentCategory records via emission_component_category_group_id to establish the roll-up hierarchy. |
-| name | String |  | The label for this gas-category group, such as Fluorinated gases or Biogenic carbon flows, used in summary tables and disclosure headings. |
-| description | String |  | A description of which greenhouse gases are included in this group, the rationale for the grouping (e.g. regulatory definition or characterisation method), and how the group total is aggregated. |
+<table>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique identifier for this EmissionComponentCategoryGroup record, referenced by EmissionComponentCategory records via emission_component_category_group_id to establish the roll-up hierarchy.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="1106fb03" data-kind="attribute" data-el-id="795" data-attr-name="id" data-attr-type="Key" data-file-path="Emissions/EmissionComponentCategoryGroup.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The label for this gas-category group, such as Fluorinated gases or Biogenic carbon flows, used in summary tables and disclosure headings.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="65438c00" data-kind="attribute" data-el-id="795" data-attr-name="name" data-attr-type="String" data-file-path="Emissions/EmissionComponentCategoryGroup.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+<tr><td>description</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>A description of which greenhouse gases are included in this group, the rationale for the grouping (e.g. regulatory definition or characterisation method), and how the group total is aggregated.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="ccbc4c69" data-kind="attribute" data-el-id="795" data-attr-name="description" data-attr-type="String" data-file-path="Emissions/EmissionComponentCategoryGroup.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| description | EmissionComponentCategoryGroup is a reference entity that provides a higher-level grouping of EmissionComponentCategory records, enabling roll-up from individual gas categories to broad gas families for summary disclosures. |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>description</td><td>EmissionComponentCategoryGroup is a reference entity that provides a higher-level grouping of EmissionComponentCategory records, enabling roll-up from individual gas categories to broad gas families for summary disclosures.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="795" data-tag-name="description" data-tag-value="EmissionComponentCategoryGroup is a reference entity that provides a higher-level grouping of EmissionComponentCategory records, enabling roll-up from individual gas categories to broad gas families for summary disclosures." data-file-path="Emissions/EmissionComponentCategoryGroup.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -64,8 +74,8 @@ notes_hash: 1146d900
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e792","label":"EmissionComponentCatego…","fullName":"EmissionComponentCategory","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionComponentCategory.html"},{"id":"e795","label":"EmissionComponentCatego…","fullName":"EmissionComponentCategoryGroup","packageName":"Emissions","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e780","label":"EmissionFactor","fullName":"EmissionFactor","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionFactor.html"},{"id":"e778","label":"EmissionComponent","fullName":"EmissionComponent","packageName":"Emissions","layer":"uml","isFocal":false,"hasUrl":true,"url":"EmissionComponent.html"}],"edges":[{"id":"c809","source":"e792","target":"e795","label":"Association","sourceLayer":"uml"},{"id":"c831","source":"e795","target":"e792","label":"Association","sourceLayer":"uml"},{"id":"c856","source":"e792","target":"e780","label":"Association","sourceLayer":"uml"},{"id":"c866","source":"e792","target":"e778","label":"Association","sourceLayer":"uml"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e792&quot;,&quot;label&quot;:&quot;EmissionComponentCatego…&quot;,&quot;fullName&quot;:&quot;EmissionComponentCategory&quot;,&quot;packageName&quot;:&quot;Emissions&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;EmissionComponentCategory.html&quot;},{&quot;id&quot;:&quot;e795&quot;,&quot;label&quot;:&quot;EmissionComponentCatego…&quot;,&quot;fullName&quot;:&quot;EmissionComponentCategoryGroup&quot;,&quot;packageName&quot;:&quot;Emissions&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e780&quot;,&quot;label&quot;:&quot;EmissionFactor&quot;,&quot;fullName&quot;:&quot;EmissionFactor&quot;,&quot;packageName&quot;:&quot;Emissions&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;EmissionFactor.html&quot;},{&quot;id&quot;:&quot;e778&quot;,&quot;label&quot;:&quot;EmissionComponent&quot;,&quot;fullName&quot;:&quot;EmissionComponent&quot;,&quot;packageName&quot;:&quot;Emissions&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;EmissionComponent.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c809&quot;,&quot;source&quot;:&quot;e792&quot;,&quot;target&quot;:&quot;e795&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c831&quot;,&quot;source&quot;:&quot;e795&quot;,&quot;target&quot;:&quot;e792&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c856&quot;,&quot;source&quot;:&quot;e792&quot;,&quot;target&quot;:&quot;e780&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c866&quot;,&quot;source&quot;:&quot;e792&quot;,&quot;target&quot;:&quot;e778&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:17*

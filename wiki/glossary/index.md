@@ -7,6 +7,7 @@
 | Affected Communities (ESRS S3) | Local and regional communities impacted by operations | [Affected Communities (ESRS S3)](../People/Affected Communities (ESRS S3).md), [Affected Communities (ESRS S3)](../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).md) |
 | AFM | Autoriteit Financiële Markten - Financial market supervision | [AFM](../People/AFM.md), [AFM](../ESRS Navigator Stakeholder Map/AFM.md) |
 | Agricultural Suppliers | Tomato growers, grain producers, vegetable suppliers | [Agricultural Suppliers](../People/Agricultural Suppliers.md), [Agricultural Suppliers](../ESRS Navigator Stakeholder Map/Agricultural Suppliers.md) |
+| AI - LLM | Test write-back for a previously empty notes element | [AI - LLM](../Information Collection and Model Creation/AI - LLM.md) |
 | Align sustainability reporting | Align sustainability reporting for businesses operating within the European Union | [Align sustainability reporting](../ESRS Goals and Objectives/Align sustainability reporting.md) |
 | Aligned Incentives | https://alignedincentives | [Aligned Incentives](../Private Parties/Aligned Incentives.md) |
 | Allow investors to assess financial risks and opportunities  | Allow investors to assess financial risks and opportunities arising from climate change and other sustainability issues | [Allow investors to assess financial risks and opportunities ](../ESRS Goals and Objectives/Allow investors to assess financial risks and opportunities.md) |
@@ -104,6 +105,7 @@
 | ESRS S3 Affected Communities | For more information: https://www | [ESRS S3 Affected Communities](../ESRS S3/ESRS S3 Affected Communities.md) |
 | ESRS S4 - Consumers | Consumers and end-users standard | [ESRS S4 - Consumers](../ESRS Navigator Stakeholder Map/ESRS S4 - Consumers.md) |
 | ESRS S4 Consumers and End-users | For more information: https://www | [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.md) |
+| ESRS Sector Classification | Sector Classification determine the Sector of the organisation | [ESRS Sector Classification](../ESRS Sector Classification/ESRS Sector Classification.md) |
 | European Commission | Issues CSRD directive and ESRS regulations | [European Commission](../People/European Commission.md), [European Commission](../ESRS Navigator Stakeholder Map/European Commission.md) |
 | European Sustainability Reporting Standards | The European Sustainability Reporting Standards (ESRS) oblige all companies subject to the Corporate Sustainability Reporting Directive (CSRD) of the European Union to report both on their impacts on people and the environment, and on how social and environmental issues create financial risks and opportunities for the company | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.md) |
 | External Auditors | Must approve sustainability reporting | [External Auditors](../People/External Auditors.md), [External Auditors](../ESRS Navigator Stakeholder Map/External Auditors.md) |
@@ -258,4 +260,4 @@
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:17*

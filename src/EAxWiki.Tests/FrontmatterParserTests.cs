@@ -1,3 +1,4 @@
+using EAxWiki.Export.Exporters;
 using EAxWiki.Export.Helpers;
 
 namespace EAxWiki.Tests;
@@ -85,5 +86,51 @@ public class FrontmatterParserTests : IDisposable
 
         var text = File.ReadAllText(_filePath);
         Assert.Contains("**Created:** 2025-12-02", text);
+    }
+
+    private const string PageWithRowWidgets = """
+        # Widget Container
+
+        <table>
+        <tbody>
+        <tr><td>maxRetries</td><td>int</td><td>3</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0-->Number of retries.<!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="deadbeef" data-kind="attribute" data-el-id="42" data-attr-name="maxRetries" data-attr-type="int" data-file-path="Widget Container.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+        <tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+        <tr><td>timeoutMs</td><td>int</td><td>5000</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="e3b0c442" data-kind="attribute" data-el-id="42" data-attr-name="timeoutMs" data-attr-type="int" data-file-path="Widget Container.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+        <tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+        </tbody>
+        </table>
+
+        <div class="ea-row-notes-widget" data-row-id="method-0"><span class="ea-row-notes-text"><!--ea-row-notes-start:method-0-->Runs the retry loop.<!--ea-row-notes-end:method-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="inline" data-row-id="method-0" data-notes-hash="cafef00d" data-kind="method" data-el-id="42" data-method-name="Retry" data-return-type="void" data-is-static="false" data-file-path="Widget Container.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></div>
+        """;
+
+    [Fact]
+    public void ExtractRowNotesContent_ReturnsOnlyTheMatchingRowsContent()
+    {
+        File.WriteAllText(_filePath, PageWithRowWidgets);
+
+        Assert.Equal("Number of retries.", FrontmatterParser.ExtractRowNotesContent(_filePath, "attr-0"));
+        Assert.Equal("", FrontmatterParser.ExtractRowNotesContent(_filePath, "attr-1"));
+        Assert.Equal("Runs the retry loop.", FrontmatterParser.ExtractRowNotesContent(_filePath, "method-0"));
+        Assert.Null(FrontmatterParser.ExtractRowNotesContent(_filePath, "attr-99"));
+    }
+
+    [Fact]
+    public void UpdateRowNotes_PatchesOnlyTheTargetRowsContentAndHash()
+    {
+        File.WriteAllText(_filePath, PageWithRowWidgets);
+        var expectedNewHash = ElementPageWriter.ComputeNotesHash("Timeout in milliseconds before giving up.");
+
+        FrontmatterParser.UpdateRowNotes(_filePath, "attr-1", "Timeout in milliseconds before giving up.");
+
+        var text = File.ReadAllText(_filePath);
+        Assert.Contains("Timeout in milliseconds before giving up.", text);
+        Assert.Contains($"data-row-id=\"attr-1\" data-notes-hash=\"{expectedNewHash}\"", text);
+        Assert.DoesNotContain("data-row-id=\"attr-1\" data-notes-hash=\"e3b0c442\"", text);
+
+        // Other rows' content and hashes must be untouched
+        Assert.Contains("Number of retries.", text);
+        Assert.Contains("data-row-id=\"attr-0\" data-notes-hash=\"deadbeef\"", text);
+        Assert.Contains("Runs the retry loop.", text);
+        Assert.Contains("data-row-id=\"method-0\" data-notes-hash=\"cafef00d\"", text);
     }
 }

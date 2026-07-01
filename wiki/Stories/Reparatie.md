@@ -26,9 +26,13 @@ notes_hash: 68a8e871
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="240" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="Stories/Reparatie.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -42,4 +46,4 @@ notes_hash: 68a8e871
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

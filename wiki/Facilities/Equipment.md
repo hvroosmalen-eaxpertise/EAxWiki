@@ -26,19 +26,29 @@ notes_hash: e4fedc0b
 
 ## Attributes
 
-| Name | Type | Default | Description |
-|------|------|---------|-------------|
-| id | Key |  | The unique system-assigned identifier for the Equipment record. It serves as the primary key referenced by EmissionInventory and EmissionActivityParameter when associating records with a specific equipment item. It must be globally unique and stable across equipment moves or renames. |
-| name | String |  | The operational name or asset tag description of the equipment item, such as "Centrifugal Compressor C-001" or "Flare Stack F-002". The name is used in inventory reports, maintenance records, and asset dashboards to identify the specific physical asset associated with a given emission measurement. |
-| parent_id | String |  | A foreign key referencing the parent Equipment record in the equipment assembly hierarchy, enabling the modelling of sub-components that roll up to a parent asset for aggregated emission reporting. Implementations must enforce acyclicity. |
+<table>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the Equipment record. It serves as the primary key referenced by EmissionInventory and EmissionActivityParameter when associating records with a specific equipment item. It must be globally unique and stable across equipment moves or renames.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="1499ccd8" data-kind="attribute" data-el-id="756" data-attr-name="id" data-attr-type="Key" data-file-path="Facilities/Equipment.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The operational name or asset tag description of the equipment item, such as "Centrifugal Compressor C-001" or "Flare Stack F-002". The name is used in inventory reports, maintenance records, and asset dashboards to identify the specific physical asset associated with a given emission measurement.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="ec5305d0" data-kind="attribute" data-el-id="756" data-attr-name="name" data-attr-type="String" data-file-path="Facilities/Equipment.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+<tr><td>parent_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>A foreign key referencing the parent Equipment record in the equipment assembly hierarchy, enabling the modelling of sub-components that roll up to a parent asset for aggregated emission reporting. Implementations must enforce acyclicity.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="0a7e3bfe" data-kind="attribute" data-el-id="756" data-attr-name="parent_id" data-attr-type="String" data-file-path="Facilities/Equipment.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| description | Equipment describes a device used in an operation or activity that is located or installed at a particular Facility. |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>description</td><td>Equipment describes a device used in an operation or activity that is located or installed at a particular Facility.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="756" data-tag-name="description" data-tag-value="Equipment describes a device used in an operation or activity that is located or installed at a particular Facility." data-file-path="Facilities/Equipment.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -64,8 +74,8 @@ notes_hash: e4fedc0b
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e761","label":"EquipmentInstallation","fullName":"EquipmentInstallation","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"EquipmentInstallation.html"},{"id":"e756","label":"Equipment","fullName":"Equipment","packageName":"Facilities","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e753","label":"Facility","fullName":"Facility","packageName":"Facilities","layer":"uml","isFocal":false,"hasUrl":true,"url":"Facility.html"}],"edges":[{"id":"c877","source":"e753","target":"e761","label":"Association","sourceLayer":"uml"},{"id":"c878","source":"e756","target":"e761","label":"Association","sourceLayer":"uml"},{"id":"c876","source":"e756","target":"e756","label":"Association","sourceLayer":"uml"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e761&quot;,&quot;label&quot;:&quot;EquipmentInstallation&quot;,&quot;fullName&quot;:&quot;EquipmentInstallation&quot;,&quot;packageName&quot;:&quot;Facilities&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;EquipmentInstallation.html&quot;},{&quot;id&quot;:&quot;e756&quot;,&quot;label&quot;:&quot;Equipment&quot;,&quot;fullName&quot;:&quot;Equipment&quot;,&quot;packageName&quot;:&quot;Facilities&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e753&quot;,&quot;label&quot;:&quot;Facility&quot;,&quot;fullName&quot;:&quot;Facility&quot;,&quot;packageName&quot;:&quot;Facilities&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Facility.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c877&quot;,&quot;source&quot;:&quot;e753&quot;,&quot;target&quot;:&quot;e761&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c878&quot;,&quot;source&quot;:&quot;e756&quot;,&quot;target&quot;:&quot;e761&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c876&quot;,&quot;source&quot;:&quot;e756&quot;,&quot;target&quot;:&quot;e756&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:17*

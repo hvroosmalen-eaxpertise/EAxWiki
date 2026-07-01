@@ -26,9 +26,13 @@ notes_hash: e3b0c442
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="581" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="Information Collection and Model Creation/Intersection Group.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -53,8 +57,8 @@ notes_hash: e3b0c442
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e582","label":"EDGY 23 Language Founda…","fullName":"EDGY 23 Language Foundation","packageName":"Information Collection and Model Creation","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"EDGY 23 Language Foundation.html"},{"id":"e581","label":"Intersection Group","fullName":"Intersection Group","packageName":"Information Collection and Model Creation","layer":"edgy-ex","isFocal":true,"hasUrl":false,"url":""},{"id":"e585","label":"Compile Information Sou…","fullName":"Compile Information Sources","packageName":"Information Collection and Model Creation","layer":"edgy-ar","isFocal":false,"hasUrl":true,"url":"Compile Information Sources.html"}],"edges":[{"id":"c618","source":"e581","target":"e582","label":"ControlFlow","sourceLayer":"edgy-ex"},{"id":"c619","source":"e582","target":"e585","label":"ControlFlow","sourceLayer":"edgy-ar"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e582&quot;,&quot;label&quot;:&quot;EDGY 23 Language Founda…&quot;,&quot;fullName&quot;:&quot;EDGY 23 Language Foundation&quot;,&quot;packageName&quot;:&quot;Information Collection and Model Creation&quot;,&quot;layer&quot;:&quot;edgy-ar&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;EDGY 23 Language Foundation.html&quot;},{&quot;id&quot;:&quot;e581&quot;,&quot;label&quot;:&quot;Intersection Group&quot;,&quot;fullName&quot;:&quot;Intersection Group&quot;,&quot;packageName&quot;:&quot;Information Collection and Model Creation&quot;,&quot;layer&quot;:&quot;edgy-ex&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e585&quot;,&quot;label&quot;:&quot;Compile Information Sou…&quot;,&quot;fullName&quot;:&quot;Compile Information Sources&quot;,&quot;packageName&quot;:&quot;Information Collection and Model Creation&quot;,&quot;layer&quot;:&quot;edgy-ar&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Compile Information Sources.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c618&quot;,&quot;source&quot;:&quot;e581&quot;,&quot;target&quot;:&quot;e582&quot;,&quot;label&quot;:&quot;ControlFlow&quot;,&quot;sourceLayer&quot;:&quot;edgy-ex&quot;},{&quot;id&quot;:&quot;c619&quot;,&quot;source&quot;:&quot;e582&quot;,&quot;target&quot;:&quot;e585&quot;,&quot;label&quot;:&quot;ControlFlow&quot;,&quot;sourceLayer&quot;:&quot;edgy-ar&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

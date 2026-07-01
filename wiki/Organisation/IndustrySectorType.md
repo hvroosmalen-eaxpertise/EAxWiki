@@ -26,20 +26,31 @@ notes_hash: 96ac0e12
 
 ## Attributes
 
-| Name | Type | Default | Description |
-|------|------|---------|-------------|
-| id | Key |  | The unique system-assigned identifier for the IndustrySectorType record. It serves as the primary key and is also referenced in the self-referential parent association to build sector hierarchies. It must be globally unique across all sector classification records. |
-| code | String |  | The standardised industry sector classification code as defined by the relevant classification system (e.g., NAICS code "325" for "Chemical Manufacturing" or "32511" for "Petrochemical Manufacturing"). The code enables automated alignment with external databases, emission factor repositories, and regulatory reporting schemas that reference industry sectors by code. |
-| name | String |  | The human-readable name of the industry sector, such as "Oil and Gas" or "Iron and Steel". The name provides a user-friendly label for display in reports and selection interfaces and should match the official label used by the classification system referenced by the code attribute. |
-| parent_id | String |  | A foreign key referencing the parent IndustrySectorType record in the sector hierarchy, enabling multi-level classifications such as Chemical Manufacturing (325) as the parent of Petrochemical Manufacturing (32511). This attribute must not create cycles; implementations should enforce acyclicity. |
+<table>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the IndustrySectorType record. It serves as the primary key and is also referenced in the self-referential parent association to build sector hierarchies. It must be globally unique across all sector classification records.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="7b7fa9d1" data-kind="attribute" data-el-id="739" data-attr-name="id" data-attr-type="Key" data-file-path="Organisation/IndustrySectorType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>code</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The standardised industry sector classification code as defined by the relevant classification system (e.g., NAICS code "325" for "Chemical Manufacturing" or "32511" for "Petrochemical Manufacturing"). The code enables automated alignment with external databases, emission factor repositories, and regulatory reporting schemas that reference industry sectors by code.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="04cb7c7b" data-kind="attribute" data-el-id="739" data-attr-name="code" data-attr-type="String" data-file-path="Organisation/IndustrySectorType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>The human-readable name of the industry sector, such as "Oil and Gas" or "Iron and Steel". The name provides a user-friendly label for display in reports and selection interfaces and should match the official label used by the classification system referenced by the code attribute.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="5ad95a62" data-kind="attribute" data-el-id="739" data-attr-name="name" data-attr-type="String" data-file-path="Organisation/IndustrySectorType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
+<tr><td>parent_id</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-3--><p>A foreign key referencing the parent IndustrySectorType record in the sector hierarchy, enabling multi-level classifications such as Chemical Manufacturing (325) as the parent of Petrochemical Manufacturing (32511). This attribute must not create cycles; implementations should enforce acyclicity.</p><!--ea-row-notes-end:attr-3--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-3" data-notes-hash="0e2a329a" data-kind="attribute" data-el-id="739" data-attr-name="parent_id" data-attr-type="String" data-file-path="Organisation/IndustrySectorType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-3" style="display:none"><td colspan="4"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| description | IndustrySectorType provides a hierarchical classification of industry sectors used to categorise organisations for benchmarking, regulatory grouping, and sector-specific emissions factor selection. |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>description</td><td>IndustrySectorType provides a hierarchical classification of industry sectors used to categorise organisations for benchmarking, regulatory grouping, and sector-specific emissions factor selection.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="739" data-tag-name="description" data-tag-value="IndustrySectorType provides a hierarchical classification of industry sectors used to categorise organisations for benchmarking, regulatory grouping, and sector-specific emissions factor selection." data-file-path="Organisation/IndustrySectorType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -73,8 +84,8 @@ notes_hash: 96ac0e12
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e750","label":"OrganizationIndustrySec…","fullName":"OrganizationIndustrySector","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationIndustrySector.html"},{"id":"e739","label":"IndustrySectorType","fullName":"IndustrySectorType","packageName":"Organisation","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c901","source":"e735","target":"e750","label":"Association","sourceLayer":"uml"},{"id":"c902","source":"e739","target":"e750","label":"Association","sourceLayer":"uml"},{"id":"c900","source":"e739","target":"e739","label":"Association","sourceLayer":"uml"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e750&quot;,&quot;label&quot;:&quot;OrganizationIndustrySec…&quot;,&quot;fullName&quot;:&quot;OrganizationIndustrySector&quot;,&quot;packageName&quot;:&quot;Organisation&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;OrganizationIndustrySector.html&quot;},{&quot;id&quot;:&quot;e739&quot;,&quot;label&quot;:&quot;IndustrySectorType&quot;,&quot;fullName&quot;:&quot;IndustrySectorType&quot;,&quot;packageName&quot;:&quot;Organisation&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e735&quot;,&quot;label&quot;:&quot;Organization&quot;,&quot;fullName&quot;:&quot;Organization&quot;,&quot;packageName&quot;:&quot;Organisation&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Organization.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c901&quot;,&quot;source&quot;:&quot;e735&quot;,&quot;target&quot;:&quot;e750&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c902&quot;,&quot;source&quot;:&quot;e739&quot;,&quot;target&quot;:&quot;e750&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c900&quot;,&quot;source&quot;:&quot;e739&quot;,&quot;target&quot;:&quot;e739&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

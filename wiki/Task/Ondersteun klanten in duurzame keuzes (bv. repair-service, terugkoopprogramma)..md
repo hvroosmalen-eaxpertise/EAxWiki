@@ -26,9 +26,13 @@ notes_hash: e3b0c442
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| EDGY::TextAlign | Top | Default: Center  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>EDGY::TextAlign</td><td>Top</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="145" data-tag-name="EDGY::TextAlign" data-tag-value="Top" data-file-path="Task/Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma)..md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -62,8 +66,8 @@ notes_hash: e3b0c442
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e125","label":"Green Customer Task","fullName":"Green Customer Task","packageName":"Task","layer":"edgy-ex","isFocal":false,"hasUrl":true,"url":"Green Customer Task.html"},{"id":"e171","label":"# teruggenomen producte…","fullName":"# teruggenomen producten (per jaar)","packageName":"Metrics","layer":"edgy-lb","isFocal":false,"hasUrl":true,"url":"../Metrics/_ teruggenomen producten (per jaar).html"},{"id":"e145","label":"Ondersteun klanten in d…","fullName":"Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma).","packageName":"Task","layer":"edgy-ex","isFocal":true,"hasUrl":false,"url":""},{"id":"e14","label":"SDG 12. Responsible Con…","fullName":"SDG 12. Responsible Consumption and Production","packageName":"Sustainability Development Goals","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.html"},{"id":"e40","label":"ESRS E5 Resource Use an…","fullName":"ESRS E5 Resource Use and Circular Economy","packageName":"ESRS E5","layer":"edgy-id","isFocal":false,"hasUrl":true,"url":"../ESRS E5/ESRS E5 Resource Use and Circular Economy.html"}],"edges":[{"id":"c38","source":"e125","target":"e145","label":"ControlFlow","sourceLayer":"edgy-ex"},{"id":"c62","source":"e14","target":"e125","label":"Association","sourceLayer":"edgy-id"},{"id":"c95","source":"e40","target":"e171","label":"ControlFlow","sourceLayer":"edgy-id"},{"id":"c139","source":"e145","target":"e171","label":"Association","sourceLayer":"edgy-ex"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e125&quot;,&quot;label&quot;:&quot;Green Customer Task&quot;,&quot;fullName&quot;:&quot;Green Customer Task&quot;,&quot;packageName&quot;:&quot;Task&quot;,&quot;layer&quot;:&quot;edgy-ex&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Green Customer Task.html&quot;},{&quot;id&quot;:&quot;e171&quot;,&quot;label&quot;:&quot;# teruggenomen producte…&quot;,&quot;fullName&quot;:&quot;# teruggenomen producten (per jaar)&quot;,&quot;packageName&quot;:&quot;Metrics&quot;,&quot;layer&quot;:&quot;edgy-lb&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Metrics/_ teruggenomen producten (per jaar).html&quot;},{&quot;id&quot;:&quot;e145&quot;,&quot;label&quot;:&quot;Ondersteun klanten in d…&quot;,&quot;fullName&quot;:&quot;Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma).&quot;,&quot;packageName&quot;:&quot;Task&quot;,&quot;layer&quot;:&quot;edgy-ex&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e14&quot;,&quot;label&quot;:&quot;SDG 12. Responsible Con…&quot;,&quot;fullName&quot;:&quot;SDG 12. Responsible Consumption and Production&quot;,&quot;packageName&quot;:&quot;Sustainability Development Goals&quot;,&quot;layer&quot;:&quot;edgy-id&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.html&quot;},{&quot;id&quot;:&quot;e40&quot;,&quot;label&quot;:&quot;ESRS E5 Resource Use an…&quot;,&quot;fullName&quot;:&quot;ESRS E5 Resource Use and Circular Economy&quot;,&quot;packageName&quot;:&quot;ESRS E5&quot;,&quot;layer&quot;:&quot;edgy-id&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../ESRS E5/ESRS E5 Resource Use and Circular Economy.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c38&quot;,&quot;source&quot;:&quot;e125&quot;,&quot;target&quot;:&quot;e145&quot;,&quot;label&quot;:&quot;ControlFlow&quot;,&quot;sourceLayer&quot;:&quot;edgy-ex&quot;},{&quot;id&quot;:&quot;c62&quot;,&quot;source&quot;:&quot;e14&quot;,&quot;target&quot;:&quot;e125&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;edgy-id&quot;},{&quot;id&quot;:&quot;c95&quot;,&quot;source&quot;:&quot;e40&quot;,&quot;target&quot;:&quot;e171&quot;,&quot;label&quot;:&quot;ControlFlow&quot;,&quot;sourceLayer&quot;:&quot;edgy-id&quot;},{&quot;id&quot;:&quot;c139&quot;,&quot;source&quot;:&quot;e145&quot;,&quot;target&quot;:&quot;e171&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;edgy-ex&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

@@ -26,18 +26,27 @@ notes_hash: 8fe38e0a
 
 ## Attributes
 
-| Name | Type | Default | Description |
-|------|------|---------|-------------|
-| id | Key |  | The unique system-assigned identifier for the OrganizationAssociationType record. It must be globally unique and stable so that existing OrganizationAssociation records are not affected when the type vocabulary is extended. |
-| name | String |  | The descriptive label for the association type, such as "Subsidiary", "Verifier", "Branch", or "Affiliate". The name should be drawn from a consistent controlled vocabulary agreed across the reporting ecosystem to ensure that association types carry the same meaning when shared between organisations in a supply chain. |
+<table>
+<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the OrganizationAssociationType record. It must be globally unique and stable so that existing OrganizationAssociation records are not affected when the type vocabulary is extended.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="f6895d94" data-kind="attribute" data-el-id="742" data-attr-name="id" data-attr-type="Key" data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
+<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The descriptive label for the association type, such as "Subsidiary", "Verifier", "Branch", or "Affiliate". The name should be drawn from a consistent controlled vocabulary agreed across the reporting ecosystem to ensure that association types carry the same meaning when shared between organisations in a supply chain.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="62a97851" data-kind="attribute" data-el-id="742" data-attr-name="name" data-attr-type="String" data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| description | OrganizationAssociationType provides the controlled vocabulary of association types that can exist between two organisations, such as "Auditor", "Department", "Subsidiary", "Verifier", "Branch", or "Affiliate". |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>description</td><td>OrganizationAssociationType provides the controlled vocabulary of association types that can exist between two organisations, such as &quot;Auditor&quot;, &quot;Department&quot;, &quot;Subsidiary&quot;, &quot;Verifier&quot;, &quot;Branch&quot;, or &quot;Affiliate&quot;.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="742" data-tag-name="description" data-tag-value="OrganizationAssociationType provides the controlled vocabulary of association types that can exist between two organisations, such as &quot;Auditor&quot;, &quot;Department&quot;, &quot;Subsidiary&quot;, &quot;Verifier&quot;, &quot;Branch&quot;, or &quot;Affiliate&quot;." data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -62,8 +71,8 @@ notes_hash: 8fe38e0a
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e741","label":"OrganizationAssociation","fullName":"OrganizationAssociation","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"OrganizationAssociation.html"},{"id":"e742","label":"OrganizationAssociation…","fullName":"OrganizationAssociationType","packageName":"Organisation","layer":"uml","isFocal":true,"hasUrl":false,"url":""},{"id":"e735","label":"Organization","fullName":"Organization","packageName":"Organisation","layer":"uml","isFocal":false,"hasUrl":true,"url":"Organization.html"}],"edges":[{"id":"c913","source":"e742","target":"e741","label":"Association","sourceLayer":"uml"},{"id":"c914","source":"e735","target":"e741","label":"Association","sourceLayer":"uml"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e741&quot;,&quot;label&quot;:&quot;OrganizationAssociation&quot;,&quot;fullName&quot;:&quot;OrganizationAssociation&quot;,&quot;packageName&quot;:&quot;Organisation&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;OrganizationAssociation.html&quot;},{&quot;id&quot;:&quot;e742&quot;,&quot;label&quot;:&quot;OrganizationAssociation…&quot;,&quot;fullName&quot;:&quot;OrganizationAssociationType&quot;,&quot;packageName&quot;:&quot;Organisation&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e735&quot;,&quot;label&quot;:&quot;Organization&quot;,&quot;fullName&quot;:&quot;Organization&quot;,&quot;packageName&quot;:&quot;Organisation&quot;,&quot;layer&quot;:&quot;uml&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Organization.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c913&quot;,&quot;source&quot;:&quot;e742&quot;,&quot;target&quot;:&quot;e741&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;},{&quot;id&quot;:&quot;c914&quot;,&quot;source&quot;:&quot;e735&quot;,&quot;target&quot;:&quot;e741&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;uml&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*

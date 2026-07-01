@@ -26,9 +26,13 @@ notes_hash: 09732a2d
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| archimate_element_identifier | id-gov-008 |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>archimate_element_identifier</td><td>id-gov-008</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="243" data-tag-name="archimate_element_identifier" data-tag-value="id-gov-008" data-file-path="ESRS Navigator Stakeholder Map/Sustainability Committee.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -53,8 +57,8 @@ notes_hash: 09732a2d
 ## Relationship Graph
 
 <div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{"nodes":[{"id":"e503","label":"Sustainability Committee","fullName":"Sustainability Committee","packageName":"People","layer":"edgy-pe","isFocal":false,"hasUrl":true,"url":"../People/Sustainability Committee.html"},{"id":"e243","label":"Sustainability Committee","fullName":"Sustainability Committee","packageName":"ESRS Navigator Stakeholder Map","layer":"business","isFocal":true,"hasUrl":false,"url":""},{"id":"e510","label":"Company subject to CSRD","fullName":"Company subject to CSRD","packageName":"People","layer":"edgy-pe","isFocal":false,"hasUrl":true,"url":"../People/Company subject to CSRD.html"}],"edges":[{"id":"c477","source":"e243","target":"e503","label":"Abstraction","sourceLayer":"business"},{"id":"c552","source":"e503","target":"e510","label":"advises","sourceLayer":"edgy-pe"}]}</div>
+<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e503&quot;,&quot;label&quot;:&quot;Sustainability Committee&quot;,&quot;fullName&quot;:&quot;Sustainability Committee&quot;,&quot;packageName&quot;:&quot;People&quot;,&quot;layer&quot;:&quot;edgy-pe&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../People/Sustainability Committee.html&quot;},{&quot;id&quot;:&quot;e243&quot;,&quot;label&quot;:&quot;Sustainability Committee&quot;,&quot;fullName&quot;:&quot;Sustainability Committee&quot;,&quot;packageName&quot;:&quot;ESRS Navigator Stakeholder Map&quot;,&quot;layer&quot;:&quot;business&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e510&quot;,&quot;label&quot;:&quot;Company subject to CSRD&quot;,&quot;fullName&quot;:&quot;Company subject to CSRD&quot;,&quot;packageName&quot;:&quot;People&quot;,&quot;layer&quot;:&quot;edgy-pe&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../People/Company subject to CSRD.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c477&quot;,&quot;source&quot;:&quot;e243&quot;,&quot;target&quot;:&quot;e503&quot;,&quot;label&quot;:&quot;Abstraction&quot;,&quot;sourceLayer&quot;:&quot;business&quot;},{&quot;id&quot;:&quot;c552&quot;,&quot;source&quot;:&quot;e503&quot;,&quot;target&quot;:&quot;e510&quot;,&quot;label&quot;:&quot;advises&quot;,&quot;sourceLayer&quot;:&quot;edgy-pe&quot;}]}</div>
 
 ---
 
-*Generated: 2026-07-01 12:21:53*
+*Generated: 2026-07-01 14:13:16*
