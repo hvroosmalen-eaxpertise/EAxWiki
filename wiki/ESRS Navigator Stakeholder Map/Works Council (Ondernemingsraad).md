@@ -8,11 +8,13 @@ notes_hash: 944bd86b
 
 # <span class="sl" data-layer="business">BusinessRole</span> Works Council (Ondernemingsraad)
 
-**Type:** Class  **Stereotype:** ArchiMate_BusinessRole  **StereotypeEx:** ArchiMate_BusinessRole  **FQStereotype:** ArchiMate3::ArchiMate_BusinessRole  
+**Type:** Class  **Stereotype:** ArchiMate_BusinessRole  **StereotypeEx:** ArchiMate_BusinessRole  **FQStereotype:** ArchiMate3::ArchiMate_BusinessRole  **Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="279" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad).md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="279" data-file-path="ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad).md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -57,4 +59,4 @@ notes_hash: 944bd86b
 
 ---
 
-*Generated: 2026-07-01 09:47:23*
+*Generated: 2026-07-01 10:25:43*

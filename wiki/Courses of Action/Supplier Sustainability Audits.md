@@ -8,11 +8,13 @@ notes_hash: 0905202c
 
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Supplier Sustainability Audits
 
-**Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  **StereotypeEx:** ArchiMate_CourseOfAction  **FQStereotype:** ArchiMate3::ArchiMate_CourseOfAction  
+**Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  **StereotypeEx:** ArchiMate_CourseOfAction  **FQStereotype:** ArchiMate3::ArchiMate_CourseOfAction  **Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="454" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Courses of Action/Supplier Sustainability Audits.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="454" data-file-path="Courses of Action/Supplier Sustainability Audits.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -70,4 +72,4 @@ Ensures supply chain transparency and responsible sourcing practices.</p>
 
 ---
 
-*Generated: 2026-07-01 09:47:23*
+*Generated: 2026-07-01 10:25:43*

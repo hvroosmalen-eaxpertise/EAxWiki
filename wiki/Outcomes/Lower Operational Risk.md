@@ -8,11 +8,13 @@ notes_hash: 091bb51d
 
 # <span class="sl" data-layer="motivation">Outcome</span> Lower Operational Risk
 
-**Type:** Class  **Stereotype:** ArchiMate_Outcome  **StereotypeEx:** ArchiMate_Outcome  **FQStereotype:** ArchiMate3::ArchiMate_Outcome  
+**Type:** Class  **Stereotype:** ArchiMate_Outcome  **StereotypeEx:** ArchiMate_Outcome  **FQStereotype:** ArchiMate3::ArchiMate_Outcome  **Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Outcomes](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="459" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Outcomes/Lower Operational Risk.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="459" data-file-path="Outcomes/Lower Operational Risk.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -72,4 +74,4 @@ Enhances business resilience and operational continuity.</p>
 
 ---
 
-*Generated: 2026-07-01 09:47:23*
+*Generated: 2026-07-01 10:25:43*

@@ -8,11 +8,13 @@ notes_hash: 154d8e51
 
 # <span class="sl" data-layer="motivation">Goal</span> Long-term Value Creation
 
-**Type:** Class  **Stereotype:** ArchiMate_Goal  **StereotypeEx:** ArchiMate_Goal  **FQStereotype:** ArchiMate3::ArchiMate_Goal  
+**Type:** Class  **Stereotype:** ArchiMate_Goal  **StereotypeEx:** ArchiMate_Goal  **FQStereotype:** ArchiMate3::ArchiMate_Goal  **Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="434" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Goals/Long-term Value Creation.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="434" data-file-path="Goals/Long-term Value Creation.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -75,4 +77,4 @@ Integrates sustainability into value creation logic rather than treating it as a
 
 ---
 
-*Generated: 2026-07-01 09:47:23*
+*Generated: 2026-07-01 10:25:43*

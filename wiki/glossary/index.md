@@ -135,7 +135,7 @@
 | Integrate Sustainability into Corporate Strategy | Master strategy to fully integrate sustainability considerations into corporate strategy formulation and execution | [Integrate Sustainability into Corporate Strategy](../Courses of Action/Integrate Sustainability into Corporate Strategy.md) |
 | Introduce Sustainable Product Design Process | Implementation of eco-design principles and life cycle thinking into product development processes | [Introduce Sustainable Product Design Process](../Courses of Action/Introduce Sustainable Product Design Process.md) |
 | Investors/Shareholders | High-level view of all stakeholders in ESRS reporting ecosystem | [Investors/Shareholders](../People/Investors_Shareholders.md), [Investors/Shareholders](../ESRS Navigator Stakeholder Map/Investors_Shareholders.md) |
-| Large Companies (>250 employees) | Companies required to report under CSRD from 2025 | [Large Companies (>250 employees)](../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md) |
+| Large Companies (>250 employees) | Companies with over 250 employees are required to report under CSRD from 2025 | [Large Companies (>250 employees)](../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md) |
 | Legal Design Agencies | Agencies like Patroon Legal Design | [Legal Design Agencies](../People/Legal Design Agencies.md), [Legal Design Agencies](../ESRS Navigator Stakeholder Map/Legal Design Agencies.md) |
 | Lifecycle & Circularity Model | Beschrijving van productlevenscyclus | [Lifecycle & Circularity Model](../Process/Lifecycle & Circularity Model.md) |
 | Listed SMEs | Small and medium enterprises with stock exchange listing (future LSME standard) Required to report: Any listed companies that meet two of the following three criteria on any two consecutive balance sheet dates: at least EUR 25 million in total assets at least EUR 50 million in net turnover at least 250 employees (average) during the year | [Listed SMEs](../People/Listed SMEs.md), [Listed SMEs](../ESRS Navigator Stakeholder Map/Listed SMEs.md) |
@@ -258,4 +258,4 @@
 
 ---
 
-*Generated: 2026-07-01 09:47:24*
+*Generated: 2026-07-01 10:25:44*

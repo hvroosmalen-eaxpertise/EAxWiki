@@ -85,6 +85,7 @@
 .status-implemented { background: #cce5ff; color: #004085; }
 .status-mandatory { background: #f8d7da; color: #721c24; }
 .status-invalid { background: #e2e3e5; color: #383d41; }
+.status-not-set { background: #e2e3e5; color: #6c757d; font-style: italic; }
 
 .status-bar-container {
   margin: 0.25em 0;

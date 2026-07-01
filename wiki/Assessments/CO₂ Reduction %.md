@@ -1,18 +1,20 @@
 ---
 ea_id: 462
-status: 
+status: Approved
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
-ea_hash: e3b0c442
+ea_hash: 87b42e40
 notes_hash: 2ca048de
 ---
 
 # <span class="sl" data-layer="motivation">Assessment</span> CO₂ Reduction %
 
-**Type:** Class  **Stereotype:** ArchiMate_Assessment  **StereotypeEx:** ArchiMate_Assessment  **FQStereotype:** ArchiMate3::ArchiMate_Assessment  
+**Type:** Class  **Stereotype:** ArchiMate_Assessment  **StereotypeEx:** ArchiMate_Assessment  **FQStereotype:** ArchiMate3::ArchiMate_Assessment  **Status:** <span class="status-badge status-approved">Approved</span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="462" data-status="Approved" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Assessments/CO₂ Reduction %.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="462" data-file-path="Assessments/CO₂ Reduction %.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -61,4 +63,4 @@ Critical metric for climate change mitigation efforts and alignment with Paris A
 
 ---
 
-*Generated: 2026-07-01 09:47:23*
+*Generated: 2026-07-01 10:25:43*

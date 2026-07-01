@@ -12,7 +12,7 @@ Stakeholder map based on the ESRS Navigator document for sustainability reportin
 ## Elements
 
 - <span class="sl" data-layer="motivation">Stakeholder</span> [Large Companies (>250 employees)](Large Companies (_250 employees).md)
-  - *<!--ea-notes-start--> <p>Companies required to report under CSRD from 2025.</p> <!--ea-notes-end-->*
+  - *<p>Companies with over 250 employees are required to report under CSRD from 2025.</p>*
 - <span class="sl" data-layer="motivation">Stakeholder</span> [FreshFood B.V.](FreshFood B.V..md)
   - *Example company: 450 employees, food production, two facilities in Netherlands*
 - <span class="sl" data-layer="motivation">Stakeholder</span> [Listed SMEs](Listed SMEs.md)
@@ -132,4 +132,4 @@ Stakeholder map based on the ESRS Navigator document for sustainability reportin
 
 ---
 
-*Generated: 2026-07-01 09:47:23*
+*Generated: 2026-07-01 10:25:44*

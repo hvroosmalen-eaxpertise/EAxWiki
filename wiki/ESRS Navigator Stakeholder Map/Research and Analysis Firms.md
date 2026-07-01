@@ -8,11 +8,13 @@ notes_hash: ea199371
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Research and Analysis Firms
 
-**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
+**Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  **Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="260" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/Research and Analysis Firms.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="260" data-file-path="ESRS Navigator Stakeholder Map/Research and Analysis Firms.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -57,4 +59,4 @@ notes_hash: ea199371
 
 ---
 
-*Generated: 2026-07-01 09:47:23*
+*Generated: 2026-07-01 10:25:44*

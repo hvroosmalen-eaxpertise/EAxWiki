@@ -8,11 +8,13 @@ notes_hash: 69803db2
 
 # <span class="sl" data-layer="uml">reference-data</span> EmissionCategoryStandardAssociation
 
-**Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
+**Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  **Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="787" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Emissions/EmissionCategoryStandardAssociation.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="787" data-file-path="Emissions/EmissionCategoryStandardAssociation.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -60,4 +62,4 @@ notes_hash: 69803db2
 
 ---
 
-*Generated: 2026-07-01 09:47:24*
+*Generated: 2026-07-01 10:25:44*

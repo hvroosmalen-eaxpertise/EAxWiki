@@ -71,7 +71,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             $"**Stereotype:** {MarkdownHelpers.EscapeCell(element.Stereotype)}  " +
             (string.IsNullOrWhiteSpace(element.StereotypeEx) ? "" : $"**StereotypeEx:** {MarkdownHelpers.EscapeCell(element.StereotypeEx)}  ") +
             (string.IsNullOrWhiteSpace(element.FQStereotype) ? "" : $"**FQStereotype:** {MarkdownHelpers.EscapeCell(element.FQStereotype)}  ") +
-            (string.IsNullOrEmpty(element.Status) ? "" : $"**Status:** <span class=\"status-badge status-{element.Status.ToLowerInvariant()}\">{MarkdownHelpers.EscapeCell(element.Status)}</span>  "),
+            $"**Status:** <span class=\"status-badge {(string.IsNullOrEmpty(element.Status) ? "status-not-set" : $"status-{element.Status.ToLowerInvariant()}")}\">{(string.IsNullOrEmpty(element.Status) ? "Not Set" : MarkdownHelpers.EscapeCell(element.Status))}</span>  ",
             $"**Created:** {createdStr}  **Modified:** {modifiedStr}",
             string.Empty,
             string.Empty,
@@ -80,7 +80,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             string.Empty,
         };
 
-        if (!string.IsNullOrEmpty(element.Status) && ctx.ApiPort > 0)
+        if (ctx.ApiPort > 0)
         {
             lines.Add(
                 $"<div id=\"ea-status-editor\" class=\"ea-status-editor\"" +

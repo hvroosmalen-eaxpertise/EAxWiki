@@ -8,11 +8,13 @@ notes_hash: f41a6346
 
 # <span class="sl" data-layer="motivation">Driver</span> Stakeholder Expectations
 
-**Type:** Class  **Stereotype:** ArchiMate_Driver  **StereotypeEx:** ArchiMate_Driver  **FQStereotype:** ArchiMate3::ArchiMate_Driver  
+**Type:** Class  **Stereotype:** ArchiMate_Driver  **StereotypeEx:** ArchiMate_Driver  **FQStereotype:** ArchiMate3::ArchiMate_Driver  **Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="430" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Drivers/Stakeholder Expectations.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="430" data-file-path="Drivers/Stakeholder Expectations.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -59,4 +61,4 @@ Stakeholders increasingly demand ESG performance disclosure and sustainable busi
 
 ---
 
-*Generated: 2026-07-01 09:47:23*
+*Generated: 2026-07-01 10:25:43*

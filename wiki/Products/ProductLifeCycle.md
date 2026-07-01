@@ -8,11 +8,13 @@ notes_hash: f23c1c60
 
 # <span class="sl" data-layer="uml">master-data</span> ProductLifeCycle
 
-**Type:** Class  **Stereotype:** master-data  **StereotypeEx:** master-data  **FQStereotype:** master-data  
+**Type:** Class  **Stereotype:** master-data  **StereotypeEx:** master-data  **FQStereotype:** master-data  **Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
+
+<div id="ea-status-editor" class="ea-status-editor" data-ea-id="813" data-status="" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Products/ProductLifeCycle.md" data-api-port="8001"></div>
 
 <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="813" data-file-path="Products/ProductLifeCycle.md" data-api-port="8001">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
@@ -68,4 +70,4 @@ notes_hash: f23c1c60
 
 ---
 
-*Generated: 2026-07-01 09:47:24*
+*Generated: 2026-07-01 10:25:44*
