@@ -1,15 +1,15 @@
 ---
 ea_id: 350
-status: Proposed
+status: Implemented
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
-ea_hash: 9b0c660b
+ea_hash: bf546638
 notes_hash: 81b78c8c
 ---
 
 # <span class="sl" data-layer="business">BusinessObject</span> ESRS E1 - Climate
 
 **Type:** Class  **Stereotype:** ArchiMate_BusinessObject  **StereotypeEx:** ArchiMate_BusinessObject  **FQStereotype:** ArchiMate3::ArchiMate_BusinessObject  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="350" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/ESRS E1 - Climate.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="350" data-status="Implemented" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Navigator Stakeholder Map/ESRS E1 - Climate.md" data-api-port="8001"><span class="status-badge status-implemented">Implemented</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-11-14  **Modified:** 2026-07-01
 
 
