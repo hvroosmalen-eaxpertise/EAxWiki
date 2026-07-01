@@ -44,9 +44,10 @@ public class WriteBackScanner(IEaReader reader, ILogger logger)
                         {
                             try
                             {
+                                var oldStatus = reader.GetElementStatus(elementId);
                                 reader.UpdateElementStatus(elementId, currentStatus);
                                 FrontmatterParser.UpdateStatus(file, currentStatus);
-                                statusChanges.Add(new ChangeResult(elementId, "(previous)", currentStatus, file));
+                                statusChanges.Add(new ChangeResult(elementId, oldStatus, currentStatus, file));
                                 logger.LogInformation("Write-back: element {Id} status set to '{Status}' ({File})",
                                     elementId, currentStatus, Path.GetFileName(file));
                             }

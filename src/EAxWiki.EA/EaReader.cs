@@ -231,6 +231,16 @@ public class EaReader : IEaReader, IDisposable
         return statuses;
     }
 
+    public string GetElementStatus(int elementId)
+    {
+        if (_repository == null)
+            throw new InvalidOperationException("Repository is not open.");
+        var element = _repository.GetElementByID(elementId);
+        if (element == null)
+            throw new InvalidOperationException($"Element {elementId} not found in repository.");
+        return element.Status ?? string.Empty;
+    }
+
     public void UpdateElementStatus(int elementId, string newStatus)
     {
         if (_repository == null)

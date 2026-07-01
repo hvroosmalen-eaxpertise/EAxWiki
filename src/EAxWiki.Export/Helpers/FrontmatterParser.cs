@@ -1,11 +1,16 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using EAxWiki.Export.Exporters;
+using Ganss.Xss;
 
 namespace EAxWiki.Export.Helpers;
 
 public static class FrontmatterParser
 {
+    // Shared instance per the library's own usage docs — Sanitize() does not mutate shared state,
+    // so one instance safely serves concurrent calls from the parallel export pipeline.
+    private static readonly HtmlSanitizer NotesSanitizer = new();
+
     /// <summary>
     /// Parses the YAML frontmatter block (between the first two --- delimiters) of a Markdown file.
     /// Returns a dictionary of key → raw string value, or an empty dictionary if no frontmatter is present.
@@ -109,17 +114,27 @@ public static class FrontmatterParser
     /// them as literal comment text, since they sit inside .ea-notes-content) and, if what remains
     /// contains no HTML tags at all, wraps blank-line-separated blocks in &lt;p&gt; so multiple
     /// paragraphs survive Markdown's block-HTML passthrough. Notes that already contain markup
-    /// (beyond the stripped markers) are left untouched.
+    /// (beyond the stripped markers) are run through an allowlist HTML sanitizer (HtmlSanitizer /
+    /// AngleSharp) — this text is user-typed, gets persisted into the live EA repository via COM,
+    /// and is embedded as raw HTML into the generated wiki page, so unsanitized markup would be a
+    /// stored-XSS vector. The sanitizer keeps ordinary rich-text markup (p, lists, bold, links, ...)
+    /// and strips script/style/iframe/object/embed/form tags, event-handler attributes, and
+    /// javascript:/data: URLs.
     /// </summary>
     public static string NormalizeNotesHtml(string? notes)
     {
         var cleaned = NotesMarkerPattern.Replace(notes ?? string.Empty, string.Empty).Trim();
-        if (cleaned.Length == 0 || cleaned.Contains('<'))
+        if (cleaned.Length == 0)
             return cleaned;
 
-        var paragraphs = Regex.Split(cleaned.Replace("\r\n", "\n"), @"\n\s*\n")
-            .Where(p => !string.IsNullOrWhiteSpace(p));
-        return string.Join("\n", paragraphs.Select(p => $"<p>{p.Trim()}</p>"));
+        if (!cleaned.Contains('<'))
+        {
+            var paragraphs = Regex.Split(cleaned.Replace("\r\n", "\n"), @"\n\s*\n")
+                .Where(p => !string.IsNullOrWhiteSpace(p));
+            return string.Join("\n", paragraphs.Select(p => $"<p>{p.Trim()}</p>"));
+        }
+
+        return NotesSanitizer.Sanitize(cleaned);
     }
 
     /// <summary>

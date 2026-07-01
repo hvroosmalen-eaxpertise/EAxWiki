@@ -44,10 +44,12 @@ public class MarkdownExporter : IWikiExporter
 
             var statusTypes = reader?.GetStatusTypes() ?? [];
             int.TryParse(Environment.GetEnvironmentVariable("EAXWIKI_API_PORT"), out var apiPort);
+            var apiToken = apiPort > 0 ? ApiTokenStore.GetOrCreate(outputPath) : string.Empty;
             var ctx = ContextBuilder.Build(packages, outputPath, force) with
             {
                 StatusTypes = statusTypes,
                 ApiPort = apiPort,
+                ApiToken = apiToken,
             };
 
             var packageExporter = new PackageExporter(_writer, _logger);

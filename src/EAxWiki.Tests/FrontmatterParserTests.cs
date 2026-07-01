@@ -133,4 +133,57 @@ public class FrontmatterParserTests : IDisposable
         Assert.Contains("Runs the retry loop.", text);
         Assert.Contains("data-row-id=\"method-0\" data-notes-hash=\"cafef00d\"", text);
     }
+
+    [Fact]
+    public void NormalizeNotesHtml_WrapsPlainTextParagraphs()
+    {
+        var result = FrontmatterParser.NormalizeNotesHtml("First paragraph.\n\nSecond paragraph.");
+
+        Assert.Equal("<p>First paragraph.</p>\n<p>Second paragraph.</p>", result);
+    }
+
+    [Fact]
+    public void NormalizeNotesHtml_PreservesOrdinaryRichText()
+    {
+        var result = FrontmatterParser.NormalizeNotesHtml("<p>Hello <b>world</b>, see <a href=\"https://example.com\">this link</a>.</p>");
+
+        Assert.Contains("<b>world</b>", result);
+        Assert.Contains("<a href=\"https://example.com\">this link</a>", result);
+    }
+
+    [Fact]
+    public void NormalizeNotesHtml_StripsScriptTags()
+    {
+        var result = FrontmatterParser.NormalizeNotesHtml("<p>Hi</p><script>alert(document.cookie)</script>");
+
+        Assert.DoesNotContain("<script", result, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("alert(document.cookie)", result);
+        Assert.Contains("<p>Hi</p>", result);
+    }
+
+    [Fact]
+    public void NormalizeNotesHtml_StripsEventHandlerAttributes()
+    {
+        var result = FrontmatterParser.NormalizeNotesHtml("<img src=\"x.png\" onerror=\"alert(1)\">");
+
+        Assert.DoesNotContain("onerror", result, StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
+    public void NormalizeNotesHtml_StripsJavascriptUrls()
+    {
+        var result = FrontmatterParser.NormalizeNotesHtml("<a href=\"javascript:alert(1)\">click me</a>");
+
+        Assert.DoesNotContain("javascript:", result, StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
+    public void NormalizeNotesHtml_StripsIframeAndObjectTags()
+    {
+        var result = FrontmatterParser.NormalizeNotesHtml("<p>Hi</p><iframe src=\"https://evil.example\"></iframe><object data=\"evil.swf\"></object>");
+
+        Assert.DoesNotContain("<iframe", result, StringComparison.OrdinalIgnoreCase);
+        Assert.DoesNotContain("<object", result, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("<p>Hi</p>", result);
+    }
 }

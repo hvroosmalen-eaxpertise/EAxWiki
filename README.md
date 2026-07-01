@@ -282,7 +282,9 @@ Use `export-and-serve.ps1` with `--api-port` to start everything in one command:
 
 This exports the wiki (embedding the status, notes, diagram, and row-level editor widgets), starts the write-back server on port 8001 as a background job, and starts MkDocs on port 8000. When Apply/Save is clicked the EA model is updated immediately via COM, the page's `**Modified:**` date is bumped to today to match, and MkDocs hot-reloads the page within seconds.
 
-Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per blank-line-separated paragraph before being sent to EA, so multi-paragraph notes don't collapse into a single line. If you do want lists, bold text, or links, just type the HTML directly — it's passed through untouched.
+Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per blank-line-separated paragraph before being sent to EA, so multi-paragraph notes don't collapse into a single line. If you do want lists, bold text, or links, just type the HTML directly — ordinary rich text (`p`, lists, bold, links, ...) is preserved; `<script>`, event-handler attributes (`onerror=`, ...), and `javascript:`/embed/iframe content are stripped before it's saved, since this text is embedded directly into the wiki page as HTML.
+
+> **Authentication:** each write-back server generates a random token on first use, saved to `<output>/.eaxwiki-token` (gitignored) and embedded into every exported page's editor widgets. The browser sends it back on every write request; requests without a matching token are rejected. If a widget shows "Not authenticated" after you upgrade EAxWiki, re-export with `--force` — incremental export skips unchanged pages, so pages exported before this existed won't have picked up the new token otherwise.
 
 **Batch write-back** (for `.md` edits made while the server was not running):
 
@@ -315,6 +317,8 @@ Each export/serve/write-back triple is fully isolated by its `--output`, `--port
 ```
 
 Each write-back server only accepts requests from its own paired wiki: it checks that the request's `Origin` matches its own hostname on the `--wiki-port` it was started with. `export-and-serve.ps1` and `serve-api.ps1` infer `--wiki-port` from `--port` automatically, so nothing extra to configure above — instance A's wiki page simply can't reach instance B's write-back server, even though both run on the same machine. If you invoke `dotnet run --project src/EAxWiki -- --api ...` directly instead of through the scripts, pass `--wiki-port` yourself to match whichever port `mkdocs serve` uses for that instance.
+
+The [auth token](#live-write-back--change-status-and-notes-directly-from-the-wiki-page) is isolated the same way, automatically: it's generated per `--output` directory (`<output>/.eaxwiki-token`), so instance A and instance B each get their own — A's token is never valid against B's server, even by accident.
 
 ## Saved connection config
 

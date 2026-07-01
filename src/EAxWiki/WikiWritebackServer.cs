@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using System.Text;
 using EAxWiki.EA;
 using EAxWiki.Export.Helpers;
 using Microsoft.AspNetCore.Builder;
@@ -19,6 +21,23 @@ internal static class WikiWritebackServer
         string? MethodName, string? ReturnType, bool? IsStatic,
         string? TagName, string? TagValue);
 
+    /// <summary>
+    /// Resolves <paramref name="relativePath"/> against <paramref name="outputPath"/> and rejects it
+    /// unless the result stays strictly inside that directory (with a trailing separator, so a sibling
+    /// directory sharing the same prefix — e.g. "wiki" vs "wiki-archive" — cannot pass) and ends in
+    /// ".md", since that is the only file type write-back ever touches.
+    /// </summary>
+    private static bool TryResolveWikiFilePath(string outputPath, string relativePath, out string filePath)
+    {
+        var root = Path.GetFullPath(outputPath);
+        var rootWithSeparator = root.EndsWith(Path.DirectorySeparatorChar) ? root : root + Path.DirectorySeparatorChar;
+        filePath = Path.GetFullPath(Path.Combine(root, relativePath));
+
+        if (!filePath.StartsWith(rootWithSeparator, StringComparison.OrdinalIgnoreCase))
+            return false;
+        return filePath.EndsWith(".md", StringComparison.OrdinalIgnoreCase);
+    }
+
     public static async Task RunAsync(Config config, string outputPath, ILoggerFactory loggerFactory)
     {
         var logger = loggerFactory.CreateLogger("WikiWritebackServer");
@@ -26,6 +45,9 @@ internal static class WikiWritebackServer
         var reader = new EaReader(loggerFactory.CreateLogger<EaReader>());
         reader.Open(config.RepositoryPath);
         logger.LogInformation("EA repository opened for write-back server");
+
+        var apiToken = ApiTokenStore.GetOrCreate(outputPath);
+        var apiTokenBytes = Encoding.UTF8.GetBytes(apiToken);
 
         var builder = WebApplication.CreateBuilder();
         builder.Logging.ClearProviders();
@@ -50,7 +72,7 @@ internal static class WikiWritebackServer
                 originUri.Port == wikiPort)
             {
                 context.Response.Headers.AccessControlAllowOrigin = origin;
-                context.Response.Headers.AccessControlAllowHeaders = "Content-Type";
+                context.Response.Headers.AccessControlAllowHeaders = "Content-Type, X-EAxWiki-Token";
                 context.Response.Headers.AccessControlAllowMethods = "GET, POST";
             }
 
@@ -58,6 +80,24 @@ internal static class WikiWritebackServer
             {
                 context.Response.StatusCode = StatusCodes.Status204NoContent;
                 return;
+            }
+
+            // Origin/port matching above only restricts browser-mediated cross-origin calls — a
+            // raw HTTP client (curl, a LAN port scan) can set any Origin header it likes, so it is
+            // not authentication. This shared secret is: generated once per wiki output directory
+            // (ApiTokenStore), embedded into every exported page's widgets as data-api-token, and
+            // required here on every /api request. It is visible to anyone who can view a wiki page
+            // (view-source), so it does not protect against someone with legitimate view access to
+            // this instance — it protects against everyone else (LAN scanning, unrelated sites).
+            if (context.Request.Path.StartsWithSegments("/api"))
+            {
+                var provided = context.Request.Headers["X-EAxWiki-Token"].ToString();
+                if (!CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(provided), apiTokenBytes))
+                {
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                    await context.Response.WriteAsJsonAsync(new { success = false, message = "Missing or invalid API token." });
+                    return;
+                }
             }
 
             await next();
@@ -87,9 +127,7 @@ internal static class WikiWritebackServer
             if (!allowed.Contains(req.NewStatus, StringComparer.OrdinalIgnoreCase))
                 return Results.BadRequest(new { success = false, message = $"'{req.NewStatus}' is not a valid status. Allowed: {string.Join(", ", allowed)}" });
 
-            // Resolve file path relative to wiki output dir; guard against path traversal
-            var filePath = Path.GetFullPath(Path.Combine(outputPath, req.FilePath));
-            if (!filePath.StartsWith(Path.GetFullPath(outputPath), StringComparison.OrdinalIgnoreCase))
+            if (!TryResolveWikiFilePath(outputPath, req.FilePath, out var filePath))
                 return Results.BadRequest(new { success = false, message = "Invalid file path." });
 
             if (!File.Exists(filePath))
@@ -114,8 +152,7 @@ internal static class WikiWritebackServer
             if (req.NewNotes == null)
                 return Results.BadRequest(new { success = false, message = "newNotes is required." });
 
-            var filePath = Path.GetFullPath(Path.Combine(outputPath, req.FilePath));
-            if (!filePath.StartsWith(Path.GetFullPath(outputPath), StringComparison.OrdinalIgnoreCase))
+            if (!TryResolveWikiFilePath(outputPath, req.FilePath, out var filePath))
                 return Results.BadRequest(new { success = false, message = "Invalid file path." });
 
             if (!File.Exists(filePath))
@@ -141,8 +178,7 @@ internal static class WikiWritebackServer
             if (req.NewNotes == null)
                 return Results.BadRequest(new { success = false, message = "newNotes is required." });
 
-            var filePath = Path.GetFullPath(Path.Combine(outputPath, req.FilePath));
-            if (!filePath.StartsWith(Path.GetFullPath(outputPath), StringComparison.OrdinalIgnoreCase))
+            if (!TryResolveWikiFilePath(outputPath, req.FilePath, out var filePath))
                 return Results.BadRequest(new { success = false, message = "Invalid file path." });
 
             if (!File.Exists(filePath))
@@ -168,8 +204,7 @@ internal static class WikiWritebackServer
             if (req.NewNotes == null)
                 return Results.BadRequest(new { success = false, message = "newNotes is required." });
 
-            var filePath = Path.GetFullPath(Path.Combine(outputPath, req.FilePath));
-            if (!filePath.StartsWith(Path.GetFullPath(outputPath), StringComparison.OrdinalIgnoreCase))
+            if (!TryResolveWikiFilePath(outputPath, req.FilePath, out var filePath))
                 return Results.BadRequest(new { success = false, message = "Invalid file path." });
 
             if (!File.Exists(filePath))

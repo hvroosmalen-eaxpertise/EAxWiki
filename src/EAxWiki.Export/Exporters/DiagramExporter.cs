@@ -45,6 +45,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     : FrontmatterParser.NormalizeNotesHtml(derivedText);
                 var notesHash = ElementPageWriter.ComputeNotesHash(seedValue);
                 var wikiRelPath = Path.GetRelativePath(ctx.OutputPath, mdPath).Replace('\\', '/');
+                var wikiRelPathHtml = ElementPageWriter.HtmlEscape(wikiRelPath);
 
                 var lines = new List<string>
                 {
@@ -73,8 +74,9 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                         $"<div id=\"ea-notes-editor\" class=\"ea-notes-editor\"" +
                         $" data-ea-id=\"{diagram.Id}\"" +
                         $" data-kind=\"diagram\"" +
-                        $" data-file-path=\"{wikiRelPath}\"" +
-                        $" data-api-port=\"{ctx.ApiPort}\">");
+                        $" data-file-path=\"{wikiRelPathHtml}\"" +
+                        $" data-api-port=\"{ctx.ApiPort}\"" +
+                        $" data-api-token=\"{ElementPageWriter.HtmlEscape(ctx.ApiToken)}\">");
                     lines.Add("<button id=\"ea-notes-edit-btn\" class=\"ea-notes-edit-btn\" type=\"button\" aria-label=\"Edit description\">&#9998;</button>");
                     if (!hasOwnNotes && !string.IsNullOrEmpty(derivedText))
                         lines.Add("<span class=\"ea-notes-derived-hint\">(derived)</span>");

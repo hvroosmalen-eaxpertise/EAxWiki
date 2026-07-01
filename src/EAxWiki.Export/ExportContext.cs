@@ -20,6 +20,9 @@ internal record ExportContext(
     /// <summary>Port of the wiki write-back server. 0 means no server — widget is omitted.</summary>
     public int ApiPort { get; init; } = 0;
 
+    /// <summary>Shared secret embedded in write-back widgets and required by the --api server. Empty when ApiPort is 0.</summary>
+    public string ApiToken { get; init; } = string.Empty;
+
     /// <summary>
     /// Absolute paths of every element .md file as actually written (including collision-renamed files).
     /// Populated by PackageExporter; consumed by cleanup.

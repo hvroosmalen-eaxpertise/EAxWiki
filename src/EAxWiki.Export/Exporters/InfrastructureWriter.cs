@@ -264,6 +264,7 @@ if (typeof document$ !== 'undefined') {
     var options = JSON.parse(widget.dataset.options);
     var file    = widget.dataset.filePath;
     var port    = widget.dataset.apiPort || '8001';
+    var token   = widget.dataset.apiToken || '';
     var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
 
     var badge   = widget.querySelector('.status-badge');
@@ -325,16 +326,21 @@ if (typeof document$ !== 'undefined') {
 
       fetch(apiBase + '/api/status', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
         body: JSON.stringify({ elementId: eaId, newStatus: chosen, filePath: file })
       })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
       .then(function (res) {
         if (res.ok) {
           current = chosen;
           badge.textContent = chosen;
           badge.className = 'status-badge status-' + chosen.toLowerCase();
           exitEditMode();
+        } else if (res.status === 401) {
+          msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
+          msg.style.color = '#c62828';
+          applyBtn.disabled = false;
+          cancelBtn.disabled = false;
         } else {
           msg.textContent = '✗ ' + (res.data.message || 'Error');
           msg.style.color = '#c62828';
@@ -379,6 +385,7 @@ if (typeof document$ !== 'undefined') {
     var kind    = widget.dataset.kind || 'element';
     var file    = widget.dataset.filePath;
     var port    = widget.dataset.apiPort || '8001';
+    var token   = widget.dataset.apiToken || '';
     var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
     var endpoint = kind === 'diagram' ? '/api/diagram-notes' : '/api/notes';
     var idField  = kind === 'diagram' ? 'diagramId' : 'elementId';
@@ -453,16 +460,21 @@ if (typeof document$ !== 'undefined') {
 
       fetch(apiBase + endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
         body: JSON.stringify(body)
       })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
       .then(function (res) {
         if (res.ok) {
           contentDiv.innerHTML = res.data.html || placeholderHtml;
           if (hint && hint.parentNode) hint.parentNode.removeChild(hint);
           hint = null;
           exitEditMode();
+        } else if (res.status === 401) {
+          msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
+          msg.style.color = '#c62828';
+          saveBtn.disabled = false;
+          cancelBtn.disabled = false;
         } else {
           msg.textContent = '✗ ' + (res.data.message || 'Error');
           msg.style.color = '#c62828';
@@ -609,20 +621,26 @@ if (typeof document$ !== 'undefined') {
       msg.textContent = 'Saving…';
 
       var port = btn.dataset.apiPort || '8001';
+      var token = btn.dataset.apiToken || '';
       var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
       var body = buildRequestBody(btn, rowId, textarea.value);
 
       fetch(apiBase + '/api/row-notes', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
         body: JSON.stringify(body)
       })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
       .then(function (res) {
         if (res.ok) {
           var html = res.data.html;
           textSpan.innerHTML = html && html.trim() ? html : '<em class="ea-row-notes-placeholder">No description set.</em>';
           closeCurrent();
+        } else if (res.status === 401) {
+          msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
+          msg.style.color = '#c62828';
+          saveBtn.disabled = false;
+          cancelBtn.disabled = false;
         } else {
           msg.textContent = '✗ ' + (res.data.message || 'Error');
           msg.style.color = '#c62828';

@@ -23,6 +23,7 @@ internal class FakeEaReader : IEaReader
     public bool ExportDiagramImage(string diagramGuid, string filePath) => true;
     public string RepositoryPath => string.Empty;
     public IReadOnlyList<string> GetStatusTypes() => ["Approved", "Implemented", "Mandatory", "Proposed", "Validated"];
+    public string GetElementStatus(int elementId) => "Proposed";
 
     public void UpdateElementStatus(int elementId, string newStatus) => StatusUpdates.Add((elementId, newStatus));
     public void UpdateElementNotes(int elementId, string newNotesHtml) => ElementNotesUpdates.Add((elementId, newNotesHtml));

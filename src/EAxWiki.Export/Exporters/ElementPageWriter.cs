@@ -52,8 +52,11 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         var statusHash = ComputeStatusHash(element.Status);
         var normalizedNotes = FrontmatterParser.NormalizeNotesHtml(element.Notes);
         var notesHash = ComputeNotesHash(normalizedNotes);
-        var statusOptionsJson = "[" + string.Join(",", statusOptionsList.Select(s => $"\"{s}\"")) + "]";
+        // HtmlEscape (which also escapes ') wraps the whole thing so it's safe inside the
+        // single-quoted data-options attribute below regardless of what a status name contains.
+        var statusOptionsJson = HtmlEscape("[" + string.Join(",", statusOptionsList.Select(s => $"\"{JsonEscape(s)}\"")) + "]");
         var wikiRelPath = Path.GetRelativePath(outputDir, filePath).Replace('\\', '/');
+        var wikiRelPathHtml = HtmlEscape(wikiRelPath);
 
         var statusBadgeClass = string.IsNullOrEmpty(element.Status) ? "status-not-set" : $"status-{element.Status.ToLowerInvariant()}";
         var statusBadgeLabel = string.IsNullOrEmpty(element.Status) ? "Not Set" : MarkdownHelpers.EscapeCell(element.Status);
@@ -61,10 +64,11 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         var statusFieldHtml = ctx.ApiPort > 0
             ? $"<span id=\"ea-status-editor\" class=\"ea-status-editor\"" +
               $" data-ea-id=\"{element.Id}\"" +
-              $" data-status=\"{element.Status}\"" +
+              $" data-status=\"{HtmlEscape(element.Status)}\"" +
               $" data-options='{statusOptionsJson}'" +
-              $" data-file-path=\"{wikiRelPath}\"" +
-              $" data-api-port=\"{ctx.ApiPort}\">" +
+              $" data-file-path=\"{wikiRelPathHtml}\"" +
+              $" data-api-port=\"{ctx.ApiPort}\"" +
+              $" data-api-token=\"{HtmlEscape(ctx.ApiToken)}\">" +
               statusBadgeHtml +
               "<button class=\"ea-status-edit-btn\" type=\"button\" aria-label=\"Edit status\">&#9998;</button>" +
               "</span>"
@@ -100,8 +104,9 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             lines.Add(
                 $"<div id=\"ea-notes-editor\" class=\"ea-notes-editor\"" +
                 $" data-ea-id=\"{element.Id}\"" +
-                $" data-file-path=\"{wikiRelPath}\"" +
-                $" data-api-port=\"{ctx.ApiPort}\">");
+                $" data-file-path=\"{wikiRelPathHtml}\"" +
+                $" data-api-port=\"{ctx.ApiPort}\"" +
+                $" data-api-token=\"{HtmlEscape(ctx.ApiToken)}\">");
             lines.Add("<button id=\"ea-notes-edit-btn\" class=\"ea-notes-edit-btn\" type=\"button\" aria-label=\"Edit notes\">&#9998;</button>");
             lines.Add("<div class=\"ea-notes-content\">");
             lines.Add("<!--ea-notes-start-->");
@@ -132,7 +137,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                 {
                     var rowId = $"attr-{attrIdx++}";
                     var (viewHtml, editRowHtml) = BuildRowNotesWidget(
-                        rowId, attr.Notes, "attribute", "table-row", element.Id, wikiRelPath, ctx.ApiPort, 4,
+                        rowId, attr.Notes, "attribute", "table-row", element.Id, wikiRelPathHtml, ctx.ApiPort, ctx.ApiToken, 4,
                         ("attr-name", attr.Name), ("attr-type", attr.Type));
                     lines.Add($"<tr><td>{HtmlEscape(attr.Name)}</td><td>{HtmlEscape(attr.Type)}</td><td>{HtmlEscape(attr.DefaultValue ?? "")}</td><td>{viewHtml}</td></tr>");
                     lines.Add(editRowHtml);
@@ -174,7 +179,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                 {
                     var rowId = $"method-{methodIdx++}";
                     var (viewHtml, _) = BuildRowNotesWidget(
-                        rowId, method.Notes, "method", "inline", element.Id, wikiRelPath, ctx.ApiPort, 0,
+                        rowId, method.Notes, "method", "inline", element.Id, wikiRelPathHtml, ctx.ApiPort, ctx.ApiToken, 0,
                         ("method-name", method.Name), ("return-type", method.Type), ("is-static", method.IsStatic ? "true" : "false"));
                     lines.Add($"<div class=\"ea-row-notes-widget\" data-row-id=\"{rowId}\">{viewHtml}</div>");
                     lines.Add(string.Empty);
@@ -202,7 +207,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                 {
                     var rowId = $"tag-{tvIdx++}";
                     var (viewHtml, editRowHtml) = BuildRowNotesWidget(
-                        rowId, tv.Notes, "tagged-value", "table-row", element.Id, wikiRelPath, ctx.ApiPort, 3,
+                        rowId, tv.Notes, "tagged-value", "table-row", element.Id, wikiRelPathHtml, ctx.ApiPort, ctx.ApiToken, 3,
                         ("tag-name", tv.Name), ("tag-value", tv.Value));
                     lines.Add($"<tr><td>{HtmlEscape(tv.Name)}</td><td>{HtmlEscape(tv.Value)}</td><td>{viewHtml}</td></tr>");
                     lines.Add(editRowHtml);
@@ -419,8 +424,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
     private static string JsonEscape(string s) =>
         s.Replace("\\", "\\\\").Replace("\"", "\\\"").Replace("\r", "").Replace("\n", " ").Replace("\t", " ");
 
-    private static string HtmlEscape(string s) =>
-        (s ?? string.Empty).Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;");
+    internal static string HtmlEscape(string s) =>
+        (s ?? string.Empty).Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;").Replace("'", "&#39;");
 
     /// <summary>
     /// Builds the view span + hidden edit surface for one row-level description editor (attribute,
@@ -433,7 +438,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
     /// </summary>
     private static (string ViewHtml, string EditSurfaceHtml) BuildRowNotesWidget(
         string rowId, string? notesValue, string kind, string surface, int elementId,
-        string wikiRelPath, int apiPort, int colspan,
+        string wikiRelPathHtml, int apiPort, string apiToken, int colspan,
         params (string Attr, string Value)[] matchAttrs)
     {
         var normalized = FrontmatterParser.NormalizeNotesHtml(notesValue);
@@ -444,7 +449,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             $"<span class=\"ea-row-notes-text\"><!--ea-row-notes-start:{rowId}-->{normalized}<!--ea-row-notes-end:{rowId}--></span>" +
             $"<button class=\"ea-row-notes-edit-btn\" type=\"button\" data-surface=\"{surface}\" data-row-id=\"{rowId}\" data-notes-hash=\"{hash}\"" +
             $" data-kind=\"{kind}\" data-el-id=\"{elementId}\" {matchAttrsHtml}" +
-            $" data-file-path=\"{wikiRelPath}\" data-api-port=\"{apiPort}\" aria-label=\"Edit description\">&#9998;</button>";
+            $" data-file-path=\"{wikiRelPathHtml}\" data-api-port=\"{apiPort}\" data-api-token=\"{HtmlEscape(apiToken)}\" aria-label=\"Edit description\">&#9998;</button>";
 
         var editSurfaceHtml = surface == "table-row"
             ? $"<tr class=\"ea-row-edit\" data-row-id=\"{rowId}\" style=\"display:none\"><td colspan=\"{colspan}\"></td></tr>"
