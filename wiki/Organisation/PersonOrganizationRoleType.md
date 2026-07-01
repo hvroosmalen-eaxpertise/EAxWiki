@@ -3,6 +3,7 @@ ea_id: 746
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 2b45222f
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> PersonOrganizationRoleType
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-PersonOrganizationRoleType provides the controlled vocabulary of roles that a person can play within an organisation, such as "Primary Contact", "Secondary Contact", "Sustainability Director", "CEO", or "Plant Manager". Classifying person–organisation relationships by role type enables structured retrieval of the appropriate contact for a given operational context, such as emissions reporting queries or audit communications. The role vocabulary may be extended by individual implementations to meet sector-specific requirements.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="746" data-file-path="Organisation/PersonOrganizationRoleType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>PersonOrganizationRoleType provides the controlled vocabulary of roles that a person can play within an organisation, such as "Primary Contact", "Secondary Contact", "Sustainability Director", "CEO", or "Plant Manager". Classifying person–organisation relationships by role type enables structured retrieval of the appropriate contact for a given operational context, such as emissions reporting queries or audit communications. The role vocabulary may be extended by individual implementations to meet sector-specific requirements.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -57,4 +65,4 @@ PersonOrganizationRoleType provides the controlled vocabulary of roles that a pe
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

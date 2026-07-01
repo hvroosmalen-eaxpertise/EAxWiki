@@ -3,6 +3,7 @@ ea_id: 761
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 2396216d
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> EquipmentInstallation
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-EquipmentInstallation captures the temporal fact of a piece of Equipment being installed at a Facility to perform specific operational activities. The effective and termination datetimes allow the history of equipment deployments to be tracked, supporting accurate attribution of equipment-level emissions to the facility and period in which the equipment was operational. An Emission Inventory can be associated with a particular piece of equipment through this relationship, and the link to Equipment is optional for an Emission Inventory but required for a Facility.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="761" data-file-path="Facilities/EquipmentInstallation.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EquipmentInstallation captures the temporal fact of a piece of Equipment being installed at a Facility to perform specific operational activities. The effective and termination datetimes allow the history of equipment deployments to be tracked, supporting accurate attribution of equipment-level emissions to the facility and period in which the equipment was operational. An Emission Inventory can be associated with a particular piece of equipment through this relationship, and the link to Equipment is optional for an Emission Inventory but required for a Facility.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -62,4 +70,4 @@ EquipmentInstallation captures the temporal fact of a piece of Equipment being i
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

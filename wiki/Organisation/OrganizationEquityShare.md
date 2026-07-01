@@ -3,6 +3,7 @@ ea_id: 751
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: f764e0e6
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> OrganizationEquityShare
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-OrganizationEquityShare records the percentage equity stake that an organisation holds in a specific OrganizationalBoundary, supporting the equity-share consolidation approach for GHG accounting as defined in the GHG Protocol. Under the equity share approach, an organisation accounts for GHG emissions from operations in proportion to its equity share, regardless of operational control. This entity enables accurate attribution of partial ownership stakes to the correct boundary and also supports Scope 3 Category 15 (Investments) reporting under the GHG Protocol.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="751" data-file-path="Organisation/OrganizationEquityShare.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>OrganizationEquityShare records the percentage equity stake that an organisation holds in a specific OrganizationalBoundary, supporting the equity-share consolidation approach for GHG accounting as defined in the GHG Protocol. Under the equity share approach, an organisation accounts for GHG emissions from operations in proportion to its equity share, regardless of operational control. This entity enables accurate attribution of partial ownership stakes to the correct boundary and also supports Scope 3 Category 15 (Investments) reporting under the GHG Protocol.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -67,4 +75,4 @@ OrganizationEquityShare records the percentage equity stake that an organisation
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

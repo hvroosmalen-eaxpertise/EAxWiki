@@ -3,6 +3,7 @@ ea_id: 445
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 10a5ac24
 ---
 
 # <span class="sl" data-layer="strategy">Capability</span> ESG Performance Management
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
 
-Capability to systematically measure, monitor, and manage Environmental, Social, and Governance performance.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="445" data-file-path="Capabilities/ESG Performance Management.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Capability to systematically measure, monitor, and manage Environmental, Social, and Governance performance.         
 Encompasses KPI frameworks, data collection systems, performance analysis, and continuous improvement methodologies.         
-Enables evidence-based sustainability management and transparent reporting to stakeholders.
+Enables evidence-based sustainability management and transparent reporting to stakeholders.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -70,4 +78,4 @@ Enables evidence-based sustainability management and transparent reporting to st
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

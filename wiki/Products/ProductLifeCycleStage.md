@@ -3,6 +3,7 @@ ea_id: 816
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 5d47fbd9
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> ProductLifeCycleStage
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
-ProductLifeCycleStage is a reference entity that enumerates the individual stages in a product life cycle, such as Raw Material Extraction, Manufacturing, Distribution and Retail, Use, and End-of-Life. Stages are defined at the vocabulary level as reference data so that all products in the model share a consistent set of stage labels, enabling stage-level emission comparisons across products, industries, and reporting frameworks including ISO 14040/14044 and ESRS E1.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="816" data-file-path="Products/ProductLifeCycleStage.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>ProductLifeCycleStage is a reference entity that enumerates the individual stages in a product life cycle, such as Raw Material Extraction, Manufacturing, Distribution and Retail, Use, and End-of-Life. Stages are defined at the vocabulary level as reference data so that all products in the model share a consistent set of stage labels, enabling stage-level emission comparisons across products, industries, and reporting frameworks including ISO 14040/14044 and ESRS E1.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -52,4 +60,4 @@ ProductLifeCycleStage is a reference entity that enumerates the individual stage
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

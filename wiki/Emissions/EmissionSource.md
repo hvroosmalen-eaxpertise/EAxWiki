@@ -3,6 +3,7 @@ ea_id: 784
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 096fdc3a
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> EmissionSource
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionSource is a reference entity that classifies the physical origin from which greenhouse gas emissions are released, such as natural gas combustion, diesel combustion, refrigerant leakage, or wastewater treatment. Emission sources provide a more granular technical classification than the EmissionActivityType and are used in calculation model selection and emission factor lookup to narrow the applicable factor set to the correct physical process.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="784" data-file-path="Emissions/EmissionSource.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionSource is a reference entity that classifies the physical origin from which greenhouse gas emissions are released, such as natural gas combustion, diesel combustion, refrigerant leakage, or wastewater treatment. Emission sources provide a more granular technical classification than the EmissionActivityType and are used in calculation model selection and emission factor lookup to narrow the applicable factor set to the correct physical process.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -50,4 +58,4 @@ EmissionSource is a reference entity that classifies the physical origin from wh
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

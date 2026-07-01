@@ -3,6 +3,7 @@ ea_id: 448
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: d791c5a0
 ---
 
 # <span class="sl" data-layer="strategy">Capability</span> Sustainability Data and Reporting
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
 
-Capability to collect, validate, and report sustainability data in accordance with international standards.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="448" data-file-path="Capabilities/Sustainability Data and Reporting.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Capability to collect, validate, and report sustainability data in accordance with international standards.         
 Encompasses data management systems, assurance processes, and regulatory reporting compliance (e.g., GRI, TCFD, CSRD).         
-Ensures transparency and credibility of sustainability communications.
+Ensures transparency and credibility of sustainability communications.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -54,4 +62,4 @@ Ensures transparency and credibility of sustainability communications.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

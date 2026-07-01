@@ -3,6 +3,7 @@ ea_id: 463
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: a09846de
 ---
 
 # <span class="sl" data-layer="motivation">Assessment</span> ESG Score
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
 
-Composite score reflecting overall Environmental, Social, and Governance performance.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="463" data-file-path="Assessments/ESG Score.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Composite score reflecting overall Environmental, Social, and Governance performance.         
 May be based on internal assessment frameworks or external rating agency methodologies.         
-Provides aggregate view of sustainability performance for management and investor communication.
+Provides aggregate view of sustainability performance for management and investor communication.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -53,4 +61,4 @@ Provides aggregate view of sustainability performance for management and investo
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

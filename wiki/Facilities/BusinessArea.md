@@ -3,6 +3,7 @@ ea_id: 767
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: d536291e
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> BusinessArea
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-BusinessArea represents a location that is identified and defined by an organisation in which business is done by that organisation. It can be used to refer to the location of an office, a plant, a port, or any other operationally significant geographic area defined from the organisation's operational perspective. Unlike formal geopolitical entities, a business area is a master-data concept owned by the reporting organisation. Temporal validity attributes allow the business area definition to be tracked over time as the organisation's operational structure evolves.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="767" data-file-path="Facilities/BusinessArea.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>BusinessArea represents a location that is identified and defined by an organisation in which business is done by that organisation. It can be used to refer to the location of an office, a plant, a port, or any other operationally significant geographic area defined from the organisation's operational perspective. Unlike formal geopolitical entities, a business area is a master-data concept owned by the reporting organisation. Temporal validity attributes allow the business area definition to be tracked over time as the organisation's operational structure evolves.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -52,4 +60,4 @@ BusinessArea represents a location that is identified and defined by an organisa
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

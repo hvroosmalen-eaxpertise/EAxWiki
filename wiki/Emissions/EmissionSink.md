@@ -3,6 +3,7 @@ ea_id: 785
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: ac489c84
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> EmissionSink
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionSink is a reference entity that classifies a physical destination into which greenhouse gases are absorbed or sequestered, such as forest biomass, soil carbon, or geological storage. Sinks are used to record carbon removal activities alongside emission activities in an inventory, enabling net-emission calculations and supporting reporting of land-use, land-use-change, and forestry (LULUCF) activities as required by ISO 14064-1 and voluntary carbon standards.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="785" data-file-path="Emissions/EmissionSink.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionSink is a reference entity that classifies a physical destination into which greenhouse gases are absorbed or sequestered, such as forest biomass, soil carbon, or geological storage. Sinks are used to record carbon removal activities alongside emission activities in an inventory, enabling net-emission calculations and supporting reporting of land-use, land-use-change, and forestry (LULUCF) activities as required by ISO 14064-1 and voluntary carbon standards.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -50,4 +58,4 @@ EmissionSink is a reference entity that classifies a physical destination into w
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

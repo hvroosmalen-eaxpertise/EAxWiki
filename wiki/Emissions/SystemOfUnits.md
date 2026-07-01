@@ -3,6 +3,7 @@ ea_id: 796
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 284fbb15
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> SystemOfUnits
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-SystemOfUnits is a reference entity that identifies the measurement system to which a UnitOfMeasure belongs, such as the International System of Units (SI), the Imperial system, or US Customary units. Recording the system of units as a reference entity enables validation rules that prevent mixing incompatible unit systems in a single calculation and supports conversion path determination by identifying a common base for inter-system conversions.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="796" data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>SystemOfUnits is a reference entity that identifies the measurement system to which a UnitOfMeasure belongs, such as the International System of Units (SI), the Imperial system, or US Customary units. Recording the system of units as a reference entity enables validation rules that prevent mixing incompatible unit systems in a single calculation and supports conversion path determination by identifying a common base for inter-system conversions.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -50,4 +58,4 @@ SystemOfUnits is a reference entity that identifies the measurement system to wh
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

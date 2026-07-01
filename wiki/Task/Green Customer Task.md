@@ -3,6 +3,7 @@ ea_id: 125
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: 164ba5f7
 ---
 
 # <span class="sl" data-layer="edgy-ex">Task</span> Green Customer Task
@@ -15,11 +16,18 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="125" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Task/Green Customer Task.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="125" data-file-path="Task/Green Customer Task.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 Wat klanten duurzaam willen bereiken met hulp van het bedrijf.
 <ul>
 	<li>IKEA Buy Back – https://www.ikea.com – Stimuleert klanten om meubels terug te verkopen i.p.v. weggooien.</li>
 	<li>Vinted – https://www.vinted.com – Helpt klanten kleding tweedehands te kopen en verkopen.</li>
 </ul>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -64,4 +72,4 @@ Wat klanten duurzaam willen bereiken met hulp van het bedrijf.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

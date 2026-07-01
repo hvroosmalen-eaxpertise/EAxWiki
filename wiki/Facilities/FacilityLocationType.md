@@ -3,6 +3,7 @@ ea_id: 769
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 6e276453
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> FacilityLocationType
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-FacilityLocationType is a reference entity that classifies how a facility location is to be determined, distinguishing between the three location subtypes available in the model: Business Area, Geopolitical Entity, and Geospatial Location. This type classification drives which subtype entity provides the detailed location attributes for a given Location record and determines how geographic attribution is performed for emission reporting purposes.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="769" data-file-path="Facilities/FacilityLocationType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>FacilityLocationType is a reference entity that classifies how a facility location is to be determined, distinguishing between the three location subtypes available in the model: Business Area, Geopolitical Entity, and Geospatial Location. This type classification drives which subtype entity provides the detailed location attributes for a given Location record and determines how geographic attribution is performed for emission reporting purposes.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -50,4 +58,4 @@ FacilityLocationType is a reference entity that classifies how a facility locati
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

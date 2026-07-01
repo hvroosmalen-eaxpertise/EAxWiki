@@ -3,6 +3,7 @@ ea_id: 34
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: e5712f2d
 ---
 
 # <span class="sl" data-layer="edgy-id">Content</span> ESRS 1 General Requirements
@@ -15,8 +16,15 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="34" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS 1/ESRS 1 General Requirements.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="34" data-file-path="ESRS 1/ESRS 1 General Requirements.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 ESRS 1 defines general principles to be applied for reporting.
 For more information: <a href="$inet://https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F06%2520Draft%2520ESRS%25201%2520General%2520requirements%2520November%25202022.pdf"><font color="#0000ff"><u>EFRAG General Requirements</u></font></a>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -62,4 +70,4 @@ For more information: <a href="$inet://https://www.efrag.org/Assets/Download?ass
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:22*

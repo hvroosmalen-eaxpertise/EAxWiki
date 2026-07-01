@@ -3,6 +3,7 @@ ea_id: 772
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: eaed16e4
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> EmissionScopeType
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionScopeType is a reference entity that codifies the three GHG Protocol emission scopes used to classify where in a value chain an emission originates. Scope 1 covers direct emissions from sources owned or controlled by the organisation; Scope 2 covers indirect emissions from purchased energy; Scope 3 covers all other indirect emissions in the upstream and downstream value chain. This classification is mandatory for corporate GHG inventories and drives aggregation and boundary logic throughout the model.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="772" data-file-path="Emissions/EmissionScopeType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionScopeType is a reference entity that codifies the three GHG Protocol emission scopes used to classify where in a value chain an emission originates. Scope 1 covers direct emissions from sources owned or controlled by the organisation; Scope 2 covers indirect emissions from purchased energy; Scope 3 covers all other indirect emissions in the upstream and downstream value chain. This classification is mandatory for corporate GHG inventories and drives aggregation and boundary logic throughout the model.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -51,4 +59,4 @@ EmissionScopeType is a reference entity that codifies the three GHG Protocol emi
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

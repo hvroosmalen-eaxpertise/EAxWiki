@@ -3,6 +3,7 @@ ea_id: 350
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 81b78c8c
 ---
 
 # <span class="sl" data-layer="business">BusinessObject</span> ESRS E1 - Climate
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Climate change reporting standard
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="350" data-file-path="ESRS Navigator Stakeholder Map/ESRS E1 - Climate.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Climate change reporting standard</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -57,4 +65,4 @@ Climate change reporting standard
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

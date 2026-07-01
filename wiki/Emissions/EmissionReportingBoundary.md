@@ -3,6 +3,7 @@ ea_id: 808
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: f07327ef
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> EmissionReportingBoundary
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionReportingBoundary is a work-product-component that defines and documents the organisational, operational, and geographic boundary applied to a specific EmissionInventory or EmissionReport. It records the boundary-setting methodology, the entities included and excluded, and the rationale for any exclusions, providing the complete boundary documentation required by GHG Protocol and ISO 14064-1 first-party assertions and supporting the assurance engagement.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="808" data-file-path="Emissions/EmissionReportingBoundary.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionReportingBoundary is a work-product-component that defines and documents the organisational, operational, and geographic boundary applied to a specific EmissionInventory or EmissionReport. It records the boundary-setting methodology, the entities included and excluded, and the rationale for any exclusions, providing the complete boundary documentation required by GHG Protocol and ISO 14064-1 first-party assertions and supporting the assurance engagement.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -53,4 +61,4 @@ EmissionReportingBoundary is a work-product-component that defines and documents
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

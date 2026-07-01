@@ -3,6 +3,7 @@ ea_id: 461
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 693711b4
 ---
 
 # <span class="sl" data-layer="motivation">Outcome</span> Improved Long-term Profitability
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Outcomes](index.md)
 
-Enhanced financial performance over the long term through sustainability-driven efficiency gains, innovation, and risk mitigation.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="461" data-file-path="Outcomes/Improved Long-term Profitability.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Enhanced financial performance over the long term through sustainability-driven efficiency gains, innovation, and risk mitigation.         
 Demonstrates the business case for sustainability beyond short-term costs.         
-Supports sustainable value creation and investor returns.
+Supports sustainable value creation and investor returns.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -63,4 +71,4 @@ Supports sustainable value creation and investor returns.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

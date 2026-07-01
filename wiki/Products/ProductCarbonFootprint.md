@@ -3,6 +3,7 @@ ea_id: 812
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: e6e53ec1
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> ProductCarbonFootprint
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
-ProductCarbonFootprint is a work-product-component that records the quantified greenhouse gas emissions associated with a product within a defined system boundary, expressed per declared unit. The entity carries the full set of attributes required for WBCSD PACT-compliant data exchange, including biogenic carbon flows, land-use emissions, fossil carbon content, geography of production, allocation rules, assurance information, and cross-sectoral standards applied. It is the primary technical vehicle for sharing product-level Scope 3 emission data between organisations in a value chain.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="812" data-file-path="Products/ProductCarbonFootprint.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>ProductCarbonFootprint is a work-product-component that records the quantified greenhouse gas emissions associated with a product within a defined system boundary, expressed per declared unit. The entity carries the full set of attributes required for WBCSD PACT-compliant data exchange, including biogenic carbon flows, land-use emissions, fossil carbon content, geography of production, allocation rules, assurance information, and cross-sectoral standards applied. It is the primary technical vehicle for sharing product-level Scope 3 emission data between organisations in a value chain.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -92,4 +100,4 @@ ProductCarbonFootprint is a work-product-component that records the quantified g
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

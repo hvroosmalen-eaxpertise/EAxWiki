@@ -3,6 +3,7 @@ ea_id: 810
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 5d96fe61
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> Product
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
-Product is a master-data entity that represents a physical good or service whose carbon footprint can be measured and declared. It acts as the anchor for all product-level sustainability data, linking the product to its classification codes (CentralProductClassificationCode), its product carbon footprint records (ProductFootprint), and the life-cycle stages used to structure its footprint assessment. In a supply-chain context, Product enables data exchange between buyer and supplier organisations under the WBCSD PACT framework.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="810" data-file-path="Products/Product.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Product is a master-data entity that represents a physical good or service whose carbon footprint can be measured and declared. It acts as the anchor for all product-level sustainability data, linking the product to its classification codes (CentralProductClassificationCode), its product carbon footprint records (ProductFootprint), and the life-cycle stages used to structure its footprint assessment. In a supply-chain context, Product enables data exchange between buyer and supplier organisations under the WBCSD PACT framework.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -56,4 +64,4 @@ Product is a master-data entity that represents a physical good or service whose
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

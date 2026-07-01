@@ -3,6 +3,7 @@ ea_id: 466
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 3f4fec13
 ---
 
 # <span class="sl" data-layer="motivation">Assessment</span> Sustainable Revenue Ratio
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
 
-Percentage of total revenue derived from products and services classified as sustainable according to defined criteria.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="466" data-file-path="Assessments/Sustainable Revenue Ratio.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Percentage of total revenue derived from products and services classified as sustainable according to defined criteria.         
 Measures the organization''s transition toward a sustainable business portfolio.         
-Indicates strategic alignment between commercial success and sustainability objectives.
+Indicates strategic alignment between commercial success and sustainability objectives.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -53,4 +61,4 @@ Indicates strategic alignment between commercial success and sustainability obje
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

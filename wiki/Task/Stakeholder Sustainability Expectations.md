@@ -3,6 +3,7 @@ ea_id: 124
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: 8a7f62f7
 ---
 
 # <span class="sl" data-layer="edgy-ex">Task</span> Stakeholder Sustainability Expectations
@@ -15,11 +16,18 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="124" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Task/Stakeholder Sustainability Expectations.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="124" data-file-path="Task/Stakeholder Sustainability Expectations.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 Duurzaamheidsverwachtingen van stakeholders.
 <ul>
 	<li>Interface – https://www.interface.com – Betrekt medewerkers in duurzaamheidsprogramma's.</li>
 	<li>Fairphone – https://www.fairphone.com – Integreert wensen van bewuste consumenten in duurzaam ontwerp.</li>
 </ul>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -66,4 +74,4 @@ Duurzaamheidsverwachtingen van stakeholders.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

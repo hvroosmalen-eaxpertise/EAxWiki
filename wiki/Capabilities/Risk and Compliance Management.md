@@ -3,6 +3,7 @@ ea_id: 450
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 2b04585c
 ---
 
 # <span class="sl" data-layer="strategy">Capability</span> Risk and Compliance Management
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
 
-Capability to identify, assess, and manage sustainability-related risks and ensure regulatory compliance.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="450" data-file-path="Capabilities/Risk and Compliance Management.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Capability to identify, assess, and manage sustainability-related risks and ensure regulatory compliance.         
 Integrates ESG risks into enterprise risk management and implements compliance monitoring systems.         
-Prevents legal violations, reputational damage, and operational disruptions from sustainability issues.
+Prevents legal violations, reputational damage, and operational disruptions from sustainability issues.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -54,4 +62,4 @@ Prevents legal violations, reputational damage, and operational disruptions from
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

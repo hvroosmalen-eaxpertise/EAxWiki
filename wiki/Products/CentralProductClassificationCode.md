@@ -3,6 +3,7 @@ ea_id: 815
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 253bacf7
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> CentralProductClassificationCode
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
-CentralProductClassificationCode is a reference entity that provides a classification code from the United Nations Central Product Classification (UN CPC) or another recognised product taxonomy used to categorise a product for regulatory, statistical, or supply-chain matching purposes. Linking a product to its CPC code supports automated mapping to applicable product category rules, sector-specific emission factors, and ESRS sector-classification requirements.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="815" data-file-path="Products/CentralProductClassificationCode.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>CentralProductClassificationCode is a reference entity that provides a classification code from the United Nations Central Product Classification (UN CPC) or another recognised product taxonomy used to categorise a product for regulatory, statistical, or supply-chain matching purposes. Linking a product to its CPC code supports automated mapping to applicable product category rules, sector-specific emission factors, and ESRS sector-classification requirements.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -60,4 +68,4 @@ CentralProductClassificationCode is a reference entity that provides a classific
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

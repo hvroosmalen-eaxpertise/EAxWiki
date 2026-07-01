@@ -3,6 +3,7 @@ ea_id: 742
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 8fe38e0a
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> OrganizationAssociationType
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-OrganizationAssociationType provides the controlled vocabulary of association types that can exist between two organisations, such as "Auditor", "Department", "Subsidiary", "Verifier", "Branch", or "Affiliate". Classifying association types enables structured querying of organisational networks and supports automated determination of consolidation scope in GHG inventories. This is not a hierarchical association and can have many-to-many relationships, so the same organisation may be classified as both a subsidiary of one entity and a verifier for another simultaneously.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="742" data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>OrganizationAssociationType provides the controlled vocabulary of association types that can exist between two organisations, such as "Auditor", "Department", "Subsidiary", "Verifier", "Branch", or "Affiliate". Classifying association types enables structured querying of organisational networks and supports automated determination of consolidation scope in GHG inventories. This is not a hierarchical association and can have many-to-many relationships, so the same organisation may be classified as both a subsidiary of one entity and a verifier for another simultaneously.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -57,4 +65,4 @@ OrganizationAssociationType provides the controlled vocabulary of association ty
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

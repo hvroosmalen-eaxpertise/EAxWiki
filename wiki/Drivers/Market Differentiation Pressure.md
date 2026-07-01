@@ -3,6 +3,7 @@ ea_id: 432
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 34f57aa0
 ---
 
 # <span class="sl" data-layer="motivation">Driver</span> Market Differentiation Pressure
@@ -13,8 +14,15 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
 
-Competitive pressure to differentiate through sustainability leadership and eco-innovation.         
-Sustainable products and services increasingly become market differentiators and customer preferences shift toward responsible brands.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="432" data-file-path="Drivers/Market Differentiation Pressure.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Competitive pressure to differentiate through sustainability leadership and eco-innovation.         
+Sustainable products and services increasingly become market differentiators and customer preferences shift toward responsible brands.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -50,4 +58,4 @@ Sustainable products and services increasingly become market differentiators and
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

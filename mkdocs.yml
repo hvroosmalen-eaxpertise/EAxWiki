@@ -22,6 +22,7 @@ extra_javascript:
   - cytoscape.min.js
   - graph-init.js
   - status-editor.js
+  - notes-editor.js
 
 plugins:
   - search

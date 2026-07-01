@@ -3,6 +3,7 @@ ea_id: 459
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 091bb51d
 ---
 
 # <span class="sl" data-layer="motivation">Outcome</span> Lower Operational Risk
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Outcomes](index.md)
 
-Reduction in operational risks related to environmental incidents, social controversies, and governance failures.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="459" data-file-path="Outcomes/Lower Operational Risk.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Reduction in operational risks related to environmental incidents, social controversies, and governance failures.         
 Decreases likelihood of regulatory penalties, supply chain disruptions, and operational crises.         
-Enhances business resilience and operational continuity.
+Enhances business resilience and operational continuity.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -64,4 +72,4 @@ Enhances business resilience and operational continuity.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

@@ -3,6 +3,7 @@ ea_id: 326
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: d5847054
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> European Commission
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Issues CSRD directive and ESRS regulations
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="326" data-file-path="ESRS Navigator Stakeholder Map/European Commission.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Issues CSRD directive and ESRS regulations</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -58,4 +66,4 @@ Issues CSRD directive and ESRS regulations
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

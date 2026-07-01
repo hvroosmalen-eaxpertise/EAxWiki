@@ -3,10 +3,16 @@
 ## Summary
 
 <div class="status-bar-container">
+  <div class="status-bar status-approved" style="width: 5%">Approved 1</div>
+</div>
+<div class="status-bar-container">
+  <div class="status-bar status-implemented" style="width: 5%">Implemented 1</div>
+</div>
+<div class="status-bar-container">
   <div class="status-bar status-mandatory" style="width: 5%">Mandatory 1</div>
 </div>
 <div class="status-bar-container">
-  <div class="status-bar status-proposed" style="width: 100%">Proposed 270</div>
+  <div class="status-bar status-proposed" style="width: 100%">Proposed 268</div>
 </div>
 
 *181 elements have no status set.*
@@ -14,43 +20,43 @@
 
 ## By Package
 
-| Package | Mandatory | Proposed | Total |
-|---|:---:|:---:|:---:|
-| [Asset](../Asset/index.md) | <a href="#pkg_asset_mandatory">1</a> | <a href="#pkg_asset_proposed">5</a> | **6** |
-| [Capability](../Capability/index.md) | — | <a href="#pkg_capability_proposed">1</a> | **1** |
-| [Channel](../Channel/index.md) | — | <a href="#pkg_channel_proposed">3</a> | **3** |
-| [Content](../Content/index.md) | — | <a href="#pkg_content_proposed">3</a> | **3** |
-| [ESRS 1](../ESRS 1/index.md) | — | <a href="#pkg_esrs_1_proposed">1</a> | **1** |
-| [ESRS 2](../ESRS 2/index.md) | — | <a href="#pkg_esrs_2_proposed">1</a> | **1** |
-| [ESRS E1](../ESRS E1/index.md) | — | <a href="#pkg_esrs_e1_proposed">1</a> | **1** |
-| [ESRS E2](../ESRS E2/index.md) | — | <a href="#pkg_esrs_e2_proposed">1</a> | **1** |
-| [ESRS E3](../ESRS E3/index.md) | — | <a href="#pkg_esrs_e3_proposed">1</a> | **1** |
-| [ESRS E4](../ESRS E4/index.md) | — | <a href="#pkg_esrs_e4_proposed">1</a> | **1** |
-| [ESRS E5](../ESRS E5/index.md) | — | <a href="#pkg_esrs_e5_proposed">1</a> | **1** |
-| [ESRS G1](../ESRS G1/index.md) | — | <a href="#pkg_esrs_g1_proposed">1</a> | **1** |
-| [ESRS Goals and Objectives](../ESRS Goals and Objectives/index.md) | — | <a href="#pkg_esrs_goals_and_objectives_proposed">5</a> | **5** |
-| [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) | — | <a href="#pkg_esrs_navigator_stakeholder_map_proposed">1</a> | **1** |
-| [ESRS S1](../ESRS S1/index.md) | — | <a href="#pkg_esrs_s1_proposed">1</a> | **1** |
-| [ESRS S2](../ESRS S2/index.md) | — | <a href="#pkg_esrs_s2_proposed">1</a> | **1** |
-| [ESRS S3](../ESRS S3/index.md) | — | <a href="#pkg_esrs_s3_proposed">1</a> | **1** |
-| [ESRS S4](../ESRS S4/index.md) | — | <a href="#pkg_esrs_s4_proposed">1</a> | **1** |
-| [ESRS Sector Classification](../ESRS Sector Classification/index.md) | — | <a href="#pkg_esrs_sector_classification_proposed">1</a> | **1** |
-| [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) | — | <a href="#pkg_european_sustainability_reporting_standards_proposed">1</a> | **1** |
-| [Information Collection and Model Creation](../Information Collection and Model Creation/index.md) | — | <a href="#pkg_information_collection_and_model_creation_proposed">23</a> | **23** |
-| [Introduction EurSuRA](../Introduction EurSuRA/index.md) | — | <a href="#pkg_introduction_eursura_proposed">24</a> | **24** |
-| [Journey](../Journey/index.md) | — | <a href="#pkg_journey_proposed">1</a> | **1** |
-| [Metrics](../Metrics/index.md) | — | <a href="#pkg_metrics_proposed">72</a> | **72** |
-| [People](../People/index.md) | — | <a href="#pkg_people_proposed">51</a> | **51** |
-| [Private Parties](../Private Parties/index.md) | — | <a href="#pkg_private_parties_proposed">2</a> | **2** |
-| [Process](../Process/index.md) | — | <a href="#pkg_process_proposed">3</a> | **3** |
-| [Purpose](../Purpose/index.md) | — | <a href="#pkg_purpose_proposed">2</a> | **2** |
-| [Reference Documents](../Reference Documents/index.md) | — | <a href="#pkg_reference_documents_proposed">2</a> | **2** |
-| [Reference Websites](../Reference Websites/index.md) | — | <a href="#pkg_reference_websites_proposed">1</a> | **1** |
-| [Stories](../Stories/index.md) | — | <a href="#pkg_stories_proposed">3</a> | **3** |
-| [Story](../Story/index.md) | — | <a href="#pkg_story_proposed">3</a> | **3** |
-| [Sustainability Development Goals](../Sustainability Development Goals/index.md) | — | <a href="#pkg_sustainability_development_goals_proposed">25</a> | **25** |
-| [Task](../Task/index.md) | — | <a href="#pkg_task_proposed">26</a> | **26** |
-| **Total** | **1** | **270** | **271** |
+| Package | Approved | Implemented | Mandatory | Proposed | Total |
+|---|:---:|:---:|:---:|:---:|:---:|
+| [Asset](../Asset/index.md) | — | — | <a href="#pkg_asset_mandatory">1</a> | <a href="#pkg_asset_proposed">5</a> | **6** |
+| [Capability](../Capability/index.md) | — | — | — | <a href="#pkg_capability_proposed">1</a> | **1** |
+| [Channel](../Channel/index.md) | — | — | — | <a href="#pkg_channel_proposed">3</a> | **3** |
+| [Content](../Content/index.md) | — | — | — | <a href="#pkg_content_proposed">3</a> | **3** |
+| [ESRS 1](../ESRS 1/index.md) | — | — | — | <a href="#pkg_esrs_1_proposed">1</a> | **1** |
+| [ESRS 2](../ESRS 2/index.md) | — | — | — | <a href="#pkg_esrs_2_proposed">1</a> | **1** |
+| [ESRS E1](../ESRS E1/index.md) | — | — | — | <a href="#pkg_esrs_e1_proposed">1</a> | **1** |
+| [ESRS E2](../ESRS E2/index.md) | — | — | — | <a href="#pkg_esrs_e2_proposed">1</a> | **1** |
+| [ESRS E3](../ESRS E3/index.md) | — | — | — | <a href="#pkg_esrs_e3_proposed">1</a> | **1** |
+| [ESRS E4](../ESRS E4/index.md) | — | — | — | <a href="#pkg_esrs_e4_proposed">1</a> | **1** |
+| [ESRS E5](../ESRS E5/index.md) | — | — | — | <a href="#pkg_esrs_e5_proposed">1</a> | **1** |
+| [ESRS G1](../ESRS G1/index.md) | — | — | — | <a href="#pkg_esrs_g1_proposed">1</a> | **1** |
+| [ESRS Goals and Objectives](../ESRS Goals and Objectives/index.md) | — | — | — | <a href="#pkg_esrs_goals_and_objectives_proposed">5</a> | **5** |
+| [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) | <a href="#pkg_esrs_navigator_stakeholder_map_approved">1</a> | — | — | — | **1** |
+| [ESRS S1](../ESRS S1/index.md) | — | — | — | <a href="#pkg_esrs_s1_proposed">1</a> | **1** |
+| [ESRS S2](../ESRS S2/index.md) | — | — | — | <a href="#pkg_esrs_s2_proposed">1</a> | **1** |
+| [ESRS S3](../ESRS S3/index.md) | — | — | — | <a href="#pkg_esrs_s3_proposed">1</a> | **1** |
+| [ESRS S4](../ESRS S4/index.md) | — | — | — | <a href="#pkg_esrs_s4_proposed">1</a> | **1** |
+| [ESRS Sector Classification](../ESRS Sector Classification/index.md) | — | — | — | <a href="#pkg_esrs_sector_classification_proposed">1</a> | **1** |
+| [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) | — | — | — | <a href="#pkg_european_sustainability_reporting_standards_proposed">1</a> | **1** |
+| [Information Collection and Model Creation](../Information Collection and Model Creation/index.md) | — | — | — | <a href="#pkg_information_collection_and_model_creation_proposed">23</a> | **23** |
+| [Introduction EurSuRA](../Introduction EurSuRA/index.md) | — | — | — | <a href="#pkg_introduction_eursura_proposed">24</a> | **24** |
+| [Journey](../Journey/index.md) | — | — | — | <a href="#pkg_journey_proposed">1</a> | **1** |
+| [Metrics](../Metrics/index.md) | — | — | — | <a href="#pkg_metrics_proposed">72</a> | **72** |
+| [People](../People/index.md) | — | — | — | <a href="#pkg_people_proposed">51</a> | **51** |
+| [Private Parties](../Private Parties/index.md) | — | — | — | <a href="#pkg_private_parties_proposed">2</a> | **2** |
+| [Process](../Process/index.md) | — | — | — | <a href="#pkg_process_proposed">3</a> | **3** |
+| [Purpose](../Purpose/index.md) | — | — | — | <a href="#pkg_purpose_proposed">2</a> | **2** |
+| [Reference Documents](../Reference Documents/index.md) | — | <a href="#pkg_reference_documents_implemented">1</a> | — | <a href="#pkg_reference_documents_proposed">1</a> | **2** |
+| [Reference Websites](../Reference Websites/index.md) | — | — | — | <a href="#pkg_reference_websites_proposed">1</a> | **1** |
+| [Stories](../Stories/index.md) | — | — | — | <a href="#pkg_stories_proposed">3</a> | **3** |
+| [Story](../Story/index.md) | — | — | — | <a href="#pkg_story_proposed">3</a> | **3** |
+| [Sustainability Development Goals](../Sustainability Development Goals/index.md) | — | — | — | <a href="#pkg_sustainability_development_goals_proposed">25</a> | **25** |
+| [Task](../Task/index.md) | — | — | — | <a href="#pkg_task_proposed">26</a> | **26** |
+| **Total** | **1** | **1** | **1** | **268** | **271** |
 
 <details class="status-details" id="pkg_asset_mandatory">
   <summary>Asset &mdash; Mandatory (1)</summary>
@@ -162,11 +168,11 @@
   <li><a href="../ESRS Goals and Objectives/Standardize ESG reporting and enhance transparency and comparability in Europe..html">Standardize ESG reporting and enhance transparency and comparability in Europe. </a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
-<details class="status-details" id="pkg_esrs_navigator_stakeholder_map_proposed">
-  <summary>ESRS Navigator Stakeholder Map &mdash; Proposed (1)</summary>
+<details class="status-details" id="pkg_esrs_navigator_stakeholder_map_approved">
+  <summary>ESRS Navigator Stakeholder Map &mdash; Approved (1)</summary>
 
 <ul>
-  <li><a href="../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).html">Affected Communities (ESRS S3)</a> <span class="status-badge status-proposed">Proposed</span></li>
+  <li><a href="../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).html">Affected Communities (ESRS S3)</a> <span class="status-badge status-approved">Approved</span></li>
 </ul>
 </details>
 <details class="status-details" id="pkg_esrs_s1_proposed">
@@ -437,11 +443,17 @@
   <li><a href="../Purpose/Sustainability Identity.html">Sustainability Identity</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
-<details class="status-details" id="pkg_reference_documents_proposed">
-  <summary>Reference Documents &mdash; Proposed (2)</summary>
+<details class="status-details" id="pkg_reference_documents_implemented">
+  <summary>Reference Documents &mdash; Implemented (1)</summary>
 
 <ul>
-  <li><a href="../Reference Documents/Road to Net Zero.html">Road to Net Zero</a> <span class="status-badge status-proposed">Proposed</span></li>
+  <li><a href="../Reference Documents/Road to Net Zero.html">Road to Net Zero</a> <span class="status-badge status-implemented">Implemented</span></li>
+</ul>
+</details>
+<details class="status-details" id="pkg_reference_documents_proposed">
+  <summary>Reference Documents &mdash; Proposed (1)</summary>
+
+<ul>
   <li><a href="../Reference Documents/Strategic Sustainability Management.html">Strategic Sustainability Management</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
@@ -536,30 +548,30 @@
 
 ## By Type
 
-| Type | Mandatory | Proposed | Total |
-|---|:---:|:---:|:---:|
-| Asset | <a href="#type_asset_mandatory">1</a> | <a href="#type_asset_proposed">16</a> | **17** |
-| Brand | — | <a href="#type_brand_proposed">1</a> | **1** |
-| Capability | — | <a href="#type_capability_proposed">4</a> | **4** |
-| Channel | — | <a href="#type_channel_proposed">9</a> | **9** |
-| Content | — | <a href="#type_content_proposed">16</a> | **16** |
-| Journey | — | <a href="#type_journey_proposed">1</a> | **1** |
-| Metric | — | <a href="#type_metric_proposed">47</a> | **47** |
-| NavigationCell | — | <a href="#type_navigationcell_proposed">6</a> | **6** |
-| Object | — | <a href="#type_object_proposed">2</a> | **2** |
-| Organisation | — | <a href="#type_organisation_proposed">1</a> | **1** |
-| Outcome | — | <a href="#type_outcome_proposed">11</a> | **11** |
-| People | — | <a href="#type_people_proposed">60</a> | **60** |
-| Process | — | <a href="#type_process_proposed">6</a> | **6** |
-| Product | — | <a href="#type_product_proposed">6</a> | **6** |
-| Purpose | — | <a href="#type_purpose_proposed">22</a> | **22** |
-| Resource | — | <a href="#type_resource_proposed">3</a> | **3** |
-| Stakeholder | — | <a href="#type_stakeholder_proposed">1</a> | **1** |
-| Story | — | <a href="#type_story_proposed">8</a> | **8** |
-| Tag | — | <a href="#type_tag_proposed">19</a> | **19** |
-| Task | — | <a href="#type_task_proposed">26</a> | **26** |
-| Uncategorized | — | <a href="#type_uncategorized_proposed">5</a> | **5** |
-| **Total** | **1** | **270** | **271** |
+| Type | Approved | Implemented | Mandatory | Proposed | Total |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Asset | — | — | <a href="#type_asset_mandatory">1</a> | <a href="#type_asset_proposed">16</a> | **17** |
+| Brand | — | — | — | <a href="#type_brand_proposed">1</a> | **1** |
+| Capability | — | — | — | <a href="#type_capability_proposed">4</a> | **4** |
+| Channel | — | — | — | <a href="#type_channel_proposed">9</a> | **9** |
+| Content | — | — | — | <a href="#type_content_proposed">16</a> | **16** |
+| Journey | — | — | — | <a href="#type_journey_proposed">1</a> | **1** |
+| Metric | — | — | — | <a href="#type_metric_proposed">47</a> | **47** |
+| NavigationCell | — | — | — | <a href="#type_navigationcell_proposed">6</a> | **6** |
+| Object | — | — | — | <a href="#type_object_proposed">2</a> | **2** |
+| Organisation | — | — | — | <a href="#type_organisation_proposed">1</a> | **1** |
+| Outcome | — | — | — | <a href="#type_outcome_proposed">11</a> | **11** |
+| People | — | — | — | <a href="#type_people_proposed">60</a> | **60** |
+| Process | — | — | — | <a href="#type_process_proposed">6</a> | **6** |
+| Product | — | — | — | <a href="#type_product_proposed">6</a> | **6** |
+| Purpose | — | — | — | <a href="#type_purpose_proposed">22</a> | **22** |
+| Resource | — | <a href="#type_resource_implemented">1</a> | — | <a href="#type_resource_proposed">2</a> | **3** |
+| Stakeholder | <a href="#type_stakeholder_approved">1</a> | — | — | — | **1** |
+| Story | — | — | — | <a href="#type_story_proposed">8</a> | **8** |
+| Tag | — | — | — | <a href="#type_tag_proposed">19</a> | **19** |
+| Task | — | — | — | <a href="#type_task_proposed">26</a> | **26** |
+| Uncategorized | — | — | — | <a href="#type_uncategorized_proposed">5</a> | **5** |
+| **Total** | **1** | **1** | **1** | **268** | **271** |
 
 <details class="status-details" id="type_asset_mandatory">
   <summary>Asset &mdash; Mandatory (1)</summary>
@@ -866,20 +878,26 @@
   <li><a href="../Purpose/Sustainability Identity.html">Sustainability Identity</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
-<details class="status-details" id="type_resource_proposed">
-  <summary>Resource &mdash; Proposed (3)</summary>
+<details class="status-details" id="type_resource_implemented">
+  <summary>Resource &mdash; Implemented (1)</summary>
 
 <ul>
-  <li><a href="../Reference Documents/Road to Net Zero.html">Road to Net Zero</a> <span class="status-badge status-proposed">Proposed</span></li>
+  <li><a href="../Reference Documents/Road to Net Zero.html">Road to Net Zero</a> <span class="status-badge status-implemented">Implemented</span></li>
+</ul>
+</details>
+<details class="status-details" id="type_resource_proposed">
+  <summary>Resource &mdash; Proposed (2)</summary>
+
+<ul>
   <li><a href="../Reference Websites/SDG Academy.html">SDG Academy</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Reference Documents/Strategic Sustainability Management.html">Strategic Sustainability Management</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
-<details class="status-details" id="type_stakeholder_proposed">
-  <summary>Stakeholder &mdash; Proposed (1)</summary>
+<details class="status-details" id="type_stakeholder_approved">
+  <summary>Stakeholder &mdash; Approved (1)</summary>
 
 <ul>
-  <li><a href="../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).html">Affected Communities (ESRS S3)</a> <span class="status-badge status-proposed">Proposed</span></li>
+  <li><a href="../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).html">Affected Communities (ESRS S3)</a> <span class="status-badge status-approved">Approved</span></li>
 </ul>
 </details>
 <details class="status-details" id="type_story_proposed">
@@ -967,4 +985,4 @@
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

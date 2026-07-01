@@ -3,6 +3,7 @@ ea_id: 452
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: b56870b8
 ---
 
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Embed Sustainability in Investment Portfolio
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
 
-Initiative to integrate sustainability criteria into capital allocation and investment decision-making processes.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="452" data-file-path="Courses of Action/Embed Sustainability in Investment Portfolio.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Initiative to integrate sustainability criteria into capital allocation and investment decision-making processes.         
 Applies ESG screening, impact assessment, and sustainability risk evaluation to investment portfolios.         
-Ensures financial resources support strategic sustainability objectives.
+Ensures financial resources support strategic sustainability objectives.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -61,4 +69,4 @@ Ensures financial resources support strategic sustainability objectives.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

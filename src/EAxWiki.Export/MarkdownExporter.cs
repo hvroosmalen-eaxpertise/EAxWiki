@@ -86,6 +86,7 @@ public class MarkdownExporter : IWikiExporter
                 infrastructure.WriteExtraCssAsync(outputPath),
                 infrastructure.WriteGraphScriptsAsync(outputPath),
                 infrastructure.WriteStatusEditorScriptAsync(outputPath),
+                infrastructure.WriteNotesEditorScriptAsync(outputPath),
             };
 
             if (reader != null)

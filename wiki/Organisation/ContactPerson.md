@@ -3,6 +3,7 @@ ea_id: 738
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 2476c091
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> ContactPerson
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-ContactPerson represents an individual who is designated as the primary or secondary contact for an organisation's emissions reporting activities. Contact persons may include sustainability officers, environmental compliance managers, data stewards, or external auditors. The entity captures sufficient name components to support formal correspondence, including title, first, middle, last, and full name, as well as a phone number for direct communication. A contact person is associated with an address for postal or physical contact purposes.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="738" data-file-path="Organisation/ContactPerson.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>ContactPerson represents an individual who is designated as the primary or secondary contact for an organisation's emissions reporting activities. Contact persons may include sustainability officers, environmental compliance managers, data stewards, or external auditors. The entity captures sufficient name components to support formal correspondence, including title, first, middle, last, and full name, as well as a phone number for direct communication. A contact person is associated with an address for postal or physical contact purposes.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -72,4 +80,4 @@ ContactPerson represents an individual who is designated as the primary or secon
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

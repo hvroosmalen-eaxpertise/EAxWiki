@@ -3,6 +3,7 @@ ea_id: 763
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: a10e5b45
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> EmissionActivityParameterValue
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-EmissionActivityParameterValue records the actual measured or estimated value of an EmissionActivityParameter at a specific moment in time. This entity provides the time-series data that feeds into emission calculation models, capturing how activity data values evolve across reporting periods. The datetime attribute records the precise moment the value was measured or estimated, enabling time-series analysis and period-level aggregation in inventory calculations.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="763" data-file-path="Facilities/EmissionActivityParameterValue.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionActivityParameterValue records the actual measured or estimated value of an EmissionActivityParameter at a specific moment in time. This entity provides the time-series data that feeds into emission calculation models, capturing how activity data values evolve across reporting periods. The datetime attribute records the precise moment the value was measured or estimated, enabling time-series analysis and period-level aggregation in inventory calculations.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -64,4 +72,4 @@ EmissionActivityParameterValue records the actual measured or estimated value of
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

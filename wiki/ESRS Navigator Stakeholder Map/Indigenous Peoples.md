@@ -3,6 +3,7 @@ ea_id: 314
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 3836bcb3
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Indigenous Peoples
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Indigenous communities where applicable
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="314" data-file-path="ESRS Navigator Stakeholder Map/Indigenous Peoples.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Indigenous communities where applicable</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -49,4 +57,4 @@ Indigenous communities where applicable
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

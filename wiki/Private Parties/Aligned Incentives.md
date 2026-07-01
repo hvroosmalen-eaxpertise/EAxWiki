@@ -3,6 +3,7 @@ ea_id: 567
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: d0bceb96
 ---
 
 # <span class="sl" data-layer="edgy-pe">People</span> Aligned Incentives
@@ -15,7 +16,14 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="567" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Private Parties/Aligned Incentives.md" data-api-port="8001"></div>
 
-https://alignedincentives.com/our-story/
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="567" data-file-path="Private Parties/Aligned Incentives.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>https://alignedincentives.com/our-story/</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ### Appears on Diagrams
 
@@ -27,4 +35,4 @@ https://alignedincentives.com/our-story/
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

@@ -3,6 +3,7 @@ ea_id: 431
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: b5dcb834
 ---
 
 # <span class="sl" data-layer="motivation">Driver</span> Climate Risk
@@ -13,8 +14,15 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
 
-Physical and transition risks associated with climate change, including extreme weather events, resource scarcity, and carbon pricing.         
-Poses material financial risks that require strategic risk management and adaptation measures.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="431" data-file-path="Drivers/Climate Risk.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Physical and transition risks associated with climate change, including extreme weather events, resource scarcity, and carbon pricing.         
+Poses material financial risks that require strategic risk management and adaptation measures.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -51,4 +59,4 @@ Poses material financial risks that require strategic risk management and adapta
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

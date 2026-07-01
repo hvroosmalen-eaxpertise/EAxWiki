@@ -3,6 +3,7 @@ ea_id: 529
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: 7ca9b229
 ---
 
 # <span class="sl" data-layer="edgy-pe">People</span> Suppliers
@@ -15,7 +16,14 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="529" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="People/Suppliers.md" data-api-port="8001"></div>
 
-All upstream suppliers in the value chain
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="529" data-file-path="People/Suppliers.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>All upstream suppliers in the value chain</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Relationships
 
@@ -57,4 +65,4 @@ All upstream suppliers in the value chain
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

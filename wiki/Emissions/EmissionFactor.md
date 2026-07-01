@@ -3,6 +3,7 @@ ea_id: 780
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 862b6f05
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> EmissionFactor
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionFactor is a master-data entity that records a single quantified coefficient expressing the amount of greenhouse gas emitted per unit of an activity parameter, drawn from a recognised emission factor source. Factors are typed by the component category they represent (e.g. CO2 fossil, CH4), scoped by applicability (geography, activity type, technology, time period), and versioned to support year-over-year comparability. They form the primary input to activity-based calculation models.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="780" data-file-path="Emissions/EmissionFactor.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionFactor is a master-data entity that records a single quantified coefficient expressing the amount of greenhouse gas emitted per unit of an activity parameter, drawn from a recognised emission factor source. Factors are typed by the component category they represent (e.g. CO2 fossil, CH4), scoped by applicability (geography, activity type, technology, time period), and versioned to support year-over-year comparability. They form the primary input to activity-based calculation models.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -76,4 +84,4 @@ EmissionFactor is a master-data entity that records a single quantified coeffici
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

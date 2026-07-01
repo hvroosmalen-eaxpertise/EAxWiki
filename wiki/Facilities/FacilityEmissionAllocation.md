@@ -3,6 +3,7 @@ ea_id: 764
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 8ef0c98f
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> FacilityEmissionAllocation
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-FacilityEmissionAllocation records the allocation of a specific emission quantity to a specific Facility, expressed as a percentage of the total emission quantity in the linked EmissionStatement. This entity supports scenarios where an emission source or activity is shared between multiple facilities, enabling the portion of the emission attributable to each site to be recorded separately for site-level inventory and regulatory reporting purposes. This is of particular relevance to US EPA Subpart W reporting for Petroleum and Natural Gas Systems.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="764" data-file-path="Facilities/FacilityEmissionAllocation.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>FacilityEmissionAllocation records the allocation of a specific emission quantity to a specific Facility, expressed as a percentage of the total emission quantity in the linked EmissionStatement. This entity supports scenarios where an emission source or activity is shared between multiple facilities, enabling the portion of the emission attributable to each site to be recorded separately for site-level inventory and regulatory reporting purposes. This is of particular relevance to US EPA Subpart W reporting for Petroleum and Natural Gas Systems.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -61,4 +69,4 @@ FacilityEmissionAllocation records the allocation of a specific emission quantit
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

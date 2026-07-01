@@ -3,6 +3,7 @@ ea_id: 741
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 4cea77c8
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> OrganizationAssociation
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-OrganizationAssociation represents a typed relationship between two organisations, such as a parent–subsidiary link, a joint-venture partnership, a verifier relationship, or a department association. It records which organisation is the parent and which is the child in the association, and is classified by an OrganizationAssociationType that describes the nature of the relationship. This entity enables the modelling of complex corporate structures without embedding hierarchy information directly in the Organization entity, and supports the non-hierarchical many-to-many relationships (e.g., Auditor, Affiliate) that are common in emissions reporting ecosystems.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="741" data-file-path="Organisation/OrganizationAssociation.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>OrganizationAssociation represents a typed relationship between two organisations, such as a parent–subsidiary link, a joint-venture partnership, a verifier relationship, or a department association. It records which organisation is the parent and which is the child in the association, and is classified by an OrganizationAssociationType that describes the nature of the relationship. This entity enables the modelling of complex corporate structures without embedding hierarchy information directly in the Organization entity, and supports the non-hierarchical many-to-many relationships (e.g., Auditor, Affiliate) that are common in emissions reporting ecosystems.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -69,4 +77,4 @@ OrganizationAssociation represents a typed relationship between two organisation
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

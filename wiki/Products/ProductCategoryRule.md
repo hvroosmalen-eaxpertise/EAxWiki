@@ -3,6 +3,7 @@ ea_id: 820
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 8b6de569
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> ProductCategoryRule
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
-ProductCategoryRule is a master-data entity that represents a product category rule (PCR) document that provides specific methodological requirements for conducting life-cycle assessments and producing EPDs or PCF declarations for a defined product category. PCRs constrain the methodological choices practitioners can make when calculating a PCF, specifying system boundary, allocation rules, data quality requirements, and declared unit definitions for the product type. Linking a PCR to a ProductCarbonFootprint provides essential methodological context for comparison across competing products.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="820" data-file-path="Products/ProductCategoryRule.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>ProductCategoryRule is a master-data entity that represents a product category rule (PCR) document that provides specific methodological requirements for conducting life-cycle assessments and producing EPDs or PCF declarations for a defined product category. PCRs constrain the methodological choices practitioners can make when calculating a PCF, specifying system boundary, allocation rules, data quality requirements, and declared unit definitions for the product type. Linking a PCR to a ProductCarbonFootprint provides essential methodological context for comparison across competing products.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -63,4 +71,4 @@ ProductCategoryRule is a master-data entity that represents a product category r
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

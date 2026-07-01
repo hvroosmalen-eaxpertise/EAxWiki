@@ -3,6 +3,7 @@ ea_id: 139
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: a706b0b9
 ---
 
 # <span class="sl" data-layer="edgy-ar">Asset</span> Sustainability Metrics
@@ -15,11 +16,18 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="139" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Asset/Sustainability Metrics.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="139" data-file-path="Asset/Sustainability Metrics.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 KPI’s voor duurzaamheid.
 <ul>
 	<li>CarbonNeutral&#174; – https://carbonneutral.com – Transparante emissiemetingen.</li>
 	<li>GRI Standards – https://www.globalreporting.org – Wereldwijde standaard voor duurzaamheids-KPI’s.</li>
 </ul>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -64,4 +72,4 @@ KPI’s voor duurzaamheid.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

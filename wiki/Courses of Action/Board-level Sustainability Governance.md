@@ -3,6 +3,7 @@ ea_id: 455
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: c640a0f7
 ---
 
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Board-level Sustainability Governance
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
 
-Establishment of formal governance mechanisms to anchor sustainability at the board and executive management level.        
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="455" data-file-path="Courses of Action/Board-level Sustainability Governance.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Establishment of formal governance mechanisms to anchor sustainability at the board and executive management level.        
  Creates sustainability committees, defines board member responsibilities, and integrates ESG into executive compensation.         
-Ensures top-level commitment and strategic oversight of sustainability performance.
+Ensures top-level commitment and strategic oversight of sustainability performance.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -61,4 +69,4 @@ Ensures top-level commitment and strategic oversight of sustainability performan
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

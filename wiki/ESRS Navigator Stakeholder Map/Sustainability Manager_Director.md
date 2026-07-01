@@ -3,6 +3,7 @@ ea_id: 269
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 64b1d48b
 ---
 
 # <span class="sl" data-layer="business">BusinessRole</span> Sustainability Manager/Director
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Coordinates implementation of sustainability measures, reports to CEO
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="269" data-file-path="ESRS Navigator Stakeholder Map/Sustainability Manager_Director.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Coordinates implementation of sustainability measures, reports to CEO</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -49,4 +57,4 @@ Coordinates implementation of sustainability measures, reports to CEO
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

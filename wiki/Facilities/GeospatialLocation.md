@@ -3,6 +3,7 @@ ea_id: 768
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: eec547e4
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> GeospatialLocation
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-GeospatialLocation provides a spatial representation of a Location, defined by coordinate values and an EPSG coordinate reference system code. It can represent a point on the earth such as a latitude/longitude coordinate pair, or may capture the polygon outline of a location. Both original and normalised coordinate values are stored to preserve the source data while enabling consistent geographic comparison. Geospatial information may be either master data specific to a company location or reference data obtained from a third-party dataset.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="768" data-file-path="Facilities/GeospatialLocation.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>GeospatialLocation provides a spatial representation of a Location, defined by coordinate values and an EPSG coordinate reference system code. It can represent a point on the earth such as a latitude/longitude coordinate pair, or may capture the polygon outline of a location. Both original and normalised coordinate values are stored to preserve the source data while enabling consistent geographic comparison. Geospatial information may be either master data specific to a company location or reference data obtained from a third-party dataset.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -57,4 +65,4 @@ GeospatialLocation provides a spatial representation of a Location, defined by c
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

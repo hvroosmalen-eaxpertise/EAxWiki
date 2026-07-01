@@ -3,6 +3,7 @@ ea_id: 284
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 3d52b4ea
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Seasonal Agricultural Workers
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Seasonal workers at supplier farms
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="284" data-file-path="ESRS Navigator Stakeholder Map/Seasonal Agricultural Workers.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Seasonal workers at supplier farms</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -49,4 +57,4 @@ Seasonal workers at supplier farms
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

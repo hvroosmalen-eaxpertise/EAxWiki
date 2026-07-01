@@ -3,6 +3,7 @@ ea_id: 429
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: a306a70d
 ---
 
 # <span class="sl" data-layer="motivation">Driver</span> Regulatory Pressure
@@ -13,8 +14,15 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
 
-External pressure from government regulations, environmental laws, and mandatory sustainability reporting requirements (e.g., CSRD, EU Taxonomy).         
-Forces organizations to comply with evolving environmental and social standards.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="429" data-file-path="Drivers/Regulatory Pressure.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>External pressure from government regulations, environmental laws, and mandatory sustainability reporting requirements (e.g., CSRD, EU Taxonomy).         
+Forces organizations to comply with evolving environmental and social standards.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -51,4 +59,4 @@ Forces organizations to comply with evolving environmental and social standards.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

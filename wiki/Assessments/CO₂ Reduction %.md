@@ -3,6 +3,7 @@ ea_id: 462
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 2ca048de
 ---
 
 # <span class="sl" data-layer="motivation">Assessment</span> CO₂ Reduction %
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
 
-Key performance indicator measuring the percentage reduction in carbon dioxide emissions relative to a baseline year.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="462" data-file-path="Assessments/CO₂ Reduction %.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Key performance indicator measuring the percentage reduction in carbon dioxide emissions relative to a baseline year.         
 Typically covers Scope 1, 2, and ideally Scope 3 emissions.         
-Critical metric for climate change mitigation efforts and alignment with Paris Agreement targets.
+Critical metric for climate change mitigation efforts and alignment with Paris Agreement targets.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -53,4 +61,4 @@ Critical metric for climate change mitigation efforts and alignment with Paris A
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

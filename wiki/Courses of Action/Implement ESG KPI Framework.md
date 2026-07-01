@@ -3,6 +3,7 @@ ea_id: 451
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: fbd228ed
 ---
 
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Implement ESG KPI Framework
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
 
-Concrete initiative to design and implement a comprehensive framework of ESG key performance indicators.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="451" data-file-path="Courses of Action/Implement ESG KPI Framework.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Concrete initiative to design and implement a comprehensive framework of ESG key performance indicators.         
 Defines metrics, targets, measurement methodologies, and reporting frequencies aligned with strategic goals.         
-Operationalizes sustainability performance management through structured measurement systems.
+Operationalizes sustainability performance management through structured measurement systems.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -61,4 +69,4 @@ Operationalizes sustainability performance management through structured measure
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

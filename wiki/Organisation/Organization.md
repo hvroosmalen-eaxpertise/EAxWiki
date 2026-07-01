@@ -3,6 +3,7 @@ ea_id: 735
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 7eedb1f0
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> Organization
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-Organization is the central anchor entity for emissions reporting. It represents any legal entity, company, subsidiary, joint venture, or other organisational unit that is subject to emissions accounting obligations or that voluntarily participates in a carbon disclosure programme. The Organization entity links directly to standards, types, contact persons, addresses, and organisational boundaries, forming the root context from which all emission inventories and product footprints are ultimately traceable. An organization may have an external identifier issued by a third-party registry such as GLEIF LEI codes, enabling cross-system reconciliation.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="735" data-file-path="Organisation/Organization.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Organization is the central anchor entity for emissions reporting. It represents any legal entity, company, subsidiary, joint venture, or other organisational unit that is subject to emissions accounting obligations or that voluntarily participates in a carbon disclosure programme. The Organization entity links directly to standards, types, contact persons, addresses, and organisational boundaries, forming the root context from which all emission inventories and product footprints are ultimately traceable. An organization may have an external identifier issued by a third-party registry such as GLEIF LEI codes, enabling cross-system reconciliation.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -83,4 +91,4 @@ Organization is the central anchor entity for emissions reporting. It represents
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

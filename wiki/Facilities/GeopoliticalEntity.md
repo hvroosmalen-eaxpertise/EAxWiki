@@ -3,6 +3,7 @@ ea_id: 766
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: e81450d9
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> GeopoliticalEntity
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-GeopoliticalEntity represents a named geographical area that is defined and administered by an official entity, such as countries, nature reserves, states, regions, or provinces. It is classified by a GeopoliticalEntityType and optionally linked to a Country. Examples include "USA", "Canada", "United Kingdom", "Yellow Stone National Park", "Alberta", and "North Sea". Geopolitical entities provide the administrative geographic context required for regulatory jurisdiction mapping, reporting by jurisdiction, and alignment with country-level emission factor datasets.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="766" data-file-path="Facilities/GeopoliticalEntity.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>GeopoliticalEntity represents a named geographical area that is defined and administered by an official entity, such as countries, nature reserves, states, regions, or provinces. It is classified by a GeopoliticalEntityType and optionally linked to a Country. Examples include "USA", "Canada", "United Kingdom", "Yellow Stone National Park", "Alberta", and "North Sea". Geopolitical entities provide the administrative geographic context required for regulatory jurisdiction mapping, reporting by jurisdiction, and alignment with country-level emission factor datasets.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -68,4 +76,4 @@ GeopoliticalEntity represents a named geographical area that is defined and admi
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

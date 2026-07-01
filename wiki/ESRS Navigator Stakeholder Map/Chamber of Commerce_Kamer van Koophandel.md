@@ -3,6 +3,7 @@ ea_id: 304
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 4b53ace6
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Chamber of Commerce/Kamer van Koophandel
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Chamber of Commerce - provides CSRD guidance
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="304" data-file-path="ESRS Navigator Stakeholder Map/Chamber of Commerce_Kamer van Koophandel.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Chamber of Commerce - provides CSRD guidance</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -57,4 +65,4 @@ Chamber of Commerce - provides CSRD guidance
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

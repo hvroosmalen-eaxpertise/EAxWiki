@@ -3,6 +3,7 @@ ea_id: 260
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: ea199371
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Research and Analysis Firms
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Verification bureaus for water, energy, CO2 data
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="260" data-file-path="ESRS Navigator Stakeholder Map/Research and Analysis Firms.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Verification bureaus for water, energy, CO2 data</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -49,4 +57,4 @@ Verification bureaus for water, energy, CO2 data
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

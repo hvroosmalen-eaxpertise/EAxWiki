@@ -3,6 +3,7 @@ ea_id: 266
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 7d7d0ff6
 ---
 
 # <span class="sl" data-layer="business">BusinessRole</span> Board of Directors (Directie)
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-CEO, CFO, COO - Final responsibility for sustainability policy
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="266" data-file-path="ESRS Navigator Stakeholder Map/Board of Directors (Directie).md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>CEO, CFO, COO - Final responsibility for sustainability policy</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -52,4 +60,4 @@ CEO, CFO, COO - Final responsibility for sustainability policy
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

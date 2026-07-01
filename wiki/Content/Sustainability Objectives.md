@@ -3,6 +3,7 @@ ea_id: 116
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: 575e3e73
 ---
 
 # <span class="sl" data-layer="edgy-id">Content</span> Sustainability Objectives
@@ -15,11 +16,18 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="116" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Content/Sustainability Objectives.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="116" data-file-path="Content/Sustainability Objectives.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 Meetbare duurzaamheidsprestaties (CO₂-reductie, circulariteit, energieneutraliteit).
 <ul>
 	<li>Seventh Generation – https://www.seventhgeneration.com – Publiceert concrete klimaatdoelen.</li>
 	<li>Unilever – https://www.unilever.com – Heeft Science-Based Targets voor netto-nul uitstoot.</li>
 </ul>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -66,4 +74,4 @@ Meetbare duurzaamheidsprestaties (CO₂-reductie, circulariteit, energieneutrali
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

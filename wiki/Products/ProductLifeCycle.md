@@ -3,6 +3,7 @@ ea_id: 813
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: f23c1c60
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> ProductLifeCycle
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
-ProductLifeCycle is a master-data entity that defines the set of life-cycle stages considered in a product carbon footprint assessment, establishing the system boundary for a given product and footprint scope. It groups the individual ProductLifeCycleStage records that enumerate each stage (raw material extraction, manufacturing, distribution, use, end-of-life) and anchors the ProductLifeCycleFootprint records that hold stage-level emission quantities. Defining the life cycle as a structured entity rather than a string field enables stage-level comparisons across products and supply-chain tiers.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="813" data-file-path="Products/ProductLifeCycle.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>ProductLifeCycle is a master-data entity that defines the set of life-cycle stages considered in a product carbon footprint assessment, establishing the system boundary for a given product and footprint scope. It groups the individual ProductLifeCycleStage records that enumerate each stage (raw material extraction, manufacturing, distribution, use, end-of-life) and anchors the ProductLifeCycleFootprint records that hold stage-level emission quantities. Defining the life cycle as a structured entity rather than a string field enables stage-level comparisons across products and supply-chain tiers.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -60,4 +68,4 @@ ProductLifeCycle is a master-data entity that defines the set of life-cycle stag
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

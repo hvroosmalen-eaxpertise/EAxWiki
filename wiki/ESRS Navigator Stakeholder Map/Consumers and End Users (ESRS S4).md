@@ -3,6 +3,7 @@ ea_id: 280
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 15da69b3
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Consumers and End Users (ESRS S4)
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Final consumers - focus on food safety and product information
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="280" data-file-path="ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4).md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Final consumers - focus on food safety and product information</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -58,4 +66,4 @@ Final consumers - focus on food safety and product information
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

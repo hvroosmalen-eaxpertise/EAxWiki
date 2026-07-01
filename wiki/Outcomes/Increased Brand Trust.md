@@ -3,6 +3,7 @@ ea_id: 460
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 29fc3776
 ---
 
 # <span class="sl" data-layer="motivation">Outcome</span> Increased Brand Trust
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Outcomes](index.md)
 
-Enhanced stakeholder trust and brand reputation resulting from transparent and credible sustainability performance.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="460" data-file-path="Outcomes/Increased Brand Trust.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Enhanced stakeholder trust and brand reputation resulting from transparent and credible sustainability performance.         
 Strengthens relationships with customers, employees, investors, and communities.         
-Provides competitive advantage in markets where sustainability drives purchasing decisions.
+Provides competitive advantage in markets where sustainability drives purchasing decisions.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -51,4 +59,4 @@ Provides competitive advantage in markets where sustainability drives purchasing
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

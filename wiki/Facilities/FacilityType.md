@@ -3,6 +3,7 @@ ea_id: 754
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: ef187cfa
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> FacilityType
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-FacilityType provides a controlled vocabulary of facility classifications, sourced from references such as ISO 15926-4 for non-moving oil and gas facilities and the US EPA Subpart W classification for petroleum and natural gas systems. Examples include "Compressor Station", "Gas Plant", "Offshore Production", "Natural Gas Processing", and "LNG storage". Classifying facilities by type enables sector-appropriate emissions factor selection, benchmarking against industry peers, and consistent aggregation of site-level data in portfolio analyses.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="754" data-file-path="Facilities/FacilityType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>FacilityType provides a controlled vocabulary of facility classifications, sourced from references such as ISO 15926-4 for non-moving oil and gas facilities and the US EPA Subpart W classification for petroleum and natural gas systems. Examples include "Compressor Station", "Gas Plant", "Offshore Production", "Natural Gas Processing", and "LNG storage". Classifying facilities by type enables sector-appropriate emissions factor selection, benchmarking against industry peers, and consistent aggregation of site-level data in portfolio analyses.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -58,4 +66,4 @@ FacilityType provides a controlled vocabulary of facility classifications, sourc
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

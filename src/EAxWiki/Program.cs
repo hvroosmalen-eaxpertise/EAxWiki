@@ -103,11 +103,15 @@ try
     {
         Console.WriteLine("Running write-back scan...");
         var scanner = new WriteBackScanner(reader, loggerFactory.CreateLogger<WriteBackScanner>());
-        var changes = scanner.Scan(outputPath);
-        if (changes.Count == 0)
+        var scanResult = scanner.Scan(outputPath);
+        if (scanResult.StatusChanges.Count == 0)
             Console.WriteLine("Write-back: no status changes detected.");
         else
-            Console.WriteLine($"Write-back: applied {changes.Count} status change(s) to EA.");
+            Console.WriteLine($"Write-back: applied {scanResult.StatusChanges.Count} status change(s) to EA.");
+        if (scanResult.NotesChanges.Count == 0)
+            Console.WriteLine("Write-back: no notes changes detected.");
+        else
+            Console.WriteLine($"Write-back: applied {scanResult.NotesChanges.Count} notes change(s) to EA.");
         Console.WriteLine();
     }
 

@@ -3,6 +3,7 @@ ea_id: 776
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 754fa64a
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> EmissionStatement
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionStatement is the central work-product-component that records a single quantified emission result: the GHG emissions or removals attributable to one EmissionActivity within one reporting period. It links the activity, the organisational boundary, the scope type, the calculation model used, and the resulting emission quantity and unit, forming the atomic building block of an emission inventory. Multiple statements are aggregated into an EmissionInventory to produce total scope-level and entity-level disclosures.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="776" data-file-path="Emissions/EmissionStatement.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionStatement is the central work-product-component that records a single quantified emission result: the GHG emissions or removals attributable to one EmissionActivity within one reporting period. It links the activity, the organisational boundary, the scope type, the calculation model used, and the resulting emission quantity and unit, forming the atomic building block of an emission inventory. Multiple statements are aggregated into an EmissionInventory to produce total scope-level and entity-level disclosures.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -86,4 +94,4 @@ EmissionStatement is the central work-product-component that records a single qu
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

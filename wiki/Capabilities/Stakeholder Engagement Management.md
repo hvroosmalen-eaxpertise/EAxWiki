@@ -3,6 +3,7 @@ ea_id: 449
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 53dd8899
 ---
 
 # <span class="sl" data-layer="strategy">Capability</span> Stakeholder Engagement Management
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
 
-Capability to identify, engage, and maintain dialogue with key sustainability stakeholders.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="449" data-file-path="Capabilities/Stakeholder Engagement Management.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Capability to identify, engage, and maintain dialogue with key sustainability stakeholders.
         Includes materiality assessments, stakeholder consultations, and responsive communication strategies.
-        Ensures alignment between organizational sustainability priorities and stakeholder expectations.
+        Ensures alignment between organizational sustainability priorities and stakeholder expectations.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -51,4 +59,4 @@ Capability to identify, engage, and maintain dialogue with key sustainability st
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

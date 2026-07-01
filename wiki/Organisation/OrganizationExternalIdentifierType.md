@@ -3,6 +3,7 @@ ea_id: 749
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 63616c0f
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> OrganizationExternalIdentifierType
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-OrganizationExternalIdentifierType provides the controlled vocabulary of external identifier schemes used to publicly identify organisations, such as "Federal Information Processing System (FIPS) Codes", "Data Universal Numbering System (DUNS)", "Employer Identification Number (EIN)", or "North American Industry Classification System (NAICS)". Classifying identifier types enables systems to select the correct identifier when communicating with a specific external registry or trading partner system.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="749" data-file-path="Organisation/OrganizationExternalIdentifierType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>OrganizationExternalIdentifierType provides the controlled vocabulary of external identifier schemes used to publicly identify organisations, such as "Federal Information Processing System (FIPS) Codes", "Data Universal Numbering System (DUNS)", "Employer Identification Number (EIN)", or "North American Industry Classification System (NAICS)". Classifying identifier types enables systems to select the correct identifier when communicating with a specific external registry or trading partner system.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -57,4 +65,4 @@ OrganizationExternalIdentifierType provides the controlled vocabulary of externa
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

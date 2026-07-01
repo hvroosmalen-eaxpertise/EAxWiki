@@ -3,6 +3,7 @@ ea_id: 775
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 296970bc
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> EmissionParameterType
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionParameterType is a reference entity that defines a named, typed slot for measurement or operational data used in emission calculation. Examples include fuel quantity consumed (MWh), vehicle distance travelled (km), and refrigerant charge (kg). Each EmissionActivityParameter value recorded against a Facility references an EmissionParameterType to establish what was measured and in what unit, enabling calculation engines to apply the correct emission factor formula.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="775" data-file-path="Emissions/EmissionParameterType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionParameterType is a reference entity that defines a named, typed slot for measurement or operational data used in emission calculation. Examples include fuel quantity consumed (MWh), vehicle distance travelled (km), and refrigerant charge (kg). Each EmissionActivityParameter value recorded against a Facility references an EmissionParameterType to establish what was measured and in what unit, enabling calculation engines to apply the correct emission factor formula.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -66,4 +74,4 @@ EmissionParameterType is a reference entity that defines a named, typed slot for
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

@@ -3,6 +3,7 @@ ea_id: 133
 status: Mandatory
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 1a666d0d
+notes_hash: c81852f4
 ---
 
 # <span class="sl" data-layer="edgy-ar">Asset</span> Emission Sources
@@ -15,11 +16,18 @@ ea_hash: 1a666d0d
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="133" data-status="Mandatory" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Asset/Emission Sources.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="133" data-file-path="Asset/Emission Sources.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 Locaties of activiteiten die emissies genereren.
 <ul>
 	<li>Science Based Targets – https://sciencebasedtargets.org – Identificeert uitstootbronnen voor reductie.</li>
 	<li>Neste – https://www.neste.com – Identificeert en reduceert fossiele bron-emissies.</li>
 </ul>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -64,4 +72,4 @@ Locaties of activiteiten die emissies genereren.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

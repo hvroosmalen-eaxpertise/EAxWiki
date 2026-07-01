@@ -3,6 +3,7 @@ ea_id: 771
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: ce68dc6f
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> EmissionInventory
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionInventory is the top-level work-product-component that represents a single, bounded GHG emissions accounting exercise performed by an Organisation for a defined reporting period. It groups all EmissionStatement records that together constitute a complete inventory of an organisation's greenhouse gas emissions, organised by scope, source, and boundary. The inventory record holds the metadata required for formal reporting, including the applicable standard, the organisational boundary method, and audit trail information.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="771" data-file-path="Emissions/EmissionInventory.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionInventory is the top-level work-product-component that represents a single, bounded GHG emissions accounting exercise performed by an Organisation for a defined reporting period. It groups all EmissionStatement records that together constitute a complete inventory of an organisation's greenhouse gas emissions, organised by scope, source, and boundary. The inventory record holds the metadata required for formal reporting, including the applicable standard, the organisational boundary method, and audit trail information.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -71,4 +79,4 @@ EmissionInventory is the top-level work-product-component that represents a sing
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

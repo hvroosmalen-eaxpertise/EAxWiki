@@ -3,6 +3,7 @@ ea_id: 13
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: e3cdeed4
 ---
 
 # <span class="sl" data-layer="edgy-id">Purpose</span> SDG 11. Sustainable Cities and Communities
@@ -15,8 +16,14 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="13" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/SDG 11. Sustainable Cities and Communities.md" data-api-port="8001"></div>
 
-Make cities and human settlements inclusive, safe, resilient and sustainable.
-
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="13" data-file-path="Sustainability Development Goals/SDG 11. Sustainable Cities and Communities.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Make cities and human settlements inclusive, safe, resilient and sustainable.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -37,4 +44,4 @@ Make cities and human settlements inclusive, safe, resilient and sustainable.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:22*

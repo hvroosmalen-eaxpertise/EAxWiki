@@ -244,6 +244,19 @@ public class EaReader : IEaReader, IDisposable
         _logger?.LogInformation("Updated element {ElementId} status to '{Status}'", elementId, newStatus);
     }
 
+    public void UpdateElementNotes(int elementId, string newNotesHtml)
+    {
+        if (_repository == null)
+            throw new InvalidOperationException("Repository is not open.");
+        var element = _repository.GetElementByID(elementId);
+        if (element == null)
+            throw new InvalidOperationException($"Element {elementId} not found in repository.");
+        element.Notes = newNotesHtml;
+        element.Update();
+        _repository.RefreshModelView(0);
+        _logger?.LogInformation("Updated element {ElementId} notes", elementId);
+    }
+
     public bool ExportDiagramImage(string diagramGuid, string filePath)
     {
         if (_repository == null) return false;

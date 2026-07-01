@@ -3,6 +3,7 @@ ea_id: 140
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: 6467cd4a
 ---
 
 # <span class="sl" data-layer="edgy-id">Story</span> Sustainable Work Practices
@@ -15,11 +16,18 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="140" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Story/Sustainable Work Practices.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="140" data-file-path="Story/Sustainable Work Practices.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 Gedragsroutines die duurzaam werken ondersteunen.
 <ul>
 	<li>Patagonia Worn Wear – https://wornwear.patagonia.com – Reparatiecultuur vermindert verspilling.</li>
 	<li>Ecover – https://www.ecover.com – Stimuleert medewerkers duurzame werkpraktijken.</li>
 </ul>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -66,4 +74,4 @@ Gedragsroutines die duurzaam werken ondersteunen.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

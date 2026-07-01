@@ -3,6 +3,7 @@ ea_id: 444
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 1cda4af4
 ---
 
 # <span class="sl" data-layer="strategy">Capability</span> Sustainability Governance
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
 
-Organizational capability to establish and maintain effective governance structures for sustainability management.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="444" data-file-path="Capabilities/Sustainability Governance.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Organizational capability to establish and maintain effective governance structures for sustainability management.         
 Includes board-level oversight, clear accountability frameworks, sustainability committees, and integration into corporate governance codes.         
-Essential for strategic steering and ensuring sustainability is anchored at the highest decision-making level.
+Essential for strategic steering and ensuring sustainability is anchored at the highest decision-making level.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -57,4 +65,4 @@ Essential for strategic steering and ensuring sustainability is anchored at the 
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

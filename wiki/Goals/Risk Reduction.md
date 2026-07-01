@@ -3,6 +3,7 @@ ea_id: 436
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 8598e295
 ---
 
 # <span class="sl" data-layer="motivation">Goal</span> Risk Reduction
@@ -13,8 +14,15 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
 
-Systematically reduce environmental, social, and governance risks that could impact business continuity and financial performance.         
-Proactively manage sustainability-related risks before they materialize into crises.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="436" data-file-path="Goals/Risk Reduction.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Systematically reduce environmental, social, and governance risks that could impact business continuity and financial performance.         
+Proactively manage sustainability-related risks before they materialize into crises.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -70,4 +78,4 @@ Proactively manage sustainability-related risks before they materialize into cri
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

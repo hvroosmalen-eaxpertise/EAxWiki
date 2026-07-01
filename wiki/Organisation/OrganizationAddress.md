@@ -3,6 +3,7 @@ ea_id: 743
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 66c30a16
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> OrganizationAddress
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-OrganizationAddress is the intersection entity that associates an Organisation with a physical or postal Address at a specific address type (e.g., visiting, correspondence, statutory). It acts as a bridge between the Organisation, the Address, and the OrganizationAddressType, allowing an organisation to maintain multiple categorised addresses simultaneously without ambiguity. This design supports the full range of address types required by legal, regulatory, and operational contexts.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="743" data-file-path="Organisation/OrganizationAddress.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>OrganizationAddress is the intersection entity that associates an Organisation with a physical or postal Address at a specific address type (e.g., visiting, correspondence, statutory). It acts as a bridge between the Organisation, the Address, and the OrganizationAddressType, allowing an organisation to maintain multiple categorised addresses simultaneously without ambiguity. This design supports the full range of address types required by legal, regulatory, and operational contexts.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -71,4 +79,4 @@ OrganizationAddress is the intersection entity that associates an Organisation w
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

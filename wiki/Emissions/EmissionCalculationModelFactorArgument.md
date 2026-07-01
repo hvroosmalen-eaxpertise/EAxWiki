@@ -3,6 +3,7 @@ ea_id: 804
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 5be7d0c7
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> EmissionCalculationModelFactorArgument
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionCalculationModelFactorArgument is a master-data entity that binds a named argument slot in an EmissionCalculationModel to the specific EmissionFactor that should be used to fill that slot during calculation. A model may reference multiple factors; for example, a Scope 2 market-based model may require both an electricity emission factor and a transmission-and-distribution loss factor. Defining factor arguments as data rather than code enables model configuration without software deployment and supports systematic factor update workflows.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="804" data-file-path="Emissions/EmissionCalculationModelFactorArgument.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionCalculationModelFactorArgument is a master-data entity that binds a named argument slot in an EmissionCalculationModel to the specific EmissionFactor that should be used to fill that slot during calculation. A model may reference multiple factors; for example, a Scope 2 market-based model may require both an electricity emission factor and a transmission-and-distribution loss factor. Defining factor arguments as data rather than code enables model configuration without software deployment and supports systematic factor update workflows.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -53,4 +61,4 @@ EmissionCalculationModelFactorArgument is a master-data entity that binds a name
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

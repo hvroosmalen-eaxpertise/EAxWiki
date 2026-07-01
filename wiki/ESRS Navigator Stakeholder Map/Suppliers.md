@@ -3,6 +3,7 @@ ea_id: 335
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 7ca9b229
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Suppliers
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-All upstream suppliers in the value chain
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="335" data-file-path="ESRS Navigator Stakeholder Map/Suppliers.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>All upstream suppliers in the value chain</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -64,4 +72,4 @@ All upstream suppliers in the value chain
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

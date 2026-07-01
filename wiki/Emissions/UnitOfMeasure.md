@@ -3,6 +3,7 @@ ea_id: 779
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: c32e45b8
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> UnitOfMeasure
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-UnitOfMeasure is a reference entity that provides the controlled vocabulary of measurement units used throughout the model for quantities, emission factors, parameter values, and product footprint attributes. It supports unit conversion through conversion factor attributes and is linked to a PhysicalQuantityType to enable dimensional analysis. The entity allows the model to be system-of-units-agnostic while maintaining the traceability required for rigorous scientific and regulatory reporting.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="779" data-file-path="Emissions/UnitOfMeasure.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>UnitOfMeasure is a reference entity that provides the controlled vocabulary of measurement units used throughout the model for quantities, emission factors, parameter values, and product footprint attributes. It supports unit conversion through conversion factor attributes and is linked to a PhysicalQuantityType to enable dimensional analysis. The entity allows the model to be system-of-units-agnostic while maintaining the traceability required for rigorous scientific and regulatory reporting.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -78,4 +86,4 @@ UnitOfMeasure is a reference entity that provides the controlled vocabulary of m
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

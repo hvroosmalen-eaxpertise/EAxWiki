@@ -50,6 +50,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             : (IReadOnlyList<string>)["Approved", "Implemented", "Mandatory", "Proposed", "Validated"];
         var statusOptions = string.Join(", ", statusOptionsList);
         var statusHash = ComputeStatusHash(element.Status);
+        var normalizedNotes = FrontmatterParser.NormalizeNotesHtml(element.Notes);
+        var notesHash = ComputeNotesHash(normalizedNotes);
         var statusOptionsJson = "[" + string.Join(",", statusOptionsList.Select(s => $"\"{s}\"")) + "]";
         var wikiRelPath = Path.GetRelativePath(outputDir, filePath).Replace('\\', '/');
 
@@ -60,6 +62,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             $"status: {element.Status}",
             $"status_options: [{statusOptions}]",
             $"ea_hash: {statusHash}",
+            $"notes_hash: {notesHash}",
             "---",
             string.Empty,
             $"# {MarkdownHelpers.GetStereotypeLabel(element)} {element.Name}",
@@ -92,7 +95,25 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
 
         if (!string.IsNullOrWhiteSpace(element.Notes))
         {
-            lines.Add(element.Notes);
+            if (ctx.ApiPort > 0)
+            {
+                lines.Add(
+                    $"<div id=\"ea-notes-editor\" class=\"ea-notes-editor\"" +
+                    $" data-ea-id=\"{element.Id}\"" +
+                    $" data-file-path=\"{wikiRelPath}\"" +
+                    $" data-api-port=\"{ctx.ApiPort}\">");
+                lines.Add("<button id=\"ea-notes-edit-btn\" class=\"ea-notes-edit-btn\" type=\"button\" aria-label=\"Edit notes\">&#9998;</button>");
+                lines.Add("<div class=\"ea-notes-content\">");
+                lines.Add("<!--ea-notes-start-->");
+                lines.Add(normalizedNotes);
+                lines.Add("<!--ea-notes-end-->");
+                lines.Add("</div>");
+                lines.Add("</div>");
+            }
+            else
+            {
+                lines.Add(element.Notes);
+            }
             lines.Add(string.Empty);
         }
 
@@ -333,6 +354,12 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
     internal static string ComputeStatusHash(string status)
     {
         var bytes = SHA256.HashData(Encoding.UTF8.GetBytes(status ?? string.Empty));
+        return Convert.ToHexString(bytes)[..8].ToLowerInvariant();
+    }
+
+    internal static string ComputeNotesHash(string? notes)
+    {
+        var bytes = SHA256.HashData(Encoding.UTF8.GetBytes(notes ?? string.Empty));
         return Convert.ToHexString(bytes)[..8].ToLowerInvariant();
     }
 

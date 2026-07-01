@@ -3,6 +3,7 @@ ea_id: 562
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: f98b967a
 ---
 
 # <span class="sl" data-layer="edgy-lb">Outcome</span> Standardize ESG reporting and enhance transparency and comparability in Europe. 
@@ -15,7 +16,14 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="562" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Goals and Objectives/Standardize ESG reporting and enhance transparency and comparability in Europe..md" data-api-port="8001"></div>
 
-The ESRS align the EU reporting system to the International Sustainability Standards Board (ISSB) and the Global Reporting Initiative (GRI), ensuring a high degree of interoperability between EU and global standards and prevent unnecessary double reporting by companies.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="562" data-file-path="ESRS Goals and Objectives/Standardize ESG reporting and enhance transparency and comparability in Europe..md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>The ESRS align the EU reporting system to the International Sustainability Standards Board (ISSB) and the Global Reporting Initiative (GRI), ensuring a high degree of interoperability between EU and global standards and prevent unnecessary double reporting by companies.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -35,4 +43,4 @@ The ESRS align the EU reporting system to the International Sustainability Stand
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

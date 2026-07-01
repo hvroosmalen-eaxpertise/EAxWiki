@@ -3,6 +3,7 @@ ea_id: 131
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: 788c9133
 ---
 
 # <span class="sl" data-layer="edgy-ar">Asset</span> Sustainable Resources / Assets
@@ -15,11 +16,18 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="131" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Asset/Sustainable Resources _ Assets.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="131" data-file-path="Asset/Sustainable Resources _ Assets.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 Middelen zoals zonnepanelen, elektrische voertuigen en tooling.
 <ul>
 	<li>New Belgium Brewing – https://www.newbelgium.com – 200 kW zonnepanelen, windenergie.</li>
 	<li>IKEA zonnepanelenproject – https://www.ikea.com – Gebruikt grootschalig duurzame energie.</li>
 </ul>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -66,4 +74,4 @@ Middelen zoals zonnepanelen, elektrische voertuigen en tooling.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

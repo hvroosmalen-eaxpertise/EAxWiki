@@ -3,6 +3,7 @@ ea_id: 786
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 7348f5ef
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> EmissionActivityType
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionActivityType is a reference entity that classifies the technical nature of an emission-generating or emission-removing process, providing a finer-grained taxonomy than EmissionActivityCategory. Examples include Stationary Combustion, Mobile Combustion, Process Emissions, Fugitive Emissions, and Land Use Change. The type is used in calculation model selection and in parameter recording template assignment to determine which measurement parameters are required for a given activity.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="786" data-file-path="Emissions/EmissionActivityType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionActivityType is a reference entity that classifies the technical nature of an emission-generating or emission-removing process, providing a finer-grained taxonomy than EmissionActivityCategory. Examples include Stationary Combustion, Mobile Combustion, Process Emissions, Fugitive Emissions, and Land Use Change. The type is used in calculation model selection and in parameter recording template assignment to determine which measurement parameters are required for a given activity.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -61,4 +69,4 @@ EmissionActivityType is a reference entity that classifies the technical nature 
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

@@ -3,6 +3,7 @@ ea_id: 252
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 08256bdf
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Sociaal Economische Raad (SER)
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Provides information and webinars on CSRD/ESRS
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="252" data-file-path="ESRS Navigator Stakeholder Map/Sociaal Economische Raad (SER).md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Provides information and webinars on CSRD/ESRS</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -48,4 +56,4 @@ Provides information and webinars on CSRD/ESRS
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

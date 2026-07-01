@@ -3,6 +3,7 @@ ea_id: 464
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: b2b08d92
 ---
 
 # <span class="sl" data-layer="motivation">Assessment</span> Supplier Compliance Rate
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
 
-Percentage of suppliers meeting defined environmental and social standards based on audits and assessments.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="464" data-file-path="Assessments/Supplier Compliance Rate.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Percentage of suppliers meeting defined environmental and social standards based on audits and assessments.         
 Measures effectiveness of sustainable supply chain management programs.         
-Indicates level of control over value chain sustainability impacts.
+Indicates level of control over value chain sustainability impacts.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -54,4 +62,4 @@ Indicates level of control over value chain sustainability impacts.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

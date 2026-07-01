@@ -3,6 +3,7 @@ ea_id: 127
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: 84b472fb
 ---
 
 # <span class="sl" data-layer="edgy-ex">Channel</span> Sustainable Channels
@@ -15,11 +16,18 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="127" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Channel/Sustainable Channels.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="127" data-file-path="Channel/Sustainable Channels.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 Manieren van duurzame interactie met het bedrijf.
 <ul>
 	<li>Teleconferencing reductie studies – https://www.ncbi.nlm.nih.gov – Digitale kanalen besparen grote CO₂.</li>
 	<li>Zoom – https://zoom.us – Vermindert wereldwijde reisbehoefte sterk via digitaal kanaal.</li>
 </ul>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -64,4 +72,4 @@ Manieren van duurzame interactie met het bedrijf.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

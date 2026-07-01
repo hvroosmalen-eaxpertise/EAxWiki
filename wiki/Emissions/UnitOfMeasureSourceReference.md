@@ -3,6 +3,7 @@ ea_id: 798
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: bf8a66ce
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> UnitOfMeasureSourceReference
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-UnitOfMeasureSourceReference is a reference entity that identifies the authoritative registry or specification from which a UnitOfMeasure definition is drawn. Examples include the UN/CEFACT Common Codes for Units of Measurement, the QUDT Units Ontology, and the NIST SP 811 guide to SI units. Tracking the source reference ensures that unit definitions used in the model can be validated against a canonical authority and that imported data using the same reference can be reconciled without ambiguity.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="798" data-file-path="Emissions/UnitOfMeasureSourceReference.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>UnitOfMeasureSourceReference is a reference entity that identifies the authoritative registry or specification from which a UnitOfMeasure definition is drawn. Examples include the UN/CEFACT Common Codes for Units of Measurement, the QUDT Units Ontology, and the NIST SP 811 guide to SI units. Tracking the source reference ensures that unit definitions used in the model can be validated against a canonical authority and that imported data using the same reference can be reconciled without ambiguity.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -51,4 +59,4 @@ UnitOfMeasureSourceReference is a reference entity that identifies the authorita
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

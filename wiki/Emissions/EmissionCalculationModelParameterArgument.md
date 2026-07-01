@@ -3,6 +3,7 @@ ea_id: 805
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 360f22f0
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> EmissionCalculationModelParameterArgument
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionCalculationModelParameterArgument is a master-data entity that binds a named argument slot in an EmissionCalculationModel to the EmissionParameterType whose recorded values are used as the activity data input for that argument during calculation. This entity complements EmissionCalculationModelFactorArgument by declaring the activity-data inputs alongside the factor inputs, giving a complete specification of what a calculation model needs to execute.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="805" data-file-path="Emissions/EmissionCalculationModelParameterArgument.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionCalculationModelParameterArgument is a master-data entity that binds a named argument slot in an EmissionCalculationModel to the EmissionParameterType whose recorded values are used as the activity data input for that argument during calculation. This entity complements EmissionCalculationModelFactorArgument by declaring the activity-data inputs alongside the factor inputs, giving a complete specification of what a calculation model needs to execute.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -53,4 +61,4 @@ EmissionCalculationModelParameterArgument is a master-data entity that binds a n
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

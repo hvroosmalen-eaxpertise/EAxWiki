@@ -3,6 +3,7 @@ ea_id: 736
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 946876ec
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> OrganizationType
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-OrganizationType provides a controlled vocabulary of organisational classifications, such as "Headquarters", "Regional Headquarters", or "Branch". Maintaining a separate entity for organisation types rather than free-text values ensures consistency across the dataset and enables structured filtering and aggregation in reporting. The type classification is relevant for determining applicable regulatory obligations, disclosure requirements, and boundary-setting methodologies. Each OrganizationType may apply to many organisations simultaneously.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="736" data-file-path="Organisation/OrganizationType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>OrganizationType provides a controlled vocabulary of organisational classifications, such as "Headquarters", "Regional Headquarters", or "Branch". Maintaining a separate entity for organisation types rather than free-text values ensures consistency across the dataset and enables structured filtering and aggregation in reporting. The type classification is relevant for determining applicable regulatory obligations, disclosure requirements, and boundary-setting methodologies. Each OrganizationType may apply to many organisations simultaneously.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -65,4 +73,4 @@ OrganizationType provides a controlled vocabulary of organisational classificati
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

@@ -3,6 +3,7 @@ ea_id: 783
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 2827b849
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> EmissionReportPeriod
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionReportPeriod is a work-product-component that holds the aggregated emission totals for a specific time period within an EmissionReport, broken down by scope and boundary. It carries the period dates and may record the period at year, quarter, or month granularity. Multiple period records within a single report support multi-year trend disclosures and interim reporting required by frameworks such as CDP or ESRS E1.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="783" data-file-path="Emissions/EmissionReportPeriod.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionReportPeriod is a work-product-component that holds the aggregated emission totals for a specific time period within an EmissionReport, broken down by scope and boundary. It carries the period dates and may record the period at year, quarter, or month granularity. Multiple period records within a single report support multi-year trend disclosures and interim reporting required by frameworks such as CDP or ESRS E1.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -69,4 +77,4 @@ EmissionReportPeriod is a work-product-component that holds the aggregated emiss
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

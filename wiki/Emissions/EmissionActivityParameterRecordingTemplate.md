@@ -3,6 +3,7 @@ ea_id: 806
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 28439fce
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> EmissionActivityParameterRecordingTemplate
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionActivityParameterRecordingTemplate is a master-data entity that defines the set of EmissionParameterType measurements required for a specific EmissionActivityType in a specific jurisdiction or context. It acts as a data-collection template that tells facility operators which parameters they must record for each activity type, ensuring that all inputs needed by the applicable calculation models are systematically collected. Templates may be jurisdiction-specific to reflect local regulatory data requirements.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="806" data-file-path="Emissions/EmissionActivityParameterRecordingTemplate.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionActivityParameterRecordingTemplate is a master-data entity that defines the set of EmissionParameterType measurements required for a specific EmissionActivityType in a specific jurisdiction or context. It acts as a data-collection template that tells facility operators which parameters they must record for each activity type, ensuring that all inputs needed by the applicable calculation models are systematically collected. Templates may be jurisdiction-specific to reflect local regulatory data requirements.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -62,4 +70,4 @@ EmissionActivityParameterRecordingTemplate is a master-data entity that defines 
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

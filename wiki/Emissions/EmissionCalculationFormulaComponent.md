@@ -3,6 +3,7 @@ ea_id: 803
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 7cb70136
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> EmissionCalculationFormulaComponent
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionCalculationFormulaComponent is a master-data entity that decomposes an EmissionCalculationFormula into its individual multiplicative or additive terms, each term referencing either an EmissionFactor, an activity parameter type, or a constant. This decomposition enables calculation engines to evaluate formulas programmatically from structured data rather than parsed strings, and supports formula-level audit trails that show exactly which factors and parameters contributed to an emission result.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="803" data-file-path="Emissions/EmissionCalculationFormulaComponent.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionCalculationFormulaComponent is a master-data entity that decomposes an EmissionCalculationFormula into its individual multiplicative or additive terms, each term referencing either an EmissionFactor, an activity parameter type, or a constant. This decomposition enables calculation engines to evaluate formulas programmatically from structured data rather than parsed strings, and supports formula-level audit trails that show exactly which factors and parameters contributed to an emission result.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -57,4 +65,4 @@ EmissionCalculationFormulaComponent is a master-data entity that decomposes an E
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

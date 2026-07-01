@@ -3,6 +3,7 @@ ea_id: 341
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 20b72d46
 ---
 
 # <span class="sl" data-layer="business">BusinessObject</span> ESRS E4 - Biodiversity
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Biodiversity and ecosystems standard
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="341" data-file-path="ESRS Navigator Stakeholder Map/ESRS E4 - Biodiversity.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Biodiversity and ecosystems standard</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -57,4 +65,4 @@ Biodiversity and ecosystems standard
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

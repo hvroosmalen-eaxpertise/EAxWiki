@@ -3,6 +3,7 @@ ea_id: 43
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: 405ac275
 ---
 
 # <span class="sl" data-layer="edgy-id">Content</span> ESRS S3 Affected Communities
@@ -15,8 +16,15 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="43" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS S3/ESRS S3 Affected Communities.md" data-api-port="8001"></div>
 
-For more information:
-https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F15%2520Draft%2520ESRS%2520S3%2520Affected%2520communities%2520November%25202022.pdf
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="43" data-file-path="ESRS S3/ESRS S3 Affected Communities.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>For more information:
+https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F15%2520Draft%2520ESRS%2520S3%2520Affected%2520communities%2520November%25202022.pdf</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -72,4 +80,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

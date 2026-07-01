@@ -3,6 +3,7 @@ ea_id: 3
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: d676ab84
 ---
 
 # <span class="sl" data-layer="edgy-id">Purpose</span> SDG  1. No Poverty
@@ -15,7 +16,14 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="3" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Sustainability Development Goals/SDG  1. No Poverty.md" data-api-port="8001"></div>
 
-End poverty in all its forms everywhere.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="3" data-file-path="Sustainability Development Goals/SDG  1. No Poverty.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>End poverty in all its forms everywhere.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -36,4 +44,4 @@ End poverty in all its forms everywhere.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:22*

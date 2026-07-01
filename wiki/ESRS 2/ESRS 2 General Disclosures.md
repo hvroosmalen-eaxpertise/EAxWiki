@@ -3,6 +3,7 @@ ea_id: 35
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: efca9d19
 ---
 
 # <span class="sl" data-layer="edgy-id">Content</span> ESRS 2 General Disclosures
@@ -15,9 +16,16 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="35" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS 2/ESRS 2 General Disclosures.md" data-api-port="8001"></div>
 
-ESRS 2 establishes the basic information that must be provided regardless of the sustainability topic under consideration.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="35" data-file-path="ESRS 2/ESRS 2 General Disclosures.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>ESRS 2 establishes the basic information that must be provided regardless of the sustainability topic under consideration.
 For more information:
-https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F07.%2520Draft%2520ESRS%25202%2520General%2520disclsoures%2520November%25202022.pdf
+https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F07.%2520Draft%2520ESRS%25202%2520General%2520disclsoures%2520November%25202022.pdf</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -63,4 +71,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

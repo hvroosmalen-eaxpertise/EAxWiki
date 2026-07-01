@@ -3,6 +3,7 @@ ea_id: 440
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 6782e78c
 ---
 
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Sustainability-driven Differentiation
@@ -13,8 +14,15 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
 
-Strategic approach to achieve competitive differentiation through superior sustainability performance and communication.         
-Positions the organization as a sustainability leader in its industry to attract conscious consumers and investors.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="440" data-file-path="Courses of Action/Sustainability-driven Differentiation.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Strategic approach to achieve competitive differentiation through superior sustainability performance and communication.         
+Positions the organization as a sustainability leader in its industry to attract conscious consumers and investors.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -61,4 +69,4 @@ Positions the organization as a sustainability leader in its industry to attract
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

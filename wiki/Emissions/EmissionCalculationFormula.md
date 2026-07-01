@@ -3,6 +3,7 @@ ea_id: 790
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 0a5f4094
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> EmissionCalculationFormula
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionCalculationFormula is a master-data entity that encodes the mathematical expression used by an EmissionCalculationModel to derive an emission quantity from input parameter and factor values. A formula belongs to one calculation model and may be decomposed into multiple EmissionCalculationFormulaComponent records that capture the individual multiplicative terms. Storing formulas as structured data rather than code allows them to be audited, versioned, and applied consistently by calculation engines without custom programming per model.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="790" data-file-path="Emissions/EmissionCalculationFormula.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionCalculationFormula is a master-data entity that encodes the mathematical expression used by an EmissionCalculationModel to derive an emission quantity from input parameter and factor values. A formula belongs to one calculation model and may be decomposed into multiple EmissionCalculationFormulaComponent records that capture the individual multiplicative terms. Storing formulas as structured data rather than code allows them to be audited, versioned, and applied consistently by calculation engines without custom programming per model.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -62,4 +70,4 @@ EmissionCalculationFormula is a master-data entity that encodes the mathematical
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

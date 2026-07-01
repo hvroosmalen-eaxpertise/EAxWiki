@@ -3,6 +3,7 @@ ea_id: 134
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: 4169c594
 ---
 
 # <span class="sl" data-layer="edgy-ar">Process</span> Reduction Initiatives
@@ -15,11 +16,18 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="134" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Process/Reduction Initiatives.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="134" data-file-path="Process/Reduction Initiatives.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 Projecten gericht op emissiereductie.
 <ul>
 	<li>SME Climate Hub – https://smeclimatehub.org – Mobiliseert mkb voor emissiereductie.</li>
 	<li>Google – https://sustainability.google – CO₂-reductie via 24/7 carbon-free energy.</li>
 </ul>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -64,4 +72,4 @@ Projecten gericht op emissiereductie.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

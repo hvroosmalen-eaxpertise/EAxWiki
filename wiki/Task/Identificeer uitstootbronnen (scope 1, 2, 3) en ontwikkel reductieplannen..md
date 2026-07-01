@@ -3,6 +3,7 @@ ea_id: 154
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: e3b0c442
 ---
 
 # <span class="sl" data-layer="edgy-ex">Task</span> Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen.
@@ -57,4 +58,4 @@ ea_hash: 9b0c660b
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

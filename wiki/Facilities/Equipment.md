@@ -3,6 +3,7 @@ ea_id: 756
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: e4fedc0b
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> Equipment
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-Equipment describes a device used in an operation or activity that is located or installed at a particular Facility. It is a manufactured, non-consumable object delivering the required functionality of facilities. Examples include Natural Gas Pneumatic Devices, Blowdown Vent Stacks, Flare Stacks, Centrifugal Compressors, Reciprocating Compressors, Atmospheric Storage Tanks, and Combustion Equipment, as catalogued in the US EPA Subpart W reference. A self-referential parent relationship allows the modelling of equipment assemblies. Both Facility and Equipment may be assigned an EmissionActivityParameter and an associated EmissionActivityParameterValue at a given point in time.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="756" data-file-path="Facilities/Equipment.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Equipment describes a device used in an operation or activity that is located or installed at a particular Facility. It is a manufactured, non-consumable object delivering the required functionality of facilities. Examples include Natural Gas Pneumatic Devices, Blowdown Vent Stacks, Flare Stacks, Centrifugal Compressors, Reciprocating Compressors, Atmospheric Storage Tanks, and Combustion Equipment, as catalogued in the US EPA Subpart W reference. A self-referential parent relationship allows the modelling of equipment assemblies. Both Facility and Equipment may be assigned an EmissionActivityParameter and an associated EmissionActivityParameterValue at a given point in time.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -59,4 +67,4 @@ Equipment describes a device used in an operation or activity that is located or
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

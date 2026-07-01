@@ -3,6 +3,7 @@ ea_id: 811
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 24fe1e50
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> ProductFootprint
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
-ProductFootprint is a work-product-component that serves as the versioned envelope record for a product carbon footprint declaration. It holds the declaration metadata including the status, version history, validity period, and preceding footprint reference, grouping one or more ProductCarbonFootprint records that carry the quantified GHG data. The ProductFootprint entity aligns with the PACT technical specification version 2 data model, where a footprint declaration can be updated or superseded while retaining the historical chain of prior versions.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="811" data-file-path="Products/ProductFootprint.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>ProductFootprint is a work-product-component that serves as the versioned envelope record for a product carbon footprint declaration. It holds the declaration metadata including the status, version history, validity period, and preceding footprint reference, grouping one or more ProductCarbonFootprint records that carry the quantified GHG data. The ProductFootprint entity aligns with the PACT technical specification version 2 data model, where a footprint declaration can be updated or superseded while retaining the historical chain of prior versions.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -67,4 +75,4 @@ ProductFootprint is a work-product-component that serves as the versioned envelo
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

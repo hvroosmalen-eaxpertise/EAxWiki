@@ -10,4 +10,5 @@ public interface IEaReader
     string RepositoryPath { get; }
     IReadOnlyList<string> GetStatusTypes();
     void UpdateElementStatus(int elementId, string newStatus);
+    void UpdateElementNotes(int elementId, string newNotesHtml);
 }

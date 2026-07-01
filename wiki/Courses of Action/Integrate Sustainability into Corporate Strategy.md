@@ -3,6 +3,7 @@ ea_id: 439
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: ea403225
 ---
 
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Integrate Sustainability into Corporate Strategy
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
 
-Master strategy to fully integrate sustainability considerations into corporate strategy formulation and execution.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="439" data-file-path="Courses of Action/Integrate Sustainability into Corporate Strategy.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Master strategy to fully integrate sustainability considerations into corporate strategy formulation and execution.         
 Treats sustainability not as a separate initiative but as a core element of strategic planning and business model design.         
-According to Bodenstein, this represents the fundamental strategic choice to make sustainability a steering variable.
+According to Bodenstein, this represents the fundamental strategic choice to make sustainability a steering variable.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -68,4 +76,4 @@ According to Bodenstein, this represents the fundamental strategic choice to mak
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

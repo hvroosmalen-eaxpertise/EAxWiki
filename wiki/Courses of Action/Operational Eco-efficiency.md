@@ -3,6 +3,7 @@ ea_id: 441
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: ad2648d4
 ---
 
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Operational Eco-efficiency
@@ -13,8 +14,15 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
 
-Strategy focused on reducing environmental impact while simultaneously improving operational efficiency and reducing costs.         
-Implements circular economy principles, resource optimization, and waste reduction across operations.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="441" data-file-path="Courses of Action/Operational Eco-efficiency.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Strategy focused on reducing environmental impact while simultaneously improving operational efficiency and reducing costs.         
+Implements circular economy principles, resource optimization, and waste reduction across operations.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -60,4 +68,4 @@ Implements circular economy principles, resource optimization, and waste reducti
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

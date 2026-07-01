@@ -3,6 +3,7 @@ ea_id: 818
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: d9d6f27f
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> ProductCarbonFootprintFactorSource
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
-ProductCarbonFootprintFactorSource is an intersection entity that records which emission factor databases were used as secondary or background data sources in calculating a specific ProductCarbonFootprint. This entity provides the structured traceability required by the PACT technical specification secondary_emission_factor_sources field, capturing not just the database name but also the version and applicable life-cycle stage, enabling systematic data quality assessment by receivers.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="818" data-file-path="Products/ProductCarbonFootprintFactorSource.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>ProductCarbonFootprintFactorSource is an intersection entity that records which emission factor databases were used as secondary or background data sources in calculating a specific ProductCarbonFootprint. This entity provides the structured traceability required by the PACT technical specification secondary_emission_factor_sources field, capturing not just the database name but also the version and applicable life-cycle stage, enabling systematic data quality assessment by receivers.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -62,4 +70,4 @@ ProductCarbonFootprintFactorSource is an intersection entity that records which 
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

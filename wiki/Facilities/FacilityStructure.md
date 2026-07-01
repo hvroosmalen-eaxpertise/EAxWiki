@@ -3,6 +3,7 @@ ea_id: 757
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 150221b8
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> FacilityStructure
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-FacilityStructure records the fact that one facility is a structural component of another facility — for example, one facility is mounted on, connected to, or dependent upon another. This parent-child composition allows complex facility assemblies to be modelled as hierarchies, enabling aggregation of emissions from sub-facilities to parent facilities and supporting site-level reporting that reflects the physical dependencies between operational units. Most likely only the parent Facility in the FacilityStructure would be assigned to the lowest level of the Location hierarchy.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="757" data-file-path="Facilities/FacilityStructure.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>FacilityStructure records the fact that one facility is a structural component of another facility — for example, one facility is mounted on, connected to, or dependent upon another. This parent-child composition allows complex facility assemblies to be modelled as hierarchies, enabling aggregation of emissions from sub-facilities to parent facilities and supporting site-level reporting that reflects the physical dependencies between operational units. Most likely only the parent Facility in the FacilityStructure would be assigned to the lowest level of the Location hierarchy.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -60,4 +68,4 @@ FacilityStructure records the fact that one facility is a structural component o
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

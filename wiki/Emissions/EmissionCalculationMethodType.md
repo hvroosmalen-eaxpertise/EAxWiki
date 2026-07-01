@@ -3,6 +3,7 @@ ea_id: 791
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: dae08305
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> EmissionCalculationMethodType
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionCalculationMethodType is a reference entity that classifies the high-level methodological approach applied in an EmissionCalculationModel. The WBCSD PACT technical specification defines four primary method types: supplier-specific, hybrid, activity-based, and spend-based, each with different data quality implications and applicability conditions. Registering these types as reference data enables transparent method disclosure and drives data quality scoring in product carbon footprint assessments.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="791" data-file-path="Emissions/EmissionCalculationMethodType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionCalculationMethodType is a reference entity that classifies the high-level methodological approach applied in an EmissionCalculationModel. The WBCSD PACT technical specification defines four primary method types: supplier-specific, hybrid, activity-based, and spend-based, each with different data quality implications and applicability conditions. Registering these types as reference data enables transparent method disclosure and drives data quality scoring in product carbon footprint assessments.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -50,4 +58,4 @@ EmissionCalculationMethodType is a reference entity that classifies the high-lev
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

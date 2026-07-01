@@ -3,6 +3,7 @@ ea_id: 465
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 8808b5b4
 ---
 
 # <span class="sl" data-layer="motivation">Assessment</span> Energy Efficiency Index
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
 
-Metric measuring energy consumption per unit of output, tracking improvements in operational energy efficiency.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="465" data-file-path="Assessments/Energy Efficiency Index.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Metric measuring energy consumption per unit of output, tracking improvements in operational energy efficiency.         
 Monitors progress in reducing energy intensity and optimizing resource use.         
-Links environmental performance to operational excellence and cost management.
+Links environmental performance to operational excellence and cost management.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -53,4 +61,4 @@ Links environmental performance to operational excellence and cost management.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

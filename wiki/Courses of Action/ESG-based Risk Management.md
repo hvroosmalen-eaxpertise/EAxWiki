@@ -3,6 +3,7 @@ ea_id: 443
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: ac3d4267
 ---
 
 # <span class="sl" data-layer="strategy">CourseOfAction</span> ESG-based Risk Management
@@ -13,8 +14,15 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
 
-Strategic integration of ESG factors into enterprise risk management frameworks.         
-Identifies, assesses, and mitigates sustainability-related risks with the same rigor as traditional business risks.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="443" data-file-path="Courses of Action/ESG-based Risk Management.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Strategic integration of ESG factors into enterprise risk management frameworks.         
+Identifies, assesses, and mitigates sustainability-related risks with the same rigor as traditional business risks.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -63,4 +71,4 @@ Identifies, assesses, and mitigates sustainability-related risks with the same r
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

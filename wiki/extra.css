@@ -191,3 +191,70 @@ details.status-details li {
 }
 .ea-status-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .ea-status-msg { font-style: italic; font-size: 0.95em; }
+
+/* Notes editor widget */
+.ea-notes-editor {
+  position: relative;
+  margin: 0.6em 0 1em;
+}
+.ea-notes-content {
+  padding-right: 2em;
+}
+.ea-notes-edit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.8em;
+  height: 1.8em;
+  padding: 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  font-size: 0.9em;
+  line-height: 1;
+}
+.ea-notes-edit-btn:hover {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+.ea-notes-textarea {
+  width: 100%;
+  min-height: 8em;
+  box-sizing: border-box;
+  padding: 0.5em;
+  font-family: var(--md-code-font-family, monospace);
+  font-size: 0.85em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+.ea-notes-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.4em;
+}
+.ea-notes-save-btn {
+  padding: 0.2em 0.8em;
+  border: 1px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+.ea-notes-cancel-btn {
+  padding: 0.2em 0.8em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+  font-size: 0.85em;
+}
+.ea-notes-save-btn:disabled, .ea-notes-cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.ea-notes-msg { font-style: italic; font-size: 0.85em; }

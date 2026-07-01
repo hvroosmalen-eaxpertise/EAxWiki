@@ -3,6 +3,7 @@ ea_id: 782
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 0ad1eba6
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> EmissionReport
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionReport is a work-product-component that represents a formal, structured output document produced from one or more EmissionInventory records for disclosure to regulators, investors, or the public. It carries the report metadata, including the applicable reporting framework, the consolidation boundary, and the sign-off status. The entity acts as an envelope that groups EmissionReportPeriod records and drives the generation of summary tables and narrative sections in published disclosures.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="782" data-file-path="Emissions/EmissionReport.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionReport is a work-product-component that represents a formal, structured output document produced from one or more EmissionInventory records for disclosure to regulators, investors, or the public. It carries the report metadata, including the applicable reporting framework, the consolidation boundary, and the sign-off status. The entity acts as an envelope that groups EmissionReportPeriod records and drives the generation of summary tables and narrative sections in published disclosures.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -65,4 +73,4 @@ EmissionReport is a work-product-component that represents a formal, structured 
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

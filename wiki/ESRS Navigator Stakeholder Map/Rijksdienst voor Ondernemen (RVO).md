@@ -3,6 +3,7 @@ ea_id: 338
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 21751c63
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Rijksdienst voor Ondernemen (RVO)
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Dutch government agency - MVO-steunpunt provides CSR guidance
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="338" data-file-path="ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO).md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Dutch government agency - MVO-steunpunt provides CSR guidance</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -58,4 +66,4 @@ Dutch government agency - MVO-steunpunt provides CSR guidance
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

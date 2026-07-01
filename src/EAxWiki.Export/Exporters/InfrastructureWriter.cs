@@ -341,6 +341,115 @@ if (typeof document$ !== 'undefined') {
         await writer.WriteFileAsync(Path.Combine(outputDir, "status-editor.js"), js);
     }
 
+    public async Task WriteNotesEditorScriptAsync(string outputDir)
+    {
+        const string js = """
+(function () {
+  'use strict';
+
+  function initNotesEditor() {
+    var widget = document.getElementById('ea-notes-editor');
+    if (!widget || widget.dataset.initialized) return;
+    widget.dataset.initialized = 'true';
+
+    var eaId = parseInt(widget.dataset.eaId, 10);
+    var file = widget.dataset.filePath;
+    var port = widget.dataset.apiPort || '8001';
+    var apiBase = 'http://localhost:' + port;
+
+    var editBtn = document.getElementById('ea-notes-edit-btn');
+    var contentDiv = widget.querySelector('.ea-notes-content');
+    if (!editBtn || !contentDiv) return;
+
+    var notesMarkerPattern = /<!--\s*ea-notes-(start|end)\s*-->/g;
+    var textarea, controls, saveBtn, cancelBtn, msg;
+
+    function enterEditMode() {
+      textarea = document.createElement('textarea');
+      textarea.className = 'ea-notes-textarea';
+      textarea.value = contentDiv.innerHTML.replace(notesMarkerPattern, '').trim();
+
+      controls = document.createElement('div');
+      controls.className = 'ea-notes-controls';
+
+      saveBtn = document.createElement('button');
+      saveBtn.className = 'ea-notes-save-btn';
+      saveBtn.textContent = 'Save';
+
+      cancelBtn = document.createElement('button');
+      cancelBtn.className = 'ea-notes-cancel-btn';
+      cancelBtn.textContent = 'Cancel';
+
+      msg = document.createElement('span');
+      msg.className = 'ea-notes-msg';
+
+      controls.appendChild(saveBtn);
+      controls.appendChild(cancelBtn);
+      controls.appendChild(msg);
+
+      contentDiv.style.display = 'none';
+      editBtn.style.display = 'none';
+      widget.appendChild(textarea);
+      widget.appendChild(controls);
+      textarea.focus();
+
+      cancelBtn.addEventListener('click', exitEditMode);
+      saveBtn.addEventListener('click', save);
+    }
+
+    function exitEditMode() {
+      if (textarea) widget.removeChild(textarea);
+      if (controls) widget.removeChild(controls);
+      textarea = controls = null;
+      contentDiv.style.display = '';
+      editBtn.style.display = '';
+    }
+
+    function save() {
+      var newNotes = textarea.value;
+      saveBtn.disabled = true;
+      cancelBtn.disabled = true;
+      msg.textContent = 'Saving…';
+
+      fetch(apiBase + '/api/notes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ elementId: eaId, newNotes: newNotes, filePath: file })
+      })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
+      .then(function (res) {
+        if (res.ok) {
+          contentDiv.innerHTML = res.data.html;
+          exitEditMode();
+        } else {
+          msg.textContent = '✗ ' + (res.data.message || 'Error');
+          msg.style.color = '#c62828';
+          saveBtn.disabled = false;
+          cancelBtn.disabled = false;
+        }
+      })
+      .catch(function (e) {
+        msg.textContent = '✗ ' + (e && e.message ? e.message : 'Could not reach API — is EAxWiki --api running?');
+        msg.style.color = '#c62828';
+        saveBtn.disabled = false;
+        cancelBtn.disabled = false;
+        console.error('EAxWiki notes-editor error:', e);
+      });
+    }
+
+    editBtn.addEventListener('click', enterEditMode);
+  }
+
+  if (typeof document$ !== 'undefined') {
+    document$.subscribe(function () { initNotesEditor(); });
+  } else {
+    document.addEventListener('DOMContentLoaded', initNotesEditor);
+  }
+})();
+""";
+        await writer.WriteFileAsync(Path.Combine(outputDir, "notes-editor.js"), js);
+    }
+
     public async Task WriteExtraCssAsync(string outputDir)
     {
         var content = """
@@ -537,6 +646,73 @@ details.status-details li {
 }
 .ea-status-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .ea-status-msg { font-style: italic; font-size: 0.95em; }
+
+/* Notes editor widget */
+.ea-notes-editor {
+  position: relative;
+  margin: 0.6em 0 1em;
+}
+.ea-notes-content {
+  padding-right: 2em;
+}
+.ea-notes-edit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.8em;
+  height: 1.8em;
+  padding: 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  font-size: 0.9em;
+  line-height: 1;
+}
+.ea-notes-edit-btn:hover {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+.ea-notes-textarea {
+  width: 100%;
+  min-height: 8em;
+  box-sizing: border-box;
+  padding: 0.5em;
+  font-family: var(--md-code-font-family, monospace);
+  font-size: 0.85em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+.ea-notes-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.4em;
+}
+.ea-notes-save-btn {
+  padding: 0.2em 0.8em;
+  border: 1px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+.ea-notes-cancel-btn {
+  padding: 0.2em 0.8em;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  cursor: pointer;
+  font-size: 0.85em;
+}
+.ea-notes-save-btn:disabled, .ea-notes-cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.ea-notes-msg { font-style: italic; font-size: 0.85em; }
 """;
         await writer.WriteFileAsync(Path.Combine(outputDir, "extra.css"), content);
     }

@@ -3,6 +3,7 @@ ea_id: 795
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 1146d900
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> EmissionComponentCategoryGroup
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionComponentCategoryGroup is a reference entity that provides a higher-level grouping of EmissionComponentCategory records, enabling roll-up from individual gas categories to broad gas families for summary disclosures. Typical groups include Carbon dioxide, Methane and nitrous oxide, Fluorinated gases (F-gases), Biogenic CO2, and Aggregate CO2-equivalent. This grouping is required by several reporting frameworks that present emission totals at the gas-group level in addition to individual gas breakdowns.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="795" data-file-path="Emissions/EmissionComponentCategoryGroup.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionComponentCategoryGroup is a reference entity that provides a higher-level grouping of EmissionComponentCategory records, enabling roll-up from individual gas categories to broad gas families for summary disclosures. Typical groups include Carbon dioxide, Methane and nitrous oxide, Fluorinated gases (F-gases), Biogenic CO2, and Aggregate CO2-equivalent. This grouping is required by several reporting frameworks that present emission totals at the gas-group level in addition to individual gas breakdowns.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -59,4 +67,4 @@ EmissionComponentCategoryGroup is a reference entity that provides a higher-leve
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

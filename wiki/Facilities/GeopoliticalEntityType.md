@@ -3,6 +3,7 @@ ea_id: 765
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 9b868291
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> GeopoliticalEntityType
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-GeopoliticalEntityType provides the controlled vocabulary used to classify geopolitical entities, with examples including "Country", "Nature Reserve", "State", and "Region". Classifying geopolitical entities by type enables geographic analysis at multiple administrative levels and supports regulatory jurisdiction mapping in emissions reporting. The code attribute supports alignment with external geopolitical classification systems such as those maintained by the United Nations.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="765" data-file-path="Facilities/GeopoliticalEntityType.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>GeopoliticalEntityType provides the controlled vocabulary used to classify geopolitical entities, with examples including "Country", "Nature Reserve", "State", and "Region". Classifying geopolitical entities by type enables geographic analysis at multiple administrative levels and supports regulatory jurisdiction mapping in emissions reporting. The code attribute supports alignment with external geopolitical classification systems such as those maintained by the United Nations.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -50,4 +58,4 @@ GeopoliticalEntityType provides the controlled vocabulary used to classify geopo
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

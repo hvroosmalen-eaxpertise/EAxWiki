@@ -3,6 +3,7 @@ ea_id: 555
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: a7577f1b
 ---
 
 # <span class="sl" data-layer="edgy-id">Content</span> European Sustainability Reporting Standards
@@ -15,7 +16,14 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="555" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="European Sustainability Reporting Standards/European Sustainability Reporting Standards.md" data-api-port="8001"></div>
 
-The European Sustainability Reporting Standards (ESRS) oblige all companies subject to the Corporate Sustainability Reporting Directive (CSRD) of the European Union to report both on their impacts on people and the environment, and on how social and environmental issues create financial risks and opportunities for the company.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="555" data-file-path="European Sustainability Reporting Standards/European Sustainability Reporting Standards.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>The European Sustainability Reporting Standards (ESRS) oblige all companies subject to the Corporate Sustainability Reporting Directive (CSRD) of the European Union to report both on their impacts on people and the environment, and on how social and environmental issues create financial risks and opportunities for the company.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -72,4 +80,4 @@ The European Sustainability Reporting Standards (ESRS) oblige all companies subj
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:22*

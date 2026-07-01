@@ -2,6 +2,9 @@
 
 | Name | Type | Modified | Path |
 |------|------|----------|------|
+| [Large Companies (>250 employees)](../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md) | Class | 2026-07-01 | [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) |
+| [Affected Communities (ESRS S3)](../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).md) | Class | 2026-06-30 | [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) |
+| [Road to Net Zero](../Reference Documents/Road to Net Zero.md) | Class | 2026-06-30 | [Home](../index.md) / [Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Documents](../Reference Documents/index.md) |
 | [Emission Sources](../Asset/Emission Sources.md) | Class | 2026-06-30 | [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) / [Asset](../Asset/index.md) |
 | [Organisation](../Organisation/diagrams/Organisation.md) | Diagram | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](../Organisation/index.md) |
 | [ProductFootprintDataQualityIndicator](../Products/ProductFootprintDataQualityIndicator.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](../Products/index.md) |
@@ -49,10 +52,7 @@
 | [UnitOfMeasure](../Emissions/UnitOfMeasure.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
 | [EmissionFactor](../Emissions/EmissionFactor.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
 | [EmissionInventory](../Emissions/EmissionInventory.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
-| [EmissionScopeType](../Emissions/EmissionScopeType.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
-| [EmissionActivity](../Emissions/EmissionActivity.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
-| [EmissionActivityCategory](../Emissions/EmissionActivityCategory.md) | Class | 2026-05-20 | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

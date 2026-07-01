@@ -3,6 +3,7 @@ ea_id: 819
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 7fd275b9
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> EnvironmentalProductDeclaration
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
-EnvironmentalProductDeclaration is a work-product-component that represents a formal Type III environmental declaration published under a recognised EPD programme, such as those governed by ISO 14025. An EPD discloses the life-cycle environmental impacts of a product across multiple impact categories, of which the global warming potential (GWP) impact category is directly comparable to a product carbon footprint. Linking an EPD record to a product enables organisations to reference externally verified declarations alongside internally calculated footprints in their supply-chain disclosures.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="819" data-file-path="Products/EnvironmentalProductDeclaration.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EnvironmentalProductDeclaration is a work-product-component that represents a formal Type III environmental declaration published under a recognised EPD programme, such as those governed by ISO 14025. An EPD discloses the life-cycle environmental impacts of a product across multiple impact categories, of which the global warming potential (GWP) impact category is directly comparable to a product carbon footprint. Linking an EPD record to a product enables organisations to reference externally verified declarations alongside internally calculated footprints in their supply-chain disclosures.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -64,4 +72,4 @@ EnvironmentalProductDeclaration is a work-product-component that represents a fo
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

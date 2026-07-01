@@ -3,6 +3,7 @@ ea_id: 807
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 76ee9f40
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> EmissionActivityTypeParameterTypeAssignment
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionActivityTypeParameterTypeAssignment is a master-data entity that records a single parameter type requirement within an EmissionActivityParameterRecordingTemplate, specifying which EmissionParameterType must be recorded and whether the measurement is mandatory or optional. Each template is composed of one or more of these assignment records, forming the complete parameter checklist for the associated activity type and jurisdiction.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="807" data-file-path="Emissions/EmissionActivityTypeParameterTypeAssignment.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionActivityTypeParameterTypeAssignment is a master-data entity that records a single parameter type requirement within an EmissionActivityParameterRecordingTemplate, specifying which EmissionParameterType must be recorded and whether the measurement is mandatory or optional. Each template is composed of one or more of these assignment records, forming the complete parameter checklist for the associated activity type and jurisdiction.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -53,4 +61,4 @@ EmissionActivityTypeParameterTypeAssignment is a master-data entity that records
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

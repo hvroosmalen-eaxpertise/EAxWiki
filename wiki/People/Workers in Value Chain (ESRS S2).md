@@ -3,6 +3,7 @@ ea_id: 532
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: e24e9b7e
 ---
 
 # <span class="sl" data-layer="edgy-pe">People</span> Workers in Value Chain (ESRS S2)
@@ -15,7 +16,14 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="532" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="People/Workers in Value Chain (ESRS S2).md" data-api-port="8001"></div>
 
-Employees of suppliers and partners
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="532" data-file-path="People/Workers in Value Chain (ESRS S2).md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Employees of suppliers and partners</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Relationships
 
@@ -56,4 +64,4 @@ Employees of suppliers and partners
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

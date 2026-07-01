@@ -3,6 +3,7 @@ ea_id: 437
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 7518ab2c
 ---
 
 # <span class="sl" data-layer="motivation">Goal</span> Corporate Sustainability Integration
@@ -13,8 +14,15 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
 
-Fully embed sustainability principles and practices into all core business processes, decision-making frameworks, and organizational culture.         
-Move beyond peripheral CSR initiatives toward strategic integration throughout the enterprise.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="437" data-file-path="Goals/Corporate Sustainability Integration.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Fully embed sustainability principles and practices into all core business processes, decision-making frameworks, and organizational culture.         
+Move beyond peripheral CSR initiatives toward strategic integration throughout the enterprise.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -65,4 +73,4 @@ Move beyond peripheral CSR initiatives toward strategic integration throughout t
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

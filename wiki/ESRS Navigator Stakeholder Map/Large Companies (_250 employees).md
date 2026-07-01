@@ -3,17 +3,25 @@ ea_id: 331
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: f926a825
 ---
 
 # <span class="sl" data-layer="motivation">Stakeholder</span> Large Companies (>250 employees)
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
-**Created:** 2025-11-14  **Modified:** 2025-11-14
+**Created:** 2025-11-14  **Modified:** 2026-07-01
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
 
-Companies required to report under CSRD from 2025
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="331" data-file-path="ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Companies with over 250 employees are required to report under CSRD from 2025.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -102,4 +110,4 @@ Companies required to report under CSRD from 2025
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

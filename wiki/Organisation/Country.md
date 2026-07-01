@@ -3,6 +3,7 @@ ea_id: 745
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: f11fbdf0
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> Country
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-Country represents an area of land or territory of a nation or state, identified by its ISO alpha-3 country code and geopolitical entity name. The Country entity serves as a reference point for linking addresses and geopolitical entities to a standardised country identifier, enabling geographic analysis and cross-border data alignment across the model. Country is modelled as a subtype of GeopoliticalEntity in the standard's conceptual model, distinguished by GeopoliticalEntityType, but is represented as a dedicated reference entity here to support direct foreign key relationships from Address and other entities that specifically require a country reference.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="745" data-file-path="Organisation/Country.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Country represents an area of land or territory of a nation or state, identified by its ISO alpha-3 country code and geopolitical entity name. The Country entity serves as a reference point for linking addresses and geopolitical entities to a standardised country identifier, enabling geographic analysis and cross-border data alignment across the model. Country is modelled as a subtype of GeopoliticalEntity in the standard's conceptual model, distinguished by GeopoliticalEntityType, but is represented as a dedicated reference entity here to support direct foreign key relationships from Address and other entities that specifically require a country reference.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -63,4 +71,4 @@ Country represents an area of land or territory of a nation or state, identified
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

@@ -3,19 +3,27 @@ ea_id: 484
 status: Implemented
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: bf546638
+notes_hash: 7e9e0106
 ---
 
 # <span class="sl" data-layer="strategy">Resource</span> Road to Net Zero
 
 **Type:** Class  **Stereotype:** ArchiMate_Resource  **StereotypeEx:** ArchiMate_Resource  **FQStereotype:** ArchiMate3::ArchiMate_Resource  **Status:** <span class="status-badge status-implemented">Implemented</span>  
-**Created:** 2025-12-12  **Modified:** 2025-12-12
+**Created:** 2025-12-12  **Modified:** 2026-06-30
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Documents](index.md)
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="484" data-status="Implemented" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Reference Documents/Road to Net Zero.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="484" data-file-path="Reference Documents/Road to Net Zero.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 <font color="#242021">Strategic Pathways for Sustainability Driven Business Transformation, Zipse Oliver, et. al.</font>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ### Appears on Diagrams
 
@@ -27,4 +35,4 @@ ea_hash: bf546638
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

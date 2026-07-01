@@ -3,6 +3,7 @@ ea_id: 447
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 5d29223f
 ---
 
 # <span class="sl" data-layer="strategy">Capability</span> Sustainable Supply Chain Management
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
 
-Capability to manage environmental and social sustainability throughout the supply chain.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="447" data-file-path="Capabilities/Sustainable Supply Chain Management.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Capability to manage environmental and social sustainability throughout the supply chain.         
 Includes supplier assessment, auditing, development programs, and collaborative sustainability initiatives.         
-Ensures responsible sourcing and addresses upstream environmental and social impacts.
+Ensures responsible sourcing and addresses upstream environmental and social impacts.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -63,4 +71,4 @@ Ensures responsible sourcing and addresses upstream environmental and social imp
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

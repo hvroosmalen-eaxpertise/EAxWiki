@@ -3,6 +3,7 @@ ea_id: 430
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: f41a6346
 ---
 
 # <span class="sl" data-layer="motivation">Driver</span> Stakeholder Expectations
@@ -13,8 +14,15 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
 
-Growing expectations from investors, customers, employees, and civil society for transparent and responsible corporate behavior.         
-Stakeholders increasingly demand ESG performance disclosure and sustainable business practices.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="430" data-file-path="Drivers/Stakeholder Expectations.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Growing expectations from investors, customers, employees, and civil society for transparent and responsible corporate behavior.         
+Stakeholders increasingly demand ESG performance disclosure and sustainable business practices.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -51,4 +59,4 @@ Stakeholders increasingly demand ESG performance disclosure and sustainable busi
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

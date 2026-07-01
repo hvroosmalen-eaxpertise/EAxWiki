@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Text.RegularExpressions;
 using EAxWiki.Export.Exporters;
 
@@ -83,6 +84,71 @@ public static class FrontmatterParser
         // 3. Atomic write — swap via temp file so MkDocs never sees a partial file
         var tmp = filePath + ".tmp";
         File.WriteAllLines(tmp, lines);
+        File.Move(tmp, filePath, overwrite: true);
+    }
+
+    private static readonly Regex NotesMarkerPattern = new(@"<!--\s*ea-notes-(start|end)\s*-->", RegexOptions.Compiled);
+
+    /// <summary>
+    /// Strips the ea-notes-start/end markers (the widget's client-side innerHTML capture includes
+    /// them as literal comment text, since they sit inside .ea-notes-content) and, if what remains
+    /// contains no HTML tags at all, wraps blank-line-separated blocks in &lt;p&gt; so multiple
+    /// paragraphs survive Markdown's block-HTML passthrough. Notes that already contain markup
+    /// (beyond the stripped markers) are left untouched.
+    /// </summary>
+    public static string NormalizeNotesHtml(string? notes)
+    {
+        var cleaned = NotesMarkerPattern.Replace(notes ?? string.Empty, string.Empty).Trim();
+        if (cleaned.Length == 0 || cleaned.Contains('<'))
+            return cleaned;
+
+        var paragraphs = Regex.Split(cleaned.Replace("\r\n", "\n"), @"\n\s*\n")
+            .Where(p => !string.IsNullOrWhiteSpace(p));
+        return string.Join("\n", paragraphs.Select(p => $"<p>{p.Trim()}</p>"));
+    }
+
+    /// <summary>
+    /// Extracts the current notes body from between the ea-notes-start/end markers, or null if
+    /// the page has no notes widget (exported without --api-port, or the element has no notes).
+    /// </summary>
+    public static string? ExtractNotesContent(string filePath)
+    {
+        string text;
+        try { text = File.ReadAllText(filePath).Replace("\r\n", "\n"); }
+        catch { return null; }
+
+        var match = Regex.Match(text, @"<!--ea-notes-start-->\n(.*?)\n<!--ea-notes-end-->", RegexOptions.Singleline);
+        return match.Success ? match.Groups[1].Value : null;
+    }
+
+    /// <summary>
+    /// Updates the notes block (between the ea-notes-start/end markers) and the notes_hash
+    /// frontmatter field. Uses an atomic temp-file swap, same as UpdateStatus.
+    /// </summary>
+    public static void UpdateNotes(string filePath, string newNotesHtml)
+    {
+        var original = File.ReadAllText(filePath);
+        var usesCrlf = original.Contains("\r\n");
+        var text = original.Replace("\r\n", "\n");
+
+        var fmMatch = Regex.Match(text, @"\A---\n(.*?\n)---\n", RegexOptions.Singleline);
+        if (!fmMatch.Success) return;
+
+        var newHash = ElementPageWriter.ComputeNotesHash(newNotesHtml);
+        var fmBody = fmMatch.Groups[1].Value;
+        fmBody = Regex.IsMatch(fmBody, @"^notes_hash:.*$", RegexOptions.Multiline)
+            ? Regex.Replace(fmBody, @"^notes_hash:.*$", $"notes_hash: {newHash}", RegexOptions.Multiline)
+            : fmBody + $"notes_hash: {newHash}\n";
+
+        text = $"---\n{fmBody}---\n" + text[fmMatch.Length..];
+
+        var contentPattern = new Regex(@"(<!--ea-notes-start-->\n).*?(\n<!--ea-notes-end-->)", RegexOptions.Singleline);
+        text = contentPattern.Replace(text, m => m.Groups[1].Value + newNotesHtml + m.Groups[2].Value, 1);
+
+        if (usesCrlf) text = text.Replace("\n", "\r\n");
+
+        var tmp = filePath + ".tmp";
+        File.WriteAllText(tmp, text);
         File.Move(tmp, filePath, overwrite: true);
     }
 }

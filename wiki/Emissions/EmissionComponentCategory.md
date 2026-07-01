@@ -3,6 +3,7 @@ ea_id: 792
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 465180ec
 ---
 
 # <span class="sl" data-layer="uml">reference-data</span> EmissionComponentCategory
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionComponentCategory is a reference entity that classifies the greenhouse gas type or aggregate measure represented by an EmissionComponent record. The seven Kyoto Protocol gases (CO2, CH4, N2O, HFCs, PFCs, SF6, and NF3) are the primary values, supplemented by aggregate categories such as CO2e total (AR5 GWPs) or biogenic CO2. Categorising components at this level enables gas-specific aggregation, GWP factor application, and the gas-level disclosures required by ISO 14064-1 and ESRS E1.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="792" data-file-path="Emissions/EmissionComponentCategory.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionComponentCategory is a reference entity that classifies the greenhouse gas type or aggregate measure represented by an EmissionComponent record. The seven Kyoto Protocol gases (CO2, CH4, N2O, HFCs, PFCs, SF6, and NF3) are the primary values, supplemented by aggregate categories such as CO2e total (AR5 GWPs) or biogenic CO2. Categorising components at this level enables gas-specific aggregation, GWP factor application, and the gas-level disclosures required by ISO 14064-1 and ESRS E1.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -64,4 +72,4 @@ EmissionComponentCategory is a reference entity that classifies the greenhouse g
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

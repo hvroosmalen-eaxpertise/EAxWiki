@@ -3,6 +3,7 @@ ea_id: 453
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 06097bb5
 ---
 
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Introduce Sustainable Product Design Process
@@ -13,9 +14,16 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
 
-Implementation of eco-design principles and life cycle thinking into product development processes.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="453" data-file-path="Courses of Action/Introduce Sustainable Product Design Process.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Implementation of eco-design principles and life cycle thinking into product development processes.
         Establishes design guidelines for resource efficiency, recyclability, durability, and reduced environmental footprint.
-        Drives innovation toward circular economy products and services.
+        Drives innovation toward circular economy products and services.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -61,4 +69,4 @@ Implementation of eco-design principles and life cycle thinking into product dev
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

@@ -3,6 +3,7 @@ ea_id: 802
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: ac1cc17a
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> ActivityEmissionAllocation
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-ActivityEmissionAllocation is a work-product-component that records the portion of a shared or joint emission activity total emission quantity assigned to a specific EmissionActivity when multiple activities share a common emission source. This entity is used, for example, when a shared boiler serves multiple processes and its total emissions must be apportioned across each process emission activity record in proportion to energy consumed, production output, or another allocation base.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="802" data-file-path="Emissions/ActivityEmissionAllocation.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>ActivityEmissionAllocation is a work-product-component that records the portion of a shared or joint emission activity total emission quantity assigned to a specific EmissionActivity when multiple activities share a common emission source. This entity is used, for example, when a shared boiler serves multiple processes and its total emissions must be apportioned across each process emission activity record in proportion to energy consumed, production output, or another allocation base.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -55,4 +63,4 @@ ActivityEmissionAllocation is a work-product-component that records the portion 
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

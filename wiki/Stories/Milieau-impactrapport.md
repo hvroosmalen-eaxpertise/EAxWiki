@@ -3,6 +3,7 @@ ea_id: 239
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: c83e1266
 ---
 
 # <span class="sl" data-layer="edgy-id">Story</span> Milieau-impactrapport
@@ -15,7 +16,14 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="239" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Stories/Milieau-impactrapport.md" data-api-port="8001"></div>
 
-Een productiemanager van een textielfabriek wandelde op een ochtend langs de rivier bij de fabriek en zag hoe afvalwater de oever vervuilde. Geschrokken deed ze haar verhaal nog diezelfde week tijdens een personeelsoverleg. Deze eerlijke confrontatie met hun milieueffect raakte een snaar. Het bedrijf besloot jaarlijks een open milieu-impactrapport te publiceren en concrete stappen te delen zoals 30% minder watergebruik en herbebossing langs de rivier.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="239" data-file-path="Stories/Milieau-impactrapport.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Een productiemanager van een textielfabriek wandelde op een ochtend langs de rivier bij de fabriek en zag hoe afvalwater de oever vervuilde. Geschrokken deed ze haar verhaal nog diezelfde week tijdens een personeelsoverleg. Deze eerlijke confrontatie met hun milieueffect raakte een snaar. Het bedrijf besloot jaarlijks een open milieu-impactrapport te publiceren en concrete stappen te delen zoals 30% minder watergebruik en herbebossing langs de rivier.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -35,4 +43,4 @@ Een productiemanager van een textielfabriek wandelde op een ochtend langs de riv
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

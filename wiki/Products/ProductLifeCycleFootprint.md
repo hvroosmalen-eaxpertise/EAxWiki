@@ -3,6 +3,7 @@ ea_id: 817
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 83d335c4
 ---
 
 # <span class="sl" data-layer="uml">work-product-component</span> ProductLifeCycleFootprint
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
-ProductLifeCycleFootprint is a work-product-component that records the GHG emission contribution of a specific ProductLifeCycleStage to the total ProductCarbonFootprint. By disaggregating the PCF total into stage-level contributions, this entity enables hotspot analysis, targeted supplier engagement, and the stage-by-stage breakdowns required by ISO 14067 and increasingly expected by frameworks such as ESRS E1 Appendix A.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="817" data-file-path="Products/ProductLifeCycleFootprint.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>ProductLifeCycleFootprint is a work-product-component that records the GHG emission contribution of a specific ProductLifeCycleStage to the total ProductCarbonFootprint. By disaggregating the PCF total into stage-level contributions, this entity enables hotspot analysis, targeted supplier engagement, and the stage-by-stage breakdowns required by ISO 14067 and increasingly expected by frameworks such as ESRS E1 Appendix A.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -64,4 +72,4 @@ ProductLifeCycleFootprint is a work-product-component that records the GHG emiss
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

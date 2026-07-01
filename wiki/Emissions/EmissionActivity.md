@@ -3,6 +3,7 @@ ea_id: 773
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: ec99f5f6
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> EmissionActivity
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-EmissionActivity is a master-data entity that represents a discrete operational process or event that generates, absorbs, or transfers greenhouse gas emissions. Each activity is linked to an EmissionActivityType and an EmissionActivityCategory, enabling aggregation and scope attribution. The entity supports a self-referential hierarchy through parent_id, allowing complex multi-level activity structures to be modelled without loss of granularity.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="773" data-file-path="Emissions/EmissionActivity.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionActivity is a master-data entity that represents a discrete operational process or event that generates, absorbs, or transfers greenhouse gas emissions. Each activity is linked to an EmissionActivityType and an EmissionActivityCategory, enabling aggregation and scope attribution. The entity supports a self-referential hierarchy through parent_id, allowing complex multi-level activity structures to be modelled without loss of granularity.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -74,4 +82,4 @@ EmissionActivity is a master-data entity that represents a discrete operational 
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

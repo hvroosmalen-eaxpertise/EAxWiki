@@ -3,6 +3,7 @@ ea_id: 438
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: db816efd
 ---
 
 # <span class="sl" data-layer="motivation">Goal</span> ESG Performance Improvement
@@ -13,8 +14,15 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
 
-Systematically improve performance across Environmental, Social, and Governance dimensions based on recognized standards and frameworks.         
-Achieve measurable progress in ESG ratings and benchmarks relevant to the industry.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="438" data-file-path="Goals/ESG Performance Improvement.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Systematically improve performance across Environmental, Social, and Governance dimensions based on recognized standards and frameworks.         
+Achieve measurable progress in ESG ratings and benchmarks relevant to the industry.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -62,4 +70,4 @@ Achieve measurable progress in ESG ratings and benchmarks relevant to the indust
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

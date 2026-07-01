@@ -3,6 +3,7 @@ ea_id: 138
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: 6cad19f6
 ---
 
 # <span class="sl" data-layer="edgy-id">Content</span> SDG Mapping Content
@@ -15,11 +16,18 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="138" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Content/SDG Mapping Content.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="138" data-file-path="Content/SDG Mapping Content.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 Documentatie die elementen koppelt aan SDG’s.
 <ul>
 	<li>UN SDG Portal – https://sdgs.un.org – Centrale bron voor SDG-informatie.</li>
 	<li>UN Global Compact – https://unglobalcompact.org – SDG mapping tools voor bedrijven.</li>
 </ul>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -72,4 +80,4 @@ Documentatie die elementen koppelt aan SDG’s.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

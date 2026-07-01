@@ -3,6 +3,7 @@ ea_id: 734
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 4a22ed5d
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> Standard
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-Standard represents a formal specification, protocol, methodology, or regulatory framework that governs how an organisation measures, calculates, or reports its greenhouse gas emissions. Examples include the GHG Protocol Corporate Standard, ISO 14064, and TCFD recommendations. Each Standard provides a named reference that can be cited in emission inventories or organisational boundary definitions, ensuring traceability between reported data and the methodology used to produce it. The Standard entity also carries a descriptive text and a URL so that consumers of the data can navigate directly to the authoritative source of the referenced specification.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="734" data-file-path="Organisation/Standard.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Standard represents a formal specification, protocol, methodology, or regulatory framework that governs how an organisation measures, calculates, or reports its greenhouse gas emissions. Examples include the GHG Protocol Corporate Standard, ISO 14064, and TCFD recommendations. Each Standard provides a named reference that can be cited in emission inventories or organisational boundary definitions, ensuring traceability between reported data and the methodology used to produce it. The Standard entity also carries a descriptive text and a URL so that consumers of the data can navigate directly to the authoritative source of the referenced specification.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -78,4 +86,4 @@ Standard represents a formal specification, protocol, methodology, or regulatory
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:23*

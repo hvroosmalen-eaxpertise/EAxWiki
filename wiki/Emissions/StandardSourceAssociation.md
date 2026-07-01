@@ -3,6 +3,7 @@ ea_id: 794
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 6a1b9dc0
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> StandardSourceAssociation
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-StandardSourceAssociation is an intersection entity that records which emission factor databases or reference sources are recognised as appropriate inputs under a given Standard. A standard such as the GHG Protocol may endorse specific factor databases (IPCC, national inventory agencies, DESNZ) while another framework mandates different sources. Capturing these endorsements as data avoids hard-coding source eligibility rules in application logic and supports audit queries confirming that all factors used were sourced from a framework-approved database.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="794" data-file-path="Emissions/StandardSourceAssociation.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>StandardSourceAssociation is an intersection entity that records which emission factor databases or reference sources are recognised as appropriate inputs under a given Standard. A standard such as the GHG Protocol may endorse specific factor databases (IPCC, national inventory agencies, DESNZ) while another framework mandates different sources. Capturing these endorsements as data avoids hard-coding source eligibility rules in application logic and supports audit queries confirming that all factors used were sourced from a framework-approved database.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -61,4 +69,4 @@ StandardSourceAssociation is an intersection entity that records which emission 
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

@@ -3,6 +3,7 @@ ea_id: 121
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: 33ed3c12
 ---
 
 # <span class="sl" data-layer="edgy-id">Content</span> Sustainability Principles
@@ -15,11 +16,18 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="121" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Content/Sustainability Principles.md" data-api-port="8001"></div>
 
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="121" data-file-path="Content/Sustainability Principles.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
 Ontwerp- en besluitregels die duurzame keuzes sturen.
 <ul>
 	<li>Seventh Generation – https://www.seventhgeneration.com – Richt zich op onderwijs over duurzaam beslissen.</li>
 	<li>Triodos Bank – https://www.triodos.com – Principes gebaseerd op mens, milieu en transparantie.</li>
 </ul>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -66,4 +74,4 @@ Ontwerp- en besluitregels die duurzame keuzes sturen.
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

@@ -3,6 +3,7 @@ ea_id: 563
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
+notes_hash: d4abaa0b
 ---
 
 # <span class="sl" data-layer="edgy-lb">Outcome</span> Implement a double materiality approach
@@ -15,7 +16,14 @@ ea_hash: 9b0c660b
 
 <div id="ea-status-editor" class="ea-status-editor" data-ea-id="563" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="ESRS Goals and Objectives/Implement a double materiality approach.md" data-api-port="8001"></div>
 
-Implement a double materiality approach, necessitating companies to report on both impact (social and environmental) and financial materiality (e.g., how cash flows, financial position and financial performance are affected).
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="563" data-file-path="ESRS Goals and Objectives/Implement a double materiality approach.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Implement a double materiality approach, necessitating companies to report on both impact (social and environmental) and financial materiality (e.g., how cash flows, financial position and financial performance are affected).</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
@@ -35,4 +43,4 @@ Implement a double materiality approach, necessitating companies to report on bo
 
 ---
 
-*Generated: 2026-06-30 17:14:22*
+*Generated: 2026-07-01 09:47:23*

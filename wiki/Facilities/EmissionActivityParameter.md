@@ -3,6 +3,7 @@ ea_id: 762
 status: 
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: e3b0c442
+notes_hash: 7adb7be2
 ---
 
 # <span class="sl" data-layer="uml">master-data</span> EmissionActivityParameter
@@ -13,7 +14,14 @@ ea_hash: e3b0c442
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](index.md)
 
-EmissionActivityParameter identifies a specific instance of an EmissionParameterType that is applicable to a facility or equipment item for use in emission calculations. It links a Facility and optionally an Equipment item to an EmissionParameterType and to the EmissionActivity it monitors, providing the structural metadata that describes what is being measured or estimated for a given activity. Parameter values over time are recorded in the associated EmissionActivityParameterValue entity.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="762" data-file-path="Facilities/EmissionActivityParameter.md" data-api-port="8001">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>EmissionActivityParameter identifies a specific instance of an EmissionParameterType that is applicable to a facility or equipment item for use in emission calculations. It links a Facility and optionally an Equipment item to an EmissionParameterType and to the EmissionActivity it monitors, providing the structural metadata that describes what is being measured or estimated for a given activity. Parameter values over time are recorded in the associated EmissionActivityParameterValue entity.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Attributes
 
@@ -65,4 +73,4 @@ EmissionActivityParameter identifies a specific instance of an EmissionParameter
 
 ---
 
-*Generated: 2026-06-30 17:14:23*
+*Generated: 2026-07-01 09:47:24*

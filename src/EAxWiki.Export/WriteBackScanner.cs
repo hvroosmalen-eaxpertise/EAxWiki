@@ -8,18 +8,20 @@ namespace EAxWiki.Export;
 public class WriteBackScanner(IEaReader reader, ILogger logger)
 {
     public record ChangeResult(int ElementId, string OldStatus, string NewStatus, string FilePath);
+    public record NotesChangeResult(int ElementId, string FilePath);
+    public record ScanResult(List<ChangeResult> StatusChanges, List<NotesChangeResult> NotesChanges);
 
     /// <summary>
-    /// Scans <paramref name="wikiPath"/> for element pages whose frontmatter status differs from
-    /// the ea_hash, then writes the changed status back to EA via COM.
+    /// Scans <paramref name="wikiPath"/> for element pages whose frontmatter status or notes
+    /// differ from their stored hash, then writes the changed values back to EA via COM.
     /// </summary>
-    public List<ChangeResult> Scan(string wikiPath)
+    public ScanResult Scan(string wikiPath)
     {
         var allowedStatuses = new HashSet<string>(
             reader.GetStatusTypes(), StringComparer.OrdinalIgnoreCase);
 
-        var applied = new List<ChangeResult>();
-        var conflicts = new List<string>();
+        var statusChanges = new List<ChangeResult>();
+        var notesChanges = new List<NotesChangeResult>();
 
         foreach (var file in Directory.EnumerateFiles(wikiPath, "*.md", SearchOption.AllDirectories))
         {
@@ -28,38 +30,60 @@ public class WriteBackScanner(IEaReader reader, ILogger logger)
                 !int.TryParse(idStr, out var elementId))
                 continue;
 
-            if (!fm.TryGetValue("status", out var currentStatus) ||
-                !fm.TryGetValue("ea_hash", out var storedHash))
-                continue;
-
-            var expectedHash = ElementPageWriter.ComputeStatusHash(currentStatus);
-            if (string.Equals(expectedHash, storedHash, StringComparison.OrdinalIgnoreCase))
-                continue;  // status matches hash → exporter wrote this, no human change
-
-            if (!allowedStatuses.Contains(currentStatus))
+            if (fm.TryGetValue("status", out var currentStatus) &&
+                fm.TryGetValue("ea_hash", out var storedStatusHash))
             {
-                logger.LogWarning("Skipping {File}: '{Status}' is not a valid status value", file, currentStatus);
-                continue;
+                var expectedStatusHash = ElementPageWriter.ComputeStatusHash(currentStatus);
+                if (!string.Equals(expectedStatusHash, storedStatusHash, StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!allowedStatuses.Contains(currentStatus))
+                    {
+                        logger.LogWarning("Skipping {File}: '{Status}' is not a valid status value", file, currentStatus);
+                    }
+                    else
+                    {
+                        try
+                        {
+                            reader.UpdateElementStatus(elementId, currentStatus);
+                            FrontmatterParser.UpdateStatus(file, currentStatus);
+                            statusChanges.Add(new ChangeResult(elementId, "(previous)", currentStatus, file));
+                            logger.LogInformation("Write-back: element {Id} status set to '{Status}' ({File})",
+                                elementId, currentStatus, Path.GetFileName(file));
+                        }
+                        catch (Exception ex)
+                        {
+                            logger.LogError(ex, "Status write-back failed for element {Id} in {File}", elementId, file);
+                        }
+                    }
+                }
             }
 
-            // Derive the old status from the stored hash — we can't reverse it, so just log "unknown"
-            // and use it only for reporting.
-            var oldStatus = fm.TryGetValue("ea_hash", out _) ? "(previous)" : string.Empty;
-
-            try
+            if (fm.TryGetValue("notes_hash", out var storedNotesHash))
             {
-                reader.UpdateElementStatus(elementId, currentStatus);
-                FrontmatterParser.UpdateStatus(file, currentStatus);
-                applied.Add(new ChangeResult(elementId, oldStatus, currentStatus, file));
-                logger.LogInformation("Write-back: element {Id} status set to '{Status}' ({File})",
-                    elementId, currentStatus, Path.GetFileName(file));
-            }
-            catch (Exception ex)
-            {
-                logger.LogError(ex, "Write-back failed for element {Id} in {File}", elementId, file);
+                var currentNotes = FrontmatterParser.ExtractNotesContent(file);
+                if (currentNotes != null)
+                {
+                    var expectedNotesHash = ElementPageWriter.ComputeNotesHash(currentNotes);
+                    if (!string.Equals(expectedNotesHash, storedNotesHash, StringComparison.OrdinalIgnoreCase))
+                    {
+                        try
+                        {
+                            var normalized = FrontmatterParser.NormalizeNotesHtml(currentNotes);
+                            reader.UpdateElementNotes(elementId, normalized);
+                            FrontmatterParser.UpdateNotes(file, normalized);
+                            notesChanges.Add(new NotesChangeResult(elementId, file));
+                            logger.LogInformation("Write-back: element {Id} notes updated ({File})",
+                                elementId, Path.GetFileName(file));
+                        }
+                        catch (Exception ex)
+                        {
+                            logger.LogError(ex, "Notes write-back failed for element {Id} in {File}", elementId, file);
+                        }
+                    }
+                }
             }
         }
 
-        return applied;
+        return new ScanResult(statusChanges, notesChanges);
     }
 }
