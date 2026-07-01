@@ -13,6 +13,7 @@ public class Config
     public bool WriteBack { get; set; }
     public bool ApiMode { get; set; }
     public int ApiPort { get; set; } = 0;
+    public int WikiPort { get; set; } = 0;
 
     public void Load(string[] args)
     {
@@ -68,6 +69,11 @@ public class Config
                     if (i + 1 >= args.Length)
                         throw new ArgumentException($"Option {args[i]} requires a value");
                     ApiPort = int.Parse(args[++i]);
+                    break;
+                case "--wiki-port":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
+                    WikiPort = int.Parse(args[++i]);
                     break;
                 case "--help":
                 case "/?":

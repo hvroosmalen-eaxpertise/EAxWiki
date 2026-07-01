@@ -264,7 +264,7 @@ if (typeof document$ !== 'undefined') {
     var options = JSON.parse(widget.dataset.options);
     var file    = widget.dataset.filePath;
     var port    = widget.dataset.apiPort || '8001';
-    var apiBase = 'http://localhost:' + port;
+    var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
 
     var badge   = widget.querySelector('.status-badge');
     var editBtn = widget.querySelector('.ea-status-edit-btn');
@@ -379,7 +379,7 @@ if (typeof document$ !== 'undefined') {
     var kind    = widget.dataset.kind || 'element';
     var file    = widget.dataset.filePath;
     var port    = widget.dataset.apiPort || '8001';
-    var apiBase = 'http://localhost:' + port;
+    var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
     var endpoint = kind === 'diagram' ? '/api/diagram-notes' : '/api/notes';
     var idField  = kind === 'diagram' ? 'diagramId' : 'elementId';
 
@@ -609,7 +609,7 @@ if (typeof document$ !== 'undefined') {
       msg.textContent = 'Saving…';
 
       var port = btn.dataset.apiPort || '8001';
-      var apiBase = 'http://localhost:' + port;
+      var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
       var body = buildRequestBody(btn, rowId, textarea.value);
 
       fetch(apiBase + '/api/row-notes', {

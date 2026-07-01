@@ -1,10 +1,8 @@
 using EAxWiki.EA;
 using EAxWiki.Export.Helpers;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace EAxWiki;
@@ -33,13 +31,37 @@ internal static class WikiWritebackServer
         builder.Logging.ClearProviders();
         builder.Logging.AddConsole();
 
-        builder.Services.AddCors(options =>
-            options.AddDefaultPolicy(policy =>
-                policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
-
         var app = builder.Build();
 
-        app.UseCors();
+        // This server is paired 1:1 with one `mkdocs serve` instance. Rather than a global
+        // AllowAnyOrigin() (which would let a page from *any* origin — including sibling
+        // EAxWiki instances on the same machine, or the public GitHub Pages export — call
+        // this write-back API), only accept requests whose Origin hostname matches this
+        // request's own Host header (so it still works under any LAN name/IP the server is
+        // reached by) AND whose Origin port matches the configured --wiki-port. This keeps
+        // trust scoped to exactly the one wiki instance this server was started for.
+        var wikiPort = config.WikiPort > 0 ? config.WikiPort : 8000;
+        app.Use(async (context, next) =>
+        {
+            var origin = context.Request.Headers.Origin.ToString();
+            if (!string.IsNullOrEmpty(origin) &&
+                Uri.TryCreate(origin, UriKind.Absolute, out var originUri) &&
+                string.Equals(originUri.Host, context.Request.Host.Host, StringComparison.OrdinalIgnoreCase) &&
+                originUri.Port == wikiPort)
+            {
+                context.Response.Headers.AccessControlAllowOrigin = origin;
+                context.Response.Headers.AccessControlAllowHeaders = "Content-Type";
+                context.Response.Headers.AccessControlAllowMethods = "GET, POST";
+            }
+
+            if (HttpMethods.IsOptions(context.Request.Method))
+            {
+                context.Response.StatusCode = StatusCodes.Status204NoContent;
+                return;
+            }
+
+            await next();
+        });
 
         app.MapGet("/api/status-types", () =>
         {
@@ -190,7 +212,8 @@ internal static class WikiWritebackServer
         });
 
         var port = config.ApiPort > 0 ? config.ApiPort : 8001;
-        logger.LogInformation("Wiki write-back server listening on http://localhost:{Port}", port);
+        logger.LogInformation("Wiki write-back server listening on port {Port}", port);
+        logger.LogInformation("Accepting requests only from origins on port {WikiPort} (pass --wiki-port to override)", wikiPort);
         logger.LogInformation("Press Ctrl+C to stop.");
 
         // Bind both IPv4 and IPv6 so browsers resolving localhost to either

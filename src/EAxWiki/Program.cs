@@ -179,6 +179,8 @@ static void ShowUsage()
     Console.WriteLine("  --writeback, -w       Scan wiki for status changes and write them back to EA via COM");
     Console.WriteLine("  --api                 Start wiki write-back server for in-wiki status editing");
     Console.WriteLine("  --api-port <port>     Port for the wiki write-back server (default: 8001)");
+    Console.WriteLine("  --wiki-port <port>    Port the paired 'mkdocs serve' uses (default: 8000);");
+    Console.WriteLine("                        --api only accepts requests whose Origin matches this port.");
     Console.WriteLine("  --help, -h            Show this help message");
     Console.WriteLine();
     Console.WriteLine("Connection string examples:");
