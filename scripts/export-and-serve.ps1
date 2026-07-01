@@ -66,7 +66,7 @@ if ($ApiPort -gt 0) {
     Write-Host ""
     Write-Host "Starting wiki write-back server on port $ApiPort..." -ForegroundColor Cyan
 
-    $apiArgs = @("--api", "--api-port", $ApiPort, "--output", $wikiDir)
+    $apiArgs = @("--api", "--api-port", $ApiPort, "--wiki-port", $Port, "--output", $wikiDir)
     if ($RepoPath) {
         $resolvedRepo = if ($RepoPath -match '=') { $RepoPath }
                         elseif ([System.IO.Path]::IsPathRooted($RepoPath)) { $RepoPath }
