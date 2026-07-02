@@ -43,7 +43,17 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
         config.RepositoryPath = BuildConnectionStringInteractively();
         if (!string.IsNullOrWhiteSpace(config.RepositoryPath))
         {
-            var newConfig = new LocalConfigStore.Config { RepoPath = config.RepositoryPath };
+            Console.WriteLine();
+            Console.Write("Configure Slack webhook for monitoring alerts? [y/N]: ");
+            var wantWebhook = (Console.ReadLine() ?? "").Trim().ToLowerInvariant();
+            var webhookUrl = "";
+            if (wantWebhook == "y" || wantWebhook == "yes")
+            {
+                Console.Write("Slack webhook URL (https://hooks.slack.com/services/...): ");
+                webhookUrl = (Console.ReadLine() ?? "").Trim();
+            }
+
+            var newConfig = new LocalConfigStore.Config { RepoPath = config.RepositoryPath, WebhookUrl = webhookUrl };
             LocalConfigStore.Save(LocalConfig, newConfig);
             Console.WriteLine($"Saved to {LocalConfig} (encrypted) — future runs will use this automatically.");
             Console.WriteLine();
