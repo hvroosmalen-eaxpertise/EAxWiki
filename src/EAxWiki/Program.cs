@@ -80,6 +80,15 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
         config.RepositoryPath = BuildConnectionStringInteractively();
         if (!string.IsNullOrWhiteSpace(config.RepositoryPath))
         {
+            // Validate the repository path before saving config
+            bool isConnectionString = config.RepositoryPath.Contains('=');
+            if (!isConnectionString && !File.Exists(config.RepositoryPath))
+            {
+                Console.Error.WriteLine($"Error: repository file not found: {config.RepositoryPath}");
+                Console.Error.WriteLine("Please use an absolute path like: E:\\Users\\Han\\Repos\\EAxWiki\\model\\EurSuRA.qea");
+                return 1;
+            }
+
             Console.WriteLine();
             Console.Write("Wiki serve port [8000]: ");
             var wikiPortStr = (Console.ReadLine() ?? "").Trim();
@@ -115,14 +124,6 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
 {
     Console.Error.WriteLine("Error: no repository specified.");
-    return 1;
-}
-
-// Only validate file existence for plain file paths, not DB connection strings.
-bool isConnectionString = config.RepositoryPath.Contains('=');
-if (!isConnectionString && !File.Exists(config.RepositoryPath))
-{
-    Console.Error.WriteLine($"Error: repository file not found: {config.RepositoryPath}");
     return 1;
 }
 
