@@ -29,6 +29,12 @@ The serve step runs [MkDocs](https://www.mkdocs.org/) with the [Material theme](
 
 Because the serve step only needs Python and the `wiki/` folder, it works on any platform — including Linux and Mac. The `wiki/` folder just needs to be accessible on the serving machine, whether via a shared filesystem, git, or any other means.
 
+### Monitoring & Alerting
+
+EAxWiki can send monitoring alerts to **Slack** when background export/serve operations encounter issues. See [**Slack Webhook Setup**](docs/SLACK_WEBHOOK_SETUP.md) for detailed instructions on configuring your Slack workspace to receive alerts.
+
+> **Note:** Currently only Slack is supported. Teams webhook support is planned — see [GitHub issues](https://github.com/hvroosmalen-eaxpertise/EAxWiki/issues) to track or contribute.
+
 ### Windows — export and serve on the same machine
 
 ```
