@@ -350,8 +350,4 @@ dotnet build src/EAxWiki/EAxWiki.csproj 2>&1 | Select-String -Pattern "error|Bui
 ```bash
 git add src/EAxWiki.Export/Exporters/StatusDashboardExporter.cs
 git commit -m "feat(status-dashboard): add bar charts, inline drill-down, and By Type section"
-```<｜end▁of▁thinking｜>Let me clean up the code — the `dynamic`/`IList` approach is messy. I'll write it with direct inline sections instead:
-
-<｜｜DSML｜｜tool_calls>
-<｜｜DSML｜｜invoke name="edit">
-<｜｜DSML｜｜parameter name="filePath" string="true">E:\Users\Han\Repos\EAxWiki\docs\superpowers\plans\2026-06-29-status-dashboard-v2.md
+```
