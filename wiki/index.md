@@ -1,8 +1,8 @@
-# EurSuRA
+# EursuRA
 
 ## Repository
 
-E:\Users\Han\Repos\EAxWiki\model\EurSuRA.qea
+e:/users/han/repos/EAxWiki/model/EursuRA.qea
 
 ## Repository Structure
 
@@ -13,4 +13,4 @@ E:\Users\Han\Repos\EAxWiki\model\EurSuRA.qea
 
 ---
 
-*Generated: 2026-07-01 14:13:17*
+*Generated: 2026-07-02 18:48:26*

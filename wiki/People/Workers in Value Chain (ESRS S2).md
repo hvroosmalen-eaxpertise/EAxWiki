@@ -9,13 +9,13 @@ notes_hash: e24e9b7e
 # <span class="sl" data-layer="edgy-pe">People</span> Workers in Value Chain (ESRS S2)
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="532" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="People/Workers in Value Chain (ESRS S2).md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="532" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Workers in Value Chain (ESRS S2).md" data-api-port="8001" data-api-token="76b59d573d0422a8a80a60d648ca7e0cdaaa327c4fc14968"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="532" data-file-path="People/Workers in Value Chain (ESRS S2).md" data-api-port="8001">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="532" data-file-path="People/Workers in Value Chain (ESRS S2).md" data-api-port="8001" data-api-token="76b59d573d0422a8a80a60d648ca7e0cdaaa327c4fc14968">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -63,4 +63,4 @@ notes_hash: e24e9b7e
 
 ---
 
-*Generated: 2026-07-01 14:13:15*
+*Generated: 2026-07-02 18:47:38*

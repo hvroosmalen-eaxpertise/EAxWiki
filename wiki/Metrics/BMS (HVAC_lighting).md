@@ -9,13 +9,13 @@ notes_hash: e3b0c442
 # <span class="sl" data-layer="edgy-lb">Tag</span> BMS (HVAC/lighting)
 
 **Type:** Requirement  **Stereotype:** Tag  **StereotypeEx:** Tag  **FQStereotype:** EDGY::Tag  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="211" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Metrics/BMS (HVAC_lighting).md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="211" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/BMS (HVAC_lighting).md" data-api-port="8001" data-api-token="76b59d573d0422a8a80a60d648ca7e0cdaaa327c4fc14968"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Metrics](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="211" data-file-path="Metrics/BMS (HVAC_lighting).md" data-api-port="8001">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="211" data-file-path="Metrics/BMS (HVAC_lighting).md" data-api-port="8001" data-api-token="76b59d573d0422a8a80a60d648ca7e0cdaaa327c4fc14968">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -57,4 +57,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-01 14:13:16*
+*Generated: 2026-07-02 18:47:38*

@@ -10,7 +10,7 @@ notes_hash: e26db5e1
 
 ![ESRS](ESRS.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="2" data-kind="diagram" data-file-path="European Sustainability Reporting Standards/diagrams/ESRS.md" data-api-port="8001">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="2" data-kind="diagram" data-file-path="European Sustainability Reporting Standards/diagrams/ESRS.md" data-api-port="8001" data-api-token="76b59d573d0422a8a80a60d648ca7e0cdaaa327c4fc14968">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -38,4 +38,4 @@ notes_hash: e26db5e1
 
 ---
 
-*Generated: 2026-07-01 14:13:19*
+*Generated: 2026-07-02 18:47:40*

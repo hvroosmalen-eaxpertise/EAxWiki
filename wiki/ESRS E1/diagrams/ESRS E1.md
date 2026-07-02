@@ -10,7 +10,7 @@ notes_hash: fafc6797
 
 ![ESRS E1](ESRS E1.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="3" data-kind="diagram" data-file-path="ESRS E1/diagrams/ESRS E1.md" data-api-port="8001">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="3" data-kind="diagram" data-file-path="ESRS E1/diagrams/ESRS E1.md" data-api-port="8001" data-api-token="76b59d573d0422a8a80a60d648ca7e0cdaaa327c4fc14968">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -27,4 +27,4 @@ https://www</p>
 
 ---
 
-*Generated: 2026-07-01 14:13:19*
+*Generated: 2026-07-02 18:47:41*

@@ -3,19 +3,19 @@ ea_id: 121
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
-notes_hash: 33ed3c12
+notes_hash: 9657f94b
 ---
 
 # <span class="sl" data-layer="edgy-id">Content</span> Sustainability Principles
 
 **Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="121" data-status="Proposed" data-options='["Approved","Implemented","Mandatory","Proposed","Validated"]' data-file-path="Content/Sustainability Principles.md" data-api-port="8001"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="121" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Content/Sustainability Principles.md" data-api-port="8001" data-api-token="76b59d573d0422a8a80a60d648ca7e0cdaaa327c4fc14968"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Identity](../Identity/index.md) / [Content](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="121" data-file-path="Content/Sustainability Principles.md" data-api-port="8001">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="121" data-file-path="Content/Sustainability Principles.md" data-api-port="8001" data-api-token="76b59d573d0422a8a80a60d648ca7e0cdaaa327c4fc14968">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -33,7 +33,7 @@ Ontwerp- en besluitregels die duurzame keuzes sturen.
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="121" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="Content/Sustainability Principles.md" data-api-port="8001" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="121" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="Content/Sustainability Principles.md" data-api-port="8001" data-api-token="76b59d573d0422a8a80a60d648ca7e0cdaaa327c4fc14968" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -77,4 +77,4 @@ Ontwerp- en besluitregels die duurzame keuzes sturen.
 
 ---
 
-*Generated: 2026-07-01 14:13:15*
+*Generated: 2026-07-02 18:47:38*

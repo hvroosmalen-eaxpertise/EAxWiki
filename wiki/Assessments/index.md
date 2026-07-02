@@ -7,7 +7,7 @@
 - <span class="sl" data-layer="motivation">Assessment</span> [CO₂ Reduction %](CO₂ Reduction %.md)
   - *<p>Key performance indicator measuring the percentage reduction in carbon dioxide emissions relative to a baseline year.          Typically covers Scope 1, 2 and ideally Scope 3 emissions.          Critical metric for climate change mitigation efforts and alignment with Paris Agreement targets.</p>*
 - <span class="sl" data-layer="motivation">Assessment</span> [ESG Score](ESG Score.md)
-  - *Composite score reflecting overall Environmental, Social, and Governance performance.          May be based on internal assessment frameworks or external rating agency methodologies.          Provides aggregate view of sustainability performance for management and investor communication.*
+  - *<p>Legit text</p><img src="x">*
 - <span class="sl" data-layer="motivation">Assessment</span> [Supplier Compliance Rate](Supplier Compliance Rate.md)
   - *Percentage of suppliers meeting defined environmental and social standards based on audits and assessments.          Measures effectiveness of sustainable supply chain management programs.          Indicates level of control over value chain sustainability impacts.*
 - <span class="sl" data-layer="motivation">Assessment</span> [Energy Efficiency Index](Energy Efficiency Index.md)
@@ -17,4 +17,4 @@
 
 ---
 
-*Generated: 2026-07-01 14:13:16*
+*Generated: 2026-07-02 18:48:26*
