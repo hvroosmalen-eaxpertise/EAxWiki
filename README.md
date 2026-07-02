@@ -331,7 +331,7 @@ Override:    .\scripts\export.ps1 --repo "other_connection_string"
 Reset:       delete .eaxwiki to re-enter interactively
 ```
 
-> **Security:** `.eaxwiki` contains your credentials in plaintext. It is gitignored and never committed. Keep it on a private or access-controlled machine.
+> **Security:** `.eaxwiki` is encrypted at rest with Windows DPAPI, scoped to your Windows user account — only your account, on this machine, can decrypt it. It is also gitignored and never committed. A `.eaxwiki` file saved by an older version of EAxWiki (plaintext) is read transparently and re-encrypted automatically on next use.
 
 ## Scheduling exports
 
