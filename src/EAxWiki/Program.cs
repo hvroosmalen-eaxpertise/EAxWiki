@@ -20,12 +20,12 @@ if (config.HelpRequested)
 
 const string ConfigFileName = ".eaxwiki";
 
-// Find .eaxwiki in current directory or parent directories (up to 5 levels)
+// Find .eaxwiki in current directory or parent directories, but stop at repo root (.git)
 string LocalConfig = "";
 var currentDir = Directory.GetCurrentDirectory();
 var searchDir = currentDir;
-var highestParent = currentDir; // Track the highest parent we search
-for (int i = 0; i < 5; i++)
+var repoRoot = currentDir; // Track the repo root
+for (int i = 0; i < 10; i++)
 {
     var candidate = Path.Combine(searchDir, ConfigFileName);
     if (File.Exists(candidate))
@@ -33,16 +33,23 @@ for (int i = 0; i < 5; i++)
         LocalConfig = candidate;
         break;
     }
-    highestParent = searchDir;
+
+    // Stop searching if we find .git (repo root)
+    if (Directory.Exists(Path.Combine(searchDir, ".git")))
+    {
+        repoRoot = searchDir;
+        break;
+    }
+
     var parent = Directory.GetParent(searchDir);
     if (parent == null) break;
     searchDir = parent.FullName;
 }
 
-// If not found, default to highest parent directory we searched (likely repo root)
+// If not found, default to repo root
 if (string.IsNullOrEmpty(LocalConfig))
 {
-    LocalConfig = Path.Combine(highestParent, ConfigFileName);
+    LocalConfig = Path.Combine(repoRoot, ConfigFileName);
 }
 
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
