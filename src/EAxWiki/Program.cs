@@ -28,6 +28,11 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
         if (!string.IsNullOrWhiteSpace(savedConfig.RepoPath))
         {
             config.RepositoryPath = savedConfig.RepoPath;
+            if (config.WikiPort == 0 && savedConfig.WikiPort.HasValue)
+                config.WikiPort = savedConfig.WikiPort.Value;
+            if (config.ApiPort == 0 && savedConfig.ApiPort.HasValue)
+                config.ApiPort = savedConfig.ApiPort.Value;
+
             Console.WriteLine($"Using saved repository: {EaRepository.Redact(config.RepositoryPath)}");
             if (wasLegacyPlaintext)
             {
@@ -44,6 +49,14 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
         if (!string.IsNullOrWhiteSpace(config.RepositoryPath))
         {
             Console.WriteLine();
+            Console.Write("Wiki serve port [8000]: ");
+            var wikiPortStr = (Console.ReadLine() ?? "").Trim();
+            var wikiPort = string.IsNullOrEmpty(wikiPortStr) ? 8000 : int.Parse(wikiPortStr);
+
+            Console.Write($"API port [{wikiPort + 1}]: ");
+            var apiPortStr = (Console.ReadLine() ?? "").Trim();
+            var apiPort = string.IsNullOrEmpty(apiPortStr) ? wikiPort + 1 : int.Parse(apiPortStr);
+
             Console.Write("Configure Slack webhook for monitoring alerts? [y/N]: ");
             var wantWebhook = (Console.ReadLine() ?? "").Trim().ToLowerInvariant();
             var webhookUrl = "";
@@ -53,7 +66,13 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
                 webhookUrl = (Console.ReadLine() ?? "").Trim();
             }
 
-            var newConfig = new LocalConfigStore.Config { RepoPath = config.RepositoryPath, WebhookUrl = webhookUrl };
+            var newConfig = new LocalConfigStore.Config
+            {
+                RepoPath = config.RepositoryPath,
+                WebhookUrl = webhookUrl,
+                WikiPort = wikiPort,
+                ApiPort = apiPort
+            };
             LocalConfigStore.Save(LocalConfig, newConfig);
             Console.WriteLine($"Saved to {LocalConfig} (encrypted) — future runs will use this automatically.");
             Console.WriteLine();

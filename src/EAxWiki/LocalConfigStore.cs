@@ -24,6 +24,8 @@ public static class LocalConfigStore
     {
         public string? RepoPath { get; set; }
         public string? WebhookUrl { get; set; }
+        public int? WikiPort { get; set; }
+        public int? ApiPort { get; set; }
     }
 
     public static Config Load(string path, out bool wasLegacyPlaintext)
@@ -38,7 +40,16 @@ public static class LocalConfigStore
         }
         catch (FormatException)
         {
-            // Not base64 — a plaintext file predating encryption (old format: just the connection string).
+            // Not base64 — try as plaintext JSON first, then fall back to legacy format
+            try
+            {
+                var config = JsonSerializer.Deserialize<Config>(raw);
+                if (config != null && !string.IsNullOrEmpty(config.RepoPath))
+                    return config;
+            }
+            catch (JsonException) { }
+
+            // Legacy plaintext format: just the connection string
             wasLegacyPlaintext = true;
             return new Config { RepoPath = raw };
         }
