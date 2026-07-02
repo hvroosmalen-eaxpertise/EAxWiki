@@ -70,6 +70,30 @@
 - **Wiki write-back server** (`WikiWritebackServer`, `--api` mode): an ASP.NET Core minimal API (SDK: `Microsoft.NET.Sdk.Web`) running on a configurable port (default 8001). Handles `POST /api/status`, `POST /api/notes`, `POST /api/diagram-notes`, and `POST /api/row-notes` requests from the widgets. Validates the new status against live `t_statustypes`, updates EA via `element.Update()`/`diagram.Update()`/etc. COM calls, then patches the `.md` file in-place.
 - **CORS is scoped per-instance, not `AllowAnyOrigin`**: custom middleware (not the built-in CORS services) accepts a request only if its `Origin` hostname matches the request's own `Host` header (works under any LAN name/IP the server is reached by) *and* `Origin`'s port matches a `--wiki-port` flag (default 8000) naming the one `mkdocs serve` instance this server is paired with. This exists because the project explicitly supports running several exporter/serve/write-back triples on one machine (`--output`/`--port`/`--api-port` per instance) — a blanket "same host, any port" rule would let one instance's wiki page talk to a sibling instance's write-back server. `export-and-serve.ps1`/`serve-api.ps1` set `--wiki-port` automatically from `--port`. Listens on both IPv4 (`0.0.0.0`) and IPv6 (`[::]`) because Chrome may resolve `localhost` to `::1`.
 - **Write-back API requires a per-instance shared-secret token**: CORS/origin matching above only restricts *browser-mediated* cross-origin calls — a raw HTTP client (`curl`, a LAN port scan) can set any `Origin` header it likes, so it provides no real authentication. `ApiTokenStore.GetOrCreate` generates a random token once per wiki output directory, persisted to `<output>/.eaxwiki-token` (gitignored) so a later export and a later `--api` run agree on the same value without any manual config. The exporter embeds it into every widget as `data-api-token`; the client JS sends it back as an `X-EAxWiki-Token` header; the server checks it (via `CryptographicOperations.FixedTimeEquals`) on every `/api/*` request before doing anything else. Because the token is embedded in the exported HTML, anyone with legitimate view access to that wiki instance can read it from page source — it stops everyone *else* (LAN scanning, unrelated sites), not a viewer turning malicious. A page exported before this token existed has no `data-api-token`; re-export with `--force` to refresh it (incremental export won't touch unchanged pages).
+
+    ```mermaid
+    sequenceDiagram
+        participant Exporter
+        participant Token as .eaxwiki-token
+        participant Server as Write-back server
+        participant Browser as Browser (widget JS)
+
+        Note over Exporter,Browser: Setup — once per output directory
+        Exporter->>Token: GetOrCreate(outputPath)
+        Token-->>Exporter: token (generated once, reused after)
+        Exporter->>Browser: embed as data-api-token in exported page
+        Server->>Token: GetOrCreate(outputPath)
+        Token-->>Server: same token
+
+        Note over Browser,Server: Every edit — runtime
+        Browser->>Server: POST /api/status (X-EAxWiki-Token: token)
+        Server->>Server: FixedTimeEquals(token, stored)
+        alt match
+            Server-->>Browser: 200 OK — EA + wiki page updated
+        else mismatch
+            Server-->>Browser: 401 — "Not authenticated"
+        end
+    ```
 - **Write-back file-path resolution is centralized in `TryResolveWikiFilePath`**: rejects any `req.FilePath` that doesn't resolve to somewhere strictly inside the output directory (compared with a trailing separator, so a sibling directory sharing the same prefix — e.g. `wiki` vs `wiki-archive` — can't pass) and doesn't end in `.md`. Previously each of the four endpoints repeated a raw `StartsWith` check with no trailing separator, which is exactly the kind of prefix bug that lets `..\` traversal into a same-prefixed sibling slip through.
 - **Notes HTML is sanitized, not passed through verbatim**: `FrontmatterParser.NormalizeNotesHtml` runs any notes value containing a `<` through `Ganss.Xss.HtmlSanitizer` (AngleSharp-backed allowlist sanitizer) before it's persisted to EA via COM or embedded into the generated page. Without this, typed `<script>`/`onerror=`/`javascript:` content would round-trip forever (re-exported from EA on every future run) as stored XSS on the wiki page. Ordinary rich text (`p`, lists, bold, links, ...) passes through unchanged.
 - **`FrontmatterParser.UpdateStatus`**: patches the `.md` file atomically (write to `.tmp` then `File.Move` overwrite): (1) `status:` and `ea_hash:` in YAML frontmatter, (2) the status badge `<span>` class and text in the page body, (3) `data-status` attribute on the widget span, (4) the `**Modified:**` date (see below). All must be updated so MkDocs hot-reload rebuilds the page with the correct, current state.
