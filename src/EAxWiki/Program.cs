@@ -24,6 +24,7 @@ const string ConfigFileName = ".eaxwiki";
 string LocalConfig = "";
 var currentDir = Directory.GetCurrentDirectory();
 var searchDir = currentDir;
+var highestParent = currentDir; // Track the highest parent we search
 for (int i = 0; i < 5; i++)
 {
     var candidate = Path.Combine(searchDir, ConfigFileName);
@@ -32,15 +33,16 @@ for (int i = 0; i < 5; i++)
         LocalConfig = candidate;
         break;
     }
+    highestParent = searchDir;
     var parent = Directory.GetParent(searchDir);
     if (parent == null) break;
     searchDir = parent.FullName;
 }
 
-// If not found, default to current directory
+// If not found, default to highest parent directory we searched (likely repo root)
 if (string.IsNullOrEmpty(LocalConfig))
 {
-    LocalConfig = Path.Combine(currentDir, ConfigFileName);
+    LocalConfig = Path.Combine(highestParent, ConfigFileName);
 }
 
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
