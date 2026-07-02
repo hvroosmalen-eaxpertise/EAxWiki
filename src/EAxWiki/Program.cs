@@ -15,7 +15,7 @@ config.Load(args);
 if (config.HelpRequested)
 {
     ShowUsage();
-    return;
+    return 0;
 }
 
 const string LocalConfig = ".eaxwiki";
@@ -24,8 +24,13 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
 {
     if (File.Exists(LocalConfig))
     {
-        config.RepositoryPath = File.ReadAllText(LocalConfig).Trim();
+        config.RepositoryPath = LocalConfigStore.Load(LocalConfig, out var wasLegacyPlaintext);
         Console.WriteLine($"Using saved repository: {EaRepository.Redact(config.RepositoryPath)}");
+        if (wasLegacyPlaintext)
+        {
+            LocalConfigStore.Save(LocalConfig, config.RepositoryPath);
+            Console.WriteLine($"(Encrypted {LocalConfig} at rest — it was stored in plaintext.)");
+        }
         Console.WriteLine($"(Pass --repo to override, or delete {LocalConfig} to re-enter interactively.)");
         Console.WriteLine();
     }
@@ -34,8 +39,8 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
         config.RepositoryPath = BuildConnectionStringInteractively();
         if (!string.IsNullOrWhiteSpace(config.RepositoryPath))
         {
-            File.WriteAllText(LocalConfig, config.RepositoryPath);
-            Console.WriteLine($"Saved to {LocalConfig} — future runs will use this automatically.");
+            LocalConfigStore.Save(LocalConfig, config.RepositoryPath);
+            Console.WriteLine($"Saved to {LocalConfig} (encrypted) — future runs will use this automatically.");
             Console.WriteLine();
         }
     }
@@ -44,7 +49,7 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
 {
     Console.Error.WriteLine("Error: no repository specified.");
-    return;
+    return 1;
 }
 
 // Only validate file existence for plain file paths, not DB connection strings.
@@ -52,7 +57,7 @@ bool isConnectionString = config.RepositoryPath.Contains('=');
 if (!isConnectionString && !File.Exists(config.RepositoryPath))
 {
     Console.Error.WriteLine($"Error: repository file not found: {config.RepositoryPath}");
-    return;
+    return 1;
 }
 
 var outputPath = Path.GetFullPath(config.OutputPath);
@@ -62,7 +67,7 @@ var outputParent = Path.GetDirectoryName(outputPath) ?? outputPath;
 if (!string.IsNullOrEmpty(outputParent) && !Directory.Exists(outputParent))
 {
     Console.Error.WriteLine($"Error: output parent directory does not exist: {outputParent}");
-    return;
+    return 1;
 }
 
 Console.WriteLine($"Repository: {EaRepository.Redact(config.RepositoryPath)}");
@@ -89,7 +94,7 @@ IWikiExporter exporter = new MarkdownExporter(writer, logger);
 if (config.ApiMode)
 {
     await WikiWritebackServer.RunAsync(config, outputPath, loggerFactory);
-    return;
+    return 0;
 }
 
 // Expose API port to MarkdownExporter so the status-editor widget URL is embedded correctly.
@@ -138,6 +143,7 @@ catch (Exception ex)
     Console.WriteLine(ex.ToString());
     if (ex.InnerException != null)
         Console.WriteLine(ex.InnerException.ToString());
+    return 1;
 }
 finally
 {
@@ -150,6 +156,8 @@ finally
         Console.Error.WriteLine($"Warning: EA cleanup failed: {ex.Message}");
     }
 }
+
+return 0;
 
 static EaPackage? FindPackage(List<EaPackage> packages, string name)
 {
