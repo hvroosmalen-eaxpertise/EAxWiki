@@ -10,7 +10,8 @@
     var kind    = widget.dataset.kind || 'element';
     var file    = widget.dataset.filePath;
     var port    = widget.dataset.apiPort || '8001';
-    var apiBase = 'http://localhost:' + port;
+    var token   = widget.dataset.apiToken || '';
+    var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
     var endpoint = kind === 'diagram' ? '/api/diagram-notes' : '/api/notes';
     var idField  = kind === 'diagram' ? 'diagramId' : 'elementId';
 
@@ -84,16 +85,21 @@
 
       fetch(apiBase + endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
         body: JSON.stringify(body)
       })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
       .then(function (res) {
         if (res.ok) {
           contentDiv.innerHTML = res.data.html || placeholderHtml;
           if (hint && hint.parentNode) hint.parentNode.removeChild(hint);
           hint = null;
           exitEditMode();
+        } else if (res.status === 401) {
+          msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
+          msg.style.color = '#c62828';
+          saveBtn.disabled = false;
+          cancelBtn.disabled = false;
         } else {
           msg.textContent = '✗ ' + (res.data.message || 'Error');
           msg.style.color = '#c62828';

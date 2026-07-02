@@ -11,7 +11,8 @@
     var options = JSON.parse(widget.dataset.options);
     var file    = widget.dataset.filePath;
     var port    = widget.dataset.apiPort || '8001';
-    var apiBase = 'http://localhost:' + port;
+    var token   = widget.dataset.apiToken || '';
+    var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
 
     var badge   = widget.querySelector('.status-badge');
     var editBtn = widget.querySelector('.ea-status-edit-btn');
@@ -72,16 +73,21 @@
 
       fetch(apiBase + '/api/status', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
         body: JSON.stringify({ elementId: eaId, newStatus: chosen, filePath: file })
       })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
       .then(function (res) {
         if (res.ok) {
           current = chosen;
           badge.textContent = chosen;
           badge.className = 'status-badge status-' + chosen.toLowerCase();
           exitEditMode();
+        } else if (res.status === 401) {
+          msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
+          msg.style.color = '#c62828';
+          applyBtn.disabled = false;
+          cancelBtn.disabled = false;
         } else {
           msg.textContent = '✗ ' + (res.data.message || 'Error');
           msg.style.color = '#c62828';
