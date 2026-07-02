@@ -3,12 +3,13 @@
 # "right" cadence depends on the deploying organization; see issue #38 for a
 # future timezone/day-night-aware replacement of this trigger.
 #
-# IMPORTANT: Set EAXWIKI_ALERT_WEBHOOK before running this script if you want Slack alerts.
-# Do NOT pass --webhook-url on the command line — Task Scheduler stores action arguments
-# in a readable way (any admin on the machine can read them back via Get-ScheduledTask).
-# Instead, set the env var persistently:
-#   setx EAXWIKI_ALERT_WEBHOOK "https://hooks.slack.com/services/..."
-# Then run this script, and the monitor task will inherit the env var from the system.
+# Slack webhook URL can be configured in one of three ways (checked in this order):
+#   1. Stored in .eaxwiki as encrypted JSON (recommended for per-instance setup)
+#   2. Set as EAXWIKI_ALERT_WEBHOOK environment variable (use when .eaxwiki is shared/unencrypted)
+#   3. Not configured (alerting is disabled; only logging to wiki/status/health.md)
+#
+# The monitor script does NOT accept --webhook-url on the command line because Task Scheduler
+# stores action arguments in a readable way (any admin can read them back via Get-ScheduledTask).
 #
 # Usage:
 #   .\scripts\register-scheduled-task.ps1
@@ -44,11 +45,6 @@ if (-not $IsWindows) {
     exit 1
 }
 
-if (-not $env:EAXWIKI_ALERT_WEBHOOK) {
-    Write-Warning "EAXWIKI_ALERT_WEBHOOK env var is not set. Slack alerts will not be sent."
-    Write-Warning "To enable alerts, run: setx EAXWIKI_ALERT_WEBHOOK `"https://hooks.slack.com/services/...`""
-    Write-Warning ""
-}
 
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 $monitorScript = Join-Path $repoRoot "scripts\monitor-export-and-serve.ps1"

@@ -10,13 +10,18 @@
 # Usage:
 #   .\scripts\monitor-export-and-serve.ps1
 #   .\scripts\monitor-export-and-serve.ps1 --repo "model/file.qea" --output "wiki" --port 8000 `
-#       --max-retries 3 --retry-delay 30 --min-element-fraction 0.5 --webhook-url "https://hooks.slack.com/services/..."
-#   .\scripts\monitor-export-and-serve.ps1 --test-alert --webhook-url "https://hooks.slack.com/services/..."
+#       --max-retries 3 --retry-delay 30 --min-element-fraction 0.5
+#   .\scripts\monitor-export-and-serve.ps1 --test-alert
 #
-# --webhook-url expects a Slack incoming webhook (https://api.slack.com/messaging/webhooks).
-# Prefer setting EAXWIKI_ALERT_WEBHOOK instead of --webhook-url for scheduled/unattended use —
-# Task Scheduler stores action arguments in a way any admin on the machine can read back, whereas
-# an env var set in the task's own "Run as" context is not exposed through the task definition.
+# Slack webhook URL resolution (in order):
+#   1. --webhook-url CLI argument (if passed)
+#   2. EAXWIKI_ALERT_WEBHOOK environment variable (if set)
+#   3. .eaxwiki config file (webhookUrl field in encrypted JSON)
+#
+# Prefer storing the webhook URL in .eaxwiki via interactive setup or direct configuration.
+# For scheduled/unattended use without .eaxwiki, set EAXWIKI_ALERT_WEBHOOK env var in the
+# scheduled task's "Run as" credentials — this keeps the credential out of Task Scheduler's
+# stored action arguments (which any admin on the machine can read back).
 
 $RepoPath            = ""
 $OutputDir           = ""     # defaults to <repo-root>\wiki when not specified
@@ -24,7 +29,7 @@ $Port                = 8000
 $MaxRetries          = 3
 $RetryDelaySeconds   = 30
 $MinElementFraction  = 0.5    # sanity floor: alert if output shrinks below this fraction of the previous successful run
-$WebhookUrl          = $env:EAXWIKI_ALERT_WEBHOOK
+$WebhookUrl          = $null  # will be resolved from CLI arg, env var, or .eaxwiki file
 $TestAlert           = $false
 
 $i = 0
@@ -50,6 +55,28 @@ if (-not $IsWindows) {
 
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 Push-Location $repoRoot
+
+# Resolve webhook URL from CLI arg → env var → .eaxwiki file.
+if ($null -eq $WebhookUrl -or "" -eq $WebhookUrl) {
+    if ($env:EAXWIKI_ALERT_WEBHOOK) {
+        $WebhookUrl = $env:EAXWIKI_ALERT_WEBHOOK
+    } elseif (Test-Path ".eaxwiki") {
+        # Try to decrypt and extract webhookUrl from .eaxwiki JSON config.
+        try {
+            $entropy = [System.Text.Encoding]::UTF8.GetBytes("EAxWiki.LocalConfig.v1")
+            $base64 = Get-Content ".eaxwiki" -Raw | ForEach-Object { $_.Trim() }
+            $encrypted = [Convert]::FromBase64String($base64)
+            $decrypted = [System.Security.Cryptography.ProtectedData]::Unprotect($encrypted, $entropy, [System.Security.Cryptography.DataProtectionScope]::CurrentUser)
+            $json = [System.Text.Encoding]::UTF8.GetString($decrypted)
+            $config = $json | ConvertFrom-Json -ErrorAction SilentlyContinue
+            if ($config.webhookUrl) {
+                $WebhookUrl = $config.webhookUrl
+            }
+        } catch {
+            # Silent — .eaxwiki may not have a webhook URL, or may be in an old format.
+        }
+    }
+}
 
 $wikiDir = if ($OutputDir) {
     if ([System.IO.Path]::IsPathRooted($OutputDir)) { $OutputDir }

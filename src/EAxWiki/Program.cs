@@ -24,22 +24,27 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
 {
     if (File.Exists(LocalConfig))
     {
-        config.RepositoryPath = LocalConfigStore.Load(LocalConfig, out var wasLegacyPlaintext);
-        Console.WriteLine($"Using saved repository: {EaRepository.Redact(config.RepositoryPath)}");
-        if (wasLegacyPlaintext)
+        var savedConfig = LocalConfigStore.Load(LocalConfig, out var wasLegacyPlaintext);
+        if (!string.IsNullOrWhiteSpace(savedConfig.RepoPath))
         {
-            LocalConfigStore.Save(LocalConfig, config.RepositoryPath);
-            Console.WriteLine($"(Encrypted {LocalConfig} at rest — it was stored in plaintext.)");
+            config.RepositoryPath = savedConfig.RepoPath;
+            Console.WriteLine($"Using saved repository: {EaRepository.Redact(config.RepositoryPath)}");
+            if (wasLegacyPlaintext)
+            {
+                LocalConfigStore.Save(LocalConfig, savedConfig);
+                Console.WriteLine($"(Encrypted {LocalConfig} at rest — it was stored in plaintext.)");
+            }
+            Console.WriteLine($"(Pass --repo to override, or delete {LocalConfig} to re-enter interactively.)");
+            Console.WriteLine();
         }
-        Console.WriteLine($"(Pass --repo to override, or delete {LocalConfig} to re-enter interactively.)");
-        Console.WriteLine();
     }
     else
     {
         config.RepositoryPath = BuildConnectionStringInteractively();
         if (!string.IsNullOrWhiteSpace(config.RepositoryPath))
         {
-            LocalConfigStore.Save(LocalConfig, config.RepositoryPath);
+            var newConfig = new LocalConfigStore.Config { RepoPath = config.RepositoryPath };
+            LocalConfigStore.Save(LocalConfig, newConfig);
             Console.WriteLine($"Saved to {LocalConfig} (encrypted) — future runs will use this automatically.");
             Console.WriteLine();
         }
