@@ -10,7 +10,13 @@
 # Usage:
 #   .\scripts\monitor-export-and-serve.ps1
 #   .\scripts\monitor-export-and-serve.ps1 --repo "model/file.qea" --output "wiki" --port 8000 `
-#       --max-retries 3 --retry-delay 30 --min-element-fraction 0.5 --webhook-url "https://..."
+#       --max-retries 3 --retry-delay 30 --min-element-fraction 0.5 --webhook-url "https://hooks.slack.com/services/..."
+#   .\scripts\monitor-export-and-serve.ps1 --test-alert --webhook-url "https://hooks.slack.com/services/..."
+#
+# --webhook-url expects a Slack incoming webhook (https://api.slack.com/messaging/webhooks).
+# Prefer setting EAXWIKI_ALERT_WEBHOOK instead of --webhook-url for scheduled/unattended use —
+# Task Scheduler stores action arguments in a way any admin on the machine can read back, whereas
+# an env var set in the task's own "Run as" context is not exposed through the task definition.
 
 $RepoPath            = ""
 $OutputDir           = ""     # defaults to <repo-root>\wiki when not specified
@@ -19,6 +25,7 @@ $MaxRetries          = 3
 $RetryDelaySeconds   = 30
 $MinElementFraction  = 0.5    # sanity floor: alert if output shrinks below this fraction of the previous successful run
 $WebhookUrl          = $env:EAXWIKI_ALERT_WEBHOOK
+$TestAlert           = $false
 
 $i = 0
 while ($i -lt $args.Count) {
@@ -30,6 +37,7 @@ while ($i -lt $args.Count) {
         '^(--retry-delay|-RetryDelaySeconds)$'   { $i++; if ($i -lt $args.Count) { $RetryDelaySeconds   = [int]$args[$i] } }
         '^(--min-element-fraction)$'             { $i++; if ($i -lt $args.Count) { $MinElementFraction = [double]$args[$i] } }
         '^(--webhook-url|-WebhookUrl)$'          { $i++; if ($i -lt $args.Count) { $WebhookUrl          = $args[$i] } }
+        '^(--test-alert|-TestAlert)$'            { $TestAlert = $true }
         default                                  { if (-not "$($args[$i])".StartsWith('-')) { $RepoPath = $args[$i] } }
     }
     $i++
@@ -71,6 +79,10 @@ function Write-MonitorLog {
     Write-Host $line
 }
 
+# Identifies which instance an alert is about — matters once more than one exporter/serve/monitor
+# triple runs on the same machine (the project explicitly supports that via --output/--port).
+$instanceLabel = "$env:COMPUTERNAME — $wikiDir"
+
 function Get-HealthState {
     if (Test-Path $healthPath) {
         try { return Get-Content $healthPath -Raw | ConvertFrom-Json } catch {}
@@ -95,7 +107,7 @@ function Save-HealthState {
 function Send-Alert {
     param(
         [string]$Message,
-        [ValidateSet('Failure', 'Recovery', 'ServeFailure', 'ServeRecovery')]
+        [ValidateSet('Failure', 'Recovery', 'ServeFailure', 'ServeRecovery', 'Test')]
         [string]$Kind
     )
     Write-MonitorLog -Phase "alert" -Message "[$Kind] $Message"
@@ -103,12 +115,48 @@ function Send-Alert {
         Write-MonitorLog -Phase "alert" -Message "No webhook URL configured (--webhook-url or EAXWIKI_ALERT_WEBHOOK); alert logged only."
         return
     }
-    $payload = @{ text = "**EAxWiki [$Kind]** — $Message" } | ConvertTo-Json
+
+    $color = switch ($Kind) {
+        'Failure'       { '#dc3545' } # red
+        'ServeFailure'  { '#dc3545' }
+        'Recovery'      { '#28a745' } # green
+        'ServeRecovery' { '#28a745' }
+        'Test'          { '#3aa3e3' } # blue
+    }
+    $emoji = switch ($Kind) {
+        'Failure'       { ':red_circle:' }
+        'ServeFailure'  { ':red_circle:' }
+        'Recovery'      { ':large_green_circle:' }
+        'ServeRecovery' { ':large_green_circle:' }
+        'Test'          { ':large_blue_circle:' }
+    }
+
+    # Slack's mrkdwn dialect: single asterisks for bold (not Markdown's **), triple-backtick
+    # fences work the same as Markdown.
+    $payload = @{
+        attachments = @(
+            @{
+                color      = $color
+                mrkdwn_in  = @('text', 'pretext')
+                pretext    = "$emoji *EAxWiki [$Kind]* — $instanceLabel"
+                text       = $Message
+                footer     = $instanceLabel
+                ts         = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
+            }
+        )
+    } | ConvertTo-Json -Depth 6
+
     try {
-        Invoke-RestMethod -Uri $WebhookUrl -Method Post -Body $payload -ContentType 'application/json' | Out-Null
+        Invoke-RestMethod -Uri $WebhookUrl -Method Post -Body $payload -ContentType 'application/json; charset=utf-8' | Out-Null
+        Write-MonitorLog -Phase "alert" -Message "Webhook dispatched."
     } catch {
         Write-MonitorLog -Phase "alert" -Message "Webhook dispatch failed: $($_.Exception.Message)"
     }
+}
+
+if ($TestAlert) {
+    Send-Alert -Kind Test -Message "Test alert from monitor-export-and-serve.ps1 — if you can see this in Slack, the webhook is wired correctly."
+    exit 0
 }
 
 function Get-ElementCount {
@@ -226,7 +274,9 @@ if ($succeeded) {
     $state.lastFailureTime = (Get-Date).ToString("o")
     $state.consecutiveFailures = [int]$state.consecutiveFailures + 1
     Write-MonitorLog -Phase "export" -Message "Gave up after $MaxRetries attempt(s)."
-    Send-Alert -Kind Failure -Message "Export failed after $MaxRetries attempt(s) (exit code $lastExitCode).`n``````n$outputTail`n``````"
+    $fence = [string][char]0x60 * 3
+    $failureBody = "Export failed after $MaxRetries attempt(s) (exit code $lastExitCode).`n$fence`n$outputTail`n$fence"
+    Send-Alert -Kind Failure -Message $failureBody
 }
 
 Update-HealthPage -State $state

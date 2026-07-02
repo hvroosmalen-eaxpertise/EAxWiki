@@ -3,10 +3,17 @@
 # "right" cadence depends on the deploying organization; see issue #38 for a
 # future timezone/day-night-aware replacement of this trigger.
 #
+# IMPORTANT: Set EAXWIKI_ALERT_WEBHOOK before running this script if you want Slack alerts.
+# Do NOT pass --webhook-url on the command line — Task Scheduler stores action arguments
+# in a readable way (any admin on the machine can read them back via Get-ScheduledTask).
+# Instead, set the env var persistently:
+#   setx EAXWIKI_ALERT_WEBHOOK "https://hooks.slack.com/services/..."
+# Then run this script, and the monitor task will inherit the env var from the system.
+#
 # Usage:
 #   .\scripts\register-scheduled-task.ps1
 #   .\scripts\register-scheduled-task.ps1 --interval-hours 4 --repo "model/file.qea" --output "wiki" --port 8000
-#   .\scripts\register-scheduled-task.ps1 --task-name "EAxWiki Monitor" --webhook-url "https://..."
+#   .\scripts\register-scheduled-task.ps1 --task-name "EAxWiki Monitor"
 #
 # Re-running with the same --task-name replaces the existing registration.
 
@@ -17,7 +24,6 @@ $OutputDir       = ""
 $Port            = 8000
 $MaxRetries      = 3
 $RetryDelaySeconds = 30
-$WebhookUrl      = ""
 
 $i = 0
 while ($i -lt $args.Count) {
@@ -29,7 +35,6 @@ while ($i -lt $args.Count) {
         '^(-p|--port|-Port)$'                  { $i++; if ($i -lt $args.Count) { $Port              = [int]$args[$i] } }
         '^(--max-retries|-MaxRetries)$'        { $i++; if ($i -lt $args.Count) { $MaxRetries         = [int]$args[$i] } }
         '^(--retry-delay|-RetryDelaySeconds)$' { $i++; if ($i -lt $args.Count) { $RetryDelaySeconds  = [int]$args[$i] } }
-        '^(--webhook-url|-WebhookUrl)$'        { $i++; if ($i -lt $args.Count) { $WebhookUrl         = $args[$i] } }
     }
     $i++
 }
@@ -39,6 +44,12 @@ if (-not $IsWindows) {
     exit 1
 }
 
+if (-not $env:EAXWIKI_ALERT_WEBHOOK) {
+    Write-Warning "EAXWIKI_ALERT_WEBHOOK env var is not set. Slack alerts will not be sent."
+    Write-Warning "To enable alerts, run: setx EAXWIKI_ALERT_WEBHOOK `"https://hooks.slack.com/services/...`""
+    Write-Warning ""
+}
+
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 $monitorScript = Join-Path $repoRoot "scripts\monitor-export-and-serve.ps1"
 
@@ -46,7 +57,6 @@ $scriptArgs = @("--max-retries", $MaxRetries, "--retry-delay", $RetryDelaySecond
 if ($RepoPath)   { $scriptArgs += "--repo", $RepoPath }
 if ($OutputDir)  { $scriptArgs += "--output", $OutputDir }
 if ($Port)       { $scriptArgs += "--port", $Port }
-if ($WebhookUrl) { $scriptArgs += "--webhook-url", $WebhookUrl }
 
 $argLine = ($scriptArgs | ForEach-Object { if ($_ -match '\s') { "`"$_`"" } else { $_ } }) -join ' '
 $psExe = (Get-Process -Id $PID).Path
