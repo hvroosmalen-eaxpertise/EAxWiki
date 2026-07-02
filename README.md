@@ -31,7 +31,7 @@ Because the serve step only needs Python and the `wiki/` folder, it works on any
 
 ### Monitoring & Alerting
 
-EAxWiki can send monitoring alerts to **Slack** when background export/serve operations encounter issues. See [**Slack Webhook Setup**](docs/SLACK_WEBHOOK_SETUP.md) for detailed instructions on configuring your Slack workspace to receive alerts.
+EAxWiki can send monitoring alerts to **Slack** when background export/serve operations start, encounter issues, or recover — see [Scheduling exports](#scheduling-exports) for the unattended monitor wrapper that sends these. See [**Slack Webhook Setup**](docs/SLACK_WEBHOOK_SETUP.md) for detailed instructions on configuring your Slack workspace to receive alerts.
 
 > **Note:** Currently only Slack is supported. Teams webhook support is planned — see [GitHub issues](https://github.com/hvroosmalen-eaxpertise/EAxWiki/issues) to track or contribute.
 
@@ -196,7 +196,10 @@ A typical first-time setup is just:
 | `scripts/export.ps1` | Export EA model to Markdown only |
 | `scripts/serve.ps1` | Start MkDocs on an already-exported wiki |
 | `scripts/export-and-serve.ps1` | Export then serve (calls the two above) |
+| `scripts/serve-api.ps1` | Start MkDocs *and* the wiki write-back server together, without re-exporting |
 | `scripts/writeback.ps1` | Scan wiki for status and notes changes and write them back to EA via COM (**Windows only**) |
+| `scripts/monitor-export-and-serve.ps1` | Unattended wrapper for scheduled runs: retry with backoff, Slack alerting, health page, serve watchdog (see [Scheduling exports](#scheduling-exports), **Windows only**) |
+| `scripts/register-scheduled-task.ps1` | Register `monitor-export-and-serve.ps1` as a Windows Task Scheduler task on a fixed interval (see [Scheduling exports](#scheduling-exports), **Windows only**) |
 
 All scripts accept both PowerShell (`-Flag`) and Unix-style (`--flag`) syntax interchangeably, e.g. `--force`, `--verbose`, `--repo`.
 
@@ -343,7 +346,49 @@ Reset:       delete .eaxwiki to re-enter interactively
 
 Because the connection is saved in `.eaxwiki`, the scripts run unattended and are suitable for scheduling.
 
-### Windows Task Scheduler
+### Windows Task Scheduler — unattended monitoring (recommended)
+
+`scripts/register-scheduled-task.ps1` registers `scripts/monitor-export-and-serve.ps1` on a fixed interval. Unlike calling `export.ps1` directly from Task Scheduler, the monitor wrapper is built for running unattended with nobody watching: it retries transient failures with backoff, restarts `mkdocs serve` if it dies, writes a `wiki/status/health.md` page, and (if a Slack webhook is configured — see [Monitoring & Alerting](#monitoring--alerting)) posts to Slack on every run start, on final failure, and on recovery.
+
+```powershell
+# Register a task that runs every 30 minutes
+.\scripts\register-scheduled-task.ps1 --interval-minutes 30 --port 8000
+
+# Or every N hours instead
+.\scripts\register-scheduled-task.ps1 --interval-hours 4 --port 8000
+```
+
+Re-running `register-scheduled-task.ps1` with the same `--task-name` (default `EAxWiki-Monitor`) replaces the existing registration. Remove it with `Unregister-ScheduledTask -TaskName EAxWiki-Monitor`.
+
+What the monitor wrapper does on each scheduled run:
+- Pre-flight: kills any orphaned `EA.exe` left over from a prior crashed run
+- Exports with bounded retry + backoff (`--max-retries`, default 3; `--retry-delay`, default 30s) and a sanity check that alerts if the element count collapses versus the previous successful run (`--min-element-fraction`, default 0.5)
+- Checks whether `mkdocs serve` is still up — including a check on whether the wiki port itself is already listening, so it won't start a second, colliding `mkdocs serve` on top of one you started manually outside the monitor's tracking — and restarts it if it's down
+- Sends a Slack "run starting" notification at the beginning of every pass (disable with `--no-notify-start`), plus Failure/Recovery alerts for export and serve independently
+
+Export mode on the schedule: incremental by default, same as `export.ps1` itself — forcing a full rebuild on every run of a short interval would be needlessly slow against a large model.
+
+```powershell
+# Force a full rebuild on every scheduled run
+.\scripts\register-scheduled-task.ps1 --interval-minutes 30 --force
+
+# Or force only every Nth run (e.g. once/day on a 30-minute cadence) for periodic
+# drift correction, staying incremental the rest of the time
+.\scripts\register-scheduled-task.ps1 --interval-minutes 30 --force-every 48
+```
+
+Overlap protection: the registered task uses `MultipleInstances IgnoreNew`, so if a run is still in progress when the next trigger fires (e.g. a slow EA export overruns a 30-minute interval), Task Scheduler skips the new trigger instead of stacking runs; an `ExecutionTimeLimit` just under the interval kills a genuinely hung run as a backstop.
+
+You can also run `monitor-export-and-serve.ps1` directly (e.g. to test alerting) without registering a task:
+
+```powershell
+.\scripts\monitor-export-and-serve.ps1 --port 8000          # one pass
+.\scripts\monitor-export-and-serve.ps1 --test-alert          # send a test Slack message and exit
+```
+
+### Windows Task Scheduler — simple export only
+
+If you don't need retry/alerting/serve-watchdog behaviour, you can still call `export.ps1` directly:
 
 ```powershell
 $action  = New-ScheduledTaskAction -Execute "pwsh" -Argument "-ExecutionPolicy Bypass -File C:\EAxWiki\scripts\export.ps1"

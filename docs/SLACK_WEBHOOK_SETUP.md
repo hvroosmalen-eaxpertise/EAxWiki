@@ -51,12 +51,27 @@ To change the webhook URL later:
 
 ## Testing Your Webhook
 
-After configuration, EAxWiki will automatically send alerts to your Slack channel when:
-- Export/serve operations start or complete
-- Errors occur during processing
-- Monitoring thresholds are exceeded (if enabled)
+Send a one-off test message without running a real export:
 
-Check your Slack channel to confirm messages are being delivered.
+```powershell
+.\scripts\monitor-export-and-serve.ps1 --test-alert
+```
+
+This resolves the webhook URL the same way a real scheduled run does — `--webhook-url` argument, then `EAXWIKI_ALERT_WEBHOOK` environment variable, then `.eaxwiki` — and posts a blue "Test" message. Check your Slack channel to confirm it arrived.
+
+## When Alerts Are Sent
+
+Alerts are sent by `scripts/monitor-export-and-serve.ps1` — the unattended wrapper used for [scheduled runs](../README.md#scheduling-exports), not by `export.ps1` or `export-and-serve.ps1` directly. Each scheduled pass can send:
+
+| Kind | When |
+|---|---|
+| Start | Beginning of every scheduled run (disable with `--no-notify-start`) |
+| Failure | Export failed after all retries are exhausted |
+| Recovery | Export succeeded after a prior run had failed |
+| ServeFailure | `mkdocs serve` failed to (re)start after all retries |
+| ServeRecovery | `mkdocs serve` came back up after a prior serve failure |
+
+A transient failure that succeeds on retry (within the same scheduled pass) does **not** alert — only the final outcome of a pass does, so a blip that resolves itself doesn't page anyone.
 
 ## Security Notes
 
