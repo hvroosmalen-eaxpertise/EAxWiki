@@ -19,7 +19,7 @@
 
         Note over Script,Browser: Start services
         Script->>MkDocs: mkdocs serve --dev-addr 0.0.0.0:PORT --dirty
-        MkDocs->>MkDocs: pip install requirements; watch wiki/ for changes
+        MkDocs->>MkDocs: pip install requirements, watch wiki/ for changes
 
         Note over Script,Browser: Every page load — runtime
         Browser->>MkDocs: GET /
