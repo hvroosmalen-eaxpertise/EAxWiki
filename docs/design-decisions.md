@@ -3,6 +3,28 @@
 ## Architecture
 
 - **Export pipeline**: C# .NET 10 console app reads EA model via COM Interop, writes Markdown + PNG files, then MkDocs serves the result. Three scripts for flexibility: `export.ps1`, `serve.ps1`, `export-and-serve.ps1`.
+
+    ```mermaid
+    sequenceDiagram
+        participant Script as Launch script
+        participant Exporter
+        participant MkDocs as mkdocs
+        participant Browser
+
+        Note over Script,Browser: Export — runs once, before serving
+        Script->>Exporter: dotnet run EAxWiki -- --output wiki [--api-port]
+        Exporter->>Exporter: EaReader.Open(repo) — read via COM
+        Exporter->>Exporter: write .md/.png/.css/.js + token (parallel)
+        Exporter-->>Script: exit 0 — "Done. Wiki generated"
+
+        Note over Script,Browser: Start services
+        Script->>MkDocs: mkdocs serve --dev-addr 0.0.0.0:PORT --dirty
+        MkDocs->>MkDocs: pip install requirements; watch wiki/ for changes
+
+        Note over Script,Browser: Every page load — runtime
+        Browser->>MkDocs: GET /
+        MkDocs-->>Browser: 200 OK — rendered page + widgets
+    ```
 - **Test project** (`EAxWiki.Tests`): 19 unit tests for `MarkdownHelpers` and 6 integration tests using an `InMemoryWriter` stub. Tests run with xUnit and access internal types via `InternalsVisibleTo`.
 
 ## File Naming
