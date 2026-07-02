@@ -13,7 +13,7 @@ $Force     = $false
 $Verbose   = $false
 $Json      = $false
 $WriteBack = $false
-$ApiPort   = 0
+$ApiPort   = 8001  # Default to 8001 so write-back is enabled by default
 
 $i = 0
 while ($i -lt $args.Count) {
