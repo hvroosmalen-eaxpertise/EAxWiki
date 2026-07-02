@@ -22,6 +22,15 @@
 # For scheduled/unattended use without .eaxwiki, set EAXWIKI_ALERT_WEBHOOK env var in the
 # scheduled task's "Run as" credentials — this keeps the credential out of Task Scheduler's
 # stored action arguments (which any admin on the machine can read back).
+#
+# $PSNativeCommandUseErrorActionPreference (PowerShell 7.3+, defaults to $true in a fresh
+# -NoProfile session — exactly how Task Scheduler launches this script) makes stderr output
+# from a native command interfere with $LASTEXITCODE / $? once that stderr is merged via
+# `2>&1`, as happens below when capturing export.ps1's output. dotnet's own logger writes
+# warn-level lines (e.g. "Duplicate sanitized name...") to stderr even on a fully successful
+# run, which was enough to make export.ps1's own `dotnet run` exit-code check misfire and
+# report a false failure. Disabling it here scopes the fix to this script only.
+$PSNativeCommandUseErrorActionPreference = $false
 
 $RepoPath            = ""
 $OutputDir           = ""     # defaults to <repo-root>\wiki when not specified
@@ -31,6 +40,7 @@ $RetryDelaySeconds   = 30
 $MinElementFraction  = 0.5    # sanity floor: alert if output shrinks below this fraction of the previous successful run
 $WebhookUrl          = $null  # will be resolved from CLI arg, env var, or .eaxwiki file
 $TestAlert           = $false
+$NotifyOnStart       = $true  # send a Slack message at the beginning of every scheduled run, not just on failure/recovery
 
 $i = 0
 while ($i -lt $args.Count) {
@@ -43,6 +53,7 @@ while ($i -lt $args.Count) {
         '^(--min-element-fraction)$'             { $i++; if ($i -lt $args.Count) { $MinElementFraction = [double]$args[$i] } }
         '^(--webhook-url|-WebhookUrl)$'          { $i++; if ($i -lt $args.Count) { $WebhookUrl          = $args[$i] } }
         '^(--test-alert|-TestAlert)$'            { $TestAlert = $true }
+        '^(--no-notify-start)$'                  { $NotifyOnStart = $false }
         default                                  { if (-not "$($args[$i])".StartsWith('-')) { $RepoPath = $args[$i] } }
     }
     $i++
@@ -134,7 +145,7 @@ function Save-HealthState {
 function Send-Alert {
     param(
         [string]$Message,
-        [ValidateSet('Failure', 'Recovery', 'ServeFailure', 'ServeRecovery', 'Test')]
+        [ValidateSet('Start', 'Failure', 'Recovery', 'ServeFailure', 'ServeRecovery', 'Test')]
         [string]$Kind
     )
     Write-MonitorLog -Phase "alert" -Message "[$Kind] $Message"
@@ -144,6 +155,7 @@ function Send-Alert {
     }
 
     $color = switch ($Kind) {
+        'Start'         { '#3aa3e3' } # blue
         'Failure'       { '#dc3545' } # red
         'ServeFailure'  { '#dc3545' }
         'Recovery'      { '#28a745' } # green
@@ -151,6 +163,7 @@ function Send-Alert {
         'Test'          { '#3aa3e3' } # blue
     }
     $emoji = switch ($Kind) {
+        'Start'         { ':arrows_counterclockwise:' }
         'Failure'       { ':red_circle:' }
         'ServeFailure'  { ':red_circle:' }
         'Recovery'      { ':large_green_circle:' }
@@ -226,6 +239,10 @@ function Update-HealthPage {
         "| Consecutive failures | $($State.serveConsecutiveFailures) |"
     )
     Set-Content -Path (Join-Path $statusDir "health.md") -Value $lines
+}
+
+if ($NotifyOnStart) {
+    Send-Alert -Kind Start -Message "Scheduled run starting."
 }
 
 # --- Pre-flight: clean up orphaned EA.exe processes left by a prior crashed run. ---
@@ -310,12 +327,56 @@ Update-HealthPage -State $state
 Save-HealthState -State $state
 
 # --- Serve watchdog: verify mkdocs is still up, restart if it died since the last pass. ---
+# The pid file stores PID + process start time (not just PID) so a stale file surviving
+# a machine reboot can't produce a false "still alive" if the OS has since reused that PID
+# for an unrelated process.
+function Test-PortListening {
+    param([int]$PortNumber)
+    try {
+        $conn = Get-NetTCPConnection -LocalPort $PortNumber -State Listen -ErrorAction Stop
+        return $null -ne $conn
+    } catch {
+        # Get-NetTCPConnection may be unavailable; fall back to a direct TCP probe.
+        try {
+            $client = New-Object System.Net.Sockets.TcpClient
+            $iar = $client.BeginConnect('127.0.0.1', $PortNumber, $null, $null)
+            $success = $iar.AsyncWaitHandle.WaitOne(500)
+            $client.Close()
+            return $success
+        } catch {
+            return $false
+        }
+    }
+}
+
 function Test-ServeAlive {
-    if (-not (Test-Path $servePidPath)) { return $false }
-    $pid_ = Get-Content $servePidPath -Raw -ErrorAction SilentlyContinue
-    if (-not $pid_) { return $false }
-    $proc = Get-Process -Id ([int]$pid_.Trim()) -ErrorAction SilentlyContinue
-    return $null -ne $proc
+    # First, does this monitor instance have a tracked, still-running serve process?
+    if (Test-Path $servePidPath) {
+        try {
+            $info = Get-Content $servePidPath -Raw | ConvertFrom-Json
+            if ($info.pid) {
+                $proc = Get-Process -Id ([int]$info.pid) -ErrorAction SilentlyContinue
+                if ($proc -and $info.startTime) {
+                    $recordedStart = [DateTimeOffset]::Parse($info.startTime)
+                    $actualStart = [DateTimeOffset]$proc.StartTime
+                    if ([Math]::Abs(($recordedStart - $actualStart).TotalSeconds) -le 2) {
+                        return $true
+                    }
+                }
+            }
+        } catch {
+            # Corrupt or unreadable pid file — fall through to the port check below.
+        }
+    }
+
+    # No (valid) tracked process — but something else may already be serving this port,
+    # e.g. a manually started export-and-serve.ps1 that this monitor instance didn't launch.
+    # Don't start a second mkdocs and collide on the port; leave an already-listening port alone.
+    if (Test-PortListening -PortNumber $Port) {
+        Write-MonitorLog -Phase "serve" -Message "Port $Port is already listening (untracked by this monitor instance); leaving it alone."
+        return $true
+    }
+    return $false
 }
 
 function Start-Serve {
@@ -328,7 +389,8 @@ function Start-Serve {
         -ArgumentList @("-NoProfile", "-File", $serveScript, "--port", $Port, "--wiki-dir", $wikiDir) `
         -RedirectStandardOutput $outFile -RedirectStandardError $errFile `
         -WindowStyle Hidden -PassThru -ErrorAction Stop
-    Set-Content -Path $servePidPath -Value $proc.Id
+    [pscustomobject]@{ pid = $proc.Id; startTime = $proc.StartTime.ToString("o") } |
+        ConvertTo-Json | Set-Content -Path $servePidPath
     return $proc
 }
 

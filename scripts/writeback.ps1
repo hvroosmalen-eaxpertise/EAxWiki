@@ -7,6 +7,10 @@
 #
 # Requirements: Windows + Sparx Enterprise Architect installed (same as export).
 
+# See export.ps1 for why this is needed: dotnet's own stderr log lines can otherwise corrupt
+# $LASTEXITCODE under $PSNativeCommandUseErrorActionPreference's default in a -NoProfile session.
+$PSNativeCommandUseErrorActionPreference = $false
+
 $RepoPath = ""
 $Verbose  = $false
 
