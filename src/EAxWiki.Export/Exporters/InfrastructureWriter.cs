@@ -9,14 +9,24 @@ internal class InfrastructureWriter(IOutputWriter writer)
     public async Task WritePagesFileAsync(string outputDir)
     {
         // wiki/status/health.md is written by scripts/monitor-export-and-serve.ps1 (issue #37/#38),
-        // not by this exporter — only nest it into the Status nav entry when it actually exists, so a
-        // plain export.ps1 run (no monitor wrapper in use) doesn't get a nav link to a missing page.
+        // not by this exporter — only add its nav entry when it actually exists, so a plain export.ps1
+        // run (no monitor wrapper in use) doesn't get a link to a missing page.
+        //
+        // The Pipeline Health entry deliberately points at "status/health.html", not "status/health.md":
+        // mkdocs-awesome-pages-plugin has a bug (confirmed empirically, not just in this project's own
+        // .pages files — reproduced with a minimal mkdocs.yml + plugins: [awesome-pages] config) where an
+        // explicit nav entry referencing a second .md file in an already-referenced directory renders with
+        // the source .md extension as the href instead of being resolved to .html, while plain mkdocs nav
+        // (no awesome-pages) resolves the exact same entry correctly. A bare .html reference isn't matched
+        // against any known page by the plugin at all, so it passes through as a literal relative link —
+        // and since use_directory_urls: false means the built file genuinely exists at that literal path,
+        // the link just works. The main "Status: status/" entry is unaffected (a directory reference was
+        // already the working, unchanged pattern here) and still resolves via directory-index serving.
         var statusLines = File.Exists(Path.Combine(outputDir, "status", "health.md"))
             ? new[]
               {
-                  "  - Status:",
-                  "    - Status: status/index.md",
-                  "    - Pipeline Health: status/health.md",
+                  "  - Status: status/",
+                  "  - Pipeline Health: status/health.html",
               }
             : ["  - Status: status/"];
 
