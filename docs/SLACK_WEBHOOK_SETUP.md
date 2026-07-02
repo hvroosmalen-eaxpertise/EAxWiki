@@ -4,7 +4,7 @@ EAxWiki can send monitoring and alerting notifications to Slack when background 
 
 ## Supported Webhook Type
 
-Currently, only **Slack Incoming Webhooks** are supported. Teams webhook support is tracked in [GitHub issue #??](https://github.com/hvroosmalen-eaxpertise/EAxWiki/issues).
+Currently, only **Slack Incoming Webhooks** are supported. Teams webhook support is tracked in [GitHub issue #39](https://github.com/hvroosmalen-eaxpertise/EAxWiki/issues/39).
 
 ## How to Create a Slack Incoming Webhook
 
@@ -78,4 +78,4 @@ Check your Slack channel to confirm messages are being delivered.
 
 ## Future: Teams Webhook Support
 
-Teams webhook support is planned. Track progress in [GitHub issue #??](https://github.com/hvroosmalen-eaxpertise/EAxWiki/issues).
+Teams webhook support is planned. Track progress in [GitHub issue #39](https://github.com/hvroosmalen-eaxpertise/EAxWiki/issues/39).
