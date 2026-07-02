@@ -23,22 +23,29 @@ const string ConfigFileName = ".eaxwiki";
 // Find .eaxwiki in current directory or parent directories (up to 5 levels)
 string LocalConfig = "";
 var currentDir = Directory.GetCurrentDirectory();
+var searchDir = currentDir;
 for (int i = 0; i < 5; i++)
 {
-    var candidate = Path.Combine(currentDir, ConfigFileName);
+    var candidate = Path.Combine(searchDir, ConfigFileName);
     if (File.Exists(candidate))
     {
         LocalConfig = candidate;
         break;
     }
-    var parent = Directory.GetParent(currentDir);
+    var parent = Directory.GetParent(searchDir);
     if (parent == null) break;
-    currentDir = parent.FullName;
+    searchDir = parent.FullName;
+}
+
+// If not found, default to current directory
+if (string.IsNullOrEmpty(LocalConfig))
+{
+    LocalConfig = Path.Combine(currentDir, ConfigFileName);
 }
 
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
 {
-    if (!string.IsNullOrWhiteSpace(LocalConfig))
+    if (!string.IsNullOrWhiteSpace(LocalConfig) && File.Exists(LocalConfig))
     {
         var savedConfig = LocalConfigStore.Load(LocalConfig, out var wasLegacyPlaintext);
         if (!string.IsNullOrWhiteSpace(savedConfig.RepoPath))
