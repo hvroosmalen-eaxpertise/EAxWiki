@@ -8,6 +8,18 @@ internal class InfrastructureWriter(IOutputWriter writer)
 {
     public async Task WritePagesFileAsync(string outputDir)
     {
+        // wiki/status/health.md is written by scripts/monitor-export-and-serve.ps1 (issue #37/#38),
+        // not by this exporter — only nest it into the Status nav entry when it actually exists, so a
+        // plain export.ps1 run (no monitor wrapper in use) doesn't get a nav link to a missing page.
+        var statusLines = File.Exists(Path.Combine(outputDir, "status", "health.md"))
+            ? new[]
+              {
+                  "  - Status:",
+                  "    - Status: status/index.md",
+                  "    - Pipeline Health: status/health.md",
+              }
+            : ["  - Status: status/"];
+
         await writer.WriteFileAsync(Path.Combine(outputDir, ".pages"), string.Join(Environment.NewLine,
         [
             "nav:",
@@ -16,7 +28,7 @@ internal class InfrastructureWriter(IOutputWriter writer)
             "  - Types: types/",
             "  - Glossary: glossary/",
             "  - Recent: recent/",
-            "  - Status: status/",
+            .. statusLines,
             string.Empty,
         ]));
 
