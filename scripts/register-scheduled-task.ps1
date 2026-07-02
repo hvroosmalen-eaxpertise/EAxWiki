@@ -18,6 +18,11 @@
 # interval), Task Scheduler skips the new trigger rather than stacking runs. As a
 # backstop, ExecutionTimeLimit kills a genuinely hung run before the interval repeats.
 #
+# Export mode: every scheduled run is incremental by default, same as export.ps1 itself —
+# --force on every run of a short-interval schedule would be needlessly slow. Use --force
+# to bake --force into every run instead, or --force-every N to force only every Nth run
+# (periodic drift correction while staying incremental the rest of the time).
+#
 # Usage:
 #   .\scripts\register-scheduled-task.ps1
 #   .\scripts\register-scheduled-task.ps1 --interval-minutes 30 --repo "model/file.qea" --output "wiki" --port 8000
@@ -33,6 +38,8 @@ $OutputDir         = ""
 $Port              = 8000
 $MaxRetries        = 3
 $RetryDelaySeconds = 30
+$ForceExport       = $false # bake --force into every scheduled run (see monitor-export-and-serve.ps1)
+$ForceEveryNRuns   = 0      # bake --force-every N into the scheduled run instead of forcing every time
 
 $i = 0
 while ($i -lt $args.Count) {
@@ -45,6 +52,8 @@ while ($i -lt $args.Count) {
         '^(-p|--port|-Port)$'                   { $i++; if ($i -lt $args.Count) { $Port              = [int]$args[$i] } }
         '^(--max-retries|-MaxRetries)$'         { $i++; if ($i -lt $args.Count) { $MaxRetries         = [int]$args[$i] } }
         '^(--retry-delay|-RetryDelaySeconds)$'  { $i++; if ($i -lt $args.Count) { $RetryDelaySeconds  = [int]$args[$i] } }
+        '^(-f|--force)$'                        { $ForceExport = $true }
+        '^(--force-every)$'                     { $i++; if ($i -lt $args.Count) { $ForceEveryNRuns   = [int]$args[$i] } }
     }
     $i++
 }
@@ -67,6 +76,8 @@ $scriptArgs = @("--max-retries", $MaxRetries, "--retry-delay", $RetryDelaySecond
 if ($RepoPath)   { $scriptArgs += "--repo", $RepoPath }
 if ($OutputDir)  { $scriptArgs += "--output", $OutputDir }
 if ($Port)       { $scriptArgs += "--port", $Port }
+if ($ForceExport) { $scriptArgs += "--force" }
+elseif ($ForceEveryNRuns -gt 0) { $scriptArgs += "--force-every", $ForceEveryNRuns }
 
 $argLine = ($scriptArgs | ForEach-Object { if ($_ -match '\s') { "`"$_`"" } else { $_ } }) -join ' '
 $psExe = (Get-Process -Id $PID).Path

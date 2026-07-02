@@ -13,6 +13,13 @@
 #       --max-retries 3 --retry-delay 30 --min-element-fraction 0.5
 #   .\scripts\monitor-export-and-serve.ps1 --test-alert
 #
+# Export mode, same as export.ps1: incremental (default) or --force for a full rebuild every
+# run. On a short (e.g. 30-minute) cadence, --force every run is needlessly slow against a
+# large model — use --force-every N instead to force a full rebuild only on every Nth run,
+# correcting for any drift a single incremental diff might miss while staying incremental
+# the rest of the time (tracked in the health state file as runsSinceForce):
+#   .\scripts\monitor-export-and-serve.ps1 --force-every 48   # e.g. once/day on a 30-min cadence
+#
 # Slack webhook URL resolution (in order):
 #   1. --webhook-url CLI argument (if passed)
 #   2. EAXWIKI_ALERT_WEBHOOK environment variable (if set)
@@ -41,6 +48,9 @@ $MinElementFraction  = 0.5    # sanity floor: alert if output shrinks below this
 $WebhookUrl          = $null  # will be resolved from CLI arg, env var, or .eaxwiki file
 $TestAlert           = $false
 $NotifyOnStart       = $true  # send a Slack message at the beginning of every scheduled run, not just on failure/recovery
+$Force               = $false # full regeneration instead of export.ps1's default incremental mode; see --force-every below
+$ForceEveryNRuns     = 0      # 0 = never auto-force; N>0 = force a full rebuild every Nth run (drift correction on an
+                               # otherwise-incremental schedule), tracked via forceRunCounter in the health state file
 
 $i = 0
 while ($i -lt $args.Count) {
@@ -54,6 +64,8 @@ while ($i -lt $args.Count) {
         '^(--webhook-url|-WebhookUrl)$'          { $i++; if ($i -lt $args.Count) { $WebhookUrl          = $args[$i] } }
         '^(--test-alert|-TestAlert)$'            { $TestAlert = $true }
         '^(--no-notify-start)$'                  { $NotifyOnStart = $false }
+        '^(-f|--force|-Force)$'                  { $Force = $true }
+        '^(--force-every|-ForceEveryNRuns)$'     { $i++; if ($i -lt $args.Count) { $ForceEveryNRuns = [int]$args[$i] } }
         default                                  { if (-not "$($args[$i])".StartsWith('-')) { $RepoPath = $args[$i] } }
     }
     $i++
@@ -122,10 +134,14 @@ function Write-MonitorLog {
 $instanceLabel = "$env:COMPUTERNAME — $wikiDir"
 
 function Get-HealthState {
-    if (Test-Path $healthPath) {
-        try { return Get-Content $healthPath -Raw | ConvertFrom-Json } catch {}
-    }
-    return [pscustomobject]@{
+    # PSCustomObject (both a [pscustomobject] literal and one returned by ConvertFrom-Json)
+    # throws on assigning a property that doesn't already exist — silently, since it's a
+    # non-terminating error under the default $ErrorActionPreference. So a health.json written
+    # by an older version of this script (missing a field added since) would silently drop any
+    # later `$state.newField = ...` assignment. Build the full-shape default first, then for an
+    # existing file, backfill any fields the on-disk JSON doesn't have via Add-Member -Force,
+    # so every field is guaranteed assignable regardless of when the state file was created.
+    $default = [pscustomobject]@{
         lastSuccessTime       = $null
         lastFailureTime       = $null
         consecutiveFailures   = 0
@@ -134,7 +150,22 @@ function Get-HealthState {
         serveConsecutiveFailures = 0
         lastServeFailureTime  = $null
         lastServeSuccessTime  = $null
+        runsSinceForce        = 0
+        lastMode               = $null
     }
+
+    if (Test-Path $healthPath) {
+        try {
+            $loaded = Get-Content $healthPath -Raw | ConvertFrom-Json
+            foreach ($prop in $default.PSObject.Properties) {
+                if (-not (Get-Member -InputObject $loaded -Name $prop.Name -ErrorAction SilentlyContinue)) {
+                    $loaded | Add-Member -NotePropertyName $prop.Name -NotePropertyValue $prop.Value -Force
+                }
+            }
+            return $loaded
+        } catch {}
+    }
+    return $default
 }
 
 function Save-HealthState {
@@ -229,6 +260,8 @@ function Update-HealthPage {
         "| Consecutive failures | $($State.consecutiveFailures) |"
         "| Last exit code | $($State.lastExitCode) |"
         "| Last element count | $($State.lastElementCount) |"
+        "| Last mode | $($State.lastMode) |"
+        "| Runs since full rebuild | $($State.runsSinceForce) |"
         ""
         "## Serve"
         ""
@@ -263,9 +296,22 @@ function Cleanup-EAProcesses {
 
 $state = Get-HealthState
 
+# --force is off by default here, same as export.ps1 itself — a 30-minute-cadence schedule
+# doing a full rebuild every run would be needlessly slow against a large model. --force-every
+# lets an otherwise-incremental schedule periodically self-correct any drift a single run's
+# incremental diff might miss, without forcing every run.
+$runsSinceForce = if ($state.runsSinceForce) { [int]$state.runsSinceForce } else { 0 }
+$effectiveForce = $Force
+if (-not $effectiveForce -and $ForceEveryNRuns -gt 0 -and $runsSinceForce -ge ($ForceEveryNRuns - 1)) {
+    $effectiveForce = $true
+}
+
 # --- Export with bounded retry + backoff. ---
 $exportArgs = @("--output", $wikiDir)
 if ($RepoPath) { $exportArgs += "--repo", $RepoPath }
+if ($effectiveForce) { $exportArgs += "--force" }
+$state.lastMode = if ($effectiveForce) { "full (--force)" } else { "incremental" }
+Write-MonitorLog -Phase "export" -Message "Mode: $($state.lastMode)."
 
 $attempt = 0
 $succeeded = $false
@@ -310,6 +356,7 @@ if ($succeeded) {
     $wasFailing = $state.consecutiveFailures -gt 0
     $state.lastSuccessTime = (Get-Date).ToString("o")
     $state.consecutiveFailures = 0
+    $state.runsSinceForce = if ($effectiveForce) { 0 } else { $runsSinceForce + 1 }
     if ($wasFailing) {
         Send-Alert -Kind Recovery -Message "Export succeeded after $($attempt) attempt(s), recovering from a prior failure."
     }
