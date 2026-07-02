@@ -18,11 +18,27 @@ if (config.HelpRequested)
     return 0;
 }
 
-const string LocalConfig = ".eaxwiki";
+const string ConfigFileName = ".eaxwiki";
+
+// Find .eaxwiki in current directory or parent directories (up to 5 levels)
+string LocalConfig = "";
+var currentDir = Directory.GetCurrentDirectory();
+for (int i = 0; i < 5; i++)
+{
+    var candidate = Path.Combine(currentDir, ConfigFileName);
+    if (File.Exists(candidate))
+    {
+        LocalConfig = candidate;
+        break;
+    }
+    var parent = Directory.GetParent(currentDir);
+    if (parent == null) break;
+    currentDir = parent.FullName;
+}
 
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
 {
-    if (File.Exists(LocalConfig))
+    if (!string.IsNullOrWhiteSpace(LocalConfig))
     {
         var savedConfig = LocalConfigStore.Load(LocalConfig, out var wasLegacyPlaintext);
         if (!string.IsNullOrWhiteSpace(savedConfig.RepoPath))
@@ -39,7 +55,7 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
                 LocalConfigStore.Save(LocalConfig, savedConfig);
                 Console.WriteLine($"(Encrypted {LocalConfig} at rest — it was stored in plaintext.)");
             }
-            Console.WriteLine($"(Pass --repo to override, or delete {LocalConfig} to re-enter interactively.)");
+            Console.WriteLine($"(Pass --repo to override, or delete {Path.GetFileName(LocalConfig)} to re-enter interactively.)");
             Console.WriteLine();
         }
     }
