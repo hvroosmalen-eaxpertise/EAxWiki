@@ -2,7 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 
-namespace EAxWiki;
+namespace EAxWiki.Core.Configuration;
 
 /// <summary>
 /// Encrypts the saved EA repository connection string (which may embed a DB password, e.g. for a
@@ -13,6 +13,10 @@ namespace EAxWiki;
 ///
 /// Format: encrypted JSON with "repoPath" (required) and "webhookUrl" (optional) fields.
 /// Legacy format: plaintext connection string (migrated to JSON on next save).
+///
+/// Lives in EAxWiki.Core (not the EAxWiki console/API project) so it can be shared with other
+/// front ends — e.g. EAxWiki.SchedulerUI reads it read-only to display the current repo/port
+/// configuration alongside scheduling controls.
 /// </summary>
 public static class LocalConfigStore
 {

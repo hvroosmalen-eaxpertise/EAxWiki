@@ -199,7 +199,8 @@ A typical first-time setup is just:
 | `scripts/serve-api.ps1` | Start MkDocs *and* the wiki write-back server together, without re-exporting |
 | `scripts/writeback.ps1` | Scan wiki for status and notes changes and write them back to EA via COM (**Windows only**) |
 | `scripts/monitor-export-and-serve.ps1` | Unattended wrapper for scheduled runs: retry with backoff, Slack alerting, health page, serve watchdog (see [Scheduling exports](#scheduling-exports), **Windows only**) |
-| `scripts/register-scheduled-task.ps1` | Register `monitor-export-and-serve.ps1` as a Windows Task Scheduler task on a fixed interval (see [Scheduling exports](#scheduling-exports), **Windows only**) |
+| `scripts/register-scheduled-task.ps1` | Register `monitor-export-and-serve.ps1` as a Windows Task Scheduler task — fixed interval or day/night mode (see [Scheduling exports](#scheduling-exports), **Windows only**) |
+| `src/EAxWiki.SchedulerUI` | WinForms GUI front end for the script above — see [Scheduler GUI](#scheduler-gui), **Windows only** |
 
 All scripts accept both PowerShell (`-Flag`) and Unix-style (`--flag`) syntax interchangeably, e.g. `--force`, `--verbose`, `--repo`.
 
@@ -384,6 +385,41 @@ You can also run `monitor-export-and-serve.ps1` directly (e.g. to test alerting)
 ```powershell
 .\scripts\monitor-export-and-serve.ps1 --port 8000          # one pass
 .\scripts\monitor-export-and-serve.ps1 --test-alert          # send a test Slack message and exit
+```
+
+#### Day/night scheduling
+
+By default a schedule runs at one fixed cadence 24/7. `--work-start`/`--work-end` switch to a
+day/night mode instead: a fast interval during a weekday work-hours window, layered on top of a
+slower all-day, every-day baseline (the "always-alive" heartbeat, so a real failure at night or on
+a weekend isn't silently indistinguishable from "just paused"). This is two native Task Scheduler
+triggers on one task, not a config file — `monitor-export-and-serve.ps1` has no idea day/night
+scheduling exists.
+
+```powershell
+.\scripts\register-scheduled-task.ps1 --work-start "08:00" --work-end "18:00" `
+    --work-interval-minutes 10 --off-hours-interval-minutes 240
+```
+
+All four flags are required together — there are no baked-in defaults for "work hours," since a
+wrong silent default is worse than requiring an explicit choice. Changing the window later means
+re-running this script with new flags; there is no live-reloaded config. See
+`docs/superpowers/specs/2026-07-03-issue-38-scheduling-design.md` for the full design, including
+why this is deliberately *not* timezone-aware scheduling for a global team (EA COM only runs on one
+machine in one timezone — "day vs night" can only mean that machine's own clock).
+
+#### Scheduler GUI
+
+`src/EAxWiki.SchedulerUI` is a small WinForms app that builds and runs the same
+`register-scheduled-task.ps1` calls above from a form instead of the command line — a Configuration
+tab (read-only view of the current `.eaxwiki` repo path/ports/webhook), a Task Status tab (current
+state, next run time, registered triggers, with Enable/Disable/Unregister buttons), and a Schedule
+Settings tab (simple interval or day/night mode, export force mode, a Register/Apply button). It
+shells out to the same scripts and plain `Get-ScheduledTask` queries described above rather than
+reimplementing any Task Scheduler logic itself — one source of truth either way.
+
+```powershell
+dotnet run --project src/EAxWiki.SchedulerUI
 ```
 
 ### Windows Task Scheduler — simple export only

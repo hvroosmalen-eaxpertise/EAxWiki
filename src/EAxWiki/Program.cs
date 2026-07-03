@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using EAxWiki;
+using EAxWiki.Core.Configuration;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.EA;
