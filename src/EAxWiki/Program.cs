@@ -113,7 +113,7 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
             var teamsWebhookUrl = "";
             if (wantTeamsWebhook == "y" || wantTeamsWebhook == "yes")
             {
-                Console.Write("Teams webhook URL (https://.../IncomingWebhook/...): ");
+                Console.Write("Teams webhook URL (from a Workflows \"Send webhook alert to a channel\" flow, or a classic Connector): ");
                 teamsWebhookUrl = (Console.ReadLine() ?? "").Trim();
             }
 

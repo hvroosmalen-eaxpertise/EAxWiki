@@ -6,30 +6,23 @@ EAxWiki can send monitoring and alerting notifications to a Microsoft Teams chan
 
 Teams Incoming Webhooks are supported here. Slack is also supported — see [**Slack Webhook Setup**](SLACK_WEBHOOK_SETUP.md). The two are independent, not exclusive: configure either, neither, or both, and every alert goes to whichever channel(s) are set up.
 
-## How to Create a Teams Incoming Webhook
+## How to Create a Teams Webhook (Workflows)
 
-Microsoft has been moving Teams away from classic "Connectors" toward "Workflows" (Power Automate), so the exact menu can differ by tenant. Try the classic Connector path first (Option A); if your tenant has that disabled, use the Workflows path (Option B) instead — either produces a webhook URL that works identically with EAxWiki.
+Microsoft has been retiring the classic "Connectors" feature in favor of "Workflows" (built on Power Automate) — use Workflows unless your tenant genuinely doesn't offer it. These are the actual steps, verified end-to-end with a real alert landing in a real channel:
 
-### Option A — Classic Incoming Webhook connector
+1. **Create or open a Team** — In Teams, go to **Teams and Channels** in the left sidebar, click **Create Team**, then select **Create team**.
+2. **Add a channel** — Within the team, click **Add channel**, give it a name, and select a channel type (Standard/Private/Shared).
+3. **Create a Workflow** — Open the new channel and, from its options, create a **Workflow**.
+4. **Find the webhook template** — In the Workflows panel, search for **"webhook"** and select **"Send webhook alert to a channel"** (exact template wording can vary slightly by tenant/Teams version — look for anything mentioning a channel + webhook).
+5. **Name the workflow** — Give it a name (e.g. `EAxWiki Alerts`) to finish creating it.
+6. **Copy the webhook URL** — Power Automate shows the URL for this flow once it's created. It's long — something like:
+   ```
+   https://<region>.environment.api.powerplatform.com/powerautomate/automations/direct/workflows/<id>/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=<signature>
+   ```
 
-1. **Open the Teams channel** where you want alerts posted.
-2. Click the **"…" (More options)** next to the channel name, then **"Connectors"** (sometimes under **"Manage channel"** → **"Connectors"** depending on your Teams version).
-3. Search for **"Incoming Webhook"** and click **"Configure"** (or **"Add"**).
-4. Give it a name (e.g. `EAxWiki`) and optionally upload an icon.
-5. Click **"Create"**.
-6. **Copy the webhook URL** shown — it's long, looks like `https://<tenant>.webhook.office.com/webhookb2/...`.
-7. Click **"Done"**.
+No further Teams-side configuration is needed — this URL is what EAxWiki posts a JSON payload to.
 
-### Option B — Workflows (Power Automate)
-
-If "Connectors" isn't available in your tenant:
-
-1. In the target channel, click **"…"** → **"Workflows"**.
-2. Search for the **"Post to a channel when a webhook request is received"** template.
-3. Follow the prompts to select the channel and create the workflow.
-4. **Copy the webhook URL** shown at the end of setup.
-
-Either option produces a URL EAxWiki can POST a JSON payload to — no further Teams-side configuration is needed.
+> **If your tenant only has classic "Connectors" and no "Workflows" option**, look for **"Incoming Webhook"** under **Connectors** instead (via the channel's **"…"** → **"Connectors"** menu). It produces a shorter `https://<tenant>.webhook.office.com/webhookb2/...` URL that works identically with EAxWiki, but Microsoft is phasing this path out.
 
 ## Configure EAxWiki to Use Your Webhook
 
@@ -39,7 +32,7 @@ When you first run EAxWiki, it will prompt for both channels in sequence:
 ```
 Configure Slack webhook for monitoring alerts? [y/N]: n
 Configure Teams webhook for monitoring alerts? [y/N]: y
-Teams webhook URL (https://.../IncomingWebhook/...): <paste your URL here>
+Teams webhook URL (from a Workflows "Send webhook alert to a channel" flow, or a classic Connector): <paste your URL here>
 ```
 
 Answer `n` to the Slack prompt if you only want Teams — see [Slack Webhook Setup](SLACK_WEBHOOK_SETUP.md) if you want that too. Both webhook URLs are encrypted and saved to the `.eaxwiki` configuration file.
@@ -85,8 +78,8 @@ A transient failure that succeeds on retry (within the same scheduled pass) does
 **Messages not appearing in Teams?**
 - Verify the webhook URL is correct and complete (they're long)
 - Check that the connector/workflow still exists in the channel — it can be removed independently of EAxWiki's own config
-- If your tenant recently disabled classic Connectors, switch to the Workflows path (Option B above) and update `.eaxwiki` with the new URL
+- If your tenant recently disabled classic Connectors, switch to the Workflows path above and update `.eaxwiki` with the new URL
 
 **Payload format**
 
-EAxWiki posts the classic Teams [MessageCard](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/connectors-using) format (`@type: MessageCard`), which both the classic Connector and the Workflows "webhook received" trigger accept.
+EAxWiki posts the classic Teams [MessageCard](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/connectors-using) format (`@type: MessageCard`), which both the Workflows "webhook alert" trigger and the classic Connector accept.
