@@ -108,10 +108,20 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
                 webhookUrl = (Console.ReadLine() ?? "").Trim();
             }
 
+            Console.Write("Configure Teams webhook for monitoring alerts? [y/N]: ");
+            var wantTeamsWebhook = (Console.ReadLine() ?? "").Trim().ToLowerInvariant();
+            var teamsWebhookUrl = "";
+            if (wantTeamsWebhook == "y" || wantTeamsWebhook == "yes")
+            {
+                Console.Write("Teams webhook URL (https://.../IncomingWebhook/...): ");
+                teamsWebhookUrl = (Console.ReadLine() ?? "").Trim();
+            }
+
             var newConfig = new LocalConfigStore.Config
             {
                 RepoPath = config.RepositoryPath,
                 WebhookUrl = webhookUrl,
+                TeamsWebhookUrl = teamsWebhookUrl,
                 WikiPort = wikiPort,
                 ApiPort = apiPort
             };

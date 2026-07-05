@@ -20,6 +20,7 @@ public class SchedulerForm : Form
     private readonly Label _wikiPortValue = new() { AutoSize = true, Text = "-" };
     private readonly Label _apiPortValue = new() { AutoSize = true, Text = "-" };
     private readonly Label _webhookValue = new() { AutoSize = true, Text = "-" };
+    private readonly Label _teamsWebhookValue = new() { AutoSize = true, Text = "-" };
 
     // Task status display
     private readonly TextBox _taskNameBox = new() { Text = "EAxWiki-Monitor", Width = 220 };
@@ -113,6 +114,7 @@ public class SchedulerForm : Form
         AddRow(table, "Wiki port:", _wikiPortValue);
         AddRow(table, "API port:", _apiPortValue);
         AddRow(table, "Slack Webhook:", _webhookValue);
+        AddRow(table, "Teams Webhook:", _teamsWebhookValue);
 
         var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, AutoSize = true, FlowDirection = FlowDirection.TopDown };
         panel.Controls.Add(table);
@@ -226,6 +228,7 @@ public class SchedulerForm : Form
             _wikiPortValue.Text = "-";
             _apiPortValue.Text = "-";
             _webhookValue.Text = "-";
+            _teamsWebhookValue.Text = "-";
             return;
         }
 
@@ -236,6 +239,7 @@ public class SchedulerForm : Form
             _wikiPortValue.Text = config.WikiPort?.ToString() ?? "(default 8000)";
             _apiPortValue.Text = config.ApiPort?.ToString() ?? "(default 8001)";
             _webhookValue.Text = string.IsNullOrEmpty(config.WebhookUrl) ? "Not configured" : "Configured";
+            _teamsWebhookValue.Text = string.IsNullOrEmpty(config.TeamsWebhookUrl) ? "Not configured" : "Configured";
             if (config.WikiPort.HasValue)
                 _portBox.Value = config.WikiPort.Value;
         }

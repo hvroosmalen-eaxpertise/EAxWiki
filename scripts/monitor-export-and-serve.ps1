@@ -25,10 +25,19 @@
 #   2. EAXWIKI_ALERT_WEBHOOK environment variable (if set)
 #   3. .eaxwiki config file (webhookUrl field in encrypted JSON)
 #
-# Prefer storing the webhook URL in .eaxwiki via interactive setup or direct configuration.
-# For scheduled/unattended use without .eaxwiki, set EAXWIKI_ALERT_WEBHOOK env var in the
-# scheduled task's "Run as" credentials — this keeps the credential out of Task Scheduler's
-# stored action arguments (which any admin on the machine can read back).
+# Teams webhook URL resolution follows the identical pattern (issue #39):
+#   1. --teams-webhook-url CLI argument
+#   2. EAXWIKI_ALERT_TEAMS_WEBHOOK environment variable
+#   3. .eaxwiki config file (teamsWebhookUrl field)
+#
+# Slack and Teams are independent, not exclusive — if both are configured, every alert is sent
+# to both. Neither is required; a missing/unresolved webhook for one channel just means alerts
+# aren't dispatched there (still logged locally either way).
+#
+# Prefer storing webhook URLs in .eaxwiki via interactive setup or direct configuration.
+# For scheduled/unattended use without .eaxwiki, set the env vars above in the scheduled task's
+# "Run as" credentials — this keeps the credential out of Task Scheduler's stored action
+# arguments (which any admin on the machine can read back).
 #
 # $PSNativeCommandUseErrorActionPreference (PowerShell 7.3+, defaults to $true in a fresh
 # -NoProfile session — exactly how Task Scheduler launches this script) makes stderr output
@@ -46,6 +55,7 @@ $MaxRetries          = 3
 $RetryDelaySeconds   = 30
 $MinElementFraction  = 0.5    # sanity floor: alert if output shrinks below this fraction of the previous successful run
 $WebhookUrl          = $null  # will be resolved from CLI arg, env var, or .eaxwiki file
+$TeamsWebhookUrl     = $null  # same resolution order as $WebhookUrl (issue #39)
 $TestAlert           = $false
 $NotifyOnStart       = $true  # send a Slack message at the beginning of every scheduled run, not just on failure/recovery
 $Force               = $false # full regeneration instead of export.ps1's default incremental mode; see --force-every below
@@ -62,6 +72,7 @@ while ($i -lt $args.Count) {
         '^(--retry-delay|-RetryDelaySeconds)$'   { $i++; if ($i -lt $args.Count) { $RetryDelaySeconds   = [int]$args[$i] } }
         '^(--min-element-fraction)$'             { $i++; if ($i -lt $args.Count) { $MinElementFraction = [double]$args[$i] } }
         '^(--webhook-url|-WebhookUrl)$'          { $i++; if ($i -lt $args.Count) { $WebhookUrl          = $args[$i] } }
+        '^(--teams-webhook-url|-TeamsWebhookUrl)$' { $i++; if ($i -lt $args.Count) { $TeamsWebhookUrl   = $args[$i] } }
         '^(--test-alert|-TestAlert)$'            { $TestAlert = $true }
         '^(--no-notify-start)$'                  { $NotifyOnStart = $false }
         '^(-f|--force|-Force)$'                  { $Force = $true }
@@ -79,25 +90,36 @@ if (-not $IsWindows) {
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 Push-Location $repoRoot
 
-# Resolve webhook URL from CLI arg → env var → .eaxwiki file.
+# Resolve both webhook URLs from CLI arg → env var → .eaxwiki file. .eaxwiki is decrypted at
+# most once (not once per channel) and shared between the two lookups below.
+$needsEaxwikiConfig = ($null -eq $WebhookUrl -or "" -eq $WebhookUrl) -or ($null -eq $TeamsWebhookUrl -or "" -eq $TeamsWebhookUrl)
+$eaxwikiConfig = $null
+if ($needsEaxwikiConfig -and (Test-Path ".eaxwiki")) {
+    try {
+        $entropy = [System.Text.Encoding]::UTF8.GetBytes("EAxWiki.LocalConfig.v1")
+        $base64 = Get-Content ".eaxwiki" -Raw | ForEach-Object { $_.Trim() }
+        $encrypted = [Convert]::FromBase64String($base64)
+        $decrypted = [System.Security.Cryptography.ProtectedData]::Unprotect($encrypted, $entropy, [System.Security.Cryptography.DataProtectionScope]::CurrentUser)
+        $json = [System.Text.Encoding]::UTF8.GetString($decrypted)
+        $eaxwikiConfig = $json | ConvertFrom-Json -ErrorAction SilentlyContinue
+    } catch {
+        # Silent — .eaxwiki may not exist in a decryptable form, or may be in an old format.
+    }
+}
+
 if ($null -eq $WebhookUrl -or "" -eq $WebhookUrl) {
     if ($env:EAXWIKI_ALERT_WEBHOOK) {
         $WebhookUrl = $env:EAXWIKI_ALERT_WEBHOOK
-    } elseif (Test-Path ".eaxwiki") {
-        # Try to decrypt and extract webhookUrl from .eaxwiki JSON config.
-        try {
-            $entropy = [System.Text.Encoding]::UTF8.GetBytes("EAxWiki.LocalConfig.v1")
-            $base64 = Get-Content ".eaxwiki" -Raw | ForEach-Object { $_.Trim() }
-            $encrypted = [Convert]::FromBase64String($base64)
-            $decrypted = [System.Security.Cryptography.ProtectedData]::Unprotect($encrypted, $entropy, [System.Security.Cryptography.DataProtectionScope]::CurrentUser)
-            $json = [System.Text.Encoding]::UTF8.GetString($decrypted)
-            $config = $json | ConvertFrom-Json -ErrorAction SilentlyContinue
-            if ($config.webhookUrl) {
-                $WebhookUrl = $config.webhookUrl
-            }
-        } catch {
-            # Silent — .eaxwiki may not have a webhook URL, or may be in an old format.
-        }
+    } elseif ($eaxwikiConfig -and $eaxwikiConfig.webhookUrl) {
+        $WebhookUrl = $eaxwikiConfig.webhookUrl
+    }
+}
+
+if ($null -eq $TeamsWebhookUrl -or "" -eq $TeamsWebhookUrl) {
+    if ($env:EAXWIKI_ALERT_TEAMS_WEBHOOK) {
+        $TeamsWebhookUrl = $env:EAXWIKI_ALERT_TEAMS_WEBHOOK
+    } elseif ($eaxwikiConfig -and $eaxwikiConfig.teamsWebhookUrl) {
+        $TeamsWebhookUrl = $eaxwikiConfig.teamsWebhookUrl
     }
 }
 
@@ -180,11 +202,13 @@ function Send-Alert {
         [string]$Kind
     )
     Write-MonitorLog -Phase "alert" -Message "[$Kind] $Message"
-    if (-not $WebhookUrl) {
-        Write-MonitorLog -Phase "alert" -Message "No webhook URL configured (--webhook-url or EAXWIKI_ALERT_WEBHOOK); alert logged only."
+    if (-not $WebhookUrl -and -not $TeamsWebhookUrl) {
+        Write-MonitorLog -Phase "alert" -Message "No webhook URL configured (Slack: --webhook-url/EAXWIKI_ALERT_WEBHOOK; Teams: --teams-webhook-url/EAXWIKI_ALERT_TEAMS_WEBHOOK); alert logged only."
         return
     }
 
+    # Slack and Teams are independent, not exclusive (issue #39) — send to whichever channel(s)
+    # are configured, not "the first one found."
     $color = switch ($Kind) {
         'Start'         { '#3aa3e3' } # blue
         'Failure'       { '#dc3545' } # red
@@ -202,31 +226,57 @@ function Send-Alert {
         'Test'          { ':large_blue_circle:' }
     }
 
-    # Slack's mrkdwn dialect: single asterisks for bold (not Markdown's **), triple-backtick
-    # fences work the same as Markdown.
-    $payload = @{
-        attachments = @(
-            @{
-                color      = $color
-                mrkdwn_in  = @('text', 'pretext')
-                pretext    = "$emoji *EAxWiki [$Kind]* — $instanceLabel"
-                text       = $Message
-                footer     = $instanceLabel
-                ts         = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
-            }
-        )
-    } | ConvertTo-Json -Depth 6
+    if ($WebhookUrl) {
+        # Slack's mrkdwn dialect: single asterisks for bold (not Markdown's **), triple-backtick
+        # fences work the same as Markdown.
+        $slackPayload = @{
+            attachments = @(
+                @{
+                    color      = $color
+                    mrkdwn_in  = @('text', 'pretext')
+                    pretext    = "$emoji *EAxWiki [$Kind]* — $instanceLabel"
+                    text       = $Message
+                    footer     = $instanceLabel
+                    ts         = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
+                }
+            )
+        } | ConvertTo-Json -Depth 6
 
-    try {
-        Invoke-RestMethod -Uri $WebhookUrl -Method Post -Body $payload -ContentType 'application/json; charset=utf-8' | Out-Null
-        Write-MonitorLog -Phase "alert" -Message "Webhook dispatched."
-    } catch {
-        Write-MonitorLog -Phase "alert" -Message "Webhook dispatch failed: $($_.Exception.Message)"
+        try {
+            Invoke-RestMethod -Uri $WebhookUrl -Method Post -Body $slackPayload -ContentType 'application/json; charset=utf-8' | Out-Null
+            Write-MonitorLog -Phase "alert" -Message "Slack webhook dispatched."
+        } catch {
+            Write-MonitorLog -Phase "alert" -Message "Slack webhook dispatch failed: $($_.Exception.Message)"
+        }
+    }
+
+    if ($TeamsWebhookUrl) {
+        # Classic Teams "Incoming Webhook" MessageCard format. themeColor is hex without the
+        # leading '#' (unlike Slack's attachment color, which requires it).
+        $teamsPayload = @{
+            '@type'    = 'MessageCard'
+            '@context' = 'http://schema.org/extensions'
+            themeColor = $color.TrimStart('#')
+            summary    = "EAxWiki [$Kind] — $instanceLabel"
+            sections   = @(
+                @{
+                    activityTitle = "EAxWiki [$Kind] — $instanceLabel"
+                    text          = $Message
+                }
+            )
+        } | ConvertTo-Json -Depth 6
+
+        try {
+            Invoke-RestMethod -Uri $TeamsWebhookUrl -Method Post -Body $teamsPayload -ContentType 'application/json; charset=utf-8' | Out-Null
+            Write-MonitorLog -Phase "alert" -Message "Teams webhook dispatched."
+        } catch {
+            Write-MonitorLog -Phase "alert" -Message "Teams webhook dispatch failed: $($_.Exception.Message)"
+        }
     }
 }
 
 if ($TestAlert) {
-    Send-Alert -Kind Test -Message "Test alert from monitor-export-and-serve.ps1 — if you can see this in Slack, the webhook is wired correctly."
+    Send-Alert -Kind Test -Message "Test alert from monitor-export-and-serve.ps1 — if you can see this in Slack/Teams, the webhook is wired correctly."
     exit 0
 }
 

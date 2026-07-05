@@ -6,13 +6,17 @@
 # triggers per task, so this is two native triggers, not a config file read by the wrapper.
 # monitor-export-and-serve.ps1 itself is completely unaware this exists.
 #
-# Slack webhook URL can be configured in one of three ways (checked in this order):
+# Slack and/or Teams webhook URLs (issue #39 — both are independent, not exclusive; configure
+# either, neither, or both) can be configured in one of three ways each (checked in this order):
 #   1. Stored in .eaxwiki as encrypted JSON (recommended for per-instance setup)
-#   2. Set as EAXWIKI_ALERT_WEBHOOK environment variable (use when .eaxwiki is shared/unencrypted)
-#   3. Not configured (alerting is disabled; only logging to wiki/status/health.md)
+#   2. Set as EAXWIKI_ALERT_WEBHOOK / EAXWIKI_ALERT_TEAMS_WEBHOOK environment variable (use when
+#      .eaxwiki is shared/unencrypted)
+#   3. Not configured (alerting is disabled for that channel; still logs to wiki/status/health.md)
 #
-# The monitor script does NOT accept --webhook-url on the command line because Task Scheduler
-# stores action arguments in a readable way (any admin can read them back via Get-ScheduledTask).
+# This registration script does NOT bake --webhook-url/--teams-webhook-url into the scheduled
+# task's command line, even though monitor-export-and-serve.ps1 itself accepts them for manual/
+# direct invocation — Task Scheduler stores action arguments in a readable way (any admin can
+# read them back via Get-ScheduledTask), so scheduled runs always resolve via env var or .eaxwiki.
 #
 # Overlap protection: MultipleInstances is set to IgnoreNew, so if a run is still in
 # progress when the next trigger fires (e.g. a slow EA export overruns a 30-minute

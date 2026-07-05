@@ -4,7 +4,7 @@ EAxWiki can send monitoring and alerting notifications to Slack when background 
 
 ## Supported Webhook Type
 
-Currently, only **Slack Incoming Webhooks** are supported. Teams webhook support is tracked in [GitHub issue #39](https://github.com/hvroosmalen-eaxpertise/EAxWiki/issues/39).
+Slack Incoming Webhooks are supported here. Microsoft Teams is also supported — see [**Teams Webhook Setup**](TEAMS_WEBHOOK_SETUP.md). The two are independent, not exclusive: configure either, neither, or both, and every alert goes to whichever channel(s) are set up.
 
 ## How to Create a Slack Incoming Webhook
 
@@ -39,9 +39,10 @@ When you first run EAxWiki, it will prompt:
 ```
 Configure Slack webhook for monitoring alerts? [y/N]: y
 Slack webhook URL (https://hooks.slack.com/services/...): <paste your URL here>
+Configure Teams webhook for monitoring alerts? [y/N]: n
 ```
 
-The webhook URL will be encrypted and saved to `.eaxwiki` configuration file.
+Answer `n` to the Teams prompt if you only want Slack — see [Teams Webhook Setup](TEAMS_WEBHOOK_SETUP.md) if you want that too. Both webhook URLs are encrypted and saved to the `.eaxwiki` configuration file.
 
 ### Update Existing Configuration
 
@@ -91,6 +92,6 @@ A transient failure that succeeds on retry (within the same scheduled pass) does
 - Make sure you copied the complete URL including `https://`
 - Webhook URLs are long strings starting with `https://hooks.slack.com/services/`
 
-## Future: Teams Webhook Support
+## Also Sending to Microsoft Teams
 
-Teams webhook support is planned. Track progress in [GitHub issue #39](https://github.com/hvroosmalen-eaxpertise/EAxWiki/issues/39).
+Slack and Teams webhooks are independent — configuring one doesn't affect the other, and both can be active at once. See [**Teams Webhook Setup**](TEAMS_WEBHOOK_SETUP.md).

@@ -28,6 +28,7 @@ public static class LocalConfigStore
     {
         public string? RepoPath { get; set; }
         public string? WebhookUrl { get; set; }
+        public string? TeamsWebhookUrl { get; set; }
         public int? WikiPort { get; set; }
         public int? ApiPort { get; set; }
     }
