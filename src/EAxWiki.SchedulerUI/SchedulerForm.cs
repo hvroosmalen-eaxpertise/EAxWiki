@@ -61,8 +61,6 @@ public class SchedulerForm : Form
     private readonly RadioButton _forceEveryNRadio = new() { Text = "Force every N runs, N =", AutoSize = true };
     private readonly NumericUpDown _forceEveryN = new() { Minimum = 2, Maximum = 100000, Value = 5, Width = 80, Enabled = false };
 
-    private readonly NumericUpDown _portBox = new() { Minimum = 1, Maximum = 65535, Value = 8000, Width = 80 };
-
     private readonly TextBox _outputBox = new() { Multiline = true, ReadOnly = true, ScrollBars = ScrollBars.Vertical, Dock = DockStyle.Fill, Font = new Font(FontFamily.GenericMonospace, 9) };
     private readonly Button _registerButton = new() { Text = "Register / Apply Schedule", AutoSize = true };
     private readonly Button _enableButton = new() { Text = "Enable", AutoSize = true };
@@ -133,6 +131,9 @@ public class SchedulerForm : Form
         else
         {
             LoadEaxwikiConfig();
+            // Fire-and-forget: reflects whatever schedule is actually registered on open, rather
+            // than only after the user manually clicks Refresh Status. Constructors can't be async.
+            _ = RefreshTaskStatusAsync();
         }
 
         UpdateModeEnablement();
@@ -253,16 +254,12 @@ public class SchedulerForm : Form
         forceRow.Controls.Add(_forceEveryNRadio);
         forceRow.Controls.Add(_forceEveryN);
 
-        var portTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
-        AddRow(portTable, "Wiki port:", _portBox);
-
         var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown, WrapContents = false };
         panel.Controls.Add(modeRow);
         panel.Controls.Add(simpleTable);
         panel.Controls.Add(dayNightTable);
         panel.Controls.Add(new Label { Text = "Export mode:", AutoSize = true, Margin = new Padding(3, 10, 3, 3) });
         panel.Controls.Add(forceRow);
-        panel.Controls.Add(portTable);
 
         // Kept out of the FlowLayoutPanel above deliberately: with TopDown flow, once content
         // exceeds the available height the panel wraps into a new column instead of scrolling,
@@ -328,8 +325,6 @@ public class SchedulerForm : Form
             _apiPortConfigBox.Value = Math.Clamp(config.ApiPort ?? 8001, (int)_apiPortConfigBox.Minimum, (int)_apiPortConfigBox.Maximum);
             _webhookBox.Text = config.WebhookUrl ?? "";
             _teamsWebhookBox.Text = config.TeamsWebhookUrl ?? "";
-            if (config.WikiPort.HasValue)
-                _portBox.Value = config.WikiPort.Value;
         }
         catch (Exception ex)
         {
@@ -493,7 +488,9 @@ public class SchedulerForm : Form
         try
         {
             // Query state/next-run/triggers via a single script call, JSON-serialized, so we don't
-            // have to parse PowerShell's default table formatting in C#.
+            // have to parse PowerShell's default table formatting in C#. triggerDetails/actionArguments
+            // (structured, unlike the human-readable "triggers" strings) let ApplyScheduleFromTask
+            // below reconstruct the Schedule Settings tab from whatever is actually registered.
             var command = $$"""
                 $task = Get-ScheduledTask -TaskName '{{taskName}}' -ErrorAction SilentlyContinue
                 if (-not $task) { @{ found = $false } | ConvertTo-Json; exit 0 }
@@ -503,7 +500,11 @@ public class SchedulerForm : Form
                     $days = if ($t.DaysOfWeek) { " days=$($t.DaysOfWeek)" } else { "" }
                     "$($t.CimClass.CimClassName) at=$($t.StartBoundary)$days interval=$($t.Repetition.Interval) duration=$($t.Repetition.Duration)"
                 })
-                @{ found = $true; state = [string]$task.State; nextRun = [string]$info.NextRunTime; triggers = $triggers } | ConvertTo-Json
+                $triggerDetails = @($task.Triggers | ForEach-Object {
+                    @{ type = $_.CimClass.CimClassName; startBoundary = $_.StartBoundary; intervalIso = $_.Repetition.Interval; durationIso = $_.Repetition.Duration }
+                })
+                $actionArguments = if ($task.Actions.Count -gt 0) { $task.Actions[0].Arguments } else { "" }
+                @{ found = $true; state = [string]$task.State; nextRun = [string]$info.NextRunTime; triggers = $triggers; triggerDetails = $triggerDetails; actionArguments = $actionArguments } | ConvertTo-Json -Depth 5
                 """;
             var result = await PowerShellRunner.RunCommandAsync(command, _repoRoot);
             if (result.ExitCode != 0)
@@ -526,6 +527,7 @@ public class SchedulerForm : Form
             _nextRunValue.Text = root.GetProperty("nextRun").GetString() ?? "-";
             var triggerLines = root.GetProperty("triggers").EnumerateArray().Select(t => t.GetString() ?? "");
             _triggersBox.Text = string.Join(Environment.NewLine, triggerLines);
+            ApplyScheduleFromTask(root);
         }
         catch (Exception ex)
         {
@@ -534,6 +536,96 @@ public class SchedulerForm : Form
         finally
         {
             _refreshStatusButton.Enabled = true;
+        }
+    }
+
+    // Reverse of RegisterAsync's argument construction: reconstructs the Schedule Settings tab
+    // from whatever schedule is actually registered, so a hardcoded default (Simple / 240 min /
+    // no force) is never silently shown in place of a real Day/Night schedule — and never gets
+    // silently re-applied over it if the user clicks Register/Apply without noticing the mismatch.
+    private void ApplyScheduleFromTask(JsonElement root)
+    {
+        if (!root.TryGetProperty("triggerDetails", out var triggerDetailsElement)) return;
+        var triggers = triggerDetailsElement.EnumerateArray().ToList();
+        if (triggers.Count == 0) return; // nothing registered to reflect — leave fields as-is
+
+        var daily = triggers.FirstOrDefault(t => t.GetProperty("type").GetString() == "MSFT_TaskDailyTrigger");
+        var weekly = triggers.FirstOrDefault(t => t.GetProperty("type").GetString() == "MSFT_TaskWeeklyTrigger");
+        var once = triggers.FirstOrDefault(t => t.GetProperty("type").GetString() == "MSFT_TaskTimeTrigger");
+
+        if (daily.ValueKind == JsonValueKind.Object && weekly.ValueKind == JsonValueKind.Object)
+        {
+            _dayNightModeRadio.Checked = true;
+
+            if (TryParseIsoMinutes(daily, "intervalIso", out var offHoursMinutes))
+                _offHoursIntervalMinutes.Value = Math.Clamp(offHoursMinutes, _offHoursIntervalMinutes.Minimum, _offHoursIntervalMinutes.Maximum);
+
+            if (TryParseIsoMinutes(weekly, "intervalIso", out var workMinutes))
+                _workIntervalMinutes.Value = Math.Clamp(workMinutes, _workIntervalMinutes.Minimum, _workIntervalMinutes.Maximum);
+
+            if (weekly.TryGetProperty("startBoundary", out var startEl) &&
+                DateTimeOffset.TryParse(startEl.GetString(), out var startDto))
+            {
+                var workStartTime = startDto.TimeOfDay;
+                _workStart.Value = DateTime.Today.Add(workStartTime);
+
+                if (weekly.TryGetProperty("durationIso", out var durationEl) &&
+                    !string.IsNullOrEmpty(durationEl.GetString()) &&
+                    TryParseIsoDuration(durationEl.GetString()!, out var workDuration))
+                {
+                    _workEnd.Value = DateTime.Today.Add(workStartTime + workDuration);
+                }
+            }
+        }
+        else if (once.ValueKind == JsonValueKind.Object)
+        {
+            _simpleModeRadio.Checked = true;
+            if (TryParseIsoMinutes(once, "intervalIso", out var intervalMinutes))
+                _simpleIntervalMinutes.Value = Math.Clamp(intervalMinutes, _simpleIntervalMinutes.Minimum, _simpleIntervalMinutes.Maximum);
+        }
+
+        UpdateModeEnablement();
+
+        // Force mode isn't part of the trigger — register-scheduled-task.ps1 bakes --force /
+        // --force-every N into the scheduled action's own command line instead (see its $scriptArgs).
+        var actionArguments = root.TryGetProperty("actionArguments", out var actionArgsEl) ? actionArgsEl.GetString() ?? "" : "";
+        var forceEveryMatch = System.Text.RegularExpressions.Regex.Match(actionArguments, @"--force-every\s+(\d+)");
+        if (System.Text.RegularExpressions.Regex.IsMatch(actionArguments, @"(?<!-)--force(?!-every)\b"))
+        {
+            _forceEveryRunRadio.Checked = true;
+        }
+        else if (forceEveryMatch.Success)
+        {
+            _forceEveryNRadio.Checked = true;
+            _forceEveryN.Value = Math.Clamp(int.Parse(forceEveryMatch.Groups[1].Value), _forceEveryN.Minimum, _forceEveryN.Maximum);
+        }
+        else
+        {
+            _noForceRadio.Checked = true;
+        }
+        _forceEveryN.Enabled = _forceEveryNRadio.Checked;
+    }
+
+    private static bool TryParseIsoMinutes(JsonElement trigger, string property, out decimal minutes)
+    {
+        minutes = 0;
+        if (!trigger.TryGetProperty(property, out var el) || string.IsNullOrEmpty(el.GetString())) return false;
+        if (!TryParseIsoDuration(el.GetString()!, out var span)) return false;
+        minutes = (decimal)span.TotalMinutes;
+        return true;
+    }
+
+    private static bool TryParseIsoDuration(string iso, out TimeSpan span)
+    {
+        try
+        {
+            span = System.Xml.XmlConvert.ToTimeSpan(iso);
+            return true;
+        }
+        catch (FormatException)
+        {
+            span = TimeSpan.Zero;
+            return false;
         }
     }
 
@@ -554,7 +646,11 @@ public class SchedulerForm : Form
     {
         if (_repoRoot == null) return;
 
-        var args = new List<string> { "--task-name", _taskNameBox.Text.Trim(), "--port", ((int)_portBox.Value).ToString() };
+        // Wiki port lives only on the Configuration tab now — the Schedule Settings tab used to
+        // have its own separate NumericUpDown that just duplicated it (kept in sync one-way from
+        // .eaxwiki on load), which meant editing the Configuration tab's port and registering from
+        // here without a reload could silently apply a stale value.
+        var args = new List<string> { "--task-name", _taskNameBox.Text.Trim(), "--port", ((int)_wikiPortConfigBox.Value).ToString() };
 
         if (_dayNightModeRadio.Checked)
         {
