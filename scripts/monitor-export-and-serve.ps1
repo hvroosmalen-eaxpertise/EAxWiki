@@ -7,6 +7,14 @@
 # health-page update, and a serve health check (restarting mkdocs if it died since
 # the last pass). It does not block on `mkdocs serve` itself.
 #
+# Alert content (issue #41): the Start alert says whether the run is forced or incremental; a
+# Finish alert (gated by the same $NotifyOnStart / --no-notify-start flag as Start) reports
+# duration and page counts (total/diagram/element, with delta vs the previous run); and once a
+# calendar day boundary is crossed, a DailyDigest alert reports the previous day's approximate
+# wiki page-read count (from mkdocs' own dev-server log — see Get-NewPageReadCount for why this
+# is inherently approximate) and write-back count (from wiki/status/writeback.log, written by
+# WikiWritebackServer.cs).
+#
 # Usage:
 #   .\scripts\monitor-export-and-serve.ps1
 #   .\scripts\monitor-export-and-serve.ps1 --repo "model/file.qea" --output "wiki" --port 8000 `
@@ -57,7 +65,7 @@ $MinElementFraction  = 0.5    # sanity floor: alert if output shrinks below this
 $WebhookUrl          = $null  # will be resolved from CLI arg, env var, or .eaxwiki file
 $TeamsWebhookUrl     = $null  # same resolution order as $WebhookUrl (issue #39)
 $TestAlert           = $false
-$NotifyOnStart       = $true  # send a Slack message at the beginning of every scheduled run, not just on failure/recovery
+$NotifyOnStart       = $true  # send a Slack/Teams message at the start AND end of every scheduled run, not just on failure/recovery
 $Force               = $false # full regeneration instead of export.ps1's default incremental mode; see --force-every below
 $ForceEveryNRuns     = 0      # 0 = never auto-force; N>0 = force a full rebuild every Nth run (drift correction on an
                                # otherwise-incremental schedule), tracked via forceRunCounter in the health state file
@@ -169,11 +177,23 @@ function Get-HealthState {
         consecutiveFailures   = 0
         lastExitCode          = $null
         lastElementCount      = $null
+        lastDiagramCount      = $null
         serveConsecutiveFailures = 0
         lastServeFailureTime  = $null
         lastServeSuccessTime  = $null
         runsSinceForce        = 0
         lastMode               = $null
+        # Issue #41 daily activity digest: counters accumulate across runs, get reported and reset
+        # once a calendar day boundary is crossed (see the digest block near the end of this script).
+        # The *LogFile/*LogOffset pairs track how far each source log has already been scanned, so a
+        # frequently-run monitor pass never re-counts a page read or write-back it already tallied.
+        pageReadsToday        = 0
+        writebacksToday       = 0
+        lastDigestDate        = $null
+        pageReadLogFile       = $null
+        pageReadLogOffset     = 0
+        writebackLogFile      = $null
+        writebackLogOffset    = 0
     }
 
     if (Test-Path $healthPath) {
@@ -198,7 +218,7 @@ function Save-HealthState {
 function Send-Alert {
     param(
         [string]$Message,
-        [ValidateSet('Start', 'Failure', 'Recovery', 'ServeFailure', 'ServeRecovery', 'Test')]
+        [ValidateSet('Start', 'Finish', 'Failure', 'Recovery', 'ServeFailure', 'ServeRecovery', 'Test', 'DailyDigest')]
         [string]$Kind
     )
     Write-MonitorLog -Phase "alert" -Message "[$Kind] $Message"
@@ -211,19 +231,23 @@ function Send-Alert {
     # are configured, not "the first one found."
     $color = switch ($Kind) {
         'Start'         { '#3aa3e3' } # blue
+        'Finish'        { '#28a745' } # green
         'Failure'       { '#dc3545' } # red
         'ServeFailure'  { '#dc3545' }
         'Recovery'      { '#28a745' } # green
         'ServeRecovery' { '#28a745' }
         'Test'          { '#3aa3e3' } # blue
+        'DailyDigest'   { '#3aa3e3' } # blue
     }
     $emoji = switch ($Kind) {
         'Start'         { ':arrows_counterclockwise:' }
+        'Finish'        { ':large_green_circle:' }
         'Failure'       { ':red_circle:' }
         'ServeFailure'  { ':red_circle:' }
         'Recovery'      { ':large_green_circle:' }
         'ServeRecovery' { ':large_green_circle:' }
         'Test'          { ':large_blue_circle:' }
+        'DailyDigest'   { ':bar_chart:' }
     }
 
     if ($WebhookUrl) {
@@ -281,9 +305,99 @@ if ($TestAlert) {
 }
 
 function Get-ElementCount {
-    # Basic output-size sanity signal: count of generated markdown pages.
+    # Basic output-size sanity signal: count of generated markdown pages (elements + diagrams
+    # together, deliberately — this feeds the sanity-check floor below, which cares about total
+    # output size, not the element/diagram split).
     if (-not (Test-Path $wikiDir)) { return 0 }
     return @(Get-ChildItem -Path $wikiDir -Filter '*.md' -Recurse -File -ErrorAction SilentlyContinue).Count
+}
+
+function Get-DiagramCount {
+    # Diagram pages live under any 'diagrams' subfolder. Kept separate from Get-ElementCount
+    # (used only for the Finish alert's breakdown, issue #41) so the existing sanity-check floor
+    # above — which intentionally counts *all* generated pages — stays untouched.
+    if (-not (Test-Path $wikiDir)) { return 0 }
+    return @(Get-ChildItem -Path $wikiDir -Filter '*.md' -Recurse -File -ErrorAction SilentlyContinue |
+        Where-Object { $_.DirectoryName -match '[\\/]diagrams([\\/]|$)' }).Count
+}
+
+# --- Issue #41: daily activity digest (approximate page reads + write-back count). ---
+# Both counters use offset-tracked incremental scans of an append-only log rather than parsing
+# dates out of individual log lines, because the mkdocs serve log has no date on each line (only
+# a time-of-day) and can span multiple calendar days if mkdocs never restarts — there'd be no
+# reliable way to tell which day an isolated "[14:32:10] ..." line belongs to after the fact.
+# Scanning only new bytes since the last pass and accumulating into pageReadsToday/writebacksToday
+# sidesteps that entirely.
+function Read-NewLogText {
+    param([string]$Path, [string]$OffsetProperty)
+    if (-not (Test-Path $Path)) { return $null }
+    $length = (Get-Item $Path).Length
+    $offset = [long]$state.$OffsetProperty
+    if ($length -lt $offset) { $offset = 0 } # file was rotated/truncated since the last scan
+    if ($length -eq $offset) { return $null }
+
+    $stream = [System.IO.File]::Open($Path, [System.IO.FileMode]::Open, [System.IO.FileAccess]::Read, [System.IO.FileShare]::ReadWrite)
+    try {
+        $stream.Seek($offset, [System.IO.SeekOrigin]::Begin) | Out-Null
+        $reader = New-Object System.IO.StreamReader($stream)
+        $text = $reader.ReadToEnd()
+        $state.$OffsetProperty = $stream.Position
+        return $text
+    } finally {
+        $stream.Dispose()
+    }
+}
+
+function Get-NewPageReadCount {
+    # "Browser connected: <url>" in mkdocs' dev-server log (stderr) marks a page load — but the
+    # same line also fires when livereload auto-reconnects an already-open tab after a rebuild,
+    # which happens on every export run that changed content. Counting those as reads would mostly
+    # measure "how many scheduled exports ran while a tab was open," not real visits, so any
+    # "Browser connected" within 10 seconds of a "Reloading browsers" line is excluded as a
+    # reconnect. Still approximate — mkdocs' dev server was never built for analytics — but it's
+    # the only signal available without adding a reverse proxy or new logging layer in front of it.
+    $files = @(Get-ChildItem -Path $logDir -Filter "serve-*.err.log" -ErrorAction SilentlyContinue | Sort-Object LastWriteTime)
+    if ($files.Count -eq 0) { return 0 }
+
+    $currentFile = $files[-1].FullName
+    if ($state.pageReadLogFile -ne $currentFile) {
+        # mkdocs (re)started since the last scan — new log file, count from its beginning.
+        $state.pageReadLogFile = $currentFile
+        $state.pageReadLogOffset = 0
+    }
+
+    $newText = Read-NewLogText -Path $currentFile -OffsetProperty 'pageReadLogOffset'
+    if (-not $newText) { return 0 }
+
+    $lastReloadSeconds = $null
+    $count = 0
+    foreach ($line in ($newText -split "`r?`n")) {
+        if ($line -match '\[(\d{2}):(\d{2}):(\d{2})\]\s+Reloading browsers') {
+            $lastReloadSeconds = [int]$matches[1] * 3600 + [int]$matches[2] * 60 + [int]$matches[3]
+            continue
+        }
+        if ($line -match '\[(\d{2}):(\d{2}):(\d{2})\]\s+Browser connected:') {
+            $seconds = [int]$matches[1] * 3600 + [int]$matches[2] * 60 + [int]$matches[3]
+            if ($null -ne $lastReloadSeconds -and ($seconds - $lastReloadSeconds) -ge 0 -and ($seconds - $lastReloadSeconds) -le 10) {
+                continue
+            }
+            $count++
+        }
+    }
+    return $count
+}
+
+function Get-NewWritebackCount {
+    # WikiWritebackServer.cs (LogWriteback) appends one line per successful write-back to
+    # status/writeback.log — see that file for why it lives under status/ specifically.
+    $writebackLogPath = Join-Path $wikiDir "status\writeback.log"
+    if ($state.writebackLogFile -ne $writebackLogPath) {
+        $state.writebackLogFile = $writebackLogPath
+        $state.writebackLogOffset = 0
+    }
+    $newText = Read-NewLogText -Path $writebackLogPath -OffsetProperty 'writebackLogOffset'
+    if (-not $newText) { return 0 }
+    return @($newText -split "`r?`n" | Where-Object { $_.Trim().Length -gt 0 }).Count
 }
 
 function Update-HealthPage {
@@ -309,7 +423,8 @@ function Update-HealthPage {
         "| Last failure | $($State.lastFailureTime) |"
         "| Consecutive failures | $($State.consecutiveFailures) |"
         "| Last exit code | $($State.lastExitCode) |"
-        "| Last element count | $($State.lastElementCount) |"
+        "| Last page count (total) | $($State.lastElementCount) |"
+        "| Last page count (diagrams) | $($State.lastDiagramCount) |"
         "| Last mode | $($State.lastMode) |"
         "| Runs since full rebuild | $($State.runsSinceForce) |"
         ""
@@ -324,8 +439,21 @@ function Update-HealthPage {
     Set-Content -Path (Join-Path $statusDir "health.md") -Value $lines
 }
 
+$state = Get-HealthState
+
+# --force is off by default here, same as export.ps1 itself — a 30-minute-cadence schedule
+# doing a full rebuild every run would be needlessly slow against a large model. --force-every
+# lets an otherwise-incremental schedule periodically self-correct any drift a single run's
+# incremental diff might miss, without forcing every run.
+$runsSinceForce = if ($state.runsSinceForce) { [int]$state.runsSinceForce } else { 0 }
+$effectiveForce = $Force
+if (-not $effectiveForce -and $ForceEveryNRuns -gt 0 -and $runsSinceForce -ge ($ForceEveryNRuns - 1)) {
+    $effectiveForce = $true
+}
+
 if ($NotifyOnStart) {
-    Send-Alert -Kind Start -Message "Scheduled run starting."
+    $startModeLabel = if ($effectiveForce) { "forced full rebuild" } else { "incremental" }
+    Send-Alert -Kind Start -Message "Scheduled run starting ($startModeLabel)."
 }
 
 # --- Pre-flight: clean up orphaned EA.exe processes left by a prior crashed run. ---
@@ -344,18 +472,6 @@ function Cleanup-EAProcesses {
     }
 }
 
-$state = Get-HealthState
-
-# --force is off by default here, same as export.ps1 itself — a 30-minute-cadence schedule
-# doing a full rebuild every run would be needlessly slow against a large model. --force-every
-# lets an otherwise-incremental schedule periodically self-correct any drift a single run's
-# incremental diff might miss, without forcing every run.
-$runsSinceForce = if ($state.runsSinceForce) { [int]$state.runsSinceForce } else { 0 }
-$effectiveForce = $Force
-if (-not $effectiveForce -and $ForceEveryNRuns -gt 0 -and $runsSinceForce -ge ($ForceEveryNRuns - 1)) {
-    $effectiveForce = $true
-}
-
 # --- Export with bounded retry + backoff. ---
 $exportArgs = @("--output", $wikiDir)
 if ($RepoPath) { $exportArgs += "--repo", $RepoPath }
@@ -367,6 +483,7 @@ $attempt = 0
 $succeeded = $false
 $lastExitCode = $null
 $outputTail = ""
+$exportStopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 
 while ($attempt -lt $MaxRetries -and -not $succeeded) {
     $attempt++
@@ -400,6 +517,7 @@ while ($attempt -lt $MaxRetries -and -not $succeeded) {
     }
 }
 
+$exportStopwatch.Stop()
 $state.lastExitCode = $lastExitCode
 
 if ($succeeded) {
@@ -410,7 +528,18 @@ if ($succeeded) {
     if ($wasFailing) {
         Send-Alert -Kind Recovery -Message "Export succeeded after $($attempt) attempt(s), recovering from a prior failure."
     }
-    Write-MonitorLog -Phase "export" -Message "Succeeded on attempt $attempt."
+
+    $diagramCount = Get-DiagramCount
+    $pageDelta = $elementCount - $previousCount
+    $deltaLabel = if ($pageDelta -ge 0) { "+$pageDelta" } else { "$pageDelta" }
+    $state.lastDiagramCount = $diagramCount
+
+    if ($NotifyOnStart) {
+        Send-Alert -Kind Finish -Message ("Export finished in {0} — {1} page(s) total ({2} diagram, {3} element), {4} vs previous run." -f `
+            $exportStopwatch.Elapsed.ToString('mm\:ss'), $elementCount, $diagramCount, ($elementCount - $diagramCount), $deltaLabel)
+    }
+
+    Write-MonitorLog -Phase "export" -Message "Succeeded on attempt $attempt in $($exportStopwatch.Elapsed.ToString('mm\:ss'))."
 } else {
     $state.lastFailureTime = (Get-Date).ToString("o")
     $state.consecutiveFailures = [int]$state.consecutiveFailures + 1
@@ -419,6 +548,17 @@ if ($succeeded) {
     $failureBody = "Export failed after $MaxRetries attempt(s) (exit code $lastExitCode).`n$fence`n$outputTail`n$fence"
     Send-Alert -Kind Failure -Message $failureBody
 }
+
+$state.pageReadsToday = [int]$state.pageReadsToday + (Get-NewPageReadCount)
+$state.writebacksToday = [int]$state.writebacksToday + (Get-NewWritebackCount)
+
+$today = (Get-Date).ToString("yyyy-MM-dd")
+if ($state.lastDigestDate -and $state.lastDigestDate -ne $today) {
+    Send-Alert -Kind DailyDigest -Message "Activity for $($state.lastDigestDate): ~$($state.pageReadsToday) wiki page read(s) (approximate), $($state.writebacksToday) write-back(s)."
+    $state.pageReadsToday = 0
+    $state.writebacksToday = 0
+}
+$state.lastDigestDate = $today
 
 Update-HealthPage -State $state
 Save-HealthState -State $state

@@ -38,6 +38,27 @@ internal static class WikiWritebackServer
         return filePath.EndsWith(".md", StringComparison.OrdinalIgnoreCase);
     }
 
+    /// <summary>
+    /// Appends one line per successful write-back to status/writeback.log (issue #41's "daily
+    /// number of writebacks" alert reads this). Written under status/ specifically because
+    /// InfrastructureWriter.CleanupOrphanedFilesAsync treats that directory as special and never
+    /// recurses into it — anywhere else under outputPath, the next export would delete this file
+    /// as an unrecognized artifact.
+    /// </summary>
+    private static void LogWriteback(string outputPath, string kind)
+    {
+        try
+        {
+            var statusDir = Path.Combine(outputPath, "status");
+            Directory.CreateDirectory(statusDir);
+            File.AppendAllText(Path.Combine(statusDir, "writeback.log"), $"{DateTime.UtcNow:yyyy-MM-dd HH:mm:ss} {kind}{Environment.NewLine}");
+        }
+        catch
+        {
+            // Best-effort activity counter — never let logging failure block a write-back that otherwise succeeded.
+        }
+    }
+
     public static async Task RunAsync(Config config, string outputPath, ILoggerFactory loggerFactory)
     {
         var logger = loggerFactory.CreateLogger("WikiWritebackServer");
@@ -138,6 +159,7 @@ internal static class WikiWritebackServer
                 reader.UpdateElementStatus(req.ElementId, req.NewStatus);
                 FrontmatterParser.UpdateStatus(filePath, req.NewStatus);
                 logger.LogInformation("Status change: element {Id} → {Status} ({File})", req.ElementId, req.NewStatus, req.FilePath);
+                LogWriteback(outputPath, "status");
                 return Results.Ok(new { success = true, message = $"Status updated to '{req.NewStatus}'." });
             }
             catch (Exception ex)
@@ -164,6 +186,7 @@ internal static class WikiWritebackServer
                 reader.UpdateElementNotes(req.ElementId, normalized);
                 FrontmatterParser.UpdateNotes(filePath, normalized);
                 logger.LogInformation("Notes updated for element {Id} ({File})", req.ElementId, req.FilePath);
+                LogWriteback(outputPath, "notes");
                 return Results.Ok(new { success = true, message = "Notes updated.", html = normalized });
             }
             catch (Exception ex)
@@ -190,6 +213,7 @@ internal static class WikiWritebackServer
                 reader.UpdateDiagramNotes(req.DiagramId, normalized);
                 FrontmatterParser.UpdateNotes(filePath, normalized);
                 logger.LogInformation("Notes updated for diagram {Id} ({File})", req.DiagramId, req.FilePath);
+                LogWriteback(outputPath, "diagram-notes");
                 return Results.Ok(new { success = true, message = "Description updated.", html = normalized });
             }
             catch (Exception ex)
@@ -237,6 +261,7 @@ internal static class WikiWritebackServer
 
                 FrontmatterParser.UpdateRowNotes(filePath, req.RowId, normalized);
                 logger.LogInformation("Row notes updated: {Kind} on element {Id}, row {RowId} ({File})", req.Kind, req.ElementId, req.RowId, req.FilePath);
+                LogWriteback(outputPath, $"row-notes:{req.Kind}");
                 return Results.Ok(new { success = true, message = "Description updated.", html = normalized });
             }
             catch (Exception ex)

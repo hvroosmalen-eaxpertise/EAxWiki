@@ -29,7 +29,14 @@ internal static class PowerShellRunner
         // closes the outer quote early from the OS argument parser's point of view, well before
         // PowerShell ever sees the script. That corrupts the command into unrelated argv entries,
         // which pwsh then fails on silently (exit 1, no output) rather than a parse error we'd see.
-        var encoded = Convert.ToBase64String(System.Text.Encoding.Unicode.GetBytes(command));
+        //
+        // $ProgressPreference = 'SilentlyContinue' matters too: the ScheduledTasks cmdlets
+        // (Get-ScheduledTask, Enable/Disable-ScheduledTask, ...) write progress records, and with no
+        // interactive host attached those get serialized as "#< CLIXML" text onto the error stream
+        // instead of rendering a progress bar. RunAsync below merges stdout+stderr into one buffer,
+        // so that CLIXML block lands right in the middle of the JSON we're about to parse.
+        var fullCommand = $"$ProgressPreference = 'SilentlyContinue'; {command}";
+        var encoded = Convert.ToBase64String(System.Text.Encoding.Unicode.GetBytes(fullCommand));
         var argLine = $"-NoProfile -ExecutionPolicy Bypass -EncodedCommand {encoded}";
         return await RunAsync(argLine, workingDirectory);
     }
