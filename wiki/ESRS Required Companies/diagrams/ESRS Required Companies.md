@@ -10,7 +10,7 @@ notes_hash: 4ea79420
 
 ![ESRS Required Companies](ESRS Required Companies.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="39" data-kind="diagram" data-file-path="ESRS Required Companies/diagrams/ESRS Required Companies.md" data-api-port="8001" data-api-token="76b59d573d0422a8a80a60d648ca7e0cdaaa327c4fc14968">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="39" data-kind="diagram" data-file-path="ESRS Required Companies/diagrams/ESRS Required Companies.md" data-api-port="8001" data-api-token="8dd4166c9c78ab2c9290cf00a1626990562f1ec3db2906d5">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,4 +29,4 @@ notes_hash: 4ea79420
 
 ---
 
-*Generated: 2026-07-02 18:47:42*
+*Generated: 2026-07-05 17:15:12*

@@ -132,4 +132,4 @@ Stakeholder map based on the ESRS Navigator document for sustainability reportin
 
 ---
 
-*Generated: 2026-07-02 19:34:11*
+*Generated: 2026-07-05 21:45:30*

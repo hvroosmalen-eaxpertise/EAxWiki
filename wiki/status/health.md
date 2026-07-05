@@ -8,13 +8,13 @@
 
 | Field | Value |
 |---|---|
-| Last success | 2026-07-02T19:34:12.5476583+02:00 |
+| Last success | 2026-07-05T21:45:31.8962478+02:00 |
 | Last failure |  |
 | Consecutive failures | 0 |
 | Last exit code | 0 |
 | Last element count | 606 |
 | Last mode | incremental |
-| Runs since full rebuild | 4 |
+| Runs since full rebuild | 3 |
 
 ## Serve
 
