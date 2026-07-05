@@ -410,15 +410,20 @@ machine in one timezone — "day vs night" can only mean that machine's own cloc
 
 `src/EAxWiki.SchedulerUI` is a small WinForms app that builds and runs the same
 `register-scheduled-task.ps1` calls above from a form instead of the command line — a Configuration
-tab (read-only view of the current `.eaxwiki` repo path/ports/Slack+Teams webhooks), a Task Status tab (current
-state, next run time, registered triggers, with Enable/Disable/Unregister buttons), and a Schedule
-Settings tab (simple interval or day/night mode, export force mode, a Register/Apply button). It
-shells out to the same scripts and plain `Get-ScheduledTask` queries described above rather than
-reimplementing any Task Scheduler logic itself — one source of truth either way.
+tab (view and edit the current `.eaxwiki` repo path/ports/Slack+Teams webhooks, with a Save button;
+repository type can be a `.qea` file or a SQL Server/MySQL-MariaDB/Oracle/PostgreSQL connection,
+same as the console wizard), a Task Status tab (current state, next run time, registered triggers,
+with Enable/Disable/Unregister buttons), and a Schedule Settings tab (simple interval or day/night
+mode, export force mode, a Register/Apply button). It shells out to the same scripts and plain
+`Get-ScheduledTask` queries described above rather than reimplementing any Task Scheduler logic
+itself — one source of truth either way.
 
 ```powershell
-dotnet run --project src/EAxWiki.SchedulerUI
+.\scripts\start-scheduler-ui.ps1
 ```
+
+The script resolves the repo root from its own location, so it works from any working directory.
+Equivalent to running `dotnet run --project src/EAxWiki.SchedulerUI` from the repo root directly.
 
 ### Windows Task Scheduler — simple export only
 

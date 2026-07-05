@@ -22,7 +22,15 @@ internal static class PowerShellRunner
 
     public static async Task<PowerShellResult> RunCommandAsync(string command, string workingDirectory)
     {
-        var argLine = $"-NoProfile -ExecutionPolicy Bypass -Command {Quote(command)}";
+        // -EncodedCommand (Base64 UTF-16LE) sidesteps command-line quoting entirely. Wrapping the
+        // raw script in one pair of quotes (like Quote() does for individual args below) breaks as
+        // soon as the script itself contains an embedded double quote — e.g. the task-status query
+        // below builds strings like "$($t.CimClass.CimClassName) at=...", and that literal `"`
+        // closes the outer quote early from the OS argument parser's point of view, well before
+        // PowerShell ever sees the script. That corrupts the command into unrelated argv entries,
+        // which pwsh then fails on silently (exit 1, no output) rather than a parse error we'd see.
+        var encoded = Convert.ToBase64String(System.Text.Encoding.Unicode.GetBytes(command));
+        var argLine = $"-NoProfile -ExecutionPolicy Bypass -EncodedCommand {encoded}";
         return await RunAsync(argLine, workingDirectory);
     }
 

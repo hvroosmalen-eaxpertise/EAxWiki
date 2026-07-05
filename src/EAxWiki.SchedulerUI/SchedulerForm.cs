@@ -5,22 +5,39 @@ namespace EAxWiki.SchedulerUI;
 
 /// <summary>
 /// Settings GUI for scheduling only (issue #38's slice of the broader unified-config ask in #40).
-/// Shows the current .eaxwiki repo/port config read-only for context, shows the currently
-/// registered EAxWiki-Monitor scheduled task's state, and lets you construct + register either a
-/// simple fixed-interval schedule or a day/night (weekday work-hours boost + all-day baseline)
-/// schedule. All registration/query logic is delegated to scripts/register-scheduled-task.ps1 and
-/// plain Get-ScheduledTask calls via pwsh.exe — this form never touches Task Scheduler directly.
+/// Shows and edits the current .eaxwiki repo/port/webhook config, shows the currently registered
+/// EAxWiki-Monitor scheduled task's state, and lets you construct + register either a simple
+/// fixed-interval schedule or a day/night (weekday work-hours boost + all-day baseline) schedule.
+/// All registration/query logic is delegated to scripts/register-scheduled-task.ps1 and plain
+/// Get-ScheduledTask calls via pwsh.exe — this form never touches Task Scheduler directly.
 /// </summary>
 public class SchedulerForm : Form
 {
     private readonly string? _repoRoot;
 
-    // Current config display
-    private readonly Label _repoValue = new() { AutoSize = true, Text = "(not found)" };
-    private readonly Label _wikiPortValue = new() { AutoSize = true, Text = "-" };
-    private readonly Label _apiPortValue = new() { AutoSize = true, Text = "-" };
-    private readonly Label _webhookValue = new() { AutoSize = true, Text = "-" };
-    private readonly Label _teamsWebhookValue = new() { AutoSize = true, Text = "-" };
+    // Current config, editable
+    // Repository type mirrors the console wizard's choice (BuildConnectionStringInteractively in
+    // EAxWiki/Program.cs) so the two entry points produce identical .eaxwiki connection strings.
+    private readonly RadioButton _repoTypeFile = new() { Text = "File (.qea)", AutoSize = true, Checked = true };
+    private readonly RadioButton _repoTypeSqlServer = new() { Text = "SQL Server", AutoSize = true };
+    private readonly RadioButton _repoTypeMySql = new() { Text = "MySQL / MariaDB", AutoSize = true };
+    private readonly RadioButton _repoTypeOracle = new() { Text = "Oracle", AutoSize = true };
+    private readonly RadioButton _repoTypePostgres = new() { Text = "PostgreSQL", AutoSize = true };
+    private readonly TextBox _repoFilePathBox = new() { Width = 340 };
+    private readonly Button _browseRepoFileButton = new() { Text = "Browse...", AutoSize = true };
+    private readonly TextBox _dbServerBox = new() { Width = 200 };
+    private readonly TextBox _dbPortBox = new() { Width = 200 };
+    private readonly TextBox _dbDatabaseBox = new() { Width = 200 };
+    private readonly TextBox _dbUserBox = new() { Width = 200 };
+    private readonly TextBox _dbPasswordBox = new() { Width = 200, UseSystemPasswordChar = true };
+    private readonly Panel _repoFilePanel = new() { AutoSize = true };
+    private readonly Panel _dbFieldsPanel = new() { AutoSize = true };
+
+    private readonly NumericUpDown _wikiPortConfigBox = new() { Minimum = 1, Maximum = 65535, Value = 8000, Width = 80 };
+    private readonly NumericUpDown _apiPortConfigBox = new() { Minimum = 1, Maximum = 65535, Value = 8001, Width = 80 };
+    private readonly TextBox _webhookBox = new() { Width = 400 };
+    private readonly TextBox _teamsWebhookBox = new() { Width = 400 };
+    private readonly Button _saveConfigButton = new() { Text = "Save Configuration", AutoSize = true };
 
     // Task status display
     private readonly TextBox _taskNameBox = new() { Text = "EAxWiki-Monitor", Width = 220 };
@@ -59,8 +76,10 @@ public class SchedulerForm : Form
         _repoRoot = RepoLocator.FindRepoRoot();
 
         Text = "EAxWiki Scheduler";
-        MinimumSize = new Size(700, 600);
-        Size = new Size(700, 600);
+        // Tall enough that the Configuration tab's repo-type section (up to 5 DB fields, plus
+        // ports and both webhooks) fits without scrolling at the 65/35 tab/output split below.
+        MinimumSize = new Size(700, 780);
+        Size = new Size(700, 780);
         Padding = new Padding(10);
 
         // Output is deliberately not a tab — it shows results from actions taken on any tab
@@ -72,8 +91,8 @@ public class SchedulerForm : Form
 
         var tabs = new TabControl { Dock = DockStyle.Fill };
         tabs.TabPages.Add(BuildConfigTab());
-        tabs.TabPages.Add(BuildTaskStatusTab());
         tabs.TabPages.Add(BuildScheduleTab());
+        tabs.TabPages.Add(BuildTaskStatusTab());
 
         root.Controls.Add(tabs, 0, 0);
         root.Controls.Add(BuildOutputGroup(), 0, 1);
@@ -81,6 +100,18 @@ public class SchedulerForm : Form
         Controls.Add(root);
 
         _refreshConfigButton.Click += (_, _) => LoadEaxwikiConfig();
+        _saveConfigButton.Click += (_, _) => SaveEaxwikiConfig();
+        _repoTypeFile.CheckedChanged += (_, _) => UpdateRepoTypeEnablement();
+        _repoTypeSqlServer.CheckedChanged += (_, _) => UpdateRepoTypeEnablement();
+        _repoTypeMySql.CheckedChanged += (_, _) => UpdateRepoTypeEnablement();
+        _repoTypeOracle.CheckedChanged += (_, _) => UpdateRepoTypeEnablement();
+        _repoTypePostgres.CheckedChanged += (_, _) => UpdateRepoTypeEnablement();
+        _browseRepoFileButton.Click += (_, _) =>
+        {
+            using var dialog = new OpenFileDialog { Filter = "EA project files (*.qea)|*.qea|All files (*.*)|*.*" };
+            if (dialog.ShowDialog() == DialogResult.OK)
+                _repoFilePathBox.Text = dialog.FileName;
+        };
         _refreshStatusButton.Click += async (_, _) => await RefreshTaskStatusAsync();
         _registerButton.Click += async (_, _) => await RegisterAsync();
         _enableButton.Click += async (_, _) => await RunTaskCommandAsync("Enable-ScheduledTask");
@@ -105,22 +136,79 @@ public class SchedulerForm : Form
         }
 
         UpdateModeEnablement();
+        UpdateRepoTypeEnablement();
     }
 
     private TabPage BuildConfigTab()
     {
         var table = new TableLayoutPanel { ColumnCount = 2, AutoSize = true, Dock = DockStyle.Top };
-        AddRow(table, "Repository:", _repoValue);
-        AddRow(table, "Wiki port:", _wikiPortValue);
-        AddRow(table, "API port:", _apiPortValue);
-        AddRow(table, "Slack Webhook:", _webhookValue);
-        AddRow(table, "Teams Webhook:", _teamsWebhookValue);
+        AddRow(table, "Wiki port:", _wikiPortConfigBox);
+        AddRow(table, "API port:", _apiPortConfigBox);
+        AddRow(table, "Slack Webhook:", _webhookBox);
+        AddRow(table, "Teams Webhook:", _teamsWebhookBox);
 
-        var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, AutoSize = true, FlowDirection = FlowDirection.TopDown };
+        // WrapContents = false and no AutoSize here, matching BuildScheduleTab: with AutoSize +
+        // TopDown flow, once content exceeds the tab's visible height the panel wraps into a new
+        // column instead of scrolling, shoving everything after it off the right edge of the
+        // window. The buttons are kept out of this panel and docked to the tab bottom instead, so
+        // they stay put regardless of how tall the panel above needs to scroll.
+        var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown, WrapContents = false };
+        panel.Controls.Add(BuildRepoTypeSection());
         panel.Controls.Add(table);
-        panel.Controls.Add(_refreshConfigButton);
 
-        return new TabPage("Configuration") { Padding = new Padding(10), AutoScroll = true, Controls = { panel } };
+        var buttons = new FlowLayoutPanel { Dock = DockStyle.Bottom, FlowDirection = FlowDirection.RightToLeft, AutoSize = true, Padding = new Padding(0, 8, 0, 0) };
+        buttons.Controls.Add(_saveConfigButton);
+        buttons.Controls.Add(_refreshConfigButton);
+
+        var tabPage = new TabPage("Configuration") { Padding = new Padding(10), AutoScroll = true };
+        tabPage.Controls.Add(panel);
+        tabPage.Controls.Add(buttons);
+        return tabPage;
+    }
+
+    private Control BuildRepoTypeSection()
+    {
+        var typeRow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight };
+        typeRow.Controls.Add(new Label { Text = "Repository type:", AutoSize = true, Margin = new Padding(3, 6, 10, 3) });
+        typeRow.Controls.Add(_repoTypeFile);
+        typeRow.Controls.Add(_repoTypeSqlServer);
+        typeRow.Controls.Add(_repoTypeMySql);
+        typeRow.Controls.Add(_repoTypeOracle);
+        typeRow.Controls.Add(_repoTypePostgres);
+
+        var fileRow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, WrapContents = false };
+        fileRow.Controls.Add(_repoFilePathBox);
+        fileRow.Controls.Add(_browseRepoFileButton);
+        var fileTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
+        AddRow(fileTable, "Path to .qea file:", fileRow);
+        _repoFilePanel.Controls.Add(fileTable);
+
+        var dbTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
+        AddRow(dbTable, "Server / host:", _dbServerBox);
+        AddRow(dbTable, "Port (optional):", _dbPortBox);
+        AddRow(dbTable, "Database:", _dbDatabaseBox);
+        AddRow(dbTable, "Username:", _dbUserBox);
+        AddRow(dbTable, "Password:", _dbPasswordBox);
+        _dbFieldsPanel.Controls.Add(dbTable);
+
+        var section = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.TopDown, WrapContents = false };
+        section.Controls.Add(typeRow);
+        section.Controls.Add(_repoFilePanel);
+        section.Controls.Add(_dbFieldsPanel);
+        return section;
+    }
+
+    private void UpdateRepoTypeEnablement()
+    {
+        var isFile = _repoTypeFile.Checked;
+        _repoFilePanel.Visible = isFile;
+        _dbFieldsPanel.Visible = !isFile;
+
+        // Oracle's TNS "Data Source" embeds host/port/service, so there's no separate port or
+        // database field to fill in — matches BuildConnectionStringInteractively's Oracle branch.
+        var isOracle = _repoTypeOracle.Checked;
+        _dbPortBox.Enabled = !isOracle;
+        _dbDatabaseBox.Enabled = !isOracle;
     }
 
     private TabPage BuildTaskStatusTab()
@@ -224,30 +312,175 @@ public class SchedulerForm : Form
         var path = Path.Combine(_repoRoot, ".eaxwiki");
         if (!File.Exists(path))
         {
-            _repoValue.Text = "(no .eaxwiki found)";
-            _wikiPortValue.Text = "-";
-            _apiPortValue.Text = "-";
-            _webhookValue.Text = "-";
-            _teamsWebhookValue.Text = "-";
+            ApplyRepoPathToFields("");
+            _wikiPortConfigBox.Value = 8000;
+            _apiPortConfigBox.Value = 8001;
+            _webhookBox.Text = "";
+            _teamsWebhookBox.Text = "";
             return;
         }
 
         try
         {
             var config = LocalConfigStore.Load(path, out _);
-            _repoValue.Text = string.IsNullOrEmpty(config.RepoPath) ? "(not set)" : config.RepoPath;
-            _wikiPortValue.Text = config.WikiPort?.ToString() ?? "(default 8000)";
-            _apiPortValue.Text = config.ApiPort?.ToString() ?? "(default 8001)";
-            _webhookValue.Text = string.IsNullOrEmpty(config.WebhookUrl) ? "Not configured" : "Configured";
-            _teamsWebhookValue.Text = string.IsNullOrEmpty(config.TeamsWebhookUrl) ? "Not configured" : "Configured";
+            ApplyRepoPathToFields(config.RepoPath ?? "");
+            _wikiPortConfigBox.Value = Math.Clamp(config.WikiPort ?? 8000, (int)_wikiPortConfigBox.Minimum, (int)_wikiPortConfigBox.Maximum);
+            _apiPortConfigBox.Value = Math.Clamp(config.ApiPort ?? 8001, (int)_apiPortConfigBox.Minimum, (int)_apiPortConfigBox.Maximum);
+            _webhookBox.Text = config.WebhookUrl ?? "";
+            _teamsWebhookBox.Text = config.TeamsWebhookUrl ?? "";
             if (config.WikiPort.HasValue)
                 _portBox.Value = config.WikiPort.Value;
         }
         catch (Exception ex)
         {
-            _repoValue.Text = "(failed to read)";
             AppendOutput($"Failed to read .eaxwiki: {ex.Message}");
         }
+    }
+
+    private void SaveEaxwikiConfig()
+    {
+        if (_repoRoot == null) return;
+        var path = Path.Combine(_repoRoot, ".eaxwiki");
+
+        var repoPath = BuildRepoPath();
+        if (repoPath.Length == 0)
+        {
+            AppendOutput("Cannot save: repository details are incomplete.");
+            return;
+        }
+
+        var config = new LocalConfigStore.Config
+        {
+            RepoPath = repoPath,
+            WikiPort = (int)_wikiPortConfigBox.Value,
+            ApiPort = (int)_apiPortConfigBox.Value,
+            WebhookUrl = _webhookBox.Text.Trim() is { Length: > 0 } slack ? slack : null,
+            TeamsWebhookUrl = _teamsWebhookBox.Text.Trim() is { Length: > 0 } teams ? teams : null,
+        };
+
+        try
+        {
+            LocalConfigStore.Save(path, config);
+            AppendOutput($"Saved configuration to {path}.");
+            LoadEaxwikiConfig();
+        }
+        catch (Exception ex)
+        {
+            AppendOutput($"Failed to save .eaxwiki: {ex.Message}");
+        }
+    }
+
+    // Mirrors BuildConnectionStringInteractively in EAxWiki/Program.cs exactly, so the GUI and the
+    // console wizard produce identical connection strings for the same inputs.
+    private string BuildRepoPath()
+    {
+        if (_repoTypeFile.Checked)
+            return _repoFilePathBox.Text.Trim();
+
+        var server = _dbServerBox.Text.Trim();
+        if (server.Length == 0) return "";
+
+        var port = _dbPortBox.Text.Trim();
+        var database = _dbDatabaseBox.Text.Trim();
+        var user = _dbUserBox.Text.Trim();
+        var password = _dbPasswordBox.Text;
+
+        // SQL Server appends port with a comma: "SERVER,1433". MySQL/PostgreSQL use a separate Port= key.
+        var sqlServerHost = port.Length == 0 ? server : $"{server},{port}";
+        var portSegment = port.Length == 0 ? "" : $"Port={port};";
+
+        if (_repoTypeSqlServer.Checked)
+            return $"DBType=1;Connect=Provider=SQLOLEDB.1;Data Source={sqlServerHost};Initial Catalog={database};User Id={user};Password={password};";
+        if (_repoTypeMySql.Checked)
+            return $"DBType=3;Connect=Server={server};{portSegment}Database={database};Uid={user};Pwd={password};";
+        if (_repoTypeOracle.Checked)
+            return $"DBType=2;Connect=Data Source={server};User Id={user};Password={password};";
+        if (_repoTypePostgres.Checked)
+            return $"DBType=7;Connect=Server={server};{portSegment}Database={database};User Id={user};Password={password};";
+
+        return "";
+    }
+
+    // Reverse of BuildRepoPath: populates the repo-type radio and its fields from a saved
+    // connection string (or plain .qea path) so re-opening the form shows what's actually saved.
+    private void ApplyRepoPathToFields(string repoPath)
+    {
+        const string dbTypePrefix = "DBType=";
+        const string connectMarker = ";Connect=";
+        var connectIdx = repoPath.StartsWith(dbTypePrefix, StringComparison.Ordinal)
+            ? repoPath.IndexOf(connectMarker, StringComparison.Ordinal)
+            : -1;
+
+        if (connectIdx < 0)
+        {
+            _repoTypeFile.Checked = true;
+            _repoFilePathBox.Text = repoPath;
+            _dbServerBox.Text = "";
+            _dbPortBox.Text = "";
+            _dbDatabaseBox.Text = "";
+            _dbUserBox.Text = "";
+            _dbPasswordBox.Text = "";
+            return;
+        }
+
+        var dbType = repoPath[dbTypePrefix.Length..connectIdx];
+        var parts = ParseConnectString(repoPath[(connectIdx + connectMarker.Length)..]);
+        _repoFilePathBox.Text = "";
+
+        switch (dbType)
+        {
+            case "1":
+                _repoTypeSqlServer.Checked = true;
+                var dataSource = parts.GetValueOrDefault("Data Source", "");
+                var commaIdx = dataSource.IndexOf(',');
+                _dbServerBox.Text = commaIdx < 0 ? dataSource : dataSource[..commaIdx];
+                _dbPortBox.Text = commaIdx < 0 ? "" : dataSource[(commaIdx + 1)..];
+                _dbDatabaseBox.Text = parts.GetValueOrDefault("Initial Catalog", "");
+                _dbUserBox.Text = parts.GetValueOrDefault("User Id", "");
+                _dbPasswordBox.Text = parts.GetValueOrDefault("Password", "");
+                break;
+            case "3":
+                _repoTypeMySql.Checked = true;
+                _dbServerBox.Text = parts.GetValueOrDefault("Server", "");
+                _dbPortBox.Text = parts.GetValueOrDefault("Port", "");
+                _dbDatabaseBox.Text = parts.GetValueOrDefault("Database", "");
+                _dbUserBox.Text = parts.GetValueOrDefault("Uid", "");
+                _dbPasswordBox.Text = parts.GetValueOrDefault("Pwd", "");
+                break;
+            case "2":
+                _repoTypeOracle.Checked = true;
+                _dbServerBox.Text = parts.GetValueOrDefault("Data Source", "");
+                _dbPortBox.Text = "";
+                _dbDatabaseBox.Text = "";
+                _dbUserBox.Text = parts.GetValueOrDefault("User Id", "");
+                _dbPasswordBox.Text = parts.GetValueOrDefault("Password", "");
+                break;
+            case "7":
+                _repoTypePostgres.Checked = true;
+                _dbServerBox.Text = parts.GetValueOrDefault("Server", "");
+                _dbPortBox.Text = parts.GetValueOrDefault("Port", "");
+                _dbDatabaseBox.Text = parts.GetValueOrDefault("Database", "");
+                _dbUserBox.Text = parts.GetValueOrDefault("User Id", "");
+                _dbPasswordBox.Text = parts.GetValueOrDefault("Password", "");
+                break;
+            default:
+                // Unrecognized DBType — show the raw string as a file/path value so nothing is lost.
+                _repoTypeFile.Checked = true;
+                _repoFilePathBox.Text = repoPath;
+                break;
+        }
+    }
+
+    private static Dictionary<string, string> ParseConnectString(string connect)
+    {
+        var result = new Dictionary<string, string>();
+        foreach (var segment in connect.Split(';', StringSplitOptions.RemoveEmptyEntries))
+        {
+            var eq = segment.IndexOf('=');
+            if (eq < 0) continue;
+            result[segment[..eq].Trim()] = segment[(eq + 1)..].Trim();
+        }
+        return result;
     }
 
     private async Task RefreshTaskStatusAsync()
