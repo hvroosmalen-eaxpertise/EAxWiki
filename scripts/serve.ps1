@@ -1,16 +1,26 @@
-# Support both PowerShell -Flag and Unix-style --flag syntax.
-$Port    = 8000
-$WikiDir = ""   # defaults to <repo-root>\wiki when not specified
+function Get-ServeArgs {
+    param([string[]]$Arguments)
+    $Port    = 8000
+    $WikiDir = ""
 
-$i = 0
-while ($i -lt $args.Count) {
-    switch -Regex ($args[$i]) {
-        '^(-p|--port|-Port)$'           { $i++; if ($i -lt $args.Count) { $Port    = [int]$args[$i] } }
-        '^(-o|--wiki-dir|-WikiDir)$'    { $i++; if ($i -lt $args.Count) { $WikiDir = $args[$i] } }
-        default                         { if ($args[$i] -match '^\d+$') { $Port    = [int]$args[$i] } }
+    $i = 0
+    while ($i -lt $Arguments.Count) {
+        switch -Regex ($Arguments[$i]) {
+            '^(-p|--port|-Port)$'           { $i++; if ($i -lt $Arguments.Count) { $Port    = [int]$Arguments[$i] } }
+            '^(-o|--wiki-dir|-WikiDir)$'    { $i++; if ($i -lt $Arguments.Count) { $WikiDir = $Arguments[$i] } }
+            default                         { if ($Arguments[$i] -match '^\d+$') { $Port    = [int]$Arguments[$i] } }
+        }
+        $i++
     }
-    $i++
+    return [PSCustomObject]@{
+        Port    = $Port
+        WikiDir = $WikiDir
+    }
 }
+
+$parsed = Get-ServeArgs -Arguments $args
+$Port    = $parsed.Port
+$WikiDir = $parsed.WikiDir
 
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 Push-Location $repoRoot

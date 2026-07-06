@@ -1,4 +1,4 @@
-# Start the EAxWiki wiki write-back server alongside MkDocs.
+﻿# Start the EAxWiki wiki write-back server alongside MkDocs.
 #
 # The write-back server listens on --api-port and handles status changes
 # from the status-editor widget on element pages. MkDocs serves on --port.
@@ -7,22 +7,37 @@
 #   .\scripts\serve-api.ps1
 #   .\scripts\serve-api.ps1 --repo "path/to/model.qea" --output "wiki" --port 8000 --api-port 8001
 
-$RepoPath  = ""
-$OutputDir = ""   # defaults to <repo-root>\wiki when not specified
-$Port      = 8000
-$ApiPort   = 8001
+function Get-ServeApiArgs {
+    param([string[]]$Arguments)
+    $RepoPath  = ""
+    $OutputDir = ""
+    $Port      = 8000
+    $ApiPort   = 8001
 
-$i = 0
-while ($i -lt $args.Count) {
-    switch -Regex ($args[$i]) {
-        '^(-p|--port|-Port)$'         { $i++; if ($i -lt $args.Count) { $Port      = [int]$args[$i] } }
-        '^(--api-port|-ApiPort)$'     { $i++; if ($i -lt $args.Count) { $ApiPort   = [int]$args[$i] } }
-        '^(-r|--repo|-RepoPath)$'     { $i++; if ($i -lt $args.Count) { $RepoPath  = $args[$i] } }
-        '^(-o|--output|-OutputDir)$'  { $i++; if ($i -lt $args.Count) { $OutputDir = $args[$i] } }
-        default                       { if ($args[$i] -match '^\d+$') { $Port      = [int]$args[$i] } }
+    $i = 0
+    while ($i -lt $Arguments.Count) {
+        switch -Regex ($Arguments[$i]) {
+            '^(-p|--port|-Port)$'         { $i++; if ($i -lt $Arguments.Count) { $Port      = [int]$Arguments[$i] } }
+            '^(--api-port|-ApiPort)$'     { $i++; if ($i -lt $Arguments.Count) { $ApiPort   = [int]$Arguments[$i] } }
+            '^(-r|--repo|-RepoPath)$'     { $i++; if ($i -lt $Arguments.Count) { $RepoPath  = $Arguments[$i] } }
+            '^(-o|--output|-OutputDir)$'  { $i++; if ($i -lt $Arguments.Count) { $OutputDir = $Arguments[$i] } }
+            default                       { if ($Arguments[$i] -match '^\d+$') { $Port      = [int]$Arguments[$i] } }
+        }
+        $i++
     }
-    $i++
+    return [PSCustomObject]@{
+        RepoPath  = $RepoPath
+        OutputDir = $OutputDir
+        Port      = $Port
+        ApiPort   = $ApiPort
+    }
 }
+
+$parsed = Get-ServeApiArgs -Arguments $args
+$RepoPath  = $parsed.RepoPath
+$OutputDir = $parsed.OutputDir
+$Port      = $parsed.Port
+$ApiPort   = $parsed.ApiPort
 
 if (-not $IsWindows) {
     Write-Error "The wiki write-back server requires Sparx Enterprise Architect, which is only available on Windows."
@@ -40,7 +55,7 @@ $wikiDir = if ($OutputDir) {
     Join-Path $repoRoot "wiki"
 }
 
-Write-Host "=== EAxWiki — wiki write-back server + Wiki ===" -ForegroundColor Cyan
+Write-Host "=== EAxWiki - wiki write-back server + Wiki ===" -ForegroundColor Cyan
 Write-Host "Write-back server : http://localhost:$ApiPort"
 Write-Host "Wiki              : http://localhost:$Port"
 Write-Host "Output            : $wikiDir"
@@ -52,7 +67,7 @@ $exportArgs = @("--output", $wikiDir, "--api-port", $ApiPort)
 if ($RepoPath) { $exportArgs += "--repo", $RepoPath }
 & $PSScriptRoot\export.ps1 @exportArgs
 if ($LASTEXITCODE -ne 0) {
-    Write-Error "Export failed — cannot start write-back server + wiki."
+    Write-Error "Export failed - cannot start write-back server + wiki."
     Pop-Location
     exit $LASTEXITCODE
 }

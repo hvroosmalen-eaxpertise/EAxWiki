@@ -4,29 +4,49 @@
 # check below even on a fully successful run. Scoped to this script only.
 $PSNativeCommandUseErrorActionPreference = $false
 
-# Support both PowerShell -Flag and Unix-style --flag syntax.
-$RepoPath  = ""
-$OutputDir = ""   # defaults to <repo-root>\wiki when not specified
-$Force     = $false
-$Verbose   = $false
-$Json      = $false
-$WriteBack = $false
-$ApiPort   = 0
+function Get-ExportArgs {
+    param([string[]]$Arguments)
+    $RepoPath  = ""
+    $OutputDir = ""
+    $Force     = $false
+    $Verbose   = $false
+    $Json      = $false
+    $WriteBack = $false
+    $ApiPort   = 0
 
-$i = 0
-while ($i -lt $args.Count) {
-    switch -Regex ($args[$i]) {
-        '^(-f|--force|-Force)$'              { $Force     = $true }
-        '^(-v|--verbose|-Verbose)$'          { $Verbose   = $true }
-        '^(-j|--json|-Json)$'                { $Json      = $true }
-        '^(-w|--writeback|-WriteBack)$'      { $WriteBack = $true }
-        '^(-r|--repo|-RepoPath)$'            { $i++; if ($i -lt $args.Count) { $RepoPath  = $args[$i] } }
-        '^(-o|--output|-OutputDir)$'         { $i++; if ($i -lt $args.Count) { $OutputDir = $args[$i] } }
-        '^(--api-port|-ApiPort)$'            { $i++; if ($i -lt $args.Count) { $ApiPort   = [int]$args[$i] } }
-        default                              { if (-not "$($args[$i])".StartsWith('-')) { $RepoPath = $args[$i] } }
+    $i = 0
+    while ($i -lt $Arguments.Count) {
+        switch -Regex ($Arguments[$i]) {
+            '^(-f|--force|-Force)$'              { $Force     = $true }
+            '^(-v|--verbose|-Verbose)$'          { $Verbose   = $true }
+            '^(-j|--json|-Json)$'                { $Json      = $true }
+            '^(-w|--writeback|-WriteBack)$'      { $WriteBack = $true }
+            '^(-r|--repo|-RepoPath)$'            { $i++; if ($i -lt $Arguments.Count) { $RepoPath  = $Arguments[$i] } }
+            '^(-o|--output|-OutputDir)$'         { $i++; if ($i -lt $Arguments.Count) { $OutputDir = $Arguments[$i] } }
+            '^(--api-port|-ApiPort)$'            { $i++; if ($i -lt $Arguments.Count) { $ApiPort   = [int]$Arguments[$i] } }
+            default                              { if (-not "$($Arguments[$i])".StartsWith('-')) { $RepoPath = $Arguments[$i] } }
+        }
+        $i++
     }
-    $i++
+    return [PSCustomObject]@{
+        RepoPath  = $RepoPath
+        OutputDir = $OutputDir
+        Force     = $Force
+        Verbose   = $Verbose
+        Json      = $Json
+        WriteBack = $WriteBack
+        ApiPort   = $ApiPort
+    }
 }
+
+$parsed = Get-ExportArgs -Arguments $args
+$RepoPath  = $parsed.RepoPath
+$OutputDir = $parsed.OutputDir
+$Force     = $parsed.Force
+$Verbose   = $parsed.Verbose
+$Json      = $parsed.Json
+$WriteBack = $parsed.WriteBack
+$ApiPort   = $parsed.ApiPort
 
 if (-not $IsWindows) {
     Write-Error "Export requires Sparx Enterprise Architect, which is only available on Windows."

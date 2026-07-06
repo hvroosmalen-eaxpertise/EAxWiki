@@ -5,31 +5,53 @@
 #   .\scripts\export-and-serve.ps1
 #   .\scripts\export-and-serve.ps1 --repo "model/file.qea" --output "wiki" --port 8000 --api-port 8001
 
-# Support both PowerShell -Flag and Unix-style --flag syntax.
-$RepoPath  = ""
-$OutputDir = ""   # defaults to <repo-root>\wiki when not specified
-$Port      = 8000
-$Force     = $false
-$Verbose   = $false
-$Json      = $false
-$WriteBack = $false
-$ApiPort   = 8001  # Default to 8001 so write-back is enabled by default
+function Get-ExportAndServeArgs {
+    param([string[]]$Arguments)
+    $RepoPath  = ""
+    $OutputDir = ""
+    $Port      = 8000
+    $Force     = $false
+    $Verbose   = $false
+    $Json      = $false
+    $WriteBack = $false
+    $ApiPort   = 8001
 
-$i = 0
-while ($i -lt $args.Count) {
-    switch -Regex ($args[$i]) {
-        '^(-f|--force|-Force)$'         { $Force     = $true }
-        '^(-v|--verbose|-Verbose)$'     { $Verbose   = $true }
-        '^(-j|--json|-Json)$'           { $Json      = $true }
-        '^(-w|--writeback|-WriteBack)$' { $WriteBack = $true }
-        '^(-p|--port|-Port)$'           { $i++; if ($i -lt $args.Count) { $Port      = [int]$args[$i] } }
-        '^(-r|--repo|-RepoPath)$'       { $i++; if ($i -lt $args.Count) { $RepoPath  = $args[$i] } }
-        '^(-o|--output|-OutputDir)$'    { $i++; if ($i -lt $args.Count) { $OutputDir = $args[$i] } }
-        '^(--api-port|-ApiPort)$'       { $i++; if ($i -lt $args.Count) { $ApiPort   = [int]$args[$i] } }
-        default                         { if (-not "$($args[$i])".StartsWith('-')) { $RepoPath = $args[$i] } }
+    $i = 0
+    while ($i -lt $Arguments.Count) {
+        switch -Regex ($Arguments[$i]) {
+            '^(-f|--force|-Force)$'         { $Force     = $true }
+            '^(-v|--verbose|-Verbose)$'     { $Verbose   = $true }
+            '^(-j|--json|-Json)$'           { $Json      = $true }
+            '^(-w|--writeback|-WriteBack)$' { $WriteBack = $true }
+            '^(-p|--port|-Port)$'           { $i++; if ($i -lt $Arguments.Count) { $Port      = [int]$Arguments[$i] } }
+            '^(-r|--repo|-RepoPath)$'       { $i++; if ($i -lt $Arguments.Count) { $RepoPath  = $Arguments[$i] } }
+            '^(-o|--output|-OutputDir)$'    { $i++; if ($i -lt $Arguments.Count) { $OutputDir = $Arguments[$i] } }
+            '^(--api-port|-ApiPort)$'       { $i++; if ($i -lt $Arguments.Count) { $ApiPort   = [int]$Arguments[$i] } }
+            default                         { if (-not "$($Arguments[$i])".StartsWith('-')) { $RepoPath = $Arguments[$i] } }
+        }
+        $i++
     }
-    $i++
+    return [PSCustomObject]@{
+        RepoPath  = $RepoPath
+        OutputDir = $OutputDir
+        Port      = $Port
+        Force     = $Force
+        Verbose   = $Verbose
+        Json      = $Json
+        WriteBack = $WriteBack
+        ApiPort   = $ApiPort
+    }
 }
+
+$parsed = Get-ExportAndServeArgs -Arguments $args
+$RepoPath  = $parsed.RepoPath
+$OutputDir = $parsed.OutputDir
+$Port      = $parsed.Port
+$Force     = $parsed.Force
+$Verbose   = $parsed.Verbose
+$Json      = $parsed.Json
+$WriteBack = $parsed.WriteBack
+$ApiPort   = $parsed.ApiPort
 
 if ($ApiPort -gt 0 -and -not $IsWindows) {
     Write-Error "The wiki write-back server requires Sparx Enterprise Architect, which is only available on Windows."

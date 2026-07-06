@@ -1,4 +1,4 @@
-# Unattended wrapper around export.ps1 / serve.ps1 for issue #37: log to a file,
+﻿# Unattended wrapper around export.ps1 / serve.ps1 for issue #37: log to a file,
 # keep a health state file and wiki/status/health.md up to date, retry transient
 # failures with backoff, and alert (webhook) on final give-up / recovery.
 #
@@ -11,7 +11,7 @@
 # Finish alert (gated by the same $NotifyOnStart / --no-notify-start flag as Start) reports
 # duration and page counts (total/diagram/element, with delta vs the previous run); and once a
 # calendar day boundary is crossed, a DailyDigest alert reports the previous day's approximate
-# wiki page-read count (from mkdocs' own dev-server log — see Get-NewPageReadCount for why this
+# wiki page-read count (from mkdocs' own dev-server log - see Get-NewPageReadCount for why this
 # is inherently approximate) and write-back count (from wiki/status/writeback.log, written by
 # WikiWritebackServer.cs).
 #
@@ -23,7 +23,7 @@
 #
 # Export mode, same as export.ps1: incremental (default) or --force for a full rebuild every
 # run. On a short (e.g. 30-minute) cadence, --force every run is needlessly slow against a
-# large model — use --force-every N instead to force a full rebuild only on every Nth run,
+# large model - use --force-every N instead to force a full rebuild only on every Nth run,
 # correcting for any drift a single incremental diff might miss while staying incremental
 # the rest of the time (tracked in the health state file as runsSinceForce):
 #   .\scripts\monitor-export-and-serve.ps1 --force-every 48   # e.g. once/day on a 30-min cadence
@@ -38,17 +38,17 @@
 #   2. EAXWIKI_ALERT_TEAMS_WEBHOOK environment variable
 #   3. .eaxwiki config file (teamsWebhookUrl field)
 #
-# Slack and Teams are independent, not exclusive — if both are configured, every alert is sent
+# Slack and Teams are independent, not exclusive - if both are configured, every alert is sent
 # to both. Neither is required; a missing/unresolved webhook for one channel just means alerts
 # aren't dispatched there (still logged locally either way).
 #
 # Prefer storing webhook URLs in .eaxwiki via interactive setup or direct configuration.
 # For scheduled/unattended use without .eaxwiki, set the env vars above in the scheduled task's
-# "Run as" credentials — this keeps the credential out of Task Scheduler's stored action
+# "Run as" credentials - this keeps the credential out of Task Scheduler's stored action
 # arguments (which any admin on the machine can read back).
 #
 # $PSNativeCommandUseErrorActionPreference (PowerShell 7.3+, defaults to $true in a fresh
-# -NoProfile session — exactly how Task Scheduler launches this script) makes stderr output
+# -NoProfile session - exactly how Task Scheduler launches this script) makes stderr output
 # from a native command interfere with $LASTEXITCODE / $? once that stderr is merged via
 # `2>&1`, as happens below when capturing export.ps1's output. dotnet's own logger writes
 # warn-level lines (e.g. "Duplicate sanitized name...") to stderr even on a fully successful
@@ -56,39 +56,69 @@
 # report a false failure. Disabling it here scopes the fix to this script only.
 $PSNativeCommandUseErrorActionPreference = $false
 
-$RepoPath            = ""
-$OutputDir           = ""     # defaults to <repo-root>\wiki when not specified
-$Port                = 8000
-$MaxRetries          = 3
-$RetryDelaySeconds   = 30
-$MinElementFraction  = 0.5    # sanity floor: alert if output shrinks below this fraction of the previous successful run
-$WebhookUrl          = $null  # will be resolved from CLI arg, env var, or .eaxwiki file
-$TeamsWebhookUrl     = $null  # same resolution order as $WebhookUrl (issue #39)
-$TestAlert           = $false
-$NotifyOnStart       = $true  # send a Slack/Teams message at the start AND end of every scheduled run, not just on failure/recovery
-$Force               = $false # full regeneration instead of export.ps1's default incremental mode; see --force-every below
-$ForceEveryNRuns     = 0      # 0 = never auto-force; N>0 = force a full rebuild every Nth run (drift correction on an
-                               # otherwise-incremental schedule), tracked via forceRunCounter in the health state file
+function Get-MonitorArgs {
+    param([string[]]$Arguments)
+    $RepoPath            = ""
+    $OutputDir           = ""
+    $Port                = 8000
+    $MaxRetries          = 3
+    $RetryDelaySeconds   = 30
+    $MinElementFraction  = 0.5
+    $WebhookUrl          = $null
+    $TeamsWebhookUrl     = $null
+    $TestAlert           = $false
+    $NotifyOnStart       = $true
+    $Force               = $false
+    $ForceEveryNRuns     = 0
 
-$i = 0
-while ($i -lt $args.Count) {
-    switch -Regex ($args[$i]) {
-        '^(-r|--repo|-RepoPath)$'                { $i++; if ($i -lt $args.Count) { $RepoPath           = $args[$i] } }
-        '^(-o|--output|-OutputDir)$'             { $i++; if ($i -lt $args.Count) { $OutputDir          = $args[$i] } }
-        '^(-p|--port|-Port)$'                    { $i++; if ($i -lt $args.Count) { $Port               = [int]$args[$i] } }
-        '^(--max-retries|-MaxRetries)$'          { $i++; if ($i -lt $args.Count) { $MaxRetries          = [int]$args[$i] } }
-        '^(--retry-delay|-RetryDelaySeconds)$'   { $i++; if ($i -lt $args.Count) { $RetryDelaySeconds   = [int]$args[$i] } }
-        '^(--min-element-fraction)$'             { $i++; if ($i -lt $args.Count) { $MinElementFraction = [double]$args[$i] } }
-        '^(--webhook-url|-WebhookUrl)$'          { $i++; if ($i -lt $args.Count) { $WebhookUrl          = $args[$i] } }
-        '^(--teams-webhook-url|-TeamsWebhookUrl)$' { $i++; if ($i -lt $args.Count) { $TeamsWebhookUrl   = $args[$i] } }
-        '^(--test-alert|-TestAlert)$'            { $TestAlert = $true }
-        '^(--no-notify-start)$'                  { $NotifyOnStart = $false }
-        '^(-f|--force|-Force)$'                  { $Force = $true }
-        '^(--force-every|-ForceEveryNRuns)$'     { $i++; if ($i -lt $args.Count) { $ForceEveryNRuns = [int]$args[$i] } }
-        default                                  { if (-not "$($args[$i])".StartsWith('-')) { $RepoPath = $args[$i] } }
+    $i = 0
+    while ($i -lt $Arguments.Count) {
+        switch -Regex ($Arguments[$i]) {
+            '^(-r|--repo|-RepoPath)$'                { $i++; if ($i -lt $Arguments.Count) { $RepoPath           = $Arguments[$i] } }
+            '^(-o|--output|-OutputDir)$'             { $i++; if ($i -lt $Arguments.Count) { $OutputDir          = $Arguments[$i] } }
+            '^(-p|--port|-Port)$'                    { $i++; if ($i -lt $Arguments.Count) { $Port               = [int]$Arguments[$i] } }
+            '^(--max-retries|-MaxRetries)$'          { $i++; if ($i -lt $Arguments.Count) { $MaxRetries          = [int]$Arguments[$i] } }
+            '^(--retry-delay|-RetryDelaySeconds)$'   { $i++; if ($i -lt $Arguments.Count) { $RetryDelaySeconds   = [int]$Arguments[$i] } }
+            '^(--min-element-fraction)$'             { $i++; if ($i -lt $Arguments.Count) { $MinElementFraction = [double]$Arguments[$i] } }
+            '^(--webhook-url|-WebhookUrl)$'          { $i++; if ($i -lt $Arguments.Count) { $WebhookUrl          = $Arguments[$i] } }
+            '^(--teams-webhook-url|-TeamsWebhookUrl)$' { $i++; if ($i -lt $Arguments.Count) { $TeamsWebhookUrl   = $Arguments[$i] } }
+            '^(--test-alert|-TestAlert)$'            { $TestAlert = $true }
+            '^(--no-notify-start)$'                  { $NotifyOnStart = $false }
+            '^(-f|--force|-Force)$'                  { $Force = $true }
+            '^(--force-every|-ForceEveryNRuns)$'     { $i++; if ($i -lt $Arguments.Count) { $ForceEveryNRuns = [int]$Arguments[$i] } }
+            default                                  { if (-not "$($Arguments[$i])".StartsWith('-')) { $RepoPath = $Arguments[$i] } }
+        }
+        $i++
     }
-    $i++
+    return [PSCustomObject]@{
+        RepoPath            = $RepoPath
+        OutputDir           = $OutputDir
+        Port                = $Port
+        MaxRetries          = $MaxRetries
+        RetryDelaySeconds   = $RetryDelaySeconds
+        MinElementFraction  = $MinElementFraction
+        WebhookUrl          = $WebhookUrl
+        TeamsWebhookUrl     = $TeamsWebhookUrl
+        TestAlert           = $TestAlert
+        NotifyOnStart       = $NotifyOnStart
+        Force               = $Force
+        ForceEveryNRuns     = $ForceEveryNRuns
+    }
 }
+
+$parsed = Get-MonitorArgs -Arguments $args
+$RepoPath            = $parsed.RepoPath
+$OutputDir           = $parsed.OutputDir
+$Port                = $parsed.Port
+$MaxRetries          = $parsed.MaxRetries
+$RetryDelaySeconds   = $parsed.RetryDelaySeconds
+$MinElementFraction  = $parsed.MinElementFraction
+$WebhookUrl          = $parsed.WebhookUrl
+$TeamsWebhookUrl     = $parsed.TeamsWebhookUrl
+$TestAlert           = $parsed.TestAlert
+$NotifyOnStart       = $parsed.NotifyOnStart
+$Force               = $parsed.Force
+$ForceEveryNRuns     = $parsed.ForceEveryNRuns
 
 if (-not $IsWindows) {
     Write-Error "Monitoring requires Sparx Enterprise Architect, which is only available on Windows."
@@ -98,7 +128,7 @@ if (-not $IsWindows) {
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 Push-Location $repoRoot
 
-# Resolve both webhook URLs from CLI arg → env var → .eaxwiki file. .eaxwiki is decrypted at
+# Resolve both webhook URLs from CLI arg â†’ env var â†’ .eaxwiki file. .eaxwiki is decrypted at
 # most once (not once per channel) and shared between the two lookups below.
 $needsEaxwikiConfig = ($null -eq $WebhookUrl -or "" -eq $WebhookUrl) -or ($null -eq $TeamsWebhookUrl -or "" -eq $TeamsWebhookUrl)
 $eaxwikiConfig = $null
@@ -111,7 +141,7 @@ if ($needsEaxwikiConfig -and (Test-Path ".eaxwiki")) {
         $json = [System.Text.Encoding]::UTF8.GetString($decrypted)
         $eaxwikiConfig = $json | ConvertFrom-Json -ErrorAction SilentlyContinue
     } catch {
-        # Silent — .eaxwiki may not exist in a decryptable form, or may be in an old format.
+        # Silent - .eaxwiki may not exist in a decryptable form, or may be in an old format.
     }
 }
 
@@ -141,7 +171,7 @@ $wikiDir = if ($OutputDir) {
 # Per-instance state, keyed by a hash of the resolved wiki output dir. This lives OUTSIDE
 # $wikiDir on purpose: the exporter's orphan cleanup (InfrastructureWriter.CleanupOrphanedFilesAsync)
 # deletes any top-level directory in the output dir that isn't a recognized package or one of its
-# special dirs (diagrams/types/glossary/recent/status) on every run — a log directory placed inside
+# special dirs (diagrams/types/glossary/recent/status) on every run - a log directory placed inside
 # $wikiDir gets silently wiped on the very next export.
 $md5 = [System.Security.Cryptography.MD5]::Create()
 $instanceHash = [Convert]::ToHexString($md5.ComputeHash([System.Text.Encoding]::UTF8.GetBytes($wikiDir.ToLowerInvariant()))).Substring(0, 12).ToLowerInvariant()
@@ -159,13 +189,13 @@ function Write-MonitorLog {
     Write-Host $line
 }
 
-# Identifies which instance an alert is about — matters once more than one exporter/serve/monitor
+# Identifies which instance an alert is about - matters once more than one exporter/serve/monitor
 # triple runs on the same machine (the project explicitly supports that via --output/--port).
-$instanceLabel = "$env:COMPUTERNAME — $wikiDir"
+$instanceLabel = "$env:COMPUTERNAME - $wikiDir"
 
 function Get-HealthState {
     # PSCustomObject (both a [pscustomobject] literal and one returned by ConvertFrom-Json)
-    # throws on assigning a property that doesn't already exist — silently, since it's a
+    # throws on assigning a property that doesn't already exist - silently, since it's a
     # non-terminating error under the default $ErrorActionPreference. So a health.json written
     # by an older version of this script (missing a field added since) would silently drop any
     # later `$state.newField = ...` assignment. Build the full-shape default first, then for an
@@ -227,7 +257,7 @@ function Send-Alert {
         return
     }
 
-    # Slack and Teams are independent, not exclusive (issue #39) — send to whichever channel(s)
+    # Slack and Teams are independent, not exclusive (issue #39) - send to whichever channel(s)
     # are configured, not "the first one found."
     $color = switch ($Kind) {
         'Start'         { '#3aa3e3' } # blue
@@ -258,7 +288,7 @@ function Send-Alert {
                 @{
                     color      = $color
                     mrkdwn_in  = @('text', 'pretext')
-                    pretext    = "$emoji *EAxWiki [$Kind]* — $instanceLabel"
+                    pretext    = "$emoji *EAxWiki [$Kind]* - $instanceLabel"
                     text       = $Message
                     footer     = $instanceLabel
                     ts         = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds()
@@ -281,10 +311,10 @@ function Send-Alert {
             '@type'    = 'MessageCard'
             '@context' = 'http://schema.org/extensions'
             themeColor = $color.TrimStart('#')
-            summary    = "EAxWiki [$Kind] — $instanceLabel"
+            summary    = "EAxWiki [$Kind] - $instanceLabel"
             sections   = @(
                 @{
-                    activityTitle = "EAxWiki [$Kind] — $instanceLabel"
+                    activityTitle = "EAxWiki [$Kind] - $instanceLabel"
                     text          = $Message
                 }
             )
@@ -300,13 +330,13 @@ function Send-Alert {
 }
 
 if ($TestAlert) {
-    Send-Alert -Kind Test -Message "Test alert from monitor-export-and-serve.ps1 — if you can see this in Slack/Teams, the webhook is wired correctly."
+    Send-Alert -Kind Test -Message "Test alert from monitor-export-and-serve.ps1 - if you can see this in Slack/Teams, the webhook is wired correctly."
     exit 0
 }
 
 function Get-ElementCount {
     # Basic output-size sanity signal: count of generated markdown pages (elements + diagrams
-    # together, deliberately — this feeds the sanity-check floor below, which cares about total
+    # together, deliberately - this feeds the sanity-check floor below, which cares about total
     # output size, not the element/diagram split).
     if (-not (Test-Path $wikiDir)) { return 0 }
     return @(Get-ChildItem -Path $wikiDir -Filter '*.md' -Recurse -File -ErrorAction SilentlyContinue).Count
@@ -315,7 +345,7 @@ function Get-ElementCount {
 function Get-DiagramCount {
     # Diagram pages live under any 'diagrams' subfolder. Kept separate from Get-ElementCount
     # (used only for the Finish alert's breakdown, issue #41) so the existing sanity-check floor
-    # above — which intentionally counts *all* generated pages — stays untouched.
+    # above - which intentionally counts *all* generated pages - stays untouched.
     if (-not (Test-Path $wikiDir)) { return 0 }
     return @(Get-ChildItem -Path $wikiDir -Filter '*.md' -Recurse -File -ErrorAction SilentlyContinue |
         Where-Object { $_.DirectoryName -match '[\\/]diagrams([\\/]|$)' }).Count
@@ -324,7 +354,7 @@ function Get-DiagramCount {
 # --- Issue #41: daily activity digest (approximate page reads + write-back count). ---
 # Both counters use offset-tracked incremental scans of an append-only log rather than parsing
 # dates out of individual log lines, because the mkdocs serve log has no date on each line (only
-# a time-of-day) and can span multiple calendar days if mkdocs never restarts — there'd be no
+# a time-of-day) and can span multiple calendar days if mkdocs never restarts - there'd be no
 # reliable way to tell which day an isolated "[14:32:10] ..." line belongs to after the fact.
 # Scanning only new bytes since the last pass and accumulating into pageReadsToday/writebacksToday
 # sidesteps that entirely.
@@ -349,19 +379,19 @@ function Read-NewLogText {
 }
 
 function Get-NewPageReadCount {
-    # "Browser connected: <url>" in mkdocs' dev-server log (stderr) marks a page load — but the
+    # "Browser connected: <url>" in mkdocs' dev-server log (stderr) marks a page load - but the
     # same line also fires when livereload auto-reconnects an already-open tab after a rebuild,
     # which happens on every export run that changed content. Counting those as reads would mostly
     # measure "how many scheduled exports ran while a tab was open," not real visits, so any
     # "Browser connected" within 10 seconds of a "Reloading browsers" line is excluded as a
-    # reconnect. Still approximate — mkdocs' dev server was never built for analytics — but it's
+    # reconnect. Still approximate - mkdocs' dev server was never built for analytics - but it's
     # the only signal available without adding a reverse proxy or new logging layer in front of it.
     $files = @(Get-ChildItem -Path $logDir -Filter "serve-*.err.log" -ErrorAction SilentlyContinue | Sort-Object LastWriteTime)
     if ($files.Count -eq 0) { return 0 }
 
     $currentFile = $files[-1].FullName
     if ($state.pageReadLogFile -ne $currentFile) {
-        # mkdocs (re)started since the last scan — new log file, count from its beginning.
+        # mkdocs (re)started since the last scan - new log file, count from its beginning.
         $state.pageReadLogFile = $currentFile
         $state.pageReadLogOffset = 0
     }
@@ -389,7 +419,7 @@ function Get-NewPageReadCount {
 
 function Get-NewWritebackCount {
     # WikiWritebackServer.cs (LogWriteback) appends one line per successful write-back to
-    # status/writeback.log — see that file for why it lives under status/ specifically.
+    # status/writeback.log - see that file for why it lives under status/ specifically.
     $writebackLogPath = Join-Path $wikiDir "status\writeback.log"
     if ($state.writebackLogFile -ne $writebackLogPath) {
         $state.writebackLogFile = $writebackLogPath
@@ -411,7 +441,7 @@ function Update-HealthPage {
     $lines = @(
         "# Pipeline Health"
         ""
-        "*Generated by monitor-export-and-serve.ps1 — reports export/serve pipeline status, not EA model element status.*"
+        "*Generated by monitor-export-and-serve.ps1 - reports export/serve pipeline status, not EA model element status.*"
         ""
         "**Overall:** $overall"
         ""
@@ -441,7 +471,7 @@ function Update-HealthPage {
 
 $state = Get-HealthState
 
-# --force is off by default here, same as export.ps1 itself — a 30-minute-cadence schedule
+# --force is off by default here, same as export.ps1 itself - a 30-minute-cadence schedule
 # doing a full rebuild every run would be needlessly slow against a large model. --force-every
 # lets an otherwise-incremental schedule periodically self-correct any drift a single run's
 # incremental diff might miss, without forcing every run.
@@ -535,7 +565,7 @@ if ($succeeded) {
     $state.lastDiagramCount = $diagramCount
 
     if ($NotifyOnStart) {
-        Send-Alert -Kind Finish -Message ("Export finished in {0} — {1} page(s) total ({2} diagram, {3} element), {4} vs previous run." -f `
+        Send-Alert -Kind Finish -Message ("Export finished in {0} - {1} page(s) total ({2} diagram, {3} element), {4} vs previous run." -f `
             $exportStopwatch.Elapsed.ToString('mm\:ss'), $elementCount, $diagramCount, ($elementCount - $diagramCount), $deltaLabel)
     }
 
@@ -602,11 +632,11 @@ function Test-ServeAlive {
                 }
             }
         } catch {
-            # Corrupt or unreadable pid file — fall through to the port check below.
+            # Corrupt or unreadable pid file - fall through to the port check below.
         }
     }
 
-    # No (valid) tracked process — but something else may already be serving this port,
+    # No (valid) tracked process - but something else may already be serving this port,
     # e.g. a manually started export-and-serve.ps1 that this monitor instance didn't launch.
     # Don't start a second mkdocs and collide on the port; leave an already-listening port alone.
     if (Test-PortListening -PortNumber $Port) {

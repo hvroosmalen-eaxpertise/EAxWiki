@@ -11,18 +11,29 @@
 # $LASTEXITCODE under $PSNativeCommandUseErrorActionPreference's default in a -NoProfile session.
 $PSNativeCommandUseErrorActionPreference = $false
 
-$RepoPath = ""
-$Verbose  = $false
+function Get-WritebackArgs {
+    param([string[]]$Arguments)
+    $RepoPath = ""
+    $Verbose  = $false
 
-$i = 0
-while ($i -lt $args.Count) {
-    switch -Regex ($args[$i]) {
-        '^(-v|--verbose|-Verbose)$'     { $Verbose = $true }
-        '^(-r|--repo|-RepoPath)$'       { $i++; if ($i -lt $args.Count) { $RepoPath = $args[$i] } }
-        default                         { if (-not $args[$i].StartsWith('-')) { $RepoPath = $args[$i] } }
+    $i = 0
+    while ($i -lt $Arguments.Count) {
+        switch -Regex ($Arguments[$i]) {
+            '^(-v|--verbose|-Verbose)$'     { $Verbose = $true }
+            '^(-r|--repo|-RepoPath)$'       { $i++; if ($i -lt $Arguments.Count) { $RepoPath = $Arguments[$i] } }
+            default                         { if (-not $Arguments[$i].StartsWith('-')) { $RepoPath = $Arguments[$i] } }
+        }
+        $i++
     }
-    $i++
+    return [PSCustomObject]@{
+        RepoPath = $RepoPath
+        Verbose  = $Verbose
+    }
 }
+
+$parsed = Get-WritebackArgs -Arguments $args
+$RepoPath = $parsed.RepoPath
+$Verbose  = $parsed.Verbose
 
 if (-not $IsWindows) {
     Write-Error "Write-back requires Sparx Enterprise Architect, which is only available on Windows."

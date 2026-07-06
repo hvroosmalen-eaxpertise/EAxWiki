@@ -500,10 +500,16 @@ All views are generated automatically by the exporter and configured via the awe
 
 ## Tests
 
-EAxWiki uses **xUnit** with **Moq** for unit tests. The test project is at `src/EAxWiki.Tests/`.
+EAxWiki uses **xUnit** with **Moq** for unit tests of the C# codebase. The test project is at `src/EAxWiki.Tests/`.
 
 ```powershell
 $env:EAPath = 'E:\Program Files\Sparx Systems\EA\'; dotnet test src\EAxWiki.Tests
+```
+
+PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
+
+```powershell
+.\tests\run-tests.ps1
 ```
 
 | Group | Tests | What's covered |
@@ -515,8 +521,15 @@ $env:EAPath = 'E:\Program Files\Sparx Systems\EA\'; dotnet test src\EAxWiki.Test
 | Frontmatter parser | 4 | YamlDotNet-based YAML frontmatter parsing |
 | ElementPageWriter renderers | 38 | All 11 widget renderers (rich HTML + plain Markdown modes), edge cases, 2-hop graph, missing references |
 | Other | ~38 | Cleanup, Markdown helpers, hash helpers, etc. |
+| **.NET subtotal** | **~153** | |
+| Export | 29 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths |
+| Serve | 21 | Port/root flags, file server config, cert modes, default page, path normalization |
+| ServeApi | 10 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
+| MonitorExportAndServe | 40 | Schedule parsing, task registration/update, state file, health check, alerting, CLI flags |
+| Writeback | 22 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
+| **Pester subtotal** | **122** | |
 
-**136 tests total**, all pass.
+**275 tests total** (153 .NET + 122 Pester), all pass.
 
 ## Design decisions
 
