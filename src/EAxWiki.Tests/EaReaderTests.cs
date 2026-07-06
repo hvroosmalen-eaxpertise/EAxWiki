@@ -111,7 +111,7 @@ public class EaReaderTests
             packageId: 7, status: "Approved",
             modified: modified, created: created);
 
-        var result = EAxWiki.EA.EaReader.MapElement(mock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapElement(mock.Object);
 
         Assert.Equal(42, result.Id);
         Assert.Equal("TestElem", result.Name);
@@ -144,7 +144,7 @@ public class EaReaderTests
         var coll = CreateCollection(attrMock1.Object, attrMock2.Object);
         var mock = CreateElementMock(attributes: coll.Object);
 
-        var result = EAxWiki.EA.EaReader.MapElement(mock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapElement(mock.Object);
 
         Assert.Equal(2, result.Attributes.Count);
         Assert.Equal("Attr1", result.Attributes[0].Name);
@@ -174,7 +174,7 @@ public class EaReaderTests
         var coll = CreateCollection(methodMock1.Object, methodMock2.Object);
         var mock = CreateElementMock(methods: coll.Object);
 
-        var result = EAxWiki.EA.EaReader.MapElement(mock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapElement(mock.Object);
 
         Assert.Equal(2, result.Methods.Count);
         Assert.Equal("Foo", result.Methods[0].Name);
@@ -201,7 +201,7 @@ public class EaReaderTests
         var coll = CreateCollection(tvMock1.Object, tvMock2.Object);
         var mock = CreateElementMock(taggedValues: coll.Object);
 
-        var result = EAxWiki.EA.EaReader.MapElement(mock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapElement(mock.Object);
 
         Assert.Equal(2, result.TaggedValues.Count);
         Assert.Equal("Tag1", result.TaggedValues[0].Name);
@@ -225,7 +225,7 @@ public class EaReaderTests
         var coll = CreateCollection(connMock1.Object);
         var mock = CreateElementMock(connectors: coll.Object);
 
-        var result = EAxWiki.EA.EaReader.MapElement(mock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapElement(mock.Object);
 
         Assert.Single(result.Connectors);
         Assert.Equal(100, result.Connectors[0].Id);
@@ -240,7 +240,7 @@ public class EaReaderTests
     public void MapElement_NullCollections_ProducesEmptyLists()
     {
         var mock = CreateElementMock();
-        var result = EAxWiki.EA.EaReader.MapElement(mock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapElement(mock.Object);
 
         Assert.Empty(result.Attributes);
         Assert.Empty(result.Methods);
@@ -252,7 +252,7 @@ public class EaReaderTests
     public void MapElement_NullStatus_ReturnsEmptyString()
     {
         var mock = CreateElementMock(status: null!);
-        var result = EAxWiki.EA.EaReader.MapElement(mock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapElement(mock.Object);
         Assert.Equal(string.Empty, result.Status);
     }
 
@@ -262,7 +262,7 @@ public class EaReaderTests
         var coll = CreateCollection<EA.Element>();
         var mock = CreateElementMock(attributes: coll.Object, methods: coll.Object,
             taggedValues: coll.Object, connectors: coll.Object);
-        var result = EAxWiki.EA.EaReader.MapElement(mock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapElement(mock.Object);
 
         Assert.Empty(result.Attributes);
         Assert.Empty(result.Methods);
@@ -277,7 +277,7 @@ public class EaReaderTests
         var coll = CreateCollection<object>(badItem.Object);
         var mock = CreateElementMock(attributes: coll.Object);
 
-        var result = EAxWiki.EA.EaReader.MapElement(mock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapElement(mock.Object);
         Assert.Empty(result.Attributes);
     }
 
@@ -309,10 +309,7 @@ public class EaReaderTests
     public void MapPackage_MapsBasicProperties()
     {
         var pkgMock = CreatePackageMock(id: 99, name: "Root", notes: "Root notes", parentId: 5);
-        var reader = new EAxWiki.EA.EaReader();
-
-        var result = reader.MapPackage(pkgMock.Object);
-
+        var result = EAxWiki.EA.ModelMapper.MapPackage(pkgMock.Object, null);
         Assert.Equal(99, result.Id);
         Assert.Equal("Root", result.Name);
         Assert.Equal("Root notes", result.Notes);
@@ -325,10 +322,7 @@ public class EaReaderTests
         var elemMock = CreateElementMock(id: 1, name: "Child");
         var coll = CreateCollection(elemMock.Object);
         var pkgMock = CreatePackageMock(elements: coll.Object);
-        var reader = new EAxWiki.EA.EaReader();
-
-        var result = reader.MapPackage(pkgMock.Object);
-
+        var result = EAxWiki.EA.ModelMapper.MapPackage(pkgMock.Object, null);
         Assert.Single(result.Elements);
         Assert.Equal(1, result.Elements[0].Id);
     }
@@ -347,10 +341,7 @@ public class EaReaderTests
 
         var coll = CreateCollection(diagMock.Object);
         var pkgMock = CreatePackageMock(diagrams: coll.Object);
-        var reader = new EAxWiki.EA.EaReader();
-
-        var result = reader.MapPackage(pkgMock.Object);
-
+        var result = EAxWiki.EA.ModelMapper.MapPackage(pkgMock.Object, null);
         Assert.Single(result.Diagrams);
         Assert.Equal(55, result.Diagrams[0].Id);
         Assert.Equal("MyDiagram", result.Diagrams[0].Name);
@@ -362,10 +353,7 @@ public class EaReaderTests
         var childMock = CreatePackageMock(id: 20, name: "Child", parentId: 10);
         var coll = CreateCollection(childMock.Object);
         var pkgMock = CreatePackageMock(packages: coll.Object);
-        var reader = new EAxWiki.EA.EaReader();
-
-        var result = reader.MapPackage(pkgMock.Object);
-
+        var result = EAxWiki.EA.ModelMapper.MapPackage(pkgMock.Object, null);
         Assert.Single(result.Children);
         Assert.Equal(20, result.Children[0].Id);
         Assert.Equal("Child", result.Children[0].Name);
@@ -375,10 +363,7 @@ public class EaReaderTests
     public void MapPackage_NullCollections_ProducesEmptyLists()
     {
         var pkgMock = CreatePackageMock();
-        var reader = new EAxWiki.EA.EaReader();
-
-        var result = reader.MapPackage(pkgMock.Object);
-
+        var result = EAxWiki.EA.ModelMapper.MapPackage(pkgMock.Object, null);
         Assert.Empty(result.Elements);
         Assert.Empty(result.Diagrams);
         Assert.Empty(result.Children);
@@ -392,10 +377,7 @@ public class EaReaderTests
         var childMock = CreatePackageMock(id: 20, name: "Child", parentId: 10, packages: gcColl.Object);
         var childColl = CreateCollection(childMock.Object);
         var rootMock = CreatePackageMock(id: 10, name: "Root", packages: childColl.Object);
-        var reader = new EAxWiki.EA.EaReader();
-
-        var result = reader.MapPackage(rootMock.Object);
-
+        var result = EAxWiki.EA.ModelMapper.MapPackage(rootMock.Object, null);
         Assert.Single(result.Children);
         Assert.Equal(20, result.Children[0].Id);
         Assert.Single(result.Children[0].Children);
@@ -418,7 +400,7 @@ public class EaReaderTests
         diagMock.Setup(d => d.ModifiedDate).Returns(new System.DateTime(2024, 6, 1));
         diagMock.Setup(d => d.PackageID).Returns(10);
 
-        var result = EAxWiki.EA.EaReader.MapDiagram(diagMock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapDiagram(diagMock.Object);
 
         Assert.Equal(77, result.Id);
         Assert.Equal("{GUID-123}", result.Guid);
@@ -448,7 +430,7 @@ public class EaReaderTests
         diagMock.Setup(d => d.PackageID).Returns(10);
         diagMock.Setup(d => d.DiagramObjects).Returns(coll.Object);
 
-        var result = EAxWiki.EA.EaReader.MapDiagram(diagMock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapDiagram(diagMock.Object);
 
         Assert.Single(result.DiagramObjects);
         Assert.Equal(77, result.DiagramObjects[0].DiagramId);
@@ -469,7 +451,7 @@ public class EaReaderTests
         diagMock.Setup(d => d.PackageID).Returns(1);
         diagMock.Setup(d => d.DiagramObjects).Returns((EA.Collection?)null!);
 
-        var result = EAxWiki.EA.EaReader.MapDiagram(diagMock.Object);
+        var result = EAxWiki.EA.ModelMapper.MapDiagram(diagMock.Object);
 
         Assert.Empty(result.DiagramObjects);
     }
