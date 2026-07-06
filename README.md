@@ -148,6 +148,8 @@ Windows machine                         Linux / Mac machine
 
 Linux only needs Python and PowerShell Core (`pwsh`). The `install.sh` script installs `pwsh` automatically if it is not present.
 
+> **Building with an older .NET SDK:** All projects target `net10.0` by default. The SchedulerUI (`src/EAxWiki.SchedulerUI`) targets `$(WindowsTargetFramework)`, which defaults to `net10.0-windows`. To build with .NET 8 or .NET 9 SDK instead, pass `-p:WindowsTargetFramework=net8.0-windows` (or `net9.0-windows`) when running `dotnet build`. The non-Windows projects (`EAxWiki.Core`, `EAxWiki.Export`, `EAxWiki.EA`) must be retargeted manually by changing their `.csproj` `<TargetFramework>` values — they have no override property.
+
 ## Prerequisites
 
 | Prerequisite | Windows | Linux/Mac |

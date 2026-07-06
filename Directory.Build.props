@@ -3,4 +3,12 @@
     <EAPath Condition="'$(EAPath)' == '' And '$(EA_PATH)' != ''">$(EA_PATH)</EAPath>
     <EAPath Condition="'$(EAPath)' == '' And '$([MSBuild]::IsOSPlatform(Windows))'">E:\Program Files\Sparx Systems\EA\</EAPath>
   </PropertyGroup>
+
+  <!-- Overrideable TFM for the WinForms SchedulerUI.
+       Default is net10.0-windows. To build with an older SDK, pass:
+         dotnet build -p:WindowsTargetFramework=net8.0-windows
+       Needs Microsoft.WindowsDesktop.App.Ref for the chosen version. -->
+  <PropertyGroup>
+    <WindowsTargetFramework Condition="'$(WindowsTargetFramework)' == ''">net10.0-windows</WindowsTargetFramework>
+  </PropertyGroup>
 </Project>
