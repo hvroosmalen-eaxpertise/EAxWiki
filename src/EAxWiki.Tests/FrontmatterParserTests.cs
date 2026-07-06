@@ -49,6 +49,50 @@ public class FrontmatterParserTests : IDisposable
         """;
 
     [Fact]
+    public void Parse_ReturnsScalarValues()
+    {
+        File.WriteAllText(_filePath, SamplePage);
+
+        var fm = FrontmatterParser.Parse(_filePath);
+
+        Assert.Equal("133", fm["ea_id"]);
+        Assert.Equal("Mandatory", fm["status"]);
+        Assert.Equal("1a666d0d", fm["ea_hash"]);
+        Assert.Equal("c81852f4", fm["notes_hash"]);
+    }
+
+    [Fact]
+    public void Parse_ParsesStatusOptionsAsCommaSeparatedList()
+    {
+        File.WriteAllText(_filePath, SamplePage);
+
+        var fm = FrontmatterParser.Parse(_filePath);
+
+        Assert.True(fm.TryGetValue("status_options", out var options));
+        Assert.Equal("[Approved, Implemented, Mandatory, Proposed, Validated]", options);
+    }
+
+    [Fact]
+    public void Parse_ReturnsEmptyDictForFileWithoutFrontmatter()
+    {
+        File.WriteAllText(_filePath, "# Just a heading\n\nSome content.");
+
+        var fm = FrontmatterParser.Parse(_filePath);
+
+        Assert.Empty(fm);
+    }
+
+    [Fact]
+    public void Parse_ReturnsEmptyDictForMissingFile()
+    {
+        var missing = Path.Combine(Path.GetTempPath(), "eaxwiki_missing_" + Guid.NewGuid().ToString("N") + ".md");
+
+        var fm = FrontmatterParser.Parse(missing);
+
+        Assert.Empty(fm);
+    }
+
+    [Fact]
     public void UpdateStatus_BumpsModifiedDateToToday()
     {
         File.WriteAllText(_filePath, SamplePage);

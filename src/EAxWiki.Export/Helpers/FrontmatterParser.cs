@@ -1,7 +1,7 @@
-using System.Linq;
 using System.Text.RegularExpressions;
 using EAxWiki.Export.Exporters;
 using Ganss.Xss;
+using YamlDotNet.Serialization;
 
 namespace EAxWiki.Export.Helpers;
 
@@ -11,6 +11,10 @@ public static class FrontmatterParser
     // so one instance safely serves concurrent calls from the parallel export pipeline.
     private static readonly HtmlSanitizer NotesSanitizer = new();
 
+    // Shared deserializer per the library's thread-safety docs — Deserialize() does not mutate
+    // shared state, so one instance safely serves concurrent calls from the parallel export pipeline.
+    private static readonly IDeserializer YamlDeserializer = new DeserializerBuilder().Build();
+
     /// <summary>
     /// Parses the YAML frontmatter block (between the first two --- delimiters) of a Markdown file.
     /// Returns a dictionary of key → raw string value, or an empty dictionary if no frontmatter is present.
@@ -18,24 +22,37 @@ public static class FrontmatterParser
     public static Dictionary<string, string> Parse(string filePath)
     {
         var result = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-        string[] lines;
-        try { lines = File.ReadAllLines(filePath); }
+        string text;
+        try { text = File.ReadAllText(filePath); }
         catch { return result; }
 
-        if (lines.Length < 2 || lines[0].Trim() != "---")
-            return result;
+        var match = Regex.Match(text, @"\A---\s*\n(.*?\n)---", RegexOptions.Singleline);
+        if (!match.Success) return result;
 
-        for (int i = 1; i < lines.Length; i++)
+        var yamlBlock = match.Groups[1].Value;
+
+        try
         {
-            if (lines[i].Trim() == "---")
-                break;
+            var yamlObject = YamlDeserializer.Deserialize<Dictionary<object, object>>(yamlBlock);
+            if (yamlObject == null) return result;
 
-            var sep = lines[i].IndexOf(':');
-            if (sep < 1) continue;
-
-            var key = lines[i][..sep].Trim();
-            var value = lines[i][(sep + 1)..].Trim();
-            result[key] = value;
+            foreach (var kvp in yamlObject)
+            {
+                var key = kvp.Key?.ToString() ?? "";
+                result[key] = kvp.Value switch
+                {
+                    string s => s,
+                    List<object> list => "[" + string.Join(", ", list.Select(o => o?.ToString() ?? "")) + "]",
+                    int i => i.ToString(),
+                    long l => l.ToString(),
+                    null => "",
+                    _ => kvp.Value.ToString() ?? ""
+                };
+            }
+        }
+        catch
+        {
+            // YAML parse error — caller treats missing keys gracefully
         }
 
         return result;
