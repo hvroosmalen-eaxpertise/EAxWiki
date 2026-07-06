@@ -1,5 +1,6 @@
 extern alias EAInterop;
 
+using Microsoft.Extensions.Logging;
 using Moq;
 using Xunit;
 
@@ -382,6 +383,85 @@ public class EaReaderTests
         Assert.Equal(20, result.Children[0].Id);
         Assert.Single(result.Children[0].Children);
         Assert.Equal(30, result.Children[0].Children[0].Id);
+    }
+
+    [Fact]
+    public void MapPackage_WithLogger_WarnsOnUnexpectedElementType()
+    {
+        var loggerMock = new Mock<ILogger>();
+        var coll = CreateCollection<object>(new object());
+        var pkgMock = CreatePackageMock(elements: coll.Object);
+
+        EAxWiki.EA.ModelMapper.MapPackage(pkgMock.Object, loggerMock.Object);
+
+        loggerMock.Verify(
+            x => x.Log(
+                LogLevel.Warning,
+                It.IsAny<EventId>(),
+                It.IsAny<It.IsAnyType>(),
+                It.IsAny<Exception>(),
+                It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
+            Times.Once);
+    }
+
+    [Fact]
+    public void MapPackage_WithLogger_WarnsOnUnexpectedDiagramType()
+    {
+        var loggerMock = new Mock<ILogger>();
+        var coll = CreateCollection<object>(new object());
+        var pkgMock = CreatePackageMock(diagrams: coll.Object);
+
+        EAxWiki.EA.ModelMapper.MapPackage(pkgMock.Object, loggerMock.Object);
+
+        loggerMock.Verify(
+            x => x.Log(
+                LogLevel.Warning,
+                It.IsAny<EventId>(),
+                It.IsAny<It.IsAnyType>(),
+                It.IsAny<Exception>(),
+                It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
+            Times.Once);
+    }
+
+    [Fact]
+    public void MapPackage_WithLogger_WarnsOnUnexpectedPackageType()
+    {
+        var loggerMock = new Mock<ILogger>();
+        var coll = CreateCollection<object>(new object());
+        var pkgMock = CreatePackageMock(packages: coll.Object);
+
+        EAxWiki.EA.ModelMapper.MapPackage(pkgMock.Object, loggerMock.Object);
+
+        loggerMock.Verify(
+            x => x.Log(
+                LogLevel.Warning,
+                It.IsAny<EventId>(),
+                It.IsAny<It.IsAnyType>(),
+                It.IsAny<Exception>(),
+                It.IsAny<Func<It.IsAnyType, Exception?, string>>()),
+            Times.Once);
+    }
+
+    [Fact]
+    public void MapPackage_WithLogger_NoWarningsOnValidInput()
+    {
+        var loggerMock = new Mock<ILogger>(MockBehavior.Strict);
+        var elemMock = CreateElementMock(id: 1);
+        var elemColl = CreateCollection(elemMock.Object);
+        var diagMock = new Mock<EA.Diagram>();
+        diagMock.Setup(d => d.DiagramID).Returns(1);
+        diagMock.Setup(d => d.DiagramGUID).Returns("{G}");
+        diagMock.Setup(d => d.Name).Returns("D");
+        diagMock.Setup(d => d.Type).Returns("Logical");
+        diagMock.Setup(d => d.Notes).Returns("");
+        diagMock.Setup(d => d.ModifiedDate).Returns(new System.DateTime(2024, 1, 1));
+        diagMock.Setup(d => d.PackageID).Returns(10);
+        var diagColl = CreateCollection(diagMock.Object);
+        var childMock = CreatePackageMock(id: 20, name: "Child", parentId: 10);
+        var childColl = CreateCollection(childMock.Object);
+        var pkgMock = CreatePackageMock(elements: elemColl.Object, diagrams: diagColl.Object, packages: childColl.Object);
+
+        EAxWiki.EA.ModelMapper.MapPackage(pkgMock.Object, loggerMock.Object);
     }
 
     #endregion
