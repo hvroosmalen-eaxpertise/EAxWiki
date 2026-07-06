@@ -363,7 +363,7 @@ What the monitor wrapper does on each scheduled run:
 - Pre-flight: kills any orphaned `EA.exe` left over from a prior crashed run
 - Exports with bounded retry + backoff (`--max-retries`, default 3; `--retry-delay`, default 30s) and a sanity check that alerts if the element count collapses versus the previous successful run (`--min-element-fraction`, default 0.5)
 - Checks whether `mkdocs serve` is still up — including a check on whether the wiki port itself is already listening, so it won't start a second, colliding `mkdocs serve` on top of one you started manually outside the monitor's tracking — and restarts it if it's down
-- Sends a "run starting" notification at the beginning of every pass (disable with `--no-notify-start`), plus Failure/Recovery alerts for export and serve independently
+- Sends "run starting" and "run finished" notifications for every pass — Start reports forced vs. incremental, Finish reports duration and page counts (total/diagram/element, delta vs. the previous run) — disable both with `--no-notify-start`; plus Failure/Recovery alerts for export and serve independently, and a once-per-day digest of approximate wiki page reads and write-back counts
 
 Export mode on the schedule: incremental by default, same as `export.ps1` itself — forcing a full rebuild on every run of a short interval would be needlessly slow against a large model.
 
@@ -377,6 +377,8 @@ Export mode on the schedule: incremental by default, same as `export.ps1` itself
 ```
 
 Overlap protection: the registered task uses `MultipleInstances IgnoreNew`, so if a run is still in progress when the next trigger fires (e.g. a slow EA export overruns a 30-minute interval), Task Scheduler skips the new trigger instead of stacking runs; an `ExecutionTimeLimit` just under the interval kills a genuinely hung run as a backstop.
+
+The task also sets `WakeToRun` by default, so Task Scheduler holds the machine awake for the run's duration if something else wakes it while asleep — without this, a run can freeze for hours if the machine falls back asleep right after an unrelated wake event. Pass `--no-wake-to-run` to opt out (e.g. on a laptop where unexpected wake behavior is itself the bigger annoyance, or hardware with known-flaky wake timers).
 
 You can also run `monitor-export-and-serve.ps1` directly (e.g. to test alerting) without registering a task:
 
@@ -414,9 +416,11 @@ tab (view and edit the current `.eaxwiki` repo path/ports/Slack+Teams webhooks, 
 repository type can be a `.qea` file or a SQL Server/MySQL-MariaDB/Oracle/PostgreSQL connection,
 same as the console wizard), a Task Status tab (current state, next run time, registered triggers,
 with Enable/Disable/Unregister buttons), and a Schedule Settings tab (simple interval or day/night
-mode, export force mode, a Register/Apply button). It shells out to the same scripts and plain
-`Get-ScheduledTask` queries described above rather than reimplementing any Task Scheduler logic
-itself — one source of truth either way.
+mode, export force mode, wake-to-run, a Register/Apply button). Opening the app — or clicking
+Refresh Status — reads back whatever is actually registered in Task Scheduler and reflects it on
+the Schedule Settings tab, so it never silently shows stale defaults in place of a real schedule.
+It shells out to the same scripts and plain `Get-ScheduledTask` queries described above rather than
+reimplementing any Task Scheduler logic itself — one source of truth either way.
 
 ```powershell
 .\scripts\start-scheduler-ui.ps1
