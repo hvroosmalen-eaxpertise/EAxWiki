@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\cytoscape.min.js" />
+    <EmbeddedResource Include="Resources\extra.css" />
   </ItemGroup>
 
   <ItemGroup>
