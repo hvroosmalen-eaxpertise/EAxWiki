@@ -1,9 +1,8 @@
-using System.Security.Cryptography;
-using System.Text;
 using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.Export.Helpers;
+using EAxWiki.Export.Renderers;
 
 namespace EAxWiki.Export.Exporters;
 
@@ -21,7 +20,6 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             try
             {
                 var fileTime = File.GetLastWriteTimeUtc(filePath);
-                // GetLastWriteTimeUtc returns 1601-01-01 when the file does not exist — treat that as "needs write"
                 if (fileTime > DateTime.UnixEpoch)
                 {
                     isNew = false;
@@ -37,7 +35,6 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             }
             catch (IOException)
             {
-                // File was removed between our check and the read — proceed with writing
             }
         }
         logger.LogInformation("{Action} {ElementName}", isNew ? "Created" : "Updated", element.Name);
@@ -49,30 +46,14 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             ? ctx.StatusTypes
             : (IReadOnlyList<string>)["Approved", "Implemented", "Mandatory", "Proposed", "Validated"];
         var statusOptions = string.Join(", ", statusOptionsList);
-        var statusHash = ComputeStatusHash(element.Status);
+        var statusHash = HtmlHelpers.ComputeStatusHash(element.Status);
         var normalizedNotes = FrontmatterParser.NormalizeNotesHtml(element.Notes);
-        var notesHash = ComputeNotesHash(normalizedNotes);
-        // HtmlEscape (which also escapes ') wraps the whole thing so it's safe inside the
-        // single-quoted data-options attribute below regardless of what a status name contains.
-        var statusOptionsJson = HtmlEscape("[" + string.Join(",", statusOptionsList.Select(s => $"\"{JsonEscape(s)}\"")) + "]");
+        var notesHash = HtmlHelpers.ComputeNotesHash(normalizedNotes);
+        var statusOptionsJson = HtmlHelpers.HtmlEscape("[" + string.Join(",", statusOptionsList.Select(s => $"\"{HtmlHelpers.JsonEscape(s)}\"")) + "]");
         var wikiRelPath = Path.GetRelativePath(outputDir, filePath).Replace('\\', '/');
-        var wikiRelPathHtml = HtmlEscape(wikiRelPath);
+        var wikiRelPathHtml = HtmlHelpers.HtmlEscape(wikiRelPath);
 
-        var statusBadgeClass = string.IsNullOrEmpty(element.Status) ? "status-not-set" : $"status-{element.Status.ToLowerInvariant()}";
-        var statusBadgeLabel = string.IsNullOrEmpty(element.Status) ? "Not Set" : MarkdownHelpers.EscapeCell(element.Status);
-        var statusBadgeHtml = $"<span class=\"status-badge {statusBadgeClass}\">{statusBadgeLabel}</span>";
-        var statusFieldHtml = ctx.ApiPort > 0
-            ? $"<span id=\"ea-status-editor\" class=\"ea-status-editor\"" +
-              $" data-ea-id=\"{element.Id}\"" +
-              $" data-status=\"{HtmlEscape(element.Status)}\"" +
-              $" data-options='{statusOptionsJson}'" +
-              $" data-file-path=\"{wikiRelPathHtml}\"" +
-              $" data-api-port=\"{ctx.ApiPort}\"" +
-              $" data-api-token=\"{HtmlEscape(ctx.ApiToken)}\">" +
-              statusBadgeHtml +
-              "<button class=\"ea-status-edit-btn\" type=\"button\" aria-label=\"Edit status\">&#9998;</button>" +
-              "</span>"
-            : statusBadgeHtml;
+        var statusBadgeHtml = StatusBadgeRenderer.Render(element, ctx, wikiRelPathHtml, statusOptionsJson);
 
         var lines = new List<string>
         {
@@ -90,7 +71,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             $"**Stereotype:** {MarkdownHelpers.EscapeCell(element.Stereotype)}  " +
             (string.IsNullOrWhiteSpace(element.StereotypeEx) ? "" : $"**StereotypeEx:** {MarkdownHelpers.EscapeCell(element.StereotypeEx)}  ") +
             (string.IsNullOrWhiteSpace(element.FQStereotype) ? "" : $"**FQStereotype:** {MarkdownHelpers.EscapeCell(element.FQStereotype)}  "),
-            $"**Status:** {statusFieldHtml}  ",
+            $"**Status:** {statusBadgeHtml}  ",
             $"**Created:** {createdStr}  **Modified:** {modifiedStr}",
             string.Empty,
             string.Empty,
@@ -99,362 +80,19 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             string.Empty,
         };
 
-        if (ctx.ApiPort > 0)
-        {
-            lines.Add(
-                $"<div id=\"ea-notes-editor\" class=\"ea-notes-editor\"" +
-                $" data-ea-id=\"{element.Id}\"" +
-                $" data-file-path=\"{wikiRelPathHtml}\"" +
-                $" data-api-port=\"{ctx.ApiPort}\"" +
-                $" data-api-token=\"{HtmlEscape(ctx.ApiToken)}\">");
-            lines.Add("<button id=\"ea-notes-edit-btn\" class=\"ea-notes-edit-btn\" type=\"button\" aria-label=\"Edit notes\">&#9998;</button>");
-            lines.Add("<div class=\"ea-notes-content\">");
-            lines.Add("<!--ea-notes-start-->");
-            lines.Add(normalizedNotes);
-            lines.Add("<!--ea-notes-end-->");
-            lines.Add("</div>");
-            lines.Add("</div>");
-            lines.Add(string.Empty);
-        }
-        else if (!string.IsNullOrWhiteSpace(element.Notes))
-        {
-            lines.Add(element.Notes);
-            lines.Add(string.Empty);
-        }
+        lines.AddRange(NotesWidgetRenderer.Render(element, ctx, normalizedNotes, wikiRelPathHtml));
+        lines.AddRange(AttributesSectionRenderer.Render(element, ctx, wikiRelPathHtml));
+        lines.AddRange(MethodsSectionRenderer.Render(element, ctx, wikiRelPathHtml));
+        lines.AddRange(TaggedValuesSectionRenderer.Render(element, ctx, wikiRelPathHtml));
+        lines.AddRange(RelationshipsTableRenderer.Render(element, dir, ctx));
+        lines.AddRange(DiagramThumbnailRenderer.Render(element, dir, ctx));
+        lines.AddRange(ReferencedByTableRenderer.Render(element, dir, ctx));
 
-        if (element.Attributes.Count > 0)
-        {
-            lines.Add("## Attributes");
-            lines.Add(string.Empty);
-
-            if (ctx.ApiPort > 0)
-            {
-                lines.Add("<table>");
-                lines.Add("<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>");
-                lines.Add("<tbody>");
-                var attrIdx = 0;
-                foreach (var attr in element.Attributes)
-                {
-                    var rowId = $"attr-{attrIdx++}";
-                    var (viewHtml, editRowHtml) = BuildRowNotesWidget(
-                        rowId, attr.Notes, "attribute", "table-row", element.Id, wikiRelPathHtml, ctx.ApiPort, ctx.ApiToken, 4,
-                        ("attr-name", attr.Name), ("attr-type", attr.Type));
-                    lines.Add($"<tr><td>{HtmlEscape(attr.Name)}</td><td>{HtmlEscape(attr.Type)}</td><td>{HtmlEscape(attr.DefaultValue ?? "")}</td><td>{viewHtml}</td></tr>");
-                    lines.Add(editRowHtml);
-                }
-                lines.Add("</tbody>");
-                lines.Add("</table>");
-            }
-            else
-            {
-                lines.Add("| Name | Type | Default | Description |");
-                lines.Add("|------|------|---------|-------------|");
-                foreach (var attr in element.Attributes)
-                {
-                    var desc = (attr.Notes ?? "").Replace("|", "\\|").Replace("\n", "<br/>");
-                    lines.Add($"| {MarkdownHelpers.EscapeCell(attr.Name)} | {MarkdownHelpers.EscapeCell(attr.Type)} | {MarkdownHelpers.EscapeCell(attr.DefaultValue ?? "")} | {desc} |");
-                }
-            }
-
-            lines.Add(string.Empty);
-            lines.Add("[↑ Back to top](#)");
-            lines.Add(string.Empty);
-        }
-
-        if (element.Methods.Count > 0)
-        {
-            lines.Add("## Methods");
-            lines.Add(string.Empty);
-
-            var methodIdx = 0;
-            foreach (var method in element.Methods)
-            {
-                var staticTag = method.IsStatic ? " *(static)*" : "";
-                lines.Add($"### {method.Name}{staticTag}");
-                lines.Add(string.Empty);
-                lines.Add($"**Returns:** `{method.Type}`");
-                lines.Add(string.Empty);
-
-                if (ctx.ApiPort > 0)
-                {
-                    var rowId = $"method-{methodIdx++}";
-                    var (viewHtml, _) = BuildRowNotesWidget(
-                        rowId, method.Notes, "method", "inline", element.Id, wikiRelPathHtml, ctx.ApiPort, ctx.ApiToken, 0,
-                        ("method-name", method.Name), ("return-type", method.Type), ("is-static", method.IsStatic ? "true" : "false"));
-                    lines.Add($"<div class=\"ea-row-notes-widget\" data-row-id=\"{rowId}\">{viewHtml}</div>");
-                    lines.Add(string.Empty);
-                }
-                else if (!string.IsNullOrWhiteSpace(method.Notes))
-                {
-                    lines.Add(method.Notes);
-                    lines.Add(string.Empty);
-                }
-            }
-        }
-
-        if (element.TaggedValues.Count > 0)
-        {
-            lines.Add("## Tagged Values");
-            lines.Add(string.Empty);
-
-            if (ctx.ApiPort > 0)
-            {
-                lines.Add("<table>");
-                lines.Add("<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>");
-                lines.Add("<tbody>");
-                var tvIdx = 0;
-                foreach (var tv in element.TaggedValues)
-                {
-                    var rowId = $"tag-{tvIdx++}";
-                    var (viewHtml, editRowHtml) = BuildRowNotesWidget(
-                        rowId, tv.Notes, "tagged-value", "table-row", element.Id, wikiRelPathHtml, ctx.ApiPort, ctx.ApiToken, 3,
-                        ("tag-name", tv.Name), ("tag-value", tv.Value));
-                    lines.Add($"<tr><td>{HtmlEscape(tv.Name)}</td><td>{HtmlEscape(tv.Value)}</td><td>{viewHtml}</td></tr>");
-                    lines.Add(editRowHtml);
-                }
-                lines.Add("</tbody>");
-                lines.Add("</table>");
-            }
-            else
-            {
-                lines.Add("| Name | Value | Notes |");
-                lines.Add("|------|-------|-------|");
-                foreach (var tv in element.TaggedValues)
-                    lines.Add($"| {MarkdownHelpers.EscapeCell(tv.Name)} | {MarkdownHelpers.EscapeCell(tv.Value)} | {MarkdownHelpers.EscapeCell(tv.Notes ?? "")} |");
-            }
-
-            lines.Add(string.Empty);
-            lines.Add("[↑ Back to top](#)");
-            lines.Add(string.Empty);
-        }
-
-        if (element.Connectors.Count > 0)
-        {
-            lines.Add("## Relationships");
-            lines.Add(string.Empty);
-            lines.Add("| Type | Stereotype | Connected To |");
-            lines.Add("|------|------------|-------------|");
-
-            foreach (var conn in element.Connectors)
-            {
-                var otherId = conn.SourceId == element.Id ? conn.TargetId
-                    : conn.TargetId == element.Id ? conn.SourceId
-                    : -1;
-
-                if (otherId <= 0) continue;
-
-                string connectedTo;
-                if (ctx.ElementLookup.TryGetValue(otherId, out var other))
-                {
-                    var otherName = MarkdownHelpers.SanitizeName(other.Element.Name);
-                    var relativePath = Path.GetRelativePath(dir, Path.Combine(other.PackageDir, $"{otherName}.md")).Replace('\\', '/');
-                    connectedTo = $"[{MarkdownHelpers.EscapeCell(other.Element.Name)}]({relativePath})";
-                }
-                else
-                {
-                    connectedTo = $"Element ID {otherId} (not in export)";
-                }
-
-                lines.Add($"| {MarkdownHelpers.EscapeCell(conn.Type)} | {MarkdownHelpers.EscapeCell(conn.Stereotype)} | {connectedTo} |");
-            }
-
-            lines.Add(string.Empty);
-            lines.Add("[↑ Back to top](#)");
-            lines.Add(string.Empty);
-        }
-
-        if (ctx.DiagramIndex.TryGetValue(element.Id, out var elementDiagrams))
-        {
-            lines.Add("### Appears on Diagrams");
-            lines.Add(string.Empty);
-            lines.Add("<div class=\"diagram-thumbs\">");
-
-            foreach (var (diagram, pkgDir) in elementDiagrams)
-            {
-                var diagDir = Path.Combine(pkgDir, "diagrams");
-                var sanitized = MarkdownHelpers.SanitizeName(diagram.Name);
-                var diagLink = Path.GetRelativePath(dir, Path.Combine(diagDir, $"{sanitized}.md")).Replace('\\', '/');
-                var diagLinkHtml = diagLink.EndsWith(".md", StringComparison.OrdinalIgnoreCase)
-                    ? diagLink[..^3] + ".html" : diagLink;
-
-                var pngRelPath = Path.GetRelativePath(dir, Path.Combine(diagDir, $"{sanitized}.png")).Replace('\\', '/');
-
-                lines.Add($"  <a href=\"{diagLinkHtml}\" class=\"diagram-thumb\"><img src=\"{pngRelPath}\" alt=\"{diagram.Name}\" loading=\"lazy\"><span>{MarkdownHelpers.EscapeCell(diagram.Name)}</span></a>");
-            }
-
-            lines.Add("</div>");
-            lines.Add(string.Empty);
-            lines.Add("[↑ Back to top](#)");
-            lines.Add(string.Empty);
-        }
-
-        if (ctx.IncomingIndex.TryGetValue(element.Id, out var incomingConns))
-        {
-            lines.Add("### Referenced By");
-            lines.Add(string.Empty);
-            lines.Add("| Type | Stereotype | Source |");
-            lines.Add("|------|------------|--------|");
-
-            foreach (var (conn, sourceId) in incomingConns)
-            {
-                string source;
-                if (ctx.ElementLookup.TryGetValue(sourceId, out var srcElem))
-                {
-                    var srcName = MarkdownHelpers.SanitizeName(srcElem.Element.Name);
-                    var relativePath = Path.GetRelativePath(dir, Path.Combine(srcElem.PackageDir, $"{srcName}.md")).Replace('\\', '/');
-                    source = $"[{MarkdownHelpers.EscapeCell(srcElem.Element.Name)}]({relativePath})";
-                }
-                else
-                {
-                    source = $"Element ID {sourceId} (not in export)";
-                }
-
-                lines.Add($"| {MarkdownHelpers.EscapeCell(conn.Type)} | {MarkdownHelpers.EscapeCell(conn.Stereotype)} | {source} |");
-            }
-
-            lines.Add(string.Empty);
-            lines.Add("[↑ Back to top](#)");
-            lines.Add(string.Empty);
-        }
-
-        var graphHtml = BuildGraphHtml(element, dir, ctx);
+        var graphHtml = RelationshipGraphRenderer.Render(element, dir, ctx);
         if (graphHtml.Length > 0)
             lines.AddRange(["---", string.Empty, "## Relationship Graph", string.Empty, graphHtml, string.Empty]);
 
         lines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines));
-    }
-
-    private static string BuildGraphHtml(EaElement focal, string focalPkgDir, ExportContext ctx)
-    {
-        // 1-hop: all elements directly connected to focal (both directions)
-        var hop1 = new HashSet<int>();
-        foreach (var conn in focal.Connectors)
-        {
-            var neighborId = conn.SourceId == focal.Id ? conn.TargetId : conn.SourceId;
-            if (neighborId != focal.Id && ctx.ElementLookup.ContainsKey(neighborId))
-                hop1.Add(neighborId);
-        }
-
-        if (hop1.Count == 0) return string.Empty;
-
-        // 2-hop: neighbors of neighbors not already in the set
-        var allIds = new HashSet<int>(hop1) { focal.Id };
-        foreach (var h1Id in hop1)
-        {
-            var (h1Elem, _) = ctx.ElementLookup[h1Id];
-            foreach (var conn in h1Elem.Connectors)
-            {
-                var neighborId = conn.SourceId == h1Id ? conn.TargetId : conn.SourceId;
-                if (neighborId != h1Id && ctx.ElementLookup.ContainsKey(neighborId))
-                    allIds.Add(neighborId);
-            }
-        }
-
-        // Nodes JSON
-        var nodes = new System.Text.StringBuilder();
-        var nodeLayerMap = new Dictionary<int, string>();
-        var firstNode = true;
-        foreach (var id in allIds)
-        {
-            var (elem, pkgDir) = ctx.ElementLookup[id];
-            var isFocal = id == focal.Id;
-            var label = JsonEscape(elem.Name.Length > 24 ? elem.Name[..23] + "…" : elem.Name);
-            var fullName = JsonEscape(elem.Name);
-            var pkgName = ctx.PackageLookup.TryGetValue(elem.PackageId, out var pkg) ? JsonEscape(pkg.Name) : "";
-            var layer = MarkdownHelpers.GetLayer(elem);
-            nodeLayerMap[id] = layer;
-            string url;
-            if (isFocal)
-            {
-                url = "";
-            }
-            else
-            {
-                var targetFile = MarkdownHelpers.SanitizeName(elem.Name) + ".html";
-                var fromFolder = Path.GetFileName(focalPkgDir);
-                var toFolder = Path.GetFileName(pkgDir);
-                url = fromFolder.Equals(toFolder, StringComparison.OrdinalIgnoreCase)
-                    ? targetFile
-                    : $"../{toFolder}/{targetFile}";
-                url = JsonEscape(url);
-            }
-            if (!firstNode) nodes.Append(',');
-            firstNode = false;
-            nodes.Append($"{{\"id\":\"e{id}\",\"label\":\"{label}\",\"fullName\":\"{fullName}\",\"packageName\":\"{pkgName}\",\"layer\":\"{layer}\",\"isFocal\":{(isFocal ? "true" : "false")},\"hasUrl\":{(!isFocal ? "true" : "false")},\"url\":\"{url}\"}}");
-        }
-
-        // Edges JSON — deduplicate by connector ID, both endpoints must be in allIds
-        var edges = new System.Text.StringBuilder();
-        var seenEdgeIds = new HashSet<int>();
-        var firstEdge = true;
-        foreach (var id in allIds)
-        {
-            var (elem, _) = ctx.ElementLookup[id];
-            foreach (var conn in elem.Connectors)
-            {
-                if (!seenEdgeIds.Add(conn.Id)) continue;
-                if (!allIds.Contains(conn.SourceId) || !allIds.Contains(conn.TargetId)) continue;
-                var edgeLabel = JsonEscape(!string.IsNullOrEmpty(conn.Name) ? conn.Name : conn.Type);
-                var sourceLayer = nodeLayerMap.TryGetValue(conn.SourceId, out var sl) ? sl : "uml";
-                if (!firstEdge) edges.Append(',');
-                firstEdge = false;
-                edges.Append($"{{\"id\":\"c{conn.Id}\",\"source\":\"e{conn.SourceId}\",\"target\":\"e{conn.TargetId}\",\"label\":\"{edgeLabel}\",\"sourceLayer\":\"{sourceLayer}\"}}");
-            }
-        }
-
-        var json = HtmlEscape($"{{\"nodes\":[{nodes}],\"edges\":[{edges}]}}");
-        return
-            "<div id=\"ea-graph-container\"></div>\n" +
-            $"<div id=\"ea-graph-data\" style=\"display:none\">{json}</div>";
-    }
-
-    internal static string ComputeStatusHash(string status)
-    {
-        var bytes = SHA256.HashData(Encoding.UTF8.GetBytes(status ?? string.Empty));
-        return Convert.ToHexString(bytes)[..8].ToLowerInvariant();
-    }
-
-    internal static string ComputeNotesHash(string? notes)
-    {
-        var bytes = SHA256.HashData(Encoding.UTF8.GetBytes(notes ?? string.Empty));
-        return Convert.ToHexString(bytes)[..8].ToLowerInvariant();
-    }
-
-    private static string JsonEscape(string s) =>
-        s.Replace("\\", "\\\\").Replace("\"", "\\\"").Replace("\r", "").Replace("\n", " ").Replace("\t", " ");
-
-    internal static string HtmlEscape(string s) =>
-        (s ?? string.Empty).Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "&quot;").Replace("'", "&#39;");
-
-    /// <summary>
-    /// Builds the view span + hidden edit surface for one row-level description editor (attribute,
-    /// method, or tagged value). "surface" controls how notes-editor.js reveals the edit UI:
-    /// "table-row" expects a sibling &lt;tr class="ea-row-edit"&gt; (returned as editSurfaceHtml) for
-    /// callers rendering a table; "inline" builds the edit UI directly inside the view widget instead,
-    /// so editSurfaceHtml is empty and unused by the caller.
-    /// EA's Attribute/Method/TaggedValue COM objects expose no ID, so match* holds whatever composite
-    /// key (name plus other stable fields) EaReader needs to find the right child object at write-back time.
-    /// </summary>
-    private static (string ViewHtml, string EditSurfaceHtml) BuildRowNotesWidget(
-        string rowId, string? notesValue, string kind, string surface, int elementId,
-        string wikiRelPathHtml, int apiPort, string apiToken, int colspan,
-        params (string Attr, string Value)[] matchAttrs)
-    {
-        var normalized = FrontmatterParser.NormalizeNotesHtml(notesValue);
-        var hash = ComputeNotesHash(normalized);
-        var matchAttrsHtml = string.Join(" ", matchAttrs.Select(a => $"data-{a.Attr}=\"{HtmlEscape(a.Value)}\""));
-
-        var viewHtml =
-            $"<span class=\"ea-row-notes-text\"><!--ea-row-notes-start:{rowId}-->{normalized}<!--ea-row-notes-end:{rowId}--></span>" +
-            $"<button class=\"ea-row-notes-edit-btn\" type=\"button\" data-surface=\"{surface}\" data-row-id=\"{rowId}\" data-notes-hash=\"{hash}\"" +
-            $" data-kind=\"{kind}\" data-el-id=\"{elementId}\" {matchAttrsHtml}" +
-            $" data-file-path=\"{wikiRelPathHtml}\" data-api-port=\"{apiPort}\" data-api-token=\"{HtmlEscape(apiToken)}\" aria-label=\"Edit description\">&#9998;</button>";
-
-        var editSurfaceHtml = surface == "table-row"
-            ? $"<tr class=\"ea-row-edit\" data-row-id=\"{rowId}\" style=\"display:none\"><td colspan=\"{colspan}\"></td></tr>"
-            : string.Empty;
-
-        return (viewHtml, editSurfaceHtml);
     }
 }

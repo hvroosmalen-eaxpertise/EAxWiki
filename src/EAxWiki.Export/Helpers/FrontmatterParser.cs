@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using EAxWiki.Export.Exporters;
+using EAxWiki.Export.Renderers;
 using Ganss.Xss;
 using YamlDotNet.Serialization;
 
@@ -75,7 +76,7 @@ public static class FrontmatterParser
         if (end < 0) return;
 
         // 1. Update frontmatter
-        var newHash = ElementPageWriter.ComputeStatusHash(newStatus);
+        var newHash = HtmlHelpers.ComputeStatusHash(newStatus);
         for (int i = 1; i < end; i++)
         {
             var sep = lines[i].IndexOf(':');
@@ -181,7 +182,7 @@ public static class FrontmatterParser
         var fmMatch = Regex.Match(text, @"\A---\n(.*?\n)---\n", RegexOptions.Singleline);
         if (!fmMatch.Success) return;
 
-        var newHash = ElementPageWriter.ComputeNotesHash(newNotesHtml);
+        var newHash = HtmlHelpers.ComputeNotesHash(newNotesHtml);
         var fmBody = fmMatch.Groups[1].Value;
         fmBody = Regex.IsMatch(fmBody, @"^notes_hash:.*$", RegexOptions.Multiline)
             ? Regex.Replace(fmBody, @"^notes_hash:.*$", $"notes_hash: {newHash}", RegexOptions.Multiline)
@@ -231,7 +232,7 @@ public static class FrontmatterParser
         var usesCrlf = original.Contains("\r\n");
         var text = original.Replace("\r\n", "\n");
 
-        var newHash = ElementPageWriter.ComputeNotesHash(newNotesHtml);
+        var newHash = HtmlHelpers.ComputeNotesHash(newNotesHtml);
 
         var hashPattern = new Regex($"(data-row-id=\"{Regex.Escape(rowId)}\"[^>]*?data-notes-hash=\")[^\"]*(\")");
         text = hashPattern.Replace(text, $"${{1}}{newHash}$2", 1);

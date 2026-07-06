@@ -1,5 +1,6 @@
 using EAxWiki.Export.Exporters;
 using EAxWiki.Export.Helpers;
+using EAxWiki.Export.Renderers;
 
 namespace EAxWiki.Tests;
 
@@ -162,7 +163,7 @@ public class FrontmatterParserTests : IDisposable
     public void UpdateRowNotes_PatchesOnlyTheTargetRowsContentAndHash()
     {
         File.WriteAllText(_filePath, PageWithRowWidgets);
-        var expectedNewHash = ElementPageWriter.ComputeNotesHash("Timeout in milliseconds before giving up.");
+        var expectedNewHash = HtmlHelpers.ComputeNotesHash("Timeout in milliseconds before giving up.");
 
         FrontmatterParser.UpdateRowNotes(_filePath, "attr-1", "Timeout in milliseconds before giving up.");
 

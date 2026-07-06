@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.Export.Helpers;
+using EAxWiki.Export.Renderers;
 
 namespace EAxWiki.Export.Exporters;
 
@@ -43,9 +44,9 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                 var seedValue = hasOwnNotes
                     ? FrontmatterParser.NormalizeNotesHtml(diagram.Notes)
                     : FrontmatterParser.NormalizeNotesHtml(derivedText);
-                var notesHash = ElementPageWriter.ComputeNotesHash(seedValue);
+                var notesHash = HtmlHelpers.ComputeNotesHash(seedValue);
                 var wikiRelPath = Path.GetRelativePath(ctx.OutputPath, mdPath).Replace('\\', '/');
-                var wikiRelPathHtml = ElementPageWriter.HtmlEscape(wikiRelPath);
+                var wikiRelPathHtml = HtmlHelpers.HtmlEscape(wikiRelPath);
 
                 var lines = new List<string>
                 {
@@ -76,7 +77,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                         $" data-kind=\"diagram\"" +
                         $" data-file-path=\"{wikiRelPathHtml}\"" +
                         $" data-api-port=\"{ctx.ApiPort}\"" +
-                        $" data-api-token=\"{ElementPageWriter.HtmlEscape(ctx.ApiToken)}\">");
+                        $" data-api-token=\"{HtmlHelpers.HtmlEscape(ctx.ApiToken)}\">");
                     lines.Add("<button id=\"ea-notes-edit-btn\" class=\"ea-notes-edit-btn\" type=\"button\" aria-label=\"Edit description\">&#9998;</button>");
                     if (!hasOwnNotes && !string.IsNullOrEmpty(derivedText))
                         lines.Add("<span class=\"ea-notes-derived-hint\">(derived)</span>");

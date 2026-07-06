@@ -2,6 +2,7 @@ using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.Export;
 using EAxWiki.Export.Exporters;
+using EAxWiki.Export.Renderers;
 using Microsoft.Extensions.Logging.Abstractions;
 
 namespace EAxWiki.Tests;
@@ -124,7 +125,7 @@ public class WriteBackScannerTests : IDisposable
     public void Scan_SkipsFileWhenNotesHashMatches()
     {
         var normalized = "<p>Edited diagram description directly in the .md file.</p>";
-        var hash = ElementPageWriter.ComputeNotesHash(normalized);
+        var hash = HtmlHelpers.ComputeNotesHash(normalized);
         var page = DiagramPage.Replace("notes_hash: deadbeef", $"notes_hash: {hash}");
         File.WriteAllText(Path.Combine(_wikiDir, "Diagram.md"), page);
         var fakeReader = new FakeEaReader();
@@ -156,7 +157,7 @@ public class WriteBackScannerTests : IDisposable
     [Fact]
     public void Scan_RoutesAttributeRowNotesToUpdateAttributeNotes()
     {
-        var methodHash = ElementPageWriter.ComputeNotesHash("UNCHANGED_HASH_MATCHES");
+        var methodHash = HtmlHelpers.ComputeNotesHash("UNCHANGED_HASH_MATCHES");
         var page = ElementPageWithRowWidgets.Replace("__METHOD_HASH__", methodHash);
         File.WriteAllText(Path.Combine(_wikiDir, "Widget Container.md"), page);
         var fakeReader = new FakeEaReader();

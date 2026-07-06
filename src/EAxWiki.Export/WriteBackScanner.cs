@@ -2,6 +2,7 @@ using System.Text.RegularExpressions;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Export.Exporters;
 using EAxWiki.Export.Helpers;
+using EAxWiki.Export.Renderers;
 using Microsoft.Extensions.Logging;
 
 namespace EAxWiki.Export;
@@ -33,7 +34,7 @@ public class WriteBackScanner(IEaReader reader, ILogger logger)
                 if (fm.TryGetValue("status", out var currentStatus) &&
                     fm.TryGetValue("ea_hash", out var storedStatusHash))
                 {
-                    var expectedStatusHash = ElementPageWriter.ComputeStatusHash(currentStatus);
+                    var expectedStatusHash = HtmlHelpers.ComputeStatusHash(currentStatus);
                     if (!string.Equals(expectedStatusHash, storedStatusHash, StringComparison.OrdinalIgnoreCase))
                     {
                         if (!allowedStatuses.Contains(currentStatus))
@@ -98,7 +99,7 @@ public class WriteBackScanner(IEaReader reader, ILogger logger)
             var currentRowNotes = FrontmatterParser.ExtractRowNotesContent(file, rowId);
             if (currentRowNotes == null) continue;
 
-            var expectedHash = ElementPageWriter.ComputeNotesHash(currentRowNotes);
+            var expectedHash = HtmlHelpers.ComputeNotesHash(currentRowNotes);
             if (string.Equals(expectedHash, storedHash, StringComparison.OrdinalIgnoreCase)) continue;
 
             try
@@ -141,7 +142,7 @@ public class WriteBackScanner(IEaReader reader, ILogger logger)
         var currentNotes = FrontmatterParser.ExtractNotesContent(file);
         if (currentNotes == null) return;
 
-        var expectedNotesHash = ElementPageWriter.ComputeNotesHash(currentNotes);
+        var expectedNotesHash = HtmlHelpers.ComputeNotesHash(currentNotes);
         if (string.Equals(expectedNotesHash, storedNotesHash, StringComparison.OrdinalIgnoreCase)) return;
 
         try
