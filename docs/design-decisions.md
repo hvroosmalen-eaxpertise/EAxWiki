@@ -47,7 +47,23 @@
 - **Relative links** use `../` prefix and forward slashes, computed via `Path.GetRelativePath`.
 - **Parallel view generation**: `Task.WhenAll` runs Types, Glossary, Recent Changes, Diagrams index, and infrastructure writes concurrently after the structural export completes.
 - **Duplicate sanitized filenames** (e.g. `unnamed.md`) get a `_{id}` suffix (e.g. `unnamed_634.md`). The actual written path is registered in `ExportContext.RegisteredElementFiles` so the orphan cleanup step knows the real filename and does not delete it.
-- **`ExportContext`**: built once at the start of export, holds all indexes (element lookup, diagram index, incoming connector index, package lookup) and the `Force` flag. Shared across all export phases — no redundant model traversals.
+- **`ExportContext`**: built once at the start of export, holds all indexes (element lookup, diagram index, incoming connector index, package lookup) and the `Force` flag. Shared across all export phases — no redundant model traversals. Built by `ContextBuilder.Build()`, which delegates to five focused sub-builders:
+
+    ```mermaid
+    flowchart LR
+        A[ContextBuilder.Build] --> B[ElementCollector]
+        A --> C[DiagramIndexBuilder]
+        A --> D[LookupBuilder]
+        A --> E[ConnectorIndexBuilder]
+        A --> F[PackageDirCollector]
+        B -->|List<Element,Dir>| G[ExportContext]
+        C -->|List<Diagram> + Index| G
+        D -->|ElementLookup + PackageLookup| G
+        E -->|Incoming connector index| G
+        F -->|All package dirs| G
+    ```
+
+    Each sub-builder is `internal static`, independently testable, and was extracted from the original monolithic `Build()` method (see issue #46). `ConnectorIndexBuilder` includes the `HashSet<int>` dedup guard that prevents dual-side EA COM connector duplication from inflating the incoming index.
 
 ## Diagrams
 
