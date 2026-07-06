@@ -6,6 +6,8 @@ public class EaConnector
     public string Name { get; set; } = string.Empty;
     public string Type { get; set; } = string.Empty;
     public string Stereotype { get; set; } = string.Empty;
+    public string? StereotypeEx { get; set; }
+    public string? FQStereotype { get; set; }
     public string? Notes { get; set; }
     public int SourceId { get; set; }
     public int TargetId { get; set; }

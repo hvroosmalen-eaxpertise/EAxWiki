@@ -105,6 +105,8 @@ internal static class ModelMapper
                         Name = eaConn.Name,
                         Type = eaConn.Type,
                         Stereotype = eaConn.Stereotype,
+                        StereotypeEx = eaConn.StereotypeEx,
+                        FQStereotype = eaConn.FQStereotype,
                         Notes = eaConn.Notes,
                         SourceId = eaConn.ClientID,
                         TargetId = eaConn.SupplierID
