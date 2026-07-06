@@ -350,6 +350,19 @@ public class ElementPageWriterTests
     }
 
     [Fact]
+    public void ReferencedByTableRenderer_WithIncomingConnectorMissingSource_ShowsNotInExport()
+    {
+        var ctx = new ExportContext(@"C:\out", [],
+            new Dictionary<int, (EaElement, string)>(),
+            [], [],
+            new Dictionary<int, List<(EaConnector, int)>> { [1] = [(new EaConnector { Id = 10, Type = "Flow", Stereotype = "triggers" }, 999)] },
+            new Dictionary<int, (string, int?)>()) { ApiPort = 0 };
+        var result = string.Join("\n", ReferencedByTableRenderer.Render(MakeElement(), @"C:\pkg", ctx));
+        Assert.Contains("### Referenced By", result);
+        Assert.Contains("Element ID 999 (not in export)", result);
+    }
+
+    [Fact]
     public void ReferencedByTableRenderer_WithIncomingConnector()
     {
         var source = new EaElement { Id = 2, Name = "Source" };
@@ -421,6 +434,30 @@ public class ElementPageWriterTests
         Assert.Contains("isFocal", result);
         Assert.Contains("&quot;id&quot;:&quot;e1&quot;", result);
         Assert.Contains("&quot;id&quot;:&quot;c1&quot;", result);
+    }
+
+    [Fact]
+    public void RelationshipGraphRenderer_TwoHop_IncludesIndirectNeighbor()
+    {
+        var neighbor1 = new EaElement { Id = 2, Name = "N1", PackageId = 10 };
+        var neighbor2 = new EaElement { Id = 3, Name = "N2", PackageId = 10 };
+        neighbor1.Connectors = [new EaConnector { Id = 10, Name = "hop", Type = "Association", SourceId = 2, TargetId = 3 }];
+        var element = MakeElement(e => e.Connectors = [new EaConnector { Id = 1, Name = "link", Type = "Association", SourceId = 1, TargetId = 2 }]);
+        var ctx = new ExportContext(@"C:\out",
+            [(neighbor1, @"C:\pkg"), (neighbor2, @"C:\pkg")],
+            new Dictionary<int, (EaElement, string)>
+            {
+                [2] = (neighbor1, @"C:\pkg"),
+                [3] = (neighbor2, @"C:\pkg"),
+                [1] = (element, @"C:\pkg")
+            },
+            [], [], [],
+            new Dictionary<int, (string, int?)> { [10] = ("Pkg", null) }) { ApiPort = 0 };
+        var result = RelationshipGraphRenderer.Render(element, @"C:\pkg", ctx);
+        Assert.Contains("N1", result);
+        Assert.Contains("N2", result);
+        Assert.Contains("&quot;id&quot;:&quot;e3&quot;", result);
+        Assert.Contains("&quot;id&quot;:&quot;c10&quot;", result);
     }
 
     [Fact]
