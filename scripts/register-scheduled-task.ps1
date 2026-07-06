@@ -44,6 +44,12 @@
 # Re-running with the same --task-name replaces the existing registration. Changing the
 # schedule later (either mode) means re-running this script with new flags — there is no
 # live-reloaded config; see the design doc for why that's an accepted tradeoff.
+#
+# WakeToRun (issue #44) is on by default: Task Scheduler holds the machine awake for the
+# duration of a wake-triggered run, which prevents it falling back asleep mid-export if
+# something else wakes the machine first (see commit 8f71db94 for the incident this fixed).
+# Pass --no-wake-to-run to opt out — e.g. on a laptop where unexpected wake behavior itself
+# is the bigger problem, or hardware with known-flaky wake timers.
 
 $TaskName                 = "EAxWiki-Monitor"
 $IntervalMinutes          = 0     # if set (via --interval-minutes), takes precedence over --interval-hours
@@ -59,6 +65,9 @@ $MaxRetries               = 3
 $RetryDelaySeconds        = 30
 $ForceExport              = $false # bake --force into every scheduled run (see monitor-export-and-serve.ps1)
 $ForceEveryNRuns          = 0      # bake --force-every N into the scheduled run instead of forcing every time
+$WakeToRun                = $true  # keep the machine awake for the run's duration if something wakes it while
+                                    # asleep (issue #44) — without this, a run can freeze mid-export for hours if
+                                    # the machine falls back asleep right after an unrelated wake (see commit 8f71db94)
 
 $i = 0
 while ($i -lt $args.Count) {
@@ -77,6 +86,7 @@ while ($i -lt $args.Count) {
         '^(--retry-delay|-RetryDelaySeconds)$'          { $i++; if ($i -lt $args.Count) { $RetryDelaySeconds        = [int]$args[$i] } }
         '^(-f|--force)$'                                { $ForceExport = $true }
         '^(--force-every)$'                             { $i++; if ($i -lt $args.Count) { $ForceEveryNRuns         = [int]$args[$i] } }
+        '^(--no-wake-to-run)$'                          { $WakeToRun = $false }
     }
     $i++
 }
@@ -187,12 +197,7 @@ if ($dayNightMode) {
     $triggers = @(New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval $intervalSpan -RepetitionDuration (New-TimeSpan -Days 3650))
 }
 
-# WakeToRun matters beyond just waking the machine for a missed trigger: Task Scheduler holds the
-# system awake for the duration of a wake-triggered task. Without it, a run that happens to start
-# right as (or just after) something else wakes the machine can have the system fall back asleep
-# mid-export, freezing it for hours until the next real wake — observed in practice on 2026-07-06
-# (03:36 wake from an unrelated source, asleep again 5s later, export didn't finish until 09:06).
-$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd -WakeToRun `
+$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd -WakeToRun:$WakeToRun `
     -ExecutionTimeLimit (New-TimeSpan -Minutes $timeLimitMinutes) -MultipleInstances IgnoreNew
 
 try {

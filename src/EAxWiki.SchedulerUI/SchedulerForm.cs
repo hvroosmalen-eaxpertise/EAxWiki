@@ -61,6 +61,9 @@ public class SchedulerForm : Form
     private readonly RadioButton _forceEveryNRadio = new() { Text = "Force every N runs, N =", AutoSize = true };
     private readonly NumericUpDown _forceEveryN = new() { Minimum = 2, Maximum = 100000, Value = 5, Width = 80, Enabled = false };
 
+    // Wake behavior (issue #44) — on by default, matching register-scheduled-task.ps1's own default.
+    private readonly CheckBox _wakeToRunCheckbox = new() { Text = "Wake the computer to run this task", Checked = true, AutoSize = true };
+
     private readonly TextBox _outputBox = new() { Multiline = true, ReadOnly = true, ScrollBars = ScrollBars.Vertical, Dock = DockStyle.Fill, Font = new Font(FontFamily.GenericMonospace, 9) };
     private readonly Button _registerButton = new() { Text = "Register / Apply Schedule", AutoSize = true };
     private readonly Button _enableButton = new() { Text = "Enable", AutoSize = true };
@@ -260,6 +263,8 @@ public class SchedulerForm : Form
         panel.Controls.Add(dayNightTable);
         panel.Controls.Add(new Label { Text = "Export mode:", AutoSize = true, Margin = new Padding(3, 10, 3, 3) });
         panel.Controls.Add(forceRow);
+        _wakeToRunCheckbox.Margin = new Padding(3, 10, 3, 3);
+        panel.Controls.Add(_wakeToRunCheckbox);
 
         // Kept out of the FlowLayoutPanel above deliberately: with TopDown flow, once content
         // exceeds the available height the panel wraps into a new column instead of scrolling,
@@ -504,7 +509,7 @@ public class SchedulerForm : Form
                     @{ type = $_.CimClass.CimClassName; startBoundary = $_.StartBoundary; intervalIso = $_.Repetition.Interval; durationIso = $_.Repetition.Duration }
                 })
                 $actionArguments = if ($task.Actions.Count -gt 0) { $task.Actions[0].Arguments } else { "" }
-                @{ found = $true; state = [string]$task.State; nextRun = [string]$info.NextRunTime; triggers = $triggers; triggerDetails = $triggerDetails; actionArguments = $actionArguments } | ConvertTo-Json -Depth 5
+                @{ found = $true; state = [string]$task.State; nextRun = [string]$info.NextRunTime; triggers = $triggers; triggerDetails = $triggerDetails; actionArguments = $actionArguments; wakeToRun = [bool]$task.Settings.WakeToRun } | ConvertTo-Json -Depth 5
                 """;
             var result = await PowerShellRunner.RunCommandAsync(command, _repoRoot);
             if (result.ExitCode != 0)
@@ -604,6 +609,9 @@ public class SchedulerForm : Form
             _noForceRadio.Checked = true;
         }
         _forceEveryN.Enabled = _forceEveryNRadio.Checked;
+
+        if (root.TryGetProperty("wakeToRun", out var wakeToRunEl))
+            _wakeToRunCheckbox.Checked = wakeToRunEl.GetBoolean();
     }
 
     private static bool TryParseIsoMinutes(JsonElement trigger, string property, out decimal minutes)
@@ -670,6 +678,9 @@ public class SchedulerForm : Form
             args.Add("--force");
         else if (_forceEveryNRadio.Checked)
             args.AddRange(["--force-every", ((int)_forceEveryN.Value).ToString()]);
+
+        if (!_wakeToRunCheckbox.Checked)
+            args.Add("--no-wake-to-run");
 
         var scriptPath = Path.Combine(_repoRoot, "scripts", "register-scheduled-task.ps1");
         AppendOutput($"> register-scheduled-task.ps1 {string.Join(' ', args)}");
