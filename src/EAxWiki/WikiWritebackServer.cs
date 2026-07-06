@@ -63,9 +63,8 @@ internal static class WikiWritebackServer
     {
         var logger = loggerFactory.CreateLogger("WikiWritebackServer");
 
-        var reader = new EaReader(loggerFactory.CreateLogger<EaReader>());
-        reader.Open(config.RepositoryPath);
-        logger.LogInformation("EA repository opened for write-back server");
+        var reader = new EaReaderStaDispatcher(loggerFactory.CreateLogger<EaReader>(), config.RepositoryPath);
+        logger.LogInformation("EA repository opened for write-back server (STA dispatch)");
 
         var apiToken = ApiTokenStore.GetOrCreate(outputPath);
         var apiTokenBytes = Encoding.UTF8.GetBytes(apiToken);
