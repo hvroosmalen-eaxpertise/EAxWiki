@@ -187,7 +187,12 @@ if ($dayNightMode) {
     $triggers = @(New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval $intervalSpan -RepetitionDuration (New-TimeSpan -Days 3650))
 }
 
-$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd `
+# WakeToRun matters beyond just waking the machine for a missed trigger: Task Scheduler holds the
+# system awake for the duration of a wake-triggered task. Without it, a run that happens to start
+# right as (or just after) something else wakes the machine can have the system fall back asleep
+# mid-export, freezing it for hours until the next real wake — observed in practice on 2026-07-06
+# (03:36 wake from an unrelated source, asleep again 5s later, export didn't finish until 09:06).
+$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd -WakeToRun `
     -ExecutionTimeLimit (New-TimeSpan -Minutes $timeLimitMinutes) -MultipleInstances IgnoreNew
 
 try {
