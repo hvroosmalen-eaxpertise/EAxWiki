@@ -83,7 +83,7 @@ public class EaReader : IEaReader, IDisposable
         }
     }
 
-    private EaPackage MapPackage(EA.Package eaPkg)
+    internal EaPackage MapPackage(EA.Package eaPkg)
     {
         var pkg = new EaPackage
         {
@@ -123,7 +123,7 @@ public class EaReader : IEaReader, IDisposable
         return pkg;
     }
 
-    private static EaElement MapElement(EA.Element eaElement)
+    internal static EaElement MapElement(EA.Element eaElement)
     {
         var elem = new EaElement
         {
@@ -189,7 +189,7 @@ public class EaReader : IEaReader, IDisposable
         return elem;
     }
 
-    private static EaDiagram MapDiagram(EA.Diagram eaDiagram)
+    internal static EaDiagram MapDiagram(EA.Diagram eaDiagram)
     {
         var diagram = new EaDiagram
         {

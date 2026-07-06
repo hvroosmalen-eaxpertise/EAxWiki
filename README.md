@@ -496,6 +496,25 @@ The wiki has six navigation views:
 
 All views are generated automatically by the exporter and configured via the awesome-pages MkDocs plugin.
 
+## Tests
+
+EAxWiki uses **xUnit** with **Moq** for unit tests. The test project is at `src/EAxWiki.Tests/`.
+
+```powershell
+$env:EAPath = 'E:\Program Files\Sparx Systems\EA\'; dotnet test src\EAxWiki.Tests
+```
+
+| Group | Tests | What's covered |
+|-------|-------|---------------|
+| Export integration | 6 | End-to-end Markdown output via `InMemoryWriter` |
+| Write-back scanner | 4 | Notes round-trip routing, hash skip, attribute row notes |
+| EaReader | 33 | COM model mapping (Element/Package/Diagram), null handling, guard clauses, Open validation, dispose |
+| ContextBuilder | 9 | Sub-builder decomposition (ElementCollector, DiagramIndexBuilder, ConnectorIndexBuilder, LookupBuilder, PackageDirCollector) |
+| Frontmatter parser | 4 | YamlDotNet-based YAML frontmatter parsing |
+| Other | ~38 | Cleanup, Markdown helpers, etc. |
+
+**94 tests total**, all pass.
+
 ## Design decisions
 
 See [docs/design-decisions.md](docs/design-decisions.md) for a full summary of architecture, naming, navigation, export, error handling, and deployment decisions.
