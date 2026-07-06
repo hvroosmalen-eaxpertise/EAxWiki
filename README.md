@@ -521,7 +521,8 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 | Frontmatter parser | 4 | YamlDotNet-based YAML frontmatter parsing |
 | ElementPageWriter renderers | 38 | All 11 widget renderers (rich HTML + plain Markdown modes), edge cases, 2-hop graph, missing references |
 | Other | ~38 | Cleanup, Markdown helpers, hash helpers, etc. |
-| **.NET subtotal** | **~153** | |
+| Property-based (FsCheck) | 26 | SanitizeName, EscapeCell, ParseStereotype, GetStereotypeLabel, SanitizeForAnchor, ComputeNotesHash, ComputeStatusHash invariants |
+| **.NET subtotal** | **~179** | |
 | Export | 29 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths |
 | Serve | 21 | Port/root flags, file server config, cert modes, default page, path normalization |
 | ServeApi | 10 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
@@ -529,7 +530,7 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 | Writeback | 22 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
 | **Pester subtotal** | **122** | |
 
-**275 tests total** (153 .NET + 122 Pester), all pass.
+**301 tests total** (179 .NET + 122 Pester), all pass.
 
 ## Design decisions
 

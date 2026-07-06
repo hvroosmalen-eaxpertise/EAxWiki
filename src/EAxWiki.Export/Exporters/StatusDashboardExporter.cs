@@ -129,7 +129,7 @@ internal class StatusDashboardExporter(IOutputWriter writer)
         return link.EndsWith(".md", StringComparison.OrdinalIgnoreCase) ? link[..^3] + ".html" : link;
     }
 
-    private static string SanitizeForAnchor(string raw)
+    internal static string SanitizeForAnchor(string raw)
     {
         var sb = new System.Text.StringBuilder();
         foreach (var ch in raw.ToLowerInvariant())
