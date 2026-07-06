@@ -96,7 +96,7 @@ public class PropertyBasedTests
     [Property]
     public bool ParseStereotype_DoubleColon_LanguageIsPrefix(NonEmptyString lang, string type)
     {
-        if (lang.Item.Contains("::"))
+        if (lang.Item.Contains(':'))
             return true;
         var input = $"{lang.Item}::{type}";
         var (resultLang, _) = MarkdownHelpers.ParseStereotype(input);

@@ -165,7 +165,7 @@ using var loggerFactory = LoggerFactory.Create(builder =>
 });
 
 IEaReader reader = new EaReader(loggerFactory.CreateLogger<EaReader>());
-using var writer = new FileOutputWriter();
+var writer = new FileOutputWriter();
 var logger = loggerFactory.CreateLogger<MarkdownExporter>();
 IWikiExporter exporter = new MarkdownExporter(writer, logger);
 

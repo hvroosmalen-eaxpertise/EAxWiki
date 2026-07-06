@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 namespace EAxWiki.EA;
 
 [System.Runtime.Versioning.SupportedOSPlatform("windows")]
-internal class EaReaderStaDispatcher : IEaReader, IDisposable
+public class EaReaderStaDispatcher : IEaReader, IDisposable
 {
     private readonly ILogger _logger;
     private readonly BlockingCollection<WorkItem> _workQueue = new(new ConcurrentQueue<WorkItem>());
@@ -15,7 +15,7 @@ internal class EaReaderStaDispatcher : IEaReader, IDisposable
     private Exception? _initException;
     private bool _disposed;
 
-    internal EaReaderStaDispatcher(ILogger logger, string repositoryPath)
+    public EaReaderStaDispatcher(ILogger logger, string repositoryPath)
     {
         _logger = logger;
         _staThread = new Thread(() => RunStaPump(repositoryPath))

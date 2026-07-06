@@ -9,13 +9,13 @@ notes_hash: 2b45222f
 # <span class="sl" data-layer="uml">reference-data</span> PersonOrganizationRoleType
 
 **Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="746" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Organisation/PersonOrganizationRoleType.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="746" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Organisation/PersonOrganizationRoleType.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="746" data-file-path="Organisation/PersonOrganizationRoleType.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="746" data-file-path="Organisation/PersonOrganizationRoleType.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,9 +29,9 @@ notes_hash: 2b45222f
 <table>
 <thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
 <tbody>
-<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the PersonOrganizationRoleType record. It must be globally unique and stable so that existing OrganizationPersonAssociation records remain valid when the role vocabulary is extended.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="4b1640b8" data-kind="attribute" data-el-id="746" data-attr-name="id" data-attr-type="Key" data-file-path="Organisation/PersonOrganizationRoleType.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the PersonOrganizationRoleType record. It must be globally unique and stable so that existing OrganizationPersonAssociation records remain valid when the role vocabulary is extended.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="4b1640b8" data-kind="attribute" data-el-id="746" data-attr-name="id" data-attr-type="Key" data-file-path="Organisation/PersonOrganizationRoleType.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
-<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The descriptive label for the role type, such as "Primary Contact", "Chief Executive Officer", or "Sustainability Director". The name should reflect the functional responsibility of the person in the context of emissions reporting and should be drawn from a controlled list agreed across the reporting ecosystem.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="46e86b39" data-kind="attribute" data-el-id="746" data-attr-name="name" data-attr-type="String" data-file-path="Organisation/PersonOrganizationRoleType.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The descriptive label for the role type, such as "Primary Contact", "Chief Executive Officer", or "Sustainability Director". The name should reflect the functional responsibility of the person in the context of emissions reporting and should be drawn from a controlled list agreed across the reporting ecosystem.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="46e86b39" data-kind="attribute" data-el-id="746" data-attr-name="name" data-attr-type="String" data-file-path="Organisation/PersonOrganizationRoleType.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
 </tbody>
 </table>
@@ -43,7 +43,7 @@ notes_hash: 2b45222f
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>description</td><td>PersonOrganizationRoleType provides the controlled vocabulary of roles that a person can play within an organisation, such as &quot;Primary Contact&quot;, &quot;Secondary Contact&quot;, &quot;Sustainability Director&quot;, &quot;CEO&quot;, or &quot;Plant Manager&quot;.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="746" data-tag-name="description" data-tag-value="PersonOrganizationRoleType provides the controlled vocabulary of roles that a person can play within an organisation, such as &quot;Primary Contact&quot;, &quot;Secondary Contact&quot;, &quot;Sustainability Director&quot;, &quot;CEO&quot;, or &quot;Plant Manager&quot;." data-file-path="Organisation/PersonOrganizationRoleType.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>description</td><td>PersonOrganizationRoleType provides the controlled vocabulary of roles that a person can play within an organisation, such as &quot;Primary Contact&quot;, &quot;Secondary Contact&quot;, &quot;Sustainability Director&quot;, &quot;CEO&quot;, or &quot;Plant Manager&quot;.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="746" data-tag-name="description" data-tag-value="PersonOrganizationRoleType provides the controlled vocabulary of roles that a person can play within an organisation, such as &quot;Primary Contact&quot;, &quot;Secondary Contact&quot;, &quot;Sustainability Director&quot;, &quot;CEO&quot;, or &quot;Plant Manager&quot;." data-file-path="Organisation/PersonOrganizationRoleType.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -75,4 +75,4 @@ notes_hash: 2b45222f
 
 ---
 
-*Generated: 2026-07-06 11:15:41*
+*Generated: 2026-07-06 21:15:32*

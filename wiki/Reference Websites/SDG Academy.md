@@ -9,13 +9,13 @@ notes_hash: f09d9045
 # <span class="sl" data-layer="strategy">Resource</span> SDG Academy
 
 **Type:** Class  **Stereotype:** ArchiMate_Resource  **StereotypeEx:** ArchiMate_Resource  **FQStereotype:** ArchiMate3::ArchiMate_Resource  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="482" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Reference Websites/SDG Academy.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="482" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Reference Websites/SDG Academy.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-12
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Websites](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="482" data-file-path="Reference Websites/SDG Academy.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="482" data-file-path="Reference Websites/SDG Academy.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -34,4 +34,4 @@ notes_hash: f09d9045
 
 ---
 
-*Generated: 2026-07-06 11:15:39*
+*Generated: 2026-07-06 21:15:32*

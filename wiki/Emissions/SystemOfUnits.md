@@ -9,13 +9,13 @@ notes_hash: 284fbb15
 # <span class="sl" data-layer="uml">reference-data</span> SystemOfUnits
 
 **Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="796" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="796" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="796" data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="796" data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,11 +29,11 @@ notes_hash: 284fbb15
 <table>
 <thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
 <tbody>
-<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique identifier for this SystemOfUnits record, referenced by UnitOfMeasure records via system_of_units_id to classify each unit into its measurement system family.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="d08636ea" data-kind="attribute" data-el-id="796" data-attr-name="id" data-attr-type="Key" data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique identifier for this SystemOfUnits record, referenced by UnitOfMeasure records via system_of_units_id to classify each unit into its measurement system family.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="d08636ea" data-kind="attribute" data-el-id="796" data-attr-name="id" data-attr-type="Key" data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
-<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The standard name for this system of units, such as International System of Units (SI), Imperial, or US Customary, used in validation messages and unit selection guidance.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="9bdc6fc4" data-kind="attribute" data-el-id="796" data-attr-name="name" data-attr-type="String" data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The standard name for this system of units, such as International System of Units (SI), Imperial, or US Customary, used in validation messages and unit selection guidance.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="9bdc6fc4" data-kind="attribute" data-el-id="796" data-attr-name="name" data-attr-type="String" data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
-<tr><td>description</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>A description of the system origin, authority, and the physical quantities it covers, enabling implementors to understand applicability scope and any known incompatibilities with other systems.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="3dd388d7" data-kind="attribute" data-el-id="796" data-attr-name="description" data-attr-type="String" data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>description</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>A description of the system origin, authority, and the physical quantities it covers, enabling implementors to understand applicability scope and any known incompatibilities with other systems.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="3dd388d7" data-kind="attribute" data-el-id="796" data-attr-name="description" data-attr-type="String" data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
 </tbody>
 </table>
@@ -45,7 +45,7 @@ notes_hash: 284fbb15
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>description</td><td>SystemOfUnits is a reference entity that identifies the measurement system to which a UnitOfMeasure belongs, such as the International System of Units (SI), the Imperial system, or US Customary units.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="796" data-tag-name="description" data-tag-value="SystemOfUnits is a reference entity that identifies the measurement system to which a UnitOfMeasure belongs, such as the International System of Units (SI), the Imperial system, or US Customary units." data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>description</td><td>SystemOfUnits is a reference entity that identifies the measurement system to which a UnitOfMeasure belongs, such as the International System of Units (SI), the Imperial system, or US Customary units.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="796" data-tag-name="description" data-tag-value="SystemOfUnits is a reference entity that identifies the measurement system to which a UnitOfMeasure belongs, such as the International System of Units (SI), the Imperial system, or US Customary units." data-file-path="Emissions/SystemOfUnits.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -69,4 +69,4 @@ notes_hash: 284fbb15
 
 ---
 
-*Generated: 2026-07-06 11:15:41*
+*Generated: 2026-07-06 21:15:32*

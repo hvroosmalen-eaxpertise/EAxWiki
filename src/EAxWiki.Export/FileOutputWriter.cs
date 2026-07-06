@@ -1,13 +1,9 @@
-using System.Collections.Concurrent;
 using EAxWiki.Core.Interfaces;
 
 namespace EAxWiki.Export;
 
-public class FileOutputWriter : IOutputWriter, IDisposable
+public class FileOutputWriter : IOutputWriter
 {
-    private readonly ConcurrentDictionary<string, SemaphoreSlim> _fileLocks = new();
-    private bool _disposed;
-
     public Task CreateDirectoryAsync(string path, CancellationToken ct = default)
     {
         Directory.CreateDirectory(path);
@@ -16,26 +12,7 @@ public class FileOutputWriter : IOutputWriter, IDisposable
 
     public async Task WriteFileAsync(string filePath, string content, CancellationToken ct = default)
     {
-        var fileLock = _fileLocks.GetOrAdd(filePath, _ => new SemaphoreSlim(1, 1));
-        await fileLock.WaitAsync(ct);
-        try
-        {
-            Directory.CreateDirectory(Path.GetDirectoryName(filePath)!);
-            await File.WriteAllTextAsync(filePath, content, ct);
-        }
-        finally
-        {
-            fileLock.Release();
-        }
-    }
-
-    public void Dispose()
-    {
-        if (_disposed) return;
-        _disposed = true;
-        foreach (var sem in _fileLocks.Values)
-            sem.Dispose();
-        _fileLocks.Clear();
-        GC.SuppressFinalize(this);
+        Directory.CreateDirectory(Path.GetDirectoryName(filePath)!);
+        await File.WriteAllTextAsync(filePath, content, ct);
     }
 }

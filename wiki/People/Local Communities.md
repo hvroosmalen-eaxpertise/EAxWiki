@@ -9,13 +9,13 @@ notes_hash: 07b8db4a
 # <span class="sl" data-layer="edgy-pe">People</span> Local Communities
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="524" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Local Communities.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="524" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Local Communities.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="524" data-file-path="People/Local Communities.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="524" data-file-path="People/Local Communities.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -61,4 +61,4 @@ notes_hash: 07b8db4a
 
 ---
 
-*Generated: 2026-07-06 11:15:35*
+*Generated: 2026-07-06 21:15:31*
