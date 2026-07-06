@@ -510,12 +510,13 @@ $env:EAPath = 'E:\Program Files\Sparx Systems\EA\'; dotnet test src\EAxWiki.Test
 |-------|-------|---------------|
 | Export integration | 6 | End-to-end Markdown output via `InMemoryWriter` |
 | Write-back scanner | 4 | Notes round-trip routing, hash skip, attribute row notes |
-| EaReader | 33 | COM model mapping (Element/Package/Diagram), null handling, guard clauses, Open validation, dispose |
+| EaReader + ModelMapper | 37 | COM model mapping (Element/Package/Diagram), logger warning paths, null handling, guard clauses, Open validation, dispose |
 | ContextBuilder | 9 | Sub-builder decomposition (ElementCollector, DiagramIndexBuilder, ConnectorIndexBuilder, LookupBuilder, PackageDirCollector) |
 | Frontmatter parser | 4 | YamlDotNet-based YAML frontmatter parsing |
-| Other | ~38 | Cleanup, Markdown helpers, etc. |
+| ElementPageWriter renderers | 38 | All 11 widget renderers (rich HTML + plain Markdown modes), edge cases, 2-hop graph, missing references |
+| Other | ~38 | Cleanup, Markdown helpers, hash helpers, etc. |
 
-**94 tests total**, all pass.
+**136 tests total**, all pass.
 
 ## Design decisions
 
