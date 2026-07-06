@@ -10,7 +10,7 @@ notes_hash: fafc6797
 
 ![ESRS S3 Affected Communities - People](ESRS S3 Affected Communities - People.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="35" data-kind="diagram" data-file-path="ESRS S3 Affected Communities - People/diagrams/ESRS S3 Affected Communities - People.md" data-api-port="8001" data-api-token="8dd4166c9c78ab2c9290cf00a1626990562f1ec3db2906d5">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="35" data-kind="diagram" data-file-path="ESRS S3 Affected Communities - People/diagrams/ESRS S3 Affected Communities - People.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -30,4 +30,4 @@ https://www</p>
 
 ---
 
-*Generated: 2026-07-05 17:15:15*
+*Generated: 2026-07-06 11:15:50*

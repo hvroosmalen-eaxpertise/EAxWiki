@@ -10,7 +10,7 @@ notes_hash: e0ea570d
 
 ![Strategic Sustainability Management Model (Bodenstein)](Strategic Sustainability Management Model (Bodenstein).png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="22" data-kind="diagram" data-file-path="Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md" data-api-port="8001" data-api-token="8dd4166c9c78ab2c9290cf00a1626990562f1ec3db2906d5">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="22" data-kind="diagram" data-file-path="Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -62,4 +62,4 @@ notes_hash: e0ea570d
 
 ---
 
-*Generated: 2026-07-05 17:15:21*
+*Generated: 2026-07-06 11:16:01*

@@ -9,13 +9,13 @@ notes_hash: efca9d19
 # <span class="sl" data-layer="edgy-id">Content</span> ESRS 2 General Disclosures
 
 **Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="35" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="ESRS 2/ESRS 2 General Disclosures.md" data-api-port="8001" data-api-token="8dd4166c9c78ab2c9290cf00a1626990562f1ec3db2906d5"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="35" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="ESRS 2/ESRS 2 General Disclosures.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-16
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS 2](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="35" data-file-path="ESRS 2/ESRS 2 General Disclosures.md" data-api-port="8001" data-api-token="8dd4166c9c78ab2c9290cf00a1626990562f1ec3db2906d5">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="35" data-file-path="ESRS 2/ESRS 2 General Disclosures.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -31,7 +31,7 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="35" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="ESRS 2/ESRS 2 General Disclosures.md" data-api-port="8001" data-api-token="8dd4166c9c78ab2c9290cf00a1626990562f1ec3db2906d5" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="35" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="ESRS 2/ESRS 2 General Disclosures.md" data-api-port="8001" data-api-token="1f41298c2eed8841afdaf2a93ce65ae424e78a6c261f6549" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -74,4 +74,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-07-05 17:15:06*
+*Generated: 2026-07-06 11:15:33*
