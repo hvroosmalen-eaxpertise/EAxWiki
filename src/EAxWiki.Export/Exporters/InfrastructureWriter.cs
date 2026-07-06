@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Threading;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Export.Helpers;
 
@@ -6,7 +7,7 @@ namespace EAxWiki.Export.Exporters;
 
 internal class InfrastructureWriter(IOutputWriter writer)
 {
-    public async Task WritePagesFileAsync(string outputDir)
+    public async Task WritePagesFileAsync(string outputDir, CancellationToken ct = default)
     {
         // wiki/status/health.md is written by scripts/monitor-export-and-serve.ps1 (issue #37/#38),
         // not by this exporter — only add its nav entry when it actually exists, so a plain export.ps1
@@ -40,20 +41,20 @@ internal class InfrastructureWriter(IOutputWriter writer)
             "  - Recent: recent/",
             .. statusLines,
             string.Empty,
-        ]));
+        ]), ct);
 
         var diagramsDir = Path.Combine(outputDir, "diagrams");
-        await writer.CreateDirectoryAsync(diagramsDir);
+        await writer.CreateDirectoryAsync(diagramsDir, ct);
         await writer.WriteFileAsync(Path.Combine(diagramsDir, ".pages"),
-            string.Join(Environment.NewLine, ["title: Diagrams", string.Empty]));
+            string.Join(Environment.NewLine, ["title: Diagrams", string.Empty]), ct);
 
         var typesDir = Path.Combine(outputDir, "types");
-        await writer.CreateDirectoryAsync(typesDir);
+        await writer.CreateDirectoryAsync(typesDir, ct);
         await writer.WriteFileAsync(Path.Combine(typesDir, ".pages"),
-            string.Join(Environment.NewLine, ["title: Types", string.Empty]));
+            string.Join(Environment.NewLine, ["title: Types", string.Empty]), ct);
     }
 
-    public async Task WriteGraphScriptsAsync(string outputDir)
+    public async Task WriteGraphScriptsAsync(string outputDir, CancellationToken ct = default)
     {
         // Extract embedded cytoscape.min.js to the wiki output so it works offline.
         var assembly = Assembly.GetExecutingAssembly();
@@ -62,7 +63,7 @@ internal class InfrastructureWriter(IOutputWriter writer)
         using var stream = assembly.GetManifestResourceStream(resourceName)!;
         using var reader = new StreamReader(stream);
         var cytoscapeJs = await reader.ReadToEndAsync();
-        await writer.WriteFileAsync(Path.Combine(outputDir, "cytoscape.min.js"), cytoscapeJs);
+        await writer.WriteFileAsync(Path.Combine(outputDir, "cytoscape.min.js"), cytoscapeJs, ct);
 
         const string graphInitJs = """
 var EA_LAYER_COLORS = {
@@ -267,10 +268,10 @@ if (typeof document$ !== 'undefined') {
     document.addEventListener('DOMContentLoaded', initEaGraph);
 }
 """;
-        await writer.WriteFileAsync(Path.Combine(outputDir, "graph-init.js"), graphInitJs);
+        await writer.WriteFileAsync(Path.Combine(outputDir, "graph-init.js"), graphInitJs, ct);
     }
 
-    public async Task WriteStatusEditorScriptAsync(string outputDir)
+    public async Task WriteStatusEditorScriptAsync(string outputDir, CancellationToken ct = default)
     {
         const string js = """
 (function () {
@@ -389,10 +390,10 @@ if (typeof document$ !== 'undefined') {
   }
 })();
 """;
-        await writer.WriteFileAsync(Path.Combine(outputDir, "status-editor.js"), js);
+        await writer.WriteFileAsync(Path.Combine(outputDir, "status-editor.js"), js, ct);
     }
 
-    public async Task WriteNotesEditorScriptAsync(string outputDir)
+    public async Task WriteNotesEditorScriptAsync(string outputDir, CancellationToken ct = default)
     {
         const string js = """
 (function () {
@@ -523,10 +524,10 @@ if (typeof document$ !== 'undefined') {
   }
 })();
 """;
-        await writer.WriteFileAsync(Path.Combine(outputDir, "notes-editor.js"), js);
+        await writer.WriteFileAsync(Path.Combine(outputDir, "notes-editor.js"), js, ct);
     }
 
-    public async Task WriteRowNotesEditorScriptAsync(string outputDir)
+    public async Task WriteRowNotesEditorScriptAsync(string outputDir, CancellationToken ct = default)
     {
         const string js = """
 (function () {
@@ -700,10 +701,10 @@ if (typeof document$ !== 'undefined') {
   }
 })();
 """;
-        await writer.WriteFileAsync(Path.Combine(outputDir, "row-notes-editor.js"), js);
+        await writer.WriteFileAsync(Path.Combine(outputDir, "row-notes-editor.js"), js, ct);
     }
 
-    public async Task WriteExtraCssAsync(string outputDir)
+    public async Task WriteExtraCssAsync(string outputDir, CancellationToken ct = default)
     {
         var assembly = Assembly.GetExecutingAssembly();
         var resourceName = assembly.GetManifestResourceNames()
@@ -711,10 +712,10 @@ if (typeof document$ !== 'undefined') {
         using var stream = assembly.GetManifestResourceStream(resourceName)!;
         using var reader = new StreamReader(stream);
         var css = await reader.ReadToEndAsync();
-        await writer.WriteFileAsync(Path.Combine(outputDir, "extra.css"), css);
+        await writer.WriteFileAsync(Path.Combine(outputDir, "extra.css"), css, ct);
     }
 
-    public static async Task CleanupOrphanedFilesAsync(ExportContext ctx)
+    public static async Task CleanupOrphanedFilesAsync(ExportContext ctx, CancellationToken ct = default)
     {
         if (!Directory.Exists(ctx.OutputPath))
         {

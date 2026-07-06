@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Threading;
 using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
@@ -8,7 +9,7 @@ namespace EAxWiki.Export.Exporters;
 
 internal class PackageExporter(IOutputWriter writer, ILogger logger)
 {
-    public async Task ExportAsync(EaPackage package, ExportContext ctx, Action<int>? onElementsWritten = null)
+    public async Task<(int Succeeded, int Failed)> ExportAsync(EaPackage package, ExportContext ctx, Action<int>? onElementsWritten = null, CancellationToken ct = default)
     {
         var pkgStopwatch = Stopwatch.StartNew();
         logger.LogInformation("Exporting package {PackageName} ({ElementCount} elements, {DiagramCount} diagrams)",
@@ -16,7 +17,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
 
         var outputDir = ctx.OutputPath;
         var dir = Path.Combine(outputDir, MarkdownHelpers.SanitizeName(package.Name));
-        await writer.CreateDirectoryAsync(dir);
+        await writer.CreateDirectoryAsync(dir, ct);
 
         var indexLines = new List<string>
         {
@@ -54,15 +55,15 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
             indexLines.Add(string.Empty);
         }
 
+        var totalFailed = 0;
+
         if (package.Elements.Count > 0)
         {
             indexLines.Add("## Elements");
             indexLines.Add(string.Empty);
 
             var elementWriter = new ElementPageWriter(writer, logger);
-            var elementTasks = new List<Task>();
 
-            // Resolve file names once so collisions can be detected and disambiguated.
             var seenNames = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
             var elementFileNames = new Dictionary<int, string>(package.Elements.Count);
             foreach (var elem in package.Elements)
@@ -70,7 +71,6 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
                 var sanitized = MarkdownHelpers.SanitizeName(elem.Name);
                 if (seenNames.TryGetValue(sanitized, out _))
                 {
-                    // Append element ID to make the name unique within this package.
                     sanitized = $"{sanitized}_{elem.Id}";
                     logger.LogWarning("Duplicate sanitized name in package '{Package}': element '{Name}' (ID {Id}) renamed to '{NewName}'",
                         package.Name, elem.Name, elem.Id, sanitized);
@@ -79,12 +79,13 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
                 elementFileNames[elem.Id] = sanitized;
             }
 
+            var elementTasks = new List<Task>();
             foreach (var elem in package.Elements)
             {
                 var baseName = elementFileNames[elem.Id];
                 var elemFile = $"{baseName}.md";
                 ctx.RegisteredElementFiles.Add(Path.Combine(dir, elemFile));
-                elementTasks.Add(elementWriter.WriteAsync(elem, dir, ctx, baseName));
+                elementTasks.Add(elementWriter.WriteAsync(elem, dir, ctx, baseName, ct));
 
                 indexLines.Add($"- {MarkdownHelpers.GetStereotypeLabel(elem)} [{elem.Name}]({elemFile})");
 
@@ -95,16 +96,20 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
                 }
             }
 
-            try
+            // Await all tasks, swallowing exceptions since we inspect individual tasks.
+            var whenAll = Task.WhenAll(elementTasks);
+            try { await whenAll; } catch { }
+
+            foreach (var t in elementTasks)
             {
-                await Task.WhenAll(elementTasks);
-                onElementsWritten?.Invoke(package.Elements.Count);
+                if (!t.IsFaulted) continue;
+                var ex = t.Exception?.InnerException ?? t.Exception;
+                if (ex is OperationCanceledException) throw ex;
+                logger.LogWarning(ex, "Failed to write element in package {PackageName}", package.Name);
+                totalFailed++;
             }
-            catch (Exception ex)
-            {
-                logger.LogError(ex, "Failed to write one or more element pages in package {PackageName}", package.Name);
-                throw;
-            }
+
+            onElementsWritten?.Invoke(package.Elements.Count);
 
             indexLines.Add(string.Empty);
         }
@@ -125,12 +130,20 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
         }
 
         indexLines.Add(MarkdownHelpers.FormatTimestamp());
-        await writer.WriteFileAsync(Path.Combine(dir, "index.md"), string.Join(Environment.NewLine, indexLines));
+        await writer.WriteFileAsync(Path.Combine(dir, "index.md"), string.Join(Environment.NewLine, indexLines), ct);
 
         pkgStopwatch.Stop();
-        logger.LogInformation("Exported package {PackageName} in {ElapsedMs}ms", package.Name, pkgStopwatch.ElapsedMilliseconds);
+        var succeeded = package.Elements.Count - totalFailed;
+        logger.LogInformation("Exported package {PackageName} in {ElapsedMs}ms ({Succeeded} succeeded, {Failed} failed)",
+            package.Name, pkgStopwatch.ElapsedMilliseconds, succeeded, totalFailed);
 
         foreach (var child in package.Children)
-            await ExportAsync(child, ctx, onElementsWritten);
+        {
+            var (childSucceeded, childFailed) = await ExportAsync(child, ctx, onElementsWritten, ct);
+            succeeded += childSucceeded;
+            totalFailed += childFailed;
+        }
+
+        return (succeeded, totalFailed);
     }
 }

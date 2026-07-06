@@ -2,6 +2,7 @@ using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.Export;
 using Microsoft.Extensions.Logging.Abstractions;
+using System.Threading;
 
 namespace EAxWiki.Tests;
 
@@ -12,8 +13,8 @@ public class ExportIntegrationTests
         public readonly Dictionary<string, string> Files = new(StringComparer.OrdinalIgnoreCase);
         public readonly HashSet<string> Directories = new(StringComparer.OrdinalIgnoreCase);
 
-        public Task CreateDirectoryAsync(string path) { Directories.Add(path); return Task.CompletedTask; }
-        public Task WriteFileAsync(string filePath, string content) { Files[Normalize(filePath)] = content; return Task.CompletedTask; }
+        public Task CreateDirectoryAsync(string path, CancellationToken ct = default) { Directories.Add(path); return Task.CompletedTask; }
+        public Task WriteFileAsync(string filePath, string content, CancellationToken ct = default) { Files[Normalize(filePath)] = content; return Task.CompletedTask; }
 
         private static string Normalize(string path) => path.Replace('\\', '/');
     }

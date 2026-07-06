@@ -1,3 +1,4 @@
+using System.Threading;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.Export;
@@ -19,7 +20,7 @@ internal class FakeEaReader : IEaReader
     public List<(int ElementId, string Name, string ReturnType, bool IsStatic, string Notes)> MethodNotesUpdates { get; } = [];
     public List<(int ElementId, string Name, string Value, string Notes)> TaggedValueNotesUpdates { get; } = [];
 
-    public EaRepository Open(string connectionString) => new();
+    public EaRepository Open(string connectionString, CancellationToken ct = default) => new();
     public void Close() { }
     public bool ExportDiagramImage(string diagramGuid, string filePath) => true;
     public string RepositoryPath => string.Empty;

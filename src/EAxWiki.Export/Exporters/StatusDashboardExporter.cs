@@ -1,3 +1,4 @@
+using System.Threading;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Export.Helpers;
 
@@ -5,10 +6,10 @@ namespace EAxWiki.Export.Exporters;
 
 internal class StatusDashboardExporter(IOutputWriter writer)
 {
-    public async Task ExportAsync(ExportContext ctx)
+    public async Task ExportAsync(ExportContext ctx, CancellationToken ct = default)
     {
         var dashboardDir = Path.Combine(ctx.OutputPath, "status");
-        await writer.CreateDirectoryAsync(dashboardDir);
+        await writer.CreateDirectoryAsync(dashboardDir, ct);
 
         var statuses = new SortedSet<string>(StringComparer.OrdinalIgnoreCase);
         var packageRows = new Dictionary<string, PackageRow>(StringComparer.OrdinalIgnoreCase);
@@ -118,7 +119,7 @@ internal class StatusDashboardExporter(IOutputWriter writer)
 
         lines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(Path.Combine(dashboardDir, "index.md"),
-            string.Join(Environment.NewLine, lines));
+            string.Join(Environment.NewLine, lines), ct);
     }
 
     private static string CreateElementLink(Core.Models.EaElement element, string pkgDir, string fromDir)

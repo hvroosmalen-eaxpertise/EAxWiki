@@ -206,8 +206,12 @@ try
             Console.WriteLine($"Warning: Package '{config.PackageFilter}' not found. Exporting entire repository.");
     }
 
-    await exporter.ExportAsync(repository, startPackage, outputPath, reader, config.Force);
+    var result = await exporter.ExportAsync(repository, startPackage, outputPath, reader, config.Force);
     Console.WriteLine($"Done. Wiki generated at: {outputPath}");
+    if (result.FailedElements > 0)
+        Console.WriteLine($"  {result.SucceededElements} succeeded, {result.FailedElements} failed, {result.Elapsed.TotalSeconds:F1}s");
+    else
+        Console.WriteLine($"  {result.SucceededElements} elements exported in {result.Elapsed.TotalSeconds:F1}s");
 
     if (config.JsonExport)
     {

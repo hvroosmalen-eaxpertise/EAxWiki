@@ -18,25 +18,26 @@ public class MarkdownExporter : IWikiExporter
         _logger = logger;
     }
 
-    public async Task ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath, IEaReader? reader = null, bool force = false, CancellationToken cancellationToken = default)
+    public async Task<ExportResult> ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath, IEaReader? reader = null, bool force = false, CancellationToken cancellationToken = default)
     {
         MarkdownHelpers.ClearCache();
+        var totalStopwatch = Stopwatch.StartNew();
         try
         {
-            // Validate writability against the parent directory before doing anything destructive.
             var parentDir = Path.GetDirectoryName(outputPath) ?? outputPath;
             var probeDir = Directory.Exists(outputPath) ? outputPath : parentDir;
             var testFile = Path.Combine(probeDir, ".write-test");
             try { File.WriteAllText(testFile, ""); File.Delete(testFile); }
             catch (Exception ex) { throw new InvalidOperationException($"Output path is not writable: {outputPath}", ex); }
 
+            cancellationToken.ThrowIfCancellationRequested();
+
             if (force && Directory.Exists(outputPath))
-                Directory.Delete(outputPath, recursive: true);
+                SafeDeleteContents(outputPath);
 
             Directory.CreateDirectory(outputPath);
 
             _logger.LogInformation("Export mode: {Mode}", force ? "full (--force)" : "incremental");
-            var totalStopwatch = Stopwatch.StartNew();
 
             var packages = startPackage != null
                 ? new List<EaPackage> { startPackage }
@@ -55,6 +56,8 @@ public class MarkdownExporter : IWikiExporter
             var packageExporter = new PackageExporter(_writer, _logger);
             var totalElements = ctx.Elements.Count;
             var processedElements = 0;
+            var totalFailed = 0;
+            var totalDiagramsExported = 0;
             const int progressInterval = 50;
             void OnElementsWritten(int count)
             {
@@ -69,42 +72,68 @@ public class MarkdownExporter : IWikiExporter
             foreach (var pkg in packages)
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                await packageExporter.ExportAsync(pkg, ctx, OnElementsWritten);
+                var (succeeded, failed) = await packageExporter.ExportAsync(pkg, ctx, OnElementsWritten, cancellationToken);
+                processedElements += succeeded;
+                totalFailed += failed;
             }
 
-            await WriteRootIndexAsync(packages, outputPath, repository.ConnectionString);
+            await WriteRootIndexAsync(packages, outputPath, repository.ConnectionString, cancellationToken);
 
             var diagramExporter = new DiagramExporter(_writer, _logger);
             var infrastructure = new InfrastructureWriter(_writer);
 
             var viewTasks = new List<Task>
             {
-                new TypesExporter(_writer, _logger).ExportAsync(ctx),
-                new GlossaryExporter(_writer).ExportAsync(ctx),
-                new RecentChangesExporter(_writer).ExportAsync(ctx),
-                new StatusDashboardExporter(_writer).ExportAsync(ctx),
-                diagramExporter.WriteIndexAsync(ctx),
-                infrastructure.WritePagesFileAsync(outputPath),
-                infrastructure.WriteExtraCssAsync(outputPath),
-                infrastructure.WriteGraphScriptsAsync(outputPath),
-                infrastructure.WriteStatusEditorScriptAsync(outputPath),
-                infrastructure.WriteNotesEditorScriptAsync(outputPath),
-                infrastructure.WriteRowNotesEditorScriptAsync(outputPath),
+                new TypesExporter(_writer, _logger).ExportAsync(ctx, cancellationToken),
+                new GlossaryExporter(_writer).ExportAsync(ctx, cancellationToken),
+                new RecentChangesExporter(_writer).ExportAsync(ctx, cancellationToken),
+                new StatusDashboardExporter(_writer).ExportAsync(ctx, cancellationToken),
+                diagramExporter.WriteIndexAsync(ctx, cancellationToken),
+                infrastructure.WritePagesFileAsync(outputPath, cancellationToken),
+                infrastructure.WriteExtraCssAsync(outputPath, cancellationToken),
+                infrastructure.WriteGraphScriptsAsync(outputPath, cancellationToken),
+                infrastructure.WriteStatusEditorScriptAsync(outputPath, cancellationToken),
+                infrastructure.WriteNotesEditorScriptAsync(outputPath, cancellationToken),
+                infrastructure.WriteRowNotesEditorScriptAsync(outputPath, cancellationToken),
             };
 
             if (reader != null)
-                viewTasks.Add(diagramExporter.ExportPagesAsync(ctx, reader));
+                viewTasks.Add(diagramExporter.ExportPagesAsync(ctx, reader, cancellationToken));
 
             await Task.WhenAll(viewTasks).WaitAsync(cancellationToken);
 
-            await InfrastructureWriter.CleanupOrphanedFilesAsync(ctx);
+            await InfrastructureWriter.CleanupOrphanedFilesAsync(ctx, cancellationToken);
 
             totalStopwatch.Stop();
-            _logger.LogInformation("Export complete: {TotalElapsedMs}ms total", totalStopwatch.ElapsedMilliseconds);
+            var succeededElements = totalElements - totalFailed;
+            _logger.LogInformation("Export complete: {TotalElapsedMs}ms total ({Succeeded} succeeded, {Failed} failed)",
+                totalStopwatch.ElapsedMilliseconds, succeededElements, totalFailed);
+
+            return new ExportResult(totalElements, succeededElements, totalFailed, totalDiagramsExported, totalStopwatch.Elapsed);
+        }
+        catch (OperationCanceledException)
+        {
+            totalStopwatch.Stop();
+            _logger.LogInformation("Export cancelled after {TotalElapsedMs}ms", totalStopwatch.ElapsedMilliseconds);
+            throw;
         }
         catch (Exception ex)
         {
+            totalStopwatch.Stop();
             _logger.LogError(ex, "Export failed unexpectedly");
+            return new ExportResult(0, 0, 0, 0, totalStopwatch.Elapsed);
+        }
+    }
+
+    private static void SafeDeleteContents(string path)
+    {
+        foreach (var file in Directory.EnumerateFiles(path))
+        {
+            try { File.Delete(file); } catch { }
+        }
+        foreach (var dir in Directory.EnumerateDirectories(path))
+        {
+            try { Directory.Delete(dir, recursive: true); } catch { }
         }
     }
 
@@ -121,7 +150,7 @@ public class MarkdownExporter : IWikiExporter
         return "Wiki";
     }
 
-    private async Task WriteRootIndexAsync(List<EaPackage> rootPackages, string outputDir, string repositoryPath)
+    private async Task WriteRootIndexAsync(List<EaPackage> rootPackages, string outputDir, string repositoryPath, CancellationToken ct = default)
     {
         var siteName = GetFriendlyRepoName(repositoryPath);
         var lines = new List<string> { $"# {siteName}", string.Empty };
@@ -142,6 +171,6 @@ public class MarkdownExporter : IWikiExporter
 
         lines.Add(string.Empty);
         lines.Add(MarkdownHelpers.FormatTimestamp());
-        await _writer.WriteFileAsync(Path.Combine(outputDir, "index.md"), string.Join(Environment.NewLine, lines));
+        await _writer.WriteFileAsync(Path.Combine(outputDir, "index.md"), string.Join(Environment.NewLine, lines), ct);
     }
 }

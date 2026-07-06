@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Threading;
 using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
@@ -10,7 +11,7 @@ namespace EAxWiki.Export.Exporters;
 internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 {
     private const int MaxIndexDescriptionLength = 100;
-    public async Task ExportPagesAsync(ExportContext ctx, IEaReader reader)
+    public async Task ExportPagesAsync(ExportContext ctx, IEaReader reader, CancellationToken ct = default)
     {
         logger.LogInformation("Exporting {DiagramCount} diagrams with PNG images", ctx.AllDiagrams.Count);
 
@@ -21,7 +22,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
             try
             {
                 var diagramsDir = Path.Combine(pkgDir, "diagrams");
-                await writer.CreateDirectoryAsync(diagramsDir);
+                await writer.CreateDirectoryAsync(diagramsDir, ct);
 
                 var fileName = MarkdownHelpers.SanitizeName(diagram.Name);
                 var pngPath = Path.Combine(diagramsDir, $"{fileName}.png");
@@ -119,7 +120,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                 }
 
                 lines.Add(MarkdownHelpers.FormatTimestamp());
-                await writer.WriteFileAsync(mdPath, string.Join(Environment.NewLine, lines));
+                await writer.WriteFileAsync(mdPath, string.Join(Environment.NewLine, lines), ct);
 
                 sw.Stop();
                 logger.LogInformation("Exported diagram {DiagramName} in {ElapsedMs}ms", diagram.Name, sw.ElapsedMilliseconds);
@@ -136,10 +137,10 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                 failures.Count, string.Join(", ", failures));
     }
 
-    public async Task WriteIndexAsync(ExportContext ctx)
+    public async Task WriteIndexAsync(ExportContext ctx, CancellationToken ct = default)
     {
         var diagramsDir = Path.Combine(ctx.OutputPath, "diagrams");
-        await writer.CreateDirectoryAsync(diagramsDir);
+        await writer.CreateDirectoryAsync(diagramsDir, ct);
 
         var sorted = ctx.AllDiagrams
             .Select(d => (d.Diagram, d.PackageDir, Path: MarkdownHelpers.BuildBreadcrumb(d.Diagram.PackageId, diagramsDir, ctx.OutputPath, ctx.PackageLookup)))
@@ -176,7 +177,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 
         lines.Add(string.Empty);
         lines.Add(MarkdownHelpers.FormatTimestamp());
-        await writer.WriteFileAsync(Path.Combine(diagramsDir, "index.md"), string.Join(Environment.NewLine, lines));
+        await writer.WriteFileAsync(Path.Combine(diagramsDir, "index.md"), string.Join(Environment.NewLine, lines), ct);
     }
 
     private static bool IsDiagramUpToDate(string mdPath, string? modifiedDateStr)

@@ -27,8 +27,10 @@ public class EaReader : IEaReader, IDisposable
     // Connection strings contain '=' (e.g. "DBType=1;Connect=..."); file paths do not.
     private static bool IsConnectionString(string value) => value.Contains('=');
 
-    public EaRepository Open(string connectionString)
+    public EaRepository Open(string connectionString, CancellationToken ct = default)
     {
+        ct.ThrowIfCancellationRequested();
+
         if (string.IsNullOrWhiteSpace(connectionString))
             throw new ArgumentException("Repository path or connection string must not be empty.", nameof(connectionString));
 
@@ -48,6 +50,7 @@ public class EaReader : IEaReader, IDisposable
             throw new InvalidOperationException($"Failed to open EA repository '{EaRepository.Redact(connectionString)}': {ex.Message}", ex);
         }
         _repositoryPath = connectionString;
+        ct.ThrowIfCancellationRequested();
 
         var model = new EaRepository
         {

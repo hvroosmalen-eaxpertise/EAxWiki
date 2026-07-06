@@ -1,3 +1,4 @@
+using System.Threading;
 using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
@@ -8,7 +9,7 @@ namespace EAxWiki.Export.Exporters;
 
 internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
 {
-    public async Task WriteAsync(EaElement element, string dir, ExportContext ctx, string? fileNameOverride = null)
+    public async Task WriteAsync(EaElement element, string dir, ExportContext ctx, string? fileNameOverride = null, CancellationToken ct = default)
     {
         var outputDir = ctx.OutputPath;
         var baseName = fileNameOverride ?? MarkdownHelpers.SanitizeName(element.Name);
@@ -93,6 +94,6 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
             lines.AddRange(["---", string.Empty, "## Relationship Graph", string.Empty, graphHtml, string.Empty]);
 
         lines.Add(MarkdownHelpers.FormatTimestamp());
-        await writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines));
+        await writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines), ct);
     }
 }

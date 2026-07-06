@@ -8,20 +8,20 @@ public class FileOutputWriter : IOutputWriter, IDisposable
     private readonly ConcurrentDictionary<string, SemaphoreSlim> _fileLocks = new();
     private bool _disposed;
 
-    public Task CreateDirectoryAsync(string path)
+    public Task CreateDirectoryAsync(string path, CancellationToken ct = default)
     {
         Directory.CreateDirectory(path);
         return Task.CompletedTask;
     }
 
-    public async Task WriteFileAsync(string filePath, string content)
+    public async Task WriteFileAsync(string filePath, string content, CancellationToken ct = default)
     {
         var fileLock = _fileLocks.GetOrAdd(filePath, _ => new SemaphoreSlim(1, 1));
-        await fileLock.WaitAsync();
+        await fileLock.WaitAsync(ct);
         try
         {
             Directory.CreateDirectory(Path.GetDirectoryName(filePath)!);
-            await File.WriteAllTextAsync(filePath, content);
+            await File.WriteAllTextAsync(filePath, content, ct);
         }
         finally
         {

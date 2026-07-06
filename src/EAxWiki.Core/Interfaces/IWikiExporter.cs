@@ -4,5 +4,5 @@ namespace EAxWiki.Core.Interfaces;
 
 public interface IWikiExporter
 {
-    Task ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath, IEaReader? reader = null, bool force = false, CancellationToken cancellationToken = default);
+    Task<ExportResult> ExportAsync(EaRepository repository, EaPackage? startPackage, string outputPath, IEaReader? reader = null, bool force = false, CancellationToken cancellationToken = default);
 }

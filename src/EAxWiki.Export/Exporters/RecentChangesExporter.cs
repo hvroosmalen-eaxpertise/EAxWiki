@@ -1,3 +1,4 @@
+using System.Threading;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Export.Helpers;
 
@@ -8,11 +9,11 @@ internal class RecentChangesExporter(IOutputWriter writer)
     /// <summary>Maximum entries shown in the Recent Changes view. Adjust to show more or fewer.</summary>
     private const int TopN = 50;
 
-    public async Task ExportAsync(ExportContext ctx)
+    public async Task ExportAsync(ExportContext ctx, CancellationToken ct = default)
     {
         var outputDir = ctx.OutputPath;
         var recentDir = Path.Combine(outputDir, "recent");
-        await writer.CreateDirectoryAsync(recentDir);
+        await writer.CreateDirectoryAsync(recentDir, ct);
 
         var entries = new List<(string Name, string Type, DateTime? ModifiedDate, string Path)>();
 
@@ -61,6 +62,6 @@ internal class RecentChangesExporter(IOutputWriter writer)
 
         lines.Add(string.Empty);
         lines.Add(MarkdownHelpers.FormatTimestamp());
-        await writer.WriteFileAsync(Path.Combine(recentDir, "index.md"), string.Join(Environment.NewLine, lines));
+        await writer.WriteFileAsync(Path.Combine(recentDir, "index.md"), string.Join(Environment.NewLine, lines), ct);
     }
 }

@@ -1,3 +1,4 @@
+using System.Threading;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Export.Helpers;
 
@@ -5,10 +6,10 @@ namespace EAxWiki.Export.Exporters;
 
 internal class GlossaryExporter(IOutputWriter writer)
 {
-    public async Task ExportAsync(ExportContext ctx)
+    public async Task ExportAsync(ExportContext ctx, CancellationToken ct = default)
     {
         var glossaryDir = Path.Combine(ctx.OutputPath, "glossary");
-        await writer.CreateDirectoryAsync(glossaryDir);
+        await writer.CreateDirectoryAsync(glossaryDir, ct);
 
         var entries = new List<(string Term, string Definition, List<(string Name, string Link)> Sources)>();
 
@@ -63,6 +64,6 @@ internal class GlossaryExporter(IOutputWriter writer)
 
         lines.Add(string.Empty);
         lines.Add(MarkdownHelpers.FormatTimestamp());
-        await writer.WriteFileAsync(Path.Combine(glossaryDir, "index.md"), string.Join(Environment.NewLine, lines));
+        await writer.WriteFileAsync(Path.Combine(glossaryDir, "index.md"), string.Join(Environment.NewLine, lines), ct);
     }
 }

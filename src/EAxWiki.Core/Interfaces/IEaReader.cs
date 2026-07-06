@@ -4,7 +4,7 @@ namespace EAxWiki.Core.Interfaces;
 
 public interface IEaReader
 {
-    EaRepository Open(string connectionString);
+    EaRepository Open(string connectionString, CancellationToken ct = default);
     void Close();
     bool ExportDiagramImage(string diagramGuid, string filePath);
     string RepositoryPath { get; }

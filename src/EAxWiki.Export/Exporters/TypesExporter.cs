@@ -1,3 +1,4 @@
+using System.Threading;
 using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Export.Helpers;
@@ -6,11 +7,11 @@ namespace EAxWiki.Export.Exporters;
 
 internal class TypesExporter(IOutputWriter writer, ILogger logger)
 {
-    public async Task ExportAsync(ExportContext ctx)
+    public async Task ExportAsync(ExportContext ctx, CancellationToken ct = default)
     {
         var outputDir = ctx.OutputPath;
         var typesDir = Path.Combine(outputDir, "types");
-        await writer.CreateDirectoryAsync(typesDir);
+        await writer.CreateDirectoryAsync(typesDir, ct);
 
         var parsed = ctx.Elements
             .Select(e =>
@@ -41,15 +42,15 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
 
         indexLines.Add(string.Empty);
         indexLines.Add(MarkdownHelpers.FormatTimestamp());
-        await writer.WriteFileAsync(Path.Combine(typesDir, "index.md"), string.Join(Environment.NewLine, indexLines));
+        await writer.WriteFileAsync(Path.Combine(typesDir, "index.md"), string.Join(Environment.NewLine, indexLines), ct);
 
         foreach (var lang in languages)
         {
             var langDir = Path.Combine(typesDir, MarkdownHelpers.SanitizeName(lang));
-            await writer.CreateDirectoryAsync(langDir);
+            await writer.CreateDirectoryAsync(langDir, ct);
 
             await writer.WriteFileAsync(Path.Combine(langDir, ".pages"),
-                string.Join(Environment.NewLine, [$"title: {lang}", string.Empty]));
+                string.Join(Environment.NewLine, [$"title: {lang}", string.Empty]), ct);
 
             var typeGroups = parsed
                 .Where(x => x.Language == lang)
@@ -70,7 +71,7 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
 
             langIndexLines.Add(string.Empty);
             langIndexLines.Add(MarkdownHelpers.FormatTimestamp());
-            await writer.WriteFileAsync(Path.Combine(langDir, "index.md"), string.Join(Environment.NewLine, langIndexLines));
+            await writer.WriteFileAsync(Path.Combine(langDir, "index.md"), string.Join(Environment.NewLine, langIndexLines), ct);
 
             foreach (var group in typeGroups)
             {
@@ -92,7 +93,7 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
 
                 lines.Add(string.Empty);
                 lines.Add(MarkdownHelpers.FormatTimestamp());
-                await writer.WriteFileAsync(Path.Combine(langDir, $"{MarkdownHelpers.SanitizeName(group.Key)}.md"), string.Join(Environment.NewLine, lines));
+                await writer.WriteFileAsync(Path.Combine(langDir, $"{MarkdownHelpers.SanitizeName(group.Key)}.md"), string.Join(Environment.NewLine, lines), ct);
             }
         }
 

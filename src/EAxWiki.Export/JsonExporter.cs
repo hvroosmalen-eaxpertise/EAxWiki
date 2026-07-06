@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 
@@ -21,10 +22,10 @@ public class JsonExporter
         _writer = writer;
     }
 
-    public async Task ExportAsync(EaRepository repository, string outputPath)
+    public async Task ExportAsync(EaRepository repository, string outputPath, CancellationToken ct = default)
     {
         var json = JsonSerializer.Serialize(repository, JsonOptions);
         var filePath = Path.Combine(outputPath, "model.json");
-        await _writer.WriteFileAsync(filePath, json);
+        await _writer.WriteFileAsync(filePath, json, ct);
     }
 }
