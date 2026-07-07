@@ -14,6 +14,8 @@ namespace EAxWiki.SchedulerUI;
 public class SchedulerForm : Form
 {
     private readonly string? _repoRoot;
+    private readonly bool _isAdmin;
+    private bool _connectionValid;
 
     // Current config, editable
     // Repository type mirrors the console wizard's choice (BuildConnectionStringInteractively in
@@ -141,6 +143,22 @@ public class SchedulerForm : Form
 
         UpdateModeEnablement();
         UpdateRepoTypeEnablement();
+
+        using (var identity = System.Security.Principal.WindowsIdentity.GetCurrent())
+        {
+            var principal = new System.Security.Principal.WindowsPrincipal(identity);
+            _isAdmin = principal.IsInRole(System.Security.Principal.WindowsBuiltInRole.Administrator);
+        }
+
+        if (!_isAdmin)
+        {
+            AppendOutput("This tool requires Administrator privileges to manage scheduled tasks. Please restart as Administrator.");
+            _registerButton.Enabled = false;
+            _enableButton.Enabled = false;
+            _disableButton.Enabled = false;
+            _unregisterButton.Enabled = false;
+            _refreshStatusButton.Enabled = false;
+        }
     }
 
     private TabPage BuildConfigTab()
@@ -653,6 +671,11 @@ public class SchedulerForm : Form
     private async Task RegisterAsync()
     {
         if (_repoRoot == null) return;
+        if (!_connectionValid)
+        {
+            AppendOutput("Test the repository connection on the Configuration tab first.");
+            return;
+        }
 
         // Wiki port lives only on the Configuration tab now — the Schedule Settings tab used to
         // have its own separate NumericUpDown that just duplicated it (kept in sync one-way from

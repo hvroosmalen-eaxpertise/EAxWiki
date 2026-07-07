@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EAxWiki.Core\EAxWiki.Core.csproj" />
+    <ProjectReference Include="..\EAxWiki.EA\EAxWiki.EA.csproj" />
   </ItemGroup>
 
 </Project>
