@@ -105,6 +105,19 @@ public class MarkdownExporter : IWikiExporter
 
             await InfrastructureWriter.CleanupOrphanedFilesAsync(ctx, cancellationToken);
 
+            if (ctx.WrittenMdFiles.Count > 0)
+            {
+                var report = ExportValidator.Validate(ctx.WrittenMdFiles, outputPath);
+                _logger.LogInformation("Validation: {Passed} passed, {Warnings} warnings, {Errors} errors across {Count} files",
+                    report.Passed, report.Warnings, report.Errors, report.FilesValidated);
+
+                if (report.Errors > 0 || report.Warnings > 0)
+                {
+                    var reportPath = Path.Combine(outputPath, ".validation-report.json");
+                    await File.WriteAllTextAsync(reportPath, ExportValidator.ToJson(report), cancellationToken);
+                }
+            }
+
             totalStopwatch.Stop();
             var succeededElements = totalElements - totalFailed;
             _logger.LogInformation("Export complete: {TotalElapsedMs}ms total ({Succeeded} succeeded, {Failed} failed)",
