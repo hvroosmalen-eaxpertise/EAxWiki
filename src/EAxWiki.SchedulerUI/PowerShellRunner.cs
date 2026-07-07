@@ -103,12 +103,12 @@ internal static class PowerShellRunner
         return "pwsh.exe";
     }
 
-    private static string? GetFullPathFromPathEnv(string fileName)
+    internal static string? GetFullPathFromPathEnv(string fileName, string[]? paths = null)
     {
-        var paths = (Environment.GetEnvironmentVariable("PATH") ?? "").Split(Path.PathSeparator);
+        paths ??= (Environment.GetEnvironmentVariable("PATH") ?? "").Split(Path.PathSeparator, StringSplitOptions.RemoveEmptyEntries);
         foreach (var dir in paths)
         {
-            var full = Path.Combine(dir, fileName);
+            var full = Path.Combine(dir.Trim(), fileName);
             if (File.Exists(full)) return full;
         }
         return null;

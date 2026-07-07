@@ -8,9 +8,11 @@ namespace EAxWiki.SchedulerUI;
 /// </summary>
 internal static class RepoLocator
 {
-    public static string? FindRepoRoot()
+    public static string? FindRepoRoot() => FindRepoRoot(null);
+
+    internal static string? FindRepoRoot(string? startDir)
     {
-        var dir = new DirectoryInfo(AppContext.BaseDirectory);
+        var dir = new DirectoryInfo(startDir ?? AppContext.BaseDirectory);
         for (var i = 0; i < 10 && dir != null; i++)
         {
             var candidate = Path.Combine(dir.FullName, "scripts", "register-scheduled-task.ps1");
