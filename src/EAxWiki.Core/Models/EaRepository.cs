@@ -10,6 +10,7 @@ public class EaRepository
 
     public static string Redact(string connectionString)
     {
+        if (connectionString is null) return "";
         if (!connectionString.Contains('=')) return connectionString;
         return Regex.Replace(
             connectionString,
