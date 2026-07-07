@@ -1,5 +1,7 @@
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading.RateLimiting;
 using EAxWiki.EA;
 using EAxWiki.Export.Helpers;
 using Microsoft.AspNetCore.Builder;
@@ -73,7 +75,23 @@ internal static class WikiWritebackServer
         builder.Logging.ClearProviders();
         builder.Logging.AddConsole();
 
+        builder.WebHost.UseKestrel(options =>
+        {
+            options.Limits.MaxRequestBodySize = 1_048_576; // 1 MB
+
+            if (!string.IsNullOrEmpty(config.CertPath))
+            {
+                options.ConfigureHttpsDefaults(adaptOptions =>
+                {
+                    adaptOptions.ServerCertificate = X509CertificateLoader.LoadPkcs12(File.ReadAllBytes(config.CertPath), config.CertPassword ?? "", X509KeyStorageFlags.DefaultKeySet);
+                });
+            }
+        });
+
         var app = builder.Build();
+
+        app.MapGet("/healthz", () => Results.Ok(new { status = "healthy" }));
+        app.MapGet("/readyz", () => Results.Ok(new { status = "ready" }));
 
         // This server is paired 1:1 with one `mkdocs serve` instance. Rather than a global
         // AllowAnyOrigin() (which would let a page from *any* origin — including sibling
@@ -123,6 +141,36 @@ internal static class WikiWritebackServer
             await next();
         });
 
+        // Per-token rate limiter (60 requests/minute, sliding window)
+        var rateLimiter = PartitionedRateLimiter.Create<string, string>(key =>
+            RateLimitPartition.GetSlidingWindowLimiter(key, _ => new SlidingWindowRateLimiterOptions
+            {
+                PermitLimit = 60,
+                Window = TimeSpan.FromSeconds(60),
+                SegmentsPerWindow = 6,
+                AutoReplenishment = true
+            }));
+
+        app.Use(async (context, next) =>
+        {
+            if (context.Request.Path.StartsWithSegments("/api"))
+            {
+                var token = context.Request.Headers["X-EAxWiki-Token"].ToString();
+                var partitionKey = string.IsNullOrEmpty(token) ? "anonymous" : token;
+
+                using var lease = await rateLimiter.AcquireAsync(partitionKey);
+                if (!lease.IsAcquired)
+                {
+                    context.Response.StatusCode = StatusCodes.Status429TooManyRequests;
+                    context.Response.Headers.RetryAfter = "60";
+                    await context.Response.WriteAsJsonAsync(new { success = false, message = "Rate limit exceeded. Try again in 60 seconds." });
+                    return;
+                }
+            }
+
+            await next();
+        });
+
         app.MapGet("/api/status-types", () =>
         {
             try
@@ -137,7 +185,7 @@ internal static class WikiWritebackServer
             }
         });
 
-        app.MapPost("/api/status", ([FromBody] StatusChangeRequest req) =>
+        app.MapPost("/api/status", (StatusChangeRequest req, HttpContext context) =>
         {
             if (string.IsNullOrWhiteSpace(req.NewStatus))
                 return Results.BadRequest(new { success = false, message = "newStatus is required." });
@@ -159,16 +207,22 @@ internal static class WikiWritebackServer
                 FrontmatterParser.UpdateStatus(filePath, req.NewStatus);
                 logger.LogInformation("Status change: element {Id} → {Status} ({File})", req.ElementId, req.NewStatus, req.FilePath);
                 LogWriteback(outputPath, "status");
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/status", req.ElementId, "status",
+                    context.Response.StatusCode, "Write-back completed",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Ok(new { success = true, message = $"Status updated to '{req.NewStatus}'." });
             }
             catch (Exception ex)
             {
                 logger.LogError(ex, "Write-back failed for element {Id}", req.ElementId);
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/status", req.ElementId, "status",
+                    StatusCodes.Status500InternalServerError, $"Write-back failed: {ex.Message}",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Problem($"Write-back failed: {ex.Message}");
             }
         });
 
-        app.MapPost("/api/notes", ([FromBody] NotesChangeRequest req) =>
+        app.MapPost("/api/notes", (NotesChangeRequest req, HttpContext context) =>
         {
             if (req.NewNotes == null)
                 return Results.BadRequest(new { success = false, message = "newNotes is required." });
@@ -186,16 +240,22 @@ internal static class WikiWritebackServer
                 FrontmatterParser.UpdateNotes(filePath, normalized);
                 logger.LogInformation("Notes updated for element {Id} ({File})", req.ElementId, req.FilePath);
                 LogWriteback(outputPath, "notes");
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/notes", req.ElementId, "notes",
+                    context.Response.StatusCode, "Write-back completed",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Ok(new { success = true, message = "Notes updated.", html = normalized });
             }
             catch (Exception ex)
             {
                 logger.LogError(ex, "Notes write-back failed for element {Id}", req.ElementId);
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/notes", req.ElementId, "notes",
+                    StatusCodes.Status500InternalServerError, $"Write-back failed: {ex.Message}",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Problem($"Write-back failed: {ex.Message}");
             }
         });
 
-        app.MapPost("/api/diagram-notes", ([FromBody] DiagramNotesChangeRequest req) =>
+        app.MapPost("/api/diagram-notes", (DiagramNotesChangeRequest req, HttpContext context) =>
         {
             if (req.NewNotes == null)
                 return Results.BadRequest(new { success = false, message = "newNotes is required." });
@@ -213,16 +273,22 @@ internal static class WikiWritebackServer
                 FrontmatterParser.UpdateNotes(filePath, normalized);
                 logger.LogInformation("Notes updated for diagram {Id} ({File})", req.DiagramId, req.FilePath);
                 LogWriteback(outputPath, "diagram-notes");
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/diagram-notes", req.DiagramId, "diagram-notes",
+                    context.Response.StatusCode, "Write-back completed",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Ok(new { success = true, message = "Description updated.", html = normalized });
             }
             catch (Exception ex)
             {
                 logger.LogError(ex, "Notes write-back failed for diagram {Id}", req.DiagramId);
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/diagram-notes", req.DiagramId, "diagram-notes",
+                    StatusCodes.Status500InternalServerError, $"Write-back failed: {ex.Message}",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Problem($"Write-back failed: {ex.Message}");
             }
         });
 
-        app.MapPost("/api/row-notes", ([FromBody] RowNotesChangeRequest req) =>
+        app.MapPost("/api/row-notes", (RowNotesChangeRequest req, HttpContext context) =>
         {
             if (req.NewNotes == null)
                 return Results.BadRequest(new { success = false, message = "newNotes is required." });
@@ -261,11 +327,17 @@ internal static class WikiWritebackServer
                 FrontmatterParser.UpdateRowNotes(filePath, req.RowId, normalized);
                 logger.LogInformation("Row notes updated: {Kind} on element {Id}, row {RowId} ({File})", req.Kind, req.ElementId, req.RowId, req.FilePath);
                 LogWriteback(outputPath, $"row-notes:{req.Kind}");
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/row-notes", req.ElementId, $"row-notes:{req.Kind}",
+                    context.Response.StatusCode, "Write-back completed",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Ok(new { success = true, message = "Description updated.", html = normalized });
             }
             catch (Exception ex)
             {
                 logger.LogError(ex, "Row notes write-back failed: {Kind} on element {Id}, row {RowId}", req.Kind, req.ElementId, req.RowId);
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/row-notes", req.ElementId, $"row-notes:{req.Kind}",
+                    StatusCodes.Status500InternalServerError, $"Write-back failed: {ex.Message}",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Problem($"Write-back failed: {ex.Message}");
             }
         });
@@ -277,8 +349,9 @@ internal static class WikiWritebackServer
 
         // Bind both IPv4 and IPv6 so browsers resolving localhost to either
         // 127.0.0.1 or ::1 can reach the server.
-        app.Urls.Add($"http://0.0.0.0:{port}");
-        app.Urls.Add($"http://[::]:{port}");
+        var scheme = string.IsNullOrEmpty(config.CertPath) ? "http" : "https";
+        app.Urls.Add($"{scheme}://0.0.0.0:{port}");
+        app.Urls.Add($"{scheme}://[::]:{port}");
         try
         {
             await app.RunAsync();
