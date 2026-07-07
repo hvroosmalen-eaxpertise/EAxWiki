@@ -108,6 +108,13 @@ function Get-MonitorArgs {
     }
 }
 
+function ConvertTo-RedactedConnectionString {
+    param([string]$ConnectionString)
+    if ([string]::IsNullOrEmpty($ConnectionString)) { return "" }
+    if (-not $ConnectionString.Contains('=')) { return $ConnectionString }
+    return $ConnectionString -replace '(?i)(Password|Pwd)\s*=[^;]*', '$1=***'
+}
+
 $parsed = Get-MonitorArgs -Arguments $args
 $RepoPath            = $parsed.RepoPath
 $OutputDir           = $parsed.OutputDir
@@ -132,7 +139,7 @@ Push-Location $repoRoot
 
 # Resolve both webhook URLs from CLI arg â†’ env var â†’ .eaxwiki file. .eaxwiki is decrypted at
 # most once (not once per channel) and shared between the two lookups below.
-$needsEaxwikiConfig = ($null -eq $WebhookUrl -or "" -eq $WebhookUrl) -or ($null -eq $TeamsWebhookUrl -or "" -eq $TeamsWebhookUrl)
+$needsEaxwikiConfig = ($null -eq $WebhookUrl -or "" -eq $WebhookUrl) -or ($null -eq $TeamsWebhookUrl -or "" -eq $TeamsWebhookUrl) -or ($null -eq $RepoPath -or "" -eq $RepoPath)
 $eaxwikiConfig = $null
 if ($needsEaxwikiConfig -and (Test-Path ".eaxwiki")) {
     try {
@@ -162,6 +169,12 @@ if ($null -eq $TeamsWebhookUrl -or "" -eq $TeamsWebhookUrl) {
         $TeamsWebhookUrl = $eaxwikiConfig.teamsWebhookUrl
     }
 }
+
+if (($null -eq $RepoPath -or "" -eq $RepoPath) -and $eaxwikiConfig -and $eaxwikiConfig.repoPath) {
+    $RepoPath = $eaxwikiConfig.repoPath
+}
+
+Write-MonitorLog -Phase "config" -Message "Repo: $(ConvertTo-RedactedConnectionString $RepoPath)"
 
 $wikiDir = if ($OutputDir) {
     if ([System.IO.Path]::IsPathRooted($OutputDir)) { $OutputDir }
