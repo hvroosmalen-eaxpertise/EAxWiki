@@ -181,9 +181,11 @@ A typical first-time setup is just:
 | `--verbose` | `-v` | export | Debug-level logging with per-element timing. |
 | `--json` | `-j` | export | Also write `model.json` (the full model as JSON) alongside the Markdown. |
 | `--writeback` | `-w` | export | Batch mode: scan `wiki/` for manual status/notes edits made while `--api` wasn't running, and push them to EA via COM before exporting. |
-| `--api` | | write-back server | Start the wiki write-back server so the pencil-icon editors on the page work live. |
+| `--api` | | write-back server | Start the wiki write-back server so the pencil-icon editors on the page work live. Combined with `--cert` for HTTPS — see [Write-back server security](#write-back-server-security). |
 | `--api-port <port>` | | write-back server | Port the write-back server listens on (default: `8001`). |
 | `--wiki-port <port>` | | write-back server | Port the *paired* `mkdocs serve` uses (default: `8000`). The write-back server only accepts requests whose `Origin` matches this port — see [Running multiple wikis on one machine](#running-multiple-wikis-on-one-machine). `export-and-serve.ps1` / `serve-api.ps1` set this automatically from `--port`; only pass it yourself if you call `dotnet run` directly. |
+| `--cert <path>` | | write-back server | Path to a PFX certificate for HTTPS. When set, the write-back server binds to `https://` instead of `http://` — see [Write-back server security](#write-back-server-security). |
+| `--cert-password <pw>` | | write-back server | PFX certificate password. Only used with `--cert`. |
 | `--port <port>` | `-p`, but only in `serve.ps1`/`export-and-serve.ps1`/`serve-api.ps1` | serve | Port `mkdocs serve` listens on (default: `8000`). Careful: this `-p` is those scripts' own shorthand — `-p` passed to the exporter itself (`export.ps1`) means `--package`, not port. |
 | `--help` | `-h` | any | Show usage and exit. |
 
@@ -294,7 +296,13 @@ This exports the wiki (embedding the status, notes, diagram, and row-level edito
 
 Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per blank-line-separated paragraph before being sent to EA, so multi-paragraph notes don't collapse into a single line. If you do want lists, bold text, or links, just type the HTML directly — ordinary rich text (`p`, lists, bold, links, ...) is preserved; `<script>`, event-handler attributes (`onerror=`, ...), and `javascript:`/embed/iframe content are stripped before it's saved, since this text is embedded directly into the wiki page as HTML.
 
-> **Authentication:** each write-back server generates a random token on first use, saved to `<output>/.eaxwiki-token` (gitignored) and embedded into every exported page's editor widgets. The browser sends it back on every write request; requests without a matching token are rejected. If a widget shows "Not authenticated" after you upgrade EAxWiki, re-export with `--force` — incremental export skips unchanged pages, so pages exported before this existed won't have picked up the new token otherwise.
+> **Authentication (auth token):** each write-back server generates a cryptographically random 24-byte hex token on first use, saved to `<output>/.eaxwiki-token` (gitignored) and embedded into every exported page's editor widgets as `data-api-token`. The browser sends it back on every write request via the `X-EAxWiki-Token` header; requests without a matching token are rejected with HTTP 401. Token comparison uses `CryptographicOperations.FixedTimeEquals` (constant-time) to prevent timing side-channel attacks.
+>
+> The token is scoped to one `--output` directory, so multiple wiki instances on the same machine each get their own independent token — instance A's token is never valid against instance B's server.
+>
+> **Two-layer access control:** the auth token is complemented by a CORS-style origin check — the server only accepts cross-origin requests from the same hostname and the `--wiki-port` it was started with. This prevents a wiki page (or any script running in it) from accidentally or maliciously reaching a write-back server that belongs to a different EAxWiki instance on the same machine. The auth token itself protects against raw HTTP clients (curl, LAN scanning) that can set any `Origin` header they like — it is visible to anyone who can view the wiki page source, but is never transmitted over the network unencrypted when `--cert` is used (see [Write-back server security](#write-back-server-security)).
+>
+> **Fallback:** if `.eaxwiki-token` does not exist when the server starts, it is created automatically. Pages exported without a token (from an older version or incremental skip) will show "Not authenticated" when editing — re-export with `--force` to embed the current token.
 
 **Batch write-back** (for `.md` edits made while the server was not running):
 
@@ -316,6 +324,37 @@ Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per 
 | Live diagram description write-back (wiki → EA) | ✓ | ✗ requires EA |
 | Live attribute/method/tagged value write-back (wiki → EA) | ✓ | ✗ requires EA |
 | Batch write-back (`--writeback`) | ✓ | ✗ requires EA |
+
+### Write-back server security
+
+The write-back server is a Kestrel HTTP server that runs alongside `mkdocs serve` and accepts write requests from the browser. Since it can modify the live EA repository via COM, the following security measures are in place:
+
+| Measure | What it does | Why |
+|---|---|---|
+| **Auth token** (`X-EAxWiki-Token`) | Random 24-byte hex token per output directory, validated with constant-time comparison | Prevents unauthorized access from LAN scanning or unrelated sites |
+| **Origin/port CORS check** | Accepts cross-origin requests only from the same host on the configured `--wiki-port` | Prevents one wiki instance from reaching another's write-back server on the same machine |
+| **HTTPS** (`--cert <pfx>` / `--cert-password <pw>`) | When a PFX certificate is provided, Kestrel binds to `https://` instead of `http://` | Protects the auth token and notes/status content from network eavesdropping (see below) |
+| **Request body size limit** (1 MB) | `KestrelServerOptions.Limits.MaxRequestBodySize = 1_048_576` | Prevents OOM / disk-fill from arbitrarily large notes payloads |
+| **Rate limiting** (60 / min / token) | In-memory sliding window per `X-EAxWiki-Token` value, returns `429 Too Many Requests` with `Retry-After: 60` | Prevents a compromised or misbehaving client from hammering the EA COM API |
+| **Audit log** | JSON-lines file at `.eaxwiki-monitor/audit.log` with timestamp, token prefix, endpoint, element ID, field name, status code | Provides a structured trail of all write-back activity for forensic review |
+| **Health endpoints** | `GET /healthz` → `{"status":"healthy"}`, `GET /readyz` → `{"status":"ready"}` | Allow monitoring probes (e.g. the scheduler's serve watchdog) to check server liveness |
+
+**HTTPS in detail:** Without a certificate, the auth token and all write-back payloads travel in cleartext over HTTP. While the origin/port CORS check limits which pages can talk to the server, it does nothing against passive network eavesdropping on the same LAN (or, if the port is exposed, on the broader network). Providing a PFX certificate upgrades the connection to HTTPS, protecting all traffic using TLS. The server listens on HTTP or HTTPS depending on whether `--cert` is given — never both, since the mixed case offers no security advantage and adds an unauthenticated fallback path.
+
+```powershell
+# Start the write-back server with HTTPS
+.\scripts\export-and-serve.ps1 --repo "model.qea" --api-port 8001 --cert "C:\certs\wiki.pfx" --cert-password "secret"
+```
+
+When HTTPS is active, the editor widget JavaScript constructs `https://` API URLs automatically (the server passes the protocol to the page at export time).
+
+**Audit log in detail:** Each successful or failed write-back request produces one JSON line in `.eaxwiki-monitor/audit.log`:
+
+```json
+{"timestamp":"2026-07-07T14:22:00.0000000Z","tokenPrefix":"a1b2c3d4","endpoint":"POST /api/status","elementId":123,"field":"status","statusCode":200,"message":"Write-back completed"}
+```
+
+The log is written synchronously with `AutoFlush` semantics (append + flush per line) so no entry is lost on a crash. It lives in `.eaxwiki-monitor/` alongside the scheduler's health state, outside the wiki output directory, to avoid being cleaned up by `InfrastructureWriter.CleanupOrphanedFilesAsync`. The token prefix is truncated to its first 8 hex characters — enough to distinguish tokens in logs without exposing the full secret.
 
 ### Running multiple wikis on one machine
 
@@ -529,7 +568,7 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 | ElementPageWriter renderers | 38 | All 11 widget renderers (rich HTML + plain Markdown modes), edge cases, 2-hop graph, missing references |
 | Other | ~38 | Cleanup, Markdown helpers, hash helpers, etc. |
 | Property-based (FsCheck) | 26 | SanitizeName, EscapeCell, ParseStereotype, GetStereotypeLabel, SanitizeForAnchor, ComputeNotesHash, ComputeStatusHash invariants |
-| **.NET subtotal** | **~179** | |
+| **.NET subtotal** | **244** | |
 | Export | 29 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths |
 | Serve | 21 | Port/root flags, file server config, cert modes, default page, path normalization |
 | ServeApi | 10 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
@@ -537,7 +576,7 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 | Writeback | 22 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
 | **Pester subtotal** | **122** | |
 
-**301 tests total** (179 .NET + 122 Pester), all pass.
+**366 tests total** (244 .NET + 122 Pester), all pass.
 
 ## Design decisions
 
