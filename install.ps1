@@ -1,4 +1,3 @@
-#Requires -Version 7
 <#
 .SYNOPSIS
     EAxWiki installer — sets up all prerequisites and builds the project.
@@ -26,6 +25,15 @@ param(
     [switch]$SkipDotnet,
     [switch]$SkipPython
 )
+
+# Bootstrap PS edition detection
+. $PSScriptRoot\scripts\_bootstrap.ps1
+
+# Warn but don't block on PS 5.1
+if ($PSVersionTable.PSVersion.Major -lt 7) {
+    Write-Warning "EAxWiki is designed for PowerShell 7+. Some features may not work under Windows PowerShell 5.1."
+    Write-Warning "Install PowerShell 7 from: https://github.com/PowerShell/PowerShell/releases"
+}
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
@@ -60,7 +68,7 @@ if ($pythonCmd) {
 }
 
 # .NET and EA (Windows only)
-if ($IsWindows -and -not $SkipDotnet) {
+if ($IsWindowsOS -and -not $SkipDotnet) {
     if (Test-Command "dotnet") {
         $dotnetVer = dotnet --version 2>&1
         $major = [int]($dotnetVer -split '\.')[0]
@@ -94,7 +102,7 @@ if ($IsWindows -and -not $SkipDotnet) {
         Write-Host "      set the EA_PATH environment variable before building."
         Write-Host "      The .NET project will not build without it."
     }
-} elseif (-not $IsWindows) {
+} elseif (-not $IsWindowsOS) {
     Write-Host "$info .NET / Enterprise Architect: skipped (Linux/Mac — export is Windows-only)"
 }
 
@@ -102,7 +110,7 @@ Write-Host ""
 
 # ── Unblock scripts (Windows marks downloaded files as untrusted) ──────────────
 
-if ($IsWindows) {
+if ($IsWindowsOS) {
     $scriptsDir = Join-Path $repoRoot "scripts"
     if (Test-Path $scriptsDir) {
         Get-ChildItem "$scriptsDir\*.ps1" | ForEach-Object { Unblock-File -Path $_.FullName }
@@ -114,7 +122,7 @@ Write-Host ""
 
 # ── .NET build (Windows only) ──────────────────────────────────────────────────
 
-if ($IsWindows -and -not $SkipDotnet) {
+if ($IsWindowsOS -and -not $SkipDotnet) {
     $srcProject = Join-Path $repoRoot "src\EAxWiki\EAxWiki.csproj"
     if (-not (Test-Path $srcProject)) {
         Write-Host "$err Source not found at: $srcProject"
@@ -152,7 +160,7 @@ if (-not $SkipPython) {
     }
 
     $venvDir  = Join-Path $repoRoot ".venv"
-    $activate = if ($IsWindows) {
+    $activate = if ($IsWindowsOS) {
         Join-Path $venvDir "Scripts\Activate.ps1"
     } else {
         Join-Path $venvDir "bin/Activate.ps1"
@@ -181,7 +189,7 @@ Write-Host "  Installation complete!" -ForegroundColor Green
 Write-Host "=====================================" -ForegroundColor Green
 Write-Host ""
 
-if ($IsWindows) {
+if ($IsWindowsOS) {
     Write-Host "Available commands:"
     Write-Host "  .\scripts\export.ps1                   Export EA model to wiki/"
     Write-Host "  .\scripts\serve.ps1                    Serve the wiki with MkDocs"
