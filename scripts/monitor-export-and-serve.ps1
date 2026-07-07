@@ -174,8 +174,6 @@ if (($null -eq $RepoPath -or "" -eq $RepoPath) -and $eaxwikiConfig -and $eaxwiki
     $RepoPath = $eaxwikiConfig.repoPath
 }
 
-Write-MonitorLog -Phase "config" -Message "Repo: $(ConvertTo-RedactedConnectionString $RepoPath)"
-
 $wikiDir = if ($OutputDir) {
     if ([System.IO.Path]::IsPathRooted($OutputDir)) { $OutputDir }
     else { Join-Path $repoRoot $OutputDir }
@@ -207,6 +205,8 @@ function Write-MonitorLog {
     Add-Content -Path $logPath -Value $line
     Write-Host $line
 }
+
+Write-MonitorLog -Phase "config" -Message "Repo: $(ConvertTo-RedactedConnectionString $RepoPath)"
 
 # Identifies which instance an alert is about - matters once more than one exporter/serve/monitor
 # triple runs on the same machine (the project explicitly supports that via --output/--port).
@@ -569,9 +569,25 @@ if ($succeeded) {
     $deltaLabel = if ($pageDelta -ge 0) { "+$pageDelta" } else { "$pageDelta" }
     $state.lastDiagramCount = $diagramCount
 
+    $validationSuffix = ""
+    $validationReportPath = Join-Path $wikiDir ".validation-report.json"
+    if (Test-Path $validationReportPath) {
+        try {
+            $vr = Get-Content $validationReportPath -Raw | ConvertFrom-Json
+            $parts = @()
+            if ([int]$vr.Errors -gt 0) { $parts += "$($vr.Errors) error(s)" }
+            if ([int]$vr.Warnings -gt 0) { $parts += "$($vr.Warnings) warning(s)" }
+            if ($parts.Count -gt 0) {
+                $validationSuffix = " - validation: $($parts -join ', ') ($($vr.Passed)/$($vr.FilesValidated) files clean)"
+            } else {
+                $validationSuffix = " - all $($vr.FilesValidated) files validated clean"
+            }
+        } catch {}
+    }
+
     if ($NotifyOnStart) {
-        Send-Alert -Kind Finish -Message ("Export finished in {0} - {1} page(s) total ({2} diagram, {3} element), {4} vs previous run." -f `
-            $exportStopwatch.Elapsed.ToString('mm\:ss'), $elementCount, $diagramCount, ($elementCount - $diagramCount), $deltaLabel)
+        Send-Alert -Kind Finish -Message ("Export finished in {0} - {1} page(s) total ({2} diagram, {3} element), {4} vs previous run.{5}" -f `
+            $exportStopwatch.Elapsed.ToString('mm\:ss'), $elementCount, $diagramCount, ($elementCount - $diagramCount), $deltaLabel, $validationSuffix)
     }
 
     Write-MonitorLog -Phase "export" -Message "Succeeded on attempt $attempt in $($exportStopwatch.Elapsed.ToString('mm\:ss'))."
