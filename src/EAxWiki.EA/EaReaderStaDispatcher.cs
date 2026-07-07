@@ -36,6 +36,12 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
     public EaRepository Open(string connectionString, CancellationToken ct = default) =>
         throw new NotSupportedException("EaReaderStaDispatcher opens the repository in its constructor.");
 
+    public bool TestConnection(string connectionString, out string? error)
+    {
+        using var reader = new EaReader();
+        return reader.TestConnection(connectionString, out error);
+    }
+
     public void Close() =>
         throw new NotSupportedException("Use Dispose to shut down the STA dispatcher.");
 

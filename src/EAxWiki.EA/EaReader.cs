@@ -77,6 +77,23 @@ public class EaReader : IEaReader, IDisposable
         return model;
     }
 
+    public bool TestConnection(string connectionString, out string? error)
+    {
+        try
+        {
+            var repo = new EA.Repository();
+            repo.OpenFile(connectionString);
+            repo.CloseFile();
+            error = null;
+            return true;
+        }
+        catch (Exception ex)
+        {
+            error = ex.Message;
+            return false;
+        }
+    }
+
     public void Close()
     {
         if (_repository != null)

@@ -13,6 +13,7 @@ public class FakeEaReader : IEaReader
     public List<(int ElementId, string Name, string Value, string Notes)> TaggedValueNotesUpdates { get; } = [];
 
     public EaRepository Open(string connectionString, CancellationToken ct = default) => new();
+    public bool TestConnection(string connectionString, out string? error) { error = null; return true; }
     public void Close() { }
     public bool ExportDiagramImage(string diagramGuid, string filePath) => true;
     public string RepositoryPath => string.Empty;
