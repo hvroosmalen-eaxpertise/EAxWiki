@@ -10,15 +10,7 @@ notes_hash: 944bd86b
 
 ![ESRS Stakeholder Map](ESRS Stakeholder Map.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="45" data-kind="diagram" data-file-path="ESRS and People/diagrams/ESRS Stakeholder Map.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
-<span class="ea-notes-derived-hint">(derived)</span>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>Employee representation with quarterly management consultation</p>
-<!--ea-notes-end-->
-</div>
-</div>
+**Derived Description:** Employee representation with quarterly management consultation
 
 ## Elements
 
@@ -76,4 +68,4 @@ notes_hash: 944bd86b
 
 ---
 
-*Generated: 2026-07-07 09:02:47*
+*Generated: 2026-07-07 13:30:39*

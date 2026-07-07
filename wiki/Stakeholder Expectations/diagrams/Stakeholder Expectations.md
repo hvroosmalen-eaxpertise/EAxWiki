@@ -10,15 +10,7 @@ notes_hash: 60a4cdc7
 
 ![Stakeholder Expectations](Stakeholder Expectations.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="23" data-kind="diagram" data-file-path="Stakeholder Expectations/diagrams/Stakeholder Expectations.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
-<span class="ea-notes-derived-hint">(derived)</span>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>Growing expectations from investors, customers, employees, and civil society for transparent and responsible corporate behavior</p>
-<!--ea-notes-end-->
-</div>
-</div>
+**Derived Description:** Growing expectations from investors, customers, employees, and civil society for transparent and responsible corporate behavior
 
 ## Elements
 
@@ -43,4 +35,4 @@ notes_hash: 60a4cdc7
 
 ---
 
-*Generated: 2026-07-07 09:02:54*
+*Generated: 2026-07-07 13:30:49*

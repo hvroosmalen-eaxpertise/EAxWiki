@@ -9,30 +9,19 @@ notes_hash: a7577f1b
 # <span class="sl" data-layer="edgy-id">Content</span> European Sustainability Reporting Standards
 
 **Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="555" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="European Sustainability Reporting Standards/European Sustainability Reporting Standards.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2026-05-13
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="555" data-file-path="European Sustainability Reporting Standards/European Sustainability Reporting Standards.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>The European Sustainability Reporting Standards (ESRS) oblige all companies subject to the Corporate Sustainability Reporting Directive (CSRD) of the European Union to report both on their impacts on people and the environment, and on how social and environmental issues create financial risks and opportunities for the company.</p>
-<!--ea-notes-end-->
-</div>
-</div>
+The European Sustainability Reporting Standards (ESRS) oblige all companies subject to the Corporate Sustainability Reporting Directive (CSRD) of the European Union to report both on their impacts on people and the environment, and on how social and environmental issues create financial risks and opportunities for the company.
 
 ## Tagged Values
 
-<table>
-<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
-<tbody>
-<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="555" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="European Sustainability Reporting Standards/European Sustainability Reporting Standards.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e" aria-label="Edit description">&#9998;</button></td></tr>
-<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
-</tbody>
-</table>
+| Name | Value | Notes |
+|------|-------|-------|
+| EDGY::TextAlign | Center | Default: Center  |
 
 [↑ Back to top](#)
 
@@ -83,4 +72,4 @@ notes_hash: a7577f1b
 
 ---
 
-*Generated: 2026-07-07 09:02:40*
+*Generated: 2026-07-07 13:30:29*

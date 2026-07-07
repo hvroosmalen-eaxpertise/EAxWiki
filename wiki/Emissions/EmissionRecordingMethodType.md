@@ -9,46 +9,29 @@ notes_hash: c782bb64
 # <span class="sl" data-layer="uml">reference-data</span> EmissionRecordingMethodType
 
 **Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="799" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Emissions/EmissionRecordingMethodType.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="799" data-file-path="Emissions/EmissionRecordingMethodType.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>EmissionRecordingMethodType is a reference entity that classifies how an emission quantity was obtained: whether it was directly measured using instrumentation, calculated from activity data and emission factors, estimated using engineering judgement, derived from a published default, or extrapolated from related data. This classification is required by ISO 14064-1 and GHG Protocol for data quality assessments and for identifying which statements require improved monitoring as part of an improvement plan.</p>
-<!--ea-notes-end-->
-</div>
-</div>
+EmissionRecordingMethodType is a reference entity that classifies how an emission quantity was obtained: whether it was directly measured using instrumentation, calculated from activity data and emission factors, estimated using engineering judgement, derived from a published default, or extrapolated from related data. This classification is required by ISO 14064-1 and GHG Protocol for data quality assessments and for identifying which statements require improved monitoring as part of an improvement plan.
 
 ## Attributes
 
-<table>
-<thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
-<tbody>
-<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique identifier for this EmissionRecordingMethodType record, referenced by EmissionStatement records to describe how each emission quantity was obtained.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="f13d63d3" data-kind="attribute" data-el-id="799" data-attr-name="id" data-attr-type="Key" data-file-path="Emissions/EmissionRecordingMethodType.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e" aria-label="Edit description">&#9998;</button></td></tr>
-<tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
-<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The label for the recording method, drawn from values such as Measured, Calculated, Estimated, Default factor, or Extrapolated, used in data quality tables and assurance documentation.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="b9e7155b" data-kind="attribute" data-el-id="799" data-attr-name="name" data-attr-type="String" data-file-path="Emissions/EmissionRecordingMethodType.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e" aria-label="Edit description">&#9998;</button></td></tr>
-<tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
-<tr><td>description</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-2--><p>A description of the recording method approach, its typical applicability, and the data quality tier it represents, supporting selection guidance for practitioners completing inventory data entry.</p><!--ea-row-notes-end:attr-2--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-2" data-notes-hash="21419f44" data-kind="attribute" data-el-id="799" data-attr-name="description" data-attr-type="String" data-file-path="Emissions/EmissionRecordingMethodType.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e" aria-label="Edit description">&#9998;</button></td></tr>
-<tr class="ea-row-edit" data-row-id="attr-2" style="display:none"><td colspan="4"></td></tr>
-</tbody>
-</table>
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| id | Key |  | The unique identifier for this EmissionRecordingMethodType record, referenced by EmissionStatement records to describe how each emission quantity was obtained. |
+| name | String |  | The label for the recording method, drawn from values such as Measured, Calculated, Estimated, Default factor, or Extrapolated, used in data quality tables and assurance documentation. |
+| description | String |  | A description of the recording method approach, its typical applicability, and the data quality tier it represents, supporting selection guidance for practitioners completing inventory data entry. |
 
 [↑ Back to top](#)
 
 ## Tagged Values
 
-<table>
-<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
-<tbody>
-<tr><td>description</td><td>EmissionRecordingMethodType is a reference entity that classifies how an emission quantity was obtained: whether it was directly measured using instrumentation, calculated from activity data and emission factors, estimated using engineering judgement, der</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="799" data-tag-name="description" data-tag-value="EmissionRecordingMethodType is a reference entity that classifies how an emission quantity was obtained: whether it was directly measured using instrumentation, calculated from activity data and emission factors, estimated using engineering judgement, der" data-file-path="Emissions/EmissionRecordingMethodType.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e" aria-label="Edit description">&#9998;</button></td></tr>
-<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
-</tbody>
-</table>
+| Name | Value | Notes |
+|------|-------|-------|
+| description | EmissionRecordingMethodType is a reference entity that classifies how an emission quantity was obtained: whether it was directly measured using instrumentation, calculated from activity data and emission factors, estimated using engineering judgement, der |  |
 
 [↑ Back to top](#)
 
@@ -69,4 +52,4 @@ notes_hash: c782bb64
 
 ---
 
-*Generated: 2026-07-07 09:02:41*
+*Generated: 2026-07-07 13:30:30*

@@ -10,16 +10,9 @@ notes_hash: d4c7cf1b
 
 ![Reference Documents](Reference Documents.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="30" data-kind="diagram" data-file-path="Reference Documents/diagrams/Reference Documents.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
-<span class="ea-notes-derived-hint">(derived)</span>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>A Practical Approach for Companies Using the SDGs as a Framework, Bodenstein Robert, Herget Josef</p>
-<p>This book provides a practical guide to implementing sustainability strategies within companies</p>
-<!--ea-notes-end-->
-</div>
-</div>
+**Derived Description:** A Practical Approach for Companies Using the SDGs as a Framework, Bodenstein Robert, Herget Josef
+
+This book provides a practical guide to implementing sustainability strategies within companies
 
 ## Elements
 
@@ -28,4 +21,4 @@ notes_hash: d4c7cf1b
 
 ---
 
-*Generated: 2026-07-07 09:02:51*
+*Generated: 2026-07-07 13:30:45*

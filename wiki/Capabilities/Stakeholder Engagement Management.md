@@ -9,32 +9,21 @@ notes_hash: 53dd8899
 # <span class="sl" data-layer="strategy">Capability</span> Stakeholder Engagement Management
 
 **Type:** Class  **Stereotype:** ArchiMate_Capability  **StereotypeEx:** ArchiMate_Capability  **FQStereotype:** ArchiMate3::ArchiMate_Capability  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="449" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Capabilities/Stakeholder Engagement Management.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Capabilities](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="449" data-file-path="Capabilities/Stakeholder Engagement Management.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>Capability to identify, engage, and maintain dialogue with key sustainability stakeholders.
+Capability to identify, engage, and maintain dialogue with key sustainability stakeholders.
         Includes materiality assessments, stakeholder consultations, and responsive communication strategies.
-        Ensures alignment between organizational sustainability priorities and stakeholder expectations.</p>
-<!--ea-notes-end-->
-</div>
-</div>
+        Ensures alignment between organizational sustainability priorities and stakeholder expectations.
 
 ## Tagged Values
 
-<table>
-<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
-<tbody>
-<tr><td>archimate_element_identifier</td><td>capability-006</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="449" data-tag-name="archimate_element_identifier" data-tag-value="capability-006" data-file-path="Capabilities/Stakeholder Engagement Management.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e" aria-label="Edit description">&#9998;</button></td></tr>
-<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
-</tbody>
-</table>
+| Name | Value | Notes |
+|------|-------|-------|
+| archimate_element_identifier | capability-006 |  |
 
 [↑ Back to top](#)
 
@@ -64,4 +53,4 @@ notes_hash: 53dd8899
 
 ---
 
-*Generated: 2026-07-07 09:02:41*
+*Generated: 2026-07-07 13:30:30*

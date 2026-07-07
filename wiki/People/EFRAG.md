@@ -9,20 +9,14 @@ notes_hash: 92c066e4
 # <span class="sl" data-layer="edgy-pe">People</span> EFRAG
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="534" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/EFRAG.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="534" data-file-path="People/EFRAG.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>The ESRS were developed by the EFRAG (previously known as the European Financial Reporting Advisory Group) an independent body bringing together various different stakeholders. These standards allow companies to be compliant with the Corporate Sustainability Reporting Directive (CSRD), entered into force in January 2023 to strengthen the rules concerning the social and environmental information that companies have to report. The new reporting rules have to be applied for the first time in the 2024 financial year, for reports published in 2025. By June 2026, the European Commission will broaden the ESRS list by finalising and adopting new sector-specific standards.</p>
-<!--ea-notes-end-->
-</div>
-</div>
+The ESRS were developed by the EFRAG (previously known as the European Financial Reporting Advisory Group) an independent body bringing together various different stakeholders. These standards allow companies to be compliant with the Corporate Sustainability Reporting Directive (CSRD), entered into force in January 2023 to strengthen the rules concerning the social and environmental information that companies have to report. The new reporting rules have to be applied for the first time in the 2024 financial year, for reports published in 2025. By June 2026, the European Commission will broaden the ESRS list by finalising and adopting new sector-specific standards.
+
 
 ## Relationships
 
@@ -61,4 +55,4 @@ notes_hash: 92c066e4
 
 ---
 
-*Generated: 2026-07-07 09:02:40*
+*Generated: 2026-07-07 13:30:30*

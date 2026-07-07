@@ -9,20 +9,13 @@ notes_hash: 8694b769
 # <span class="sl" data-layer="edgy-pe">People</span> Sociaal Economische Raad (SER)
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="520" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Sociaal Economische Raad (SER).md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="520" data-file-path="People/Sociaal Economische Raad (SER).md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>High-level view of all stakeholders in ESRS reporting ecosystem</p>
-<!--ea-notes-end-->
-</div>
-</div>
+High-level view of all stakeholders in ESRS reporting ecosystem
 
 ## Relationships
 
@@ -61,4 +54,4 @@ notes_hash: 8694b769
 
 ---
 
-*Generated: 2026-07-07 09:02:40*
+*Generated: 2026-07-07 13:30:30*

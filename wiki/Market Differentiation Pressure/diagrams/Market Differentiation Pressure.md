@@ -10,15 +10,7 @@ notes_hash: e3cb2aa5
 
 ![Market Differentiation Pressure](Market Differentiation Pressure.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="26" data-kind="diagram" data-file-path="Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
-<span class="ea-notes-derived-hint">(derived)</span>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>Competitive pressure to differentiate through sustainability leadership and eco-innovation</p>
-<!--ea-notes-end-->
-</div>
-</div>
+**Derived Description:** Competitive pressure to differentiate through sustainability leadership and eco-innovation
 
 ## Elements
 
@@ -37,4 +29,4 @@ notes_hash: e3cb2aa5
 
 ---
 
-*Generated: 2026-07-07 09:02:55*
+*Generated: 2026-07-07 13:30:51*

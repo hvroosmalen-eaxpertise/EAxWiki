@@ -8,14 +8,14 @@
 
 | Field | Value |
 |---|---|
-| Last success | 2026-07-07T09:22:38.0882069+02:00 |
+| Last success | 2026-07-07T14:02:43.6983940+02:00 |
 | Last failure | 07/06/2026 16:41:48 |
 | Consecutive failures | 0 |
 | Last exit code | 0 |
 | Last page count (total) | 606 |
 | Last page count (diagrams) | 41 |
 | Last mode | incremental |
-| Runs since full rebuild | 3 |
+| Runs since full rebuild | 6 |
 
 ## Serve
 
@@ -24,3 +24,4 @@
 | Last success | 07/02/2026 19:04:22 |
 | Last failure |  |
 | Consecutive failures | 0 |
+

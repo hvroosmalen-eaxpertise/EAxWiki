@@ -10,15 +10,7 @@ notes_hash: 0f551ff9
 
 ![Goals and Objectives](Goals and Objectives.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="40" data-kind="diagram" data-file-path="ESRS Goals and Objectives/diagrams/Goals and Objectives.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
-<span class="ea-notes-derived-hint">(derived)</span>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>Align sustainability reporting for businesses operating within the European Union</p>
-<!--ea-notes-end-->
-</div>
-</div>
+**Derived Description:** Align sustainability reporting for businesses operating within the European Union
 
 ## Elements
 
@@ -30,4 +22,4 @@ notes_hash: 0f551ff9
 
 ---
 
-*Generated: 2026-07-07 09:02:45*
+*Generated: 2026-07-07 13:30:36*

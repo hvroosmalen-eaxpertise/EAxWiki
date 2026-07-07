@@ -10,15 +10,7 @@ notes_hash: 5c35375d
 
 ![Reference Websites](Reference Websites.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="29" data-kind="diagram" data-file-path="Reference Websites/diagrams/Reference Websites.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
-<span class="ea-notes-derived-hint">(derived)</span>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>SDG Academy provides a number of applicable resources and provides free training material, see https://sdgacademy</p>
-<!--ea-notes-end-->
-</div>
-</div>
+**Derived Description:** SDG Academy provides a number of applicable resources and provides free training material, see https://sdgacademy
 
 ## Elements
 
@@ -26,4 +18,4 @@ notes_hash: 5c35375d
 
 ---
 
-*Generated: 2026-07-07 09:02:51*
+*Generated: 2026-07-07 13:30:45*

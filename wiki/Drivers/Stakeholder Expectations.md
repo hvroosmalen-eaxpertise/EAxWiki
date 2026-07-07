@@ -9,31 +9,20 @@ notes_hash: f41a6346
 # <span class="sl" data-layer="motivation">Driver</span> Stakeholder Expectations
 
 **Type:** Class  **Stereotype:** ArchiMate_Driver  **StereotypeEx:** ArchiMate_Driver  **FQStereotype:** ArchiMate3::ArchiMate_Driver  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="430" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Drivers/Stakeholder Expectations.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Drivers](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="430" data-file-path="Drivers/Stakeholder Expectations.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>Growing expectations from investors, customers, employees, and civil society for transparent and responsible corporate behavior.         
-Stakeholders increasingly demand ESG performance disclosure and sustainable business practices.</p>
-<!--ea-notes-end-->
-</div>
-</div>
+Growing expectations from investors, customers, employees, and civil society for transparent and responsible corporate behavior.         
+Stakeholders increasingly demand ESG performance disclosure and sustainable business practices.
 
 ## Tagged Values
 
-<table>
-<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
-<tbody>
-<tr><td>archimate_element_identifier</td><td>driver-002</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="430" data-tag-name="archimate_element_identifier" data-tag-value="driver-002" data-file-path="Drivers/Stakeholder Expectations.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e" aria-label="Edit description">&#9998;</button></td></tr>
-<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
-</tbody>
-</table>
+| Name | Value | Notes |
+|------|-------|-------|
+| archimate_element_identifier | driver-002 |  |
 
 [↑ Back to top](#)
 
@@ -64,4 +53,4 @@ Stakeholders increasingly demand ESG performance disclosure and sustainable busi
 
 ---
 
-*Generated: 2026-07-07 09:02:41*
+*Generated: 2026-07-07 13:30:30*

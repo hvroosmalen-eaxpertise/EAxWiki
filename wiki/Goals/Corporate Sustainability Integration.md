@@ -9,31 +9,20 @@ notes_hash: 7518ab2c
 # <span class="sl" data-layer="motivation">Goal</span> Corporate Sustainability Integration
 
 **Type:** Class  **Stereotype:** ArchiMate_Goal  **StereotypeEx:** ArchiMate_Goal  **FQStereotype:** ArchiMate3::ArchiMate_Goal  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="437" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Goals/Corporate Sustainability Integration.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span class="status-badge status-not-set">Not Set</span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Goals](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="437" data-file-path="Goals/Corporate Sustainability Integration.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-<p>Fully embed sustainability principles and practices into all core business processes, decision-making frameworks, and organizational culture.         
-Move beyond peripheral CSR initiatives toward strategic integration throughout the enterprise.</p>
-<!--ea-notes-end-->
-</div>
-</div>
+Fully embed sustainability principles and practices into all core business processes, decision-making frameworks, and organizational culture.         
+Move beyond peripheral CSR initiatives toward strategic integration throughout the enterprise.
 
 ## Tagged Values
 
-<table>
-<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
-<tbody>
-<tr><td>archimate_element_identifier</td><td>goal-004</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="437" data-tag-name="archimate_element_identifier" data-tag-value="goal-004" data-file-path="Goals/Corporate Sustainability Integration.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e" aria-label="Edit description">&#9998;</button></td></tr>
-<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
-</tbody>
-</table>
+| Name | Value | Notes |
+|------|-------|-------|
+| archimate_element_identifier | goal-004 |  |
 
 [↑ Back to top](#)
 
@@ -78,4 +67,4 @@ Move beyond peripheral CSR initiatives toward strategic integration throughout t
 
 ---
 
-*Generated: 2026-07-07 09:02:41*
+*Generated: 2026-07-07 13:30:30*

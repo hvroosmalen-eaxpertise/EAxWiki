@@ -9,20 +9,11 @@ notes_hash: e3b0c442
 # <span class="sl" data-layer="edgy-pe">People</span> Han van Roosmalen
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="605" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Introduction EurSuRA/Han van Roosmalen.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span class="status-badge status-proposed">Proposed</span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
 [Home](../index.md) / [Model Creation](../Model Creation/index.md) / [Introduction EurSuRA](index.md)
-
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="605" data-file-path="Introduction EurSuRA/Han van Roosmalen.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
-<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
-<div class="ea-notes-content">
-<!--ea-notes-start-->
-
-<!--ea-notes-end-->
-</div>
-</div>
 
 ## Relationships
 
@@ -57,4 +48,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-07 09:02:41*
+*Generated: 2026-07-07 13:30:30*
