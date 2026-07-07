@@ -1,0 +1,1 @@
+Activity for @@DIGEST_DATE@@: ~@@PAGE_READS_TODAY@@ wiki page read(s) (approximate), @@WRITEBACKS_TODAY@@ write-back(s).

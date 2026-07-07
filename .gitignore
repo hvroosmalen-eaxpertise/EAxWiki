@@ -68,4 +68,4 @@ src/EAxWiki/EAxWiki.csproj.bak
 
 # Per-instance monitor/alerting state (issue #37) — kept outside the wiki output dir since the
 # exporter's orphan cleanup deletes any top-level directory there it doesn't recognize
-/.eaxwiki-monitor/
+/.eaxwiki-monitor/*/
