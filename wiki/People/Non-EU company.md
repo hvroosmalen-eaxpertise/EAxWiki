@@ -9,13 +9,13 @@ notes_hash: 0bc9a3c2
 # <span class="sl" data-layer="edgy-pe">People</span> Non-EU company
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="557" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Non-EU company.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="557" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Non-EU company.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="557" data-file-path="People/Non-EU company.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="557" data-file-path="People/Non-EU company.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -62,4 +62,4 @@ Non-EU companies, which generate over EUR 150 million on the EU market.</p>
 
 ---
 
-*Generated: 2026-07-06 21:15:31*
+*Generated: 2026-07-07 09:02:40*

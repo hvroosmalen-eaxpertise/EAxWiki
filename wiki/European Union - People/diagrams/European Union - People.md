@@ -10,7 +10,7 @@ notes_hash: acc6783b
 
 ![European Union - People](European Union - People.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="37" data-kind="diagram" data-file-path="European Union - People/diagrams/European Union - People.md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="37" data-kind="diagram" data-file-path="European Union - People/diagrams/European Union - People.md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -43,4 +43,4 @@ notes_hash: acc6783b
 
 ---
 
-*Generated: 2026-07-06 21:15:39*
+*Generated: 2026-07-07 09:02:47*

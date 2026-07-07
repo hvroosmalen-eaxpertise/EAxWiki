@@ -9,13 +9,13 @@ notes_hash: e3b0c442
 # <span class="sl" data-layer="edgy-ex">Task</span> Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling.
 
 **Type:** Activity  **Stereotype:** Task  **StereotypeEx:** Task  **FQStereotype:** EDGY::Task  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="141" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Task/Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling..md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="141" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Task/Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling..md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Task](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="141" data-file-path="Task/Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling..md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="141" data-file-path="Task/Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling..md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,7 +29,7 @@ notes_hash: e3b0c442
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>EDGY::TextAlign</td><td>Top</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="141" data-tag-name="EDGY::TextAlign" data-tag-value="Top" data-file-path="Task/Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling..md" data-api-port="8001" data-api-token="6cd4cc2624ef5bc9f1dad964b4328a440a65e1c7621cffd4" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>EDGY::TextAlign</td><td>Top</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="141" data-tag-name="EDGY::TextAlign" data-tag-value="Top" data-file-path="Task/Neem duurzame ontwerpprincipes op in inkoop en productontwikkeling..md" data-api-port="8001" data-api-token="c830d91b8dd2c1754fbb1de0692f48785f082e966daf750e" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -70,4 +70,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-06 21:15:31*
+*Generated: 2026-07-07 09:02:40*
