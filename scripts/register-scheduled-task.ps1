@@ -145,7 +145,11 @@ $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -
 $monitorScript = Join-Path $repoRoot "scripts\monitor-export-and-serve.ps1"
 
 $scriptArgs = @("--max-retries", $MaxRetries, "--retry-delay", $RetryDelaySeconds)
-if ($RepoPath)   { $scriptArgs += "--repo", $RepoPath }
+# NOT baking --repo into the task action: the monitor resolves RepoPath from the
+# DPAPI-encrypted .eaxwiki file instead, avoiding plaintext secrets on the command
+# line (visible in Task Scheduler UI, Event Log, and process viewers). The user
+# passes --repo to this registration script for validation, but the scheduled task
+# itself never carries it.
 if ($OutputDir)  { $scriptArgs += "--output", $OutputDir }
 if ($Port)       { $scriptArgs += "--port", $Port }
 if ($ForceExport) { $scriptArgs += "--force" }
