@@ -27,6 +27,8 @@ internal record ExportContext(
     /// Absolute paths of every element .md file as actually written (including collision-renamed files).
     /// Populated by PackageExporter; consumed by cleanup.
     /// </summary>
+    public ConcurrentBag<string> WrittenMdFiles { get; } = new();
+
     public ConcurrentBag<string> RegisteredElementFiles { get; } = new();
 
     /// <summary>

@@ -95,5 +95,6 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
 
         lines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines), ct);
+        ctx.WrittenMdFiles.Add(filePath);
     }
 }

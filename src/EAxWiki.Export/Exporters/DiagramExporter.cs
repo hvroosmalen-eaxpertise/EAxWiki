@@ -121,6 +121,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 
                 lines.Add(MarkdownHelpers.FormatTimestamp());
                 await writer.WriteFileAsync(mdPath, string.Join(Environment.NewLine, lines), ct);
+                ctx.WrittenMdFiles.Add(mdPath);
 
                 sw.Stop();
                 logger.LogInformation("Exported diagram {DiagramName} in {ElapsedMs}ms", diagram.Name, sw.ElapsedMilliseconds);
@@ -177,7 +178,9 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 
         lines.Add(string.Empty);
         lines.Add(MarkdownHelpers.FormatTimestamp());
-        await writer.WriteFileAsync(Path.Combine(diagramsDir, "index.md"), string.Join(Environment.NewLine, lines), ct);
+        var indexMdPath = Path.Combine(diagramsDir, "index.md");
+        await writer.WriteFileAsync(indexMdPath, string.Join(Environment.NewLine, lines), ct);
+        ctx.WrittenMdFiles.Add(indexMdPath);
     }
 
     private static bool IsDiagramUpToDate(string mdPath, string? modifiedDateStr)

@@ -78,6 +78,7 @@ public class MarkdownExporter : IWikiExporter
             }
 
             await WriteRootIndexAsync(packages, outputPath, repository.ConnectionString, cancellationToken);
+            ctx.WrittenMdFiles.Add(Path.Combine(outputPath, "index.md"));
 
             var diagramExporter = new DiagramExporter(_writer, _logger);
             var infrastructure = new InfrastructureWriter(_writer);

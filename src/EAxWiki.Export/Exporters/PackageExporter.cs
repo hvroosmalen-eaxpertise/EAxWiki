@@ -130,7 +130,9 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
         }
 
         indexLines.Add(MarkdownHelpers.FormatTimestamp());
-        await writer.WriteFileAsync(Path.Combine(dir, "index.md"), string.Join(Environment.NewLine, indexLines), ct);
+        var indexPath = Path.Combine(dir, "index.md");
+        await writer.WriteFileAsync(indexPath, string.Join(Environment.NewLine, indexLines), ct);
+        ctx.WrittenMdFiles.Add(indexPath);
 
         pkgStopwatch.Stop();
         var succeeded = package.Elements.Count - totalFailed;
