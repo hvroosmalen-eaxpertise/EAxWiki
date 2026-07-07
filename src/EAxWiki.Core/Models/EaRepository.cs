@@ -12,9 +12,13 @@ public class EaRepository
     {
         if (connectionString is null) return "";
         if (!connectionString.Contains('=')) return connectionString;
-        return Regex.Replace(
+        var result = Regex.Replace(
             connectionString,
-            @"(?i)(Password|Pwd|User\s*Id|Uid|User\s*Name|Username)\s*=[^;]*",
+            @"(?i)(Password|Pwd|User\s*Id|Uid|User\s*Name|Username)\s*=[^;)]*",
             m => m.Groups[1].Value + "=***");
+        return Regex.Replace(
+            result,
+            @"(?i)\(PASSWORD=[^)]*\)",
+            "(PASSWORD=***)");
     }
 }

@@ -82,4 +82,25 @@ public class EaRepositoryTests
     {
         Assert.Equal("Password=***;", EaRepository.Redact("Password=foo=bar;"));
     }
+
+    [Fact]
+    public void Redact_OracleParenthesizedPassword_Redacted()
+    {
+        var input = "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=host))(CONNECT_DATA=(SID=sid))(PASSWORD=secret))";
+        Assert.Equal("(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=host))(CONNECT_DATA=(SID=sid))(PASSWORD=***))", EaRepository.Redact(input));
+    }
+
+    [Fact]
+    public void Redact_OracleParenthesizedPassword_CaseInsensitive()
+    {
+        Assert.Equal("(PASSWORD=***)", EaRepository.Redact("(PASSWORD=MySecret)"));
+        Assert.Equal("(PASSWORD=***)", EaRepository.Redact("(password=MySecret)"));
+    }
+
+    [Fact]
+    public void Redact_OracleAndSemicolonMixed_BothRedacted()
+    {
+        var input = "DBType=2;Connect=(DESCRIPTION=(PASSWORD=secret));User Id=admin;";
+        Assert.Equal("DBType=2;Connect=(DESCRIPTION=(PASSWORD=***));User Id=***;", EaRepository.Redact(input));
+    }
 }
