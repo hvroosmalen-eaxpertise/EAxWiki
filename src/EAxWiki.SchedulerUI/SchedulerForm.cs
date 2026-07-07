@@ -1,5 +1,6 @@
 using System.Text.Json;
 using EAxWiki.Core.Configuration;
+using EAxWiki.EA;
 
 namespace EAxWiki.SchedulerUI;
 
@@ -39,6 +40,7 @@ public class SchedulerForm : Form
     private readonly NumericUpDown _apiPortConfigBox = new() { Minimum = 1, Maximum = 65535, Value = 8001, Width = 80 };
     private readonly TextBox _webhookBox = new() { Width = 400 };
     private readonly TextBox _teamsWebhookBox = new() { Width = 400 };
+    private readonly Button _testConnectionButton = new() { Text = "Test Connection", AutoSize = true };
     private readonly Button _saveConfigButton = new() { Text = "Save Configuration", AutoSize = true };
 
     // Task status display
@@ -104,6 +106,7 @@ public class SchedulerForm : Form
 
         _refreshConfigButton.Click += (_, _) => LoadEaxwikiConfig();
         _saveConfigButton.Click += (_, _) => SaveEaxwikiConfig();
+        _testConnectionButton.Click += async (_, _) => await TestConnectionAsync();
         _repoTypeFile.CheckedChanged += (_, _) => UpdateRepoTypeEnablement();
         _repoTypeSqlServer.CheckedChanged += (_, _) => UpdateRepoTypeEnablement();
         _repoTypeMySql.CheckedChanged += (_, _) => UpdateRepoTypeEnablement();
@@ -180,6 +183,7 @@ public class SchedulerForm : Form
 
         var buttons = new FlowLayoutPanel { Dock = DockStyle.Bottom, FlowDirection = FlowDirection.RightToLeft, AutoSize = true, Padding = new Padding(0, 8, 0, 0) };
         buttons.Controls.Add(_saveConfigButton);
+        buttons.Controls.Add(_testConnectionButton);
         buttons.Controls.Add(_refreshConfigButton);
 
         var tabPage = new TabPage("Configuration") { Padding = new Padding(10), AutoScroll = true };
@@ -367,6 +371,19 @@ public class SchedulerForm : Form
             return;
         }
 
+        if (_webhookBox.Text.Trim() is { Length: > 0 } slackUrl &&
+            !Uri.TryCreate(slackUrl, UriKind.Absolute, out _))
+        {
+            AppendOutput($"Invalid Slack webhook URL: {slackUrl}");
+            return;
+        }
+        if (_teamsWebhookBox.Text.Trim() is { Length: > 0 } teamsUrl &&
+            !Uri.TryCreate(teamsUrl, UriKind.Absolute, out _))
+        {
+            AppendOutput($"Invalid Teams webhook URL: {teamsUrl}");
+            return;
+        }
+
         var config = new LocalConfigStore.Config
         {
             RepoPath = repoPath,
@@ -417,6 +434,54 @@ public class SchedulerForm : Form
             return $"DBType=7;Connect=Server={server};{portSegment}Database={database};User Id={user};Password={password};";
 
         return "";
+    }
+
+    private async Task TestConnectionAsync()
+    {
+        var repoPath = BuildRepoPath();
+        if (repoPath.Length == 0)
+        {
+            AppendOutput("Enter repository details first.");
+            return;
+        }
+
+        _testConnectionButton.Enabled = false;
+        _testConnectionButton.Text = "Testing...";
+        AppendOutput("Testing repository connection...");
+
+        try
+        {
+            var tcs = new TaskCompletionSource<(bool ok, string? error)>();
+            var thread = new Thread(() =>
+            {
+                try
+                {
+                    var reader = new EaReader();
+                    var ok = reader.TestConnection(repoPath, out var error);
+                    reader.Dispose();
+                    tcs.SetResult((ok, error));
+                }
+                catch (Exception ex)
+                {
+                    tcs.SetResult((false, ex.Message));
+                }
+            });
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+
+            var (ok, error) = await tcs.Task;
+            _connectionValid = ok;
+
+            if (ok)
+                AppendOutput("Connection successful.");
+            else
+                AppendOutput($"Connection failed: {error}");
+        }
+        finally
+        {
+            _testConnectionButton.Enabled = true;
+            _testConnectionButton.Text = "Test Connection";
+        }
     }
 
     // Reverse of BuildRepoPath: populates the repo-type radio and its fields from a saved
