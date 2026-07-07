@@ -270,8 +270,10 @@ static void ShowUsage()
     Console.WriteLine("  --api                 Start wiki write-back server for in-wiki status editing");
     Console.WriteLine("  --api-port <port>     Port for the wiki write-back server (default: 8001)");
     Console.WriteLine("  --wiki-port <port>    Port the paired 'mkdocs serve' uses (default: 8000);");
-    Console.WriteLine("                        --api only accepts requests whose Origin matches this port.");
-    Console.WriteLine("  --help, -h            Show this help message");
+  Console.WriteLine("                        --api only accepts requests whose Origin matches this port.");
+  Console.WriteLine("  --cert <path>         Path to PFX certificate for HTTPS");
+  Console.WriteLine("  --cert-password <pw>  PFX certificate password");
+  Console.WriteLine("  --help, -h            Show this help message");
     Console.WriteLine();
     Console.WriteLine("Connection string examples:");
     Console.WriteLine("  SQL Server:  DBType=1;Connect=Provider=SQLOLEDB.1;Data Source=SERVER;Initial Catalog=EA;Integrated Security=SSPI;");

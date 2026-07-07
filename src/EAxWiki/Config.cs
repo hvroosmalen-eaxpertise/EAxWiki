@@ -14,6 +14,8 @@ public class Config
     public bool ApiMode { get; set; }
     public int ApiPort { get; set; } = 0;
     public int WikiPort { get; set; } = 0;
+    public string? CertPath { get; set; }
+    public string? CertPassword { get; set; }
 
     public void Load(string[] args)
     {
@@ -74,6 +76,16 @@ public class Config
                     if (i + 1 >= args.Length)
                         throw new ArgumentException($"Option {args[i]} requires a value");
                     WikiPort = int.Parse(args[++i]);
+                    break;
+                case "--cert":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
+                    CertPath = args[++i];
+                    break;
+                case "--cert-password":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
+                    CertPassword = args[++i];
                     break;
                 case "--help":
                 case "/?":
