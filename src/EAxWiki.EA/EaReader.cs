@@ -139,6 +139,8 @@ public class EaReader : IEaReader, IDisposable
         element.Status = newStatus;
         element.Update();
         _repository.RefreshModelView(0);
+        var actualStatus = _repository.GetElementByID(elementId)?.Status ?? string.Empty;
+        VerifyWrite(_logger, $"element {elementId} Status", newStatus, actualStatus);
         _logger?.LogInformation("Updated element {ElementId} status to '{Status}'", elementId, newStatus);
     }
 
@@ -152,6 +154,8 @@ public class EaReader : IEaReader, IDisposable
         element.Notes = newNotesHtml;
         element.Update();
         _repository.RefreshModelView(0);
+        var actualNotes = _repository.GetElementByID(elementId)?.Notes ?? string.Empty;
+        VerifyWrite(_logger, $"element {elementId} Notes", newNotesHtml, actualNotes);
         _logger?.LogInformation("Updated element {ElementId} notes", elementId);
     }
 
@@ -165,6 +169,8 @@ public class EaReader : IEaReader, IDisposable
         diagram.Notes = newNotesHtml;
         diagram.Update();
         _repository.RefreshModelView(0);
+        var actualNotes = _repository.GetDiagramByID(diagramId)?.Notes ?? string.Empty;
+        VerifyWrite(_logger, $"diagram {diagramId} Notes", newNotesHtml, actualNotes);
         _logger?.LogInformation("Updated diagram {DiagramId} notes", diagramId);
     }
 
@@ -202,6 +208,15 @@ public class EaReader : IEaReader, IDisposable
         match.Notes = newNotesHtml;
         match.Update();
         _repository.RefreshModelView(0);
+        var reElement = _repository.GetElementByID(elementId);
+        string? reNotes = null;
+        if (reElement?.Attributes is EA.Collection reAttrs)
+            for (short j = 0; j < reAttrs.Count; j++)
+                if (reAttrs.GetAt(j) is EA.Attribute reAttr &&
+                    string.Equals(reAttr.Name, attributeName, StringComparison.Ordinal) &&
+                    string.Equals(reAttr.Type, attributeType, StringComparison.Ordinal))
+                    { reNotes = reAttr.Notes; break; }
+        VerifyWrite(_logger, $"attribute '{attributeName}' ({attributeType}) on element {elementId}", newNotesHtml, reNotes);
         _logger?.LogInformation("Updated attribute '{Name}' notes on element {ElementId}", attributeName, elementId);
     }
 
@@ -235,6 +250,16 @@ public class EaReader : IEaReader, IDisposable
         match.Notes = newNotesHtml;
         match.Update();
         _repository.RefreshModelView(0);
+        var reElement = _repository.GetElementByID(elementId);
+        string? reNotes = null;
+        if (reElement?.Methods is EA.Collection reMethods)
+            for (short j = 0; j < reMethods.Count; j++)
+                if (reMethods.GetAt(j) is EA.Method reMethod &&
+                    string.Equals(reMethod.Name, methodName, StringComparison.Ordinal) &&
+                    string.Equals(reMethod.ReturnType, returnType, StringComparison.Ordinal) &&
+                    reMethod.IsStatic == isStatic)
+                    { reNotes = reMethod.Notes; break; }
+        VerifyWrite(_logger, $"method '{methodName}' ({returnType}) on element {elementId}", newNotesHtml, reNotes);
         _logger?.LogInformation("Updated method '{Name}' notes on element {ElementId}", methodName, elementId);
     }
 
@@ -267,7 +292,27 @@ public class EaReader : IEaReader, IDisposable
         match.Notes = newNotesHtml;
         match.Update();
         _repository.RefreshModelView(0);
+        var reElement = _repository.GetElementByID(elementId);
+        string? reNotes = null;
+        if (reElement?.TaggedValues is EA.Collection reTvs)
+            for (short j = 0; j < reTvs.Count; j++)
+                if (reTvs.GetAt(j) is EA.TaggedValue reTv &&
+                    string.Equals(reTv.Name, tagName, StringComparison.Ordinal) &&
+                    string.Equals(reTv.Value, tagValue, StringComparison.Ordinal))
+                    { reNotes = reTv.Notes; break; }
+        VerifyWrite(_logger, $"tagged value '{tagName}' ({tagValue}) on element {elementId}", newNotesHtml, reNotes);
         _logger?.LogInformation("Updated tagged value '{Name}' notes on element {ElementId}", tagName, elementId);
+    }
+
+    private static void VerifyWrite(ILogger? logger, string entityDescription, string expected, string? actual)
+    {
+        if (string.Equals(expected, actual ?? string.Empty, StringComparison.Ordinal))
+            return;
+
+        static string Truncate(string s) => s.Length <= 200 ? s : s[..200] + "...";
+        logger?.LogWarning(
+            "Write-back verification failed for {Entity}: expected '{Expected}' but read back '{Actual}'",
+            entityDescription, Truncate(expected), Truncate(actual ?? string.Empty));
     }
 
     public bool ExportDiagramImage(string diagramGuid, string filePath)
