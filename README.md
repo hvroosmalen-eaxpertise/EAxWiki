@@ -424,6 +424,13 @@ the Schedule Settings tab, so it never silently shows stale defaults in place of
 It shells out to the same scripts and plain `Get-ScheduledTask` queries described above rather than
 reimplementing any Task Scheduler logic itself — one source of truth either way.
 
+The Configuration tab also includes a **Test Connection** button that validates the configured
+repository path by opening it through EA's COM API (`EA.Repository.OpenFile`), the same mechanism
+the exporter uses — so you know the connection works before scheduling. At startup, the app checks
+for Administrator privileges and disables all Task Scheduler operations (Register, Enable, Disable,
+Unregister, Refresh Status) with a clear message if the user is not elevated, since all Task
+Scheduler cmdlets require admin rights.
+
 ```powershell
 .\scripts\start-scheduler-ui.ps1
 ```
