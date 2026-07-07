@@ -1,3 +1,5 @@
+. $PSScriptRoot\_bootstrap.ps1
+
 # Registers monitor-export-and-serve.ps1 as a Windows Task Scheduler task, either on a
 # simple fixed interval or (see issue #38) on a day/night-aware schedule: a fast interval
 # during a weekday work-hours window, layered on top of a slower all-day, every-day
@@ -91,7 +93,7 @@ while ($i -lt $args.Count) {
     $i++
 }
 
-if (-not $IsWindows) {
+if (-not $IsWindowsOS) {
     Write-Error "Task Scheduler registration is only available on Windows."
     exit 1
 }
@@ -150,7 +152,7 @@ if ($ForceExport) { $scriptArgs += "--force" }
 elseif ($ForceEveryNRuns -gt 0) { $scriptArgs += "--force-every", $ForceEveryNRuns }
 
 $argLine = ($scriptArgs | ForEach-Object { if ($_ -match '\s') { "`"$_`"" } else { $_ } }) -join ' '
-$psExe = (Get-Process -Id $PID).Path
+$psExe = $PSExecutable
 
 $action  = New-ScheduledTaskAction -Execute $psExe `
     -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$monitorScript`" $argLine"

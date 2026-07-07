@@ -1,3 +1,5 @@
+. $PSScriptRoot\_bootstrap.ps1
+
 # Export the wiki and start MkDocs. If --api-port is given, also starts the
 # local wiki write-back server so the status-editor widget can write back to EA.
 #
@@ -53,7 +55,7 @@ $Json      = $parsed.Json
 $WriteBack = $parsed.WriteBack
 $ApiPort   = $parsed.ApiPort
 
-if ($ApiPort -gt 0 -and -not $IsWindows) {
+if ($ApiPort -gt 0 -and -not $IsWindowsOS) {
     Write-Error "The wiki write-back server requires Sparx Enterprise Architect, which is only available on Windows."
     exit 1
 }

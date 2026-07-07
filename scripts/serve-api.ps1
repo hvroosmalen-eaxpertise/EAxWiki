@@ -1,4 +1,6 @@
-﻿# Start the EAxWiki wiki write-back server alongside MkDocs.
+﻿. $PSScriptRoot\_bootstrap.ps1
+
+# Start the EAxWiki wiki write-back server alongside MkDocs.
 #
 # The write-back server listens on --api-port and handles status changes
 # from the status-editor widget on element pages. MkDocs serves on --port.
@@ -39,7 +41,7 @@ $OutputDir = $parsed.OutputDir
 $Port      = $parsed.Port
 $ApiPort   = $parsed.ApiPort
 
-if (-not $IsWindows) {
+if (-not $IsWindowsOS) {
     Write-Error "The wiki write-back server requires Sparx Enterprise Architect, which is only available on Windows."
     exit 1
 }
@@ -117,7 +119,7 @@ if (-not (Test-Path $venvDir)) {
     if ($LASTEXITCODE -ne 0) { python -m venv $venvDir }
 }
 
-$activate = if ($IsWindows) {
+$activate = if ($IsWindowsOS) {
     Join-Path $venvDir "Scripts\Activate.ps1"
 } else {
     Join-Path $venvDir "bin/Activate.ps1"

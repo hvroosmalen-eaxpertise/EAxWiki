@@ -1,3 +1,5 @@
+. $PSScriptRoot\_bootstrap.ps1
+
 function Get-ServeArgs {
     param([string[]]$Arguments)
     $Port    = 8000
@@ -48,7 +50,7 @@ if (-not (Test-Path $venvDir)) {
     if ($LASTEXITCODE -ne 0) { python -m venv $venvDir }
 }
 
-$activate = if ($IsWindows) {
+$activate = if ($IsWindowsOS) {
     Join-Path $venvDir "Scripts\Activate.ps1"
 } else {
     Join-Path $venvDir "bin/Activate.ps1"

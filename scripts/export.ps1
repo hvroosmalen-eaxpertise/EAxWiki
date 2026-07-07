@@ -1,3 +1,5 @@
+. $PSScriptRoot\_bootstrap.ps1
+
 # $PSNativeCommandUseErrorActionPreference (PowerShell 7.3+) defaults to $true in a fresh
 # -NoProfile session (e.g. launched by monitor-export-and-serve.ps1 or Task Scheduler). When
 # set, dotnet's own warn-level log lines on stderr are enough to corrupt the $LASTEXITCODE
@@ -48,7 +50,7 @@ $Json      = $parsed.Json
 $WriteBack = $parsed.WriteBack
 $ApiPort   = $parsed.ApiPort
 
-if (-not $IsWindows) {
+if (-not $IsWindowsOS) {
     Write-Error "Export requires Sparx Enterprise Architect, which is only available on Windows."
     exit 1
 }

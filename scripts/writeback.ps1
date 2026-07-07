@@ -1,3 +1,5 @@
+. $PSScriptRoot\_bootstrap.ps1
+
 # Scan the local wiki for status changes made by users and write them back to the EA model via COM.
 #
 # Production workflow:
@@ -35,7 +37,7 @@ $parsed = Get-WritebackArgs -Arguments $args
 $RepoPath = $parsed.RepoPath
 $Verbose  = $parsed.Verbose
 
-if (-not $IsWindows) {
+if (-not $IsWindowsOS) {
     Write-Error "Write-back requires Sparx Enterprise Architect, which is only available on Windows."
     exit 1
 }

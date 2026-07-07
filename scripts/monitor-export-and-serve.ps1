@@ -1,4 +1,6 @@
-﻿# Unattended wrapper around export.ps1 / serve.ps1 for issue #37: log to a file,
+﻿. $PSScriptRoot\_bootstrap.ps1
+
+# Unattended wrapper around export.ps1 / serve.ps1 for issue #37: log to a file,
 # keep a health state file and wiki/status/health.md up to date, retry transient
 # failures with backoff, and alert (webhook) on final give-up / recovery.
 #
@@ -120,7 +122,7 @@ $NotifyOnStart       = $parsed.NotifyOnStart
 $Force               = $parsed.Force
 $ForceEveryNRuns     = $parsed.ForceEveryNRuns
 
-if (-not $IsWindows) {
+if (-not $IsWindowsOS) {
     Write-Error "Monitoring requires Sparx Enterprise Architect, which is only available on Windows."
     exit 1
 }
@@ -650,7 +652,7 @@ function Start-Serve {
     $stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
     $outFile = Join-Path $logDir "serve-$stamp.out.log"
     $errFile = Join-Path $logDir "serve-$stamp.err.log"
-    $psExe = (Get-Process -Id $PID).Path
+    $psExe = $PSExecutable
     $serveScript = Join-Path $PSScriptRoot "serve.ps1"
     $proc = Start-Process -FilePath $psExe `
         -ArgumentList @("-NoProfile", "-File", $serveScript, "--port", $Port, "--wiki-dir", $wikiDir) `
