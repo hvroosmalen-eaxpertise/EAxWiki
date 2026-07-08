@@ -65,6 +65,12 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
                 config.WikiPort = savedConfig.WikiPort.Value;
             if (config.ApiPort == 0 && savedConfig.ApiPort.HasValue)
                 config.ApiPort = savedConfig.ApiPort.Value;
+            if (string.IsNullOrEmpty(config.AiEndpoint) && !string.IsNullOrEmpty(savedConfig.AiEndpoint))
+                config.AiEndpoint = savedConfig.AiEndpoint;
+            if (string.IsNullOrEmpty(config.AiModel) && !string.IsNullOrEmpty(savedConfig.AiModel))
+                config.AiModel = savedConfig.AiModel;
+            if (string.IsNullOrEmpty(config.AiKey) && !string.IsNullOrEmpty(savedConfig.AiKey))
+                config.AiKey = savedConfig.AiKey;
 
             Console.WriteLine($"Using saved repository: {EaRepository.Redact(config.RepositoryPath)}");
             if (wasLegacyPlaintext)
