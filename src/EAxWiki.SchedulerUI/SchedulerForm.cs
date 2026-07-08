@@ -1,3 +1,5 @@
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text.Json;
 using EAxWiki.Core.Configuration;
 using EAxWiki.EA;
@@ -43,6 +45,9 @@ public class SchedulerForm : Form
     private readonly TextBox _aiEndpointBox = new() { Width = 400 };
     private readonly TextBox _aiModelBox = new() { Width = 400 };
     private readonly TextBox _aiKeyBox = new() { Width = 400, UseSystemPasswordChar = true };
+    private readonly Button _aiTestButton = new() { Text = "Test LLM Connection", AutoSize = true };
+    private readonly Button _aiSaveButton = new() { Text = "Save AI Config", AutoSize = true };
+    private readonly Label _aiTestResult = new() { AutoSize = true };
     private readonly Button _testConnectionButton = new() { Text = "Test Connection", AutoSize = true };
     private readonly Button _saveConfigButton = new() { Text = "Save Configuration", AutoSize = true };
 
@@ -100,6 +105,7 @@ public class SchedulerForm : Form
         var tabs = new TabControl { Dock = DockStyle.Fill };
         tabs.TabPages.Add(BuildConfigTab());
         tabs.TabPages.Add(BuildScheduleTab());
+        tabs.TabPages.Add(BuildAiTab());
         tabs.TabPages.Add(BuildTaskStatusTab());
 
         root.Controls.Add(tabs, 0, 0);
@@ -129,6 +135,8 @@ public class SchedulerForm : Form
 
         _simpleModeRadio.CheckedChanged += (_, _) => UpdateModeEnablement();
         _forceEveryNRadio.CheckedChanged += (_, _) => _forceEveryN.Enabled = _forceEveryNRadio.Checked;
+        _aiTestButton.Click += async (_, _) => await TestAiConnectionAsync();
+        _aiSaveButton.Click += (_, _) => SaveAiConfig();
 
         if (_repoRoot == null)
         {
@@ -174,9 +182,6 @@ public class SchedulerForm : Form
         AddRow(table, "API port:", _apiPortConfigBox);
         AddRow(table, "Slack Webhook:", _webhookBox);
         AddRow(table, "Teams Webhook:", _teamsWebhookBox);
-        AddRow(table, "AI Endpoint:", _aiEndpointBox);
-        AddRow(table, "AI Model:", _aiModelBox);
-        AddRow(table, "AI Key:", _aiKeyBox);
 
         // WrapContents = false and no AutoSize here, matching BuildScheduleTab: with AutoSize +
         // TopDown flow, once content exceeds the tab's visible height the panel wraps into a new
@@ -307,6 +312,125 @@ public class SchedulerForm : Form
         return tabPage;
     }
 
+    private TabPage BuildAiTab()
+    {
+        var table = new TableLayoutPanel { ColumnCount = 2, AutoSize = true, Dock = DockStyle.Top };
+        AddRow(table, "AI Endpoint:", _aiEndpointBox);
+        AddRow(table, "AI Model:", _aiModelBox);
+        AddRow(table, "AI Key:", _aiKeyBox);
+        AddRow(table, "Status:", _aiTestResult);
+
+        var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown, WrapContents = false };
+        panel.Controls.Add(table);
+
+        var buttons = new FlowLayoutPanel { Dock = DockStyle.Bottom, FlowDirection = FlowDirection.RightToLeft, AutoSize = true, Padding = new Padding(0, 8, 0, 0) };
+        buttons.Controls.Add(_aiSaveButton);
+        buttons.Controls.Add(_aiTestButton);
+
+        return new TabPage("AI LLM") { Padding = new Padding(10), AutoScroll = true, Controls = { panel, buttons } };
+    }
+
+    private async Task TestAiConnectionAsync()
+    {
+        var endpoint = _aiEndpointBox.Text.Trim();
+        if (endpoint.Length == 0)
+        {
+            _aiTestResult.Text = "Enter an AI endpoint first.";
+            _aiTestResult.ForeColor = Color.Red;
+            return;
+        }
+
+        _aiTestButton.Enabled = false;
+        _aiTestButton.Text = "Testing...";
+        _aiTestResult.Text = "";
+        AppendOutput("Testing LLM connection...");
+
+        try
+        {
+            using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
+            var model = _aiModelBox.Text.Trim();
+            if (model.Length == 0) model = "llama-3.2-3b";
+
+            var body = new
+            {
+                model,
+                messages = new[] { new { role = "user", content = "Say OK" } },
+                max_tokens = 5
+            };
+
+            var request = new HttpRequestMessage(HttpMethod.Post, $"{endpoint.TrimEnd('/')}/chat/completions")
+            {
+                Content = JsonContent.Create(body)
+            };
+
+            var key = _aiKeyBox.Text;
+            if (!string.IsNullOrEmpty(key))
+                request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", key);
+
+            var response = await httpClient.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<JsonElement>();
+                var content = "";
+                if (result.TryGetProperty("choices", out var choices) && choices.GetArrayLength() > 0)
+                    content = choices[0].GetProperty("message").GetProperty("content").GetString() ?? "";
+
+                _aiTestResult.Text = $"LLM reachable — response: {content.Trim()}";
+                _aiTestResult.ForeColor = Color.Green;
+                AppendOutput($"LLM test successful: {content.Trim()}");
+            }
+            else
+            {
+                var errorBody = await response.Content.ReadAsStringAsync();
+                _aiTestResult.Text = $"Error: HTTP {(int)response.StatusCode}";
+                _aiTestResult.ForeColor = Color.Red;
+                AppendOutput($"LLM test failed (HTTP {(int)response.StatusCode}): {errorBody}");
+            }
+        }
+        catch (Exception ex)
+        {
+            _aiTestResult.Text = $"Error: {ex.Message}";
+            _aiTestResult.ForeColor = Color.Red;
+            AppendOutput($"LLM test failed: {ex.Message}");
+        }
+        finally
+        {
+            _aiTestButton.Enabled = true;
+            _aiTestButton.Text = "Test LLM Connection";
+        }
+    }
+
+    private void SaveAiConfig()
+    {
+        if (_repoRoot == null) return;
+        var path = Path.Combine(_repoRoot, ".eaxwiki");
+
+        if (_aiEndpointBox.Text.Trim() is { Length: > 0 } endpoint &&
+            !Uri.TryCreate(endpoint, UriKind.Absolute, out _))
+        {
+            AppendOutput($"Invalid AI endpoint URL: {endpoint}");
+            return;
+        }
+
+        try
+        {
+            var config = File.Exists(path)
+                ? LocalConfigStore.Load(path, out _)
+                : new LocalConfigStore.Config();
+
+            config.AiEndpoint = _aiEndpointBox.Text.Trim() is { Length: > 0 } ai ? ai : null;
+            config.AiModel = _aiModelBox.Text.Trim() is { Length: > 0 } model ? model : null;
+            config.AiKey = _aiKeyBox.Text is { Length: > 0 } key ? key : null;
+
+            LocalConfigStore.Save(path, config);
+            AppendOutput("AI config saved.");
+        }
+        catch (Exception ex)
+        {
+            AppendOutput($"Failed to save AI config: {ex.Message}");
+        }
+    }
+
     private GroupBox BuildOutputGroup()
     {
         return new GroupBox { Text = "Output", Dock = DockStyle.Fill, Padding = new Padding(8), Controls = { _outputBox } };
@@ -395,12 +519,6 @@ public class SchedulerForm : Form
             AppendOutput($"Invalid Teams webhook URL: {teamsUrl}");
             return;
         }
-        if (_aiEndpointBox.Text.Trim() is { Length: > 0 } aiEndpoint &&
-            !Uri.TryCreate(aiEndpoint, UriKind.Absolute, out _))
-        {
-            AppendOutput($"Invalid AI endpoint URL: {aiEndpoint}");
-            return;
-        }
 
         var config = new LocalConfigStore.Config
         {
@@ -409,9 +527,6 @@ public class SchedulerForm : Form
             ApiPort = (int)_apiPortConfigBox.Value,
             WebhookUrl = _webhookBox.Text.Trim() is { Length: > 0 } slack ? slack : null,
             TeamsWebhookUrl = _teamsWebhookBox.Text.Trim() is { Length: > 0 } teams ? teams : null,
-            AiEndpoint = _aiEndpointBox.Text.Trim() is { Length: > 0 } ai ? ai : null,
-            AiModel = _aiModelBox.Text.Trim() is { Length: > 0 } model ? model : null,
-            AiKey = _aiKeyBox.Text is { Length: > 0 } key ? key : null,
         };
 
         try
