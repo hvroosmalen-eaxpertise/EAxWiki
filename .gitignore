@@ -61,6 +61,7 @@ src/EAxWiki/EAxWiki.csproj.bak
 .venv/
 
 # Local connection config — contains credentials, never commit (repo root only)
+/src/EAxWiki/wiki/
 /.eaxwiki
 
 # Per-instance write-back API shared secret, auto-generated inside each wiki output dir
