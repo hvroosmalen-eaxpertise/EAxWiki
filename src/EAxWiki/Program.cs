@@ -177,6 +177,8 @@ if (config.ApiMode)
 
 // Expose API port to MarkdownExporter so the status-editor widget URL is embedded correctly.
 Environment.SetEnvironmentVariable("EAXWIKI_API_PORT", config.ApiPort.ToString());
+if (!string.IsNullOrEmpty(config.AiEndpoint))
+    Environment.SetEnvironmentVariable("EAXWIKI_AI_ENDPOINT", config.AiEndpoint);
 
 try
 {
@@ -273,6 +275,9 @@ static void ShowUsage()
   Console.WriteLine("                        --api only accepts requests whose Origin matches this port.");
   Console.WriteLine("  --cert <path>         Path to PFX certificate for HTTPS");
   Console.WriteLine("  --cert-password <pw>  PFX certificate password");
+  Console.WriteLine("  --ai-endpoint <url>   OpenAI-compatible API base URL (empty = AI suggestions disabled)");
+  Console.WriteLine("  --ai-model <name>     Model name sent to AI endpoint (default: llama-3.2-3b)");
+  Console.WriteLine("  --ai-key <key>        API key for AI endpoint (optional for local LLMs)");
   Console.WriteLine("  --help, -h            Show this help message");
     Console.WriteLine();
     Console.WriteLine("Connection string examples:");

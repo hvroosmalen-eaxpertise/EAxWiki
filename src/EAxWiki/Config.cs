@@ -16,6 +16,9 @@ public class Config
     public int WikiPort { get; set; } = 0;
     public string? CertPath { get; set; }
     public string? CertPassword { get; set; }
+    public string AiEndpoint { get; set; } = "";
+    public string AiModel { get; set; } = "llama-3.2-3b";
+    public string AiKey { get; set; } = "";
 
     public void Load(string[] args)
     {
@@ -86,6 +89,21 @@ public class Config
                     if (i + 1 >= args.Length)
                         throw new ArgumentException($"Option {args[i]} requires a value");
                     CertPassword = args[++i];
+                    break;
+                case "--ai-endpoint":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
+                    AiEndpoint = args[++i];
+                    break;
+                case "--ai-model":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
+                    AiModel = args[++i];
+                    break;
+                case "--ai-key":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
+                    AiKey = args[++i];
                     break;
                 case "--help":
                 case "/?":
