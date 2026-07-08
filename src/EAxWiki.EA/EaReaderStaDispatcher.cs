@@ -140,6 +140,9 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
     public bool ExportDiagramImage(string diagramGuid, string filePath) =>
         Dispatch(r => r.ExportDiagramImage(diagramGuid, filePath));
 
+    public EaElementSummary? GetElementSummary(int elementId) =>
+        Dispatch(r => r.GetElementSummary(elementId));
+
     public void Dispose()
     {
         if (_disposed) return;

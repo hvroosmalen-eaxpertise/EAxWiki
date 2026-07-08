@@ -129,6 +129,88 @@ public class EaReader : IEaReader, IDisposable
         return element.Status ?? string.Empty;
     }
 
+    public EaElementSummary? GetElementSummary(int elementId)
+    {
+        if (_repository == null)
+            throw new InvalidOperationException("Repository is not open.");
+        var element = _repository.GetElementByID(elementId);
+        if (element == null) return null;
+
+        var path = new List<string>();
+        var pkg = _repository.GetPackageByID(element.PackageID);
+        while (pkg != null)
+        {
+            path.Add(pkg.Name);
+            pkg = pkg.ParentID != 0 ? _repository.GetPackageByID(pkg.ParentID) : null;
+        }
+        path.Reverse();
+
+        return new EaElementSummary
+        {
+            ElementId = element.ElementID,
+            Name = element.Name,
+            Type = element.Type,
+            Stereotype = element.Stereotype ?? element.FQStereotype ?? string.Empty,
+            PackagePath = string.Join("/", path),
+            Status = element.Status ?? string.Empty,
+            Attributes = MapAttributesForSummary(element),
+            Methods = MapMethodsForSummary(element),
+            TaggedValues = MapTaggedValuesForSummary(element),
+            Relationships = MapRelationshipsForSummary(element)
+        };
+    }
+
+    private static List<AttributeInfo> MapAttributesForSummary(EA.Element element)
+    {
+        var result = new List<AttributeInfo>();
+        if (element.Attributes is EA.Collection attrs)
+            for (short i = 0; i < attrs.Count; i++)
+                if (attrs.GetAt(i) is EA.Attribute attr)
+                    result.Add(new AttributeInfo(attr.Name, attr.Type));
+        return result;
+    }
+
+    private static List<MethodInfo> MapMethodsForSummary(EA.Element element)
+    {
+        var result = new List<MethodInfo>();
+        if (element.Methods is EA.Collection methods)
+            for (short i = 0; i < methods.Count; i++)
+                if (methods.GetAt(i) is EA.Method method)
+                    result.Add(new MethodInfo(method.Name, method.ReturnType, method.IsStatic));
+        return result;
+    }
+
+    private static List<TaggedValueInfo> MapTaggedValuesForSummary(EA.Element element)
+    {
+        var result = new List<TaggedValueInfo>();
+        if (element.TaggedValues is EA.Collection tvs)
+            for (short i = 0; i < tvs.Count; i++)
+                if (tvs.GetAt(i) is EA.TaggedValue tv)
+                    result.Add(new TaggedValueInfo(tv.Name, tv.Value));
+        return result;
+    }
+
+    private List<RelationshipInfo> MapRelationshipsForSummary(EA.Element element)
+    {
+        var result = new List<RelationshipInfo>();
+        if (element.Connectors is EA.Collection connectors)
+        {
+            for (short i = 0; i < connectors.Count; i++)
+            {
+                if (connectors.GetAt(i) is not EA.Connector conn) continue;
+                var isSource = conn.ClientID == element.ElementID;
+                var targetId = isSource ? conn.SupplierID : conn.ClientID;
+                var target = _repository?.GetElementByID(targetId);
+                result.Add(new RelationshipInfo(
+                    conn.Type,
+                    isSource ? "source→target" : "target→source",
+                    target?.Name ?? "(deleted)",
+                    target?.Type ?? "Unknown"));
+            }
+        }
+        return result;
+    }
+
     public void UpdateElementStatus(int elementId, string newStatus)
     {
         if (_repository == null)
