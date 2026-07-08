@@ -17,7 +17,7 @@ The exporter is a .NET 10 console application that connects to a Sparx Enterpris
 What the exporter produces:
 - One Markdown page per element, organised into the same package hierarchy as the EA model
 - PNG diagram images with a linked Markdown page per diagram (clickable for zoom via glightbox)
-- Six cross-cutting index views: **Structure**, **Types**, **Glossary**, **Diagrams**, **Recent Changes**, **Status Dashboard**
+- Seven cross-cutting index views: **Structure**, **Types**, **Glossary**, **Diagrams**, **Recent Changes**, **Status Dashboard**, **Model Health**
 - A `model.json` file with the full model serialised as JSON (opt-in via `--json` / `-j`)
 - An `extra.css` and `.pages` navigation file for MkDocs
 
@@ -513,7 +513,7 @@ By default the exporter skips elements and diagrams whose output file is newer t
 
 ## Wiki navigation
 
-The wiki has six navigation views:
+The wiki has seven navigation views:
 
 - **Structure** — a top-down tree of packages and their elements, following the EA model hierarchy
 - **Types** — elements grouped by modelling language and type (e.g. ArchiMate3 BusinessRole, UML Metric)
@@ -521,6 +521,7 @@ The wiki has six navigation views:
 - **Glossary** — terms extracted from "Definition"/"Glossary" tagged values and first sentences from element notes
 - **Recent** — top 50 most recently modified elements and diagrams, sorted by date descending
 - **Status Dashboard** — a dashboard at `/status/` with summary bar charts, a **By Package** table with collapsible drill-down (clickable element links with status badges), and a **By Type** breakdown section
+- **Model Health** — a report at `/status/model-health.html` flagging content-quality issues in the model itself (not export/serve pipeline health): orphan elements with no connectors and no diagram appearance, elements with an empty Notes field, elements with a Status set that haven't been touched in 90+ days, and duplicate element names within the same package. Every flagged entry links to the element's own page for one-click editing via the write-back widgets.
 
 ## Element page features
 

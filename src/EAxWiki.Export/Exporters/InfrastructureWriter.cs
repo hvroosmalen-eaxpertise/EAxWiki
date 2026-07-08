@@ -23,13 +23,23 @@ internal class InfrastructureWriter(IOutputWriter writer)
         // and since use_directory_urls: false means the built file genuinely exists at that literal path,
         // the link just works. The main "Status: status/" entry is unaffected (a directory reference was
         // already the working, unchanged pattern here) and still resolves via directory-index serving.
+        // Model Health (status/model-health.md) is written unconditionally by ModelHealthExporter as
+        // part of every export, unlike status/health.md above which only exists when the monitor
+        // wrapper is in use — so its nav entry doesn't need the same existence check. It hits the same
+        // awesome-pages .html-vs-.md quirk as Pipeline Health (a second .md file in an
+        // already-referenced directory), so it's referenced the same way.
         var statusLines = File.Exists(Path.Combine(outputDir, "status", "health.md"))
             ? new[]
               {
                   "  - Status: status/",
                   "  - Pipeline Health: status/health.html",
+                  "  - Model Health: status/model-health.html",
               }
-            : ["  - Status: status/"];
+            : new[]
+              {
+                  "  - Status: status/",
+                  "  - Model Health: status/model-health.html",
+              };
 
         await writer.WriteFileAsync(Path.Combine(outputDir, ".pages"), string.Join(Environment.NewLine,
         [
