@@ -31,6 +31,9 @@ public static class LocalConfigStore
         public string? TeamsWebhookUrl { get; set; }
         public int? WikiPort { get; set; }
         public int? ApiPort { get; set; }
+        public string? AiEndpoint { get; set; }
+        public string? AiModel { get; set; }
+        public string? AiKey { get; set; }
     }
 
     public static Config Load(string path, out bool wasLegacyPlaintext)

@@ -40,6 +40,9 @@ public class SchedulerForm : Form
     private readonly NumericUpDown _apiPortConfigBox = new() { Minimum = 1, Maximum = 65535, Value = 8001, Width = 80 };
     private readonly TextBox _webhookBox = new() { Width = 400 };
     private readonly TextBox _teamsWebhookBox = new() { Width = 400 };
+    private readonly TextBox _aiEndpointBox = new() { Width = 400 };
+    private readonly TextBox _aiModelBox = new() { Width = 400 };
+    private readonly TextBox _aiKeyBox = new() { Width = 400, UseSystemPasswordChar = true };
     private readonly Button _testConnectionButton = new() { Text = "Test Connection", AutoSize = true };
     private readonly Button _saveConfigButton = new() { Text = "Save Configuration", AutoSize = true };
 
@@ -171,6 +174,9 @@ public class SchedulerForm : Form
         AddRow(table, "API port:", _apiPortConfigBox);
         AddRow(table, "Slack Webhook:", _webhookBox);
         AddRow(table, "Teams Webhook:", _teamsWebhookBox);
+        AddRow(table, "AI Endpoint:", _aiEndpointBox);
+        AddRow(table, "AI Model:", _aiModelBox);
+        AddRow(table, "AI Key:", _aiKeyBox);
 
         // WrapContents = false and no AutoSize here, matching BuildScheduleTab: with AutoSize +
         // TopDown flow, once content exceeds the tab's visible height the panel wraps into a new
@@ -341,6 +347,9 @@ public class SchedulerForm : Form
             _apiPortConfigBox.Value = 8001;
             _webhookBox.Text = "";
             _teamsWebhookBox.Text = "";
+            _aiEndpointBox.Text = "";
+            _aiModelBox.Text = "llama-3.2-3b";
+            _aiKeyBox.Text = "";
             return;
         }
 
@@ -352,6 +361,9 @@ public class SchedulerForm : Form
             _apiPortConfigBox.Value = Math.Clamp(config.ApiPort ?? 8001, (int)_apiPortConfigBox.Minimum, (int)_apiPortConfigBox.Maximum);
             _webhookBox.Text = config.WebhookUrl ?? "";
             _teamsWebhookBox.Text = config.TeamsWebhookUrl ?? "";
+            _aiEndpointBox.Text = config.AiEndpoint ?? "";
+            _aiModelBox.Text = config.AiModel ?? "llama-3.2-3b";
+            _aiKeyBox.Text = config.AiKey ?? "";
         }
         catch (Exception ex)
         {
@@ -383,6 +395,12 @@ public class SchedulerForm : Form
             AppendOutput($"Invalid Teams webhook URL: {teamsUrl}");
             return;
         }
+        if (_aiEndpointBox.Text.Trim() is { Length: > 0 } aiEndpoint &&
+            !Uri.TryCreate(aiEndpoint, UriKind.Absolute, out _))
+        {
+            AppendOutput($"Invalid AI endpoint URL: {aiEndpoint}");
+            return;
+        }
 
         var config = new LocalConfigStore.Config
         {
@@ -391,6 +409,9 @@ public class SchedulerForm : Form
             ApiPort = (int)_apiPortConfigBox.Value,
             WebhookUrl = _webhookBox.Text.Trim() is { Length: > 0 } slack ? slack : null,
             TeamsWebhookUrl = _teamsWebhookBox.Text.Trim() is { Length: > 0 } teams ? teams : null,
+            AiEndpoint = _aiEndpointBox.Text.Trim() is { Length: > 0 } ai ? ai : null,
+            AiModel = _aiModelBox.Text.Trim() is { Length: > 0 } model ? model : null,
+            AiKey = _aiKeyBox.Text is { Length: > 0 } key ? key : null,
         };
 
         try
