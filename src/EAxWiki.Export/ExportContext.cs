@@ -22,6 +22,7 @@ internal record ExportContext(
 
     /// <summary>Shared secret embedded in write-back widgets and required by the --api server. Empty when ApiPort is 0.</summary>
     public string ApiToken { get; init; } = string.Empty;
+    public bool AiConfigured { get; init; } = false;
 
     /// <summary>
     /// Absolute paths of every element .md file as actually written (including collision-renamed files).

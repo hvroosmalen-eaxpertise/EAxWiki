@@ -8,6 +8,7 @@ public interface IEaReader
     bool TestConnection(string connectionString, out string? error);
     void Close();
     bool ExportDiagramImage(string diagramGuid, string filePath);
+    EaElementSummary? GetElementSummary(int elementId);
     string RepositoryPath { get; }
     IReadOnlyList<string> GetStatusTypes();
     string GetElementStatus(int elementId);
