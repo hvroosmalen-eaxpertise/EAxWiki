@@ -463,7 +463,7 @@ public class SchedulerForm : Form
 
         try
         {
-            var psi = new ProcessStartInfo(exePath, $"-m \"{modelPath}\" -c 4096 --port {(int)_apiPortConfigBox.Value + 2} --n-gpu-layers 0")
+            var psi = new ProcessStartInfo(exePath, $"-m \"{modelPath}\" -c 4096 --port 8080 --n-gpu-layers 0")
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
@@ -476,7 +476,7 @@ public class SchedulerForm : Form
             _llmProcess = process;
             _llmStopButton.Enabled = true;
             _llmStartButton.Text = "Running";
-            AppendOutput($"LLM server started (PID {process.Id}). AI endpoint: http://localhost:{_apiPortConfigBox.Value + 2}/v1");
+            AppendOutput($"LLM server started (PID {process.Id}). AI endpoint: http://localhost:8080/v1");
 
             // Read output in background to detect failures
             _ = Task.Run(async () =>
