@@ -10,7 +10,7 @@ Many EA elements ship with empty Notes. An author currently writes a description
 
 ## Scope
 
-1. **Suggest button** in the notes-editor widget, shown only when Notes are empty.
+1. **Suggest button** in the notes-editor widget, shown only when Notes are empty **and** `--ai-endpoint` is non-empty.
 2. **`POST /api/ai-suggest`** endpoint on the write-back server that reads element context from EA COM, sends it to a configurable LLM, and returns a draft.
 3. **CLI flags + Scheduler UI config** for the AI endpoint, model, and optional API key.
 4. **Local LLM** runs via `llama-server` as the default provider; any OpenAI-compatible API works via config.
@@ -70,7 +70,7 @@ The same `--ai-endpoint` config works with any OpenAI-compatible provider:
 | Provider | Endpoint | Model | Speed |
 |----------|----------|-------|-------|
 | OpenAI | `https://api.openai.com/v1` | `gpt-4o-mini` | ~1-2s |
-| Claude (Anthropic) | via LiteLLM proxy | `claude-3-haiku` | ~1-3s |
+| Claude | via LiteLLM proxy | `claude-3-haiku` | ~1-3s |
 | Azure OpenAI | `https://{resource}.openai.azure.com/v1` | `gpt-4o-mini` | ~1-2s |
 | Local (llama-server) | `http://localhost:8080/v1` | `llama-3.2-3b` | ~17s |
 
@@ -115,7 +115,6 @@ public EaElementSummary? GetElementSummary(int elementId)
     var element = _repository?.GetElementByID(elementId);
     if (element == null) return null;
 
-    // Resolve package path by walking parent chain
     var path = new List<string>();
     var pkg = _repository?.GetPackageByID(element.PackageID);
     while (pkg != null)
@@ -167,11 +166,13 @@ Request:
 
 Handler flow:
 1. Authenticate via `X-EAxWiki-Token` (same as all other endpoints).
-2. Call `reader.GetElementSummary(elementId)`.
-3. If null, return 404.
-4. Build a prompt from the summary (see section 5).
-5. POST to `{AI_ENDPOINT}/v1/chat/completions` with OpenAI-compatible schema.
-6. Return `{ "suggestion": "..." }`.
+2. If `AI_ENDPOINT` is empty/unset, return 501 (AI not configured).
+3. Call `reader.GetElementSummary(elementId)`.
+4. If null, return 404.
+5. If the element has no relationships and no tagged values (insufficient context), return 204 with `{ "message": "Not enough context to suggest a description." }`.
+6. Build a prompt from the summary.
+7. POST to `{AI_ENDPOINT}/chat/completions` with OpenAI-compatible schema.
+8. Return `{ "suggestion": "..." }`.
 
 #### Prompt Template
 
@@ -201,7 +202,7 @@ Relationships:
 {Relationships}
 ```
 
-Empty sections (no attributes, no relationships, etc.) are omitted.
+Empty sections are omitted.
 
 #### HTTP Call to LLM
 
@@ -228,7 +229,7 @@ Authorization: Bearer {AI_KEY}  (if set)
 
 | Flag | Env | Default | Purpose |
 |------|-----|---------|---------|
-| `--ai-endpoint` | `AI_ENDPOINT` | `http://localhost:8080/v1` | OpenAI-compatible API base URL |
+| `--ai-endpoint` | `AI_ENDPOINT` | `http://localhost:8080/v1` | API base URL. Set to empty to disable AI. |
 | `--ai-model` | `AI_MODEL` | `llama-3.2-3b` | Model name sent in API requests |
 | `--ai-key` | `AI_KEY` | `""` | API key (empty = no auth header) |
 
@@ -240,54 +241,34 @@ Authorization: Bearer {AI_KEY}  (if set)
 
 **New file:** `src/EAxWiki.Export/wwwroot/ai-suggest.js`
 
-- When the notes widget loads with an empty textarea, inject a "Suggest a description" button below it.
+- The script initializes only if `dataset.aiConfigured` is truthy (set by `InfrastructureWriter` when `--ai-endpoint` is non-empty).
+- For each notes widget with an **empty textarea**, inject a "Suggest a description" button below it.
 - On click:
   1. Disable button, show spinner/ellipsis.
   2. `POST /api/ai-suggest { elementId }` using the existing `apiBase` and `X-EAxWiki-Token`.
   3. On success: populate the textarea with the suggestion, enable the save button.
-  4. On error: show inline error message, re-enable the button.
-- User edits the draft freely, then saves normally — the existing `POST /api/notes` flow is untouched.
+  4. On 204 (insufficient context): show "Not enough context to suggest a description."
+  5. On error: show inline error message, re-enable the button.
+- User edits the draft freely, then saves normally — existing save flow untouched.
 
-**In `InfrastructureWriter`** (`src/EAxWiki.Export/Exporters/InfrastructureWriter.cs`):
+**In `InfrastructureWriter`**:
 - Embed the new JS alongside `notes-editor.js`.
-- Only include when `ApiPort > 0` (same guard).
+- Add `dataset.aiConfigured` based on `ApiPort > 0 && AiEndpoint is non-empty`.
 
-### 5. Prompt Context Example
-
-The LLM receives this context for a typical element:
-
-```
-Name: ESG Score
-Type: Class
-Stereotype: Assessment
-Package: Sustainability/ESG Framework/Scorecards
-Status: Approved
-
-Attributes:
-  - scoreValue: decimal
-  - calculationDate: datetime
-
-TaggedValues:
-  - frequency: quarterly
-  - owner: sustainability-team
-
-Relationships:
-  - measures → Sustainability Performance (Goal)
-  - tracked_by → ESG Dashboard (ApplicationComponent)
-```
-
-### 6. Error Handling
+### 5. Error Handling
 
 | Scenario | HTTP | Browser UX |
 |----------|------|------------|
+| AI not configured (endpoint empty) | 501 | Button not shown (aiConfigured=false) |
 | Element not found | 404 | "Element not found" error, button re-enabled |
+| Insufficient context (no rels, no TVs) | 204 | "Not enough context to suggest a description." |
 | LLM endpoint unreachable | 502 | "AI service unavailable, try again" |
 | LLM timeout (>30s) | 504 | "Request timed out, try again" |
 | LLM returns empty | 422 | "AI returned no suggestion" |
 | Rate limited | 429 | "Too many requests, wait a moment" |
 | Invalid/expired token | 401 | Handled by existing auth middleware |
 
-### 7. Files Changed
+### 6. Files Changed
 
 | File | Change |
 |------|--------|
@@ -298,13 +279,21 @@ Relationships:
 | `src/EAxWiki/Config.cs` | Add `--ai-endpoint`, `--ai-model`, `--ai-key` |
 | `src/EAxWiki/Program.cs` | Pass AI config to write-back server |
 | `src/EAxWiki/WikiWritebackServer.cs` | Add `POST /api/ai-suggest` endpoint |
-| `src/EAxWiki.Export/Exporters/InfrastructureWriter.cs` | Embed `ai-suggest.js` |
+| `src/EAxWiki.Export/Exporters/InfrastructureWriter.cs` | Embed `ai-suggest.js`, add `aiConfigured` flag |
 | `src/EAxWiki.Export/wwwroot/ai-suggest.js` | New file (Suggest button widget) |
 | `src/EAxWiki.SchedulerUI/SchedulerForm.cs` | AI config fields in Settings tab |
 
-### 8. Out of Scope (for now)
+### 7. Out of Scope (for now)
 
 - Per-element user feedback ("this suggestion was helpful / not helpful").
 - Streaming suggestions token-by-token.
 - AI-generated descriptions for diagrams.
 - Batch AI-suggest for all elements at export time.
+
+## Design Decisions (from issue discussion)
+
+| Decision | Choice | Rationale |
+|----------|--------|-----------|
+| Minimal-context elements | B: Decline with message | If no relationships and no tagged values, return `204 "Not enough context"` — don't waste LLM call on thin data |
+| JS file structure | A: Separate `ai-suggest.js` | Cleaner separation, AI toggle independent of editor, smaller focused files |
+| Button visibility | B: Only if endpoint configured | Empty `--ai-endpoint ""` = feature disabled entirely; no stale errors for non-local LLMs. Set it and it works, clear it and it vanishes. |
