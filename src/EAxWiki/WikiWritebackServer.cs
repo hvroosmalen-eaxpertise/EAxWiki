@@ -1,7 +1,9 @@
+using System.Net.Http.Json;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.RateLimiting;
+using EAxWiki.Core.Models;
 using EAxWiki.EA;
 using EAxWiki.Export.Helpers;
 using Microsoft.AspNetCore.Builder;
@@ -17,6 +19,8 @@ internal static class WikiWritebackServer
     internal record StatusChangeRequest(int ElementId, string NewStatus, string FilePath);
     internal record NotesChangeRequest(int ElementId, string NewNotes, string FilePath);
     internal record DiagramNotesChangeRequest(int DiagramId, string NewNotes, string FilePath);
+    internal record AiSuggestRequest(int ElementId);
+
     internal record RowNotesChangeRequest(
         string Kind, int ElementId, string RowId, string NewNotes, string FilePath,
         string? AttributeName, string? AttributeType,
@@ -60,6 +64,46 @@ internal static class WikiWritebackServer
             // Best-effort activity counter — never let logging failure block a write-back that otherwise succeeded.
         }
     }
+
+    private static string BuildSuggestPrompt(EaElementSummary el)
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine($"Name: {el.Name}");
+        sb.AppendLine($"Type: {el.Type}");
+        sb.AppendLine($"Stereotype: {el.Stereotype}");
+        sb.AppendLine($"Package: {el.PackagePath}");
+        sb.AppendLine($"Status: {el.Status}");
+
+        if (el.Attributes.Count > 0)
+        {
+            sb.AppendLine();
+            sb.AppendLine("Attributes:");
+            foreach (var a in el.Attributes)
+                sb.AppendLine($"  - {a.Name}: {a.Type}");
+        }
+
+        if (el.TaggedValues.Count > 0)
+        {
+            sb.AppendLine();
+            sb.AppendLine("TaggedValues:");
+            foreach (var t in el.TaggedValues)
+                sb.AppendLine($"  - {t.Name}: {t.Value}");
+        }
+
+        if (el.Relationships.Count > 0)
+        {
+            sb.AppendLine();
+            sb.AppendLine("Relationships:");
+            foreach (var r in el.Relationships)
+                sb.AppendLine($"  - {r.Direction} {r.Type} → {r.TargetName} ({r.TargetType})");
+        }
+
+        return sb.ToString();
+    }
+
+    private record LlmChatMessage(string role, string content);
+    private record LlmChatChoice(LlmChatMessage message);
+    private record LlmChatResponse(LlmChatChoice[]? choices);
 
     public static async Task RunAsync(Config config, string outputPath, ILoggerFactory loggerFactory)
     {
@@ -339,6 +383,73 @@ internal static class WikiWritebackServer
                     StatusCodes.Status500InternalServerError, $"Write-back failed: {ex.Message}",
                     context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Problem($"Write-back failed: {ex.Message}");
+            }
+        });
+
+        app.MapPost("/api/ai-suggest", async (AiSuggestRequest req, HttpContext context) =>
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(config.AiEndpoint))
+                    return Results.Json(new { message = "AI suggestions are not configured." }, statusCode: 501);
+
+                var summary = reader.GetElementSummary(req.ElementId);
+                if (summary == null)
+                    return Results.Json(new { message = "Element not found." }, statusCode: 404);
+
+                if (summary.Relationships.Count == 0 && summary.TaggedValues.Count == 0)
+                    return Results.Json(new { message = "Not enough context to suggest a description." }, statusCode: 204);
+
+                var prompt = BuildSuggestPrompt(summary);
+
+                using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(60) };
+                var llmBody = new
+                {
+                    model = config.AiModel,
+                    messages = new[]
+                    {
+                        new { role = "system", content = "You are a technical writer for enterprise architecture documentation. Write a concise 2-3 sentence description for the following element. Use the context provided (type, stereotype, package, relationships, tagged values). Be factual, precise, and write in plain English. Do not use markdown." },
+                        new { role = "user", content = prompt }
+                    },
+                    max_tokens = 300,
+                    temperature = 0.3,
+                    stream = false
+                };
+
+                var request = new HttpRequestMessage(HttpMethod.Post, $"{config.AiEndpoint.TrimEnd('/')}/chat/completions")
+                {
+                    Content = JsonContent.Create(llmBody)
+                };
+                if (!string.IsNullOrEmpty(config.AiKey))
+                    request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", config.AiKey);
+
+                var response = await httpClient.SendAsync(request, context.RequestAborted);
+                if (!response.IsSuccessStatusCode)
+                {
+                    var errorBody = await response.Content.ReadAsStringAsync();
+                    logger.LogWarning("AI endpoint returned {StatusCode}: {Error}", (int)response.StatusCode, errorBody);
+                    return Results.Json(new { message = "AI service returned an error." }, statusCode: 502);
+                }
+
+                var result = await response.Content.ReadFromJsonAsync<LlmChatResponse>();
+                var suggestion = result?.choices?.Length > 0 ? result.choices[0].message.content?.Trim() : null;
+
+                if (string.IsNullOrEmpty(suggestion))
+                    return Results.Json(new { message = "AI returned no suggestion." }, statusCode: 422);
+
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/ai-suggest", req.ElementId, "suggested",
+                    StatusCodes.Status200OK, "AI suggestion generated",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
+                return Results.Json(new { suggestion });
+            }
+            catch (OperationCanceledException)
+            {
+                return Results.Json(new { message = "AI request timed out." }, statusCode: 504);
+            }
+            catch (HttpRequestException ex)
+            {
+                logger.LogWarning(ex, "AI endpoint unreachable");
+                return Results.Json(new { message = "AI service unavailable." }, statusCode: 502);
             }
         });
 
