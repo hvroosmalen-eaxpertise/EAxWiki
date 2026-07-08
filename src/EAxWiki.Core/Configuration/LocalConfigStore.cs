@@ -34,6 +34,8 @@ public static class LocalConfigStore
         public string? AiEndpoint { get; set; }
         public string? AiModel { get; set; }
         public string? AiKey { get; set; }
+        public string? LlamaExePath { get; set; }
+        public string? LlamaModelPath { get; set; }
     }
 
     public static Config Load(string path, out bool wasLegacyPlaintext)

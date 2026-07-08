@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
@@ -48,6 +49,13 @@ public class SchedulerForm : Form
     private readonly Button _aiTestButton = new() { Text = "Test LLM Connection", AutoSize = true };
     private readonly Button _aiSaveButton = new() { Text = "Save AI Config", AutoSize = true };
     private readonly Label _aiTestResult = new() { AutoSize = true };
+    private readonly TextBox _llmExeBox = new() { Width = 340 };
+    private readonly Button _browseLlmExeButton = new() { Text = "Browse...", AutoSize = true };
+    private readonly TextBox _llmModelPathBox = new() { Width = 340 };
+    private readonly Button _browseLlmModelButton = new() { Text = "Browse...", AutoSize = true };
+    private readonly Button _llmStartButton = new() { Text = "Start LLM", AutoSize = true };
+    private readonly Button _llmStopButton = new() { Text = "Stop LLM", AutoSize = true, Enabled = false };
+    private Process? _llmProcess;
     private readonly Button _testConnectionButton = new() { Text = "Test Connection", AutoSize = true };
     private readonly Button _saveConfigButton = new() { Text = "Save Configuration", AutoSize = true };
 
@@ -137,6 +145,20 @@ public class SchedulerForm : Form
         _forceEveryNRadio.CheckedChanged += (_, _) => _forceEveryN.Enabled = _forceEveryNRadio.Checked;
         _aiTestButton.Click += async (_, _) => await TestAiConnectionAsync();
         _aiSaveButton.Click += (_, _) => SaveAiConfig();
+        _browseLlmExeButton.Click += (_, _) =>
+        {
+            using var dialog = new OpenFileDialog { Filter = "llama-server.exe|llama-server.exe|All files (*.*)|*.*", CheckFileExists = true };
+            if (dialog.ShowDialog() == DialogResult.OK)
+                _llmExeBox.Text = dialog.FileName;
+        };
+        _browseLlmModelButton.Click += (_, _) =>
+        {
+            using var dialog = new OpenFileDialog { Filter = "GGUF models (*.gguf)|*.gguf|All files (*.*)|*.*", CheckFileExists = true };
+            if (dialog.ShowDialog() == DialogResult.OK)
+                _llmModelPathBox.Text = dialog.FileName;
+        };
+        _llmStartButton.Click += async (_, _) => await StartLlmAsync();
+        _llmStopButton.Click += (_, _) => StopLlm();
 
         if (_repoRoot == null)
         {
@@ -318,16 +340,31 @@ public class SchedulerForm : Form
         AddRow(table, "AI Endpoint:", _aiEndpointBox);
         AddRow(table, "AI Model:", _aiModelBox);
         AddRow(table, "AI Key:", _aiKeyBox);
+        AddRow(table, "LLM Server:", MakeBrowseRow(_llmExeBox, _browseLlmExeButton));
+        AddRow(table, "LLM Model:", MakeBrowseRow(_llmModelPathBox, _browseLlmModelButton));
         AddRow(table, "Status:", _aiTestResult);
+
+        var runRow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(0, 8, 0, 0) };
+        runRow.Controls.Add(_llmStartButton);
+        runRow.Controls.Add(_llmStopButton);
 
         var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown, WrapContents = false };
         panel.Controls.Add(table);
+        panel.Controls.Add(runRow);
 
         var buttons = new FlowLayoutPanel { Dock = DockStyle.Bottom, FlowDirection = FlowDirection.RightToLeft, AutoSize = true, Padding = new Padding(0, 8, 0, 0) };
         buttons.Controls.Add(_aiSaveButton);
         buttons.Controls.Add(_aiTestButton);
 
         return new TabPage("AI LLM") { Padding = new Padding(10), AutoScroll = true, Controls = { panel, buttons } };
+    }
+
+    private static FlowLayoutPanel MakeBrowseRow(TextBox box, Button button)
+    {
+        var row = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, WrapContents = false };
+        row.Controls.Add(box);
+        row.Controls.Add(button);
+        return row;
     }
 
     private async Task TestAiConnectionAsync()
@@ -400,6 +437,92 @@ public class SchedulerForm : Form
         }
     }
 
+    private async Task StartLlmAsync()
+    {
+        var exePath = _llmExeBox.Text.Trim();
+        var modelPath = _llmModelPathBox.Text.Trim();
+        if (exePath.Length == 0 || modelPath.Length == 0)
+        {
+            AppendOutput("Set both LLM Server path and LLM Model path first.");
+            return;
+        }
+        if (!File.Exists(exePath))
+        {
+            AppendOutput($"LLM server not found: {exePath}");
+            return;
+        }
+        if (!File.Exists(modelPath))
+        {
+            AppendOutput($"LLM model not found: {modelPath}");
+            return;
+        }
+
+        _llmStartButton.Enabled = false;
+        _llmStartButton.Text = "Starting...";
+        AppendOutput($"Starting LLM server: {exePath}");
+
+        try
+        {
+            var psi = new ProcessStartInfo(exePath, $"-m \"{modelPath}\" -c 4096 --port {(int)_apiPortConfigBox.Value + 2} --n-gpu-layers 0")
+            {
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true
+            };
+            var process = new Process { StartInfo = psi, EnableRaisingEvents = true };
+            process.Start();
+
+            _llmProcess = process;
+            _llmStopButton.Enabled = true;
+            _llmStartButton.Text = "Running";
+            AppendOutput($"LLM server started (PID {process.Id}). AI endpoint: http://localhost:{_apiPortConfigBox.Value + 2}/v1");
+
+            // Read output in background to detect failures
+            _ = Task.Run(async () =>
+            {
+                var output = await process.StandardOutput.ReadToEndAsync();
+                var error = await process.StandardError.ReadToEndAsync();
+                var fullLog = (output + error).Trim();
+                if (fullLog.Length > 0)
+                    BeginInvoke(() => AppendOutput($"LLM exited: {fullLog[..Math.Min(fullLog.Length, 500)]}"));
+
+                BeginInvoke(() =>
+                {
+                    _llmProcess = null;
+                    _llmStartButton.Enabled = true;
+                    _llmStartButton.Text = "Start LLM";
+                    _llmStopButton.Enabled = false;
+                    AppendOutput("LLM server stopped.");
+                });
+            });
+        }
+        catch (Exception ex)
+        {
+            AppendOutput($"Failed to start LLM: {ex.Message}");
+            _llmStartButton.Enabled = true;
+            _llmStartButton.Text = "Start LLM";
+        }
+    }
+
+    private void StopLlm()
+    {
+        if (_llmProcess == null || _llmProcess.HasExited) return;
+        try
+        {
+            _llmProcess.Kill(entireProcessTree: true);
+            AppendOutput("LLM server stopped.");
+        }
+        catch (Exception ex)
+        {
+            AppendOutput($"Failed to stop LLM: {ex.Message}");
+        }
+        _llmProcess = null;
+        _llmStartButton.Enabled = true;
+        _llmStartButton.Text = "Start LLM";
+        _llmStopButton.Enabled = false;
+    }
+
     private void SaveAiConfig()
     {
         if (_repoRoot == null) return;
@@ -421,6 +544,8 @@ public class SchedulerForm : Form
             config.AiEndpoint = _aiEndpointBox.Text.Trim() is { Length: > 0 } ai ? ai : null;
             config.AiModel = _aiModelBox.Text.Trim() is { Length: > 0 } model ? model : null;
             config.AiKey = _aiKeyBox.Text is { Length: > 0 } key ? key : null;
+            config.LlamaExePath = _llmExeBox.Text.Trim() is { Length: > 0 } exe ? exe : null;
+            config.LlamaModelPath = _llmModelPathBox.Text.Trim() is { Length: > 0 } mp ? mp : null;
 
             LocalConfigStore.Save(path, config);
             AppendOutput("AI config saved.");
@@ -474,6 +599,8 @@ public class SchedulerForm : Form
             _aiEndpointBox.Text = "";
             _aiModelBox.Text = "llama-3.2-3b";
             _aiKeyBox.Text = "";
+            _llmExeBox.Text = "E:\\llama-cpp\\llama-server.exe";
+            _llmModelPathBox.Text = "E:\\models\\llama-3.2-3b-q4.gguf";
             return;
         }
 
@@ -488,6 +615,8 @@ public class SchedulerForm : Form
             _aiEndpointBox.Text = config.AiEndpoint ?? "";
             _aiModelBox.Text = config.AiModel ?? "llama-3.2-3b";
             _aiKeyBox.Text = config.AiKey ?? "";
+            _llmExeBox.Text = config.LlamaExePath ?? "E:\\llama-cpp\\llama-server.exe";
+            _llmModelPathBox.Text = config.LlamaModelPath ?? "E:\\models\\llama-3.2-3b-q4.gguf";
         }
         catch (Exception ex)
         {
