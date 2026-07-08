@@ -336,22 +336,40 @@ public class SchedulerForm : Form
 
     private TabPage BuildAiTab()
     {
-        var table = new TableLayoutPanel { ColumnCount = 2, AutoSize = true, Dock = DockStyle.Top };
-        AddRow(table, "AI Endpoint:", _aiEndpointBox);
-        AddRow(table, "AI Model:", _aiModelBox);
-        AddRow(table, "AI Key:", _aiKeyBox);
-        AddRow(table, "LLM Server:", MakeBrowseRow(_llmExeBox, _browseLlmExeButton));
-        AddRow(table, "LLM Model:", MakeBrowseRow(_llmModelPathBox, _browseLlmModelButton));
-        AddRow(table, "Status:", _aiTestResult);
+        var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown, WrapContents = false, AutoScroll = true };
 
-        var runRow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(0, 8, 0, 0) };
-        runRow.Controls.Add(_llmStartButton);
-        runRow.Controls.Add(_llmStopButton);
+        // Local LLM section
+        var localGroup = new GroupBox { Text = "Local LLM", AutoSize = true, Padding = new Padding(8) };
+        var localTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
+        AddRow(localTable, "Server executable:", MakeBrowseRow(_llmExeBox, _browseLlmExeButton));
+        AddRow(localTable, "Model file (.gguf):", MakeBrowseRow(_llmModelPathBox, _browseLlmModelButton));
+        var localButtons = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(3, 8, 3, 3) };
+        localButtons.Controls.Add(_llmStartButton);
+        localButtons.Controls.Add(_llmStopButton);
+        localGroup.Controls.Add(localTable);
+        localGroup.Controls.Add(localButtons);
+        // Position table then buttons inside group box
+        localTable.Location = new Point(8, 20);
+        localButtons.Location = new Point(8, localTable.Bottom + 4);
+        localGroup.Height = localButtons.Bottom + 8;
+        panel.Controls.Add(localGroup);
 
-        var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown, WrapContents = false };
-        panel.Controls.Add(table);
-        panel.Controls.Add(runRow);
+        // Remote LLM section
+        var remoteGroup = new GroupBox { Text = "Remote LLM", AutoSize = true, Padding = new Padding(8) };
+        var remoteTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
+        AddRow(remoteTable, "API Endpoint:", _aiEndpointBox);
+        AddRow(remoteTable, "Model:", _aiModelBox);
+        AddRow(remoteTable, "API Key:", _aiKeyBox);
+        remoteGroup.Controls.Add(remoteTable);
+        remoteTable.Location = new Point(8, 20);
+        remoteGroup.Height = remoteTable.Bottom + 12;
+        panel.Controls.Add(remoteGroup);
 
+        // Status
+        _aiTestResult.Margin = new Padding(3, 8, 3, 3);
+        panel.Controls.Add(_aiTestResult);
+
+        // Action buttons
         var buttons = new FlowLayoutPanel { Dock = DockStyle.Bottom, FlowDirection = FlowDirection.RightToLeft, AutoSize = true, Padding = new Padding(0, 8, 0, 0) };
         buttons.Controls.Add(_aiSaveButton);
         buttons.Controls.Add(_aiTestButton);
@@ -476,6 +494,7 @@ public class SchedulerForm : Form
             _llmProcess = process;
             _llmStopButton.Enabled = true;
             _llmStartButton.Text = "Running";
+            _aiEndpointBox.Text = "http://localhost:8080/v1";
             AppendOutput($"LLM server started (PID {process.Id}). AI endpoint: http://localhost:8080/v1");
 
             // Read output in background to detect failures
