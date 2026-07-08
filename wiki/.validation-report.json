@@ -5,31 +5,6 @@
   "Errors": 74,
   "Issues": [
     {
-      "File": "Facilities\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Products\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Drivers\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Courses of Action\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Capabilities\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
       "File": "index.md",
       "Type": "error",
       "Message": "YAML frontmatter present but could not be parsed"
@@ -56,6 +31,16 @@
     },
     {
       "File": "Market Differentiation Pressure\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Regulatory Pressure\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Regulatory Pressure\\index.md",
       "Type": "warning",
       "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
     },
@@ -150,11 +135,6 @@
       "Message": "YAML frontmatter present but could not be parsed"
     },
     {
-      "File": "Reference Documents\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
       "File": "Reference Material\\index.md",
       "Type": "error",
       "Message": "YAML frontmatter present but could not be parsed"
@@ -176,6 +156,36 @@
     },
     {
       "File": "Goals\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Drivers\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Courses of Action\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Capabilities\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Assessments\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Assessments\\index.md",
+      "Type": "warning",
+      "Message": "Missing image: x"
+    },
+    {
+      "File": "Elements\\index.md",
       "Type": "error",
       "Message": "YAML frontmatter present but could not be parsed"
     },
@@ -206,56 +216,6 @@
     },
     {
       "File": "Channel\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Experience\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Process\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Capability\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Asset\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Architecture\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Story\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Purpose\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Content\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Identity\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Private Parties\\index.md",
       "Type": "error",
       "Message": "YAML frontmatter present but could not be parsed"
     },
@@ -313,6 +273,91 @@
       "File": "People\\index.md",
       "Type": "warning",
       "Message": "Broken link: Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Reference Documents\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Experience\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Process\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Capability\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Asset\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Architecture\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Story\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Purpose\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Content\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
     },
     {
       "File": "Base\\index.md",
@@ -385,7 +430,47 @@
       "Message": "YAML frontmatter present but could not be parsed"
     },
     {
-      "File": "Mapping SDG to Main\\index.md",
+      "File": "ESRS E5\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS E4\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS E3\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS E2\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS E1\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS 2\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS 1\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "European Sustainability Reporting Standards\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS\\index.md",
       "Type": "error",
       "Message": "YAML frontmatter present but could not be parsed"
     },
@@ -400,44 +485,14 @@
       "Message": "YAML frontmatter present but could not be parsed"
     },
     {
-      "File": "diagrams\\index.md",
+      "File": "Facilities\\index.md",
       "Type": "error",
       "Message": "YAML frontmatter present but could not be parsed"
     },
     {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+      "File": "Products\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
     },
     {
       "File": "Organisation\\index.md",
@@ -496,31 +551,6 @@
     },
     {
       "File": "Model Creation\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Regulatory Pressure\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Regulatory Pressure\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "Assessments\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "Assessments\\index.md",
-      "Type": "warning",
-      "Message": "Missing image: x"
-    },
-    {
-      "File": "Elements\\index.md",
       "Type": "error",
       "Message": "YAML frontmatter present but could not be parsed"
     },
@@ -680,47 +710,17 @@
       "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
     },
     {
-      "File": "ESRS E5\\index.md",
+      "File": "Identity\\index.md",
       "Type": "error",
       "Message": "YAML frontmatter present but could not be parsed"
     },
     {
-      "File": "ESRS E4\\index.md",
+      "File": "Private Parties\\index.md",
       "Type": "error",
       "Message": "YAML frontmatter present but could not be parsed"
     },
     {
-      "File": "ESRS E3\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "ESRS E2\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "ESRS E1\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "ESRS 2\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "ESRS 1\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "European Sustainability Reporting Standards\\index.md",
-      "Type": "error",
-      "Message": "YAML frontmatter present but could not be parsed"
-    },
-    {
-      "File": "ESRS\\index.md",
+      "File": "Mapping SDG to Main\\index.md",
       "Type": "error",
       "Message": "YAML frontmatter present but could not be parsed"
     },

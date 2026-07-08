@@ -436,17 +436,38 @@ function Get-NewPageReadCount {
     return $count
 }
 
-function Get-NewWritebackCount {
+function Get-NewWritebackSummary {
     # WikiWritebackServer.cs (LogWriteback) appends one line per successful write-back to
-    # status/writeback.log - see that file for why it lives under status/ specifically.
+    # status/writeback.log with format: "{timestamp} {kind}" where kind is one of:
+    # status, notes, diagram-notes, or row-notes:{kind}.
+    # Returns a hashtable with total count and per-kind breakdown.
     $writebackLogPath = Join-Path $wikiDir "status\writeback.log"
     if ($state.writebackLogFile -ne $writebackLogPath) {
         $state.writebackLogFile = $writebackLogPath
         $state.writebackLogOffset = 0
     }
     $newText = Read-NewLogText -Path $writebackLogPath -OffsetProperty 'writebackLogOffset'
-    if (-not $newText) { return 0 }
-    return @($newText -split "`r?`n" | Where-Object { $_.Trim().Length -gt 0 }).Count
+    if (-not $newText) { return @{ Total = 0; Kinds = @{} } }
+
+    $kinds = @{}
+    $total = 0
+    foreach ($line in ($newText -split "`r?`n")) {
+        $trimmed = $line.Trim()
+        if ($trimmed.Length -eq 0) { continue }
+        $total++
+        # Format: "2026-07-08 15:30:00 status"
+        $parts = $trimmed -split '\s+', 3
+        if ($parts.Count -ge 3) {
+            $kind = $parts[2]
+            $kinds[$kind] = [int]$kinds[$kind] + 1
+        }
+    }
+    return @{ Total = $total; Kinds = $kinds }
+}
+
+function Get-NewWritebackCount {
+    $summary = Get-NewWritebackSummary
+    return $summary.Total
 }
 
 function Update-HealthPage {
@@ -555,6 +576,8 @@ while ($attempt -lt $MaxRetries -and -not $succeeded) {
 $exportStopwatch.Stop()
 $state.lastExitCode = $lastExitCode
 
+$writebackSummary = Get-NewWritebackSummary
+
 if ($succeeded) {
     $wasFailing = $state.consecutiveFailures -gt 0
     $state.lastSuccessTime = (Get-Date).ToString("o")
@@ -585,9 +608,19 @@ if ($succeeded) {
         } catch {}
     }
 
+    $writebackSuffix = ""
     if ($NotifyOnStart) {
-        Send-Alert -Kind Finish -Message ("Export finished in {0} - {1} page(s) total ({2} diagram, {3} element), {4} vs previous run.{5}" -f `
-            $exportStopwatch.Elapsed.ToString('mm\:ss'), $elementCount, $diagramCount, ($elementCount - $diagramCount), $deltaLabel, $validationSuffix)
+        if ($writebackSummary -and $writebackSummary.Total -gt 0) {
+            $parts = @()
+            foreach ($kv in $writebackSummary.Kinds.GetEnumerator() | Sort-Object { $_.Value } -Descending) {
+                $parts += "$($kv.Value) $($kv.Key)"
+            }
+            if ($parts.Count -gt 0) {
+                $writebackSuffix = " - write-backs: $($parts -join ', ')"
+            }
+        }
+        Send-Alert -Kind Finish -Message ("Export finished in {0} - {1} page(s) total ({2} diagram, {3} element), {4} vs previous run.{5}{6}" -f `
+            $exportStopwatch.Elapsed.ToString('mm\:ss'), $elementCount, $diagramCount, ($elementCount - $diagramCount), $deltaLabel, $validationSuffix, $writebackSuffix)
     }
 
     Write-MonitorLog -Phase "export" -Message "Succeeded on attempt $attempt in $($exportStopwatch.Elapsed.ToString('mm\:ss'))."
@@ -601,7 +634,7 @@ if ($succeeded) {
 }
 
 $state.pageReadsToday = [int]$state.pageReadsToday + (Get-NewPageReadCount)
-$state.writebacksToday = [int]$state.writebacksToday + (Get-NewWritebackCount)
+$state.writebacksToday = [int]$state.writebacksToday + $writebackSummary.Total
 
 $today = (Get-Date).ToString("yyyy-MM-dd")
 if ($state.lastDigestDate -and $state.lastDigestDate -ne $today) {

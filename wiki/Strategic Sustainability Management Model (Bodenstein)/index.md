@@ -20,4 +20,4 @@ This model integrates sustainability as a strategic variable into corporate stra
 
 ---
 
-*Generated: 2026-07-08 15:42:43*
+*Generated: 2026-07-08 16:10:31*
