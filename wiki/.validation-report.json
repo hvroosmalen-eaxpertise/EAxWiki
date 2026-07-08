@@ -1,0 +1,733 @@
+{
+  "FilesValidated": 74,
+  "Passed": 0,
+  "Warnings": 71,
+  "Errors": 74,
+  "Issues": [
+    {
+      "File": "Facilities\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Products\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Drivers\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Courses of Action\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Capabilities\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Emissions\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Reputation Risk\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Reputation Risk\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Market Differentiation Pressure\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Market Differentiation Pressure\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Climate Risk\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Climate Risk\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Stakeholder Expectations\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Stakeholder Expectations\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Strategic Sustainability Management Model (Bodenstein)\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Strategic Sustainability Management Model (Bodenstein)\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: diagrams/Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Supervisory Board (RvC"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Rijksdienst voor Ondernemen (RVO"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Sociaal Economische Raad (SER"
+    },
+    {
+      "File": "Reference Websites\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Reference Documents\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Reference Material\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS Sector Classification\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS Classification\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Outcomes\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Goals\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Task\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Task\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
+    },
+    {
+      "File": "Task\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Identificeer uitstootbronnen (scope 1, 2, 3"
+    },
+    {
+      "File": "Task\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma"
+    },
+    {
+      "File": "Journey\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Channel\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Experience\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Process\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Capability\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Asset\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Architecture\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Story\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Purpose\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Content\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Identity\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Private Parties\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Chamber of Commerce (Kamer van Koophandel"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Rijksdienst voor Ondernemend Nederland (RVO"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Sociaal Economische Raad (SER"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Supervisory Board (RvC"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "Base\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS S3 Affected Communities - People\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ERSR S2 Workers in the Value Chain - People\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS S1 Own Workforce - People\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS E1, E2, E3, E4, E5, G1 - People\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "European Union - People\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS and People\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS Required Companies\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS Goals and Objectives\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS G1\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS S4\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS S3\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS S2\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS S1\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Mapping SDG to Main\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Sustainability Development Goals\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "SDGs\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Organisation\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Open Footprint Data Model LDM\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Data Layer\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Information Collection and Model Creation\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Information Collection and Model Creation\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: EDGY -_ XMI (Python"
+    },
+    {
+      "File": "Information Collection and Model Creation\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: LDM -_ XMI (Python"
+    },
+    {
+      "File": "Introduction EurSuRA\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Introduction EurSuRA\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
+    },
+    {
+      "File": "Introduction EurSuRA\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Deutsche Bahn (Marco Dillenburg"
+    },
+    {
+      "File": "Introduction EurSuRA\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Calculation Engine(s"
+    },
+    {
+      "File": "Introduction EurSuRA\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: EurSuRA.eu (Website"
+    },
+    {
+      "File": "Model Creation\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Regulatory Pressure\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Regulatory Pressure\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Assessments\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Assessments\\index.md",
+      "Type": "warning",
+      "Message": "Missing image: x"
+    },
+    {
+      "File": "Elements\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Archimate\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Archimate\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Stories\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: % Gerecycled materiaal = (gerecycled _ totaal input"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: % Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Emissiereductie (%"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Totale uitstoot = Scope 1 \u002B Scope 2 \u002B Scope 3 (in ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: _ teruggenomen producten (per jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Aantal duurzame assets (bv. EV\u0027s, zonnepanelen"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: BMS (HVAC_lighting"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Brandstofgebruik (Scope 1"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: CO\u2082 bespaard door digitalisering (ton"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: CO\u2082 per klanttransactie (kg"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Elektriciteitsverbruik (Scope 2"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Energie (MWh_jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Energieverbruik (kWh"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Hernieuwbare energieopwekking (kWh"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Herstelde natuur (ha"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Jaarlijkse CO\u2082-reductie (%"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Leveranciers-, transport-, gebruiksdata (Scope 3"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Massa gerecycled materiaal (kg_% input"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Productiesoftware (SCADA, MES"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Reductiedoel CO\u2082 (% t.o.v. basisjaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Restafval per medewerker (kg_jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Uitstoot NO\u2093_SO\u2093 (kg_jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "ESRS E5\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS E4\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS E3\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS E2\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS E1\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS 2\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS 1\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "European Sustainability Reporting Standards\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "ESRS\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    },
+    {
+      "File": "Edgy\\index.md",
+      "Type": "error",
+      "Message": "YAML frontmatter present but could not be parsed"
+    }
+  ]
+}

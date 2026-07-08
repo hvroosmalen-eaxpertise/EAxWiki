@@ -8,12 +8,14 @@ internal static class NotesWidgetRenderer
     {
         if (ctx.ApiPort > 0)
         {
+            var aiConfigured = ctx.ApiPort > 0 && ctx.AiConfigured;
             yield return
                 $"<div id=\"ea-notes-editor\" class=\"ea-notes-editor\"" +
                 $" data-ea-id=\"{element.Id}\"" +
                 $" data-file-path=\"{wikiRelPathHtml}\"" +
                 $" data-api-port=\"{ctx.ApiPort}\"" +
-                $" data-api-token=\"{HtmlHelpers.HtmlEscape(ctx.ApiToken)}\">";
+                $" data-api-token=\"{HtmlHelpers.HtmlEscape(ctx.ApiToken)}\"" +
+                $" data-ai-configured=\"{aiConfigured}\">";
             yield return "<button id=\"ea-notes-edit-btn\" class=\"ea-notes-edit-btn\" type=\"button\" aria-label=\"Edit notes\">&#9998;</button>";
             yield return "<div class=\"ea-notes-content\">";
             yield return "<!--ea-notes-start-->";

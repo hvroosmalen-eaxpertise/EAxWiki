@@ -100,6 +100,7 @@ public class MarkdownExporter : IWikiExporter
                 infrastructure.WriteStatusEditorScriptAsync(outputPath, cancellationToken),
                 infrastructure.WriteNotesEditorScriptAsync(outputPath, cancellationToken),
                 infrastructure.WriteRowNotesEditorScriptAsync(outputPath, cancellationToken),
+                infrastructure.WriteAiSuggestScriptAsync(outputPath, cancellationToken),
             };
 
             if (reader != null)

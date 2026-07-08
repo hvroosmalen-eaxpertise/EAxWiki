@@ -43,15 +43,18 @@ public class SchedulerForm : Form
     private readonly NumericUpDown _apiPortConfigBox = new() { Minimum = 1, Maximum = 65535, Value = 8001, Width = 80 };
     private readonly TextBox _webhookBox = new() { Width = 400 };
     private readonly TextBox _teamsWebhookBox = new() { Width = 400 };
-    private readonly TextBox _aiEndpointBox = new() { Width = 400 };
-    private readonly TextBox _aiModelBox = new() { Width = 400 };
+    private readonly TextBox _aiEndpointBox = new() { Width = 400, Text = "https://api.openai.com/v1" };
+    private readonly TextBox _aiModelBox = new() { Width = 400, Text = "gpt-4o-mini" };
     private readonly TextBox _aiKeyBox = new() { Width = 400, UseSystemPasswordChar = true };
     private readonly Button _aiTestButton = new() { Text = "Test LLM Connection", AutoSize = true };
     private readonly Button _aiSaveButton = new() { Text = "Save AI Config", AutoSize = true };
     private readonly Label _aiTestResult = new() { AutoSize = true };
-    private readonly TextBox _llmExeBox = new() { Width = 340 };
+    private readonly RadioButton _llmModeNone = new() { Text = "No LLM", AutoSize = true };
+    private readonly RadioButton _llmModeLocal = new() { Text = "Local LLM", AutoSize = true, Checked = true };
+    private readonly RadioButton _llmModeRemote = new() { Text = "Remote LLM", AutoSize = true };
+    private readonly TextBox _llmExeBox = new() { Width = 340, Height = 23 };
     private readonly Button _browseLlmExeButton = new() { Text = "Browse...", AutoSize = true };
-    private readonly TextBox _llmModelPathBox = new() { Width = 340 };
+    private readonly TextBox _llmModelPathBox = new() { Width = 340, Height = 23 };
     private readonly Button _browseLlmModelButton = new() { Text = "Browse...", AutoSize = true };
     private readonly Button _llmStartButton = new() { Text = "Start LLM", AutoSize = true };
     private readonly Button _llmStopButton = new() { Text = "Stop LLM", AutoSize = true, Enabled = false };
@@ -143,6 +146,9 @@ public class SchedulerForm : Form
 
         _simpleModeRadio.CheckedChanged += (_, _) => UpdateModeEnablement();
         _forceEveryNRadio.CheckedChanged += (_, _) => _forceEveryN.Enabled = _forceEveryNRadio.Checked;
+        _llmModeNone.CheckedChanged += (_, _) => UpdateAiModeEnablement();
+        _llmModeLocal.CheckedChanged += (_, _) => UpdateAiModeEnablement();
+        _llmModeRemote.CheckedChanged += (_, _) => UpdateAiModeEnablement();
         _aiTestButton.Click += async (_, _) => await TestAiConnectionAsync();
         _aiSaveButton.Click += (_, _) => SaveAiConfig();
         _browseLlmExeButton.Click += (_, _) =>
@@ -179,6 +185,10 @@ public class SchedulerForm : Form
 
         UpdateModeEnablement();
         UpdateRepoTypeEnablement();
+
+        if (_aiEndpointBox.Text.Length == 0) _aiEndpointBox.Text = "https://api.openai.com/v1";
+        if (_aiModelBox.Text.Length == 0) _aiModelBox.Text = "gpt-4o-mini";
+        UpdateAiModeEnablement();
 
         using (var identity = System.Security.Principal.WindowsIdentity.GetCurrent())
         {
@@ -338,43 +348,49 @@ public class SchedulerForm : Form
     {
         var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown, WrapContents = false, AutoScroll = true };
 
+        // Mode selector
+        var modeRow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(0, 0, 0, 8) };
+        modeRow.Controls.Add(_llmModeNone);
+        modeRow.Controls.Add(_llmModeLocal);
+        modeRow.Controls.Add(_llmModeRemote);
+        panel.Controls.Add(modeRow);
+
         // Local LLM section
-        var localGroup = new GroupBox { Text = "Local LLM", AutoSize = true, Padding = new Padding(8) };
+        var localGroup = new GroupBox { Text = "Local LLM", Width = 560, Height = 180, Padding = new Padding(6) };
         var localTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
+        localTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        localTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
         AddRow(localTable, "Server executable:", MakeBrowseRow(_llmExeBox, _browseLlmExeButton));
         AddRow(localTable, "Model file (.gguf):", MakeBrowseRow(_llmModelPathBox, _browseLlmModelButton));
-        var localButtons = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(3, 8, 3, 3) };
+        var localButtons = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(3, 4, 3, 3) };
         localButtons.Controls.Add(_llmStartButton);
         localButtons.Controls.Add(_llmStopButton);
         localGroup.Controls.Add(localTable);
         localGroup.Controls.Add(localButtons);
-        // Position table then buttons inside group box
-        localTable.Location = new Point(8, 20);
-        localButtons.Location = new Point(8, localTable.Bottom + 4);
-        localGroup.Height = localButtons.Bottom + 8;
+        localTable.Location = new Point(6, 16);
+        localButtons.Location = new Point(6, localTable.Bottom + 2);
         panel.Controls.Add(localGroup);
 
         // Remote LLM section
-        var remoteGroup = new GroupBox { Text = "Remote LLM", AutoSize = true, Padding = new Padding(8) };
+        var remoteGroup = new GroupBox { Text = "Remote LLM", Width = 560, Height = 180, Padding = new Padding(6) };
         var remoteTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
-        AddRow(remoteTable, "API Endpoint:", _aiEndpointBox);
+        remoteTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        remoteTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        AddRow(remoteTable, "Remote LLM Endpoint:", _aiEndpointBox);
         AddRow(remoteTable, "Model:", _aiModelBox);
         AddRow(remoteTable, "API Key:", _aiKeyBox);
+        var remoteButtons = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(3, 4, 3, 3), WrapContents = false };
+        remoteButtons.Controls.Add(_aiTestButton);
+        remoteButtons.Controls.Add(_aiSaveButton);
         remoteGroup.Controls.Add(remoteTable);
-        remoteTable.Location = new Point(8, 20);
-        remoteGroup.Height = remoteTable.Bottom + 12;
+        remoteGroup.Controls.Add(_aiTestResult);
+        remoteGroup.Controls.Add(remoteButtons);
+        remoteTable.Location = new Point(6, 16);
+        _aiTestResult.Location = new Point(6, remoteTable.Bottom + 4);
+        remoteButtons.Location = new Point(6, _aiTestResult.Bottom + 2);
         panel.Controls.Add(remoteGroup);
 
-        // Status
-        _aiTestResult.Margin = new Padding(3, 8, 3, 3);
-        panel.Controls.Add(_aiTestResult);
-
-        // Action buttons
-        var buttons = new FlowLayoutPanel { Dock = DockStyle.Bottom, FlowDirection = FlowDirection.RightToLeft, AutoSize = true, Padding = new Padding(0, 8, 0, 0) };
-        buttons.Controls.Add(_aiSaveButton);
-        buttons.Controls.Add(_aiTestButton);
-
-        return new TabPage("AI LLM") { Padding = new Padding(10), AutoScroll = true, Controls = { panel, buttons } };
+        return new TabPage("AI LLM") { Padding = new Padding(10), AutoScroll = true, Controls = { panel } };
     }
 
     private static FlowLayoutPanel MakeBrowseRow(TextBox box, Button button)
@@ -404,7 +420,7 @@ public class SchedulerForm : Form
         {
             using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
             var model = _aiModelBox.Text.Trim();
-            if (model.Length == 0) model = "llama-3.2-3b";
+            if (model.Length == 0) model = "gpt-4o-mini";
 
             var body = new
             {
@@ -560,6 +576,7 @@ public class SchedulerForm : Form
                 ? LocalConfigStore.Load(path, out _)
                 : new LocalConfigStore.Config();
 
+            config.AiMode = _llmModeNone.Checked ? "none" : _llmModeLocal.Checked ? "local" : "remote";
             config.AiEndpoint = _aiEndpointBox.Text.Trim() is { Length: > 0 } ai ? ai : null;
             config.AiModel = _aiModelBox.Text.Trim() is { Length: > 0 } model ? model : null;
             config.AiKey = _aiKeyBox.Text is { Length: > 0 } key ? key : null;
@@ -584,9 +601,27 @@ public class SchedulerForm : Form
     {
         var row = table.RowCount;
         table.RowCount = row + 1;
-        table.Controls.Add(new Label { Text = caption, AutoSize = true, Anchor = AnchorStyles.Left, Margin = new Padding(3, 6, 3, 3) }, 0, row);
+        table.Controls.Add(new Label { Text = caption, AutoSize = true, MinimumSize = new Size(0, 23), TextAlign = ContentAlignment.MiddleRight, Anchor = AnchorStyles.Right, Margin = new Padding(3, 3, 8, 3) }, 0, row);
         value.Margin = new Padding(3, 3, 3, 3);
         table.Controls.Add(value, 1, row);
+    }
+
+    private void UpdateAiModeEnablement()
+    {
+        var none = _llmModeNone.Checked;
+        var local = _llmModeLocal.Checked;
+        var remote = _llmModeRemote.Checked;
+        _llmExeBox.Enabled = local;
+        _browseLlmExeButton.Enabled = local;
+        _llmModelPathBox.Enabled = local;
+        _browseLlmModelButton.Enabled = local;
+        _llmStartButton.Enabled = local;
+        _llmStopButton.Enabled = local && _llmProcess != null;
+        _aiEndpointBox.Enabled = remote;
+        _aiModelBox.Enabled = remote;
+        _aiKeyBox.Enabled = remote;
+        _aiTestButton.Enabled = !none;
+        _aiSaveButton.Enabled = !none;
     }
 
     private void UpdateModeEnablement()
@@ -615,8 +650,8 @@ public class SchedulerForm : Form
             _apiPortConfigBox.Value = 8001;
             _webhookBox.Text = "";
             _teamsWebhookBox.Text = "";
-            _aiEndpointBox.Text = "";
-            _aiModelBox.Text = "llama-3.2-3b";
+            _aiEndpointBox.Text = "https://api.openai.com/v1";
+            _aiModelBox.Text = "gpt-4o-mini";
             _aiKeyBox.Text = "";
             _llmExeBox.Text = "E:\\llama-cpp\\llama-server.exe";
             _llmModelPathBox.Text = "E:\\models\\llama-3.2-3b-q4.gguf";
@@ -631,8 +666,12 @@ public class SchedulerForm : Form
             _apiPortConfigBox.Value = Math.Clamp(config.ApiPort ?? 8001, (int)_apiPortConfigBox.Minimum, (int)_apiPortConfigBox.Maximum);
             _webhookBox.Text = config.WebhookUrl ?? "";
             _teamsWebhookBox.Text = config.TeamsWebhookUrl ?? "";
-            _aiEndpointBox.Text = config.AiEndpoint ?? "";
-            _aiModelBox.Text = config.AiModel ?? "llama-3.2-3b";
+            var aiMode = config.AiMode ?? "local";
+            _llmModeNone.Checked = aiMode == "none";
+            _llmModeLocal.Checked = aiMode == "local";
+            _llmModeRemote.Checked = aiMode == "remote";
+            _aiEndpointBox.Text = config.AiEndpoint is null or "" ? "https://api.openai.com/v1" : config.AiEndpoint;
+            _aiModelBox.Text = config.AiModel is null or "" or "llama-3.2-3b" ? "gpt-4o-mini" : config.AiModel;
             _aiKeyBox.Text = config.AiKey ?? "";
             _llmExeBox.Text = config.LlamaExePath ?? "E:\\llama-cpp\\llama-server.exe";
             _llmModelPathBox.Text = config.LlamaModelPath ?? "E:\\models\\llama-3.2-3b-q4.gguf";

@@ -6,3 +6,4 @@ nav:
   - Recent: recent/
   - Status: status/
   - Pipeline Health: status/health.html
+  - Model Health: status/model-health.html
