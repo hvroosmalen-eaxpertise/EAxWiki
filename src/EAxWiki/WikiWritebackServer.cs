@@ -27,6 +27,9 @@ internal static class WikiWritebackServer
         string? MethodName, string? ReturnType, bool? IsStatic,
         string? TagName, string? TagValue);
 
+    internal record EditLockRequest(string Action, int? ElementId = null);
+    internal record EditLockState(bool Active, int? ElementId, DateTime AcquiredAt, DateTime ExpiresAt);
+
     /// <summary>
     /// Resolves <paramref name="relativePath"/> against <paramref name="outputPath"/> and rejects it
     /// unless the result stays strictly inside that directory (with a trailing separator, so a sibling
@@ -63,6 +66,34 @@ internal static class WikiWritebackServer
         {
             // Best-effort activity counter — never let logging failure block a write-back that otherwise succeeded.
         }
+    }
+
+    private static readonly TimeSpan EditLockDuration = TimeSpan.FromMinutes(5);
+
+    private static string GetEditLockPath(string outputPath) =>
+        Path.Combine(outputPath, "status", "edit-lock.json");
+
+    private static IResult HandleEditLock(string outputPath, EditLockRequest req)
+    {
+        var lockPath = GetEditLockPath(outputPath);
+        var dir = Path.GetDirectoryName(lockPath)!;
+        if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+
+        if (string.Equals(req.Action, "acquire", StringComparison.OrdinalIgnoreCase))
+        {
+            var now = DateTime.UtcNow;
+            var state = new EditLockState(true, req.ElementId, now, now.Add(EditLockDuration));
+            File.WriteAllText(lockPath, System.Text.Json.JsonSerializer.Serialize(state));
+            return Results.Ok(state);
+        }
+        else if (string.Equals(req.Action, "release", StringComparison.OrdinalIgnoreCase))
+        {
+            var state = new EditLockState(false, null, default, default);
+            File.WriteAllText(lockPath, System.Text.Json.JsonSerializer.Serialize(state));
+            return Results.Ok(state);
+        }
+
+        return Results.BadRequest(new { message = "Action must be 'acquire' or 'release'." });
     }
 
     private static string BuildSuggestPrompt(EaElementSummary el)
@@ -453,10 +484,24 @@ internal static class WikiWritebackServer
             }
         });
 
+        app.MapPost("/api/edit-lock", (EditLockRequest req) =>
+        {
+            return HandleEditLock(outputPath, req);
+        });
+
         var port = config.ApiPort > 0 ? config.ApiPort : 8001;
         logger.LogInformation("Wiki write-back server listening on port {Port}", port);
         logger.LogInformation("Accepting requests only from origins on port {WikiPort} (pass --wiki-port to override)", wikiPort);
         logger.LogInformation("Press Ctrl+C to stop.");
+
+        // Signal readiness to the monitor by writing a "ready" file in the status dir.
+        var readyDir = Path.Combine(outputPath, "status");
+        Directory.CreateDirectory(readyDir);
+        var readyFile = Path.Combine(readyDir, "api-ready");
+        app.Lifetime.ApplicationStarted.Register(() =>
+        {
+            File.WriteAllText(readyFile, $"{Environment.ProcessId}");
+        });
 
         // Bind both IPv4 and IPv6 so browsers resolving localhost to either
         // 127.0.0.1 or ::1 can reach the server.
@@ -469,6 +514,7 @@ internal static class WikiWritebackServer
         }
         finally
         {
+            if (File.Exists(readyFile)) File.Delete(readyFile);
             reader.Dispose();
         }
     }
