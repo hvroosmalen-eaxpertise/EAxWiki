@@ -306,6 +306,28 @@ if (typeof document$ !== 'undefined') {
 
     var select, applyBtn, cancelBtn, msg;
 
+    function acquireEditLock(eaId) {
+      var port = (document.getElementById('ea-status-editor') || {}).dataset.apiPort || '8001';
+      var token = (document.getElementById('ea-status-editor') || {}).dataset.apiToken || '';
+      var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
+      fetch(apiBase + '/api/edit-lock', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+        body: JSON.stringify({ action: 'acquire', elementId: eaId })
+      }).catch(function () {});
+    }
+
+    function releaseEditLock() {
+      var port = (document.getElementById('ea-status-editor') || {}).dataset.apiPort || '8001';
+      var token = (document.getElementById('ea-status-editor') || {}).dataset.apiToken || '';
+      var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
+      fetch(apiBase + '/api/edit-lock', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+        body: JSON.stringify({ action: 'release' })
+      }).catch(function () {});
+    }
+
     function enterEditMode() {
       select = document.createElement('select');
       select.className = 'ea-status-select';
@@ -338,9 +360,11 @@ if (typeof document$ !== 'undefined') {
 
       cancelBtn.addEventListener('click', exitEditMode);
       applyBtn.addEventListener('click', apply);
+      acquireEditLock(eaId);
     }
 
     function exitEditMode() {
+      releaseEditLock();
       [select, applyBtn, cancelBtn, msg].forEach(function (el) {
         if (el && el.parentNode) el.parentNode.removeChild(el);
       });
@@ -368,6 +392,7 @@ if (typeof document$ !== 'undefined') {
           current = chosen;
           badge.textContent = chosen;
           badge.className = 'status-badge status-' + chosen.toLowerCase();
+          releaseEditLock();
           exitEditMode();
         } else if (res.status === 401) {
           msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
