@@ -468,12 +468,14 @@ if (typeof document$ !== 'undefined') {
       widget.appendChild(textarea);
       widget.appendChild(controls);
       textarea.focus();
+      acquireEditLock(eaId);
 
       cancelBtn.addEventListener('click', exitEditMode);
       saveBtn.addEventListener('click', save);
     }
 
     function exitEditMode() {
+      releaseEditLock();
       if (textarea) widget.removeChild(textarea);
       if (controls) widget.removeChild(controls);
       textarea = controls = null;
@@ -499,6 +501,7 @@ if (typeof document$ !== 'undefined') {
       .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
       .then(function (res) {
         if (res.ok) {
+          releaseEditLock();
           contentDiv.innerHTML = res.data.html || placeholderHtml;
           if (hint && hint.parentNode) hint.parentNode.removeChild(hint);
           hint = null;
@@ -601,6 +604,28 @@ if (typeof document$ !== 'undefined') {
         console.error('EAxWiki ai-suggest error:', e);
       });
     });
+  }
+
+  function acquireEditLock(eaId) {
+    var port = (document.getElementById('ea-notes-editor') || {}).dataset.apiPort || '8001';
+    var token = (document.getElementById('ea-notes-editor') || {}).dataset.apiToken || '';
+    var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
+    fetch(apiBase + '/api/edit-lock', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+      body: JSON.stringify({ action: 'acquire', elementId: eaId })
+    }).catch(function () {});
+  }
+
+  function releaseEditLock() {
+    var port = (document.getElementById('ea-notes-editor') || {}).dataset.apiPort || '8001';
+    var token = (document.getElementById('ea-notes-editor') || {}).dataset.apiToken || '';
+    var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
+    fetch(apiBase + '/api/edit-lock', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+      body: JSON.stringify({ action: 'release' })
+    }).catch(function () {});
   }
 
   function init() {
