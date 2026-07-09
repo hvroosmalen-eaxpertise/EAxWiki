@@ -72,6 +72,8 @@ function Get-MonitorArgs {
     $NotifyOnStart       = $true
     $Force               = $false
     $ForceEveryNRuns     = 0
+    $ExportIntervalMinutes = 30
+    $MonitorCheckIntervalSeconds = 30
 
     $i = 0
     while ($i -lt $Arguments.Count) {
@@ -88,6 +90,8 @@ function Get-MonitorArgs {
             '^(--no-notify-start)$'                  { $NotifyOnStart = $false }
             '^(-f|--force|-Force)$'                  { $Force = $true }
             '^(--force-every|-ForceEveryNRuns)$'     { $i++; if ($i -lt $Arguments.Count) { $ForceEveryNRuns = [int]$Arguments[$i] } }
+            '^(--export-interval|-ExportIntervalMinutes)$' { $i++; if ($i -lt $Arguments.Count) { $ExportIntervalMinutes = [int]$Arguments[$i] } }
+            '^(--check-interval|-MonitorCheckIntervalSeconds)$' { $i++; if ($i -lt $Arguments.Count) { $MonitorCheckIntervalSeconds = [int]$Arguments[$i] } }
             default                                  { if (-not "$($Arguments[$i])".StartsWith('-')) { $RepoPath = $Arguments[$i] } }
         }
         $i++
@@ -105,6 +109,8 @@ function Get-MonitorArgs {
         NotifyOnStart       = $NotifyOnStart
         Force               = $Force
         ForceEveryNRuns     = $ForceEveryNRuns
+        ExportIntervalMinutes = $ExportIntervalMinutes
+        MonitorCheckIntervalSeconds = $MonitorCheckIntervalSeconds
     }
 }
 
@@ -128,6 +134,8 @@ $TestAlert           = $parsed.TestAlert
 $NotifyOnStart       = $parsed.NotifyOnStart
 $Force               = $parsed.Force
 $ForceEveryNRuns     = $parsed.ForceEveryNRuns
+$ExportIntervalMinutes = $parsed.ExportIntervalMinutes
+$MonitorCheckIntervalSeconds = $parsed.MonitorCheckIntervalSeconds
 
 if (-not $IsWindowsOS) {
     Write-Error "Monitoring requires Sparx Enterprise Architect, which is only available on Windows."
@@ -139,9 +147,8 @@ Push-Location $repoRoot
 
 # Resolve both webhook URLs from CLI arg â†’ env var â†’ .eaxwiki file. .eaxwiki is decrypted at
 # most once (not once per channel) and shared between the two lookups below.
-$needsEaxwikiConfig = ($null -eq $WebhookUrl -or "" -eq $WebhookUrl) -or ($null -eq $TeamsWebhookUrl -or "" -eq $TeamsWebhookUrl) -or ($null -eq $RepoPath -or "" -eq $RepoPath)
 $eaxwikiConfig = $null
-if ($needsEaxwikiConfig -and (Test-Path ".eaxwiki")) {
+if (Test-Path ".eaxwiki") {
     try {
         $entropy = [System.Text.Encoding]::UTF8.GetBytes("EAxWiki.LocalConfig.v1")
         $base64 = Get-Content ".eaxwiki" -Raw | ForEach-Object { $_.Trim() }
@@ -174,6 +181,31 @@ if (($null -eq $RepoPath -or "" -eq $RepoPath) -and $eaxwikiConfig -and $eaxwiki
     $RepoPath = $eaxwikiConfig.repoPath
 }
 
+# Resolve all service settings from .eaxwiki.
+$LlamaExePath     = if ($eaxwikiConfig -and $eaxwikiConfig.llamaExePath)     { $eaxwikiConfig.llamaExePath }     else { $null }
+$LlamaModelPath   = if ($eaxwikiConfig -and $eaxwikiConfig.llamaModelPath)   { $eaxwikiConfig.llamaModelPath }   else { $null }
+$AiMode           = if ($eaxwikiConfig -and $eaxwikiConfig.aiMode)           { $eaxwikiConfig.aiMode }           else { "none" }
+$AiEndpoint       = if ($eaxwikiConfig -and $eaxwikiConfig.aiEndpoint)       { $eaxwikiConfig.aiEndpoint }       else { $null }
+$AiModel          = if ($eaxwikiConfig -and $eaxwikiConfig.aiModel)          { $eaxwikiConfig.aiModel }          else { $null }
+$ApiPort          = if ($eaxwikiConfig -and $eaxwikiConfig.apiPort)          { $eaxwikiConfig.apiPort }          else { 0 }
+$WikiPort         = if ($eaxwikiConfig -and $eaxwikiConfig.wikiPort)         { $eaxwikiConfig.wikiPort }         else { 8000 }
+if ($Port -eq 8000 -and $WikiPort -ne 8000) { $Port = $WikiPort }
+
+# Default LLM paths (matching SchedulerForm's defaults).
+$LlamaExePathDefault   = "E:\llama-cpp\llama-server.exe"
+$LlamaModelPathDefault = "E:\models\llama-3.2-3b-q4.gguf"
+if (-not $LlamaExePath)   { $LlamaExePath   = $LlamaExePathDefault }
+if (-not $LlamaModelPath) { $LlamaModelPath = $LlamaModelPathDefault }
+
+# Infer AiMode if not explicitly saved in .eaxwiki.
+if (($null -eq $AiMode -or $AiMode -eq "none") -and $AiEndpoint) {
+    if ($AiEndpoint -like "http://localhost*" -or $AiEndpoint -like "http://127.0.0.1*") {
+        if ($LlamaExePath -and (Test-Path $LlamaExePath -ErrorAction SilentlyContinue)) {
+            $AiMode = "local"
+        }
+    }
+}
+
 $wikiDir = if ($OutputDir) {
     if ([System.IO.Path]::IsPathRooted($OutputDir)) { $OutputDir }
     else { Join-Path $repoRoot $OutputDir }
@@ -191,6 +223,8 @@ $instanceHash = [Convert]::ToHexString($md5.ComputeHash([System.Text.Encoding]::
 $stateDir = Join-Path $repoRoot ".eaxwiki-monitor\$instanceHash"
 $healthPath  = Join-Path $stateDir "health.json"
 $servePidPath = Join-Path $stateDir "serve.pid"
+$llmPidPath   = Join-Path $stateDir "llm.pid"
+$apiPidPath   = Join-Path $stateDir "api.pid"
 $logDir      = Join-Path $stateDir "logs"
 if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }
 $logPath     = Join-Path $logDir ("monitor-{0:yyyy-MM-dd}.log" -f (Get-Date))
@@ -207,6 +241,10 @@ function Write-MonitorLog {
 }
 
 Write-MonitorLog -Phase "config" -Message "Repo: $(ConvertTo-RedactedConnectionString $RepoPath)"
+Write-MonitorLog -Phase "config" -Message "ApiPort=$ApiPort WikiPort=$Port AiEndpoint=$AiEndpoint LlamaExePath=$LlamaExePath"
+if ($AiMode -eq "local" -and $null -eq $eaxwikiConfig.aiMode) {
+    Write-MonitorLog -Phase "config" -Message "Inferred AiMode=local from AiEndpoint=$AiEndpoint and existing LlamaExePath."
+}
 
 # Identifies which instance an alert is about - matters once more than one exporter/serve/monitor
 # triple runs on the same machine (the project explicitly supports that via --output/--port).
@@ -230,6 +268,15 @@ function Get-HealthState {
         serveConsecutiveFailures = 0
         lastServeFailureTime  = $null
         lastServeSuccessTime  = $null
+        llmConsecutiveFailures = 0
+        lastLlmFailureTime    = $null
+        lastLlmSuccessTime    = $null
+        apiConsecutiveFailures = 0
+        lastApiFailureTime    = $null
+        lastApiSuccessTime    = $null
+        # Tracks the ApiPort used during the last export; a change triggers a forced full rebuild
+        # so inline editor widgets are embedded in pages that weren't regenerated incrementally.
+        lastApiPort           = 0
         runsSinceForce        = 0
         lastMode               = $null
         # Issue #41 daily activity digest: counters accumulate across runs, get reported and reset
@@ -243,6 +290,10 @@ function Get-HealthState {
         pageReadLogOffset     = 0
         writebackLogFile      = $null
         writebackLogOffset    = 0
+        # User-initiated stop flags (issue #XX): set by SchedulerUI's stop buttons,
+        # cleared by Enable or by the run itself (skipExport is one-shot, skipServe persists).
+        skipExport            = $false
+        skipServe             = $false
     }
 
     if (Test-Path $healthPath) {
@@ -267,7 +318,7 @@ function Save-HealthState {
 function Send-Alert {
     param(
         [string]$Message,
-        [ValidateSet('Start', 'Finish', 'Failure', 'Recovery', 'ServeFailure', 'ServeRecovery', 'Test', 'DailyDigest')]
+        [ValidateSet('Start', 'Finish', 'Failure', 'Recovery', 'ServeFailure', 'ServeRecovery', 'LlmFailure', 'LlmRecovery', 'ApiFailure', 'ApiRecovery', 'Test', 'DailyDigest', 'UserStop')]
         [string]$Kind
     )
     Write-MonitorLog -Phase "alert" -Message "[$Kind] $Message"
@@ -283,20 +334,30 @@ function Send-Alert {
         'Finish'        { '#28a745' } # green
         'Failure'       { '#dc3545' } # red
         'ServeFailure'  { '#dc3545' }
+        'LlmFailure'    { '#dc3545' }
+        'ApiFailure'    { '#dc3545' }
         'Recovery'      { '#28a745' } # green
         'ServeRecovery' { '#28a745' }
+        'LlmRecovery'   { '#28a745' }
+        'ApiRecovery'   { '#28a745' }
         'Test'          { '#3aa3e3' } # blue
         'DailyDigest'   { '#3aa3e3' } # blue
+        'UserStop'      { '#FF8C00' } # orange
     }
     $emoji = switch ($Kind) {
         'Start'         { ':arrows_counterclockwise:' }
         'Finish'        { ':large_green_circle:' }
         'Failure'       { ':red_circle:' }
         'ServeFailure'  { ':red_circle:' }
+        'LlmFailure'    { ':red_circle:' }
+        'ApiFailure'    { ':red_circle:' }
         'Recovery'      { ':large_green_circle:' }
         'ServeRecovery' { ':large_green_circle:' }
+        'LlmRecovery'   { ':large_green_circle:' }
+        'ApiRecovery'   { ':large_green_circle:' }
         'Test'          { ':large_blue_circle:' }
         'DailyDigest'   { ':bar_chart:' }
+        'UserStop'      { ':raised_hand:' }
     }
 
     if ($WebhookUrl) {
@@ -475,7 +536,7 @@ function Update-HealthPage {
     $statusDir = Join-Path $wikiDir "status"
     if (-not (Test-Path $statusDir)) { New-Item -ItemType Directory -Path $statusDir -Force | Out-Null }
 
-    $overall = if ($State.consecutiveFailures -eq 0 -and $State.serveConsecutiveFailures -eq 0) { "Healthy" }
+    $overall = if ($State.consecutiveFailures -eq 0 -and $State.serveConsecutiveFailures -eq 0 -and $State.llmConsecutiveFailures -eq 0 -and $State.apiConsecutiveFailures -eq 0) { "Healthy" }
                else { "Degraded" }
 
     $template = Get-Content $healthTemplate -Raw
@@ -491,166 +552,243 @@ function Update-HealthPage {
         -replace '@@RUNS_SINCE_FORCE@@', "$($State.runsSinceForce)" `
         -replace '@@LAST_SERVE_SUCCESS_TIME@@', "$($State.lastServeSuccessTime)" `
         -replace '@@LAST_SERVE_FAILURE_TIME@@', "$($State.lastServeFailureTime)" `
-        -replace '@@SERVE_CONSECUTIVE_FAILURES@@', "$($State.serveConsecutiveFailures)"
+        -replace '@@SERVE_CONSECUTIVE_FAILURES@@', "$($State.serveConsecutiveFailures)" `
+        -replace '@@LAST_LLM_SUCCESS_TIME@@', "$($State.lastLlmSuccessTime)" `
+        -replace '@@LAST_LLM_FAILURE_TIME@@', "$($State.lastLlmFailureTime)" `
+        -replace '@@LLM_CONSECUTIVE_FAILURES@@', "$($State.llmConsecutiveFailures)" `
+        -replace '@@LAST_API_SUCCESS_TIME@@', "$($State.lastApiSuccessTime)" `
+        -replace '@@LAST_API_FAILURE_TIME@@', "$($State.lastApiFailureTime)" `
+        -replace '@@API_CONSECUTIVE_FAILURES@@', "$($State.apiConsecutiveFailures)"
     Set-Content -Path (Join-Path $statusDir "health.md") -Value $lines
 }
-
 $state = Get-HealthState
 
-# --force is off by default here, same as export.ps1 itself - a 30-minute-cadence schedule
-# doing a full rebuild every run would be needlessly slow against a large model. --force-every
-# lets an otherwise-incremental schedule periodically self-correct any drift a single run's
-# incremental diff might miss, without forcing every run.
-$runsSinceForce = if ($state.runsSinceForce) { [int]$state.runsSinceForce } else { 0 }
-$effectiveForce = $Force
-if (-not $effectiveForce -and $ForceEveryNRuns -gt 0 -and $runsSinceForce -ge ($ForceEveryNRuns - 1)) {
-    $effectiveForce = $true
-}
+$lastExportTime = [DateTime]::MinValue
 
-if ($NotifyOnStart) {
-    $startModeLabel = if ($effectiveForce) { "forced full rebuild" } else { "incremental" }
-    Send-Alert -Kind Start -Message "Scheduled run starting ($startModeLabel)."
-}
+function Test-EditLock {
+    param([string]$WikiDir)
+    $lockPath = Join-Path $WikiDir "status" "edit-lock.json"
+    if (-not (Test-Path $lockPath)) { return $false }
 
-# --- Pre-flight: clean up orphaned EA.exe processes left by a prior crashed run. ---
-$leftoverEA = @(Get-Process EA -ErrorAction SilentlyContinue)
-if ($leftoverEA.Count -gt 0) {
-    Write-MonitorLog -Phase "preflight" -Message "Found $($leftoverEA.Count) leftover EA.exe process(es) from a prior run; terminating."
-    $leftoverEA | Stop-Process -Force -ErrorAction SilentlyContinue
-}
+    try {
+        $lock = Get-Content $lockPath -Raw | ConvertFrom-Json
+        if (-not $lock.Active) { return $false }
 
-$eaPidsBefore = @(Get-Process EA -ErrorAction SilentlyContinue | ForEach-Object { $_.Id })
-function Cleanup-EAProcesses {
-    $orphans = @(Get-Process EA -ErrorAction SilentlyContinue | Where-Object { $_.Id -notin $eaPidsBefore })
-    if ($orphans.Count -gt 0) {
-        $orphans | Stop-Process -Force -ErrorAction SilentlyContinue
-        Write-MonitorLog -Phase "preflight" -Message "Cleaned up $($orphans.Count) orphaned EA process(es) from this run."
+        $expires = [DateTime]::Parse($lock.ExpiresAt, [CultureInfo]::InvariantCulture, [System.Globalization.DateTimeStyles]::AssumeUniversal)
+        if ([DateTime]::UtcNow -gt $expires) {
+            Write-MonitorLog -Phase "export" -Message "Edit-lock expired; clearing stale lock."
+            Remove-Item $lockPath -Force -ErrorAction SilentlyContinue
+            return $false
+        }
+
+        return $true
+    } catch {
+        Write-MonitorLog -Phase "export" -Message "Failed to read edit-lock: $($_.Exception.Message)"
+        return $false
     }
 }
 
-# --- Export with bounded retry + backoff. ---
-$exportArgs = @("--output", $wikiDir)
-if ($RepoPath) { $exportArgs += "--repo", $RepoPath }
-if ($effectiveForce) { $exportArgs += "--force" }
-$state.lastMode = if ($effectiveForce) { "full (--force)" } else { "incremental" }
-Write-MonitorLog -Phase "export" -Message "Mode: $($state.lastMode)."
+while ($true) {
+    $exportDue = $lastExportTime -eq [DateTime]::MinValue -or (([DateTime]::UtcNow - $lastExportTime).TotalMinutes -ge $ExportIntervalMinutes)
 
-$attempt = 0
-$succeeded = $false
-$lastExitCode = $null
-$outputTail = ""
-$exportStopwatch = [System.Diagnostics.Stopwatch]::StartNew()
+    # Clear user-initiated skip flags at the start of every run so a prior Stop action
+    # doesn't permanently disable services (skipExport is one-shot per design, skipServe
+    # is service-lifecycle scoped - both get reset here).
+    $state.skipExport = $false
+    $state.skipServe = $false
 
-while ($attempt -lt $MaxRetries -and -not $succeeded) {
-    $attempt++
-    Write-MonitorLog -Phase "export" -Message "Attempt $attempt/$MaxRetries starting."
+    # --force is off by default here, same as export.ps1 itself - a 30-minute-cadence schedule
+    # doing a full rebuild every run would be needlessly slow against a large model. --force-every
+    # lets an otherwise-incremental schedule periodically self-correct any drift a single run's
+    # incremental diff might miss, without forcing every run.
+    $runsSinceForce = if ($state.runsSinceForce) { [int]$state.runsSinceForce } else { 0 }
 
-    $output = & $PSScriptRoot\export.ps1 @exportArgs 2>&1 | Tee-Object -Variable capturedOutput
-    $lastExitCode = $LASTEXITCODE
-    $outputTail = ($capturedOutput | Select-Object -Last 20) -join "`n"
-    Cleanup-EAProcesses
+    # --- Edit-lock check: defer export if a user is actively editing. ---
+    if ($exportDue) {
+        if (Test-EditLock -WikiDir $wikiDir) {
+            Write-MonitorLog -Phase "export" -Message "Deferring export - edit in progress, retry next cycle."
+            $exportDue = $false
+        }
+    }
 
-    if ($lastExitCode -eq 0) {
-        $elementCount = Get-ElementCount
-        $previousCount = if ($state.lastElementCount) { [int]$state.lastElementCount } else { 0 }
-        $floor = [math]::Floor($previousCount * $MinElementFraction)
+    if ($exportDue) {
+        $effectiveForce = $true
+        Write-MonitorLog -Phase "config" -Message "Full export (monitor always rebuilds)."
 
-        if ($previousCount -gt 0 -and $elementCount -lt $floor) {
-            Write-MonitorLog -Phase "export" -Message "Sanity check failed: element count $elementCount is below floor $floor (previous $previousCount)."
-            $lastExitCode = 1
-        } else {
+        if ($NotifyOnStart) {
+            Send-Alert -Kind Start -Message "Scheduled run starting (forced full rebuild)."
+        }
+
+        # --- Pre-flight: clean up orphaned EA.exe processes left by a prior crashed run. ---
+        $leftoverEA = @(Get-Process EA -ErrorAction SilentlyContinue)
+        if ($leftoverEA.Count -gt 0) {
+            Write-MonitorLog -Phase "preflight" -Message "Found $($leftoverEA.Count) leftover EA.exe process(es) from a prior run; terminating."
+            $leftoverEA | Stop-Process -Force -ErrorAction SilentlyContinue
+        }
+
+        $eaPidsBefore = @(Get-Process EA -ErrorAction SilentlyContinue | ForEach-Object { $_.Id })
+        function Cleanup-EAProcesses {
+            $orphans = @(Get-Process EA -ErrorAction SilentlyContinue | Where-Object { $_.Id -notin $eaPidsBefore })
+            if ($orphans.Count -gt 0) {
+                $orphans | Stop-Process -Force -ErrorAction SilentlyContinue
+                Write-MonitorLog -Phase "preflight" -Message "Cleaned up $($orphans.Count) orphaned EA process(es) from this run."
+            }
+        }
+
+        # --- Export with bounded retry + backoff. ---
+        $skipPhase = $false
+        if ($state.skipExport) {
+            Write-MonitorLog -Phase "export" -Message "Skipped by user request (skipExport flag)."
+            Send-Alert -Kind UserStop -Message "Export skipped by user request."
+            $state.skipExport = $false
+            $skipPhase = $true
             $succeeded = $true
-            $state.lastElementCount = $elementCount
+            $lastExitCode = 0
+            $elementCount = if ($state.lastElementCount) { [int]$state.lastElementCount } else { 0 }
+            $previousCount = $elementCount
         }
-    } else {
-        Write-MonitorLog -Phase "export" -Message "Attempt $attempt failed with exit code $lastExitCode."
-    }
 
-    if (-not $succeeded -and $attempt -lt $MaxRetries) {
-        $delay = $RetryDelaySeconds * $attempt
-        Write-MonitorLog -Phase "export" -Message "Retrying in $delay seconds."
-        Start-Sleep -Seconds $delay
-    }
-}
+        $writebackSummary = Get-NewWritebackSummary
 
-$exportStopwatch.Stop()
-$state.lastExitCode = $lastExitCode
+        if (-not $skipPhase) {
+            $exportArgs = @("--output", $wikiDir)
+            if ($RepoPath) { $exportArgs += "--repo", $RepoPath }
+            if ($effectiveForce) { $exportArgs += "--force" }
+            if ($ApiPort -gt 0) {
+                $exportArgs += "--writeback", "--api-port", "$ApiPort"
+            }
+            $state.lastMode = if ($effectiveForce) { "full (--force)" } else { "incremental" }
+            Write-MonitorLog -Phase "export" -Message "Mode: $($state.lastMode)."
 
-$writebackSummary = Get-NewWritebackSummary
+            $attempt = 0
+            $succeeded = $false
+            $lastExitCode = $null
+            $outputTail = ""
+            $exportStopwatch = [System.Diagnostics.Stopwatch]::StartNew()
 
-if ($succeeded) {
-    $wasFailing = $state.consecutiveFailures -gt 0
-    $state.lastSuccessTime = (Get-Date).ToString("o")
-    $state.consecutiveFailures = 0
-    $state.runsSinceForce = if ($effectiveForce) { 0 } else { $runsSinceForce + 1 }
-    if ($wasFailing) {
-        Send-Alert -Kind Recovery -Message "Export succeeded after $($attempt) attempt(s), recovering from a prior failure."
-    }
+            while ($attempt -lt $MaxRetries -and -not $succeeded) {
+                $attempt++
+                Write-MonitorLog -Phase "export" -Message "Attempt $attempt/$MaxRetries starting."
 
-    $diagramCount = Get-DiagramCount
-    $pageDelta = $elementCount - $previousCount
-    $deltaLabel = if ($pageDelta -ge 0) { "+$pageDelta" } else { "$pageDelta" }
-    $state.lastDiagramCount = $diagramCount
+                $output = & $PSScriptRoot\export.ps1 @exportArgs
+                $lastExitCode = 1
+                foreach ($line in $output) {
+                    if ($line -match '^EAXWIKI_EXIT_CODE=(\d+)$') {
+                        $lastExitCode = [int]$Matches[1]
+                    }
+                }
+                $outputTail = ($output | Where-Object { $_ -notmatch '^EAXWIKI_EXIT_CODE=' } | Select-Object -Last 20) -join "`n"
 
-    $validationSuffix = ""
-    $validationReportPath = Join-Path $wikiDir ".validation-report.json"
-    if (Test-Path $validationReportPath) {
-        try {
-            $vr = Get-Content $validationReportPath -Raw | ConvertFrom-Json
-            $parts = @()
-            if ([int]$vr.Errors -gt 0) { $parts += "$($vr.Errors) error(s)" }
-            if ([int]$vr.Warnings -gt 0) { $parts += "$($vr.Warnings) warning(s)" }
-            if ($parts.Count -gt 0) {
-                $validationSuffix = " - validation: $($parts -join ', ') ($($vr.Passed)/$($vr.FilesValidated) files clean)"
+                if ($lastExitCode -eq 0) {
+                    $elementCount = Get-ElementCount
+                    $previousCount = if ($state.lastElementCount) { [int]$state.lastElementCount } else { 0 }
+
+                    $floor = [math]::Floor($previousCount * $MinElementFraction)
+
+                    if ($previousCount -gt 0 -and $elementCount -lt $floor) {
+                        Write-MonitorLog -Phase "export" -Message "Sanity check failed: element count $elementCount is below floor $floor (previous $previousCount)."
+                        $lastExitCode = 1
+                    } else {
+                        $succeeded = $true
+                        $state.lastElementCount = $elementCount
+                    }
+                } else {
+                    Write-MonitorLog -Phase "export" -Message "Attempt $attempt failed with exit code $lastExitCode."
+                }
+
+                if (-not $succeeded -and $attempt -lt $MaxRetries) {
+                    $delay = $RetryDelaySeconds * $attempt
+                    Write-MonitorLog -Phase "export" -Message "Retrying in $delay seconds."
+                    Start-Sleep -Seconds $delay
+                }
+            }
+
+            $exportStopwatch.Stop()
+            $state.lastExitCode = $lastExitCode
+
+            if ($succeeded) {
+                $wasFailing = $state.consecutiveFailures -gt 0
+                $state.lastSuccessTime = (Get-Date).ToString("o")
+                $state.consecutiveFailures = 0
+                $state.runsSinceForce = if ($effectiveForce) { 0 } else { $runsSinceForce + 1 }
+                $state.lastApiPort = $ApiPort
+                if ($wasFailing) {
+                    Send-Alert -Kind Recovery -Message "Export succeeded after $($attempt) attempt(s), recovering from a prior failure."
+                }
+
+                $diagramCount = Get-DiagramCount
+                $pageDelta = $elementCount - $previousCount
+                $deltaLabel = if ($pageDelta -ge 0) { "+$pageDelta" } else { "$pageDelta" }
+                $state.lastDiagramCount = $diagramCount
+
+                $validationSuffix = ""
+                $validationReportPath = Join-Path $wikiDir ".validation-report.json"
+                if (Test-Path $validationReportPath) {
+                    try {
+                        $vr = Get-Content $validationReportPath -Raw | ConvertFrom-Json
+                        $parts = @()
+                        if ([int]$vr.Errors -gt 0) { $parts += "$($vr.Errors) error(s)" }
+                        if ([int]$vr.Warnings -gt 0) { $parts += "$($vr.Warnings) warning(s)" }
+                        if ($parts.Count -gt 0) {
+                            $validationSuffix = " - validation: $($parts -join ', ') ($($vr.Passed)/$($vr.FilesValidated) files clean)"
+                        } else {
+                            $validationSuffix = " - all $($vr.FilesValidated) files validated clean"
+                        }
+                    } catch {}
+                }
+
+                $writebackSuffix = ""
+                if ($NotifyOnStart) {
+                    if ($writebackSummary -and $writebackSummary.Total -gt 0) {
+                        $parts = @()
+                        foreach ($kv in $writebackSummary.Kinds.GetEnumerator() | Sort-Object { $_.Value } -Descending) {
+                            $parts += "$($kv.Value) $($kv.Key)"
+                        }
+                        if ($parts.Count -gt 0) {
+                            $writebackSuffix = " - write-backs: $($parts -join ', ')"
+                        }
+                    }
+                    Send-Alert -Kind Finish -Message ("Export finished in {0} - {1} page(s) total ({2} diagram, {3} element), {4} vs previous run.{5}{6}" -f `
+                        $exportStopwatch.Elapsed.ToString('mm\:ss'), $elementCount, $diagramCount, ($elementCount - $diagramCount), $deltaLabel, $validationSuffix, $writebackSuffix)
+                }
+
+                Write-MonitorLog -Phase "export" -Message "Succeeded on attempt $attempt in $($exportStopwatch.Elapsed.ToString('mm\:ss'))."
             } else {
-                $validationSuffix = " - all $($vr.FilesValidated) files validated clean"
+                $state.lastFailureTime = (Get-Date).ToString("o")
+                $state.consecutiveFailures = [int]$state.consecutiveFailures + 1
+                Write-MonitorLog -Phase "export" -Message "Gave up after $MaxRetries attempt(s)."
+                $fence = [string][char]0x60 * 3
+                $failureBody = "Export failed after $MaxRetries attempt(s) (exit code $lastExitCode).`n$fence`n$outputTail`n$fence"
+                Send-Alert -Kind Failure -Message $failureBody
             }
-        } catch {}
+        } # end if (-not $skipPhase)
+
+        $lastExportTime = [DateTime]::UtcNow
+    } else {
+        Write-MonitorLog -Phase "config" -Message "Skipping export (next due in $ExportIntervalMinutes min)."
+        $writebackSummary = $null
+        $succeeded = $true
     }
 
-    $writebackSuffix = ""
-    if ($NotifyOnStart) {
-        if ($writebackSummary -and $writebackSummary.Total -gt 0) {
-            $parts = @()
-            foreach ($kv in $writebackSummary.Kinds.GetEnumerator() | Sort-Object { $_.Value } -Descending) {
-                $parts += "$($kv.Value) $($kv.Key)"
-            }
-            if ($parts.Count -gt 0) {
-                $writebackSuffix = " - write-backs: $($parts -join ', ')"
-            }
-        }
-        Send-Alert -Kind Finish -Message ("Export finished in {0} - {1} page(s) total ({2} diagram, {3} element), {4} vs previous run.{5}{6}" -f `
-            $exportStopwatch.Elapsed.ToString('mm\:ss'), $elementCount, $diagramCount, ($elementCount - $diagramCount), $deltaLabel, $validationSuffix, $writebackSuffix)
+    # --- Daily activity digest ---
+    $state.pageReadsToday = [int]$state.pageReadsToday + (Get-NewPageReadCount)
+    $state.writebacksToday = [int]$state.writebacksToday + $writebackSummary.Total
+
+    $today = (Get-Date).ToString("yyyy-MM-dd")
+    if ($state.lastDigestDate -and $state.lastDigestDate -ne $today) {
+        $digestContent = Get-Content $digestTemplate -Raw
+        $digestMessage = $digestContent `
+            -replace '@@DIGEST_DATE@@', "$($state.lastDigestDate)" `
+            -replace '@@PAGE_READS_TODAY@@', "$($state.pageReadsToday)" `
+            -replace '@@WRITEBACKS_TODAY@@', "$($state.writebacksToday)"
+        Send-Alert -Kind DailyDigest -Message $digestMessage
+        $state.pageReadsToday = 0
+        $state.writebacksToday = 0
     }
+    $state.lastDigestDate = $today
 
-    Write-MonitorLog -Phase "export" -Message "Succeeded on attempt $attempt in $($exportStopwatch.Elapsed.ToString('mm\:ss'))."
-} else {
-    $state.lastFailureTime = (Get-Date).ToString("o")
-    $state.consecutiveFailures = [int]$state.consecutiveFailures + 1
-    Write-MonitorLog -Phase "export" -Message "Gave up after $MaxRetries attempt(s)."
-    $fence = [string][char]0x60 * 3
-    $failureBody = "Export failed after $MaxRetries attempt(s) (exit code $lastExitCode).`n$fence`n$outputTail`n$fence"
-    Send-Alert -Kind Failure -Message $failureBody
-}
-
-$state.pageReadsToday = [int]$state.pageReadsToday + (Get-NewPageReadCount)
-$state.writebacksToday = [int]$state.writebacksToday + $writebackSummary.Total
-
-$today = (Get-Date).ToString("yyyy-MM-dd")
-if ($state.lastDigestDate -and $state.lastDigestDate -ne $today) {
-    $digestContent = Get-Content $digestTemplate -Raw
-    $digestMessage = $digestContent `
-        -replace '@@DIGEST_DATE@@', "$($state.lastDigestDate)" `
-        -replace '@@PAGE_READS_TODAY@@', "$($state.pageReadsToday)" `
-        -replace '@@WRITEBACKS_TODAY@@', "$($state.writebacksToday)"
-    Send-Alert -Kind DailyDigest -Message $digestMessage
-    $state.pageReadsToday = 0
-    $state.writebacksToday = 0
-}
-$state.lastDigestDate = $today
-
-Update-HealthPage -State $state
-Save-HealthState -State $state
+    Update-HealthPage -State $state
+    Save-HealthState -State $state
 
 # --- Serve watchdog: verify mkdocs is still up, restart if it died since the last pass. ---
 # The pid file stores PID + process start time (not just PID) so a stale file surviving
@@ -720,7 +858,9 @@ function Start-Serve {
     return $proc
 }
 
-if (-not (Test-ServeAlive)) {
+if ($state.skipServe) {
+    Write-MonitorLog -Phase "serve" -Message "Serve restart blocked by user (skipServe flag)."
+} elseif (-not (Test-ServeAlive)) {
     Write-MonitorLog -Phase "serve" -Message "mkdocs serve is not running; attempting to (re)start."
     $serveAttempt = 0
     $serveUp = $false
@@ -761,7 +901,216 @@ if (-not (Test-ServeAlive)) {
     Write-MonitorLog -Phase "serve" -Message "mkdocs serve already running."
 }
 
+# --- API server watchdog: start the write-back API server if configured in .eaxwiki. ---
+# The API server (EAxWiki.exe --api) runs persistently to handle wiki-editor write-backs
+# and AI suggestion requests between export runs.
+function Test-ApiAlive {
+    if (Test-Path $apiPidPath) {
+        try {
+            $info = Get-Content $apiPidPath -Raw | ConvertFrom-Json
+            if ($info.pid) {
+                $proc = Get-Process -Id ([int]$info.pid) -ErrorAction SilentlyContinue
+                if ($proc -and $info.startTime) {
+                    $recordedStart = [DateTimeOffset]::Parse($info.startTime)
+                    $actualStart = [DateTimeOffset]$proc.StartTime
+                    if ([Math]::Abs(($recordedStart - $actualStart).TotalSeconds) -le 2) {
+                        return $true
+                    }
+                }
+            }
+        } catch { }
+    }
+    # Port is occupied by an untracked or stale process — don't report alive; the start loop
+    # below will kill the occupant and replace it.
+    return $false
+}
+
+function Clear-Port {
+    param([int]$PortNumber)
+    $owner = Get-NetTCPConnection -LocalPort $PortNumber -ErrorAction SilentlyContinue |
+        Select-Object -First 1 -ExpandProperty OwningProcess
+    if ($owner) {
+        Write-MonitorLog -Phase "api" -Message "Killing process $owner on port $PortNumber."
+        Stop-Process -Id $owner -Force -ErrorAction SilentlyContinue
+        Start-Sleep -Seconds 2
+    }
+}
+
+function Start-ApiServer {
+    $stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
+    $outFile = Join-Path $logDir "api-$stamp.out.log"
+    $errFile = Join-Path $logDir "api-$stamp.err.log"
+    $psExe = $PSExecutable
+    $dllPath = Join-Path $repoRoot "src\EAxWiki\bin\Debug\net10.0\EAxWiki.dll"
+    $projDir = Join-Path $repoRoot "src\EAxWiki"
+    $execArgs = @("exec", "--runtimeconfig", (Join-Path $projDir "bin\Debug\net10.0\EAxWiki.runtimeconfig.json"),
+        "--depsfile", (Join-Path $projDir "bin\Debug\net10.0\EAxWiki.deps.json"),
+        $dllPath, "--api", "--api-port", $ApiPort, "--wiki-port", $Port, "--output", $wikiDir)
+    if ($RepoPath) { $execArgs += "--repo"; $execArgs += $RepoPath }
+    $proc = Start-Process -FilePath $psExe `
+        -ArgumentList @("-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", "dotnet $execArgs") `
+        -RedirectStandardOutput $outFile -RedirectStandardError $errFile `
+        -WindowStyle Hidden -PassThru -ErrorAction Stop
+    return $proc
+}
+
+if ($ApiPort -gt 0) {
+    if (-not (Test-ApiAlive)) {
+        Write-MonitorLog -Phase "api" -Message "API server not running; attempting to start on port $ApiPort."
+        $apiAttempt = 0
+        $apiUp = $false
+        while ($apiAttempt -lt $MaxRetries -and -not $apiUp) {
+            $apiAttempt++
+            try {
+                # Kill any stale occupant before each attempt.
+                Clear-Port -PortNumber $ApiPort
+                # Remove any stale ready-file from a prior crash, so we
+                # can reliably detect the fresh write.
+                $readyFile = Join-Path $wikiDir "status\api-ready"
+                if (Test-Path $readyFile) { Remove-Item $readyFile -Force }
+
+                $proc = Start-ApiServer
+
+                # Poll for the ready file (written by the API server via
+                # app.Lifetime.ApplicationStarted) with 1-second intervals.
+                $ready = $false
+                $timeout = [DateTime]::UtcNow.AddSeconds(30)
+                while ([DateTime]::UtcNow -lt $timeout -and -not $ready) {
+                    $ready = Test-Path $readyFile
+                    if (-not $ready) { Start-Sleep -Seconds 1 }
+                }
+                $apiUp = $ready -and ($null -ne $proc) -and ($null -ne (Get-Process -Id $proc.Id -ErrorAction SilentlyContinue))
+                if ($apiUp) {
+                    [pscustomobject]@{ pid = $proc.Id; startTime = $proc.StartTime.ToString("o") } |
+                        ConvertTo-Json | Set-Content -Path $apiPidPath -Force
+                }
+            } catch {
+                Write-MonitorLog -Phase "api" -Message "Start attempt $apiAttempt failed: $($_.Exception.Message)"
+            }
+            if (-not $apiUp -and $apiAttempt -lt $MaxRetries) {
+                $delay = $RetryDelaySeconds * $apiAttempt
+                Write-MonitorLog -Phase "api" -Message "Retrying API start in $delay seconds."
+                Start-Sleep -Seconds $delay
+            }
+        }
+        if ($apiUp) {
+            $wasFailing = $state.apiConsecutiveFailures -gt 0
+            $state.lastApiSuccessTime = (Get-Date).ToString("o")
+            $state.apiConsecutiveFailures = 0
+            Write-MonitorLog -Phase "api" -Message "API server started on attempt $apiAttempt."
+            if ($wasFailing) {
+                Send-Alert -Kind ApiRecovery -Message "Write-back API server restarted successfully on port $ApiPort."
+            }
+        } else {
+            $state.lastApiFailureTime = (Get-Date).ToString("o")
+            $state.apiConsecutiveFailures = [int]$state.apiConsecutiveFailures + 1
+            Write-MonitorLog -Phase "api" -Message "Gave up starting API server after $MaxRetries attempt(s)."
+            Send-Alert -Kind ApiFailure -Message "Write-back API server failed to start after $MaxRetries attempt(s)."
+        }
+        Update-HealthPage -State $state
+        Save-HealthState -State $state
+    } else {
+        Write-MonitorLog -Phase "api" -Message "API server already running on port $ApiPort."
+    }
+} else {
+    Write-MonitorLog -Phase "api" -Message "API server not configured (ApiPort not set)."
+}
+
+# --- LLM server watchdog: start llama-server if AiMode is "local" in .eaxwiki. ---
+# The LLM server provides AI suggestions via the wiki-editor's "Suggest" button.
+$llmPort = 8080
+
+function Test-LlmAlive {
+    if (Test-Path $llmPidPath) {
+        try {
+            $info = Get-Content $llmPidPath -Raw | ConvertFrom-Json
+            if ($info.pid) {
+                $proc = Get-Process -Id ([int]$info.pid) -ErrorAction SilentlyContinue
+                if ($proc -and $info.startTime) {
+                    $recordedStart = [DateTimeOffset]::Parse($info.startTime)
+                    $actualStart = [DateTimeOffset]$proc.StartTime
+                    if ([Math]::Abs(($recordedStart - $actualStart).TotalSeconds) -le 2) {
+                        return $true
+                    }
+                }
+            }
+        } catch { }
+    }
+    # Port occupied by untracked process — don't report alive; Clear-Port will replace it.
+    return $false
+}
+
+function Start-Llm {
+    $stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
+    $outFile = Join-Path $logDir "llm-$stamp.out.log"
+    $errFile = Join-Path $logDir "llm-$stamp.err.log"
+    $proc = Start-Process -FilePath $LlamaExePath `
+        -ArgumentList @("-m", $LlamaModelPath, "-c", "4096", "--port", $llmPort, "--n-gpu-layers", "0") `
+        -RedirectStandardOutput $outFile -RedirectStandardError $errFile `
+        -WindowStyle Hidden -PassThru -ErrorAction Stop
+    [pscustomobject]@{ pid = $proc.Id; startTime = $proc.StartTime.ToString("o") } |
+        ConvertTo-Json | Set-Content -Path $llmPidPath
+    return $proc
+}
+
+if ($AiMode -eq "local") {
+    if ($null -eq $LlamaExePath -or "" -eq $LlamaExePath) {
+        Write-MonitorLog -Phase "llm" -Message "AiMode is 'local' but llamaExePath not set in .eaxwiki; skipping."
+    } elseif ($null -eq $LlamaModelPath -or "" -eq $LlamaModelPath) {
+        Write-MonitorLog -Phase "llm" -Message "AiMode is 'local' but llamaModelPath not set in .eaxwiki; skipping."
+    } elseif (-not (Test-Path $LlamaExePath)) {
+        Write-MonitorLog -Phase "llm" -Message "LLM server not found at $LlamaExePath; skipping."
+    } elseif (-not (Test-Path $LlamaModelPath)) {
+        Write-MonitorLog -Phase "llm" -Message "LLM model not found at $LlamaModelPath; skipping."
+    } else {
+        if (-not (Test-LlmAlive)) {
+            Write-MonitorLog -Phase "llm" -Message "LLM server not running; attempting to start."
+            Clear-Port -PortNumber $llmPort
+            $llmAttempt = 0
+            $llmUp = $false
+            while ($llmAttempt -lt $MaxRetries -and -not $llmUp) {
+                $llmAttempt++
+                try {
+                    $proc = Start-Llm
+                    Start-Sleep -Seconds 5
+                    $llmUp = ($null -ne $proc) -and ($null -ne (Get-Process -Id $proc.Id -ErrorAction SilentlyContinue))
+                } catch {
+                    Write-MonitorLog -Phase "llm" -Message "Start attempt $llmAttempt failed: $($_.Exception.Message)"
+                }
+                if (-not $llmUp -and $llmAttempt -lt $MaxRetries) {
+                    $delay = $RetryDelaySeconds * $llmAttempt
+                    Write-MonitorLog -Phase "llm" -Message "Retrying LLM start in $delay seconds."
+                    Start-Sleep -Seconds $delay
+                }
+            }
+            if ($llmUp) {
+                $wasFailing = $state.llmConsecutiveFailures -gt 0
+                $state.lastLlmSuccessTime = (Get-Date).ToString("o")
+                $state.llmConsecutiveFailures = 0
+                Write-MonitorLog -Phase "llm" -Message "LLM server started (PID $($proc.Id)) on port $llmPort."
+                if ($wasFailing) {
+                    Send-Alert -Kind LlmRecovery -Message "LLM server restarted successfully on port $llmPort."
+                }
+            } else {
+                $state.lastLlmFailureTime = (Get-Date).ToString("o")
+                $state.llmConsecutiveFailures = [int]$state.llmConsecutiveFailures + 1
+                Write-MonitorLog -Phase "llm" -Message "Gave up starting LLM server after $MaxRetries attempt(s)."
+                Send-Alert -Kind LlmFailure -Message "LLM server failed to start after $MaxRetries attempt(s)."
+            }
+            Update-HealthPage -State $state
+            Save-HealthState -State $state
+        } else {
+            Write-MonitorLog -Phase "llm" -Message "LLM server already running on port $llmPort."
+        }
+    }
+    } else {
+        Write-MonitorLog -Phase "llm" -Message "LLM not configured (AiMode=$AiMode)."
+    }
+
+    Write-MonitorLog -Phase "monitor" -Message "Sleeping for $MonitorCheckIntervalSeconds seconds."
+    Start-Sleep -Seconds $MonitorCheckIntervalSeconds
+} # end while ($true)
+
 Pop-Location
 
-if (-not $succeeded) { exit 1 }
-exit 0
+Write-Host "Monitor stopped."
