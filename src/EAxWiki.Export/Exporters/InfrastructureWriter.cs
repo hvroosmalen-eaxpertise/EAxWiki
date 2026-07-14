@@ -1026,6 +1026,10 @@ if (typeof document$ !== 'undefined') {
 
             if (!expectedDirs.Contains(subDir))
             {
+                // Keep diagrams/ subdirectories — they contain generated diagram pages, not orphaned packages.
+                if (string.Equals(Path.GetFileName(subDir), "diagrams", StringComparison.OrdinalIgnoreCase))
+                    continue;
+
                 // Orphaned package directory (renamed or emptied) — remove entirely.
                 Directory.Delete(subDir, recursive: true);
             }

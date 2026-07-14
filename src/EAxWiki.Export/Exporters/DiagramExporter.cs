@@ -164,7 +164,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 
             foreach (var (diagram, pkgDir, path) in sorted)
             {
-                var diagramPage = Path.GetRelativePath(diagramsDir, Path.Combine(pkgDir, "diagrams", $"{MarkdownHelpers.SanitizeName(diagram.Name)}.md")).Replace('\\', '/');
+                var diagramPage = Path.GetRelativePath(diagramsDir, Path.Combine(pkgDir, "diagrams", $"{MarkdownHelpers.SanitizeName(diagram.Name)}.html")).Replace('\\', '/');
                 var link = $"[{MarkdownHelpers.EscapeCell(diagram.Name)}]({diagramPage})";
 
                 var modified = !string.IsNullOrWhiteSpace(diagram.ModifiedDate) && DateTime.TryParse(diagram.ModifiedDate, out var dt)
