@@ -23,6 +23,7 @@ extra_javascript:
   - graph-init.js
   - status-editor.js
   - notes-editor.js
+  - ai-suggest.js
   - row-notes-editor.js
 
 plugins:

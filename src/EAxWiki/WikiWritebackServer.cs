@@ -509,7 +509,7 @@ internal static class WikiWritebackServer
 
                 var prompt = BuildSuggestPrompt(summary);
 
-                using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(60) };
+                using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(300) };
                 var llmBody = new
                 {
                     model = config.AiModel,
@@ -576,7 +576,7 @@ internal static class WikiWritebackServer
 
                 var prompt = BuildDiagramSuggestPrompt(summary);
 
-                using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(60) };
+                using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(300) };
                 var llmBody = new
                 {
                     model = config.AiModel,
