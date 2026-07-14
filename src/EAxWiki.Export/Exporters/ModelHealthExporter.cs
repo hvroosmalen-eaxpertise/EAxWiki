@@ -28,7 +28,7 @@ internal class ModelHealthExporter(IOutputWriter writer)
         var orphans = new List<(string Name, string Link)>();
         var missingDescriptions = new List<(string Name, string Link)>();
         var stale = new List<(string Name, string Link, string Status, DateTime Modified)>();
-        var byPackageName = new Dictionary<(int PackageId, string Name), List<(string Name, string Link)>>();
+        var byPackageName = new Dictionary<(int PackageId, string Name, string Type, string Stereotype), List<(string Name, string Link)>>();
 
         var now = DateTime.Now;
 
@@ -56,7 +56,7 @@ internal class ModelHealthExporter(IOutputWriter writer)
 
             if (!string.IsNullOrWhiteSpace(elem.Name))
             {
-                var key = (elem.PackageId, elem.Name.Trim());
+                var key = (elem.PackageId, elem.Name.Trim(), elem.Type.Trim(), elem.Stereotype.Trim());
                 if (!byPackageName.TryGetValue(key, out var group))
                 {
                     group = [];
@@ -156,7 +156,7 @@ internal class ModelHealthExporter(IOutputWriter writer)
         var total = duplicateGroups.Sum(g => g.Count);
         lines.Add($"## Duplicate Names Within a Package ({duplicateGroups.Count} name{(duplicateGroups.Count == 1 ? "" : "s")}, {total} elements)");
         lines.Add(string.Empty);
-        lines.Add("*Two or more elements share a name within the same package. Duplicates across different packages are expected and not shown here.*");
+        lines.Add("*Two or more elements share a name, type, and stereotype within the same package. Duplicates across different packages or different types/stereotypes are expected and not shown here.*");
         lines.Add(string.Empty);
         if (duplicateGroups.Count == 0)
         {

@@ -355,12 +355,12 @@ None.
 | [ESRS 2 General Disclosures](../ESRS 2/ESRS 2 General Disclosures.md) | Proposed | 2025-12-16 |
 | [ESRS 1 General Requirements](../ESRS 1/ESRS 1 General Requirements.md) | Proposed | 2025-12-16 |
 
-## Duplicate Names Within a Package (1 name, 2 elements)
+## Duplicate Names Within a Package (0 names, 0 elements)
 
-*Two or more elements share a name within the same package. Duplicates across different packages are expected and not shown here.*
+*Two or more elements share a name, type, and stereotype within the same package. Duplicates across different packages or different types/stereotypes are expected and not shown here.*
 
-- [EurSuRA](../Introduction EurSuRA/EurSuRA.md), [EurSuRA](../Introduction EurSuRA/EurSuRA.md)
+None.
 
 ---
 
-*Generated: 2026-07-14 09:39:51*
+*Generated: 2026-07-14 16:12:16*
