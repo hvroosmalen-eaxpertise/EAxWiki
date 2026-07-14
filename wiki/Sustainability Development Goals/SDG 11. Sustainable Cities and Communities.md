@@ -9,13 +9,13 @@ notes_hash: e3cdeed4
 # <span class="sl" data-layer="edgy-id">Purpose</span> SDG 11. Sustainable Cities and Communities
 
 **Type:** Activity  **Stereotype:** Purpose  **StereotypeEx:** Purpose  **FQStereotype:** EDGY::Purpose  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="13" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Sustainability Development Goals/SDG 11. Sustainable Cities and Communities.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="13" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Sustainability Development Goals/SDG 11. Sustainable Cities and Communities.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-02
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Sustainability Development Goals](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="13" data-file-path="Sustainability Development Goals/SDG 11. Sustainable Cities and Communities.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="13" data-file-path="Sustainability Development Goals/SDG 11. Sustainable Cities and Communities.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,7 +29,7 @@ notes_hash: e3cdeed4
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="13" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="Sustainability Development Goals/SDG 11. Sustainable Cities and Communities.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="13" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="Sustainability Development Goals/SDG 11. Sustainable Cities and Communities.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -47,4 +47,4 @@ notes_hash: e3cdeed4
 
 ---
 
-*Generated: 2026-07-14 09:39:50*
+*Generated: 2026-07-14 16:12:14*

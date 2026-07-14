@@ -7,7 +7,7 @@ Stakeholder map based on the ESRS Navigator document for sustainability reportin
 ## Diagrams
 
 - [ESRS Stakeholder Overview](diagrams/ESRS Stakeholder Overview.md) (Logical)
-  - *High-level view of all stakeholders in ESRS reporting ecosystem*
+  - *<p>This logical diagram provides a comprehensive overview of all stakeholders in the ESRS reporting ecosystem, including companies, employees, suppliers, customers, and various organizations that interact with the reporting organization. It highlights the different types of stakeholders, their roles, and responsibilities, and how they are connected within the ecosystem. The diagram is intended to provide a high-level view of the stakeholders involved in the ESRS reporting process.</p>*
 
 ## Elements
 
@@ -132,4 +132,4 @@ Stakeholder map based on the ESRS Navigator document for sustainability reportin
 
 ---
 
-*Generated: 2026-07-14 09:39:51*
+*Generated: 2026-07-14 16:12:15*

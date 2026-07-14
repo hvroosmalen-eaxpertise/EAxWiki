@@ -9,13 +9,13 @@ notes_hash: 0bc9a3c2
 # <span class="sl" data-layer="edgy-pe">People</span> Non-EU company
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="557" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Non-EU company.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="557" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Non-EU company.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="557" data-file-path="People/Non-EU company.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="557" data-file-path="People/Non-EU company.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -62,4 +62,4 @@ Non-EU companies, which generate over EUR 150 million on the EU market.</p>
 
 ---
 
-*Generated: 2026-07-14 09:39:50*
+*Generated: 2026-07-14 16:12:14*

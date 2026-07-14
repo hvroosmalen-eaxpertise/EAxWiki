@@ -1,6 +1,6 @@
 ---
 diagram_id: 19
-notes_hash: 8694b769
+notes_hash: 1c604c5c
 ---
 
 # ESRS Stakeholder Overview
@@ -10,11 +10,11 @@ notes_hash: 8694b769
 
 ![ESRS Stakeholder Overview](ESRS Stakeholder Overview.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="19" data-kind="diagram" data-file-path="ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="19" data-kind="diagram" data-file-path="ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
-<p>High-level view of all stakeholders in ESRS reporting ecosystem</p>
+<p>This logical diagram provides a comprehensive overview of all stakeholders in the ESRS reporting ecosystem, including companies, employees, suppliers, customers, and various organizations that interact with the reporting organization. It highlights the different types of stakeholders, their roles, and responsibilities, and how they are connected within the ecosystem. The diagram is intended to provide a high-level view of the stakeholders involved in the ESRS reporting process.</p>
 <!--ea-notes-end-->
 </div>
 </div>
@@ -142,4 +142,4 @@ notes_hash: 8694b769
 
 ---
 
-*Generated: 2026-07-14 09:40:00*
+*Generated: 2026-07-14 16:12:29*

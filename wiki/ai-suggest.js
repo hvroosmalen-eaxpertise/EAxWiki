@@ -6,10 +6,13 @@
     if (!widget || widget.dataset.aiConfigured !== 'true') return;
     if (widget.querySelector('.ea-suggest-btn')) return;
 
+    var isDiagram = widget.dataset.kind === 'diagram';
     var eaId  = parseInt(widget.dataset.eaId, 10);
     var port  = widget.dataset.apiPort || '8001';
     var token = widget.dataset.apiToken || '';
     var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
+    var endpoint = isDiagram ? '/api/ai-suggest-diagram' : '/api/ai-suggest';
+    var payload  = isDiagram ? { diagramId: eaId } : { elementId: eaId };
 
     var btn = document.createElement('button');
     btn.className = 'ea-suggest-btn';
@@ -36,10 +39,10 @@
       msg.textContent = '';
       msg.style.color = '';
 
-      fetch(apiBase + '/api/ai-suggest', {
+      fetch(apiBase + endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
-        body: JSON.stringify({ elementId: eaId })
+        body: JSON.stringify(payload)
       })
       .then(function (r) {
         return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; });

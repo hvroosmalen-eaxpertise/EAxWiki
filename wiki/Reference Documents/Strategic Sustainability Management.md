@@ -9,13 +9,13 @@ notes_hash: 4edefce9
 # <span class="sl" data-layer="strategy">Resource</span> Strategic Sustainability Management
 
 **Type:** Class  **Stereotype:** ArchiMate_Resource  **StereotypeEx:** ArchiMate_Resource  **FQStereotype:** ArchiMate3::ArchiMate_Resource  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="483" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Reference Documents/Strategic Sustainability Management.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="483" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Reference Documents/Strategic Sustainability Management.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-12
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Documents](index.md)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="483" data-file-path="Reference Documents/Strategic Sustainability Management.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="483" data-file-path="Reference Documents/Strategic Sustainability Management.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -37,4 +37,4 @@ The book is enriched with practical tools, including checklists and insights int
 
 ---
 
-*Generated: 2026-07-14 09:39:50*
+*Generated: 2026-07-14 16:12:15*

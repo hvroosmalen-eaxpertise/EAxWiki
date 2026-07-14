@@ -86,10 +86,13 @@
           msg.textContent = '';
           msg.style.color = '';
 
-          fetch(apiBase + '/api/ai-suggest', {
+          var suggestEndpoint = kind === 'diagram' ? '/api/ai-suggest-diagram' : '/api/ai-suggest';
+          var suggestPayload  = kind === 'diagram' ? { diagramId: eaId } : { elementId: eaId };
+
+          fetch(apiBase + suggestEndpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
-            body: JSON.stringify({ elementId: eaId })
+            body: JSON.stringify(suggestPayload)
           })
           .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
           .then(function (res) {

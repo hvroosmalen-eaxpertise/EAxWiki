@@ -10,7 +10,7 @@ notes_hash: ef93713e
 
 ![ESRS Sector Classification](ESRS Sector Classification.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="42" data-kind="diagram" data-file-path="ESRS Sector Classification/diagrams/ESRS Sector Classification.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="42" data-kind="diagram" data-file-path="ESRS Sector Classification/diagrams/ESRS Sector Classification.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -25,4 +25,4 @@ notes_hash: ef93713e
 
 ---
 
-*Generated: 2026-07-14 09:39:58*
+*Generated: 2026-07-14 16:12:26*
