@@ -329,6 +329,18 @@ Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per 
 | Live attribute/method/tagged value write-back (wiki → EA) | ✓ | ✗ requires EA |
 | Batch write-back (`--writeback`) | ✓ | ✗ requires EA |
 
+### AI-suggested descriptions
+
+When `--ai-endpoint` is configured (default `http://localhost:8080/v1`), a **Suggest** button appears next to the Notes pencil icon. Clicking it sends the element's context to a local or cloud LLM and fills the textarea with a first-draft description focused on what the element does and why it matters — deliberately omitting information the viewer can already see (type, stereotype, status, package).
+
+| Flag | Env | Default | Description |
+|---|---|---|---|
+| `--ai-endpoint <url>` | `AI_ENDPOINT` | `http://localhost:8080/v1` | OpenAI-compatible API base URL. Set empty to disable AI. |
+| `--ai-model <name>` | `AI_MODEL` | `llama-3.2-3b` | Model name sent in API requests |
+| `--ai-key <key>` | `AI_KEY` | `""` | API key (empty = no auth header) |
+
+The default endpoint expects a local `llama-server` instance; any OpenAI-compatible provider works (OpenAI, Claude via LiteLLM, Azure OpenAI, etc.). Related-element context (target notes, stereotypes) is fetched from EA COM to enrich the prompt — see `docs/superpowers/specs/2026-07-08-ai-suggested-descriptions-design.md` for the full design.
+
 ### Write-back server security
 
 The write-back server is a Kestrel HTTP server that runs alongside `mkdocs serve` and accepts write requests from the browser. Since it can modify the live EA repository via COM, the following security measures are in place:

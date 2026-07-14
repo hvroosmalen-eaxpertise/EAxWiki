@@ -104,10 +104,13 @@ internal static class WikiWritebackServer
     {
         var sb = new StringBuilder();
         sb.AppendLine($"Name: {el.Name}");
-        sb.AppendLine($"Type: {el.Type}");
-        sb.AppendLine($"Stereotype: {el.Stereotype}");
-        sb.AppendLine($"Package: {el.PackagePath}");
-        sb.AppendLine($"Status: {el.Status}");
+
+        if (!string.IsNullOrWhiteSpace(el.Notes))
+        {
+            sb.AppendLine();
+            sb.AppendLine("Existing Description:");
+            sb.AppendLine(el.Notes);
+        }
 
         if (el.Attributes.Count > 0)
         {
@@ -128,9 +131,22 @@ internal static class WikiWritebackServer
         if (el.Relationships.Count > 0)
         {
             sb.AppendLine();
-            sb.AppendLine("Relationships:");
+            sb.AppendLine("Related Elements:");
             foreach (var r in el.Relationships)
-                sb.AppendLine($"  - {r.Direction} {r.Type} → {r.TargetName} ({r.TargetType})");
+            {
+                var line = $"  - {r.TargetName} (connected via {r.Type}";
+                if (!string.IsNullOrEmpty(r.ConnectorStereotype))
+                    line += $", {r.ConnectorStereotype}";
+                line += ")";
+                if (!string.IsNullOrEmpty(r.TargetNotes))
+                {
+                    var snippet = r.TargetNotes.Length > 120
+                        ? r.TargetNotes[..120] + "..."
+                        : r.TargetNotes;
+                    line += $" — \"{snippet}\"";
+                }
+                sb.AppendLine(line);
+            }
         }
 
         return sb.ToString();
@@ -461,7 +477,7 @@ internal static class WikiWritebackServer
                     model = config.AiModel,
                     messages = new[]
                     {
-                        new { role = "system", content = "You are a technical writer for enterprise architecture documentation. Write a concise 2-3 sentence description for the following element. Use the context provided (type, stereotype, package, relationships, tagged values). Be factual, precise, and write in plain English. Do not use markdown." },
+                        new { role = "system", content = "You are a technical writer for enterprise architecture documentation. Write a concise 2-3 sentence description for the element below. Focus on what the element does, its purpose, and its business significance based on attributes, tagged values, and related elements. Do not mention the element's type, stereotype, status, package, or relationship types by name — the reader can already see these in the diagram. Avoid listing or enumerating data. Write in plain English. Do not use markdown." },
                         new { role = "user", content = prompt }
                     },
                     max_tokens = 300,

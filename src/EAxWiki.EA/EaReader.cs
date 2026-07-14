@@ -153,6 +153,7 @@ public class EaReader : IEaReader, IDisposable
             Stereotype = element.Stereotype ?? element.FQStereotype ?? string.Empty,
             PackagePath = string.Join("/", path),
             Status = element.Status ?? string.Empty,
+            Notes = element.Notes,
             Attributes = MapAttributesForSummary(element),
             Methods = MapMethodsForSummary(element),
             TaggedValues = MapTaggedValuesForSummary(element),
@@ -201,11 +202,17 @@ public class EaReader : IEaReader, IDisposable
                 var isSource = conn.ClientID == element.ElementID;
                 var targetId = isSource ? conn.SupplierID : conn.ClientID;
                 var target = _repository?.GetElementByID(targetId);
+                var targetStereotype = target?.Stereotype ?? target?.FQStereotype ?? string.Empty;
+                var targetNotes = target?.Notes;
+                var connectorStereotype = conn.Stereotype ?? string.Empty;
                 result.Add(new RelationshipInfo(
                     conn.Type,
                     isSource ? "source→target" : "target→source",
                     target?.Name ?? "(deleted)",
-                    target?.Type ?? "Unknown"));
+                    target?.Type ?? "Unknown",
+                    targetStereotype,
+                    targetNotes,
+                    connectorStereotype));
             }
         }
         return result;
