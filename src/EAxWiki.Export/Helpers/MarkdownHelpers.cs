@@ -137,7 +137,8 @@ internal static class MarkdownHelpers
     internal static string CreateElementLink(EaElement element, string pkgDir, string fromDir)
     {
         var elemName = SanitizeName(element.Name);
-        return Path.GetRelativePath(fromDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
+        var link = Path.GetRelativePath(fromDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
+        return link.EndsWith(".md", StringComparison.OrdinalIgnoreCase) ? link[..^3] + ".html" : link;
     }
 
     internal static string BuildBreadcrumb(int packageId, string currentPageDir, string outputDir, Dictionary<int, (string Name, int? ParentId)> packageLookup, Action<string>? onMissingPackage = null)
@@ -159,13 +160,13 @@ internal static class MarkdownHelpers
         var breadcrumbParts = new List<string>();
         if (segments.Count > 0)
         {
-            var homeRelPath = Path.GetRelativePath(currentPageDir, Path.Combine(outputDir, "index.md")).Replace('\\', '/');
+            var homeRelPath = Path.GetRelativePath(currentPageDir, Path.Combine(outputDir, "index.html")).Replace('\\', '/');
             breadcrumbParts.Add($"[Home]({homeRelPath})");
         }
         foreach (var (name, _) in segments)
         {
             var pkgDir = Path.Combine(outputDir, SanitizeName(name));
-            var relPath = Path.GetRelativePath(currentPageDir, Path.Combine(pkgDir, "index.md")).Replace('\\', '/');
+            var relPath = Path.GetRelativePath(currentPageDir, Path.Combine(pkgDir, "index.html")).Replace('\\', '/');
             breadcrumbParts.Add($"[{name}]({relPath})");
         }
         return string.Join(" / ", breadcrumbParts);

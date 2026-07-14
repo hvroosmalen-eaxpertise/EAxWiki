@@ -42,7 +42,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
 
             foreach (var diag in package.Diagrams)
             {
-                var diagFile = $"diagrams/{MarkdownHelpers.SanitizeName(diag.Name)}.md";
+                var diagFile = $"diagrams/{MarkdownHelpers.SanitizeName(diag.Name)}.html";
                 indexLines.Add($"- [{diag.Name}]({diagFile}) ({diag.Type})");
 
                 if (!string.IsNullOrWhiteSpace(diag.Notes))
@@ -87,7 +87,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
                 ctx.RegisteredElementFiles.Add(Path.Combine(dir, elemFile));
                 elementTasks.Add(elementWriter.WriteAsync(elem, dir, ctx, baseName, ct));
 
-                indexLines.Add($"- {MarkdownHelpers.GetStereotypeLabel(elem)} [{elem.Name}]({elemFile})");
+                indexLines.Add($"- {MarkdownHelpers.GetStereotypeLabel(elem)} [{elem.Name}]({baseName}.html)");
 
                 if (!string.IsNullOrWhiteSpace(elem.Notes))
                 {
@@ -122,7 +122,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
             foreach (var child in package.Children)
             {
                 var childDir = Path.Combine(outputDir, MarkdownHelpers.SanitizeName(child.Name));
-                var childRelPath = Path.GetRelativePath(dir, Path.Combine(childDir, "index.md")).Replace('\\', '/');
+                var childRelPath = Path.GetRelativePath(dir, Path.Combine(childDir, "index.html")).Replace('\\', '/');
                 indexLines.Add($"- [{child.Name}]({childRelPath})");
             }
 

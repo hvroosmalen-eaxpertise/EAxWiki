@@ -186,7 +186,7 @@ public class MarkdownExporter : IWikiExporter
         lines.Add(string.Empty);
 
         foreach (var pkg in rootPackages)
-            lines.Add($"- [{pkg.Name}]({MarkdownHelpers.SanitizeName(pkg.Name)}/index.md)");
+            lines.Add($"- [{pkg.Name}]({MarkdownHelpers.SanitizeName(pkg.Name)}/index.html)");
 
         lines.Add(string.Empty);
         lines.Add(MarkdownHelpers.FormatTimestamp());

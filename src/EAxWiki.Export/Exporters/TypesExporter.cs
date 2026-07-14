@@ -38,7 +38,7 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
         };
 
         foreach (var lang in languages)
-            indexLines.Add($"- [{lang}]({MarkdownHelpers.SanitizeName(lang)}/index.md)");
+            indexLines.Add($"- [{lang}]({MarkdownHelpers.SanitizeName(lang)}/index.html)");
 
         indexLines.Add(string.Empty);
         indexLines.Add(MarkdownHelpers.FormatTimestamp());
@@ -67,7 +67,7 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
             };
 
             foreach (var group in typeGroups)
-                langIndexLines.Add($"- [{group.Key}]({MarkdownHelpers.SanitizeName(group.Key)}.md)");
+                langIndexLines.Add($"- [{group.Key}]({MarkdownHelpers.SanitizeName(group.Key)}.html)");
 
             langIndexLines.Add(string.Empty);
             langIndexLines.Add(MarkdownHelpers.FormatTimestamp());
@@ -87,7 +87,7 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
                 {
                     var elemName = MarkdownHelpers.SanitizeName(item.Element.Name);
                     var relativeDir = Path.GetRelativePath(outputDir, item.PackageDir);
-                    var relativePath = $"../../{relativeDir}/{elemName}.md".Replace('\\', '/');
+                    var relativePath = $"../../{relativeDir}/{elemName}.html".Replace('\\', '/');
                     lines.Add($"- {MarkdownHelpers.GetStereotypeLabel(item.Element)} [{item.Element.Name}]({relativePath})");
                 }
 

@@ -217,6 +217,6 @@ public class ModelHealthExporterTests
         var content = await RunAsync(ctx);
 
         Assert.Contains("[Flagged](", content);
-        Assert.Contains("Flagged.md", content);
+        Assert.Contains("Flagged.html", content);
     }
 }
