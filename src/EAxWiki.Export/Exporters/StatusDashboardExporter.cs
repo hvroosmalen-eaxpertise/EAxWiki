@@ -31,7 +31,7 @@ internal class StatusDashboardExporter(IOutputWriter writer)
             var pkgName = ctx.PackageLookup.TryGetValue(elem.PackageId, out var pkg) ? pkg.Name : "Unknown";
             if (!packageRows.TryGetValue(pkgName, out var row))
             {
-                var relLink = Path.GetRelativePath(dashboardDir, Path.Combine(pkgDir, "index.md"))
+                var relLink = Path.GetRelativePath(dashboardDir, Path.Combine(pkgDir, "index.html"))
                     .Replace('\\', '/');
                 row = new PackageRow(pkgName, relLink);
                 packageRows[pkgName] = row;
