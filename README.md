@@ -65,25 +65,36 @@ MkDocs itself is cross-platform — only EXPORT and WRITE-BACK need EA COM, whic
 ### Windows + Linux — export on Windows, serve on Linux
 
 ```
-┌──────────────────────────────────┐   ┌──────────────────────────────────┐
-│         WINDOWS MACHINE          │   │         LINUX / MAC MACHINE      │
-│                                  │   │                                  │
-│  EA Model (.qea / DB)            │   │                                  │
-│           │                      │   │                                  │
-│        COM API                   │   │                                  │
-│           │                      │   │                                  │
-│           ▼                      │   │  wiki/                           │
-│  EAxWiki.exe                     │   │  Markdown + PNG files            │
-│  scripts/export.ps1              │   │           │                      │
-│           │                      │   │           ▼                      │
-│           ▼                      │   │  MkDocs + Material               │
-│  wiki/  ──── shared filesystem ──┼──►│  scripts/serve.ps1               │
-│           (or git, rsync, etc.)  │   │           │                      │
-│                                  │   │           ▼                      │
-│                                  │   │  Browser                         │
-│                                  │   │  http://localhost:8000           │
-└──────────────────────────────────┘   └──────────────────────────────────┘
+┌──────────────────────────────────────────┐   ┌──────────────────────────────────┐
+│            WINDOWS MACHINE               │   │         LINUX / MAC MACHINE      │
+│                                          │   │                                  │
+│  EA Model (.qea / DB)                    │   │  wiki/                           │
+│           │                              │   │  Markdown + PNG files            │
+│        COM API                           │   │           │                      │
+│           │                              │   │           ▼                      │
+│           ▼                              │   │  MkDocs + Material               │
+│  EAxWiki.exe / export.ps1                │   │  scripts/serve.ps1               │
+│           │                              │   │           │                      │
+│           ▼                              │   │           ▼                      │
+│  wiki/  ──── shared filesystem ──────────┼──►│  Browser                         │
+│           (or git, rsync, etc.)          │   │  http://localhost:8000           │
+│                                          │   │           │                      │
+│  Wiki write-back server                  │ ◄─┼───────────┤ POST /api/status      │
+│  EAxWiki.exe --api (port 8001)            │   │           │ POST /api/notes       │
+│           │                              │   │           │ POST /api/ai-suggest  │
+│           ├── EA COM → Update()          │   │           │ ... (live edits)     │
+│           │                              │   │                                  │
+│           └── LLM prompt ──────┐        │   │                                  │
+│                                ▼        │   │                                  │
+│  LLM endpoint (optional)                │   │                                  │
+│  llama-server / OpenAI / Claude / ...    │   │                                  │
+│  POST /chat/completions                  │   │                                  │
+│  (OpenAI-compatible API)                 │   │                                  │
+│                                          │   │                                  │
+└──────────────────────────────────────────┘   └──────────────────────────────────┘
 ```
+
+The browser talks to two servers on separate ports: **MkDocs** (`:8000`) for reading, and the **write-back server** (`:8001` on the Windows machine's IP) for live edits and AI suggestions. The write-back server calls EA COM for status/notes updates and the configured LLM endpoint for AI-generated descriptions.
 
 ## Installation
 
