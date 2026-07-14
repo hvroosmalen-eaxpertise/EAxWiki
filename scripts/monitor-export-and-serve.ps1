@@ -222,9 +222,10 @@ $md5 = [System.Security.Cryptography.MD5]::Create()
 $instanceHash = [Convert]::ToHexString($md5.ComputeHash([System.Text.Encoding]::UTF8.GetBytes($wikiDir.ToLowerInvariant()))).Substring(0, 12).ToLowerInvariant()
 $stateDir = Join-Path $repoRoot ".eaxwiki-monitor\$instanceHash"
 $healthPath  = Join-Path $stateDir "health.json"
-$servePidPath = Join-Path $stateDir "serve.pid"
-$llmPidPath   = Join-Path $stateDir "llm.pid"
-$apiPidPath   = Join-Path $stateDir "api.pid"
+$servePidPath    = Join-Path $stateDir "serve.pid"
+$llmPidPath      = Join-Path $stateDir "llm.pid"
+$apiPidPath      = Join-Path $stateDir "api.pid"
+$monitorPidPath  = Join-Path $stateDir "monitor.pid"
 $logDir      = Join-Path $stateDir "logs"
 if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }
 $logPath     = Join-Path $logDir ("monitor-{0:yyyy-MM-dd}.log" -f (Get-Date))
@@ -245,6 +246,26 @@ Write-MonitorLog -Phase "config" -Message "ApiPort=$ApiPort WikiPort=$Port AiEnd
 if ($AiMode -eq "local" -and $null -eq $eaxwikiConfig.aiMode) {
     Write-MonitorLog -Phase "config" -Message "Inferred AiMode=local from AiEndpoint=$AiEndpoint and existing LlamaExePath."
 }
+
+# Prevent duplicate monitor instances via PID file.
+if (Test-Path $monitorPidPath) {
+    $existingPid = Get-Content $monitorPidPath -Raw -ErrorAction SilentlyContinue
+    if ($existingPid -match '^\d+$') {
+        $existingProc = Get-Process -Id $existingPid -ErrorAction SilentlyContinue
+        if ($existingProc -and $existingProc.Id -ne $PID) {
+            Write-MonitorLog -Phase "monitor" -Message "Duplicate monitor detected (PID $existingPid already running). Exiting."
+            exit 0
+        }
+    }
+    Remove-Item $monitorPidPath -Force -ErrorAction SilentlyContinue
+}
+try {
+    $PID | Out-File -FilePath $monitorPidPath -NoNewline -ErrorAction Stop
+} catch {
+    Write-MonitorLog -Phase "monitor" -Message "Failed to write monitor PID file: $($_.Exception.Message)"
+    exit 1
+}
+Register-EngineEvent -SourceIdentifier PowerShell.Exiting -Action { Remove-Item $monitorPidPath -Force -ErrorAction SilentlyContinue } | Out-Null
 
 # Identifies which instance an alert is about - matters once more than one exporter/serve/monitor
 # triple runs on the same machine (the project explicitly supports that via --output/--port).
@@ -533,7 +554,8 @@ function Get-NewWritebackCount {
 
 function Update-HealthPage {
     param($State)
-    $statusDir = Join-Path $wikiDir "status"
+    $monitorDir = Join-Path $PSScriptRoot ".." ".eaxwiki-monitor"
+    $statusDir = Join-Path $monitorDir "status"
     if (-not (Test-Path $statusDir)) { New-Item -ItemType Directory -Path $statusDir -Force | Out-Null }
 
     $overall = if ($State.consecutiveFailures -eq 0 -and $State.serveConsecutiveFailures -eq 0 -and $State.llmConsecutiveFailures -eq 0 -and $State.apiConsecutiveFailures -eq 0) { "Healthy" }
@@ -567,7 +589,7 @@ $lastExportTime = [DateTime]::MinValue
 
 function Test-EditLock {
     param([string]$WikiDir)
-    $lockPath = Join-Path $WikiDir "status" "edit-lock.json"
+    $lockPath = Join-Path (Split-Path $WikiDir -Parent) ".data" "edit-lock.json"
     if (-not (Test-Path $lockPath)) { return $false }
 
     try {
@@ -619,21 +641,7 @@ while ($true) {
             Send-Alert -Kind Start -Message "Scheduled run starting (forced full rebuild)."
         }
 
-        # --- Pre-flight: clean up orphaned EA.exe processes left by a prior crashed run. ---
-        $leftoverEA = @(Get-Process EA -ErrorAction SilentlyContinue)
-        if ($leftoverEA.Count -gt 0) {
-            Write-MonitorLog -Phase "preflight" -Message "Found $($leftoverEA.Count) leftover EA.exe process(es) from a prior run; terminating."
-            $leftoverEA | Stop-Process -Force -ErrorAction SilentlyContinue
-        }
-
         $eaPidsBefore = @(Get-Process EA -ErrorAction SilentlyContinue | ForEach-Object { $_.Id })
-        function Cleanup-EAProcesses {
-            $orphans = @(Get-Process EA -ErrorAction SilentlyContinue | Where-Object { $_.Id -notin $eaPidsBefore })
-            if ($orphans.Count -gt 0) {
-                $orphans | Stop-Process -Force -ErrorAction SilentlyContinue
-                Write-MonitorLog -Phase "preflight" -Message "Cleaned up $($orphans.Count) orphaned EA process(es) from this run."
-            }
-        }
 
         # --- Export with bounded retry + backoff. ---
         $skipPhase = $false
@@ -974,7 +982,7 @@ if ($ApiPort -gt 0) {
                 # Poll for the ready file (written by the API server via
                 # app.Lifetime.ApplicationStarted) with 1-second intervals.
                 $ready = $false
-                $timeout = [DateTime]::UtcNow.AddSeconds(30)
+                $timeout = [DateTime]::UtcNow.AddSeconds(120)
                 while ([DateTime]::UtcNow -lt $timeout -and -not $ready) {
                     $ready = Test-Path $readyFile
                     if (-not $ready) { Start-Sleep -Seconds 1 }

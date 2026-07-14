@@ -58,6 +58,8 @@ EAxWiki can send monitoring alerts to **Slack and/or Microsoft Teams** when back
                         All three run together on one Windows machine
 ```
 
+**Runtime state** (`.data/`): The exporter and write-back server store runtime files — such as the edit-lock (`edit-lock.json`) and the audit log — in `.data/` alongside the `wiki/` directory. This keeps them outside mkdocs' file watcher, so they never trigger livereload when updated.
+
 MkDocs itself is cross-platform — only EXPORT and WRITE-BACK need EA COM, which is Windows-only. See the next diagram for running SERVE on a separate Linux/Mac machine instead.
 
 ### Windows + Linux — export on Windows, serve on Linux
@@ -303,6 +305,8 @@ Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per 
 > **Two-layer access control:** the auth token is complemented by a CORS-style origin check — the server only accepts cross-origin requests from the same hostname and the `--wiki-port` it was started with. This prevents a wiki page (or any script running in it) from accidentally or maliciously reaching a write-back server that belongs to a different EAxWiki instance on the same machine. The auth token itself protects against raw HTTP clients (curl, LAN scanning) that can set any `Origin` header they like — it is visible to anyone who can view the wiki page source, but is never transmitted over the network unencrypted when `--cert` is used (see [Write-back server security](#write-back-server-security)).
 >
 > **Fallback:** if `.eaxwiki-token` does not exist when the server starts, it is created automatically. Pages exported without a token (from an older version or incremental skip) will show "Not authenticated" when editing — re-export with `--force` to embed the current token.
+>
+> **Edit-lock — preventing export cycles from interrupting editors:** When a wiki page editor (status, notes, or diagram/row description) is opened, the widget acquires an edit-lock via `POST /api/edit-lock`; closing the editor releases it. The lock is persisted as `<repo>/.data/edit-lock.json` — intentionally outside `wiki/` so mkdocs' file watcher never sees it and the page never reloads mid-edit. The monitor's `Test-EditLock` function checks this file before each export — if a lock is active and not expired (5-minute timeout), the export cycle is deferred until the next loop iteration. This keeps the page stable while someone is actively editing.
 
 **Batch write-back** (for `.md` edits made while the server was not running):
 

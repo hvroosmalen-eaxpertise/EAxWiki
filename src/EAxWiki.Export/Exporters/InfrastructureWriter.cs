@@ -381,38 +381,54 @@ if (typeof document$ !== 'undefined') {
       cancelBtn.disabled = true;
       msg.textContent = 'Saving…';
 
-      fetch(apiBase + '/api/status', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
-        body: JSON.stringify({ elementId: eaId, newStatus: chosen, filePath: file })
-      })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
-      .then(function (res) {
-        if (res.ok) {
-          current = chosen;
-          badge.textContent = chosen;
-          badge.className = 'status-badge status-' + chosen.toLowerCase();
-          releaseEditLock();
-          exitEditMode();
-        } else if (res.status === 401) {
-          msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
-          msg.style.color = '#c62828';
-          applyBtn.disabled = false;
-          cancelBtn.disabled = false;
-        } else {
-          msg.textContent = '✗ ' + (res.data.message || 'Error');
-          msg.style.color = '#c62828';
-          applyBtn.disabled = false;
-          cancelBtn.disabled = false;
-        }
-      })
-      .catch(function (e) {
-        msg.textContent = '✗ ' + (e && e.message ? e.message : 'Could not reach API — is EAxWiki --api running?');
-        msg.style.color = '#c62828';
-        applyBtn.disabled = false;
-        cancelBtn.disabled = false;
-        console.error('EAxWiki status-editor error:', e);
-      });
+      var retries = 5;
+
+      function doFetch() {
+        fetch(apiBase + '/api/status', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+          body: JSON.stringify({ elementId: eaId, newStatus: chosen, filePath: file })
+        })
+        .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
+        .then(function (res) {
+          if (res.ok) {
+            current = chosen;
+            badge.textContent = chosen;
+            badge.className = 'status-badge status-' + chosen.toLowerCase();
+            releaseEditLock();
+            exitEditMode();
+          } else if (res.status === 401) {
+            msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
+            msg.style.color = '#c62828';
+            applyBtn.disabled = false;
+            cancelBtn.disabled = false;
+          } else if (res.status >= 500 && retries > 0) {
+            retries--;
+            msg.textContent = 'Retrying…';
+            setTimeout(doFetch, 2000);
+          } else {
+            msg.textContent = '✗ ' + (res.data.message || 'Error');
+            msg.style.color = '#c62828';
+            applyBtn.disabled = false;
+            cancelBtn.disabled = false;
+          }
+        })
+        .catch(function (e) {
+          if (retries > 0) {
+            retries--;
+            msg.textContent = 'Retrying…';
+            setTimeout(doFetch, 2000);
+          } else {
+            msg.textContent = '✗ Could not reach API — is EAxWiki --api running?';
+            msg.style.color = '#c62828';
+            applyBtn.disabled = false;
+            cancelBtn.disabled = false;
+            console.error('EAxWiki status-editor error:', e);
+          }
+        });
+      }
+
+      doFetch();
     }
 
     editBtn.addEventListener('click', enterEditMode);
@@ -460,14 +476,20 @@ if (typeof document$ !== 'undefined') {
       contentDiv.innerHTML = placeholderHtml;
     }
 
-    var textarea, controls, saveBtn, cancelBtn, msg;
+    function stripHtml(html) {
+      var tmp = document.createElement('div');
+      tmp.innerHTML = html;
+      return tmp.textContent || tmp.innerText || '';
+    }
+
+    var textarea, controls, saveBtn, cancelBtn, suggestBtn, msg;
 
     function enterEditMode() {
       var isPlaceholder = !!contentDiv.querySelector('.ea-notes-placeholder');
 
       textarea = document.createElement('textarea');
       textarea.className = 'ea-notes-textarea';
-      textarea.value = isPlaceholder ? '' : contentDiv.innerHTML.replace(notesMarkerPattern, '').trim();
+      textarea.value = isPlaceholder ? '' : stripHtml(contentDiv.innerHTML.replace(notesMarkerPattern, '').trim());
 
       controls = document.createElement('div');
       controls.className = 'ea-notes-controls';
@@ -475,6 +497,14 @@ if (typeof document$ !== 'undefined') {
       saveBtn = document.createElement('button');
       saveBtn.className = 'ea-notes-save-btn';
       saveBtn.textContent = 'Save';
+
+      suggestBtn = null;
+      if (widget.dataset.aiConfigured === 'true') {
+        suggestBtn = document.createElement('button');
+        suggestBtn.className = 'ea-notes-suggest-btn';
+        suggestBtn.textContent = 'Suggest';
+        suggestBtn.type = 'button';
+      }
 
       cancelBtn = document.createElement('button');
       cancelBtn.className = 'ea-notes-cancel-btn';
@@ -484,6 +514,7 @@ if (typeof document$ !== 'undefined') {
       msg.className = 'ea-notes-msg';
 
       controls.appendChild(saveBtn);
+      if (suggestBtn) controls.appendChild(suggestBtn);
       controls.appendChild(cancelBtn);
       controls.appendChild(msg);
 
@@ -497,6 +528,43 @@ if (typeof document$ !== 'undefined') {
 
       cancelBtn.addEventListener('click', exitEditMode);
       saveBtn.addEventListener('click', save);
+      if (suggestBtn) {
+        suggestBtn.addEventListener('click', function () {
+          suggestBtn.disabled = true;
+          suggestBtn.textContent = 'Generating...';
+          msg.textContent = '';
+          msg.style.color = '';
+
+          fetch(apiBase + '/api/ai-suggest', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+            body: JSON.stringify({ elementId: eaId })
+          })
+          .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
+          .then(function (res) {
+            if (res.ok) {
+              textarea.value = res.data.suggestion;
+              msg.textContent = 'Draft loaded \u2014 review and save.';
+              msg.style.color = '#2e7d32';
+            } else if (res.status === 204) {
+              msg.textContent = res.data.message || 'Not enough context to suggest a description.';
+              msg.style.color = '#666';
+            } else {
+              msg.textContent = 'Error: ' + (res.data.message || 'Unknown error');
+              msg.style.color = '#c62828';
+            }
+            suggestBtn.disabled = false;
+            suggestBtn.textContent = 'Suggest';
+          })
+          .catch(function (e) {
+            msg.textContent = 'Could not reach AI service.';
+            msg.style.color = '#c62828';
+            suggestBtn.disabled = false;
+            suggestBtn.textContent = 'Suggest';
+            console.error('EAxWiki ai-suggest error:', e);
+          });
+        });
+      }
     }
 
     function exitEditMode() {
@@ -518,117 +586,57 @@ if (typeof document$ !== 'undefined') {
       cancelBtn.disabled = true;
       msg.textContent = 'Saving…';
 
-      fetch(apiBase + endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
-        body: JSON.stringify(body)
-      })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
-      .then(function (res) {
-        if (res.ok) {
-          releaseEditLock();
-          contentDiv.innerHTML = res.data.html || placeholderHtml;
-          if (hint && hint.parentNode) hint.parentNode.removeChild(hint);
-          hint = null;
-          exitEditMode();
-        } else if (res.status === 401) {
-          msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
-          msg.style.color = '#c62828';
-          saveBtn.disabled = false;
-          cancelBtn.disabled = false;
-        } else {
-          msg.textContent = '✗ ' + (res.data.message || 'Error');
-          msg.style.color = '#c62828';
-          saveBtn.disabled = false;
-          cancelBtn.disabled = false;
-        }
-      })
-      .catch(function (e) {
-        msg.textContent = '✗ ' + (e && e.message ? e.message : 'Could not reach API — is EAxWiki --api running?');
-        msg.style.color = '#c62828';
-        saveBtn.disabled = false;
-        cancelBtn.disabled = false;
-        console.error('EAxWiki notes-editor error:', e);
-      });
+      var retries = 5;
+
+      function doFetch() {
+        fetch(apiBase + endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+          body: JSON.stringify(body)
+        })
+        .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
+        .then(function (res) {
+          if (res.ok) {
+            releaseEditLock();
+            contentDiv.innerHTML = res.data.html || placeholderHtml;
+            if (hint && hint.parentNode) hint.parentNode.removeChild(hint);
+            hint = null;
+            exitEditMode();
+          } else if (res.status === 401) {
+            msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
+            msg.style.color = '#c62828';
+            saveBtn.disabled = false;
+            cancelBtn.disabled = false;
+          } else if (res.status >= 500 && retries > 0) {
+            retries--;
+            msg.textContent = 'Retrying…';
+            setTimeout(doFetch, 2000);
+          } else {
+            msg.textContent = '✗ ' + (res.data.message || 'Error');
+            msg.style.color = '#c62828';
+            saveBtn.disabled = false;
+            cancelBtn.disabled = false;
+          }
+        })
+        .catch(function (e) {
+          if (retries > 0) {
+            retries--;
+            msg.textContent = 'Retrying…';
+            setTimeout(doFetch, 2000);
+          } else {
+            msg.textContent = '✗ Could not reach API — is EAxWiki --api running?';
+            msg.style.color = '#c62828';
+            saveBtn.disabled = false;
+            cancelBtn.disabled = false;
+            console.error('EAxWiki notes-editor error:', e);
+          }
+        });
+      }
+
+      doFetch();
     }
 
     editBtn.addEventListener('click', enterEditMode);
-  }
-
-  function initAiSuggest() {
-    var widget = document.getElementById('ea-notes-editor');
-    if (!widget || widget.dataset.aiConfigured !== 'true') return;
-    if (widget.querySelector('.ea-suggest-btn')) return;
-
-    var contentDiv = widget.querySelector('.ea-notes-content');
-    if (!contentDiv) return;
-    var isPlaceholder = !!contentDiv.querySelector('.ea-notes-placeholder');
-    if (!isPlaceholder) return;
-
-    var eaId  = parseInt(widget.dataset.eaId, 10);
-    var port  = widget.dataset.apiPort || '8001';
-    var token = widget.dataset.apiToken || '';
-    var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
-
-    var btn = document.createElement('button');
-    btn.className = 'ea-suggest-btn';
-    btn.textContent = 'Suggest a description';
-    btn.type = 'button';
-
-    var msg = document.createElement('span');
-    msg.className = 'ea-suggest-msg';
-    msg.style.marginLeft = '8px';
-
-    var container = document.createElement('div');
-    container.style.marginTop = '8px';
-    container.appendChild(btn);
-    container.appendChild(msg);
-
-    var editBtn = document.getElementById('ea-notes-edit-btn');
-    if (editBtn && editBtn.parentNode) {
-      editBtn.parentNode.insertBefore(container, editBtn.nextSibling);
-    }
-
-    btn.addEventListener('click', function () {
-      btn.disabled = true;
-      btn.textContent = 'Generating...';
-      msg.textContent = '';
-      msg.style.color = '';
-
-      fetch(apiBase + '/api/ai-suggest', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
-        body: JSON.stringify({ elementId: eaId })
-      })
-      .then(function (r) {
-        return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; });
-      })
-      .then(function (res) {
-        if (res.ok) {
-          var textarea = widget.querySelector('.ea-notes-textarea');
-          if (textarea) {
-            textarea.value = res.data.suggestion;
-            msg.textContent = 'Draft loaded \u2014 review and save.';
-            msg.style.color = '#2e7d32';
-          }
-        } else if (res.status === 204) {
-          msg.textContent = res.data.message || 'Not enough context to suggest a description.';
-          msg.style.color = '#666';
-        } else {
-          msg.textContent = 'Error: ' + (res.data.message || 'Unknown error');
-          msg.style.color = '#c62828';
-        }
-        btn.disabled = false;
-        btn.textContent = 'Suggest a description';
-      })
-      .catch(function (e) {
-        msg.textContent = 'Could not reach AI service.';
-        msg.style.color = '#c62828';
-        btn.disabled = false;
-        btn.textContent = 'Suggest a description';
-        console.error('EAxWiki ai-suggest error:', e);
-      });
-    });
   }
 
   function acquireEditLock(eaId) {
@@ -655,7 +663,6 @@ if (typeof document$ !== 'undefined') {
 
   function init() {
     initNotesEditor();
-    initAiSuggest();
   }
 
   if (typeof document$ !== 'undefined') {
@@ -788,37 +795,52 @@ if (typeof document$ !== 'undefined') {
       var token = btn.dataset.apiToken || '';
       var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
       var body = buildRequestBody(btn, rowId, textarea.value);
+      var retries = 5;
 
-      fetch(apiBase + '/api/row-notes', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
-        body: JSON.stringify(body)
-      })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
-      .then(function (res) {
-        if (res.ok) {
-          var html = res.data.html;
-          textSpan.innerHTML = html && html.trim() ? html : '<em class="ea-row-notes-placeholder">No description set.</em>';
-          closeCurrent();
-        } else if (res.status === 401) {
-          msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
-          msg.style.color = '#c62828';
-          saveBtn.disabled = false;
-          cancelBtn.disabled = false;
-        } else {
-          msg.textContent = '✗ ' + (res.data.message || 'Error');
-          msg.style.color = '#c62828';
-          saveBtn.disabled = false;
-          cancelBtn.disabled = false;
-        }
-      })
-      .catch(function (e) {
-        msg.textContent = '✗ ' + (e && e.message ? e.message : 'Could not reach API — is EAxWiki --api running?');
-        msg.style.color = '#c62828';
-        saveBtn.disabled = false;
-        cancelBtn.disabled = false;
-        console.error('EAxWiki row-notes-editor error:', e);
-      });
+      function doFetch() {
+        fetch(apiBase + '/api/row-notes', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+          body: JSON.stringify(body)
+        })
+        .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
+        .then(function (res) {
+          if (res.ok) {
+            var html = res.data.html;
+            textSpan.innerHTML = html && html.trim() ? html : '<em class="ea-row-notes-placeholder">No description set.</em>';
+            closeCurrent();
+          } else if (res.status === 401) {
+            msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
+            msg.style.color = '#c62828';
+            saveBtn.disabled = false;
+            cancelBtn.disabled = false;
+          } else if (res.status >= 500 && retries > 0) {
+            retries--;
+            msg.textContent = 'Retrying…';
+            setTimeout(doFetch, 2000);
+          } else {
+            msg.textContent = '✗ ' + (res.data.message || 'Error');
+            msg.style.color = '#c62828';
+            saveBtn.disabled = false;
+            cancelBtn.disabled = false;
+          }
+        })
+        .catch(function (e) {
+          if (retries > 0) {
+            retries--;
+            msg.textContent = 'Retrying…';
+            setTimeout(doFetch, 2000);
+          } else {
+            msg.textContent = '✗ Could not reach API — is EAxWiki --api running?';
+            msg.style.color = '#c62828';
+            saveBtn.disabled = false;
+            cancelBtn.disabled = false;
+            console.error('EAxWiki row-notes-editor error:', e);
+          }
+        });
+      }
+
+      doFetch();
     });
   }
 
@@ -855,11 +877,6 @@ if (typeof document$ !== 'undefined') {
     var widget = document.getElementById('ea-notes-editor');
     if (!widget || widget.dataset.aiConfigured !== 'true') return;
     if (widget.querySelector('.ea-suggest-btn')) return;
-
-    var contentDiv = widget.querySelector('.ea-notes-content');
-    if (!contentDiv) return;
-    var isPlaceholder = !!contentDiv.querySelector('.ea-notes-placeholder');
-    if (!isPlaceholder) return;
 
     var eaId  = parseInt(widget.dataset.eaId, 10);
     var port  = widget.dataset.apiPort || '8001';
@@ -902,6 +919,11 @@ if (typeof document$ !== 'undefined') {
       .then(function (res) {
         if (res.ok) {
           var textarea = widget.querySelector('.ea-notes-textarea');
+          if (!textarea) {
+            var eb = document.getElementById('ea-notes-edit-btn');
+            if (eb) eb.click();
+            textarea = widget.querySelector('.ea-notes-textarea');
+          }
           if (textarea) {
             textarea.value = res.data.suggestion;
             msg.textContent = 'Draft loaded — review and save.';

@@ -89,9 +89,14 @@ public class SchedulerForm : Form
 
     private readonly TextBox _outputBox = new() { Multiline = true, ReadOnly = true, ScrollBars = ScrollBars.Vertical, Dock = DockStyle.Fill, Font = new Font(FontFamily.GenericMonospace, 9) };
     private readonly Button _registerButton = new() { Text = "Register / Apply Schedule", AutoSize = true };
+    private readonly Button _runMonitorButton = new() { Text = "Run Monitor Now", AutoSize = true };
     private readonly Button _enableButton = new() { Text = "Enable", AutoSize = true };
     private readonly Button _disableButton = new() { Text = "Disable", AutoSize = true };
     private readonly Button _unregisterButton = new() { Text = "Unregister", AutoSize = true };
+    private readonly Button _stopExportButton = new() { Text = "Stop Export", AutoSize = true };
+    private readonly Button _stopServeButton = new() { Text = "Stop Serve", AutoSize = true };
+    private readonly Button _stopLlmButton = new() { Text = "Stop LLM", AutoSize = true };
+    private readonly Button _stopAllButton = new() { Text = "Stop All", AutoSize = true };
     private readonly Button _refreshStatusButton = new() { Text = "Refresh Status", AutoSize = true };
     private readonly Button _refreshConfigButton = new() { Text = "Refresh", AutoSize = true };
 
@@ -140,8 +145,13 @@ public class SchedulerForm : Form
         };
         _refreshStatusButton.Click += async (_, _) => await RefreshTaskStatusAsync();
         _registerButton.Click += async (_, _) => await RegisterAsync();
-        _enableButton.Click += async (_, _) => await RunTaskCommandAsync("Enable-ScheduledTask");
+        _runMonitorButton.Click += async (_, _) => await RunMonitorAsync();
+        _enableButton.Click += async (_, _) => await EnableAndResumeAsync();
         _disableButton.Click += async (_, _) => await RunTaskCommandAsync("Disable-ScheduledTask");
+        _stopExportButton.Click += async (_, _) => await StopExportAsync();
+        _stopServeButton.Click += async (_, _) => await StopServeAsync();
+        _stopLlmButton.Click += async (_, _) => await StopLlmAsync();
+        _stopAllButton.Click += async (_, _) => await StopAllAsync();
         _unregisterButton.Click += async (_, _) => await RunTaskCommandAsync("Unregister-ScheduledTask -Confirm:$false");
 
         _simpleModeRadio.CheckedChanged += (_, _) => UpdateModeEnablement();
@@ -288,15 +298,25 @@ public class SchedulerForm : Form
         AddRow(table, "Next run:", _nextRunValue);
         AddRow(table, "Triggers:", _triggersBox);
 
-        var buttons = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight };
-        buttons.Controls.Add(_refreshStatusButton);
-        buttons.Controls.Add(_enableButton);
-        buttons.Controls.Add(_disableButton);
-        buttons.Controls.Add(_unregisterButton);
+        var buttonRow1 = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight };
+        buttonRow1.Controls.Add(_refreshStatusButton);
+        buttonRow1.Controls.Add(_enableButton);
+        buttonRow1.Controls.Add(_disableButton);
+        buttonRow1.Controls.Add(_unregisterButton);
+
+        var buttonRow2 = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight };
+        buttonRow2.Controls.Add(_stopExportButton);
+        buttonRow2.Controls.Add(_stopServeButton);
+        buttonRow2.Controls.Add(_stopLlmButton);
+        buttonRow2.Controls.Add(_stopAllButton);
+
+        var buttonStack = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.TopDown };
+        buttonStack.Controls.Add(buttonRow1);
+        buttonStack.Controls.Add(buttonRow2);
 
         var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, AutoSize = true, FlowDirection = FlowDirection.TopDown };
         panel.Controls.Add(table);
-        panel.Controls.Add(buttons);
+        panel.Controls.Add(buttonStack);
 
         return new TabPage("Task Status") { Padding = new Padding(10), AutoScroll = true, Controls = { panel } };
     }
@@ -337,6 +357,7 @@ public class SchedulerForm : Form
         // instead, so it stays put regardless of how much the panel above needs to scroll.
         var buttonRow = new FlowLayoutPanel { Dock = DockStyle.Bottom, FlowDirection = FlowDirection.RightToLeft, AutoSize = true, Padding = new Padding(0, 8, 0, 0) };
         buttonRow.Controls.Add(_registerButton);
+        buttonRow.Controls.Add(_runMonitorButton);
 
         var tabPage = new TabPage("Schedule Settings") { Padding = new Padding(10), AutoScroll = true };
         tabPage.Controls.Add(panel);
@@ -1113,5 +1134,166 @@ public class SchedulerForm : Form
         }
 
         await RefreshTaskStatusAsync();
+    }
+
+    private async Task RunMonitorAsync()
+    {
+        if (_repoRoot == null) return;
+
+        var repoPath = BuildRepoPath();
+        if (repoPath.Length == 0)
+        {
+            AppendOutput("Configure the repository on the Configuration tab first.");
+            return;
+        }
+
+        // Save config so .eaxwiki has webhooks, ports, etc.
+        SaveEaxwikiConfig();
+        AppendOutput("Config saved to .eaxwiki.");
+
+        var psExe = PowerShellRunner.FindPowerShellExecutable() ?? "pwsh.exe";
+        var scriptPath = Path.Combine(_repoRoot, "scripts", "monitor-export-and-serve.ps1");
+        var args = new List<string>
+        {
+            "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", scriptPath,
+            "--repo", repoPath,
+            "--port", ((int)_wikiPortConfigBox.Value).ToString()
+        };
+
+        var webhook = _webhookBox.Text.Trim();
+        if (webhook.Length > 0) { args.Add("--webhook-url"); args.Add(webhook); }
+        var teamsWebhook = _teamsWebhookBox.Text.Trim();
+        if (teamsWebhook.Length > 0) { args.Add("--teams-webhook-url"); args.Add(teamsWebhook); }
+
+        if (_forceEveryRunRadio.Checked) args.Add("--force");
+        else if (_forceEveryNRadio.Checked) { args.Add("--force-every"); args.Add(((int)_forceEveryN.Value).ToString()); }
+
+        AppendOutput($"> Starting monitor in new window...");
+        var psi = new ProcessStartInfo
+        {
+            FileName = psExe,
+            Arguments = string.Join(" ", args.Select(a => a.Contains(' ') ? $"\"{a}\"" : a)),
+            WorkingDirectory = _repoRoot,
+            UseShellExecute = true,
+            WindowStyle = ProcessWindowStyle.Normal,
+        };
+        Process.Start(psi);
+        AppendOutput($"Monitor launched in separate window.");
+    }
+
+    private async Task EnableAndResumeAsync()
+    {
+        if (_repoRoot == null) return;
+        await RunTaskCommandAsync("Enable-ScheduledTask");
+
+        var cmd = $@"
+$sf = Get-ChildItem -Path '{_repoRoot}\.eaxwiki-monitor\*\health.json' -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
+if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipExport = $false; $s.skipServe = $false; $s | ConvertTo-Json | Set-Content $sf; Write-Host 'Cleared skipExport and skipServe flags.' }}
+";
+        var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
+        AppendOutput(result.Output);
+    }
+
+    private async Task StopExportAsync()
+    {
+        if (_repoRoot == null) return;
+        var repoRoot = _repoRoot;
+        var webhookUrl = _webhookBox.Text.Trim();
+        var teamsUrl = _teamsWebhookBox.Text.Trim();
+
+        var cmd = $@"
+# Kill any process with EAxWiki in its command line (dotnet.exe, EAxWiki.exe, etc.)
+Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
+    Where-Object {{ $_.CommandLine -match 'EAxWiki' -and $_.Name -notmatch 'powershell|pwsh' }} |
+    ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
+$sf = Get-ChildItem -Path '{repoRoot}\.eaxwiki-monitor\*\health.json' -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
+if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipExport = $true; $s | ConvertTo-Json | Set-Content $sf; Write-Host 'skipExport=$true' }}
+& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -Message 'Export stopped by user.' -Kind UserStop
+";
+        AppendOutput("> Stopping export...");
+        var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
+        AppendOutput(result.Output);
+    }
+
+    private async Task StopServeAsync()
+    {
+        if (_repoRoot == null) return;
+        var repoRoot = _repoRoot;
+        var webhookUrl = _webhookBox.Text.Trim();
+        var teamsUrl = _teamsWebhookBox.Text.Trim();
+
+        var cmd = $@"
+# Kill pwsh.exe running serve.ps1
+Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
+    Where-Object {{ $_.Name -match 'pwsh|powershell' -and $_.CommandLine -match 'serve\.ps1|mkdocs' }} |
+    ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
+# Kill mkdocs.exe and its python workers
+Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
+    Where-Object {{ $_.Name -match 'mkdocs|python' -and $_.CommandLine -match 'mkdocs' }} |
+    ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
+$sf = Get-ChildItem -Path '{repoRoot}\.eaxwiki-monitor\*\health.json' -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
+if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipServe = $true; $s | ConvertTo-Json | Set-Content $sf; Write-Host 'skipServe=$true' }}
+& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -Message 'Serve stopped by user.' -Kind UserStop
+";
+        AppendOutput("> Stopping serve...");
+        var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
+        AppendOutput(result.Output);
+    }
+
+    private async Task StopLlmAsync()
+    {
+        if (_repoRoot == null) return;
+        var repoRoot = _repoRoot;
+        var webhookUrl = _webhookBox.Text.Trim();
+        var teamsUrl = _teamsWebhookBox.Text.Trim();
+
+        var cmd = $@"
+Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
+    Where-Object {{ $_.Name -match 'llama-server' }} |
+    ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
+& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -Message 'Local LLM stopped by user.' -Kind UserStop
+";
+        AppendOutput("> Stopping LLM...");
+        var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
+        AppendOutput(result.Output);
+
+        _llmProcess = null;
+        UpdateAiModeEnablement();
+    }
+
+    private async Task StopAllAsync()
+    {
+        if (_repoRoot == null) return;
+        var repoRoot = _repoRoot;
+        var webhookUrl = _webhookBox.Text.Trim();
+        var teamsUrl = _teamsWebhookBox.Text.Trim();
+
+        var cmd = $@"
+# Kill any process with EAxWiki in command line
+Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
+    Where-Object {{ $_.CommandLine -match 'EAxWiki' -and $_.Name -notmatch 'powershell|pwsh' }} |
+    ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
+# Kill pwsh.exe running serve.ps1
+Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
+    Where-Object {{ $_.Name -match 'pwsh|powershell' -and $_.CommandLine -match 'serve\.ps1|mkdocs' }} |
+    ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
+# Kill mkdocs.exe and its python workers
+Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
+    Where-Object {{ $_.Name -match 'mkdocs|python' -and $_.CommandLine -match 'mkdocs' }} |
+    ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
+# Kill llama-server
+Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
+    Where-Object {{ $_.Name -match 'llama-server' }} |
+    ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
+$sf = Get-ChildItem -Path '{repoRoot}\.eaxwiki-monitor\*\health.json' -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
+if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipExport = $true; $s.skipServe = $true; $s | ConvertTo-Json | Set-Content $sf; Write-Host 'skipExport=$true, skipServe=$true' }}
+& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -Message 'All processes stopped by user.' -Kind UserStop
+";
+        AppendOutput("> Stopping all processes...");
+        var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
+        AppendOutput(result.Output);
+
+        _llmProcess = null;
+        UpdateAiModeEnablement();
     }
 }

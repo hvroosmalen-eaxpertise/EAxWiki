@@ -1,4 +1,5 @@
 using System.Collections.Concurrent;
+using System.Runtime.InteropServices;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using Microsoft.Extensions.Logging;
@@ -69,13 +70,41 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
         {
             foreach (var work in _workQueue.GetConsumingEnumerable())
             {
-                try
+                int retries = 0;
+                const int maxRetries = 1;
+                bool executed = false;
+                while (!executed && retries <= maxRetries)
                 {
-                    work.Execute(reader);
-                }
-                catch (Exception ex)
-                {
-                    work.SetException(ex);
+                    try
+                    {
+                        work.Execute(reader);
+                        executed = true;
+                    }
+                    catch (COMException ex) when (!_disposed && retries < maxRetries)
+                    {
+                        retries++;
+                        _logger.LogWarning(ex,
+                            "EA COM disconnected (retry {Retry}/{MaxRetries}); reconnecting.",
+                            retries, maxRetries);
+                        reader?.Dispose();
+                        try
+                        {
+                            reader = new EaReader(_logger as ILogger<EaReader>);
+                            reader.Open(repositoryPath);
+                            _logger.LogInformation("EA reconnection succeeded.");
+                        }
+                        catch (Exception reconnectEx)
+                        {
+                            _logger.LogError(reconnectEx, "EA reconnection failed.");
+                            work.SetException(reconnectEx);
+                            executed = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        work.SetException(ex);
+                        executed = true;
+                    }
                 }
             }
         }

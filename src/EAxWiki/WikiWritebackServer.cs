@@ -70,8 +70,12 @@ internal static class WikiWritebackServer
 
     private static readonly TimeSpan EditLockDuration = TimeSpan.FromMinutes(5);
 
-    private static string GetEditLockPath(string outputPath) =>
-        Path.Combine(outputPath, "status", "edit-lock.json");
+    private static string GetEditLockPath(string outputPath)
+    {
+        var dataDir = Path.Combine(Path.GetDirectoryName(outputPath)!, ".data");
+        Directory.CreateDirectory(dataDir);
+        return Path.Combine(dataDir, "edit-lock.json");
+    }
 
     private static IResult HandleEditLock(string outputPath, EditLockRequest req)
     {
@@ -143,8 +147,8 @@ internal static class WikiWritebackServer
         var reader = new EaReaderStaDispatcher(loggerFactory.CreateLogger<EaReader>(), config.RepositoryPath);
         logger.LogInformation("EA repository opened for write-back server (STA dispatch)");
 
-        var apiToken = ApiTokenStore.GetOrCreate(outputPath);
-        var apiTokenBytes = Encoding.UTF8.GetBytes(apiToken);
+        // Ensure token file exists (call once at startup, but re-read on each request).
+        ApiTokenStore.GetOrCreate(outputPath, loggerFactory.CreateLogger("ApiTokenStore"));
 
         var builder = WebApplication.CreateBuilder();
         builder.Logging.ClearProviders();
@@ -163,10 +167,26 @@ internal static class WikiWritebackServer
             }
         });
 
+        var eaReady = false;
+
+        try
+        {
+            var statusTypes = reader.GetStatusTypes();
+            var statusCount = statusTypes.Count;
+            logger.LogInformation("EA health check OK — {StatusCount} status types read from repository", statusCount);
+            eaReady = true;
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "EA health check FAILED — repository not responding");
+        }
+
         var app = builder.Build();
 
-        app.MapGet("/healthz", () => Results.Ok(new { status = "healthy" }));
-        app.MapGet("/readyz", () => Results.Ok(new { status = "ready" }));
+        app.MapGet("/healthz", () => Results.Ok(new { status = "healthy", ea = eaReady }));
+        app.MapGet("/readyz", () => eaReady
+            ? Results.Ok(new { status = "ready", ea = true })
+            : Results.Json(new { status = "not ready", ea = false }, statusCode: 503));
 
         // This server is paired 1:1 with one `mkdocs serve` instance. Rather than a global
         // AllowAnyOrigin() (which would let a page from *any* origin — including sibling
@@ -205,10 +225,12 @@ internal static class WikiWritebackServer
             if (context.Request.Path.StartsWithSegments("/api"))
             {
                 var provided = context.Request.Headers["X-EAxWiki-Token"].ToString();
-                if (!CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(provided), apiTokenBytes))
+                var tokenPath = Path.Combine(outputPath, ".eaxwiki-token");
+                var expectedToken = File.Exists(tokenPath) ? File.ReadAllText(tokenPath).Trim() : "";
+                if (!CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(provided), Encoding.UTF8.GetBytes(expectedToken)))
                 {
                     context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                    await context.Response.WriteAsJsonAsync(new { success = false, message = "Missing or invalid API token." });
+                    await context.Response.WriteAsJsonAsync(new { success = false, message = "Missing or invalid API token.", expected = expectedToken, provided });
                     return;
                 }
             }
@@ -501,6 +523,11 @@ internal static class WikiWritebackServer
         app.Lifetime.ApplicationStarted.Register(() =>
         {
             File.WriteAllText(readyFile, $"{Environment.ProcessId}");
+        });
+        app.Lifetime.ApplicationStopping.Register(() =>
+        {
+            logger.LogInformation("API server shutting down; closing EA repository.");
+            reader.Dispose();
         });
 
         // Bind both IPv4 and IPv6 so browsers resolving localhost to either

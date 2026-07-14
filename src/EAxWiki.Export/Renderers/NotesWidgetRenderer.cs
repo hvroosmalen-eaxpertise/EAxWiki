@@ -15,7 +15,7 @@ internal static class NotesWidgetRenderer
                 $" data-file-path=\"{wikiRelPathHtml}\"" +
                 $" data-api-port=\"{ctx.ApiPort}\"" +
                 $" data-api-token=\"{HtmlHelpers.HtmlEscape(ctx.ApiToken)}\"" +
-                $" data-ai-configured=\"{aiConfigured}\">";
+                $" data-ai-configured=\"{aiConfigured.ToString().ToLowerInvariant()}\">";
             yield return "<button id=\"ea-notes-edit-btn\" class=\"ea-notes-edit-btn\" type=\"button\" aria-label=\"Edit notes\">&#9998;</button>";
             yield return "<div class=\"ea-notes-content\">";
             yield return "<!--ea-notes-start-->";

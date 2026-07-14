@@ -45,7 +45,7 @@ public class MarkdownExporter : IWikiExporter
 
             var statusTypes = reader?.GetStatusTypes() ?? [];
             int.TryParse(Environment.GetEnvironmentVariable("EAXWIKI_API_PORT"), out var apiPort);
-            var apiToken = apiPort > 0 ? ApiTokenStore.GetOrCreate(outputPath) : string.Empty;
+            var apiToken = apiPort > 0 ? ApiTokenStore.GetOrCreate(outputPath, _logger) : string.Empty;
             var aiEndpoint = Environment.GetEnvironmentVariable("EAXWIKI_AI_ENDPOINT");
             var aiConfigured = !string.IsNullOrEmpty(aiEndpoint);
             var ctx = ContextBuilder.Build(packages, outputPath, force) with

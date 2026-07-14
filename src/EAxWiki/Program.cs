@@ -53,34 +53,28 @@ if (string.IsNullOrEmpty(LocalConfig))
     LocalConfig = Path.Combine(repoRoot, ConfigFileName);
 }
 
+// Always try to load .eaxwiki for fallback values (ports, AI endpoint, etc.)
+LocalConfigStore.Config? savedConfig = null;
+bool wasLegacyPlaintext = false;
+if (!string.IsNullOrWhiteSpace(LocalConfig) && File.Exists(LocalConfig))
+{
+    savedConfig = LocalConfigStore.Load(LocalConfig, out wasLegacyPlaintext);
+}
+
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
 {
-    if (!string.IsNullOrWhiteSpace(LocalConfig) && File.Exists(LocalConfig))
+    if (savedConfig != null && !string.IsNullOrWhiteSpace(savedConfig.RepoPath))
     {
-        var savedConfig = LocalConfigStore.Load(LocalConfig, out var wasLegacyPlaintext);
-        if (!string.IsNullOrWhiteSpace(savedConfig.RepoPath))
-        {
-            config.RepositoryPath = savedConfig.RepoPath;
-            if (config.WikiPort == 0 && savedConfig.WikiPort.HasValue)
-                config.WikiPort = savedConfig.WikiPort.Value;
-            if (config.ApiPort == 0 && savedConfig.ApiPort.HasValue)
-                config.ApiPort = savedConfig.ApiPort.Value;
-            if (string.IsNullOrEmpty(config.AiEndpoint) && !string.IsNullOrEmpty(savedConfig.AiEndpoint))
-                config.AiEndpoint = savedConfig.AiEndpoint;
-            if (string.IsNullOrEmpty(config.AiModel) && !string.IsNullOrEmpty(savedConfig.AiModel))
-                config.AiModel = savedConfig.AiModel;
-            if (string.IsNullOrEmpty(config.AiKey) && !string.IsNullOrEmpty(savedConfig.AiKey))
-                config.AiKey = savedConfig.AiKey;
+        config.RepositoryPath = savedConfig.RepoPath;
 
-            Console.WriteLine($"Using saved repository: {EaRepository.Redact(config.RepositoryPath)}");
-            if (wasLegacyPlaintext)
-            {
-                LocalConfigStore.Save(LocalConfig, savedConfig);
-                Console.WriteLine($"(Encrypted {LocalConfig} at rest — it was stored in plaintext.)");
-            }
-            Console.WriteLine($"(Pass --repo to override, or delete {Path.GetFileName(LocalConfig)} to re-enter interactively.)");
-            Console.WriteLine();
+        Console.WriteLine($"Using saved repository: {EaRepository.Redact(config.RepositoryPath)}");
+        if (wasLegacyPlaintext)
+        {
+            LocalConfigStore.Save(LocalConfig, savedConfig);
+            Console.WriteLine($"(Encrypted {LocalConfig} at rest — it was stored in plaintext.)");
         }
+        Console.WriteLine($"(Pass --repo to override, or delete {Path.GetFileName(LocalConfig)} to re-enter interactively.)");
+        Console.WriteLine();
     }
     else
     {
@@ -134,8 +128,31 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
             LocalConfigStore.Save(LocalConfig, newConfig);
             Console.WriteLine($"Saved to {LocalConfig} (encrypted) — future runs will use this automatically.");
             Console.WriteLine();
+
+            // Reload savedConfig with freshly-saved values so fallbacks below apply correctly
+            if (!string.IsNullOrWhiteSpace(LocalConfig) && File.Exists(LocalConfig))
+            {
+                savedConfig = LocalConfigStore.Load(LocalConfig, out _);
+            }
         }
     }
+}
+
+// Apply .eaxwiki fallbacks for ApiPort, WikiPort, and AI settings
+// (always, even when --repo was provided — the monitor passes --repo but
+//  relies on .eaxwiki for ApiPort and AI config)
+if (savedConfig != null)
+{
+    if (config.WikiPort == 0 && savedConfig.WikiPort.HasValue)
+        config.WikiPort = savedConfig.WikiPort.Value;
+    if (config.ApiPort == 0 && savedConfig.ApiPort.HasValue)
+        config.ApiPort = savedConfig.ApiPort.Value;
+    if (string.IsNullOrEmpty(config.AiEndpoint) && !string.IsNullOrEmpty(savedConfig.AiEndpoint))
+        config.AiEndpoint = savedConfig.AiEndpoint;
+    if (string.IsNullOrEmpty(config.AiModel) && !string.IsNullOrEmpty(savedConfig.AiModel))
+        config.AiModel = savedConfig.AiModel;
+    if (string.IsNullOrEmpty(config.AiKey) && !string.IsNullOrEmpty(savedConfig.AiKey))
+        config.AiKey = savedConfig.AiKey;
 }
 
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
@@ -166,6 +183,7 @@ Console.WriteLine();
 
 using var loggerFactory = LoggerFactory.Create(builder =>
 {
+    if (Console.Error is StreamWriter sw) sw.AutoFlush = true;
     builder.AddSimpleConsole(options => options.TimestampFormat = "HH:mm:ss.fff ");
     builder.SetMinimumLevel(config.Verbose ? LogLevel.Debug : LogLevel.Information);
 });

@@ -95,11 +95,13 @@ if ($ApiPort -gt 0)  { $runArgs += "--api-port", $ApiPort }
 
 try {
     dotnet run --project src/EAxWiki -- $runArgs
-    if ($LASTEXITCODE -ne 0) {
-        Write-Error "Export failed (exit code $LASTEXITCODE)."
+    $code = if ($null -eq $LASTEXITCODE) { 0 } else { $LASTEXITCODE }
+    Write-Output "EAXWIKI_EXIT_CODE=$code"
+    if ($code -ne 0) {
+        Write-Error "Export failed (exit code $code)."
         Cleanup-EAProcesses
         Pop-Location
-        exit $LASTEXITCODE
+        exit $code
     }
     Write-Host "Export complete." -ForegroundColor Green
 }

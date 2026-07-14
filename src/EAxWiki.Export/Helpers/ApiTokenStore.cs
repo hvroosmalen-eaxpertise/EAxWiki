@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using Microsoft.Extensions.Logging;
 
 namespace EAxWiki.Export.Helpers;
 
@@ -12,18 +13,24 @@ public static class ApiTokenStore
 {
     private const string FileName = ".eaxwiki-token";
 
-    public static string GetOrCreate(string outputPath)
+    public static string GetOrCreate(string outputPath, ILogger? logger = null)
     {
         var path = Path.Combine(outputPath, FileName);
-        if (File.Exists(path))
+        var exists = File.Exists(path);
+        if (exists)
         {
             var existing = File.ReadAllText(path).Trim();
-            if (existing.Length > 0) return existing;
+            if (existing.Length > 0)
+            {
+                logger?.LogInformation("Token: read from {Path} ({Token})", path, existing);
+                return existing;
+            }
         }
 
         Directory.CreateDirectory(outputPath);
         var token = Convert.ToHexString(RandomNumberGenerator.GetBytes(24)).ToLowerInvariant();
         File.WriteAllText(path, token);
+        logger?.LogInformation("Token: created at {Path} ({Status}) Value={Token}", path, exists ? "overwritten (was empty)" : "new file", token);
         return token;
     }
 }

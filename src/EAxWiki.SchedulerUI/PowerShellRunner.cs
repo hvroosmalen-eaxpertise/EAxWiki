@@ -94,7 +94,7 @@ internal static class PowerShellRunner
         return new PowerShellResult(process.ExitCode, output.ToString());
     }
 
-    private static string FindPowerShellExecutable()
+    internal static string FindPowerShellExecutable()
     {
         var pwshPath = GetFullPathFromPathEnv("pwsh.exe");
         if (pwshPath != null) return pwshPath;
