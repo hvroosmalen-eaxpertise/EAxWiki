@@ -9,13 +9,20 @@ notes_hash: 07b8db4a
 # <span class="sl" data-layer="edgy-pe">People</span> Local Communities
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="524" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Local Communities.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
 
-Communities around production facilities and supplier regions
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="524" data-file-path="People/Local Communities.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64" data-ai-configured="true">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Communities around production facilities and supplier regions</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Relationships
 
@@ -54,4 +61,4 @@ Communities around production facilities and supplier regions
 
 ---
 
-*Generated: 2026-07-08 15:12:47*
+*Generated: 2026-07-14 09:39:50*

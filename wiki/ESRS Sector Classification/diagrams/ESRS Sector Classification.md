@@ -10,7 +10,14 @@ notes_hash: ef93713e
 
 ![ESRS Sector Classification](ESRS Sector Classification.png)
 
-**Description:** <p>The Sector Classification is important.</p>
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="42" data-kind="diagram" data-file-path="ESRS Sector Classification/diagrams/ESRS Sector Classification.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>The Sector Classification is important.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -18,4 +25,4 @@ notes_hash: ef93713e
 
 ---
 
-*Generated: 2026-07-08 15:13:04*
+*Generated: 2026-07-14 09:39:58*

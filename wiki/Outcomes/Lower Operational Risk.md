@@ -9,21 +9,32 @@ notes_hash: 091bb51d
 # <span class="sl" data-layer="motivation">Outcome</span> Lower Operational Risk
 
 **Type:** Class  **Stereotype:** ArchiMate_Outcome  **StereotypeEx:** ArchiMate_Outcome  **FQStereotype:** ArchiMate3::ArchiMate_Outcome  
-**Status:** <span class="status-badge status-not-set">Not Set</span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="459" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Outcomes/Lower Operational Risk.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Outcomes](index.md)
 
-Reduction in operational risks related to environmental incidents, social controversies, and governance failures.         
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="459" data-file-path="Outcomes/Lower Operational Risk.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64" data-ai-configured="true">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Reduction in operational risks related to environmental incidents, social controversies, and governance failures.         
 Decreases likelihood of regulatory penalties, supply chain disruptions, and operational crises.         
-Enhances business resilience and operational continuity.
+Enhances business resilience and operational continuity.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| archimate_element_identifier | outcome-003 |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>archimate_element_identifier</td><td>outcome-003</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="459" data-tag-name="archimate_element_identifier" data-tag-value="outcome-003" data-file-path="Outcomes/Lower Operational Risk.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -66,4 +77,4 @@ Enhances business resilience and operational continuity.
 
 ---
 
-*Generated: 2026-07-08 15:12:48*
+*Generated: 2026-07-14 09:39:50*

@@ -8,12 +8,11 @@
 
 None.
 
-## Missing Descriptions (151)
+## Missing Descriptions (148)
 
 *Notes field is empty or whitespace-only.*
 
 - [ Levensduur product](../Metrics/Levensduur product.md)
-- [ Productievolumes / normaliserende operationele data](../Metrics/Productievolumes _ normaliserende operationele data.md)
 - [# bomen geplant / ha natuur hersteld](../Metrics/_ bomen geplant _ ha natuur hersteld.md)
 - [# SDGs met meetbare KPI’s](../Metrics/_ SDGs met meetbare KPI’s.md)
 - [# teruggenomen producten (per jaar)](../Metrics/_ teruggenomen producten (per jaar).md)
@@ -55,7 +54,6 @@ None.
 - [EDGY -> XMI (Python)](../Information Collection and Model Creation/EDGY -_ XMI (Python).md)
 - [EDGY 23 Language Foundation](../Information Collection and Model Creation/EDGY 23 Language Foundation.md)
 - [EDGY Model Elementen en Relaties](../Information Collection and Model Creation/EDGY Model Elementen en Relaties.md)
-- [EFRAG Website](../Information Collection and Model Creation/EFRAG Website.md)
 - [Elektriciteitsverbruik (Scope 2)](../Metrics/Elektriciteitsverbruik (Scope 2).md)
 - [Emissie vóór/na project](../Metrics/Emissie vóór_na project.md)
 - [Emissiereductie (%) = ((baseline – huidig) / baseline) × 100](../Metrics/Emissiereductie (%) = ((baseline – huidig) _ baseline) × 100.md)
@@ -153,7 +151,6 @@ None.
 - [unnamed](../Sustainability Development Goals/unnamed.md)
 - [unnamed](../Sustainability Development Goals/unnamed.md)
 - [unnamed](../Sustainability Development Goals/unnamed.md)
-- [unnamed](../Sustainability Development Goals/unnamed.md)
 - [Validatie via energienota’s](../Metrics/Validatie via energienota’s.md)
 - [Vermeden CO₂ door maatregelen (ton/jaar)](../Metrics/Vermeden CO₂ door maatregelen (ton_jaar).md)
 - [Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval.](../Task/Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval..md)
@@ -164,7 +161,7 @@ None.
 - [Willem Krijgsman](../Introduction EurSuRA/Willem Krijgsman.md)
 - [XMI Import Definition](../Information Collection and Model Creation/XMI Import Definition.md)
 
-## Untouched 90+ Days (197)
+## Untouched 90+ Days (187)
 
 *Has a Status set, but no field on the element (Notes, tagged values, relationships, etc.) has changed in over 90 days. Does not track how long the Status value itself has been unchanged.*
 
@@ -230,9 +227,7 @@ None.
 | [Massa gerecycled materiaal (kg/% input)](../Metrics/Massa gerecycled materiaal (kg_% input).md) | Proposed | 2025-12-03 |
 | [Retourpercentages producten](../Metrics/Retourpercentages producten.md) | Proposed | 2025-12-03 |
 | [Afval per fase + recycleerbaar aandeel](../Metrics/Afval per fase + recycleerbaar aandeel.md) | Proposed | 2025-12-03 |
-| [ Levensduur product](../Metrics/Levensduur product.md) | Proposed | 2025-12-03 |
 | [CO₂e, energie, afval, water per proces](../Metrics/CO₂e, energie, afval, water per proces.md) | Proposed | 2025-12-03 |
-| [ Productievolumes / normaliserende operationele data](../Metrics/Productievolumes _ normaliserende operationele data.md) | Proposed | 2025-12-03 |
 | [Datakwaliteit: beschikbaarheid / updatefrequentie](../Metrics/Datakwaliteit_ beschikbaarheid _ updatefrequentie.md) | Proposed | 2025-12-03 |
 | [Slimme meters / EMS](../Metrics/Slimme meters _ EMS.md) | Proposed | 2025-12-03 |
 | [BMS (HVAC/lighting)](../Metrics/BMS (HVAC_lighting).md) | Proposed | 2025-12-03 |
@@ -265,13 +260,10 @@ None.
 | [SDG Academy](../Reference Websites/SDG Academy.md) | Proposed | 2025-12-12 |
 | [Strategic Sustainability Management](../Reference Documents/Strategic Sustainability Management.md) | Proposed | 2025-12-12 |
 | [Works Council (Ondernemingsraad)](../People/Works Council (Ondernemingsraad).md) | Proposed | 2025-12-15 |
-| [Affected Communities (ESRS S3)](../People/Affected Communities (ESRS S3).md) | Proposed | 2025-12-15 |
 | [AFM](../People/AFM.md) | Proposed | 2025-12-15 |
-| [Agricultural Suppliers](../People/Agricultural Suppliers.md) | Proposed | 2025-12-15 |
 | [Banks and Financial Institutions](../People/Banks and Financial Institutions.md) | Proposed | 2025-12-15 |
 | [Board of Directors (Directie)](../People/Board of Directors (Directie).md) | Proposed | 2025-12-15 |
 | [CEO](../People/CEO.md) | Proposed | 2025-12-15 |
-| [Certification Bodies](../People/Certification Bodies.md) | Proposed | 2025-12-15 |
 | [Consumers and End Users (ESRS S4)](../People/Consumers and End Users (ESRS S4).md) | Proposed | 2025-12-15 |
 | [COO](../People/COO.md) | Proposed | 2025-12-15 |
 | [Credit Rating Agencies](../People/Credit Rating Agencies.md) | Proposed | 2025-12-15 |
@@ -315,11 +307,6 @@ None.
 | [Enterprise Purpose](../Purpose/Enterprise Purpose.md) | Proposed | 2025-12-15 |
 | [Sustainability Identity](../Purpose/Sustainability Identity.md) | Proposed | 2025-12-15 |
 | [Green Capabilities](../Capability/Green Capabilities.md) | Proposed | 2025-12-15 |
-| [Environmental Impact Map](../Asset/Environmental Impact Map.md) | Proposed | 2025-12-15 |
-| [Sustainability Metrics](../Asset/Sustainability Metrics.md) | Proposed | 2025-12-15 |
-| [Sustainable Data Assets](../Asset/Sustainable Data Assets.md) | Proposed | 2025-12-15 |
-| [Sustainable Policies](../Asset/Sustainable Policies.md) | Proposed | 2025-12-15 |
-| [Sustainable Resources / Assets](../Asset/Sustainable Resources _ Assets.md) | Proposed | 2025-12-15 |
 | [Lifecycle & Circularity Model](../Process/Lifecycle & Circularity Model.md) | Proposed | 2025-12-15 |
 | [Reduction Initiatives](../Process/Reduction Initiatives.md) | Proposed | 2025-12-15 |
 | [Sustainable Processes](../Process/Sustainable Processes.md) | Proposed | 2025-12-15 |
@@ -376,4 +363,4 @@ None.
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:51*

@@ -5,6 +5,7 @@
 ## Diagrams
 
 - [Architecture](diagrams/Architecture.md) (Custom)
+  - *<p>Updated diagram description from smoke test at 09:50:05</p>*
 
 ## Sub-packages
 
@@ -14,4 +15,4 @@
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:50*

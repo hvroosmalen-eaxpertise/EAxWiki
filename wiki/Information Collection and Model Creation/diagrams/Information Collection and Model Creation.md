@@ -1,6 +1,6 @@
 ---
 diagram_id: 43
-notes_hash: e8ae6e3a
+notes_hash: d95ef852
 ---
 
 # Information Collection and Model Creation
@@ -10,7 +10,15 @@ notes_hash: e8ae6e3a
 
 ![Information Collection and Model Creation](Information Collection and Model Creation.png)
 
-**Derived Description:** <p>Test write-back for a previously empty notes element
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="43" data-kind="diagram" data-file-path="Information Collection and Model Creation/diagrams/Information Collection and Model Creation.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>The EFRAG Website is a proposed Channel class that is responsible for collecting information and creating models</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -40,4 +48,4 @@ notes_hash: e8ae6e3a
 
 ---
 
-*Generated: 2026-07-08 15:13:20*
+*Generated: 2026-07-14 09:40:04*

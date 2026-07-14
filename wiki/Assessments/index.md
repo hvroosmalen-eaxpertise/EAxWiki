@@ -11,10 +11,10 @@
 - <span class="sl" data-layer="motivation">Assessment</span> [Supplier Compliance Rate](Supplier Compliance Rate.md)
   - *Percentage of suppliers meeting defined environmental and social standards based on audits and assessments.          Measures effectiveness of sustainable supply chain management programs.          Indicates level of control over value chain sustainability impacts.*
 - <span class="sl" data-layer="motivation">Assessment</span> [Energy Efficiency Index](Energy Efficiency Index.md)
-  - *Metric measuring energy consumption per unit of output, tracking improvements in operational energy efficiency.          Monitors progress in reducing energy intensity and optimizing resource use.          Links environmental performance to operational excellence and cost management.*
+  - *<p>Test notes from automated smoke test at 09:49:23</p>*
 - <span class="sl" data-layer="motivation">Assessment</span> [Sustainable Revenue Ratio](Sustainable Revenue Ratio.md)
-  - *Percentage of total revenue derived from products and services classified as sustainable according to defined criteria.          Measures the organization''s transition toward a sustainable business portfolio.          Indicates strategic alignment between commercial success and sustainability objectives.*
+  - *<p>Rich test notes from automated smoke test.</p><ul><li>Point 1</li><li>Point 2</li></ul>*
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:50*

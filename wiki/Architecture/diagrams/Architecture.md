@@ -1,6 +1,6 @@
 ---
 diagram_id: 6
-notes_hash: 453efdac
+notes_hash: 5c8e309f
 ---
 
 # Architecture
@@ -10,7 +10,14 @@ notes_hash: 453efdac
 
 ![Architecture](Architecture.png)
 
-**Derived Description:** Vermogens die duurzaam opereren mogelijk maken
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="6" data-kind="diagram" data-file-path="Architecture/diagrams/Architecture.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Updated diagram description from smoke test at 09:50:05</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -48,4 +55,4 @@ notes_hash: 453efdac
 
 ---
 
-*Generated: 2026-07-08 15:13:01*
+*Generated: 2026-07-14 09:39:57*

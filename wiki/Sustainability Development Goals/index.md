@@ -46,11 +46,12 @@
 - <span class="sl" data-layer="uml">Uncategorized</span> [](unnamed.md)
 - <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_634.md)
 - <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_635.md)
-- <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_636.md)
 - <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_637.md)
 - <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_638.md)
 - <span class="sl" data-layer="uml">NavigationCell</span> [](unnamed_640.md)
+- <span class="sl" data-layer="uml">NavigationCell</span> [Architecture](Architecture.md)
+  - *Architecture*
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:50*

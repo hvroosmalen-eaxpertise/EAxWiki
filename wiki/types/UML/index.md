@@ -1,6 +1,6 @@
 # UML
 
-96 element(s) across 5 type(s):
+95 element(s) across 5 type(s):
 
 - [master-data](master-data.md)
 - [NavigationCell](NavigationCell.md)
@@ -10,4 +10,4 @@
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:51*

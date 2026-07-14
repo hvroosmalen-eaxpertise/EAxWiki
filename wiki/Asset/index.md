@@ -9,7 +9,7 @@
 - <span class="sl" data-layer="edgy-ar">Asset</span> [Environmental Impact Map](Environmental Impact Map.md)
   - *Overzicht van milieu-impact. <ul> 	<li>OpenLCA – https://www.openlca.org – Tool voor levenscyclusanalyse.</li> 	<li>Samsung LCA Reports – https://www.samsung.com – Publiceert volledige impactrapportages.</li> </ul>*
 - <span class="sl" data-layer="edgy-ar">Asset</span> [Sustainability Metrics](Sustainability Metrics.md)
-  - *KPI’s voor duurzaamheid. <ul> 	<li>CarbonNeutral&#174; – https://carbonneutral.com – Transparante emissiemetingen.</li> 	<li>GRI Standards – https://www.globalreporting.org – Wereldwijde standaard voor duurzaamheids-KPI’s.</li> </ul>*
+  - *<p>Smoke test notes 11:15:30</p>*
 - <span class="sl" data-layer="edgy-ar">Asset</span> [Sustainable Data Assets](Sustainable Data Assets.md)
   - *Duurzaamheidsdata voor monitoring. <ul> 	<li>GHG Protocol – https://ghgprotocol.org – Data-standaarden voor emissiemetingen.</li> 	<li>CDP – https://www.cdp.net – Wereldwijde database voor klimaatdata.</li> </ul>*
 - <span class="sl" data-layer="edgy-ar">Asset</span> [Sustainable Policies](Sustainable Policies.md)
@@ -19,4 +19,4 @@
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:50*

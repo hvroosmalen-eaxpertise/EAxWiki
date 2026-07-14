@@ -10,7 +10,15 @@ notes_hash: 7d5c969f
 
 ![Sustainability Development Goals](Sustainability Development Goals.png)
 
-**Derived Description:** End poverty in all its forms everywhere
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="1" data-kind="diagram" data-file-path="Sustainability Development Goals/diagrams/Sustainability Development Goals.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>End poverty in all its forms everywhere</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -20,7 +28,7 @@ notes_hash: 7d5c969f
 - <span class="sl" data-layer="uml">NavigationCell</span> [](../unnamed.md)
 - <span class="sl" data-layer="uml">NavigationCell</span> [](../unnamed.md)
 - <span class="sl" data-layer="uml">NavigationCell</span> [](../unnamed.md)
-- <span class="sl" data-layer="uml">NavigationCell</span> [](../unnamed.md)
+- <span class="sl" data-layer="uml">NavigationCell</span> [Architecture](../Architecture.md)
 - <span class="sl" data-layer="edgy-id">Purpose</span> [SDG  1. No Poverty](../SDG  1. No Poverty.md)
 - <span class="sl" data-layer="edgy-id">Purpose</span> [SDG  2. Zero Hunger](../SDG  2. Zero Hunger.md)
 - <span class="sl" data-layer="edgy-id">Purpose</span> [SDG  3. Good Health and Well-Being](../SDG  3. Good Health and Well-Being.md)
@@ -42,4 +50,4 @@ notes_hash: 7d5c969f
 
 ---
 
-*Generated: 2026-07-08 15:12:51*
+*Generated: 2026-07-14 09:39:52*

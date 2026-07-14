@@ -10,7 +10,15 @@ notes_hash: c79075de
 
 ![Organisation](Organisation.png)
 
-**Derived Description:** OrganizationEquityShare records the percentage equity stake that an organisation holds in a specific OrganizationalBoundary, supporting the equity-share consolidation approach for GHG accounting as defined in the GHG Protocol
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="48" data-kind="diagram" data-file-path="Organisation/diagrams/Organisation.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<span class="ea-notes-derived-hint">(derived)</span>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>OrganizationEquityShare records the percentage equity stake that an organisation holds in a specific OrganizationalBoundary, supporting the equity-share consolidation approach for GHG accounting as defined in the GHG Protocol</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -35,4 +43,4 @@ notes_hash: c79075de
 
 ---
 
-*Generated: 2026-07-08 15:13:21*
+*Generated: 2026-07-14 09:40:04*

@@ -1,6 +1,6 @@
 # reference-data
 
-27 element(s):
+26 element(s):
 
 - <span class="sl" data-layer="uml">reference-data</span> [OrganizationType](../../Organisation/OrganizationType.md)
 - <span class="sl" data-layer="uml">reference-data</span> [IndustrySectorType](../../Organisation/IndustrySectorType.md)
@@ -28,8 +28,7 @@
 - <span class="sl" data-layer="uml">reference-data</span> [SystemOfUnits](../../Emissions/SystemOfUnits.md)
 - <span class="sl" data-layer="uml">reference-data</span> [PhysicalQuantityType](../../Emissions/PhysicalQuantityType.md)
 - <span class="sl" data-layer="uml">reference-data</span> [UnitOfMeasureSourceReference](../../Emissions/UnitOfMeasureSourceReference.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionRecordingMethodType](../../Emissions/EmissionRecordingMethodType.md)
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:51*

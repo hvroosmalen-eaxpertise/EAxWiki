@@ -2,6 +2,10 @@
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](index.md)
 
+## Diagrams
+
+- [Emissions](diagrams/Emissions.md) (Logical)
+
 ## Elements
 
 - <span class="sl" data-layer="uml">master-data</span> [EmissionInventory](EmissionInventory.md)
@@ -60,8 +64,6 @@
   - *PhysicalQuantityType is a reference entity that classifies what physical property a UnitOfMeasure measures, such as Mass, Energy, Volume, Length, Temperature, or Area. It enables dimensional analysis validation in calculation models, ensuring for example that an emission factor expressed in kgCO2/kWh is applied to an activity parameter expressed in an energy unit rather than a mass or distance unit. This prevents a class of calculation errors that are otherwise difficult to detect programmatically.*
 - <span class="sl" data-layer="uml">reference-data</span> [UnitOfMeasureSourceReference](UnitOfMeasureSourceReference.md)
   - *UnitOfMeasureSourceReference is a reference entity that identifies the authoritative registry or specification from which a UnitOfMeasure definition is drawn. Examples include the UN/CEFACT Common Codes for Units of Measurement, the QUDT Units Ontology, and the NIST SP 811 guide to SI units. Tracking the source reference ensures that unit definitions used in the model can be validated against a canonical authority and that imported data using the same reference can be reconciled without ambiguity.*
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionRecordingMethodType](EmissionRecordingMethodType.md)
-  - *EmissionRecordingMethodType is a reference entity that classifies how an emission quantity was obtained: whether it was directly measured using instrumentation, calculated from activity data and emission factors, estimated using engineering judgement, derived from a published default, or extrapolated from related data. This classification is required by ISO 14064-1 and GHG Protocol for data quality assessments and for identifying which statements require improved monitoring as part of an improvement plan.*
 - <span class="sl" data-layer="uml">work-product-component</span> [RecordingUncertaintyAssessment](RecordingUncertaintyAssessment.md)
   - *RecordingUncertaintyAssessment is a work-product-component that captures the quantitative or qualitative uncertainty associated with a specific EmissionStatement, as required by ISO 14064-1 for first-party assurance. It records the uncertainty range, the assessment methodology, and the primary uncertainty drivers identified for that emission quantity. Systematic uncertainty documentation supports both the GHG Protocol accuracy principle and the assurance engagement process for third-party verification.*
 - <span class="sl" data-layer="uml">work-product-component</span> [OrganizationEmissionAllocation](OrganizationEmissionAllocation.md)
@@ -83,4 +85,4 @@
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:51*

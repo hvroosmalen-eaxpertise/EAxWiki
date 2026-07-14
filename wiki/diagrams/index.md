@@ -12,8 +12,11 @@
 | [Regulatory Pressure](../Regulatory Pressure/diagrams/Regulatory Pressure.md) | 2026-01-13 | - | [Home](../index.md) / [Archimate](../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Regulatory Pressure](../Regulatory Pressure/index.md) |
 | [Reputation Risk](../Reputation Risk/diagrams/Reputation Risk.md) | 2025-12-11 | - | [Home](../index.md) / [Archimate](../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Reputation Risk](../Reputation Risk/index.md) |
 | [Stakeholder Expectations](../Stakeholder Expectations/diagrams/Stakeholder Expectations.md) | 2026-05-13 | - | [Home](../index.md) / [Archimate](../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Stakeholder Expectations](../Stakeholder Expectations/index.md) |
+| [Emissions](../Emissions/diagrams/Emissions.md) | 2026-07-13 | - | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Emissions](../Emissions/index.md) |
+| [Facilities](../Facilities/diagrams/Facilities.md) | 2026-07-13 | - | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Facilities](../Facilities/index.md) |
 | [Organisation](../Organisation/diagrams/Organisation.md) | 2026-05-20 | - | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Organisation](../Organisation/index.md) |
-| [Architecture](../Architecture/diagrams/Architecture.md) | 2026-04-29 | - | [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) |
+| [Products](../Products/diagrams/Products.md) | 2026-07-13 | - | [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](../Products/index.md) |
+| [Architecture](../Architecture/diagrams/Architecture.md) | 2026-04-29 | <p>Updated diagram description from smoke test at 09:50:05</p> | [Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](../Architecture/index.md) |
 | [Private Parties](../Private Parties/diagrams/Private Parties.md) | 2025-12-15 | - | [Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](../People/index.md) / [Private Parties](../Private Parties/index.md) |
 | [ESRS Stakeholder Map](../ESRS and People/diagrams/ESRS Stakeholder Map.md) | 2026-05-13 | - | [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [ESRS and People](../ESRS and People/index.md) |
 | [ERSR S2 Workers in the Value Chain - People](../ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.md) | 2026-05-13 | - | [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [ESRS and People](../ESRS and People/index.md) / [ERSR S2 Workers in the Value Chain - People](../ERSR S2 Workers in the Value Chain - People/index.md) |
@@ -45,4 +48,4 @@
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:51*

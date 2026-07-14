@@ -9,20 +9,31 @@ notes_hash: ac3d4267
 # <span class="sl" data-layer="strategy">CourseOfAction</span> ESG-based Risk Management
 
 **Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  **StereotypeEx:** ArchiMate_CourseOfAction  **FQStereotype:** ArchiMate3::ArchiMate_CourseOfAction  
-**Status:** <span class="status-badge status-not-set">Not Set</span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="443" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Courses of Action/ESG-based Risk Management.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Courses of Action](index.md)
 
-Strategic integration of ESG factors into enterprise risk management frameworks.         
-Identifies, assesses, and mitigates sustainability-related risks with the same rigor as traditional business risks.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="443" data-file-path="Courses of Action/ESG-based Risk Management.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64" data-ai-configured="true">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Strategic integration of ESG factors into enterprise risk management frameworks.         
+Identifies, assesses, and mitigates sustainability-related risks with the same rigor as traditional business risks.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| archimate_element_identifier | strategy-005 |  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>archimate_element_identifier</td><td>strategy-005</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="443" data-tag-name="archimate_element_identifier" data-tag-value="strategy-005" data-file-path="Courses of Action/ESG-based Risk Management.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -65,4 +76,4 @@ Identifies, assesses, and mitigates sustainability-related risks with the same r
 
 ---
 
-*Generated: 2026-07-08 15:12:48*
+*Generated: 2026-07-14 09:39:50*

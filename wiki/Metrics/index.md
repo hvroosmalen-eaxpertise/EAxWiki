@@ -16,6 +16,7 @@
 - <span class="sl" data-layer="edgy-lb">Outcome</span> [Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e)](Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e).md)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [ Levensduur product](Levensduur product.md)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [ Productievolumes / normaliserende operationele data](Productievolumes _ normaliserende operationele data.md)
+  - *<p>Aangepast</p> twee keer*
 - <span class="sl" data-layer="edgy-lb">Metric</span> [# bomen geplant / ha natuur hersteld](_ bomen geplant _ ha natuur hersteld.md)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [# SDGs met meetbare KPI’s](_ SDGs met meetbare KPI’s.md)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [# teruggenomen producten (per jaar)](_ teruggenomen producten (per jaar).md)
@@ -83,4 +84,4 @@
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:50*

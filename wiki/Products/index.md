@@ -2,6 +2,10 @@
 
 [Home](../index.md) / [Data Layer](../Data Layer/index.md) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md) / [Products](index.md)
 
+## Diagrams
+
+- [Products](diagrams/Products.md) (Logical)
+
 ## Elements
 
 - <span class="sl" data-layer="uml">master-data</span> [Product](Product.md)
@@ -31,4 +35,4 @@
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:51*

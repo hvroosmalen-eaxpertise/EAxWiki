@@ -21,6 +21,7 @@
 - <span class="sl" data-layer="edgy-ar">Asset</span> [EDGY 23 Language Foundation](EDGY 23 Language Foundation.md)
 - <span class="sl" data-layer="edgy-lb">Object</span> [EDGY Model Elementen en Relaties](EDGY Model Elementen en Relaties.md)
 - <span class="sl" data-layer="edgy-ex">Channel</span> [EFRAG Website](EFRAG Website.md)
+  - *<p>The EFRAG Website is a proposed Channel class that is responsible for collecting information and creating models. It is part of the Model Creation/Information Collection and Model Creation package and is connected to the ESRS (European Financial Reporting Advisory Group) class through a control flow relationship, indicating the flow of information from EFRAG Website to ESRS.</p>*
 - <span class="sl" data-layer="edgy-lb">Object</span> [ERD Model](ERD Model.md)
 - <span class="sl" data-layer="edgy-ar">Asset</span> [ESRS](ESRS.md)
 - <span class="sl" data-layer="edgy-ex">Channel</span> [ESRS Website](ESRS Website.md)
@@ -35,4 +36,4 @@
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:51*

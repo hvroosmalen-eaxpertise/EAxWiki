@@ -5,7 +5,7 @@
 ## Elements
 
 - <span class="sl" data-layer="edgy-pe">People</span> [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md)
-  - *Local and regional communities impacted by operations*
+  - *<p>Local and regional communities impacted by operations</p>*
 - <span class="sl" data-layer="edgy-pe">People</span> [AFM](AFM.md)
   - *Autoriteit Financi&#235;le Markten - Financial market supervision*
 - <span class="sl" data-layer="edgy-pe">People</span> [Agricultural Suppliers](Agricultural Suppliers.md)
@@ -17,7 +17,7 @@
 - <span class="sl" data-layer="edgy-pe">People</span> [CEO](CEO.md)
   - *Chief Executive Officer*
 - <span class="sl" data-layer="edgy-pe">People</span> [Certification Bodies](Certification Bodies.md)
-  - *ISO certifications and verification services*
+  - *<p>ISO certifications and verification services</p>*
 - <span class="sl" data-layer="edgy-pe">People</span> [Chamber of Commerce (Kamer van Koophandel)](Chamber of Commerce (Kamer van Koophandel).md)
   - *Chamber of Commerce - provides CSRD guidance*
 - <span class="sl" data-layer="edgy-pe">People</span> [Chief Financial Officer](Chief Financial Officer.md)
@@ -112,4 +112,4 @@
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:50*

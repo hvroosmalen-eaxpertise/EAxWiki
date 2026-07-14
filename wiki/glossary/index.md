@@ -36,6 +36,7 @@
 | Customers | Direct business customers | [Customers](../People/Customers.md), [Customers](../ESRS Navigator Stakeholder Map/Customers.md) |
 | Duurzaamsheidsvisie | Tijdens een personeelsbijeenkomst deelde de directeur een persoonlijk moment: zijn dochter had hem gevraagd: “Wat doen jullie eigenlijk voor de aarde?” Dat bleek de katalysator voor een ambitieuze duurzaamheidsvisie: klimaatneutraal in 2030 en volledig circulair in 2050 | [Duurzaamsheidsvisie](../Stories/Duurzaamsheidsvisie.md) |
 | EFRAG | The ESRS were developed by the EFRAG (previously known as the European Financial Reporting Advisory Group) an independent body bringing together various different stakeholders | [EFRAG](../People/EFRAG.md), [EFRAG](../ESRS Navigator Stakeholder Map/EFRAG.md) |
+| EFRAG Website | The EFRAG Website is a proposed Channel class that is responsible for collecting information and creating models | [EFRAG Website](../Information Collection and Model Creation/EFRAG Website.md) |
 | Embed Sustainability in Investment Portfolio | Initiative to integrate sustainability criteria into capital allocation and investment decision-making processes | [Embed Sustainability in Investment Portfolio](../Courses of Action/Embed Sustainability in Investment Portfolio.md) |
 | Emission Sources | Locaties of activiteiten die emissies genereren | [Emission Sources](../Asset/Emission Sources.md) |
 | EmissionActivity | EmissionActivity is a master-data entity that represents a discrete operational process or event that generates, absorbs, or transfers greenhouse gas emissions | [EmissionActivity](../Emissions/EmissionActivity.md) |
@@ -62,7 +63,6 @@
 | EmissionFactorSource | EmissionFactorSource is a reference entity that identifies the authoritative database, publication, or programme from which emission factors are drawn | [EmissionFactorSource](../Emissions/EmissionFactorSource.md) |
 | EmissionInventory | EmissionInventory is the top-level work-product-component that represents a single, bounded GHG emissions accounting exercise performed by an Organisation for a defined reporting period | [EmissionInventory](../Emissions/EmissionInventory.md) |
 | EmissionParameterType | EmissionParameterType is a reference entity that defines a named, typed slot for measurement or operational data used in emission calculation | [EmissionParameterType](../Emissions/EmissionParameterType.md) |
-| EmissionRecordingMethodType | EmissionRecordingMethodType is a reference entity that classifies how an emission quantity was obtained: whether it was directly measured using instrumentation, calculated from activity data and emission factors, estimated using engineering judgement, derived from a published default, or extrapolated from related data | [EmissionRecordingMethodType](../Emissions/EmissionRecordingMethodType.md) |
 | EmissionReport | EmissionReport is a work-product-component that represents a formal, structured output document produced from one or more EmissionInventory records for disclosure to regulators, investors, or the public | [EmissionReport](../Emissions/EmissionReport.md) |
 | EmissionReportingBoundary | EmissionReportingBoundary is a work-product-component that defines and documents the organisational, operational, and geographic boundary applied to a specific EmissionInventory or EmissionReport | [EmissionReportingBoundary](../Emissions/EmissionReportingBoundary.md) |
 | EmissionReportPeriod | EmissionReportPeriod is a work-product-component that holds the aggregated emission totals for a specific time period within an EmissionReport, broken down by scope and boundary | [EmissionReportPeriod](../Emissions/EmissionReportPeriod.md) |
@@ -71,7 +71,7 @@
 | EmissionSource | EmissionSource is a reference entity that classifies the physical origin from which greenhouse gas emissions are released, such as natural gas combustion, diesel combustion, refrigerant leakage, or wastewater treatment | [EmissionSource](../Emissions/EmissionSource.md) |
 | EmissionStatement | EmissionStatement is the central work-product-component that records a single quantified emission result: the GHG emissions or removals attributable to one EmissionActivity within one reporting period | [EmissionStatement](../Emissions/EmissionStatement.md) |
 | EmissionStatementPerStandard | EmissionStatementPerStandard is an intersection entity that records the emission quantity attributed to a specific EmissionStatement as it must be reported under a particular Standard or reporting framework | [EmissionStatementPerStandard](../Emissions/EmissionStatementPerStandard.md) |
-| Energy Efficiency Index | Metric measuring energy consumption per unit of output, tracking improvements in operational energy efficiency | [Energy Efficiency Index](../Assessments/Energy Efficiency Index.md) |
+| Energy Efficiency Index | Test notes from automated smoke test at 09:49:23 | [Energy Efficiency Index](../Assessments/Energy Efficiency Index.md) |
 | Ensure that investors and other stakeholders have access to the information | Ensure that investors and other stakeholders have access to the information they need to assess the impact of companies on people and the environment | [Ensure that investors and other stakeholders have access to the information](../ESRS Goals and Objectives/Ensure that investors and other stakeholders have access to the information.md) |
 | Enterprise Purpose | De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en milieudoelen | [Enterprise Purpose](../Purpose/Enterprise Purpose.md) |
 | Environmental Impact Map | Overzicht van milieu-impact | [Environmental Impact Map](../Asset/Environmental Impact Map.md) |
@@ -232,7 +232,7 @@
 | Sustainability Governance | Organizational capability to establish and maintain effective governance structures for sustainability management | [Sustainability Governance](../Capabilities/Sustainability Governance.md) |
 | Sustainability Identity | Hoe het bedrijf zichzelf positioneert rond duurzaamheid | [Sustainability Identity](../Purpose/Sustainability Identity.md) |
 | Sustainability Manager/Director | Coordinates implementation of sustainability measures, reports to CEO | [Sustainability Manager/Director](../People/Sustainability Manager_Director.md), [Sustainability Manager/Director](../ESRS Navigator Stakeholder Map/Sustainability Manager_Director.md) |
-| Sustainability Metrics | KPI’s voor duurzaamheid | [Sustainability Metrics](../Asset/Sustainability Metrics.md) |
+| Sustainability Metrics | Smoke test notes 11:15:30 | [Sustainability Metrics](../Asset/Sustainability Metrics.md) |
 | Sustainability Objectives | Meetbare duurzaamheidsprestaties (CO₂-reductie, circulariteit, energieneutraliteit) | [Sustainability Objectives](../Content/Sustainability Objectives.md) |
 | Sustainability Principles | Ontwerp- en besluitregels die duurzame keuzes sturen | [Sustainability Principles](../Content/Sustainability Principles.md) |
 | Sustainability Vision | Toekomstbeeld van de onderneming in 2030/2050 gericht op klimaatneutraliteit en circulariteit | [Sustainability Vision](../Story/Sustainability Vision.md) |
@@ -245,7 +245,7 @@
 | Sustainable Policies | Interne beleidslijnen rondom duurzaamheid | [Sustainable Policies](../Asset/Sustainable Policies.md) |
 | Sustainable Processes | Activiteiten die bijdragen aan verduurzaming | [Sustainable Processes](../Process/Sustainable Processes.md) |
 | Sustainable Resources / Assets | Middelen zoals zonnepanelen, elektrische voertuigen en tooling | [Sustainable Resources / Assets](../Asset/Sustainable Resources _ Assets.md) |
-| Sustainable Revenue Ratio | Percentage of total revenue derived from products and services classified as sustainable according to defined criteria | [Sustainable Revenue Ratio](../Assessments/Sustainable Revenue Ratio.md) |
+| Sustainable Revenue Ratio | Rich test notes from automated smoke test | [Sustainable Revenue Ratio](../Assessments/Sustainable Revenue Ratio.md) |
 | Sustainable Supply Chain Management | Capability to manage environmental and social sustainability throughout the supply chain | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.md) |
 | Sustainable Work Practices | Gedragsroutines die duurzaam werken ondersteunen | [Sustainable Work Practices](../Story/Sustainable Work Practices.md) |
 | SystemOfUnits | SystemOfUnits is a reference entity that identifies the measurement system to which a UnitOfMeasure belongs, such as the International System of Units (SI), the Imperial system, or US Customary units | [SystemOfUnits](../Emissions/SystemOfUnits.md) |
@@ -259,4 +259,4 @@
 
 ---
 
-*Generated: 2026-07-08 16:10:31*
+*Generated: 2026-07-14 09:39:51*

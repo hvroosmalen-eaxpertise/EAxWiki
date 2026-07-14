@@ -10,7 +10,14 @@ notes_hash: 4ea79420
 
 ![ESRS Required Companies](ESRS Required Companies.png)
 
-**Description:** Not all companies are subjected to report according to the ESRS.
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="39" data-kind="diagram" data-file-path="ESRS Required Companies/diagrams/ESRS Required Companies.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>Not all companies are subjected to report according to the ESRS.</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Elements
 
@@ -22,4 +29,4 @@ notes_hash: 4ea79420
 
 ---
 
-*Generated: 2026-07-08 15:12:55*
+*Generated: 2026-07-14 09:39:54*

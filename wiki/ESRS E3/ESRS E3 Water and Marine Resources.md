@@ -9,20 +9,31 @@ notes_hash: 63ffbf07
 # <span class="sl" data-layer="edgy-id">Content</span> ESRS E3 Water and Marine Resources
 
 **Type:** Class  **Stereotype:** Content  **StereotypeEx:** Content  **FQStereotype:** EDGY::Content  
-**Status:** <span class="status-badge status-proposed">Proposed</span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="38" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="ESRS E3/ESRS E3 Water and Marine Resources.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2026-05-13
 
 
 [Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) / [ESRS E3](index.md)
 
-For more information:
-https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F10%2520Draft%2520ESRS%2520E3%2520Water%2520and%2520marine%2520resources%2520November%25202022.pdf
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="38" data-file-path="ESRS E3/ESRS E3 Water and Marine Resources.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64" data-ai-configured="true">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-notes-start-->
+<p>For more information:
+https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F10%2520Draft%2520ESRS%2520E3%2520Water%2520and%2520marine%2520resources%2520November%25202022.pdf</p>
+<!--ea-notes-end-->
+</div>
+</div>
 
 ## Tagged Values
 
-| Name | Value | Notes |
-|------|-------|-------|
-| EDGY::TextAlign | Center | Default: Center  |
+<table>
+<thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>EDGY::TextAlign</td><td>Center</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="38" data-tag-name="EDGY::TextAlign" data-tag-value="Center" data-file-path="ESRS E3/ESRS E3 Water and Marine Resources.md" data-api-port="8001" data-api-token="d2382ee8c75bc7c580459389e91977f57f36098ad9ac5a64" aria-label="Edit description">&#9998;</button></td></tr>
+<tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
+</tbody>
+</table>
 
 [↑ Back to top](#)
 
@@ -78,4 +89,4 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 
 ---
 
-*Generated: 2026-07-08 15:12:47*
+*Generated: 2026-07-14 09:39:50*
