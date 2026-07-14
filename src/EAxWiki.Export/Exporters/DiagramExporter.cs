@@ -72,13 +72,15 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 
                 if (ctx.ApiPort > 0)
                 {
+                    var aiConfigured = ctx.AiConfigured;
                     lines.Add(
                         $"<div id=\"ea-notes-editor\" class=\"ea-notes-editor\"" +
                         $" data-ea-id=\"{diagram.Id}\"" +
                         $" data-kind=\"diagram\"" +
                         $" data-file-path=\"{wikiRelPathHtml}\"" +
                         $" data-api-port=\"{ctx.ApiPort}\"" +
-                        $" data-api-token=\"{HtmlHelpers.HtmlEscape(ctx.ApiToken)}\">");
+                        $" data-api-token=\"{HtmlHelpers.HtmlEscape(ctx.ApiToken)}\"" +
+                        $" data-ai-configured=\"{aiConfigured.ToString().ToLowerInvariant()}\">");
                     lines.Add("<button id=\"ea-notes-edit-btn\" class=\"ea-notes-edit-btn\" type=\"button\" aria-label=\"Edit description\">&#9998;</button>");
                     if (!hasOwnNotes && !string.IsNullOrEmpty(derivedText))
                         lines.Add("<span class=\"ea-notes-derived-hint\">(derived)</span>");

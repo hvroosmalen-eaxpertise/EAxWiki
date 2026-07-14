@@ -172,6 +172,9 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
     public EaElementSummary? GetElementSummary(int elementId) =>
         Dispatch(r => r.GetElementSummary(elementId));
 
+    public EaDiagramSummary? GetDiagramSummary(int diagramId) =>
+        Dispatch(r => r.GetDiagramSummary(diagramId));
+
     public void Dispose()
     {
         if (_disposed) return;

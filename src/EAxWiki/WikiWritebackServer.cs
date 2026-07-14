@@ -20,6 +20,7 @@ internal static class WikiWritebackServer
     internal record NotesChangeRequest(int ElementId, string NewNotes, string FilePath);
     internal record DiagramNotesChangeRequest(int DiagramId, string NewNotes, string FilePath);
     internal record AiSuggestRequest(int ElementId);
+    internal record AiSuggestDiagramRequest(int DiagramId);
 
     internal record RowNotesChangeRequest(
         string Kind, int ElementId, string RowId, string NewNotes, string FilePath,
@@ -143,6 +144,43 @@ internal static class WikiWritebackServer
                     var snippet = r.TargetNotes.Length > 120
                         ? r.TargetNotes[..120] + "..."
                         : r.TargetNotes;
+                    line += $" — \"{snippet}\"";
+                }
+                sb.AppendLine(line);
+            }
+        }
+
+        return sb.ToString();
+    }
+
+    private static string BuildDiagramSuggestPrompt(EaDiagramSummary diagram)
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine($"Diagram Name: {diagram.Name}");
+        sb.AppendLine($"Diagram Type: {diagram.Type}");
+
+        if (!string.IsNullOrWhiteSpace(diagram.Notes))
+        {
+            sb.AppendLine();
+            sb.AppendLine("Existing Description:");
+            sb.AppendLine(diagram.Notes);
+        }
+
+        if (diagram.Elements.Count > 0)
+        {
+            sb.AppendLine();
+            sb.AppendLine("Elements on this diagram:");
+            foreach (var el in diagram.Elements)
+            {
+                var line = $"  - {el.Name} ({el.Type}";
+                if (!string.IsNullOrEmpty(el.Stereotype))
+                    line += $", {el.Stereotype}";
+                line += ")";
+                if (!string.IsNullOrEmpty(el.Notes))
+                {
+                    var snippet = el.Notes.Length > 120
+                        ? el.Notes[..120] + "..."
+                        : el.Notes;
                     line += $" — \"{snippet}\"";
                 }
                 sb.AppendLine(line);
@@ -508,6 +546,73 @@ internal static class WikiWritebackServer
 
                 _ = AuditLogger.LogAsync(outputPath, "POST /api/ai-suggest", req.ElementId, "suggested",
                     StatusCodes.Status200OK, "AI suggestion generated",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
+                return Results.Json(new { suggestion });
+            }
+            catch (OperationCanceledException)
+            {
+                return Results.Json(new { message = "AI request timed out." }, statusCode: 504);
+            }
+            catch (HttpRequestException ex)
+            {
+                logger.LogWarning(ex, "AI endpoint unreachable");
+                return Results.Json(new { message = "AI service unavailable." }, statusCode: 502);
+            }
+        });
+
+        app.MapPost("/api/ai-suggest-diagram", async (AiSuggestDiagramRequest req, HttpContext context) =>
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(config.AiEndpoint))
+                    return Results.Json(new { message = "AI suggestions are not configured." }, statusCode: 501);
+
+                var summary = reader.GetDiagramSummary(req.DiagramId);
+                if (summary == null)
+                    return Results.Json(new { message = "Diagram not found." }, statusCode: 404);
+
+                if (summary.Elements.Count == 0)
+                    return Results.Json(new { message = "Not enough context to suggest a description." }, statusCode: 204);
+
+                var prompt = BuildDiagramSuggestPrompt(summary);
+
+                using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(60) };
+                var llmBody = new
+                {
+                    model = config.AiModel,
+                    messages = new[]
+                    {
+                        new { role = "system", content = "You are a technical writer for enterprise architecture documentation. Write a concise 1-3 sentence description for the diagram below. Focus on what the diagram shows, its purpose, and the business domain it covers based on the elements it contains. Do not mention the diagram type or list element names. Write in plain English. Do not use markdown." },
+                        new { role = "user", content = prompt }
+                    },
+                    max_tokens = 300,
+                    temperature = 0.3,
+                    stream = false
+                };
+
+                var request = new HttpRequestMessage(HttpMethod.Post, $"{config.AiEndpoint.TrimEnd('/')}/chat/completions")
+                {
+                    Content = JsonContent.Create(llmBody)
+                };
+                if (!string.IsNullOrEmpty(config.AiKey))
+                    request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", config.AiKey);
+
+                var response = await httpClient.SendAsync(request, context.RequestAborted);
+                if (!response.IsSuccessStatusCode)
+                {
+                    var errorBody = await response.Content.ReadAsStringAsync();
+                    logger.LogWarning("AI endpoint returned {StatusCode}: {Error}", (int)response.StatusCode, errorBody);
+                    return Results.Json(new { message = "AI service returned an error." }, statusCode: 502);
+                }
+
+                var result = await response.Content.ReadFromJsonAsync<LlmChatResponse>();
+                var suggestion = result?.choices?.Length > 0 ? result.choices[0].message.content?.Trim() : null;
+
+                if (string.IsNullOrEmpty(suggestion))
+                    return Results.Json(new { message = "AI returned no suggestion." }, statusCode: 422);
+
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/ai-suggest-diagram", req.DiagramId, "suggested",
+                    StatusCodes.Status200OK, "AI suggestion generated for diagram",
                     context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Json(new { suggestion });
             }

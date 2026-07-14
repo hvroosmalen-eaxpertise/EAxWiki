@@ -161,6 +161,43 @@ public class EaReader : IEaReader, IDisposable
         };
     }
 
+    public EaDiagramSummary? GetDiagramSummary(int diagramId)
+    {
+        if (_repository == null)
+            throw new InvalidOperationException("Repository is not open.");
+        var diagram = _repository.GetDiagramByID(diagramId);
+        if (diagram == null) return null;
+
+        var elements = new List<DiagramElementInfo>();
+        if (diagram.DiagramObjects is EA.Collection diagramObjects)
+        {
+            for (short i = 0; i < diagramObjects.Count; i++)
+            {
+                if (diagramObjects.GetAt(i) is EA.DiagramObject eaDO)
+                {
+                    var el = _repository.GetElementByID(eaDO.ElementID);
+                    if (el != null)
+                    {
+                        elements.Add(new DiagramElementInfo(
+                            el.Name,
+                            el.Type,
+                            el.Stereotype ?? el.FQStereotype ?? string.Empty,
+                            el.Notes));
+                    }
+                }
+            }
+        }
+
+        return new EaDiagramSummary
+        {
+            DiagramId = diagram.DiagramID,
+            Name = diagram.Name,
+            Type = diagram.Type,
+            Notes = diagram.Notes,
+            Elements = elements
+        };
+    }
+
     private static List<AttributeInfo> MapAttributesForSummary(EA.Element element)
     {
         var result = new List<AttributeInfo>();

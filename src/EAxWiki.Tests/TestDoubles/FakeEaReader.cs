@@ -17,6 +17,7 @@ public class FakeEaReader : IEaReader
     public void Close() { }
     public bool ExportDiagramImage(string diagramGuid, string filePath) => true;
     public EaElementSummary? GetElementSummary(int elementId) => null;
+    public EaDiagramSummary? GetDiagramSummary(int diagramId) => null;
     public string RepositoryPath => string.Empty;
     public IReadOnlyList<string> GetStatusTypes() => ["Approved", "Implemented", "Mandatory", "Proposed", "Validated"];
     public string GetElementStatus(int elementId) => "Proposed";

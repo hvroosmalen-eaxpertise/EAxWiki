@@ -9,6 +9,7 @@ public interface IEaReader
     void Close();
     bool ExportDiagramImage(string diagramGuid, string filePath);
     EaElementSummary? GetElementSummary(int elementId);
+    EaDiagramSummary? GetDiagramSummary(int diagramId);
     string RepositoryPath { get; }
     IReadOnlyList<string> GetStatusTypes();
     string GetElementStatus(int elementId);
