@@ -115,37 +115,52 @@
       var token = btn.dataset.apiToken || '';
       var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
       var body = buildRequestBody(btn, rowId, textarea.value);
+      var retries = 5;
 
-      fetch(apiBase + '/api/row-notes', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
-        body: JSON.stringify(body)
-      })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
-      .then(function (res) {
-        if (res.ok) {
-          var html = res.data.html;
-          textSpan.innerHTML = html && html.trim() ? html : '<em class="ea-row-notes-placeholder">No description set.</em>';
-          closeCurrent();
-        } else if (res.status === 401) {
-          msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
-          msg.style.color = '#c62828';
-          saveBtn.disabled = false;
-          cancelBtn.disabled = false;
-        } else {
-          msg.textContent = '✗ ' + (res.data.message || 'Error');
-          msg.style.color = '#c62828';
-          saveBtn.disabled = false;
-          cancelBtn.disabled = false;
-        }
-      })
-      .catch(function (e) {
-        msg.textContent = '✗ ' + (e && e.message ? e.message : 'Could not reach API — is EAxWiki --api running?');
-        msg.style.color = '#c62828';
-        saveBtn.disabled = false;
-        cancelBtn.disabled = false;
-        console.error('EAxWiki row-notes-editor error:', e);
-      });
+      function doFetch() {
+        fetch(apiBase + '/api/row-notes', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+          body: JSON.stringify(body)
+        })
+        .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
+        .then(function (res) {
+          if (res.ok) {
+            var html = res.data.html;
+            textSpan.innerHTML = html && html.trim() ? html : '<em class="ea-row-notes-placeholder">No description set.</em>';
+            closeCurrent();
+          } else if (res.status === 401) {
+            msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
+            msg.style.color = '#c62828';
+            saveBtn.disabled = false;
+            cancelBtn.disabled = false;
+          } else if (res.status >= 500 && retries > 0) {
+            retries--;
+            msg.textContent = 'Retrying…';
+            setTimeout(doFetch, 2000);
+          } else {
+            msg.textContent = '✗ ' + (res.data.message || 'Error');
+            msg.style.color = '#c62828';
+            saveBtn.disabled = false;
+            cancelBtn.disabled = false;
+          }
+        })
+        .catch(function (e) {
+          if (retries > 0) {
+            retries--;
+            msg.textContent = 'Retrying…';
+            setTimeout(doFetch, 2000);
+          } else {
+            msg.textContent = '✗ Could not reach API — is EAxWiki --api running?';
+            msg.style.color = '#c62828';
+            saveBtn.disabled = false;
+            cancelBtn.disabled = false;
+            console.error('EAxWiki row-notes-editor error:', e);
+          }
+        });
+      }
+
+      doFetch();
     });
   }
 

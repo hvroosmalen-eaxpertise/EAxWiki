@@ -290,6 +290,21 @@ details.status-details li {
   cursor: pointer;
   font-size: 0.85em;
 }
+.ea-notes-suggest-btn {
+  padding: 0.2em 0.8em;
+  border: 1px solid #9c27b0;
+  border-radius: 4px;
+  background: #9c27b0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+.ea-notes-suggest-btn:hover {
+  background: #7b1fa2;
+  border-color: #7b1fa2;
+}
+.ea-notes-suggest-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .ea-notes-save-btn:disabled, .ea-notes-cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .ea-notes-msg { font-style: italic; font-size: 0.85em; }
 

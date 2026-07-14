@@ -20,6 +20,28 @@
 
     var select, applyBtn, cancelBtn, msg;
 
+    function acquireEditLock(eaId) {
+      var port = (document.getElementById('ea-status-editor') || {}).dataset.apiPort || '8001';
+      var token = (document.getElementById('ea-status-editor') || {}).dataset.apiToken || '';
+      var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
+      fetch(apiBase + '/api/edit-lock', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+        body: JSON.stringify({ action: 'acquire', elementId: eaId })
+      }).catch(function () {});
+    }
+
+    function releaseEditLock() {
+      var port = (document.getElementById('ea-status-editor') || {}).dataset.apiPort || '8001';
+      var token = (document.getElementById('ea-status-editor') || {}).dataset.apiToken || '';
+      var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
+      fetch(apiBase + '/api/edit-lock', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+        body: JSON.stringify({ action: 'release' })
+      }).catch(function () {});
+    }
+
     function enterEditMode() {
       select = document.createElement('select');
       select.className = 'ea-status-select';
@@ -52,9 +74,11 @@
 
       cancelBtn.addEventListener('click', exitEditMode);
       applyBtn.addEventListener('click', apply);
+      acquireEditLock(eaId);
     }
 
     function exitEditMode() {
+      releaseEditLock();
       [select, applyBtn, cancelBtn, msg].forEach(function (el) {
         if (el && el.parentNode) el.parentNode.removeChild(el);
       });
@@ -71,37 +95,54 @@
       cancelBtn.disabled = true;
       msg.textContent = 'Saving…';
 
-      fetch(apiBase + '/api/status', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
-        body: JSON.stringify({ elementId: eaId, newStatus: chosen, filePath: file })
-      })
-      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
-      .then(function (res) {
-        if (res.ok) {
-          current = chosen;
-          badge.textContent = chosen;
-          badge.className = 'status-badge status-' + chosen.toLowerCase();
-          exitEditMode();
-        } else if (res.status === 401) {
-          msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
-          msg.style.color = '#c62828';
-          applyBtn.disabled = false;
-          cancelBtn.disabled = false;
-        } else {
-          msg.textContent = '✗ ' + (res.data.message || 'Error');
-          msg.style.color = '#c62828';
-          applyBtn.disabled = false;
-          cancelBtn.disabled = false;
-        }
-      })
-      .catch(function (e) {
-        msg.textContent = '✗ ' + (e && e.message ? e.message : 'Could not reach API — is EAxWiki --api running?');
-        msg.style.color = '#c62828';
-        applyBtn.disabled = false;
-        cancelBtn.disabled = false;
-        console.error('EAxWiki status-editor error:', e);
-      });
+      var retries = 5;
+
+      function doFetch() {
+        fetch(apiBase + '/api/status', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+          body: JSON.stringify({ elementId: eaId, newStatus: chosen, filePath: file })
+        })
+        .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
+        .then(function (res) {
+          if (res.ok) {
+            current = chosen;
+            badge.textContent = chosen;
+            badge.className = 'status-badge status-' + chosen.toLowerCase();
+            releaseEditLock();
+            exitEditMode();
+          } else if (res.status === 401) {
+            msg.textContent = '✗ Not authenticated — re-export with --force to refresh this page.';
+            msg.style.color = '#c62828';
+            applyBtn.disabled = false;
+            cancelBtn.disabled = false;
+          } else if (res.status >= 500 && retries > 0) {
+            retries--;
+            msg.textContent = 'Retrying…';
+            setTimeout(doFetch, 2000);
+          } else {
+            msg.textContent = '✗ ' + (res.data.message || 'Error');
+            msg.style.color = '#c62828';
+            applyBtn.disabled = false;
+            cancelBtn.disabled = false;
+          }
+        })
+        .catch(function (e) {
+          if (retries > 0) {
+            retries--;
+            msg.textContent = 'Retrying…';
+            setTimeout(doFetch, 2000);
+          } else {
+            msg.textContent = '✗ Could not reach API — is EAxWiki --api running?';
+            msg.style.color = '#c62828';
+            applyBtn.disabled = false;
+            cancelBtn.disabled = false;
+            console.error('EAxWiki status-editor error:', e);
+          }
+        });
+      }
+
+      doFetch();
     }
 
     editBtn.addEventListener('click', enterEditMode);

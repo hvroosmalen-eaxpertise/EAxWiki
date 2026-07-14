@@ -6,11 +6,6 @@
     if (!widget || widget.dataset.aiConfigured !== 'true') return;
     if (widget.querySelector('.ea-suggest-btn')) return;
 
-    var contentDiv = widget.querySelector('.ea-notes-content');
-    if (!contentDiv) return;
-    var isPlaceholder = !!contentDiv.querySelector('.ea-notes-placeholder');
-    if (!isPlaceholder) return;
-
     var eaId  = parseInt(widget.dataset.eaId, 10);
     var port  = widget.dataset.apiPort || '8001';
     var token = widget.dataset.apiToken || '';
@@ -52,6 +47,11 @@
       .then(function (res) {
         if (res.ok) {
           var textarea = widget.querySelector('.ea-notes-textarea');
+          if (!textarea) {
+            var eb = document.getElementById('ea-notes-edit-btn');
+            if (eb) eb.click();
+            textarea = widget.querySelector('.ea-notes-textarea');
+          }
           if (textarea) {
             textarea.value = res.data.suggestion;
             msg.textContent = 'Draft loaded — review and save.';
