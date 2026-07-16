@@ -3,14 +3,14 @@ ea_id: 600
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
-notes_hash: e3b0c442
+notes_hash: 4a168b64
 ---
 
 # <span class="sl" data-layer="edgy-ix">Brand</span> EurSuRA
 
 **Type:** Activity  **Stereotype:** Brand  **StereotypeEx:** Brand  **FQStereotype:** EDGY::Brand  
 **Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="600" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Introduction EurSuRA/EurSuRA.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
-**Created:** 2026-05-13  **Modified:** 2026-05-13
+**Created:** 2026-05-13  **Modified:** 2026-07-16
 
 
 [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Introduction EurSuRA](index.html)
@@ -19,7 +19,7 @@ notes_hash: e3b0c442
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
-
+<p>The EurSuRA serves as a central connection point for stakeholders and initiatives, fostering collaboration and knowledge-sharing among key individuals, the EurSuRA.eu website, and the broader EU reporting community. Its primary function is to promote the EurSuRA initiative and its goals within the EU, facilitating communication and coordination among its associated entities. By acting as a central hub, the EurSuRA plays a vital role in building and sustaining the EU reporting community.</p>
 <!--ea-notes-end-->
 </div>
 </div>
