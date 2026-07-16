@@ -33,7 +33,7 @@
       return tmp.textContent || tmp.innerText || '';
     }
 
-    var textarea, controls, saveBtn, cancelBtn, msg;
+    var textarea, controls, saveBtn, cancelBtn, suggestBtn, msg;
 
     function enterEditMode() {
       var isPlaceholder = !!contentDiv.querySelector('.ea-notes-placeholder');
@@ -49,6 +49,14 @@
       saveBtn.className = 'ea-notes-save-btn';
       saveBtn.textContent = 'Save';
 
+      suggestBtn = null;
+      if (widget.dataset.aiConfigured === 'true') {
+        suggestBtn = document.createElement('button');
+        suggestBtn.className = 'ea-notes-suggest-btn';
+        suggestBtn.textContent = 'Suggest';
+        suggestBtn.type = 'button';
+      }
+
       cancelBtn = document.createElement('button');
       cancelBtn.className = 'ea-notes-cancel-btn';
       cancelBtn.textContent = 'Cancel';
@@ -57,6 +65,7 @@
       msg.className = 'ea-notes-msg';
 
       controls.appendChild(saveBtn);
+      if (suggestBtn) controls.appendChild(suggestBtn);
       controls.appendChild(cancelBtn);
       controls.appendChild(msg);
 
@@ -70,6 +79,46 @@
 
       cancelBtn.addEventListener('click', exitEditMode);
       saveBtn.addEventListener('click', save);
+      if (suggestBtn) {
+        suggestBtn.addEventListener('click', function () {
+          suggestBtn.disabled = true;
+          suggestBtn.textContent = 'Generating...';
+          msg.textContent = '';
+          msg.style.color = '';
+
+          var suggestEndpoint = kind === 'diagram' ? '/api/ai-suggest-diagram' : '/api/ai-suggest';
+          var suggestPayload  = kind === 'diagram' ? { diagramId: eaId } : { elementId: eaId };
+
+          fetch(apiBase + suggestEndpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
+            body: JSON.stringify(suggestPayload)
+          })
+          .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
+          .then(function (res) {
+            if (res.ok) {
+              textarea.value = res.data.suggestion;
+              msg.textContent = 'Draft loaded \u2014 review and save.';
+              msg.style.color = '#2e7d32';
+            } else if (res.status === 204) {
+              msg.textContent = res.data.message || 'Not enough context to suggest a description.';
+              msg.style.color = '#666';
+            } else {
+              msg.textContent = 'Error: ' + (res.data.message || 'Unknown error');
+              msg.style.color = '#c62828';
+            }
+            suggestBtn.disabled = false;
+            suggestBtn.textContent = 'Suggest';
+          })
+          .catch(function (e) {
+            msg.textContent = 'Could not reach AI service.';
+            msg.style.color = '#c62828';
+            suggestBtn.disabled = false;
+            suggestBtn.textContent = 'Suggest';
+            console.error('EAxWiki ai-suggest error:', e);
+          });
+        });
+      }
     }
 
     function exitEditMode() {
