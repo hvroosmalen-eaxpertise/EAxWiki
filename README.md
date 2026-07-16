@@ -1,10 +1,13 @@
-EAxWiki — Export EA model to Markdown wiki, served with MkDocs
+# EAxWiki — Export EA model to Markdown wiki, served with MkDocs
 
-This repository exports an Enterprise Architect `.qea` model to a `wiki/` folder of Markdown pages, then serves them locally with MkDocs.
+This repository exports an Enterprise Architect `.qea`, or any database stored model repository to a `wiki/` folder of Markdown pages, then serves them locally with MkDocs. The wiki is fully navigable, with diagrams, cross-cutting indexes, and in the right configuration enables live editing of **Status** and **Notes** directly from the page. It can also suggest AI-generated descriptions for elements via a local or cloud LLM.
 
-> **Note — test data only:** The `wiki/` folder, `model/` folder, and the live site in this repository contain the **EurSuRA** model, which is used exclusively for development and testing of EAxWiki itself. They are not part of the tool and have no relation to any installation. When you use EAxWiki with your own EA model, it will write to a `wiki/` folder in your own repository.
+> **Note — test data only:** The `wiki/` folder, `model/` folder, and the live site in this repository contain the **EurSuRA** model, which is used exclusively for development and testing of EAxWiki itself. They are not part of the tool and have no relation to your installation. When you use EAxWiki with your own EA model, it will write to a `wiki/` folder in your own environment.
 
-**Live site (test data):** https://hvroosmalen-eaxpertise.github.io/EAxWiki/
+**Live site (test data):** https://hvroosmalen-eaxpertise.github.io/EAxWiki/ this is a read-only demo of what EAxWiki produces, using the EurSuRA model. Again: It is not your own model.
+
+### EAxWiki is developed and maintained by EAxpertise (The Netherlands) — see [www.eaxpertise.nl](https://www.eaxpertise.nl) for more information. Contact us at sales@eaxpertise.nl.
+
 
 ## How it works
 
@@ -60,7 +63,8 @@ EAxWiki can send monitoring alerts to **Slack and/or Microsoft Teams** when back
 
 **Runtime state** (`.data/`): The exporter and write-back server store runtime files — such as the edit-lock (`edit-lock.json`) and the audit log — in `.data/` alongside the `wiki/` directory. This keeps them outside mkdocs' file watcher, so they never trigger livereload when updated.
 
-MkDocs itself is cross-platform — only EXPORT and WRITE-BACK need EA COM, which is Windows-only. See the next diagram for running SERVE on a separate Linux/Mac machine instead.
+MkDocs itself is cross-platform — only EXPORT and WRITE-BACK need the Sparx EA COM interface (EAInterop.dll), which is Windows-only. See the next diagram for running SERVE on a separate Linux/Mac machine instead.
+**Note:** On Linux systems it is possible to run an EA Instance through Wine, but this is not officially supported and may not work reliably.
 
 ### Windows + Linux — export on Windows, serve on Linux
 
