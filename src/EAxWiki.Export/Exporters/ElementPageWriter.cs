@@ -89,9 +89,8 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         lines.AddRange(DiagramThumbnailRenderer.Render(element, dir, ctx));
         lines.AddRange(ReferencedByTableRenderer.Render(element, dir, ctx));
 
-        var graphHtml = RelationshipGraphRenderer.Render(element, dir, ctx);
-        if (graphHtml.Length > 0)
-            lines.AddRange(["---", string.Empty, "## Relationship Graph", string.Empty, graphHtml, string.Empty]);
+        lines.AddRange(["---", string.Empty, "## Relationship Graph", string.Empty,
+            $"<div id=\"ea-graph-container\" data-focal-id=\"{element.Id}\"></div>", string.Empty]);
 
         lines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines), ct);
