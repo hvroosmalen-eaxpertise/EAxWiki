@@ -101,6 +101,7 @@ public class MarkdownExporter : IWikiExporter
                 infrastructure.WriteNotesEditorScriptAsync(outputPath, cancellationToken),
                 infrastructure.WriteRowNotesEditorScriptAsync(outputPath, cancellationToken),
                 infrastructure.WriteAiSuggestScriptAsync(outputPath, cancellationToken),
+                new GraphIndexExporter(_writer, _logger).ExportAsync(ctx, cancellationToken),
             };
 
             if (reader != null)
