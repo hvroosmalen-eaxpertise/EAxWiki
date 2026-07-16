@@ -79,9 +79,10 @@ public class EaReader : IEaReader, IDisposable
 
     public bool TestConnection(string connectionString, out string? error)
     {
+        EA.Repository? repo = null;
         try
         {
-            var repo = new EA.Repository();
+            repo = new EA.Repository();
             repo.OpenFile(connectionString);
             repo.CloseFile();
             error = null;
@@ -91,6 +92,10 @@ public class EaReader : IEaReader, IDisposable
         {
             error = ex.Message;
             return false;
+        }
+        finally
+        {
+            if (repo != null) Marshal.ReleaseComObject(repo);
         }
     }
 
