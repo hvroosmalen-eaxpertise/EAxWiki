@@ -2,6 +2,7 @@
 
 | Name | Type | Modified | Path |
 |------|------|----------|------|
+| [EurSuRA](../Introduction EurSuRA/EurSuRA.html) | Activity | 2026-07-16 | [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Introduction EurSuRA](../Introduction EurSuRA/index.html) |
 | [EFRAG Website](../Information Collection and Model Creation/EFRAG Website.html) | Class | 2026-07-13 | [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Information Collection and Model Creation](../Information Collection and Model Creation/index.html) |
 | [Sustainability Metrics](../Asset/Sustainability Metrics.html) | Class | 2026-07-13 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Architecture](../Architecture/index.html) / [Asset](../Asset/index.html) |
 | [Emissions](../Emissions/diagrams/Emissions.html) | Diagram | 2026-07-13 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Emissions](../Emissions/index.html) |
@@ -51,8 +52,7 @@
 | [EmissionActivityFlow](../Products/EmissionActivityFlow.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [Product](../Products/Product.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [ProductFootprint](../Products/ProductFootprint.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
-| [EmissionActivityParameterRecordingTemplate](../Emissions/EmissionActivityParameterRecordingTemplate.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Emissions](../Emissions/index.html) |
 
 ---
 
-*Generated: 2026-07-16 12:35:25*
+*Generated: 2026-07-16 21:11:28*

@@ -107,6 +107,7 @@
 | ESRS Sector Classification | Sector Classification determine the Sector of the organisation | [ESRS Sector Classification](../ESRS Sector Classification/ESRS Sector Classification.html) |
 | European Commission | Issues CSRD directive and ESRS regulations | [European Commission](../People/European Commission.html), [European Commission](../ESRS Navigator Stakeholder Map/European Commission.html) |
 | European Sustainability Reporting Standards | The European Sustainability Reporting Standards (ESRS) oblige all companies subject to the Corporate Sustainability Reporting Directive (CSRD) of the European Union to report both on their impacts on people and the environment, and on how social and environmental issues create financial risks and opportunities for the company | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.html) |
+| EurSuRA | The EurSuRA serves as a central connection point for stakeholders and initiatives, fostering collaboration and knowledge-sharing among key individuals, the EurSuRA | [EurSuRA](../Introduction EurSuRA/EurSuRA.html) |
 | External Auditors | Must approve sustainability reporting | [External Auditors](../People/External Auditors.html), [External Auditors](../ESRS Navigator Stakeholder Map/External Auditors.html) |
 | Facility | Facility represents the capability of an organisation to perform a particular business function or service | [Facility](../Facilities/Facility.html) |
 | FacilityActivityParticipation | FacilityActivityParticipation records the fact that a specific Facility participates in a specific EmissionActivity | [FacilityActivityParticipation](../Facilities/FacilityActivityParticipation.html) |
@@ -259,4 +260,4 @@
 
 ---
 
-*Generated: 2026-07-16 12:35:25*
+*Generated: 2026-07-16 21:11:28*

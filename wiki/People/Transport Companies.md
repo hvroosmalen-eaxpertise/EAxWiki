@@ -9,13 +9,13 @@ notes_hash: 48f8ff1c
 # <span class="sl" data-layer="edgy-pe">People</span> Transport Companies
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="530" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Transport Companies.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="530" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Transport Companies.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
 
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="530" data-file-path="People/Transport Companies.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="530" data-file-path="People/Transport Companies.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -53,9 +53,8 @@ notes_hash: 48f8ff1c
 
 ## Relationship Graph
 
-<div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e294&quot;,&quot;label&quot;:&quot;Transport Companies&quot;,&quot;fullName&quot;:&quot;Transport Companies&quot;,&quot;packageName&quot;:&quot;ESRS Navigator Stakeholder Map&quot;,&quot;layer&quot;:&quot;motivation&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../ESRS Navigator Stakeholder Map/Transport Companies.html&quot;},{&quot;id&quot;:&quot;e530&quot;,&quot;label&quot;:&quot;Transport Companies&quot;,&quot;fullName&quot;:&quot;Transport Companies&quot;,&quot;packageName&quot;:&quot;People&quot;,&quot;layer&quot;:&quot;edgy-pe&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e335&quot;,&quot;label&quot;:&quot;Suppliers&quot;,&quot;fullName&quot;:&quot;Suppliers&quot;,&quot;packageName&quot;:&quot;ESRS Navigator Stakeholder Map&quot;,&quot;layer&quot;:&quot;motivation&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../ESRS Navigator Stakeholder Map/Suppliers.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c279&quot;,&quot;source&quot;:&quot;e294&quot;,&quot;target&quot;:&quot;e335&quot;,&quot;label&quot;:&quot;Generalization&quot;,&quot;sourceLayer&quot;:&quot;motivation&quot;},{&quot;id&quot;:&quot;c505&quot;,&quot;source&quot;:&quot;e294&quot;,&quot;target&quot;:&quot;e530&quot;,&quot;label&quot;:&quot;Abstraction&quot;,&quot;sourceLayer&quot;:&quot;motivation&quot;}]}</div>
+<div id="ea-graph-container" data-focal-id="530"></div>
 
 ---
 
-*Generated: 2026-07-16 12:12:11*
+*Generated: 2026-07-16 21:11:27*

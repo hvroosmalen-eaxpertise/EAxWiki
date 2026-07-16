@@ -9,13 +9,13 @@ notes_hash: 53dd8899
 # <span class="sl" data-layer="strategy">Capability</span> Stakeholder Engagement Management
 
 **Type:** Class  **Stereotype:** ArchiMate_Capability  **StereotypeEx:** ArchiMate_Capability  **FQStereotype:** ArchiMate3::ArchiMate_Capability  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="449" data-status="Approved" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Capabilities/Stakeholder Engagement Management.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-approved">Approved</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="449" data-status="Approved" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Capabilities/Stakeholder Engagement Management.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040"><span class="status-badge status-approved">Approved</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-11  **Modified:** 2026-07-13
 
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Capabilities](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="449" data-file-path="Capabilities/Stakeholder Engagement Management.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="449" data-file-path="Capabilities/Stakeholder Engagement Management.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -31,7 +31,7 @@ notes_hash: 53dd8899
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>archimate_element_identifier</td><td>capability-006</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="449" data-tag-name="archimate_element_identifier" data-tag-value="capability-006" data-file-path="Capabilities/Stakeholder Engagement Management.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>archimate_element_identifier</td><td>capability-006</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="449" data-tag-name="archimate_element_identifier" data-tag-value="capability-006" data-file-path="Capabilities/Stakeholder Engagement Management.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -59,9 +59,8 @@ notes_hash: 53dd8899
 
 ## Relationship Graph
 
-<div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e440&quot;,&quot;label&quot;:&quot;Sustainability-driven D…&quot;,&quot;fullName&quot;:&quot;Sustainability-driven Differentiation&quot;,&quot;packageName&quot;:&quot;Courses of Action&quot;,&quot;layer&quot;:&quot;strategy&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Courses of Action/Sustainability-driven Differentiation.html&quot;},{&quot;id&quot;:&quot;e449&quot;,&quot;label&quot;:&quot;Stakeholder Engagement …&quot;,&quot;fullName&quot;:&quot;Stakeholder Engagement Management&quot;,&quot;packageName&quot;:&quot;Capabilities&quot;,&quot;layer&quot;:&quot;strategy&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e435&quot;,&quot;label&quot;:&quot;Sustainable Competitive…&quot;,&quot;fullName&quot;:&quot;Sustainable Competitive Advantage&quot;,&quot;packageName&quot;:&quot;Goals&quot;,&quot;layer&quot;:&quot;motivation&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;../Goals/Sustainable Competitive Advantage.html&quot;},{&quot;id&quot;:&quot;e446&quot;,&quot;label&quot;:&quot;Sustainable Innovation …&quot;,&quot;fullName&quot;:&quot;Sustainable Innovation Management&quot;,&quot;packageName&quot;:&quot;Capabilities&quot;,&quot;layer&quot;:&quot;strategy&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Sustainable Innovation Management.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c421&quot;,&quot;source&quot;:&quot;e440&quot;,&quot;target&quot;:&quot;e435&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;strategy&quot;},{&quot;id&quot;:&quot;c428&quot;,&quot;source&quot;:&quot;e446&quot;,&quot;target&quot;:&quot;e440&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;strategy&quot;},{&quot;id&quot;:&quot;c432&quot;,&quot;source&quot;:&quot;e449&quot;,&quot;target&quot;:&quot;e440&quot;,&quot;label&quot;:&quot;realizes&quot;,&quot;sourceLayer&quot;:&quot;strategy&quot;}]}</div>
+<div id="ea-graph-container" data-focal-id="449"></div>
 
 ---
 
-*Generated: 2026-07-16 12:12:11*
+*Generated: 2026-07-16 21:11:27*

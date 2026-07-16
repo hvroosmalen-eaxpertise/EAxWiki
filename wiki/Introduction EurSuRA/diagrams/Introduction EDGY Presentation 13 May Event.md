@@ -1,6 +1,6 @@
 ---
 diagram_id: 44
-notes_hash: 41a1fcc4
+notes_hash: 81393151
 ---
 
 # Introduction EDGY Presentation 13 May Event
@@ -10,19 +10,12 @@ notes_hash: 41a1fcc4
 
 ![Introduction EDGY Presentation 13 May Event](Introduction EDGY Presentation 13 May Event.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="44" data-kind="diagram" data-file-path="Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="44" data-kind="diagram" data-file-path="Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
-Small and medium enterprises with stock exchange listing (future LSME standard)
-Required to report: 
-Any listed companies that meet two of the following three criteria on any two consecutive balance sheet dates:
-<ol>
-	<li>at least EUR 25 million in total assets</li>
-	<li>at least EUR 50 million in net turnover</li>
-	<li>at least 250 employees (average) during the year</li>
-</ol>
+<p>The EurSuRA serves as a central connection point for stakeholders and initiatives, fostering collaboration and knowledge-sharing among key individuals, the EurSuRA</p>
 <!--ea-notes-end-->
 </div>
 </div>
@@ -61,4 +54,4 @@ Any listed companies that meet two of the following three criteria on any two co
 
 ---
 
-*Generated: 2026-07-16 12:12:34*
+*Generated: 2026-07-16 21:11:42*

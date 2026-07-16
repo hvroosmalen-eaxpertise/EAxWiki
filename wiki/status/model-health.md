@@ -8,7 +8,7 @@
 
 None.
 
-## Missing Descriptions (148)
+## Missing Descriptions (147)
 
 *Notes field is empty or whitespace-only.*
 
@@ -70,7 +70,6 @@ None.
 - [ESRS](../Information Collection and Model Creation/ESRS.html)
 - [ESRS Referentie Model](../Information Collection and Model Creation/ESRS Referentie Model.html)
 - [ESRS Website](../Information Collection and Model Creation/ESRS Website.html)
-- [EurSuRA](../Introduction EurSuRA/EurSuRA.html)
 - [EurSuRA](../Introduction EurSuRA/EurSuRA.html)
 - [EurSuRA Model](../Information Collection and Model Creation/EurSuRA Model.html)
 - [EurSuRA.eu (Website)](../Introduction EurSuRA/EurSuRA.eu (Website).html)
@@ -363,4 +362,4 @@ None.
 
 ---
 
-*Generated: 2026-07-16 12:35:25*
+*Generated: 2026-07-16 21:11:28*

@@ -9,13 +9,13 @@ notes_hash: 7e9e0106
 # <span class="sl" data-layer="strategy">Resource</span> Road to Net Zero
 
 **Type:** Class  **Stereotype:** ArchiMate_Resource  **StereotypeEx:** ArchiMate_Resource  **FQStereotype:** ArchiMate3::ArchiMate_Resource  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="484" data-status="Implemented" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Reference Documents/Road to Net Zero.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-implemented">Implemented</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="484" data-status="Implemented" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Reference Documents/Road to Net Zero.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040"><span class="status-badge status-implemented">Implemented</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-12  **Modified:** 2026-06-30
 
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Reference Material](../Reference Material/index.html) / [Reference Documents](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="484" data-file-path="Reference Documents/Road to Net Zero.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="484" data-file-path="Reference Documents/Road to Net Zero.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -34,4 +34,10 @@ notes_hash: 7e9e0106
 
 ---
 
-*Generated: 2026-07-16 12:12:11*
+## Relationship Graph
+
+<div id="ea-graph-container" data-focal-id="484"></div>
+
+---
+
+*Generated: 2026-07-16 21:11:27*

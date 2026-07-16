@@ -100,7 +100,7 @@ var _graphIndexPromise = null;
 
 function fetchGraphIndex() {
     if (!_graphIndexPromise) {
-        _graphIndexPromise = fetch('graph-index.json').then(function (r) {
+        _graphIndexPromise = fetch(resolveUrl('graph-index.json')).then(function (r) {
             if (!r.ok) throw new Error('Not found');
             return r.json();
         });

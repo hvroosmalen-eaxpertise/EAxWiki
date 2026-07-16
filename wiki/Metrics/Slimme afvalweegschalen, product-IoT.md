@@ -9,13 +9,13 @@ notes_hash: e3b0c442
 # <span class="sl" data-layer="edgy-lb">Tag</span> Slimme afvalweegschalen, product-IoT
 
 **Type:** Requirement  **Stereotype:** Tag  **StereotypeEx:** Tag  **FQStereotype:** EDGY::Tag  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="226" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/Slimme afvalweegschalen, product-IoT.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="226" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/Slimme afvalweegschalen, product-IoT.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="226" data-file-path="Metrics/Slimme afvalweegschalen, product-IoT.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="226" data-file-path="Metrics/Slimme afvalweegschalen, product-IoT.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -52,9 +52,8 @@ notes_hash: e3b0c442
 
 ## Relationship Graph
 
-<div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e205&quot;,&quot;label&quot;:&quot;Afval per fase + recycl…&quot;,&quot;fullName&quot;:&quot;Afval per fase + recycleerbaar aandeel&quot;,&quot;packageName&quot;:&quot;Metrics&quot;,&quot;layer&quot;:&quot;edgy-lb&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Afval per fase + recycleerbaar aandeel.html&quot;},{&quot;id&quot;:&quot;e226&quot;,&quot;label&quot;:&quot;Slimme afvalweegschalen…&quot;,&quot;fullName&quot;:&quot;Slimme afvalweegschalen, product-IoT&quot;,&quot;packageName&quot;:&quot;Metrics&quot;,&quot;layer&quot;:&quot;edgy-lb&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e182&quot;,&quot;label&quot;:&quot;% gerecyclede materiale…&quot;,&quot;fullName&quot;:&quot;% gerecyclede materialen in producten&quot;,&quot;packageName&quot;:&quot;Metrics&quot;,&quot;layer&quot;:&quot;edgy-lb&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;% gerecyclede materialen in producten.html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c206&quot;,&quot;source&quot;:&quot;e182&quot;,&quot;target&quot;:&quot;e205&quot;,&quot;label&quot;:&quot;Aggregation&quot;,&quot;sourceLayer&quot;:&quot;edgy-lb&quot;},{&quot;id&quot;:&quot;c226&quot;,&quot;source&quot;:&quot;e205&quot;,&quot;target&quot;:&quot;e226&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;edgy-lb&quot;}]}</div>
+<div id="ea-graph-container" data-focal-id="226"></div>
 
 ---
 
-*Generated: 2026-07-16 12:12:11*
+*Generated: 2026-07-16 21:11:27*

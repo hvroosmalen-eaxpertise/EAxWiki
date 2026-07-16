@@ -9,13 +9,13 @@ notes_hash: e3b0c442
 # <span class="sl" data-layer="uml">NavigationCell</span> 
 
 **Type:** Text  **Stereotype:** NavigationCell  **StereotypeEx:** NavigationCell  **FQStereotype:** NavigationCell  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="638" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Sustainability Development Goals/unnamed_638.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="638" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Sustainability Development Goals/unnamed_638.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2026-05-13  **Modified:** 2026-05-13
 
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="638" data-file-path="Sustainability Development Goals/unnamed_638.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="638" data-file-path="Sustainability Development Goals/unnamed_638.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -34,4 +34,10 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-16 12:12:10*
+## Relationship Graph
+
+<div id="ea-graph-container" data-focal-id="638"></div>
+
+---
+
+*Generated: 2026-07-16 21:11:27*

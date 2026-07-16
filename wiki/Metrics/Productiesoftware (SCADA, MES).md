@@ -9,13 +9,13 @@ notes_hash: e3b0c442
 # <span class="sl" data-layer="edgy-lb">Tag</span> Productiesoftware (SCADA, MES)
 
 **Type:** Requirement  **Stereotype:** Tag  **StereotypeEx:** Tag  **FQStereotype:** EDGY::Tag  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="215" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/Productiesoftware (SCADA, MES).md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="215" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/Productiesoftware (SCADA, MES).md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="215" data-file-path="Metrics/Productiesoftware (SCADA, MES).md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="215" data-file-path="Metrics/Productiesoftware (SCADA, MES).md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -52,9 +52,8 @@ notes_hash: e3b0c442
 
 ## Relationship Graph
 
-<div id="ea-graph-container"></div>
-<div id="ea-graph-data" style="display:none">{&quot;nodes&quot;:[{&quot;id&quot;:&quot;e195&quot;,&quot;label&quot;:&quot;CO₂e per processtap of …&quot;,&quot;fullName&quot;:&quot;CO₂e per processtap of productlevensfase&quot;,&quot;packageName&quot;:&quot;Metrics&quot;,&quot;layer&quot;:&quot;edgy-lb&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;CO₂e per processtap of productlevensfase.html&quot;},{&quot;id&quot;:&quot;e215&quot;,&quot;label&quot;:&quot;Productiesoftware (SCAD…&quot;,&quot;fullName&quot;:&quot;Productiesoftware (SCADA, MES)&quot;,&quot;packageName&quot;:&quot;Metrics&quot;,&quot;layer&quot;:&quot;edgy-lb&quot;,&quot;isFocal&quot;:true,&quot;hasUrl&quot;:false,&quot;url&quot;:&quot;&quot;},{&quot;id&quot;:&quot;e179&quot;,&quot;label&quot;:&quot;Totaal afval (ton/jaar)&quot;,&quot;fullName&quot;:&quot;Totaal afval (ton/jaar)&quot;,&quot;packageName&quot;:&quot;Metrics&quot;,&quot;layer&quot;:&quot;edgy-lb&quot;,&quot;isFocal&quot;:false,&quot;hasUrl&quot;:true,&quot;url&quot;:&quot;Totaal afval (ton_jaar).html&quot;}],&quot;edges&quot;:[{&quot;id&quot;:&quot;c196&quot;,&quot;source&quot;:&quot;e179&quot;,&quot;target&quot;:&quot;e195&quot;,&quot;label&quot;:&quot;Aggregation&quot;,&quot;sourceLayer&quot;:&quot;edgy-lb&quot;},{&quot;id&quot;:&quot;c216&quot;,&quot;source&quot;:&quot;e195&quot;,&quot;target&quot;:&quot;e215&quot;,&quot;label&quot;:&quot;Association&quot;,&quot;sourceLayer&quot;:&quot;edgy-lb&quot;}]}</div>
+<div id="ea-graph-container" data-focal-id="215"></div>
 
 ---
 
-*Generated: 2026-07-16 12:12:11*
+*Generated: 2026-07-16 21:11:27*
