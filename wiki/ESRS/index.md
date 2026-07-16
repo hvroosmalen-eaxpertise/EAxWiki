@@ -1,12 +1,12 @@
 # ESRS
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [ESRS](index.html)
 
 ## Sub-packages
 
-- [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md)
-- [ESRS and People](../ESRS and People/index.md)
+- [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.html)
+- [ESRS and People](../ESRS and People/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:14*
+*Generated: 2026-07-16 12:35:25*

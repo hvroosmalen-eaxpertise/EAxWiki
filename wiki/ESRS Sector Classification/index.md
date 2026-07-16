@@ -1,17 +1,17 @@
 # ESRS Sector Classification
 
-[Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Classification](../ESRS Classification/index.md) / [ESRS Sector Classification](index.md)
+[Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Classification](../ESRS Classification/index.html) / [ESRS Sector Classification](index.html)
 
 ## Diagrams
 
-- [ESRS Sector Classification](diagrams/ESRS Sector Classification.md) (Logical)
+- [ESRS Sector Classification](diagrams/ESRS Sector Classification.html) (Logical)
   - *<p>The Sector Classification is important.</p>*
 
 ## Elements
 
-- <span class="sl" data-layer="uml">Uncategorized</span> [ESRS Sector Classification](ESRS Sector Classification.md)
+- <span class="sl" data-layer="uml">Uncategorized</span> [ESRS Sector Classification](ESRS Sector Classification.html)
   - *<p>Sector Classification determine the Sector of the organisation.</p>*
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:35:25*

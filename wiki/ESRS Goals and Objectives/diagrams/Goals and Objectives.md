@@ -6,11 +6,11 @@ notes_hash: 0f551ff9
 # Goals and Objectives
 
 
-[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS Goals and Objectives](../index.md)
+[Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.html) / [ESRS Goals and Objectives](../index.html)
 
 ![Goals and Objectives](Goals and Objectives.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="40" data-kind="diagram" data-file-path="ESRS Goals and Objectives/diagrams/Goals and Objectives.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="40" data-kind="diagram" data-file-path="ESRS Goals and Objectives/diagrams/Goals and Objectives.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -22,12 +22,12 @@ notes_hash: 0f551ff9
 
 ## Elements
 
-- <span class="sl" data-layer="edgy-lb">Outcome</span> [Align sustainability reporting](../Align sustainability reporting.md)
-- <span class="sl" data-layer="edgy-lb">Outcome</span> [Allow investors to assess financial risks and opportunities ](../Allow investors to assess financial risks and opportunities.md)
-- <span class="sl" data-layer="edgy-lb">Outcome</span> [Ensure that investors and other stakeholders have access to the information](../Ensure that investors and other stakeholders have access to the information.md)
-- <span class="sl" data-layer="edgy-lb">Outcome</span> [Implement a double materiality approach](../Implement a double materiality approach.md)
-- <span class="sl" data-layer="edgy-lb">Outcome</span> [Standardize ESG reporting and enhance transparency and comparability in Europe. ](../Standardize ESG reporting and enhance transparency and comparability in Europe..md)
+- <span class="sl" data-layer="edgy-lb">Outcome</span> [Align sustainability reporting](../Align sustainability reporting.html)
+- <span class="sl" data-layer="edgy-lb">Outcome</span> [Allow investors to assess financial risks and opportunities ](../Allow investors to assess financial risks and opportunities.html)
+- <span class="sl" data-layer="edgy-lb">Outcome</span> [Ensure that investors and other stakeholders have access to the information](../Ensure that investors and other stakeholders have access to the information.html)
+- <span class="sl" data-layer="edgy-lb">Outcome</span> [Implement a double materiality approach](../Implement a double materiality approach.html)
+- <span class="sl" data-layer="edgy-lb">Outcome</span> [Standardize ESG reporting and enhance transparency and comparability in Europe. ](../Standardize ESG reporting and enhance transparency and comparability in Europe..html)
 
 ---
 
-*Generated: 2026-07-14 16:12:20*
+*Generated: 2026-07-16 12:12:18*

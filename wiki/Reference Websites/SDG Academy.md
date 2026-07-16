@@ -9,13 +9,13 @@ notes_hash: f09d9045
 # <span class="sl" data-layer="strategy">Resource</span> SDG Academy
 
 **Type:** Class  **Stereotype:** ArchiMate_Resource  **StereotypeEx:** ArchiMate_Resource  **FQStereotype:** ArchiMate3::ArchiMate_Resource  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="482" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Reference Websites/SDG Academy.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="482" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Reference Websites/SDG Academy.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-12
 
 
-[Home](../index.md) / [Archimate](../Archimate/index.md) / [Reference Material](../Reference Material/index.md) / [Reference Websites](index.md)
+[Home](../index.html) / [Archimate](../Archimate/index.html) / [Reference Material](../Reference Material/index.html) / [Reference Websites](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="482" data-file-path="Reference Websites/SDG Academy.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="482" data-file-path="Reference Websites/SDG Academy.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -34,4 +34,4 @@ notes_hash: f09d9045
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:12:11*

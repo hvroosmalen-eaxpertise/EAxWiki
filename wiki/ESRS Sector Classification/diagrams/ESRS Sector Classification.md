@@ -6,11 +6,11 @@ notes_hash: ef93713e
 # ESRS Sector Classification
 
 
-[Home](../../index.md) / [Archimate](../../Archimate/index.md) / [ESRS Classification](../../ESRS Classification/index.md) / [ESRS Sector Classification](../index.md)
+[Home](../../index.html) / [Archimate](../../Archimate/index.html) / [ESRS Classification](../../ESRS Classification/index.html) / [ESRS Sector Classification](../index.html)
 
 ![ESRS Sector Classification](ESRS Sector Classification.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="42" data-kind="diagram" data-file-path="ESRS Sector Classification/diagrams/ESRS Sector Classification.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="42" data-kind="diagram" data-file-path="ESRS Sector Classification/diagrams/ESRS Sector Classification.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -21,8 +21,8 @@ notes_hash: ef93713e
 
 ## Elements
 
-- <span class="sl" data-layer="uml">Uncategorized</span> [ESRS Sector Classification](../ESRS Sector Classification.md)
+- <span class="sl" data-layer="uml">Uncategorized</span> [ESRS Sector Classification](../ESRS Sector Classification.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:26*
+*Generated: 2026-07-16 12:12:25*

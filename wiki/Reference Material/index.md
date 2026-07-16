@@ -1,12 +1,12 @@
 # Reference Material
 
-[Home](../index.md) / [Archimate](../Archimate/index.md) / [Reference Material](index.md)
+[Home](../index.html) / [Archimate](../Archimate/index.html) / [Reference Material](index.html)
 
 ## Sub-packages
 
-- [Reference Documents](../Reference Documents/index.md)
-- [Reference Websites](../Reference Websites/index.md)
+- [Reference Documents](../Reference Documents/index.html)
+- [Reference Websites](../Reference Websites/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:35:25*

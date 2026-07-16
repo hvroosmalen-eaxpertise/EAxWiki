@@ -9,13 +9,13 @@ notes_hash: 48f8ff1c
 # <span class="sl" data-layer="motivation">Stakeholder</span> Transport Companies
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="294" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="ESRS Navigator Stakeholder Map/Transport Companies.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="294" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="ESRS Navigator Stakeholder Map/Transport Companies.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
-[Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+[Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="294" data-file-path="ESRS Navigator Stakeholder Map/Transport Companies.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="294" data-file-path="ESRS Navigator Stakeholder Map/Transport Companies.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,7 +29,7 @@ notes_hash: 48f8ff1c
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>archimate_element_identifier</td><td>id-up-004</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="294" data-tag-name="archimate_element_identifier" data-tag-value="id-up-004" data-file-path="ESRS Navigator Stakeholder Map/Transport Companies.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>archimate_element_identifier</td><td>id-up-004</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="294" data-tag-name="archimate_element_identifier" data-tag-value="id-up-004" data-file-path="ESRS Navigator Stakeholder Map/Transport Companies.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -40,8 +40,8 @@ notes_hash: 48f8ff1c
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
-| Generalization | ArchiMate_Specialization | [Suppliers](Suppliers.md) |
-| Abstraction | trace | [Transport Companies](../People/Transport Companies.md) |
+| Generalization | ArchiMate_Specialization | [Suppliers](Suppliers.html) |
+| Abstraction | trace | [Transport Companies](../People/Transport Companies.html) |
 
 [↑ Back to top](#)
 
@@ -62,4 +62,4 @@ notes_hash: 48f8ff1c
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:12:11*

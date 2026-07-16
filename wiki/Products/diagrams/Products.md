@@ -6,11 +6,11 @@ notes_hash: b4507156
 # Products
 
 
-[Home](../../index.md) / [Data Layer](../../Data Layer/index.md) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.md) / [Products](../index.md)
+[Home](../../index.html) / [Data Layer](../../Data Layer/index.html) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.html) / [Products](../index.html)
 
 ![Products](Products.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="49" data-kind="diagram" data-file-path="Products/diagrams/Products.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="49" data-kind="diagram" data-file-path="Products/diagrams/Products.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -22,19 +22,19 @@ notes_hash: b4507156
 
 ## Elements
 
-- <span class="sl" data-layer="uml">reference-data</span> [CentralProductClassificationCode](../CentralProductClassificationCode.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionActivityFlow](../EmissionActivityFlow.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [EnvironmentalProductDeclaration](../EnvironmentalProductDeclaration.md)
-- <span class="sl" data-layer="uml">master-data</span> [Product](../Product.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [ProductCarbonFootprint](../ProductCarbonFootprint.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [ProductCarbonFootprintFactorSource](../ProductCarbonFootprintFactorSource.md)
-- <span class="sl" data-layer="uml">master-data</span> [ProductCategoryRule](../ProductCategoryRule.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [ProductFootprint](../ProductFootprint.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [ProductFootprintDataQualityIndicator](../ProductFootprintDataQualityIndicator.md)
-- <span class="sl" data-layer="uml">master-data</span> [ProductLifeCycle](../ProductLifeCycle.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [ProductLifeCycleFootprint](../ProductLifeCycleFootprint.md)
-- <span class="sl" data-layer="uml">master-data</span> [ProductLifeCycleStage](../ProductLifeCycleStage.md)
+- <span class="sl" data-layer="uml">reference-data</span> [CentralProductClassificationCode](../CentralProductClassificationCode.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionActivityFlow](../EmissionActivityFlow.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [EnvironmentalProductDeclaration](../EnvironmentalProductDeclaration.html)
+- <span class="sl" data-layer="uml">master-data</span> [Product](../Product.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [ProductCarbonFootprint](../ProductCarbonFootprint.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [ProductCarbonFootprintFactorSource](../ProductCarbonFootprintFactorSource.html)
+- <span class="sl" data-layer="uml">master-data</span> [ProductCategoryRule](../ProductCategoryRule.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [ProductFootprint](../ProductFootprint.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [ProductFootprintDataQualityIndicator](../ProductFootprintDataQualityIndicator.html)
+- <span class="sl" data-layer="uml">master-data</span> [ProductLifeCycle](../ProductLifeCycle.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [ProductLifeCycleFootprint](../ProductLifeCycleFootprint.html)
+- <span class="sl" data-layer="uml">master-data</span> [ProductLifeCycleStage](../ProductLifeCycleStage.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:35*
+*Generated: 2026-07-16 12:12:40*

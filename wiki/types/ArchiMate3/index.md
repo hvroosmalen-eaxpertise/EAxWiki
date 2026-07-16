@@ -2,17 +2,17 @@
 
 100 element(s) across 10 type(s):
 
-- [Assessment](Assessment.md)
-- [BusinessObject](BusinessObject.md)
-- [BusinessRole](BusinessRole.md)
-- [Capability](Capability.md)
-- [CourseOfAction](CourseOfAction.md)
-- [Driver](Driver.md)
-- [Goal](Goal.md)
-- [Outcome](Outcome.md)
-- [Resource](Resource.md)
-- [Stakeholder](Stakeholder.md)
+- [Assessment](Assessment.html)
+- [BusinessObject](BusinessObject.html)
+- [BusinessRole](BusinessRole.html)
+- [Capability](Capability.html)
+- [CourseOfAction](CourseOfAction.html)
+- [Driver](Driver.html)
+- [Goal](Goal.html)
+- [Outcome](Outcome.html)
+- [Resource](Resource.html)
+- [Stakeholder](Stakeholder.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:16*
+*Generated: 2026-07-16 12:35:25*

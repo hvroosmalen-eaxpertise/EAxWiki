@@ -6,11 +6,11 @@ notes_hash: e3cb2aa5
 # Market Differentiation Pressure
 
 
-[Home](../../index.md) / [Archimate](../../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Market Differentiation Pressure](../index.md)
+[Home](../../index.html) / [Archimate](../../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.html) / [Market Differentiation Pressure](../index.html)
 
 ![Market Differentiation Pressure](Market Differentiation Pressure.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="26" data-kind="diagram" data-file-path="Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="26" data-kind="diagram" data-file-path="Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -22,19 +22,19 @@ notes_hash: e3cb2aa5
 
 ## Elements
 
-- <span class="sl" data-layer="strategy">CourseOfAction</span> [Board-level Sustainability Governance](../../Courses of Action/Board-level Sustainability Governance.md)
-- <span class="sl" data-layer="strategy">Capability</span> [ESG Performance Management](../../Capabilities/ESG Performance Management.md)
-- <span class="sl" data-layer="motivation">Assessment</span> [ESG Score](../../Assessments/ESG Score.md)
-- <span class="sl" data-layer="strategy">CourseOfAction</span> [Implement ESG KPI Framework](../../Courses of Action/Implement ESG KPI Framework.md)
-- <span class="sl" data-layer="motivation">Outcome</span> [Improved ESG Rating](../../Outcomes/Improved ESG Rating.md)
-- <span class="sl" data-layer="motivation">Outcome</span> [Increased Brand Trust](../../Outcomes/Increased Brand Trust.md)
-- <span class="sl" data-layer="motivation">Driver</span> [Market Differentiation Pressure](../../Drivers/Market Differentiation Pressure.md)
-- <span class="sl" data-layer="strategy">Capability</span> [Stakeholder Engagement Management](../../Capabilities/Stakeholder Engagement Management.md)
-- <span class="sl" data-layer="strategy">Capability</span> [Sustainability Governance](../../Capabilities/Sustainability Governance.md)
-- <span class="sl" data-layer="strategy">CourseOfAction</span> [Sustainability-driven Differentiation](../../Courses of Action/Sustainability-driven Differentiation.md)
-- <span class="sl" data-layer="motivation">Goal</span> [Sustainable Competitive Advantage](../../Goals/Sustainable Competitive Advantage.md)
-- <span class="sl" data-layer="strategy">Capability</span> [Sustainable Innovation Management](../../Capabilities/Sustainable Innovation Management.md)
+- <span class="sl" data-layer="strategy">CourseOfAction</span> [Board-level Sustainability Governance](../../Courses of Action/Board-level Sustainability Governance.html)
+- <span class="sl" data-layer="strategy">Capability</span> [ESG Performance Management](../../Capabilities/ESG Performance Management.html)
+- <span class="sl" data-layer="motivation">Assessment</span> [ESG Score](../../Assessments/ESG Score.html)
+- <span class="sl" data-layer="strategy">CourseOfAction</span> [Implement ESG KPI Framework](../../Courses of Action/Implement ESG KPI Framework.html)
+- <span class="sl" data-layer="motivation">Outcome</span> [Improved ESG Rating](../../Outcomes/Improved ESG Rating.html)
+- <span class="sl" data-layer="motivation">Outcome</span> [Increased Brand Trust](../../Outcomes/Increased Brand Trust.html)
+- <span class="sl" data-layer="motivation">Driver</span> [Market Differentiation Pressure](../../Drivers/Market Differentiation Pressure.html)
+- <span class="sl" data-layer="strategy">Capability</span> [Stakeholder Engagement Management](../../Capabilities/Stakeholder Engagement Management.html)
+- <span class="sl" data-layer="strategy">Capability</span> [Sustainability Governance](../../Capabilities/Sustainability Governance.html)
+- <span class="sl" data-layer="strategy">CourseOfAction</span> [Sustainability-driven Differentiation](../../Courses of Action/Sustainability-driven Differentiation.html)
+- <span class="sl" data-layer="motivation">Goal</span> [Sustainable Competitive Advantage](../../Goals/Sustainable Competitive Advantage.html)
+- <span class="sl" data-layer="strategy">Capability</span> [Sustainable Innovation Management](../../Capabilities/Sustainable Innovation Management.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:32*
+*Generated: 2026-07-16 12:12:33*

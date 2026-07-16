@@ -183,6 +183,23 @@
 - **Duplicate names are scoped to the same package only, keyed by `PackageId`, not the sanitized folder path**: the same name recurring in different packages is expected and intentional in this model, so cross-package matches are never flagged. Grouping by the sanitized `PackageDir` string instead of the real `PackageId` would risk false positives, since two structurally different packages can sanitize to the same folder name at different points in the hierarchy.
 - **Every flagged entry links to the element's own page**, same convention as every other cross-cutting view — and it closes the loop with round-trip write-back specifically: clicking through from a "missing description" entry lands directly on a page that already has the `notes-editor` widget in place to fix it.
 
+## Table formatting
+
+- **Tables are rendered as raw HTML `<table>` elements** (not Markdown pipe-tables) so the exporter can control `width`, `word-break`, and `th`/`td` attributes directly per-column — see `InfrastructureWriter.WriteExtraCssAsync`. All EA data tables (element metadata, attribute/method/tagged value tables) use this approach.
+
+- **MkDocs Material JS wraps every classless `<table>` at runtime**: the `content` plugin in `bundle.*.min.js` calls `M("table:not([class]")` on DOM-ready, which wraps each matching table in `<div.md-typeset__scrollwrap><div.md-typeset__table>{{table}}</div></div>`. This is Material's mechanism for scrollable overflow on wide markdown tables.
+
+- **The `md-typeset__table` wrapper uses `display: inline-block` by default**, causing the wrapper to shrink-wrap to the table's intrinsic content width. A `width: 100% !important` rule on the `<table>` becomes circular — 100% of an inline-block parent that is itself sized to the table's content — so the table falls back to its intrinsic (content-based) width, appearing to "flash full-width then shrink" after the JS runs.
+
+- **Fix: override `md-typeset__table` to `display: block !important`** in `extra.css`. A block-level wrapper fills the content area, making the table's `width: 100%` meaningful. The selector deliberately drops `:not([class])` so the rule survives any class that Material JS may add to the table dynamically.
+
+    ```css
+    .md-typeset table { width: 100% !important; }
+    .md-typeset__table { display: block !important; }
+    ```
+
+    Applied in two places: `wiki/extra.css` (used by MkDocs directly) and `src/EAxWiki.Export/Resources/extra.css` (embedded as a managed resource, written on every export). Both must be kept in sync.
+
 ## Deployment
 
 - **Production target is local server only** — GitHub Pages was considered but ruled out: the write-back server requires a running Windows machine with EA installed. The wiki is served locally via MkDocs. GitHub Pages may still be used for publishing a read-only snapshot.

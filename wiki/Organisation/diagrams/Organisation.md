@@ -6,11 +6,11 @@ notes_hash: c79075de
 # Organisation
 
 
-[Home](../../index.md) / [Data Layer](../../Data Layer/index.md) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.md) / [Organisation](../index.md)
+[Home](../../index.html) / [Data Layer](../../Data Layer/index.html) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.html) / [Organisation](../index.html)
 
 ![Organisation](Organisation.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="48" data-kind="diagram" data-file-path="Organisation/diagrams/Organisation.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="48" data-kind="diagram" data-file-path="Organisation/diagrams/Organisation.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -22,25 +22,25 @@ notes_hash: c79075de
 
 ## Elements
 
-- <span class="sl" data-layer="uml">master-data</span> [Address](../Address.md)
-- <span class="sl" data-layer="uml">master-data</span> [ContactPerson](../ContactPerson.md)
-- <span class="sl" data-layer="uml">reference-data</span> [Country](../Country.md)
-- <span class="sl" data-layer="uml">reference-data</span> [IndustrySectorType](../IndustrySectorType.md)
-- <span class="sl" data-layer="uml">master-data</span> [Organization](../Organization.md)
-- <span class="sl" data-layer="uml">master-data</span> [OrganizationAddress](../OrganizationAddress.md)
-- <span class="sl" data-layer="uml">reference-data</span> [OrganizationAddressType](../OrganizationAddressType.md)
-- <span class="sl" data-layer="uml">master-data</span> [OrganizationalBoundary](../OrganizationalBoundary.md)
-- <span class="sl" data-layer="uml">master-data</span> [OrganizationAssociation](../OrganizationAssociation.md)
-- <span class="sl" data-layer="uml">reference-data</span> [OrganizationAssociationType](../OrganizationAssociationType.md)
-- <span class="sl" data-layer="uml">master-data</span> [OrganizationEquityShare](../OrganizationEquityShare.md)
-- <span class="sl" data-layer="uml">master-data</span> [OrganizationExternalIdentifier](../OrganizationExternalIdentifier.md)
-- <span class="sl" data-layer="uml">reference-data</span> [OrganizationExternalIdentifierType](../OrganizationExternalIdentifierType.md)
-- <span class="sl" data-layer="uml">master-data</span> [OrganizationIndustrySector](../OrganizationIndustrySector.md)
-- <span class="sl" data-layer="uml">master-data</span> [OrganizationPersonAssociation](../OrganizationPersonAssociation.md)
-- <span class="sl" data-layer="uml">reference-data</span> [OrganizationType](../OrganizationType.md)
-- <span class="sl" data-layer="uml">reference-data</span> [PersonOrganizationRoleType](../PersonOrganizationRoleType.md)
-- <span class="sl" data-layer="uml">master-data</span> [Standard](../Standard.md)
+- <span class="sl" data-layer="uml">master-data</span> [Address](../Address.html)
+- <span class="sl" data-layer="uml">master-data</span> [ContactPerson](../ContactPerson.html)
+- <span class="sl" data-layer="uml">reference-data</span> [Country](../Country.html)
+- <span class="sl" data-layer="uml">reference-data</span> [IndustrySectorType](../IndustrySectorType.html)
+- <span class="sl" data-layer="uml">master-data</span> [Organization](../Organization.html)
+- <span class="sl" data-layer="uml">master-data</span> [OrganizationAddress](../OrganizationAddress.html)
+- <span class="sl" data-layer="uml">reference-data</span> [OrganizationAddressType](../OrganizationAddressType.html)
+- <span class="sl" data-layer="uml">master-data</span> [OrganizationalBoundary](../OrganizationalBoundary.html)
+- <span class="sl" data-layer="uml">master-data</span> [OrganizationAssociation](../OrganizationAssociation.html)
+- <span class="sl" data-layer="uml">reference-data</span> [OrganizationAssociationType](../OrganizationAssociationType.html)
+- <span class="sl" data-layer="uml">master-data</span> [OrganizationEquityShare](../OrganizationEquityShare.html)
+- <span class="sl" data-layer="uml">master-data</span> [OrganizationExternalIdentifier](../OrganizationExternalIdentifier.html)
+- <span class="sl" data-layer="uml">reference-data</span> [OrganizationExternalIdentifierType](../OrganizationExternalIdentifierType.html)
+- <span class="sl" data-layer="uml">master-data</span> [OrganizationIndustrySector](../OrganizationIndustrySector.html)
+- <span class="sl" data-layer="uml">master-data</span> [OrganizationPersonAssociation](../OrganizationPersonAssociation.html)
+- <span class="sl" data-layer="uml">reference-data</span> [OrganizationType](../OrganizationType.html)
+- <span class="sl" data-layer="uml">reference-data</span> [PersonOrganizationRoleType](../PersonOrganizationRoleType.html)
+- <span class="sl" data-layer="uml">master-data</span> [Standard](../Standard.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:34*
+*Generated: 2026-07-16 12:12:37*

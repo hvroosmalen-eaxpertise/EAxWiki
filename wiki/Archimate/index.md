@@ -1,15 +1,15 @@
 # Archimate
 
-[Home](../index.md) / [Archimate](index.md)
+[Home](../index.html) / [Archimate](index.html)
 
 ## Sub-packages
 
-- [Elements](../Elements/index.md)
-- [ESRS Classification](../ESRS Classification/index.md)
-- [Reference Material](../Reference Material/index.md)
-- [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md)
-- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/index.md)
+- [Elements](../Elements/index.html)
+- [ESRS Classification](../ESRS Classification/index.html)
+- [Reference Material](../Reference Material/index.html)
+- [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html)
+- [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:35:25*

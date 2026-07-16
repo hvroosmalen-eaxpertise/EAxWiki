@@ -1,11 +1,11 @@
 # Stakeholder Expectations
 
-[Home](../index.md) / [Archimate](../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Stakeholder Expectations](index.md)
+[Home](../index.html) / [Archimate](../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/index.html) / [Stakeholder Expectations](index.html)
 
 ## Diagrams
 
-- [Stakeholder Expectations](diagrams/Stakeholder Expectations.md) (Logical)
+- [Stakeholder Expectations](diagrams/Stakeholder Expectations.html) (Logical)
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:35:25*

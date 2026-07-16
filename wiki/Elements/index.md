@@ -1,16 +1,16 @@
 # Elements
 
-[Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](index.md)
+[Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](index.html)
 
 ## Sub-packages
 
-- [Assessments](../Assessments/index.md)
-- [Capabilities](../Capabilities/index.md)
-- [Courses of Action](../Courses of Action/index.md)
-- [Drivers](../Drivers/index.md)
-- [Goals](../Goals/index.md)
-- [Outcomes](../Outcomes/index.md)
+- [Assessments](../Assessments/index.html)
+- [Capabilities](../Capabilities/index.html)
+- [Courses of Action](../Courses of Action/index.html)
+- [Drivers](../Drivers/index.html)
+- [Goals](../Goals/index.html)
+- [Outcomes](../Outcomes/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:35:25*

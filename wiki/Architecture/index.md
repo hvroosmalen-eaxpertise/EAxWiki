@@ -1,18 +1,18 @@
 # Architecture
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [Architecture](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [Architecture](index.html)
 
 ## Diagrams
 
-- [Architecture](diagrams/Architecture.md) (Custom)
+- [Architecture](diagrams/Architecture.html) (Custom)
   - *<p>Updated diagram description from smoke test at 09:50:05</p>*
 
 ## Sub-packages
 
-- [Asset](../Asset/index.md)
-- [Capability](../Capability/index.md)
-- [Process](../Process/index.md)
+- [Asset](../Asset/index.html)
+- [Capability](../Capability/index.html)
+- [Process](../Process/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:35:25*

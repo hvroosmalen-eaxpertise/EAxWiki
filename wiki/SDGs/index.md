@@ -1,12 +1,12 @@
 # SDGs
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](index.html)
 
 ## Sub-packages
 
-- [Sustainability Development Goals](../Sustainability Development Goals/index.md)
-- [Mapping SDG to Main](../Mapping SDG to Main/index.md)
+- [Sustainability Development Goals](../Sustainability Development Goals/index.html)
+- [Mapping SDG to Main](../Mapping SDG to Main/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:12*
+*Generated: 2026-07-16 12:35:25*

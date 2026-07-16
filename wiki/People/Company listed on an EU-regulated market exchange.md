@@ -9,13 +9,13 @@ notes_hash: b41295cc
 # <span class="sl" data-layer="edgy-pe">People</span> Company listed on an EU-regulated market exchange
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="556" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Company listed on an EU-regulated market exchange.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="556" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Company listed on an EU-regulated market exchange.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="556" data-file-path="People/Company listed on an EU-regulated market exchange.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="556" data-file-path="People/Company listed on an EU-regulated market exchange.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -34,7 +34,7 @@ Any companies listed on an EU-regulated market exchange - except for listed ‘m
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
-| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.md) |
+| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.html) |
 
 [↑ Back to top](#)
 
@@ -51,7 +51,7 @@ Any companies listed on an EU-regulated market exchange - except for listed ‘m
 
 | Type | Stereotype | Source |
 |------|------------|--------|
-| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.md) |
+| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.html) |
 
 [↑ Back to top](#)
 
@@ -64,4 +64,4 @@ Any companies listed on an EU-regulated market exchange - except for listed ‘m
 
 ---
 
-*Generated: 2026-07-14 16:12:14*
+*Generated: 2026-07-16 12:12:11*

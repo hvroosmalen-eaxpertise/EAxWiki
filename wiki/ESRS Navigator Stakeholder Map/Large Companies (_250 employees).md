@@ -9,13 +9,13 @@ notes_hash: f926a825
 # <span class="sl" data-layer="motivation">Stakeholder</span> Large Companies (>250 employees)
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="331" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="331" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-11-14  **Modified:** 2026-07-01
 
 
-[Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Navigator Stakeholder Map](index.md)
+[Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="331" data-file-path="ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="331" data-file-path="ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,7 +29,7 @@ notes_hash: f926a825
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>archimate_element_identifier</td><td>id-org-001</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="331" data-tag-name="archimate_element_identifier" data-tag-value="id-org-001" data-file-path="ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>archimate_element_identifier</td><td>id-org-001</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="331" data-tag-name="archimate_element_identifier" data-tag-value="id-org-001" data-file-path="ESRS Navigator Stakeholder Map/Large Companies (_250 employees).md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -40,35 +40,35 @@ notes_hash: f926a825
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
-| Generalization | ArchiMate_Specialization | [FreshFood B.V.](FreshFood B.V..md) |
-| Association | ArchiMate_Association | [ESRS E4 - Biodiversity](ESRS E4 - Biodiversity.md) |
-| Association | ArchiMate_Association | [Investors/Shareholders](Investors_Shareholders.md) |
-| Association | ArchiMate_Assignment | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
-| Association | ArchiMate_Association | [Legal Design Agencies](Legal Design Agencies.md) |
-| Association | ArchiMate_Association | [European Commission](European Commission.md) |
-| Association | ArchiMate_Association | [ESRS G1 - Business Conduct](ESRS G1 - Business Conduct.md) |
-| Association | ArchiMate_Association | [Industry Associations](Industry Associations.md) |
-| Association | ArchiMate_Association | [Customers](Customers.md) |
-| Association | ArchiMate_Association | [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).md) |
-| Association | ArchiMate_Association | [ESRS E5 - Circular Economy](ESRS E5 - Circular Economy.md) |
-| Association | ArchiMate_Association | [AFM](AFM.md) |
-| Association | ArchiMate_Assignment | [Supervisory Board (RvC)](Supervisory Board (RvC).md) |
-| Association | ArchiMate_Association | [Research and Analysis Firms](Research and Analysis Firms.md) |
-| Association | ArchiMate_Association | [ESRS E1 - Climate](ESRS E1 - Climate.md) |
-| Association | ArchiMate_Association | [ESRS E2 - Pollution](ESRS E2 - Pollution.md) |
-| Association | ArchiMate_Association | [Rijksdienst voor Ondernemen (RVO)](Rijksdienst voor Ondernemen (RVO).md) |
-| Association | ArchiMate_Association | [NGOs and Civil Society](NGOs and Civil Society.md) |
-| Generalization | ArchiMate_Specialization | [Non-listed SMEs](Non-listed SMEs.md) |
-| Association | ArchiMate_Association | [Sustainability Consultants](Sustainability Consultants.md) |
-| Association | ArchiMate_Assignment | [Board of Directors (Directie)](Board of Directors (Directie).md) |
-| Association | ArchiMate_Association | [External Auditors](External Auditors.md) |
-| Association | ArchiMate_Association | [Suppliers](Suppliers.md) |
-| Association | ArchiMate_Association | [Certification Bodies](Certification Bodies.md) |
-| Association | ArchiMate_Association | [Credit Rating Agencies](Credit Rating Agencies.md) |
-| Association | ArchiMate_Association | [Banks and Financial Institutions](Banks and Financial Institutions.md) |
-| Association | ArchiMate_Association | [ESRS E3 - Water](ESRS E3 - Water.md) |
-| Generalization | ArchiMate_Specialization | [Listed SMEs](Listed SMEs.md) |
-| Abstraction | trace | [Company subject to CSRD](../People/Company subject to CSRD.md) |
+| Generalization | ArchiMate_Specialization | [FreshFood B.V.](FreshFood B.V..html) |
+| Association | ArchiMate_Association | [ESRS E4 - Biodiversity](ESRS E4 - Biodiversity.html) |
+| Association | ArchiMate_Association | [Investors/Shareholders](Investors_Shareholders.html) |
+| Association | ArchiMate_Assignment | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).html) |
+| Association | ArchiMate_Association | [Legal Design Agencies](Legal Design Agencies.html) |
+| Association | ArchiMate_Association | [European Commission](European Commission.html) |
+| Association | ArchiMate_Association | [ESRS G1 - Business Conduct](ESRS G1 - Business Conduct.html) |
+| Association | ArchiMate_Association | [Industry Associations](Industry Associations.html) |
+| Association | ArchiMate_Association | [Customers](Customers.html) |
+| Association | ArchiMate_Association | [Affected Communities (ESRS S3)](Affected Communities (ESRS S3).html) |
+| Association | ArchiMate_Association | [ESRS E5 - Circular Economy](ESRS E5 - Circular Economy.html) |
+| Association | ArchiMate_Association | [AFM](AFM.html) |
+| Association | ArchiMate_Assignment | [Supervisory Board (RvC)](Supervisory Board (RvC).html) |
+| Association | ArchiMate_Association | [Research and Analysis Firms](Research and Analysis Firms.html) |
+| Association | ArchiMate_Association | [ESRS E1 - Climate](ESRS E1 - Climate.html) |
+| Association | ArchiMate_Association | [ESRS E2 - Pollution](ESRS E2 - Pollution.html) |
+| Association | ArchiMate_Association | [Rijksdienst voor Ondernemen (RVO)](Rijksdienst voor Ondernemen (RVO).html) |
+| Association | ArchiMate_Association | [NGOs and Civil Society](NGOs and Civil Society.html) |
+| Generalization | ArchiMate_Specialization | [Non-listed SMEs](Non-listed SMEs.html) |
+| Association | ArchiMate_Association | [Sustainability Consultants](Sustainability Consultants.html) |
+| Association | ArchiMate_Assignment | [Board of Directors (Directie)](Board of Directors (Directie).html) |
+| Association | ArchiMate_Association | [External Auditors](External Auditors.html) |
+| Association | ArchiMate_Association | [Suppliers](Suppliers.html) |
+| Association | ArchiMate_Association | [Certification Bodies](Certification Bodies.html) |
+| Association | ArchiMate_Association | [Credit Rating Agencies](Credit Rating Agencies.html) |
+| Association | ArchiMate_Association | [Banks and Financial Institutions](Banks and Financial Institutions.html) |
+| Association | ArchiMate_Association | [ESRS E3 - Water](ESRS E3 - Water.html) |
+| Generalization | ArchiMate_Specialization | [Listed SMEs](Listed SMEs.html) |
+| Abstraction | trace | [Company subject to CSRD](../People/Company subject to CSRD.html) |
 
 [↑ Back to top](#)
 
@@ -84,25 +84,25 @@ notes_hash: f926a825
 
 | Type | Stereotype | Source |
 |------|------------|--------|
-| Generalization | ArchiMate_Specialization | [FreshFood B.V.](FreshFood B.V..md) |
-| Association | ArchiMate_Association | [Investors/Shareholders](Investors_Shareholders.md) |
-| Association | ArchiMate_Assignment | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).md) |
-| Association | ArchiMate_Association | [Legal Design Agencies](Legal Design Agencies.md) |
-| Association | ArchiMate_Association | [European Commission](European Commission.md) |
-| Association | ArchiMate_Association | [AFM](AFM.md) |
-| Association | ArchiMate_Assignment | [Supervisory Board (RvC)](Supervisory Board (RvC).md) |
-| Association | ArchiMate_Association | [Research and Analysis Firms](Research and Analysis Firms.md) |
-| Association | ArchiMate_Association | [Rijksdienst voor Ondernemen (RVO)](Rijksdienst voor Ondernemen (RVO).md) |
-| Association | ArchiMate_Association | [NGOs and Civil Society](NGOs and Civil Society.md) |
-| Generalization | ArchiMate_Specialization | [Non-listed SMEs](Non-listed SMEs.md) |
-| Association | ArchiMate_Association | [Sustainability Consultants](Sustainability Consultants.md) |
-| Association | ArchiMate_Assignment | [Board of Directors (Directie)](Board of Directors (Directie).md) |
-| Association | ArchiMate_Association | [External Auditors](External Auditors.md) |
-| Association | ArchiMate_Association | [Suppliers](Suppliers.md) |
-| Association | ArchiMate_Association | [Certification Bodies](Certification Bodies.md) |
-| Association | ArchiMate_Association | [Credit Rating Agencies](Credit Rating Agencies.md) |
-| Association | ArchiMate_Association | [Banks and Financial Institutions](Banks and Financial Institutions.md) |
-| Generalization | ArchiMate_Specialization | [Listed SMEs](Listed SMEs.md) |
+| Generalization | ArchiMate_Specialization | [FreshFood B.V.](FreshFood B.V..html) |
+| Association | ArchiMate_Association | [Investors/Shareholders](Investors_Shareholders.html) |
+| Association | ArchiMate_Assignment | [Own Personnel (ESRS S1)](Own Personnel (ESRS S1).html) |
+| Association | ArchiMate_Association | [Legal Design Agencies](Legal Design Agencies.html) |
+| Association | ArchiMate_Association | [European Commission](European Commission.html) |
+| Association | ArchiMate_Association | [AFM](AFM.html) |
+| Association | ArchiMate_Assignment | [Supervisory Board (RvC)](Supervisory Board (RvC).html) |
+| Association | ArchiMate_Association | [Research and Analysis Firms](Research and Analysis Firms.html) |
+| Association | ArchiMate_Association | [Rijksdienst voor Ondernemen (RVO)](Rijksdienst voor Ondernemen (RVO).html) |
+| Association | ArchiMate_Association | [NGOs and Civil Society](NGOs and Civil Society.html) |
+| Generalization | ArchiMate_Specialization | [Non-listed SMEs](Non-listed SMEs.html) |
+| Association | ArchiMate_Association | [Sustainability Consultants](Sustainability Consultants.html) |
+| Association | ArchiMate_Assignment | [Board of Directors (Directie)](Board of Directors (Directie).html) |
+| Association | ArchiMate_Association | [External Auditors](External Auditors.html) |
+| Association | ArchiMate_Association | [Suppliers](Suppliers.html) |
+| Association | ArchiMate_Association | [Certification Bodies](Certification Bodies.html) |
+| Association | ArchiMate_Association | [Credit Rating Agencies](Credit Rating Agencies.html) |
+| Association | ArchiMate_Association | [Banks and Financial Institutions](Banks and Financial Institutions.html) |
+| Generalization | ArchiMate_Specialization | [Listed SMEs](Listed SMEs.html) |
 
 [↑ Back to top](#)
 
@@ -115,4 +115,4 @@ notes_hash: f926a825
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:12:11*

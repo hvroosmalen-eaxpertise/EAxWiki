@@ -6,11 +6,11 @@ notes_hash: 5c35375d
 # Reference Websites
 
 
-[Home](../../index.md) / [Archimate](../../Archimate/index.md) / [Reference Material](../../Reference Material/index.md) / [Reference Websites](../index.md)
+[Home](../../index.html) / [Archimate](../../Archimate/index.html) / [Reference Material](../../Reference Material/index.html) / [Reference Websites](../index.html)
 
 ![Reference Websites](Reference Websites.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="29" data-kind="diagram" data-file-path="Reference Websites/diagrams/Reference Websites.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="29" data-kind="diagram" data-file-path="Reference Websites/diagrams/Reference Websites.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -22,8 +22,8 @@ notes_hash: 5c35375d
 
 ## Elements
 
-- <span class="sl" data-layer="strategy">Resource</span> [SDG Academy](../SDG Academy.md)
+- <span class="sl" data-layer="strategy">Resource</span> [SDG Academy](../SDG Academy.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:27*
+*Generated: 2026-07-16 12:12:26*

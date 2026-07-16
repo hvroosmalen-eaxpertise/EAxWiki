@@ -22,43 +22,43 @@
 
 | Package | Approved | Implemented | Mandatory | Proposed | Total |
 |---|:---:|:---:|:---:|:---:|:---:|
-| [Assessments](../Assessments/index.md) | <a href="#pkg_assessments_approved">4</a> | <a href="#pkg_assessments_implemented">1</a> | — | — | **5** |
-| [Asset](../Asset/index.md) | <a href="#pkg_asset_approved">6</a> | — | — | — | **6** |
-| [Capabilities](../Capabilities/index.md) | <a href="#pkg_capabilities_approved">6</a> | — | — | — | **6** |
-| [Capability](../Capability/index.md) | — | — | — | <a href="#pkg_capability_proposed">1</a> | **1** |
-| [Channel](../Channel/index.md) | — | — | — | <a href="#pkg_channel_proposed">3</a> | **3** |
-| [Content](../Content/index.md) | — | — | — | <a href="#pkg_content_proposed">3</a> | **3** |
-| [Emissions](../Emissions/index.md) | <a href="#pkg_emissions_approved">1</a> | — | — | — | **1** |
-| [ESRS 1](../ESRS 1/index.md) | — | — | — | <a href="#pkg_esrs_1_proposed">1</a> | **1** |
-| [ESRS 2](../ESRS 2/index.md) | — | — | — | <a href="#pkg_esrs_2_proposed">1</a> | **1** |
-| [ESRS E1](../ESRS E1/index.md) | — | — | — | <a href="#pkg_esrs_e1_proposed">1</a> | **1** |
-| [ESRS E2](../ESRS E2/index.md) | — | — | — | <a href="#pkg_esrs_e2_proposed">1</a> | **1** |
-| [ESRS E3](../ESRS E3/index.md) | — | — | — | <a href="#pkg_esrs_e3_proposed">1</a> | **1** |
-| [ESRS E4](../ESRS E4/index.md) | — | — | — | <a href="#pkg_esrs_e4_proposed">1</a> | **1** |
-| [ESRS E5](../ESRS E5/index.md) | — | — | — | <a href="#pkg_esrs_e5_proposed">1</a> | **1** |
-| [ESRS G1](../ESRS G1/index.md) | — | — | — | <a href="#pkg_esrs_g1_proposed">1</a> | **1** |
-| [ESRS Goals and Objectives](../ESRS Goals and Objectives/index.md) | — | — | — | <a href="#pkg_esrs_goals_and_objectives_proposed">5</a> | **5** |
-| [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md) | <a href="#pkg_esrs_navigator_stakeholder_map_approved">1</a> | <a href="#pkg_esrs_navigator_stakeholder_map_implemented">2</a> | — | <a href="#pkg_esrs_navigator_stakeholder_map_proposed">1</a> | **4** |
-| [ESRS S1](../ESRS S1/index.md) | — | — | — | <a href="#pkg_esrs_s1_proposed">1</a> | **1** |
-| [ESRS S2](../ESRS S2/index.md) | — | — | — | <a href="#pkg_esrs_s2_proposed">1</a> | **1** |
-| [ESRS S3](../ESRS S3/index.md) | — | — | — | <a href="#pkg_esrs_s3_proposed">1</a> | **1** |
-| [ESRS S4](../ESRS S4/index.md) | — | — | — | <a href="#pkg_esrs_s4_proposed">1</a> | **1** |
-| [ESRS Sector Classification](../ESRS Sector Classification/index.md) | — | — | — | <a href="#pkg_esrs_sector_classification_proposed">1</a> | **1** |
-| [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md) | — | — | — | <a href="#pkg_european_sustainability_reporting_standards_proposed">1</a> | **1** |
-| [Information Collection and Model Creation](../Information Collection and Model Creation/index.md) | — | <a href="#pkg_information_collection_and_model_creation_implemented">1</a> | — | <a href="#pkg_information_collection_and_model_creation_proposed">22</a> | **23** |
-| [Introduction EurSuRA](../Introduction EurSuRA/index.md) | — | — | — | <a href="#pkg_introduction_eursura_proposed">24</a> | **24** |
-| [Journey](../Journey/index.md) | — | — | — | <a href="#pkg_journey_proposed">1</a> | **1** |
-| [Metrics](../Metrics/index.md) | — | — | <a href="#pkg_metrics_mandatory">1</a> | <a href="#pkg_metrics_proposed">71</a> | **72** |
-| [People](../People/index.md) | <a href="#pkg_people_approved">1</a> | <a href="#pkg_people_implemented">1</a> | — | <a href="#pkg_people_proposed">49</a> | **51** |
-| [Private Parties](../Private Parties/index.md) | — | — | — | <a href="#pkg_private_parties_proposed">2</a> | **2** |
-| [Process](../Process/index.md) | — | — | — | <a href="#pkg_process_proposed">3</a> | **3** |
-| [Purpose](../Purpose/index.md) | — | — | — | <a href="#pkg_purpose_proposed">2</a> | **2** |
-| [Reference Documents](../Reference Documents/index.md) | — | <a href="#pkg_reference_documents_implemented">1</a> | — | <a href="#pkg_reference_documents_proposed">1</a> | **2** |
-| [Reference Websites](../Reference Websites/index.md) | — | — | — | <a href="#pkg_reference_websites_proposed">1</a> | **1** |
-| [Stories](../Stories/index.md) | — | — | — | <a href="#pkg_stories_proposed">3</a> | **3** |
-| [Story](../Story/index.md) | — | — | — | <a href="#pkg_story_proposed">3</a> | **3** |
-| [Sustainability Development Goals](../Sustainability Development Goals/index.md) | — | — | — | <a href="#pkg_sustainability_development_goals_proposed">25</a> | **25** |
-| [Task](../Task/index.md) | — | — | — | <a href="#pkg_task_proposed">26</a> | **26** |
+| [Assessments](../Assessments/index.html) | <a href="#pkg_assessments_approved">4</a> | <a href="#pkg_assessments_implemented">1</a> | — | — | **5** |
+| [Asset](../Asset/index.html) | <a href="#pkg_asset_approved">6</a> | — | — | — | **6** |
+| [Capabilities](../Capabilities/index.html) | <a href="#pkg_capabilities_approved">6</a> | — | — | — | **6** |
+| [Capability](../Capability/index.html) | — | — | — | <a href="#pkg_capability_proposed">1</a> | **1** |
+| [Channel](../Channel/index.html) | — | — | — | <a href="#pkg_channel_proposed">3</a> | **3** |
+| [Content](../Content/index.html) | — | — | — | <a href="#pkg_content_proposed">3</a> | **3** |
+| [Emissions](../Emissions/index.html) | <a href="#pkg_emissions_approved">1</a> | — | — | — | **1** |
+| [ESRS 1](../ESRS 1/index.html) | — | — | — | <a href="#pkg_esrs_1_proposed">1</a> | **1** |
+| [ESRS 2](../ESRS 2/index.html) | — | — | — | <a href="#pkg_esrs_2_proposed">1</a> | **1** |
+| [ESRS E1](../ESRS E1/index.html) | — | — | — | <a href="#pkg_esrs_e1_proposed">1</a> | **1** |
+| [ESRS E2](../ESRS E2/index.html) | — | — | — | <a href="#pkg_esrs_e2_proposed">1</a> | **1** |
+| [ESRS E3](../ESRS E3/index.html) | — | — | — | <a href="#pkg_esrs_e3_proposed">1</a> | **1** |
+| [ESRS E4](../ESRS E4/index.html) | — | — | — | <a href="#pkg_esrs_e4_proposed">1</a> | **1** |
+| [ESRS E5](../ESRS E5/index.html) | — | — | — | <a href="#pkg_esrs_e5_proposed">1</a> | **1** |
+| [ESRS G1](../ESRS G1/index.html) | — | — | — | <a href="#pkg_esrs_g1_proposed">1</a> | **1** |
+| [ESRS Goals and Objectives](../ESRS Goals and Objectives/index.html) | — | — | — | <a href="#pkg_esrs_goals_and_objectives_proposed">5</a> | **5** |
+| [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html) | <a href="#pkg_esrs_navigator_stakeholder_map_approved">1</a> | <a href="#pkg_esrs_navigator_stakeholder_map_implemented">2</a> | — | <a href="#pkg_esrs_navigator_stakeholder_map_proposed">1</a> | **4** |
+| [ESRS S1](../ESRS S1/index.html) | — | — | — | <a href="#pkg_esrs_s1_proposed">1</a> | **1** |
+| [ESRS S2](../ESRS S2/index.html) | — | — | — | <a href="#pkg_esrs_s2_proposed">1</a> | **1** |
+| [ESRS S3](../ESRS S3/index.html) | — | — | — | <a href="#pkg_esrs_s3_proposed">1</a> | **1** |
+| [ESRS S4](../ESRS S4/index.html) | — | — | — | <a href="#pkg_esrs_s4_proposed">1</a> | **1** |
+| [ESRS Sector Classification](../ESRS Sector Classification/index.html) | — | — | — | <a href="#pkg_esrs_sector_classification_proposed">1</a> | **1** |
+| [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.html) | — | — | — | <a href="#pkg_european_sustainability_reporting_standards_proposed">1</a> | **1** |
+| [Information Collection and Model Creation](../Information Collection and Model Creation/index.html) | — | <a href="#pkg_information_collection_and_model_creation_implemented">1</a> | — | <a href="#pkg_information_collection_and_model_creation_proposed">22</a> | **23** |
+| [Introduction EurSuRA](../Introduction EurSuRA/index.html) | — | — | — | <a href="#pkg_introduction_eursura_proposed">24</a> | **24** |
+| [Journey](../Journey/index.html) | — | — | — | <a href="#pkg_journey_proposed">1</a> | **1** |
+| [Metrics](../Metrics/index.html) | — | — | <a href="#pkg_metrics_mandatory">1</a> | <a href="#pkg_metrics_proposed">71</a> | **72** |
+| [People](../People/index.html) | <a href="#pkg_people_approved">1</a> | <a href="#pkg_people_implemented">1</a> | — | <a href="#pkg_people_proposed">49</a> | **51** |
+| [Private Parties](../Private Parties/index.html) | — | — | — | <a href="#pkg_private_parties_proposed">2</a> | **2** |
+| [Process](../Process/index.html) | — | — | — | <a href="#pkg_process_proposed">3</a> | **3** |
+| [Purpose](../Purpose/index.html) | — | — | — | <a href="#pkg_purpose_proposed">2</a> | **2** |
+| [Reference Documents](../Reference Documents/index.html) | — | <a href="#pkg_reference_documents_implemented">1</a> | — | <a href="#pkg_reference_documents_proposed">1</a> | **2** |
+| [Reference Websites](../Reference Websites/index.html) | — | — | — | <a href="#pkg_reference_websites_proposed">1</a> | **1** |
+| [Stories](../Stories/index.html) | — | — | — | <a href="#pkg_stories_proposed">3</a> | **3** |
+| [Story](../Story/index.html) | — | — | — | <a href="#pkg_story_proposed">3</a> | **3** |
+| [Sustainability Development Goals](../Sustainability Development Goals/index.html) | — | — | — | <a href="#pkg_sustainability_development_goals_proposed">25</a> | **25** |
+| [Task](../Task/index.html) | — | — | — | <a href="#pkg_task_proposed">26</a> | **26** |
 | **Total** | **19** | **6** | **1** | **260** | **286** |
 
 <details class="status-details" id="pkg_assessments_approved">
@@ -1135,4 +1135,4 @@
 
 ---
 
-*Generated: 2026-07-14 16:12:16*
+*Generated: 2026-07-16 12:35:25*

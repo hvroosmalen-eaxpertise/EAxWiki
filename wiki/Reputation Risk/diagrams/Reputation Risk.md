@@ -6,11 +6,11 @@ notes_hash: 3b97211b
 # Reputation Risk
 
 
-[Home](../../index.md) / [Archimate](../../Archimate/index.md) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.md) / [Reputation Risk](../index.md)
+[Home](../../index.html) / [Archimate](../../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.html) / [Reputation Risk](../index.html)
 
 ![Reputation Risk](Reputation Risk.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="27" data-kind="diagram" data-file-path="Reputation Risk/diagrams/Reputation Risk.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="27" data-kind="diagram" data-file-path="Reputation Risk/diagrams/Reputation Risk.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -22,27 +22,27 @@ notes_hash: 3b97211b
 
 ## Elements
 
-- <span class="sl" data-layer="strategy">CourseOfAction</span> [Carbon Footprint Reduction Program](../../Courses of Action/Carbon Footprint Reduction Program.md)
-- <span class="sl" data-layer="motivation">Assessment</span> [CO₂ Reduction %](../../Assessments/CO₂ Reduction %.md)
-- <span class="sl" data-layer="motivation">Goal</span> [Corporate Sustainability Integration](../../Goals/Corporate Sustainability Integration.md)
-- <span class="sl" data-layer="motivation">Assessment</span> [Energy Efficiency Index](../../Assessments/Energy Efficiency Index.md)
-- <span class="sl" data-layer="strategy">Capability</span> [ESG Performance Management](../../Capabilities/ESG Performance Management.md)
-- <span class="sl" data-layer="strategy">CourseOfAction</span> [ESG-based Risk Management](../../Courses of Action/ESG-based Risk Management.md)
-- <span class="sl" data-layer="strategy">CourseOfAction</span> [Integrate Sustainability into Corporate Strategy](../../Courses of Action/Integrate Sustainability into Corporate Strategy.md)
-- <span class="sl" data-layer="strategy">CourseOfAction</span> [Introduce Sustainable Product Design Process](../../Courses of Action/Introduce Sustainable Product Design Process.md)
-- <span class="sl" data-layer="motivation">Outcome</span> [Lower Operational Risk](../../Outcomes/Lower Operational Risk.md)
-- <span class="sl" data-layer="motivation">Outcome</span> [Reduced Environmental Impact](../../Outcomes/Reduced Environmental Impact.md)
-- <span class="sl" data-layer="motivation">Driver</span> [Reputation Risk](../../Drivers/Reputation Risk.md)
-- <span class="sl" data-layer="strategy">CourseOfAction</span> [Responsible Supply Chain Strategy](../../Courses of Action/Responsible Supply Chain Strategy.md)
-- <span class="sl" data-layer="strategy">Capability</span> [Risk and Compliance Management](../../Capabilities/Risk and Compliance Management.md)
-- <span class="sl" data-layer="motivation">Goal</span> [Risk Reduction](../../Goals/Risk Reduction.md)
-- <span class="sl" data-layer="motivation">Assessment</span> [Supplier Compliance Rate](../../Assessments/Supplier Compliance Rate.md)
-- <span class="sl" data-layer="strategy">CourseOfAction</span> [Supplier Sustainability Audits](../../Courses of Action/Supplier Sustainability Audits.md)
-- <span class="sl" data-layer="strategy">Capability</span> [Sustainability Data and Reporting](../../Capabilities/Sustainability Data and Reporting.md)
-- <span class="sl" data-layer="strategy">Capability</span> [Sustainability Governance](../../Capabilities/Sustainability Governance.md)
-- <span class="sl" data-layer="strategy">Capability</span> [Sustainable Innovation Management](../../Capabilities/Sustainable Innovation Management.md)
-- <span class="sl" data-layer="strategy">Capability</span> [Sustainable Supply Chain Management](../../Capabilities/Sustainable Supply Chain Management.md)
+- <span class="sl" data-layer="strategy">CourseOfAction</span> [Carbon Footprint Reduction Program](../../Courses of Action/Carbon Footprint Reduction Program.html)
+- <span class="sl" data-layer="motivation">Assessment</span> [CO₂ Reduction %](../../Assessments/CO₂ Reduction %.html)
+- <span class="sl" data-layer="motivation">Goal</span> [Corporate Sustainability Integration](../../Goals/Corporate Sustainability Integration.html)
+- <span class="sl" data-layer="motivation">Assessment</span> [Energy Efficiency Index](../../Assessments/Energy Efficiency Index.html)
+- <span class="sl" data-layer="strategy">Capability</span> [ESG Performance Management](../../Capabilities/ESG Performance Management.html)
+- <span class="sl" data-layer="strategy">CourseOfAction</span> [ESG-based Risk Management](../../Courses of Action/ESG-based Risk Management.html)
+- <span class="sl" data-layer="strategy">CourseOfAction</span> [Integrate Sustainability into Corporate Strategy](../../Courses of Action/Integrate Sustainability into Corporate Strategy.html)
+- <span class="sl" data-layer="strategy">CourseOfAction</span> [Introduce Sustainable Product Design Process](../../Courses of Action/Introduce Sustainable Product Design Process.html)
+- <span class="sl" data-layer="motivation">Outcome</span> [Lower Operational Risk](../../Outcomes/Lower Operational Risk.html)
+- <span class="sl" data-layer="motivation">Outcome</span> [Reduced Environmental Impact](../../Outcomes/Reduced Environmental Impact.html)
+- <span class="sl" data-layer="motivation">Driver</span> [Reputation Risk](../../Drivers/Reputation Risk.html)
+- <span class="sl" data-layer="strategy">CourseOfAction</span> [Responsible Supply Chain Strategy](../../Courses of Action/Responsible Supply Chain Strategy.html)
+- <span class="sl" data-layer="strategy">Capability</span> [Risk and Compliance Management](../../Capabilities/Risk and Compliance Management.html)
+- <span class="sl" data-layer="motivation">Goal</span> [Risk Reduction](../../Goals/Risk Reduction.html)
+- <span class="sl" data-layer="motivation">Assessment</span> [Supplier Compliance Rate](../../Assessments/Supplier Compliance Rate.html)
+- <span class="sl" data-layer="strategy">CourseOfAction</span> [Supplier Sustainability Audits](../../Courses of Action/Supplier Sustainability Audits.html)
+- <span class="sl" data-layer="strategy">Capability</span> [Sustainability Data and Reporting](../../Capabilities/Sustainability Data and Reporting.html)
+- <span class="sl" data-layer="strategy">Capability</span> [Sustainability Governance](../../Capabilities/Sustainability Governance.html)
+- <span class="sl" data-layer="strategy">Capability</span> [Sustainable Innovation Management](../../Capabilities/Sustainable Innovation Management.html)
+- <span class="sl" data-layer="strategy">Capability</span> [Sustainable Supply Chain Management](../../Capabilities/Sustainable Supply Chain Management.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:32*
+*Generated: 2026-07-16 12:12:33*

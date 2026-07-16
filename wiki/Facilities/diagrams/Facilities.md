@@ -6,11 +6,11 @@ notes_hash: 7f90f3ec
 # Facilities
 
 
-[Home](../../index.md) / [Data Layer](../../Data Layer/index.md) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.md) / [Facilities](../index.md)
+[Home](../../index.html) / [Data Layer](../../Data Layer/index.html) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.html) / [Facilities](../index.html)
 
 ![Facilities](Facilities.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="50" data-kind="diagram" data-file-path="Facilities/diagrams/Facilities.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="50" data-kind="diagram" data-file-path="Facilities/diagrams/Facilities.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -22,24 +22,24 @@ notes_hash: 7f90f3ec
 
 ## Elements
 
-- <span class="sl" data-layer="uml">master-data</span> [BusinessArea](../BusinessArea.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionActivityParameter](../EmissionActivityParameter.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [EmissionActivityParameterValue](../EmissionActivityParameterValue.md)
-- <span class="sl" data-layer="uml">master-data</span> [Equipment](../Equipment.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [EquipmentInstallation](../EquipmentInstallation.md)
-- <span class="sl" data-layer="uml">master-data</span> [Facility](../Facility.md)
-- <span class="sl" data-layer="uml">master-data</span> [FacilityActivityParticipation](../FacilityActivityParticipation.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [FacilityEmissionAllocation](../FacilityEmissionAllocation.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [FacilityLocationAssociation](../FacilityLocationAssociation.md)
-- <span class="sl" data-layer="uml">reference-data</span> [FacilityLocationType](../FacilityLocationType.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [FacilitySpecification](../FacilitySpecification.md)
-- <span class="sl" data-layer="uml">master-data</span> [FacilityStructure](../FacilityStructure.md)
-- <span class="sl" data-layer="uml">reference-data</span> [FacilityType](../FacilityType.md)
-- <span class="sl" data-layer="uml">master-data</span> [GeopoliticalEntity](../GeopoliticalEntity.md)
-- <span class="sl" data-layer="uml">reference-data</span> [GeopoliticalEntityType](../GeopoliticalEntityType.md)
-- <span class="sl" data-layer="uml">master-data</span> [GeospatialLocation](../GeospatialLocation.md)
-- <span class="sl" data-layer="uml">master-data</span> [Location](../Location.md)
+- <span class="sl" data-layer="uml">master-data</span> [BusinessArea](../BusinessArea.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionActivityParameter](../EmissionActivityParameter.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [EmissionActivityParameterValue](../EmissionActivityParameterValue.html)
+- <span class="sl" data-layer="uml">master-data</span> [Equipment](../Equipment.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [EquipmentInstallation](../EquipmentInstallation.html)
+- <span class="sl" data-layer="uml">master-data</span> [Facility](../Facility.html)
+- <span class="sl" data-layer="uml">master-data</span> [FacilityActivityParticipation](../FacilityActivityParticipation.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [FacilityEmissionAllocation](../FacilityEmissionAllocation.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [FacilityLocationAssociation](../FacilityLocationAssociation.html)
+- <span class="sl" data-layer="uml">reference-data</span> [FacilityLocationType](../FacilityLocationType.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [FacilitySpecification](../FacilitySpecification.html)
+- <span class="sl" data-layer="uml">master-data</span> [FacilityStructure](../FacilityStructure.html)
+- <span class="sl" data-layer="uml">reference-data</span> [FacilityType](../FacilityType.html)
+- <span class="sl" data-layer="uml">master-data</span> [GeopoliticalEntity](../GeopoliticalEntity.html)
+- <span class="sl" data-layer="uml">reference-data</span> [GeopoliticalEntityType](../GeopoliticalEntityType.html)
+- <span class="sl" data-layer="uml">master-data</span> [GeospatialLocation](../GeospatialLocation.html)
+- <span class="sl" data-layer="uml">master-data</span> [Location](../Location.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:36*
+*Generated: 2026-07-16 12:12:41*

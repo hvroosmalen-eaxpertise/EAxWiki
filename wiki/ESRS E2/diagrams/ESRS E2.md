@@ -6,11 +6,11 @@ notes_hash: fafc6797
 # ESRS E2
 
 
-[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.md) / [ESRS E2](../index.md)
+[Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.html) / [ESRS E2](../index.html)
 
 ![ESRS E2](ESRS E2.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="9" data-kind="diagram" data-file-path="ESRS E2/diagrams/ESRS E2.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="9" data-kind="diagram" data-file-path="ESRS E2/diagrams/ESRS E2.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -23,8 +23,8 @@ https://www</p>
 
 ## Elements
 
-- <span class="sl" data-layer="edgy-id">Content</span> [ESRS E2 Pollution](../ESRS E2 Pollution.md)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS E2 Pollution](../ESRS E2 Pollution.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:19*
+*Generated: 2026-07-16 12:12:16*

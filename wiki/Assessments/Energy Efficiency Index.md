@@ -9,13 +9,13 @@ notes_hash: e887030e
 # <span class="sl" data-layer="motivation">Assessment</span> Energy Efficiency Index
 
 **Type:** Class  **Stereotype:** ArchiMate_Assessment  **StereotypeEx:** ArchiMate_Assessment  **FQStereotype:** ArchiMate3::ArchiMate_Assessment  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="465" data-status="Approved" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Assessments/Energy Efficiency Index.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-approved">Approved</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="465" data-status="Approved" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Assessments/Energy Efficiency Index.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-approved">Approved</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-11  **Modified:** 2026-07-13
 
 
-[Home](../index.md) / [Archimate](../Archimate/index.md) / [Elements](../Elements/index.md) / [Assessments](index.md)
+[Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="465" data-file-path="Assessments/Energy Efficiency Index.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="465" data-file-path="Assessments/Energy Efficiency Index.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,7 +29,7 @@ notes_hash: e887030e
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>archimate_element_identifier</td><td>kpi-004</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="465" data-tag-name="archimate_element_identifier" data-tag-value="kpi-004" data-file-path="Assessments/Energy Efficiency Index.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>archimate_element_identifier</td><td>kpi-004</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="465" data-tag-name="archimate_element_identifier" data-tag-value="kpi-004" data-file-path="Assessments/Energy Efficiency Index.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -40,8 +40,8 @@ notes_hash: e887030e
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
-| Association | ArchiMate_Association | [Reduced Environmental Impact](../Outcomes/Reduced Environmental Impact.md) |
-| Association | ArchiMate_Association | [ESG Performance Management](../Capabilities/ESG Performance Management.md) |
+| Association | ArchiMate_Association | [Reduced Environmental Impact](../Outcomes/Reduced Environmental Impact.html) |
+| Association | ArchiMate_Association | [ESG Performance Management](../Capabilities/ESG Performance Management.html) |
 
 [↑ Back to top](#)
 
@@ -64,4 +64,4 @@ notes_hash: e887030e
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:12:11*

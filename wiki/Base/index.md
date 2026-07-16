@@ -1,11 +1,11 @@
 # Base
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](index.html)
 
 ## Sub-packages
 
-- [People](../People/index.md)
+- [People](../People/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:14*
+*Generated: 2026-07-16 12:35:25*

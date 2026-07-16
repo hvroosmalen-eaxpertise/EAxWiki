@@ -9,13 +9,13 @@ notes_hash: 7e7a4093
 # <span class="sl" data-layer="edgy-pe">People</span> Non-listed SMEs
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="501" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Non-listed SMEs.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="501" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Non-listed SMEs.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
 
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="501" data-file-path="People/Non-listed SMEs.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="501" data-file-path="People/Non-listed SMEs.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -35,9 +35,9 @@ Any non-listed companies that meet two of the following three criteria on any tw
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
-| Abstraction | trace | [Non-listed SMEs](../ESRS Navigator Stakeholder Map/Non-listed SMEs.md) |
-| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.md) |
-| ControlFlow | Flow | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).md) |
+| Abstraction | trace | [Non-listed SMEs](../ESRS Navigator Stakeholder Map/Non-listed SMEs.html) |
+| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.html) |
+| ControlFlow | Flow | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).html) |
 
 [↑ Back to top](#)
 
@@ -57,9 +57,9 @@ Any non-listed companies that meet two of the following three criteria on any tw
 
 | Type | Stereotype | Source |
 |------|------------|--------|
-| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.md) |
-| Abstraction | trace | [Non-listed SMEs](../ESRS Navigator Stakeholder Map/Non-listed SMEs.md) |
-| ControlFlow | Flow | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).md) |
+| Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.html) |
+| Abstraction | trace | [Non-listed SMEs](../ESRS Navigator Stakeholder Map/Non-listed SMEs.html) |
+| ControlFlow | Flow | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).html) |
 
 [↑ Back to top](#)
 
@@ -72,4 +72,4 @@ Any non-listed companies that meet two of the following three criteria on any tw
 
 ---
 
-*Generated: 2026-07-14 16:12:14*
+*Generated: 2026-07-16 12:12:11*

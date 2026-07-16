@@ -1,17 +1,17 @@
 # Experience
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [Experience](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [Experience](index.html)
 
 ## Diagrams
 
-- [Experience](diagrams/Experience.md) (Custom)
+- [Experience](diagrams/Experience.html) (Custom)
 
 ## Sub-packages
 
-- [Channel](../Channel/index.md)
-- [Journey](../Journey/index.md)
-- [Task](../Task/index.md)
+- [Channel](../Channel/index.html)
+- [Journey](../Journey/index.html)
+- [Task](../Task/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:35:25*

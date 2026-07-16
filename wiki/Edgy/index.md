@@ -1,18 +1,18 @@
 # Edgy
 
-[Home](../index.md) / [Edgy](index.md)
+[Home](../index.html) / [Edgy](index.html)
 
 ## Sub-packages
 
-- [SDGs](../SDGs/index.md)
-- [ESRS](../ESRS/index.md)
-- [Base](../Base/index.md)
-- [Identity](../Identity/index.md)
-- [Architecture](../Architecture/index.md)
-- [Experience](../Experience/index.md)
-- [Metrics](../Metrics/index.md)
-- [Stories](../Stories/index.md)
+- [SDGs](../SDGs/index.html)
+- [ESRS](../ESRS/index.html)
+- [Base](../Base/index.html)
+- [Identity](../Identity/index.html)
+- [Architecture](../Architecture/index.html)
+- [Experience](../Experience/index.html)
+- [Metrics](../Metrics/index.html)
+- [Stories](../Stories/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:12*
+*Generated: 2026-07-16 12:35:25*

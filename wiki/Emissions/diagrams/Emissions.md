@@ -6,11 +6,11 @@ notes_hash: 2583101b
 # Emissions
 
 
-[Home](../../index.md) / [Data Layer](../../Data Layer/index.md) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.md) / [Emissions](../index.md)
+[Home](../../index.html) / [Data Layer](../../Data Layer/index.html) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.html) / [Emissions](../index.html)
 
 ![Emissions](Emissions.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="51" data-kind="diagram" data-file-path="Emissions/diagrams/Emissions.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="51" data-kind="diagram" data-file-path="Emissions/diagrams/Emissions.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -22,44 +22,44 @@ notes_hash: 2583101b
 
 ## Elements
 
-- <span class="sl" data-layer="uml">work-product-component</span> [ActivityEmissionAllocation](../ActivityEmissionAllocation.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionActivity](../EmissionActivity.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionActivityCategory](../EmissionActivityCategory.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [EmissionActivityFactor](../EmissionActivityFactor.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionActivityParameterRecordingTemplate](../EmissionActivityParameterRecordingTemplate.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionActivityType](../EmissionActivityType.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionActivityTypeParameterTypeAssignment](../EmissionActivityTypeParameterTypeAssignment.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [EmissionCalculationFormula](../EmissionCalculationFormula.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [EmissionCalculationFormulaComponent](../EmissionCalculationFormulaComponent.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionCalculationMethodType](../EmissionCalculationMethodType.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionCalculationModel](../EmissionCalculationModel.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [EmissionCalculationModelFactorArgument](../EmissionCalculationModelFactorArgument.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [EmissionCalculationModelParameterArgument](../EmissionCalculationModelParameterArgument.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionCategoryStandardAssociation](../EmissionCategoryStandardAssociation.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionComponent](../EmissionComponent.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionComponentCategory](../EmissionComponentCategory.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionComponentCategoryGroup](../EmissionComponentCategoryGroup.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionComponentPerStandard](../EmissionComponentPerStandard.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionFactor](../EmissionFactor.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionFactorSource](../EmissionFactorSource.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionInventory](../EmissionInventory.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionParameterType](../EmissionParameterType.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [EmissionReport](../EmissionReport.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionReportingBoundary](../EmissionReportingBoundary.md)
-- <span class="sl" data-layer="uml">master-data</span> [EmissionReportPeriod](../EmissionReportPeriod.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionScopeType](../EmissionScopeType.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionSink](../EmissionSink.md)
-- <span class="sl" data-layer="uml">reference-data</span> [EmissionSource](../EmissionSource.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [EmissionStatement](../EmissionStatement.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [EmissionStatementPerStandard](../EmissionStatementPerStandard.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [OrganizationEmissionAllocation](../OrganizationEmissionAllocation.md)
-- <span class="sl" data-layer="uml">reference-data</span> [PhysicalQuantityType](../PhysicalQuantityType.md)
-- <span class="sl" data-layer="uml">work-product-component</span> [RecordingUncertaintyAssessment](../RecordingUncertaintyAssessment.md)
-- <span class="sl" data-layer="uml">master-data</span> [StandardSourceAssociation](../StandardSourceAssociation.md)
-- <span class="sl" data-layer="uml">reference-data</span> [SystemOfUnits](../SystemOfUnits.md)
-- <span class="sl" data-layer="uml">reference-data</span> [UnitOfMeasure](../UnitOfMeasure.md)
-- <span class="sl" data-layer="uml">reference-data</span> [UnitOfMeasureSourceReference](../UnitOfMeasureSourceReference.md)
+- <span class="sl" data-layer="uml">work-product-component</span> [ActivityEmissionAllocation](../ActivityEmissionAllocation.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionActivity](../EmissionActivity.html)
+- <span class="sl" data-layer="uml">reference-data</span> [EmissionActivityCategory](../EmissionActivityCategory.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [EmissionActivityFactor](../EmissionActivityFactor.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionActivityParameterRecordingTemplate](../EmissionActivityParameterRecordingTemplate.html)
+- <span class="sl" data-layer="uml">reference-data</span> [EmissionActivityType](../EmissionActivityType.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionActivityTypeParameterTypeAssignment](../EmissionActivityTypeParameterTypeAssignment.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [EmissionCalculationFormula](../EmissionCalculationFormula.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [EmissionCalculationFormulaComponent](../EmissionCalculationFormulaComponent.html)
+- <span class="sl" data-layer="uml">reference-data</span> [EmissionCalculationMethodType](../EmissionCalculationMethodType.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionCalculationModel](../EmissionCalculationModel.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [EmissionCalculationModelFactorArgument](../EmissionCalculationModelFactorArgument.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [EmissionCalculationModelParameterArgument](../EmissionCalculationModelParameterArgument.html)
+- <span class="sl" data-layer="uml">reference-data</span> [EmissionCategoryStandardAssociation](../EmissionCategoryStandardAssociation.html)
+- <span class="sl" data-layer="uml">reference-data</span> [EmissionComponent](../EmissionComponent.html)
+- <span class="sl" data-layer="uml">reference-data</span> [EmissionComponentCategory](../EmissionComponentCategory.html)
+- <span class="sl" data-layer="uml">reference-data</span> [EmissionComponentCategoryGroup](../EmissionComponentCategoryGroup.html)
+- <span class="sl" data-layer="uml">reference-data</span> [EmissionComponentPerStandard](../EmissionComponentPerStandard.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionFactor](../EmissionFactor.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionFactorSource](../EmissionFactorSource.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionInventory](../EmissionInventory.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionParameterType](../EmissionParameterType.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [EmissionReport](../EmissionReport.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionReportingBoundary](../EmissionReportingBoundary.html)
+- <span class="sl" data-layer="uml">master-data</span> [EmissionReportPeriod](../EmissionReportPeriod.html)
+- <span class="sl" data-layer="uml">reference-data</span> [EmissionScopeType](../EmissionScopeType.html)
+- <span class="sl" data-layer="uml">reference-data</span> [EmissionSink](../EmissionSink.html)
+- <span class="sl" data-layer="uml">reference-data</span> [EmissionSource](../EmissionSource.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [EmissionStatement](../EmissionStatement.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [EmissionStatementPerStandard](../EmissionStatementPerStandard.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [OrganizationEmissionAllocation](../OrganizationEmissionAllocation.html)
+- <span class="sl" data-layer="uml">reference-data</span> [PhysicalQuantityType](../PhysicalQuantityType.html)
+- <span class="sl" data-layer="uml">work-product-component</span> [RecordingUncertaintyAssessment](../RecordingUncertaintyAssessment.html)
+- <span class="sl" data-layer="uml">master-data</span> [StandardSourceAssociation](../StandardSourceAssociation.html)
+- <span class="sl" data-layer="uml">reference-data</span> [SystemOfUnits](../SystemOfUnits.html)
+- <span class="sl" data-layer="uml">reference-data</span> [UnitOfMeasure](../UnitOfMeasure.html)
+- <span class="sl" data-layer="uml">reference-data</span> [UnitOfMeasureSourceReference](../UnitOfMeasureSourceReference.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:39*
+*Generated: 2026-07-16 12:12:47*

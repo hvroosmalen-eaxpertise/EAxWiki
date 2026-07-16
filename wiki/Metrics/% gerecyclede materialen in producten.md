@@ -9,13 +9,13 @@ notes_hash: e3b0c442
 # <span class="sl" data-layer="edgy-lb">Metric</span> % gerecyclede materialen in producten
 
 **Type:** Requirement  **Stereotype:** Metric  **StereotypeEx:** Metric  **FQStereotype:** EDGY::Metric  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="182" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/% gerecyclede materialen in producten.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="182" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/% gerecyclede materialen in producten.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [Metrics](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="182" data-file-path="Metrics/% gerecyclede materialen in producten.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="182" data-file-path="Metrics/% gerecyclede materialen in producten.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,9 +29,9 @@ notes_hash: e3b0c442
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>EDGY::MetricStatus</td><td>Good</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Good</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="a900ab84" data-kind="tagged-value" data-el-id="182" data-tag-name="EDGY::MetricStatus" data-tag-value="Good" data-file-path="Metrics/% gerecyclede materialen in producten.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>EDGY::MetricStatus</td><td>Good</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Good</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="a900ab84" data-kind="tagged-value" data-el-id="182" data-tag-name="EDGY::MetricStatus" data-tag-value="Good" data-file-path="Metrics/% gerecyclede materialen in producten.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
-<tr><td>EDGY::MetricValue</td><td>&lt;VALUE&gt;</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-1-->Default: <!--ea-row-notes-end:tag-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-1" data-notes-hash="c1f81883" data-kind="tagged-value" data-el-id="182" data-tag-name="EDGY::MetricValue" data-tag-value="&lt;VALUE&gt;" data-file-path="Metrics/% gerecyclede materialen in producten.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>EDGY::MetricValue</td><td>&lt;VALUE&gt;</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-1-->Default: <!--ea-row-notes-end:tag-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-1" data-notes-hash="c1f81883" data-kind="tagged-value" data-el-id="182" data-tag-name="EDGY::MetricValue" data-tag-value="&lt;VALUE&gt;" data-file-path="Metrics/% gerecyclede materialen in producten.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-1" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -42,13 +42,13 @@ notes_hash: e3b0c442
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
-| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
-| Association | Link | [Ontwerp producten die modulair, repareerbaar en recyclebaar zijn.](../Task/Ontwerp producten die modulair, repareerbaar en recyclebaar zijn..md) |
-| Aggregation | Tree | [Massa gerecycled materiaal (kg/% input)](Massa gerecycled materiaal (kg_% input).md) |
-| Aggregation | Tree | [Retourpercentages producten](Retourpercentages producten.md) |
-| Aggregation | Tree | [Afval per fase + recycleerbaar aandeel](Afval per fase + recycleerbaar aandeel.md) |
-| Aggregation | Tree | [ Levensduur product](Levensduur product.md) |
-| ControlFlow | Flow | [% Gerecycled materiaal = (gerecycled / totaal input) × 100](% Gerecycled materiaal = (gerecycled _ totaal input) × 100.md) |
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.html) |
+| Association | Link | [Ontwerp producten die modulair, repareerbaar en recyclebaar zijn.](../Task/Ontwerp producten die modulair, repareerbaar en recyclebaar zijn..html) |
+| Aggregation | Tree | [Massa gerecycled materiaal (kg/% input)](Massa gerecycled materiaal (kg_% input).html) |
+| Aggregation | Tree | [Retourpercentages producten](Retourpercentages producten.html) |
+| Aggregation | Tree | [Afval per fase + recycleerbaar aandeel](Afval per fase + recycleerbaar aandeel.html) |
+| Aggregation | Tree | [ Levensduur product](Levensduur product.html) |
+| ControlFlow | Flow | [% Gerecycled materiaal = (gerecycled / totaal input) × 100](% Gerecycled materiaal = (gerecycled _ totaal input) × 100.html) |
 
 [↑ Back to top](#)
 
@@ -65,8 +65,8 @@ notes_hash: e3b0c442
 
 | Type | Stereotype | Source |
 |------|------------|--------|
-| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.md) |
-| Association | Link | [Ontwerp producten die modulair, repareerbaar en recyclebaar zijn.](../Task/Ontwerp producten die modulair, repareerbaar en recyclebaar zijn..md) |
+| ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.html) |
+| Association | Link | [Ontwerp producten die modulair, repareerbaar en recyclebaar zijn.](../Task/Ontwerp producten die modulair, repareerbaar en recyclebaar zijn..html) |
 
 [↑ Back to top](#)
 
@@ -79,4 +79,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:12:11*

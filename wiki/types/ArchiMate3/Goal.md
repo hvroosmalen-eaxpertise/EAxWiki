@@ -2,12 +2,12 @@
 
 5 element(s):
 
-- <span class="sl" data-layer="motivation">Goal</span> [Long-term Value Creation](../../Goals/Long-term Value Creation.md)
-- <span class="sl" data-layer="motivation">Goal</span> [Sustainable Competitive Advantage](../../Goals/Sustainable Competitive Advantage.md)
-- <span class="sl" data-layer="motivation">Goal</span> [Risk Reduction](../../Goals/Risk Reduction.md)
-- <span class="sl" data-layer="motivation">Goal</span> [Corporate Sustainability Integration](../../Goals/Corporate Sustainability Integration.md)
-- <span class="sl" data-layer="motivation">Goal</span> [ESG Performance Improvement](../../Goals/ESG Performance Improvement.md)
+- <span class="sl" data-layer="motivation">Goal</span> [Long-term Value Creation](../../Goals/Long-term Value Creation.html)
+- <span class="sl" data-layer="motivation">Goal</span> [Sustainable Competitive Advantage](../../Goals/Sustainable Competitive Advantage.html)
+- <span class="sl" data-layer="motivation">Goal</span> [Risk Reduction](../../Goals/Risk Reduction.html)
+- <span class="sl" data-layer="motivation">Goal</span> [Corporate Sustainability Integration](../../Goals/Corporate Sustainability Integration.html)
+- <span class="sl" data-layer="motivation">Goal</span> [ESG Performance Improvement](../../Goals/ESG Performance Improvement.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:16*
+*Generated: 2026-07-16 12:35:25*

@@ -1,19 +1,19 @@
 # ESRS and People
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [ESRS and People](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [ESRS](../ESRS/index.html) / [ESRS and People](index.html)
 
 ## Diagrams
 
-- [ESRS Stakeholder Map](diagrams/ESRS Stakeholder Map.md) (Custom)
+- [ESRS Stakeholder Map](diagrams/ESRS Stakeholder Map.html) (Custom)
 
 ## Sub-packages
 
-- [European Union - People](../European Union - People/index.md)
-- [ESRS E1, E2, E3, E4, E5, G1 - People](../ESRS E1, E2, E3, E4, E5, G1 - People/index.md)
-- [ESRS S1 Own Workforce - People](../ESRS S1 Own Workforce - People/index.md)
-- [ERSR S2 Workers in the Value Chain - People](../ERSR S2 Workers in the Value Chain - People/index.md)
-- [ESRS S3 Affected Communities - People](../ESRS S3 Affected Communities - People/index.md)
+- [European Union - People](../European Union - People/index.html)
+- [ESRS E1, E2, E3, E4, E5, G1 - People](../ESRS E1, E2, E3, E4, E5, G1 - People/index.html)
+- [ESRS S1 Own Workforce - People](../ESRS S1 Own Workforce - People/index.html)
+- [ERSR S2 Workers in the Value Chain - People](../ERSR S2 Workers in the Value Chain - People/index.html)
+- [ESRS S3 Affected Communities - People](../ESRS S3 Affected Communities - People/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:14*
+*Generated: 2026-07-16 12:35:25*

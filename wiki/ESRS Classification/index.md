@@ -1,11 +1,11 @@
 # ESRS Classification
 
-[Home](../index.md) / [Archimate](../Archimate/index.md) / [ESRS Classification](index.md)
+[Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Classification](index.html)
 
 ## Sub-packages
 
-- [ESRS Sector Classification](../ESRS Sector Classification/index.md)
+- [ESRS Sector Classification](../ESRS Sector Classification/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:35:25*

@@ -1,11 +1,11 @@
 # ESRS S3 Affected Communities - People
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [ESRS](../ESRS/index.md) / [ESRS and People](../ESRS and People/index.md) / [ESRS S3 Affected Communities - People](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [ESRS](../ESRS/index.html) / [ESRS and People](../ESRS and People/index.html) / [ESRS S3 Affected Communities - People](index.html)
 
 ## Diagrams
 
-- [ESRS S3 Affected Communities - People](diagrams/ESRS S3 Affected Communities - People.md) (Custom)
+- [ESRS S3 Affected Communities - People](diagrams/ESRS S3 Affected Communities - People.html) (Custom)
 
 ---
 
-*Generated: 2026-07-14 16:12:14*
+*Generated: 2026-07-16 12:35:25*

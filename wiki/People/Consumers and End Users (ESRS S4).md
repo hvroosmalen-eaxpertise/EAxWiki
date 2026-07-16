@@ -9,13 +9,13 @@ notes_hash: 15da69b3
 # <span class="sl" data-layer="edgy-pe">People</span> Consumers and End Users (ESRS S4)
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="517" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Consumers and End Users (ESRS S4).md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="517" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Consumers and End Users (ESRS S4).md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
 
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="517" data-file-path="People/Consumers and End Users (ESRS S4).md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="517" data-file-path="People/Consumers and End Users (ESRS S4).md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -28,9 +28,9 @@ notes_hash: 15da69b3
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
-| Abstraction | trace | [Consumers and End Users (ESRS S4)](../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4).md) |
-| Association | Link | [Customers](Customers.md) |
-| Association | Link | [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.md) |
+| Abstraction | trace | [Consumers and End Users (ESRS S4)](../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4).html) |
+| Association | Link | [Customers](Customers.html) |
+| Association | Link | [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.html) |
 
 [↑ Back to top](#)
 
@@ -47,8 +47,8 @@ notes_hash: 15da69b3
 
 | Type | Stereotype | Source |
 |------|------------|--------|
-| Abstraction | trace | [Consumers and End Users (ESRS S4)](../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4).md) |
-| Association | Link | [Customers](Customers.md) |
+| Abstraction | trace | [Consumers and End Users (ESRS S4)](../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4).html) |
+| Association | Link | [Customers](Customers.html) |
 
 [↑ Back to top](#)
 
@@ -61,4 +61,4 @@ notes_hash: 15da69b3
 
 ---
 
-*Generated: 2026-07-14 16:12:14*
+*Generated: 2026-07-16 12:12:11*

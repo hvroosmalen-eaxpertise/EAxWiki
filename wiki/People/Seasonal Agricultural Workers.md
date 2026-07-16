@@ -9,13 +9,13 @@ notes_hash: 3d52b4ea
 # <span class="sl" data-layer="edgy-pe">People</span> Seasonal Agricultural Workers
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="533" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Seasonal Agricultural Workers.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="533" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="People/Seasonal Agricultural Workers.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-12  **Modified:** 2025-12-15
 
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [Base](../Base/index.md) / [People](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="533" data-file-path="People/Seasonal Agricultural Workers.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="533" data-file-path="People/Seasonal Agricultural Workers.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -28,8 +28,8 @@ notes_hash: 3d52b4ea
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
-| Abstraction | trace | [Seasonal Agricultural Workers](../ESRS Navigator Stakeholder Map/Seasonal Agricultural Workers.md) |
-| Aggregation | Tree | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
+| Abstraction | trace | [Seasonal Agricultural Workers](../ESRS Navigator Stakeholder Map/Seasonal Agricultural Workers.html) |
+| Aggregation | Tree | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).html) |
 
 [↑ Back to top](#)
 
@@ -47,8 +47,8 @@ notes_hash: 3d52b4ea
 
 | Type | Stereotype | Source |
 |------|------------|--------|
-| Abstraction | trace | [Seasonal Agricultural Workers](../ESRS Navigator Stakeholder Map/Seasonal Agricultural Workers.md) |
-| Aggregation | Tree | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).md) |
+| Abstraction | trace | [Seasonal Agricultural Workers](../ESRS Navigator Stakeholder Map/Seasonal Agricultural Workers.html) |
+| Aggregation | Tree | [Workers in Value Chain (ESRS S2)](Workers in Value Chain (ESRS S2).html) |
 
 [↑ Back to top](#)
 
@@ -61,4 +61,4 @@ notes_hash: 3d52b4ea
 
 ---
 
-*Generated: 2026-07-14 16:12:14*
+*Generated: 2026-07-16 12:12:11*

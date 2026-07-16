@@ -1,17 +1,17 @@
 # Identity
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [Identity](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [Identity](index.html)
 
 ## Diagrams
 
-- [Identity](diagrams/Identity.md) (Custom)
+- [Identity](diagrams/Identity.html) (Custom)
 
 ## Sub-packages
 
-- [Content](../Content/index.md)
-- [Purpose](../Purpose/index.md)
-- [Story](../Story/index.md)
+- [Content](../Content/index.html)
+- [Purpose](../Purpose/index.html)
+- [Story](../Story/index.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:35:25*

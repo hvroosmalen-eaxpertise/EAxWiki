@@ -6,11 +6,11 @@ notes_hash: fafc6797
 # ESRS S3 Affected Communities - People
 
 
-[Home](../../index.md) / [Edgy](../../Edgy/index.md) / [ESRS](../../ESRS/index.md) / [ESRS and People](../../ESRS and People/index.md) / [ESRS S3 Affected Communities - People](../index.md)
+[Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [ESRS and People](../../ESRS and People/index.html) / [ESRS S3 Affected Communities - People](../index.html)
 
 ![ESRS S3 Affected Communities - People](ESRS S3 Affected Communities - People.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="35" data-kind="diagram" data-file-path="ESRS S3 Affected Communities - People/diagrams/ESRS S3 Affected Communities - People.md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="35" data-kind="diagram" data-file-path="ESRS S3 Affected Communities - People/diagrams/ESRS S3 Affected Communities - People.md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -23,11 +23,11 @@ https://www</p>
 
 ## Elements
 
-- <span class="sl" data-layer="edgy-pe">People</span> [Affected Communities (ESRS S3)](../../People/Affected Communities (ESRS S3).md)
-- <span class="sl" data-layer="edgy-id">Content</span> [ESRS S3 Affected Communities](../../ESRS S3/ESRS S3 Affected Communities.md)
-- <span class="sl" data-layer="edgy-pe">People</span> [Indigenous Peoples](../../People/Indigenous Peoples.md)
-- <span class="sl" data-layer="edgy-pe">People</span> [Local Communities](../../People/Local Communities.md)
+- <span class="sl" data-layer="edgy-pe">People</span> [Affected Communities (ESRS S3)](../../People/Affected Communities (ESRS S3).html)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS S3 Affected Communities](../../ESRS S3/ESRS S3 Affected Communities.html)
+- <span class="sl" data-layer="edgy-pe">People</span> [Indigenous Peoples](../../People/Indigenous Peoples.html)
+- <span class="sl" data-layer="edgy-pe">People</span> [Local Communities](../../People/Local Communities.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:23*
+*Generated: 2026-07-16 12:12:22*

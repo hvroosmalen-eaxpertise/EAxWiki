@@ -1,11 +1,11 @@
 # Mapping SDG to Main
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [SDGs](../SDGs/index.md) / [Mapping SDG to Main](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Mapping SDG to Main](index.html)
 
 ## Diagrams
 
-- [Mapping SDG to Main](diagrams/Mapping SDG to Main.md) (Custom)
+- [Mapping SDG to Main](diagrams/Mapping SDG to Main.html) (Custom)
 
 ---
 
-*Generated: 2026-07-14 16:12:14*
+*Generated: 2026-07-16 12:35:25*

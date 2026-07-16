@@ -9,13 +9,13 @@ notes_hash: e3b0c442
 # <span class="sl" data-layer="edgy-ex">Task</span> Optimaliseer processen voor minder energie/waterverbruik en minder restmateriaal.
 
 **Type:** Activity  **Stereotype:** Task  **StereotypeEx:** Task  **FQStereotype:** EDGY::Task  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="150" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Task/Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="150" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Task/Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-02  **Modified:** 2025-12-15
 
 
-[Home](../index.md) / [Edgy](../Edgy/index.md) / [Experience](../Experience/index.md) / [Task](index.md)
+[Home](../index.html) / [Edgy](../Edgy/index.html) / [Experience](../Experience/index.html) / [Task](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="150" data-file-path="Task/Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="150" data-file-path="Task/Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,7 +29,7 @@ notes_hash: e3b0c442
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>EDGY::TextAlign</td><td>Top</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="150" data-tag-name="EDGY::TextAlign" data-tag-value="Top" data-file-path="Task/Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md" data-api-port="8001" data-api-token="18d132bbe33b2ed98ccfbfb3e0b3db8e014680c6894bc358" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>EDGY::TextAlign</td><td>Top</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><p>Default: Center</p><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="5cc00a1f" data-kind="tagged-value" data-el-id="150" data-tag-name="EDGY::TextAlign" data-tag-value="Top" data-file-path="Task/Optimaliseer processen voor minder energie_waterverbruik en minder restmateriaal..md" data-api-port="8001" data-api-token="396808bb42d562fe840c39b8d02ecae080faf57660476df3" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -40,8 +40,8 @@ notes_hash: e3b0c442
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
-| ControlFlow | Flow | [Sustainable Processes](../Process/Sustainable Processes.md) |
-| Association | Link | [Energieverbruik en waterverbruik per eenheid](../Metrics/Energieverbruik en waterverbruik per eenheid.md) |
+| ControlFlow | Flow | [Sustainable Processes](../Process/Sustainable Processes.html) |
+| Association | Link | [Energieverbruik en waterverbruik per eenheid](../Metrics/Energieverbruik en waterverbruik per eenheid.html) |
 
 [↑ Back to top](#)
 
@@ -57,7 +57,7 @@ notes_hash: e3b0c442
 
 | Type | Stereotype | Source |
 |------|------------|--------|
-| ControlFlow | Flow | [Sustainable Processes](../Process/Sustainable Processes.md) |
+| ControlFlow | Flow | [Sustainable Processes](../Process/Sustainable Processes.html) |
 
 [↑ Back to top](#)
 
@@ -70,4 +70,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-14 16:12:15*
+*Generated: 2026-07-16 12:12:11*

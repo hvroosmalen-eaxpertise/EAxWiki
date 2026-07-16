@@ -2,13 +2,13 @@
 
 6 element(s):
 
-- <span class="sl" data-layer="uml">NavigationCell</span> [](../../Sustainability Development Goals/unnamed.md)
-- <span class="sl" data-layer="uml">NavigationCell</span> [](../../Sustainability Development Goals/unnamed.md)
-- <span class="sl" data-layer="uml">NavigationCell</span> [](../../Sustainability Development Goals/unnamed.md)
-- <span class="sl" data-layer="uml">NavigationCell</span> [](../../Sustainability Development Goals/unnamed.md)
-- <span class="sl" data-layer="uml">NavigationCell</span> [](../../Sustainability Development Goals/unnamed.md)
-- <span class="sl" data-layer="uml">NavigationCell</span> [Architecture](../../Sustainability Development Goals/Architecture.md)
+- <span class="sl" data-layer="uml">NavigationCell</span> [](../../Sustainability Development Goals/unnamed.html)
+- <span class="sl" data-layer="uml">NavigationCell</span> [](../../Sustainability Development Goals/unnamed.html)
+- <span class="sl" data-layer="uml">NavigationCell</span> [](../../Sustainability Development Goals/unnamed.html)
+- <span class="sl" data-layer="uml">NavigationCell</span> [](../../Sustainability Development Goals/unnamed.html)
+- <span class="sl" data-layer="uml">NavigationCell</span> [](../../Sustainability Development Goals/unnamed.html)
+- <span class="sl" data-layer="uml">NavigationCell</span> [Architecture](../../Sustainability Development Goals/Architecture.html)
 
 ---
 
-*Generated: 2026-07-14 16:12:16*
+*Generated: 2026-07-16 12:35:25*
