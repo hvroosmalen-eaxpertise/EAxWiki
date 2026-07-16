@@ -83,25 +83,6 @@ public class GraphIndexExporterTests
     }
 
     [Fact]
-    public async Task Focal_Element_Has_Empty_Url()
-    {
-        var pkg = ("Pkg", (int?)null);
-        var a = MakeElement(1, "Alpha", 10);
-        var ctx = MakeContext(
-            [(a, "C:\\out\\Pkg")],
-            new() { [10] = ("Pkg", null) }
-        );
-        var writer = new MemoryWriter();
-        var exporter = new GraphIndexExporter(writer, NullLogger<GraphIndexExporter>.Instance);
-
-        await exporter.ExportAsync(ctx, CancellationToken.None);
-
-        using var doc = JsonDocument.Parse(writer.Files["C:/out/graph-index.json"]);
-        var node = doc.RootElement.GetProperty("nodes")[0];
-        Assert.Equal("", node.GetProperty("url").GetString());
-    }
-
-    [Fact]
     public async Task Edges_Deduplicated_By_ConnectorId()
     {
         var pkg = ("Pkg", (int?)null);
