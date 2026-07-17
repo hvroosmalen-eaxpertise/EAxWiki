@@ -611,6 +611,71 @@ function Test-EditLock {
     }
 }
 
+function Stop-ApiServer {
+    # Gracefully stop the tracked API server process so its DLL locks are released
+    # before a dotnet-run export can overwrite them.  Falls back to Clear-Port if
+    # the tracked process is gone but something else still holds the port.
+    if (Test-Path $apiPidPath) {
+        try {
+            $info = Get-Content $apiPidPath -Raw | ConvertFrom-Json
+            if ($info.pid) {
+                $proc = Get-Process -Id ([int]$info.pid) -ErrorAction SilentlyContinue
+                if ($proc) {
+                    Write-MonitorLog -Phase "api" -Message "Stopping tracked API server (PID $($info.pid)) to release DLL locks."
+                    $proc.CloseMainWindow() | Out-Null
+                    # Give it up to 5 seconds to exit gracefully.
+                    $deadline = [DateTime]::UtcNow.AddSeconds(5)
+                    while ([DateTime]::UtcNow -lt $deadline) {
+                        if ($proc.HasExited) { break }
+                        Start-Sleep -Milliseconds 200
+                    }
+                    if (-not $proc.HasExited) {
+                        Write-MonitorLog -Phase "api" -Message "API server did not exit gracefully; force-killing."
+                        $proc | Stop-Process -Force -ErrorAction SilentlyContinue
+                        Start-Sleep -Seconds 1
+                    }
+                }
+            }
+        } catch { }
+        # Always clear the pid file so the watchdog doesn't think it's still alive.
+        Remove-Item $apiPidPath -Force -ErrorAction SilentlyContinue
+    }
+    # Release the port if anything still holds it.
+    Clear-Port -PortNumber $ApiPort
+}
+
+function Clear-Port {
+    param([int]$PortNumber)
+    $owner = Get-NetTCPConnection -LocalPort $PortNumber -ErrorAction SilentlyContinue |
+        Select-Object -First 1 -ExpandProperty OwningProcess
+    if ($owner) {
+        Write-MonitorLog -Phase "api" -Message "Killing process $owner on port $PortNumber."
+        Stop-Process -Id $owner -Force -ErrorAction SilentlyContinue
+        Start-Sleep -Seconds 2
+    }
+}
+
+function Test-ApiAlive {
+    if (Test-Path $apiPidPath) {
+        try {
+            $info = Get-Content $apiPidPath -Raw | ConvertFrom-Json
+            if ($info.pid) {
+                $proc = Get-Process -Id ([int]$info.pid) -ErrorAction SilentlyContinue
+                if ($proc -and $info.startTime) {
+                    $recordedStart = [DateTimeOffset]::Parse($info.startTime)
+                    $actualStart = [DateTimeOffset]$proc.StartTime
+                    if ([Math]::Abs(($recordedStart - $actualStart).TotalSeconds) -le 2) {
+                        return $true
+                    }
+                }
+            }
+        } catch { }
+    }
+    # Port is occupied by an untracked or stale process — don't report alive; the start loop
+    # below will kill the occupant and replace it.
+    return $false
+}
+
 while ($true) {
     $exportDue = $lastExportTime -eq [DateTime]::MinValue -or (([DateTime]::UtcNow - $lastExportTime).TotalMinutes -ge $ExportIntervalMinutes)
 
@@ -660,6 +725,13 @@ while ($true) {
         $writebackSummary = Get-NewWritebackSummary
 
         if (-not $skipPhase) {
+            # Stop the API server before export so its DLL locks don't prevent
+            # dotnet-run from overwriting the binaries.  The API watchdog section
+            # at the end of this pass will restart it automatically.
+            if ($ApiPort -gt 0 -and (Test-ApiAlive)) {
+                Stop-ApiServer
+            }
+
             $exportArgs = @("--output", $wikiDir)
             if ($RepoPath) { $exportArgs += "--repo", $RepoPath }
             if ($effectiveForce) { $exportArgs += "--force" }
@@ -853,6 +925,15 @@ function Test-ServeAlive {
 }
 
 function Start-Serve {
+    # Ensure status dir and placeholder files exist before mkdocs serve starts.
+    # The API server writes api-ready on startup, but mkdocs serve copies all files
+    # in wiki/ on its first build — if api-ready doesn't exist yet, mkdocs crashes
+    # with FileNotFoundError.
+    $statusDir = Join-Path $wikiDir "status"
+    if (-not (Test-Path $statusDir)) { New-Item -ItemType Directory -Path $statusDir -Force | Out-Null }
+    $apiReadyPath = Join-Path $statusDir "api-ready"
+    if (-not (Test-Path $apiReadyPath)) { "placeholder" | Set-Content -Path $apiReadyPath -NoNewline }
+
     $stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
     $outFile = Join-Path $logDir "serve-$stamp.out.log"
     $errFile = Join-Path $logDir "serve-$stamp.err.log"
@@ -913,38 +994,6 @@ if ($state.skipServe) {
 # --- API server watchdog: start the write-back API server if configured in .eaxwiki. ---
 # The API server (EAxWiki.exe --api) runs persistently to handle wiki-editor write-backs
 # and AI suggestion requests between export runs.
-function Test-ApiAlive {
-    if (Test-Path $apiPidPath) {
-        try {
-            $info = Get-Content $apiPidPath -Raw | ConvertFrom-Json
-            if ($info.pid) {
-                $proc = Get-Process -Id ([int]$info.pid) -ErrorAction SilentlyContinue
-                if ($proc -and $info.startTime) {
-                    $recordedStart = [DateTimeOffset]::Parse($info.startTime)
-                    $actualStart = [DateTimeOffset]$proc.StartTime
-                    if ([Math]::Abs(($recordedStart - $actualStart).TotalSeconds) -le 2) {
-                        return $true
-                    }
-                }
-            }
-        } catch { }
-    }
-    # Port is occupied by an untracked or stale process — don't report alive; the start loop
-    # below will kill the occupant and replace it.
-    return $false
-}
-
-function Clear-Port {
-    param([int]$PortNumber)
-    $owner = Get-NetTCPConnection -LocalPort $PortNumber -ErrorAction SilentlyContinue |
-        Select-Object -First 1 -ExpandProperty OwningProcess
-    if ($owner) {
-        Write-MonitorLog -Phase "api" -Message "Killing process $owner on port $PortNumber."
-        Stop-Process -Id $owner -Force -ErrorAction SilentlyContinue
-        Start-Sleep -Seconds 2
-    }
-}
-
 function Start-ApiServer {
     $stamp = Get-Date -Format "yyyy-MM-dd_HHmmss"
     $outFile = Join-Path $logDir "api-$stamp.out.log"

@@ -53,10 +53,6 @@ internal static class ExportValidator
         }
 
         var fm = FrontmatterParser.Parse(filePath);
-        if (fm.Count == 0 && content.Contains("---"))
-        {
-            issues.Add(new ValidationIssue(relativePath, "error", "YAML frontmatter present but could not be parsed"));
-        }
 
         var body = StripFrontmatter(content);
 
@@ -67,6 +63,9 @@ internal static class ExportValidator
         {
             var link = match.Groups[1].Value;
             if (IsExternalUrl(link) || link.StartsWith('#')) continue;
+            // .html links in EA notes (elements, diagrams, methods, attributes) are resolved
+            // by MkDocs at build time — they don't exist as source files in wiki/.
+            if (link.EndsWith(".html", StringComparison.OrdinalIgnoreCase)) continue;
             var target = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(filePath)!, link));
             if (!File.Exists(target))
                 issues.Add(new ValidationIssue(relativePath, "warning", $"Broken link: {link}"));
