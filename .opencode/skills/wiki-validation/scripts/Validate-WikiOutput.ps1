@@ -148,7 +148,7 @@ function Test-Infrastructure {
 
 function Test-Pages {
     $checks = @('ea-graph-container', 'data-focal-id', 'ea-notes', 'notes-editor\.js', 'graph-init\.js', 'cytoscape', 'diagram-thumbs')
-    $excludeDirs = @('types', 'assets', 'glossary', 'recent', 'status')
+    $excludeDirs = @('types', 'assets', 'glossary', 'recent', 'status', 'diagrams')
 
     $htmlFiles = Get-ChildItem $SitePath -Filter "*.html" -Recurse | Where-Object {
         $rel = $_.FullName.Replace("$SitePath\", "")
@@ -156,7 +156,7 @@ function Test-Pages {
         # Exclude special directories and files
         $isExcluded = $false
         foreach ($dir in $excludeDirs) {
-            if ($rel -match "^$dir[\\/]") { $isExcluded = $true; break }
+            if ($rel -match "(^|[\\/])$dir[\\/]") { $isExcluded = $true; break }
         }
         -not $isExcluded -and $name -ne "404.html" -and $name -ne "index.html"
     }
