@@ -145,11 +145,12 @@ if (-not $IsWindowsOS) {
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
 Push-Location $repoRoot
 
-# Resolve both webhook URLs from CLI arg â†’ env var â†’ .eaxwiki file. .eaxwiki is decrypted at
+# Resolve both webhook URLs from CLI arg → env var → .eaxwiki file. .eaxwiki is decrypted at
 # most once (not once per channel) and shared between the two lookups below.
 $eaxwikiConfig = $null
 if (Test-Path ".eaxwiki") {
     try {
+        Add-Type -AssemblyName System.Security
         $entropy = [System.Text.Encoding]::UTF8.GetBytes("EAxWiki.LocalConfig.v1")
         $base64 = Get-Content ".eaxwiki" -Raw | ForEach-Object { $_.Trim() }
         $encrypted = [Convert]::FromBase64String($base64)
