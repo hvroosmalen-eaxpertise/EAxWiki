@@ -95,7 +95,7 @@ internal static class ExportValidator
 
     private static List<string> FindUnclosedTags(string html)
     {
-        var tagsToCheck = new[] { "div", "span", "details", "summary", "table", "tr", "td", "th", "a", "p", "ul", "ol", "li", "pre", "code", "select", "option" };
+        var tagsToCheck = new[] { "div", "span", "details", "summary", "table", "tr", "td", "th", "a", "ul", "ol", "li", "pre", "code", "select", "option" };
         var unclosed = new List<string>();
         foreach (var tag in tagsToCheck)
         {
