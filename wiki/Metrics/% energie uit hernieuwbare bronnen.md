@@ -1,16 +1,16 @@
 ---
 ea_id: 177
-status: Proposed
+status: Approved
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
-ea_hash: 9b0c660b
+ea_hash: 87b42e40
 notes_hash: e3b0c442
 ---
 
 # <span class="sl" data-layer="edgy-lb">Metric</span> % energie uit hernieuwbare bronnen
 
 **Type:** Requirement  **Stereotype:** Metric  **StereotypeEx:** Metric  **FQStereotype:** EDGY::Metric  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="177" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/% energie uit hernieuwbare bronnen.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
-**Created:** 2025-12-03  **Modified:** 2025-12-03
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="177" data-status="Approved" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/% energie uit hernieuwbare bronnen.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040"><span class="status-badge status-approved">Approved</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Created:** 2025-12-03  **Modified:** 2026-07-17
 
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](index.html)

@@ -3,14 +3,14 @@ ea_id: 465
 status: Approved
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 87b42e40
-notes_hash: e887030e
+notes_hash: e3b0c442
 ---
 
 # <span class="sl" data-layer="motivation">Assessment</span> Energy Efficiency Index
 
 **Type:** Class  **Stereotype:** ArchiMate_Assessment  **StereotypeEx:** ArchiMate_Assessment  **FQStereotype:** ArchiMate3::ArchiMate_Assessment  
 **Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="465" data-status="Approved" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Assessments/Energy Efficiency Index.md" data-api-port="8001" data-api-token="cb00ff8e615c4dac03751156a603075df7bdab65ec6c0040"><span class="status-badge status-approved">Approved</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
-**Created:** 2025-12-11  **Modified:** 2026-07-13
+**Created:** 2025-12-11  **Modified:** 2026-07-17
 
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](index.html)
@@ -19,7 +19,7 @@ notes_hash: e887030e
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
-<p>Test notes from automated smoke test at 09:49:23</p>
+
 <!--ea-notes-end-->
 </div>
 </div>
