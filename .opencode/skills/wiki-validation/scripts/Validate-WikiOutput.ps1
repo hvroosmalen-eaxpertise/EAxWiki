@@ -257,9 +257,21 @@ function Test-Services {
     $script:Results.svc_warnings = ($svcChecks | Where-Object { $_.status -eq 'warn' }).Count
 }
 
+function Send-JsonPost {
+    param([string]$Uri, [hashtable]$Body, [hashtable]$Headers = @{}, [int]$TimeoutSec = 10)
+    $json = $Body | ConvertTo-Json -Compress
+    $bytes = [System.Text.Encoding]::UTF8.GetBytes($json)
+    Invoke-RestMethod -Uri $Uri -Method POST -Body $bytes -ContentType "application/json; charset=utf-8" -Headers $Headers -TimeoutSec $TimeoutSec
+}
+
 function Get-ApiHeaders {
     $headers = @{}
-    if ($ApiToken) { $headers["X-EAxWiki-Token"] = $ApiToken }
+    $token = $ApiToken
+    if (-not $token) {
+        $tokenFile = Join-Path $WikiPath ".eaxwiki-token"
+        if (Test-Path $tokenFile) { $token = (Get-Content $tokenFile -Raw).Trim() }
+    }
+    if ($token) { $headers["X-EAxWiki-Token"] = $token }
     return $headers
 }
 
@@ -341,8 +353,7 @@ function Test-StatusRoundtrip {
             return
         }
 
-        $body = @{ elementId = $ElementId; newStatus = $newStatus; filePath = $filePath } | ConvertTo-Json
-        $response = Invoke-RestMethod -Uri "$ApiBase/api/status" -Method POST -Body $body -ContentType "application/json" -Headers (Get-ApiHeaders) -TimeoutSec 10
+        $response = Send-JsonPost -Uri "$ApiBase/api/status" -Body @{ elementId = $ElementId; newStatus = $newStatus; filePath = $filePath } -Headers (Get-ApiHeaders)
 
         $elapsed = ((Get-Date) - $start).TotalMilliseconds
         Write-ValidationCheck -Category 'api' -Name 'api-status-roundtrip' -Status 'pass' -Detail "status '$newStatus' written to element $ElementId" -Duration $elapsed
@@ -363,8 +374,7 @@ function Test-NotesRoundtrip {
             return
         }
 
-        $body = @{ elementId = $ElementId; newNotes = $marker; filePath = $filePath } | ConvertTo-Json
-        $response = Invoke-RestMethod -Uri "$ApiBase/api/notes" -Method POST -Body $body -ContentType "application/json" -Headers (Get-ApiHeaders) -TimeoutSec 10
+        $response = Send-JsonPost -Uri "$ApiBase/api/notes" -Body @{ elementId = $ElementId; newNotes = $marker; filePath = $filePath } -Headers (Get-ApiHeaders)
 
         $elapsed = ((Get-Date) - $start).TotalMilliseconds
         Write-ValidationCheck -Category 'api' -Name 'api-notes-roundtrip' -Status 'pass' -Detail "notes written and restored to element $ElementId"
@@ -378,8 +388,7 @@ function Test-AiSuggest {
     param([int]$ElementId)
     $start = Get-Date
     try {
-        $body = @{ elementId = $ElementId } | ConvertTo-Json
-        $response = Invoke-RestMethod -Uri "$ApiBase/api/ai-suggest" -Method POST -Body $body -ContentType "application/json" -Headers (Get-ApiHeaders) -TimeoutSec 30
+        $response = Send-JsonPost -Uri "$ApiBase/api/ai-suggest" -Body @{ elementId = $ElementId } -Headers (Get-ApiHeaders) -TimeoutSec 30
 
         $elapsed = ((Get-Date) - $start).TotalMilliseconds
         if ($response.suggestion -and $response.suggestion.Length -gt 0) {
@@ -397,8 +406,7 @@ function Test-AiSuggestDiagram {
     param([int]$DiagramId)
     $start = Get-Date
     try {
-        $body = @{ diagramId = $DiagramId } | ConvertTo-Json
-        $response = Invoke-RestMethod -Uri "$ApiBase/api/ai-suggest-diagram" -Method POST -Body $body -ContentType "application/json" -Headers (Get-ApiHeaders) -TimeoutSec 30
+        $response = Send-JsonPost -Uri "$ApiBase/api/ai-suggest-diagram" -Body @{ diagramId = $DiagramId } -Headers (Get-ApiHeaders) -TimeoutSec 30
 
         $elapsed = ((Get-Date) - $start).TotalMilliseconds
         if ($response.suggestion -and $response.suggestion.Length -gt 0) {
@@ -415,15 +423,16 @@ function Test-AiSuggestDiagram {
 function Find-ElementFilePath {
     param([int]$ElementId)
     $resolvedSitePath = (Resolve-Path $SitePath).Path
-    # Search for data-ea-id="$ElementId" in HTML files to find the corresponding .md file
-    $htmlFiles = Get-ChildItem $SitePath -Filter "*.html" -Recurse | Where-Object {
+    # HTML files live in the mkdocs output dir (site/), a sibling of the source dir (wiki/)
+    $htmlRoot = Join-Path (Split-Path $resolvedSitePath -Parent) "site"
+    if (-not (Test-Path $htmlRoot)) { $htmlRoot = $resolvedSitePath }
+    $htmlFiles = Get-ChildItem $htmlRoot -Filter "*.html" -Recurse | Where-Object {
         $_.FullName -notmatch '\\types\\' -and $_.FullName -notmatch '\\assets\\'
     }
     foreach ($file in $htmlFiles) {
         $content = Get-Content $file.FullName -Raw -ErrorAction SilentlyContinue
         if ($content -match "data-ea-id=""$ElementId""") {
-            # Convert HTML path to .md path (relative to site root, which matches wiki structure)
-            $relativePath = $file.FullName.Replace("$resolvedSitePath\", "").Replace(".html", ".md")
+            $relativePath = $file.FullName.Replace("$htmlRoot\", "").Replace(".html", ".md")
             return $relativePath
         }
     }
