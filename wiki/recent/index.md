@@ -2,6 +2,9 @@
 
 | Name | Type | Modified | Path |
 |------|------|----------|------|
+| [CO₂ Reduction %](../Assessments/CO₂ Reduction %.html) | Class | 2026-07-17 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
+| [% energie uit hernieuwbare bronnen](../Metrics/% energie uit hernieuwbare bronnen.html) | Requirement | 2026-07-17 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](../Metrics/index.html) |
+| [Energy Efficiency Index](../Assessments/Energy Efficiency Index.html) | Class | 2026-07-17 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
 | [EurSuRA](../Introduction EurSuRA/EurSuRA.html) | Activity | 2026-07-16 | [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Introduction EurSuRA](../Introduction EurSuRA/index.html) |
 | [EFRAG Website](../Information Collection and Model Creation/EFRAG Website.html) | Class | 2026-07-13 | [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Information Collection and Model Creation](../Information Collection and Model Creation/index.html) |
 | [Sustainability Metrics](../Asset/Sustainability Metrics.html) | Class | 2026-07-13 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Architecture](../Architecture/index.html) / [Asset](../Asset/index.html) |
@@ -9,7 +12,6 @@
 | [Facilities](../Facilities/diagrams/Facilities.html) | Diagram | 2026-07-13 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Facilities](../Facilities/index.html) |
 | [Products](../Products/diagrams/Products.html) | Diagram | 2026-07-13 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [Sustainable Revenue Ratio](../Assessments/Sustainable Revenue Ratio.html) | Class | 2026-07-13 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
-| [Energy Efficiency Index](../Assessments/Energy Efficiency Index.html) | Class | 2026-07-13 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
 | [Sustainable Innovation Management](../Capabilities/Sustainable Innovation Management.html) | Class | 2026-07-13 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Capabilities](../Capabilities/index.html) |
 | [Sustainability Governance](../Capabilities/Sustainability Governance.html) | Class | 2026-07-13 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Capabilities](../Capabilities/index.html) |
 | [Sustainability Data and Reporting](../Capabilities/Sustainability Data and Reporting.html) | Class | 2026-07-13 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Capabilities](../Capabilities/index.html) |
@@ -35,7 +37,6 @@
 | [ESRS Sector Classification](../ESRS Sector Classification/ESRS Sector Classification.html) | Enumeration | 2026-07-01 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Classification](../ESRS Classification/index.html) / [ESRS Sector Classification](../ESRS Sector Classification/index.html) |
 | [FreshFood B.V.](../ESRS Navigator Stakeholder Map/FreshFood B.V..html) | Class | 2026-07-01 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html) |
 | [ESRS E2 - Pollution](../ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.html) | Class | 2026-07-01 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html) |
-| [CO₂ Reduction %](../Assessments/CO₂ Reduction %.html) | Class | 2026-07-01 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
 | [Large Companies (>250 employees)](../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).html) | Class | 2026-07-01 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html) |
 | [Affected Communities (ESRS S3)](../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).html) | Class | 2026-06-30 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html) |
 | [Road to Net Zero](../Reference Documents/Road to Net Zero.html) | Class | 2026-06-30 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Reference Material](../Reference Material/index.html) / [Reference Documents](../Reference Documents/index.html) |
@@ -51,8 +52,7 @@
 | [ProductLifeCycle](../Products/ProductLifeCycle.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [EmissionActivityFlow](../Products/EmissionActivityFlow.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [Product](../Products/Product.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
-| [ProductFootprint](../Products/ProductFootprint.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 
 ---
 
-*Generated: 2026-07-16 21:11:28*
+*Generated: 2026-07-17 16:59:37*

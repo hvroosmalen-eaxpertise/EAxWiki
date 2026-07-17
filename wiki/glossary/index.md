@@ -24,7 +24,6 @@
 | Chamber of Commerce/Kamer van Koophandel | Chamber of Commerce - provides CSRD guidance | [Chamber of Commerce/Kamer van Koophandel](../ESRS Navigator Stakeholder Map/Chamber of Commerce_Kamer van Koophandel.html) |
 | Chief Financial Officer | Often responsible for compliance | [Chief Financial Officer](../People/Chief Financial Officer.html) |
 | Climate Risk | Physical and transition risks associated with climate change, including extreme weather events, resource scarcity, and carbon pricing | [Climate Risk](../Drivers/Climate Risk.html) |
-| CO₂ Reduction % | Key performance indicator measuring the percentage reduction in carbon dioxide emissions relative to a baseline year | [CO₂ Reduction %](../Assessments/CO₂ Reduction %.html) |
 | Company listed on an EU-regulated market exchange | Required to report: Any companies listed on an EU-regulated market exchange - except for listed ‘micro undertakings’ -that fail to meet two of these three criteria on consecutive balance sheet dates: at least EUR 450 | [Company listed on an EU-regulated market exchange](../People/Company listed on an EU-regulated market exchange.html) |
 | Company subject to CSRD | Companies required to report under CSRD from 2025 | [Company subject to CSRD](../People/Company subject to CSRD.html) |
 | Consumers and End Users (ESRS S4) | Final consumers - focus on food safety and product information | [Consumers and End Users (ESRS S4)](../People/Consumers and End Users (ESRS S4).html), [Consumers and End Users (ESRS S4)](../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4).html) |
@@ -71,7 +70,6 @@
 | EmissionSource | EmissionSource is a reference entity that classifies the physical origin from which greenhouse gas emissions are released, such as natural gas combustion, diesel combustion, refrigerant leakage, or wastewater treatment | [EmissionSource](../Emissions/EmissionSource.html) |
 | EmissionStatement | EmissionStatement is the central work-product-component that records a single quantified emission result: the GHG emissions or removals attributable to one EmissionActivity within one reporting period | [EmissionStatement](../Emissions/EmissionStatement.html) |
 | EmissionStatementPerStandard | EmissionStatementPerStandard is an intersection entity that records the emission quantity attributed to a specific EmissionStatement as it must be reported under a particular Standard or reporting framework | [EmissionStatementPerStandard](../Emissions/EmissionStatementPerStandard.html) |
-| Energy Efficiency Index | Test notes from automated smoke test at 09:49:23 | [Energy Efficiency Index](../Assessments/Energy Efficiency Index.html) |
 | Ensure that investors and other stakeholders have access to the information | Ensure that investors and other stakeholders have access to the information they need to assess the impact of companies on people and the environment | [Ensure that investors and other stakeholders have access to the information](../ESRS Goals and Objectives/Ensure that investors and other stakeholders have access to the information.html) |
 | Enterprise Purpose | De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en milieudoelen | [Enterprise Purpose](../Purpose/Enterprise Purpose.html) |
 | Environmental Impact Map | Overzicht van milieu-impact | [Environmental Impact Map](../Asset/Environmental Impact Map.html) |
@@ -260,4 +258,4 @@
 
 ---
 
-*Generated: 2026-07-16 21:11:28*
+*Generated: 2026-07-17 16:59:37*

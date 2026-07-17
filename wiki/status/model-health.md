@@ -8,7 +8,7 @@
 
 None.
 
-## Missing Descriptions (147)
+## Missing Descriptions (149)
 
 *Notes field is empty or whitespace-only.*
 
@@ -43,6 +43,7 @@ None.
 - [Constureren MD to XMI Convertor](../Information Collection and Model Creation/Constureren MD to XMI Convertor.html)
 - [CO₂ bespaard door digitalisering (ton)](../Metrics/CO₂ bespaard door digitalisering (ton).html)
 - [CO₂ per klanttransactie (kg)](../Metrics/CO₂ per klanttransactie (kg).html)
+- [CO₂ Reduction %](../Assessments/CO₂ Reduction %.html)
 - [CO₂-intensiteit per € omzet](../Metrics/CO₂-intensiteit per € omzet.html)
 - [CO₂e per processtap of productlevensfase](../Metrics/CO₂e per processtap of productlevensfase.html)
 - [CO₂e, energie, afval, water per proces](../Metrics/CO₂e, energie, afval, water per proces.html)
@@ -63,6 +64,7 @@ None.
 - [Energieverbruik (kWh)](../Metrics/Energieverbruik (kWh).html)
 - [Energieverbruik en waterverbruik per eenheid](../Metrics/Energieverbruik en waterverbruik per eenheid.html)
 - [Energieverbruik vóór/na project](../Metrics/Energieverbruik vóór_na project.html)
+- [Energy Efficiency Index](../Assessments/Energy Efficiency Index.html)
 - [ERD Model](../Information Collection and Model Creation/ERD Model.html)
 - [ERP + Scope 3-calculatietools](../Metrics/ERP + Scope 3-calculatietools.html)
 - [ERP, IoT-sensoren, utility meters](../Metrics/ERP, IoT-sensoren, utility meters.html)
@@ -160,7 +162,7 @@ None.
 - [Willem Krijgsman](../Introduction EurSuRA/Willem Krijgsman.html)
 - [XMI Import Definition](../Information Collection and Model Creation/XMI Import Definition.html)
 
-## Untouched 90+ Days (187)
+## Untouched 90+ Days (186)
 
 *Has a Status set, but no field on the element (Notes, tagged values, relationships, etc.) has changed in over 90 days. Does not track how long the Status value itself has been unchanged.*
 
@@ -198,7 +200,6 @@ None.
 | [% omzet uit duurzame producten](../Metrics/% omzet uit duurzame producten.html) | Proposed | 2025-12-03 |
 | [% R&D naar duurzame innovatie](../Metrics/% R&D naar duurzame innovatie.html) | Proposed | 2025-12-03 |
 | [Energieverbruik en waterverbruik per eenheid](../Metrics/Energieverbruik en waterverbruik per eenheid.html) | Proposed | 2025-12-03 |
-| [% energie uit hernieuwbare bronnen](../Metrics/% energie uit hernieuwbare bronnen.html) | Proposed | 2025-12-03 |
 | [% reductie reisgerelateerde CO₂](../Metrics/% reductie reisgerelateerde CO₂.html) | Proposed | 2025-12-03 |
 | [Totaal afval (ton/jaar)](../Metrics/Totaal afval (ton_jaar).html) | Proposed | 2025-12-03 |
 | [Scope 1 uitstoot per bron (ton CO₂e)](../Metrics/Scope 1 uitstoot per bron (ton CO₂e).html) | Proposed | 2025-12-03 |
@@ -362,4 +363,4 @@ None.
 
 ---
 
-*Generated: 2026-07-16 21:11:28*
+*Generated: 2026-07-17 16:59:37*

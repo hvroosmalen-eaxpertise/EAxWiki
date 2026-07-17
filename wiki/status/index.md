@@ -3,16 +3,16 @@
 ## Summary
 
 <div class="status-bar-container">
-  <div class="status-bar status-approved" style="width: 7%">Approved 19</div>
+  <div class="status-bar status-approved" style="width: 8%">Approved 21</div>
 </div>
 <div class="status-bar-container">
-  <div class="status-bar status-implemented" style="width: 5%">Implemented 6</div>
+  <div class="status-bar status-implemented" style="width: 5%">Implemented 5</div>
 </div>
 <div class="status-bar-container">
   <div class="status-bar status-mandatory" style="width: 5%">Mandatory 1</div>
 </div>
 <div class="status-bar-container">
-  <div class="status-bar status-proposed" style="width: 100%">Proposed 260</div>
+  <div class="status-bar status-proposed" style="width: 100%">Proposed 259</div>
 </div>
 
 *165 elements have no status set.*
@@ -22,7 +22,7 @@
 
 | Package | Approved | Implemented | Mandatory | Proposed | Total |
 |---|:---:|:---:|:---:|:---:|:---:|
-| [Assessments](../Assessments/index.html) | <a href="#pkg_assessments_approved">4</a> | <a href="#pkg_assessments_implemented">1</a> | — | — | **5** |
+| [Assessments](../Assessments/index.html) | <a href="#pkg_assessments_approved">5</a> | — | — | — | **5** |
 | [Asset](../Asset/index.html) | <a href="#pkg_asset_approved">6</a> | — | — | — | **6** |
 | [Capabilities](../Capabilities/index.html) | <a href="#pkg_capabilities_approved">6</a> | — | — | — | **6** |
 | [Capability](../Capability/index.html) | — | — | — | <a href="#pkg_capability_proposed">1</a> | **1** |
@@ -48,7 +48,7 @@
 | [Information Collection and Model Creation](../Information Collection and Model Creation/index.html) | — | <a href="#pkg_information_collection_and_model_creation_implemented">1</a> | — | <a href="#pkg_information_collection_and_model_creation_proposed">22</a> | **23** |
 | [Introduction EurSuRA](../Introduction EurSuRA/index.html) | — | — | — | <a href="#pkg_introduction_eursura_proposed">24</a> | **24** |
 | [Journey](../Journey/index.html) | — | — | — | <a href="#pkg_journey_proposed">1</a> | **1** |
-| [Metrics](../Metrics/index.html) | — | — | <a href="#pkg_metrics_mandatory">1</a> | <a href="#pkg_metrics_proposed">71</a> | **72** |
+| [Metrics](../Metrics/index.html) | <a href="#pkg_metrics_approved">1</a> | — | <a href="#pkg_metrics_mandatory">1</a> | <a href="#pkg_metrics_proposed">70</a> | **72** |
 | [People](../People/index.html) | <a href="#pkg_people_approved">1</a> | <a href="#pkg_people_implemented">1</a> | — | <a href="#pkg_people_proposed">49</a> | **51** |
 | [Private Parties](../Private Parties/index.html) | — | — | — | <a href="#pkg_private_parties_proposed">2</a> | **2** |
 | [Process](../Process/index.html) | — | — | — | <a href="#pkg_process_proposed">3</a> | **3** |
@@ -59,23 +59,17 @@
 | [Story](../Story/index.html) | — | — | — | <a href="#pkg_story_proposed">3</a> | **3** |
 | [Sustainability Development Goals](../Sustainability Development Goals/index.html) | — | — | — | <a href="#pkg_sustainability_development_goals_proposed">25</a> | **25** |
 | [Task](../Task/index.html) | — | — | — | <a href="#pkg_task_proposed">26</a> | **26** |
-| **Total** | **19** | **6** | **1** | **260** | **286** |
+| **Total** | **21** | **5** | **1** | **259** | **286** |
 
 <details class="status-details" id="pkg_assessments_approved">
-  <summary>Assessments &mdash; Approved (4)</summary>
+  <summary>Assessments &mdash; Approved (5)</summary>
 
 <ul>
+  <li><a href="../Assessments/CO₂ Reduction %.html">CO₂ Reduction %</a> <span class="status-badge status-approved">Approved</span></li>
   <li><a href="../Assessments/Energy Efficiency Index.html">Energy Efficiency Index</a> <span class="status-badge status-approved">Approved</span></li>
   <li><a href="../Assessments/ESG Score.html">ESG Score</a> <span class="status-badge status-approved">Approved</span></li>
   <li><a href="../Assessments/Supplier Compliance Rate.html">Supplier Compliance Rate</a> <span class="status-badge status-approved">Approved</span></li>
   <li><a href="../Assessments/Sustainable Revenue Ratio.html">Sustainable Revenue Ratio</a> <span class="status-badge status-approved">Approved</span></li>
-</ul>
-</details>
-<details class="status-details" id="pkg_assessments_implemented">
-  <summary>Assessments &mdash; Implemented (1)</summary>
-
-<ul>
-  <li><a href="../Assessments/CO₂ Reduction %.html">CO₂ Reduction %</a> <span class="status-badge status-implemented">Implemented</span></li>
 </ul>
 </details>
 <details class="status-details" id="pkg_asset_approved">
@@ -337,6 +331,13 @@
   <li><a href="../Journey/Green Customer Journey.html">Green Customer Journey</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
+<details class="status-details" id="pkg_metrics_approved">
+  <summary>Metrics &mdash; Approved (1)</summary>
+
+<ul>
+  <li><a href="../Metrics/% energie uit hernieuwbare bronnen.html">% energie uit hernieuwbare bronnen</a> <span class="status-badge status-approved">Approved</span></li>
+</ul>
+</details>
 <details class="status-details" id="pkg_metrics_mandatory">
   <summary>Metrics &mdash; Mandatory (1)</summary>
 
@@ -345,14 +346,13 @@
 </ul>
 </details>
 <details class="status-details" id="pkg_metrics_proposed">
-  <summary>Metrics &mdash; Proposed (71)</summary>
+  <summary>Metrics &mdash; Proposed (70)</summary>
 
 <ul>
   <li><a href="../Metrics/Productievolumes _ normaliserende operationele data.html"> Productievolumes / normaliserende operationele data</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/_ bomen geplant _ ha natuur hersteld.html"># bomen geplant / ha natuur hersteld</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/_ SDGs met meetbare KPI’s.html"># SDGs met meetbare KPI’s</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/_ teruggenomen producten (per jaar).html"># teruggenomen producten (per jaar)</a> <span class="status-badge status-proposed">Proposed</span></li>
-  <li><a href="../Metrics/% energie uit hernieuwbare bronnen.html">% energie uit hernieuwbare bronnen</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/% Gerecycled materiaal = (gerecycled _ totaal input) × 100.html">% Gerecycled materiaal = (gerecycled / totaal input) × 100</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/% gerecyclede materialen in producten.html">% gerecyclede materialen in producten</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/% Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik) × 100.html">% Hernieuwbare Energie = (opgewekte hernieuwbare energie / totaal verbruik) × 100</a> <span class="status-badge status-proposed">Proposed</span></li>
@@ -622,7 +622,7 @@
 
 | Type | Approved | Implemented | Mandatory | Proposed | Total |
 |---|:---:|:---:|:---:|:---:|:---:|
-| Assessment | <a href="#type_assessment_approved">4</a> | <a href="#type_assessment_implemented">1</a> | — | — | **5** |
+| Assessment | <a href="#type_assessment_approved">5</a> | — | — | — | **5** |
 | Asset | <a href="#type_asset_approved">6</a> | — | — | <a href="#type_asset_proposed">11</a> | **17** |
 | Brand | — | — | — | <a href="#type_brand_proposed">1</a> | **1** |
 | BusinessObject | — | <a href="#type_businessobject_implemented">2</a> | — | — | **2** |
@@ -630,7 +630,7 @@
 | Channel | — | <a href="#type_channel_implemented">1</a> | — | <a href="#type_channel_proposed">8</a> | **9** |
 | Content | — | — | — | <a href="#type_content_proposed">16</a> | **16** |
 | Journey | — | — | — | <a href="#type_journey_proposed">1</a> | **1** |
-| Metric | — | — | <a href="#type_metric_mandatory">1</a> | <a href="#type_metric_proposed">46</a> | **47** |
+| Metric | <a href="#type_metric_approved">1</a> | — | <a href="#type_metric_mandatory">1</a> | <a href="#type_metric_proposed">45</a> | **47** |
 | NavigationCell | — | — | — | <a href="#type_navigationcell_proposed">6</a> | **6** |
 | Object | — | — | — | <a href="#type_object_proposed">2</a> | **2** |
 | Organisation | — | — | — | <a href="#type_organisation_proposed">1</a> | **1** |
@@ -646,23 +646,17 @@
 | Tag | — | — | — | <a href="#type_tag_proposed">19</a> | **19** |
 | Task | — | — | — | <a href="#type_task_proposed">26</a> | **26** |
 | Uncategorized | — | — | — | <a href="#type_uncategorized_proposed">5</a> | **5** |
-| **Total** | **19** | **6** | **1** | **260** | **286** |
+| **Total** | **21** | **5** | **1** | **259** | **286** |
 
 <details class="status-details" id="type_assessment_approved">
-  <summary>Assessment &mdash; Approved (4)</summary>
+  <summary>Assessment &mdash; Approved (5)</summary>
 
 <ul>
+  <li><a href="../Assessments/CO₂ Reduction %.html">CO₂ Reduction %</a> <span class="status-badge status-approved">Approved</span></li>
   <li><a href="../Assessments/Energy Efficiency Index.html">Energy Efficiency Index</a> <span class="status-badge status-approved">Approved</span></li>
   <li><a href="../Assessments/ESG Score.html">ESG Score</a> <span class="status-badge status-approved">Approved</span></li>
   <li><a href="../Assessments/Supplier Compliance Rate.html">Supplier Compliance Rate</a> <span class="status-badge status-approved">Approved</span></li>
   <li><a href="../Assessments/Sustainable Revenue Ratio.html">Sustainable Revenue Ratio</a> <span class="status-badge status-approved">Approved</span></li>
-</ul>
-</details>
-<details class="status-details" id="type_assessment_implemented">
-  <summary>Assessment &mdash; Implemented (1)</summary>
-
-<ul>
-  <li><a href="../Assessments/CO₂ Reduction %.html">CO₂ Reduction %</a> <span class="status-badge status-implemented">Implemented</span></li>
 </ul>
 </details>
 <details class="status-details" id="type_asset_approved">
@@ -781,6 +775,13 @@
   <li><a href="../Journey/Green Customer Journey.html">Green Customer Journey</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
+<details class="status-details" id="type_metric_approved">
+  <summary>Metric &mdash; Approved (1)</summary>
+
+<ul>
+  <li><a href="../Metrics/% energie uit hernieuwbare bronnen.html">% energie uit hernieuwbare bronnen</a> <span class="status-badge status-approved">Approved</span></li>
+</ul>
+</details>
 <details class="status-details" id="type_metric_mandatory">
   <summary>Metric &mdash; Mandatory (1)</summary>
 
@@ -789,14 +790,13 @@
 </ul>
 </details>
 <details class="status-details" id="type_metric_proposed">
-  <summary>Metric &mdash; Proposed (46)</summary>
+  <summary>Metric &mdash; Proposed (45)</summary>
 
 <ul>
   <li><a href="../Metrics/Productievolumes _ normaliserende operationele data.html"> Productievolumes / normaliserende operationele data</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/_ bomen geplant _ ha natuur hersteld.html"># bomen geplant / ha natuur hersteld</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/_ SDGs met meetbare KPI’s.html"># SDGs met meetbare KPI’s</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/_ teruggenomen producten (per jaar).html"># teruggenomen producten (per jaar)</a> <span class="status-badge status-proposed">Proposed</span></li>
-  <li><a href="../Metrics/% energie uit hernieuwbare bronnen.html">% energie uit hernieuwbare bronnen</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/% gerecyclede materialen in producten.html">% gerecyclede materialen in producten</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/% hernieuwbare grondstoffen.html">% hernieuwbare grondstoffen</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Metrics/% minder plasticverpakkingen.html">% minder plasticverpakkingen</a> <span class="status-badge status-proposed">Proposed</span></li>
@@ -1135,4 +1135,4 @@
 
 ---
 
-*Generated: 2026-07-16 21:11:28*
+*Generated: 2026-07-17 16:59:37*
