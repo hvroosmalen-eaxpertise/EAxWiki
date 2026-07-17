@@ -1,0 +1,620 @@
+{
+    "summary":  {
+                    "total_failed":  77,
+                    "diagram_pngs_missing":  0,
+                    "pages_passed":  451,
+                    "infrastructure_failed":  0,
+                    "api_passed":  0,
+                    "services_failed":  0,
+                    "total_skipped":  1,
+                    "total_passed":  6,
+                    "pages_skipped":  32,
+                    "services_warnings":  null,
+                    "api_skipped":  0,
+                    "api_failed":  0,
+                    "diagram_pngs_total":  760,
+                    "services_passed":  3,
+                    "infrastructure_passed":  3,
+                    "total_warnings":  1,
+                    "pages_failed":  76
+                },
+    "timestamp":  "2026-07-17T11:14:48.7216841+02:00",
+    "checks":  [
+                   {
+                       "category":  "infrastructure",
+                       "name":  "graph-index-exists",
+                       "status":  "pass",
+                       "detail":  "graph-index.json found (136721 bytes)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "infrastructure",
+                       "name":  "graph-index-valid",
+                       "status":  "pass",
+                       "detail":  "451 nodes, 592 edges",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "infrastructure",
+                       "name":  "diagram-png-existence",
+                       "status":  "pass",
+                       "detail":  "760/760 PNGs exist",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Architecture\\diagrams\\Architecture.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Architecture\\diagrams\\Architecture.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Climate Risk\\diagrams\\Climate Risk.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Climate Risk\\diagrams\\Climate Risk.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Emissions\\diagrams\\Emissions.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Emissions\\diagrams\\Emissions.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ERSR S2 Workers in the Value Chain - People\\diagrams\\ERSR S2 Workers in the Value Chain - People.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ERSR S2 Workers in the Value Chain - People\\diagrams\\ERSR S2 Workers in the Value Chain - People.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS and People\\diagrams\\ESRS Stakeholder Map.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS and People\\diagrams\\ESRS Stakeholder Map.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E1\\diagrams\\ESRS E1.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E1\\diagrams\\ESRS E1.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E1, E2, E3, E4, E5, G1 - People\\diagrams\\ESRS E1, E2, E3, E4, E5, G1 - People.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E1, E2, E3, E4, E5, G1 - People\\diagrams\\ESRS E1, E2, E3, E4, E5, G1 - People.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E2\\diagrams\\ESRS E2.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E2\\diagrams\\ESRS E2.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E3\\diagrams\\ESRS E3.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E3\\diagrams\\ESRS E3.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E4\\diagrams\\ESRS E4.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E4\\diagrams\\ESRS E4.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E5\\diagrams\\ESRS E5.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS E5\\diagrams\\ESRS E5.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS G1\\diagrams\\ESRS G1.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS G1\\diagrams\\ESRS G1.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS Goals and Objectives\\diagrams\\Goals and Objectives.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS Goals and Objectives\\diagrams\\Goals and Objectives.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS Navigator Stakeholder Map\\diagrams\\ESRS Stakeholder Overview.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS Navigator Stakeholder Map\\diagrams\\ESRS Stakeholder Overview.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS Required Companies\\diagrams\\ESRS Required Companies.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS Required Companies\\diagrams\\ESRS Required Companies.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S1\\diagrams\\ESRS S1.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S1\\diagrams\\ESRS S1.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S1 Own Workforce - People\\diagrams\\ESRS S1 Own Workforce - People.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S1 Own Workforce - People\\diagrams\\ESRS S1 Own Workforce - People.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S2\\diagrams\\ESRS S2.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S2\\diagrams\\ESRS S2.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S3\\diagrams\\ESRS S3.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S3\\diagrams\\ESRS S3.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S3 Affected Communities - People\\diagrams\\ESRS S3 Affected Communities - People.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S3 Affected Communities - People\\diagrams\\ESRS S3 Affected Communities - People.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S4\\diagrams\\ESRS S4.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS S4\\diagrams\\ESRS S4.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS Sector Classification\\diagrams\\ESRS Sector Classification.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\ESRS Sector Classification\\diagrams\\ESRS Sector Classification.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\European Sustainability Reporting Standards\\diagrams\\ESRS.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\European Sustainability Reporting Standards\\diagrams\\ESRS.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\European Union - People\\diagrams\\European Union - People.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\European Union - People\\diagrams\\European Union - People.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Experience\\diagrams\\Experience.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Experience\\diagrams\\Experience.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Facilities\\diagrams\\Facilities.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Facilities\\diagrams\\Facilities.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Identity\\diagrams\\Identity.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Identity\\diagrams\\Identity.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Information Collection and Model Creation\\diagrams\\Information Collection and Model Creation.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Information Collection and Model Creation\\diagrams\\Information Collection and Model Creation.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Introduction EurSuRA\\diagrams\\Introduction EDGY Presentation 13 May Event.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Introduction EurSuRA\\diagrams\\Introduction EDGY Presentation 13 May Event.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Mapping SDG to Main\\diagrams\\Mapping SDG to Main.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Mapping SDG to Main\\diagrams\\Mapping SDG to Main.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Market Differentiation Pressure\\diagrams\\Market Differentiation Pressure.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Market Differentiation Pressure\\diagrams\\Market Differentiation Pressure.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Metrics\\diagrams\\Metrics.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Metrics\\diagrams\\Metrics.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Organisation\\diagrams\\Organisation.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Organisation\\diagrams\\Organisation.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Private Parties\\diagrams\\Private Parties.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Private Parties\\diagrams\\Private Parties.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Products\\diagrams\\Products.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Products\\diagrams\\Products.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Reference Documents\\diagrams\\Reference Documents.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Reference Documents\\diagrams\\Reference Documents.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Reference Websites\\diagrams\\Reference Websites.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Reference Websites\\diagrams\\Reference Websites.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Regulatory Pressure\\diagrams\\Regulatory Pressure.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Regulatory Pressure\\diagrams\\Regulatory Pressure.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Reputation Risk\\diagrams\\Reputation Risk.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Reputation Risk\\diagrams\\Reputation Risk.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Stakeholder Expectations\\diagrams\\Stakeholder Expectations.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Stakeholder Expectations\\diagrams\\Stakeholder Expectations.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\status\\model-health.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\status\\model-health.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Stories\\diagrams\\Stories Voorbeelden.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Stories\\diagrams\\Stories Voorbeelden.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Strategic Sustainability Management Model (Bodenstein)\\diagrams\\Strategic Sustainability Management Model (Bodenstein).html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Strategic Sustainability Management Model (Bodenstein)\\diagrams\\Strategic Sustainability Management Model (Bodenstein).html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Sustainability Development Goals\\diagrams\\Sustainability Development Goals.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\Sustainability Development Goals\\diagrams\\Sustainability Development Goals.html: 4/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Assessment.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Assessment.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\BusinessObject.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\BusinessObject.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\BusinessRole.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\BusinessRole.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Capability.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Capability.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\CourseOfAction.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\CourseOfAction.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Driver.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Driver.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Goal.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Goal.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Outcome.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Outcome.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Resource.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Resource.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Stakeholder.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\ArchiMate3\\Stakeholder.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Asset.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Asset.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Brand.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Brand.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Capability.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Capability.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Channel.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Channel.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Content.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Content.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Journey.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Journey.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Metric.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Metric.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Object.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Object.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Organisation.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Organisation.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Outcome.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Outcome.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\People.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\People.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Process.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Process.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Product.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Product.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Purpose.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Purpose.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Story.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Story.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Tag.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Tag.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Task.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\EDGY\\Task.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\UML\\master-data.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\UML\\master-data.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\UML\\NavigationCell.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\UML\\NavigationCell.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\UML\\reference-data.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\UML\\reference-data.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\UML\\Uncategorized.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\UML\\Uncategorized.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "page",
+                       "name":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\UML\\work-product-component.html",
+                       "status":  "fail",
+                       "detail":  "E:\\Users\\Han\\Repos\\EAxWiki\\site\\types\\UML\\work-product-component.html: 3/7 checks passed (0 thumbs)",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "pages",
+                       "name":  "page-validation",
+                       "status":  "fail",
+                       "detail":  "451 passed, 76 failed, 32 skipped",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "service",
+                       "name":  "mkdocs-serve-port",
+                       "status":  "pass",
+                       "detail":  "Port 8000 LISTENING",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "service",
+                       "name":  "mkdocs-serve-http",
+                       "status":  "pass",
+                       "detail":  "HTTP 200",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "service",
+                       "name":  "writeback-api-port",
+                       "status":  "pass",
+                       "detail":  "Port 8001 LISTENING",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "service",
+                       "name":  "ea-process-cleanup",
+                       "status":  "warn",
+                       "detail":  "1 EA.exe process(es) still running",
+                       "duration":  0
+                   },
+                   {
+                       "category":  "api",
+                       "name":  "api-checks",
+                       "status":  "skip",
+                       "detail":  "API server not responding at http://127.0.0.1:8001",
+                       "duration":  0
+                   }
+               ],
+    "mode":  "once"
+}
