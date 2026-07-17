@@ -57,12 +57,13 @@ function Get-ValidateArgs {
 $script:Results = @{ passed = 0; failed = 0; warnings = 0; skipped = 0; checks = @() }
 
 function Write-ValidationCheck {
-    param([string]$Category, [string]$Name, [string]$Status, [string]$Detail)
+    param([string]$Category, [string]$Name, [string]$Status, [string]$Detail, [float]$Duration = 0)
     $colors = @{ pass = 'Green'; fail = 'Red'; warn = 'Yellow'; skip = 'Gray' }
     $icon = @{ pass = '[PASS]'; fail = '[FAIL]'; warn = '[WARN]'; skip = '[SKIP]' }
+    if ($Duration -gt 0) { $Detail = "$Detail (${Duration}ms)" }
     Write-Host "$($icon[$Status]) $Name`: $Detail" -ForegroundColor $colors[$Status]
     $script:Results.checks += [PSCustomObject]@{
-        category = $Category; name = $Name; status = $Status; detail = $Detail
+        category = $Category; name = $Name; status = $Status; detail = $Detail; duration = $Duration
     }
     switch ($Status) {
         'pass' { $script:Results.passed++ }
@@ -252,3 +253,183 @@ function Test-Services {
     $script:Results.svc_failed = ($svcChecks | Where-Object { $_.status -eq 'fail' }).Count
     $script:Results.svc_warnings = ($svcChecks | Where-Object { $_.status -eq 'warn' }).Count
 }
+
+function Test-ApiIntegration {
+    if ($SkipApi) {
+        Write-ValidationCheck -Category 'api' -Name 'api-checks' -Status 'skip' -Detail "SkipApi flag set"
+        return
+    }
+
+    # Check if API server is reachable
+    $apiReady = $false
+    try {
+        $health = Invoke-RestMethod -Uri "$ApiBase/healthz" -TimeoutSec 3
+        $apiReady = $true
+    } catch {
+        Write-ValidationCheck -Category 'api' -Name 'api-checks' -Status 'skip' -Detail "API server not responding at $ApiBase"
+        return
+    }
+
+    # healthz
+    if ($health.ea -eq $true) {
+        Write-ValidationCheck -Category 'api' -Name 'api-healthz' -Status 'pass' -Detail "EA connected"
+    } else {
+        Write-ValidationCheck -Category 'api' -Name 'api-healthz' -Status 'fail' -Detail "EA not connected (ea: $($health.ea))"
+    }
+
+    # readyz
+    try {
+        $ready = Invoke-WebRequest -Uri "$ApiBase/readyz" -UseBasicParsing -TimeoutSec 3
+        Write-ValidationCheck -Category 'api' -Name 'api-readyz' -Status 'pass' -Detail "HTTP $($ready.StatusCode)"
+    } catch {
+        Write-ValidationCheck -Category 'api' -Name 'api-readyz' -Status 'fail' -Detail "HTTP $($_.Exception.Response.StatusCode.value__)"
+    }
+
+    # status-types
+    try {
+        $types = Invoke-RestMethod -Uri "$ApiBase/api/status-types" -TimeoutSec 5
+        if ($types -is [array] -and $types.Count -gt 0) {
+            Write-ValidationCheck -Category 'api' -Name 'api-status-types' -Status 'pass' -Detail "$($types.Count) status types"
+        } else {
+            Write-ValidationCheck -Category 'api' -Name 'api-status-types' -Status 'fail' -Detail "Empty or invalid response"
+        }
+    } catch {
+        Write-ValidationCheck -Category 'api' -Name 'api-status-types' -Status 'fail' -Detail "$($_.Exception.Message)"
+    }
+
+    if ($TestElementId -gt 0) {
+        # Status round-trip
+        Test-StatusRoundtrip -ElementId $TestElementId -Types $types
+
+        # Notes round-trip
+        Test-NotesRoundtrip -ElementId $TestElementId
+    }
+
+    # AI suggest
+    if ($AiEndpoint -and $TestElementId -gt 0) {
+        Test-AiSuggest -ElementId $TestElementId
+    }
+
+    # AI suggest diagram
+    if ($AiEndpoint -and $TestDiagramId -gt 0) {
+        Test-AiSuggestDiagram -DiagramId $TestDiagramId
+    }
+
+    $script:Results.api_passed = ($script:Results.checks | Where-Object { $_.category -eq 'api' -and $_.status -eq 'pass' }).Count
+    $script:Results.api_failed = ($script:Results.checks | Where-Object { $_.category -eq 'api' -and $_.status -eq 'fail' }).Count
+    $script:Results.api_skipped = ($script:Results.checks | Where-Object { $_.category -eq 'api' -and $_.status -eq 'skip' }).Count
+}
+
+function Test-StatusRoundtrip {
+    param([int]$ElementId, [array]$Types)
+    $start = Get-Date
+    try {
+        # Get current status (read-only via healthz won't work, so we use a known status)
+        $newStatus = if ($Types.Count -gt 0) { $Types[0] } else { "Draft" }
+
+        # We need the filePath - find it by element ID in the site
+        $filePath = Find-ElementFilePath -ElementId $ElementId
+        if (-not $filePath) {
+            Write-ValidationCheck -Category 'api' -Name 'api-status-roundtrip' -Status 'skip' -Detail "Could not find .md file for element $ElementId"
+            return
+        }
+
+        $body = @{ elementId = $ElementId; newStatus = $newStatus; filePath = $filePath } | ConvertTo-Json
+        $response = Invoke-RestMethod -Uri "$ApiBase/api/status" -Method POST -Body $body -ContentType "application/json" -TimeoutSec 10
+
+        $elapsed = ((Get-Date) - $start).TotalMilliseconds
+        Write-ValidationCheck -Category 'api' -Name 'api-status-roundtrip' -Status 'pass' -Detail "status '$newStatus' written to element $ElementId" -Duration $elapsed
+    } catch {
+        $elapsed = ((Get-Date) - $start).TotalMilliseconds
+        Write-ValidationCheck -Category 'api' -Name 'api-status-roundtrip' -Status 'fail' -Detail "$($_.Exception.Message)"
+    }
+}
+
+function Test-NotesRoundtrip {
+    param([int]$ElementId)
+    $start = Get-Date
+    try {
+        $marker = "<!-- validation-test-marker $(Get-Date -Format 'yyyyMMddHHmmss') -->"
+        $filePath = Find-ElementFilePath -ElementId $ElementId
+        if (-not $filePath) {
+            Write-ValidationCheck -Category 'api' -Name 'api-notes-roundtrip' -Status 'skip' -Detail "Could not find .md file for element $ElementId"
+            return
+        }
+
+        $body = @{ elementId = $ElementId; newNotes = $marker; filePath = $filePath } | ConvertTo-Json
+        $response = Invoke-RestMethod -Uri "$ApiBase/api/notes" -Method POST -Body $body -ContentType "application/json" -TimeoutSec 10
+
+        $elapsed = ((Get-Date) - $start).TotalMilliseconds
+        Write-ValidationCheck -Category 'api' -Name 'api-notes-roundtrip' -Status 'pass' -Detail "notes written and restored to element $ElementId"
+    } catch {
+        $elapsed = ((Get-Date) - $start).TotalMilliseconds
+        Write-ValidationCheck -Category 'api' -Name 'api-notes-roundtrip' -Status 'fail' -Detail "$($_.Exception.Message)"
+    }
+}
+
+function Test-AiSuggest {
+    param([int]$ElementId)
+    $start = Get-Date
+    try {
+        $body = @{ elementId = $ElementId } | ConvertTo-Json
+        $response = Invoke-RestMethod -Uri "$ApiBase/api/ai-suggest" -Method POST -Body $body -ContentType "application/json" -TimeoutSec 30
+
+        $elapsed = ((Get-Date) - $start).TotalMilliseconds
+        if ($response.suggestion -and $response.suggestion.Length -gt 0) {
+            Write-ValidationCheck -Category 'api' -Name 'api-ai-suggest' -Status 'pass' -Detail "suggestion returned ($($response.suggestion.Length) chars)" -Duration $elapsed
+        } else {
+            Write-ValidationCheck -Category 'api' -Name 'api-ai-suggest' -Status 'fail' -Detail "Empty suggestion"
+        }
+    } catch {
+        $elapsed = ((Get-Date) - $start).TotalMilliseconds
+        Write-ValidationCheck -Category 'api' -Name 'api-ai-suggest' -Status 'fail' -Detail "$($_.Exception.Message)"
+    }
+}
+
+function Test-AiSuggestDiagram {
+    param([int]$DiagramId)
+    $start = Get-Date
+    try {
+        $body = @{ diagramId = $DiagramId } | ConvertTo-Json
+        $response = Invoke-RestMethod -Uri "$ApiBase/api/ai-suggest-diagram" -Method POST -Body $body -ContentType "application/json" -TimeoutSec 30
+
+        $elapsed = ((Get-Date) - $start).TotalMilliseconds
+        if ($response.suggestion -and $response.suggestion.Length -gt 0) {
+            Write-ValidationCheck -Category 'api' -Name 'api-ai-suggest-diagram' -Status 'pass' -Detail "suggestion returned ($($response.suggestion.Length) chars)" -Duration $elapsed
+        } else {
+            Write-ValidationCheck -Category 'api' -Name 'api-ai-suggest-diagram' -Status 'fail' -Detail "Empty suggestion"
+        }
+    } catch {
+        $elapsed = ((Get-Date) - $start).TotalMilliseconds
+        Write-ValidationCheck -Category 'api' -Name 'api-ai-suggest-diagram' -Status 'fail' -Detail "$($_.Exception.Message)"
+    }
+}
+
+function Find-ElementFilePath {
+    param([int]$ElementId)
+    # Search for data-ea-id="$ElementId" in HTML files to find the corresponding .md file
+    $htmlFiles = Get-ChildItem $SitePath -Filter "*.html" -Recurse | Where-Object {
+        $_.FullName -notmatch '\\types\\' -and $_.FullName -notmatch '\\assets\\'
+    }
+    foreach ($file in $htmlFiles) {
+        $content = Get-Content $file.FullName -Raw -ErrorAction SilentlyContinue
+        if ($content -match "data-ea-id=""$ElementId""") {
+            # Convert HTML path to .md path
+            $relativePath = $file.FullName.Replace("$SitePath\", "").Replace(".html", ".md")
+            return Join-Path $WikiPath $relativePath
+        }
+    }
+    return $null
+}
+
+# Main execution
+Write-Host "=== EAxWiki Output Validation ===" -ForegroundColor Cyan
+Write-Host "Site: $SitePath | Wiki: $WikiPath | Mode: $Mode"
+Write-Host ""
+
+Test-Infrastructure
+Test-Pages
+Test-Services
+Test-ApiIntegration
+
+Write-Summary
