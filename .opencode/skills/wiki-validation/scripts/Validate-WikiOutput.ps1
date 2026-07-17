@@ -261,10 +261,8 @@ function Test-ApiIntegration {
     }
 
     # Check if API server is reachable
-    $apiReady = $false
     try {
         $health = Invoke-RestMethod -Uri "$ApiBase/healthz" -TimeoutSec 3
-        $apiReady = $true
     } catch {
         Write-ValidationCheck -Category 'api' -Name 'api-checks' -Status 'skip' -Detail "API server not responding at $ApiBase"
         return

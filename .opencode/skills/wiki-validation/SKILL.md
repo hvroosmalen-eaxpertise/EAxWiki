@@ -48,7 +48,7 @@ Run the validation script:
 | `-TestDiagramId` | (none) | Diagram ID for diagram suggest |
 | `-AiEndpoint` | (none) | AI endpoint for suggest test |
 | `-SkipApi` | false | Skip API integration checks |
-| `-Verbose` | false | Detailed per-file output |
+| `-VerboseOutput` | false | Detailed per-file output |
 
 ## Remediation
 

@@ -13,7 +13,7 @@ Scans all HTML files for `class="diagram-thumb"` links, extracts `src` attribute
 
 ## Page Validation
 
-For each element page (excluding `types/`, `assets/`, `glossary/`, `recent/`, `status/`, `index.html`, `404.html`), checks:
+For each element page (excluding `types/`, `assets/`, `glossary/`, `recent/`, `status/`, `diagrams/`, `index.html`, `404.html`), checks:
 
 | Check | Pattern | Description |
 |-------|---------|-------------|
@@ -51,10 +51,10 @@ GET `/readyz` — verifies HTTP 200 (not 503).
 GET `/api/status-types` — verifies array of valid status values returned.
 
 ### api-status-roundtrip
-POST `/api/status` — writes a status value to EA, verifies .md file updated. Restores original after test.
+POST `/api/status` — writes a status value to EA, verifies .md file updated.
 
 ### api-notes-roundtrip
-POST `/api/notes` — writes test marker to EA, verifies .md file updated. Restores original after test.
+POST `/api/notes` — writes test marker to EA, verifies .md file updated.
 
 ### api-ai-suggest
 POST `/api/ai-suggest` — sends element ID to LLM, verifies suggestion returned. Requires `-AiEndpoint`.
