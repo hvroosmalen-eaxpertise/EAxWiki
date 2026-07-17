@@ -144,3 +144,71 @@ function Test-Infrastructure {
         }
     }
 }
+
+function Test-Pages {
+    $checks = @('ea-graph-container', 'data-focal-id', 'ea-notes', 'notes-editor\.js', 'graph-init\.js', 'cytoscape', 'diagram-thumbs')
+    $excludeDirs = @('types', 'assets', 'glossary', 'recent', 'status')
+
+    $htmlFiles = Get-ChildItem $SitePath -Filter "*.html" -Recurse | Where-Object {
+        $rel = $_.FullName.Replace("$SitePath\", "")
+        $name = $_.Name
+        # Exclude special directories and files
+        $isExcluded = $false
+        foreach ($dir in $excludeDirs) {
+            if ($rel -match "^$dir[\\/]") { $isExcluded = $true; break }
+        }
+        -not $isExcluded -and $name -ne "404.html" -and $name -ne "index.html"
+    }
+
+    $pagePassed = 0; $pageFailed = 0; $pageSkipped = 0
+
+    # Count type pages separately
+    $typeFiles = Get-ChildItem $SitePath -Filter "*.html" -Recurse | Where-Object {
+        $_.FullName -match '\\types\\' -and $_.Name -ne "index.html"
+    }
+    $pageSkipped = $typeFiles.Count
+
+    foreach ($file in $htmlFiles) {
+        $content = Get-Content $file.FullName -Raw -ErrorAction SilentlyContinue
+        if (-not $content) { continue }
+
+        $passed = 0; $failed = 0; $thumbs = 0; $focalId = 0
+
+        foreach ($check in $checks) {
+            if ($content -match $check) {
+                $passed++
+                if ($check -eq 'data-focal-id') {
+                    $match = [regex]::Match($content, 'data-focal-id="(\d+)"')
+                    if ($match.Success) { $focalId = [int]$match.Groups[1].Value }
+                }
+            } else {
+                $failed++
+            }
+        }
+
+        $thumbMatch = [regex]::Matches($content, 'class="diagram-thumb"')
+        $thumbs = $thumbMatch.Count
+
+        if ($failed -eq 0) {
+            $pagePassed++
+            if ($VerboseOutput) {
+                $rel = $file.FullName.Replace("$SitePath\", "")
+                Write-PageResult -File $rel -Passed $passed -Failed $failed -Thumbs $thumbs -FocalId $focalId
+            }
+        } else {
+            $pageFailed++
+            $rel = $file.FullName.Replace("$SitePath\", "")
+            Write-PageResult -File $rel -Passed $passed -Failed $failed -Thumbs $thumbs -FocalId $focalId
+        }
+    }
+
+    $script:Results.page_passed = $pagePassed
+    $script:Results.page_failed = $pageFailed
+    $script:Results.page_skipped = $pageSkipped
+
+    if ($pageFailed -eq 0) {
+        Write-ValidationCheck -Category 'pages' -Name 'page-validation' -Status 'pass' -Detail "$pagePassed pages passed, $pageSkipped skipped (type pages)"
+    } else {
+        Write-ValidationCheck -Category 'pages' -Name 'page-validation' -Status 'fail' -Detail "$pagePassed passed, $pageFailed failed, $pageSkipped skipped"
+    }
+}
