@@ -212,3 +212,43 @@ function Test-Pages {
         Write-ValidationCheck -Category 'pages' -Name 'page-validation' -Status 'fail' -Detail "$pagePassed passed, $pageFailed failed, $pageSkipped skipped"
     }
 }
+
+function Test-Services {
+    # mkdocs serve port
+    $mkdocsPort = netstat -ano | Select-String ":8000\s.*LISTENING"
+    if ($mkdocsPort) {
+        Write-ValidationCheck -Category 'service' -Name 'mkdocs-serve-port' -Status 'pass' -Detail "Port 8000 LISTENING"
+    } else {
+        Write-ValidationCheck -Category 'service' -Name 'mkdocs-serve-port' -Status 'fail' -Detail "Port 8000 not listening"
+    }
+
+    # mkdocs HTTP
+    try {
+        $response = Invoke-WebRequest -Uri "http://127.0.0.1:8000" -UseBasicParsing -TimeoutSec 5
+        Write-ValidationCheck -Category 'service' -Name 'mkdocs-serve-http' -Status 'pass' -Detail "HTTP $($response.StatusCode)"
+    } catch {
+        Write-ValidationCheck -Category 'service' -Name 'mkdocs-serve-http' -Status 'fail' -Detail "HTTP request failed: $($_.Exception.Message)"
+    }
+
+    # Writeback API port
+    $apiPort = netstat -ano | Select-String ":8001\s.*LISTENING"
+    if ($apiPort) {
+        Write-ValidationCheck -Category 'service' -Name 'writeback-api-port' -Status 'pass' -Detail "Port 8001 LISTENING"
+    } else {
+        Write-ValidationCheck -Category 'service' -Name 'writeback-api-port' -Status 'fail' -Detail "Port 8001 not listening"
+    }
+
+    # EA process cleanup
+    $eaProcesses = Get-Process -Name "EA" -ErrorAction SilentlyContinue
+    if ($eaProcesses) {
+        Write-ValidationCheck -Category 'service' -Name 'ea-process-cleanup' -Status 'warn' -Detail "$($eaProcesses.Count) EA.exe process(es) still running"
+    } else {
+        Write-ValidationCheck -Category 'service' -Name 'ea-process-cleanup' -Status 'pass' -Detail "No EA.exe processes"
+    }
+
+    # Compute category totals from checks array
+    $svcChecks = $script:Results.checks | Where-Object { $_.category -eq 'service' }
+    $script:Results.svc_passed = ($svcChecks | Where-Object { $_.status -eq 'pass' }).Count
+    $script:Results.svc_failed = ($svcChecks | Where-Object { $_.status -eq 'fail' }).Count
+    $script:Results.svc_warnings = ($svcChecks | Where-Object { $_.status -eq 'warn' }).Count
+}
