@@ -219,7 +219,8 @@ $wikiDir = if ($OutputDir) {
 # special dirs (diagrams/types/glossary/recent/status) on every run - a log directory placed inside
 # $wikiDir gets silently wiped on the very next export.
 $md5 = [System.Security.Cryptography.MD5]::Create()
-$instanceHash = [Convert]::ToHexString($md5.ComputeHash([System.Text.Encoding]::UTF8.GetBytes($wikiDir.ToLowerInvariant()))).Substring(0, 12).ToLowerInvariant()
+$instanceHash = ($md5.ComputeHash([System.Text.Encoding]::UTF8.GetBytes($wikiDir.ToLowerInvariant())) | ForEach-Object { $_.ToString("x2") }) -join ''
+$instanceHash = $instanceHash.Substring(0, 12)
 $stateDir = Join-Path $repoRoot ".eaxwiki-monitor\$instanceHash"
 $healthPath  = Join-Path $stateDir "health.json"
 $servePidPath    = Join-Path $stateDir "serve.pid"
@@ -554,7 +555,7 @@ function Get-NewWritebackCount {
 
 function Update-HealthPage {
     param($State)
-    $monitorDir = Join-Path $PSScriptRoot ".." ".eaxwiki-monitor"
+    $monitorDir = Join-Path (Join-Path $PSScriptRoot "..") ".eaxwiki-monitor"
     $statusDir = Join-Path $monitorDir "status"
     if (-not (Test-Path $statusDir)) { New-Item -ItemType Directory -Path $statusDir -Force | Out-Null }
 
@@ -589,7 +590,7 @@ $lastExportTime = [DateTime]::MinValue
 
 function Test-EditLock {
     param([string]$WikiDir)
-    $lockPath = Join-Path (Split-Path $WikiDir -Parent) ".data" "edit-lock.json"
+    $lockPath = Join-Path (Join-Path (Split-Path $WikiDir -Parent) ".data") "edit-lock.json"
     if (-not (Test-Path $lockPath)) { return $false }
 
     try {
