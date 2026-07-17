@@ -422,14 +422,80 @@ function Find-ElementFilePath {
     return $null
 }
 
+function Invoke-ValidationRun {
+    $script:Results = @{
+        passed = 0; failed = 0; warnings = 0; skipped = 0
+        page_passed = 0; page_failed = 0; page_skipped = 0
+        infra_passed = 0; infra_failed = 0
+        svc_passed = 0; svc_failed = 0; svc_warnings = 0
+        api_passed = 0; api_failed = 0; api_skipped = 0
+        pngs_total = 0; pngs_found = 0
+        checks = @()
+    }
+
+    Write-Host ""
+    Write-Host "=== Wiki Validation $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') ===" -ForegroundColor Cyan
+    Write-Host ""
+
+    Test-Infrastructure
+    Test-Pages
+    Test-Services
+    Test-ApiIntegration
+
+    $script:Results.infra_passed = ($script:Results.checks | Where-Object { $_.category -eq 'infrastructure' -and $_.status -eq 'pass' }).Count
+    $script:Results.infra_failed = ($script:Results.checks | Where-Object { $_.category -eq 'infrastructure' -and $_.status -eq 'fail' }).Count
+
+    Write-Summary
+
+    if ($OutputJson) {
+        $jsonOutput = @{
+            timestamp = (Get-Date -Format "o")
+            mode = $Mode.ToLower()
+            summary = @{
+                pages_passed = $script:Results.page_passed
+                pages_failed = $script:Results.page_failed
+                pages_skipped = $script:Results.page_skipped
+                infrastructure_passed = $script:Results.infra_passed
+                infrastructure_failed = $script:Results.infra_failed
+                services_passed = $script:Results.svc_passed
+                services_failed = $script:Results.svc_failed
+                services_warnings = $script:Results.svc_warnings
+                api_passed = $script:Results.api_passed
+                api_failed = $script:Results.api_failed
+                api_skipped = $script:Results.api_skipped
+                diagram_pngs_total = $script:Results.pngs_total
+                diagram_pngs_missing = $script:Results.pngs_total - $script:Results.pngs_found
+                total_passed = $script:Results.passed
+                total_failed = $script:Results.failed
+                total_warnings = $script:Results.warnings
+                total_skipped = $script:Results.skipped
+            }
+            checks = $script:Results.checks
+        }
+        $jsonOutput | ConvertTo-Json -Depth 10 | Set-Content $OutputJson
+        Write-Host ""
+        Write-Host "JSON report written to $OutputJson" -ForegroundColor Gray
+    }
+
+    return $script:Results.failed
+}
+
 # Main execution
-Write-Host "=== EAxWiki Output Validation ===" -ForegroundColor Cyan
-Write-Host "Site: $SitePath | Wiki: $WikiPath | Mode: $Mode"
-Write-Host ""
-
-Test-Infrastructure
-Test-Pages
-Test-Services
-Test-ApiIntegration
-
-Write-Summary
+if ($Mode -eq "Watch") {
+    Write-Host "Watch mode: checking every $WatchIntervalSec seconds (Ctrl+C to stop)" -ForegroundColor Cyan
+    while ($true) {
+        $failures = Invoke-ValidationRun
+        if ($failures -gt $Threshold) {
+            Write-Host "FAILURE: $failures failures exceeds threshold ($Threshold)" -ForegroundColor Red
+        }
+        Write-Host ""
+        Write-Host "Next check in $WatchIntervalSec seconds..." -ForegroundColor Gray
+        Start-Sleep -Seconds $WatchIntervalSec
+        Clear-Host
+    }
+} else {
+    $failures = Invoke-ValidationRun
+    if ($failures -gt $Threshold) {
+        exit 1
+    }
+}
