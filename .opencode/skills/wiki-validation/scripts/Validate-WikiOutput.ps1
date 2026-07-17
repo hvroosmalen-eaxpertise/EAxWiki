@@ -11,6 +11,7 @@ param(
     [int]$TestElementId = 0,
     [int]$TestDiagramId = 0,
     [string]$AiEndpoint = "",
+    [string]$ApiToken = "",
     [switch]$SkipApi,
     [switch]$VerboseOutput
 )
@@ -29,6 +30,7 @@ function Get-ValidateArgs {
         TestElementId   = 0
         TestDiagramId   = 0
         AiEndpoint      = ""
+        ApiToken        = ""
         SkipApi         = $false
         Verbose         = $false
     }
@@ -46,6 +48,7 @@ function Get-ValidateArgs {
             '-TestElementId'  { $result.TestElementId = [int]$Arguments[++$i] }
             '-TestDiagramId'  { $result.TestDiagramId = [int]$Arguments[++$i] }
             '-AiEndpoint'     { $result.AiEndpoint = $Arguments[++$i] }
+            '-ApiToken'       { $result.ApiToken = $Arguments[++$i] }
             '-SkipApi'        { $result.SkipApi = $true }
             '-Verbose'        { $result.Verbose = $true }
         }
@@ -254,6 +257,12 @@ function Test-Services {
     $script:Results.svc_warnings = ($svcChecks | Where-Object { $_.status -eq 'warn' }).Count
 }
 
+function Get-ApiHeaders {
+    $headers = @{}
+    if ($ApiToken) { $headers["X-EAxWiki-Token"] = $ApiToken }
+    return $headers
+}
+
 function Test-ApiIntegration {
     if ($SkipApi) {
         Write-ValidationCheck -Category 'api' -Name 'api-checks' -Status 'skip' -Detail "SkipApi flag set"
@@ -285,7 +294,7 @@ function Test-ApiIntegration {
 
     # status-types
     try {
-        $types = Invoke-RestMethod -Uri "$ApiBase/api/status-types" -TimeoutSec 5
+        $types = Invoke-RestMethod -Uri "$ApiBase/api/status-types" -Headers (Get-ApiHeaders) -TimeoutSec 5
         if ($types -is [array] -and $types.Count -gt 0) {
             Write-ValidationCheck -Category 'api' -Name 'api-status-types' -Status 'pass' -Detail "$($types.Count) status types"
         } else {
@@ -333,7 +342,7 @@ function Test-StatusRoundtrip {
         }
 
         $body = @{ elementId = $ElementId; newStatus = $newStatus; filePath = $filePath } | ConvertTo-Json
-        $response = Invoke-RestMethod -Uri "$ApiBase/api/status" -Method POST -Body $body -ContentType "application/json" -TimeoutSec 10
+        $response = Invoke-RestMethod -Uri "$ApiBase/api/status" -Method POST -Body $body -ContentType "application/json" -Headers (Get-ApiHeaders) -TimeoutSec 10
 
         $elapsed = ((Get-Date) - $start).TotalMilliseconds
         Write-ValidationCheck -Category 'api' -Name 'api-status-roundtrip' -Status 'pass' -Detail "status '$newStatus' written to element $ElementId" -Duration $elapsed
@@ -355,7 +364,7 @@ function Test-NotesRoundtrip {
         }
 
         $body = @{ elementId = $ElementId; newNotes = $marker; filePath = $filePath } | ConvertTo-Json
-        $response = Invoke-RestMethod -Uri "$ApiBase/api/notes" -Method POST -Body $body -ContentType "application/json" -TimeoutSec 10
+        $response = Invoke-RestMethod -Uri "$ApiBase/api/notes" -Method POST -Body $body -ContentType "application/json" -Headers (Get-ApiHeaders) -TimeoutSec 10
 
         $elapsed = ((Get-Date) - $start).TotalMilliseconds
         Write-ValidationCheck -Category 'api' -Name 'api-notes-roundtrip' -Status 'pass' -Detail "notes written and restored to element $ElementId"
@@ -370,7 +379,7 @@ function Test-AiSuggest {
     $start = Get-Date
     try {
         $body = @{ elementId = $ElementId } | ConvertTo-Json
-        $response = Invoke-RestMethod -Uri "$ApiBase/api/ai-suggest" -Method POST -Body $body -ContentType "application/json" -TimeoutSec 30
+        $response = Invoke-RestMethod -Uri "$ApiBase/api/ai-suggest" -Method POST -Body $body -ContentType "application/json" -Headers (Get-ApiHeaders) -TimeoutSec 30
 
         $elapsed = ((Get-Date) - $start).TotalMilliseconds
         if ($response.suggestion -and $response.suggestion.Length -gt 0) {
@@ -389,7 +398,7 @@ function Test-AiSuggestDiagram {
     $start = Get-Date
     try {
         $body = @{ diagramId = $DiagramId } | ConvertTo-Json
-        $response = Invoke-RestMethod -Uri "$ApiBase/api/ai-suggest-diagram" -Method POST -Body $body -ContentType "application/json" -TimeoutSec 30
+        $response = Invoke-RestMethod -Uri "$ApiBase/api/ai-suggest-diagram" -Method POST -Body $body -ContentType "application/json" -Headers (Get-ApiHeaders) -TimeoutSec 30
 
         $elapsed = ((Get-Date) - $start).TotalMilliseconds
         if ($response.suggestion -and $response.suggestion.Length -gt 0) {
@@ -405,6 +414,7 @@ function Test-AiSuggestDiagram {
 
 function Find-ElementFilePath {
     param([int]$ElementId)
+    $resolvedSitePath = (Resolve-Path $SitePath).Path
     # Search for data-ea-id="$ElementId" in HTML files to find the corresponding .md file
     $htmlFiles = Get-ChildItem $SitePath -Filter "*.html" -Recurse | Where-Object {
         $_.FullName -notmatch '\\types\\' -and $_.FullName -notmatch '\\assets\\'
@@ -412,9 +422,9 @@ function Find-ElementFilePath {
     foreach ($file in $htmlFiles) {
         $content = Get-Content $file.FullName -Raw -ErrorAction SilentlyContinue
         if ($content -match "data-ea-id=""$ElementId""") {
-            # Convert HTML path to .md path
-            $relativePath = $file.FullName.Replace("$SitePath\", "").Replace(".html", ".md")
-            return Join-Path $WikiPath $relativePath
+            # Convert HTML path to .md path (relative to site root, which matches wiki structure)
+            $relativePath = $file.FullName.Replace("$resolvedSitePath\", "").Replace(".html", ".md")
+            return $relativePath
         }
     }
     return $null
