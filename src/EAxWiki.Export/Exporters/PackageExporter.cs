@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.Export.Helpers;
+using EAxWiki.Export.Renderers;
 
 namespace EAxWiki.Export.Exporters;
 
@@ -29,7 +30,34 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
             msg => logger.LogWarning("{Message} (package '{Name}')", msg, package.Name)));
         indexLines.Add(string.Empty);
 
-        if (!string.IsNullOrWhiteSpace(package.Notes))
+        if (ctx.ApiPort > 0)
+        {
+            var statusHash = HtmlHelpers.ComputeStatusHash(package.Status);
+            var notesHash = HtmlHelpers.ComputeNotesHash(package.Notes);
+            var statusOptionsList = ctx.StatusTypes.Count > 0
+                ? ctx.StatusTypes
+                : (IReadOnlyList<string>)["Approved", "Implemented", "Mandatory", "Proposed", "Validated"];
+            var statusOptions = string.Join(", ", statusOptionsList);
+            var statusOptionsJson = HtmlHelpers.HtmlEscape("[" + string.Join(",", statusOptionsList.Select(s => $"\"{HtmlHelpers.JsonEscape(s)}\"")) + "]");
+
+            indexLines.Insert(0, "---");
+            indexLines.Insert(1, $"package_id: {package.Id}");
+            indexLines.Insert(2, $"status: {package.Status}");
+            indexLines.Insert(3, $"status_options: [{statusOptions}]");
+            indexLines.Insert(4, $"ea_hash: {statusHash}");
+            indexLines.Insert(5, $"notes_hash: {notesHash}");
+            indexLines.Insert(6, "---");
+            indexLines.Insert(7, string.Empty);
+
+            var wikiRelPath = Path.GetRelativePath(outputDir, Path.Combine(dir, "index.md")).Replace('\\', '/');
+            var wikiRelPathHtml = HtmlHelpers.HtmlEscape(wikiRelPath);
+            var normalizedNotes = FrontmatterParser.NormalizeNotesHtml(package.Notes);
+            var statusBadgeHtml = StatusBadgeRenderer.Render(package, ctx, wikiRelPathHtml, statusOptionsJson, kind: "package");
+            indexLines.Add($"**Status:** {statusBadgeHtml}  ");
+            indexLines.Add(string.Empty);
+            indexLines.AddRange(NotesWidgetRenderer.Render(package, ctx, normalizedNotes, wikiRelPathHtml, kind: "package"));
+        }
+        else if (!string.IsNullOrWhiteSpace(package.Notes))
         {
             indexLines.Add(package.Notes);
             indexLines.Add(string.Empty);

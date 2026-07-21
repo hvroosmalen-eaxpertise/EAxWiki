@@ -4,6 +4,12 @@ namespace EAxWiki.Export.Renderers;
 
 internal static class NotesWidgetRenderer
 {
+    internal static IEnumerable<string> Render(EaPackage package, ExportContext ctx, string normalizedNotes, string wikiRelPathHtml, string? kind = null)
+    {
+        var element = new EaElement { Id = package.Id, Status = package.Status, Notes = package.Notes };
+        return Render(element, ctx, normalizedNotes, wikiRelPathHtml, kind);
+    }
+
     internal static IEnumerable<string> Render(EaElement element, ExportContext ctx, string normalizedNotes, string wikiRelPathHtml, string? kind = null)
     {
         if (ctx.ApiPort > 0)
