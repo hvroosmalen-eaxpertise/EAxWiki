@@ -166,6 +166,14 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
     public void UpdateTaggedValueNotes(int elementId, string tagName, string tagValue, string newNotesHtml) =>
         DispatchVoid(r => r.UpdateTaggedValueNotes(elementId, tagName, tagValue, newNotesHtml));
 
+    public string GetPackageStatus(int packageId) => Dispatch(r => r.GetPackageStatus(packageId));
+
+    public void UpdatePackageStatus(int packageId, string newStatus) =>
+        DispatchVoid(r => r.UpdatePackageStatus(packageId, newStatus));
+
+    public void UpdatePackageNotes(int packageId, string newNotesHtml) =>
+        DispatchVoid(r => r.UpdatePackageNotes(packageId, newNotesHtml));
+
     public bool ExportDiagramImage(string diagramGuid, string filePath) =>
         Dispatch(r => r.ExportDiagramImage(diagramGuid, filePath));
 
