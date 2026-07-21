@@ -7,6 +7,7 @@
     widget.dataset.initialized = 'true';
 
     var eaId    = parseInt(widget.dataset.eaId, 10);
+    var kind    = widget.dataset.kind || 'element';
     var current = widget.dataset.status;
     var options = JSON.parse(widget.dataset.options);
     var file    = widget.dataset.filePath;
@@ -101,7 +102,7 @@
         fetch(apiBase + '/api/status', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'X-EAxWiki-Token': token },
-          body: JSON.stringify({ elementId: eaId, newStatus: chosen, filePath: file })
+          body: JSON.stringify(kind === 'package' ? { packageId: eaId, newStatus: chosen, filePath: file } : { elementId: eaId, newStatus: chosen, filePath: file })
         })
         .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, status: r.status, data: d }; }); })
         .then(function (res) {

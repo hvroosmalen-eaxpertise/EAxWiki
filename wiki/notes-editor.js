@@ -13,7 +13,7 @@
     var token   = widget.dataset.apiToken || '';
     var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
     var endpoint = kind === 'diagram' ? '/api/diagram-notes' : '/api/notes';
-    var idField  = kind === 'diagram' ? 'diagramId' : 'elementId';
+    var idField  = kind === 'diagram' ? 'diagramId' : kind === 'package' ? 'packageId' : 'elementId';
 
     var editBtn = document.getElementById('ea-notes-edit-btn');
     var contentDiv = widget.querySelector('.ea-notes-content');
