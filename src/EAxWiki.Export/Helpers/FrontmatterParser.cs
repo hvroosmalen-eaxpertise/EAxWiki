@@ -250,4 +250,94 @@ public static class FrontmatterParser
         File.WriteAllText(tmp, text);
         File.Move(tmp, filePath, overwrite: true);
     }
+
+    /// <summary>
+    /// Updates the frontmatter status and ea_hash for a package page. Unlike <see cref="UpdateStatus"/>,
+    /// this does NOT scan the body for badge HTML or data-status attributes — package pages do not yet
+    /// have status badge widgets (that comes in Task 6). Updates the "**Modified:**" date if present.
+    /// </summary>
+    public static void UpdatePackageStatus(string filePath, string newStatus)
+    {
+        var lines = File.ReadAllLines(filePath).ToList();
+        if (lines.Count < 2 || lines[0].Trim() != "---") return;
+
+        int end = -1;
+        for (int i = 1; i < lines.Count; i++)
+        {
+            if (lines[i].Trim() == "---") { end = i; break; }
+        }
+        if (end < 0) return;
+
+        // Update frontmatter: status + ea_hash
+        var newHash = HtmlHelpers.ComputeStatusHash(newStatus);
+        for (int i = 1; i < end; i++)
+        {
+            var sep = lines[i].IndexOf(':');
+            if (sep < 1) continue;
+            var key = lines[i][..sep].Trim();
+            if (key.Equals("status", StringComparison.OrdinalIgnoreCase))
+                lines[i] = $"status: {newStatus}";
+            else if (key.Equals("ea_hash", StringComparison.OrdinalIgnoreCase))
+                lines[i] = $"ea_hash: {newHash}";
+        }
+
+        // Update **Modified:** date in body
+        for (int i = end + 1; i < lines.Count; i++)
+        {
+            if (lines[i].Contains("**Modified:**"))
+                lines[i] = PatchModifiedDate(lines[i]);
+        }
+
+        // Atomic write
+        var tmp = filePath + ".tmp";
+        File.WriteAllLines(tmp, lines);
+        File.Move(tmp, filePath, overwrite: true);
+    }
+
+    /// <summary>
+    /// Extracts the current notes body from between the ea-package-notes-start/end markers,
+    /// or null if the page has no package notes widget.
+    /// </summary>
+    public static string? ExtractPackageNotesContent(string filePath)
+    {
+        string text;
+        try { text = File.ReadAllText(filePath).Replace("\r\n", "\n"); }
+        catch { return null; }
+
+        var match = Regex.Match(text, @"<!--ea-package-notes-start-->\n?(.*?)\n?<!--ea-package-notes-end-->", RegexOptions.Singleline);
+        return match.Success ? match.Groups[1].Value : null;
+    }
+
+    /// <summary>
+    /// Updates the package notes block (between the ea-package-notes-start/end markers) and the
+    /// notes_hash frontmatter field. Uses an atomic temp-file swap, same as <see cref="UpdateNotes"/>.
+    /// </summary>
+    public static void UpdatePackageNotes(string filePath, string newNotesHtml)
+    {
+        var original = File.ReadAllText(filePath);
+        var usesCrlf = original.Contains("\r\n");
+        var text = original.Replace("\r\n", "\n");
+
+        var fmMatch = Regex.Match(text, @"\A---\n(.*?\n)---\n", RegexOptions.Singleline);
+        if (!fmMatch.Success) return;
+
+        var newHash = HtmlHelpers.ComputeNotesHash(newNotesHtml);
+        var fmBody = fmMatch.Groups[1].Value;
+        fmBody = Regex.IsMatch(fmBody, @"^notes_hash:.*$", RegexOptions.Multiline)
+            ? Regex.Replace(fmBody, @"^notes_hash:.*$", $"notes_hash: {newHash}", RegexOptions.Multiline)
+            : fmBody + $"notes_hash: {newHash}\n";
+
+        text = $"---\n{fmBody}---\n" + text[fmMatch.Length..];
+
+        var contentPattern = new Regex(@"(<!--ea-package-notes-start-->\n).*?(\n<!--ea-package-notes-end-->)", RegexOptions.Singleline);
+        text = contentPattern.Replace(text, m => m.Groups[1].Value + newNotesHtml + m.Groups[2].Value, 1);
+
+        text = ModifiedDatePattern.Replace(text, $"${{1}}{DateTime.Now:yyyy-MM-dd}");
+
+        if (usesCrlf) text = text.Replace("\n", "\r\n");
+
+        var tmp = filePath + ".tmp";
+        File.WriteAllText(tmp, text);
+        File.Move(tmp, filePath, overwrite: true);
+    }
 }
