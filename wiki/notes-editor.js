@@ -20,7 +20,7 @@
     var hint = widget.querySelector('.ea-notes-derived-hint');
     if (!editBtn || !contentDiv) return;
 
-    var notesMarkerPattern = /<!--\s*ea-notes-(start|end)\s*-->/g;
+    var notesMarkerPattern = /<!--\s*ea-(package-)?notes-(start|end)\s*-->/g;
     var placeholderHtml = '<em class="ea-notes-placeholder">No description set.</em>';
 
     if (contentDiv.innerHTML.replace(notesMarkerPattern, '').trim() === '') {

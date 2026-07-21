@@ -253,8 +253,9 @@ public static class FrontmatterParser
 
     /// <summary>
     /// Updates the frontmatter status and ea_hash for a package page. Unlike <see cref="UpdateStatus"/>,
-    /// this does NOT scan the body for badge HTML or data-status attributes — package pages do not yet
-    /// have status badge widgets (that comes in Task 6). Updates the "**Modified:**" date if present.
+    /// this does NOT scan the body for badge HTML or data-status attributes — the JavaScript widget
+    /// handles live badge updates in the browser, and re-export regenerates the badge correctly.
+    /// Updates the "**Modified:**" date if present.
     /// </summary>
     public static void UpdatePackageStatus(string filePath, string newStatus)
     {
