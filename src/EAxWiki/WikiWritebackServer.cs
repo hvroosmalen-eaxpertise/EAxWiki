@@ -341,7 +341,6 @@ internal static class WikiWritebackServer
             if (string.IsNullOrWhiteSpace(req.NewStatus))
                 return Results.BadRequest(new { success = false, message = "newStatus is required." });
 
-            // Validate against live t_statustypes
             var allowed = reader.GetStatusTypes();
             if (!allowed.Contains(req.NewStatus, StringComparer.OrdinalIgnoreCase))
                 return Results.BadRequest(new { success = false, message = $"'{req.NewStatus}' is not a valid status. Allowed: {string.Join(", ", allowed)}" });
@@ -354,19 +353,33 @@ internal static class WikiWritebackServer
 
             try
             {
-                reader.UpdateElementStatus(req.ElementId, req.NewStatus);
-                FrontmatterParser.UpdateStatus(filePath, req.NewStatus);
-                logger.LogInformation("Status change: element {Id} → {Status} ({File})", req.ElementId, req.NewStatus, req.FilePath);
+                if (req.PackageId.HasValue)
+                {
+                    reader.UpdatePackageStatus(req.PackageId.Value, req.NewStatus);
+                    FrontmatterParser.UpdatePackageStatus(filePath, req.NewStatus);
+                    logger.LogInformation("Status change: package {Id} → {Status} ({File})", req.PackageId.Value, req.NewStatus, req.FilePath);
+                }
+                else if (req.ElementId.HasValue)
+                {
+                    reader.UpdateElementStatus(req.ElementId.Value, req.NewStatus);
+                    FrontmatterParser.UpdateStatus(filePath, req.NewStatus);
+                    logger.LogInformation("Status change: element {Id} → {Status} ({File})", req.ElementId.Value, req.NewStatus, req.FilePath);
+                }
+                else
+                {
+                    return Results.BadRequest(new { success = false, message = "Either elementId or packageId is required." });
+                }
+
                 LogWriteback(outputPath, "status");
-                _ = AuditLogger.LogAsync(outputPath, "POST /api/status", req.ElementId, "status",
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/status", req.PackageId ?? req.ElementId ?? 0, "status",
                     context.Response.StatusCode, "Write-back completed",
                     context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Ok(new { success = true, message = $"Status updated to '{req.NewStatus}'." });
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Write-back failed for element {Id}", req.ElementId);
-                _ = AuditLogger.LogAsync(outputPath, "POST /api/status", req.ElementId, "status",
+                logger.LogError(ex, "Write-back failed for {Entity}", req.PackageId.HasValue ? $"package {req.PackageId}" : $"element {req.ElementId}");
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/status", req.PackageId ?? req.ElementId ?? 0, "status",
                     StatusCodes.Status500InternalServerError, $"Write-back failed: {ex.Message}",
                     context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Problem($"Write-back failed: {ex.Message}");
@@ -387,19 +400,34 @@ internal static class WikiWritebackServer
             try
             {
                 var normalized = FrontmatterParser.NormalizeNotesHtml(req.NewNotes);
-                reader.UpdateElementNotes(req.ElementId, normalized);
-                FrontmatterParser.UpdateNotes(filePath, normalized);
-                logger.LogInformation("Notes updated for element {Id} ({File})", req.ElementId, req.FilePath);
+
+                if (req.PackageId.HasValue)
+                {
+                    reader.UpdatePackageNotes(req.PackageId.Value, normalized);
+                    FrontmatterParser.UpdatePackageNotes(filePath, normalized);
+                    logger.LogInformation("Notes updated for package {Id} ({File})", req.PackageId.Value, req.FilePath);
+                }
+                else if (req.ElementId.HasValue)
+                {
+                    reader.UpdateElementNotes(req.ElementId.Value, normalized);
+                    FrontmatterParser.UpdateNotes(filePath, normalized);
+                    logger.LogInformation("Notes updated for element {Id} ({File})", req.ElementId.Value, req.FilePath);
+                }
+                else
+                {
+                    return Results.BadRequest(new { success = false, message = "Either elementId or packageId is required." });
+                }
+
                 LogWriteback(outputPath, "notes");
-                _ = AuditLogger.LogAsync(outputPath, "POST /api/notes", req.ElementId, "notes",
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/notes", req.PackageId ?? req.ElementId ?? 0, "notes",
                     context.Response.StatusCode, "Write-back completed",
                     context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Ok(new { success = true, message = "Notes updated.", html = normalized });
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Notes write-back failed for element {Id}", req.ElementId);
-                _ = AuditLogger.LogAsync(outputPath, "POST /api/notes", req.ElementId, "notes",
+                logger.LogError(ex, "Notes write-back failed for {Entity}", req.PackageId.HasValue ? $"package {req.PackageId}" : $"element {req.ElementId}");
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/notes", req.PackageId ?? req.ElementId ?? 0, "notes",
                     StatusCodes.Status500InternalServerError, $"Write-back failed: {ex.Message}",
                     context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Problem($"Write-back failed: {ex.Message}");
