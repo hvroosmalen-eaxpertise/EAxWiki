@@ -16,8 +16,8 @@ namespace EAxWiki;
 [System.Runtime.Versioning.SupportedOSPlatform("windows")]
 internal static class WikiWritebackServer
 {
-    internal record StatusChangeRequest(int ElementId, string NewStatus, string FilePath);
-    internal record NotesChangeRequest(int ElementId, string NewNotes, string FilePath);
+    internal record StatusChangeRequest(int? ElementId, int? PackageId, string NewStatus, string FilePath);
+    internal record NotesChangeRequest(int? ElementId, int? PackageId, string NewNotes, string FilePath);
     internal record DiagramNotesChangeRequest(int DiagramId, string NewNotes, string FilePath);
     internal record AiSuggestRequest(int ElementId);
     internal record AiSuggestDiagramRequest(int DiagramId);
