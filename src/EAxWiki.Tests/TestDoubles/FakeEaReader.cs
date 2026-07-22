@@ -11,6 +11,7 @@ public class FakeEaReader : IEaReader
     public List<(int ElementId, string Name, string Type, string Notes)> AttributeNotesUpdates { get; } = [];
     public List<(int ElementId, string Name, string ReturnType, bool IsStatic, string Notes)> MethodNotesUpdates { get; } = [];
     public List<(int ElementId, string Name, string Value, string Notes)> TaggedValueNotesUpdates { get; } = [];
+    public List<(int Id, string Notes)> PackageNotesUpdates { get; } = [];
 
     public EaRepository Open(string connectionString, CancellationToken ct = default) => new();
     public bool TestConnection(string connectionString, out string? error) { error = null; return true; }
@@ -31,4 +32,6 @@ public class FakeEaReader : IEaReader
         MethodNotesUpdates.Add((elementId, methodName, returnType, isStatic, newNotesHtml));
     public void UpdateTaggedValueNotes(int elementId, string tagName, string tagValue, string newNotesHtml) =>
         TaggedValueNotesUpdates.Add((elementId, tagName, tagValue, newNotesHtml));
+    public void UpdatePackageNotes(int packageId, string newNotesHtml) =>
+        PackageNotesUpdates.Add((packageId, newNotesHtml));
 }
