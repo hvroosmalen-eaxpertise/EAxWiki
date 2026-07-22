@@ -252,50 +252,6 @@ public static class FrontmatterParser
     }
 
     /// <summary>
-    /// Updates the frontmatter status and ea_hash for a package page. Unlike <see cref="UpdateStatus"/>,
-    /// this does NOT scan the body for badge HTML or data-status attributes — the JavaScript widget
-    /// handles live badge updates in the browser, and re-export regenerates the badge correctly.
-    /// Updates the "**Modified:**" date if present.
-    /// </summary>
-    public static void UpdatePackageStatus(string filePath, string newStatus)
-    {
-        var lines = File.ReadAllLines(filePath).ToList();
-        if (lines.Count < 2 || lines[0].Trim() != "---") return;
-
-        int end = -1;
-        for (int i = 1; i < lines.Count; i++)
-        {
-            if (lines[i].Trim() == "---") { end = i; break; }
-        }
-        if (end < 0) return;
-
-        // Update frontmatter: status + ea_hash
-        var newHash = HtmlHelpers.ComputeStatusHash(newStatus);
-        for (int i = 1; i < end; i++)
-        {
-            var sep = lines[i].IndexOf(':');
-            if (sep < 1) continue;
-            var key = lines[i][..sep].Trim();
-            if (key.Equals("status", StringComparison.OrdinalIgnoreCase))
-                lines[i] = $"status: {newStatus}";
-            else if (key.Equals("ea_hash", StringComparison.OrdinalIgnoreCase))
-                lines[i] = $"ea_hash: {newHash}";
-        }
-
-        // Update **Modified:** date in body
-        for (int i = end + 1; i < lines.Count; i++)
-        {
-            if (lines[i].Contains("**Modified:**"))
-                lines[i] = PatchModifiedDate(lines[i]);
-        }
-
-        // Atomic write
-        var tmp = filePath + ".tmp";
-        File.WriteAllLines(tmp, lines);
-        File.Move(tmp, filePath, overwrite: true);
-    }
-
-    /// <summary>
     /// Extracts the current notes body from between the ea-package-notes-start/end markers,
     /// or null if the page has no package notes widget.
     /// </summary>

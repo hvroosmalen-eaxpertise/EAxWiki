@@ -69,35 +69,6 @@ public class WriteBackScanner(IEaReader reader, ILogger logger)
             }
             else if (fm.TryGetValue("package_id", out var pkgIdStr) && int.TryParse(pkgIdStr, out var packageId))
             {
-                if (fm.TryGetValue("status", out var pkgStatus) &&
-                    fm.TryGetValue("ea_hash", out var storedPkgStatusHash))
-                {
-                    var expectedPkgStatusHash = HtmlHelpers.ComputeStatusHash(pkgStatus);
-                    if (!string.Equals(expectedPkgStatusHash, storedPkgStatusHash, StringComparison.OrdinalIgnoreCase))
-                    {
-                        if (!allowedStatuses.Contains(pkgStatus))
-                        {
-                            logger.LogWarning("Skipping {File}: '{Status}' is not a valid status value", file, pkgStatus);
-                        }
-                        else
-                        {
-                            try
-                            {
-                                var oldStatus = reader.GetPackageStatus(packageId);
-                                reader.UpdatePackageStatus(packageId, pkgStatus);
-                                FrontmatterParser.UpdatePackageStatus(file, pkgStatus);
-                                statusChanges.Add(new ChangeResult(packageId, oldStatus, pkgStatus, file));
-                                logger.LogInformation("Write-back: package {Id} status set to '{Status}' ({File})",
-                                    packageId, pkgStatus, Path.GetFileName(file));
-                            }
-                            catch (Exception ex)
-                            {
-                                logger.LogError(ex, "Status write-back failed for package {Id} in {File}", packageId, file);
-                            }
-                        }
-                    }
-                }
-
                 // Package notes write-back
                 if (fm.TryGetValue("notes_hash", out var storedPkgNotesHash))
                 {

@@ -6,7 +6,7 @@ internal static class NotesWidgetRenderer
 {
     internal static IEnumerable<string> Render(EaPackage package, ExportContext ctx, string normalizedNotes, string wikiRelPathHtml, string? kind = null)
     {
-        var element = new EaElement { Id = package.Id, Status = package.Status, Notes = package.Notes };
+        var element = new EaElement { Id = package.Id, Notes = package.Notes };
         return Render(element, ctx, normalizedNotes, wikiRelPathHtml, kind);
     }
 

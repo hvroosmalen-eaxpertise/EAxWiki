@@ -5,12 +5,6 @@ namespace EAxWiki.Export.Renderers;
 
 internal static class StatusBadgeRenderer
 {
-    internal static string Render(EaPackage package, ExportContext ctx, string wikiRelPathHtml, string statusOptionsJson, string? kind = null)
-    {
-        var element = new EaElement { Id = package.Id, Status = package.Status, Notes = package.Notes };
-        return Render(element, ctx, wikiRelPathHtml, statusOptionsJson, kind);
-    }
-
     internal static string Render(EaElement element, ExportContext ctx, string wikiRelPathHtml, string statusOptionsJson, string? kind = null)
     {
         var statusBadgeClass = string.IsNullOrEmpty(element.Status) ? "status-not-set" : $"status-{element.Status.ToLowerInvariant()}";
