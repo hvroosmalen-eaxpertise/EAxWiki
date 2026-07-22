@@ -134,16 +134,6 @@ public class EaReader : IEaReader, IDisposable
         return element.Status ?? string.Empty;
     }
 
-    public string GetPackageStatus(int packageId)
-    {
-        if (_repository == null)
-            throw new InvalidOperationException("Repository is not open.");
-        var package = _repository.GetPackageByID(packageId);
-        if (package == null)
-            throw new InvalidOperationException($"Package {packageId} not found in repository.");
-        return package.Status ?? string.Empty;
-    }
-
     public EaElementSummary? GetElementSummary(int elementId)
     {
         if (_repository == null)
@@ -283,21 +273,6 @@ public class EaReader : IEaReader, IDisposable
         var actualStatus = _repository.GetElementByID(elementId)?.Status ?? string.Empty;
         VerifyWrite(_logger, $"element {elementId} Status", newStatus, actualStatus);
         _logger?.LogInformation("Updated element {ElementId} status to '{Status}'", elementId, newStatus);
-    }
-
-    public void UpdatePackageStatus(int packageId, string newStatus)
-    {
-        if (_repository == null)
-            throw new InvalidOperationException("Repository is not open.");
-        var package = _repository.GetPackageByID(packageId);
-        if (package == null)
-            throw new InvalidOperationException($"Package {packageId} not found in repository.");
-        package.Status = newStatus;
-        package.Update();
-        _repository.RefreshModelView(0);
-        var actualStatus = _repository.GetPackageByID(packageId)?.Status ?? string.Empty;
-        VerifyWrite(_logger, $"package {packageId} Status", newStatus, actualStatus);
-        _logger?.LogInformation("Updated package {PackageId} status to '{Status}'", packageId, newStatus);
     }
 
     public void UpdateElementNotes(int elementId, string newNotesHtml)
