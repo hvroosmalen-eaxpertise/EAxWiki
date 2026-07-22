@@ -13,7 +13,6 @@ internal static class ModelMapper
         {
             Id = eaPkg.PackageID,
             Name = eaPkg.Name,
-            Status = eaPkg.Status ?? string.Empty,
             Notes = eaPkg.Notes,
             ParentId = eaPkg.ParentID
         };

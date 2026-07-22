@@ -19,7 +19,5 @@ public interface IEaReader
     void UpdateAttributeNotes(int elementId, string attributeName, string attributeType, string newNotesHtml);
     void UpdateMethodNotes(int elementId, string methodName, string returnType, bool isStatic, string newNotesHtml);
     void UpdateTaggedValueNotes(int elementId, string tagName, string tagValue, string newNotesHtml);
-    string GetPackageStatus(int packageId);
-    void UpdatePackageStatus(int packageId, string newStatus);
     void UpdatePackageNotes(int packageId, string newNotesHtml);
 }
