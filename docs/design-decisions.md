@@ -200,6 +200,13 @@
 
     Applied in two places: `wiki/extra.css` (used by MkDocs directly) and `src/EAxWiki.Export/Resources/extra.css` (embedded as a managed resource, written on every export). Both must be kept in sync.
 
+## Package Notes Editing (issue #78)
+
+- **Package pages get Notes editing only, not Status**: EA 17.1's COM `IPackage` interface has no `Status` property (confirmed via reflection on `Interop.EA.dll`; `t_package` table also lacks a `Status` column). Rather than use Tagged Values as a workaround, package status editing was dropped from the scope. Element status editing is unaffected — `EA.IElement.Status` works.
+- **Separate HTML markers for package notes**: Package pages use `<!--ea-package-notes-start/end-->` markers, distinct from element `<!--ea-notes-start/end-->`, so the notes-editor.js widget can correctly identify which kind of page it's on via the `data-kind="package"` attribute.
+- **Same frontmatter pattern as elements**: Package pages get `package_id`, `notes_hash` frontmatter when `--api-port` is set. No `status`, `status_options`, or `ea_hash` fields — those are element-only.
+- **Batch write-back supports package notes**: The `WriteBackScanner` detects `package_id` in frontmatter and routes notes changes to `reader.UpdatePackageNotes()`, separate from the element `ea_id` path.
+
 ## Deployment
 
 - **Production target is local server only** — GitHub Pages was considered but ruled out: the write-back server requires a running Windows machine with EA installed. The wiki is served locally via MkDocs. GitHub Pages may still be used for publishing a read-only snapshot.

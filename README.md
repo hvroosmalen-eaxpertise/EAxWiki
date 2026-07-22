@@ -277,10 +277,10 @@ The export step cleans up any orphaned EA.exe processes when it finishes.
 
 ### Live write-back — change status and notes directly from the wiki page
 
-When the wiki runs locally on Windows with EA installed, users can edit an element's **Status** and **Notes**, and a diagram's **Description**, directly from the rendered wiki page — no need to open EA. All three use the same two-step pattern: a small pencil icon next to the value, click to edit, **Apply**/**Save** or **Cancel** to close.
+When the wiki runs locally on Windows with EA installed, users can edit an element's **Status** and **Notes**, a diagram's **Description**, and a package's **Notes**, directly from the rendered wiki page — no need to open EA. All use the same two-step pattern: a small pencil icon next to the value, click to edit, **Apply**/**Save** or **Cancel** to close.
 
-- **Status** — sits on its own line. Clicking the pencil replaces the badge in place with a dropdown, Apply, and Cancel — no separate widget block elsewhere on the page. Elements with no status set show a "Not Set" badge and can be given one the same way.
-- **Notes** — a pencil icon next to the notes text. Clicking it swaps the rendered notes for a raw-HTML `<textarea>` with Save / Cancel. Elements with no notes yet show "No description set." and can be given one the same way — the editor isn't gated on notes already existing.
+- **Status** — sits on its own line (elements only). Clicking the pencil replaces the badge in place with a dropdown, Apply, and Cancel — no separate widget block elsewhere on the page. Elements with no status set show a "Not Set" badge and can be given one the same way.
+- **Notes** — a pencil icon next to the notes text (elements and packages). Clicking it swaps the rendered notes for a raw-HTML `<textarea>` with Save / Cancel. Pages with no notes yet show "No description set." and can be given one the same way — the editor isn't gated on notes already existing. Package notes use separate HTML markers (`<!--ea-package-notes-start/end-->`) so they don't collide with element notes markers.
 - **Diagram description** — same pencil-and-textarea editor as Notes, on the diagram page. If the diagram has no description of its own, the page shows one auto-derived from an element on the diagram (marked "(derived)"); editing pre-fills with that clean text (no label) so Save just promotes it into the diagram's own stored description. Diagrams with neither show "No description set." and start from a blank box.
 - **Attribute, method, and tagged value descriptions** — the same pencil pattern, one per row. For Attributes and Tagged Values (narrow table columns), clicking the pencil expands a full-width row below it for the textarea and Save/Cancel, instead of cramming them into the Description cell. Method descriptions have room to spare already, so the textarea swaps in inline where the description text was. Opening one editor closes any other that's open, anywhere on the page.
 
@@ -326,7 +326,7 @@ Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per 
 **Batch write-back** (for `.md` edits made while the server was not running):
 
 ```powershell
-.\scripts\export.ps1 --writeback       # scan wiki/ for status, notes, diagram, and row-level description changes, write to EA
+.\scripts\export.ps1 --writeback       # scan wiki/ for status, notes, diagram, row-level description, and package notes changes, write to EA
 .\scripts\export.ps1                   # re-export to sync the wiki
 ```
 
