@@ -16,7 +16,7 @@ namespace EAxWiki;
 [System.Runtime.Versioning.SupportedOSPlatform("windows")]
 internal static class WikiWritebackServer
 {
-    internal record StatusChangeRequest(int? ElementId, int? PackageId, string NewStatus, string FilePath);
+    internal record StatusChangeRequest(int? ElementId, string NewStatus, string FilePath);
     internal record NotesChangeRequest(int? ElementId, int? PackageId, string NewNotes, string FilePath);
     internal record DiagramNotesChangeRequest(int DiagramId, string NewNotes, string FilePath);
     internal record AiSuggestRequest(int ElementId);
@@ -353,13 +353,7 @@ internal static class WikiWritebackServer
 
             try
             {
-                if (req.PackageId.HasValue)
-                {
-                    reader.UpdatePackageStatus(req.PackageId.Value, req.NewStatus);
-                    FrontmatterParser.UpdatePackageStatus(filePath, req.NewStatus);
-                    logger.LogInformation("Status change: package {Id} → {Status} ({File})", req.PackageId.Value, req.NewStatus, req.FilePath);
-                }
-                else if (req.ElementId.HasValue)
+                if (req.ElementId.HasValue)
                 {
                     reader.UpdateElementStatus(req.ElementId.Value, req.NewStatus);
                     FrontmatterParser.UpdateStatus(filePath, req.NewStatus);
@@ -367,19 +361,19 @@ internal static class WikiWritebackServer
                 }
                 else
                 {
-                    return Results.BadRequest(new { success = false, message = "Either elementId or packageId is required." });
+                    return Results.BadRequest(new { success = false, message = "elementId is required." });
                 }
 
                 LogWriteback(outputPath, "status");
-                _ = AuditLogger.LogAsync(outputPath, "POST /api/status", req.PackageId ?? req.ElementId ?? 0, "status",
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/status", req.ElementId ?? 0, "status",
                     context.Response.StatusCode, "Write-back completed",
                     context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Ok(new { success = true, message = $"Status updated to '{req.NewStatus}'." });
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Write-back failed for {Entity}", req.PackageId.HasValue ? $"package {req.PackageId}" : $"element {req.ElementId}");
-                _ = AuditLogger.LogAsync(outputPath, "POST /api/status", req.PackageId ?? req.ElementId ?? 0, "status",
+                logger.LogError(ex, "Write-back failed for element {Id}", req.ElementId);
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/status", req.ElementId ?? 0, "status",
                     StatusCodes.Status500InternalServerError, $"Write-back failed: {ex.Message}",
                     context.Request.Headers["X-EAxWiki-Token"].ToString());
                 return Results.Problem($"Write-back failed: {ex.Message}");
