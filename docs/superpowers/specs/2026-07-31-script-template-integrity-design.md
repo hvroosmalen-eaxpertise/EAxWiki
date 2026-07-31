@@ -17,10 +17,11 @@ A new xUnit test class `ScriptTemplateIntegrityTests` in `EAxWiki.Tests` that ru
 ```
 EAxWiki.Tests/
 ├── ExportIntegrationTests.cs            # Existing exporter integration tests
+├── TestInMemoryWriter.cs                # NEW — shared in-memory IOutputWriter
 └── ScriptTemplateIntegrityTests.cs      # NEW — source-template integrity checks
 ```
 
-Shared helpers (`InMemoryWriter`, exporter fixture) already exist in `ExportIntegrationTests.cs`; the new class reuses them rather than duplicating setup.
+`InMemoryWriter` is currently a private nested class inside `ExportIntegrationTests`. Extract it into a shared `TestInMemoryWriter` class in `EAxWiki.Tests` (same namespace) so both test classes can construct the exporter the same way; update `ExportIntegrationTests` to use the shared class. Both test classes build a `MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance)` and run `ExportAsync` against a minimal in-memory repo, then inspect `writer.Files`.
 
 ## Checks
 
