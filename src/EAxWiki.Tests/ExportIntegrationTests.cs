@@ -1,24 +1,11 @@
-using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.Export;
 using Microsoft.Extensions.Logging.Abstractions;
-using System.Threading;
 
 namespace EAxWiki.Tests;
 
 public class ExportIntegrationTests
 {
-    private sealed class InMemoryWriter : IOutputWriter
-    {
-        public readonly Dictionary<string, string> Files = new(StringComparer.OrdinalIgnoreCase);
-        public readonly HashSet<string> Directories = new(StringComparer.OrdinalIgnoreCase);
-
-        public Task CreateDirectoryAsync(string path, CancellationToken ct = default) { Directories.Add(path); return Task.CompletedTask; }
-        public Task WriteFileAsync(string filePath, string content, CancellationToken ct = default) { Files[Normalize(filePath)] = content; return Task.CompletedTask; }
-
-        private static string Normalize(string path) => path.Replace('\\', '/');
-    }
-
     private static EaRepository MinimalRepository(string pkgName = "MyPackage", string elemName = "MyElement")
     {
         var element = new EaElement { Id = 1, Name = elemName, Type = "Class", Stereotype = "ESRS::Disclosure" };
@@ -33,7 +20,7 @@ public class ExportIntegrationTests
     [Fact]
     public async Task Export_CreatesRootIndexFile()
     {
-        var writer = new InMemoryWriter();
+        var writer = new TestInMemoryWriter();
         var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
         var repo = MinimalRepository();
         var outPath = OutputPath;
@@ -47,7 +34,7 @@ public class ExportIntegrationTests
     [Fact]
     public async Task Export_CreatesPackageIndexFile()
     {
-        var writer = new InMemoryWriter();
+        var writer = new TestInMemoryWriter();
         var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
         var repo = MinimalRepository("MyPackage");
         var outPath = OutputPath;
@@ -61,7 +48,7 @@ public class ExportIntegrationTests
     [Fact]
     public async Task Export_CreatesElementPageFile()
     {
-        var writer = new InMemoryWriter();
+        var writer = new TestInMemoryWriter();
         var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
         var repo = MinimalRepository("MyPackage", "MyElement");
         var outPath = OutputPath;
@@ -75,7 +62,7 @@ public class ExportIntegrationTests
     [Fact]
     public async Task Export_ElementPageContainsElementName()
     {
-        var writer = new InMemoryWriter();
+        var writer = new TestInMemoryWriter();
         var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
         var repo = MinimalRepository("Pkg", "SomeElement");
         var outPath = OutputPath;
@@ -90,7 +77,7 @@ public class ExportIntegrationTests
     [Fact]
     public async Task Export_PackageIndexListsElement()
     {
-        var writer = new InMemoryWriter();
+        var writer = new TestInMemoryWriter();
         var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
         var repo = MinimalRepository("Pkg", "Alpha");
         var outPath = OutputPath;
@@ -105,7 +92,7 @@ public class ExportIntegrationTests
     [Fact]
     public async Task Export_NamesWithSpecialChars_SanitizedInPath()
     {
-        var writer = new InMemoryWriter();
+        var writer = new TestInMemoryWriter();
         var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
         var repo = MinimalRepository("My<Package>", "My|Element");
 
@@ -117,7 +104,7 @@ public class ExportIntegrationTests
     [Fact]
     public async Task Export_NotesEditorScript_IncludesAiSuggestButton()
     {
-        var writer = new InMemoryWriter();
+        var writer = new TestInMemoryWriter();
         var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
         var repo = MinimalRepository();
 
