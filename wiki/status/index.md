@@ -6,13 +6,13 @@
   <div class="status-bar status-approved" style="width: 8%">Approved 21</div>
 </div>
 <div class="status-bar-container">
-  <div class="status-bar status-implemented" style="width: 5%">Implemented 5</div>
+  <div class="status-bar status-implemented" style="width: 5%">Implemented 6</div>
 </div>
 <div class="status-bar-container">
   <div class="status-bar status-mandatory" style="width: 5%">Mandatory 1</div>
 </div>
 <div class="status-bar-container">
-  <div class="status-bar status-proposed" style="width: 100%">Proposed 259</div>
+  <div class="status-bar status-proposed" style="width: 100%">Proposed 258</div>
 </div>
 
 *165 elements have no status set.*
@@ -57,9 +57,9 @@
 | [Reference Websites](../Reference Websites/index.html) | — | — | — | <a href="#pkg_reference_websites_proposed">1</a> | **1** |
 | [Stories](../Stories/index.html) | — | — | — | <a href="#pkg_stories_proposed">3</a> | **3** |
 | [Story](../Story/index.html) | — | — | — | <a href="#pkg_story_proposed">3</a> | **3** |
-| [Sustainability Development Goals](../Sustainability Development Goals/index.html) | — | — | — | <a href="#pkg_sustainability_development_goals_proposed">25</a> | **25** |
+| [Sustainability Development Goals](../Sustainability Development Goals/index.html) | — | <a href="#pkg_sustainability_development_goals_implemented">1</a> | — | <a href="#pkg_sustainability_development_goals_proposed">24</a> | **25** |
 | [Task](../Task/index.html) | — | — | — | <a href="#pkg_task_proposed">26</a> | **26** |
-| **Total** | **21** | **5** | **1** | **259** | **286** |
+| **Total** | **21** | **6** | **1** | **258** | **286** |
 
 <details class="status-details" id="pkg_assessments_approved">
   <summary>Assessments &mdash; Approved (5)</summary>
@@ -554,13 +554,19 @@
   <li><a href="../Story/Sustainable Work Practices.html">Sustainable Work Practices</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
+<details class="status-details" id="pkg_sustainability_development_goals_implemented">
+  <summary>Sustainability Development Goals &mdash; Implemented (1)</summary>
+
+<ul>
+  <li><a href="../Sustainability Development Goals/SDG  2. Zero Hunger.html">SDG  2. Zero Hunger</a> <span class="status-badge status-implemented">Implemented</span></li>
+</ul>
+</details>
 <details class="status-details" id="pkg_sustainability_development_goals_proposed">
-  <summary>Sustainability Development Goals &mdash; Proposed (25)</summary>
+  <summary>Sustainability Development Goals &mdash; Proposed (24)</summary>
 
 <ul>
   <li><a href="../Sustainability Development Goals/Architecture.html">Architecture</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Sustainability Development Goals/SDG  1. No Poverty.html">SDG  1. No Poverty</a> <span class="status-badge status-proposed">Proposed</span></li>
-  <li><a href="../Sustainability Development Goals/SDG  2. Zero Hunger.html">SDG  2. Zero Hunger</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Sustainability Development Goals/SDG  3. Good Health and Well-Being.html">SDG  3. Good Health and Well-Being</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Sustainability Development Goals/SDG  4. Quality Education.html">SDG  4. Quality Education</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Sustainability Development Goals/SDG  5. Gender Equality.html">SDG  5. Gender Equality</a> <span class="status-badge status-proposed">Proposed</span></li>
@@ -638,7 +644,7 @@
 | People | <a href="#type_people_approved">1</a> | <a href="#type_people_implemented">1</a> | — | <a href="#type_people_proposed">58</a> | **60** |
 | Process | — | — | — | <a href="#type_process_proposed">6</a> | **6** |
 | Product | — | — | — | <a href="#type_product_proposed">6</a> | **6** |
-| Purpose | — | — | — | <a href="#type_purpose_proposed">22</a> | **22** |
+| Purpose | — | <a href="#type_purpose_implemented">1</a> | — | <a href="#type_purpose_proposed">21</a> | **22** |
 | reference-data | <a href="#type_reference_data_approved">1</a> | — | — | — | **1** |
 | Resource | — | <a href="#type_resource_implemented">1</a> | — | <a href="#type_resource_proposed">2</a> | **3** |
 | Stakeholder | <a href="#type_stakeholder_approved">1</a> | — | — | <a href="#type_stakeholder_proposed">1</a> | **2** |
@@ -646,7 +652,7 @@
 | Tag | — | — | — | <a href="#type_tag_proposed">19</a> | **19** |
 | Task | — | — | — | <a href="#type_task_proposed">26</a> | **26** |
 | Uncategorized | — | — | — | <a href="#type_uncategorized_proposed">5</a> | **5** |
-| **Total** | **21** | **5** | **1** | **259** | **286** |
+| **Total** | **21** | **6** | **1** | **258** | **286** |
 
 <details class="status-details" id="type_assessment_approved">
   <summary>Assessment &mdash; Approved (5)</summary>
@@ -986,15 +992,21 @@
   <li><a href="../Information Collection and Model Creation/Stakeholder Map.html">Stakeholder Map</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
+<details class="status-details" id="type_purpose_implemented">
+  <summary>Purpose &mdash; Implemented (1)</summary>
+
+<ul>
+  <li><a href="../Sustainability Development Goals/SDG  2. Zero Hunger.html">SDG  2. Zero Hunger</a> <span class="status-badge status-implemented">Implemented</span></li>
+</ul>
+</details>
 <details class="status-details" id="type_purpose_proposed">
-  <summary>Purpose &mdash; Proposed (22)</summary>
+  <summary>Purpose &mdash; Proposed (21)</summary>
 
 <ul>
   <li><a href="../Introduction EurSuRA/Building a EU Reporting Community.html">Building a EU Reporting Community</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Purpose/Enterprise Purpose.html">Enterprise Purpose</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).html">Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Sustainability Development Goals/SDG  1. No Poverty.html">SDG  1. No Poverty</a> <span class="status-badge status-proposed">Proposed</span></li>
-  <li><a href="../Sustainability Development Goals/SDG  2. Zero Hunger.html">SDG  2. Zero Hunger</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Sustainability Development Goals/SDG  3. Good Health and Well-Being.html">SDG  3. Good Health and Well-Being</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Sustainability Development Goals/SDG  4. Quality Education.html">SDG  4. Quality Education</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Sustainability Development Goals/SDG  5. Gender Equality.html">SDG  5. Gender Equality</a> <span class="status-badge status-proposed">Proposed</span></li>
@@ -1135,4 +1147,4 @@
 
 ---
 
-*Generated: 2026-07-17 16:59:37*
+*Generated: 2026-07-31 18:00:35*

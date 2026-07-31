@@ -10,7 +10,7 @@ notes_hash: 1c17d89a
 
 ![Mapping SDG to Main](Mapping SDG to Main.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="7" data-kind="diagram" data-file-path="Mapping SDG to Main/diagrams/Mapping SDG to Main.md" data-api-port="8001" data-api-token="28ba5ca38017843d31ceee1f4b6fb60f5b087780a7c0e6dc" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="7" data-kind="diagram" data-file-path="Mapping SDG to Main/diagrams/Mapping SDG to Main.md" data-api-port="8001" data-api-token="f3a0491e87a05fb2833bbd1e4cdb8499a0101703959665df" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -66,4 +66,4 @@ notes_hash: 1c17d89a
 
 ---
 
-*Generated: 2026-07-17 16:59:39*
+*Generated: 2026-07-31 18:00:36*

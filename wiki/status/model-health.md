@@ -162,7 +162,7 @@ None.
 - [Willem Krijgsman](../Introduction EurSuRA/Willem Krijgsman.html)
 - [XMI Import Definition](../Information Collection and Model Creation/XMI Import Definition.html)
 
-## Untouched 90+ Days (186)
+## Untouched 90+ Days (189)
 
 *Has a Status set, but no field on the element (Notes, tagged values, relationships, etc.) has changed in over 90 days. Does not track how long the Status value itself has been unchanged.*
 
@@ -177,7 +177,6 @@ None.
 | [SDG 16. Peace, Justice and Strong Institutions](../Sustainability Development Goals/SDG 16. Peace, Justice and Strong Institutions.html) | Proposed | 2025-12-02 |
 | [SDG 17. Partnerships for the Goals](../Sustainability Development Goals/SDG 17. Partnerships for the Goals.html) | Proposed | 2025-12-02 |
 | [SDG  1. No Poverty](../Sustainability Development Goals/SDG  1. No Poverty.html) | Proposed | 2025-12-02 |
-| [SDG  2. Zero Hunger](../Sustainability Development Goals/SDG  2. Zero Hunger.html) | Proposed | 2025-12-02 |
 | [SDG  3. Good Health and Well-Being](../Sustainability Development Goals/SDG  3. Good Health and Well-Being.html) | Proposed | 2025-12-02 |
 | [SDG  4. Quality Education](../Sustainability Development Goals/SDG  4. Quality Education.html) | Proposed | 2025-12-02 |
 | [SDG  5. Gender Equality](../Sustainability Development Goals/SDG  5. Gender Equality.html) | Proposed | 2025-12-02 |
@@ -354,6 +353,10 @@ None.
 | [Company subject to CSRD](../People/Company subject to CSRD.html) | Proposed | 2025-12-16 |
 | [ESRS 2 General Disclosures](../ESRS 2/ESRS 2 General Disclosures.html) | Proposed | 2025-12-16 |
 | [ESRS 1 General Requirements](../ESRS 1/ESRS 1 General Requirements.html) | Proposed | 2025-12-16 |
+| [Align sustainability reporting](../ESRS Goals and Objectives/Align sustainability reporting.html) | Proposed | 2026-04-29 |
+| [Ensure that investors and other stakeholders have access to the information](../ESRS Goals and Objectives/Ensure that investors and other stakeholders have access to the information.html) | Proposed | 2026-04-29 |
+| [Allow investors to assess financial risks and opportunities ](../ESRS Goals and Objectives/Allow investors to assess financial risks and opportunities.html) | Proposed | 2026-04-29 |
+| [Chief Financial Officer](../People/Chief Financial Officer.html) | Proposed | 2026-04-29 |
 
 ## Duplicate Names Within a Package (0 names, 0 elements)
 
@@ -363,4 +366,4 @@ None.
 
 ---
 
-*Generated: 2026-07-17 16:59:37*
+*Generated: 2026-07-31 18:00:35*

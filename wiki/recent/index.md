@@ -2,6 +2,7 @@
 
 | Name | Type | Modified | Path |
 |------|------|----------|------|
+| [SDG  2. Zero Hunger](../Sustainability Development Goals/SDG  2. Zero Hunger.html) | Activity | 2026-07-31 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](../Sustainability Development Goals/index.html) |
 | [CO₂ Reduction %](../Assessments/CO₂ Reduction %.html) | Class | 2026-07-17 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
 | [% energie uit hernieuwbare bronnen](../Metrics/% energie uit hernieuwbare bronnen.html) | Requirement | 2026-07-17 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](../Metrics/index.html) |
 | [Energy Efficiency Index](../Assessments/Energy Efficiency Index.html) | Class | 2026-07-17 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
@@ -51,8 +52,7 @@
 | [ProductCarbonFootprint](../Products/ProductCarbonFootprint.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [ProductLifeCycle](../Products/ProductLifeCycle.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [EmissionActivityFlow](../Products/EmissionActivityFlow.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
-| [Product](../Products/Product.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 
 ---
 
-*Generated: 2026-07-17 16:59:37*
+*Generated: 2026-07-31 18:00:34*
