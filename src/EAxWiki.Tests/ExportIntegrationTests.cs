@@ -113,4 +113,21 @@ public class ExportIntegrationTests
 
         Assert.DoesNotContain(writer.Files.Keys, k => k.Contains('<') || k.Contains('>') || k.Contains('|'));
     }
+
+    [Fact]
+    public async Task Export_NotesEditorScript_IncludesAiSuggestButton()
+    {
+        var writer = new InMemoryWriter();
+        var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
+        var repo = MinimalRepository();
+
+        await exporter.ExportAsync(repo, null, OutputPath);
+
+        var key = Normalize(Path.Combine(OutputPath, "notes-editor.js"));
+        Assert.True(writer.Files.ContainsKey(key), $"notes-editor.js should be created. Keys: {string.Join(", ", writer.Files.Keys)}");
+        var content = writer.Files[key];
+        Assert.Contains("suggestBtn", content);
+        Assert.Contains("ea-notes-suggest-btn", content);
+        Assert.Contains("/api/ai-suggest", content);
+    }
 }
