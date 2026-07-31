@@ -1012,14 +1012,6 @@ if (typeof document$ !== 'undefined') {
         await writer.WriteFileAsync(Path.Combine(outputDir, "row-notes-editor.js"), js, ct);
     }
 
-    public async Task WriteAiSuggestScriptAsync(string outputDir, CancellationToken ct = default)
-    {
-        const string js = """
-(function () { 'use strict'; })();
-""";
-        await writer.WriteFileAsync(Path.Combine(outputDir, "ai-suggest.js"), js, ct);
-    }
-
     public async Task WriteExtraCssAsync(string outputDir, CancellationToken ct = default)
     {
         var assembly = Assembly.GetExecutingAssembly();

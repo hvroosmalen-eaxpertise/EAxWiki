@@ -78,4 +78,12 @@ public class ScriptTemplateIntegrityTests
     {
         ReadExportedFile(await RunExportAsync(), "cytoscape.min.js");
     }
+
+    [Fact]
+    public async Task AiSuggestJs_IsNotEmitted()
+    {
+        var writer = await RunExportAsync();
+        var key = Normalize(Path.Combine(OutputPath, "ai-suggest.js"));
+        Assert.False(writer.Files.ContainsKey(key), $"ai-suggest.js should no longer be produced. Keys: {string.Join(", ", writer.Files.Keys)}");
+    }
 }
