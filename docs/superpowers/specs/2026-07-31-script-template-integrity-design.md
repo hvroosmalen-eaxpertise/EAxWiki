@@ -45,7 +45,7 @@ EAxWiki.Tests/
 
 1. **Remove `WriteAiSuggestScriptAsync`** from `InfrastructureWriter.cs` (currently writes an empty `(function () { 'use strict'; })();` stub — dead code, not referenced by `mkdocs.yml`, and `mkdocs.yml`'s `extra_javascript` was already updated to drop `ai-suggest.js`).
 2. **Remove its call** from `MarkdownExporter.cs`.
-3. The orphaned `wiki/ai-suggest.js` in the output dir is cleaned up by the existing `InfrastructureWriter.CleanupOrphanedFilesAsync` on the next export.
+3. **Delete the stale git-tracked `wiki/ai-suggest.js`** from the output dir manually as part of this change. Note: `CleanupOrphanedFilesAsync` only removes orphaned `*.md` element files and package directories — it does not clean up root-level `.js` files, so the stale file must be removed by the plan, not by the next export.
 
 ### Behavior
 
