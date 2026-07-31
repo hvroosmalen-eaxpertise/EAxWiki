@@ -180,7 +180,7 @@ Expected: `Passed! - Failed: 0, ... Total: 6` (all six markers already exist in 
 
 - [ ] **Step 3: Prove the guard catches regressions (mutation test)**
 
-Temporarily break a marker in `src/EAxWiki.Export/Exporters/InfrastructureWriter.cs`: change the `suggestBtn.className = 'ea-notes-suggest-btn';` line (line 646) so the class string reads `'ea-notes-suggest-btnX'` instead. (Use this marker, not `suggestBtn`/`/api/ai-suggest` — those appear multiple times in the script output, and `/api/ai-suggest` is a substring of `/api/ai-suggest-diagram`, so they would not trip the assertion.) Re-run:
+Temporarily break a marker in `src/EAxWiki.Export/Exporters/InfrastructureWriter.cs`: change the `suggestBtn.className = 'ea-notes-suggest-btn';` line (line 646) so the class string reads `'ea-notes-suggest-button'` instead. (Use this marker, not `suggestBtn`/`/api/ai-suggest` — those appear multiple times in the script output, and `/api/ai-suggest` is a substring of `/api/ai-suggest-diagram`, so they would not trip the assertion. Also ensure the replacement removes the `ea-notes-suggest-btn` substring entirely — appending a suffix like `-btnX` still contains the marker, so `Assert.Contains` would not fail.) Re-run:
 Run: `dotnet test "src\EAxWiki.Tests" --filter "FullyQualifiedName~NotesEditorScript_ContainsCoreFunctions"`
 Expected: FAIL on `Assert.Contains` for `ea-notes-suggest-btn`. **Revert the temporary edit immediately.**
 
