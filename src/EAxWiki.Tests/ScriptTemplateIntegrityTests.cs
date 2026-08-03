@@ -91,7 +91,7 @@ public class ScriptTemplateIntegrityTests
     {
         var (writer, outPath) = await RunExportAsync();
         var content = ReadExportedFile(writer, outPath, "extra.css");
-        AssertContainsAll(content, ".ea-notes-editor", ".ea-notes-suggest-btn", ".ea-status-editor");
+        AssertContainsAll(content, ".ea-notes-editor", ".ea-notes-suggest-btn", ".ea-status-editor", "ea-icon-spinner", "@keyframes ea-spin", "fill: currentColor");
     }
 
     [Fact]
@@ -106,7 +106,7 @@ public class ScriptTemplateIntegrityTests
     {
         var (writer, outPath) = await RunExportAsync();
         var content = ReadExportedFile(writer, outPath, "ea-icons.js");
-        AssertContainsAll(content, "window.EAxIcons", "set: function", "aria-label", "spinner");
+        AssertContainsAll(content, "window.EAxIcons", "set: function", "aria-label", "spinner", "ea-icon-spinner", "viewBox=\"0 0 24 24\"");
     }
 
     [Fact]
