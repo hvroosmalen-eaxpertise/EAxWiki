@@ -333,7 +333,7 @@ details.status-details li {
   background: #7b1fa2;
   border-color: #7b1fa2;
 }
-.ea-status-btn svg, .ea-notes-save-btn svg, .ea-notes-cancel-btn svg, .ea-notes-suggest-btn svg {
+.ea-status-btn svg, .ea-status-cancel-btn svg, .ea-notes-save-btn svg, .ea-notes-cancel-btn svg, .ea-notes-suggest-btn svg {
   width: 1em;
   height: 1em;
   fill: currentColor;
