@@ -10,7 +10,7 @@ notes_hash: 81393151
 
 ![Introduction EDGY Presentation 13 May Event](Introduction EDGY Presentation 13 May Event.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="44" data-kind="diagram" data-file-path="Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md" data-api-port="8001" data-api-token="f3a0491e87a05fb2833bbd1e4cdb8499a0101703959665df" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="44" data-kind="diagram" data-file-path="Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md" data-api-port="8001" data-api-token="d54ac7f4ba1b9561901225e0195c664d0fa006b906b25c92" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -54,4 +54,4 @@ notes_hash: 81393151
 
 ---
 
-*Generated: 2026-07-31 18:00:57*
+*Generated: 2026-08-03 08:46:48*

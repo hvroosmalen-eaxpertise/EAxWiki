@@ -1,8 +1,20 @@
+---
+package_id: 26
+notes_hash: 10e47b22
+---
+
 # ESRS Navigator Stakeholder Map
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](index.html)
 
-Stakeholder map based on the ESRS Navigator document for sustainability reporting under CSRD
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="26" data-kind="package" data-file-path="ESRS Navigator Stakeholder Map/index.md" data-api-port="8001" data-api-token="d54ac7f4ba1b9561901225e0195c664d0fa006b906b25c92" data-ai-configured="true">
+<button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+<div class="ea-notes-content">
+<!--ea-package-notes-start-->
+<p>Stakeholder map based on the ESRS Navigator document for sustainability reporting under CSRD</p>
+<!--ea-package-notes-end-->
+</div>
+</div>
 
 ## Diagrams
 
@@ -132,4 +144,4 @@ Stakeholder map based on the ESRS Navigator document for sustainability reportin
 
 ---
 
-*Generated: 2026-07-31 18:00:34*
+*Generated: 2026-08-03 08:46:17*

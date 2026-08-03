@@ -9,13 +9,13 @@ notes_hash: d0bceb96
 # <span class="sl" data-layer="edgy-pe">People</span> Aligned Incentives
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="567" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Private Parties/Aligned Incentives.md" data-api-port="8001" data-api-token="f3a0491e87a05fb2833bbd1e4cdb8499a0101703959665df"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="567" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Private Parties/Aligned Incentives.md" data-api-port="8001" data-api-token="d54ac7f4ba1b9561901225e0195c664d0fa006b906b25c92"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](../People/index.html) / [Private Parties](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="567" data-file-path="Private Parties/Aligned Incentives.md" data-api-port="8001" data-api-token="f3a0491e87a05fb2833bbd1e4cdb8499a0101703959665df" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="567" data-file-path="Private Parties/Aligned Incentives.md" data-api-port="8001" data-api-token="d54ac7f4ba1b9561901225e0195c664d0fa006b906b25c92" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -40,4 +40,4 @@ notes_hash: d0bceb96
 
 ---
 
-*Generated: 2026-07-31 18:00:34*
+*Generated: 2026-08-03 08:46:17*

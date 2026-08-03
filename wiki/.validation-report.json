@@ -5,6 +5,1986 @@
   "Errors": 0,
   "Issues": [
     {
+      "File": "Metrics\\% scope 3 emissies met gemeten data.md",
+      "Type": "warning",
+      "Message": "Broken link: Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal"
+    },
+    {
+      "File": "Metrics\\% gerecyclede materialen in producten.md",
+      "Type": "warning",
+      "Message": "Broken link: Massa gerecycled materiaal (kg_% input"
+    },
+    {
+      "File": "Metrics\\% gerecyclede materialen in producten.md",
+      "Type": "warning",
+      "Message": "Broken link: % Gerecycled materiaal = (gerecycled _ totaal input"
+    },
+    {
+      "File": "Metrics\\_ teruggenomen producten (per jaar).md",
+      "Type": "warning",
+      "Message": "Broken link: ../Task/Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma"
+    },
+    {
+      "File": "Metrics\\_ teruggenomen producten (per jaar).md",
+      "Type": "warning",
+      "Message": "Broken link: ../Task/Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma"
+    },
+    {
+      "File": "Metrics\\Product Carbon Footprint = totale CO\u2082e _ aantal eenheden geproduceerd.md",
+      "Type": "warning",
+      "Message": "Broken link: Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Product Carbon Footprint = totale CO\u2082e _ aantal eenheden geproduceerd.md",
+      "Type": "warning",
+      "Message": "Broken link: Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Brandstofsensoren_logboeken.md",
+      "Type": "warning",
+      "Message": "Broken link: Brandstofgebruik (Scope 1"
+    },
+    {
+      "File": "Metrics\\Brandstofsensoren_logboeken.md",
+      "Type": "warning",
+      "Message": "Broken link: Brandstofgebruik (Scope 1"
+    },
+    {
+      "File": "Metrics\\Brandstofgebruik (Scope 1).md",
+      "Type": "warning",
+      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\Brandstofgebruik (Scope 1).md",
+      "Type": "warning",
+      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\Emissiereductie (%) = ((baseline \u2013 huidig) _ baseline) \u00D7 100.md",
+      "Type": "warning",
+      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Emissiereductie (%) = ((baseline \u2013 huidig) _ baseline) \u00D7 100.md",
+      "Type": "warning",
+      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Metrics\\BMS (HVAC_lighting).md",
+      "Type": "warning",
+      "Message": "Broken link: Hernieuwbare energieopwekking (kWh"
+    },
+    {
+      "File": "Metrics\\BMS (HVAC_lighting).md",
+      "Type": "warning",
+      "Message": "Broken link: Hernieuwbare energieopwekking (kWh"
+    },
+    {
+      "File": "Metrics\\Assetmanagementsysteem.md",
+      "Type": "warning",
+      "Message": "Broken link: Aantal duurzame assets (bv. EV\u0027s, zonnepanelen"
+    },
+    {
+      "File": "Metrics\\Assetmanagementsysteem.md",
+      "Type": "warning",
+      "Message": "Broken link: Aantal duurzame assets (bv. EV\u0027s, zonnepanelen"
+    },
+    {
+      "File": "Metrics\\% energie uit hernieuwbare bronnen.md",
+      "Type": "warning",
+      "Message": "Broken link: Energieverbruik (kWh"
+    },
+    {
+      "File": "Metrics\\% energie uit hernieuwbare bronnen.md",
+      "Type": "warning",
+      "Message": "Broken link: Hernieuwbare energieopwekking (kWh"
+    },
+    {
+      "File": "Metrics\\% energie uit hernieuwbare bronnen.md",
+      "Type": "warning",
+      "Message": "Broken link: Aantal duurzame assets (bv. EV\u0027s, zonnepanelen"
+    },
+    {
+      "File": "Metrics\\% energie uit hernieuwbare bronnen.md",
+      "Type": "warning",
+      "Message": "Broken link: % Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik"
+    },
+    {
+      "File": "Metrics\\Totale uitstoot = Scope 1 \u002B Scope 2 \u002B Scope 3 (in ton CO\u2082e).md",
+      "Type": "warning",
+      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\Totale uitstoot = Scope 1 \u002B Scope 2 \u002B Scope 3 (in ton CO\u2082e).md",
+      "Type": "warning",
+      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../_ teruggenomen producten (per jaar"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../% Gerecycled materiaal = (gerecycled _ totaal input"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../% Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Aantal duurzame assets (bv. EV\u0027s, zonnepanelen"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../BMS (HVAC_lighting"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Brandstofgebruik (Scope 1"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../CO\u2082 bespaard door digitalisering (ton"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../CO\u2082 per klanttransactie (kg"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Elektriciteitsverbruik (Scope 2"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Emissiereductie (%"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Energie (MWh_jaar"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Energieverbruik (kWh"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Hernieuwbare energieopwekking (kWh"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Herstelde natuur (ha"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Jaarlijkse CO\u2082-reductie (%"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Leveranciers-, transport-, gebruiksdata (Scope 3"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Massa gerecycled materiaal (kg_% input"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Productiesoftware (SCADA, MES"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Reductiedoel CO\u2082 (% t.o.v. basisjaar"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Restafval per medewerker (kg_jaar"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Totale uitstoot = Scope 1 \u002B Scope 2 \u002B Scope 3 (in ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Uitstoot NO\u2093_SO\u2093 (kg_jaar"
+    },
+    {
+      "File": "Metrics\\diagrams\\Metrics.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Experience\\diagrams\\Experience.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/_ teruggenomen producten (per jaar"
+    },
+    {
+      "File": "Experience\\diagrams\\Experience.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/CO\u2082 bespaard door digitalisering (ton"
+    },
+    {
+      "File": "Experience\\diagrams\\Experience.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/CO\u2082 per klanttransactie (kg"
+    },
+    {
+      "File": "Experience\\diagrams\\Experience.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Task/Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma"
+    },
+    {
+      "File": "Architecture\\diagrams\\Architecture.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/Energie (MWh_jaar"
+    },
+    {
+      "File": "Architecture\\diagrams\\Architecture.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Task/Identificeer uitstootbronnen (scope 1, 2, 3"
+    },
+    {
+      "File": "Architecture\\diagrams\\Architecture.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Architecture\\diagrams\\Architecture.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Architecture\\diagrams\\Architecture.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Identity\\diagrams\\Identity.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
+    },
+    {
+      "File": "Identity\\diagrams\\Identity.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/Herstelde natuur (ha"
+    },
+    {
+      "File": "Identity\\diagrams\\Identity.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/Jaarlijkse CO\u2082-reductie (%"
+    },
+    {
+      "File": "Identity\\diagrams\\Identity.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/Reductiedoel CO\u2082 (% t.o.v. basisjaar"
+    },
+    {
+      "File": "Identity\\diagrams\\Identity.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/Restafval per medewerker (kg_jaar"
+    },
+    {
+      "File": "Identity\\diagrams\\Identity.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar"
+    },
+    {
+      "File": "Identity\\diagrams\\Identity.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../Metrics/Uitstoot NO\u2093_SO\u2093 (kg_jaar"
+    },
+    {
+      "File": "ESRS S3 Affected Communities - People\\diagrams\\ESRS S3 Affected Communities - People.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ERSR S2 Workers in the Value Chain - People\\diagrams\\ERSR S2 Workers in the Value Chain - People.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS S1 Own Workforce - People\\diagrams\\ESRS S1 Own Workforce - People.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS S1 Own Workforce - People\\diagrams\\ESRS S1 Own Workforce - People.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "ESRS E1, E2, E3, E4, E5, G1 - People\\diagrams\\ESRS E1, E2, E3, E4, E5, G1 - People.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Rijksdienst voor Ondernemend Nederland (RVO"
+    },
+    {
+      "File": "ESRS E1, E2, E3, E4, E5, G1 - People\\diagrams\\ESRS E1, E2, E3, E4, E5, G1 - People.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Supervisory Board (RvC"
+    },
+    {
+      "File": "European Union - People\\diagrams\\European Union - People.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Chamber of Commerce (Kamer van Koophandel"
+    },
+    {
+      "File": "European Union - People\\diagrams\\European Union - People.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Rijksdienst voor Ondernemend Nederland (RVO"
+    },
+    {
+      "File": "European Union - People\\diagrams\\European Union - People.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Sociaal Economische Raad (SER"
+    },
+    {
+      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Board of Directors (Directie"
+    },
+    {
+      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Chamber of Commerce (Kamer van Koophandel"
+    },
+    {
+      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Rijksdienst voor Ondernemend Nederland (RVO"
+    },
+    {
+      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Sociaal Economische Raad (SER"
+    },
+    {
+      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Supervisory Board (RvC"
+    },
+    {
+      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
+      "Type": "warning",
+      "Message": "Broken link: ../../People/Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "Information Collection and Model Creation\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: EDGY -_ XMI (Python"
+    },
+    {
+      "File": "Information Collection and Model Creation\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: LDM -_ XMI (Python"
+    },
+    {
+      "File": "Information Collection and Model Creation\\Constureren MD to XMI Convertor.md",
+      "Type": "warning",
+      "Message": "Broken link: EDGY -_ XMI (Python"
+    },
+    {
+      "File": "Information Collection and Model Creation\\Compile Information Sources.md",
+      "Type": "warning",
+      "Message": "Broken link: EDGY -_ XMI (Python"
+    },
+    {
+      "File": "Information Collection and Model Creation\\Compile Information Sources.md",
+      "Type": "warning",
+      "Message": "Broken link: LDM -_ XMI (Python"
+    },
+    {
+      "File": "Information Collection and Model Creation\\ERD Model.md",
+      "Type": "warning",
+      "Message": "Broken link: LDM -_ XMI (Python"
+    },
+    {
+      "File": "Information Collection and Model Creation\\ERD Model.md",
+      "Type": "warning",
+      "Message": "Broken link: LDM -_ XMI (Python"
+    },
+    {
+      "File": "Information Collection and Model Creation\\EDGY Model Elementen en Relaties.md",
+      "Type": "warning",
+      "Message": "Broken link: EDGY -_ XMI (Python"
+    },
+    {
+      "File": "Information Collection and Model Creation\\EDGY Model Elementen en Relaties.md",
+      "Type": "warning",
+      "Message": "Broken link: EDGY -_ XMI (Python"
+    },
+    {
+      "File": "Introduction EurSuRA\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
+    },
+    {
+      "File": "Introduction EurSuRA\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Deutsche Bahn (Marco Dillenburg"
+    },
+    {
+      "File": "Introduction EurSuRA\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Calculation Engine(s"
+    },
+    {
+      "File": "Introduction EurSuRA\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: EurSuRA.eu (Website"
+    },
+    {
+      "File": "Introduction EurSuRA\\Sidenote from Community Leads.md",
+      "Type": "warning",
+      "Message": "Broken link: Deutsche Bahn (Marco Dillenburg"
+    },
+    {
+      "File": "Introduction EurSuRA\\Reference Architecture Framework for ESRS Reporting.md",
+      "Type": "warning",
+      "Message": "Broken link: Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
+    },
+    {
+      "File": "Introduction EurSuRA\\Reference Architecture Framework for ESRS Reporting.md",
+      "Type": "warning",
+      "Message": "Broken link: Calculation Engine(s"
+    },
+    {
+      "File": "Introduction EurSuRA\\Reference Architecture Framework for ESRS Reporting.md",
+      "Type": "warning",
+      "Message": "Broken link: Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
+    },
+    {
+      "File": "Introduction EurSuRA\\EurSuRA.md",
+      "Type": "warning",
+      "Message": "Broken link: EurSuRA.eu (Website"
+    },
+    {
+      "File": "Introduction EurSuRA\\Building a EU Reporting Community.md",
+      "Type": "warning",
+      "Message": "Broken link: Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
+    },
+    {
+      "File": "Reputation Risk\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Market Differentiation Pressure\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Regulatory Pressure\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Climate Risk\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Stakeholder Expectations\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Strategic Sustainability Management Model (Bodenstein)\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: diagrams/Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Supervisory Board (RvC"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Rijksdienst voor Ondernemen (RVO"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Sociaal Economische Raad (SER"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS G1 - Business Conduct.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS G1 - Business Conduct.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS S4 - Consumers.md",
+      "Type": "warning",
+      "Message": "Broken link: Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS S4 - Consumers.md",
+      "Type": "warning",
+      "Message": "Broken link: Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS S3 - Communities.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS S3 - Communities.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS S2 - Value Chain Workers.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS S2 - Value Chain Workers.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS S1 - Own Personnel.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS S1 - Own Personnel.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS E5 - Circular Economy.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS E5 - Circular Economy.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS E4 - Biodiversity.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS E4 - Biodiversity.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS E3 - Water.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS E3 - Water.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS E2 - Pollution.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS E2 - Pollution.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS E1 - Climate.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\ESRS E1 - Climate.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Chamber of Commerce_Kamer van Koophandel.md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Chamber of Commerce (Kamer van Koophandel"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Research and Analysis Firms.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Sustainability Consultants.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Legal Design Agencies.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Trade Unions.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\NGOs and Civil Society.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Industry Associations.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Industry Associations.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Certification Bodies.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\External Auditors.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Sociaal Economische Raad (SER).md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Sociaal Economische Raad (SER"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Ministry of Economic Affairs.md",
+      "Type": "warning",
+      "Message": "Broken link: Rijksdienst voor Ondernemen (RVO"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\AFM.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Rijksdienst voor Ondernemen (RVO).md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Rijksdienst voor Ondernemen (RVO).md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Rijksdienst voor Ondernemend Nederland (RVO"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\European Commission.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Credit Rating Agencies.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Banks and Financial Institutions.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Investors_Shareholders.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Indigenous Peoples.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Local Communities.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Affected Communities (ESRS S3).md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Affected Communities (ESRS S3).md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Affected Communities (ESRS S3).md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Consumers and End Users (ESRS S4).md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Customers.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Customers.md",
+      "Type": "warning",
+      "Message": "Broken link: Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Customers.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Seasonal Agricultural Workers.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Workers in Value Chain (ESRS S2).md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Suppliers.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Suppliers.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Suppliers.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Production Workers.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Seasonal Workers.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Permanent Employees.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Own Personnel (ESRS S1).md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Own Personnel (ESRS S1).md",
+      "Type": "warning",
+      "Message": "Broken link: Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Own Personnel (ESRS S1).md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Own Personnel (ESRS S1).md",
+      "Type": "warning",
+      "Message": "Broken link: Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Works Council (Ondernemingsraad).md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Works Council (Ondernemingsraad).md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Supervisory Board (RvC).md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Supervisory Board (RvC).md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Supervisory Board (RvC"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\COO.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\COO.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\CFO.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\CFO.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\CEO.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\CEO.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Board of Directors (Directie).md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Board of Directors (Directie).md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Board of Directors (Directie"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Non-listed SMEs.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Listed SMEs.md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\FreshFood B.V..md",
+      "Type": "warning",
+      "Message": "Broken link: Large Companies (_250 employees"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
+      "Type": "warning",
+      "Message": "Broken link: Supervisory Board (RvC"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
+      "Type": "warning",
+      "Message": "Broken link: Rijksdienst voor Ondernemen (RVO"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
+      "Type": "warning",
+      "Message": "Broken link: Supervisory Board (RvC"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
+      "Type": "warning",
+      "Message": "Broken link: Rijksdienst voor Ondernemen (RVO"
+    },
+    {
+      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "Assessments\\index.md",
+      "Type": "warning",
+      "Message": "Missing image: x"
+    },
+    {
+      "File": "Assessments\\ESG Score.md",
+      "Type": "warning",
+      "Message": "Missing image: x"
+    },
+    {
+      "File": "Archimate\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: % Gerecycled materiaal = (gerecycled _ totaal input"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: % Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Emissiereductie (%"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Totale uitstoot = Scope 1 \u002B Scope 2 \u002B Scope 3 (in ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: _ teruggenomen producten (per jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Aantal duurzame assets (bv. EV\u0027s, zonnepanelen"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: BMS (HVAC_lighting"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Brandstofgebruik (Scope 1"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: CO\u2082 bespaard door digitalisering (ton"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: CO\u2082 per klanttransactie (kg"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Elektriciteitsverbruik (Scope 2"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Energie (MWh_jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Energieverbruik (kWh"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Hernieuwbare energieopwekking (kWh"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Herstelde natuur (ha"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Jaarlijkse CO\u2082-reductie (%"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Leveranciers-, transport-, gebruiksdata (Scope 3"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Massa gerecycled materiaal (kg_% input"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Productiesoftware (SCADA, MES"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Reductiedoel CO\u2082 (% t.o.v. basisjaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Restafval per medewerker (kg_jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Uitstoot NO\u2093_SO\u2093 (kg_jaar"
+    },
+    {
+      "File": "Metrics\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Vermeden CO\u2082 door maatregelen (ton_jaar).md",
+      "Type": "warning",
+      "Message": "Broken link: Emissiereductie (%"
+    },
+    {
+      "File": "Metrics\\Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar).md",
+      "Type": "warning",
+      "Message": "Broken link: ../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
+    },
+    {
+      "File": "Metrics\\Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar).md",
+      "Type": "warning",
+      "Message": "Broken link: ../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
+    },
+    {
+      "File": "Metrics\\Slimme meters, energienota\u2019s.md",
+      "Type": "warning",
+      "Message": "Broken link: Elektriciteitsverbruik (Scope 2"
+    },
+    {
+      "File": "Metrics\\Slimme meters, energienota\u2019s.md",
+      "Type": "warning",
+      "Message": "Broken link: Elektriciteitsverbruik (Scope 2"
+    },
+    {
+      "File": "Metrics\\Slimme meters _ EMS.md",
+      "Type": "warning",
+      "Message": "Broken link: Energieverbruik (kWh"
+    },
+    {
+      "File": "Metrics\\Slimme meters _ EMS.md",
+      "Type": "warning",
+      "Message": "Broken link: Energieverbruik (kWh"
+    },
+    {
+      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
+      "Type": "warning",
+      "Message": "Broken link: ../Task/Identificeer uitstootbronnen (scope 1, 2, 3"
+    },
+    {
+      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
+      "Type": "warning",
+      "Message": "Broken link: Brandstofgebruik (Scope 1"
+    },
+    {
+      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
+      "Type": "warning",
+      "Message": "Broken link: Elektriciteitsverbruik (Scope 2"
+    },
+    {
+      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
+      "Type": "warning",
+      "Message": "Broken link: Leveranciers-, transport-, gebruiksdata (Scope 3"
+    },
+    {
+      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
+      "Type": "warning",
+      "Message": "Broken link: Totale uitstoot = Scope 1 \u002B Scope 2 \u002B Scope 3 (in ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
+      "Type": "warning",
+      "Message": "Broken link: ../Task/Identificeer uitstootbronnen (scope 1, 2, 3"
+    },
+    {
+      "File": "Metrics\\Projectgegevens en tech specs.md",
+      "Type": "warning",
+      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Projectgegevens en tech specs.md",
+      "Type": "warning",
+      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Outputvolumes voor normalisatie.md",
+      "Type": "warning",
+      "Message": "Broken link: Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Outputvolumes voor normalisatie.md",
+      "Type": "warning",
+      "Message": "Broken link: Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Leveranciers-, transport-, gebruiksdata (Scope 3).md",
+      "Type": "warning",
+      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\Leveranciers-, transport-, gebruiksdata (Scope 3).md",
+      "Type": "warning",
+      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\Herstelde natuur (ha).md",
+      "Type": "warning",
+      "Message": "Broken link: ../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
+    },
+    {
+      "File": "Metrics\\Herstelde natuur (ha).md",
+      "Type": "warning",
+      "Message": "Broken link: ../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
+    },
+    {
+      "File": "Metrics\\Hernieuwbare energieopwekking (kWh).md",
+      "Type": "warning",
+      "Message": "Broken link: BMS (HVAC_lighting"
+    },
+    {
+      "File": "Metrics\\ERP_BOM met herkomst info.md",
+      "Type": "warning",
+      "Message": "Broken link: Massa gerecycled materiaal (kg_% input"
+    },
+    {
+      "File": "Metrics\\ERP_BOM met herkomst info.md",
+      "Type": "warning",
+      "Message": "Broken link: Massa gerecycled materiaal (kg_% input"
+    },
+    {
+      "File": "Metrics\\ERP \u002B Scope 3-calculatietools.md",
+      "Type": "warning",
+      "Message": "Broken link: Leveranciers-, transport-, gebruiksdata (Scope 3"
+    },
+    {
+      "File": "Metrics\\ERP \u002B Scope 3-calculatietools.md",
+      "Type": "warning",
+      "Message": "Broken link: Leveranciers-, transport-, gebruiksdata (Scope 3"
+    },
+    {
+      "File": "Metrics\\Energieverbruik v\u00F3\u00F3r_na project.md",
+      "Type": "warning",
+      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Energieverbruik v\u00F3\u00F3r_na project.md",
+      "Type": "warning",
+      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Energie, materiaal, water, afval per eenheid.md",
+      "Type": "warning",
+      "Message": "Broken link: Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Energie, materiaal, water, afval per eenheid.md",
+      "Type": "warning",
+      "Message": "Broken link: Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Emissie v\u00F3\u00F3r_na project.md",
+      "Type": "warning",
+      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Emissie v\u00F3\u00F3r_na project.md",
+      "Type": "warning",
+      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Metrics\\Elektriciteitsverbruik (Scope 2).md",
+      "Type": "warning",
+      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\Elektriciteitsverbruik (Scope 2).md",
+      "Type": "warning",
+      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Metrics\\CO\u2082e per processtap of productlevensfase.md",
+      "Type": "warning",
+      "Message": "Broken link: Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Metrics\\CO\u2082e per processtap of productlevensfase.md",
+      "Type": "warning",
+      "Message": "Broken link: Productiesoftware (SCADA, MES"
+    },
+    {
+      "File": "Metrics\\CO\u2082e per processtap of productlevensfase.md",
+      "Type": "warning",
+      "Message": "Broken link: Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Task\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
+    },
+    {
+      "File": "Task\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Identificeer uitstootbronnen (scope 1, 2, 3"
+    },
+    {
+      "File": "Task\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma"
+    },
+    {
+      "File": "Task\\Voer een volledige LCA uit op product- en procesniveau..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Totaal afval (ton_jaar"
+    },
+    {
+      "File": "Task\\Voer duurzame werkgewoonten in zoals repair-first, afvalscheiding en energiebewust werken..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Restafval per medewerker (kg_jaar"
+    },
+    {
+      "File": "Task\\Stel Science-Based Targets op en rapporteer jaarlijks voortgang..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Jaarlijkse CO\u2082-reductie (%"
+    },
+    {
+      "File": "Task\\Start projecten voor energiebesparing, transportoptimalisatie en circulariteit..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "Task\\Ontwikkel een 2030_2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Reductiedoel CO\u2082 (% t.o.v. basisjaar"
+    },
+    {
+      "File": "Task\\Ontwerp een klantreis met minimale afvalproductie en transparante impactcommunicatie..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/CO\u2082 per klanttransactie (kg"
+    },
+    {
+      "File": "Task\\Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma)..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/_ teruggenomen producten (per jaar"
+    },
+    {
+      "File": "Task\\Meet CO\u2082, circulariteit, energiegebruik en stel KPI\u2019s op..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Energie (MWh_jaar"
+    },
+    {
+      "File": "Task\\Maak een publiek impactrapport over emissies, afval, water en circulariteit..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Uitstoot NO\u2093_SO\u2093 (kg_jaar"
+    },
+    {
+      "File": "Task\\Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "Task\\Green Customer Task.md",
+      "Type": "warning",
+      "Message": "Broken link: Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma"
+    },
+    {
+      "File": "Task\\Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar"
+    },
+    {
+      "File": "Task\\Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Herstelde natuur (ha"
+    },
+    {
+      "File": "Task\\Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen..md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/CO\u2082 bespaard door digitalisering (ton"
+    },
+    {
+      "File": "Asset\\Emission Sources.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Task/Identificeer uitstootbronnen (scope 1, 2, 3"
+    },
+    {
+      "File": "Purpose\\Enterprise Purpose.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Chamber of Commerce (Kamer van Koophandel"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Rijksdienst voor Ondernemend Nederland (RVO"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Sociaal Economische Raad (SER"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Supervisory Board (RvC"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "People\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "People\\Works Council (Ondernemingsraad).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "People\\Works Council (Ondernemingsraad).md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Works Council (Ondernemingsraad).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "People\\Workers in Value Chain (ESRS S2).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "People\\Workers in Value Chain (ESRS S2).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "People\\Trade Unions.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Sustainability Manager_Director.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "People\\Sustainability Manager_Director.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "People\\Suppliers.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "People\\Supervisory Board (RvC).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Supervisory Board (RvC"
+    },
+    {
+      "File": "People\\Supervisory Board (RvC).md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "People\\Supervisory Board (RvC).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Supervisory Board (RvC"
+    },
+    {
+      "File": "People\\Sociaal Economische Raad (SER).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Sociaal Economische Raad (SER"
+    },
+    {
+      "File": "People\\Sociaal Economische Raad (SER).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Sociaal Economische Raad (SER"
+    },
+    {
+      "File": "People\\Seasonal Workers.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Seasonal Workers.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Seasonal Agricultural Workers.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "People\\Seasonal Agricultural Workers.md",
+      "Type": "warning",
+      "Message": "Broken link: Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "People\\Rijksdienst voor Ondernemend Nederland (RVO).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO"
+    },
+    {
+      "File": "People\\Rijksdienst voor Ondernemend Nederland (RVO).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO"
+    },
+    {
+      "File": "People\\Production Workers.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Production Workers.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Permanent Employees.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Permanent Employees.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Own Personnel (ESRS S1).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Own Personnel (ESRS S1).md",
+      "Type": "warning",
+      "Message": "Broken link: Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "People\\Own Personnel (ESRS S1).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Own Personnel (ESRS S1).md",
+      "Type": "warning",
+      "Message": "Broken link: Works Council (Ondernemingsraad"
+    },
+    {
+      "File": "People\\Non-listed SMEs.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
+    },
+    {
+      "File": "People\\Non-listed SMEs.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
+    },
+    {
+      "File": "People\\Non-EU company.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
+    },
+    {
+      "File": "People\\Non-EU company.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
+    },
+    {
+      "File": "People\\Ministry of Economic Affairs.md",
+      "Type": "warning",
+      "Message": "Broken link: Rijksdienst voor Ondernemend Nederland (RVO"
+    },
+    {
+      "File": "People\\Ministry of Economic Affairs.md",
+      "Type": "warning",
+      "Message": "Broken link: Sociaal Economische Raad (SER"
+    },
+    {
+      "File": "People\\Ministry of Economic Affairs.md",
+      "Type": "warning",
+      "Message": "Broken link: Chamber of Commerce (Kamer van Koophandel"
+    },
+    {
+      "File": "People\\Ministry of Economic Affairs.md",
+      "Type": "warning",
+      "Message": "Broken link: Rijksdienst voor Ondernemend Nederland (RVO"
+    },
+    {
+      "File": "People\\Local Communities.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "People\\Local Communities.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "People\\Listed SMEs.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
+    },
+    {
+      "File": "People\\Listed SMEs.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
+    },
+    {
+      "File": "People\\Indigenous Peoples.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "People\\Indigenous Peoples.md",
+      "Type": "warning",
+      "Message": "Broken link: Affected Communities (ESRS S3"
+    },
+    {
+      "File": "People\\Customers.md",
+      "Type": "warning",
+      "Message": "Broken link: Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "People\\COO.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "People\\COO.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "People\\Consumers and End Users (ESRS S4).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "People\\Consumers and End Users (ESRS S4).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "People\\Company subject to CSRD.md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Large Companies (_250 employees"
+    },
+    {
+      "File": "People\\Company subject to CSRD.md",
+      "Type": "warning",
+      "Message": "Broken link: Supervisory Board (RvC"
+    },
+    {
+      "File": "People\\Company subject to CSRD.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Company subject to CSRD.md",
+      "Type": "warning",
+      "Message": "Broken link: Rijksdienst voor Ondernemend Nederland (RVO"
+    },
+    {
+      "File": "People\\Company subject to CSRD.md",
+      "Type": "warning",
+      "Message": "Broken link: Chamber of Commerce (Kamer van Koophandel"
+    },
+    {
+      "File": "People\\Company subject to CSRD.md",
+      "Type": "warning",
+      "Message": "Broken link: Chamber of Commerce (Kamer van Koophandel"
+    },
+    {
+      "File": "People\\Company subject to CSRD.md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Large Companies (_250 employees"
+    },
+    {
+      "File": "People\\Company subject to CSRD.md",
+      "Type": "warning",
+      "Message": "Broken link: Supervisory Board (RvC"
+    },
+    {
+      "File": "People\\Company subject to CSRD.md",
+      "Type": "warning",
+      "Message": "Broken link: Own Personnel (ESRS S1"
+    },
+    {
+      "File": "People\\Company subject to CSRD.md",
+      "Type": "warning",
+      "Message": "Broken link: Rijksdienst voor Ondernemend Nederland (RVO"
+    },
+    {
+      "File": "People\\Chief Financial Officer.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "People\\Chief Financial Officer.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "People\\CEO.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "People\\CEO.md",
+      "Type": "warning",
+      "Message": "Broken link: Board of Directors (Directie"
+    },
+    {
+      "File": "People\\Board of Directors (Directie).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Board of Directors (Directie"
+    },
+    {
+      "File": "People\\Board of Directors (Directie).md",
+      "Type": "warning",
+      "Message": "Broken link: Supervisory Board (RvC"
+    },
+    {
+      "File": "People\\Board of Directors (Directie).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Board of Directors (Directie"
+    },
+    {
+      "File": "People\\Board of Directors (Directie).md",
+      "Type": "warning",
+      "Message": "Broken link: Supervisory Board (RvC"
+    },
+    {
+      "File": "People\\Affected Communities (ESRS S3).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3"
+    },
+    {
+      "File": "People\\Affected Communities (ESRS S3).md",
+      "Type": "warning",
+      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS S4\\ESRS S4 Consumers and End-users.md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "ESRS S4\\ESRS S4 Consumers and End-users.md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Consumers and End Users (ESRS S4"
+    },
+    {
+      "File": "ESRS S3\\ESRS S3 Affected Communities.md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS S3\\ESRS S3 Affected Communities.md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Affected Communities (ESRS S3"
+    },
+    {
+      "File": "ESRS S2\\ESRS S2 Workers in the Value Chain.md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS S2\\ESRS S2 Workers in the Value Chain.md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Workers in Value Chain (ESRS S2"
+    },
+    {
+      "File": "ESRS S1\\ESRS S1 Own Workforce.md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS S1\\ESRS S1 Own Workforce.md",
+      "Type": "warning",
+      "Message": "Broken link: ../People/Own Personnel (ESRS S1"
+    },
+    {
+      "File": "ESRS E5\\ESRS E5 Resource Use and Circular Economy.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/_ teruggenomen producten (per jaar"
+    },
+    {
+      "File": "ESRS E5\\ESRS E5 Resource Use and Circular Economy.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Totaal afval (ton_jaar"
+    },
+    {
+      "File": "ESRS E5\\ESRS E5 Resource Use and Circular Economy.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Energie (MWh_jaar"
+    },
+    {
+      "File": "ESRS E5\\ESRS E5 Resource Use and Circular Economy.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Restafval per medewerker (kg_jaar"
+    },
+    {
+      "File": "ESRS E4\\ESRS E4 Biodiversity and Ecosystems.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Herstelde natuur (ha"
+    },
+    {
+      "File": "ESRS E2\\ESRS E2 Pollution.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Uitstoot NO\u2093_SO\u2093 (kg_jaar"
+    },
+    {
+      "File": "ESRS E1\\ESRS E1 Climate Change.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar"
+    },
+    {
+      "File": "ESRS E1\\ESRS E1 Climate Change.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Reductiedoel CO\u2082 (% t.o.v. basisjaar"
+    },
+    {
+      "File": "ESRS E1\\ESRS E1 Climate Change.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Jaarlijkse CO\u2082-reductie (%"
+    },
+    {
+      "File": "ESRS E1\\ESRS E1 Climate Change.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/CO\u2082 per klanttransactie (kg"
+    },
+    {
+      "File": "ESRS E1\\ESRS E1 Climate Change.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/CO\u2082 bespaard door digitalisering (ton"
+    },
+    {
+      "File": "ESRS E1\\ESRS E1 Climate Change.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Scope 1 uitstoot per bron (ton CO\u2082e"
+    },
+    {
+      "File": "ESRS E1\\ESRS E1 Climate Change.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Vermeden CO\u2082 door maatregelen (ton_jaar"
+    },
+    {
+      "File": "ESRS E1\\ESRS E1 Climate Change.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Metrics/Energie (MWh_jaar"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
+      "File": "diagrams\\index.md",
+      "Type": "warning",
+      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
+    },
+    {
       "File": "Information Collection and Model Creation\\diagrams\\Information Collection and Model Creation.md",
       "Type": "warning",
       "Message": "Broken link: ../EDGY -_ XMI (Python"
@@ -163,1986 +2143,6 @@
       "File": "ESRS Navigator Stakeholder Map\\diagrams\\ESRS Stakeholder Overview.md",
       "Type": "warning",
       "Message": "Broken link: ../../People/Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../_ teruggenomen producten (per jaar"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../% Gerecycled materiaal = (gerecycled _ totaal input"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../% Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Aantal duurzame assets (bv. EV\u0027s, zonnepanelen"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../BMS (HVAC_lighting"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Brandstofgebruik (Scope 1"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../CO\u2082 bespaard door digitalisering (ton"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../CO\u2082 per klanttransactie (kg"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Elektriciteitsverbruik (Scope 2"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Emissiereductie (%"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Energie (MWh_jaar"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Energieverbruik (kWh"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Hernieuwbare energieopwekking (kWh"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Herstelde natuur (ha"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Jaarlijkse CO\u2082-reductie (%"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Leveranciers-, transport-, gebruiksdata (Scope 3"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Massa gerecycled materiaal (kg_% input"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Productiesoftware (SCADA, MES"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Reductiedoel CO\u2082 (% t.o.v. basisjaar"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Restafval per medewerker (kg_jaar"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Totaal afval (ton_jaar"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Totale uitstoot = Scope 1 \u002B Scope 2 \u002B Scope 3 (in ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Uitstoot NO\u2093_SO\u2093 (kg_jaar"
-    },
-    {
-      "File": "Metrics\\diagrams\\Metrics.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "Experience\\diagrams\\Experience.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/_ teruggenomen producten (per jaar"
-    },
-    {
-      "File": "Experience\\diagrams\\Experience.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/CO\u2082 bespaard door digitalisering (ton"
-    },
-    {
-      "File": "Experience\\diagrams\\Experience.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/CO\u2082 per klanttransactie (kg"
-    },
-    {
-      "File": "Experience\\diagrams\\Experience.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Task/Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma"
-    },
-    {
-      "File": "Identity\\diagrams\\Identity.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
-    },
-    {
-      "File": "Identity\\diagrams\\Identity.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/Herstelde natuur (ha"
-    },
-    {
-      "File": "Identity\\diagrams\\Identity.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/Jaarlijkse CO\u2082-reductie (%"
-    },
-    {
-      "File": "Identity\\diagrams\\Identity.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/Reductiedoel CO\u2082 (% t.o.v. basisjaar"
-    },
-    {
-      "File": "Identity\\diagrams\\Identity.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/Restafval per medewerker (kg_jaar"
-    },
-    {
-      "File": "Identity\\diagrams\\Identity.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar"
-    },
-    {
-      "File": "Identity\\diagrams\\Identity.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/Uitstoot NO\u2093_SO\u2093 (kg_jaar"
-    },
-    {
-      "File": "ESRS S3 Affected Communities - People\\diagrams\\ESRS S3 Affected Communities - People.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Affected Communities (ESRS S3"
-    },
-    {
-      "File": "Information Collection and Model Creation\\EDGY Model Elementen en Relaties.md",
-      "Type": "warning",
-      "Message": "Broken link: EDGY -_ XMI (Python"
-    },
-    {
-      "File": "Information Collection and Model Creation\\EDGY Model Elementen en Relaties.md",
-      "Type": "warning",
-      "Message": "Broken link: EDGY -_ XMI (Python"
-    },
-    {
-      "File": "Stakeholder Expectations\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "Strategic Sustainability Management Model (Bodenstein)\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: diagrams/Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Supervisory Board (RvC"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Affected Communities (ESRS S3"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Rijksdienst voor Ondernemen (RVO"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Sociaal Economische Raad (SER"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS S3 - Communities.md",
-      "Type": "warning",
-      "Message": "Broken link: Affected Communities (ESRS S3"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS S3 - Communities.md",
-      "Type": "warning",
-      "Message": "Broken link: Affected Communities (ESRS S3"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS S2 - Value Chain Workers.md",
-      "Type": "warning",
-      "Message": "Broken link: Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS S2 - Value Chain Workers.md",
-      "Type": "warning",
-      "Message": "Broken link: Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS S1 - Own Personnel.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS S1 - Own Personnel.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS E5 - Circular Economy.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS E5 - Circular Economy.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS E4 - Biodiversity.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS E4 - Biodiversity.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS E3 - Water.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS E3 - Water.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS E2 - Pollution.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS E2 - Pollution.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS E1 - Climate.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS E1 - Climate.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Research and Analysis Firms.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Sustainability Consultants.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Industry Associations.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Industry Associations.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "Assessments\\index.md",
-      "Type": "warning",
-      "Message": "Missing image: x"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: % Gerecycled materiaal = (gerecycled _ totaal input"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: % Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Emissiereductie (%"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Totale uitstoot = Scope 1 \u002B Scope 2 \u002B Scope 3 (in ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: _ teruggenomen producten (per jaar"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Aantal duurzame assets (bv. EV\u0027s, zonnepanelen"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: BMS (HVAC_lighting"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Brandstofgebruik (Scope 1"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: CO\u2082 bespaard door digitalisering (ton"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: CO\u2082 per klanttransactie (kg"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Elektriciteitsverbruik (Scope 2"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Energie (MWh_jaar"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Energieverbruik (kWh"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Hernieuwbare energieopwekking (kWh"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Herstelde natuur (ha"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Jaarlijkse CO\u2082-reductie (%"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Leveranciers-, transport-, gebruiksdata (Scope 3"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Massa gerecycled materiaal (kg_% input"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Productiesoftware (SCADA, MES"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Reductiedoel CO\u2082 (% t.o.v. basisjaar"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Restafval per medewerker (kg_jaar"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Totaal afval (ton_jaar"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Uitstoot NO\u2093_SO\u2093 (kg_jaar"
-    },
-    {
-      "File": "Metrics\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Slimme meters _ EMS.md",
-      "Type": "warning",
-      "Message": "Broken link: Energieverbruik (kWh"
-    },
-    {
-      "File": "Metrics\\Slimme meters _ EMS.md",
-      "Type": "warning",
-      "Message": "Broken link: Energieverbruik (kWh"
-    },
-    {
-      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
-      "Type": "warning",
-      "Message": "Broken link: ../Task/Identificeer uitstootbronnen (scope 1, 2, 3"
-    },
-    {
-      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
-      "Type": "warning",
-      "Message": "Broken link: Brandstofgebruik (Scope 1"
-    },
-    {
-      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
-      "Type": "warning",
-      "Message": "Broken link: Elektriciteitsverbruik (Scope 2"
-    },
-    {
-      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
-      "Type": "warning",
-      "Message": "Broken link: Leveranciers-, transport-, gebruiksdata (Scope 3"
-    },
-    {
-      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
-      "Type": "warning",
-      "Message": "Broken link: Totale uitstoot = Scope 1 \u002B Scope 2 \u002B Scope 3 (in ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\Scope 1 uitstoot per bron (ton CO\u2082e).md",
-      "Type": "warning",
-      "Message": "Broken link: ../Task/Identificeer uitstootbronnen (scope 1, 2, 3"
-    },
-    {
-      "File": "Metrics\\Herstelde natuur (ha).md",
-      "Type": "warning",
-      "Message": "Broken link: ../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
-    },
-    {
-      "File": "Metrics\\Herstelde natuur (ha).md",
-      "Type": "warning",
-      "Message": "Broken link: ../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
-    },
-    {
-      "File": "Information Collection and Model Creation\\Constureren MD to XMI Convertor.md",
-      "Type": "warning",
-      "Message": "Broken link: EDGY -_ XMI (Python"
-    },
-    {
-      "File": "Information Collection and Model Creation\\Compile Information Sources.md",
-      "Type": "warning",
-      "Message": "Broken link: EDGY -_ XMI (Python"
-    },
-    {
-      "File": "Information Collection and Model Creation\\Compile Information Sources.md",
-      "Type": "warning",
-      "Message": "Broken link: LDM -_ XMI (Python"
-    },
-    {
-      "File": "Introduction EurSuRA\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
-    },
-    {
-      "File": "Introduction EurSuRA\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Deutsche Bahn (Marco Dillenburg"
-    },
-    {
-      "File": "Introduction EurSuRA\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Calculation Engine(s"
-    },
-    {
-      "File": "Introduction EurSuRA\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: EurSuRA.eu (Website"
-    },
-    {
-      "File": "Reputation Risk\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "Market Differentiation Pressure\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "Regulatory Pressure\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "Climate Risk\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS S4 - Consumers.md",
-      "Type": "warning",
-      "Message": "Broken link: Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS S4 - Consumers.md",
-      "Type": "warning",
-      "Message": "Broken link: Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "Archimate\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "Metrics\\Vermeden CO\u2082 door maatregelen (ton_jaar).md",
-      "Type": "warning",
-      "Message": "Broken link: Emissiereductie (%"
-    },
-    {
-      "File": "Task\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
-    },
-    {
-      "File": "Task\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Identificeer uitstootbronnen (scope 1, 2, 3"
-    },
-    {
-      "File": "Task\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma"
-    },
-    {
-      "File": "Task\\Voer een volledige LCA uit op product- en procesniveau..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Totaal afval (ton_jaar"
-    },
-    {
-      "File": "Task\\Voer duurzame werkgewoonten in zoals repair-first, afvalscheiding en energiebewust werken..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Restafval per medewerker (kg_jaar"
-    },
-    {
-      "File": "Task\\Stel Science-Based Targets op en rapporteer jaarlijks voortgang..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Jaarlijkse CO\u2082-reductie (%"
-    },
-    {
-      "File": "Task\\Ontwerp een klantreis met minimale afvalproductie en transparante impactcommunicatie..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/CO\u2082 per klanttransactie (kg"
-    },
-    {
-      "File": "Task\\Meet CO\u2082, circulariteit, energiegebruik en stel KPI\u2019s op..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Energie (MWh_jaar"
-    },
-    {
-      "File": "Task\\Maak een publiek impactrapport over emissies, afval, water en circulariteit..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Uitstoot NO\u2093_SO\u2093 (kg_jaar"
-    },
-    {
-      "File": "Task\\Identificeer uitstootbronnen (scope 1, 2, 3) en ontwikkel reductieplannen..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "Task\\Green Customer Task.md",
-      "Type": "warning",
-      "Message": "Broken link: Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma"
-    },
-    {
-      "File": "Task\\Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar"
-    },
-    {
-      "File": "Task\\Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Herstelde natuur (ha"
-    },
-    {
-      "File": "Asset\\Emission Sources.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Task/Identificeer uitstootbronnen (scope 1, 2, 3"
-    },
-    {
-      "File": "People\\Works Council (Ondernemingsraad).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "People\\Works Council (Ondernemingsraad).md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Works Council (Ondernemingsraad).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "People\\Trade Unions.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Sustainability Manager_Director.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "People\\Sustainability Manager_Director.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "People\\Suppliers.md",
-      "Type": "warning",
-      "Message": "Broken link: Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "People\\Supervisory Board (RvC).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Supervisory Board (RvC"
-    },
-    {
-      "File": "People\\Supervisory Board (RvC).md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "People\\Supervisory Board (RvC).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Supervisory Board (RvC"
-    },
-    {
-      "File": "People\\Sociaal Economische Raad (SER).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Sociaal Economische Raad (SER"
-    },
-    {
-      "File": "People\\Sociaal Economische Raad (SER).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Sociaal Economische Raad (SER"
-    },
-    {
-      "File": "People\\Seasonal Agricultural Workers.md",
-      "Type": "warning",
-      "Message": "Broken link: Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "People\\Seasonal Agricultural Workers.md",
-      "Type": "warning",
-      "Message": "Broken link: Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "People\\Rijksdienst voor Ondernemend Nederland (RVO).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO"
-    },
-    {
-      "File": "People\\Rijksdienst voor Ondernemend Nederland (RVO).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO"
-    },
-    {
-      "File": "People\\Production Workers.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Production Workers.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Permanent Employees.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Permanent Employees.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Own Personnel (ESRS S1).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Own Personnel (ESRS S1).md",
-      "Type": "warning",
-      "Message": "Broken link: Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "People\\Own Personnel (ESRS S1).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Own Personnel (ESRS S1).md",
-      "Type": "warning",
-      "Message": "Broken link: Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "People\\Non-listed SMEs.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
-    },
-    {
-      "File": "People\\Non-listed SMEs.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
-    },
-    {
-      "File": "People\\Ministry of Economic Affairs.md",
-      "Type": "warning",
-      "Message": "Broken link: Rijksdienst voor Ondernemend Nederland (RVO"
-    },
-    {
-      "File": "People\\Ministry of Economic Affairs.md",
-      "Type": "warning",
-      "Message": "Broken link: Sociaal Economische Raad (SER"
-    },
-    {
-      "File": "People\\Ministry of Economic Affairs.md",
-      "Type": "warning",
-      "Message": "Broken link: Chamber of Commerce (Kamer van Koophandel"
-    },
-    {
-      "File": "People\\Ministry of Economic Affairs.md",
-      "Type": "warning",
-      "Message": "Broken link: Rijksdienst voor Ondernemend Nederland (RVO"
-    },
-    {
-      "File": "People\\Consumers and End Users (ESRS S4).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "People\\Consumers and End Users (ESRS S4).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "People\\Chief Financial Officer.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "People\\Chief Financial Officer.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "People\\Board of Directors (Directie).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Board of Directors (Directie"
-    },
-    {
-      "File": "People\\Board of Directors (Directie).md",
-      "Type": "warning",
-      "Message": "Broken link: Supervisory Board (RvC"
-    },
-    {
-      "File": "People\\Board of Directors (Directie).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Board of Directors (Directie"
-    },
-    {
-      "File": "People\\Board of Directors (Directie).md",
-      "Type": "warning",
-      "Message": "Broken link: Supervisory Board (RvC"
-    },
-    {
-      "File": "People\\Affected Communities (ESRS S3).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3"
-    },
-    {
-      "File": "People\\Affected Communities (ESRS S3).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3"
-    },
-    {
-      "File": "ESRS S4\\ESRS S4 Consumers and End-users.md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "ESRS S4\\ESRS S4 Consumers and End-users.md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "ESRS S2\\ESRS S2 Workers in the Value Chain.md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "ESRS S2\\ESRS S2 Workers in the Value Chain.md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "ESRS E4\\ESRS E4 Biodiversity and Ecosystems.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Herstelde natuur (ha"
-    },
-    {
-      "File": "ESRS E1\\ESRS E1 Climate Change.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar"
-    },
-    {
-      "File": "ESRS E1\\ESRS E1 Climate Change.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Reductiedoel CO\u2082 (% t.o.v. basisjaar"
-    },
-    {
-      "File": "ESRS E1\\ESRS E1 Climate Change.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Jaarlijkse CO\u2082-reductie (%"
-    },
-    {
-      "File": "ESRS E1\\ESRS E1 Climate Change.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/CO\u2082 per klanttransactie (kg"
-    },
-    {
-      "File": "ESRS E1\\ESRS E1 Climate Change.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/CO\u2082 bespaard door digitalisering (ton"
-    },
-    {
-      "File": "ESRS E1\\ESRS E1 Climate Change.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "ESRS E1\\ESRS E1 Climate Change.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "ESRS E1\\ESRS E1 Climate Change.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Energie (MWh_jaar"
-    },
-    {
-      "File": "ERSR S2 Workers in the Value Chain - People\\diagrams\\ERSR S2 Workers in the Value Chain - People.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "ESRS S1 Own Workforce - People\\diagrams\\ESRS S1 Own Workforce - People.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS S1 Own Workforce - People\\diagrams\\ESRS S1 Own Workforce - People.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "ESRS E1, E2, E3, E4, E5, G1 - People\\diagrams\\ESRS E1, E2, E3, E4, E5, G1 - People.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Rijksdienst voor Ondernemend Nederland (RVO"
-    },
-    {
-      "File": "ESRS E1, E2, E3, E4, E5, G1 - People\\diagrams\\ESRS E1, E2, E3, E4, E5, G1 - People.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Supervisory Board (RvC"
-    },
-    {
-      "File": "Introduction EurSuRA\\Sidenote from Community Leads.md",
-      "Type": "warning",
-      "Message": "Broken link: Deutsche Bahn (Marco Dillenburg"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\European Commission.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Local Communities.md",
-      "Type": "warning",
-      "Message": "Broken link: Affected Communities (ESRS S3"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Customers.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Customers.md",
-      "Type": "warning",
-      "Message": "Broken link: Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Customers.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Suppliers.md",
-      "Type": "warning",
-      "Message": "Broken link: Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Suppliers.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Suppliers.md",
-      "Type": "warning",
-      "Message": "Broken link: Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Production Workers.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Seasonal Workers.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Permanent Employees.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Own Personnel (ESRS S1).md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Own Personnel (ESRS S1).md",
-      "Type": "warning",
-      "Message": "Broken link: Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Own Personnel (ESRS S1).md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Own Personnel (ESRS S1).md",
-      "Type": "warning",
-      "Message": "Broken link: Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Works Council (Ondernemingsraad).md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Works Council (Ondernemingsraad).md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "Metrics\\Projectgegevens en tech specs.md",
-      "Type": "warning",
-      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Projectgegevens en tech specs.md",
-      "Type": "warning",
-      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Hernieuwbare energieopwekking (kWh).md",
-      "Type": "warning",
-      "Message": "Broken link: BMS (HVAC_lighting"
-    },
-    {
-      "File": "Metrics\\ERP_BOM met herkomst info.md",
-      "Type": "warning",
-      "Message": "Broken link: Massa gerecycled materiaal (kg_% input"
-    },
-    {
-      "File": "Metrics\\ERP_BOM met herkomst info.md",
-      "Type": "warning",
-      "Message": "Broken link: Massa gerecycled materiaal (kg_% input"
-    },
-    {
-      "File": "Metrics\\ERP \u002B Scope 3-calculatietools.md",
-      "Type": "warning",
-      "Message": "Broken link: Leveranciers-, transport-, gebruiksdata (Scope 3"
-    },
-    {
-      "File": "Metrics\\ERP \u002B Scope 3-calculatietools.md",
-      "Type": "warning",
-      "Message": "Broken link: Leveranciers-, transport-, gebruiksdata (Scope 3"
-    },
-    {
-      "File": "Metrics\\Energieverbruik v\u00F3\u00F3r_na project.md",
-      "Type": "warning",
-      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Energieverbruik v\u00F3\u00F3r_na project.md",
-      "Type": "warning",
-      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Energie, materiaal, water, afval per eenheid.md",
-      "Type": "warning",
-      "Message": "Broken link: Totaal afval (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Energie, materiaal, water, afval per eenheid.md",
-      "Type": "warning",
-      "Message": "Broken link: Totaal afval (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Emissie v\u00F3\u00F3r_na project.md",
-      "Type": "warning",
-      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Emissie v\u00F3\u00F3r_na project.md",
-      "Type": "warning",
-      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Elektriciteitsverbruik (Scope 2).md",
-      "Type": "warning",
-      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\Elektriciteitsverbruik (Scope 2).md",
-      "Type": "warning",
-      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\CO\u2082e per processtap of productlevensfase.md",
-      "Type": "warning",
-      "Message": "Broken link: Totaal afval (ton_jaar"
-    },
-    {
-      "File": "Metrics\\CO\u2082e per processtap of productlevensfase.md",
-      "Type": "warning",
-      "Message": "Broken link: Productiesoftware (SCADA, MES"
-    },
-    {
-      "File": "Metrics\\CO\u2082e per processtap of productlevensfase.md",
-      "Type": "warning",
-      "Message": "Broken link: Totaal afval (ton_jaar"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "diagrams\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Strategic Sustainability Management Model (Bodenstein"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Affected Communities (ESRS S3).md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Affected Communities (ESRS S3).md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Affected Communities (ESRS S3"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Affected Communities (ESRS S3).md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Consumers and End Users (ESRS S4).md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "Metrics\\Brandstofsensoren_logboeken.md",
-      "Type": "warning",
-      "Message": "Broken link: Brandstofgebruik (Scope 1"
-    },
-    {
-      "File": "Metrics\\Brandstofsensoren_logboeken.md",
-      "Type": "warning",
-      "Message": "Broken link: Brandstofgebruik (Scope 1"
-    },
-    {
-      "File": "Metrics\\Brandstofgebruik (Scope 1).md",
-      "Type": "warning",
-      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\Brandstofgebruik (Scope 1).md",
-      "Type": "warning",
-      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\BMS (HVAC_lighting).md",
-      "Type": "warning",
-      "Message": "Broken link: Hernieuwbare energieopwekking (kWh"
-    },
-    {
-      "File": "Metrics\\BMS (HVAC_lighting).md",
-      "Type": "warning",
-      "Message": "Broken link: Hernieuwbare energieopwekking (kWh"
-    },
-    {
-      "File": "Metrics\\Assetmanagementsysteem.md",
-      "Type": "warning",
-      "Message": "Broken link: Aantal duurzame assets (bv. EV\u0027s, zonnepanelen"
-    },
-    {
-      "File": "Metrics\\Assetmanagementsysteem.md",
-      "Type": "warning",
-      "Message": "Broken link: Aantal duurzame assets (bv. EV\u0027s, zonnepanelen"
-    },
-    {
-      "File": "Metrics\\% scope 3 emissies met gemeten data.md",
-      "Type": "warning",
-      "Message": "Broken link: Data-automatiseringsgraad = (_ automatisch verzamelde datapunten _ totaal"
-    },
-    {
-      "File": "Metrics\\Totale uitstoot = Scope 1 \u002B Scope 2 \u002B Scope 3 (in ton CO\u2082e).md",
-      "Type": "warning",
-      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\Totale uitstoot = Scope 1 \u002B Scope 2 \u002B Scope 3 (in ton CO\u2082e).md",
-      "Type": "warning",
-      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\Product Carbon Footprint = totale CO\u2082e _ aantal eenheden geproduceerd.md",
-      "Type": "warning",
-      "Message": "Broken link: Totaal afval (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Product Carbon Footprint = totale CO\u2082e _ aantal eenheden geproduceerd.md",
-      "Type": "warning",
-      "Message": "Broken link: Totaal afval (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Emissiereductie (%) = ((baseline \u2013 huidig) _ baseline) \u00D7 100.md",
-      "Type": "warning",
-      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Emissiereductie (%) = ((baseline \u2013 huidig) _ baseline) \u00D7 100.md",
-      "Type": "warning",
-      "Message": "Broken link: Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "ESRS E2\\ESRS E2 Pollution.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Uitstoot NO\u2093_SO\u2093 (kg_jaar"
-    },
-    {
-      "File": "Metrics\\% gerecyclede materialen in producten.md",
-      "Type": "warning",
-      "Message": "Broken link: Massa gerecycled materiaal (kg_% input"
-    },
-    {
-      "File": "Metrics\\% gerecyclede materialen in producten.md",
-      "Type": "warning",
-      "Message": "Broken link: % Gerecycled materiaal = (gerecycled _ totaal input"
-    },
-    {
-      "File": "Metrics\\% energie uit hernieuwbare bronnen.md",
-      "Type": "warning",
-      "Message": "Broken link: Energieverbruik (kWh"
-    },
-    {
-      "File": "Metrics\\% energie uit hernieuwbare bronnen.md",
-      "Type": "warning",
-      "Message": "Broken link: Hernieuwbare energieopwekking (kWh"
-    },
-    {
-      "File": "Metrics\\% energie uit hernieuwbare bronnen.md",
-      "Type": "warning",
-      "Message": "Broken link: Aantal duurzame assets (bv. EV\u0027s, zonnepanelen"
-    },
-    {
-      "File": "Metrics\\% energie uit hernieuwbare bronnen.md",
-      "Type": "warning",
-      "Message": "Broken link: % Hernieuwbare Energie = (opgewekte hernieuwbare energie _ totaal verbruik"
-    },
-    {
-      "File": "Metrics\\_ teruggenomen producten (per jaar).md",
-      "Type": "warning",
-      "Message": "Broken link: ../Task/Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma"
-    },
-    {
-      "File": "Metrics\\_ teruggenomen producten (per jaar).md",
-      "Type": "warning",
-      "Message": "Broken link: ../Task/Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma"
-    },
-    {
-      "File": "Task\\Start projecten voor energiebesparing, transportoptimalisatie en circulariteit..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "Task\\Ontwikkel een 2030_2050 duurzaamheidsvisie met meetbare doelen en investeringsplanning..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Reductiedoel CO\u2082 (% t.o.v. basisjaar"
-    },
-    {
-      "File": "Task\\Ondersteun klanten in duurzame keuzes (bv. repair-service, terugkoopprogramma)..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/_ teruggenomen producten (per jaar"
-    },
-    {
-      "File": "Task\\Digitaliseer processen om fysieke verplaatsingen en uitstoot te verminderen..md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/CO\u2082 bespaard door digitalisering (ton"
-    },
-    {
-      "File": "Purpose\\Enterprise Purpose.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
-    },
-    {
-      "File": "People\\Workers in Value Chain (ESRS S2).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "People\\Workers in Value Chain (ESRS S2).md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "People\\Seasonal Workers.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Seasonal Workers.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Non-EU company.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
-    },
-    {
-      "File": "People\\Non-EU company.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
-    },
-    {
-      "File": "People\\Local Communities.md",
-      "Type": "warning",
-      "Message": "Broken link: Affected Communities (ESRS S3"
-    },
-    {
-      "File": "People\\Local Communities.md",
-      "Type": "warning",
-      "Message": "Broken link: Affected Communities (ESRS S3"
-    },
-    {
-      "File": "People\\Listed SMEs.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
-    },
-    {
-      "File": "People\\Listed SMEs.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
-    },
-    {
-      "File": "People\\Indigenous Peoples.md",
-      "Type": "warning",
-      "Message": "Broken link: Affected Communities (ESRS S3"
-    },
-    {
-      "File": "People\\Indigenous Peoples.md",
-      "Type": "warning",
-      "Message": "Broken link: Affected Communities (ESRS S3"
-    },
-    {
-      "File": "People\\Customers.md",
-      "Type": "warning",
-      "Message": "Broken link: Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "People\\COO.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "People\\COO.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "People\\Company subject to CSRD.md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Large Companies (_250 employees"
-    },
-    {
-      "File": "People\\Company subject to CSRD.md",
-      "Type": "warning",
-      "Message": "Broken link: Supervisory Board (RvC"
-    },
-    {
-      "File": "People\\Company subject to CSRD.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Company subject to CSRD.md",
-      "Type": "warning",
-      "Message": "Broken link: Rijksdienst voor Ondernemend Nederland (RVO"
-    },
-    {
-      "File": "People\\Company subject to CSRD.md",
-      "Type": "warning",
-      "Message": "Broken link: Chamber of Commerce (Kamer van Koophandel"
-    },
-    {
-      "File": "People\\Company subject to CSRD.md",
-      "Type": "warning",
-      "Message": "Broken link: Chamber of Commerce (Kamer van Koophandel"
-    },
-    {
-      "File": "People\\Company subject to CSRD.md",
-      "Type": "warning",
-      "Message": "Broken link: ../ESRS Navigator Stakeholder Map/Large Companies (_250 employees"
-    },
-    {
-      "File": "People\\Company subject to CSRD.md",
-      "Type": "warning",
-      "Message": "Broken link: Supervisory Board (RvC"
-    },
-    {
-      "File": "People\\Company subject to CSRD.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\Company subject to CSRD.md",
-      "Type": "warning",
-      "Message": "Broken link: Rijksdienst voor Ondernemend Nederland (RVO"
-    },
-    {
-      "File": "People\\CEO.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "People\\CEO.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "ESRS E5\\ESRS E5 Resource Use and Circular Economy.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/_ teruggenomen producten (per jaar"
-    },
-    {
-      "File": "ESRS E5\\ESRS E5 Resource Use and Circular Economy.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Totaal afval (ton_jaar"
-    },
-    {
-      "File": "ESRS E5\\ESRS E5 Resource Use and Circular Economy.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Energie (MWh_jaar"
-    },
-    {
-      "File": "ESRS E5\\ESRS E5 Resource Use and Circular Economy.md",
-      "Type": "warning",
-      "Message": "Broken link: ../Metrics/Restafval per medewerker (kg_jaar"
-    },
-    {
-      "File": "Architecture\\diagrams\\Architecture.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/Energie (MWh_jaar"
-    },
-    {
-      "File": "Architecture\\diagrams\\Architecture.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Task/Identificeer uitstootbronnen (scope 1, 2, 3"
-    },
-    {
-      "File": "Architecture\\diagrams\\Architecture.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "Architecture\\diagrams\\Architecture.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/Totaal afval (ton_jaar"
-    },
-    {
-      "File": "Architecture\\diagrams\\Architecture.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../Metrics/Vermeden CO\u2082 door maatregelen (ton_jaar"
-    },
-    {
-      "File": "European Union - People\\diagrams\\European Union - People.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Chamber of Commerce (Kamer van Koophandel"
-    },
-    {
-      "File": "European Union - People\\diagrams\\European Union - People.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Rijksdienst voor Ondernemend Nederland (RVO"
-    },
-    {
-      "File": "European Union - People\\diagrams\\European Union - People.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Sociaal Economische Raad (SER"
-    },
-    {
-      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Affected Communities (ESRS S3"
-    },
-    {
-      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Board of Directors (Directie"
-    },
-    {
-      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Chamber of Commerce (Kamer van Koophandel"
-    },
-    {
-      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Rijksdienst voor Ondernemend Nederland (RVO"
-    },
-    {
-      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Sociaal Economische Raad (SER"
-    },
-    {
-      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Supervisory Board (RvC"
-    },
-    {
-      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "ESRS and People\\diagrams\\ESRS Stakeholder Map.md",
-      "Type": "warning",
-      "Message": "Broken link: ../../People/Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "Information Collection and Model Creation\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: EDGY -_ XMI (Python"
-    },
-    {
-      "File": "Information Collection and Model Creation\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: LDM -_ XMI (Python"
-    },
-    {
-      "File": "Information Collection and Model Creation\\ERD Model.md",
-      "Type": "warning",
-      "Message": "Broken link: LDM -_ XMI (Python"
-    },
-    {
-      "File": "Information Collection and Model Creation\\ERD Model.md",
-      "Type": "warning",
-      "Message": "Broken link: LDM -_ XMI (Python"
-    },
-    {
-      "File": "Introduction EurSuRA\\Reference Architecture Framework for ESRS Reporting.md",
-      "Type": "warning",
-      "Message": "Broken link: Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
-    },
-    {
-      "File": "Introduction EurSuRA\\Reference Architecture Framework for ESRS Reporting.md",
-      "Type": "warning",
-      "Message": "Broken link: Calculation Engine(s"
-    },
-    {
-      "File": "Introduction EurSuRA\\Reference Architecture Framework for ESRS Reporting.md",
-      "Type": "warning",
-      "Message": "Broken link: Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
-    },
-    {
-      "File": "Introduction EurSuRA\\EurSuRA.md",
-      "Type": "warning",
-      "Message": "Broken link: EurSuRA.eu (Website"
-    },
-    {
-      "File": "Introduction EurSuRA\\Building a EU Reporting Community.md",
-      "Type": "warning",
-      "Message": "Broken link: Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS G1 - Business Conduct.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\ESRS G1 - Business Conduct.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Chamber of Commerce_Kamer van Koophandel.md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Chamber of Commerce (Kamer van Koophandel"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Legal Design Agencies.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Trade Unions.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\NGOs and Civil Society.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Certification Bodies.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\External Auditors.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Sociaal Economische Raad (SER).md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Sociaal Economische Raad (SER"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Ministry of Economic Affairs.md",
-      "Type": "warning",
-      "Message": "Broken link: Rijksdienst voor Ondernemen (RVO"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\AFM.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Rijksdienst voor Ondernemen (RVO).md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Rijksdienst voor Ondernemen (RVO).md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Rijksdienst voor Ondernemend Nederland (RVO"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Credit Rating Agencies.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Banks and Financial Institutions.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Investors_Shareholders.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Indigenous Peoples.md",
-      "Type": "warning",
-      "Message": "Broken link: Affected Communities (ESRS S3"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Seasonal Agricultural Workers.md",
-      "Type": "warning",
-      "Message": "Broken link: Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Workers in Value Chain (ESRS S2).md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Supervisory Board (RvC).md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Supervisory Board (RvC).md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Supervisory Board (RvC"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\COO.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\COO.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\CFO.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\CFO.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\CEO.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\CEO.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Board of Directors (Directie).md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Board of Directors (Directie).md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Board of Directors (Directie"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Non-listed SMEs.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Listed SMEs.md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\FreshFood B.V..md",
-      "Type": "warning",
-      "Message": "Broken link: Large Companies (_250 employees"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
-      "Type": "warning",
-      "Message": "Broken link: Affected Communities (ESRS S3"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
-      "Type": "warning",
-      "Message": "Broken link: Supervisory Board (RvC"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
-      "Type": "warning",
-      "Message": "Broken link: Rijksdienst voor Ondernemen (RVO"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
-      "Type": "warning",
-      "Message": "Broken link: Supervisory Board (RvC"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
-      "Type": "warning",
-      "Message": "Broken link: Rijksdienst voor Ondernemen (RVO"
-    },
-    {
-      "File": "ESRS Navigator Stakeholder Map\\Large Companies (_250 employees).md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "Assessments\\ESG Score.md",
-      "Type": "warning",
-      "Message": "Missing image: x"
-    },
-    {
-      "File": "Metrics\\Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar).md",
-      "Type": "warning",
-      "Message": "Broken link: ../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
-    },
-    {
-      "File": "Metrics\\Totale Scope 1-3 uitstoot (ton CO\u2082e_jaar).md",
-      "Type": "warning",
-      "Message": "Broken link: ../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030"
-    },
-    {
-      "File": "Metrics\\Slimme meters, energienota\u2019s.md",
-      "Type": "warning",
-      "Message": "Broken link: Elektriciteitsverbruik (Scope 2"
-    },
-    {
-      "File": "Metrics\\Slimme meters, energienota\u2019s.md",
-      "Type": "warning",
-      "Message": "Broken link: Elektriciteitsverbruik (Scope 2"
-    },
-    {
-      "File": "Metrics\\Outputvolumes voor normalisatie.md",
-      "Type": "warning",
-      "Message": "Broken link: Totaal afval (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Outputvolumes voor normalisatie.md",
-      "Type": "warning",
-      "Message": "Broken link: Totaal afval (ton_jaar"
-    },
-    {
-      "File": "Metrics\\Leveranciers-, transport-, gebruiksdata (Scope 3).md",
-      "Type": "warning",
-      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "Metrics\\Leveranciers-, transport-, gebruiksdata (Scope 3).md",
-      "Type": "warning",
-      "Message": "Broken link: Scope 1 uitstoot per bron (ton CO\u2082e"
-    },
-    {
-      "File": "People\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Affected Communities (ESRS S3"
-    },
-    {
-      "File": "People\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Board of Directors (Directie"
-    },
-    {
-      "File": "People\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Chamber of Commerce (Kamer van Koophandel"
-    },
-    {
-      "File": "People\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Consumers and End Users (ESRS S4"
-    },
-    {
-      "File": "People\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Own Personnel (ESRS S1"
-    },
-    {
-      "File": "People\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Rijksdienst voor Ondernemend Nederland (RVO"
-    },
-    {
-      "File": "People\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Sociaal Economische Raad (SER"
-    },
-    {
-      "File": "People\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Supervisory Board (RvC"
-    },
-    {
-      "File": "People\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Workers in Value Chain (ESRS S2"
-    },
-    {
-      "File": "People\\index.md",
-      "Type": "warning",
-      "Message": "Broken link: Works Council (Ondernemingsraad"
-    },
-    {
-      "File": "ESRS S3\\ESRS S3 Affected Communities.md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Affected Communities (ESRS S3"
-    },
-    {
-      "File": "ESRS S3\\ESRS S3 Affected Communities.md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Affected Communities (ESRS S3"
-    },
-    {
-      "File": "ESRS S1\\ESRS S1 Own Workforce.md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Own Personnel (ESRS S1"
-    },
-    {
-      "File": "ESRS S1\\ESRS S1 Own Workforce.md",
-      "Type": "warning",
-      "Message": "Broken link: ../People/Own Personnel (ESRS S1"
     }
   ]
 }

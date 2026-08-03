@@ -9,13 +9,13 @@ notes_hash: e3b0c442
 # <span class="sl" data-layer="edgy-lb">Tag</span> Telematica / fleetbeheer
 
 **Type:** Requirement  **Stereotype:** Tag  **StereotypeEx:** Tag  **FQStereotype:** EDGY::Tag  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="212" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/Telematica _ fleetbeheer.md" data-api-port="8001" data-api-token="f3a0491e87a05fb2833bbd1e4cdb8499a0101703959665df"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="212" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/Telematica _ fleetbeheer.md" data-api-port="8001" data-api-token="d54ac7f4ba1b9561901225e0195c664d0fa006b906b25c92"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-03  **Modified:** 2025-12-03
 
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="212" data-file-path="Metrics/Telematica _ fleetbeheer.md" data-api-port="8001" data-api-token="f3a0491e87a05fb2833bbd1e4cdb8499a0101703959665df" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="212" data-file-path="Metrics/Telematica _ fleetbeheer.md" data-api-port="8001" data-api-token="d54ac7f4ba1b9561901225e0195c664d0fa006b906b25c92" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -56,4 +56,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-07-31 18:00:34*
+*Generated: 2026-08-03 08:46:17*
