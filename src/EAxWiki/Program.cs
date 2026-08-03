@@ -117,11 +117,25 @@ if (string.IsNullOrWhiteSpace(config.RepositoryPath))
                 teamsWebhookUrl = (Console.ReadLine() ?? "").Trim();
             }
 
+            Console.Write("Configure Telegram monitoring alerts? [y/N]: ");
+            var wantTelegram = (Console.ReadLine() ?? "").Trim().ToLowerInvariant();
+            var telegramBotToken = "";
+            var telegramChatId = "";
+            if (wantTelegram == "y" || wantTelegram == "yes")
+            {
+                Console.Write("Telegram bot token (from @BotFather): ");
+                telegramBotToken = (Console.ReadLine() ?? "").Trim();
+                Console.Write("Telegram chat ID (numeric, the destination chat): ");
+                telegramChatId = (Console.ReadLine() ?? "").Trim();
+            }
+
             var newConfig = new LocalConfigStore.Config
             {
                 RepoPath = config.RepositoryPath,
                 WebhookUrl = webhookUrl,
                 TeamsWebhookUrl = teamsWebhookUrl,
+                TelegramBotToken = telegramBotToken,
+                TelegramChatId = telegramChatId,
                 WikiPort = wikiPort,
                 ApiPort = apiPort
             };
