@@ -48,6 +48,7 @@ public class MarkdownExporter : IWikiExporter
             var apiToken = apiPort > 0 ? ApiTokenStore.GetOrCreate(outputPath, _logger) : string.Empty;
             var aiEndpoint = Environment.GetEnvironmentVariable("EAXWIKI_AI_ENDPOINT");
             var aiConfigured = !string.IsNullOrEmpty(aiEndpoint);
+            var brand = Environment.GetEnvironmentVariable("EAXWIKI_BRAND") ?? string.Empty;
             var ctx = ContextBuilder.Build(packages, outputPath, force) with
             {
                 StatusTypes = statusTypes,
@@ -96,7 +97,8 @@ public class MarkdownExporter : IWikiExporter
                 diagramExporter.WriteIndexAsync(ctx, cancellationToken),
                 infrastructure.WritePagesFileAsync(outputPath, cancellationToken),
                 infrastructure.WriteExtraCssAsync(outputPath, cancellationToken),
-                infrastructure.WriteGraphScriptsAsync(outputPath, cancellationToken),
+                infrastructure.WriteBrandAssetsAsync(outputPath, brand, cancellationToken),
+                infrastructure.WriteGraphScriptsAsync(outputPath, brand, cancellationToken),
                 infrastructure.WriteIconsScriptAsync(outputPath, cancellationToken),
                 infrastructure.WriteStatusEditorScriptAsync(outputPath, cancellationToken),
                 infrastructure.WriteNotesEditorScriptAsync(outputPath, cancellationToken),

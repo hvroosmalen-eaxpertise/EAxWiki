@@ -64,7 +64,7 @@ internal class InfrastructureWriter(IOutputWriter writer)
             string.Join(Environment.NewLine, ["title: Types", string.Empty]), ct);
     }
 
-    public async Task WriteGraphScriptsAsync(string outputDir, CancellationToken ct = default)
+    public async Task WriteGraphScriptsAsync(string outputDir, string brand, CancellationToken ct = default)
     {
         // Extract embedded cytoscape.min.js to the wiki output so it works offline.
         var assembly = Assembly.GetExecutingAssembly();
@@ -75,25 +75,9 @@ internal class InfrastructureWriter(IOutputWriter writer)
         var cytoscapeJs = await reader.ReadToEndAsync();
         await writer.WriteFileAsync(Path.Combine(outputDir, "cytoscape.min.js"), cytoscapeJs, ct);
 
-        const string graphInitJs = """
-var EA_LAYER_COLORS = {
-    'business':       '#D4A017',
-    'application':    '#2E86C1',
-    'technology':     '#27AE60',
-    'physical':       '#17A589',
-    'motivation':     '#8E44AD',
-    'strategy':       '#A0682B',
-    'implementation': '#D84B79',
-    'composite':      '#5D6D7E',
-    'uml':            '#7F8C8D',
-    'edgy-id':        '#75F0A5',
-    'edgy-ar':        '#9DB9F6',
-    'edgy-ex':        '#F985B4',
-    'edgy-ix':        '#4ECDC4',
-    'edgy-pe':        '#FFD93D',
-    'edgy-lb':        '#E8E8E8'
-};
-var EA_LAYER_DARK_TEXT = { 'edgy-id': true, 'edgy-pe': true, 'edgy-lb': true, 'business': true };
+        var graphInitJs = """
+var EA_LAYER_COLORS = /*EA_LAYER_COLORS*/;
+var EA_LAYER_DARK_TEXT = /*EA_LAYER_DARK_TEXT*/;
 var EA_DISTANCE_COLORS = ['#e65100', '#ff8a65', '#a1887f', '#9e9e9e', '#757575', '#616161'];
 
 var _graphIndexPromise = null;
@@ -420,6 +404,55 @@ if (typeof document$ !== 'undefined') {
     document.addEventListener('DOMContentLoaded', initEaGraph);
 }
 """;
+        var (layerColors, darkText) = brand == "eursura"
+            ? (new Dictionary<string, string>
+               {
+                   ["business"] = "#A8C6C7",
+                   ["application"] = "#103135",
+                   ["technology"] = "#C4E5E7",
+                   ["physical"] = "#6FB4B6",
+                   ["motivation"] = "#D0F391",
+                   ["strategy"] = "#7FA8A9",
+                   ["implementation"] = "#5C8A8B",
+                   ["composite"] = "#405B5C",
+                   ["uml"] = "#F3F7F7",
+                   ["edgy-id"] = "#75F0A5",
+                   ["edgy-ar"] = "#9DB9F6",
+                   ["edgy-ex"] = "#F985B4",
+                   ["edgy-ix"] = "#4ECDC4",
+                   ["edgy-pe"] = "#FFD93D",
+                   ["edgy-lb"] = "#E8E8E8",
+               },
+               new Dictionary<string, bool> { ["business"] = true, ["technology"] = true, ["physical"] = true, ["motivation"] = true, ["strategy"] = true, ["uml"] = true, ["edgy-id"] = true, ["edgy-pe"] = true, ["edgy-lb"] = true })
+            : (new Dictionary<string, string>
+               {
+                   ["business"] = "#D4A017",
+                   ["application"] = "#2E86C1",
+                   ["technology"] = "#27AE60",
+                   ["physical"] = "#17A589",
+                   ["motivation"] = "#8E44AD",
+                   ["strategy"] = "#A0682B",
+                   ["implementation"] = "#D84B79",
+                   ["composite"] = "#5D6D7E",
+                   ["uml"] = "#7F8C8D",
+                   ["edgy-id"] = "#75F0A5",
+                   ["edgy-ar"] = "#9DB9F6",
+                   ["edgy-ex"] = "#F985B4",
+                   ["edgy-ix"] = "#4ECDC4",
+                   ["edgy-pe"] = "#FFD93D",
+                   ["edgy-lb"] = "#E8E8E8",
+               },
+               new Dictionary<string, bool> { ["edgy-id"] = true, ["edgy-pe"] = true, ["edgy-lb"] = true, ["business"] = true });
+
+        string SerializeColors(Dictionary<string, string> map) =>
+            string.Join(",\n", map.Select(kv => $"    '{kv.Key}':{new string(' ', 15 - kv.Key.Length)} '{kv.Value}'"));
+
+        string SerializeDarkText(Dictionary<string, bool> map) =>
+            string.Join(", ", map.Select(kv => $"'{kv.Key}': {kv.Value.ToString().ToLowerInvariant()}"));
+
+        graphInitJs = graphInitJs.Replace("/*EA_LAYER_COLORS*/", "{\n" + SerializeColors(layerColors) + "\n}")
+                                 .Replace("/*EA_LAYER_DARK_TEXT*/", "{ " + SerializeDarkText(darkText) + " }");
+
         await writer.WriteFileAsync(Path.Combine(outputDir, "graph-init.js"), graphInitJs, ct);
     }
 
@@ -1065,6 +1098,28 @@ window.EAxIcons = {
         await writer.WriteFileAsync(Path.Combine(outputDir, "extra.css"), css, ct);
     }
 
+    public async Task WriteBrandAssetsAsync(string outputDir, string brand, CancellationToken ct = default)
+    {
+        if (brand != "eursura") return;
+
+        var assembly = Assembly.GetExecutingAssembly();
+
+        var cssResource = assembly.GetManifestResourceNames()
+            .First(n => n.EndsWith("brand-eursura.css", StringComparison.OrdinalIgnoreCase));
+        using var cssStream = assembly.GetManifestResourceStream(cssResource)!;
+        using var cssReader = new StreamReader(cssStream);
+        var css = await cssReader.ReadToEndAsync(ct);
+        await writer.WriteFileAsync(Path.Combine(outputDir, "brand.css"), css, ct);
+
+        var pngResource = assembly.GetManifestResourceNames()
+            .First(n => n.EndsWith("eursura-logo.png", StringComparison.OrdinalIgnoreCase));
+        using var pngStream = assembly.GetManifestResourceStream(pngResource)!;
+        var pngBytes = new byte[pngStream.Length];
+        await pngStream.ReadAsync(pngBytes, ct);
+        Directory.CreateDirectory(Path.Combine(outputDir, "assets"));
+        await File.WriteAllBytesAsync(Path.Combine(outputDir, "assets", "eursura-logo.png"), pngBytes, ct);
+    }
+
     public static async Task CleanupOrphanedFilesAsync(ExportContext ctx, CancellationToken ct = default)
     {
         if (!Directory.Exists(ctx.OutputPath))
@@ -1083,6 +1138,7 @@ window.EAxIcons = {
             Path.Combine(ctx.OutputPath, "glossary"),
             Path.Combine(ctx.OutputPath, "recent"),
             Path.Combine(ctx.OutputPath, "status"),
+            Path.Combine(ctx.OutputPath, "assets"),
         };
 
         CleanupDirectory(ctx.OutputPath, ctx.AllPackageDirs, expectedFiles, specialDirs, isRoot: true);
