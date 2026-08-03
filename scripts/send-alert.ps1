@@ -1,6 +1,8 @@
-param(
+﻿param(
     [string]$WebhookUrl = "",
     [string]$TeamsWebhookUrl = "",
+    [string]$TelegramBotToken = "",
+    [string]$TelegramChatId = "",
     [string]$Message = "",
     [string]$Kind = "Test"
 )
@@ -71,5 +73,51 @@ if ($TeamsWebhookUrl) {
         Invoke-RestMethod -Uri $TeamsWebhookUrl -Method Post -Body $teamsPayload -ContentType 'application/json; charset=utf-8' | Out-Null
     } catch {
         Write-Host "Teams webhook dispatch failed: $($_.Exception.Message)"
+    }
+}
+
+if ($TelegramBotToken -and $TelegramChatId) {
+    $tgEmoji = switch ($Kind) {
+        'Start'         { '🔄' }
+        'Finish'        { '🟢' }
+        'Failure'       { '🔴' }
+        'ServeFailure'  { '🔴' }
+        'LlmFailure'    { '🔴' }
+        'ApiFailure'    { '🔴' }
+        'Recovery'      { '🟢' }
+        'ServeRecovery' { '🟢' }
+        'LlmRecovery'   { '🟢' }
+        'ApiRecovery'   { '🟢' }
+        'Test'          { '🔵' }
+        'DailyDigest'   { '📊' }
+        'UserStop'      { '✋' }
+        default         { '🔵' }
+    }
+    $tgText = "{0} *EAxWiki [{1}]* - {2}`n{3}" -f $tgEmoji, $Kind, $instanceLabel, $Message
+    $tgUri = "https://api.telegram.org/bot{0}/sendMessage" -f $TelegramBotToken
+    $tgBody = @{
+        chat_id    = [string]$TelegramChatId
+        text       = $tgText
+        parse_mode = 'Markdown'
+    }
+
+    $attempts = 0
+    while ($true) {
+        $attempts++
+        try {
+            Invoke-RestMethod -Uri $tgUri -Method Post -Body ($tgBody | ConvertTo-Json) -ContentType 'application/json; charset=utf-8' | Out-Null
+            Write-Host "Telegram dispatched."
+            break
+        } catch {
+            $status = $null
+            if ($_.Exception.Response) { $status = $_.Exception.Response.StatusCode }
+            elseif ($_.Exception.StatusCode) { $status = $_.Exception.StatusCode }
+            if ($null -ne $status -and [int]$status -eq 400 -and $attempts -eq 1 -and $tgBody.ContainsKey('parse_mode')) {
+                $tgBody.Remove('parse_mode')
+                continue
+            }
+            Write-Host "Telegram dispatch failed: $($_.Exception.Message)"
+            break
+        }
     }
 }
