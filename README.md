@@ -34,7 +34,32 @@ Because the serve step only needs Python and the `wiki/` folder, it works on any
 
 ### Monitoring & Alerting
 
-EAxWiki can send monitoring alerts to **Slack, Microsoft Teams, and/or Telegram** when background export/serve operations start, encounter issues, or recover — see [Scheduling exports](#scheduling-exports) for the unattended monitor wrapper that sends these. The channels are independent, not exclusive: configure any subset, and every alert goes to whichever channel(s) are set up. See [**Slack Webhook Setup**](docs/SLACK_WEBHOOK_SETUP.md), [**Teams Webhook Setup**](docs/TEAMS_WEBHOOK_SETUP.md), or [**Telegram Setup**](docs/TELEGRAM_SETUP.md) for detailed instructions.
+EAxWiki can send monitoring alerts to **Slack, Microsoft Teams, and/or Telegram** when background export/serve operations start, encounter issues, or recover — see [Scheduling exports](#scheduling-exports) for the unattended monitor wrapper that sends these. The channels are independent, not exclusive: configure any subset, and every alert goes to whichever channel(s) are set up.
+
+Each channel needs a destination you create once in its own service, then give EAxWiki:
+
+- **Slack** — an *Incoming Webhook* URL. In your workspace at https://api.slack.com/apps → *Create New App* → *From scratch* → enable **Incoming Webhooks** → *Add New Webhook to Workspace* and pick a channel. Copy the URL (`https://hooks.slack.com/services/...`).
+- **Microsoft Teams** — a webhook URL from a Workflows flow (*Add a workflow* → *Webhook* → *When a webhook request is received* → *Send webhook alert to a channel*) or a classic Connector. Copy the URL.
+- **Telegram** — a *bot token* plus a *chat ID*. Message **@BotFather** → `/newbot` to create a bot and get its token. Add the bot to a private chat, group, or channel, then open `https://api.telegram.org/bot<TOKEN>/getUpdates` in a browser and read the numeric `chat.id` from the JSON (positive for private chats, negative for groups/channels).
+
+The easiest way to configure EAxWiki is to answer the interactive prompts when you first run it (`Configure Slack webhook... [y/N]`, `Configure Teams webhook... [y/N]`, `Configure Telegram monitoring alerts? [y/N]` — then paste each URL/token/chat ID). The values are encrypted into `.eaxwiki` with Windows DPAPI. To change or add a channel later, delete the `.eaxwiki` file in the repo root and run EAxWiki again — it will re-prompt for all destinations.
+
+Alternatively, set environment variables (these are checked after CLI args and before `.eaxwiki`, and are the way scheduled runs pick them up when `.eaxwiki` is not used):
+
+```powershell
+$env:EAXWIKI_ALERT_WEBHOOK                 = '<slack webhook url>'
+$env:EAXWIKI_ALERT_TEAMS_WEBHOOK           = '<teams webhook url>'
+$env:EAXWIKI_ALERT_TELEGRAM_BOT_TOKEN      = '<telegram bot token>'
+$env:EAXWIKI_ALERT_TELEGRAM_CHAT_ID        = '<telegram chat id>'
+```
+
+Test a channel without running a real export:
+
+```powershell
+.\scripts\monitor-export-and-serve.ps1 --test-alert
+```
+
+This resolves each channel the same way a real scheduled run does (CLI flag → env var → `.eaxwiki`) and posts a blue "Test" message to every configured channel. Detailed walkthroughs, alert kinds/emojis, security notes, and troubleshooting live in [**Slack Webhook Setup**](docs/SLACK_WEBHOOK_SETUP.md), [**Teams Webhook Setup**](docs/TEAMS_WEBHOOK_SETUP.md), and [**Telegram Setup**](docs/TELEGRAM_SETUP.md).
 
 ### Windows — export and serve on the same machine
 
