@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono&display=swap');
+
+:root {
+  --md-primary-fg-color: #103135;
+  --md-primary-fg-color--light: #A8C6C7;
+  --md-accent-fg-color: #D0F391;
+  --md-typeset-a-color: #103135;
+  --md-text-font: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --md-code-font: 'Geist Mono', SFMono-Regular, Consolas, monospace;
+}
+
+.md-header {
+  background-color: #103135;
+}
+.md-header__title {
+  color: #F3F7F7;
+}
+.md-tabs {
+  background-color: #103135;
+}
+
+.status-proposed { background: #F3F7F7; color: #103135; }
+.status-approved { background: #D0F391; color: #103135; }
+.status-implemented { background: #C4E5E7; color: #103135; }
+.status-mandatory { background: #A8C6C7; color: #103135; }
+.status-invalid { background: #E2E3E5; color: #103135; }
+.status-not-set { background: #E2E3E5; color: #6C757D; font-style: italic; }
+
+.sl[data-layer="business"] { background: #A8C6C7; color: #103135; }
+.sl[data-layer="application"] { background: #103135; color: #F3F7F7; }
+.sl[data-layer="technology"] { background: #C4E5E7; color: #103135; }
+.sl[data-layer="physical"] { background: #6FB4B6; color: #103135; }
+.sl[data-layer="motivation"] { background: #D0F391; color: #103135; }
+.sl[data-layer="strategy"] { background: #7FA8A9; color: #103135; }
+.sl[data-layer="implementation"] { background: #5C8A8B; color: #F3F7F7; }
+.sl[data-layer="composite"] { background: #405B5C; color: #F3F7F7; }
+.sl[data-layer="uml"] { background: #F3F7F7; color: #103135; }
+
+.diagram-thumb:hover img {
+  border-color: #103135;
+}
