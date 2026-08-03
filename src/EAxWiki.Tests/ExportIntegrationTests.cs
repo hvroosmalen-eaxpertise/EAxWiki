@@ -117,4 +117,21 @@ public class ExportIntegrationTests
         Assert.Contains("ea-notes-suggest-btn", content);
         Assert.Contains("/api/ai-suggest", content);
     }
+
+    [Fact]
+    public async Task Export_StatusEditorScript_UsesIconsNotLabels()
+    {
+        var writer = new TestInMemoryWriter();
+        var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
+        var repo = MinimalRepository();
+
+        await exporter.ExportAsync(repo, null, OutputPath);
+
+        var key = Normalize(Path.Combine(OutputPath, "status-editor.js"));
+        Assert.True(writer.Files.ContainsKey(key), $"status-editor.js should be created. Keys: {string.Join(", ", writer.Files.Keys)}");
+        var content = writer.Files[key];
+        Assert.Contains("EAxIcons.set(applyBtn", content);
+        Assert.DoesNotContain("applyBtn.textContent", content);
+        Assert.DoesNotContain("cancelBtn.textContent", content);
+    }
 }

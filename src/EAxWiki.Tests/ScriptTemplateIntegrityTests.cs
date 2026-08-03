@@ -60,7 +60,9 @@ public class ScriptTemplateIntegrityTests
     {
         var (writer, outPath) = await RunExportAsync();
         var content = ReadExportedFile(writer, outPath, "status-editor.js");
-        AssertContainsAll(content, "initStatusEditor", "/api/status");
+        AssertContainsAll(content, "initStatusEditor", "/api/status", "EAxIcons.set(applyBtn", "ea-status-btn", "ea-status-cancel-btn");
+        Assert.DoesNotContain("applyBtn.textContent", content);
+        Assert.DoesNotContain("cancelBtn.textContent", content);
     }
 
     [Fact]
