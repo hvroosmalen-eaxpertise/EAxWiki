@@ -95,6 +95,14 @@ public class ScriptTemplateIntegrityTests
     }
 
     [Fact]
+    public async Task EaIconsScript_IsEmitted()
+    {
+        var (writer, outPath) = await RunExportAsync();
+        var content = ReadExportedFile(writer, outPath, "ea-icons.js");
+        AssertContainsAll(content, "window.EAxIcons", "set: function", "aria-label", "spinner");
+    }
+
+    [Fact]
     public async Task AiSuggestJs_IsNotEmitted()
     {
         var (writer, outPath) = await RunExportAsync();
