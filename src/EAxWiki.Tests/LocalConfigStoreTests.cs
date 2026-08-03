@@ -26,6 +26,8 @@ public class LocalConfigStoreTests : IDisposable
             RepoPath = @"C:\Models\repo.qea",
             WebhookUrl = "https://hooks.slack.com/ABC",
             TeamsWebhookUrl = "https://outlook.office.com/DEF",
+            TelegramBotToken = "123456789:AAbbCCddEeffGGhhIIjj",
+            TelegramChatId = "-1001234567890",
             WikiPort = 8000,
             ApiPort = 8001
         };
@@ -37,6 +39,8 @@ public class LocalConfigStoreTests : IDisposable
         Assert.Equal(config.RepoPath, loaded.RepoPath);
         Assert.Equal(config.WebhookUrl, loaded.WebhookUrl);
         Assert.Equal(config.TeamsWebhookUrl, loaded.TeamsWebhookUrl);
+        Assert.Equal(config.TelegramBotToken, loaded.TelegramBotToken);
+        Assert.Equal(config.TelegramChatId, loaded.TelegramChatId);
         Assert.Equal(config.WikiPort, loaded.WikiPort);
         Assert.Equal(config.ApiPort, loaded.ApiPort);
     }
@@ -52,6 +56,8 @@ public class LocalConfigStoreTests : IDisposable
         Assert.False(wasLegacy);
         Assert.Equal(config.RepoPath, loaded.RepoPath);
         Assert.Null(loaded.WebhookUrl);
+        Assert.Null(loaded.TelegramBotToken);
+        Assert.Null(loaded.TelegramChatId);
     }
 
     [Fact]
