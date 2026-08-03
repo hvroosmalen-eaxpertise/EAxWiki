@@ -1,6 +1,11 @@
 (function () {
   'use strict';
 
+  if (typeof EAxIcons === 'undefined' && !window.__eaIconsWarned) {
+    window.__eaIconsWarned = true;
+    console.error('EAxIcons helper not loaded');
+  }
+
   function initStatusEditor() {
     var widget = document.getElementById('ea-status-editor');
     if (!widget || widget.dataset.initialized) return;
@@ -55,11 +60,13 @@
 
       applyBtn = document.createElement('button');
       applyBtn.className = 'ea-status-btn';
-      applyBtn.textContent = 'Apply';
+      applyBtn.type = 'button';
+      if (typeof EAxIcons !== 'undefined') EAxIcons.set(applyBtn, 'apply', 'Apply');
 
       cancelBtn = document.createElement('button');
       cancelBtn.className = 'ea-status-cancel-btn';
-      cancelBtn.textContent = 'Cancel';
+      cancelBtn.type = 'button';
+      if (typeof EAxIcons !== 'undefined') EAxIcons.set(cancelBtn, 'cancel', 'Cancel');
 
       msg = document.createElement('span');
       msg.className = 'ea-status-msg';
