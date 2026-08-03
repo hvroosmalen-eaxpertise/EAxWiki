@@ -68,6 +68,8 @@ function Get-MonitorArgs {
     $MinElementFraction  = 0.5
     $WebhookUrl          = $null
     $TeamsWebhookUrl     = $null
+    $TelegramBotToken     = $null
+    $TelegramChatId       = $null
     $TestAlert           = $false
     $NotifyOnStart       = $true
     $Force               = $false
@@ -86,6 +88,8 @@ function Get-MonitorArgs {
             '^(--min-element-fraction)$'             { $i++; if ($i -lt $Arguments.Count) { $MinElementFraction = [double]$Arguments[$i] } }
             '^(--webhook-url|-WebhookUrl)$'          { $i++; if ($i -lt $Arguments.Count) { $WebhookUrl          = $Arguments[$i] } }
             '^(--teams-webhook-url|-TeamsWebhookUrl)$' { $i++; if ($i -lt $Arguments.Count) { $TeamsWebhookUrl   = $Arguments[$i] } }
+            '^(--telegram-bot-token|-TelegramBotToken)$'  { $i++; if ($i -lt $Arguments.Count) { $TelegramBotToken = $Arguments[$i] } }
+            '^(--telegram-chat-id|-TelegramChatId)$'      { $i++; if ($i -lt $Arguments.Count) { $TelegramChatId   = $Arguments[$i] } }
             '^(--test-alert|-TestAlert)$'            { $TestAlert = $true }
             '^(--no-notify-start)$'                  { $NotifyOnStart = $false }
             '^(-f|--force|-Force)$'                  { $Force = $true }
@@ -105,6 +109,8 @@ function Get-MonitorArgs {
         MinElementFraction  = $MinElementFraction
         WebhookUrl          = $WebhookUrl
         TeamsWebhookUrl     = $TeamsWebhookUrl
+        TelegramBotToken    = $TelegramBotToken
+        TelegramChatId      = $TelegramChatId
         TestAlert           = $TestAlert
         NotifyOnStart       = $NotifyOnStart
         Force               = $Force
