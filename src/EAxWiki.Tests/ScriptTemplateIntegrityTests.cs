@@ -106,7 +106,7 @@ public class ScriptTemplateIntegrityTests
     {
         var (writer, outPath) = await RunExportAsync();
         var content = ReadExportedFile(writer, outPath, "ea-icons.js");
-        AssertContainsAll(content, "window.EAxIcons", "set: function", "aria-label", "spinner", "ea-icon-spinner", "viewBox=\"0 0 24 24\"");
+        AssertContainsAll(content, "window.EAxIcons", "set: function", "aria-label", "spinner", "ea-icon-spinner", "viewBox=\"0 0 24 24\"", "save: '<svg", "cancel: '<svg", "apply: '<svg");
     }
 
     [Fact]

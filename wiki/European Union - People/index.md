@@ -7,7 +7,7 @@ notes_hash: e3b0c442
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [ESRS](../ESRS/index.html) / [ESRS and People](../ESRS and People/index.html) / [European Union - People](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="77" data-kind="package" data-file-path="European Union - People/index.md" data-api-port="8001" data-api-token="f71e4831faa78932c4078d4ddf7941b1141fc3d544ee504f" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="77" data-kind="package" data-file-path="European Union - People/index.md" data-api-port="8001" data-api-token="0161fd334a3f013401ef2574a96a6a5d70559edb80d92c4d" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -23,4 +23,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-08-03 10:55:46*
+*Generated: 2026-08-03 11:11:53*

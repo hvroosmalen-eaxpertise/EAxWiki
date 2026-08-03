@@ -10,7 +10,7 @@ notes_hash: 60a4cdc7
 
 ![Stakeholder Expectations](Stakeholder Expectations.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="23" data-kind="diagram" data-file-path="Stakeholder Expectations/diagrams/Stakeholder Expectations.md" data-api-port="8001" data-api-token="f71e4831faa78932c4078d4ddf7941b1141fc3d544ee504f" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="23" data-kind="diagram" data-file-path="Stakeholder Expectations/diagrams/Stakeholder Expectations.md" data-api-port="8001" data-api-token="0161fd334a3f013401ef2574a96a6a5d70559edb80d92c4d" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -43,4 +43,4 @@ notes_hash: 60a4cdc7
 
 ---
 
-*Generated: 2026-08-03 10:56:05*
+*Generated: 2026-08-03 11:12:11*
