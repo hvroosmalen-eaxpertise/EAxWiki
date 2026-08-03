@@ -73,7 +73,9 @@ public class ScriptTemplateIntegrityTests
     {
         var (writer, outPath) = await RunExportAsync();
         var content = ReadExportedFile(writer, outPath, "row-notes-editor.js");
-        AssertContainsAll(content, "initRowNotesEditors", "openEditor", "/api/row-notes");
+        AssertContainsAll(content, "initRowNotesEditors", "openEditor", "/api/row-notes", "EAxIcons.set(saveBtn", "ea-notes-save-btn", "ea-notes-cancel-btn");
+        Assert.DoesNotContain("saveBtn.textContent", content);
+        Assert.DoesNotContain("cancelBtn.textContent", content);
     }
 
     [Fact]

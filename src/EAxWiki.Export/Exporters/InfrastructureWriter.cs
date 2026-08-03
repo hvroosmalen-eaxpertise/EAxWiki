@@ -840,6 +840,11 @@ if (typeof document$ !== 'undefined') {
 (function () {
   'use strict';
 
+  if (typeof EAxIcons === 'undefined' && !window.__eaIconsWarned) {
+    window.__eaIconsWarned = true;
+    console.error('EAxIcons helper not loaded');
+  }
+
   var currentOpen = null;
 
   function closeCurrent() {
@@ -911,11 +916,13 @@ if (typeof document$ !== 'undefined') {
 
     var saveBtn = document.createElement('button');
     saveBtn.className = 'ea-notes-save-btn';
-    saveBtn.textContent = 'Save';
+    saveBtn.type = 'button';
+    if (typeof EAxIcons !== 'undefined') EAxIcons.set(saveBtn, 'save', 'Save');
 
     var cancelBtn = document.createElement('button');
     cancelBtn.className = 'ea-notes-cancel-btn';
-    cancelBtn.textContent = 'Cancel';
+    cancelBtn.type = 'button';
+    if (typeof EAxIcons !== 'undefined') EAxIcons.set(cancelBtn, 'cancel', 'Cancel');
 
     var msg = document.createElement('span');
     msg.className = 'ea-notes-msg';
