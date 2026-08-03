@@ -43,6 +43,8 @@ public class SchedulerForm : Form
     private readonly NumericUpDown _apiPortConfigBox = new() { Minimum = 1, Maximum = 65535, Value = 8001, Width = 80 };
     private readonly TextBox _webhookBox = new() { Width = 400 };
     private readonly TextBox _teamsWebhookBox = new() { Width = 400 };
+    private readonly TextBox _telegramBotTokenBox = new() { Width = 400, UseSystemPasswordChar = true };
+    private readonly TextBox _telegramChatIdBox = new() { Width = 400 };
     private readonly TextBox _aiEndpointBox = new() { Width = 400, Text = "https://api.openai.com/v1" };
     private readonly TextBox _aiModelBox = new() { Width = 400, Text = "gpt-4o-mini" };
     private readonly TextBox _aiKeyBox = new() { Width = 400, UseSystemPasswordChar = true };
@@ -224,6 +226,8 @@ public class SchedulerForm : Form
         AddRow(table, "API port:", _apiPortConfigBox);
         AddRow(table, "Slack Webhook:", _webhookBox);
         AddRow(table, "Teams Webhook:", _teamsWebhookBox);
+        AddRow(table, "Telegram Bot Token:", _telegramBotTokenBox);
+        AddRow(table, "Telegram Chat ID:", _telegramChatIdBox);
 
         // WrapContents = false and no AutoSize here, matching BuildScheduleTab: with AutoSize +
         // TopDown flow, once content exceeds the tab's visible height the panel wraps into a new
@@ -671,6 +675,8 @@ public class SchedulerForm : Form
             _apiPortConfigBox.Value = 8001;
             _webhookBox.Text = "";
             _teamsWebhookBox.Text = "";
+            _telegramBotTokenBox.Text = "";
+            _telegramChatIdBox.Text = "";
             _aiEndpointBox.Text = "https://api.openai.com/v1";
             _aiModelBox.Text = "gpt-4o-mini";
             _aiKeyBox.Text = "";
@@ -687,6 +693,8 @@ public class SchedulerForm : Form
             _apiPortConfigBox.Value = Math.Clamp(config.ApiPort ?? 8001, (int)_apiPortConfigBox.Minimum, (int)_apiPortConfigBox.Maximum);
             _webhookBox.Text = config.WebhookUrl ?? "";
             _teamsWebhookBox.Text = config.TeamsWebhookUrl ?? "";
+            _telegramBotTokenBox.Text = config.TelegramBotToken ?? "";
+            _telegramChatIdBox.Text = config.TelegramChatId ?? "";
             var aiMode = config.AiMode ?? "local";
             _llmModeNone.Checked = aiMode == "none";
             _llmModeLocal.Checked = aiMode == "local";
@@ -727,6 +735,12 @@ public class SchedulerForm : Form
             AppendOutput($"Invalid Teams webhook URL: {teamsUrl}");
             return;
         }
+        if (_telegramChatIdBox.Text.Trim() is { Length: > 0 } chatId &&
+            !long.TryParse(chatId, out _))
+        {
+            AppendOutput($"Invalid Telegram chat ID (must be numeric, e.g. 123456789 or -1001234567890): {chatId}");
+            return;
+        }
 
         var config = new LocalConfigStore.Config
         {
@@ -735,6 +749,8 @@ public class SchedulerForm : Form
             ApiPort = (int)_apiPortConfigBox.Value,
             WebhookUrl = _webhookBox.Text.Trim() is { Length: > 0 } slack ? slack : null,
             TeamsWebhookUrl = _teamsWebhookBox.Text.Trim() is { Length: > 0 } teams ? teams : null,
+            TelegramBotToken = _telegramBotTokenBox.Text.Trim() is { Length: > 0 } token ? token : null,
+            TelegramChatId = _telegramChatIdBox.Text.Trim() is { Length: > 0 } id ? id : null,
         };
 
         try
@@ -1165,6 +1181,11 @@ public class SchedulerForm : Form
         var teamsWebhook = _teamsWebhookBox.Text.Trim();
         if (teamsWebhook.Length > 0) { args.Add("--teams-webhook-url"); args.Add(teamsWebhook); }
 
+        var tgBotToken = _telegramBotTokenBox.Text.Trim();
+        if (tgBotToken.Length > 0) { args.Add("--telegram-bot-token"); args.Add(tgBotToken); }
+        var tgChatId = _telegramChatIdBox.Text.Trim();
+        if (tgChatId.Length > 0) { args.Add("--telegram-chat-id"); args.Add(tgChatId); }
+
         if (_forceEveryRunRadio.Checked) args.Add("--force");
         else if (_forceEveryNRadio.Checked) { args.Add("--force-every"); args.Add(((int)_forceEveryN.Value).ToString()); }
 
@@ -1200,6 +1221,8 @@ if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipExport = $false
         var repoRoot = _repoRoot;
         var webhookUrl = _webhookBox.Text.Trim();
         var teamsUrl = _teamsWebhookBox.Text.Trim();
+        var tgBotToken = _telegramBotTokenBox.Text.Trim();
+        var tgChatId = _telegramChatIdBox.Text.Trim();
 
         var cmd = $@"
 # Kill any process with EAxWiki in its command line (dotnet.exe, EAxWiki.exe, etc.)
@@ -1208,7 +1231,7 @@ Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
     ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
 $sf = Get-ChildItem -Path '{repoRoot}\.eaxwiki-monitor\*\health.json' -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
 if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipExport = $true; $s | ConvertTo-Json | Set-Content $sf; Write-Host 'skipExport=$true' }}
-& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -Message 'Export stopped by user.' -Kind UserStop
+& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -TelegramBotToken '{tgBotToken.Replace("'", "''")}' -TelegramChatId '{tgChatId.Replace("'", "''")}' -Message 'Export stopped by user.' -Kind UserStop
 ";
         AppendOutput("> Stopping export...");
         var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
@@ -1221,6 +1244,8 @@ if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipExport = $true;
         var repoRoot = _repoRoot;
         var webhookUrl = _webhookBox.Text.Trim();
         var teamsUrl = _teamsWebhookBox.Text.Trim();
+        var tgBotToken = _telegramBotTokenBox.Text.Trim();
+        var tgChatId = _telegramChatIdBox.Text.Trim();
 
         var cmd = $@"
 # Kill pwsh.exe running serve.ps1
@@ -1233,7 +1258,7 @@ Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
     ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
 $sf = Get-ChildItem -Path '{repoRoot}\.eaxwiki-monitor\*\health.json' -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
 if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipServe = $true; $s | ConvertTo-Json | Set-Content $sf; Write-Host 'skipServe=$true' }}
-& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -Message 'Serve stopped by user.' -Kind UserStop
+& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -TelegramBotToken '{tgBotToken.Replace("'", "''")}' -TelegramChatId '{tgChatId.Replace("'", "''")}' -Message 'Serve stopped by user.' -Kind UserStop
 ";
         AppendOutput("> Stopping serve...");
         var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
@@ -1246,12 +1271,14 @@ if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipServe = $true; 
         var repoRoot = _repoRoot;
         var webhookUrl = _webhookBox.Text.Trim();
         var teamsUrl = _teamsWebhookBox.Text.Trim();
+        var tgBotToken = _telegramBotTokenBox.Text.Trim();
+        var tgChatId = _telegramChatIdBox.Text.Trim();
 
         var cmd = $@"
 Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
     Where-Object {{ $_.Name -match 'llama-server' }} |
     ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
-& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -Message 'Local LLM stopped by user.' -Kind UserStop
+& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -TelegramBotToken '{tgBotToken.Replace("'", "''")}' -TelegramChatId '{tgChatId.Replace("'", "''")}' -Message 'Local LLM stopped by user.' -Kind UserStop
 ";
         AppendOutput("> Stopping LLM...");
         var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
@@ -1267,6 +1294,8 @@ Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
         var repoRoot = _repoRoot;
         var webhookUrl = _webhookBox.Text.Trim();
         var teamsUrl = _teamsWebhookBox.Text.Trim();
+        var tgBotToken = _telegramBotTokenBox.Text.Trim();
+        var tgChatId = _telegramChatIdBox.Text.Trim();
 
         var cmd = $@"
 # Kill any process with EAxWiki in command line
@@ -1287,7 +1316,7 @@ Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
     ForEach-Object {{ Write-Host ""Killing $($_.Name) PID $($_.ProcessId)""; Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }}
 $sf = Get-ChildItem -Path '{repoRoot}\.eaxwiki-monitor\*\health.json' -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName
 if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipExport = $true; $s.skipServe = $true; $s | ConvertTo-Json | Set-Content $sf; Write-Host 'skipExport=$true, skipServe=$true' }}
-& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -Message 'All processes stopped by user.' -Kind UserStop
+& '{repoRoot}\scripts\send-alert.ps1' -WebhookUrl '{webhookUrl.Replace("'", "''")}' -TeamsWebhookUrl '{teamsUrl.Replace("'", "''")}' -TelegramBotToken '{tgBotToken.Replace("'", "''")}' -TelegramChatId '{tgChatId.Replace("'", "''")}' -Message 'All processes stopped by user.' -Kind UserStop
 ";
         AppendOutput("> Stopping all processes...");
         var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
