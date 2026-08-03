@@ -59,7 +59,7 @@ In `src/EAxWiki.Tests/ScriptTemplateIntegrityTests.cs`, add after `CytoscapeMinJ
     {
         var (writer, outPath) = await RunExportAsync();
         var content = ReadExportedFile(writer, outPath, "ea-icons.js");
-        AssertContainsAll(content, "window.EAxIcons", "EAxIcons.set", "aria-label", "spinner");
+        AssertContainsAll(content, "window.EAxIcons", "set: function", "aria-label", "spinner");
     }
 ```
 
