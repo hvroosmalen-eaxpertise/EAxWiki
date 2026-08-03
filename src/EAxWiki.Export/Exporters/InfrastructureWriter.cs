@@ -604,14 +604,14 @@ if (typeof document$ !== 'undefined') {
     var token   = widget.dataset.apiToken || '';
     var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
     var endpoint = kind === 'diagram' ? '/api/diagram-notes' : '/api/notes';
-    var idField  = kind === 'diagram' ? 'diagramId' : 'elementId';
+    var idField  = kind === 'diagram' ? 'diagramId' : kind === 'package' ? 'packageId' : 'elementId';
 
     var editBtn = document.getElementById('ea-notes-edit-btn');
     var contentDiv = widget.querySelector('.ea-notes-content');
     var hint = widget.querySelector('.ea-notes-derived-hint');
     if (!editBtn || !contentDiv) return;
 
-    var notesMarkerPattern = /<!--\s*ea-notes-(start|end)\s*-->/g;
+    var notesMarkerPattern = /<!--\s*ea-(package-)?notes-(start|end)\s*-->/g;
     var placeholderHtml = '<em class="ea-notes-placeholder">No description set.</em>';
 
     if (contentDiv.innerHTML.replace(notesMarkerPattern, '').trim() === '') {
