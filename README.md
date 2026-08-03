@@ -22,7 +22,7 @@ What the exporter produces:
 - PNG diagram images with a linked Markdown page per diagram (clickable for zoom via glightbox)
 - Seven cross-cutting index views: **Structure**, **Types**, **Glossary**, **Diagrams**, **Recent Changes**, **Status Dashboard**, **Model Health**
 - A `model.json` file with the full model serialised as JSON (opt-in via `--json` / `-j`)
-- An `extra.css` and `.pages` navigation file for MkDocs
+- An `extra.css`, `.pages` navigation file, and an `ea-icons.js` SVG icon helper for MkDocs
 
 The exporter runs **incrementally** by default — it compares each element's `ModifiedDate` in EA against the file's last-write time and skips anything that has not changed. Pass `-Force` to regenerate everything.
 
@@ -277,7 +277,7 @@ The export step cleans up any orphaned EA.exe processes when it finishes.
 
 ### Live write-back — change status and notes directly from the wiki page
 
-When the wiki runs locally on Windows with EA installed, users can edit an element's **Status** and **Notes**, a diagram's **Description**, and a package's **Notes**, directly from the rendered wiki page — no need to open EA. All use the same two-step pattern: a small pencil icon next to the value, click to edit, **Apply**/**Save** or **Cancel** to close.
+When the wiki runs locally on Windows with EA installed, users can edit an element's **Status** and **Notes**, a diagram's **Description**, and a package's **Notes**, directly from the rendered wiki page — no need to open EA. All use the same two-step pattern: a small pencil icon next to the value, click to edit, then confirm with icon-only buttons — a checkmark to **Save**/**Apply**, an **X** to **Cancel** (labels shown on hover/focus via `aria-label`/`title`). The action buttons carry no visible text; their meaning comes from the icon, loaded from the shared `ea-icons.js` helper written by the exporter.
 
 - **Status** — sits on its own line (elements only). Clicking the pencil replaces the badge in place with a dropdown, Apply, and Cancel — no separate widget block elsewhere on the page. Elements with no status set show a "Not Set" badge and can be given one the same way.
 - **Notes** — a pencil icon next to the notes text (elements and packages). Clicking it swaps the rendered notes for a raw-HTML `<textarea>` with Save / Cancel. Pages with no notes yet show "No description set." and can be given one the same way — the editor isn't gated on notes already existing. Package notes use separate HTML markers (`<!--ea-package-notes-start/end-->`) so they don't collide with element notes markers.
@@ -346,7 +346,7 @@ Notes typed as plain text (no HTML tags) are automatically wrapped in `<p>` per 
 
 ### AI-suggested descriptions
 
-When `--ai-endpoint` is configured (default `http://localhost:8080/v1`), a **Suggest** button appears next to the Notes pencil icon. Clicking it sends the element's context to a local or cloud LLM and fills the textarea with a first-draft description focused on what the element does and why it matters — deliberately omitting information the viewer can already see (type, stereotype, status, package).
+When `--ai-endpoint` is configured (default `http://localhost:8080/v1`), a sparkle-icon **Suggest** button appears next to the Notes pencil icon. Clicking it sends the element's context to a local or cloud LLM and fills the textarea with a first-draft description focused on what the element does and why it matters — deliberately omitting information the viewer can already see (type, stereotype, status, package). While the request is in flight, the sparkle swaps to an animated spinner icon on the button; it reverts to the sparkle when the suggestion arrives or on error.
 
 | Flag | Env | Default | Description |
 |---|---|---|---|
