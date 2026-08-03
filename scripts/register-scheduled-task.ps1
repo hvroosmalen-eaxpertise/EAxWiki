@@ -8,17 +8,19 @@
 # triggers per task, so this is two native triggers, not a config file read by the wrapper.
 # monitor-export-and-serve.ps1 itself is completely unaware this exists.
 #
-# Slack and/or Teams webhook URLs (issue #39 — both are independent, not exclusive; configure
-# either, neither, or both) can be configured in one of three ways each (checked in this order):
+# Slack, Teams and/or Telegram alert destinations (issue #39 / #80 — all are independent, not
+# exclusive; configure any subset) can be configured in one of three ways each (checked in this order):
 #   1. Stored in .eaxwiki as encrypted JSON (recommended for per-instance setup)
-#   2. Set as EAXWIKI_ALERT_WEBHOOK / EAXWIKI_ALERT_TEAMS_WEBHOOK environment variable (use when
-#      .eaxwiki is shared/unencrypted)
+#   2. Set as EAXWIKI_ALERT_WEBHOOK / EAXWIKI_ALERT_TEAMS_WEBHOOK (Slack/Teams) or
+#      EAXWIKI_ALERT_TELEGRAM_BOT_TOKEN / EAXWIKI_ALERT_TELEGRAM_CHAT_ID (Telegram) environment
+#      variables (use when .eaxwiki is shared/unencrypted)
 #   3. Not configured (alerting is disabled for that channel; still logs to wiki/status/health.md)
 #
-# This registration script does NOT bake --webhook-url/--teams-webhook-url into the scheduled
-# task's command line, even though monitor-export-and-serve.ps1 itself accepts them for manual/
-# direct invocation — Task Scheduler stores action arguments in a readable way (any admin can
-# read them back via Get-ScheduledTask), so scheduled runs always resolve via env var or .eaxwiki.
+# This registration script does NOT bake --webhook-url/--teams-webhook-url/--telegram-bot-token/
+# --telegram-chat-id into the scheduled task's command line, even though monitor-export-and-serve.ps1
+# itself accepts them for manual/direct invocation — Task Scheduler stores action arguments in a
+# readable way (any admin can read them back via Get-ScheduledTask), so scheduled runs always resolve
+# via env var or .eaxwiki.
 #
 # Overlap protection: MultipleInstances is set to IgnoreNew, so if a run is still in
 # progress when the next trigger fires (e.g. a slow EA export overruns a 30-minute

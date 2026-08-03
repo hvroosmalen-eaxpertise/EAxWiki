@@ -34,7 +34,7 @@ Because the serve step only needs Python and the `wiki/` folder, it works on any
 
 ### Monitoring & Alerting
 
-EAxWiki can send monitoring alerts to **Slack and/or Microsoft Teams** when background export/serve operations start, encounter issues, or recover — see [Scheduling exports](#scheduling-exports) for the unattended monitor wrapper that sends these. The two channels are independent, not exclusive: configure either, neither, or both, and every alert goes to whichever channel(s) are set up. See [**Slack Webhook Setup**](docs/SLACK_WEBHOOK_SETUP.md) or [**Teams Webhook Setup**](docs/TEAMS_WEBHOOK_SETUP.md) for detailed instructions.
+EAxWiki can send monitoring alerts to **Slack, Microsoft Teams, and/or Telegram** when background export/serve operations start, encounter issues, or recover — see [Scheduling exports](#scheduling-exports) for the unattended monitor wrapper that sends these. The channels are independent, not exclusive: configure any subset, and every alert goes to whichever channel(s) are set up. See [**Slack Webhook Setup**](docs/SLACK_WEBHOOK_SETUP.md), [**Teams Webhook Setup**](docs/TEAMS_WEBHOOK_SETUP.md), or [**Telegram Setup**](docs/TELEGRAM_SETUP.md) for detailed instructions.
 
 ### Windows — export and serve on the same machine
 
@@ -217,7 +217,7 @@ A typical first-time setup is just:
 | `scripts/export-and-serve.ps1` | Export then serve (calls the two above) |
 | `scripts/serve-api.ps1` | Start MkDocs *and* the wiki write-back server together, without re-exporting |
 | `scripts/writeback.ps1` | Scan wiki for status and notes changes and write them back to EA via COM (**Windows only**) |
-| `scripts/monitor-export-and-serve.ps1` | Unattended wrapper for scheduled runs: retry with backoff, Slack/Teams alerting, health page, serve watchdog (see [Scheduling exports](#scheduling-exports), **Windows only**) |
+| `scripts/monitor-export-and-serve.ps1` | Unattended wrapper for scheduled runs: retry with backoff, Slack/Teams/Telegram alerting, health page, serve watchdog (see [Scheduling exports](#scheduling-exports), **Windows only**) |
 | `scripts/register-scheduled-task.ps1` | Register `monitor-export-and-serve.ps1` as a Windows Task Scheduler task — fixed interval or day/night mode (see [Scheduling exports](#scheduling-exports), **Windows only**) |
 | `src/EAxWiki.SchedulerUI` | WinForms GUI front end for the script above — see [Scheduler GUI](#scheduler-gui), **Windows only** |
 
@@ -419,7 +419,7 @@ Because the connection is saved in `.eaxwiki`, the scripts run unattended and ar
 
 ### Windows Task Scheduler — unattended monitoring (recommended)
 
-`scripts/register-scheduled-task.ps1` registers `scripts/monitor-export-and-serve.ps1` on a fixed interval. Unlike calling `export.ps1` directly from Task Scheduler, the monitor wrapper is built for running unattended with nobody watching: it retries transient failures with backoff, restarts `mkdocs serve` if it dies, writes a `wiki/status/health.md` page, and (if a Slack and/or Teams webhook is configured — see [Monitoring & Alerting](#monitoring--alerting)) posts an alert on every run start, on final failure, and on recovery.
+`scripts/register-scheduled-task.ps1` registers `scripts/monitor-export-and-serve.ps1` on a fixed interval. Unlike calling `export.ps1` directly from Task Scheduler, the monitor wrapper is built for running unattended with nobody watching: it retries transient failures with backoff, restarts `mkdocs serve` if it dies, writes a `wiki/status/health.md` page, and (if a Slack, Teams, and/or Telegram alert destination is configured — see [Monitoring & Alerting](#monitoring--alerting)) posts an alert on every run start, on final failure, and on recovery.
 
 ```powershell
 # Register a task that runs every 30 minutes
@@ -484,7 +484,7 @@ machine in one timezone — "day vs night" can only mean that machine's own cloc
 
 `src/EAxWiki.SchedulerUI` is a small WinForms app that builds and runs the same
 `register-scheduled-task.ps1` calls above from a form instead of the command line — a Configuration
-tab (view and edit the current `.eaxwiki` repo path/ports/Slack+Teams webhooks, with a Save button;
+tab (view and edit the current `.eaxwiki` repo path/ports/Slack/Teams/Telegram alert settings, with a Save button;
 repository type can be a `.qea` file or a SQL Server/MySQL-MariaDB/Oracle/PostgreSQL connection,
 same as the console wizard), a Task Status tab (current state, next run time, registered triggers,
 with Enable/Disable/Unregister buttons), and a Schedule Settings tab (simple interval or day/night
