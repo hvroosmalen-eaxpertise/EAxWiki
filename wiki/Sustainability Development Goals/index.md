@@ -1,17 +1,18 @@
 ---
 package_id: 3
-notes_hash: e3b0c442
+notes_hash: 0eecd5bb
 ---
 
 # Sustainability Development Goals
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="3" data-kind="package" data-file-path="Sustainability Development Goals/index.md" data-api-port="8001" data-api-token="d54ac7f4ba1b9561901225e0195c664d0fa006b906b25c92" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="3" data-kind="package" data-file-path="Sustainability Development Goals/index.md" data-api-port="8001" data-api-token="f71e4831faa78932c4078d4ddf7941b1141fc3d544ee504f" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
-
+<p>The 2030 Agenda for Sustainable Development, adopted by all United Nations Member States in 2015, provides a shared blueprint for peace and prosperity for people and the planet, now and into the future. At its heart are the 17 Sustainable Development Goals (SDGs), which are an urgent call for action by all countries - developed and developing - in a global partnership. They recognize that ending poverty and other deprivations must go hand-in-hand with strategies that improve health and education, reduce inequality, and spur economic growth – all while tackling climate change and working to preserve our oceans and forests.</p>
+<p>The SDGs build on decades of work by countries and the UN, including the UN Department of Economic and Social Affairs.</p>
 <!--ea-package-notes-end-->
 </div>
 </div>
@@ -19,6 +20,7 @@ notes_hash: e3b0c442
 ## Diagrams
 
 - [Sustainability Development Goals](diagrams/Sustainability Development Goals.html) (Custom)
+  - *<p>This diagram illustrates the 17 United Nations' Sustainability Development Goals (SDGs), showcasing the interconnected activities and purposes that aim to create a more equitable, sustainable, and resilient world. The diagram provides a visual representation of the goals, highlighting their relationships and dependencies, and serves as a guide for understanding the global framework for sustainable development. It is a tool for businesses, organizations, and individuals seeking to align their efforts with the SDGs and contribute to a better future.</p>*
 
 ## Elements
 
@@ -68,4 +70,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-08-03 08:46:16*
+*Generated: 2026-08-03 10:55:46*

@@ -1,6 +1,6 @@
 ---
 diagram_id: 1
-notes_hash: 7d5c969f
+notes_hash: 731b4601
 ---
 
 # Sustainability Development Goals
@@ -10,12 +10,11 @@ notes_hash: 7d5c969f
 
 ![Sustainability Development Goals](Sustainability Development Goals.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="1" data-kind="diagram" data-file-path="Sustainability Development Goals/diagrams/Sustainability Development Goals.md" data-api-port="8001" data-api-token="d54ac7f4ba1b9561901225e0195c664d0fa006b906b25c92" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="1" data-kind="diagram" data-file-path="Sustainability Development Goals/diagrams/Sustainability Development Goals.md" data-api-port="8001" data-api-token="f71e4831faa78932c4078d4ddf7941b1141fc3d544ee504f" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
-<span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
-<p>End poverty in all its forms everywhere</p>
+<p>This diagram illustrates the 17 United Nations' Sustainability Development Goals (SDGs), showcasing the interconnected activities and purposes that aim to create a more equitable, sustainable, and resilient world. The diagram provides a visual representation of the goals, highlighting their relationships and dependencies, and serves as a guide for understanding the global framework for sustainable development. It is a tool for businesses, organizations, and individuals seeking to align their efforts with the SDGs and contribute to a better future.</p>
 <!--ea-notes-end-->
 </div>
 </div>
@@ -50,4 +49,4 @@ notes_hash: 7d5c969f
 
 ---
 
-*Generated: 2026-08-03 08:46:19*
+*Generated: 2026-08-03 10:55:49*

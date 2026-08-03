@@ -10,7 +10,7 @@ notes_hash: fafc6797
 
 ![ERSR S2 Workers in the Value Chain - People](ERSR S2 Workers in the Value Chain - People.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="36" data-kind="diagram" data-file-path="ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.md" data-api-port="8001" data-api-token="d54ac7f4ba1b9561901225e0195c664d0fa006b906b25c92" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="36" data-kind="diagram" data-file-path="ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.md" data-api-port="8001" data-api-token="f71e4831faa78932c4078d4ddf7941b1141fc3d544ee504f" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -32,4 +32,4 @@ https://www</p>
 
 ---
 
-*Generated: 2026-08-03 08:46:28*
+*Generated: 2026-08-03 10:55:55*

@@ -197,23 +197,34 @@ details.status-details li {
   font-size: inherit;
 }
 .ea-status-btn {
-  padding: 0.2em 0.8em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8em;
+  height: 1.8em;
+  padding: 0;
   border: 1px solid var(--md-primary-fg-color);
   border-radius: 4px;
   background: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
   cursor: pointer;
-  font-size: inherit;
-  font-weight: 600;
+  font-size: 0.9em;
+  line-height: 1;
 }
 .ea-status-cancel-btn {
-  padding: 0.2em 0.8em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8em;
+  height: 1.8em;
+  padding: 0;
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 4px;
   background: var(--md-default-bg-color);
   color: var(--md-default-fg-color);
   cursor: pointer;
-  font-size: inherit;
+  font-size: 0.9em;
+  line-height: 1;
 }
 .ea-status-btn:disabled, .ea-status-cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .ea-status-msg { font-style: italic; font-size: 0.95em; }
@@ -274,37 +285,64 @@ details.status-details li {
   margin-top: 0.4em;
 }
 .ea-notes-save-btn {
-  padding: 0.2em 0.8em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8em;
+  height: 1.8em;
+  padding: 0;
   border: 1px solid var(--md-primary-fg-color);
   border-radius: 4px;
   background: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
   cursor: pointer;
-  font-size: 0.85em;
-  font-weight: 600;
+  font-size: 0.9em;
+  line-height: 1;
 }
 .ea-notes-cancel-btn {
-  padding: 0.2em 0.8em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8em;
+  height: 1.8em;
+  padding: 0;
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 4px;
   background: var(--md-default-bg-color);
   color: var(--md-default-fg-color);
   cursor: pointer;
-  font-size: 0.85em;
+  font-size: 0.9em;
+  line-height: 1;
 }
 .ea-notes-suggest-btn {
-  padding: 0.2em 0.8em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8em;
+  height: 1.8em;
+  padding: 0;
   border: 1px solid #9c27b0;
   border-radius: 4px;
   background: #9c27b0;
   color: #fff;
   cursor: pointer;
-  font-size: 0.85em;
-  font-weight: 600;
+  font-size: 0.9em;
+  line-height: 1;
 }
 .ea-notes-suggest-btn:hover {
   background: #7b1fa2;
   border-color: #7b1fa2;
+}
+.ea-status-btn svg, .ea-notes-save-btn svg, .ea-notes-cancel-btn svg, .ea-notes-suggest-btn svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+@keyframes ea-spin {
+  to { transform: rotate(360deg); }
+}
+.ea-icon-spinner {
+  animation: ea-spin 0.8s linear infinite;
 }
 .ea-notes-suggest-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .ea-notes-save-btn:disabled, .ea-notes-cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }

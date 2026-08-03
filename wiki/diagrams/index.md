@@ -41,11 +41,11 @@
 | [Identity](../Identity/diagrams/Identity.html) | 2026-05-13 | - | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Identity](../Identity/index.html) |
 | [Metrics](../Metrics/diagrams/Metrics.html) | 2026-05-13 | - | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](../Metrics/index.html) |
 | [Mapping SDG to Main](../Mapping SDG to Main/diagrams/Mapping SDG to Main.html) | 2026-05-13 | - | [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Mapping SDG to Main](../Mapping SDG to Main/index.html) |
-| [Sustainability Development Goals](../Sustainability Development Goals/diagrams/Sustainability Development Goals.html) | 2026-05-13 | - | [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](../Sustainability Development Goals/index.html) |
+| [Sustainability Development Goals](../Sustainability Development Goals/diagrams/Sustainability Development Goals.html) | 2026-05-13 | <p>This diagram illustrates the 17 United Nations' Sustainability Development Goals (SDGs), showcasi... | [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](../Sustainability Development Goals/index.html) |
 | [Stories Voorbeelden](../Stories/diagrams/Stories Voorbeelden.html) | 2026-05-13 | - | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Stories](../Stories/index.html) |
 | [Information Collection and Model Creation](../Information Collection and Model Creation/diagrams/Information Collection and Model Creation.html) | 2026-05-13 | - | [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Information Collection and Model Creation](../Information Collection and Model Creation/index.html) |
 | [Introduction EDGY Presentation 13 May Event](../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.html) | 2026-05-13 | - | [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Introduction EurSuRA](../Introduction EurSuRA/index.html) |
 
 ---
 
-*Generated: 2026-08-03 08:46:17*
+*Generated: 2026-08-03 10:55:47*
