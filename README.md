@@ -592,23 +592,27 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 
 | Group | Tests | What's covered |
 |-------|-------|---------------|
-| Export integration | 6 | End-to-end Markdown output via `InMemoryWriter` |
+| Export integration | 8 | End-to-end Markdown output via `InMemoryWriter` |
 | Write-back scanner | 4 | Notes round-trip routing, hash skip, attribute row notes |
 | EaReader + ModelMapper | 37 | COM model mapping (Element/Package/Diagram), logger warning paths, null handling, guard clauses, Open validation, dispose |
 | ContextBuilder | 9 | Sub-builder decomposition (ElementCollector, DiagramIndexBuilder, ConnectorIndexBuilder, LookupBuilder, PackageDirCollector) |
-| Frontmatter parser | 4 | YamlDotNet-based YAML frontmatter parsing |
-| ElementPageWriter renderers | 38 | All 11 widget renderers (rich HTML + plain Markdown modes), edge cases, 2-hop graph, missing references |
-| Other | ~38 | Cleanup, Markdown helpers, hash helpers, etc. |
+| Frontmatter parser | 15 | YamlDotNet-based YAML frontmatter parsing |
+| ElementPageWriter renderers | 34 | All 11 widget renderers (rich HTML + plain Markdown modes), edge cases, 2-hop graph, missing references |
+| Other | ~137 | Cleanup, Markdown helpers, hash helpers, config store, repository/health/validation writers, resilience, script template integrity, etc. |
 | Property-based (FsCheck) | 26 | SanitizeName, EscapeCell, ParseStereotype, GetStereotypeLabel, SanitizeForAnchor, ComputeNotesHash, ComputeStatusHash invariants |
-| **.NET subtotal** | **244** | |
-| Export | 29 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths |
-| Serve | 21 | Port/root flags, file server config, cert modes, default page, path normalization |
-| ServeApi | 10 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
-| MonitorExportAndServe | 40 | Schedule parsing, task registration/update, state file, health check, alerting, CLI flags |
-| Writeback | 22 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
-| **Pester subtotal** | **122** | |
+| **.NET subtotal** | **270** | |
+| Export | 23 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths |
+| ExportAndServe | 22 | Port/root/API-port flags, retry/force args, combined pipeline args |
+| Install | 11 | `#Requires -Version 7` directive, parameter binding |
+| MonitorExportAndServe | 36 | Schedule parsing, task registration/update, state file, health check, alerting (Slack/Teams/Telegram), CLI flags |
+| SendAlert | 2 | Telegram dispatch guard + dispatch |
+| Serve | 12 | Port/root flags, file server config, cert modes, default page, path normalization |
+| ServeApi | 12 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
+| ValidateWikiOutput | 12 | Validation CLI args (repo/output/tolerance, defaults, error paths) |
+| Writeback | 13 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
+| **Pester subtotal** | **143** | |
 
-**366 tests total** (244 .NET + 122 Pester), all pass.
+**413 tests total** (270 .NET + 143 Pester), all pass.
 
 ## Design decisions
 
