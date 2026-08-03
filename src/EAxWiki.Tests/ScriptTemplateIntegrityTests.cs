@@ -52,7 +52,10 @@ public class ScriptTemplateIntegrityTests
     {
         var (writer, outPath) = await RunExportAsync();
         var content = ReadExportedFile(writer, outPath, "notes-editor.js");
-        AssertContainsAll(content, "initNotesEditor", "suggestBtn", "ea-notes-suggest-btn", "/api/ai-suggest", "acquireEditLock");
+        AssertContainsAll(content, "initNotesEditor", "suggestBtn", "ea-notes-suggest-btn", "/api/ai-suggest", "acquireEditLock", "EAxIcons.set(saveBtn", "EAxIcons.set(suggestBtn, 'spinner'");
+        Assert.DoesNotContain("saveBtn.textContent", content);
+        Assert.DoesNotContain("suggestBtn.textContent", content);
+        Assert.DoesNotContain("cancelBtn.textContent", content);
     }
 
     [Fact]

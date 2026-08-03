@@ -116,6 +116,8 @@ public class ExportIntegrationTests
         Assert.Contains("suggestBtn", content);
         Assert.Contains("ea-notes-suggest-btn", content);
         Assert.Contains("/api/ai-suggest", content);
+        Assert.Contains("EAxIcons.set(saveBtn", content);
+        Assert.DoesNotContain("saveBtn.textContent", content);
     }
 
     [Fact]

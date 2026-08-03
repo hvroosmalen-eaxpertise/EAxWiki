@@ -599,6 +599,11 @@ if (typeof document$ !== 'undefined') {
 (function () {
   'use strict';
 
+  if (typeof EAxIcons === 'undefined' && !window.__eaIconsWarned) {
+    window.__eaIconsWarned = true;
+    console.error('EAxIcons helper not loaded');
+  }
+
   function initNotesEditor() {
     var widget = document.getElementById('ea-notes-editor');
     if (!widget || widget.dataset.initialized) return;
@@ -645,19 +650,21 @@ if (typeof document$ !== 'undefined') {
 
       saveBtn = document.createElement('button');
       saveBtn.className = 'ea-notes-save-btn';
-      saveBtn.textContent = 'Save';
+      saveBtn.type = 'button';
+      if (typeof EAxIcons !== 'undefined') EAxIcons.set(saveBtn, 'save', 'Save');
 
       suggestBtn = null;
       if (widget.dataset.aiConfigured === 'true') {
         suggestBtn = document.createElement('button');
         suggestBtn.className = 'ea-notes-suggest-btn';
-        suggestBtn.textContent = 'Suggest';
         suggestBtn.type = 'button';
+        if (typeof EAxIcons !== 'undefined') EAxIcons.set(suggestBtn, 'suggest', 'Suggest');
       }
 
       cancelBtn = document.createElement('button');
       cancelBtn.className = 'ea-notes-cancel-btn';
-      cancelBtn.textContent = 'Cancel';
+      cancelBtn.type = 'button';
+      if (typeof EAxIcons !== 'undefined') EAxIcons.set(cancelBtn, 'cancel', 'Cancel');
 
       msg = document.createElement('span');
       msg.className = 'ea-notes-msg';
@@ -680,7 +687,7 @@ if (typeof document$ !== 'undefined') {
       if (suggestBtn) {
         suggestBtn.addEventListener('click', function () {
           suggestBtn.disabled = true;
-          suggestBtn.textContent = 'Generating...';
+          if (typeof EAxIcons !== 'undefined') EAxIcons.set(suggestBtn, 'spinner', 'Generating…');
           msg.textContent = '';
           msg.style.color = '';
 
@@ -706,13 +713,13 @@ if (typeof document$ !== 'undefined') {
               msg.style.color = '#c62828';
             }
             suggestBtn.disabled = false;
-            suggestBtn.textContent = 'Suggest';
+            if (typeof EAxIcons !== 'undefined') EAxIcons.set(suggestBtn, 'suggest', 'Suggest');
           })
           .catch(function (e) {
             msg.textContent = 'Could not reach AI service.';
             msg.style.color = '#c62828';
             suggestBtn.disabled = false;
-            suggestBtn.textContent = 'Suggest';
+            if (typeof EAxIcons !== 'undefined') EAxIcons.set(suggestBtn, 'suggest', 'Suggest');
             console.error('EAxWiki ai-suggest error:', e);
           });
         });
