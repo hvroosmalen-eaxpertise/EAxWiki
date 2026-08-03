@@ -167,6 +167,8 @@ if (savedConfig != null)
         config.AiModel = savedConfig.AiModel;
     if (string.IsNullOrEmpty(config.AiKey) && !string.IsNullOrEmpty(savedConfig.AiKey))
         config.AiKey = savedConfig.AiKey;
+    if (string.IsNullOrEmpty(config.Brand) && !string.IsNullOrEmpty(savedConfig.Brand))
+        config.Brand = savedConfig.Brand;
 }
 
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
@@ -217,6 +219,7 @@ if (config.ApiMode)
 Environment.SetEnvironmentVariable("EAXWIKI_API_PORT", config.ApiPort.ToString());
 if (!string.IsNullOrEmpty(config.AiEndpoint))
     Environment.SetEnvironmentVariable("EAXWIKI_AI_ENDPOINT", config.AiEndpoint);
+Environment.SetEnvironmentVariable("EAXWIKI_BRAND", config.Brand);
 
 try
 {
@@ -316,6 +319,7 @@ static void ShowUsage()
   Console.WriteLine("  --ai-endpoint <url>   OpenAI-compatible API base URL (empty = AI suggestions disabled)");
   Console.WriteLine("  --ai-model <name>     Model name sent to AI endpoint (default: llama-3.2-3b)");
   Console.WriteLine("  --ai-key <key>        API key for AI endpoint (optional for local LLMs)");
+  Console.WriteLine("  --brand <name>        Brand theme to emit (eursura); default: none");
   Console.WriteLine("  --help, -h            Show this help message");
     Console.WriteLine();
     Console.WriteLine("Connection string examples:");

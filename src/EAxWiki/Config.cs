@@ -19,6 +19,7 @@ public class Config
     public string AiEndpoint { get; set; } = "";
     public string AiModel { get; set; } = "llama-3.2-3b";
     public string AiKey { get; set; } = "";
+    public string Brand { get; set; } = "";
 
     public void Load(string[] args)
     {
@@ -104,6 +105,11 @@ public class Config
                     if (i + 1 >= args.Length)
                         throw new ArgumentException($"Option {args[i]} requires a value");
                     AiKey = args[++i];
+                    break;
+                case "--brand":
+                    if (i + 1 >= args.Length)
+                        throw new ArgumentException($"Option {args[i]} requires a value");
+                    Brand = args[++i];
                     break;
                 case "--help":
                 case "/?":

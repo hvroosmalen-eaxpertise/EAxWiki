@@ -133,6 +133,22 @@ public class ConfigTests
     }
 
     [Fact]
+    public void Load_BrandFlag_SetsBrand()
+    {
+        var cfg = new Config();
+        cfg.Load(["--brand", "eursura"]);
+        Assert.Equal("eursura", cfg.Brand);
+    }
+
+    [Fact]
+    public void Load_NoBrand_DefaultsToEmpty()
+    {
+        var cfg = new Config();
+        cfg.Load([]);
+        Assert.Equal("", cfg.Brand);
+    }
+
+    [Fact]
     public void Load_ApiPortWithoutApi_NoAutoApiMode()
     {
         var cfg = new Config();
