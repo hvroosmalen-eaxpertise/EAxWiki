@@ -1,4 +1,4 @@
-BeforeAll {
+﻿BeforeAll {
     . "$PSScriptRoot\..\..\scripts\monitor-export-and-serve.ps1"
 }
 
@@ -138,5 +138,50 @@ Describe 'Get-MonitorArgs' {
     It 'handles whitespace in url' {
         $r = Get-MonitorArgs -Arguments @('--webhook-url', 'https://hooks.example.com/path with spaces')
         $r.WebhookUrl | Should -Be 'https://hooks.example.com/path with spaces'
+    }
+}
+
+Describe 'Send-TelegramMessage' {
+    BeforeEach {
+        $script:tgCalls = 0
+        $global:tgUri = $null
+        $global:tgBody = $null
+    }
+
+    It 'is a no-op when no bot token is provided' {
+        Mock Invoke-RestMethod { $script:tgCalls++ }
+        $result = Send-TelegramMessage -BotToken '' -ChatId '1' -Message 'x' -Kind Test -InstanceLabel 'l'
+        $result | Should -BeNullOrEmpty
+        $script:tgCalls | Should -Be 0
+    }
+
+    It 'posts chat_id, text, parse_mode to bot{token}/sendMessage' {
+        Mock Invoke-RestMethod { param($Uri, $Method, $Body, $ContentType) $global:tgUri = $Uri; $global:tgBody = $Body }
+        Send-TelegramMessage -BotToken '123456:ABC' -ChatId '-1001234567890' -Message 'export failed' -Kind Failure -InstanceLabel 'PC1 - wiki'
+        $global:tgUri | Should -Be 'https://api.telegram.org/bot123456:ABC/sendMessage'
+        $json = $global:tgBody | ConvertFrom-Json
+        $json.chat_id | Should -Be '-1001234567890'
+        $json.text | Should -Match '🔴 \*EAxWiki \[Failure\]\* - PC1 - wiki'
+        $json.text | Should -Match 'export failed'
+        $json.parse_mode | Should -Be 'Markdown'
+    }
+
+    It 'retries once without parse_mode when Telegram rejects Markdown (400)' {
+        Mock Invoke-RestMethod {
+            param($Uri, $Method, $Body, $ContentType)
+            $script:tgCalls++
+            $script:tgFallbackBody = $Body
+            if ($script:tgCalls -eq 1) {
+                # Throw an object that looks like $_.Exception.Response.StatusCode = 400.
+                # PS 5.1 (the Pester host here) can't construct System.Net.Http.HttpRequestException
+                # with a status code, and WebException.Response is read-only, so a pscustomobject
+                # is the version-safe way to exercise the one-shot Markdown-fallback branch.
+                throw [pscustomobject]@{ Response = [pscustomobject]@{ StatusCode = [System.Net.HttpStatusCode]::BadRequest } }
+            }
+        }
+        $ok = Send-TelegramMessage -BotToken '123456:ABC' -ChatId '42' -Message 'hello *world*' -Kind Test -InstanceLabel 'l'
+        $script:tgCalls | Should -Be 2
+        $script:tgFallbackBody | Should -Not -Match 'parse_mode'
+        $ok | Should -BeTrue
     }
 }

@@ -120,6 +120,68 @@ function Get-MonitorArgs {
     }
 }
 
+function Send-TelegramMessage {
+    # Issue #80: Telegram Bot API dispatch. Standalone (no dependency on the script's top-level
+    # variables) so Pester can exercise it even when the monitor body exits early on a duplicate
+    # monitor. Token goes in the URL (standard Telegram pattern); chat_id is a *string* because
+    # group/supergroup IDs are negative numbers (-100...) and must survive JSON round-tripping.
+    param(
+        [string]$BotToken,
+        [string]$ChatId,
+        [string]$Message,
+        [string]$Kind,
+        [string]$InstanceLabel
+    )
+    if (-not $BotToken -or -not $ChatId) { return $null }
+
+    $tgEmoji = switch ($Kind) {
+        'Start'         { '🔄' }
+        'Finish'        { '🟢' }
+        'Failure'       { '🔴' }
+        'ServeFailure'  { '🔴' }
+        'LlmFailure'    { '🔴' }
+        'ApiFailure'    { '🔴' }
+        'Recovery'      { '🟢' }
+        'ServeRecovery' { '🟢' }
+        'LlmRecovery'   { '🟢' }
+        'ApiRecovery'   { '🟢' }
+        'Test'          { '🔵' }
+        'DailyDigest'   { '📊' }
+        'UserStop'      { '✋' }
+        default         { '🔵' }
+    }
+    $text = "{0} *EAxWiki [{1}]* - {2}`n{3}" -f $tgEmoji, $Kind, $InstanceLabel, $Message
+    $uri = "https://api.telegram.org/bot{0}/sendMessage" -f $BotToken
+    $body = @{
+        chat_id    = [string]$ChatId
+        text       = $text
+        parse_mode = 'Markdown'
+    }
+
+    $attempts = 0
+    while ($true) {
+        $attempts++
+        try {
+            Invoke-RestMethod -Uri $uri -Method Post -Body ($body | ConvertTo-Json) -ContentType 'application/json; charset=utf-8' | Out-Null
+            Write-MonitorLog -Phase "alert" -Message "Telegram dispatched."
+            return $true
+        } catch {
+            # HTTP 400 usually means Telegram rejected our Markdown (e.g. an unmatched '*' in the
+            # message body). Retry exactly once with parse_mode omitted; any other status just logs.
+            $status = $null
+            if ($_.Exception.Response) { $status = $_.Exception.Response.StatusCode }
+            elseif ($_.Exception.StatusCode) { $status = $_.Exception.StatusCode }
+            elseif ($_.TargetObject -and $_.TargetObject.Response) { $status = $_.TargetObject.Response.StatusCode }
+            if ($null -ne $status -and [int]$status -eq 400 -and $attempts -eq 1 -and $body.ContainsKey('parse_mode')) {
+                $body.Remove('parse_mode')
+                continue
+            }
+            Write-MonitorLog -Phase "alert" -Message "Telegram dispatch failed: $($_.Exception.Message)"
+            return $false
+        }
+    }
+}
+
 function ConvertTo-RedactedConnectionString {
     param([string]$ConnectionString)
     if ([string]::IsNullOrEmpty($ConnectionString)) { return "" }
@@ -136,6 +198,8 @@ $RetryDelaySeconds   = $parsed.RetryDelaySeconds
 $MinElementFraction  = $parsed.MinElementFraction
 $WebhookUrl          = $parsed.WebhookUrl
 $TeamsWebhookUrl     = $parsed.TeamsWebhookUrl
+$TelegramBotToken    = $parsed.TelegramBotToken
+$TelegramChatId      = $parsed.TelegramChatId
 $TestAlert           = $parsed.TestAlert
 $NotifyOnStart       = $parsed.NotifyOnStart
 $Force               = $parsed.Force
@@ -181,6 +245,22 @@ if ($null -eq $TeamsWebhookUrl -or "" -eq $TeamsWebhookUrl) {
         $TeamsWebhookUrl = $env:EAXWIKI_ALERT_TEAMS_WEBHOOK
     } elseif ($eaxwikiConfig -and $eaxwikiConfig.teamsWebhookUrl) {
         $TeamsWebhookUrl = $eaxwikiConfig.teamsWebhookUrl
+    }
+}
+
+if ($null -eq $TelegramBotToken -or "" -eq $TelegramBotToken) {
+    if ($env:EAXWIKI_ALERT_TELEGRAM_BOT_TOKEN) {
+        $TelegramBotToken = $env:EAXWIKI_ALERT_TELEGRAM_BOT_TOKEN
+    } elseif ($eaxwikiConfig -and $eaxwikiConfig.telegramBotToken) {
+        $TelegramBotToken = $eaxwikiConfig.telegramBotToken
+    }
+}
+
+if ($null -eq $TelegramChatId -or "" -eq $TelegramChatId) {
+    if ($env:EAXWIKI_ALERT_TELEGRAM_CHAT_ID) {
+        $TelegramChatId = $env:EAXWIKI_ALERT_TELEGRAM_CHAT_ID
+    } elseif ($eaxwikiConfig -and $eaxwikiConfig.telegramChatId) {
+        $TelegramChatId = $eaxwikiConfig.telegramChatId
     }
 }
 
@@ -351,8 +431,8 @@ function Send-Alert {
         [string]$Kind
     )
     Write-MonitorLog -Phase "alert" -Message "[$Kind] $Message"
-    if (-not $WebhookUrl -and -not $TeamsWebhookUrl) {
-        Write-MonitorLog -Phase "alert" -Message "No webhook URL configured (Slack: --webhook-url/EAXWIKI_ALERT_WEBHOOK; Teams: --teams-webhook-url/EAXWIKI_ALERT_TEAMS_WEBHOOK); alert logged only."
+    if (-not $WebhookUrl -and -not $TeamsWebhookUrl -and -not $TelegramBotToken -and -not $TelegramChatId) {
+        Write-MonitorLog -Phase "alert" -Message "No alert channel configured (Slack: --webhook-url/EAXWIKI_ALERT_WEBHOOK; Teams: --teams-webhook-url/EAXWIKI_ALERT_TEAMS_WEBHOOK; Telegram: --telegram-bot-token/--telegram-chat-id or EAXWIKI_ALERT_TELEGRAM_BOT_TOKEN/EAXWIKI_ALERT_TELEGRAM_CHAT_ID); alert logged only."
         return
     }
 
@@ -436,10 +516,14 @@ function Send-Alert {
             Write-MonitorLog -Phase "alert" -Message "Teams webhook dispatch failed: $($_.Exception.Message)"
         }
     }
+
+    if ($TelegramBotToken -and $TelegramChatId) {
+        Send-TelegramMessage -BotToken $TelegramBotToken -ChatId $TelegramChatId -Message $Message -Kind $Kind -InstanceLabel $instanceLabel
+    }
 }
 
 if ($TestAlert) {
-    Send-Alert -Kind Test -Message "Test alert from monitor-export-and-serve.ps1 - if you can see this in Slack/Teams, the webhook is wired correctly."
+    Send-Alert -Kind Test -Message "Test alert from monitor-export-and-serve.ps1 - if you can see this in Slack/Teams/Telegram, alerting is wired correctly."
     exit 0
 }
 
