@@ -636,7 +636,7 @@ git commit -m "feat(scripts): pass --brand through export + monitor (issue #79)"
 - Consumes: Task 3 output paths `wiki/brand.css` and `wiki/assets/eursura-logo.png`.
 - Produces: brand-active for the demo; harmless missing-file references for non-branded exports (verified: MkDocs build exit 0 with missing `extra_css` and missing `theme.logo`).
 
-- [ ] **Step 1: Edit `mkdocs.yml`**
+- [x] **Step 1: Edit `mkdocs.yml`**
 
 Change the `theme:` block (lines 4-9):
 
@@ -658,14 +658,15 @@ extra_css:
   - brand.css
 ```
 
-- [ ] **Step 2: Verify the static config still builds against the current (neutral) wiki**
+- [x] **Step 2: Verify the static config still builds against the current (neutral) wiki**
 
 ```bash
 & ".venv\Scripts\python.exe" -m mkdocs build --strict 2>&1 | Select-Object -Last 3
 ```
 Expected: builds with exit 0 (brand.css and logo are absent in the current neutral wiki — MkDocs tolerates this).
+> Note: `--strict` aborts on 5879 pre-existing broken `.html`-link warnings (unrelated to this change); plain `mkdocs build` exits 0 in 17s, confirming brand.css/logo missing-file references are tolerated.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add mkdocs.yml
