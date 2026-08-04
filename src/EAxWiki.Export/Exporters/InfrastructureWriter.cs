@@ -445,7 +445,7 @@ if (typeof document$ !== 'undefined') {
                new Dictionary<string, bool> { ["edgy-id"] = true, ["edgy-pe"] = true, ["edgy-lb"] = true, ["business"] = true });
 
         string SerializeColors(Dictionary<string, string> map) =>
-            string.Join(",\n", map.Select(kv => $"    '{kv.Key}':{new string(' ', 15 - kv.Key.Length)} '{kv.Value}'"));
+            string.Join(",\n", map.Select(kv => $"    '{kv.Key}':{new string(' ', 15 - kv.Key.Length)}'{kv.Value}'"));
 
         string SerializeDarkText(Dictionary<string, bool> map) =>
             string.Join(", ", map.Select(kv => $"'{kv.Key}': {kv.Value.ToString().ToLowerInvariant()}"));
