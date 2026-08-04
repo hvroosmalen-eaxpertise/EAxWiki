@@ -774,6 +774,7 @@ Expected: all pass (272 .NET tests; export + monitor Pester suites pass).
 - [x] **Step 1: Update README test counts**
 
 Update the "Tests" section counts: .NET 272 (was 270), Pester 143 (unchanged), total 415 (was 413). Add a short "Branding" line under Features: "Optional `--brand eursura` emits EurSuRA logo/palette/fonts; default stays neutral."
+> Note: actual counts are .NET **275**, Pester **147** (+4 from Task 5: Export 25, MonitorExportAndServe 38), total **422**. A `### Branding` section was added under AI-suggested descriptions.
 
 - [x] **Step 2: Commit**
 
@@ -783,7 +784,7 @@ git add --renormalize README.md
 git commit -m "docs(readme): note --brand support and test counts (issue #79)"
 ```
 
-- [x] **Step 3: Post close comment and close the issue**
+- [ ] **Step 3: Post close comment and close the issue**
 
 Write the close comment to a temp file and post it:
 
@@ -793,7 +794,7 @@ gh issue comment 79 --body-file "C:\Users\hanva\AppData\Local\Temp\opencode\issu
 gh issue close 79 --reason completed
 ```
 
-- [x] **Step 4: Push**
+- [ ] **Step 4: Push**
 
 ```bash
 git push origin master
