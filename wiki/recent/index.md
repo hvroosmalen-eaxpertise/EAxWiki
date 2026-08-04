@@ -2,6 +2,7 @@
 
 | Name | Type | Modified | Path |
 |------|------|----------|------|
+| [SDG  1. No Poverty](../Sustainability Development Goals/SDG  1. No Poverty.html) | Activity | 2026-08-03 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](../Sustainability Development Goals/index.html) |
 | [SDG  2. Zero Hunger](../Sustainability Development Goals/SDG  2. Zero Hunger.html) | Activity | 2026-07-31 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](../Sustainability Development Goals/index.html) |
 | [CO₂ Reduction %](../Assessments/CO₂ Reduction %.html) | Class | 2026-07-17 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
 | [% energie uit hernieuwbare bronnen](../Metrics/% energie uit hernieuwbare bronnen.html) | Requirement | 2026-07-17 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](../Metrics/index.html) |
@@ -51,8 +52,7 @@
 | [ProductCategoryRule](../Products/ProductCategoryRule.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [ProductCarbonFootprint](../Products/ProductCarbonFootprint.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [ProductLifeCycle](../Products/ProductLifeCycle.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
-| [EmissionActivityFlow](../Products/EmissionActivityFlow.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 
 ---
 
-*Generated: 2026-08-03 11:11:53*
+*Generated: 2026-08-04 11:36:53*

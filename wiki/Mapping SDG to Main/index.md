@@ -7,7 +7,7 @@ notes_hash: e3b0c442
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Mapping SDG to Main](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="22" data-kind="package" data-file-path="Mapping SDG to Main/index.md" data-api-port="8001" data-api-token="0161fd334a3f013401ef2574a96a6a5d70559edb80d92c4d" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="22" data-kind="package" data-file-path="Mapping SDG to Main/index.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -22,4 +22,4 @@ notes_hash: e3b0c442
 
 ---
 
-*Generated: 2026-08-03 11:11:53*
+*Generated: 2026-08-04 11:36:52*

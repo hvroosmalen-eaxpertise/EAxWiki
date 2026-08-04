@@ -162,7 +162,7 @@ None.
 - [Willem Krijgsman](../Introduction EurSuRA/Willem Krijgsman.html)
 - [XMI Import Definition](../Information Collection and Model Creation/XMI Import Definition.html)
 
-## Untouched 90+ Days (189)
+## Untouched 90+ Days (188)
 
 *Has a Status set, but no field on the element (Notes, tagged values, relationships, etc.) has changed in over 90 days. Does not track how long the Status value itself has been unchanged.*
 
@@ -176,7 +176,6 @@ None.
 | [SDG 15. Life on Land](../Sustainability Development Goals/SDG 15. Life on Land.html) | Proposed | 2025-12-02 |
 | [SDG 16. Peace, Justice and Strong Institutions](../Sustainability Development Goals/SDG 16. Peace, Justice and Strong Institutions.html) | Proposed | 2025-12-02 |
 | [SDG 17. Partnerships for the Goals](../Sustainability Development Goals/SDG 17. Partnerships for the Goals.html) | Proposed | 2025-12-02 |
-| [SDG  1. No Poverty](../Sustainability Development Goals/SDG  1. No Poverty.html) | Proposed | 2025-12-02 |
 | [SDG  3. Good Health and Well-Being](../Sustainability Development Goals/SDG  3. Good Health and Well-Being.html) | Proposed | 2025-12-02 |
 | [SDG  4. Quality Education](../Sustainability Development Goals/SDG  4. Quality Education.html) | Proposed | 2025-12-02 |
 | [SDG  5. Gender Equality](../Sustainability Development Goals/SDG  5. Gender Equality.html) | Proposed | 2025-12-02 |
@@ -366,4 +365,4 @@ None.
 
 ---
 
-*Generated: 2026-08-03 11:11:53*
+*Generated: 2026-08-04 11:36:53*

@@ -216,6 +216,29 @@
 - **Same frontmatter pattern as elements**: Package pages get `package_id`, `notes_hash` frontmatter when `--api-port` is set. No `status`, `status_options`, or `ea_hash` fields — those are element-only.
 - **Batch write-back supports package notes**: The `WriteBackScanner` detects `package_id` in frontmatter and routes notes changes to `reader.UpdatePackageNotes()`, separate from the element `ea_id` path.
 
+## EurSuRA Branding (issue #79)
+
+_2026-08-04_
+
+- **`--brand <name>` makes branding configurable, with EurSuRA as the first brand.** The brand is resolved in `Program.cs` from, in priority order: the `--brand` CLI flag → env `EAXWIKI_BRAND` → the `.eaxwiki` `Brand` field (PascalCase key, matching the `LocalConfigStore.Config` model; PowerShell property access in the monitor/export scripts is case-insensitive). The `export.ps1` and `monitor-export-and-serve.ps1` scripts pass `--brand` through to the exporter; the monitor also falls back to `EAXWIKI_BRAND` / `.eaxwiki` when no flag is given.
+- **The default (no `--brand`) stays neutral.** With an empty brand the exporter emits exactly what it emitted before this feature — no `brand.css`, no logo, and the original `EA_LAYER_COLORS`/`EA_LAYER_DARK_TEXT` blocks in `graph-init.js`. This keeps the open-source output byte-identical for everyone who does not opt in.
+- **Brand assets ship as embedded resources.** `src/EAxWiki.Export/Resources/brand-eursura.css` and `Resources/eursura-logo.png` are compiled into `EAxWiki.Export.dll`; on export the writer emits them as `wiki/brand.css` and `wiki/assets/eursura-logo.png`. Styling lives entirely in `brand.css` and the parameterized graph blocks — `extra.css` is untouched so neutral output is unaffected.
+- **Orphan cleanup whitelists `assets/`.** `CleanupOrphanedFilesAsync` deletes unknown top-level directories in the output dir on every run; `assets/` was added to the recognized special dirs so the brand logo survives re-exports.
+- **Brand palette** (from issue #79): Light Cyan `#C4E5E7`, Jet Black `#103135`, Platinum `#F3F7F7`, Opal `#A8C6C7`, Lime Cream `#D0F391`. Fonts Geist + Geist Mono are pulled from Google Fonts via an `@import` at the top of `brand.css` only.
+- **Graph layer colors under `--brand eursura`:**
+
+    | layer | color | dark text |
+    |---|---|---|
+    | business | `#A8C6C7` | yes |
+    | application | `#103135` | no |
+    | technology | `#C4E5E7` | yes |
+    | physical | `#6FB4B6` | yes |
+    | motivation | `#D0F391` | yes |
+    | strategy | `#7FA8A9` | yes |
+    | implementation | `#5C8A8B` | no |
+    | composite | `#405B5C` | no |
+    | uml | `#F3F7F7` | yes |
+
 ## Deployment
 
 - **Production target is local server only** — GitHub Pages was considered but ruled out: the write-back server requires a running Windows machine with EA installed. The wiki is served locally via MkDocs. GitHub Pages may still be used for publishing a read-only snapshot.

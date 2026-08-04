@@ -7,7 +7,7 @@ notes_hash: 0eecd5bb
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="3" data-kind="package" data-file-path="Sustainability Development Goals/index.md" data-api-port="8001" data-api-token="0161fd334a3f013401ef2574a96a6a5d70559edb80d92c4d" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="3" data-kind="package" data-file-path="Sustainability Development Goals/index.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -26,7 +26,7 @@ notes_hash: 0eecd5bb
 
 - <span class="sl" data-layer="edgy-id">Purpose</span> [Sustainability Development Goals](Sustainability Development Goals.html)
 - <span class="sl" data-layer="edgy-id">Purpose</span> [SDG  1. No Poverty](SDG  1. No Poverty.html)
-  - *End poverty in all its forms everywhere.*
+  - *<p>This element represents the goal of eradicating extreme poverty worldwide, aiming to ensure everyone has access to basic necessities. Its purpose is to drive business decisions and strategies focused on poverty reduction, aligning with the organization's social responsibility. By achieving this goal, the organization can improve its reputation and contribute to a more equitable society.</p>*
 - <span class="sl" data-layer="edgy-id">Purpose</span> [SDG  2. Zero Hunger](SDG  2. Zero Hunger.html)
   - *End hunger, achieve food security and improved nutrition, and promote sustainable agriculture. *
 - <span class="sl" data-layer="edgy-id">Purpose</span> [SDG  3. Good Health and Well-Being](SDG  3. Good Health and Well-Being.html)
@@ -70,4 +70,4 @@ notes_hash: 0eecd5bb
 
 ---
 
-*Generated: 2026-08-03 11:11:53*
+*Generated: 2026-08-04 11:36:52*

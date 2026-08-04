@@ -192,7 +192,7 @@
 | Risk and Compliance Management | Capability to identify, assess, and manage sustainability-related risks and ensure regulatory compliance | [Risk and Compliance Management](../Capabilities/Risk and Compliance Management.html) |
 | Risk Reduction | Systematically reduce environmental, social, and governance risks that could impact business continuity and financial performance | [Risk Reduction](../Goals/Risk Reduction.html) |
 | Road to Net Zero | Strategic Pathways for Sustainability Driven Business Transformation, Zipse Oliver, et | [Road to Net Zero](../Reference Documents/Road to Net Zero.html) |
-| SDG  1. No Poverty | End poverty in all its forms everywhere | [SDG  1. No Poverty](../Sustainability Development Goals/SDG  1. No Poverty.html) |
+| SDG  1. No Poverty | This element represents the goal of eradicating extreme poverty worldwide, aiming to ensure everyone has access to basic necessities | [SDG  1. No Poverty](../Sustainability Development Goals/SDG  1. No Poverty.html) |
 | SDG  2. Zero Hunger | End hunger, achieve food security and improved nutrition, and promote sustainable agriculture | [SDG  2. Zero Hunger](../Sustainability Development Goals/SDG  2. Zero Hunger.html) |
 | SDG  3. Good Health and Well-Being | Ensure healthy lives and promote well-being for all at all ages | [SDG  3. Good Health and Well-Being](../Sustainability Development Goals/SDG  3. Good Health and Well-Being.html) |
 | SDG  4. Quality Education | Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all | [SDG  4. Quality Education](../Sustainability Development Goals/SDG  4. Quality Education.html) |
@@ -258,4 +258,4 @@
 
 ---
 
-*Generated: 2026-08-03 11:11:53*
+*Generated: 2026-08-04 11:36:53*

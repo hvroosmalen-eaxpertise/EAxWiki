@@ -9,13 +9,13 @@ notes_hash: b56870b8
 # <span class="sl" data-layer="strategy">CourseOfAction</span> Embed Sustainability in Investment Portfolio
 
 **Type:** Class  **Stereotype:** ArchiMate_CourseOfAction  **StereotypeEx:** ArchiMate_CourseOfAction  **FQStereotype:** ArchiMate3::ArchiMate_CourseOfAction  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="452" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Courses of Action/Embed Sustainability in Investment Portfolio.md" data-api-port="8001" data-api-token="0161fd334a3f013401ef2574a96a6a5d70559edb80d92c4d"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="452" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Courses of Action/Embed Sustainability in Investment Portfolio.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-11  **Modified:** 2025-12-11
 
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Courses of Action](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="452" data-file-path="Courses of Action/Embed Sustainability in Investment Portfolio.md" data-api-port="8001" data-api-token="0161fd334a3f013401ef2574a96a6a5d70559edb80d92c4d" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="452" data-file-path="Courses of Action/Embed Sustainability in Investment Portfolio.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -31,7 +31,7 @@ Ensures financial resources support strategic sustainability objectives.</p>
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>archimate_element_identifier</td><td>action-002</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="452" data-tag-name="archimate_element_identifier" data-tag-value="action-002" data-file-path="Courses of Action/Embed Sustainability in Investment Portfolio.md" data-api-port="8001" data-api-token="0161fd334a3f013401ef2574a96a6a5d70559edb80d92c4d" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>archimate_element_identifier</td><td>action-002</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="452" data-tag-name="archimate_element_identifier" data-tag-value="action-002" data-file-path="Courses of Action/Embed Sustainability in Investment Portfolio.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -73,4 +73,4 @@ Ensures financial resources support strategic sustainability objectives.</p>
 
 ---
 
-*Generated: 2026-08-03 11:11:53*
+*Generated: 2026-08-04 11:36:52*

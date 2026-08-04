@@ -10,7 +10,7 @@ notes_hash: fa202955
 
 ![Climate Risk](Climate Risk.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="24" data-kind="diagram" data-file-path="Climate Risk/diagrams/Climate Risk.md" data-api-port="8001" data-api-token="0161fd334a3f013401ef2574a96a6a5d70559edb80d92c4d" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="24" data-kind="diagram" data-file-path="Climate Risk/diagrams/Climate Risk.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -43,4 +43,4 @@ notes_hash: fa202955
 
 ---
 
-*Generated: 2026-08-03 11:12:12*
+*Generated: 2026-08-04 11:37:06*
