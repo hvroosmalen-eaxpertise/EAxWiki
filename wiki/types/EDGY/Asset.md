@@ -19,7 +19,3 @@
 - <span class="sl" data-layer="edgy-ar">Asset</span> [Openfootprint Data Model](../../Information Collection and Model Creation/Openfootprint Data Model.html)
 - <span class="sl" data-layer="edgy-ar">Asset</span> [SDG](../../Information Collection and Model Creation/SDG.html)
 - <span class="sl" data-layer="edgy-ar">Asset</span> [XMI Import Definition](../../Information Collection and Model Creation/XMI Import Definition.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

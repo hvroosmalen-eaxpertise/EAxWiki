@@ -81,7 +81,6 @@ internal class ModelHealthExporter(IOutputWriter writer)
         {
             lines.Add("No issues found.");
             lines.Add(string.Empty);
-            lines.Add(MarkdownHelpers.FormatTimestamp());
             await writer.WriteFileAsync(Path.Combine(healthDir, "model-health.md"), string.Join(Environment.NewLine, lines), ct);
             return;
         }
@@ -91,7 +90,6 @@ internal class ModelHealthExporter(IOutputWriter writer)
         WriteStaleSection(lines, stale);
         WriteDuplicateSection(lines, duplicates);
 
-        lines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(Path.Combine(healthDir, "model-health.md"), string.Join(Environment.NewLine, lines), ct);
     }
 

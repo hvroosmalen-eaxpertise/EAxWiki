@@ -121,7 +121,6 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     lines.Add(string.Empty);
                 }
 
-                lines.Add(MarkdownHelpers.FormatTimestamp());
                 await writer.WriteFileAsync(mdPath, string.Join(Environment.NewLine, lines), ct);
                 ctx.WrittenMdFiles.Add(mdPath);
 
@@ -179,7 +178,6 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
         }
 
         lines.Add(string.Empty);
-        lines.Add(MarkdownHelpers.FormatTimestamp());
         var indexMdPath = Path.Combine(diagramsDir, "index.md");
         await writer.WriteFileAsync(indexMdPath, string.Join(Environment.NewLine, lines), ct);
         ctx.WrittenMdFiles.Add(indexMdPath);

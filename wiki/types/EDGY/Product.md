@@ -8,7 +8,3 @@
 - <span class="sl" data-layer="edgy-ix">Product</span> [Logical Data Model](../../Information Collection and Model Creation/Logical Data Model.html)
 - <span class="sl" data-layer="edgy-ix">Product</span> [SDG Referentie Model](../../Information Collection and Model Creation/SDG Referentie Model.html)
 - <span class="sl" data-layer="edgy-ix">Product</span> [Stakeholder Map](../../Information Collection and Model Creation/Stakeholder Map.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

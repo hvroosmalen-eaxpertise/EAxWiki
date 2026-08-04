@@ -10,7 +10,7 @@ notes_hash: 944bd86b
 
 ![ESRS Stakeholder Map](ESRS Stakeholder Map.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="45" data-kind="diagram" data-file-path="ESRS and People/diagrams/ESRS Stakeholder Map.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="45" data-kind="diagram" data-file-path="ESRS and People/diagrams/ESRS Stakeholder Map.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -73,7 +73,3 @@ notes_hash: 944bd86b
 - <span class="sl" data-layer="edgy-pe">People</span> [Transport Companies](../../People/Transport Companies.html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Workers in Value Chain (ESRS S2)](../../People/Workers in Value Chain (ESRS S2).html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Works Council (Ondernemingsraad)](../../People/Works Council (Ondernemingsraad).html)
-
----
-
-*Generated: 2026-08-04 12:35:56*

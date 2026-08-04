@@ -61,7 +61,6 @@ internal class RecentChangesExporter(IOutputWriter writer)
         }
 
         lines.Add(string.Empty);
-        lines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(Path.Combine(recentDir, "index.md"), string.Join(Environment.NewLine, lines), ct);
     }
 }

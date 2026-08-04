@@ -145,7 +145,6 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
             indexLines.Add(string.Empty);
         }
 
-        indexLines.Add(MarkdownHelpers.FormatTimestamp());
         var indexPath = Path.Combine(dir, "index.md");
         await writer.WriteFileAsync(indexPath, string.Join(Environment.NewLine, indexLines), ct);
         ctx.WrittenMdFiles.Add(indexPath);

@@ -154,4 +154,96 @@ public class CleanupTests : IDisposable
             Assert.True(Directory.Exists(Path.Combine(_outPath, special)),
                 $"Special dir '{special}' should never be deleted.");
     }
+
+    // ── Byte-stable full exports ───────────────────────────────────────────────
+
+    [Fact]
+    public async Task FullForceExport_PreservesApiToken()
+    {
+        const string token = "abcdef0123456789abcdef0123456789abcdef01";
+        var tokenPath = Path.Combine(_outPath, ".eaxwiki-token");
+        File.WriteAllText(tokenPath, token);
+
+        var oldPort = Environment.GetEnvironmentVariable("EAXWIKI_API_PORT");
+        Environment.SetEnvironmentVariable("EAXWIKI_API_PORT", "18999");
+        try
+        {
+            await CreateExporter().ExportAsync(Repo(("Pkg", ["Elem"])), null, _outPath, force: true);
+        }
+        finally
+        {
+            Environment.SetEnvironmentVariable("EAXWIKI_API_PORT", oldPort);
+        }
+
+        Assert.True(File.Exists(tokenPath), "write-back token should survive a --force export");
+        Assert.Equal(token, File.ReadAllText(tokenPath).Trim());
+    }
+
+    [Fact]
+    public async Task FullForceExport_TokenStableAcrossRuns()
+    {
+        var oldPort = Environment.GetEnvironmentVariable("EAXWIKI_API_PORT");
+        Environment.SetEnvironmentVariable("EAXWIKI_API_PORT", "18999");
+        try
+        {
+            await CreateExporter().ExportAsync(Repo(("Pkg", ["Elem"])), null, _outPath, force: true);
+            var first = File.ReadAllText(Path.Combine(_outPath, ".eaxwiki-token")).Trim();
+            await CreateExporter().ExportAsync(Repo(("Pkg", ["Elem"])), null, _outPath, force: true);
+            var second = File.ReadAllText(Path.Combine(_outPath, ".eaxwiki-token")).Trim();
+            Assert.Equal(first, second);
+        }
+        finally
+        {
+            Environment.SetEnvironmentVariable("EAXWIKI_API_PORT", oldPort);
+        }
+    }
+
+    [Fact]
+    public async Task FullForceExport_WritesGeneratedMarker()
+    {
+        await CreateExporter().ExportAsync(Repo(("Pkg", ["Elem"])), null, _outPath, force: true);
+
+        var marker = Path.Combine(_outPath, "status", ".generated");
+        Assert.True(File.Exists(marker), "status/.generated marker should be written");
+        Assert.False(string.IsNullOrWhiteSpace(File.ReadAllText(marker)));
+    }
+
+    [Fact]
+    public async Task FullForceExport_OutputHasNoGeneratedFooter()
+    {
+        await CreateExporter().ExportAsync(Repo(("Pkg", ["Elem"])), null, _outPath, force: true);
+
+        foreach (var file in Directory.EnumerateFiles(_outPath, "*.md", SearchOption.AllDirectories))
+        {
+            var content = File.ReadAllText(file);
+            Assert.DoesNotContain("*Generated:", content);
+        }
+    }
+
+    [Fact]
+    public async Task FullForceExport_ByteStableAcrossRuns()
+    {
+        var repo = Repo(("Pkg", ["Elem"]));
+        await CreateExporter().ExportAsync(repo, null, _outPath, force: true);
+        var first = Snapshot();
+
+        await CreateExporter().ExportAsync(repo, null, _outPath, force: true);
+        var second = Snapshot();
+
+        Assert.Equal(first, second);
+    }
+
+    private List<(string Path, string Bytes)> Snapshot()
+    {
+        var entries = new List<(string Path, string Bytes)>();
+        foreach (var file in Directory.EnumerateFiles(_outPath, "*", SearchOption.AllDirectories))
+        {
+            // The .generated marker records the generation time on purpose and is gitignored,
+            // so it is exempt from the byte-stability guarantee.
+            if (Path.GetFileName(file).Equals(".generated", StringComparison.Ordinal)) continue;
+            var rel = Path.GetRelativePath(_outPath, file).Replace('\\', '/');
+            entries.Add((rel, Convert.ToBase64String(File.ReadAllBytes(file))));
+        }
+        return entries.OrderBy(e => e.Path, StringComparer.Ordinal).ToList();
+    }
 }

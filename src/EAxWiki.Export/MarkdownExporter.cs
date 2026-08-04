@@ -126,6 +126,12 @@ public class MarkdownExporter : IWikiExporter
                 }
             }
 
+            // Record when this wiki was last generated in a gitignored marker, so the info is
+            // available locally without a per-page timestamp churning the committed output.
+            var statusDir = Path.Combine(outputPath, "status");
+            Directory.CreateDirectory(statusDir);
+            File.WriteAllText(Path.Combine(statusDir, ".generated"), DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
             totalStopwatch.Stop();
             var succeededElements = totalElements - totalFailed;
             _logger.LogInformation("Export complete: {TotalElapsedMs}ms total ({Succeeded} succeeded, {Failed} failed)",
@@ -151,6 +157,10 @@ public class MarkdownExporter : IWikiExporter
     {
         foreach (var file in Directory.EnumerateFiles(path))
         {
+            // The write-back API token must survive a full (--force) export; otherwise the
+            // token embedded in every widget would rotate on each run and the whole wiki would
+            // churn even when the model is unchanged. ApiTokenStore.GetOrCreate reuses the file.
+            if (Path.GetFileName(file).Equals(".eaxwiki-token", StringComparison.OrdinalIgnoreCase)) continue;
             try { File.Delete(file); } catch { }
         }
         foreach (var dir in Directory.EnumerateDirectories(path))
@@ -192,7 +202,6 @@ public class MarkdownExporter : IWikiExporter
             lines.Add($"- [{pkg.Name}]({MarkdownHelpers.SanitizeName(pkg.Name)}/index.html)");
 
         lines.Add(string.Empty);
-        lines.Add(MarkdownHelpers.FormatTimestamp());
         await _writer.WriteFileAsync(Path.Combine(outputDir, "index.md"), string.Join(Environment.NewLine, lines), ct);
     }
 }

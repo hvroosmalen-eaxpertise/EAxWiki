@@ -63,7 +63,6 @@ internal class GlossaryExporter(IOutputWriter writer)
         }
 
         lines.Add(string.Empty);
-        lines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(Path.Combine(glossaryDir, "index.md"), string.Join(Environment.NewLine, lines), ct);
     }
 }

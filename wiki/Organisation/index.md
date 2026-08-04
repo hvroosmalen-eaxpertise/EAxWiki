@@ -7,7 +7,7 @@ notes_hash: e3b0c442
 
 [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Organisation](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="94" data-kind="package" data-file-path="Organisation/index.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="94" data-kind="package" data-file-path="Organisation/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -58,7 +58,3 @@ notes_hash: e3b0c442
   - *OrganizationIndustrySector is the intersection entity that classifies an Organisation into an IndustrySectorType. An organisation may operate across multiple industry sectors, so this entity allows multiple sector classifications to be recorded without modifying the Organisation entity itself. It supports sector-level benchmarking and the selection of sector-appropriate emission factors, and enables regulatory groupings that aggregate organisations by industry for sector-level disclosure obligations.*
 - <span class="sl" data-layer="uml">master-data</span> [OrganizationEquityShare](OrganizationEquityShare.html)
   - *OrganizationEquityShare records the percentage equity stake that an organisation holds in a specific OrganizationalBoundary, supporting the equity-share consolidation approach for GHG accounting as defined in the GHG Protocol. Under the equity share approach, an organisation accounts for GHG emissions from operations in proportion to its equity share, regardless of operational control. This entity enables accurate attribution of partial ownership stakes to the correct boundary and also supports Scope 3 Category 15 (Investments) reporting under the GHG Protocol.*
-
----
-
-*Generated: 2026-08-04 12:38:11*

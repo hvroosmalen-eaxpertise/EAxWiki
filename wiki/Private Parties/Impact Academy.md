@@ -9,13 +9,13 @@ notes_hash: e36fb70f
 # <span class="sl" data-layer="edgy-pe">People</span> Impact Academy
 
 **Type:** Actor  **Stereotype:** People  **StereotypeEx:** People  **FQStereotype:** EDGY::People  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="568" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Private Parties/Impact Academy.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="568" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Private Parties/Impact Academy.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-12-15  **Modified:** 2025-12-15
 
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](../People/index.html) / [Private Parties](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="568" data-file-path="Private Parties/Impact Academy.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="568" data-file-path="Private Parties/Impact Academy.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -38,7 +38,3 @@ IMPACT ACADEMY has the main objective to offer a free, multilingual, high level 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="568"></div>
-
----
-
-*Generated: 2026-08-04 12:35:50*

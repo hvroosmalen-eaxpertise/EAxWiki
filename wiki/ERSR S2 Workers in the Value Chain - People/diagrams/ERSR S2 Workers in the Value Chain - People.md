@@ -10,7 +10,7 @@ notes_hash: fafc6797
 
 ![ERSR S2 Workers in the Value Chain - People](ERSR S2 Workers in the Value Chain - People.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="36" data-kind="diagram" data-file-path="ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="36" data-kind="diagram" data-file-path="ERSR S2 Workers in the Value Chain - People/diagrams/ERSR S2 Workers in the Value Chain - People.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -29,7 +29,3 @@ https://www</p>
 - <span class="sl" data-layer="edgy-pe">People</span> [Seasonal Agricultural Workers](../../People/Seasonal Agricultural Workers.html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Suppliers](../../People/Suppliers.html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Workers in Value Chain (ESRS S2)](../../People/Workers in Value Chain (ESRS S2).html)
-
----
-
-*Generated: 2026-08-04 12:35:58*

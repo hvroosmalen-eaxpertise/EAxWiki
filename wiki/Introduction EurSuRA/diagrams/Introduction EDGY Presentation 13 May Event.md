@@ -10,7 +10,7 @@ notes_hash: 81393151
 
 ![Introduction EDGY Presentation 13 May Event](Introduction EDGY Presentation 13 May Event.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="44" data-kind="diagram" data-file-path="Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="44" data-kind="diagram" data-file-path="Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -51,7 +51,3 @@ notes_hash: 81393151
 - <span class="sl" data-layer="edgy-id">Story</span> [Sidenote from Community Leads](../Sidenote from Community Leads.html)
 - <span class="sl" data-layer="edgy-id">Purpose</span> [Sustainability Development Goals](../../Sustainability Development Goals/Sustainability Development Goals.html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Willem Krijgsman](../Willem Krijgsman.html)
-
----
-
-*Generated: 2026-08-04 12:36:08*

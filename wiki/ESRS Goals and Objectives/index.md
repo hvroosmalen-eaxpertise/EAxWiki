@@ -7,7 +7,7 @@ notes_hash: b36829a0
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [ESRS](../ESRS/index.html) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.html) / [ESRS Goals and Objectives](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="6" data-kind="package" data-file-path="ESRS Goals and Objectives/index.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="6" data-kind="package" data-file-path="ESRS Goals and Objectives/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -32,7 +32,3 @@ notes_hash: b36829a0
   - *Implement a double materiality approach, necessitating companies to report on both impact (social and environmental) and financial materiality (e.g., how cash flows, financial position and financial performance are affected).*
 - <span class="sl" data-layer="edgy-lb">Outcome</span> [Standardize ESG reporting and enhance transparency and comparability in Europe. ](Standardize ESG reporting and enhance transparency and comparability in Europe..html)
   - *The ESRS align the EU reporting system to the International Sustainability Standards Board (ISSB) and the Global Reporting Initiative (GRI), ensuring a high degree of interoperability between EU and global standards and prevent unnecessary double reporting by companies.*
-
----
-
-*Generated: 2026-08-04 12:38:11*

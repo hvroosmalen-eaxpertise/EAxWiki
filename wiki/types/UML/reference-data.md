@@ -28,7 +28,3 @@
 - <span class="sl" data-layer="uml">reference-data</span> [SystemOfUnits](../../Emissions/SystemOfUnits.html)
 - <span class="sl" data-layer="uml">reference-data</span> [PhysicalQuantityType](../../Emissions/PhysicalQuantityType.html)
 - <span class="sl" data-layer="uml">reference-data</span> [UnitOfMeasureSourceReference](../../Emissions/UnitOfMeasureSourceReference.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

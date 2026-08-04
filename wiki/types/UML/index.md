@@ -7,7 +7,3 @@
 - [reference-data](reference-data.html)
 - [Uncategorized](Uncategorized.html)
 - [work-product-component](work-product-component.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

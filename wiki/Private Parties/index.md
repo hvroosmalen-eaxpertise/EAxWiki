@@ -7,7 +7,7 @@ notes_hash: e3b0c442
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](../People/index.html) / [Private Parties](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="79" data-kind="package" data-file-path="Private Parties/index.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="79" data-kind="package" data-file-path="Private Parties/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -26,7 +26,3 @@ notes_hash: e3b0c442
   - *https://alignedincentives.com/our-story/*
 - <span class="sl" data-layer="edgy-pe">People</span> [Impact Academy](Impact Academy.html)
   - *https://www.impactacademyproject.eu/ IMPACT ACADEMY has the main objective to offer a free, multilingual, high level education and training on the subject of the Impact Economy. It is addressed to university students who desire to acquire expertise about the impact skills needed to lead an entrepreneurship aware of its environmental and social responsibilities. *
-
----
-
-*Generated: 2026-08-04 12:38:11*

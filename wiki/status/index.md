@@ -1144,7 +1144,3 @@
   <li><a href="../Sustainability Development Goals/unnamed.html">unnamed</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
-
----
-
-*Generated: 2026-08-04 12:38:11*

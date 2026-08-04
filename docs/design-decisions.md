@@ -239,6 +239,14 @@ _2026-08-04_
     | composite | `#405B5C` | no |
     | uml | `#F3F7F7` | yes |
 
+## Byte-stable full exports
+
+_2026-08-04_
+
+- **A `--force` re-export of an unchanged model no longer churns the committed wiki.** Previously every full export rewrote ~600 files: the `.eaxwiki-token` (force wipe deleted it, `ApiTokenStore.GetOrCreate` minted a new one, so `data-api-token` rotated in every widget) plus a per-page `*Generated: {now}*` footer. Two changes fixed the causes: `SafeDeleteContents` now preserves `.eaxwiki-token` across the wipe, and the per-page `FormatTimestamp()` footer was removed from all 13 call sites in 10 files. The generation time is still recorded, but as a single gitignored `wiki/status/.generated` marker written by `MarkdownExporter` after the validation report.
+- **Gitignored, regenerated-every-run artifacts are excluded from the repo**: `wiki/.validation-report.json` (untracked now — previously committed), `wiki/status/api-ready`, and `src/EAxWiki.Tests/TestResults/`. The two `status/` entries live in the exporter's special-dir whitelist so orphan cleanup never touches them.
+- **Residual churn is 3 diagram PNGs (`Emissions`, `ESRS Stakeholder Overview`, `Strategic Sustainability Management Model (Bodenstein)`)**: verified with a byte-identical `.qea` hash and unchanged diagram `ModifiedDate`s across runs that EA's PNG renderer emits slightly different anti-aliased pixels (~200-400 px) for these diagrams each time. The `.md` pages are stable; this is pure EA render nondeterminism, pre-existing (these PNGs churned in every prior regeneration commit), and not fixable from the exporter without changing what the diagrams look like.
+
 ## Deployment
 
 - **Production target is local server only** — GitHub Pages was considered but ruled out: the write-back server requires a running Windows machine with EA installed. The wiki is served locally via MkDocs. GitHub Pages may still be used for publishing a read-only snapshot.

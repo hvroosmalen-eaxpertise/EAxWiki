@@ -10,7 +10,7 @@ notes_hash: 7f90f3ec
 
 ![Facilities](Facilities.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="50" data-kind="diagram" data-file-path="Facilities/diagrams/Facilities.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="50" data-kind="diagram" data-file-path="Facilities/diagrams/Facilities.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -39,7 +39,3 @@ notes_hash: 7f90f3ec
 - <span class="sl" data-layer="uml">reference-data</span> [GeopoliticalEntityType](../GeopoliticalEntityType.html)
 - <span class="sl" data-layer="uml">master-data</span> [GeospatialLocation](../GeospatialLocation.html)
 - <span class="sl" data-layer="uml">master-data</span> [Location](../Location.html)
-
----
-
-*Generated: 2026-08-04 12:36:11*

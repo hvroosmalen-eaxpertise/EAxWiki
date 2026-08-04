@@ -13,7 +13,3 @@
 - <span class="sl" data-layer="strategy">CourseOfAction</span> [Supplier Sustainability Audits](../../Courses of Action/Supplier Sustainability Audits.html)
 - <span class="sl" data-layer="strategy">CourseOfAction</span> [Board-level Sustainability Governance](../../Courses of Action/Board-level Sustainability Governance.html)
 - <span class="sl" data-layer="strategy">CourseOfAction</span> [Carbon Footprint Reduction Program](../../Courses of Action/Carbon Footprint Reduction Program.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

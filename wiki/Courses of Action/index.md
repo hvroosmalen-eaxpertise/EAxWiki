@@ -7,7 +7,7 @@ notes_hash: e3b0c442
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Courses of Action](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="43" data-kind="package" data-file-path="Courses of Action/index.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="43" data-kind="package" data-file-path="Courses of Action/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -40,7 +40,3 @@ notes_hash: e3b0c442
   - *Establishment of formal governance mechanisms to anchor sustainability at the board and executive management level.          Creates sustainability committees, defines board member responsibilities, and integrates ESG into executive compensation.          Ensures top-level commitment and strategic oversight of sustainability performance.*
 - <span class="sl" data-layer="strategy">CourseOfAction</span> [Carbon Footprint Reduction Program](Carbon Footprint Reduction Program.html)
   - *Comprehensive initiative to measure, reduce, and offset organizational carbon emissions (Scope 1, 2, and 3).         Implements energy efficiency measures, renewable energy sourcing, and decarbonization roadmaps.         Targets science-based emissions reduction in line with climate commitments.*
-
----
-
-*Generated: 2026-08-04 12:38:11*

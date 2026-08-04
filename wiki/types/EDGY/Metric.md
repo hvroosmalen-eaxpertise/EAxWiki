@@ -49,7 +49,3 @@
 - <span class="sl" data-layer="edgy-lb">Metric</span> [Totale Scope 1-3 uitstoot (ton CO₂e/jaar)](../../Metrics/Totale Scope 1-3 uitstoot (ton CO₂e_jaar).html)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [Uitstoot NOₓ/SOₓ (kg/jaar)](../../Metrics/Uitstoot NOₓ_SOₓ (kg_jaar).html)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [Vermeden CO₂ door maatregelen (ton/jaar)](../../Metrics/Vermeden CO₂ door maatregelen (ton_jaar).html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

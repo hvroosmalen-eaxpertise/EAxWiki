@@ -10,7 +10,7 @@ notes_hash: e3cb2aa5
 
 ![Market Differentiation Pressure](Market Differentiation Pressure.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="26" data-kind="diagram" data-file-path="Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="26" data-kind="diagram" data-file-path="Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -34,7 +34,3 @@ notes_hash: e3cb2aa5
 - <span class="sl" data-layer="strategy">CourseOfAction</span> [Sustainability-driven Differentiation](../../Courses of Action/Sustainability-driven Differentiation.html)
 - <span class="sl" data-layer="motivation">Goal</span> [Sustainable Competitive Advantage](../../Goals/Sustainable Competitive Advantage.html)
 - <span class="sl" data-layer="strategy">Capability</span> [Sustainable Innovation Management](../../Capabilities/Sustainable Innovation Management.html)
-
----
-
-*Generated: 2026-08-04 12:36:07*

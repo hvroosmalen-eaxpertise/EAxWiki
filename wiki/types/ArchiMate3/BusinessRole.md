@@ -11,7 +11,3 @@
 - <span class="sl" data-layer="business">BusinessRole</span> [Operations Manager](../../ESRS Navigator Stakeholder Map/Operations Manager.html)
 - <span class="sl" data-layer="business">BusinessRole</span> [Sustainability Committee](../../ESRS Navigator Stakeholder Map/Sustainability Committee.html)
 - <span class="sl" data-layer="business">BusinessRole</span> [Works Council (Ondernemingsraad)](../../ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad).html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

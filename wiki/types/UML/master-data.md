@@ -38,7 +38,3 @@
 - <span class="sl" data-layer="uml">master-data</span> [EmissionActivityParameterRecordingTemplate](../../Emissions/EmissionActivityParameterRecordingTemplate.html)
 - <span class="sl" data-layer="uml">master-data</span> [EmissionActivityTypeParameterTypeAssignment](../../Emissions/EmissionActivityTypeParameterTypeAssignment.html)
 - <span class="sl" data-layer="uml">master-data</span> [EmissionReportingBoundary](../../Emissions/EmissionReportingBoundary.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

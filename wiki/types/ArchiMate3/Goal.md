@@ -7,7 +7,3 @@
 - <span class="sl" data-layer="motivation">Goal</span> [Risk Reduction](../../Goals/Risk Reduction.html)
 - <span class="sl" data-layer="motivation">Goal</span> [Corporate Sustainability Integration](../../Goals/Corporate Sustainability Integration.html)
 - <span class="sl" data-layer="motivation">Goal</span> [ESG Performance Improvement](../../Goals/ESG Performance Improvement.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

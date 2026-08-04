@@ -13,7 +13,3 @@
 - <span class="sl" data-layer="edgy-lb">Outcome</span> [Emissiereductie (%) = ((baseline – huidig) / baseline) × 100](../../Metrics/Emissiereductie (%) = ((baseline – huidig) _ baseline) × 100.html)
 - <span class="sl" data-layer="edgy-lb">Outcome</span> [Product Carbon Footprint = totale CO₂e / aantal eenheden geproduceerd](../../Metrics/Product Carbon Footprint = totale CO₂e _ aantal eenheden geproduceerd.html)
 - <span class="sl" data-layer="edgy-lb">Outcome</span> [Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e)](../../Metrics/Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e).html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

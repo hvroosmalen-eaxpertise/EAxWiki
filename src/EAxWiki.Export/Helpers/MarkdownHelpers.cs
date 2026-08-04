@@ -131,9 +131,6 @@ internal static class MarkdownHelpers
     internal static string EscapeCell(string raw)
         => raw.Replace("|", "\\|").ReplaceLineEndings(" ");
 
-    internal static string FormatTimestamp()
-        => $"---\n\n*Generated: {DateTime.Now:yyyy-MM-dd HH:mm:ss}*";
-
     internal static string CreateElementLink(EaElement element, string pkgDir, string fromDir)
     {
         var elemName = SanitizeName(element.Name);

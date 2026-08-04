@@ -10,7 +10,7 @@ notes_hash: 5c8e309f
 
 ![Architecture](Architecture.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="6" data-kind="diagram" data-file-path="Architecture/diagrams/Architecture.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="6" data-kind="diagram" data-file-path="Architecture/diagrams/Architecture.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -52,7 +52,3 @@ notes_hash: 5c8e309f
 - <span class="sl" data-layer="edgy-lb">Metric</span> [Vermeden CO₂ door maatregelen (ton/jaar)](../../Metrics/Vermeden CO₂ door maatregelen (ton_jaar).html)
 - <span class="sl" data-layer="edgy-ex">Task</span> [Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval.](../../Task/Voer duurzaamheidsbeleid in voor energie, reizen, inkoop en afval..html)
 - <span class="sl" data-layer="edgy-ex">Task</span> [Voer een volledige LCA uit op product- en procesniveau.](../../Task/Voer een volledige LCA uit op product- en procesniveau..html)
-
----
-
-*Generated: 2026-08-04 12:35:59*

@@ -18,7 +18,3 @@
 - <span class="sl" data-layer="edgy-id">Content</span> [SDG Mapping Content](../../Content/SDG Mapping Content.html)
 - <span class="sl" data-layer="edgy-id">Content</span> [Sustainability Objectives](../../Content/Sustainability Objectives.html)
 - <span class="sl" data-layer="edgy-id">Content</span> [Sustainability Principles](../../Content/Sustainability Principles.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

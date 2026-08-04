@@ -255,7 +255,3 @@
 | UnitOfMeasureSourceReference | UnitOfMeasureSourceReference is a reference entity that identifies the authoritative registry or specification from which a UnitOfMeasure definition is drawn | [UnitOfMeasureSourceReference](../Emissions/UnitOfMeasureSourceReference.html) |
 | Workers in Value Chain (ESRS S2) | Employees of suppliers and partners | [Workers in Value Chain (ESRS S2)](../People/Workers in Value Chain (ESRS S2).html), [Workers in Value Chain (ESRS S2)](../ESRS Navigator Stakeholder Map/Workers in Value Chain (ESRS S2).html) |
 | Works Council (Ondernemingsraad) | Employee representation with quarterly management consultation | [Works Council (Ondernemingsraad)](../People/Works Council (Ondernemingsraad).html), [Works Council (Ondernemingsraad)](../ESRS Navigator Stakeholder Map/Works Council (Ondernemingsraad).html) |
-
----
-
-*Generated: 2026-08-04 12:38:11*

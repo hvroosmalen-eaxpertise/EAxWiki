@@ -62,7 +62,3 @@
 - <span class="sl" data-layer="edgy-pe">People</span> [Linn Willemsen](../../Introduction EurSuRA/Linn Willemsen.html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Maarten Bernards](../../Introduction EurSuRA/Maarten Bernards.html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Willem Krijgsman](../../Introduction EurSuRA/Willem Krijgsman.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

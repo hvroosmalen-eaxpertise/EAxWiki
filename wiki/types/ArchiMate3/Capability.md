@@ -9,7 +9,3 @@
 - <span class="sl" data-layer="strategy">Capability</span> [Sustainability Data and Reporting](../../Capabilities/Sustainability Data and Reporting.html)
 - <span class="sl" data-layer="strategy">Capability</span> [Stakeholder Engagement Management](../../Capabilities/Stakeholder Engagement Management.html)
 - <span class="sl" data-layer="strategy">Capability</span> [Risk and Compliance Management](../../Capabilities/Risk and Compliance Management.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

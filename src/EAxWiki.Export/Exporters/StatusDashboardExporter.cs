@@ -117,7 +117,6 @@ internal class StatusDashboardExporter(IOutputWriter writer)
 
         WriteTypeSection(lines, statusList, typeRowList, typeDrilldown);
 
-        lines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(Path.Combine(dashboardDir, "index.md"),
             string.Join(Environment.NewLine, lines), ct);
     }

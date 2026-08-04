@@ -12,7 +12,3 @@
 - [Outcome](Outcome.html)
 - [Resource](Resource.html)
 - [Stakeholder](Stakeholder.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

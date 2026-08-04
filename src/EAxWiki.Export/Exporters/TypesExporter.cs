@@ -41,7 +41,6 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
             indexLines.Add($"- [{lang}]({MarkdownHelpers.SanitizeName(lang)}/index.html)");
 
         indexLines.Add(string.Empty);
-        indexLines.Add(MarkdownHelpers.FormatTimestamp());
         await writer.WriteFileAsync(Path.Combine(typesDir, "index.md"), string.Join(Environment.NewLine, indexLines), ct);
 
         foreach (var lang in languages)
@@ -70,7 +69,6 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
                 langIndexLines.Add($"- [{group.Key}]({MarkdownHelpers.SanitizeName(group.Key)}.html)");
 
             langIndexLines.Add(string.Empty);
-            langIndexLines.Add(MarkdownHelpers.FormatTimestamp());
             await writer.WriteFileAsync(Path.Combine(langDir, "index.md"), string.Join(Environment.NewLine, langIndexLines), ct);
 
             foreach (var group in typeGroups)
@@ -92,7 +90,6 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
                 }
 
                 lines.Add(string.Empty);
-                lines.Add(MarkdownHelpers.FormatTimestamp());
                 await writer.WriteFileAsync(Path.Combine(langDir, $"{MarkdownHelpers.SanitizeName(group.Key)}.md"), string.Join(Environment.NewLine, lines), ct);
             }
         }

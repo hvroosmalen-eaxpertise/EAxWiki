@@ -10,7 +10,7 @@ notes_hash: acc6783b
 
 ![European Union - People](European Union - People.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="37" data-kind="diagram" data-file-path="European Union - People/diagrams/European Union - People.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="37" data-kind="diagram" data-file-path="European Union - People/diagrams/European Union - People.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -40,7 +40,3 @@ notes_hash: acc6783b
 - <span class="sl" data-layer="edgy-pe">People</span> [Ministry of Economic Affairs](../../People/Ministry of Economic Affairs.html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Rijksdienst voor Ondernemend Nederland (RVO)](../../People/Rijksdienst voor Ondernemend Nederland (RVO).html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Sociaal Economische Raad (SER)](../../People/Sociaal Economische Raad (SER).html)
-
----
-
-*Generated: 2026-08-04 12:35:57*

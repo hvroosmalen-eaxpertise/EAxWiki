@@ -10,7 +10,7 @@ notes_hash: 7f0e0cec
 
 ![Identity](Identity.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="4" data-kind="diagram" data-file-path="Identity/diagrams/Identity.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="4" data-kind="diagram" data-file-path="Identity/diagrams/Identity.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -55,7 +55,3 @@ notes_hash: 7f0e0cec
 - <span class="sl" data-layer="edgy-lb">Metric</span> [Totale Scope 1-3 uitstoot (ton CO₂e/jaar)](../../Metrics/Totale Scope 1-3 uitstoot (ton CO₂e_jaar).html)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [Uitstoot NOₓ/SOₓ (kg/jaar)](../../Metrics/Uitstoot NOₓ_SOₓ (kg_jaar).html)
 - <span class="sl" data-layer="edgy-ex">Task</span> [Voer duurzame werkgewoonten in zoals repair-first, afvalscheiding en energiebewust werken.](../../Task/Voer duurzame werkgewoonten in zoals repair-first, afvalscheiding en energiebewust werken..html)
-
----
-
-*Generated: 2026-08-04 12:35:59*

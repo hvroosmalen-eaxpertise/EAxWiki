@@ -52,7 +52,3 @@
 | [ProductCategoryRule](../Products/ProductCategoryRule.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [ProductCarbonFootprint](../Products/ProductCarbonFootprint.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [ProductLifeCycle](../Products/ProductLifeCycle.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
-
----
-
-*Generated: 2026-08-04 12:38:11*

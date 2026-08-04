@@ -28,7 +28,3 @@
 - <span class="sl" data-layer="edgy-ex">Task</span> [Voer een volledige LCA uit op product- en procesniveau.](../../Task/Voer een volledige LCA uit op product- en procesniveau..html)
 - <span class="sl" data-layer="edgy-ex">Task</span> [Voer stakeholderdialogen en integreer duurzaamheidsverwachtingen in de strategie.](../../Task/Voer stakeholderdialogen en integreer duurzaamheidsverwachtingen in de strategie..html)
 - <span class="sl" data-layer="edgy-ex">Task</span> [Werk samen met ketenpartners voor gezamenlijke reductiedoelen.](../../Task/Werk samen met ketenpartners voor gezamenlijke reductiedoelen..html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

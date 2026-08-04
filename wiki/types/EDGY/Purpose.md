@@ -24,7 +24,3 @@
 - <span class="sl" data-layer="edgy-id">Purpose</span> [Sustainability Identity](../../Purpose/Sustainability Identity.html)
 - <span class="sl" data-layer="edgy-id">Purpose</span> [Building a EU Reporting Community](../../Introduction EurSuRA/Building a EU Reporting Community.html)
 - <span class="sl" data-layer="edgy-id">Purpose</span> [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

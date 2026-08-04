@@ -7,7 +7,7 @@ notes_hash: e3b0c442
 
 [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Emissions](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="96" data-kind="package" data-file-path="Emissions/index.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="96" data-kind="package" data-file-path="Emissions/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -96,7 +96,3 @@ notes_hash: e3b0c442
   - *EmissionActivityTypeParameterTypeAssignment is a master-data entity that records a single parameter type requirement within an EmissionActivityParameterRecordingTemplate, specifying which EmissionParameterType must be recorded and whether the measurement is mandatory or optional. Each template is composed of one or more of these assignment records, forming the complete parameter checklist for the associated activity type and jurisdiction.*
 - <span class="sl" data-layer="uml">master-data</span> [EmissionReportingBoundary](EmissionReportingBoundary.html)
   - *EmissionReportingBoundary is a work-product-component that defines and documents the organisational, operational, and geographic boundary applied to a specific EmissionInventory or EmissionReport. It records the boundary-setting methodology, the entities included and excluded, and the rationale for any exclusions, providing the complete boundary documentation required by GHG Protocol and ISO 14064-1 first-party assertions and supporting the assurance engagement.*
-
----
-
-*Generated: 2026-08-04 12:38:11*

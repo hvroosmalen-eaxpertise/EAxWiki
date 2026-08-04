@@ -10,7 +10,7 @@ notes_hash: 0f551ff9
 
 ![Goals and Objectives](Goals and Objectives.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="40" data-kind="diagram" data-file-path="ESRS Goals and Objectives/diagrams/Goals and Objectives.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="40" data-kind="diagram" data-file-path="ESRS Goals and Objectives/diagrams/Goals and Objectives.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -27,7 +27,3 @@ notes_hash: 0f551ff9
 - <span class="sl" data-layer="edgy-lb">Outcome</span> [Ensure that investors and other stakeholders have access to the information](../Ensure that investors and other stakeholders have access to the information.html)
 - <span class="sl" data-layer="edgy-lb">Outcome</span> [Implement a double materiality approach](../Implement a double materiality approach.html)
 - <span class="sl" data-layer="edgy-lb">Outcome</span> [Standardize ESG reporting and enhance transparency and comparability in Europe. ](../Standardize ESG reporting and enhance transparency and comparability in Europe..html)
-
----
-
-*Generated: 2026-08-04 12:35:55*

@@ -11,7 +11,3 @@
 - <span class="sl" data-layer="edgy-ex">Channel</span> [Intersection Group](../../Information Collection and Model Creation/Intersection Group.html)
 - <span class="sl" data-layer="edgy-ex">Channel</span> [SDG Website](../../Information Collection and Model Creation/SDG Website.html)
 - <span class="sl" data-layer="edgy-ex">Channel</span> [The Open Group Website](../../Information Collection and Model Creation/The Open Group Website.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

@@ -24,7 +24,3 @@
 - <span class="sl" data-layer="uml">work-product-component</span> [EmissionCalculationFormulaComponent](../../Emissions/EmissionCalculationFormulaComponent.html)
 - <span class="sl" data-layer="uml">work-product-component</span> [EmissionCalculationModelFactorArgument](../../Emissions/EmissionCalculationModelFactorArgument.html)
 - <span class="sl" data-layer="uml">work-product-component</span> [EmissionCalculationModelParameterArgument](../../Emissions/EmissionCalculationModelParameterArgument.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

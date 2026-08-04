@@ -10,7 +10,7 @@ notes_hash: fafc6797
 
 ![ESRS E1, E2, E3, E4, E5, G1 - People](ESRS E1, E2, E3, E4, E5, G1 - People.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="33" data-kind="diagram" data-file-path="ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="33" data-kind="diagram" data-file-path="ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -47,7 +47,3 @@ https://www</p>
 - <span class="sl" data-layer="edgy-pe">People</span> [Sustainability Committee](../../People/Sustainability Committee.html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Sustainability Consultants](../../People/Sustainability Consultants.html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Training Providers](../../People/Training Providers.html)
-
----
-
-*Generated: 2026-08-04 12:35:57*

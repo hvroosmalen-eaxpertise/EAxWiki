@@ -19,7 +19,3 @@
 - [Story](Story.html)
 - [Tag](Tag.html)
 - [Task](Task.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

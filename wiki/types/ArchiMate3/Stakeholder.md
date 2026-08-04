@@ -42,7 +42,3 @@
 - <span class="sl" data-layer="motivation">Stakeholder</span> [Research and Analysis Firms](../../ESRS Navigator Stakeholder Map/Research and Analysis Firms.html)
 - <span class="sl" data-layer="motivation">Stakeholder</span> [Chamber of Commerce/Kamer van Koophandel](../../ESRS Navigator Stakeholder Map/Chamber of Commerce_Kamer van Koophandel.html)
 - <span class="sl" data-layer="motivation">Stakeholder</span> [Training Providers](../../ESRS Navigator Stakeholder Map/Training Providers.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*

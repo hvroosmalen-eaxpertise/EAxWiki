@@ -12,7 +12,3 @@
 - <span class="sl" data-layer="business">BusinessObject</span> [ESRS S3 - Communities](../../ESRS Navigator Stakeholder Map/ESRS S3 - Communities.html)
 - <span class="sl" data-layer="business">BusinessObject</span> [ESRS S4 - Consumers](../../ESRS Navigator Stakeholder Map/ESRS S4 - Consumers.html)
 - <span class="sl" data-layer="business">BusinessObject</span> [ESRS G1 - Business Conduct](../../ESRS Navigator Stakeholder Map/ESRS G1 - Business Conduct.html)
-
----
-
-*Generated: 2026-08-04 12:38:11*
