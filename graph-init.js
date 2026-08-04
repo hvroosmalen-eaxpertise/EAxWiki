@@ -1,13 +1,13 @@
 var EA_LAYER_COLORS = {
-    'business':       '#D4A017',
-    'application':    '#2E86C1',
-    'technology':     '#27AE60',
-    'physical':       '#17A589',
-    'motivation':     '#8E44AD',
-    'strategy':       '#A0682B',
-    'implementation': '#D84B79',
-    'composite':      '#5D6D7E',
-    'uml':            '#7F8C8D',
+    'business':       '#A8C6C7',
+    'application':    '#103135',
+    'technology':     '#C4E5E7',
+    'physical':       '#6FB4B6',
+    'motivation':     '#D0F391',
+    'strategy':       '#7FA8A9',
+    'implementation': '#5C8A8B',
+    'composite':      '#405B5C',
+    'uml':            '#F3F7F7',
     'edgy-id':        '#75F0A5',
     'edgy-ar':        '#9DB9F6',
     'edgy-ex':        '#F985B4',
@@ -15,7 +15,7 @@ var EA_LAYER_COLORS = {
     'edgy-pe':        '#FFD93D',
     'edgy-lb':        '#E8E8E8'
 };
-var EA_LAYER_DARK_TEXT = { 'edgy-id': true, 'edgy-pe': true, 'edgy-lb': true, 'business': true };
+var EA_LAYER_DARK_TEXT = { 'business': true, 'technology': true, 'physical': true, 'motivation': true, 'strategy': true, 'uml': true, 'edgy-id': true, 'edgy-pe': true, 'edgy-lb': true };
 var EA_DISTANCE_COLORS = ['#e65100', '#ff8a65', '#a1887f', '#9e9e9e', '#757575', '#616161'];
 
 var _graphIndexPromise = null;
