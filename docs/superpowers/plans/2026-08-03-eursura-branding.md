@@ -490,7 +490,7 @@ git commit -m "test(export): cover eursura brand emission (issue #79)"
 - Consumes: `--brand` CLI flag / `.eaxwiki` `brand` field.
 - Produces: `export.ps1` passes `--brand <name>` to `dotnet run`; monitor passes it to `export.ps1`. `Get-ExportArgs` returns `.Brand` (string, default `""`); `Get-MonitorArgs` returns `.Brand` (string, default `$null`).
 
-- [ ] **Step 1: Write the failing Pester tests**
+- [x] **Step 1: Write the failing Pester tests**
 
 Append to `tests/scripts/export.Tests.ps1` inside the `Describe 'Get-ExportArgs'` block:
 
@@ -532,12 +532,12 @@ Add to the monitor `returns defaults` assertion block:
         $r.Brand | Should -Be $null
 ```
 
-- [ ] **Step 2: Run tests to verify they fail**
+- [x] **Step 2: Run tests to verify they fail**
 
 Run: `Invoke-Pester tests/scripts/export.Tests.ps1 -Output Detailed`
 Expected: the 2 new `--brand` tests FAIL (no Brand member).
 
-- [ ] **Step 3: Add `--brand` to `export.ps1`**
+- [x] **Step 3: Add `--brand` to `export.ps1`**
 
 In `Get-ExportArgs` (lines 11-17) add:
 
@@ -569,7 +569,7 @@ In the `$runArgs` builder (after line 94) add:
 if ($Brand)          { $runArgs += "--brand", $Brand }
 ```
 
-- [ ] **Step 4: Add `--brand` to `monitor-export-and-serve.ps1`**
+- [x] **Step 4: Add `--brand` to `monitor-export-and-serve.ps1`**
 
 In `Get-MonitorArgs` (after line 72) add:
 
@@ -607,7 +607,7 @@ In the `$exportArgs` builder (after line 831, the `--api-port` addition) add:
             if ($Brand) { $exportArgs += "--brand", $Brand }
 ```
 
-- [ ] **Step 5: Run Pester tests to verify they pass**
+- [x] **Step 5: Run Pester tests to verify they pass**
 
 Run:
 ```powershell
@@ -616,13 +616,14 @@ Invoke-Pester tests/scripts/monitor-export-and-serve.Tests.ps1 -Output Detailed
 ```
 Expected: both PASS. (If a background monitor is running, stop it first — the monitor file dot-sources and the duplicate-monitor guard can make Pester exit early. PID file: `.eaxwiki-monitor\d88915cd6c0f\monitor.pid`.)
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add scripts/export.ps1 scripts/monitor-export-and-serve.ps1 tests/scripts/export.Tests.ps1 tests/scripts/monitor-export-and-serve.Tests.ps1
 git add --renormalize scripts/export.ps1 scripts/monitor-export-and-serve.ps1 tests/scripts/export.Tests.ps1 tests/scripts/monitor-export-and-serve.Tests.ps1
 git commit -m "feat(scripts): pass --brand through export + monitor (issue #79)"
 ```
+> Note: actual commit message used `feat(scripts): wire --brand through export and monitor scripts (issue #79)`. Export Pester 25/25 green. Monitor file verified via AST extraction of `Get-MonitorArgs` (whole-file dot-source hangs in the monitor loop — pre-existing). Also committed the omitted `InfrastructureWriter.cs` serialization fix as `8e269fa22`.
 
 ---
 
