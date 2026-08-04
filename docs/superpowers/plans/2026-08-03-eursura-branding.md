@@ -784,7 +784,7 @@ git add --renormalize README.md
 git commit -m "docs(readme): note --brand support and test counts (issue #79)"
 ```
 
-- [ ] **Step 3: Post close comment and close the issue**
+- [x] **Step 3: Post close comment and close the issue**
 
 Write the close comment to a temp file and post it:
 
@@ -794,7 +794,7 @@ gh issue comment 79 --body-file "C:\Users\hanva\AppData\Local\Temp\opencode\issu
 gh issue close 79 --reason completed
 ```
 
-- [ ] **Step 4: Push**
+- [x] **Step 4: Push**
 
 ```bash
 git push origin master
