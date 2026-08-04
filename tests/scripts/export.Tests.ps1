@@ -12,6 +12,7 @@ Describe 'Get-ExportArgs' {
         $r.RepoPath | Should -Be ""
         $r.OutputDir | Should -Be ""
         $r.ApiPort | Should -Be 0
+        $r.Brand | Should -Be ""
     }
 
     It 'parses -Force flag' {
@@ -82,6 +83,16 @@ Describe 'Get-ExportArgs' {
     It 'parses -ApiPort with numeric value' {
         $r = Get-ExportArgs -Arguments @('-ApiPort', '8001')
         $r.ApiPort | Should -Be 8001
+    }
+
+    It 'parses --brand with value' {
+        $r = Get-ExportArgs -Arguments @('--brand', 'eursura')
+        $r.Brand | Should -Be 'eursura'
+    }
+
+    It 'parses -Brand with value' {
+        $r = Get-ExportArgs -Arguments @('-Brand', 'eursura')
+        $r.Brand | Should -Be 'eursura'
     }
 
     It 'accepts bare repo path (no flag)' {

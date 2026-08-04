@@ -19,6 +19,7 @@ Describe 'Get-MonitorArgs' {
         $r.NotifyOnStart | Should -Be $true
         $r.Force | Should -Be $false
         $r.ForceEveryNRuns | Should -Be 0
+        $r.Brand | Should -Be $null
     }
 
     It 'parses -r shorthand' { $r = Get-MonitorArgs -Arguments @('-r', 'model.qea'); $r.RepoPath | Should -Be 'model.qea' }
@@ -92,6 +93,16 @@ Describe 'Get-MonitorArgs' {
     It 'parses -Force' { $r = Get-MonitorArgs -Arguments @('-Force'); $r.Force | Should -Be $true }
 
     It 'parses --force-every' { $r = Get-MonitorArgs -Arguments @('--force-every', '48'); $r.ForceEveryNRuns | Should -Be 48 }
+
+    It 'parses --brand' {
+        $r = Get-MonitorArgs -Arguments @('--brand', 'eursura')
+        $r.Brand | Should -Be 'eursura'
+    }
+
+    It 'parses -Brand' {
+        $r = Get-MonitorArgs -Arguments @('-Brand', 'eursura')
+        $r.Brand | Should -Be 'eursura'
+    }
 
     It 'handles Unicode output dir' {
         $r = Get-MonitorArgs -Arguments @('--output', 'héllo-wörld')

@@ -76,6 +76,7 @@ function Get-MonitorArgs {
     $ForceEveryNRuns     = 0
     $ExportIntervalMinutes = 30
     $MonitorCheckIntervalSeconds = 30
+    $Brand                = $null
 
     $i = 0
     while ($i -lt $Arguments.Count) {
@@ -90,6 +91,7 @@ function Get-MonitorArgs {
             '^(--teams-webhook-url|-TeamsWebhookUrl)$' { $i++; if ($i -lt $Arguments.Count) { $TeamsWebhookUrl   = $Arguments[$i] } }
             '^(--telegram-bot-token|-TelegramBotToken)$'  { $i++; if ($i -lt $Arguments.Count) { $TelegramBotToken = $Arguments[$i] } }
             '^(--telegram-chat-id|-TelegramChatId)$'      { $i++; if ($i -lt $Arguments.Count) { $TelegramChatId   = $Arguments[$i] } }
+            '^(--brand|-Brand)$'                     { $i++; if ($i -lt $Arguments.Count) { $Brand             = $Arguments[$i] } }
             '^(--test-alert|-TestAlert)$'            { $TestAlert = $true }
             '^(--no-notify-start)$'                  { $NotifyOnStart = $false }
             '^(-f|--force|-Force)$'                  { $Force = $true }
@@ -111,6 +113,7 @@ function Get-MonitorArgs {
         TeamsWebhookUrl     = $TeamsWebhookUrl
         TelegramBotToken    = $TelegramBotToken
         TelegramChatId      = $TelegramChatId
+        Brand               = $Brand
         TestAlert           = $TestAlert
         NotifyOnStart       = $NotifyOnStart
         Force               = $Force
@@ -206,6 +209,7 @@ $Force               = $parsed.Force
 $ForceEveryNRuns     = $parsed.ForceEveryNRuns
 $ExportIntervalMinutes = $parsed.ExportIntervalMinutes
 $MonitorCheckIntervalSeconds = $parsed.MonitorCheckIntervalSeconds
+$Brand               = $parsed.Brand
 
 if (-not $IsWindowsOS) {
     Write-Error "Monitoring requires Sparx Enterprise Architect, which is only available on Windows."
@@ -261,6 +265,14 @@ if ($null -eq $TelegramChatId -or "" -eq $TelegramChatId) {
         $TelegramChatId = $env:EAXWIKI_ALERT_TELEGRAM_CHAT_ID
     } elseif ($eaxwikiConfig -and $eaxwikiConfig.telegramChatId) {
         $TelegramChatId = $eaxwikiConfig.telegramChatId
+    }
+}
+
+if ($null -eq $Brand -or "" -eq $Brand) {
+    if ($env:EAXWIKI_BRAND) {
+        $Brand = $env:EAXWIKI_BRAND
+    } elseif ($eaxwikiConfig -and $eaxwikiConfig.brand) {
+        $Brand = $eaxwikiConfig.brand
     }
 }
 
@@ -829,6 +841,7 @@ while ($true) {
             if ($ApiPort -gt 0) {
                 $exportArgs += "--writeback", "--api-port", "$ApiPort"
             }
+            if ($Brand) { $exportArgs += "--brand", $Brand }
             $state.lastMode = if ($effectiveForce) { "full (--force)" } else { "incremental" }
             Write-MonitorLog -Phase "export" -Message "Mode: $($state.lastMode)."
 

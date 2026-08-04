@@ -15,6 +15,7 @@ function Get-ExportArgs {
     $Json      = $false
     $WriteBack = $false
     $ApiPort   = 0
+    $Brand     = ""
 
     $i = 0
     while ($i -lt $Arguments.Count) {
@@ -26,6 +27,7 @@ function Get-ExportArgs {
             '^(-r|--repo|-RepoPath)$'            { $i++; if ($i -lt $Arguments.Count) { $RepoPath  = $Arguments[$i] } }
             '^(-o|--output|-OutputDir)$'         { $i++; if ($i -lt $Arguments.Count) { $OutputDir = $Arguments[$i] } }
             '^(--api-port|-ApiPort)$'            { $i++; if ($i -lt $Arguments.Count) { $ApiPort   = [int]$Arguments[$i] } }
+            '^(--brand|-Brand)$'                 { $i++; if ($i -lt $Arguments.Count) { $Brand     = $Arguments[$i] } }
             default                              { if (-not "$($Arguments[$i])".StartsWith('-')) { $RepoPath = $Arguments[$i] } }
         }
         $i++
@@ -38,6 +40,7 @@ function Get-ExportArgs {
         Json      = $Json
         WriteBack = $WriteBack
         ApiPort   = $ApiPort
+        Brand     = $Brand
     }
 }
 
@@ -49,6 +52,7 @@ $Verbose   = $parsed.Verbose
 $Json      = $parsed.Json
 $WriteBack = $parsed.WriteBack
 $ApiPort   = $parsed.ApiPort
+$Brand     = $parsed.Brand
 
 if (-not $IsWindowsOS) {
     Write-Error "Export requires Sparx Enterprise Architect, which is only available on Windows."
@@ -92,6 +96,7 @@ if ($Verbose)        { $runArgs += "--verbose" }
 if ($Json)           { $runArgs += "--json" }
 if ($WriteBack)      { $runArgs += "--writeback" }
 if ($ApiPort -gt 0)  { $runArgs += "--api-port", $ApiPort }
+if ($Brand)          { $runArgs += "--brand", $Brand }
 
 try {
     dotnet run --project src/EAxWiki -- $runArgs
