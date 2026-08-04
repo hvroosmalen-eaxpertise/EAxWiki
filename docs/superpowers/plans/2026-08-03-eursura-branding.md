@@ -33,7 +33,7 @@
 - Consumes: nothing new.
 - Produces: `Config.Brand` (string, default `""`), `LocalConfigStore.Config.Brand` (string?, null), and env var `EAXWIKI_BRAND` set by Program.cs before export. Task 3 reads this env var.
 
-- [ ] **Step 1: Write the failing tests**
+- [x] **Step 1: Write the failing tests**
 
 Add to `src/EAxWiki.Tests/ConfigTests.cs` (after the existing `Load_ApiPortFlag_SetsApiPort` test, ~line 128):
 
@@ -74,12 +74,12 @@ public void Brand_RoundTrips()
 }
 ```
 
-- [ ] **Step 2: Run tests to verify they fail**
+- [x] **Step 2: Run tests to verify they fail**
 
 Run: `dotnet test src/EAxWiki.Tests --filter "FullyQualifiedName~ConfigTests|FullyQualifiedName~LocalConfigStoreTests" --no-restore`
 Expected: 2 ConfigTests + 1 LocalConfigStoreTests FAIL (no `Brand` member).
 
-- [ ] **Step 3: Add `Brand` to `Config.cs`**
+- [x] **Step 3: Add `Brand` to `Config.cs`**
 
 Add after the `AiKey` property (line 21):
 
@@ -97,7 +97,7 @@ Add to the `Load` switch, after the `--ai-key` case (line 103-107):
                     break;
 ```
 
-- [ ] **Step 4: Add `Brand` to `LocalConfigStore.Config`**
+- [x] **Step 4: Add `Brand` to `LocalConfigStore.Config`**
 
 Add after `AiKey` (line 39):
 
@@ -105,7 +105,7 @@ Add after `AiKey` (line 39):
         public string? Brand { get; set; }
 ```
 
-- [ ] **Step 5: Add fallback + env set in `Program.cs`**
+- [x] **Step 5: Add fallback + env set in `Program.cs`**
 
 In the `if (savedConfig != null)` block (lines 158-170), add as the last fallback:
 
@@ -120,7 +120,7 @@ At the env-set site (after `Environment.SetEnvironmentVariable("EAXWIKI_AI_ENDPO
 Environment.SetEnvironmentVariable("EAXWIKI_BRAND", config.Brand);
 ```
 
-- [ ] **Step 6: Add `--brand` to help text**
+- [x] **Step 6: Add `--brand` to help text**
 
 In `Program.cs` around line 311 (the `--api-port` help line), add:
 
@@ -128,12 +128,12 @@ In `Program.cs` around line 311 (the `--api-port` help line), add:
     Console.WriteLine("  --brand <name>        Brand theme to emit (eursura); default: none");
 ```
 
-- [ ] **Step 7: Run tests to verify they pass**
+- [x] **Step 7: Run tests to verify they pass**
 
 Run: `dotnet test src/EAxWiki.Tests --filter "FullyQualifiedName~ConfigTests|FullyQualifiedName~LocalConfigStoreTests" --no-restore`
 Expected: PASS.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add src/EAxWiki/Config.cs src/EAxWiki/Program.cs src/EAxWiki.Core/Configuration/LocalConfigStore.cs src/EAxWiki.Tests/ConfigTests.cs src/EAxWiki.Tests/LocalConfigStoreTests.cs
@@ -154,7 +154,7 @@ git commit -m "feat(config): add --brand option (issue #79)"
 - Consumes: Task 1's `EAXWIKI_BRAND` env var naming.
 - Produces: embedded resources named `*.brand-eursura.css` and `*.eursura-logo.png` (manifest suffix matching), consumed by Task 3's `WriteBrandAssetsAsync`.
 
-- [ ] **Step 1: Download the logo from the issue attachment**
+- [x] **Step 1: Download the logo from the issue attachment**
 
 ```bash
 curl.exe -sL -o src/EAxWiki.Export/Resources/eursura-logo.png "https://github.com/user-attachments/assets/be8af4cb-c385-4319-b72f-378d0bf39f79"
@@ -168,7 +168,7 @@ Format-Hex -Path src/EAxWiki.Export/Resources/eursura-logo.png -Count 4
 ```
 Expected: Length 30674, first bytes `89 50 4E 47`.
 
-- [ ] **Step 2: Create `brand-eursura.css`**
+- [x] **Step 2: Create `brand-eursura.css`**
 
 ```css
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono&display=swap');
@@ -214,7 +214,7 @@ Expected: Length 30674, first bytes `89 50 4E 47`.
 }
 ```
 
-- [ ] **Step 3: Register both as embedded resources**
+- [x] **Step 3: Register both as embedded resources**
 
 Edit `src/EAxWiki.Export/EAxWiki.Export.csproj` (add under the existing `EmbeddedResource` group, lines 19-22):
 
@@ -223,14 +223,14 @@ Edit `src/EAxWiki.Export/EAxWiki.Export.csproj` (add under the existing `Embedde
     <EmbeddedResource Include="Resources\eursura-logo.png" />
 ```
 
-- [ ] **Step 4: Verify the assembly embeds both**
+- [x] **Step 4: Verify the assembly embeds both**
 
 ```bash
 dotnet build src/EAxWiki.Export/EAxWiki.Export.csproj --no-restore -v q 2>&1 | Select-Object -Last 3
 ```
 Expected: build succeeds. (A failing-integrity proof comes in Task 4.)
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/EAxWiki.Export/Resources/brand-eursura.css src/EAxWiki.Export/Resources/eursura-logo.png src/EAxWiki.Export/EAxWiki.Export.csproj
@@ -250,7 +250,7 @@ git commit -m "feat(export): add eursura brand css + logo resources (issue #79)"
 - Consumes: `EAXWIKI_BRAND` env var (Task 1); embedded resources `*.brand-eursura.css`, `*.eursura-logo.png` (Task 2).
 - Produces: when brand == `eursura` → `wiki/brand.css`, `wiki/assets/eursura-logo.png`, `graph-init.js` containing brand `EA_LAYER_COLORS`/`EA_LAYER_DARK_TEXT`. Neutral → no brand files, unchanged JS. `WriteGraphScriptsAsync` signature becomes `WriteGraphScriptsAsync(string outputDir, string brand, CancellationToken ct = default)`.
 
-- [ ] **Step 1: Read brand in `MarkdownExporter`**
+- [x] **Step 1: Read brand in `MarkdownExporter`**
 
 In `ExportAsync`, after the existing `Environment.GetEnvironmentVariable("EAXWIKI_AI_ENDPOINT")` read (line 49), add:
 
@@ -273,7 +273,7 @@ to:
                 infrastructure.WriteGraphScriptsAsync(outputPath, brand, cancellationToken),
 ```
 
-- [ ] **Step 2: Parameterize `WriteGraphScriptsAsync` in `InfrastructureWriter`**
+- [x] **Step 2: Parameterize `WriteGraphScriptsAsync` in `InfrastructureWriter`**
 
 Change the signature at line 67 to:
 
@@ -331,7 +331,7 @@ Before the `await writer.WriteFileAsync(...)` call (line 423), insert the color-
 
 Rename the existing literal `const string graphInitJs = """` to `var graphInitJs = """` (it must be mutable for the `.Replace` calls). Keep `EA_DISTANCE_COLORS` and the EDGY entries inside the literal untouched. Write `graphInitJs` (the replaced variable) instead of the literal.
 
-- [ ] **Step 3: Add `WriteBrandAssetsAsync`**
+- [x] **Step 3: Add `WriteBrandAssetsAsync`**
 
 Add a new method next to `WriteExtraCssAsync` (after line 1066):
 
@@ -359,7 +359,7 @@ Add a new method next to `WriteExtraCssAsync` (after line 1066):
     }
 ```
 
-- [ ] **Step 4: Protect brand assets from orphan cleanup**
+- [x] **Step 4: Protect brand assets from orphan cleanup**
 
 In `CleanupOrphanedFilesAsync` (line 1079-1086), add `assets` to `specialDirs`:
 
@@ -377,12 +377,12 @@ In `CleanupOrphanedFilesAsync` (line 1079-1086), add `assets` to `specialDirs`:
 
 (`brand.css` at the output root is never deleted by cleanup — root `.md` deletion is gated on `!isRoot`, and root files aren't enumerated for deletion.)
 
-- [ ] **Step 5: Build**
+- [x] **Step 5: Build**
 
 Run: `dotnet build src/EAxWiki.slnx --no-restore -v q 2>&1 | Select-Object -Last 5`
 Expected: build succeeds (6 pre-existing warnings acceptable).
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/EAxWiki.Export/Exporters/InfrastructureWriter.cs src/EAxWiki.Export/MarkdownExporter.cs
@@ -401,7 +401,7 @@ git commit -m "feat(export): emit eursura brand css, logo, graph colors (issue #
 - Consumes: `MarkdownExporter.ExportAsync` behavior from Task 3; `TestInMemoryWriter.Files`; `EAXWIKI_BRAND` env var.
 - Produces: proof that neutral export is unchanged and branded export emits brand files + brand graph colors. The brand test uses the real temp dir to check the on-disk logo (written via `File.WriteAllBytesAsync`, bypassing the string-only `IOutputWriter`), consistent with diagram PNG precedent.
 
-- [ ] **Step 1: Write the failing tests**
+- [x] **Step 1: Write the failing tests**
 
 Append to `ScriptTemplateIntegrityTests.cs`:
 
@@ -459,17 +459,17 @@ Append to `ScriptTemplateIntegrityTests.cs`:
 
 Note: place `BrandNeutral_DoesNotEmitBrandFiles` in the same class (runs sequentially after any env-setting tests in this class; no other class sets `EAXWIKI_BRAND`).
 
-- [ ] **Step 2: Run tests to verify they fail**
+- [x] **Step 2: Run tests to verify they fail**
 
 Run: `dotnet test src/EAxWiki.Tests --filter "FullyQualifiedName~ScriptTemplateIntegrityTests" --no-restore`
 Expected: `BrandEursura_EmitsBrandCssLogoAndBrandColors` FAILS (brand.css absent), `BrandNeutral_DoesNotEmitBrandFiles` FAILS (brand colors present). Other integrity tests still pass.
 
-- [ ] **Step 3: Run the full suite to verify they pass**
+- [x] **Step 3: Run the full suite to verify they pass**
 
 Run: `dotnet test src/EAxWiki.Tests --no-restore`
 Expected: all pass (270 + 2 new = 272).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add src/EAxWiki.Tests/ScriptTemplateIntegrityTests.cs
@@ -687,7 +687,7 @@ git commit -m "chore(theme): reference eursura brand.css + logo (issue #79)"
 - Consumes: `--brand eursura` support from Tasks 1/3/5; `mkdocs.yml` refs from Task 6.
 - Produces: `.eaxwiki` with `brand=eursura`; committed `wiki/` containing `brand.css`, `assets/eursura-logo.png`, branded `graph-init.js`.
 
-- [ ] **Step 1: Add `brand` to `.eaxwiki` (encrypted, never committed)**
+- [x] **Step 1: Add `brand` to `.eaxwiki` (encrypted, never committed)**
 
 PowerShell 5.1 note: `.eaxwiki` is a single DPAPI-encrypted base64 blob; edit by decrypt → add `brand` → re-encrypt → write. Run from repo root:
 
@@ -713,7 +713,7 @@ Verify the monitor resolves it (config line will now show the brand if the scrip
 ```
 Expected: script parses `.eaxwiki` without error. (It may hit the duplicate-monitor guard or send the alert — that's fine, the goal is config resolution, not the alert.)
 
-- [ ] **Step 2: Regenerate the wiki branded**
+- [x] **Step 2: Regenerate the wiki branded**
 
 Ensure no monitor/serve is holding locks (kill any monitor pwsh and `EAxWiki.dll`/`dotnet run` processes; `Get-CimInstance Win32_Process -Filter "Name='pwsh.exe'"` filtered on `monitor-export-and-serve`). Then run a full export:
 
@@ -729,18 +729,18 @@ Verify:
 Test-Path wiki/brand.css; Test-Path wiki/assets/eursura-logo.png; Select-String -Path wiki/graph-init.js -Pattern '#A8C6C7'
 ```
 
-- [ ] **Step 3: Serve and eyeball**
+- [x] **Step 3: Serve and eyeball**
 
 ```bash
 .\scripts\serve.ps1 --port 8000
 ```
 Expected: header shows the EurSuRA logo + Jet Black bar, Geist body font, Lime Cream accents; graph nodes and status badges use EurSuRA tones. Stop the server when done.
 
-- [ ] **Step 4: Document the brand in `design-decisions.md`**
+- [x] **Step 4: Document the brand in `design-decisions.md`**
 
 Append a dated section documenting: `--brand eursura` (CLI/env/`.eaxwiki`), that default stays neutral/byte-identical, brand assets are embedded resources written to `wiki/`, orphan-cleanup whitelists `assets/`, and the layer-color mapping table (from the spec).
 
-- [ ] **Step 5: Commit (wiki + docs only — NOT `.eaxwiki`)**
+- [x] **Step 5: Commit (wiki + docs only — NOT `.eaxwiki`)**
 
 ```bash
 git add wiki/ docs/design-decisions.md
@@ -749,7 +749,7 @@ git commit -m "feat(wiki): regenerate demo with eursura branding (issue #79)"
 ```
 Never stage `.eaxwiki`.
 
-- [ ] **Step 6: Run the full test suites for a final gate**
+- [x] **Step 6: Run the full test suites for a final gate**
 
 ```bash
 dotnet test src/EAxWiki.Tests --no-restore
@@ -757,6 +757,7 @@ Invoke-Pester tests/scripts/export.Tests.ps1 -Output Detailed
 Invoke-Pester tests/scripts/monitor-export-and-serve.Tests.ps1 -Output Detailed
 ```
 Expected: all pass (272 .NET tests; export + monitor Pester suites pass).
+> Note: .NET suite **275/275 pass**. Export Pester **25/25 pass**. Monitor file cannot run standalone (whole-file dot-source enters the `while ($true)` loop — pre-existing); its `Get-MonitorArgs` brand cases verified via AST extraction. `.eaxwiki` `brand` was written as **PascalCase `Brand`** (the plan's lowercase `brand` would not deserialize via the case-sensitive `LocalConfigStore.Load`).
 
 ---
 
@@ -770,11 +771,11 @@ Expected: all pass (272 .NET tests; export + monitor Pester suites pass).
 - Consumes: everything above.
 - Produces: updated README test counts and a short branding note; issue #79 closed with a summary comment.
 
-- [ ] **Step 1: Update README test counts**
+- [x] **Step 1: Update README test counts**
 
 Update the "Tests" section counts: .NET 272 (was 270), Pester 143 (unchanged), total 415 (was 413). Add a short "Branding" line under Features: "Optional `--brand eursura` emits EurSuRA logo/palette/fonts; default stays neutral."
 
-- [ ] **Step 2: Commit**
+- [x] **Step 2: Commit**
 
 ```bash
 git add README.md
@@ -782,7 +783,7 @@ git add --renormalize README.md
 git commit -m "docs(readme): note --brand support and test counts (issue #79)"
 ```
 
-- [ ] **Step 3: Post close comment and close the issue**
+- [x] **Step 3: Post close comment and close the issue**
 
 Write the close comment to a temp file and post it:
 
@@ -792,7 +793,7 @@ gh issue comment 79 --body-file "C:\Users\hanva\AppData\Local\Temp\opencode\issu
 gh issue close 79 --reason completed
 ```
 
-- [ ] **Step 4: Push**
+- [x] **Step 4: Push**
 
 ```bash
 git push origin master
