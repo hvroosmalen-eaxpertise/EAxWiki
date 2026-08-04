@@ -10,13 +10,15 @@
 }
 
 .md-header {
-  background-color: #103135;
+  background-color: #C4E5E7;
+  color: #103135;
 }
 .md-header__title {
-  color: #F3F7F7;
+  color: #103135;
 }
 .md-tabs {
-  background-color: #103135;
+  background-color: #C4E5E7;
+  color: #103135;
 }
 
 .status-proposed { background: #F3F7F7; color: #103135; }

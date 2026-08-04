@@ -9,13 +9,13 @@ notes_hash: 8fe38e0a
 # <span class="sl" data-layer="uml">reference-data</span> OrganizationAssociationType
 
 **Type:** Class  **Stereotype:** reference-data  **StereotypeEx:** reference-data  **FQStereotype:** reference-data  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="742" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="742" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2026-02-27  **Modified:** 2026-05-20
 
 
 [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Organisation](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="742" data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="742" data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,9 +29,9 @@ notes_hash: 8fe38e0a
 <table>
 <thead><tr><th>Name</th><th>Type</th><th>Default</th><th>Description</th></tr></thead>
 <tbody>
-<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the OrganizationAssociationType record. It must be globally unique and stable so that existing OrganizationAssociation records are not affected when the type vocabulary is extended.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="f6895d94" data-kind="attribute" data-el-id="742" data-attr-name="id" data-attr-type="Key" data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>id</td><td>Key</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-0--><p>The unique system-assigned identifier for the OrganizationAssociationType record. It must be globally unique and stable so that existing OrganizationAssociation records are not affected when the type vocabulary is extended.</p><!--ea-row-notes-end:attr-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-0" data-notes-hash="f6895d94" data-kind="attribute" data-el-id="742" data-attr-name="id" data-attr-type="Key" data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="attr-0" style="display:none"><td colspan="4"></td></tr>
-<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The descriptive label for the association type, such as "Subsidiary", "Verifier", "Branch", or "Affiliate". The name should be drawn from a consistent controlled vocabulary agreed across the reporting ecosystem to ensure that association types carry the same meaning when shared between organisations in a supply chain.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="62a97851" data-kind="attribute" data-el-id="742" data-attr-name="name" data-attr-type="String" data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>name</td><td>String</td><td></td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:attr-1--><p>The descriptive label for the association type, such as "Subsidiary", "Verifier", "Branch", or "Affiliate". The name should be drawn from a consistent controlled vocabulary agreed across the reporting ecosystem to ensure that association types carry the same meaning when shared between organisations in a supply chain.</p><!--ea-row-notes-end:attr-1--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="attr-1" data-notes-hash="62a97851" data-kind="attribute" data-el-id="742" data-attr-name="name" data-attr-type="String" data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="attr-1" style="display:none"><td colspan="4"></td></tr>
 </tbody>
 </table>
@@ -43,7 +43,7 @@ notes_hash: 8fe38e0a
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>description</td><td>OrganizationAssociationType provides the controlled vocabulary of association types that can exist between two organisations, such as &quot;Auditor&quot;, &quot;Department&quot;, &quot;Subsidiary&quot;, &quot;Verifier&quot;, &quot;Branch&quot;, or &quot;Affiliate&quot;.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="742" data-tag-name="description" data-tag-value="OrganizationAssociationType provides the controlled vocabulary of association types that can exist between two organisations, such as &quot;Auditor&quot;, &quot;Department&quot;, &quot;Subsidiary&quot;, &quot;Verifier&quot;, &quot;Branch&quot;, or &quot;Affiliate&quot;." data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>description</td><td>OrganizationAssociationType provides the controlled vocabulary of association types that can exist between two organisations, such as &quot;Auditor&quot;, &quot;Department&quot;, &quot;Subsidiary&quot;, &quot;Verifier&quot;, &quot;Branch&quot;, or &quot;Affiliate&quot;.</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="742" data-tag-name="description" data-tag-value="OrganizationAssociationType provides the controlled vocabulary of association types that can exist between two organisations, such as &quot;Auditor&quot;, &quot;Department&quot;, &quot;Subsidiary&quot;, &quot;Verifier&quot;, &quot;Branch&quot;, or &quot;Affiliate&quot;." data-file-path="Organisation/OrganizationAssociationType.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -74,4 +74,4 @@ notes_hash: 8fe38e0a
 
 ---
 
-*Generated: 2026-08-04 11:36:53*
+*Generated: 2026-08-04 12:35:51*

@@ -9,13 +9,13 @@ notes_hash: 21751c63
 # <span class="sl" data-layer="motivation">Stakeholder</span> Rijksdienst voor Ondernemen (RVO)
 
 **Type:** Class  **Stereotype:** ArchiMate_Stakeholder  **StereotypeEx:** ArchiMate_Stakeholder  **FQStereotype:** ArchiMate3::ArchiMate_Stakeholder  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="338" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO).md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="338" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO).md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
 **Created:** 2025-11-14  **Modified:** 2025-11-14
 
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="338" data-file-path="ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO).md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="338" data-file-path="ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO).md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -29,7 +29,7 @@ notes_hash: 21751c63
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
 <tbody>
-<tr><td>archimate_element_identifier</td><td>id-reg-003</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="338" data-tag-name="archimate_element_identifier" data-tag-value="id-reg-003" data-file-path="ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO).md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" aria-label="Edit description">&#9998;</button></td></tr>
+<tr><td>archimate_element_identifier</td><td>id-reg-003</td><td><span class="ea-row-notes-text"><!--ea-row-notes-start:tag-0--><!--ea-row-notes-end:tag-0--></span><button class="ea-row-notes-edit-btn" type="button" data-surface="table-row" data-row-id="tag-0" data-notes-hash="e3b0c442" data-kind="tagged-value" data-el-id="338" data-tag-name="archimate_element_identifier" data-tag-value="id-reg-003" data-file-path="ESRS Navigator Stakeholder Map/Rijksdienst voor Ondernemen (RVO).md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" aria-label="Edit description">&#9998;</button></td></tr>
 <tr class="ea-row-edit" data-row-id="tag-0" style="display:none"><td colspan="3"></td></tr>
 </tbody>
 </table>
@@ -70,4 +70,4 @@ notes_hash: 21751c63
 
 ---
 
-*Generated: 2026-08-04 11:36:52*
+*Generated: 2026-08-04 12:35:50*

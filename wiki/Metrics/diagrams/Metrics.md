@@ -10,7 +10,7 @@ notes_hash: fafc6797
 
 ![Metrics](Metrics.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="8" data-kind="diagram" data-file-path="Metrics/diagrams/Metrics.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="8" data-kind="diagram" data-file-path="Metrics/diagrams/Metrics.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -103,4 +103,4 @@ https://www</p>
 
 ---
 
-*Generated: 2026-08-04 11:37:02*
+*Generated: 2026-08-04 12:36:00*

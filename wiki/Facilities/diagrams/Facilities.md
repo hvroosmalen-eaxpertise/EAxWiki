@@ -10,7 +10,7 @@ notes_hash: 7f90f3ec
 
 ![Facilities](Facilities.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="50" data-kind="diagram" data-file-path="Facilities/diagrams/Facilities.md" data-api-port="8001" data-api-token="e9a260cc7815d7609eabcda6e3d715efdce31af9e5bbe3c0" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="50" data-kind="diagram" data-file-path="Facilities/diagrams/Facilities.md" data-api-port="8001" data-api-token="cd030999497b4feb1b7abdba556cca130373eb9f6f037d31" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
@@ -42,4 +42,4 @@ notes_hash: 7f90f3ec
 
 ---
 
-*Generated: 2026-08-04 11:37:10*
+*Generated: 2026-08-04 12:36:11*
