@@ -381,6 +381,10 @@ When `--ai-endpoint` is configured (default `http://localhost:8080/v1`), a spark
 
 The default endpoint expects a local `llama-server` instance; any OpenAI-compatible provider works (OpenAI, Claude via LiteLLM, Azure OpenAI, etc.). Related-element context (target notes, stereotypes) is fetched from EA COM to enrich the prompt — see `docs/superpowers/specs/2026-07-08-ai-suggested-descriptions-design.md` for the full design.
 
+### Branding
+
+Optional `--brand eursura` emits the EurSuRA logo, palette, fonts, and graph colors; the default (no `--brand`) stays neutral. The brand can also be set via the `EAXWIKI_BRAND` env var or the `brand` field in `.eaxwiki`.
+
 ### Write-back server security
 
 The write-back server is a Kestrel HTTP server that runs alongside `mkdocs serve` and accepts write requests from the browser. Since it can modify the live EA repository via COM, the following security measures are in place:
@@ -623,21 +627,21 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 | ContextBuilder | 9 | Sub-builder decomposition (ElementCollector, DiagramIndexBuilder, ConnectorIndexBuilder, LookupBuilder, PackageDirCollector) |
 | Frontmatter parser | 15 | YamlDotNet-based YAML frontmatter parsing |
 | ElementPageWriter renderers | 34 | All 11 widget renderers (rich HTML + plain Markdown modes), edge cases, 2-hop graph, missing references |
-| Other | ~137 | Cleanup, Markdown helpers, hash helpers, config store, repository/health/validation writers, resilience, script template integrity, etc. |
+| Other | ~142 | Cleanup, Markdown helpers, hash helpers, config store, repository/health/validation writers, resilience, script template integrity, etc. |
 | Property-based (FsCheck) | 26 | SanitizeName, EscapeCell, ParseStereotype, GetStereotypeLabel, SanitizeForAnchor, ComputeNotesHash, ComputeStatusHash invariants |
-| **.NET subtotal** | **270** | |
-| Export | 23 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths |
+| **.NET subtotal** | **275** | |
+| Export | 25 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths, `--brand` |
 | ExportAndServe | 22 | Port/root/API-port flags, retry/force args, combined pipeline args |
 | Install | 11 | `#Requires -Version 7` directive, parameter binding |
-| MonitorExportAndServe | 36 | Schedule parsing, task registration/update, state file, health check, alerting (Slack/Teams/Telegram), CLI flags |
+| MonitorExportAndServe | 38 | Schedule parsing, task registration/update, state file, health check, alerting (Slack/Teams/Telegram), CLI flags, `--brand` |
 | SendAlert | 2 | Telegram dispatch guard + dispatch |
 | Serve | 12 | Port/root flags, file server config, cert modes, default page, path normalization |
 | ServeApi | 12 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
 | ValidateWikiOutput | 12 | Validation CLI args (repo/output/tolerance, defaults, error paths) |
 | Writeback | 13 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
-| **Pester subtotal** | **143** | |
+| **Pester subtotal** | **147** | |
 
-**413 tests total** (270 .NET + 143 Pester), all pass.
+**422 tests total** (275 .NET + 147 Pester), all pass.
 
 ## Design decisions
 
