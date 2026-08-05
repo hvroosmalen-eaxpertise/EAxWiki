@@ -1,6 +1,6 @@
 ---
 package_id: 1
-notes_hash: e3b0c442
+notes_hash: 8816ebf1
 ---
 
 # Edgy
@@ -11,7 +11,7 @@ notes_hash: e3b0c442
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
-
+<p>hgfhgfh</p>
 <!--ea-package-notes-end-->
 </div>
 </div>

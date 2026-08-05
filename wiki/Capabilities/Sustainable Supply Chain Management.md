@@ -1,16 +1,16 @@
 ---
 ea_id: 447
-status: 
+status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
-ea_hash: e3b0c442
+ea_hash: 9b0c660b
 notes_hash: 5d29223f
 ---
 
 # <span class="sl" data-layer="strategy">Capability</span> Sustainable Supply Chain Management
 
 **Type:** Class  **Stereotype:** ArchiMate_Capability  **StereotypeEx:** ArchiMate_Capability  **FQStereotype:** ArchiMate3::ArchiMate_Capability  
-**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="447" data-status="" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Capabilities/Sustainable Supply Chain Management.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83"><span class="status-badge status-not-set">Not Set</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
-**Created:** 2025-12-11  **Modified:** 2025-12-11
+**Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="447" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Capabilities/Sustainable Supply Chain Management.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
+**Created:** 2025-12-11  **Modified:** 2026-08-05
 
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Capabilities](index.html)

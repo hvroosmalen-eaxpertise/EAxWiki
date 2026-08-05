@@ -12,10 +12,10 @@
   <div class="status-bar status-mandatory" style="width: 5%">Mandatory 1</div>
 </div>
 <div class="status-bar-container">
-  <div class="status-bar status-proposed" style="width: 100%">Proposed 257</div>
+  <div class="status-bar status-proposed" style="width: 100%">Proposed 258</div>
 </div>
 
-*165 elements have no status set.*
+*164 elements have no status set.*
 
 
 ## By Package
@@ -24,7 +24,7 @@
 |---|:---:|:---:|:---:|:---:|:---:|
 | [Assessments](../Assessments/index.html) | <a href="#pkg_assessments_approved">5</a> | — | — | — | **5** |
 | [Asset](../Asset/index.html) | <a href="#pkg_asset_approved">6</a> | — | — | — | **6** |
-| [Capabilities](../Capabilities/index.html) | <a href="#pkg_capabilities_approved">6</a> | — | — | — | **6** |
+| [Capabilities](../Capabilities/index.html) | <a href="#pkg_capabilities_approved">6</a> | — | — | <a href="#pkg_capabilities_proposed">1</a> | **7** |
 | [Capability](../Capability/index.html) | — | — | — | <a href="#pkg_capability_proposed">1</a> | **1** |
 | [Channel](../Channel/index.html) | — | — | — | <a href="#pkg_channel_proposed">3</a> | **3** |
 | [Content](../Content/index.html) | — | — | — | <a href="#pkg_content_proposed">3</a> | **3** |
@@ -59,7 +59,7 @@
 | [Story](../Story/index.html) | — | — | — | <a href="#pkg_story_proposed">3</a> | **3** |
 | [Sustainability Development Goals](../Sustainability Development Goals/index.html) | — | <a href="#pkg_sustainability_development_goals_implemented">2</a> | — | <a href="#pkg_sustainability_development_goals_proposed">23</a> | **25** |
 | [Task](../Task/index.html) | — | — | — | <a href="#pkg_task_proposed">26</a> | **26** |
-| **Total** | **21** | **7** | **1** | **257** | **286** |
+| **Total** | **21** | **7** | **1** | **258** | **287** |
 
 <details class="status-details" id="pkg_assessments_approved">
   <summary>Assessments &mdash; Approved (5)</summary>
@@ -94,6 +94,13 @@
   <li><a href="../Capabilities/Sustainability Data and Reporting.html">Sustainability Data and Reporting</a> <span class="status-badge status-approved">Approved</span></li>
   <li><a href="../Capabilities/Sustainability Governance.html">Sustainability Governance</a> <span class="status-badge status-approved">Approved</span></li>
   <li><a href="../Capabilities/Sustainable Innovation Management.html">Sustainable Innovation Management</a> <span class="status-badge status-approved">Approved</span></li>
+</ul>
+</details>
+<details class="status-details" id="pkg_capabilities_proposed">
+  <summary>Capabilities &mdash; Proposed (1)</summary>
+
+<ul>
+  <li><a href="../Capabilities/Sustainable Supply Chain Management.html">Sustainable Supply Chain Management</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
 <details class="status-details" id="pkg_capability_proposed">
@@ -632,7 +639,7 @@
 | Asset | <a href="#type_asset_approved">6</a> | — | — | <a href="#type_asset_proposed">11</a> | **17** |
 | Brand | — | — | — | <a href="#type_brand_proposed">1</a> | **1** |
 | BusinessObject | — | <a href="#type_businessobject_implemented">2</a> | — | — | **2** |
-| Capability | <a href="#type_capability_approved">6</a> | — | — | <a href="#type_capability_proposed">4</a> | **10** |
+| Capability | <a href="#type_capability_approved">6</a> | — | — | <a href="#type_capability_proposed">5</a> | **11** |
 | Channel | — | <a href="#type_channel_implemented">1</a> | — | <a href="#type_channel_proposed">8</a> | **9** |
 | Content | — | — | — | <a href="#type_content_proposed">16</a> | **16** |
 | Journey | — | — | — | <a href="#type_journey_proposed">1</a> | **1** |
@@ -652,7 +659,7 @@
 | Tag | — | — | — | <a href="#type_tag_proposed">19</a> | **19** |
 | Task | — | — | — | <a href="#type_task_proposed">26</a> | **26** |
 | Uncategorized | — | — | — | <a href="#type_uncategorized_proposed">5</a> | **5** |
-| **Total** | **21** | **7** | **1** | **257** | **286** |
+| **Total** | **21** | **7** | **1** | **258** | **287** |
 
 <details class="status-details" id="type_assessment_approved">
   <summary>Assessment &mdash; Approved (5)</summary>
@@ -722,13 +729,14 @@
 </ul>
 </details>
 <details class="status-details" id="type_capability_proposed">
-  <summary>Capability &mdash; Proposed (4)</summary>
+  <summary>Capability &mdash; Proposed (5)</summary>
 
 <ul>
   <li><a href="../Information Collection and Model Creation/AI - LLM.html">AI - LLM</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Information Collection and Model Creation/EDGY -_ XMI (Python).html">EDGY -> XMI (Python)</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Capability/Green Capabilities.html">Green Capabilities</a> <span class="status-badge status-proposed">Proposed</span></li>
   <li><a href="../Information Collection and Model Creation/LDM -_ XMI (Python).html">LDM -> XMI (Python)</a> <span class="status-badge status-proposed">Proposed</span></li>
+  <li><a href="../Capabilities/Sustainable Supply Chain Management.html">Sustainable Supply Chain Management</a> <span class="status-badge status-proposed">Proposed</span></li>
 </ul>
 </details>
 <details class="status-details" id="type_channel_implemented">
