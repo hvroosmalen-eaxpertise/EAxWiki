@@ -90,6 +90,62 @@ public class ExportIntegrationTests
     }
 
     [Fact]
+    public async Task Export_PackageIndexElementNotes_IndentedWithoutBullet()
+    {
+        var element = new EaElement { Id = 1, Name = "MyElement", Type = "Class", Notes = "Element notes text." };
+        var package = new EaPackage { Id = 10, Name = "Pkg", Elements = { element } };
+        var repo = new EaRepository { RootPackages = { package } };
+
+        var writer = new TestInMemoryWriter();
+        var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
+        await exporter.ExportAsync(repo, null, OutputPath);
+
+        var key = Normalize(Path.Combine(OutputPath, "Pkg", "index.md"));
+        var content = writer.Files[key];
+
+        Assert.Contains("[MyElement](MyElement.html)", content);
+        Assert.Contains("  *Element notes text.*", content);
+        Assert.DoesNotContain("  - *Element notes text.*", content);
+    }
+
+    [Fact]
+    public async Task Export_PackageIndexDiagramNotes_IndentedWithoutBullet()
+    {
+        var diagram = new EaDiagram { Id = 5, Name = "MyDiagram", Type = "Custom", Notes = "Diagram notes text." };
+        var package = new EaPackage { Id = 10, Name = "Pkg", Diagrams = { diagram } };
+        var repo = new EaRepository { RootPackages = { package } };
+
+        var writer = new TestInMemoryWriter();
+        var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
+        await exporter.ExportAsync(repo, null, OutputPath);
+
+        var key = Normalize(Path.Combine(OutputPath, "Pkg", "index.md"));
+        var content = writer.Files[key];
+
+        Assert.Contains("[MyDiagram](diagrams/MyDiagram.html)", content);
+        Assert.Contains("  *Diagram notes text.*", content);
+        Assert.DoesNotContain("  - *Diagram notes text.*", content);
+    }
+
+    [Fact]
+    public async Task Export_PackageIndexElementNotes_TrimsPreviewWhitespace()
+    {
+        var element = new EaElement { Id = 1, Name = "MyElement", Type = "Class", Notes = "  Padded notes text.  " };
+        var package = new EaPackage { Id = 10, Name = "Pkg", Elements = { element } };
+        var repo = new EaRepository { RootPackages = { package } };
+
+        var writer = new TestInMemoryWriter();
+        var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
+        await exporter.ExportAsync(repo, null, OutputPath);
+
+        var key = Normalize(Path.Combine(OutputPath, "Pkg", "index.md"));
+        var content = writer.Files[key];
+
+        Assert.Contains("  *Padded notes text.*", content);
+        Assert.DoesNotContain("  *  Padded notes text.", content);
+    }
+
+    [Fact]
     public async Task Export_NamesWithSpecialChars_SanitizedInPath()
     {
         var writer = new TestInMemoryWriter();

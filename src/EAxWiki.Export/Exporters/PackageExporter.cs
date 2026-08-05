@@ -63,8 +63,8 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
 
                 if (!string.IsNullOrWhiteSpace(diag.Notes))
                 {
-                    var notesPreview = diag.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ");
-                    indexLines.Add($"  - *{notesPreview}*");
+                    var notesPreview = diag.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ").Trim();
+                    indexLines.Add($"  *{notesPreview}*");
                 }
             }
 
@@ -107,8 +107,8 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
 
                 if (!string.IsNullOrWhiteSpace(elem.Notes))
                 {
-                    var notesPreview = elem.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ");
-                    indexLines.Add($"  - *{notesPreview}*");
+                    var notesPreview = elem.Notes.Replace("\r\n", " ").Replace("\n", " ").Replace("\r", " ").Trim();
+                    indexLines.Add($"  *{notesPreview}*");
                 }
             }
 
