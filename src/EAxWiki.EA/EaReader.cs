@@ -95,7 +95,17 @@ public class EaReader : IEaReader, IDisposable
         }
         finally
         {
-            if (repo != null) Marshal.ReleaseComObject(repo);
+            if (repo != null)
+            {
+                try
+                {
+                    Marshal.FinalReleaseComObject(repo);
+                }
+                catch (InvalidComObjectException)
+                {
+                    // Already released.
+                }
+            }
         }
     }
 
@@ -483,9 +493,22 @@ public class EaReader : IEaReader, IDisposable
         _disposed = true;
         try
         {
+            // Capture the RCW before Close() nulls the field, then force-release it so
+            // the EA.exe -Embedding COM server sees its reference count hit zero and can
+            // shut down instead of lingering as an orphan (issue #81).
+            var repo = _repository;
             Close();
-            if (_repository != null)
-                Marshal.ReleaseComObject(_repository);
+            if (repo != null)
+            {
+                try
+                {
+                    Marshal.FinalReleaseComObject(repo);
+                }
+                catch (InvalidComObjectException)
+                {
+                    // Already released by an earlier FinalRelease or process exit.
+                }
+            }
         }
         finally
         {

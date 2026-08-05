@@ -623,5 +623,16 @@ public class EaReaderTests
         reader.Dispose();
     }
 
+    [Fact]
+    public void Dispose_AfterClose_DoesNotThrow()
+    {
+        // Regression (issue #81): Dispose used to call Close() first, which nulled
+        // _repository, making the ReleaseComObject branch dead code. The fixed path
+        // captures the RCW before Close(); a not-open reader must still no-op cleanly.
+        var reader = new EAxWiki.EA.EaReader();
+        reader.Close();
+        reader.Dispose();
+    }
+
     #endregion
 }

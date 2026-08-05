@@ -654,6 +654,24 @@ internal static class WikiWritebackServer
             return HandleEditLock(outputPath, req);
         });
 
+        // Graceful shutdown for the monitor (issue #81): token-authenticated (it's under /api),
+        // so Stop-ApiServer can ask the API to dispose its EA COM connection and exit 0 instead
+        // of force-killing it and orphaning an EA.exe -Embedding instance per export cycle.
+        app.MapPost("/api/shutdown", async (HttpContext context, Microsoft.Extensions.Hosting.IApplicationLifetime lifetime) =>
+        {
+            await AuditLogger.LogAsync(outputPath, "POST /api/shutdown", 0, "shutdown",
+                StatusCodes.Status200OK, "Graceful shutdown requested",
+                context.Request.Headers["X-EAxWiki-Token"].ToString());
+            logger.LogInformation("Shutdown requested via /api/shutdown; stopping host.");
+            // Respond first, then stop after a short delay so the client reliably sees the 200.
+            _ = Task.Run(async () =>
+            {
+                await Task.Delay(500);
+                lifetime.StopApplication();
+            });
+            return Results.Ok(new { success = true, message = "Shutting down." });
+        });
+
         var port = config.ApiPort > 0 ? config.ApiPort : 8001;
         logger.LogInformation("Wiki write-back server listening on port {Port}", port);
         logger.LogInformation("Accepting requests only from origins on port {WikiPort} (pass --wiki-port to override)", wikiPort);
