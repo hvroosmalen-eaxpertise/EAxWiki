@@ -70,7 +70,8 @@ if ($RepoPath) {
 if ($Verbose) { $runArgs += "--verbose" }
 
 try {
-    dotnet run --project src/EAxWiki -- $runArgs
+    $dll = Get-EAxWikiDllPath -RepoRoot $repoRoot
+    dotnet exec $dll $runArgs
     if ($LASTEXITCODE -ne 0) {
         Write-Error "Write-back failed (exit code $LASTEXITCODE)."
         Cleanup-EAProcesses
