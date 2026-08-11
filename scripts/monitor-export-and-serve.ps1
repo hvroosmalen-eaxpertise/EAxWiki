@@ -714,81 +714,6 @@ function Test-EditLock {
     }
 }
 
-function Stop-ApiServer {
-    # Gracefully stop the tracked API server process so its DLL locks are released
-    # before a dotnet-run export can overwrite them.  Prefers the token-authenticated
-    # POST /api/shutdown endpoint, which lets the API dispose its EA COM connection so
-    # EA.exe -Embedding exits instead of lingering as an orphan (issue #81); falls back
-    # to a force-kill if the API is unresponsive, then to Clear-Port.
-    if (Test-Path $apiPidPath) {
-        try {
-            $info = Get-Content $apiPidPath -Raw | ConvertFrom-Json
-            if ($info.pid) {
-                $proc = Get-Process -Id ([int]$info.pid) -ErrorAction SilentlyContinue
-                if ($proc) {
-                    Write-MonitorLog -Phase "api" -Message "Stopping tracked API server (PID $($info.pid)) to release DLL locks."
-                    $shutdownRequested = $false
-                    $tokenPath = Join-Path $wikiDir ".eaxwiki-token"
-                    if (Test-Path $tokenPath) {
-                        try {
-                            $token = (Get-Content $tokenPath -Raw).Trim()
-                            $uri = "http://localhost:$ApiPort/api/shutdown"
-                            Invoke-RestMethod -Uri $uri -Method Post -Headers @{ "X-EAxWiki-Token" = $token } -TimeoutSec 5 | Out-Null
-                            $shutdownRequested = $true
-                            Write-MonitorLog -Phase "api" -Message "Graceful shutdown requested via /api/shutdown."
-                        } catch {
-                            Write-MonitorLog -Phase "api" -Message "Graceful shutdown request failed: $($_.Exception.Message)"
-                        }
-                    } else {
-                        Write-MonitorLog -Phase "api" -Message "No token file at $tokenPath; falling back to force-kill."
-                    }
-
-                    if ($shutdownRequested) {
-                        # Give it up to 10 seconds to dispose EA and exit cleanly.
-                        $deadline = [DateTime]::UtcNow.AddSeconds(10)
-                        while ([DateTime]::UtcNow -lt $deadline) {
-                            $proc.Refresh()
-                            if ($proc.HasExited) { break }
-                            Start-Sleep -Milliseconds 200
-                        }
-                    }
-
-                    if (-not $proc.HasExited) {
-                        Write-MonitorLog -Phase "api" -Message "API server did not exit after shutdown request; force-killing."
-                        $proc | Stop-Process -Force -ErrorAction SilentlyContinue
-                        Start-Sleep -Seconds 1
-                    }
-
-                    # The API's EA.exe -Embedding instance survives both a graceful shutdown
-                    # and a force-kill (issue #81), so reap any -Embedding EA started at or
-                    # after the API.  Manual EA sessions never carry -Embedding and started
-                    # before the API, so they - and sibling instances' EAs - are left alone.
-                    if ($info.startTime) {
-                        try {
-                            $apiStartUtc = [DateTimeOffset]::Parse($info.startTime).UtcDateTime
-                            $apiEas = Get-CimInstance Win32_Process -Filter "Name='EA.exe'" -ErrorAction SilentlyContinue |
-                                Where-Object {
-                                    $_.CommandLine -like '*-Embedding*' -and
-                                    $_.CreationDate.ToUniversalTime() -ge $apiStartUtc
-                                }
-                            foreach ($ea in $apiEas) {
-                                Write-MonitorLog -Phase "api" -Message "Reaping API's lingering EA -Embedding instance (PID $($ea.ProcessId))."
-                                Stop-Process -Id $ea.ProcessId -Force -ErrorAction SilentlyContinue
-                            }
-                        } catch {
-                            Write-MonitorLog -Phase "api" -Message "EA reap after API stop failed: $($_.Exception.Message)"
-                        }
-                    }
-                }
-            }
-        } catch { }
-        # Always clear the pid file so the watchdog doesn't think it's still alive.
-        Remove-Item $apiPidPath -Force -ErrorAction SilentlyContinue
-    }
-    # Release the port if anything still holds it.
-    Clear-Port -PortNumber $ApiPort
-}
-
 function Clear-Port {
     param([int]$PortNumber)
     $owner = Get-NetTCPConnection -LocalPort $PortNumber -ErrorAction SilentlyContinue |
@@ -870,13 +795,6 @@ while ($true) {
         $writebackSummary = Get-NewWritebackSummary
 
         if (-not $skipPhase) {
-            # Stop the API server before export so its DLL locks don't prevent
-            # dotnet-run from overwriting the binaries.  The API watchdog section
-            # at the end of this pass will restart it automatically.
-            if ($ApiPort -gt 0 -and (Test-ApiAlive)) {
-                Stop-ApiServer
-            }
-
             $exportArgs = @("--output", $wikiDir)
             if ($RepoPath) { $exportArgs += "--repo", $RepoPath }
             if ($effectiveForce) { $exportArgs += "--force" }

@@ -196,3 +196,11 @@ Describe 'Send-TelegramMessage' {
         $ok | Should -BeTrue
     }
 }
+
+Describe 'API stays up across exports' {
+    It 'no longer stops the API server before export' {
+        $content = Get-Content "$PSScriptRoot\..\..\scripts\monitor-export-and-serve.ps1" -Raw
+        $content | Should -Not -Match 'Stop the API server before export'
+        $content | Should -Not -Match 'Stop-ApiServer'
+    }
+}
