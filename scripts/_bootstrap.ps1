@@ -1,9 +1,9 @@
-# _bootstrap.ps1 — Shared bootstrap for EAxWiki scripts.
+# _bootstrap.ps1 - Shared bootstrap for EAxWiki scripts.
 # Dot-source at the top of every script: . $PSScriptRoot\_bootstrap.ps1
 #
 # Provides:
-#   $PSExecutable   — Full path to the running PowerShell executable
-#   $IsWindowsOS    — $true on Windows (works in both PS 5.1 and PS 7+)
+#   $PSExecutable   - Full path to the running PowerShell executable
+#   $IsWindowsOS    - $true on Windows (works in both PS 5.1 and PS 7+)
 
 $PSExecutable = (Get-Process -Id $PID).Path
 
@@ -19,7 +19,7 @@ if ($PSVersionTable.PSVersion.Major -ge 7 -and $PSVersionTable.PSVersion.Minor -
     $PSNativeCommandUseErrorActionPreference = $false
 }
 
-# Get-EAxWikiDllPath — resolve the pre-built EAxWiki.dll and verify it exists. Running the DLL
+# Get-EAxWikiDllPath - resolve the pre-built EAxWiki.dll and verify it exists. Running the DLL
 # via `dotnet exec` instead of `dotnet run --project src/EAxWiki` avoids rebuilding/overwriting
 # the DLL that a running write-back API server has loaded, which is what lets the API stay up
 # across export runs (see export.ps1 / writeback.ps1 / export-and-serve.ps1 / serve-api.ps1).
