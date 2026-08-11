@@ -80,3 +80,12 @@ Describe 'Get-ExportAndServeArgs' {
         $r.ApiPort | Should -Be 9090
     }
 }
+
+Describe 'export-and-serve.ps1 runs the pre-built DLL' {
+    It 'does not use dotnet run (which rebuilds and locks the API DLL)' {
+        $content = Get-Content "$PSScriptRoot\..\..\scripts\export-and-serve.ps1" -Raw
+        $content | Should -Not -Match 'dotnet run --project'
+        $content | Should -Match 'Get-EAxWikiDllPath'
+        $content | Should -Match 'dotnet exec'
+    }
+}

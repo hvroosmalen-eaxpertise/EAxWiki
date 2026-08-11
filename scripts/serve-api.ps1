@@ -84,11 +84,12 @@ if ($RepoPath) {
     $apiArgs += "--repo", $resolvedRepo
 }
 
+$dll = Get-EAxWikiDllPath -RepoRoot $repoRoot
 $apiJob = Start-Job -ScriptBlock {
-    param($root, $argList)
+    param($root, $dllPath, $argList)
     Set-Location $root
-    dotnet run --project src/EAxWiki -- $argList
-} -ArgumentList $repoRoot, $apiArgs
+    dotnet exec $dllPath $argList
+} -ArgumentList $repoRoot, $dll, $apiArgs
 
 Start-Sleep -Seconds 3
 

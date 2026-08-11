@@ -69,3 +69,12 @@ Describe 'Get-ServeApiArgs' {
         $r.Port | Should -Be 9000
     }
 }
+
+Describe 'serve-api.ps1 runs the pre-built DLL' {
+    It 'does not use dotnet run (which rebuilds and locks the API DLL)' {
+        $content = Get-Content "$PSScriptRoot\..\..\scripts\serve-api.ps1" -Raw
+        $content | Should -Not -Match 'dotnet run --project'
+        $content | Should -Match 'Get-EAxWikiDllPath'
+        $content | Should -Match 'dotnet exec'
+    }
+}
