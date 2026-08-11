@@ -73,8 +73,8 @@ function Cleanup-EAProcesses {
     }
 }
 
-# Resolve output directory to an absolute path so it is unambiguous regardless
-# of the working directory that dotnet run assigns to the spawned process.
+# Resolve output directory to an absolute path so it is unambiguous regardless of the
+# working directory the spawned process runs in.
 $wikiDir = if ($OutputDir) {
     if ([System.IO.Path]::IsPathRooted($OutputDir)) { $OutputDir }
     else { Join-Path $repoRoot $OutputDir }
@@ -99,7 +99,8 @@ if ($ApiPort -gt 0)  { $runArgs += "--api-port", $ApiPort }
 if ($Brand)          { $runArgs += "--brand", $Brand }
 
 try {
-    dotnet run --project src/EAxWiki -- $runArgs
+    $dll = Get-EAxWikiDllPath -RepoRoot $repoRoot
+    dotnet exec $dll $runArgs
     $code = if ($null -eq $LASTEXITCODE) { 0 } else { $LASTEXITCODE }
     Write-Output "EAXWIKI_EXIT_CODE=$code"
     if ($code -ne 0) {
