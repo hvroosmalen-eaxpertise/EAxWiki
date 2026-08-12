@@ -401,11 +401,11 @@ internal static class WikiWritebackServer
             await next();
         });
 
-        app.MapGet("/api/status-types", () =>
+        app.MapGet("/api/status-types", async (HttpContext ctx) =>
         {
             try
             {
-                var types = reader.GetStatusTypes();
+                var types = await reader.GetStatusTypesAsync(ctx.RequestAborted);
                 return Results.Ok(types);
             }
             catch (Exception ex)
@@ -415,12 +415,12 @@ internal static class WikiWritebackServer
             }
         });
 
-        app.MapPost("/api/status", (StatusChangeRequest req, HttpContext context) =>
+        app.MapPost("/api/status", async (StatusChangeRequest req, HttpContext context) =>
         {
             if (string.IsNullOrWhiteSpace(req.NewStatus))
                 return Results.BadRequest(new { success = false, message = "newStatus is required." });
 
-            var allowed = reader.GetStatusTypes();
+            var allowed = await reader.GetStatusTypesAsync(context.RequestAborted);
             if (!allowed.Contains(req.NewStatus, StringComparer.OrdinalIgnoreCase))
                 return Results.BadRequest(new { success = false, message = $"'{req.NewStatus}' is not a valid status. Allowed: {string.Join(", ", allowed)}" });
 
@@ -434,7 +434,7 @@ internal static class WikiWritebackServer
             {
                 if (req.ElementId.HasValue)
                 {
-                    reader.UpdateElementStatus(req.ElementId.Value, req.NewStatus);
+                    await reader.UpdateElementStatusAsync(req.ElementId.Value, req.NewStatus, context.RequestAborted);
                     FrontmatterParser.UpdateStatus(filePath, req.NewStatus);
                     logger.LogInformation("Status change: element {Id} → {Status} ({File})", req.ElementId.Value, req.NewStatus, req.FilePath);
                 }
@@ -459,7 +459,7 @@ internal static class WikiWritebackServer
             }
         });
 
-        app.MapPost("/api/notes", (NotesChangeRequest req, HttpContext context) =>
+        app.MapPost("/api/notes", async (NotesChangeRequest req, HttpContext context) =>
         {
             if (req.NewNotes == null)
                 return Results.BadRequest(new { success = false, message = "newNotes is required." });
@@ -476,13 +476,13 @@ internal static class WikiWritebackServer
 
                 if (req.PackageId.HasValue)
                 {
-                    reader.UpdatePackageNotes(req.PackageId.Value, normalized);
+                    await reader.UpdatePackageNotesAsync(req.PackageId.Value, normalized, context.RequestAborted);
                     FrontmatterParser.UpdatePackageNotes(filePath, normalized);
                     logger.LogInformation("Notes updated for package {Id} ({File})", req.PackageId.Value, req.FilePath);
                 }
                 else if (req.ElementId.HasValue)
                 {
-                    reader.UpdateElementNotes(req.ElementId.Value, normalized);
+                    await reader.UpdateElementNotesAsync(req.ElementId.Value, normalized, context.RequestAborted);
                     FrontmatterParser.UpdateNotes(filePath, normalized);
                     logger.LogInformation("Notes updated for element {Id} ({File})", req.ElementId.Value, req.FilePath);
                 }
@@ -507,7 +507,7 @@ internal static class WikiWritebackServer
             }
         });
 
-        app.MapPost("/api/diagram-notes", (DiagramNotesChangeRequest req, HttpContext context) =>
+        app.MapPost("/api/diagram-notes", async (DiagramNotesChangeRequest req, HttpContext context) =>
         {
             if (req.NewNotes == null)
                 return Results.BadRequest(new { success = false, message = "newNotes is required." });
@@ -521,7 +521,7 @@ internal static class WikiWritebackServer
             try
             {
                 var normalized = FrontmatterParser.NormalizeNotesHtml(req.NewNotes);
-                reader.UpdateDiagramNotes(req.DiagramId, normalized);
+                await reader.UpdateDiagramNotesAsync(req.DiagramId, normalized, context.RequestAborted);
                 FrontmatterParser.UpdateNotes(filePath, normalized);
                 logger.LogInformation("Notes updated for diagram {Id} ({File})", req.DiagramId, req.FilePath);
                 LogWriteback(outputPath, "diagram-notes");
@@ -540,7 +540,7 @@ internal static class WikiWritebackServer
             }
         });
 
-        app.MapPost("/api/row-notes", (RowNotesChangeRequest req, HttpContext context) =>
+        app.MapPost("/api/row-notes", async (RowNotesChangeRequest req, HttpContext context) =>
         {
             if (req.NewNotes == null)
                 return Results.BadRequest(new { success = false, message = "newNotes is required." });
@@ -560,17 +560,17 @@ internal static class WikiWritebackServer
                     case "attribute":
                         if (req.AttributeName == null || req.AttributeType == null)
                             return Results.BadRequest(new { success = false, message = "attributeName and attributeType are required." });
-                        reader.UpdateAttributeNotes(req.ElementId, req.AttributeName, req.AttributeType, normalized);
+                        await reader.UpdateAttributeNotesAsync(req.ElementId, req.AttributeName, req.AttributeType, normalized, context.RequestAborted);
                         break;
                     case "method":
                         if (req.MethodName == null || req.ReturnType == null || req.IsStatic == null)
                             return Results.BadRequest(new { success = false, message = "methodName, returnType, and isStatic are required." });
-                        reader.UpdateMethodNotes(req.ElementId, req.MethodName, req.ReturnType, req.IsStatic.Value, normalized);
+                        await reader.UpdateMethodNotesAsync(req.ElementId, req.MethodName, req.ReturnType, req.IsStatic.Value, normalized, context.RequestAborted);
                         break;
                     case "tagged-value":
                         if (req.TagName == null || req.TagValue == null)
                             return Results.BadRequest(new { success = false, message = "tagName and tagValue are required." });
-                        reader.UpdateTaggedValueNotes(req.ElementId, req.TagName, req.TagValue, normalized);
+                        await reader.UpdateTaggedValueNotesAsync(req.ElementId, req.TagName, req.TagValue, normalized, context.RequestAborted);
                         break;
                     default:
                         return Results.BadRequest(new { success = false, message = $"Unknown kind '{req.Kind}'." });
@@ -601,7 +601,7 @@ internal static class WikiWritebackServer
                 if (string.IsNullOrEmpty(config.AiEndpoint))
                     return Results.Json(new { message = "AI suggestions are not configured." }, statusCode: 501);
 
-                var summary = reader.GetElementSummary(req.ElementId);
+                var summary = await reader.GetElementSummaryAsync(req.ElementId, context.RequestAborted);
                 if (summary == null)
                     return Results.Json(new { message = "Element not found." }, statusCode: 404);
 
@@ -667,7 +667,7 @@ internal static class WikiWritebackServer
                 if (string.IsNullOrEmpty(config.AiEndpoint))
                     return Results.Json(new { message = "AI suggestions are not configured." }, statusCode: 501);
 
-                var summary = reader.GetDiagramSummary(req.DiagramId);
+                var summary = await reader.GetDiagramSummaryAsync(req.DiagramId, context.RequestAborted);
                 if (summary == null)
                     return Results.Json(new { message = "Diagram not found." }, statusCode: 404);
 

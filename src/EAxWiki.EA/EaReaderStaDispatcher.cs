@@ -127,7 +127,17 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
         }
     }
 
-    private T Dispatch<T>(Func<EaReader, T> func)
+    private T Dispatch<T>(Func<EaReader, T> func) =>
+        DispatchAsync(func).GetAwaiter().GetResult();
+
+    private void DispatchVoid(Action<EaReader> action) =>
+        DispatchVoidAsync(action).GetAwaiter().GetResult();
+
+    // Async siblings return the underlying TaskCompletionSource.Task without blocking. The write-back
+    // server's ASP.NET request thread can go back to the pool while the STA thread processes the
+    // work item (issue #85). The STA thread stays single-threaded — COM requires it — only the
+    // caller side is freed.
+    private Task<T> DispatchAsync<T>(Func<EaReader, T> func)
     {
         ObjectDisposedException.ThrowIf(_disposed, this);
 
@@ -139,10 +149,10 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
             reader => tcs.TrySetResult(func(reader)),
             ex => tcs.TrySetException(ex)));
 
-        return tcs.Task.GetAwaiter().GetResult();
+        return tcs.Task;
     }
 
-    private void DispatchVoid(Action<EaReader> action)
+    private Task DispatchVoidAsync(Action<EaReader> action)
     {
         ObjectDisposedException.ThrowIf(_disposed, this);
 
@@ -154,7 +164,7 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
             reader => { action(reader); tcs.TrySetResult(); },
             ex => tcs.TrySetException(ex)));
 
-        tcs.Task.GetAwaiter().GetResult();
+        return tcs.Task;
     }
 
     public IReadOnlyList<string> GetStatusTypes() => Dispatch(r => r.GetStatusTypes());
@@ -190,6 +200,39 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
 
     public EaDiagramSummary? GetDiagramSummary(int diagramId) =>
         Dispatch(r => r.GetDiagramSummary(diagramId));
+
+    // Real async overrides — these are what WikiWritebackServer's endpoints call. Everything else
+    // (WriteBackScanner, tests) can stay on the sync API and eat the block on GetResult; only the
+    // HTTP request path benefits from freeing its ASP.NET thread while the STA hop runs.
+    public Task<IReadOnlyList<string>> GetStatusTypesAsync(CancellationToken ct = default) =>
+        DispatchAsync(r => r.GetStatusTypes());
+
+    public Task<EaElementSummary?> GetElementSummaryAsync(int elementId, CancellationToken ct = default) =>
+        DispatchAsync(r => r.GetElementSummary(elementId));
+
+    public Task<EaDiagramSummary?> GetDiagramSummaryAsync(int diagramId, CancellationToken ct = default) =>
+        DispatchAsync(r => r.GetDiagramSummary(diagramId));
+
+    public Task UpdateElementStatusAsync(int elementId, string newStatus, CancellationToken ct = default) =>
+        DispatchVoidAsync(r => r.UpdateElementStatus(elementId, newStatus));
+
+    public Task UpdateElementNotesAsync(int elementId, string newNotesHtml, CancellationToken ct = default) =>
+        DispatchVoidAsync(r => r.UpdateElementNotes(elementId, newNotesHtml));
+
+    public Task UpdateDiagramNotesAsync(int diagramId, string newNotesHtml, CancellationToken ct = default) =>
+        DispatchVoidAsync(r => r.UpdateDiagramNotes(diagramId, newNotesHtml));
+
+    public Task UpdateAttributeNotesAsync(int elementId, string attributeName, string attributeType, string newNotesHtml, CancellationToken ct = default) =>
+        DispatchVoidAsync(r => r.UpdateAttributeNotes(elementId, attributeName, attributeType, newNotesHtml));
+
+    public Task UpdateMethodNotesAsync(int elementId, string methodName, string returnType, bool isStatic, string newNotesHtml, CancellationToken ct = default) =>
+        DispatchVoidAsync(r => r.UpdateMethodNotes(elementId, methodName, returnType, isStatic, newNotesHtml));
+
+    public Task UpdateTaggedValueNotesAsync(int elementId, string tagName, string tagValue, string newNotesHtml, CancellationToken ct = default) =>
+        DispatchVoidAsync(r => r.UpdateTaggedValueNotes(elementId, tagName, tagValue, newNotesHtml));
+
+    public Task UpdatePackageNotesAsync(int packageId, string newNotesHtml, CancellationToken ct = default) =>
+        DispatchVoidAsync(r => r.UpdatePackageNotes(packageId, newNotesHtml));
 
     public void Dispose()
     {
