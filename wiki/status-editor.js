@@ -48,6 +48,7 @@
     }
 
     function enterEditMode() {
+      if (!document.body.classList.contains('ea-api-ready')) return;
       select = document.createElement('select');
       select.className = 'ea-status-select';
       options.forEach(function (opt) {

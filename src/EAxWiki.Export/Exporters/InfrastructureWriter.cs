@@ -509,6 +509,7 @@ if (typeof document$ !== 'undefined') {
     }
 
     function enterEditMode() {
+      if (!document.body.classList.contains('ea-api-ready')) return;
       select = document.createElement('select');
       select.className = 'ea-status-select';
       options.forEach(function (opt) {
@@ -672,6 +673,7 @@ if (typeof document$ !== 'undefined') {
     var textarea, controls, saveBtn, cancelBtn, suggestBtn, msg;
 
     function enterEditMode() {
+      if (!document.body.classList.contains('ea-api-ready')) return;
       var isPlaceholder = !!contentDiv.querySelector('.ea-notes-placeholder');
 
       textarea = document.createElement('textarea');
@@ -917,6 +919,7 @@ if (typeof document$ !== 'undefined') {
   }
 
   function openEditor(btn) {
+    if (!document.body.classList.contains('ea-api-ready')) return;
     var rowId = btn.dataset.rowId;
     if (currentOpen && currentOpen.rowId === rowId) { closeCurrent(); return; }
     closeCurrent();
@@ -1085,6 +1088,67 @@ window.EAxIcons = {
 };
 """;
         await writer.WriteFileAsync(Path.Combine(outputDir, "ea-icons.js"), js, ct);
+    }
+
+    public async Task WriteApiProbeScriptAsync(string outputDir, CancellationToken ct = default)
+    {
+        const string js = """
+(function () {
+  'use strict';
+
+  function findWidget() {
+    return document.getElementById('ea-status-editor')
+        || document.getElementById('ea-notes-editor')
+        || document.querySelector('.ea-row-notes-edit-btn');
+  }
+
+  function applyState(reason) {
+    var ready = reason === null;
+    document.body.classList.toggle('ea-api-ready', ready);
+    document.body.classList.toggle('ea-api-unavailable', !ready);
+    if (!ready) document.body.setAttribute('data-ea-reason', reason);
+    else document.body.removeAttribute('data-ea-reason');
+
+    var title = ready ? 'Edit'
+      : reason === 'no-ea'
+        ? 'Read-only: API is up but cannot reach the EA model. Check the EA repository connection.'
+        : 'Read-only: EAxWiki API not reachable. Start EAxWiki --api to enable editing.';
+    document.querySelectorAll('.ea-status-edit-btn, .ea-notes-edit-btn, .ea-row-notes-edit-btn')
+      .forEach(function (btn) { btn.setAttribute('title', title); });
+
+    document.dispatchEvent(new CustomEvent('ea-api-status', { detail: { ready: ready, reason: reason } }));
+  }
+
+  function probe() {
+    var widget = findWidget();
+    if (!widget) return;
+    var port = widget.dataset.apiPort || '8001';
+    var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + port;
+
+    var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timer = setTimeout(function () { if (controller) controller.abort(); }, 2500);
+
+    fetch(apiBase + '/readyz', { signal: controller ? controller.signal : undefined })
+      .then(function (r) {
+        clearTimeout(timer);
+        if (r.ok) { applyState(null); return; }
+        if (r.status === 503) { applyState('no-ea'); return; }
+        applyState('no-api');
+      })
+      .catch(function () {
+        clearTimeout(timer);
+        applyState('no-api');
+      });
+  }
+
+  if (typeof document$ !== 'undefined') {
+    document$.subscribe(function () { probe(); });
+  } else {
+    document.addEventListener('DOMContentLoaded', probe);
+  }
+})();
+""";
+        await writer.WriteFileAsync(Path.Combine(outputDir, "api-probe.js"), js, ct);
     }
 
     public async Task WriteExtraCssAsync(string outputDir, CancellationToken ct = default)

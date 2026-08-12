@@ -100,6 +100,7 @@ public class MarkdownExporter : IWikiExporter
                 infrastructure.WriteBrandAssetsAsync(outputPath, brand, cancellationToken),
                 infrastructure.WriteGraphScriptsAsync(outputPath, brand, cancellationToken),
                 infrastructure.WriteIconsScriptAsync(outputPath, cancellationToken),
+                infrastructure.WriteApiProbeScriptAsync(outputPath, cancellationToken),
                 infrastructure.WriteStatusEditorScriptAsync(outputPath, cancellationToken),
                 infrastructure.WriteNotesEditorScriptAsync(outputPath, cancellationToken),
                 infrastructure.WriteRowNotesEditorScriptAsync(outputPath, cancellationToken),

@@ -110,6 +110,33 @@ public class ScriptTemplateIntegrityTests
     }
 
     [Fact]
+    public async Task ApiProbeScript_IsEmitted()
+    {
+        var (writer, outPath) = await RunExportAsync();
+        var content = ReadExportedFile(writer, outPath, "api-probe.js");
+        AssertContainsAll(content, "/readyz", "ea-api-ready", "ea-api-unavailable", "no-ea", "no-api", "ea-api-status");
+    }
+
+    [Fact]
+    public async Task Editors_GateOnEaApiReady()
+    {
+        var (writer, outPath) = await RunExportAsync();
+        foreach (var file in new[] { "status-editor.js", "notes-editor.js", "row-notes-editor.js" })
+        {
+            var content = ReadExportedFile(writer, outPath, file);
+            Assert.Contains("ea-api-ready", content);
+        }
+    }
+
+    [Fact]
+    public async Task ExtraCss_GatesEditButtonsOnEaApiReady()
+    {
+        var (writer, outPath) = await RunExportAsync();
+        var content = ReadExportedFile(writer, outPath, "extra.css");
+        AssertContainsAll(content, "body.ea-api-ready", ".ea-status-edit-btn", ".ea-notes-edit-btn", ".ea-row-notes-edit-btn");
+    }
+
+    [Fact]
     public async Task AiSuggestJs_IsNotEmitted()
     {
         var (writer, outPath) = await RunExportAsync();
