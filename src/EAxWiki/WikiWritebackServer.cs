@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.RateLimiting;
+using EAxWiki.Core.Interfaces;
 using EAxWiki.Core.Models;
 using EAxWiki.EA;
 using EAxWiki.Export.Helpers;
@@ -225,6 +226,52 @@ internal static class WikiWritebackServer
             }
         });
 
+        var app = builder.Build();
+
+        Configure(app, reader, config, outputPath, logger);
+
+        var port = config.ApiPort > 0 ? config.ApiPort : 8001;
+        var wikiPort = config.WikiPort > 0 ? config.WikiPort : 8000;
+        logger.LogInformation("Wiki write-back server listening on port {Port}", port);
+        logger.LogInformation("Accepting requests only from origins on port {WikiPort} (pass --wiki-port to override)", wikiPort);
+        logger.LogInformation("Press Ctrl+C to stop.");
+
+        // Signal readiness to the monitor by writing a "ready" file in the status dir.
+        var readyDir = Path.Combine(outputPath, "status");
+        Directory.CreateDirectory(readyDir);
+        var readyFile = Path.Combine(readyDir, "api-ready");
+        app.Lifetime.ApplicationStarted.Register(() =>
+        {
+            File.WriteAllText(readyFile, $"{Environment.ProcessId}");
+        });
+        app.Lifetime.ApplicationStopping.Register(() =>
+        {
+            logger.LogInformation("API server shutting down; closing EA repository.");
+            reader.Dispose();
+        });
+
+        // Bind both IPv4 and IPv6 so browsers resolving localhost to either
+        // 127.0.0.1 or ::1 can reach the server.
+        var scheme = string.IsNullOrEmpty(config.CertPath) ? "http" : "https";
+        app.Urls.Add($"{scheme}://0.0.0.0:{port}");
+        app.Urls.Add($"{scheme}://[::]:{port}");
+        try
+        {
+            await app.RunAsync();
+        }
+        finally
+        {
+            if (File.Exists(readyFile)) File.Delete(readyFile);
+            reader.Dispose();
+        }
+    }
+
+    // Extracted from RunAsync so tests can spin up a TestServer with a FakeEaReader and hit
+    // the real middleware + endpoint pipeline. RunAsync stays responsible for bootstrapping the
+    // production Kestrel + STA dispatcher + ready-file lifetime hooks. Also runs the initial EA
+    // health probe on startup and installs the CORS/token/rate-limit middleware.
+    internal static void Configure(WebApplication app, IEaReader reader, Config config, string outputPath, ILogger logger)
+    {
         try
         {
             var statusTypes = reader.GetStatusTypes();
@@ -264,7 +311,6 @@ internal static class WikiWritebackServer
             finally { readyProbeGate.Release(); }
         }
 
-        var app = builder.Build();
 
         app.MapGet("/healthz", () => Results.Ok(new { status = "healthy", ea = reader.IsHealthy }));
         app.MapGet("/readyz", async () =>
@@ -702,39 +748,5 @@ internal static class WikiWritebackServer
             });
             return Results.Ok(new { success = true, message = "Shutting down." });
         });
-
-        var port = config.ApiPort > 0 ? config.ApiPort : 8001;
-        logger.LogInformation("Wiki write-back server listening on port {Port}", port);
-        logger.LogInformation("Accepting requests only from origins on port {WikiPort} (pass --wiki-port to override)", wikiPort);
-        logger.LogInformation("Press Ctrl+C to stop.");
-
-        // Signal readiness to the monitor by writing a "ready" file in the status dir.
-        var readyDir = Path.Combine(outputPath, "status");
-        Directory.CreateDirectory(readyDir);
-        var readyFile = Path.Combine(readyDir, "api-ready");
-        app.Lifetime.ApplicationStarted.Register(() =>
-        {
-            File.WriteAllText(readyFile, $"{Environment.ProcessId}");
-        });
-        app.Lifetime.ApplicationStopping.Register(() =>
-        {
-            logger.LogInformation("API server shutting down; closing EA repository.");
-            reader.Dispose();
-        });
-
-        // Bind both IPv4 and IPv6 so browsers resolving localhost to either
-        // 127.0.0.1 or ::1 can reach the server.
-        var scheme = string.IsNullOrEmpty(config.CertPath) ? "http" : "https";
-        app.Urls.Add($"{scheme}://0.0.0.0:{port}");
-        app.Urls.Add($"{scheme}://[::]:{port}");
-        try
-        {
-            await app.RunAsync();
-        }
-        finally
-        {
-            if (File.Exists(readyFile)) File.Delete(readyFile);
-            reader.Dispose();
-        }
     }
-}
+    }

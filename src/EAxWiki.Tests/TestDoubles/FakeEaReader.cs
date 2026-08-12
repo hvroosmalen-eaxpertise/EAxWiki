@@ -5,6 +5,9 @@ namespace EAxWiki.Tests.TestDoubles;
 
 public class FakeEaReader : IEaReader
 {
+    public bool IsHealthySignal { get; set; } = true;
+    public bool IsHealthy => IsHealthySignal;
+
     public List<(int Id, string Status)> StatusUpdates { get; } = [];
     public List<(int Id, string Notes)> ElementNotesUpdates { get; } = [];
     public List<(int Id, string Notes)> DiagramNotesUpdates { get; } = [];
