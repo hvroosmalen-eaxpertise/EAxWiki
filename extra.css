@@ -404,3 +404,19 @@ tr.ea-row-edit td {
   gap: 0.5em;
   margin-top: 0.4em;
 }
+
+/* Edit-button availability gate (issue #83) — buttons render disabled-looking by
+   default so there's no enabled→disabled flash; api-probe.js toggles body.ea-api-ready
+   once GET /readyz confirms both the API and the EA COM connection are up. */
+.ea-status-edit-btn,
+.ea-notes-edit-btn,
+.ea-row-notes-edit-btn {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+body.ea-api-ready .ea-status-edit-btn,
+body.ea-api-ready .ea-notes-edit-btn,
+body.ea-api-ready .ea-row-notes-edit-btn {
+  opacity: 1;
+  cursor: pointer;
+}

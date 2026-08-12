@@ -45,6 +45,7 @@
   }
 
   function openEditor(btn) {
+    if (!document.body.classList.contains('ea-api-ready')) return;
     var rowId = btn.dataset.rowId;
     if (currentOpen && currentOpen.rowId === rowId) { closeCurrent(); return; }
     closeCurrent();

@@ -41,6 +41,7 @@
     var textarea, controls, saveBtn, cancelBtn, suggestBtn, msg;
 
     function enterEditMode() {
+      if (!document.body.classList.contains('ea-api-ready')) return;
       var isPlaceholder = !!contentDiv.querySelector('.ea-notes-placeholder');
 
       textarea = document.createElement('textarea');
