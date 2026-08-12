@@ -65,7 +65,9 @@ public static class FrontmatterParser
     /// </summary>
     public static void UpdateStatus(string filePath, string newStatus)
     {
-        var lines = File.ReadAllLines(filePath).ToList();
+        var original = File.ReadAllText(filePath);
+        var usesCrlf = original.Contains("\r\n");
+        var lines = original.Replace("\r\n", "\n").Split('\n').ToList();
         if (lines.Count < 2 || lines[0].Trim() != "---") return;
 
         int end = -1;
@@ -89,29 +91,34 @@ public static class FrontmatterParser
         }
 
         // 2. Update page body: status badge and widget data-status attribute
-        var badgePattern  = new Regex(@"class=""status-badge status-[^""]*"">[^<]*</span>");
-        var widgetPattern = new Regex(@"data-status=""[^""]*""");
         var newClass = $"status-{newStatus.ToLowerInvariant()}";
 
         for (int i = end + 1; i < lines.Count; i++)
         {
             if (lines[i].Contains("status-badge"))
-                lines[i] = badgePattern.Replace(lines[i],
+                lines[i] = StatusBadgePattern.Replace(lines[i],
                     $"class=\"status-badge {newClass}\">{newStatus}</span>");
 
             if (lines[i].Contains("id=\"ea-status-editor\""))
-                lines[i] = widgetPattern.Replace(lines[i],
+                lines[i] = StatusWidgetPattern.Replace(lines[i],
                     $"data-status=\"{newStatus}\"");
 
             if (lines[i].Contains("**Modified:**"))
                 lines[i] = PatchModifiedDate(lines[i]);
         }
 
-        // 3. Atomic write — swap via temp file so MkDocs never sees a partial file
+        // 3. Atomic write — swap via temp file so MkDocs never sees a partial file.
+        // Preserve the file's original EOL (matches UpdateNotes/UpdateRowNotes/UpdatePackageNotes)
+        // so a status write-back on Linux doesn't silently rewrite CRLF→LF for the whole page.
+        var text = string.Join("\n", lines);
+        if (usesCrlf) text = text.Replace("\n", "\r\n");
         var tmp = filePath + ".tmp";
-        File.WriteAllLines(tmp, lines);
+        File.WriteAllText(tmp, text);
         File.Move(tmp, filePath, overwrite: true);
     }
+
+    private static readonly Regex StatusBadgePattern = new(@"class=""status-badge status-[^""]*"">[^<]*</span>", RegexOptions.Compiled);
+    private static readonly Regex StatusWidgetPattern = new(@"data-status=""[^""]*""", RegexOptions.Compiled);
 
     private static readonly Regex ModifiedDatePattern = new(@"(\*\*Modified:\*\*\s*)\d{4}-\d{2}-\d{2}", RegexOptions.Compiled);
 

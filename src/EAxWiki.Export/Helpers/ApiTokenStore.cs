@@ -22,7 +22,7 @@ public static class ApiTokenStore
             var existing = File.ReadAllText(path).Trim();
             if (existing.Length > 0)
             {
-                logger?.LogInformation("Token: read from {Path} ({Token})", path, existing);
+                logger?.LogInformation("Token: read from {Path} ({Token})", path, Redact(existing));
                 return existing;
             }
         }
@@ -30,7 +30,12 @@ public static class ApiTokenStore
         Directory.CreateDirectory(outputPath);
         var token = Convert.ToHexString(RandomNumberGenerator.GetBytes(24)).ToLowerInvariant();
         File.WriteAllText(path, token);
-        logger?.LogInformation("Token: created at {Path} ({Status}) Value={Token}", path, exists ? "overwritten (was empty)" : "new file", token);
+        logger?.LogInformation("Token: created at {Path} ({Status}) Value={Token}", path, exists ? "overwritten (was empty)" : "new file", Redact(token));
         return token;
     }
+
+    // Log-safe fingerprint — first 4 + last 4 of the hex token. Full token in log or 401 body
+    // would defeat the point of the FixedTimeEquals compare on the request path.
+    private static string Redact(string token) =>
+        token.Length <= 8 ? "…" : $"{token[..4]}…{token[^4..]}";
 }

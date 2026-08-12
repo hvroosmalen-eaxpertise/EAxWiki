@@ -194,6 +194,10 @@ internal static class WikiWritebackServer
     private record LlmChatChoice(LlmChatMessage message);
     private record LlmChatResponse(LlmChatChoice[]? choices);
 
+    // Shared client to avoid socket exhaustion. Timeout is the ceiling for a single AI request;
+    // per-request cancellation still flows via HttpContext.RequestAborted.
+    private static readonly HttpClient AiHttpClient = new() { Timeout = TimeSpan.FromSeconds(300) };
+
     public static async Task RunAsync(Config config, string outputPath, ILoggerFactory loggerFactory)
     {
         var logger = loggerFactory.CreateLogger("WikiWritebackServer");
@@ -284,7 +288,7 @@ internal static class WikiWritebackServer
                 if (!CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(provided), Encoding.UTF8.GetBytes(expectedToken)))
                 {
                     context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                    await context.Response.WriteAsJsonAsync(new { success = false, message = "Missing or invalid API token.", expected = expectedToken, provided });
+                    await context.Response.WriteAsJsonAsync(new { success = false, message = "Missing or invalid API token." });
                     return;
                 }
             }
@@ -531,7 +535,6 @@ internal static class WikiWritebackServer
 
                 var prompt = BuildSuggestPrompt(summary);
 
-                using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(300) };
                 var llmBody = new
                 {
                     model = config.AiModel,
@@ -552,7 +555,7 @@ internal static class WikiWritebackServer
                 if (!string.IsNullOrEmpty(config.AiKey))
                     request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", config.AiKey);
 
-                var response = await httpClient.SendAsync(request, context.RequestAborted);
+                var response = await AiHttpClient.SendAsync(request, context.RequestAborted);
                 if (!response.IsSuccessStatusCode)
                 {
                     var errorBody = await response.Content.ReadAsStringAsync();
@@ -598,7 +601,6 @@ internal static class WikiWritebackServer
 
                 var prompt = BuildDiagramSuggestPrompt(summary);
 
-                using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(300) };
                 var llmBody = new
                 {
                     model = config.AiModel,
@@ -619,7 +621,7 @@ internal static class WikiWritebackServer
                 if (!string.IsNullOrEmpty(config.AiKey))
                     request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", config.AiKey);
 
-                var response = await httpClient.SendAsync(request, context.RequestAborted);
+                var response = await AiHttpClient.SendAsync(request, context.RequestAborted);
                 if (!response.IsSuccessStatusCode)
                 {
                     var errorBody = await response.Content.ReadAsStringAsync();

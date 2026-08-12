@@ -60,7 +60,7 @@ internal static class ModelMapper
             Notes = eaElement.Notes,
             PackageId = eaElement.PackageID,
             Status = eaElement.Status ?? string.Empty,
-            ModifiedDate = (DateTime)eaElement.Modified,
+            ModifiedDate = eaElement.Modified as DateTime? ?? DateTime.MinValue,
             CreatedDate = eaElement.Created as DateTime?
         };
 

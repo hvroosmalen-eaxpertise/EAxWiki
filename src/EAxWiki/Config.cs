@@ -74,12 +74,12 @@ public class Config
                 case "--api-port":
                     if (i + 1 >= args.Length)
                         throw new ArgumentException($"Option {args[i]} requires a value");
-                    ApiPort = int.Parse(args[++i]);
+                    ApiPort = ParsePort(args[i], args[++i]);
                     break;
                 case "--wiki-port":
                     if (i + 1 >= args.Length)
                         throw new ArgumentException($"Option {args[i]} requires a value");
-                    WikiPort = int.Parse(args[++i]);
+                    WikiPort = ParsePort(args[i], args[++i]);
                     break;
                 case "--cert":
                     if (i + 1 >= args.Length)
@@ -118,5 +118,12 @@ public class Config
                     break;
             }
         }
+    }
+
+    private static int ParsePort(string flag, string value)
+    {
+        if (!int.TryParse(value, out var port) || port < 1 || port > 65535)
+            throw new ArgumentException($"Option {flag} requires an integer port in 1-65535 (got '{value}').");
+        return port;
     }
 }
