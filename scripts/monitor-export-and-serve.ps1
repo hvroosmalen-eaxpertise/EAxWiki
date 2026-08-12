@@ -123,22 +123,24 @@ function Get-MonitorArgs {
     }
 }
 
-function Send-TelegramMessage {
-    # Issue #80: Telegram Bot API dispatch. Standalone (no dependency on the script's top-level
-    # variables) so Pester can exercise it even when the monitor body is skipped by the
-    # dot-source run-guard. Token goes in the URL (standard Telegram pattern); chat_id is a
-    # *string* because group/supergroup IDs are negative numbers (-100...) and must survive
-    # JSON round-tripping.
-    param(
-        [string]$BotToken,
-        [string]$ChatId,
-        [string]$Message,
-        [string]$Kind,
-        [string]$InstanceLabel
-    )
-    if (-not $BotToken -or -not $ChatId) { return $null }
+function ConvertTo-HtmlEscaped {
+    param([string]$Text)
+    if ($null -eq $Text) { return "" }
+    return (($Text -replace '&', '&amp;') -replace '<', '&lt;') -replace '>', '&gt;'
+}
 
-    $tgEmoji = switch ($Kind) {
+function Format-TelegramAlertText {
+    # Issue #80 follow-up: Telegram parity with Slack. Renders the same emoji/title Slack shows
+    # in pretext, plus an explicit footer + timestamp line (Slack does this via `footer` + `ts`
+    # automatically, Telegram has no equivalent chrome). HTML mode is used because Markdown v1
+    # silently drops content on any unmatched `*` or `_` in the message body.
+    param(
+        [string]$Kind,
+        [string]$InstanceLabel,
+        [string]$Message,
+        [datetime]$Timestamp = (Get-Date)
+    )
+    $emoji = switch ($Kind) {
         'Start'         { '🔄' }
         'Finish'        { '🟢' }
         'Failure'       { '🔴' }
@@ -154,12 +156,57 @@ function Send-TelegramMessage {
         'UserStop'      { '✋' }
         default         { '🔵' }
     }
-    $text = "{0} *EAxWiki [{1}]* - {2}`n{3}" -f $tgEmoji, $Kind, $InstanceLabel, $Message
+
+    $labelHtml = ConvertTo-HtmlEscaped $InstanceLabel
+    $kindHtml  = ConvertTo-HtmlEscaped $Kind
+    $stamp     = $Timestamp.ToString('yyyy-MM-dd HH:mm:ss zzz')
+
+    # Convert ```...``` fenced blocks to <pre>...</pre>, HTML-escaping the inner content.
+    # Only the failure body uses fences today; anything else passes through the plain escaper.
+    # Two-pass: first swap fences to placeholders so the second pass can escape everything else
+    # without double-escaping the pre-block contents.
+    $preBlocks = New-Object System.Collections.Generic.List[string]
+    $withPlaceholders = [regex]::Replace($Message, '(?s)```(.*?)```', {
+        param($m)
+        $preBlocks.Add('<pre>' + (ConvertTo-HtmlEscaped $m.Groups[1].Value) + '</pre>')
+        "`u{FFFD}PRE$($preBlocks.Count - 1)`u{FFFD}"
+    })
+    $escaped = ConvertTo-HtmlEscaped $withPlaceholders
+    $bodyHtml = [regex]::Replace($escaped, "`u{FFFD}PRE(\d+)`u{FFFD}", {
+        param($m)
+        $preBlocks[[int]$m.Groups[1].Value]
+    })
+
+    $composed = "{0} <b>EAxWiki [{1}]</b> — {2}`n{3}`n`n<i>{2} • {4}</i>" -f `
+        $emoji, $kindHtml, $labelHtml, $bodyHtml, $stamp
+
+    if ($composed.Length -gt 4000) {
+        $composed = $composed.Substring(0, 4000) + "`n... (truncated)"
+    }
+    return $composed
+}
+
+function Send-TelegramMessage {
+    # Issue #80: Telegram Bot API dispatch. Standalone (no dependency on the script's top-level
+    # variables) so Pester can exercise it even when the monitor body is skipped by the
+    # dot-source run-guard. Token goes in the URL (standard Telegram pattern); chat_id is a
+    # *string* because group/supergroup IDs are negative numbers (-100...) and must survive
+    # JSON round-tripping.
+    param(
+        [string]$BotToken,
+        [string]$ChatId,
+        [string]$Message,
+        [string]$Kind,
+        [string]$InstanceLabel
+    )
+    if (-not $BotToken -or -not $ChatId) { return $null }
+
+    $text = Format-TelegramAlertText -Kind $Kind -InstanceLabel $InstanceLabel -Message $Message
     $uri = "https://api.telegram.org/bot{0}/sendMessage" -f $BotToken
     $body = @{
         chat_id    = [string]$ChatId
         text       = $text
-        parse_mode = 'Markdown'
+        parse_mode = 'HTML'
     }
 
     $attempts = 0

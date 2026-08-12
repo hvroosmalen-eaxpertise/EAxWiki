@@ -74,11 +74,28 @@ This resolves each channel the same way a real scheduled run does and posts a bl
 
 A transient failure that succeeds on retry within the same pass does **not** alert — only the final outcome of a pass does. If multiple channels are configured, every alert goes to all of them; one channel failing doesn't block the others.
 
+## Message format
+
+Alerts are sent with `parse_mode: "HTML"` (Telegram's most robust dialect — smaller escape set than Markdown, no silent drops on stray `*` / `_` characters in element names or log lines). Each message is composed of three parts:
+
+```
+{emoji} <b>EAxWiki [{Kind}]</b> — {instance-label}
+{message body, with failure output rendered in <pre>...</pre> blocks}
+
+<i>{instance-label} • {yyyy-MM-dd HH:mm:ss zzz}</i>
+```
+
+The footer (instance label + local timestamp) is added explicitly because Telegram, unlike Slack, has no automatic `footer`/`ts` chrome. The instance label repeats there so multi-instance chats stay disambiguable when the header scrolls off screen.
+
+`<`, `>`, and `&` in the message body are HTML-escaped, so an element name containing angle brackets (e.g. `<Interface>`) renders as literal text, not markup. If Telegram still rejects the message with HTTP 400, EAxWiki retries once with `parse_mode` omitted — the message body then arrives as plain text.
+
+Messages are truncated at 4000 characters (with `... (truncated)` appended) to stay under Telegram's 4096-character `sendMessage` cap. Real EAxWiki alerts are normally well under this.
+
 ## Security
 
 - **Keep your bot token secret** — do not commit `.eaxwiki` to git (it's gitignored).
 - The token and chat ID are encrypted at rest in `.eaxwiki` using Windows DPAPI (your user account only).
-- Telegram markdown in the message body is stripped on a one-shot plain-text fallback if the Bot API rejects it (HTTP 400).
+- Telegram HTML formatting in the message body is stripped on a one-shot plain-text fallback if the Bot API rejects it (HTTP 400).
 - If you suspect the token was exposed, message **@BotFather** and use `/revoke` to invalidate it, then repeat Steps 1-4.
 
 ## Troubleshooting
@@ -87,9 +104,9 @@ A transient failure that succeeds on retry within the same pass does **not** ale
 
 **"chat not found"?** The bot was never added to the destination chat, or the chat ID is stale (IDs change when a private chat's bot history is cleared). Repeat Steps 2-3.
 
-**Message too long?** Telegram limits text to 4096 characters. EAxWiki alert messages are normally far shorter.
+**Message too long?** Telegram limits text to 4096 characters. EAxWiki truncates the composed message at 4000 chars (appending `... (truncated)`), so this should not surface — real alerts are normally far shorter.
 
-**Markdown fallback triggered?** A literal `*`, `_`, or `` ` `` in the alert text can break Telegram Markdown. EAxWiki retries the message once as plain text, so you should still receive it.
+**HTML fallback triggered?** An unusual byte sequence in the alert text can occasionally make Telegram reject the HTML payload with HTTP 400. EAxWiki retries the message once as plain text, so you should still receive it — just without the bold header / italic footer / `<pre>` code blocks.
 
 ## Also Sending to Slack/Teams
 

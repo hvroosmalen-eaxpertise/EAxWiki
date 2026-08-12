@@ -173,9 +173,10 @@ Describe 'Send-TelegramMessage' {
         $global:tgUri | Should -Be 'https://api.telegram.org/bot123456:ABC/sendMessage'
         $json = $global:tgBody | ConvertFrom-Json
         $json.chat_id | Should -Be '-1001234567890'
-        $json.text | Should -Match '🔴 \*EAxWiki \[Failure\]\* - PC1 - wiki'
+        $json.text | Should -Match '🔴 <b>EAxWiki \[Failure\]</b> — PC1 - wiki'
         $json.text | Should -Match 'export failed'
-        $json.parse_mode | Should -Be 'Markdown'
+        $json.text | Should -Match '<i>PC1 - wiki • '
+        $json.parse_mode | Should -Be 'HTML'
     }
 
     It 'retries once without parse_mode when Telegram rejects Markdown (400)' {
@@ -195,6 +196,60 @@ Describe 'Send-TelegramMessage' {
         $script:tgCalls | Should -Be 2
         $script:tgFallbackBody | Should -Not -Match 'parse_mode'
         $ok | Should -BeTrue
+    }
+}
+
+Describe 'Format-TelegramAlertText' {
+    # Issue #80 follow-up: parity with Slack. HTML parse_mode + explicit footer/timestamp line.
+    # Fixed timestamp so exact-text assertions are deterministic.
+    BeforeAll {
+        $script:tgTs = [datetime]'2026-08-12T14:05:30+02:00'
+        $script:tgTsFormatted = $script:tgTs.ToString('yyyy-MM-dd HH:mm:ss zzz')
+    }
+
+    It 'header uses <b> and en-dash separator with the Test emoji' {
+        $t = Format-TelegramAlertText -Kind Test -InstanceLabel 'host - C:\wiki' -Message 'body' -Timestamp $script:tgTs
+        $t | Should -Match '^🔵 <b>EAxWiki \[Test\]</b> — host - C:\\wiki'
+    }
+
+    It 'footer line uses italic tags with bullet separator and formatted timestamp' {
+        $t = Format-TelegramAlertText -Kind Test -InstanceLabel 'host - wiki' -Message 'body' -Timestamp $script:tgTs
+        $t | Should -Match ([regex]::Escape("<i>host - wiki • $script:tgTsFormatted</i>") + '$')
+    }
+
+    It 'HTML-escapes angle brackets and ampersands in the message body' {
+        $t = Format-TelegramAlertText -Kind Test -InstanceLabel 'l' -Message '<script>&amp;' -Timestamp $script:tgTs
+        $t | Should -Match '&lt;script&gt;&amp;amp;'
+        $t | Should -Not -Match '<script>'
+    }
+
+    It 'converts triple-backtick fenced blocks to <pre> with inner escaping' {
+        $msg = "Header line`n``````" + "`nline<one>`nline&two`n" + '```'
+        $t = Format-TelegramAlertText -Kind Failure -InstanceLabel 'l' -Message $msg -Timestamp $script:tgTs
+        $t | Should -Match '<pre>'
+        $t | Should -Match '</pre>'
+        $t | Should -Match 'line&lt;one&gt;'
+        $t | Should -Match 'line&amp;two'
+        $t | Should -Not -Match '```'
+    }
+
+    It 'escapes ampersand in the instance label in both header and footer' {
+        $t = Format-TelegramAlertText -Kind Test -InstanceLabel 'A&B - wiki' -Message 'body' -Timestamp $script:tgTs
+        $t | Should -Match '<b>EAxWiki \[Test\]</b> — A&amp;B - wiki'
+        $t | Should -Match '<i>A&amp;B - wiki •'
+    }
+
+    It 'truncates payloads over 4000 chars with a "... (truncated)" suffix' {
+        $long = 'x' * 5000
+        $t = Format-TelegramAlertText -Kind Test -InstanceLabel 'l' -Message $long -Timestamp $script:tgTs
+        $t.Length | Should -BeLessOrEqual 4096
+        $t | Should -Match '\n\.\.\. \(truncated\)$'
+    }
+
+    It 'uses 🔴 for Failure, 📊 for DailyDigest, ✋ for UserStop' {
+        (Format-TelegramAlertText -Kind Failure     -InstanceLabel 'l' -Message '.' -Timestamp $script:tgTs) | Should -Match '^🔴 '
+        (Format-TelegramAlertText -Kind DailyDigest -InstanceLabel 'l' -Message '.' -Timestamp $script:tgTs) | Should -Match '^📊 '
+        (Format-TelegramAlertText -Kind UserStop    -InstanceLabel 'l' -Message '.' -Timestamp $script:tgTs) | Should -Match '^✋ '
     }
 }
 

@@ -12,8 +12,9 @@
         $global:tgUri | Should -Be 'https://api.telegram.org/bot123456:ABC/sendMessage'
         $json = $global:tgBody | ConvertFrom-Json
         $json.chat_id | Should -Be '-1001234567890'
-        $json.text | Should -Match '✋ \*EAxWiki \[UserStop\]\*'
-        $json.text | Should -Match 'Export stopped by user.'
-        $json.parse_mode | Should -Be 'Markdown'
+        $json.text | Should -Match '✋ <b>EAxWiki \[UserStop\]</b>'
+        $json.text | Should -Match 'Export stopped by user\.'
+        $json.text | Should -Match '<i>.+ • '
+        $json.parse_mode | Should -Be 'HTML'
     }
 }

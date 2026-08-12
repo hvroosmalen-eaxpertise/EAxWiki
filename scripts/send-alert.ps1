@@ -7,6 +7,59 @@
     [string]$Kind = "Test"
 )
 
+# Kept in sync with monitor-export-and-serve.ps1:ConvertTo-HtmlEscaped (issue #80 parity work).
+function ConvertTo-HtmlEscaped {
+    param([string]$Text)
+    if ($null -eq $Text) { return "" }
+    return (($Text -replace '&', '&amp;') -replace '<', '&lt;') -replace '>', '&gt;'
+}
+
+# Kept in sync with monitor-export-and-serve.ps1:Format-TelegramAlertText (issue #80 parity work).
+function Format-TelegramAlertText {
+    param(
+        [string]$Kind,
+        [string]$InstanceLabel,
+        [string]$Message,
+        [datetime]$Timestamp = (Get-Date)
+    )
+    $emoji = switch ($Kind) {
+        'Start'         { '🔄' }
+        'Finish'        { '🟢' }
+        'Failure'       { '🔴' }
+        'ServeFailure'  { '🔴' }
+        'LlmFailure'    { '🔴' }
+        'ApiFailure'    { '🔴' }
+        'Recovery'      { '🟢' }
+        'ServeRecovery' { '🟢' }
+        'LlmRecovery'   { '🟢' }
+        'ApiRecovery'   { '🟢' }
+        'Test'          { '🔵' }
+        'DailyDigest'   { '📊' }
+        'UserStop'      { '✋' }
+        default         { '🔵' }
+    }
+    $labelHtml = ConvertTo-HtmlEscaped $InstanceLabel
+    $kindHtml  = ConvertTo-HtmlEscaped $Kind
+    $stamp     = $Timestamp.ToString('yyyy-MM-dd HH:mm:ss zzz')
+    $preBlocks = New-Object System.Collections.Generic.List[string]
+    $withPlaceholders = [regex]::Replace($Message, '(?s)```(.*?)```', {
+        param($m)
+        $preBlocks.Add('<pre>' + (ConvertTo-HtmlEscaped $m.Groups[1].Value) + '</pre>')
+        "`u{FFFD}PRE$($preBlocks.Count - 1)`u{FFFD}"
+    })
+    $escaped = ConvertTo-HtmlEscaped $withPlaceholders
+    $bodyHtml = [regex]::Replace($escaped, "`u{FFFD}PRE(\d+)`u{FFFD}", {
+        param($m)
+        $preBlocks[[int]$m.Groups[1].Value]
+    })
+    $composed = "{0} <b>EAxWiki [{1}]</b> — {2}`n{3}`n`n<i>{2} • {4}</i>" -f `
+        $emoji, $kindHtml, $labelHtml, $bodyHtml, $stamp
+    if ($composed.Length -gt 4000) {
+        $composed = $composed.Substring(0, 4000) + "`n... (truncated)"
+    }
+    return $composed
+}
+
 $instanceLabel = "$env:COMPUTERNAME - SchedulerUI"
 
 $color = switch ($Kind) {
@@ -77,28 +130,12 @@ if ($TeamsWebhookUrl) {
 }
 
 if ($TelegramBotToken -and $TelegramChatId) {
-    $tgEmoji = switch ($Kind) {
-        'Start'         { '🔄' }
-        'Finish'        { '🟢' }
-        'Failure'       { '🔴' }
-        'ServeFailure'  { '🔴' }
-        'LlmFailure'    { '🔴' }
-        'ApiFailure'    { '🔴' }
-        'Recovery'      { '🟢' }
-        'ServeRecovery' { '🟢' }
-        'LlmRecovery'   { '🟢' }
-        'ApiRecovery'   { '🟢' }
-        'Test'          { '🔵' }
-        'DailyDigest'   { '📊' }
-        'UserStop'      { '✋' }
-        default         { '🔵' }
-    }
-    $tgText = "{0} *EAxWiki [{1}]* - {2}`n{3}" -f $tgEmoji, $Kind, $instanceLabel, $Message
+    $tgText = Format-TelegramAlertText -Kind $Kind -InstanceLabel $instanceLabel -Message $Message
     $tgUri = "https://api.telegram.org/bot{0}/sendMessage" -f $TelegramBotToken
     $tgBody = @{
         chat_id    = [string]$TelegramChatId
         text       = $tgText
-        parse_mode = 'Markdown'
+        parse_mode = 'HTML'
     }
 
     $attempts = 0
