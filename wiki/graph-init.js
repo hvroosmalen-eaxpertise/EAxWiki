@@ -85,15 +85,27 @@ function getDistanceColor(depth) {
     return EA_DISTANCE_COLORS[EA_DISTANCE_COLORS.length - 1];
 }
 
-// Resolves a root-relative URL (e.g. "Pkg/Elem.html") to an absolute URL
-// suitable for window.location.href, based on the current page depth.
-function resolveUrl(relPath) {
-    if (!relPath) return '';
+// Resolves a wiki-root-relative URL (e.g. "Pkg/Elem.html" or "graph-index.json")
+// to an absolute URL. Uses the cytoscape.min.js <script> tag as an anchor because
+// mkdocs computes that path correctly for the current page — including under a
+// GitHub Pages project base path (/EAxWiki/…) where deriving the depth from
+// window.location.pathname alone lands the fetch at the wrong host root (issue #84).
+function wikiBase() {
+    var s = document.querySelector('script[src$="cytoscape.min.js"]')
+         || document.querySelector('script[src$="graph-init.js"]');
+    if (s) return s.src.replace(/[^\/]+$/, '');
     var parts = window.location.pathname.replace(/\/$/, '').split('/');
     var depth = Math.max(0, parts.length - 2);
     var up = depth > 0 ? Array(depth + 1).join('../') : '';
     var a = document.createElement('a');
-    a.href = up + relPath;
+    a.href = up;
+    return a.href;
+}
+
+function resolveUrl(relPath) {
+    if (!relPath) return '';
+    var a = document.createElement('a');
+    a.href = wikiBase() + relPath;
     return a.href;
 }
 

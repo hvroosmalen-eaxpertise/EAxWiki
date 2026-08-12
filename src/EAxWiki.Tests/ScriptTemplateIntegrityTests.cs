@@ -83,7 +83,7 @@ public class ScriptTemplateIntegrityTests
     {
         var (writer, outPath) = await RunExportAsync();
         var content = ReadExportedFile(writer, outPath, "graph-init.js");
-        AssertContainsAll(content, "initEaGraph", "cytoscape");
+        AssertContainsAll(content, "initEaGraph", "cytoscape", "wikiBase", "script[src$=\"cytoscape.min.js\"]");
     }
 
     [Fact]
