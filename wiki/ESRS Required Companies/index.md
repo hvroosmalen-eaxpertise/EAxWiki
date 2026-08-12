@@ -19,4 +19,4 @@ notes_hash: e3b0c442
 ## Diagrams
 
 - [ESRS Required Companies](diagrams/ESRS Required Companies.html) (Custom)
-  - *Not all companies are subjected to report according to the ESRS.*
+  *Not all companies are subjected to report according to the ESRS.*

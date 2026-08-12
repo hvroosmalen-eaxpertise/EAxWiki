@@ -19,7 +19,7 @@ notes_hash: e3b0c442
 ## Diagrams
 
 - [Architecture](diagrams/Architecture.html) (Custom)
-  - *<p>Updated diagram description from smoke test at 09:50:05</p>*
+  *<p>Updated diagram description from smoke test at 09:50:05</p>*
 
 ## Sub-packages
 

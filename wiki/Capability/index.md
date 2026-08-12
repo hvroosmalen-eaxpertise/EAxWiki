@@ -19,4 +19,4 @@ notes_hash: e3b0c442
 ## Elements
 
 - <span class="sl" data-layer="edgy-ar">Capability</span> [Green Capabilities](Green Capabilities.html)
-  - *Vermogens die duurzaam opereren mogelijk maken. <ul> 	<li>MUD Jeans – https://mudjeans.eu – Circulair vermogen: 40% gerecyclede denim.</li> 	<li>Philips – https://www.philips.com – Circulaire capabilities in medische apparatuur.</li> </ul>*
+  *Vermogens die duurzaam opereren mogelijk maken. <ul> 	<li>MUD Jeans – https://mudjeans.eu – Circulair vermogen: 40% gerecyclede denim.</li> 	<li>Philips – https://www.philips.com – Circulaire capabilities in medische apparatuur.</li> </ul>*

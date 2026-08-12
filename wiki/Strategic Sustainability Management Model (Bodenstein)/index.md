@@ -20,7 +20,7 @@ This model integrates sustainability as a strategic variable into corporate stra
 ## Diagrams
 
 - [Strategic Sustainability Management Model (Bodenstein)](diagrams/Strategic Sustainability Management Model (Bodenstein).html) (Logical)
-  - *This diagram shows the contents of the book in a visual way. The following sections contain the structure per Driver.*
+  *This diagram shows the contents of the book in a visual way. The following sections contain the structure per Driver.*
 
 ## Sub-packages
 

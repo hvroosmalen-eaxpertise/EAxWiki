@@ -162,7 +162,7 @@ None.
 - [Willem Krijgsman](../Introduction EurSuRA/Willem Krijgsman.html)
 - [XMI Import Definition](../Information Collection and Model Creation/XMI Import Definition.html)
 
-## Untouched 90+ Days (188)
+## Untouched 90+ Days (250)
 
 *Has a Status set, but no field on the element (Notes, tagged values, relationships, etc.) has changed in over 90 days. Does not track how long the Status value itself has been unchanged.*
 
@@ -356,6 +356,68 @@ None.
 | [Ensure that investors and other stakeholders have access to the information](../ESRS Goals and Objectives/Ensure that investors and other stakeholders have access to the information.html) | Proposed | 2026-04-29 |
 | [Allow investors to assess financial risks and opportunities ](../ESRS Goals and Objectives/Allow investors to assess financial risks and opportunities.html) | Proposed | 2026-04-29 |
 | [Chief Financial Officer](../People/Chief Financial Officer.html) | Proposed | 2026-04-29 |
+| [SDG](../Information Collection and Model Creation/SDG.html) | Proposed | 2026-05-13 |
+| [SDG Website](../Information Collection and Model Creation/SDG Website.html) | Proposed | 2026-05-13 |
+| [EurSuRA Model](../Information Collection and Model Creation/EurSuRA Model.html) | Proposed | 2026-05-13 |
+| [ESRS](../Information Collection and Model Creation/ESRS.html) | Proposed | 2026-05-13 |
+| [Intersection Group](../Information Collection and Model Creation/Intersection Group.html) | Proposed | 2026-05-13 |
+| [EDGY 23 Language Foundation](../Information Collection and Model Creation/EDGY 23 Language Foundation.html) | Proposed | 2026-05-13 |
+| [ESRS Website](../Information Collection and Model Creation/ESRS Website.html) | Proposed | 2026-05-13 |
+| [Identity Map](../Information Collection and Model Creation/Identity Map.html) | Proposed | 2026-05-13 |
+| [SDG Referentie Model](../Information Collection and Model Creation/SDG Referentie Model.html) | Proposed | 2026-05-13 |
+| [ESRS Referentie Model](../Information Collection and Model Creation/ESRS Referentie Model.html) | Proposed | 2026-05-13 |
+| [EDGY Model Elementen en Relaties](../Information Collection and Model Creation/EDGY Model Elementen en Relaties.html) | Proposed | 2026-05-13 |
+| [Constureren MD to XMI Convertor](../Information Collection and Model Creation/Constureren MD to XMI Convertor.html) | Proposed | 2026-05-13 |
+| [M:\EurSuRA\Information\Climate Timeline EDGY.md](../Introduction EurSuRA/M__EurSuRA_Information_Climate Timeline EDGY.md.html) | Proposed | 2026-05-13 |
+| [EurSuRA](../Introduction EurSuRA/EurSuRA.html) | Proposed | 2026-05-13 |
+| [John van der Stap](../Introduction EurSuRA/John van der Stap.html) | Proposed | 2026-05-13 |
+| [Willem Krijgsman](../Introduction EurSuRA/Willem Krijgsman.html) | Proposed | 2026-05-13 |
+| [Maarten Bernards](../Introduction EurSuRA/Maarten Bernards.html) | Proposed | 2026-05-13 |
+| [Han van Roosmalen](../Introduction EurSuRA/Han van Roosmalen.html) | Proposed | 2026-05-13 |
+| [M:\EurSuRA\Information\Climate Timeline.md](../Introduction EurSuRA/M__EurSuRA_Information_Climate Timeline.md.html) | Proposed | 2026-05-13 |
+| [M:\EurSuRA\Information\Climate Accountability Timeline.docx](../Introduction EurSuRA/M__EurSuRA_Information_Climate Accountability Timeline.docx.html) | Proposed | 2026-05-13 |
+| [Linda Lex](../Introduction EurSuRA/Linda Lex.html) | Proposed | 2026-05-13 |
+| [Linn Willemsen](../Introduction EurSuRA/Linn Willemsen.html) | Proposed | 2026-05-13 |
+| [Reference Architecture Framework for ESRS Reporting](../Introduction EurSuRA/Reference Architecture Framework for ESRS Reporting.html) | Proposed | 2026-05-13 |
+| [Logical Data Model](../Introduction EurSuRA/Logical Data Model.html) | Proposed | 2026-05-13 |
+| [Semantic Model](../Introduction EurSuRA/Semantic Model.html) | Proposed | 2026-05-13 |
+| [Calculation Engine(s)](../Introduction EurSuRA/Calculation Engine(s).html) | Proposed | 2026-05-13 |
+| [Climate Change to SME Reporting](../Introduction EurSuRA/Climate Change to SME Reporting.html) | Proposed | 2026-05-13 |
+| [Reporting Framework](../Introduction EurSuRA/Reporting Framework.html) | Proposed | 2026-05-13 |
+| [EurSuRA.eu (Website)](../Introduction EurSuRA/EurSuRA.eu (Website).html) | Proposed | 2026-05-13 |
+| [Building a EU Reporting Community](../Introduction EurSuRA/Building a EU Reporting Community.html) | Proposed | 2026-05-13 |
+| [Integration tools to inhouse Information](../Introduction EurSuRA/Integration tools to inhouse Information.html) | Proposed | 2026-05-13 |
+| [Collecting Information and Create EDGY Diagrams/Model](../Introduction EurSuRA/Collecting Information and Create EDGY Diagrams_Model.html) | Proposed | 2026-05-13 |
+| [Deutsche Bahn (Marco Dillenburg)](../Introduction EurSuRA/Deutsche Bahn (Marco Dillenburg).html) | Proposed | 2026-05-13 |
+| [Sidenote from Community Leads](../Introduction EurSuRA/Sidenote from Community Leads.html) | Proposed | 2026-05-13 |
+| [Openfootprint Data Model](../Information Collection and Model Creation/Openfootprint Data Model.html) | Proposed | 2026-05-13 |
+| [ERD Model](../Information Collection and Model Creation/ERD Model.html) | Proposed | 2026-05-13 |
+| [Logical Data Model](../Information Collection and Model Creation/Logical Data Model.html) | Proposed | 2026-05-13 |
+| [Compile Information Sources](../Information Collection and Model Creation/Compile Information Sources.html) | Proposed | 2026-05-13 |
+| [XMI Import Definition](../Information Collection and Model Creation/XMI Import Definition.html) | Proposed | 2026-05-13 |
+| [LDM -> XMI (Python)](../Information Collection and Model Creation/LDM -_ XMI (Python).html) | Proposed | 2026-05-13 |
+| [EDGY -> XMI (Python)](../Information Collection and Model Creation/EDGY -_ XMI (Python).html) | Proposed | 2026-05-13 |
+| [unnamed](../Sustainability Development Goals/unnamed.html) | Proposed | 2026-05-13 |
+| [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.html) | Proposed | 2026-05-13 |
+| [Sustainability Development Goals](../Sustainability Development Goals/Sustainability Development Goals.html) | Proposed | 2026-05-13 |
+| [unnamed](../Sustainability Development Goals/unnamed.html) | Proposed | 2026-05-13 |
+| [unnamed](../Sustainability Development Goals/unnamed.html) | Proposed | 2026-05-13 |
+| [Architecture](../Sustainability Development Goals/Architecture.html) | Proposed | 2026-05-13 |
+| [unnamed](../Sustainability Development Goals/unnamed.html) | Proposed | 2026-05-13 |
+| [unnamed](../Sustainability Development Goals/unnamed.html) | Proposed | 2026-05-13 |
+| [unnamed](../Sustainability Development Goals/unnamed.html) | Proposed | 2026-05-13 |
+| [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).html) | Proposed | 2026-05-13 |
+| [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.html) | Proposed | 2026-05-13 |
+| [ESRS E2 Pollution](../ESRS E2/ESRS E2 Pollution.html) | Proposed | 2026-05-13 |
+| [ESRS E3 Water and Marine Resources](../ESRS E3/ESRS E3 Water and Marine Resources.html) | Proposed | 2026-05-13 |
+| [ESRS E4 Biodiversity and Ecosystems](../ESRS E4/ESRS E4 Biodiversity and Ecosystems.html) | Proposed | 2026-05-13 |
+| [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.html) | Proposed | 2026-05-13 |
+| [ESRS S1 Own Workforce](../ESRS S1/ESRS S1 Own Workforce.html) | Proposed | 2026-05-13 |
+| [ESRS S2 Workers in the Value Chain](../ESRS S2/ESRS S2 Workers in the Value Chain.html) | Proposed | 2026-05-13 |
+| [ESRS S3 Affected Communities](../ESRS S3/ESRS S3 Affected Communities.html) | Proposed | 2026-05-13 |
+| [ESRS S4 Consumers and End-users](../ESRS S4/ESRS S4 Consumers and End-users.html) | Proposed | 2026-05-13 |
+| [ESRS G1 Business Conduct](../ESRS G1/ESRS G1 Business Conduct.html) | Proposed | 2026-05-13 |
+| [Stakeholder Map](../Information Collection and Model Creation/Stakeholder Map.html) | Proposed | 2026-05-13 |
 
 ## Duplicate Names Within a Package (0 names, 0 elements)
 

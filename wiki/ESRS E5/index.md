@@ -23,4 +23,4 @@ notes_hash: e3b0c442
 ## Elements
 
 - <span class="sl" data-layer="edgy-id">Content</span> [ESRS E5 Resource Use and Circular Economy](ESRS E5 Resource Use and Circular Economy.html)
-  - *For more information: https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F12%2520Draft%2520ESRS%2520E5%2520Resource%2520use%2520and%2520circular%2520economy.pdf*
+  *For more information: https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F12%2520Draft%2520ESRS%2520E5%2520Resource%2520use%2520and%2520circular%2520economy.pdf*

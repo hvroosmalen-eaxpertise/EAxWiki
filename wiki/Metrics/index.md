@@ -30,7 +30,7 @@ notes_hash: e3b0c442
 - <span class="sl" data-layer="edgy-lb">Outcome</span> [Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e)](Totale uitstoot = Scope 1 + Scope 2 + Scope 3 (in ton CO₂e).html)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [ Levensduur product](Levensduur product.html)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [ Productievolumes / normaliserende operationele data](Productievolumes _ normaliserende operationele data.html)
-  - *<p>Aangepast</p> twee keer*
+  *<p>Aangepast</p> twee keer*
 - <span class="sl" data-layer="edgy-lb">Metric</span> [# bomen geplant / ha natuur hersteld](_ bomen geplant _ ha natuur hersteld.html)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [# SDGs met meetbare KPI’s](_ SDGs met meetbare KPI’s.html)
 - <span class="sl" data-layer="edgy-lb">Metric</span> [# teruggenomen producten (per jaar)](_ teruggenomen producten (per jaar).html)

@@ -19,9 +19,9 @@ notes_hash: e3b0c442
 ## Diagrams
 
 - [ESRS Sector Classification](diagrams/ESRS Sector Classification.html) (Logical)
-  - *<p>The Sector Classification is important.</p>*
+  *<p>The Sector Classification is important.</p>*
 
 ## Elements
 
 - <span class="sl" data-layer="uml">Uncategorized</span> [ESRS Sector Classification](ESRS Sector Classification.html)
-  - *<p>Sector Classification determine the Sector of the organisation.</p>*
+  *<p>Sector Classification determine the Sector of the organisation.</p>*

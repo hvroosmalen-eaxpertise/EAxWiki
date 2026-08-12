@@ -24,7 +24,7 @@ notes_hash: e3b0c442
 
 - <span class="sl" data-layer="edgy-id">Purpose</span> [Building a EU Reporting Community](Building a EU Reporting Community.html)
 - <span class="sl" data-layer="edgy-ix">Brand</span> [EurSuRA](EurSuRA.html)
-  - *<p>The EurSuRA serves as a central connection point for stakeholders and initiatives, fostering collaboration and knowledge-sharing among key individuals, the EurSuRA.eu website, and the broader EU reporting community. Its primary function is to promote the EurSuRA initiative and its goals within the EU, facilitating communication and coordination among its associated entities. By acting as a central hub, the EurSuRA plays a vital role in building and sustaining the EU reporting community.</p>*
+  *<p>The EurSuRA serves as a central connection point for stakeholders and initiatives, fostering collaboration and knowledge-sharing among key individuals, the EurSuRA.eu website, and the broader EU reporting community. Its primary function is to promote the EurSuRA initiative and its goals within the EU, facilitating communication and coordination among its associated entities. By acting as a central hub, the EurSuRA plays a vital role in building and sustaining the EU reporting community.</p>*
 - <span class="sl" data-layer="edgy-ix">Organisation</span> [EurSuRA](EurSuRA_601.html)
 - <span class="sl" data-layer="edgy-id">Purpose</span> [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).html)
 - <span class="sl" data-layer="edgy-pe">People</span> [Deutsche Bahn (Marco Dillenburg)](Deutsche Bahn (Marco Dillenburg).html)

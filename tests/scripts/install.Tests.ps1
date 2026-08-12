@@ -1,7 +1,9 @@
 Describe 'install.ps1 parameter binding' {
-    It 'has Requires -Version 7 directive' {
-        $firstLine = Get-Content "$PSScriptRoot\..\..\install.ps1" -First 1
-        $firstLine | Should -BeLike '#Requires*7*'
+    It 'does not require PS 7 (PS 5.1 compatible via bootstrap)' {
+        $content = Get-Content "$PSScriptRoot\..\..\install.ps1" -Raw
+        $content | Should -Not -Match '#Requires\s*-Version\s*7'
+        $content | Should -Match '\. \$PSScriptRoot\\scripts\\_bootstrap\.ps1'
+        $content | Should -Match 'Write-Warning\s+"EAxWiki is designed for PowerShell 7\+'
     }
 
     It 'declares EAPath as a string parameter' {

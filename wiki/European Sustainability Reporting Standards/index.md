@@ -24,7 +24,7 @@ notes_hash: c77b34d0
 ## Elements
 
 - <span class="sl" data-layer="edgy-id">Content</span> [European Sustainability Reporting Standards](European Sustainability Reporting Standards.html)
-  - *The European Sustainability Reporting Standards (ESRS) oblige all companies subject to the Corporate Sustainability Reporting Directive (CSRD) of the European Union to report both on their impacts on people and the environment, and on how social and environmental issues create financial risks and opportunities for the company.*
+  *The European Sustainability Reporting Standards (ESRS) oblige all companies subject to the Corporate Sustainability Reporting Directive (CSRD) of the European Union to report both on their impacts on people and the environment, and on how social and environmental issues create financial risks and opportunities for the company.*
 
 ## Sub-packages
 
