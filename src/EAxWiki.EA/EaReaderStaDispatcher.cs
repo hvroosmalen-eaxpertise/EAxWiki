@@ -15,6 +15,14 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
     private readonly Thread _staThread;
     private Exception? _initException;
     private bool _disposed;
+    private volatile bool _isHealthy;
+
+    /// <summary>
+    /// True after a successful COM work item, false after a reconnect attempt fails. Reflects the
+    /// dispatcher's last observed EA COM state so <c>/readyz</c> can report "not ready" the moment
+    /// the model is unreachable instead of waiting for the next explicit probe.
+    /// </summary>
+    public bool IsHealthy => _isHealthy;
 
     public EaReaderStaDispatcher(ILogger logger, string repositoryPath)
     {
@@ -53,6 +61,7 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
         {
             reader = new EaReader(_logger as ILogger<EaReader>);
             reader.Open(repositoryPath);
+            _isHealthy = true;
         }
         catch (Exception ex)
         {
@@ -78,11 +87,13 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
                     try
                     {
                         work.Execute(reader);
+                        _isHealthy = true;
                         executed = true;
                     }
                     catch (COMException ex) when (!_disposed && retries < maxRetries)
                     {
                         retries++;
+                        _isHealthy = false;
                         _logger.LogWarning(ex,
                             "EA COM disconnected (retry {Retry}/{MaxRetries}); reconnecting.",
                             retries, maxRetries);
@@ -92,6 +103,8 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
                             reader = new EaReader(_logger as ILogger<EaReader>);
                             reader.Open(repositoryPath);
                             _logger.LogInformation("EA reconnection succeeded.");
+                            // Stay unhealthy until the next successful work item — reconnect
+                            // opening the repo does not itself prove the model is queryable.
                         }
                         catch (Exception reconnectEx)
                         {

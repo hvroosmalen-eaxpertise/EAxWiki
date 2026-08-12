@@ -225,26 +225,55 @@ internal static class WikiWritebackServer
             }
         });
 
-        var eaReady = false;
-
         try
         {
             var statusTypes = reader.GetStatusTypes();
-            var statusCount = statusTypes.Count;
-            logger.LogInformation("EA health check OK — {StatusCount} status types read from repository", statusCount);
-            eaReady = true;
+            logger.LogInformation("EA health check OK — {StatusCount} status types read from repository", statusTypes.Count);
         }
         catch (Exception ex)
         {
             logger.LogError(ex, "EA health check FAILED — repository not responding");
         }
 
+        // /readyz needs to stay truthful across the server's lifetime (issue #83 gates the browser
+        // edit pencils on it). Two signals combine:
+        //   * dispatcher.IsHealthy — flipped false the moment a work item hits a COMException,
+        //     back to true on the next successful work item. Zero probe traffic; reflects real
+        //     user activity.
+        //   * a cached fallback probe (GetStatusTypes) — runs at most once per ReadyProbeCacheTtl
+        //     to catch the "server idle for hours, EA quietly died" case. Cache stops browser
+        //     refresh spam from hammering EA COM.
+        var readyProbeGate = new SemaphoreSlim(1, 1);
+        var readyProbeCacheTtl = TimeSpan.FromSeconds(15);
+        DateTime lastProbeAt = DateTime.MinValue;
+        bool lastProbeOk = true;
+
+        async Task<bool> ProbeEaAsync()
+        {
+            if (!reader.IsHealthy) return false;
+            if (DateTime.UtcNow - lastProbeAt < readyProbeCacheTtl) return lastProbeOk;
+            await readyProbeGate.WaitAsync();
+            try
+            {
+                if (DateTime.UtcNow - lastProbeAt < readyProbeCacheTtl) return lastProbeOk;
+                try { _ = reader.GetStatusTypes(); lastProbeOk = true; }
+                catch (Exception ex) { logger.LogWarning(ex, "EA readiness probe failed"); lastProbeOk = false; }
+                lastProbeAt = DateTime.UtcNow;
+                return lastProbeOk;
+            }
+            finally { readyProbeGate.Release(); }
+        }
+
         var app = builder.Build();
 
-        app.MapGet("/healthz", () => Results.Ok(new { status = "healthy", ea = eaReady }));
-        app.MapGet("/readyz", () => eaReady
-            ? Results.Ok(new { status = "ready", ea = true })
-            : Results.Json(new { status = "not ready", ea = false }, statusCode: 503));
+        app.MapGet("/healthz", () => Results.Ok(new { status = "healthy", ea = reader.IsHealthy }));
+        app.MapGet("/readyz", async () =>
+        {
+            var ok = await ProbeEaAsync();
+            return ok
+                ? Results.Ok(new { status = "ready", ea = true })
+                : Results.Json(new { status = "not ready", ea = false }, statusCode: 503);
+        });
 
         // This server is paired 1:1 with one `mkdocs serve` instance. Rather than a global
         // AllowAnyOrigin() (which would let a page from *any* origin — including sibling
