@@ -21,6 +21,12 @@
     <EmbeddedResource Include="Resources\extra.css" />
     <EmbeddedResource Include="Resources\brand-eursura.css" />
     <EmbeddedResource Include="Resources\eursura-logo.png" />
+    <EmbeddedResource Include="Resources\api-probe.js" />
+    <EmbeddedResource Include="Resources\ea-icons.js" />
+    <EmbeddedResource Include="Resources\notes-editor.js" />
+    <EmbeddedResource Include="Resources\row-notes-editor.js" />
+    <EmbeddedResource Include="Resources\status-editor.js" />
+    <EmbeddedResource Include="Resources\graph-init.js.tmpl" />
   </ItemGroup>
 
   <ItemGroup>
