@@ -125,9 +125,10 @@ function Get-MonitorArgs {
 
 function Send-TelegramMessage {
     # Issue #80: Telegram Bot API dispatch. Standalone (no dependency on the script's top-level
-    # variables) so Pester can exercise it even when the monitor body exits early on a duplicate
-    # monitor. Token goes in the URL (standard Telegram pattern); chat_id is a *string* because
-    # group/supergroup IDs are negative numbers (-100...) and must survive JSON round-tripping.
+    # variables) so Pester can exercise it even when the monitor body is skipped by the
+    # dot-source run-guard. Token goes in the URL (standard Telegram pattern); chat_id is a
+    # *string* because group/supergroup IDs are negative numbers (-100...) and must survive
+    # JSON round-tripping.
     param(
         [string]$BotToken,
         [string]$ChatId,
@@ -190,6 +191,23 @@ function ConvertTo-RedactedConnectionString {
     if ([string]::IsNullOrEmpty($ConnectionString)) { return "" }
     if (-not $ConnectionString.Contains('=')) { return $ConnectionString }
     return $ConnectionString -replace '(?i)(Password|Pwd)\s*=[^;]*', '$1=***'
+}
+
+function Write-MonitorLog {
+    param([string]$Phase, [string]$Message)
+    $line = "{0:yyyy-MM-dd HH:mm:ss} [{1}] {2}" -f (Get-Date), $Phase, $Message
+    Add-Content -Path $logPath -Value $line
+    Write-Host $line
+}
+
+# Dot-source run-guard: when Pester dot-sources this file, only the function definitions
+# above are loaded and control returns immediately. Without this, the parse/bind, .eaxwiki
+# load, PID-file bookkeeping (including the duplicate-monitor `exit`), and the
+# while ($true) monitoring loop would run a real monitoring pass (or hang) during tests.
+# Normal invocation (.\monitor-export-and-serve.ps1) is unaffected because
+# $MyInvocation.InvocationName is the script path, not '.'.
+if ($MyInvocation.InvocationName -eq '.') {
+    return
 }
 
 $parsed = Get-MonitorArgs -Arguments $args
@@ -333,13 +351,6 @@ $logPath     = Join-Path $logDir ("monitor-{0:yyyy-MM-dd}.log" -f (Get-Date))
 $templateDir     = Join-Path $repoRoot ".eaxwiki-monitor"
 $healthTemplate  = Join-Path $templateDir "health-template.md"
 $digestTemplate  = Join-Path $templateDir "digest-template.md"
-
-function Write-MonitorLog {
-    param([string]$Phase, [string]$Message)
-    $line = "{0:yyyy-MM-dd HH:mm:ss} [{1}] {2}" -f (Get-Date), $Phase, $Message
-    Add-Content -Path $logPath -Value $line
-    Write-Host $line
-}
 
 Write-MonitorLog -Phase "config" -Message "Repo: $(ConvertTo-RedactedConnectionString $RepoPath)"
 Write-MonitorLog -Phase "config" -Message "ApiPort=$ApiPort WikiPort=$Port AiEndpoint=$AiEndpoint LlamaExePath=$LlamaExePath"

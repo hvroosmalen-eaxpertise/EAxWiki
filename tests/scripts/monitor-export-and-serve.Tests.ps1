@@ -154,6 +154,7 @@ Describe 'Get-MonitorArgs' {
 
 Describe 'Send-TelegramMessage' {
     BeforeEach {
+        Mock Write-MonitorLog { }
         $script:tgCalls = 0
         $global:tgUri = $null
         $global:tgBody = $null
@@ -202,5 +203,16 @@ Describe 'API stays up across exports' {
         $content = Get-Content "$PSScriptRoot\..\..\scripts\monitor-export-and-serve.ps1" -Raw
         $content | Should -Not -Match 'Stop the API server before export'
         $content | Should -Not -Match 'Stop-ApiServer'
+    }
+}
+
+Describe 'Dot-source run-guard' {
+    It 'defines the testable functions but does not execute the monitor body' {
+        (Get-Command Get-MonitorArgs -ErrorAction SilentlyContinue) | Should -Not -BeNullOrEmpty
+        (Get-Command Send-TelegramMessage -ErrorAction SilentlyContinue) | Should -Not -BeNullOrEmpty
+        (Get-Command Write-MonitorLog -ErrorAction SilentlyContinue) | Should -Not -BeNullOrEmpty
+        Test-Path variable:parsed | Should -Be $false
+        Test-Path variable:logDir | Should -Be $false
+        Test-Path variable:state | Should -Be $false
     }
 }
