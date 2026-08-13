@@ -63,59 +63,51 @@ public static class FrontmatterParser
     /// Updates status in a Markdown file: frontmatter fields, status badge, and widget div.
     /// Uses an atomic temp-file swap so MkDocs never reads a partially written file.
     /// </summary>
-    public static void UpdateStatus(string filePath, string newStatus)
-    {
-        var original = File.ReadAllText(filePath);
-        var usesCrlf = original.Contains("\r\n");
-        var lines = original.Replace("\r\n", "\n").Split('\n').ToList();
-        if (lines.Count < 2 || lines[0].Trim() != "---") return;
-
-        int end = -1;
-        for (int i = 1; i < lines.Count; i++)
+    public static void UpdateStatus(string filePath, string newStatus) =>
+        RewriteMarkdown(filePath, text =>
         {
-            if (lines[i].Trim() == "---") { end = i; break; }
-        }
-        if (end < 0) return;
+            var lines = text.Split('\n').ToList();
+            if (lines.Count < 2 || lines[0].Trim() != "---") return null;
 
-        // 1. Update frontmatter
-        var newHash = HtmlHelpers.ComputeStatusHash(newStatus);
-        for (int i = 1; i < end; i++)
-        {
-            var sep = lines[i].IndexOf(':');
-            if (sep < 1) continue;
-            var key = lines[i][..sep].Trim();
-            if (key.Equals("status", StringComparison.OrdinalIgnoreCase))
-                lines[i] = $"status: {newStatus}";
-            else if (key.Equals("ea_hash", StringComparison.OrdinalIgnoreCase))
-                lines[i] = $"ea_hash: {newHash}";
-        }
+            int end = -1;
+            for (int i = 1; i < lines.Count; i++)
+            {
+                if (lines[i].Trim() == "---") { end = i; break; }
+            }
+            if (end < 0) return null;
 
-        // 2. Update page body: status badge and widget data-status attribute
-        var newClass = $"status-{newStatus.ToLowerInvariant()}";
+            // 1. Update frontmatter
+            var newHash = HtmlHelpers.ComputeStatusHash(newStatus);
+            for (int i = 1; i < end; i++)
+            {
+                var sep = lines[i].IndexOf(':');
+                if (sep < 1) continue;
+                var key = lines[i][..sep].Trim();
+                if (key.Equals("status", StringComparison.OrdinalIgnoreCase))
+                    lines[i] = $"status: {newStatus}";
+                else if (key.Equals("ea_hash", StringComparison.OrdinalIgnoreCase))
+                    lines[i] = $"ea_hash: {newHash}";
+            }
 
-        for (int i = end + 1; i < lines.Count; i++)
-        {
-            if (lines[i].Contains("status-badge"))
-                lines[i] = StatusBadgePattern.Replace(lines[i],
-                    $"class=\"status-badge {newClass}\">{newStatus}</span>");
+            // 2. Update page body: status badge and widget data-status attribute
+            var newClass = $"status-{newStatus.ToLowerInvariant()}";
 
-            if (lines[i].Contains("id=\"ea-status-editor\""))
-                lines[i] = StatusWidgetPattern.Replace(lines[i],
-                    $"data-status=\"{newStatus}\"");
+            for (int i = end + 1; i < lines.Count; i++)
+            {
+                if (lines[i].Contains("status-badge"))
+                    lines[i] = StatusBadgePattern.Replace(lines[i],
+                        $"class=\"status-badge {newClass}\">{newStatus}</span>");
 
-            if (lines[i].Contains("**Modified:**"))
-                lines[i] = PatchModifiedDate(lines[i]);
-        }
+                if (lines[i].Contains("id=\"ea-status-editor\""))
+                    lines[i] = StatusWidgetPattern.Replace(lines[i],
+                        $"data-status=\"{newStatus}\"");
 
-        // 3. Atomic write — swap via temp file so MkDocs never sees a partial file.
-        // Preserve the file's original EOL (matches UpdateNotes/UpdateRowNotes/UpdatePackageNotes)
-        // so a status write-back on Linux doesn't silently rewrite CRLF→LF for the whole page.
-        var text = string.Join("\n", lines);
-        if (usesCrlf) text = text.Replace("\n", "\r\n");
-        var tmp = filePath + ".tmp";
-        File.WriteAllText(tmp, text);
-        File.Move(tmp, filePath, overwrite: true);
-    }
+                if (lines[i].Contains("**Modified:**"))
+                    lines[i] = PatchModifiedDate(lines[i]);
+            }
+
+            return string.Join("\n", lines);
+        });
 
     private static readonly Regex StatusBadgePattern = new(@"class=""status-badge status-[^""]*"">[^<]*</span>", RegexOptions.Compiled);
     private static readonly Regex StatusWidgetPattern = new(@"data-status=""[^""]*""", RegexOptions.Compiled);
