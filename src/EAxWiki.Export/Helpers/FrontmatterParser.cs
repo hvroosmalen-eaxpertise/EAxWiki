@@ -180,34 +180,8 @@ public static class FrontmatterParser
     /// Updates the notes block (between the ea-notes-start/end markers) and the notes_hash
     /// frontmatter field. Uses an atomic temp-file swap, same as UpdateStatus.
     /// </summary>
-    public static void UpdateNotes(string filePath, string newNotesHtml)
-    {
-        var original = File.ReadAllText(filePath);
-        var usesCrlf = original.Contains("\r\n");
-        var text = original.Replace("\r\n", "\n");
-
-        var fmMatch = Regex.Match(text, @"\A---\n(.*?\n)---\n", RegexOptions.Singleline);
-        if (!fmMatch.Success) return;
-
-        var newHash = HtmlHelpers.ComputeNotesHash(newNotesHtml);
-        var fmBody = fmMatch.Groups[1].Value;
-        fmBody = Regex.IsMatch(fmBody, @"^notes_hash:.*$", RegexOptions.Multiline)
-            ? Regex.Replace(fmBody, @"^notes_hash:.*$", $"notes_hash: {newHash}", RegexOptions.Multiline)
-            : fmBody + $"notes_hash: {newHash}\n";
-
-        text = $"---\n{fmBody}---\n" + text[fmMatch.Length..];
-
-        var contentPattern = new Regex(@"(<!--ea-notes-start-->\n).*?(\n<!--ea-notes-end-->)", RegexOptions.Singleline);
-        text = contentPattern.Replace(text, m => m.Groups[1].Value + newNotesHtml + m.Groups[2].Value, 1);
-
-        text = ModifiedDatePattern.Replace(text, $"${{1}}{DateTime.Now:yyyy-MM-dd}");
-
-        if (usesCrlf) text = text.Replace("\n", "\r\n");
-
-        var tmp = filePath + ".tmp";
-        File.WriteAllText(tmp, text);
-        File.Move(tmp, filePath, overwrite: true);
-    }
+    public static void UpdateNotes(string filePath, string newNotesHtml) =>
+        UpdateNotesLike(filePath, newNotesHtml, "<!--ea-notes-start-->", "<!--ea-notes-end-->");
 
     /// <summary>
     /// Extracts the current notes body for one row-level editor (attribute/method/tagged-value
@@ -233,30 +207,21 @@ public static class FrontmatterParser
     /// data-notes-hash attribute on the row declaring that same id, and the page's Modified date.
     /// Requires the emitted markup to place data-row-id before data-notes-hash on the same tag.
     /// </summary>
-    public static void UpdateRowNotes(string filePath, string rowId, string newNotesHtml)
-    {
-        var original = File.ReadAllText(filePath);
-        var usesCrlf = original.Contains("\r\n");
-        var text = original.Replace("\r\n", "\n");
+    public static void UpdateRowNotes(string filePath, string rowId, string newNotesHtml) =>
+        RewriteMarkdown(filePath, text =>
+        {
+            var newHash = HtmlHelpers.ComputeNotesHash(newNotesHtml);
 
-        var newHash = HtmlHelpers.ComputeNotesHash(newNotesHtml);
+            var hashPattern = new Regex($"(data-row-id=\"{Regex.Escape(rowId)}\"[^>]*?data-notes-hash=\")[^\"]*(\")");
+            text = hashPattern.Replace(text, $"${{1}}{newHash}$2", 1);
 
-        var hashPattern = new Regex($"(data-row-id=\"{Regex.Escape(rowId)}\"[^>]*?data-notes-hash=\")[^\"]*(\")");
-        text = hashPattern.Replace(text, $"${{1}}{newHash}$2", 1);
+            var contentPattern = new Regex(
+                $@"(<!--ea-row-notes-start:{Regex.Escape(rowId)}-->).*?(<!--ea-row-notes-end:{Regex.Escape(rowId)}-->)",
+                RegexOptions.Singleline);
+            text = contentPattern.Replace(text, m => m.Groups[1].Value + newNotesHtml + m.Groups[2].Value, 1);
 
-        var contentPattern = new Regex(
-            $@"(<!--ea-row-notes-start:{Regex.Escape(rowId)}-->).*?(<!--ea-row-notes-end:{Regex.Escape(rowId)}-->)",
-            RegexOptions.Singleline);
-        text = contentPattern.Replace(text, m => m.Groups[1].Value + newNotesHtml + m.Groups[2].Value, 1);
-
-        text = ModifiedDatePattern.Replace(text, $"${{1}}{DateTime.Now:yyyy-MM-dd}");
-
-        if (usesCrlf) text = text.Replace("\n", "\r\n");
-
-        var tmp = filePath + ".tmp";
-        File.WriteAllText(tmp, text);
-        File.Move(tmp, filePath, overwrite: true);
-    }
+            return ModifiedDatePattern.Replace(text, $"${{1}}{DateTime.Now:yyyy-MM-dd}");
+        });
 
     /// <summary>
     /// Extracts the current notes body from between the ea-package-notes-start/end markers,
@@ -276,32 +241,52 @@ public static class FrontmatterParser
     /// Updates the package notes block (between the ea-package-notes-start/end markers) and the
     /// notes_hash frontmatter field. Uses an atomic temp-file swap, same as <see cref="UpdateNotes"/>.
     /// </summary>
-    public static void UpdatePackageNotes(string filePath, string newNotesHtml)
+    public static void UpdatePackageNotes(string filePath, string newNotesHtml) =>
+        UpdateNotesLike(filePath, newNotesHtml, "<!--ea-package-notes-start-->", "<!--ea-package-notes-end-->");
+
+    /// <summary>
+    /// Shared rewrite tail for every Update* method: read the file, normalize to \n, apply the transform,
+    /// restore the file's original EOL, and atomically swap via a temp file so MkDocs never sees a partial
+    /// file. A transform returning null means "nothing to change" and leaves the file untouched (preserves
+    /// the pre-refactor early-return behavior).
+    /// </summary>
+    private static void RewriteMarkdown(string filePath, Func<string, string?> transform)
     {
         var original = File.ReadAllText(filePath);
         var usesCrlf = original.Contains("\r\n");
-        var text = original.Replace("\r\n", "\n");
-
-        var fmMatch = Regex.Match(text, @"\A---\n(.*?\n)---\n", RegexOptions.Singleline);
-        if (!fmMatch.Success) return;
-
-        var newHash = HtmlHelpers.ComputeNotesHash(newNotesHtml);
-        var fmBody = fmMatch.Groups[1].Value;
-        fmBody = Regex.IsMatch(fmBody, @"^notes_hash:.*$", RegexOptions.Multiline)
-            ? Regex.Replace(fmBody, @"^notes_hash:.*$", $"notes_hash: {newHash}", RegexOptions.Multiline)
-            : fmBody + $"notes_hash: {newHash}\n";
-
-        text = $"---\n{fmBody}---\n" + text[fmMatch.Length..];
-
-        var contentPattern = new Regex(@"(<!--ea-package-notes-start-->\n).*?(\n<!--ea-package-notes-end-->)", RegexOptions.Singleline);
-        text = contentPattern.Replace(text, m => m.Groups[1].Value + newNotesHtml + m.Groups[2].Value, 1);
-
-        text = ModifiedDatePattern.Replace(text, $"${{1}}{DateTime.Now:yyyy-MM-dd}");
-
+        var text = transform(original.Replace("\r\n", "\n"));
+        if (text is null) return;
         if (usesCrlf) text = text.Replace("\n", "\r\n");
-
         var tmp = filePath + ".tmp";
         File.WriteAllText(tmp, text);
         File.Move(tmp, filePath, overwrite: true);
+    }
+
+    /// <summary>
+    /// Shared implementation of UpdateNotes/UpdatePackageNotes: swap the notes_hash frontmatter field
+    /// (appending it if absent), replace the content between the start/end markers, and bump the page's
+    /// Modified date. The two public methods differ only in the marker names.
+    /// </summary>
+    private static void UpdateNotesLike(string filePath, string newNotesHtml, string startMarker, string endMarker)
+    {
+        RewriteMarkdown(filePath, text =>
+        {
+            var fmMatch = Regex.Match(text, @"\A---\n(.*?\n)---\n", RegexOptions.Singleline);
+            if (!fmMatch.Success) return null;
+
+            var newHash = HtmlHelpers.ComputeNotesHash(newNotesHtml);
+            var fmBody = fmMatch.Groups[1].Value;
+            fmBody = Regex.IsMatch(fmBody, @"^notes_hash:.*$", RegexOptions.Multiline)
+                ? Regex.Replace(fmBody, @"^notes_hash:.*$", $"notes_hash: {newHash}", RegexOptions.Multiline)
+                : fmBody + $"notes_hash: {newHash}\n";
+
+            text = $"---\n{fmBody}---\n" + text[fmMatch.Length..];
+
+            var contentPattern = new Regex(
+                $@"({Regex.Escape(startMarker)}\n).*?(\n{Regex.Escape(endMarker)})", RegexOptions.Singleline);
+            text = contentPattern.Replace(text, m => m.Groups[1].Value + newNotesHtml + m.Groups[2].Value, 1);
+
+            return ModifiedDatePattern.Replace(text, $"${{1}}{DateTime.Now:yyyy-MM-dd}");
+        });
     }
 }

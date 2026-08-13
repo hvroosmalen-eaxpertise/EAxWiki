@@ -179,6 +179,49 @@ public class FrontmatterParserTests : IDisposable
         Assert.Contains("data-row-id=\"method-0\" data-notes-hash=\"cafef00d\"", text);
     }
 
+    private const string SamplePackagePage = """
+        ---
+        package_id: 46
+        notes_hash: e3b0c442
+        ---
+
+        # Assessments
+
+        <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="46" data-kind="package" data-file-path="Assessments/index.md" data-api-port="8001">
+        <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
+        <div class="ea-notes-content">
+        <!--ea-package-notes-start-->
+        <p>Original package notes.</p>
+        <!--ea-package-notes-end-->
+        </div>
+        </div>
+        """;
+
+    [Fact]
+    public void UpdatePackageNotes_UpdatesHashAndContent()
+    {
+        File.WriteAllText(_filePath, SamplePackagePage);
+        var expectedNewHash = HtmlHelpers.ComputeNotesHash("<p>Edited package notes.</p>");
+
+        FrontmatterParser.UpdatePackageNotes(_filePath, "<p>Edited package notes.</p>");
+
+        var text = File.ReadAllText(_filePath);
+        Assert.Contains($"notes_hash: {expectedNewHash}", text);
+        Assert.DoesNotContain("notes_hash: e3b0c442", text);
+        Assert.Contains("<!--ea-package-notes-start-->\n<p>Edited package notes.</p>\n<!--ea-package-notes-end-->", text);
+    }
+
+    [Fact]
+    public void UpdatePackageNotes_MissingFrontmatter_LeavesFileUntouched()
+    {
+        File.WriteAllText(_filePath, "# Just a heading\n\nSome content.");
+        var before = File.ReadAllText(_filePath);
+
+        FrontmatterParser.UpdatePackageNotes(_filePath, "<p>x</p>");
+
+        Assert.Equal(before, File.ReadAllText(_filePath));
+    }
+
     [Fact]
     public void NormalizeNotesHtml_WrapsPlainTextParagraphs()
     {
