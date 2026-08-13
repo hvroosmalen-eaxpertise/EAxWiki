@@ -623,27 +623,28 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 
 | Group | Tests | What's covered |
 |-------|-------|---------------|
-| Export integration | 8 | End-to-end Markdown output via `InMemoryWriter` |
+| Export integration | 11 | End-to-end Markdown output via `InMemoryWriter` |
 | Write-back scanner | 4 | Notes round-trip routing, hash skip, attribute row notes |
-| EaReader + ModelMapper | 37 | COM model mapping (Element/Package/Diagram), logger warning paths, null handling, guard clauses, Open validation, dispose |
+| EaReader + ModelMapper | 54 | COM model mapping (Element/Package/Diagram), logger warning paths, null handling, guard clauses, Open validation, dispose |
 | ContextBuilder | 9 | Sub-builder decomposition (ElementCollector, DiagramIndexBuilder, ConnectorIndexBuilder, LookupBuilder, PackageDirCollector) |
 | Frontmatter parser | 15 | YamlDotNet-based YAML frontmatter parsing |
 | ElementPageWriter renderers | 34 | All 11 widget renderers (rich HTML + plain Markdown modes), edge cases, 2-hop graph, missing references |
-| Other | ~142 | Cleanup, Markdown helpers, hash helpers, config store, repository/health/validation writers, resilience, script template integrity, etc. |
+| Other | ~145 | Cleanup, Markdown helpers, hash helpers, config store, repository/health/validation writers, resilience, script template integrity, write-back server HTTP tests, etc. |
 | Property-based (FsCheck) | 26 | SanitizeName, EscapeCell, ParseStereotype, GetStereotypeLabel, SanitizeForAnchor, ComputeNotesHash, ComputeStatusHash invariants |
-| **.NET subtotal** | **275** | |
-| Export | 25 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths, `--brand` |
-| ExportAndServe | 22 | Port/root/API-port flags, retry/force args, combined pipeline args |
-| Install | 11 | `#Requires -Version 7` directive, parameter binding |
-| MonitorExportAndServe | 38 | Schedule parsing, task registration/update, state file, health check, alerting (Slack/Teams/Telegram), CLI flags, `--brand` |
+| **.NET subtotal** | **298** | |
+| Bootstrap | 2 | `Get-EAxWikiDllPath` resolution + clear missing-DLL error |
+| Export | 26 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths, `--brand` |
+| ExportAndServe | 23 | Port/root/API-port flags, retry/force args, combined pipeline args |
+| Install | 11 | PS 5.1 compat via bootstrap, parameter binding |
+| MonitorExportAndServe | 47 | Schedule parsing, task registration/update, state file, health check, alerting (Slack/Teams/Telegram), CLI flags, `--brand` |
 | SendAlert | 2 | Telegram dispatch guard + dispatch |
 | Serve | 12 | Port/root flags, file server config, cert modes, default page, path normalization |
-| ServeApi | 12 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
+| ServeApi | 13 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
 | ValidateWikiOutput | 12 | Validation CLI args (repo/output/tolerance, defaults, error paths) |
-| Writeback | 13 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
-| **Pester subtotal** | **147** | |
+| Writeback | 14 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
+| **Pester subtotal** | **162** | |
 
-**422 tests total** (275 .NET + 147 Pester), all pass.
+**460 tests total** (298 .NET + 162 Pester), all pass.
 
 ## Design decisions
 
