@@ -123,6 +123,19 @@ public class FrontmatterParserTests : IDisposable
     }
 
     [Fact]
+    public void UpdateNotes_PreservesCrlfLineEndings()
+    {
+        File.WriteAllText(_filePath, SamplePage.Replace("\n", "\r\n"));
+
+        FrontmatterParser.UpdateNotes(_filePath, "<p>Edited notes.</p>");
+
+        var text = File.ReadAllText(_filePath);
+        Assert.Contains("\r\n", text);
+        Assert.DoesNotContain("<!--ea-notes-start-->\n<p>Edited notes.</p>\n<!--ea-notes-end-->", text);
+        Assert.Contains("<!--ea-notes-start-->\r\n<p>Edited notes.</p>\r\n<!--ea-notes-end-->", text);
+    }
+
+    [Fact]
     public void UpdateStatus_LeavesCreatedDateUntouched()
     {
         File.WriteAllText(_filePath, SamplePage);
@@ -187,6 +200,8 @@ public class FrontmatterParserTests : IDisposable
 
         # Assessments
 
+        **Created:** 2025-12-02  **Modified:** 2025-12-02
+
         <div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="46" data-kind="package" data-file-path="Assessments/index.md" data-api-port="8001">
         <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
         <div class="ea-notes-content">
@@ -202,6 +217,7 @@ public class FrontmatterParserTests : IDisposable
     {
         File.WriteAllText(_filePath, SamplePackagePage);
         var expectedNewHash = HtmlHelpers.ComputeNotesHash("<p>Edited package notes.</p>");
+        var today = DateTime.Now.ToString("yyyy-MM-dd");
 
         FrontmatterParser.UpdatePackageNotes(_filePath, "<p>Edited package notes.</p>");
 
@@ -209,6 +225,8 @@ public class FrontmatterParserTests : IDisposable
         Assert.Contains($"notes_hash: {expectedNewHash}", text);
         Assert.DoesNotContain("notes_hash: e3b0c442", text);
         Assert.Contains("<!--ea-package-notes-start-->\n<p>Edited package notes.</p>\n<!--ea-package-notes-end-->", text);
+        Assert.Contains($"**Modified:** {today}", text);
+        Assert.DoesNotContain("**Modified:** 2025-12-02", text);
     }
 
     [Fact]
@@ -216,10 +234,13 @@ public class FrontmatterParserTests : IDisposable
     {
         File.WriteAllText(_filePath, "# Just a heading\n\nSome content.");
         var before = File.ReadAllText(_filePath);
+        var beforeTime = File.GetLastWriteTimeUtc(_filePath);
 
         FrontmatterParser.UpdatePackageNotes(_filePath, "<p>x</p>");
 
         Assert.Equal(before, File.ReadAllText(_filePath));
+        Assert.Equal(beforeTime, File.GetLastWriteTimeUtc(_filePath));
+        Assert.False(File.Exists(_filePath + ".tmp"));
     }
 
     [Fact]

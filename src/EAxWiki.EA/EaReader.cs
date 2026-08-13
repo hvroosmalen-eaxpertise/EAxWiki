@@ -453,6 +453,8 @@ public class EaReader : IEaReader, IDisposable
     /// First-match scan of an EA COM collection, counting how many entries satisfy the predicate so the
     /// caller can log the "multiple matches, updating the first" warning. EA.Attribute/Method/TaggedValue
     /// expose no ID property, so the parent element's collection must be searched by a composite key.
+    /// Callers log the duplicate warning before throwing the not-found error: the two are mutually exclusive
+    /// (matchCount &gt; 1 implies a match exists), so keep that ordering.
     /// </summary>
     private static (T? match, int count) Find<T>(EA.Collection collection, Func<T, bool> predicate) where T : class
     {
