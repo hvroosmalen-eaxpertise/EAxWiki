@@ -329,127 +329,100 @@ public class EaReader : IEaReader, IDisposable
 
     public void UpdateAttributeNotes(int elementId, string attributeName, string attributeType, string newNotesHtml)
     {
-        if (_repository == null)
-            throw new InvalidOperationException("Repository is not open.");
-        var element = _repository.GetElementByID(elementId);
-        if (element == null)
-            throw new InvalidOperationException($"Element {elementId} not found in repository.");
-        if (element.Attributes is not EA.Collection attrs)
-            throw new InvalidOperationException($"Element {elementId} has no attributes collection.");
-
-        EA.Attribute? match = null;
-        var matchCount = 0;
-        for (short i = 0; i < attrs.Count; i++)
-        {
-            if (attrs.GetAt(i) is not EA.Attribute attr) continue;
-            if (!string.Equals(attr.Name, attributeName, StringComparison.Ordinal)) continue;
-            if (!string.Equals(attr.Type, attributeType, StringComparison.Ordinal)) continue;
-            matchCount++;
-            match ??= attr;
-        }
-
-        if (match == null)
-            throw new InvalidOperationException($"Attribute '{attributeName}' ({attributeType}) not found on element {elementId}.");
-        if (matchCount > 1)
-            _logger?.LogWarning("Multiple attributes named '{Name}' of type '{Type}' found on element {ElementId}; updating the first match.", attributeName, attributeType, elementId);
-
-        match.Notes = newNotesHtml;
-        match.Update();
-        _repository.RefreshModelView(0);
-        var reElement = _repository.GetElementByID(elementId);
-        string? reNotes = null;
-        if (reElement?.Attributes is EA.Collection reAttrs)
-            for (short j = 0; j < reAttrs.Count; j++)
-                if (reAttrs.GetAt(j) is EA.Attribute reAttr &&
-                    string.Equals(reAttr.Name, attributeName, StringComparison.Ordinal) &&
-                    string.Equals(reAttr.Type, attributeType, StringComparison.Ordinal))
-                    { reNotes = reAttr.Notes; break; }
-        VerifyWrite(_logger, $"attribute '{attributeName}' ({attributeType}) on element {elementId}", newNotesHtml, reNotes);
-        _logger?.LogInformation("Updated attribute '{Name}' notes on element {ElementId}", attributeName, elementId);
+        Write(
+            () =>
+            {
+                var element = _repository!.GetElementByID(elementId)
+                    ?? throw new InvalidOperationException($"Element {elementId} not found in repository.");
+                if (element.Attributes is not EA.Collection attrs)
+                    throw new InvalidOperationException($"Element {elementId} has no attributes collection.");
+                var (match, matchCount) = Find<EA.Attribute>(attrs, a =>
+                    string.Equals(a.Name, attributeName, StringComparison.Ordinal) &&
+                    string.Equals(a.Type, attributeType, StringComparison.Ordinal));
+                if (matchCount > 1)
+                    _logger?.LogWarning("Multiple attributes named '{Name}' of type '{Type}' found on element {ElementId}; updating the first match.", attributeName, attributeType, elementId);
+                return match
+                    ?? throw new InvalidOperationException($"Attribute '{attributeName}' ({attributeType}) not found on element {elementId}.");
+            },
+            attr => { attr.Notes = newNotesHtml; attr.Update(); },
+            () =>
+            {
+                var reElement = _repository!.GetElementByID(elementId);
+                if (reElement?.Attributes is not EA.Collection reAttrs) return null;
+                return Find<EA.Attribute>(reAttrs, a =>
+                    string.Equals(a.Name, attributeName, StringComparison.Ordinal) &&
+                    string.Equals(a.Type, attributeType, StringComparison.Ordinal)).match?.Notes;
+            },
+            newNotesHtml,
+            $"attribute '{attributeName}' ({attributeType}) on element {elementId}",
+            "Updated attribute '{Name}' notes on element {ElementId}",
+            attributeName, elementId);
     }
 
     public void UpdateMethodNotes(int elementId, string methodName, string returnType, bool isStatic, string newNotesHtml)
     {
-        if (_repository == null)
-            throw new InvalidOperationException("Repository is not open.");
-        var element = _repository.GetElementByID(elementId);
-        if (element == null)
-            throw new InvalidOperationException($"Element {elementId} not found in repository.");
-        if (element.Methods is not EA.Collection methods)
-            throw new InvalidOperationException($"Element {elementId} has no methods collection.");
-
-        EA.Method? match = null;
-        var matchCount = 0;
-        for (short i = 0; i < methods.Count; i++)
-        {
-            if (methods.GetAt(i) is not EA.Method method) continue;
-            if (!string.Equals(method.Name, methodName, StringComparison.Ordinal)) continue;
-            if (!string.Equals(method.ReturnType, returnType, StringComparison.Ordinal)) continue;
-            if (method.IsStatic != isStatic) continue;
-            matchCount++;
-            match ??= method;
-        }
-
-        if (match == null)
-            throw new InvalidOperationException($"Method '{methodName}' ({returnType}) not found on element {elementId}.");
-        if (matchCount > 1)
-            _logger?.LogWarning("Multiple methods named '{Name}' ({ReturnType}) found on element {ElementId}; updating the first match.", methodName, returnType, elementId);
-
-        match.Notes = newNotesHtml;
-        match.Update();
-        _repository.RefreshModelView(0);
-        var reElement = _repository.GetElementByID(elementId);
-        string? reNotes = null;
-        if (reElement?.Methods is EA.Collection reMethods)
-            for (short j = 0; j < reMethods.Count; j++)
-                if (reMethods.GetAt(j) is EA.Method reMethod &&
-                    string.Equals(reMethod.Name, methodName, StringComparison.Ordinal) &&
-                    string.Equals(reMethod.ReturnType, returnType, StringComparison.Ordinal) &&
-                    reMethod.IsStatic == isStatic)
-                    { reNotes = reMethod.Notes; break; }
-        VerifyWrite(_logger, $"method '{methodName}' ({returnType}) on element {elementId}", newNotesHtml, reNotes);
-        _logger?.LogInformation("Updated method '{Name}' notes on element {ElementId}", methodName, elementId);
+        Write(
+            () =>
+            {
+                var element = _repository!.GetElementByID(elementId)
+                    ?? throw new InvalidOperationException($"Element {elementId} not found in repository.");
+                if (element.Methods is not EA.Collection methods)
+                    throw new InvalidOperationException($"Element {elementId} has no methods collection.");
+                var (match, matchCount) = Find<EA.Method>(methods, m =>
+                    string.Equals(m.Name, methodName, StringComparison.Ordinal) &&
+                    string.Equals(m.ReturnType, returnType, StringComparison.Ordinal) &&
+                    m.IsStatic == isStatic);
+                if (matchCount > 1)
+                    _logger?.LogWarning("Multiple methods named '{Name}' ({ReturnType}) found on element {ElementId}; updating the first match.", methodName, returnType, elementId);
+                return match
+                    ?? throw new InvalidOperationException($"Method '{methodName}' ({returnType}) not found on element {elementId}.");
+            },
+            method => { method.Notes = newNotesHtml; method.Update(); },
+            () =>
+            {
+                var reElement = _repository!.GetElementByID(elementId);
+                if (reElement?.Methods is not EA.Collection reMethods) return null;
+                return Find<EA.Method>(reMethods, m =>
+                    string.Equals(m.Name, methodName, StringComparison.Ordinal) &&
+                    string.Equals(m.ReturnType, returnType, StringComparison.Ordinal) &&
+                    m.IsStatic == isStatic).match?.Notes;
+            },
+            newNotesHtml,
+            $"method '{methodName}' ({returnType}) on element {elementId}",
+            "Updated method '{Name}' notes on element {ElementId}",
+            methodName, elementId);
     }
 
     public void UpdateTaggedValueNotes(int elementId, string tagName, string tagValue, string newNotesHtml)
     {
-        if (_repository == null)
-            throw new InvalidOperationException("Repository is not open.");
-        var element = _repository.GetElementByID(elementId);
-        if (element == null)
-            throw new InvalidOperationException($"Element {elementId} not found in repository.");
-        if (element.TaggedValues is not EA.Collection taggedValues)
-            throw new InvalidOperationException($"Element {elementId} has no tagged values collection.");
-
-        EA.TaggedValue? match = null;
-        var matchCount = 0;
-        for (short i = 0; i < taggedValues.Count; i++)
-        {
-            if (taggedValues.GetAt(i) is not EA.TaggedValue tv) continue;
-            if (!string.Equals(tv.Name, tagName, StringComparison.Ordinal)) continue;
-            if (!string.Equals(tv.Value, tagValue, StringComparison.Ordinal)) continue;
-            matchCount++;
-            match ??= tv;
-        }
-
-        if (match == null)
-            throw new InvalidOperationException($"Tagged value '{tagName}' ({tagValue}) not found on element {elementId}.");
-        if (matchCount > 1)
-            _logger?.LogWarning("Multiple tagged values named '{Name}' with value '{Value}' found on element {ElementId}; updating the first match.", tagName, tagValue, elementId);
-
-        match.Notes = newNotesHtml;
-        match.Update();
-        _repository.RefreshModelView(0);
-        var reElement = _repository.GetElementByID(elementId);
-        string? reNotes = null;
-        if (reElement?.TaggedValues is EA.Collection reTvs)
-            for (short j = 0; j < reTvs.Count; j++)
-                if (reTvs.GetAt(j) is EA.TaggedValue reTv &&
-                    string.Equals(reTv.Name, tagName, StringComparison.Ordinal) &&
-                    string.Equals(reTv.Value, tagValue, StringComparison.Ordinal))
-                    { reNotes = reTv.Notes; break; }
-        VerifyWrite(_logger, $"tagged value '{tagName}' ({tagValue}) on element {elementId}", newNotesHtml, reNotes);
-        _logger?.LogInformation("Updated tagged value '{Name}' notes on element {ElementId}", tagName, elementId);
+        Write(
+            () =>
+            {
+                var element = _repository!.GetElementByID(elementId)
+                    ?? throw new InvalidOperationException($"Element {elementId} not found in repository.");
+                if (element.TaggedValues is not EA.Collection taggedValues)
+                    throw new InvalidOperationException($"Element {elementId} has no tagged values collection.");
+                var (match, matchCount) = Find<EA.TaggedValue>(taggedValues, tv =>
+                    string.Equals(tv.Name, tagName, StringComparison.Ordinal) &&
+                    string.Equals(tv.Value, tagValue, StringComparison.Ordinal));
+                if (matchCount > 1)
+                    _logger?.LogWarning("Multiple tagged values named '{Name}' with value '{Value}' found on element {ElementId}; updating the first match.", tagName, tagValue, elementId);
+                return match
+                    ?? throw new InvalidOperationException($"Tagged value '{tagName}' ({tagValue}) not found on element {elementId}.");
+            },
+            tv => { tv.Notes = newNotesHtml; tv.Update(); },
+            () =>
+            {
+                var reElement = _repository!.GetElementByID(elementId);
+                if (reElement?.TaggedValues is not EA.Collection reTvs) return null;
+                return Find<EA.TaggedValue>(reTvs, tv =>
+                    string.Equals(tv.Name, tagName, StringComparison.Ordinal) &&
+                    string.Equals(tv.Value, tagValue, StringComparison.Ordinal)).match?.Notes;
+            },
+            newNotesHtml,
+            $"tagged value '{tagName}' ({tagValue}) on element {elementId}",
+            "Updated tagged value '{Name}' notes on element {ElementId}",
+            tagName, elementId);
     }
 
     /// <summary>
@@ -474,6 +447,24 @@ public class EaReader : IEaReader, IDisposable
         var actual = readBack() ?? string.Empty;
         VerifyWrite(_logger, entityDescription, expected, actual);
         _logger?.LogInformation(successTemplate, successArgs);
+    }
+
+    /// <summary>
+    /// First-match scan of an EA COM collection, counting how many entries satisfy the predicate so the
+    /// caller can log the "multiple matches, updating the first" warning. EA.Attribute/Method/TaggedValue
+    /// expose no ID property, so the parent element's collection must be searched by a composite key.
+    /// </summary>
+    private static (T? match, int count) Find<T>(EA.Collection collection, Func<T, bool> predicate) where T : class
+    {
+        T? match = null;
+        var count = 0;
+        for (short i = 0; i < collection.Count; i++)
+            if (collection.GetAt(i) is T item && predicate(item))
+            {
+                count++;
+                match ??= item;
+            }
+        return (match, count);
     }
 
     private static void VerifyWrite(ILogger? logger, string entityDescription, string expected, string? actual)
