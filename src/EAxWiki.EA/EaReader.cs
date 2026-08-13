@@ -272,62 +272,54 @@ public class EaReader : IEaReader, IDisposable
 
     public void UpdateElementStatus(int elementId, string newStatus)
     {
-        if (_repository == null)
-            throw new InvalidOperationException("Repository is not open.");
-        var element = _repository.GetElementByID(elementId);
-        if (element == null)
-            throw new InvalidOperationException($"Element {elementId} not found in repository.");
-        element.Status = newStatus;
-        element.Update();
-        _repository.RefreshModelView(0);
-        var actualStatus = _repository.GetElementByID(elementId)?.Status ?? string.Empty;
-        VerifyWrite(_logger, $"element {elementId} Status", newStatus, actualStatus);
-        _logger?.LogInformation("Updated element {ElementId} status to '{Status}'", elementId, newStatus);
+        Write(
+            () => _repository!.GetElementByID(elementId)
+                ?? throw new InvalidOperationException($"Element {elementId} not found in repository."),
+            element => { element.Status = newStatus; element.Update(); },
+            () => _repository!.GetElementByID(elementId)?.Status,
+            newStatus,
+            $"element {elementId} Status",
+            "Updated element {ElementId} status to '{Status}'",
+            elementId, newStatus);
     }
 
     public void UpdateElementNotes(int elementId, string newNotesHtml)
     {
-        if (_repository == null)
-            throw new InvalidOperationException("Repository is not open.");
-        var element = _repository.GetElementByID(elementId);
-        if (element == null)
-            throw new InvalidOperationException($"Element {elementId} not found in repository.");
-        element.Notes = newNotesHtml;
-        element.Update();
-        _repository.RefreshModelView(0);
-        var actualNotes = _repository.GetElementByID(elementId)?.Notes ?? string.Empty;
-        VerifyWrite(_logger, $"element {elementId} Notes", newNotesHtml, actualNotes);
-        _logger?.LogInformation("Updated element {ElementId} notes", elementId);
+        Write(
+            () => _repository!.GetElementByID(elementId)
+                ?? throw new InvalidOperationException($"Element {elementId} not found in repository."),
+            element => { element.Notes = newNotesHtml; element.Update(); },
+            () => _repository!.GetElementByID(elementId)?.Notes,
+            newNotesHtml,
+            $"element {elementId} Notes",
+            "Updated element {ElementId} notes",
+            elementId);
     }
 
     public void UpdatePackageNotes(int packageId, string newNotesHtml)
     {
-        if (_repository == null)
-            throw new InvalidOperationException("Repository is not open.");
-        var package = _repository.GetPackageByID(packageId);
-        if (package == null)
-            throw new InvalidOperationException($"Package {packageId} not found in repository.");
-        package.Notes = newNotesHtml;
-        package.Update();
-        _repository.RefreshModelView(0);
-        var actualNotes = _repository.GetPackageByID(packageId)?.Notes ?? string.Empty;
-        VerifyWrite(_logger, $"package {packageId} Notes", newNotesHtml, actualNotes);
-        _logger?.LogInformation("Updated package {PackageId} notes", packageId);
+        Write(
+            () => _repository!.GetPackageByID(packageId)
+                ?? throw new InvalidOperationException($"Package {packageId} not found in repository."),
+            package => { package.Notes = newNotesHtml; package.Update(); },
+            () => _repository!.GetPackageByID(packageId)?.Notes,
+            newNotesHtml,
+            $"package {packageId} Notes",
+            "Updated package {PackageId} notes",
+            packageId);
     }
 
     public void UpdateDiagramNotes(int diagramId, string newNotesHtml)
     {
-        if (_repository == null)
-            throw new InvalidOperationException("Repository is not open.");
-        var diagram = _repository.GetDiagramByID(diagramId);
-        if (diagram == null)
-            throw new InvalidOperationException($"Diagram {diagramId} not found in repository.");
-        diagram.Notes = newNotesHtml;
-        diagram.Update();
-        _repository.RefreshModelView(0);
-        var actualNotes = _repository.GetDiagramByID(diagramId)?.Notes ?? string.Empty;
-        VerifyWrite(_logger, $"diagram {diagramId} Notes", newNotesHtml, actualNotes);
-        _logger?.LogInformation("Updated diagram {DiagramId} notes", diagramId);
+        Write(
+            () => _repository!.GetDiagramByID(diagramId)
+                ?? throw new InvalidOperationException($"Diagram {diagramId} not found in repository."),
+            diagram => { diagram.Notes = newNotesHtml; diagram.Update(); },
+            () => _repository!.GetDiagramByID(diagramId)?.Notes,
+            newNotesHtml,
+            $"diagram {diagramId} Notes",
+            "Updated diagram {DiagramId} notes",
+            diagramId);
     }
 
     // EA.Attribute/Method/TaggedValue COM objects expose no ID property (confirmed via reflection
@@ -458,6 +450,30 @@ public class EaReader : IEaReader, IDisposable
                     { reNotes = reTv.Notes; break; }
         VerifyWrite(_logger, $"tagged value '{tagName}' ({tagValue}) on element {elementId}", newNotesHtml, reNotes);
         _logger?.LogInformation("Updated tagged value '{Name}' notes on element {ElementId}", tagName, elementId);
+    }
+
+    /// <summary>
+    /// Shared write-back skeleton for every Update* method: null-check the open repository, locate the
+    /// target entity (locate throws a descriptive exception when it cannot be found), apply the field
+    /// change and COM Update, refresh the model view, re-read the value and VerifyWrite it, then log.
+    /// </summary>
+    private void Write<TEntity>(
+        Func<TEntity> locate,
+        Action<TEntity> apply,
+        Func<string?> readBack,
+        string expected,
+        string entityDescription,
+        string successTemplate,
+        params object[] successArgs)
+    {
+        if (_repository == null)
+            throw new InvalidOperationException("Repository is not open.");
+        var entity = locate();
+        apply(entity);
+        _repository.RefreshModelView(0);
+        var actual = readBack() ?? string.Empty;
+        VerifyWrite(_logger, entityDescription, expected, actual);
+        _logger?.LogInformation(successTemplate, successArgs);
     }
 
     private static void VerifyWrite(ILogger? logger, string entityDescription, string expected, string? actual)
