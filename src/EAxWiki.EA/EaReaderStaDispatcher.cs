@@ -59,8 +59,7 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
         EaReader? reader = null;
         try
         {
-            reader = new EaReader(_logger as ILogger<EaReader>);
-            reader.Open(repositoryPath);
+            reader = OpenNewReader(repositoryPath);
             _isHealthy = true;
         }
         catch (Exception ex)
@@ -79,51 +78,83 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
         {
             foreach (var work in _workQueue.GetConsumingEnumerable())
             {
-                int retries = 0;
-                const int maxRetries = 1;
-                bool executed = false;
-                while (!executed && retries <= maxRetries)
-                {
-                    try
+                ExecuteWithReconnect(
+                    execute: () => work.Execute(reader!),
+                    reconnect: () =>
                     {
-                        work.Execute(reader);
-                        _isHealthy = true;
-                        executed = true;
-                    }
-                    catch (COMException ex) when (!_disposed && retries < maxRetries)
+                        reader!.Dispose();
+                        reader = OpenNewReader(repositoryPath);
+                        _logger.LogInformation("EA reconnection succeeded.");
+                    },
+                    shouldRetry: ex => ex is COMException && !_disposed,
+                    onRetry: (ex, retries, maxRetries) =>
                     {
-                        retries++;
                         _isHealthy = false;
-                        _logger.LogWarning(ex,
-                            "EA COM disconnected (retry {Retry}/{MaxRetries}); reconnecting.",
-                            retries, maxRetries);
-                        reader?.Dispose();
-                        try
-                        {
-                            reader = new EaReader(_logger as ILogger<EaReader>);
-                            reader.Open(repositoryPath);
-                            _logger.LogInformation("EA reconnection succeeded.");
-                            // Stay unhealthy until the next successful work item — reconnect
-                            // opening the repo does not itself prove the model is queryable.
-                        }
-                        catch (Exception reconnectEx)
-                        {
-                            _logger.LogError(reconnectEx, "EA reconnection failed.");
-                            work.SetException(reconnectEx);
-                            executed = true;
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        work.SetException(ex);
-                        executed = true;
-                    }
-                }
+                        _logger.LogWarning(ex, "EA COM disconnected (retry {Retry}/{MaxRetries}); reconnecting.", retries, maxRetries);
+                    },
+                    onFailure: ex => work.SetException(ex),
+                    onHealthy: () => _isHealthy = true,
+                    maxRetries: 1);
             }
         }
         finally
         {
             reader?.Dispose();
+        }
+    }
+
+    private EaReader OpenNewReader(string repositoryPath)
+    {
+        var newReader = new EaReader(_logger as ILogger<EaReader>);
+        newReader.Open(repositoryPath);
+        return newReader;
+    }
+
+    // The work-item retry loop from RunStaPump, extracted so the reconnect semantics are
+    // unit-testable without a live EA repository. Semantics identical to the original loop:
+    //   * up to maxRetries + 1 attempts total
+    //   * on shouldRetry(ex) with retries remaining -> onRetry(ex, retryNumber, maxRetries),
+    //     then reconnect(); if reconnect throws -> onFailure(reconnectEx) and stop
+    //   * on non-retryable exception or retries exhausted -> onFailure(ex) and stop
+    //   * on success -> onHealthy() and stop
+    internal static void ExecuteWithReconnect(
+        Action execute,
+        Action reconnect,
+        Func<Exception, bool> shouldRetry,
+        Action<Exception, int, int> onRetry,
+        Action<Exception> onFailure,
+        Action onHealthy,
+        int maxRetries)
+    {
+        var retries = 0;
+        var executed = false;
+        while (!executed && retries <= maxRetries)
+        {
+            try
+            {
+                execute();
+                onHealthy();
+                executed = true;
+            }
+            catch (Exception ex) when (shouldRetry(ex) && retries < maxRetries)
+            {
+                retries++;
+                onRetry(ex, retries, maxRetries);
+                try
+                {
+                    reconnect();
+                }
+                catch (Exception reconnectEx)
+                {
+                    onFailure(reconnectEx);
+                    executed = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                onFailure(ex);
+                executed = true;
+            }
         }
     }
 
@@ -246,7 +277,7 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
         GC.SuppressFinalize(this);
     }
 
-    private sealed class WorkItem
+    internal sealed class WorkItem
     {
         private readonly Action<EaReader> _execute;
         private readonly Action<Exception> _onError;
@@ -257,11 +288,10 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
             _onError = onError;
         }
 
-        public void Execute(EaReader reader)
-        {
-            try { _execute(reader); }
-            catch (Exception ex) { _onError(ex); }
-        }
+        // Deliberately does NOT swallow exceptions: RunStaPump's ExecuteWithReconnect needs to
+        // observe COMException to trigger a reconnect. The pump routes non-retryable failures via
+        // SetException.
+        public void Execute(EaReader reader) => _execute(reader);
 
         public void SetException(Exception ex) => _onError(ex);
     }
