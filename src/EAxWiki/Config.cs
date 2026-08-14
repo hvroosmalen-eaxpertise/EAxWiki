@@ -14,6 +14,7 @@ public class Config
     public bool ApiMode { get; set; }
     public int ApiPort { get; set; } = 0;
     public int WikiPort { get; set; } = 0;
+    public int ApiRateLimitPerMinute { get; set; } = 60;
     public string? CertPath { get; set; }
     public string? CertPassword { get; set; }
     public string AiEndpoint { get; set; } = "";

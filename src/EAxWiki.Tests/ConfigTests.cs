@@ -192,4 +192,12 @@ public class ConfigTests
         cfg.Load(["--unknown-flag"]);
         Assert.Equal("", cfg.RepositoryPath);
     }
+
+    [Fact]
+    public void Load_NoArgs_ApiRateLimitDefaultsTo60()
+    {
+        var cfg = new Config();
+        cfg.Load([]);
+        Assert.Equal(60, cfg.ApiRateLimitPerMinute);
+    }
 }
