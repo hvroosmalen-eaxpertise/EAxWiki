@@ -625,13 +625,13 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 |-------|-------|---------------|
 | Export integration | 11 | End-to-end Markdown output via `InMemoryWriter` |
 | Write-back scanner | 4 | Notes round-trip routing, hash skip, attribute row notes |
-| EaReader + ModelMapper | 54 | COM model mapping (Element/Package/Diagram), logger warning paths, null handling, guard clauses, Open validation, dispose |
+| EaReader + ModelMapper | 60 | COM model mapping (Element/Package/Diagram), logger warning paths, null handling, guard clauses, Open validation, dispose, STA dispatcher COM-reconnect loop (`ExecuteWithReconnect`) |
 | ContextBuilder | 9 | Sub-builder decomposition (ElementCollector, DiagramIndexBuilder, ConnectorIndexBuilder, LookupBuilder, PackageDirCollector) |
-| Frontmatter parser | 15 | YamlDotNet-based YAML frontmatter parsing |
+| Frontmatter parser | 18 | YamlDotNet-based YAML frontmatter parsing, notes/status hash+content rewrite, CRLF round-trip |
 | ElementPageWriter renderers | 34 | All 11 widget renderers (rich HTML + plain Markdown modes), edge cases, 2-hop graph, missing references |
-| Other | ~145 | Cleanup, Markdown helpers, hash helpers, config store, repository/health/validation writers, resilience, script template integrity, write-back server HTTP tests, etc. |
+| Other | ~149 | Cleanup, Markdown helpers, hash helpers, config store, repository/health/validation writers, resilience, script template integrity, write-back server HTTP tests (auth/rate-limit/shutdown/CORS), config defaults, etc. |
 | Property-based (FsCheck) | 26 | SanitizeName, EscapeCell, ParseStereotype, GetStereotypeLabel, SanitizeForAnchor, ComputeNotesHash, ComputeStatusHash invariants |
-| **.NET subtotal** | **298** | |
+| **.NET subtotal** | **311** | |
 | Bootstrap | 2 | `Get-EAxWikiDllPath` resolution + clear missing-DLL error |
 | Export | 26 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths, `--brand` |
 | ExportAndServe | 23 | Port/root/API-port flags, retry/force args, combined pipeline args |
@@ -644,7 +644,7 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 | Writeback | 14 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
 | **Pester subtotal** | **162** | |
 
-**460 tests total** (298 .NET + 162 Pester), all pass.
+**473 tests total** (311 .NET + 162 Pester), all pass.
 
 ## Design decisions
 
