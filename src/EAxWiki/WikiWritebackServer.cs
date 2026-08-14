@@ -375,7 +375,7 @@ internal static class WikiWritebackServer
         var rateLimiter = PartitionedRateLimiter.Create<string, string>(key =>
             RateLimitPartition.GetSlidingWindowLimiter(key, _ => new SlidingWindowRateLimiterOptions
             {
-                PermitLimit = 60,
+                PermitLimit = config.ApiRateLimitPerMinute,
                 Window = TimeSpan.FromSeconds(60),
                 SegmentsPerWindow = 6,
                 AutoReplenishment = true

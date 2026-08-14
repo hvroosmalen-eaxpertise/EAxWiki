@@ -64,16 +64,7 @@ public class WikiWritebackServerHttpTests : IAsyncLifetime
             "",
         ]));
 
-        var builder = WebApplication.CreateBuilder();
-        builder.Logging.ClearProviders();
-        builder.WebHost.UseTestServer();
-        _app = builder.Build();
-
-        var config = new Config { WikiPort = WikiPort, ApiPort = 8001 };
-        WikiWritebackServer.Configure(_app, _reader, config, _outputDir, NullLogger.Instance);
-
-        await _app.StartAsync();
-        _client = _app.GetTestClient();
+        (_app, _client) = await BuildAppAsync(new Config { WikiPort = WikiPort, ApiPort = 8001 });
     }
 
     public async Task DisposeAsync()
@@ -82,6 +73,17 @@ public class WikiWritebackServerHttpTests : IAsyncLifetime
         if (_app != null) await _app.DisposeAsync();
         if (Directory.Exists(_outputDir))
             try { Directory.Delete(_outputDir, recursive: true); } catch { }
+    }
+
+    private async Task<(WebApplication App, HttpClient Client)> BuildAppAsync(Config config)
+    {
+        var builder = WebApplication.CreateBuilder();
+        builder.Logging.ClearProviders();
+        builder.WebHost.UseTestServer();
+        var app = builder.Build();
+        WikiWritebackServer.Configure(app, _reader, config, _outputDir, NullLogger.Instance);
+        await app.StartAsync();
+        return (app, app.GetTestClient());
     }
 
     private HttpRequestMessage Post(string path, object body, string? token = null, string? origin = Origin)
@@ -204,5 +206,61 @@ public class WikiWritebackServerHttpTests : IAsyncLifetime
         req.Headers.Add("Origin", "http://localhost:9999");
         var response = await _client.SendAsync(req);
         Assert.False(response.Headers.Contains("Access-Control-Allow-Origin"));
+    }
+
+    // ─── rate limit, origin bypass, graceful shutdown ────────────────────────────────────────
+
+    [Fact]
+    public async Task RateLimit_Exceeded_Returns429()
+    {
+        // Dispose the default (limit-60) app; build a fresh one with a tiny limit so the test
+        // stays fast. The fixture's DisposeAsync later disposes these again — idempotent.
+        _client.Dispose();
+        await _app.DisposeAsync();
+        var (app, client) = await BuildAppAsync(new Config { WikiPort = WikiPort, ApiPort = 8001, ApiRateLimitPerMinute = 3 });
+        try
+        {
+            var body = new { elementId = 42, newStatus = "Approved", filePath = "test-element.md" };
+            for (var i = 0; i < 3; i++)
+            {
+                var ok = await client.SendAsync(Post("/api/status", body));
+                Assert.Equal(HttpStatusCode.OK, ok.StatusCode);
+            }
+
+            var limited = await client.SendAsync(Post("/api/status", body));
+            Assert.Equal(HttpStatusCode.TooManyRequests, limited.StatusCode);
+            Assert.Equal("60", limited.Headers.GetValues("Retry-After").Single());
+        }
+        finally
+        {
+            client.Dispose();
+            await app.DisposeAsync();
+        }
+    }
+
+    [Fact]
+    public async Task MismatchedOrigin_PostWithValidToken_StillSucceeds()
+    {
+        // Origin/port matching only suppresses the CORS headers (browser-scoped). Token auth runs
+        // regardless, so a mismatched-origin POST with a valid token succeeds — documents that
+        // origin is not authentication.
+        var response = await _client.SendAsync(
+            Post("/api/status", new { elementId = 42, newStatus = "Approved", filePath = "test-element.md" }, origin: "http://localhost:9999"));
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        Assert.Single(_reader.StatusUpdates);
+    }
+
+    [Fact]
+    public async Task Shutdown_Returns200_ThenApplicationStoppingFires()
+    {
+        var stopping = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
+        using var registration = _app.Lifetime.ApplicationStopping.Register(() => stopping.TrySetResult());
+
+        var response = await _client.SendAsync(Post("/api/shutdown", new { }));
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+
+        // The endpoint responds 200 first, then (after ~500ms) calls lifetime.StopApplication().
+        // Prove the graceful-drain signal the monitor relies on actually fired.
+        await stopping.Task.WaitAsync(TimeSpan.FromSeconds(5));
     }
 }
