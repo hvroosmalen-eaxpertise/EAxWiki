@@ -140,7 +140,7 @@ assembly.
 
 - Build clean, no new warnings.
 - New tests green: 3 HTTP + 5 STA (11 existing HTTP tests remain green).
-- Full .NET suite: 301 → 309 passing.
+- Full .NET suite: 301 → 311 passing (10 new tests: 1 Config default, 3 HTTP, 6 STA — the dispatch regression test was added per the approved "make the reconnect path live" decision).
 - Pester suite: 162 passing, unchanged.
 - No production behavior change for default config; no public API change.
 - Optional live smoke gate (real EA): can run the existing writeback smoke test; if skipped,

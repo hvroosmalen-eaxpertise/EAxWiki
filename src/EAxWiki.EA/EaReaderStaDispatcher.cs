@@ -83,7 +83,15 @@ public class EaReaderStaDispatcher : IEaReader, IDisposable
                     reconnect: () =>
                     {
                         reader!.Dispose();
-                        reader = OpenNewReader(repositoryPath);
+                        try
+                        {
+                            reader = OpenNewReader(repositoryPath);
+                        }
+                        catch (Exception reconnectEx)
+                        {
+                            _logger.LogError(reconnectEx, "EA reconnection failed.");
+                            throw;
+                        }
                         _logger.LogInformation("EA reconnection succeeded.");
                     },
                     shouldRetry: ex => ex is COMException && !_disposed,
