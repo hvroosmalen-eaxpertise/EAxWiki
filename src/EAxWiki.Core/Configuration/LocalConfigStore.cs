@@ -33,6 +33,7 @@ public static class LocalConfigStore
         public string? TelegramChatId { get; set; }
         public int? WikiPort { get; set; }
         public int? ApiPort { get; set; }
+        public int? LlmPort { get; set; }
         public string? AiMode { get; set; }
         public string? AiEndpoint { get; set; }
         public string? AiModel { get; set; }

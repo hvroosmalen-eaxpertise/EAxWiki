@@ -29,7 +29,8 @@ public class LocalConfigStoreTests : IDisposable
             TelegramBotToken = "123456789:AAbbCCddEeffGGhhIIjj",
             TelegramChatId = "-1001234567890",
             WikiPort = 8000,
-            ApiPort = 8001
+            ApiPort = 8001,
+            LlmPort = 8080
         };
         var path = Path.Combine(_dir, ".eaxwiki");
         LocalConfigStore.Save(path, config);
@@ -43,6 +44,7 @@ public class LocalConfigStoreTests : IDisposable
         Assert.Equal(config.TelegramChatId, loaded.TelegramChatId);
         Assert.Equal(config.WikiPort, loaded.WikiPort);
         Assert.Equal(config.ApiPort, loaded.ApiPort);
+        Assert.Equal(8080, loaded.LlmPort);
     }
 
     [Fact]
