@@ -1,12 +1,12 @@
 . $PSScriptRoot\_bootstrap.ps1
 
-# Registers monitor-export-and-serve.ps1 as a Windows Task Scheduler task, either on a
+# Registers EAxWiki.Monitor.exe as a Windows Task Scheduler task, either on a
 # simple fixed interval or (see issue #38) on a day/night-aware schedule: a fast interval
 # during a weekday work-hours window, layered on top of a slower all-day, every-day
 # baseline. See docs/superpowers/specs/2026-07-03-issue-38-scheduling-design.md for the
 # design behind the day/night mode — in short: Task Scheduler natively supports multiple
 # triggers per task, so this is two native triggers, not a config file read by the wrapper.
-# monitor-export-and-serve.ps1 itself is completely unaware this exists.
+# EAxWiki.Monitor.exe itself is completely unaware this exists.
 #
 # Slack, Teams and/or Telegram alert destinations (issue #39 / #80 — all are independent, not
 # exclusive; configure any subset) can be configured in one of three ways each (checked in this order):
@@ -17,7 +17,7 @@
 #   3. Not configured (alerting is disabled for that channel; still logs to wiki/status/health.md)
 #
 # This registration script does NOT bake --webhook-url/--teams-webhook-url/--telegram-bot-token/
-# --telegram-chat-id into the scheduled task's command line, even though monitor-export-and-serve.ps1
+# --telegram-chat-id into the scheduled task's command line, even though EAxWiki.Monitor.exe
 # itself accepts them for manual/direct invocation — Task Scheduler stores action arguments in a
 # readable way (any admin can read them back via Get-ScheduledTask), so scheduled runs always resolve
 # via env var or .eaxwiki.
@@ -67,7 +67,7 @@ $OutputDir                = ""
 $Port                     = 8000
 $MaxRetries               = 3
 $RetryDelaySeconds        = 30
-$ForceExport              = $false # bake --force into every scheduled run (see monitor-export-and-serve.ps1)
+$ForceExport              = $false # bake --force into every scheduled run (see EAxWiki.Monitor.exe)
 $ForceEveryNRuns          = 0      # bake --force-every N into the scheduled run instead of forcing every time
 $WakeToRun                = $true  # keep the machine awake for the run's duration if something wakes it while
                                     # asleep (issue #44) — without this, a run can freeze mid-export for hours if
@@ -144,7 +144,7 @@ if ($dayNightMode) {
 }
 
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition | Split-Path -Parent
-$monitorScript = Join-Path $repoRoot "scripts\monitor-export-and-serve.ps1"
+$monitorExe = Get-EAxWikiMonitorExePath -RepoRoot $repoRoot
 
 $scriptArgs = @("--max-retries", $MaxRetries, "--retry-delay", $RetryDelaySeconds)
 # NOT baking --repo into the task action: the monitor resolves RepoPath from the
@@ -158,10 +158,9 @@ if ($ForceExport) { $scriptArgs += "--force" }
 elseif ($ForceEveryNRuns -gt 0) { $scriptArgs += "--force-every", $ForceEveryNRuns }
 
 $argLine = ($scriptArgs | ForEach-Object { if ($_ -match '\s') { "`"$_`"" } else { $_ } }) -join ' '
-$psExe = $PSExecutable
 
-$action  = New-ScheduledTaskAction -Execute $psExe `
-    -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$monitorScript`" $argLine"
+# Direct exe invocation (no pwsh -File wrapper): EAxWiki.Monitor.exe has its own argument parser.
+$action  = New-ScheduledTaskAction -Execute $monitorExe -Argument $argLine
 
 if ($dayNightMode) {
     # New-ScheduledTaskTrigger's -Daily and -Weekly parameter sets don't expose
@@ -237,6 +236,6 @@ if ($dayNightMode) {
     $intervalLabel = if ($effectiveMinutes % 60 -eq 0) { "$($effectiveMinutes / 60) hour(s)" } else { "$effectiveMinutes minute(s)" }
     Write-Host "Registered scheduled task '$TaskName' to run every $intervalLabel." -ForegroundColor Green
 }
-Write-Host "Command: $psExe -NoProfile -ExecutionPolicy Bypass -File `"$monitorScript`" $argLine"
+Write-Host "Command: `"$monitorExe`" $argLine"
 Write-Host ""
 Write-Host "Run 'Unregister-ScheduledTask -TaskName $TaskName' to remove it, or re-run this script to replace it."

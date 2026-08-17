@@ -56,7 +56,7 @@ $env:EAXWIKI_ALERT_TELEGRAM_CHAT_ID        = '<telegram chat id>'
 Test a channel without running a real export:
 
 ```powershell
-.\scripts\monitor-export-and-serve.ps1 --test-alert
+.\src\EAxWiki.Monitor\bin\Debug\net10.0\EAxWiki.Monitor.exe --test-alert
 ```
 
 This resolves each channel the same way a real scheduled run does (CLI flag → env var → `.eaxwiki`) and posts a blue "Test" message to every configured channel. Detailed walkthroughs, alert kinds/emojis, security notes, and troubleshooting live in [**Slack Webhook Setup**](docs/SLACK_WEBHOOK_SETUP.md), [**Teams Webhook Setup**](docs/TEAMS_WEBHOOK_SETUP.md), and [**Telegram Setup**](docs/TELEGRAM_SETUP.md).
@@ -242,8 +242,8 @@ A typical first-time setup is just:
 | `scripts/export-and-serve.ps1` | Export then serve (calls the two above) |
 | `scripts/serve-api.ps1` | Start MkDocs *and* the wiki write-back server together, without re-exporting |
 | `scripts/writeback.ps1` | Scan wiki for status and notes changes and write them back to EA via COM (**Windows only**) |
-| `scripts/monitor-export-and-serve.ps1` | Unattended wrapper for scheduled runs: retry with backoff, Slack/Teams/Telegram alerting, health page, serve watchdog (see [Scheduling exports](#scheduling-exports), **Windows only**) |
-| `scripts/register-scheduled-task.ps1` | Register `monitor-export-and-serve.ps1` as a Windows Task Scheduler task — fixed interval or day/night mode (see [Scheduling exports](#scheduling-exports), **Windows only**) |
+| `src/EAxWiki.Monitor` | Unattended monitor exe (`EAxWiki.Monitor.exe`): retry with backoff, Slack/Teams/Telegram alerting, health page, serve watchdog (see [Scheduling exports](#scheduling-exports), **Windows only**) |
+| `scripts/register-scheduled-task.ps1` | Register `EAxWiki.Monitor.exe` as a Windows Task Scheduler task — fixed interval or day/night mode (see [Scheduling exports](#scheduling-exports), **Windows only**) |
 | `src/EAxWiki.SchedulerUI` | WinForms GUI front end for the script above — see [Scheduler GUI](#scheduler-gui), **Windows only** |
 
 All scripts accept both PowerShell (`-Flag`) and Unix-style (`--flag`) syntax interchangeably, e.g. `--force`, `--verbose`, `--repo`.
@@ -450,7 +450,7 @@ Because the connection is saved in `.eaxwiki`, the scripts run unattended and ar
 
 ### Windows Task Scheduler — unattended monitoring (recommended)
 
-`scripts/register-scheduled-task.ps1` registers `scripts/monitor-export-and-serve.ps1` on a fixed interval. Unlike calling `export.ps1` directly from Task Scheduler, the monitor wrapper is built for running unattended with nobody watching: it retries transient failures with backoff, restarts `mkdocs serve` if it dies, writes a `wiki/status/health.md` page, and (if a Slack, Teams, and/or Telegram alert destination is configured — see [Monitoring & Alerting](#monitoring--alerting)) posts an alert on every run start, on final failure, and on recovery.
+`scripts/register-scheduled-task.ps1` registers `EAxWiki.Monitor.exe` on a fixed interval. Unlike calling `export.ps1` directly from Task Scheduler, the monitor is built for running unattended with nobody watching: it retries transient failures with backoff, restarts `mkdocs serve` if it dies, writes a `wiki/status/health.md` page, and (if a Slack, Teams, and/or Telegram alert destination is configured — see [Monitoring & Alerting](#monitoring--alerting)) posts an alert on every run start, on final failure, and on recovery.
 
 ```powershell
 # Register a task that runs every 30 minutes
@@ -462,10 +462,11 @@ Because the connection is saved in `.eaxwiki`, the scripts run unattended and ar
 
 Re-running `register-scheduled-task.ps1` with the same `--task-name` (default `EAxWiki-Monitor`) replaces the existing registration. Remove it with `Unregister-ScheduledTask -TaskName EAxWiki-Monitor`.
 
-What the monitor wrapper does on each scheduled run:
+What the monitor does on each scheduled run:
 - Pre-flight: kills any orphaned `EA.exe` left over from a prior crashed run
 - Exports with bounded retry + backoff (`--max-retries`, default 3; `--retry-delay`, default 30s) and a sanity check that alerts if the element count collapses versus the previous successful run (`--min-element-fraction`, default 0.5)
 - Checks whether `mkdocs serve` is still up — including a check on whether the wiki port itself is already listening, so it won't start a second, colliding `mkdocs serve` on top of one you started manually outside the monitor's tracking — and restarts it if it's down
+- Runs the write-back API and local LLM server as watchdogs too (ports via `--api-port` and the new `--llm-port`, default 8080, or from `.eaxwiki`), restarting them if they die
 - Sends "run starting" and "run finished" notifications for every pass — Start reports forced vs. incremental, Finish reports duration and page counts (total/diagram/element, delta vs. the previous run) — disable both with `--no-notify-start`; plus Failure/Recovery alerts for export and serve independently, and a once-per-day digest of approximate wiki page reads and write-back counts
 
 Export mode on the schedule: incremental by default, same as `export.ps1` itself — forcing a full rebuild on every run of a short interval would be needlessly slow against a large model.
@@ -483,11 +484,11 @@ Overlap protection: the registered task uses `MultipleInstances IgnoreNew`, so i
 
 The task also sets `WakeToRun` by default, so Task Scheduler holds the machine awake for the run's duration if something else wakes it while asleep — without this, a run can freeze for hours if the machine falls back asleep right after an unrelated wake event. Pass `--no-wake-to-run` to opt out (e.g. on a laptop where unexpected wake behavior is itself the bigger annoyance, or hardware with known-flaky wake timers).
 
-You can also run `monitor-export-and-serve.ps1` directly (e.g. to test alerting) without registering a task:
+You can also run `EAxWiki.Monitor.exe` directly (e.g. to test alerting) without registering a task:
 
 ```powershell
-.\scripts\monitor-export-and-serve.ps1 --port 8000          # one pass
-.\scripts\monitor-export-and-serve.ps1 --test-alert          # send a test message to every configured channel and exit
+.\src\EAxWiki.Monitor\bin\Debug\net10.0\EAxWiki.Monitor.exe --port 8000      # one pass
+.\src\EAxWiki.Monitor\bin\Debug\net10.0\EAxWiki.Monitor.exe --test-alert      # send a test message to every configured channel and exit
 ```
 
 #### Day/night scheduling
@@ -496,7 +497,7 @@ By default a schedule runs at one fixed cadence 24/7. `--work-start`/`--work-end
 day/night mode instead: a fast interval during a weekday work-hours window, layered on top of a
 slower all-day, every-day baseline (the "always-alive" heartbeat, so a real failure at night or on
 a weekend isn't silently indistinguishable from "just paused"). This is two native Task Scheduler
-triggers on one task, not a config file — `monitor-export-and-serve.ps1` has no idea day/night
+triggers on one task, not a config file — `EAxWiki.Monitor.exe` has no idea day/night
 scheduling exists.
 
 ```powershell
@@ -631,20 +632,19 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 | ElementPageWriter renderers | 34 | All 11 widget renderers (rich HTML + plain Markdown modes), edge cases, 2-hop graph, missing references |
 | Other | ~149 | Cleanup, Markdown helpers, hash helpers, config store, repository/health/validation writers, resilience, script template integrity, write-back server HTTP tests (auth/rate-limit/shutdown/CORS), config defaults, etc. |
 | Property-based (FsCheck) | 26 | SanitizeName, EscapeCell, ParseStereotype, GetStereotypeLabel, SanitizeForAnchor, ComputeNotesHash, ComputeStatusHash invariants |
-| **.NET subtotal** | **311** | |
-| Bootstrap | 2 | `Get-EAxWikiDllPath` resolution + clear missing-DLL error |
+| EAxWiki.Monitor | 108 | Monitor lock/loop, options resolution, CLI parser, export runner (incl. typed STA-exporter logger wiring), alert dispatcher, digest tracker, health store/renderer, edit lock, port killer/probe, pid file, process supervisor |
+| **.NET subtotal** | **419** | |
+| Bootstrap | 4 | `Get-EAxWikiDllPath` + `Get-EAxWikiMonitorExePath` resolution + clear missing-DLL/exe errors |
 | Export | 26 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths, `--brand` |
 | ExportAndServe | 23 | Port/root/API-port flags, retry/force args, combined pipeline args |
 | Install | 11 | PS 5.1 compat via bootstrap, parameter binding |
-| MonitorExportAndServe | 47 | Schedule parsing, task registration/update, state file, health check, alerting (Slack/Teams/Telegram), CLI flags, `--brand` |
-| SendAlert | 2 | Telegram dispatch guard + dispatch |
 | Serve | 12 | Port/root flags, file server config, cert modes, default page, path normalization |
 | ServeApi | 13 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
 | ValidateWikiOutput | 12 | Validation CLI args (repo/output/tolerance, defaults, error paths) |
 | Writeback | 14 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
-| **Pester subtotal** | **162** | |
+| **Pester subtotal** | **115** | |
 
-**473 tests total** (311 .NET + 162 Pester), all pass.
+**534 tests total** (419 .NET + 115 Pester), all pass.
 
 ## Design decisions
 

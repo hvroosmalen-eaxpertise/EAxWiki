@@ -7,7 +7,7 @@ description: Use when the unattended export/serve/monitor pipeline seems to have
 
 ## Overview
 
-`register-scheduled-task.ps1` and `monitor-export-and-serve.ps1` are two independent layers (`scripts/register-scheduled-task.ps1:1-7`: "monitor-export-and-serve.ps1 itself is completely unaware [the scheduled task] exists"). Most "the schedule isn't working" reports are actually a mismatch between what one layer intended and what the other is doing. Check both, don't assume either from the script source alone — the registered task can silently diverge from what the script last requested (e.g. someone re-ran it with different flags, or an old registration was never replaced).
+`register-scheduled-task.ps1` and `EAxWiki.Monitor.exe` are two independent layers (`scripts/register-scheduled-task.ps1:1-7`: "EAxWiki.Monitor.exe itself is completely unaware [the scheduled task] exists"). Most "the schedule isn't working" reports are actually a mismatch between what one layer intended and what the other is doing. Check both, don't assume either from the script source alone — the registered task can silently diverge from what the script last requested (e.g. someone re-ran it with different flags, or an old registration was never replaced).
 
 ## Where to look
 
@@ -21,11 +21,11 @@ description: Use when the unattended export/serve/monitor pipeline seems to have
    - `WakeToRun` (issue #44, `register-scheduled-task.ps1:48-52`): confirm it's actually on if the machine is expected to wake mid-sleep for a run — `$registered.Settings.WakeToRun`. Off by default expectation mismatch here is exactly the bug fixed in commit `8f71db94`.
    - `MultipleInstances` should be `IgnoreNew` — this is what makes day/night mode's legitimate trigger overlap harmless, and what prevents a slow EA export from stacking runs.
 
-2. **`wiki/status/health.md`** — human-readable pipeline health, regenerated every monitor pass (`monitor-export-and-serve.ps1:403-439`). Read this first for a quick "Healthy"/"Degraded" verdict, last success/failure times, consecutive failure counts, and `runsSinceForce`.
+2. **`wiki/status/health.md`** — human-readable pipeline health, regenerated every monitor pass (rendered by `EAxWiki.Monitor`'s `HealthPageRenderer`). Read this first for a quick "Healthy"/"Degraded" verdict, last success/failure times, consecutive failure counts, and `runsSinceForce`.
 
 3. **`.eaxwiki-monitor/<instanceHash>/health.json`** — the underlying state the health page is rendered from, plus fields not shown on the page: `pageReadsToday`/`writebacksToday` (issue #41 daily digest counters) and the `*LogOffset` pairs that track how far the monitor has already scanned `wiki/status/writeback.log` and mkdocs' own serve log. If a digest alert seems to be over/under-counting, check whether an offset looks stale (e.g. pointing past the end of a log file that got rotated/replaced).
 
-4. **Alert delivery** — webhooks resolve in this order: CLI flag → `EAXWIKI_ALERT_WEBHOOK`/`EAXWIKI_ALERT_TEAMS_WEBHOOK` env var → `.eaxwiki` encrypted config (`monitor-export-and-serve.ps1:9-14`). A scheduled run never gets the CLI-flag path deliberately (`register-scheduled-task.ps1:16-19`: Task Scheduler stores action args in a readable way), so if alerts fire when run manually but not from the scheduled task, check the env var is actually set in the *scheduled task's own execution context* (a user's interactive shell env var doesn't carry over) or that `.eaxwiki` is present and decryptable from wherever Task Scheduler actually runs (`SYSTEM`-vs-user context matters for file access).
+4. **Alert delivery** — webhooks resolve in this order: CLI flag → `EAXWIKI_ALERT_WEBHOOK`/`EAXWIKI_ALERT_TEAMS_WEBHOOK` env var → `.eaxwiki` encrypted config (resolved by `EAxWiki.Monitor`'s `MonitorOptionsResolver`). A scheduled run never gets the CLI-flag path deliberately (`register-scheduled-task.ps1:16-19`: Task Scheduler stores action args in a readable way), so if alerts fire when run manually but not from the scheduled task, check the env var is actually set in the *scheduled task's own execution context* (a user's interactive shell env var doesn't carry over) or that `.eaxwiki` is present and decryptable from wherever Task Scheduler actually runs (`SYSTEM`-vs-user context matters for file access).
 
 ## Quick triage flow
 

@@ -33,3 +33,14 @@ function Get-EAxWikiDllPath {
     }
     return $dllPath
 }
+
+# Get-EAxWikiMonitorExePath - resolve the pre-built EAxWiki.Monitor.exe and verify it exists.
+# RepoRoot is explicit (not derived from $PSScriptRoot) for the same reason as Get-EAxWikiDllPath.
+function Get-EAxWikiMonitorExePath {
+    param([string]$RepoRoot)
+    $exePath = Join-Path $RepoRoot "src\EAxWiki.Monitor\bin\Debug\net10.0\EAxWiki.Monitor.exe"
+    if (-not (Test-Path $exePath)) {
+        throw "EAxWiki.Monitor.exe not found at '$exePath'. Run 'dotnet build src/EAxWiki.Monitor' first."
+    }
+    return $exePath
+}
