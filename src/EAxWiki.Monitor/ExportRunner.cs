@@ -173,9 +173,8 @@ public class ExportRunner : IExportRunner
                     _options.AiEndpoint);
                 lastExitCode = 0;
 
-                var totalPages = _metrics.CountMarkdownFiles(_options.WikiDir);
+                elementCount = _metrics.CountMarkdownFiles(_options.WikiDir);
                 diagramCount = _metrics.CountDiagramFiles(_options.WikiDir);
-                elementCount = totalPages - diagramCount;
                 var floor = Math.Floor(previousCount * _options.MinElementFraction);
                 if (previousCount > 0 && elementCount < floor)
                 {
@@ -232,7 +231,7 @@ public class ExportRunner : IExportRunner
                     writebackSuffix = $" - write-backs: {string.Join(", ", parts)}";
                 }
                 _alerts.Dispatch(
-                    $"Export finished in {stopwatch.Elapsed:mm\\:ss} - {elementCount + diagramCount} page(s) total ({diagramCount} diagram, {elementCount} element), {deltaLabel} vs previous run.{validationSuffix}{writebackSuffix}",
+                    $"Export finished in {stopwatch.Elapsed:mm\\:ss} - {elementCount} page(s) total ({diagramCount} diagram, {elementCount - diagramCount} element), {deltaLabel} vs previous run.{validationSuffix}{writebackSuffix}",
                     AlertKind.Finish);
             }
             _logger.LogInformation("Succeeded on attempt {Attempt} in {Elapsed}.", 1, stopwatch.Elapsed.ToString("mm\\:ss"));

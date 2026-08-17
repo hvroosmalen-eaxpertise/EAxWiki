@@ -102,7 +102,7 @@ public class ExportRunnerTests : IDisposable
         Assert.Equal("full (--force)", state.LastMode);
         Assert.Equal(0, state.LastExitCode);
         Assert.NotNull(state.LastSuccessTime);
-        Assert.Equal(1, state.LastElementCount);
+        Assert.Equal(2, state.LastElementCount);
         Assert.Equal(1, state.LastDiagramCount);
     }
 
