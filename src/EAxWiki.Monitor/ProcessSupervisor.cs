@@ -119,8 +119,11 @@ public class ProcessSupervisor : IProcessSupervisor
         {
             try
             {
-                var outText = await proc.StandardOutput.ReadToEndAsync();
-                var errText = await proc.StandardError.ReadToEndAsync();
+                var outTask = proc.StandardOutput.ReadToEndAsync();
+                var errTask = proc.StandardError.ReadToEndAsync();
+                await Task.WhenAll(outTask, errTask);
+                var outText = await outTask;
+                var errText = await errTask;
                 Directory.CreateDirectory(spec.LogDir);
                 File.WriteAllText(outFile, outText);
                 File.WriteAllText(errFile, errText);
