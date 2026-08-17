@@ -58,6 +58,7 @@ public class SchedulerForm : Form
     private readonly Button _browseLlmExeButton = new() { Text = "Browse...", AutoSize = true };
     private readonly TextBox _llmModelPathBox = new() { Width = 340, Height = 23 };
     private readonly Button _browseLlmModelButton = new() { Text = "Browse...", AutoSize = true };
+    private readonly NumericUpDown _llmPortBox = new() { Minimum = 1, Maximum = 65535, Value = 8080, Width = 80 };
     private readonly Button _llmStartButton = new() { Text = "Start LLM", AutoSize = true };
     private readonly Button _llmStopButton = new() { Text = "Stop LLM", AutoSize = true, Enabled = false };
     private Process? _llmProcess;
@@ -101,6 +102,13 @@ public class SchedulerForm : Form
     private readonly Button _stopAllButton = new() { Text = "Stop All", AutoSize = true };
     private readonly Button _refreshStatusButton = new() { Text = "Refresh Status", AutoSize = true };
     private readonly Button _refreshConfigButton = new() { Text = "Refresh", AutoSize = true };
+    private readonly Button _refreshDashboardButton = new() { Text = "Refresh", AutoSize = true };
+    private readonly DataGridView _dashboardGrid = new()
+    {
+        ReadOnly = true, AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+        AllowUserToAddRows = false, AllowUserToDeleteRows = false, Dock = DockStyle.Top,
+        Height = 260,
+    };
 
     public SchedulerForm()
     {
@@ -125,6 +133,7 @@ public class SchedulerForm : Form
         tabs.TabPages.Add(BuildScheduleTab());
         tabs.TabPages.Add(BuildAiTab());
         tabs.TabPages.Add(BuildTaskStatusTab());
+        tabs.TabPages.Add(BuildDashboardTab());
 
         root.Controls.Add(tabs, 0, 0);
         root.Controls.Add(BuildOutputGroup(), 0, 1);
@@ -325,6 +334,33 @@ public class SchedulerForm : Form
         return new TabPage("Task Status") { Padding = new Padding(10), AutoScroll = true, Controls = { panel } };
     }
 
+    private TabPage BuildDashboardTab()
+    {
+        var buttonRow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight };
+        buttonRow.Controls.Add(_refreshDashboardButton);
+        var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown, WrapContents = false };
+        panel.Controls.Add(buttonRow);
+        panel.Controls.Add(_dashboardGrid);
+        _refreshDashboardButton.Click += (_, _) => RefreshDashboard();
+        return new TabPage("Health Dashboard") { Padding = new Padding(10), AutoScroll = true, Controls = { panel } };
+    }
+
+    private void RefreshDashboard()
+    {
+        if (_repoRoot == null) return;
+        var snapshot = new HealthDashboardReader().ReadAll(_repoRoot);
+        _dashboardGrid.DataSource = snapshot.Services
+            .Select(s => new
+            {
+                s.Name,
+                Status = s.NotConfigured ? "not configured" : s.Running ? "running" : "not running",
+                s.LastSuccess,
+                s.LastFailure,
+                s.ConsecutiveFailures,
+            })
+            .ToList();
+    }
+
     private TabPage BuildScheduleTab()
     {
         var modeRow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight };
@@ -387,6 +423,7 @@ public class SchedulerForm : Form
         localTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
         AddRow(localTable, "Server executable:", MakeBrowseRow(_llmExeBox, _browseLlmExeButton));
         AddRow(localTable, "Model file (.gguf):", MakeBrowseRow(_llmModelPathBox, _browseLlmModelButton));
+        AddRow(localTable, "Port:", _llmPortBox);
         var localButtons = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(3, 4, 3, 3) };
         localButtons.Controls.Add(_llmStartButton);
         localButtons.Controls.Add(_llmStopButton);
@@ -522,7 +559,8 @@ public class SchedulerForm : Form
 
         try
         {
-            var psi = new ProcessStartInfo(exePath, $"-m \"{modelPath}\" -c 4096 --port 8080 --n-gpu-layers 0")
+            var port = (int)_llmPortBox.Value;
+            var psi = new ProcessStartInfo(exePath, $"-m \"{modelPath}\" -c 4096 --port {port} --n-gpu-layers 0")
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
@@ -535,8 +573,8 @@ public class SchedulerForm : Form
             _llmProcess = process;
             _llmStopButton.Enabled = true;
             _llmStartButton.Text = "Running";
-            _aiEndpointBox.Text = "http://localhost:8080/v1";
-            AppendOutput($"LLM server started (PID {process.Id}). AI endpoint: http://localhost:8080/v1");
+            _aiEndpointBox.Text = $"http://localhost:{port}/v1";
+            AppendOutput($"LLM server started (PID {process.Id}). AI endpoint: http://localhost:{port}/v1");
 
             // Read output in background to detect failures
             _ = Task.Run(async () =>
@@ -607,6 +645,7 @@ public class SchedulerForm : Form
             config.AiKey = _aiKeyBox.Text is { Length: > 0 } key ? key : null;
             config.LlamaExePath = _llmExeBox.Text.Trim() is { Length: > 0 } exe ? exe : null;
             config.LlamaModelPath = _llmModelPathBox.Text.Trim() is { Length: > 0 } mp ? mp : null;
+            config.LlmPort = (int)_llmPortBox.Value;
 
             LocalConfigStore.Save(path, config);
             AppendOutput("AI config saved.");
@@ -640,6 +679,7 @@ public class SchedulerForm : Form
         _browseLlmExeButton.Enabled = local;
         _llmModelPathBox.Enabled = local;
         _browseLlmModelButton.Enabled = local;
+        _llmPortBox.Enabled = local;
         _llmStartButton.Enabled = local;
         _llmStopButton.Enabled = local && _llmProcess != null;
         _aiEndpointBox.Enabled = remote;
@@ -682,6 +722,7 @@ public class SchedulerForm : Form
             _aiKeyBox.Text = "";
             _llmExeBox.Text = "E:\\llama-cpp\\llama-server.exe";
             _llmModelPathBox.Text = "E:\\models\\llama-3.2-3b-q4.gguf";
+            _llmPortBox.Value = 8080;
             return;
         }
 
@@ -704,6 +745,7 @@ public class SchedulerForm : Form
             _aiKeyBox.Text = config.AiKey ?? "";
             _llmExeBox.Text = config.LlamaExePath ?? "E:\\llama-cpp\\llama-server.exe";
             _llmModelPathBox.Text = config.LlamaModelPath ?? "E:\\models\\llama-3.2-3b-q4.gguf";
+            _llmPortBox.Value = Math.Clamp(config.LlmPort ?? 8080, (int)_llmPortBox.Minimum, (int)_llmPortBox.Maximum);
         }
         catch (Exception ex)
         {
@@ -1167,32 +1209,34 @@ public class SchedulerForm : Form
         SaveEaxwikiConfig();
         AppendOutput("Config saved to .eaxwiki.");
 
-        var psExe = PowerShellRunner.FindPowerShellExecutable() ?? "pwsh.exe";
-        var scriptPath = Path.Combine(_repoRoot, "scripts", "monitor-export-and-serve.ps1");
+        var monitorExe = Path.Combine(_repoRoot, "src", "EAxWiki.Monitor", "bin", "Debug", "net10.0", "EAxWiki.Monitor.exe");
+        if (!File.Exists(monitorExe))
+        {
+            AppendOutput($"Monitor executable not found: {monitorExe}");
+            return;
+        }
+
         var args = new List<string>
         {
-            "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", scriptPath,
             "--repo", repoPath,
-            "--port", ((int)_wikiPortConfigBox.Value).ToString()
+            "--port", ((int)_wikiPortConfigBox.Value).ToString(),
+            "--llm-port", ((int)_llmPortBox.Value).ToString(),
         };
-
         var webhook = _webhookBox.Text.Trim();
         if (webhook.Length > 0) { args.Add("--webhook-url"); args.Add(webhook); }
         var teamsWebhook = _teamsWebhookBox.Text.Trim();
         if (teamsWebhook.Length > 0) { args.Add("--teams-webhook-url"); args.Add(teamsWebhook); }
-
         var tgBotToken = _telegramBotTokenBox.Text.Trim();
         if (tgBotToken.Length > 0) { args.Add("--telegram-bot-token"); args.Add(tgBotToken); }
         var tgChatId = _telegramChatIdBox.Text.Trim();
         if (tgChatId.Length > 0) { args.Add("--telegram-chat-id"); args.Add(tgChatId); }
-
         if (_forceEveryRunRadio.Checked) args.Add("--force");
         else if (_forceEveryNRadio.Checked) { args.Add("--force-every"); args.Add(((int)_forceEveryN.Value).ToString()); }
 
         AppendOutput($"> Starting monitor in new window...");
         var psi = new ProcessStartInfo
         {
-            FileName = psExe,
+            FileName = monitorExe,
             Arguments = string.Join(" ", args.Select(a => a.Contains(' ') ? $"\"{a}\"" : a)),
             WorkingDirectory = _repoRoot,
             UseShellExecute = true,
