@@ -27,7 +27,7 @@ public class HealthStore
         }
     }
 
-    public void Save(string path, HealthState state)
+    public virtual void Save(string path, HealthState state)
     {
         var json = JsonSerializer.Serialize(state, Options);
         File.WriteAllText(path, json);
