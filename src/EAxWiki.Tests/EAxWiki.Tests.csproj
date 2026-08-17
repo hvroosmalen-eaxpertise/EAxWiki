@@ -13,6 +13,7 @@
     <ProjectReference Include="..\EAxWiki.EA\EAxWiki.EA.csproj" />
     <ProjectReference Include="..\EAxWiki\EAxWiki.csproj" />
     <ProjectReference Include="..\EAxWiki.SchedulerUI\EAxWiki.SchedulerUI.csproj" />
+    <ProjectReference Include="..\EAxWiki.Monitor\EAxWiki.Monitor.csproj" />
   </ItemGroup>
 
   <ItemGroup>
