@@ -28,7 +28,7 @@ public static class MonitorApp
         var digestTracker = new DigestTracker(state, options.WikiDir, Path.Combine(stateDir, "logs"),
             Path.Combine(templateDir, "digest-template.md"));
 
-        var exporter = new StaMarkdownExporter(loggerFactory.CreateLogger("Export"));
+        var exporter = new StaMarkdownExporter(loggerFactory);
         var metrics = new WikiOutputMetrics();
         var exportRunner = new ExportRunner(options, exporter, metrics, state, alerts,
             loggerFactory.CreateLogger<ExportRunner>());

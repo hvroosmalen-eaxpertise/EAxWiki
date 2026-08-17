@@ -52,8 +52,16 @@ public interface IStaExporter
 public class StaMarkdownExporter : IStaExporter
 {
     private readonly ILogger _logger;
+    private readonly ILoggerFactory _loggerFactory;
 
-    public StaMarkdownExporter(ILogger logger) => _logger = logger;
+    public StaMarkdownExporter(ILoggerFactory loggerFactory)
+    {
+        _logger = loggerFactory.CreateLogger("Export");
+        _loggerFactory = loggerFactory;
+    }
+
+    internal ILogger<MarkdownExporter> CreateExporterLogger() =>
+        _loggerFactory.CreateLogger<MarkdownExporter>();
 
     public void ExportOnSta(string repoPath, string outputPath, bool force, bool writeBack, int apiPort, string? brand, string? aiEndpoint)
     {
@@ -63,13 +71,13 @@ public class StaMarkdownExporter : IStaExporter
         {
             try
             {
-                using var reader = new EaReader(_logger as ILogger<EaReader>);
+                using var reader = new EaReader(_loggerFactory.CreateLogger<EaReader>());
                 var repository = reader.Open(repoPath);
 
                 if (writeBack && Directory.Exists(outputPath))
                 {
                     _logger.LogInformation("Running write-back scan...");
-                    var scanner = new WriteBackScanner(reader, _logger);
+                    var scanner = new WriteBackScanner(reader, _loggerFactory.CreateLogger<WriteBackScanner>());
                     var scanResult = scanner.Scan(outputPath);
                     if (scanResult.StatusChanges.Count == 0 && scanResult.NotesChanges.Count == 0)
                         _logger.LogInformation("Write-back: no changes detected.");
@@ -79,7 +87,7 @@ public class StaMarkdownExporter : IStaExporter
                 }
 
                 var writer = new FileOutputWriter();
-                var exporter = new MarkdownExporter(writer, _logger as ILogger<MarkdownExporter>);
+                var exporter = new MarkdownExporter(writer, CreateExporterLogger());
                 var result = exporter.ExportAsync(repository, null, outputPath, reader, force)
                     .GetAwaiter().GetResult();
                 _logger.LogInformation("Export finished: {Total} pages, {Failed} failed, {Diagrams} diagrams.",
