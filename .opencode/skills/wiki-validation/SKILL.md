@@ -54,7 +54,7 @@ Run the validation script:
 
 | Failure | Fix |
 |---------|-----|
-| `graph-index-exists` fails | Re-export: `dotnet run --project src/EAxWiki -- --force` |
+| `graph-index-exists` fails | Re-export: `dotnet exec src/EAxWiki/bin/Debug/net10.0/EAxWiki.dll --force` |
 | `diagram-png-existence` fails | Check EA connection, re-export |
 | `ea-graph-container` missing | Check `ElementPageWriter.cs` template |
 | `notes-editor` missing | Add `notes-editor.js` to `mkdocs.yml` extra_javascript |

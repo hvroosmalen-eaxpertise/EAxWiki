@@ -30,8 +30,10 @@ dotnet build
 .\scripts\export-and-serve.ps1 -RepoPath "model/EurSuRA.qea"
 ```
 
-Use `-Verbose` for debug-level logging during export.
-Use `-Force` for full regeneration (required after template/markdown structure changes — otherwise only data-changed elements are updated).
+Use `--verbose` for debug-level logging during export.
+Use `--force` for full regeneration (required after template/markdown structure changes — otherwise only data-changed elements are updated).
+
+Note: flag syntax is `--flag` (PowerShell-style `-Force`/`-Verbose` are rejected by the exporter as unknown options — only `-RepoPath`/`-OutputDir`/`-ApiPort` keep their PS-style aliases in the orchestration scripts).
 
 Review the served wiki in the browser at `http://localhost:8000` to verify the output looks correct.
 

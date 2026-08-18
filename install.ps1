@@ -194,7 +194,7 @@ if ($IsWindowsOS) {
     Write-Host "  .\scripts\export.ps1                   Export EA model to wiki/"
     Write-Host "  .\scripts\serve.ps1                    Serve the wiki with MkDocs"
     Write-Host "  .\scripts\export-and-serve.ps1         Export then serve"
-    Write-Host "  .\scripts\export-and-serve.ps1 -Force  Full regeneration then serve"
+    Write-Host "  .\scripts\export-and-serve.ps1 --force  Full regeneration then serve"
 } else {
     Write-Host "Available commands:"
     Write-Host "  pwsh scripts/serve.ps1                 Serve an existing wiki/ with MkDocs"

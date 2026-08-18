@@ -24,7 +24,7 @@ What the exporter produces:
 - A `model.json` file with the full model serialised as JSON (opt-in via `--json` / `-j`)
 - An `extra.css`, `.pages` navigation file, and an `ea-icons.js` SVG icon helper for MkDocs
 
-The exporter runs **incrementally** by default — it compares each element's `ModifiedDate` in EA against the file's last-write time and skips anything that has not changed. Pass `-Force` to regenerate everything.
+The exporter runs **incrementally** by default — it compares each element's `ModifiedDate` in EA against the file's last-write time and skips anything that has not changed. Pass `--force` to regenerate everything.
 
 ### Serve
 
@@ -81,7 +81,7 @@ This resolves each channel the same way a real scheduled run does (CLI flag → 
 │  Markdown + PNG files       │   │                             │   │                             │
 │                             │   │                             │   │  export-and-serve.ps1       │
 │  Incremental by default;    │   │  export-and-serve.ps1       │   │  --api-port starts this     │
-│  use -Force to rebuild all  │   │  runs both steps at once    │   │                             │
+│  use --force to rebuild all │   │  runs both steps at once    │   │                             │
 └─────────────────────────────┘   └─────────────────────────────┘   └─────────────────────────────┘
                         All three run together on one Windows machine
 ```
@@ -203,7 +203,7 @@ Linux only needs Python and PowerShell Core (`pwsh`). The `install.sh` script in
 
 ## Configuration
 
-Every setting is passed as a command-line flag — there is no separate config file to edit, except the auto-saved `.eaxwiki` connection string (see [Saved connection config](#saved-connection-config)). All scripts accept both PowerShell (`-Flag`) and Unix-style (`--flag`) syntax, and forward unrecognized flags straight to the underlying `dotnet run -- ...` invocation.
+Every setting is passed as a command-line flag — there is no separate config file to edit, except the auto-saved `.eaxwiki` connection string (see [Saved connection config](#saved-connection-config)). Flags use Unix-style `--flag` syntax. The scripts run the already-built `EAxWiki.dll` directly (see [Scheduling exports](#scheduling-exports)) and forward any flag they don't parse themselves straight to the exporter, so a typo'd flag is rejected by the parser with a clear error instead of being silently swallowed.
 
 A typical first-time setup is just:
 
@@ -225,7 +225,7 @@ A typical first-time setup is just:
 | `--writeback` | `-w` | export | Batch mode: scan `wiki/` for manual status/notes edits made while `--api` wasn't running, and push them to EA via COM before exporting. |
 | `--api` | | write-back server | Start the wiki write-back server so the pencil-icon editors on the page work live. Combined with `--cert` for HTTPS — see [Write-back server security](#write-back-server-security). |
 | `--api-port <port>` | | write-back server | Port the write-back server listens on (default: `8001`). |
-| `--wiki-port <port>` | | write-back server | Port the *paired* `mkdocs serve` uses (default: `8000`). The write-back server only accepts requests whose `Origin` matches this port — see [Running multiple wikis on one machine](#running-multiple-wikis-on-one-machine). `export-and-serve.ps1` / `serve-api.ps1` set this automatically from `--port`; only pass it yourself if you call `dotnet run` directly. |
+| `--wiki-port <port>` | | write-back server | Port the *paired* `mkdocs serve` uses (default: `8000`). The write-back server only accepts requests whose `Origin` matches this port — see [Running multiple wikis on one machine](#running-multiple-wikis-on-one-machine). `export-and-serve.ps1` / `serve-api.ps1` set this automatically from `--port`; only pass it yourself if you invoke the exporter directly (`dotnet exec src/EAxWiki/bin/Debug/net10.0/EAxWiki.dll --api ...`). |
 | `--cert <path>` | | write-back server | Path to a PFX certificate for HTTPS. When set, the write-back server binds to `https://` instead of `http://` — see [Write-back server security](#write-back-server-security). |
 | `--cert-password <pw>` | | write-back server | PFX certificate password. Only used with `--cert`. |
 | `--port <port>` | `-p`, but only in `serve.ps1`/`export-and-serve.ps1`/`serve-api.ps1` | serve | Port `mkdocs serve` listens on (default: `8000`). Careful: this `-p` is those scripts' own shorthand — `-p` passed to the exporter itself (`export.ps1`) means `--package`, not port. |
@@ -246,7 +246,7 @@ A typical first-time setup is just:
 | `scripts/register-scheduled-task.ps1` | Register `EAxWiki.Monitor.exe` as a Windows Task Scheduler task — fixed interval or day/night mode (see [Scheduling exports](#scheduling-exports), **Windows only**) |
 | `src/EAxWiki.SchedulerUI` | WinForms GUI front end for the script above — see [Scheduler GUI](#scheduler-gui), **Windows only** |
 
-All scripts accept both PowerShell (`-Flag`) and Unix-style (`--flag`) syntax interchangeably, e.g. `--force`, `--verbose`, `--repo`.
+Flags use Unix-style `--flag` syntax everywhere (`--force`, `--verbose`, `--repo`, ...). Only `export-and-serve.ps1` / `serve-api.ps1` additionally accept the legacy PowerShell-style aliases `-RepoPath` / `-OutputDir` / `-ApiPort` (normalized to `--repo` / `--output` / `--api-port`), and `serve.ps1` accepts `-Port`. Any other `-CamelCase` flag (e.g. `-Force`, `-Verbose`) is an unknown option — use `--force`, `--verbose` instead.
 
 ### Export only
 
@@ -427,7 +427,7 @@ Each export/serve/write-back triple is fully isolated by its `--output`, `--port
 .\scripts\export-and-serve.ps1 --repo "model/ProjectB.qea" --output "D:\wikis\B" --port 8100 --api-port 8101
 ```
 
-Each write-back server only accepts requests from its own paired wiki: it checks that the request's `Origin` matches its own hostname on the `--wiki-port` it was started with. `export-and-serve.ps1` and `serve-api.ps1` infer `--wiki-port` from `--port` automatically, so nothing extra to configure above — instance A's wiki page simply can't reach instance B's write-back server, even though both run on the same machine. If you invoke `dotnet run --project src/EAxWiki -- --api ...` directly instead of through the scripts, pass `--wiki-port` yourself to match whichever port `mkdocs serve` uses for that instance.
+Each write-back server only accepts requests from its own paired wiki: it checks that the request's `Origin` matches its own hostname on the `--wiki-port` it was started with. `export-and-serve.ps1` and `serve-api.ps1` infer `--wiki-port` from `--port` automatically, so nothing extra to configure above — instance A's wiki page simply can't reach instance B's write-back server, even though both run on the same machine. If you invoke the exporter directly instead of through the scripts (`dotnet exec src/EAxWiki/bin/Debug/net10.0/EAxWiki.dll --api ...`), pass `--wiki-port` yourself to match whichever port `mkdocs serve` uses for that instance.
 
 The [auth token](#live-write-back--change-status-and-notes-directly-from-the-wiki-page) is isolated the same way, automatically: it's generated per `--output` directory (`<output>/.eaxwiki-token`), so instance A and instance B each get their own — A's token is never valid against B's server, even by accident.
 
@@ -572,7 +572,7 @@ EAxWiki handles structural changes in EA automatically on the next export run:
 
 ## Incremental vs full export
 
-By default the exporter skips elements and diagrams whose output file is newer than the source's `ModifiedDate` in EA. Pass `-Force` to regenerate everything — useful after template changes or when timestamps are unreliable.
+By default the exporter skips elements and diagrams whose output file is newer than the source's `ModifiedDate` in EA. Pass `--force` to regenerate everything — useful after template changes or when timestamps are unreliable.
 
 ## Wiki navigation
 
@@ -619,7 +619,7 @@ $env:EAPath = 'E:\Program Files\Sparx Systems\EA\'; dotnet test src\EAxWiki.Test
 PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 
 ```powershell
-.\tests\run-tests.ps1
+$env:EAPath = 'E:\Program Files\Sparx Systems\EA\'; Invoke-Pester tests/scripts/
 ```
 
 | Group | Tests | What's covered |
@@ -635,7 +635,7 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 | EAxWiki.Monitor | 108 | Monitor lock/loop, options resolution, CLI parser, export runner (incl. typed STA-exporter logger wiring), alert dispatcher, digest tracker, health store/renderer, edit lock, port killer/probe, pid file, process supervisor |
 | **.NET subtotal** | **443** | |
 | Bootstrap | 4 | `Get-EAxWikiDllPath` + `Get-EAxWikiMonitorExePath` resolution + clear missing-DLL/exe errors |
-| Export | 6 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths, `--brand` |
+| Export | 6 | Verbatim `$args` forwarding to `dotnet exec` of the pre-built DLL, EAXWIKI_EXIT_CODE protocol, EA-process cleanup, `$PSNativeCommandUseErrorActionPreference=$false`, no hand-rolled parser, no `dotnet run` |
 | ExportAndServe | 17 | Port/root/API-port flags, retry/force args, combined pipeline args |
 | Install | 11 | PS 5.1 compat via bootstrap, parameter binding |
 | Serve | 12 | Port/root flags, file server config, cert modes, default page, path normalization |
