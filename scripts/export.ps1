@@ -1,7 +1,7 @@
 . $PSScriptRoot\_bootstrap.ps1
 
 # $PSNativeCommandUseErrorActionPreference (PowerShell 7.3+) defaults to $true in a fresh
-# -NoProfile session (e.g. launched by monitor-export-and-serve.ps1 or Task Scheduler). When
+# -NoProfile session (e.g. launched by EAxWiki.Monitor.exe or Task Scheduler). When
 # set, dotnet's own warn-level log lines on stderr are enough to corrupt the $LASTEXITCODE
 # check below even on a fully successful run. Scoped to this script only.
 $PSNativeCommandUseErrorActionPreference = $false

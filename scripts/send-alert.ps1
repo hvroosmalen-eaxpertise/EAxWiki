@@ -7,14 +7,14 @@
     [string]$Kind = "Test"
 )
 
-# Kept in sync with monitor-export-and-serve.ps1:ConvertTo-HtmlEscaped (issue #80 parity work).
+# Kept in sync with EAxWiki.Monitor AlertDispatcher (issue #80 parity work).
 function ConvertTo-HtmlEscaped {
     param([string]$Text)
     if ($null -eq $Text) { return "" }
     return (($Text -replace '&', '&amp;') -replace '<', '&lt;') -replace '>', '&gt;'
 }
 
-# Kept in sync with monitor-export-and-serve.ps1:Format-TelegramAlertText (issue #80 parity work).
+# Kept in sync with EAxWiki.Monitor TelegramAlertTextFormatter (issue #80 parity work).
 function Format-TelegramAlertText {
     param(
         [string]$Kind,

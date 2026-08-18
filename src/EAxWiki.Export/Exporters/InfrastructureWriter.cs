@@ -9,7 +9,7 @@ internal class InfrastructureWriter(IOutputWriter writer)
 {
     public async Task WritePagesFileAsync(string outputDir, CancellationToken ct = default)
     {
-        // wiki/status/health.md is written by scripts/monitor-export-and-serve.ps1 (issue #37/#38),
+        // wiki/status/health.md is written by EAxWiki.Monitor (issue #37/#38),
         // not by this exporter — only add its nav entry when it actually exists, so a plain export.ps1
         // run (no monitor wrapper in use) doesn't get a link to a missing page.
         //

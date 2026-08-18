@@ -55,7 +55,7 @@ $env:EAXWIKI_ALERT_TELEGRAM_CHAT_ID = '<chat id>'
 ## Testing Your Alert
 
 ```powershell
-.\scripts\monitor-export-and-serve.ps1 --test-alert
+.\src\EAxWiki.Monitor\bin\Debug\net10.0\EAxWiki.Monitor.exe --test-alert
 ```
 
 This resolves each channel the same way a real scheduled run does and posts a blue "Test" message to every configured channel. Check your Telegram chat to confirm it arrived.

@@ -55,14 +55,14 @@ To change the webhook URL later:
 Send a one-off test message without running a real export:
 
 ```powershell
-.\scripts\monitor-export-and-serve.ps1 --test-alert
+.\src\EAxWiki.Monitor\bin\Debug\net10.0\EAxWiki.Monitor.exe --test-alert
 ```
 
 This resolves the webhook URL the same way a real scheduled run does — `--webhook-url` argument, then `EAXWIKI_ALERT_WEBHOOK` environment variable, then `.eaxwiki` — and posts a blue "Test" message. Check your Slack channel to confirm it arrived.
 
 ## When Alerts Are Sent
 
-Alerts are sent by `scripts/monitor-export-and-serve.ps1` — the unattended wrapper used for [scheduled runs](../README.md#scheduling-exports), not by `export.ps1` or `export-and-serve.ps1` directly. Each scheduled pass can send:
+Alerts are sent by `EAxWiki.Monitor.exe` — the unattended monitor used for [scheduled runs](../README.md#scheduling-exports), not by `export.ps1` or `export-and-serve.ps1` directly. Each scheduled pass can send:
 
 | Kind | When |
 |---|---|
