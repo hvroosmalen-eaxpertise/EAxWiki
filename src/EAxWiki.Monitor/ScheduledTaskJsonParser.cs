@@ -33,15 +33,10 @@ public static class ScheduledTaskJsonParser
 
         return new ScheduledTaskInfo(
             taskNameProp.GetString() ?? "",
-            AsString(root, "State") ?? "",
+            StateName(root),
             root.TryGetProperty("WakeToRun", out var w) && w.ValueKind == JsonValueKind.True,
             AsString(root, "ExecutionTimeLimit") ?? "",
-            AsString(root, "MultipleInstances") ?? AsInt(root, "MultipleInstances") switch
-            {
-                1 => "IgnoreNew",
-                2 => "Queue",
-                _ => "Parallel",
-            },
+            MultipleInstancesName(root),
             triggers);
     }
 
@@ -123,4 +118,35 @@ public static class ScheduledTaskJsonParser
 
     private static int AsInt(JsonElement el, string name) =>
         el.TryGetProperty(name, out var p) && p.ValueKind == JsonValueKind.Number ? p.GetInt32() : 0;
+
+    // Get-ScheduledTask serializes State as the CIM StateEnum int, not a string.
+    // Keep string support for robustness (older/alternative serializers).
+    private static string StateName(JsonElement root)
+    {
+        var state = AsString(root, "State");
+        if (state != null) return state;
+        return AsInt(root, "State") switch
+        {
+            0 => "Unknown",
+            1 => "Disabled",
+            2 => "Queued",
+            3 => "Ready",
+            4 => "Running",
+            _ => "",
+        };
+    }
+
+    // MultipleInstancesEnum: Parallel=0, Queue=1, IgnoreNew=2.
+    private static string MultipleInstancesName(JsonElement root)
+    {
+        var value = AsString(root, "MultipleInstances");
+        if (value != null) return value;
+        return AsInt(root, "MultipleInstances") switch
+        {
+            0 => "Parallel",
+            1 => "Queue",
+            2 => "IgnoreNew",
+            _ => "Parallel",
+        };
+    }
 }

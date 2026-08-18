@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using EAxWiki.Monitor;
 
 namespace EAxWiki.Tests;
@@ -7,10 +8,10 @@ public class ScheduledTaskSnapshotTests
     private static readonly string DailyJson = """
         {
           "TaskName": "EAxWiki-Monitor",
-          "State": "Ready",
+          "State": 1,
           "WakeToRun": false,
           "ExecutionTimeLimit": "PT72H",
-          "MultipleInstances": 1,
+          "MultipleInstances": 2,
           "Triggers": [
             { "Kind": "MSFT_TaskDailyTrigger", "StartBoundary": "2026-08-01T00:00:00",
               "RepetitionInterval": "PT4H", "RepetitionDuration": "PT8H", "DaysInterval": 1, "DaysOfWeek": 0 }
@@ -21,10 +22,10 @@ public class ScheduledTaskSnapshotTests
     private static readonly string WeeklyJson = """
         {
           "TaskName": "EAxWiki-Monitor",
-          "State": "Ready",
+          "State": 1,
           "WakeToRun": true,
           "ExecutionTimeLimit": "PT72H",
-          "MultipleInstances": 1,
+          "MultipleInstances": 2,
           "Triggers": [
             { "Kind": "MSFT_TaskWeeklyTrigger", "StartBoundary": "2026-08-03T08:00:00",
               "RepetitionInterval": "PT10M", "RepetitionDuration": "PT10H", "DaysInterval": 1, "DaysOfWeek": 62 }
@@ -38,7 +39,7 @@ public class ScheduledTaskSnapshotTests
         var info = ScheduledTaskJsonParser.Parse(DailyJson);
         Assert.NotNull(info);
         Assert.Equal("EAxWiki-Monitor", info.TaskName);
-        Assert.Equal("Ready", info.State);
+        Assert.Equal("Disabled", info.State);
         Assert.Equal("IgnoreNew", info.MultipleInstances);
         Assert.Equal("PT72H", info.ExecutionTimeLimit);
         Assert.Single(info.Triggers);
@@ -52,9 +53,52 @@ public class ScheduledTaskSnapshotTests
         var info = ScheduledTaskJsonParser.Parse(WeeklyJson);
         Assert.NotNull(info);
         Assert.True(info.WakeToRun);
+        Assert.Equal("Disabled", info.State);
+        Assert.Equal("IgnoreNew", info.MultipleInstances);
         Assert.Single(info.Triggers);
         Assert.Contains("Mon, Tue, Wed, Thu, Fri at 08:00", info.Triggers[0]);
         Assert.Contains("every 10 min (for 10 h)", info.Triggers[0]);
+    }
+
+    [Theory]
+    [InlineData(0, "Unknown")]
+    [InlineData(1, "Disabled")]
+    [InlineData(2, "Queued")]
+    [InlineData(3, "Ready")]
+    [InlineData(4, "Running")]
+    public void Parse_StateInt_MapsToEnumName(int state, string expected)
+    {
+        var info = ScheduledTaskJsonParser.Parse($$"""
+            { "TaskName": "EAxWiki-Monitor", "State": {{state}}, "WakeToRun": false,
+              "ExecutionTimeLimit": "PT72H", "MultipleInstances": 0, "Triggers": [] }
+            """);
+        Assert.NotNull(info);
+        Assert.Equal(expected, info.State);
+    }
+
+    [Theory]
+    [InlineData(0, "Parallel")]
+    [InlineData(1, "Queue")]
+    [InlineData(2, "IgnoreNew")]
+    public void Parse_MultipleInstancesInt_MapsToEnumName(int mi, string expected)
+    {
+        var info = ScheduledTaskJsonParser.Parse($$"""
+            { "TaskName": "EAxWiki-Monitor", "State": 3, "WakeToRun": false,
+              "ExecutionTimeLimit": "PT72H", "MultipleInstances": {{mi}}, "Triggers": [] }
+            """);
+        Assert.NotNull(info);
+        Assert.Equal(expected, info.MultipleInstances);
+    }
+
+    [Fact]
+    public void Parse_StateString_StillSupported()
+    {
+        var info = ScheduledTaskJsonParser.Parse("""
+            { "TaskName": "EAxWiki-Monitor", "State": "Ready", "WakeToRun": false,
+              "ExecutionTimeLimit": "PT72H", "MultipleInstances": 0, "Triggers": [] }
+            """);
+        Assert.NotNull(info);
+        Assert.Equal("Ready", info.State);
     }
 
     [Fact]
@@ -130,6 +174,47 @@ public class ScheduledTaskSnapshotTests
     public void Get_QueryReturnsNull_ReturnsNull()
     {
         var snapshot = new ScheduledTaskSnapshot(() => null);
+        Assert.Null(snapshot.Get());
+    }
+
+    [Fact]
+    public void Get_NullResult_IsCachedWithinTtl()
+    {
+        var calls = 0;
+        string? Query() { calls++; return null; }
+        var snapshot = new ScheduledTaskSnapshot(Query);
+
+        snapshot.Get();
+        snapshot.Get();
+
+        Assert.Equal(1, calls);
+    }
+
+    [Fact]
+    public void Get_NullResult_ReQueriesAfterTtl()
+    {
+        var calls = 0;
+        string? Query() { calls++; return null; }
+        var snapshot = new ScheduledTaskSnapshot(Query, TimeSpan.FromMilliseconds(10));
+
+        snapshot.Get();
+        System.Threading.Thread.Sleep(30);
+        snapshot.Get();
+
+        Assert.Equal(2, calls);
+    }
+
+    [Fact]
+    public void Get_QueryThrows_ReturnsNull()
+    {
+        var snapshot = new ScheduledTaskSnapshot(() => throw new Win32Exception("pwsh unavailable"));
+        Assert.Null(snapshot.Get());
+    }
+
+    [Fact]
+    public void Get_QueryReturnsMalformedJson_ReturnsNull()
+    {
+        var snapshot = new ScheduledTaskSnapshot(() => "{ nope");
         Assert.Null(snapshot.Get());
     }
 }
