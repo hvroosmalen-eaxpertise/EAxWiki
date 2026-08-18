@@ -44,7 +44,13 @@ public sealed class MonitorFileLoggerProvider : ILoggerProvider
         {
             var message = formatter(state, exception);
             if (exception != null) message += $" {exception.Message}";
-            var line = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} [{_name}] {message}";
+            var severity = logLevel switch
+            {
+                LogLevel.Warning => "WRN",
+                LogLevel.Error or LogLevel.Critical => "ERR",
+                _ => "INF",
+            };
+            var line = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} [{severity}] [{_name}] {message}";
             var stamp = DateTime.Now.ToString("yyyy-MM-dd");
             File.AppendAllText(Path.Combine(_parent._logDir, $"monitor-{stamp}.log"), line + Environment.NewLine);
         }

@@ -30,7 +30,23 @@ public class MonitorFileLoggerTests : IDisposable
         var logDir = Path.Combine(_dir, "logs");
         var file = Directory.GetFiles(logDir, "monitor-*.log").Single();
         var content = File.ReadAllText(file);
-        Assert.Contains("[ExportRunner] hello 42", content);
-        Assert.Matches("^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2} \\[ExportRunner\\] hello 42", content);
+        Assert.Contains("[INF] [ExportRunner] hello 42", content);
+        Assert.Matches("^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2} \\[INF\\] \\[ExportRunner\\] hello 42", content);
+    }
+
+    [Fact]
+    public void LogsSeverityTokenPerLevel()
+    {
+        using var provider = new MonitorFileLoggerProvider(_dir);
+        var logger = provider.CreateLogger("EAxWiki.Monitor.ExportRunner");
+        logger.LogInformation("plain message");
+        logger.LogWarning("careful now");
+        logger.LogError(new InvalidOperationException("boom"), "failed");
+        provider.Dispose();
+
+        var content = File.ReadAllText(Directory.GetFiles(Path.Combine(_dir, "logs"), "monitor-*.log").Single());
+        Assert.Contains("[INF] [ExportRunner] plain message", content);
+        Assert.Contains("[WRN] [ExportRunner] careful now", content);
+        Assert.Contains("[ERR] [ExportRunner] failed boom", content);
     }
 }
