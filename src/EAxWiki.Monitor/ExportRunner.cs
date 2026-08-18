@@ -162,11 +162,14 @@ public class ExportRunner : IExportRunner
         var previousCount = _state.LastElementCount ?? 0;
         var diagramCount = 0;
         var outputTail = "";
+        var succeededOnAttempt = 0;
+        var lastAttempt = 0;
         var stopwatch = Stopwatch.StartNew();
 
         for (var attempt = 1; attempt <= _options.MaxRetries && !succeeded; attempt++)
         {
             ct.ThrowIfCancellationRequested();
+            lastAttempt = attempt;
             _logger.LogInformation("Attempt {Attempt}/{MaxRetries} starting.", attempt, _options.MaxRetries);
             lastExitCode = 1;
             try
@@ -188,12 +191,14 @@ public class ExportRunner : IExportRunner
                 {
                     _logger.LogWarning("Sanity check failed: element count {Count} below floor {Floor} (previous {Previous}).",
                         elementCount, floor, previousCount);
+                    outputTail = $"Sanity check failed: element count {elementCount} below floor {floor} (previous {previousCount}).";
                     lastExitCode = 1;
                     _state.ConsecutiveFailures++;
                     break;
                 }
 
                 succeeded = true;
+                succeededOnAttempt = attempt;
                 _state.LastElementCount = elementCount;
             }
             catch (Exception ex)
@@ -242,13 +247,13 @@ public class ExportRunner : IExportRunner
                     $"Export finished in {stopwatch.Elapsed:mm\\:ss} - {elementCount} page(s) total ({diagramCount} diagram, {elementCount - diagramCount} element), {deltaLabel} vs previous run.{validationSuffix}{writebackSuffix}",
                     AlertKind.Finish);
             }
-            _logger.LogInformation("Succeeded on attempt {Attempt} in {Elapsed}.", 1, stopwatch.Elapsed.ToString("mm\\:ss"));
+            _logger.LogInformation("Succeeded on attempt {Attempt} in {Elapsed}.", succeededOnAttempt, stopwatch.Elapsed.ToString("mm\\:ss"));
         }
         else
         {
             _state.LastFailureTime = DateTimeOffset.Now;
-            _logger.LogWarning("Gave up after {MaxRetries} attempt(s).", _options.MaxRetries);
-            _alerts.Dispatch($"Export failed after {_options.MaxRetries} attempt(s) (exit code {lastExitCode}).\n```\n{outputTail}\n```",
+            _logger.LogWarning("Gave up after {Attempts} attempt(s).", lastAttempt);
+            _alerts.Dispatch($"Export failed after {lastAttempt} attempt(s) (exit code {lastExitCode}).\n```\n{outputTail}\n```",
                 AlertKind.Failure);
         }
 
@@ -278,6 +283,10 @@ public class ExportRunner : IExportRunner
         catch (System.Text.Json.JsonException)
         {
             return "";
+        }
+        catch (IOException)
+        {
+            return ""; // validation report momentarily locked/being rewritten - treat as absent
         }
     }
 }

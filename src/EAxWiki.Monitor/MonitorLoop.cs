@@ -26,6 +26,7 @@ public class MonitorLoop
     private readonly ILogger _logger;
 
     private DateTime _lastExportTime = DateTime.MinValue;
+    private bool _deferredByEditLock;
 
     public MonitorLoop(
         MonitorOptions options,
@@ -83,6 +84,7 @@ public class MonitorLoop
             {
                 _logger.LogInformation("Deferring export - edit in progress, retry next cycle.");
                 exportDue = false;
+                _deferredByEditLock = true;
             }
         }
 
@@ -109,10 +111,12 @@ public class MonitorLoop
             }
             _lastExportTime = DateTime.UtcNow;
         }
-        else
+        else if (!_deferredByEditLock)
         {
             _logger.LogInformation("Skipping export (next due in {Interval} min).", _options.ExportIntervalMinutes);
         }
+
+        _deferredByEditLock = false;
 
         _state.PageReadsToday += _digestTracker.CountNewPageReads();
         _state.WritebacksToday += writebackSummary.Total;

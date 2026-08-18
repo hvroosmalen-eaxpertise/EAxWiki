@@ -37,5 +37,9 @@ public static class EditLock
         {
             return false;
         }
+        catch (InvalidOperationException)
+        {
+            return false; // valid JSON with a non-object root (e.g. an array or scalar)
+        }
     }
 }

@@ -39,7 +39,11 @@ public static class MonitorLock
         }
         catch (ArgumentException)
         {
-            return false;
+            return false; // no process with that id
+        }
+        catch (System.ComponentModel.Win32Exception)
+        {
+            return false; // process inaccessible (another session/elevation) - treat as not live
         }
     }
 }

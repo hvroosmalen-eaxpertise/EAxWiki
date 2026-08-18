@@ -25,7 +25,7 @@ public static class PidFile
         if (!File.Exists(path)) return null;
         try
         {
-            var doc = JsonDocument.Parse(File.ReadAllText(path));
+            using var doc = JsonDocument.Parse(File.ReadAllText(path));
             if (!doc.RootElement.TryGetProperty("pid", out var pidEl) ||
                 !doc.RootElement.TryGetProperty("startTime", out var startEl))
                 return null;
@@ -36,6 +36,10 @@ public static class PidFile
         catch (JsonException)
         {
             return null;
+        }
+        catch (InvalidOperationException)
+        {
+            return null; // valid JSON with a non-object root (e.g. an array or scalar)
         }
         catch (FormatException)
         {
@@ -56,6 +60,10 @@ public static class PidFile
         catch (ArgumentException)
         {
             return false; // no process with that id
+        }
+        catch (System.ComponentModel.Win32Exception)
+        {
+            return false; // process inaccessible (another session/elevation) - treat as not live
         }
     }
 }

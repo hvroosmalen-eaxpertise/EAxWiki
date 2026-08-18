@@ -145,7 +145,9 @@ public class ExportRunnerTests : IDisposable
         Assert.Equal(1, state.LastExitCode);
         Assert.Equal(1, state.ConsecutiveFailures);
         Assert.NotNull(state.LastFailureTime);
-        Assert.Contains(alerts.Sent, a => a.Kind == AlertKind.Failure);
+        var failure = alerts.Sent.Single(a => a.Kind == AlertKind.Failure).Message;
+        Assert.Contains("Sanity check failed", failure);
+        Assert.Contains("1 attempt(s)", failure); // collapse short-circuits, not max-retries
     }
 
     [Fact]

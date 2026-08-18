@@ -63,4 +63,13 @@ public class EditLockTests : IDisposable
         File.WriteAllText(Path.Combine(lockDir, "edit-lock.json"), "{corrupt");
         Assert.False(EditLock.IsActive(Path.Combine(_dir, "wiki")));
     }
+
+    [Fact]
+    public void IsActive_NonObjectJson_ReturnsFalse()
+    {
+        var lockDir = Path.Combine(_dir, ".data");
+        Directory.CreateDirectory(lockDir);
+        File.WriteAllText(Path.Combine(lockDir, "edit-lock.json"), "[1, 2, 3]");
+        Assert.False(EditLock.IsActive(Path.Combine(_dir, "wiki")));
+    }
 }

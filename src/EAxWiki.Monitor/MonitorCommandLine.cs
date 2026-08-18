@@ -47,7 +47,9 @@ public static class MonitorCommandLine
 
     public static CliOptions ToOptions(ParseResult r)
     {
-        var bare = r.UnmatchedTokens.FirstOrDefault();
+        // Ignore unknown-looking flags in the unmatched set so a typo'd --flg is reported as
+        // "unknown option" instead of being silently swallowed as the repo path.
+        var bare = r.UnmatchedTokens.FirstOrDefault(t => !t.StartsWith("-", StringComparison.Ordinal));
         return new CliOptions
         {
             Repo = r.GetResult("--repo") is System.CommandLine.Parsing.OptionResult { Implicit: false } ? r.GetValue((Option<string?>)r.RootCommandResult.Command.Children.First(o => o.Name == "--repo")) : bare,

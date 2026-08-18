@@ -49,6 +49,15 @@ public class MonitorCommandLineTests
         Assert.Equal("DBType=postgresql;Database=foo", o.Repo);
     }
 
+    [Fact]
+    public void UnknownFlag_NotSwallowedAsRepo()
+    {
+        // A typo'd flag must not silently become the repo path (which would produce
+        // confusing failure alerts); bare non-flag tokens still resolve as the repo.
+        Assert.Null(Parse("--flg").Repo);
+        Assert.Equal("model.qea", Parse("--flg", "model.qea").Repo);
+    }
+
     [Theory]
     [InlineData("-o", "wiki")]
     [InlineData("--output", "wiki")]

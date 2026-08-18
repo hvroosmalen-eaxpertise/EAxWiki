@@ -104,8 +104,11 @@ public class AlertDispatcher : IAlertDispatcher
         };
         try
         {
-            await _http.PostAsJsonAsync(url, payload, Json);
-            _logger.LogInformation("Slack webhook dispatched.");
+            var response = await _http.PostAsJsonAsync(url, payload, Json);
+            if (response.IsSuccessStatusCode)
+                _logger.LogInformation("Slack webhook dispatched.");
+            else
+                _logger.LogWarning("Slack webhook dispatch failed: HTTP {Status}", (int)response.StatusCode);
         }
         catch (Exception ex)
         {
@@ -132,8 +135,11 @@ public class AlertDispatcher : IAlertDispatcher
         };
         try
         {
-            await _http.PostAsJsonAsync(url, payload, Json);
-            _logger.LogInformation("Teams webhook dispatched.");
+            var response = await _http.PostAsJsonAsync(url, payload, Json);
+            if (response.IsSuccessStatusCode)
+                _logger.LogInformation("Teams webhook dispatched.");
+            else
+                _logger.LogWarning("Teams webhook dispatch failed: HTTP {Status}", (int)response.StatusCode);
         }
         catch (Exception ex)
         {
