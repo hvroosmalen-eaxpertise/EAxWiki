@@ -1,4 +1,4 @@
-﻿. $PSScriptRoot\_bootstrap.ps1
+. $PSScriptRoot\_bootstrap.ps1
 
 # Start the EAxWiki wiki write-back server alongside MkDocs.
 #
@@ -8,6 +8,13 @@
 # Usage:
 #   .\scripts\serve-api.ps1
 #   .\scripts\serve-api.ps1 --repo "path/to/model.qea" --output "wiki" --port 8000 --api-port 8001
+#
+# Only the orchestration values are parsed here (--port, --api-port, --repo, --output, bare repo).
+# Everything else in $args is forwarded verbatim to export.ps1 and from there to EAxWiki.dll, so
+# typo'd flags fail fast in the parser (exit 1) instead of being swallowed. Serve-only tokens
+# (--port and a bare numeric port) are stripped; --api-port is stripped and re-appended as the
+# parsed value; legacy wrapper aliases (-RepoPath, -OutputDir, -ApiPort) are normalized to the
+# canonical flags the exe accepts.
 
 function Get-ServeApiArgs {
     param([string[]]$Arguments)
@@ -15,15 +22,34 @@ function Get-ServeApiArgs {
     $OutputDir = ""
     $Port      = 8000
     $ApiPort   = 8001
+    $Forward   = [System.Collections.Generic.List[string]]::new()
 
     $i = 0
     while ($i -lt $Arguments.Count) {
-        switch -Regex ($Arguments[$i]) {
-            '^(-p|--port|-Port)$'         { $i++; if ($i -lt $Arguments.Count) { $Port      = [int]$Arguments[$i] } }
-            '^(--api-port|-ApiPort)$'     { $i++; if ($i -lt $Arguments.Count) { $ApiPort   = [int]$Arguments[$i] } }
-            '^(-r|--repo|-RepoPath)$'     { $i++; if ($i -lt $Arguments.Count) { $RepoPath  = $Arguments[$i] } }
-            '^(-o|--output|-OutputDir)$'  { $i++; if ($i -lt $Arguments.Count) { $OutputDir = $Arguments[$i] } }
-            default                       { if ($Arguments[$i] -match '^\d+$') { $Port      = [int]$Arguments[$i] } }
+        $arg = $Arguments[$i]
+        switch -Regex ($arg) {
+            '^(-p|--port|-Port)$' {
+                $i++
+                if ($i -lt $Arguments.Count) { $Port = [int]$Arguments[$i] }
+            }
+            '^(--api-port|-ApiPort)$' {
+                $i++
+                if ($i -lt $Arguments.Count) { $ApiPort = [int]$Arguments[$i] }
+            }
+            '^(-r|--repo|-RepoPath)$' {
+                $Forward.Add('--repo')
+                $i++
+                if ($i -lt $Arguments.Count) { $RepoPath = $Arguments[$i]; $Forward.Add($Arguments[$i]) }
+            }
+            '^(-o|--output|-OutputDir)$' {
+                $Forward.Add('--output')
+                $i++
+                if ($i -lt $Arguments.Count) { $OutputDir = $Arguments[$i]; $Forward.Add($Arguments[$i]) }
+            }
+            default {
+                if ($arg -match '^\d+$') { $Port = [int]$arg }
+                else { $Forward.Add($arg) }
+            }
         }
         $i++
     }
@@ -32,6 +58,7 @@ function Get-ServeApiArgs {
         OutputDir = $OutputDir
         Port      = $Port
         ApiPort   = $ApiPort
+        Forward   = $Forward.ToArray()
     }
 }
 
@@ -65,8 +92,8 @@ Write-Host ""
 
 # Export first so the widget is embedded with the correct API port.
 Write-Host "Exporting wiki (--api-port $ApiPort embeds the status-editor widget)..." -ForegroundColor Cyan
-$exportArgs = @("--output", $wikiDir, "--api-port", $ApiPort)
-if ($RepoPath) { $exportArgs += "--repo", $RepoPath }
+$exportArgs = @($parsed.Forward)
+$exportArgs += '--api-port', $ApiPort
 & $PSScriptRoot\export.ps1 @exportArgs
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Export failed - cannot start write-back server + wiki."

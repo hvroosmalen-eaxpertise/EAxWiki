@@ -2,13 +2,14 @@ BeforeAll {
     . "$PSScriptRoot\..\..\scripts\serve-api.ps1"
 }
 
-Describe 'Get-ServeApiArgs' {
+Describe 'Get-ServeApiArgs (reduced orchestration parser)' {
     It 'returns defaults with no arguments' {
         $r = Get-ServeApiArgs
-        $r.RepoPath | Should -Be ""
+        $r.RepoPath  | Should -Be ""
         $r.OutputDir | Should -Be ""
-        $r.Port | Should -Be 8000
-        $r.ApiPort | Should -Be 8001
+        $r.Port      | Should -Be 8000
+        $r.ApiPort   | Should -Be 8001
+        $r.Forward   | Should -BeNullOrEmpty
     }
 
     It 'parses --port with value' {
@@ -26,8 +27,14 @@ Describe 'Get-ServeApiArgs' {
         $r.Port | Should -Be 8080
     }
 
-    It 'accepts bare numeric port' {
+    It 'accepts bare numeric port and strips it from Forward' {
         $r = Get-ServeApiArgs -Arguments @('9000')
+        $r.Port | Should -Be 9000
+        $r.Forward | Should -BeNullOrEmpty
+    }
+
+    It 'bare port overrides --port flag value (last wins)' {
+        $r = Get-ServeApiArgs -Arguments @('--port', '8080', '9000')
         $r.Port | Should -Be 9000
     }
 
@@ -41,14 +48,16 @@ Describe 'Get-ServeApiArgs' {
         $r.ApiPort | Should -Be 9090
     }
 
-    It 'parses --repo with value' {
+    It 'parses --repo with value and forwards it as --repo' {
         $r = Get-ServeApiArgs -Arguments @('--repo', 'model.qea')
         $r.RepoPath | Should -Be 'model.qea'
+        $r.Forward  | Should -Be @('--repo', 'model.qea')
     }
 
-    It 'parses --output with value' {
+    It 'parses --output with value and forwards it as --output' {
         $r = Get-ServeApiArgs -Arguments @('--output', 'mywiki')
         $r.OutputDir | Should -Be 'mywiki'
+        $r.Forward   | Should -Be @('--output', 'mywiki')
     }
 
     It 'handles Unicode output dir' {
@@ -56,17 +65,26 @@ Describe 'Get-ServeApiArgs' {
         $r.OutputDir | Should -Be 'héllo-wörld'
     }
 
-    It 'all flags combined' {
-        $r = Get-ServeApiArgs -Arguments @('--port', '8080', '--api-port', '9090', '--repo', 'model.qea', '--output', 'wiki')
-        $r.Port | Should -Be 8080
-        $r.ApiPort | Should -Be 9090
-        $r.RepoPath | Should -Be 'model.qea'
-        $r.OutputDir | Should -Be 'wiki'
+    It 'forwards a bare non-numeric token (becomes the exe bare positional repo)' {
+        $r = Get-ServeApiArgs -Arguments @('model.qea')
+        $r.Forward | Should -Be @('model.qea')
     }
 
-    It 'bare port does not override --port flag value' {
-        $r = Get-ServeApiArgs -Arguments @('--port', '8080', '9000')
-        $r.Port | Should -Be 9000
+    It 'all flags combined: orchestration parsed, pass-through forwarded' {
+        $r = Get-ServeApiArgs -Arguments @('--port', '8080', '--api-port', '9090', '--repo', 'model.qea', '--output', 'wiki', '--force')
+        $r.Port      | Should -Be 8080
+        $r.ApiPort   | Should -Be 9090
+        $r.RepoPath  | Should -Be 'model.qea'
+        $r.OutputDir | Should -Be 'wiki'
+        $r.Forward   | Should -Be @('--repo', 'model.qea', '--output', 'wiki', '--force')
+    }
+}
+
+Describe 'serve-api.ps1 forwarder' {
+    It 'builds the export call from the reduced parser Forward list' {
+        $content = Get-Content "$PSScriptRoot\..\..\scripts\serve-api.ps1" -Raw
+        $content.Contains('$exportArgs = @($parsed.Forward)') | Should -Be $true
+        $content.Contains('$exportArgs += ''--api-port'', $ApiPort') | Should -Be $true
     }
 }
 
