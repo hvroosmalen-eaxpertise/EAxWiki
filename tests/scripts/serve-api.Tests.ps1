@@ -67,7 +67,8 @@ Describe 'Get-ServeApiArgs (reduced orchestration parser)' {
 
     It 'forwards a bare non-numeric token (becomes the exe bare positional repo)' {
         $r = Get-ServeApiArgs -Arguments @('model.qea')
-        $r.Forward | Should -Be @('model.qea')
+        $r.RepoPath | Should -Be 'model.qea'
+        $r.Forward  | Should -Be @('model.qea')
     }
 
     It 'all flags combined: orchestration parsed, pass-through forwarded' {

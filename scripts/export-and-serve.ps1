@@ -89,7 +89,7 @@ $wikiDir = if ($OutputDir) {
 # status-editor widget embeds the correct URL. A relative --output resolves against $repoRoot
 # inside EAxWiki.dll, so it matches $wikiDir by construction.
 $exportArgs = @($parsed.Forward)
-$exportArgs += '--api-port', $ApiPort
+if ($ApiPort -gt 0) { $exportArgs += '--api-port', $ApiPort }
 
 & $PSScriptRoot\export.ps1 @exportArgs
 if ($LASTEXITCODE -ne 0) { Pop-Location; exit $LASTEXITCODE }

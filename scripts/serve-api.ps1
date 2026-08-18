@@ -48,7 +48,10 @@ function Get-ServeApiArgs {
             }
             default {
                 if ($arg -match '^\d+$') { $Port = [int]$arg }
-                else { $Forward.Add($arg) }
+                else {
+                    if (-not "$arg".StartsWith('-')) { $RepoPath = $arg }
+                    $Forward.Add($arg)
+                }
             }
         }
         $i++

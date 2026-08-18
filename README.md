@@ -636,15 +636,15 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 | **.NET subtotal** | **443** | |
 | Bootstrap | 4 | `Get-EAxWikiDllPath` + `Get-EAxWikiMonitorExePath` resolution + clear missing-DLL/exe errors |
 | Export | 6 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths, `--brand` |
-| ExportAndServe | 16 | Port/root/API-port flags, retry/force args, combined pipeline args |
+| ExportAndServe | 17 | Port/root/API-port flags, retry/force args, combined pipeline args |
 | Install | 11 | PS 5.1 compat via bootstrap, parameter binding |
 | Serve | 12 | Port/root flags, file server config, cert modes, default page, path normalization |
 | ServeApi | 15 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
 | ValidateWikiOutput | 12 | Validation CLI args (repo/output/tolerance, defaults, error paths) |
 | Writeback | 5 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
-| **Pester subtotal** | **81** | |
+| **Pester subtotal** | **82** | |
 
-**524 tests total** (443 .NET + 81 Pester), all pass.
+**525 tests total** (443 .NET + 82 Pester), all pass.
 
 ## Design decisions
 

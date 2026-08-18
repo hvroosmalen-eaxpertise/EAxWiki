@@ -51,6 +51,12 @@ Describe 'Get-ExportAndServeArgs (reduced orchestration parser)' {
         $r.Forward  | Should -BeNullOrEmpty
     }
 
+    It 'parses --api-port 0 as API-off (disable idiom)' {
+        $r = Get-ExportAndServeArgs -Arguments @('--api-port', '0')
+        $r.ApiPort | Should -Be 0
+        $r.Forward  | Should -BeNullOrEmpty
+    }
+
     It 'accepts bare repo path' {
         $r = Get-ExportAndServeArgs -Arguments @('model.qea')
         $r.RepoPath | Should -Be 'model.qea'
