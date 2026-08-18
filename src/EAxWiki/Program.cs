@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.CommandLine;
+using System.CommandLine.Help;
+using System.CommandLine.Invocation;
+using Microsoft.Extensions.Logging;
 using EAxWiki;
 using EAxWiki.Core.Configuration;
 using EAxWiki.Core.Interfaces;
@@ -10,14 +13,21 @@ using EAxWiki.Export.Exporters;
 Console.WriteLine("EAxWiki - Sparx EA Repository to Wiki Generator");
 Console.WriteLine();
 
-var config = new EAxWiki.Config();
-config.Load(args);
-
-if (config.HelpRequested)
+var root = CommandLine.BuildCommand();
+var parseResult = root.Parse(args);
+if (parseResult.Errors.Count > 0)
 {
-    ShowUsage();
+    await parseResult.InvokeAsync(new InvocationConfiguration(), CancellationToken.None);
+    return 1;
+}
+
+if (parseResult.Action is HelpAction)
+{
+    await parseResult.InvokeAsync(new InvocationConfiguration(), CancellationToken.None);
     return 0;
 }
+
+var config = CommandLine.ToConfig(parseResult);
 
 const string ConfigFileName = ".eaxwiki";
 
@@ -294,40 +304,6 @@ static EaPackage? FindPackage(List<EaPackage> packages, string name)
         if (found != null) return found;
     }
     return null;
-}
-
-static void ShowUsage()
-{
-    Console.WriteLine("Usage: EAxWiki [options]");
-    Console.WriteLine();
-    Console.WriteLine("Options:");
-    Console.WriteLine("  --repo, -r <value>    Path to a .qea file, or a DB connection string.");
-    Console.WriteLine("                        Omit to enter interactive connection builder.");
-    Console.WriteLine("  --name, -n <name>     Display name for the repository");
-    Console.WriteLine("  --output, -o <dir>    Output directory for the wiki (default: wiki)");
-    Console.WriteLine("  --package, -p <name>  Only export a specific package (by name)");
-    Console.WriteLine("  --verbose, -v         Enable verbose logging per-element timing");
-    Console.WriteLine("  --force, -f           Force full regeneration (rebuild all files)");
-    Console.WriteLine("  --json, -j            Also export model.json alongside markdown");
-    Console.WriteLine("  --writeback, -w       Scan wiki for status changes and write them back to EA via COM");
-    Console.WriteLine("  --api                 Start wiki write-back server for in-wiki status editing");
-    Console.WriteLine("  --api-port <port>     Port for the wiki write-back server (default: 8001)");
-    Console.WriteLine("  --wiki-port <port>    Port the paired 'mkdocs serve' uses (default: 8000);");
-  Console.WriteLine("                        --api only accepts requests whose Origin matches this port.");
-  Console.WriteLine("  --cert <path>         Path to PFX certificate for HTTPS");
-  Console.WriteLine("  --cert-password <pw>  PFX certificate password");
-  Console.WriteLine("  --ai-endpoint <url>   OpenAI-compatible API base URL (empty = AI suggestions disabled)");
-  Console.WriteLine("  --ai-model <name>     Model name sent to AI endpoint (default: llama-3.2-3b)");
-  Console.WriteLine("  --ai-key <key>        API key for AI endpoint (optional for local LLMs)");
-  Console.WriteLine("  --brand <name>        Brand theme to emit (eursura); default: none");
-  Console.WriteLine("  --help, -h            Show this help message");
-    Console.WriteLine();
-    Console.WriteLine("Connection string examples:");
-    Console.WriteLine("  SQL Server:  DBType=1;Connect=Provider=SQLOLEDB.1;Data Source=SERVER;Initial Catalog=EA;Integrated Security=SSPI;");
-    Console.WriteLine("  MySQL:       DBType=3;Connect=Server=localhost;Database=EA;Uid=user;Pwd=pass;");
-    Console.WriteLine("  MariaDB:     DBType=3;Connect=Server=localhost;Database=EA;Uid=user;Pwd=pass;");
-    Console.WriteLine("  Oracle:      DBType=2;Connect=Data Source=TNSNAME;User Id=user;Password=pass;");
-    Console.WriteLine("  PostgreSQL:  DBType=7;Connect=Server=localhost;Database=EA;User Id=user;Password=pass;");
 }
 
 static string BuildConnectionStringInteractively()

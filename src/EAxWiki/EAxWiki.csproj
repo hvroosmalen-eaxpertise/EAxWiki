@@ -9,6 +9,7 @@
   <ItemGroup>
     <!-- DPAPI wrapper used by LocalConfigStore to encrypt the saved .eaxwiki connection string at rest -->
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="10.0.11" />
+    <PackageReference Include="System.CommandLine" Version="2.0.11" />
   </ItemGroup>
 
   <ItemGroup>
