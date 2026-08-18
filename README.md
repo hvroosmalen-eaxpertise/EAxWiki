@@ -630,21 +630,21 @@ PowerShell scripts are tested with **Pester 5**. Test files are in `tests/`.
 | ContextBuilder | 9 | Sub-builder decomposition (ElementCollector, DiagramIndexBuilder, ConnectorIndexBuilder, LookupBuilder, PackageDirCollector) |
 | Frontmatter parser | 18 | YamlDotNet-based YAML frontmatter parsing, notes/status hash+content rewrite, CRLF round-trip |
 | ElementPageWriter renderers | 34 | All 11 widget renderers (rich HTML + plain Markdown modes), edge cases, 2-hop graph, missing references |
-| Other | ~149 | Cleanup, Markdown helpers, hash helpers, config store, repository/health/validation writers, resilience, script template integrity, write-back server HTTP tests (auth/rate-limit/shutdown/CORS), config defaults, etc. |
+| Other | ~173 | Cleanup, Markdown helpers, hash helpers, config store, repository/health/validation writers, resilience, script template integrity, write-back server HTTP tests (auth/rate-limit/shutdown/CORS), config defaults, etc. |
 | Property-based (FsCheck) | 26 | SanitizeName, EscapeCell, ParseStereotype, GetStereotypeLabel, SanitizeForAnchor, ComputeNotesHash, ComputeStatusHash invariants |
 | EAxWiki.Monitor | 108 | Monitor lock/loop, options resolution, CLI parser, export runner (incl. typed STA-exporter logger wiring), alert dispatcher, digest tracker, health store/renderer, edit lock, port killer/probe, pid file, process supervisor |
-| **.NET subtotal** | **419** | |
+| **.NET subtotal** | **443** | |
 | Bootstrap | 4 | `Get-EAxWikiDllPath` + `Get-EAxWikiMonitorExePath` resolution + clear missing-DLL/exe errors |
-| Export | 26 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths, `--brand` |
-| ExportAndServe | 23 | Port/root/API-port flags, retry/force args, combined pipeline args |
+| Export | 6 | `-Branch`, `-WhatIf`, `-Force`, overrides, cleanup guard, error paths, `--brand` |
+| ExportAndServe | 16 | Port/root/API-port flags, retry/force args, combined pipeline args |
 | Install | 11 | PS 5.1 compat via bootstrap, parameter binding |
 | Serve | 12 | Port/root flags, file server config, cert modes, default page, path normalization |
-| ServeApi | 13 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
+| ServeApi | 15 | Port/root, CORS headers, routing, JSON endpoints, static fallback |
 | ValidateWikiOutput | 12 | Validation CLI args (repo/output/tolerance, defaults, error paths) |
-| Writeback | 14 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
-| **Pester subtotal** | **115** | |
+| Writeback | 5 | Token validation, CORS, note/DLNote/diagram/row-note endpoints, error paths |
+| **Pester subtotal** | **81** | |
 
-**534 tests total** (419 .NET + 115 Pester), all pass.
+**524 tests total** (443 .NET + 81 Pester), all pass.
 
 ## Design decisions
 
