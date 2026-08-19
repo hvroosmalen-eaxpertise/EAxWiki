@@ -123,18 +123,26 @@ Write-Host ""
 # ── .NET build (Windows only) ──────────────────────────────────────────────────
 
 if ($IsWindowsOS -and -not $SkipDotnet) {
-    $srcProject = Join-Path $repoRoot "src\EAxWiki\EAxWiki.csproj"
-    if (-not (Test-Path $srcProject)) {
-        Write-Host "$err Source not found at: $srcProject"
-        Write-Host "      Download the Windows installer zip from GitHub Releases — it includes the source."
-        exit 1
-    }
+    # Build both the exporter (EAxWiki.dll) and the monitor (EAxWiki.Monitor.exe) in Debug
+    # configuration: _bootstrap.ps1 and the SchedulerUI resolve those binaries from
+    # src\*\bin\Debug\net10.0\ (see Get-EAxWikiDllPath / Get-EAxWikiMonitorExePath).
+    $projects = @(
+        (Join-Path $repoRoot "src\EAxWiki\EAxWiki.csproj"),
+        (Join-Path $repoRoot "src\EAxWiki.Monitor\EAxWiki.Monitor.csproj")
+    )
+    foreach ($srcProject in $projects) {
+        if (-not (Test-Path $srcProject)) {
+            Write-Host "$err Source not found at: $srcProject"
+            Write-Host "      Download the Windows installer zip from GitHub Releases — it includes the source."
+            exit 1
+        }
 
-    Write-Host "Building .NET project..." -ForegroundColor Yellow
-    dotnet build $srcProject --configuration Release --nologo
-    if ($LASTEXITCODE -ne 0) {
-        Write-Host "$err Build failed. Check output above for details."
-        exit $LASTEXITCODE
+        Write-Host "Building $([System.IO.Path]::GetFileName($srcProject))..." -ForegroundColor Yellow
+        dotnet build $srcProject --configuration Debug --nologo
+        if ($LASTEXITCODE -ne 0) {
+            Write-Host "$err Build failed for $srcProject. Check output above for details."
+            exit $LASTEXITCODE
+        }
     }
     Write-Host "$ok  Build succeeded."
     Write-Host ""
