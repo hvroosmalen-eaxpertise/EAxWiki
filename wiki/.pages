@@ -5,4 +5,7 @@ nav:
   - Glossary: glossary/
   - Recent: recent/
   - Status: status/
+  - Pipeline Health: status/health.html
   - Model Health: status/model-health.html
+  - Error Log: status/errors.html
+  - Configuration: status/config.html

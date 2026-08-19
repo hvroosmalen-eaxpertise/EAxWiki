@@ -450,7 +450,7 @@ Because the connection is saved in `.eaxwiki`, the scripts run unattended and ar
 
 ### Windows Task Scheduler — unattended monitoring (recommended)
 
-`scripts/register-scheduled-task.ps1` registers `EAxWiki.Monitor.exe` on a fixed interval. Unlike calling `export.ps1` directly from Task Scheduler, the monitor is built for running unattended with nobody watching: it retries transient failures with backoff, restarts `mkdocs serve` if it dies, writes a `wiki/status/health.md` page, and (if a Slack, Teams, and/or Telegram alert destination is configured — see [Monitoring & Alerting](#monitoring--alerting)) posts an alert on every run start, on final failure, and on recovery.
+`scripts/register-scheduled-task.ps1` registers `EAxWiki.Monitor.exe` on a fixed interval. Unlike calling `export.ps1` directly from Task Scheduler, the monitor is built for running unattended with nobody watching: it retries transient failures with backoff, restarts `mkdocs serve` if it dies, writes `wiki/status/health.md`, `wiki/status/errors.md`, and `wiki/status/config.md` pages, and (if a Slack, Teams, and/or Telegram alert destination is configured — see [Monitoring & Alerting](#monitoring--alerting)) posts an alert on every run start, on final failure, and on recovery.
 
 ```powershell
 # Register a task that runs every 30 minutes
@@ -585,6 +585,8 @@ The wiki has seven navigation views:
 - **Recent** — top 50 most recently modified elements and diagrams, sorted by date descending
 - **Status Dashboard** — a dashboard at `/status/` with summary bar charts, a **By Package** table with collapsible drill-down (clickable element links with status badges), and a **By Type** breakdown section
 - **Model Health** — a report at `/status/model-health.html` flagging content-quality issues in the model itself (not export/serve pipeline health): orphan elements with no connectors and no diagram appearance, elements with an empty Notes field, elements with a Status set that haven't been touched in 90+ days, and duplicate element names within the same package. Every flagged entry links to the element's own page for one-click editing via the write-back widgets.
+- **Error Log** — a monitor-generated report at `/status/errors.html` listing recent Warn/Error entries from the export/serve/API/LLM supervision logs (last 7 days of issues plus the last 20 log lines across all levels)
+- **Configuration** — a monitor-generated report at `/status/config.html` showing the resolved runtime configuration (wiki dir, repository, ports, intervals) and the live scheduled-task snapshot (task name, state, wake-to-run, execution-time limit, multiple-instances policy, and triggers)
 
 ## Element page features
 
