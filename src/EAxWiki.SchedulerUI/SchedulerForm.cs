@@ -106,8 +106,8 @@ public class SchedulerForm : Form
     private readonly DataGridView _dashboardGrid = new()
     {
         ReadOnly = true, AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
-        AllowUserToAddRows = false, AllowUserToDeleteRows = false, Dock = DockStyle.Top,
-        Height = 260,
+        AllowUserToAddRows = false, AllowUserToDeleteRows = false, Dock = DockStyle.Fill,
+        AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells,
     };
 
     public SchedulerForm()
@@ -338,11 +338,21 @@ public class SchedulerForm : Form
     {
         var buttonRow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight };
         buttonRow.Controls.Add(_refreshDashboardButton);
-        var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown, WrapContents = false };
-        panel.Controls.Add(buttonRow);
-        panel.Controls.Add(_dashboardGrid);
+
+        var split = new SplitContainer
+        {
+            Dock = DockStyle.Fill,
+            Orientation = Orientation.Horizontal,
+            SplitterWidth = 6,
+            Panel1MinSize = 28, // Refresh button row
+        };
+        split.Panel1.Controls.Add(buttonRow);
+        split.Panel1.AutoScroll = true;
+        split.Panel2.Controls.Add(_dashboardGrid);
+        split.SplitterDistance = 40; // button row only; the grid gets the rest
+
         _refreshDashboardButton.Click += (_, _) => RefreshDashboard();
-        return new TabPage("Health Dashboard") { Padding = new Padding(10), AutoScroll = true, Controls = { panel } };
+        return new TabPage("Health Dashboard") { Padding = new Padding(10), Controls = { split } };
     }
 
     private void RefreshDashboard()
