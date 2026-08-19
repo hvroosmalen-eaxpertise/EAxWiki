@@ -369,6 +369,16 @@ public class SchedulerForm : Form
                 s.ConsecutiveFailures,
             })
             .ToList();
+
+        foreach (DataGridViewColumn col in _dashboardGrid.Columns)
+        {
+            col.FillWeight = col.Name switch
+            {
+                "LastSuccess" or "LastFailure" => 35,
+                "Name" or "Status" or "ConsecutiveFailures" => 10,
+                _ => 10,
+            };
+        }
     }
 
     private TabPage BuildScheduleTab()
