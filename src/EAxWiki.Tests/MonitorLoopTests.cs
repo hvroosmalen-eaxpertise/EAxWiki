@@ -49,13 +49,20 @@ public class MonitorLoopTests
         public override void Save(string path, HealthState state) => Saves++;
     }
 
+    private sealed class StubSnapshot : IScheduledTaskSnapshot
+    {
+        public ScheduledTaskInfo? Get() =>
+            new("EAxWiki-Monitor", "Ready", false, "PT72H", "IgnoreNew", ["Daily at 00:00, every 4 h (for 8 h)"]);
+    }
+
     private static MonitorLoop Build(
         out StubExportRunner exportRunner, out StubDigest digest, out StubAlerts alerts,
         out StubSupervisor supervisor, out HealthState state, out FakeHealthStore store,
-        string? wikiDir = null, int checkInterval = 0, bool local = false)
+        out string wikiDirOut, string? wikiDir = null, int checkInterval = 0, bool local = false)
     {
         var dir = Path.Combine(Path.GetTempPath(), "eaxwiki_loop_" + Guid.NewGuid().ToString("N"));
         Directory.CreateDirectory(dir);
+        var resolvedWikiDir = wikiDir ?? Path.Combine(dir, "wiki");
         if (local)
         {
             // The loop only starts the LLM watchdog when both llama paths exist.
@@ -65,7 +72,7 @@ public class MonitorLoopTests
         var options = new MonitorOptions
         {
             RepoPath = @"C:\models\repo.qea",
-            WikiDir = wikiDir ?? Path.Combine(dir, "wiki"),
+            WikiDir = resolvedWikiDir,
             ApiPort = 8001,
             ExportIntervalMinutes = 30,
             CheckIntervalSeconds = checkInterval,
@@ -83,9 +90,14 @@ public class MonitorLoopTests
         state = new HealthState();
         store = new FakeHealthStore();
 
+        File.WriteAllText(Path.Combine(dir, "errors-template.md"), "# Error Log\n@@ERRORS@@\n@@RECENT@@\n");
+        wikiDirOut = resolvedWikiDir;
+
         var loop = new MonitorLoop(
             options, state, store,
             new HealthPageRenderer(Path.Combine(dir, "health-template.md"), options.WikiDir),
+            new ErrorLogPageRenderer(Path.Combine(dir, "errors-template.md"), options.WikiDir, Path.Combine(dir, "logs"), Array.Empty<string>()),
+            new ConfigPageRenderer(options.WikiDir, new StubSnapshot()),
             dir,
             exportRunner, digest, alerts, supervisor,
             new ServiceSpec("serve", Path.Combine(dir, "serve.pid"), "cmd.exe", Array.Empty<string>(), dir),
@@ -98,7 +110,7 @@ public class MonitorLoopTests
     [Fact]
     public void RunOnce_FirstCycle_ExportsAndStartsServices()
     {
-        var loop = Build(out var exportRunner, out _, out var alerts, out var supervisor, out var state, out _);
+        var loop = Build(out var exportRunner, out _, out var alerts, out var supervisor, out var state, out _, out _);
         loop.RunOnce();
 
         Assert.Equal(1, exportRunner.Runs);
@@ -111,7 +123,7 @@ public class MonitorLoopTests
     [Fact]
     public void RunOnce_SecondCycleWithinInterval_DoesNotExport()
     {
-        var loop = Build(out var exportRunner, out _, out _, out _, out _, out _);
+        var loop = Build(out var exportRunner, out _, out _, out _, out _, out _, out _);
         loop.RunOnce(); // first: export
         loop.RunOnce(); // second: within 30-min interval → no export
 
@@ -121,7 +133,7 @@ public class MonitorLoopTests
     [Fact]
     public void RunOnce_SkipExport_SetByStop_AlertsUserStop()
     {
-        var loop = Build(out var exportRunner, out _, out var alerts, out _, out var state, out _);
+        var loop = Build(out var exportRunner, out _, out var alerts, out _, out var state, out _, out _);
         state.SkipExport = true;
 
         loop.RunOnce();
@@ -133,7 +145,7 @@ public class MonitorLoopTests
     [Fact]
     public void RunOnce_LocalMode_StartsLlm()
     {
-        var loop = Build(out _, out _, out _, out var supervisor, out _, out _, local: true);
+        var loop = Build(out _, out _, out _, out var supervisor, out _, out _, out _, local: true);
         loop.RunOnce();
 
         Assert.True(supervisor.StartCount >= 3); // serve + api + llm
@@ -142,9 +154,19 @@ public class MonitorLoopTests
     [Fact]
     public void RunOnce_SaveHealth_Invoked()
     {
-        var loop = Build(out _, out _, out _, out _, out _, out var store);
+        var loop = Build(out _, out _, out _, out _, out _, out var store, out _);
         loop.RunOnce();
         // At least the mid-cycle save; watchdogs that (re)start a service also re-render + re-save.
         Assert.True(store.Saves >= 1);
+    }
+
+    [Fact]
+    public void RunOnce_WritesErrorAndConfigPages()
+    {
+        var loop = Build(out _, out _, out _, out _, out _, out _, out var wikiDir);
+        loop.RunOnce();
+
+        Assert.True(File.Exists(Path.Combine(wikiDir, "status", "errors.md")), "errors.md should be rendered");
+        Assert.True(File.Exists(Path.Combine(wikiDir, "status", "config.md")), "config.md should be rendered");
     }
 }

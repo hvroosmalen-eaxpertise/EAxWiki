@@ -15,6 +15,8 @@ public class MonitorLoop
     private readonly HealthState _state;
     private readonly HealthStore _healthStore;
     private readonly HealthPageRenderer _pageRenderer;
+    private readonly ErrorLogPageRenderer _errorsPageRenderer;
+    private readonly ConfigPageRenderer _configPageRenderer;
     private readonly string _stateDir;
     private readonly IExportRunner _exportRunner;
     private readonly IDigestTracker _digestTracker;
@@ -33,6 +35,8 @@ public class MonitorLoop
         HealthState state,
         HealthStore healthStore,
         HealthPageRenderer pageRenderer,
+        ErrorLogPageRenderer errorsPageRenderer,
+        ConfigPageRenderer configPageRenderer,
         string stateDir,
         IExportRunner exportRunner,
         IDigestTracker digestTracker,
@@ -47,6 +51,8 @@ public class MonitorLoop
         _state = state;
         _healthStore = healthStore;
         _pageRenderer = pageRenderer;
+        _errorsPageRenderer = errorsPageRenderer;
+        _configPageRenderer = configPageRenderer;
         _stateDir = stateDir;
         _exportRunner = exportRunner;
         _digestTracker = digestTracker;
@@ -229,6 +235,22 @@ public class MonitorLoop
         catch (Exception ex)
         {
             _logger.LogWarning("Failed to render health page: {Error}", ex.Message);
+        }
+        try
+        {
+            _errorsPageRenderer.Render(DateTime.Now);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning("Failed to render error log page: {Error}", ex.Message);
+        }
+        try
+        {
+            _configPageRenderer.Render(_options, DateTime.Now);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning("Failed to render config page: {Error}", ex.Message);
         }
         _healthStore.Save(Path.Combine(_stateDir, "health.json"), _state);
     }

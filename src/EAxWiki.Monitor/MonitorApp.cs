@@ -18,6 +18,13 @@ public static class MonitorApp
             Path.Combine(templateDir, "health-template.md"),
             options.WikiDir);
 
+        var errorsPageRenderer = new ErrorLogPageRenderer(
+            Path.Combine(templateDir, "errors-template.md"),
+            options.WikiDir,
+            Path.Combine(stateDir, "logs"),
+            new[] { options.WebhookUrl ?? "", options.TeamsWebhookUrl ?? "", options.TelegramBotToken ?? "" });
+        var configPageRenderer = new ConfigPageRenderer(options.WikiDir, new ScheduledTaskSnapshot());
+
         var alerts = new AlertDispatcher(
             new AlertOptions(options.WebhookUrl, options.TeamsWebhookUrl,
                 options.TelegramBotToken, options.TelegramChatId,
@@ -40,8 +47,8 @@ public static class MonitorApp
         var apiSpec = BuildApiSpec(options, stateDir);
         var llmSpec = BuildLlmSpec(options, stateDir);
 
-        return new MonitorLoop(options, state, healthStore, pageRenderer, stateDir,
-            exportRunner, digestTracker, alerts, supervisor, serveSpec, apiSpec, llmSpec!,
+        return new MonitorLoop(options, state, healthStore, pageRenderer, errorsPageRenderer, configPageRenderer,
+            stateDir, exportRunner, digestTracker, alerts, supervisor, serveSpec, apiSpec, llmSpec!,
             loggerFactory.CreateLogger("MonitorLoop"));
     }
 
