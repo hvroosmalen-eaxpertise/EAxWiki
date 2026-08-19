@@ -58,15 +58,13 @@ public class ErrorLogPageRenderer
         if (!Directory.Exists(_logsDir)) return result;
 
         var files = Directory.GetFiles(_logsDir, "monitor-*.log")
-            .Where(f =>
-            {
-                var name = Path.GetFileName(f);
-                if (name.Length < 19) return false;
-                return DateTime.TryParseExact(name.Substring(8, 10), "yyyy-MM-dd", CultureInfo.InvariantCulture,
+            .Select(f => (Path: f, Name: Path.GetFileName(f)))
+            .Where(t => t.Name.Length >= 19
+                && DateTime.TryParseExact(t.Name.Substring(8, 10), "yyyy-MM-dd", CultureInfo.InvariantCulture,
                     DateTimeStyles.None, out var d)
-                    && d.Date >= now.Date.AddDays(-6) && d.Date <= now.Date;
-            })
-            .OrderByDescending(File.GetLastWriteTime)
+                && d.Date >= now.Date.AddDays(-6) && d.Date <= now.Date)
+            .OrderByDescending(t => DateTime.ParseExact(t.Name.Substring(8, 10), "yyyy-MM-dd", CultureInfo.InvariantCulture))
+            .Select(t => t.Path)
             .ToArray();
 
         foreach (var file in files)
