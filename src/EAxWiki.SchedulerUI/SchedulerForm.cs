@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
+using System.Net.Sockets;
 using EAxWiki.Core.Configuration;
 using EAxWiki.EA;
 
@@ -63,9 +64,6 @@ public class SchedulerForm : Form
     private readonly TextBox _llmModelPathBox = new() { Width = 340, Height = 23 };
     private readonly Button _browseLlmModelButton = new() { Text = "Browse...", AutoSize = true };
     private readonly NumericUpDown _llmPortBox = new() { Minimum = 1, Maximum = 65535, Value = 8080, Width = 80 };
-    private readonly Button _llmStartButton = new() { Text = "Start LLM", AutoSize = true };
-    private readonly Button _llmStopButton = new() { Text = "Stop LLM", AutoSize = true, Enabled = false };
-    private Process? _llmProcess;
     private readonly Button _testConnectionButton = new() { Text = "Test Connection", AutoSize = true };
     private readonly Button _saveConfigButton = new() { Text = "Save Configuration", AutoSize = true };
 
@@ -204,8 +202,6 @@ public class SchedulerForm : Form
             if (dialog.ShowDialog() == DialogResult.OK)
                 _llmModelPathBox.Text = dialog.FileName;
         };
-        _llmStartButton.Click += async (_, _) => await StartLlmAsync();
-        _llmStopButton.Click += (_, _) => StopLlm();
 
         if (_repoRoot == null)
         {
@@ -473,13 +469,8 @@ public class SchedulerForm : Form
         AddRow(localTable, "Server executable:", MakeBrowseRow(_llmExeBox, _browseLlmExeButton));
         AddRow(localTable, "Model file (.gguf):", MakeBrowseRow(_llmModelPathBox, _browseLlmModelButton));
         AddRow(localTable, "Port:", _llmPortBox);
-        var localButtons = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(3, 4, 3, 3) };
-        localButtons.Controls.Add(_llmStartButton);
-        localButtons.Controls.Add(_llmStopButton);
         localGroup.Controls.Add(localTable);
-        localGroup.Controls.Add(localButtons);
         localTable.Location = new Point(6, 16);
-        localButtons.Location = new Point(6, localTable.Bottom + 2);
         panel.Controls.Add(localGroup);
 
         // Remote LLM section
@@ -514,6 +505,12 @@ public class SchedulerForm : Form
 
     private async Task TestAiConnectionAsync()
     {
+        if (_llmModeLocal.Checked)
+        {
+            await TestLocalLlmAsync();
+            return;
+        }
+
         var endpoint = _aiEndpointBox.Text.Trim();
         if (endpoint.Length == 0)
         {
@@ -582,92 +579,95 @@ public class SchedulerForm : Form
         }
     }
 
-    private async Task StartLlmAsync()
+    private async Task TestLocalLlmAsync()
     {
         var exePath = _llmExeBox.Text.Trim();
         var modelPath = _llmModelPathBox.Text.Trim();
         if (exePath.Length == 0 || modelPath.Length == 0)
         {
-            AppendOutput("Set both LLM Server path and LLM Model path first.");
+            _aiTestResult.Text = "Set both the LLM server executable and model file first.";
+            _aiTestResult.ForeColor = Color.Red;
             return;
         }
         if (!File.Exists(exePath))
         {
-            AppendOutput($"LLM server not found: {exePath}");
+            _aiTestResult.Text = $"LLM server not found: {exePath}";
+            _aiTestResult.ForeColor = Color.Red;
             return;
         }
         if (!File.Exists(modelPath))
         {
-            AppendOutput($"LLM model not found: {modelPath}");
+            _aiTestResult.Text = $"LLM model not found: {modelPath}";
+            _aiTestResult.ForeColor = Color.Red;
             return;
         }
 
-        _llmStartButton.Enabled = false;
-        _llmStartButton.Text = "Starting...";
-        AppendOutput($"Starting LLM server: {exePath}");
+        var port = (int)_llmPortBox.Value;
+        _aiTestButton.Enabled = false;
+        _aiTestButton.Text = "Starting LLM...";
+        _aiTestResult.Text = "";
+        AppendOutput($"Probe-starting LLM server: {exePath}");
+
+        var psi = new ProcessStartInfo(exePath, $"-m \"{modelPath}\" -c 4096 --port {port} --n-gpu-layers 0")
+        {
+            UseShellExecute = false,
+            CreateNoWindow = true,
+        };
 
         try
         {
-            var port = (int)_llmPortBox.Value;
-            var psi = new ProcessStartInfo(exePath, $"-m \"{modelPath}\" -c 4096 --port {port} --n-gpu-layers 0")
+            using var process = Process.Start(psi);
+            if (process == null)
             {
-                UseShellExecute = false,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-                CreateNoWindow = true
-            };
-            var process = new Process { StartInfo = psi, EnableRaisingEvents = true };
-            process.Start();
+                _aiTestResult.Text = "Failed to start the LLM server.";
+                _aiTestResult.ForeColor = Color.Red;
+                return;
+            }
 
-            _llmProcess = process;
-            _llmStopButton.Enabled = true;
-            _llmStartButton.Text = "Running";
-            _aiEndpointBox.Text = $"http://localhost:{port}/v1";
-            AppendOutput($"LLM server started (PID {process.Id}). AI endpoint: http://localhost:{port}/v1");
-
-            // Read output in background to detect failures
-            _ = Task.Run(async () =>
+            var started = DateTime.UtcNow;
+            var reachable = false;
+            while ((DateTime.UtcNow - started).TotalSeconds < 90)
             {
-                var output = await process.StandardOutput.ReadToEndAsync();
-                var error = await process.StandardError.ReadToEndAsync();
-                var fullLog = (output + error).Trim();
-                if (fullLog.Length > 0)
-                    BeginInvoke(() => AppendOutput($"LLM exited: {fullLog[..Math.Min(fullLog.Length, 500)]}"));
-
-                BeginInvoke(() =>
+                if (process.HasExited) break;
+                using var client = new TcpClient();
+                try
                 {
-                    _llmProcess = null;
-                    _llmStartButton.Enabled = true;
-                    _llmStartButton.Text = "Start LLM";
-                    _llmStopButton.Enabled = false;
-                    AppendOutput("LLM server stopped.");
-                });
-            });
-        }
-        catch (Exception ex)
-        {
-            AppendOutput($"Failed to start LLM: {ex.Message}");
-            _llmStartButton.Enabled = true;
-            _llmStartButton.Text = "Start LLM";
-        }
-    }
+                    var connectTask = client.ConnectAsync("localhost", port);
+                    if (await Task.WhenAny(connectTask, Task.Delay(1000)) == connectTask && client.Connected)
+                    {
+                        reachable = true;
+                        break;
+                    }
+                }
+                catch { /* server not up yet — keep waiting */ }
+                await Task.Delay(1000);
+            }
 
-    private void StopLlm()
-    {
-        if (_llmProcess == null || _llmProcess.HasExited) return;
-        try
-        {
-            _llmProcess.Kill(entireProcessTree: true);
-            AppendOutput("LLM server stopped.");
+            if (reachable)
+            {
+                _aiTestResult.Text = $"LLM reachable on http://localhost:{port}/v1";
+                _aiTestResult.ForeColor = Color.Green;
+                AppendOutput($"LLM test successful: http://localhost:{port}/v1");
+            }
+            else
+            {
+                _aiTestResult.Text = "LLM server did not accept connections within 90 seconds.";
+                _aiTestResult.ForeColor = Color.Red;
+            }
+
+            process.Kill(entireProcessTree: true);
         }
         catch (Exception ex)
         {
-            AppendOutput($"Failed to stop LLM: {ex.Message}");
+            _aiTestResult.Text = $"Error: {ex.Message}";
+            _aiTestResult.ForeColor = Color.Red;
+            AppendOutput($"LLM test failed: {ex.Message}");
         }
-        _llmProcess = null;
-        _llmStartButton.Enabled = true;
-        _llmStartButton.Text = "Start LLM";
-        _llmStopButton.Enabled = false;
+        finally
+        {
+            _aiTestButton.Enabled = true;
+            _aiTestButton.Text = "Test LLM Connection";
+        }
     }
 
     private void SaveAiConfig()
@@ -729,8 +729,6 @@ public class SchedulerForm : Form
         _llmModelPathBox.Enabled = local;
         _browseLlmModelButton.Enabled = local;
         _llmPortBox.Enabled = local;
-        _llmStartButton.Enabled = local;
-        _llmStopButton.Enabled = local && _llmProcess != null;
         _aiEndpointBox.Enabled = remote;
         _aiModelBox.Enabled = remote;
         _aiKeyBox.Enabled = remote;
@@ -1413,7 +1411,6 @@ Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
         var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
         AppendOutput(result.Output);
 
-        _llmProcess = null;
         UpdateAiModeEnablement();
     }
 
@@ -1451,7 +1448,6 @@ if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipExport = $true;
         var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
         AppendOutput(result.Output);
 
-        _llmProcess = null;
         UpdateAiModeEnablement();
     }
 }
