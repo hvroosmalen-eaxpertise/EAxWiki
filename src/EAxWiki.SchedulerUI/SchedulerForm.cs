@@ -110,6 +110,9 @@ public class SchedulerForm : Form
         AllowUserToAddRows = false, AllowUserToDeleteRows = false, Dock = DockStyle.Fill,
         AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells,
     };
+    private bool _dashboardRefreshed;
+    private TabPage? _dashboardTab;
+    private SplitContainer? _dashboardSplit;
 
     public SchedulerForm()
     {
@@ -136,6 +139,14 @@ public class SchedulerForm : Form
         tabs.TabPages.Add(BuildAiTab());
         tabs.TabPages.Add(BuildTaskStatusTab());
         tabs.TabPages.Add(BuildDashboardTab());
+        tabs.SelectedIndexChanged += (_, _) =>
+        {
+            if (tabs.SelectedTab != _dashboardTab || _dashboardRefreshed) return;
+            _dashboardRefreshed = true;
+            if (_dashboardSplit != null)
+                _dashboardSplit.SplitterDistance = Math.Max(40, _dashboardSplit.Height - 40);
+            RefreshDashboard();
+        };
 
         root.Controls.Add(tabs, 0, 0);
         root.Controls.Add(BuildOutputGroup(), 0, 1);
@@ -373,15 +384,16 @@ public class SchedulerForm : Form
             Dock = DockStyle.Fill,
             Orientation = Orientation.Horizontal,
             SplitterWidth = 6,
-            Panel1MinSize = 28, // Refresh button row
+            Panel2MinSize = 28, // Refresh button row
         };
-        split.Panel1.Controls.Add(buttonRow);
-        split.Panel1.AutoScroll = true;
-        split.Panel2.Controls.Add(_dashboardGrid);
-        split.SplitterDistance = 40; // button row only; the grid gets the rest
+        split.Panel1.Controls.Add(_dashboardGrid);
+        split.Panel2.Controls.Add(buttonRow);
+        split.Panel2.AutoScroll = true;
+        _dashboardSplit = split;
 
         _refreshDashboardButton.Click += (_, _) => RefreshDashboard();
-        return new TabPage("Health Dashboard") { Padding = new Padding(10), Controls = { split } };
+        _dashboardTab = new TabPage("Health Dashboard") { Padding = new Padding(10), Controls = { split } };
+        return _dashboardTab;
     }
 
     private void RefreshDashboard()
