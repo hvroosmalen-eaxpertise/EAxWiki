@@ -45,6 +45,9 @@ public class SchedulerForm : Form
     private readonly TextBox _teamsWebhookBox = new() { Width = 400 };
     private readonly TextBox _telegramBotTokenBox = new() { Width = 400, UseSystemPasswordChar = true };
     private readonly TextBox _telegramChatIdBox = new() { Width = 400 };
+    private readonly Button _testSlackButton = new() { Text = "Test", AutoSize = true };
+    private readonly Button _testTeamsButton = new() { Text = "Test", AutoSize = true };
+    private readonly Button _testTelegramButton = new() { Text = "Test", AutoSize = true };
     private readonly TextBox _aiEndpointBox = new() { Width = 400, Text = "https://api.openai.com/v1" };
     private readonly TextBox _aiModelBox = new() { Width = 400, Text = "gpt-4o-mini" };
     private readonly TextBox _aiKeyBox = new() { Width = 400, UseSystemPasswordChar = true };
@@ -173,6 +176,9 @@ public class SchedulerForm : Form
         _llmModeRemote.CheckedChanged += (_, _) => UpdateAiModeEnablement();
         _aiTestButton.Click += async (_, _) => await TestAiConnectionAsync();
         _aiSaveButton.Click += (_, _) => SaveAiConfig();
+        _testSlackButton.Click += async (_, _) => await TestWebhookAsync("Slack");
+        _testTeamsButton.Click += async (_, _) => await TestWebhookAsync("Teams");
+        _testTelegramButton.Click += async (_, _) => await TestWebhookAsync("Telegram");
         _browseLlmExeButton.Click += (_, _) =>
         {
             using var dialog = new OpenFileDialog { Filter = "llama-server.exe|llama-server.exe|All files (*.*)|*.*", CheckFileExists = true };
@@ -234,9 +240,9 @@ public class SchedulerForm : Form
         var table = new TableLayoutPanel { ColumnCount = 2, AutoSize = true, Dock = DockStyle.Top };
         AddRow(table, "Wiki port:", _wikiPortConfigBox);
         AddRow(table, "API port:", _apiPortConfigBox);
-        AddRow(table, "Slack Webhook:", _webhookBox);
-        AddRow(table, "Teams Webhook:", _teamsWebhookBox);
-        AddRow(table, "Telegram Bot Token:", _telegramBotTokenBox);
+        AddRow(table, "Slack Webhook:", MakeBrowseRow(_webhookBox, _testSlackButton));
+        AddRow(table, "Teams Webhook:", MakeBrowseRow(_teamsWebhookBox, _testTeamsButton));
+        AddRow(table, "Telegram Bot Token:", MakeBrowseRow(_telegramBotTokenBox, _testTelegramButton));
         AddRow(table, "Telegram Chat ID:", _telegramChatIdBox);
 
         // WrapContents = false and no AutoSize here, matching BuildScheduleTab: with AutoSize +
@@ -907,6 +913,38 @@ public class SchedulerForm : Form
             _testConnectionButton.Enabled = true;
             _testConnectionButton.Text = "Test Connection";
         }
+    }
+
+    private async Task TestWebhookAsync(string channel)
+    {
+        if (_repoRoot == null) return;
+        var script = Path.Combine(_repoRoot, "scripts", "send-alert.ps1");
+        var args = new List<string> { "-Message", $"Test {channel} webhook from EAxWiki Scheduler.", "-Kind", "Test" };
+
+        switch (channel)
+        {
+            case "Slack":
+                var slack = _webhookBox.Text.Trim();
+                if (slack.Length == 0) { AppendOutput("Enter a Slack webhook URL first."); return; }
+                args.Add("-WebhookUrl"); args.Add(slack);
+                break;
+            case "Teams":
+                var teams = _teamsWebhookBox.Text.Trim();
+                if (teams.Length == 0) { AppendOutput("Enter a Teams webhook URL first."); return; }
+                args.Add("-TeamsWebhookUrl"); args.Add(teams);
+                break;
+            case "Telegram":
+                var token = _telegramBotTokenBox.Text.Trim();
+                var chatId = _telegramChatIdBox.Text.Trim();
+                if (token.Length == 0 || chatId.Length == 0) { AppendOutput("Enter the Telegram bot token and chat ID first."); return; }
+                args.Add("-TelegramBotToken"); args.Add(token);
+                args.Add("-TelegramChatId"); args.Add(chatId);
+                break;
+        }
+
+        AppendOutput($"> send-alert.ps1 ({channel} test)");
+        var result = await PowerShellRunner.RunScriptAsync(script, args, _repoRoot);
+        AppendOutput(result.Output.Length > 0 ? result.Output : $"(no output, exit code {result.ExitCode})");
     }
 
     // Reverse of BuildRepoPath: populates the repo-type radio and its fields from a saved
