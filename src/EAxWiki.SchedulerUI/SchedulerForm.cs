@@ -21,7 +21,6 @@ public class SchedulerForm : Form
     private readonly string? _repoRoot;
     private readonly bool _isAdmin;
     private bool _connectionValid;
-    private bool _scheduleDirty;
 
     // Current config, editable
     // Repository type mirrors the console wizard's choice (BuildConnectionStringInteractively in
@@ -260,7 +259,6 @@ public class SchedulerForm : Form
     private void MarkScheduleDirty()
     {
         if (!_isAdmin) return;
-        _scheduleDirty = true;
         _registerButton.Enabled = true;
     }
 
@@ -1105,7 +1103,6 @@ public class SchedulerForm : Form
                 _stateValue.Text = "Not registered";
                 _nextRunValue.Text = "-";
                 _triggersBox.Text = "";
-                _scheduleDirty = false;
                 _registerButton.Enabled = false;
                 return;
             }
@@ -1115,7 +1112,6 @@ public class SchedulerForm : Form
             var triggerLines = root.GetProperty("triggerDetails").EnumerateArray().Select(FormatTrigger);
             _triggersBox.Text = string.Join(Environment.NewLine, triggerLines);
             ApplyScheduleFromTask(root);
-            _scheduleDirty = false;
             _registerButton.Enabled = false;
         }
         catch (Exception ex)
