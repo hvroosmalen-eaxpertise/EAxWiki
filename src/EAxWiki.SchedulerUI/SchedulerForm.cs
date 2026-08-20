@@ -20,6 +20,7 @@ public class SchedulerForm : Form
     private readonly string? _repoRoot;
     private readonly bool _isAdmin;
     private bool _connectionValid;
+    private bool _scheduleDirty;
 
     // Current config, editable
     // Repository type mirrors the console wizard's choice (BuildConnectionStringInteractively in
@@ -171,6 +172,18 @@ public class SchedulerForm : Form
 
         _simpleModeRadio.CheckedChanged += (_, _) => UpdateModeEnablement();
         _forceEveryNRadio.CheckedChanged += (_, _) => _forceEveryN.Enabled = _forceEveryNRadio.Checked;
+        _simpleModeRadio.CheckedChanged += (_, _) => MarkScheduleDirty();
+        _dayNightModeRadio.CheckedChanged += (_, _) => MarkScheduleDirty();
+        _simpleIntervalMinutes.ValueChanged += (_, _) => MarkScheduleDirty();
+        _workStart.ValueChanged += (_, _) => MarkScheduleDirty();
+        _workEnd.ValueChanged += (_, _) => MarkScheduleDirty();
+        _workIntervalMinutes.ValueChanged += (_, _) => MarkScheduleDirty();
+        _offHoursIntervalMinutes.ValueChanged += (_, _) => MarkScheduleDirty();
+        _noForceRadio.CheckedChanged += (_, _) => MarkScheduleDirty();
+        _forceEveryRunRadio.CheckedChanged += (_, _) => MarkScheduleDirty();
+        _forceEveryNRadio.CheckedChanged += (_, _) => MarkScheduleDirty();
+        _forceEveryN.ValueChanged += (_, _) => MarkScheduleDirty();
+        _wakeToRunCheckbox.CheckedChanged += (_, _) => MarkScheduleDirty();
         _llmModeNone.CheckedChanged += (_, _) => UpdateAiModeEnablement();
         _llmModeLocal.CheckedChanged += (_, _) => UpdateAiModeEnablement();
         _llmModeRemote.CheckedChanged += (_, _) => UpdateAiModeEnablement();
@@ -233,6 +246,13 @@ public class SchedulerForm : Form
             _unregisterButton.Enabled = false;
             _refreshStatusButton.Enabled = false;
         }
+    }
+
+    private void MarkScheduleDirty()
+    {
+        if (!_isAdmin) return;
+        _scheduleDirty = true;
+        _registerButton.Enabled = true;
     }
 
     private TabPage BuildConfigTab()
@@ -1071,6 +1091,8 @@ public class SchedulerForm : Form
                 _stateValue.Text = "Not registered";
                 _nextRunValue.Text = "-";
                 _triggersBox.Text = "";
+                _scheduleDirty = false;
+                _registerButton.Enabled = false;
                 return;
             }
 
@@ -1079,6 +1101,8 @@ public class SchedulerForm : Form
             var triggerLines = root.GetProperty("triggers").EnumerateArray().Select(t => t.GetString() ?? "");
             _triggersBox.Text = string.Join(Environment.NewLine, triggerLines);
             ApplyScheduleFromTask(root);
+            _scheduleDirty = false;
+            _registerButton.Enabled = false;
         }
         catch (Exception ex)
         {
@@ -1262,7 +1286,7 @@ public class SchedulerForm : Form
         var repoPath = BuildRepoPath();
         if (repoPath.Length == 0)
         {
-            AppendOutput("Configure the repository on the Configuration tab first.");
+            AppendOutput("No repository selected. Configure the repository on the Configuration tab first.");
             return;
         }
 
@@ -1294,7 +1318,7 @@ public class SchedulerForm : Form
         if (_forceEveryRunRadio.Checked) args.Add("--force");
         else if (_forceEveryNRadio.Checked) { args.Add("--force-every"); args.Add(((int)_forceEveryN.Value).ToString()); }
 
-        AppendOutput($"> Starting monitor in new window...");
+        AppendOutput($"> Starting monitor in new window (starts all configured services: exporter, wiki server, write-back, LLM)...");
         var psi = new ProcessStartInfo
         {
             FileName = monitorExe,
