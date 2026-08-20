@@ -97,7 +97,6 @@ public class SchedulerForm : Form
     private readonly Button _runMonitorButton = new() { Text = "Run Monitor Now", AutoSize = true };
     private readonly Button _enableButton = new() { Text = "Enable", AutoSize = true };
     private readonly Button _disableButton = new() { Text = "Disable", AutoSize = true };
-    private readonly Button _unregisterButton = new() { Text = "Unregister", AutoSize = true };
     private readonly Button _stopExportButton = new() { Text = "Stop Export", AutoSize = true };
     private readonly Button _stopServeButton = new() { Text = "Stop Serve", AutoSize = true };
     private readonly Button _stopLlmButton = new() { Text = "Stop LLM", AutoSize = true };
@@ -157,6 +156,12 @@ public class SchedulerForm : Form
             if (dialog.ShowDialog() == DialogResult.OK)
                 _repoFilePathBox.Text = dialog.FileName;
         };
+        _stateValue.MinimumSize = new Size(0, 23);
+        _stateValue.TextAlign = ContentAlignment.MiddleLeft;
+        _stateValue.Anchor = AnchorStyles.Left;
+        _nextRunValue.MinimumSize = new Size(0, 23);
+        _nextRunValue.TextAlign = ContentAlignment.MiddleLeft;
+        _nextRunValue.Anchor = AnchorStyles.Left;
         _refreshStatusButton.Click += async (_, _) => await RefreshTaskStatusAsync();
         _registerButton.Click += async (_, _) => await RegisterAsync();
         _runMonitorButton.Click += async (_, _) => await RunMonitorAsync();
@@ -166,7 +171,6 @@ public class SchedulerForm : Form
         _stopServeButton.Click += async (_, _) => await StopServeAsync();
         _stopLlmButton.Click += async (_, _) => await StopLlmAsync();
         _stopAllButton.Click += async (_, _) => await StopAllAsync();
-        _unregisterButton.Click += async (_, _) => await RunTaskCommandAsync("Unregister-ScheduledTask -Confirm:$false");
 
         _simpleModeRadio.CheckedChanged += (_, _) => UpdateModeEnablement();
         _forceEveryNRadio.CheckedChanged += (_, _) => _forceEveryN.Enabled = _forceEveryNRadio.Checked;
@@ -210,7 +214,6 @@ public class SchedulerForm : Form
             _refreshStatusButton.Enabled = false;
             _enableButton.Enabled = false;
             _disableButton.Enabled = false;
-            _unregisterButton.Enabled = false;
         }
         else
         {
@@ -239,7 +242,6 @@ public class SchedulerForm : Form
             _registerButton.Enabled = false;
             _enableButton.Enabled = false;
             _disableButton.Enabled = false;
-            _unregisterButton.Enabled = false;
             _refreshStatusButton.Enabled = false;
         }
     }
@@ -340,7 +342,9 @@ public class SchedulerForm : Form
         buttonRow1.Controls.Add(_refreshStatusButton);
         buttonRow1.Controls.Add(_enableButton);
         buttonRow1.Controls.Add(_disableButton);
-        buttonRow1.Controls.Add(_unregisterButton);
+        var buttonTooltip = new ToolTip();
+        buttonTooltip.SetToolTip(_enableButton, "Enable the scheduled task and clear skip flags (requires Administrator).");
+        buttonTooltip.SetToolTip(_disableButton, "Disable the scheduled task (requires Administrator).");
 
         var buttonRow2 = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight };
         buttonRow2.Controls.Add(_stopExportButton);
@@ -1096,7 +1100,7 @@ public class SchedulerForm : Form
 
             _stateValue.Text = root.GetProperty("state").GetString() ?? "-";
             _nextRunValue.Text = root.GetProperty("nextRun").GetString() ?? "-";
-            var triggerLines = root.GetProperty("triggers").EnumerateArray().Select(t => t.GetString() ?? "");
+            var triggerLines = root.GetProperty("triggerDetails").EnumerateArray().Select(FormatTrigger);
             _triggersBox.Text = string.Join(Environment.NewLine, triggerLines);
             ApplyScheduleFromTask(root);
             _scheduleDirty = false;
@@ -1110,6 +1114,60 @@ public class SchedulerForm : Form
         {
             _refreshStatusButton.Enabled = true;
         }
+    }
+
+    private static string FormatTrigger(JsonElement t)
+    {
+        var type = t.TryGetProperty("type", out var tp) ? tp.GetString() ?? "" : "";
+        var start = t.TryGetProperty("startBoundary", out var sb) ? sb.GetString() ?? "" : "";
+        var interval = t.TryGetProperty("intervalIso", out var iv) ? iv.GetString() ?? "" : "";
+
+        var kind = type switch
+        {
+            "MSFT_TaskDailyTrigger" => "Daily",
+            "MSFT_TaskWeeklyTrigger" => "Weekly",
+            "MSFT_TaskTimeTrigger" => "Once",
+            _ => type,
+        };
+
+        var when = "";
+        if (DateTimeOffset.TryParse(start, out var startOffset))
+            when = $" — starts {startOffset.ToLocalTime():g}";
+
+        var intervalText = FormatIsoInterval(interval);
+        var tz = TimeZoneInfo.Local.StandardName;
+        return intervalText.Length > 0 ? $"{kind}, every {intervalText}{when} ({tz})" : $"{kind}{when} ({tz})";
+    }
+
+    private static string FormatIsoInterval(string iso)
+    {
+        if (string.IsNullOrEmpty(iso)) return "";
+        if (!iso.StartsWith("PT", StringComparison.Ordinal)) return iso;
+
+        var hours = 0;
+        var minutes = 0;
+        var seconds = 0;
+        var num = "";
+        foreach (var ch in iso[2..])
+        {
+            if (ch >= '0' && ch <= '9') { num += ch; continue; }
+            if (int.TryParse(num, out var v))
+            {
+                switch (ch)
+                {
+                    case 'H': hours = v; break;
+                    case 'M': minutes = v; break;
+                    case 'S': seconds = v; break;
+                }
+            }
+            num = "";
+        }
+
+        var parts = new List<string>();
+        if (hours > 0) parts.Add($"{hours}h");
+        if (minutes > 0) parts.Add($"{minutes}m");
+        if (seconds > 0) parts.Add($"{seconds}s");
+        return parts.Count > 0 ? string.Join(" ", parts) : iso;
     }
 
     // Reverse of RegisterAsync's argument construction: reconstructs the Schedule Settings tab
