@@ -250,7 +250,6 @@ public class SchedulerForm : Form
 
         var buttons = new FlowLayoutPanel { Dock = DockStyle.Bottom, FlowDirection = FlowDirection.RightToLeft, AutoSize = true, Padding = new Padding(0, 8, 0, 0) };
         buttons.Controls.Add(_saveConfigButton);
-        buttons.Controls.Add(_testConnectionButton);
         buttons.Controls.Add(_refreshConfigButton);
 
         var tabPage = new TabPage("Configuration") { Padding = new Padding(10), AutoScroll = true };
@@ -269,12 +268,15 @@ public class SchedulerForm : Form
         typeRow.Controls.Add(_repoTypeOracle);
         typeRow.Controls.Add(_repoTypePostgres);
 
+        var browseStack = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.TopDown, WrapContents = false };
+        browseStack.Controls.Add(_browseRepoFileButton);
+        browseStack.Controls.Add(_testConnectionButton);
+
         var fileRow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, WrapContents = false };
+        fileRow.Controls.Add(new Label { Text = "Path to .qea file:", AutoSize = true, Margin = new Padding(3, 6, 10, 3) });
         fileRow.Controls.Add(_repoFilePathBox);
-        fileRow.Controls.Add(_browseRepoFileButton);
-        var fileTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
-        AddRow(fileTable, "Path to .qea file:", fileRow);
-        _repoFilePanel.Controls.Add(fileTable);
+        fileRow.Controls.Add(browseStack);
+        _repoFilePanel.Controls.Add(fileRow);
 
         var dbTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
         AddRow(dbTable, "Server / host:", _dbServerBox);
