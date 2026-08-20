@@ -113,6 +113,7 @@ public class SchedulerForm : Form
     public SchedulerForm()
     {
         _repoRoot = RepoLocator.FindRepoRoot();
+        _dashboardGrid.ColumnAdded += OnDashboardColumnAdded;
 
         Text = "EAxWiki Scheduler";
         // Tall enough that the Configuration tab's repo-type section (up to 5 DB fields, plus
@@ -369,16 +370,16 @@ public class SchedulerForm : Form
                 s.ConsecutiveFailures,
             })
             .ToList();
+    }
 
-        foreach (DataGridViewColumn col in _dashboardGrid.Columns)
+    private void OnDashboardColumnAdded(object? sender, DataGridViewColumnEventArgs e)
+    {
+        e.Column.FillWeight = e.Column.Name switch
         {
-            col.FillWeight = col.Name switch
-            {
-                "LastSuccess" or "LastFailure" => 35,
-                "Name" or "Status" or "ConsecutiveFailures" => 10,
-                _ => 10,
-            };
-        }
+            "LastSuccess" or "LastFailure" => 35,
+            "Name" or "Status" or "ConsecutiveFailures" => 10,
+            _ => 10,
+        };
     }
 
     private TabPage BuildScheduleTab()
