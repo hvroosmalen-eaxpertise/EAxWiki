@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\src\EAxWiki.Core\EAxWiki.Core.csproj" />
+    <ProjectReference Include="../EAxWiki.Core/EAxWiki.Core.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
