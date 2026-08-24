@@ -10,19 +10,19 @@
 
 | Field | Value |
 |---|---|
-| Last success | 08/20/2026 02:24:59 +02:00 |
-| Last failure | 08/04/2026 11:05:09 +02:00 |
+| Last success | 08/24/2026 11:00:24 +02:00 |
+| Last failure | 08/22/2026 08:54:10 +02:00 |
 | Consecutive failures | 0 |
 | Last exit code | 0 |
 | Last page count (total) | 611 |
 | Last page count (diagrams) | 44 |
 | Last mode | incremental |
-| Runs since full rebuild | 11 |
+| Runs since full rebuild | 3 |
 
 ## Serve
 
 | Field | Value |
 |---|---|
-| Last success | 08/20/2026 01:21:23 +02:00 |
+| Last success | 08/24/2026 09:28:32 +02:00 |
 | Last failure |  |
 | Consecutive failures | 0 |

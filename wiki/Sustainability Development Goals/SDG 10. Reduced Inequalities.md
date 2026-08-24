@@ -15,7 +15,7 @@ notes_hash: 5594feb7
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="12" data-file-path="Sustainability Development Goals/SDG 10. Reduced Inequalities.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="12" data-file-path="Sustainability Development Goals/SDG 10. Reduced Inequalities.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->

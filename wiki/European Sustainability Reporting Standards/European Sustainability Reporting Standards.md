@@ -15,7 +15,7 @@ notes_hash: a7577f1b
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [ESRS](../ESRS/index.html) / [European Sustainability Reporting Standards](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="555" data-file-path="European Sustainability Reporting Standards/European Sustainability Reporting Standards.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="555" data-file-path="European Sustainability Reporting Standards/European Sustainability Reporting Standards.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->

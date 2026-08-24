@@ -15,7 +15,7 @@ notes_hash: f1918bb9
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="345" data-file-path="ESRS Navigator Stakeholder Map/EFRAG.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="345" data-file-path="ESRS Navigator Stakeholder Map/EFRAG.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->

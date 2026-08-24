@@ -1,0 +1,6 @@
+
+InputObject                              SideIndicator
+-----------                              -------------
+src/EAxWiki.SchedulerUI/SchedulerForm.cs =>
+good_schedulerform_backup.cs             <=
+

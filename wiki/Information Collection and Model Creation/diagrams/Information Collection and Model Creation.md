@@ -10,7 +10,7 @@ notes_hash: d95ef852
 
 ![Information Collection and Model Creation](Information Collection and Model Creation.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="43" data-kind="diagram" data-file-path="Information Collection and Model Creation/diagrams/Information Collection and Model Creation.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="43" data-kind="diagram" data-file-path="Information Collection and Model Creation/diagrams/Information Collection and Model Creation.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
