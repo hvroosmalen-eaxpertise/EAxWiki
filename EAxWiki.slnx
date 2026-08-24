@@ -7,6 +7,7 @@
     <Project Path="src/EAxWiki.SchedulerUI/EAxWiki.SchedulerUI.csproj" />
     <Project Path="src/EAxWiki.Tests/EAxWiki.Tests.csproj" />
     <Project Path="src/EAxWiki.Monitor/EAxWiki.Monitor.csproj" />
+    <Project Path="src/EAxWiki.ProcessKiller/EAxWiki.ProcessKiller.csproj" />
     <Project Path="src/EAxWiki/EAxWiki.csproj" />
   </Folder>
 </Solution>
