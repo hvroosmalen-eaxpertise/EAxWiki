@@ -29,7 +29,6 @@ param(
 if (-not $RepoRoot) {
     $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
     $repoRoot = Split-Path -Parent $scriptDir
-    $repoRoot = Split-Path -Parent $repoRoot
 }
 
 Write-Host "EAxWiki ProcessKiller" -ForegroundColor Cyan
