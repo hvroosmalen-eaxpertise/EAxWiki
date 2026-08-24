@@ -2,7 +2,6 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
-using System.Net.Sockets;
 using EAxWiki.Core.Configuration;
 using EAxWiki.EA;
 
@@ -46,9 +45,6 @@ public class SchedulerForm : Form
     private readonly TextBox _teamsWebhookBox = new() { Width = 400 };
     private readonly TextBox _telegramBotTokenBox = new() { Width = 400, UseSystemPasswordChar = true };
     private readonly TextBox _telegramChatIdBox = new() { Width = 400 };
-    private readonly Button _testSlackButton = new() { Text = "Test", AutoSize = true };
-    private readonly Button _testTeamsButton = new() { Text = "Test", AutoSize = true };
-    private readonly Button _testTelegramButton = new() { Text = "Test", AutoSize = true };
     private readonly TextBox _aiEndpointBox = new() { Width = 400, Text = "https://api.openai.com/v1" };
     private readonly TextBox _aiModelBox = new() { Width = 400, Text = "gpt-4o-mini" };
     private readonly TextBox _aiKeyBox = new() { Width = 400, UseSystemPasswordChar = true };
@@ -63,6 +59,9 @@ public class SchedulerForm : Form
     private readonly TextBox _llmModelPathBox = new() { Width = 340, Height = 23 };
     private readonly Button _browseLlmModelButton = new() { Text = "Browse...", AutoSize = true };
     private readonly NumericUpDown _llmPortBox = new() { Minimum = 1, Maximum = 65535, Value = 8080, Width = 80 };
+    private readonly Button _llmStartButton = new() { Text = "Start LLM", AutoSize = true };
+    private readonly Button _llmStopButton = new() { Text = "Stop LLM", AutoSize = true, Enabled = false };
+    private Process? _llmProcess;
     private readonly Button _testConnectionButton = new() { Text = "Test Connection", AutoSize = true };
     private readonly Button _saveConfigButton = new() { Text = "Save Configuration", AutoSize = true };
 
@@ -166,12 +165,6 @@ public class SchedulerForm : Form
             if (dialog.ShowDialog() == DialogResult.OK)
                 _repoFilePathBox.Text = dialog.FileName;
         };
-        _stateValue.MinimumSize = new Size(0, 23);
-        _stateValue.TextAlign = ContentAlignment.MiddleLeft;
-        _stateValue.Anchor = AnchorStyles.Left;
-        _nextRunValue.MinimumSize = new Size(0, 23);
-        _nextRunValue.TextAlign = ContentAlignment.MiddleLeft;
-        _nextRunValue.Anchor = AnchorStyles.Left;
         _refreshStatusButton.Click += async (_, _) => await RefreshTaskStatusAsync();
         _registerButton.Click += async (_, _) => await RegisterAsync();
         _runMonitorButton.Click += async (_, _) => await RunMonitorAsync();
@@ -184,26 +177,11 @@ public class SchedulerForm : Form
 
         _simpleModeRadio.CheckedChanged += (_, _) => UpdateModeEnablement();
         _forceEveryNRadio.CheckedChanged += (_, _) => _forceEveryN.Enabled = _forceEveryNRadio.Checked;
-        _simpleModeRadio.CheckedChanged += (_, _) => MarkScheduleDirty();
-        _dayNightModeRadio.CheckedChanged += (_, _) => MarkScheduleDirty();
-        _simpleIntervalMinutes.ValueChanged += (_, _) => MarkScheduleDirty();
-        _workStart.ValueChanged += (_, _) => MarkScheduleDirty();
-        _workEnd.ValueChanged += (_, _) => MarkScheduleDirty();
-        _workIntervalMinutes.ValueChanged += (_, _) => MarkScheduleDirty();
-        _offHoursIntervalMinutes.ValueChanged += (_, _) => MarkScheduleDirty();
-        _noForceRadio.CheckedChanged += (_, _) => MarkScheduleDirty();
-        _forceEveryRunRadio.CheckedChanged += (_, _) => MarkScheduleDirty();
-        _forceEveryNRadio.CheckedChanged += (_, _) => MarkScheduleDirty();
-        _forceEveryN.ValueChanged += (_, _) => MarkScheduleDirty();
-        _wakeToRunCheckbox.CheckedChanged += (_, _) => MarkScheduleDirty();
         _llmModeNone.CheckedChanged += (_, _) => UpdateAiModeEnablement();
         _llmModeLocal.CheckedChanged += (_, _) => UpdateAiModeEnablement();
         _llmModeRemote.CheckedChanged += (_, _) => UpdateAiModeEnablement();
         _aiTestButton.Click += async (_, _) => await TestAiConnectionAsync();
         _aiSaveButton.Click += (_, _) => SaveAiConfig();
-        _testSlackButton.Click += async (_, _) => await TestWebhookAsync("Slack");
-        _testTeamsButton.Click += async (_, _) => await TestWebhookAsync("Teams");
-        _testTelegramButton.Click += async (_, _) => await TestWebhookAsync("Telegram");
         _browseLlmExeButton.Click += (_, _) =>
         {
             using var dialog = new OpenFileDialog { Filter = "llama-server.exe|llama-server.exe|All files (*.*)|*.*", CheckFileExists = true };
@@ -216,6 +194,8 @@ public class SchedulerForm : Form
             if (dialog.ShowDialog() == DialogResult.OK)
                 _llmModelPathBox.Text = dialog.FileName;
         };
+        _llmStartButton.Click += async (_, _) => await StartLlmAsync();
+        _llmStopButton.Click += (_, _) => StopLlm();
 
         if (_repoRoot == null)
         {
@@ -256,20 +236,14 @@ public class SchedulerForm : Form
         }
     }
 
-    private void MarkScheduleDirty()
-    {
-        if (!_isAdmin) return;
-        _registerButton.Enabled = true;
-    }
-
     private TabPage BuildConfigTab()
     {
         var table = new TableLayoutPanel { ColumnCount = 2, AutoSize = true, Dock = DockStyle.Top };
         AddRow(table, "Wiki port:", _wikiPortConfigBox);
         AddRow(table, "API port:", _apiPortConfigBox);
-        AddRow(table, "Slack Webhook:", MakeBrowseRow(_webhookBox, _testSlackButton));
-        AddRow(table, "Teams Webhook:", MakeBrowseRow(_teamsWebhookBox, _testTeamsButton));
-        AddRow(table, "Telegram Bot Token:", MakeBrowseRow(_telegramBotTokenBox, _testTelegramButton));
+        AddRow(table, "Slack Webhook:", _webhookBox);
+        AddRow(table, "Teams Webhook:", _teamsWebhookBox);
+        AddRow(table, "Telegram Bot Token:", _telegramBotTokenBox);
         AddRow(table, "Telegram Chat ID:", _telegramChatIdBox);
 
         // WrapContents = false and no AutoSize here, matching BuildScheduleTab: with AutoSize +
@@ -301,14 +275,12 @@ public class SchedulerForm : Form
         typeRow.Controls.Add(_repoTypeOracle);
         typeRow.Controls.Add(_repoTypePostgres);
 
-        var browseStack = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.TopDown, WrapContents = false };
-        browseStack.Controls.Add(_browseRepoFileButton);
-        browseStack.Controls.Add(_testConnectionButton);
-
         var fileRow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, WrapContents = false };
         fileRow.Controls.Add(new Label { Text = "Path to .qea file:", AutoSize = true, Margin = new Padding(3, 6, 10, 3) });
         fileRow.Controls.Add(_repoFilePathBox);
-        fileRow.Controls.Add(browseStack);
+        fileRow.Controls.Add(_browseRepoFileButton);
+        var testConnStack = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.TopDown, WrapContents = false };
+        testConnStack.Controls.Add(_testConnectionButton);
         _repoFilePanel.Controls.Add(fileRow);
 
         var dbTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
@@ -351,9 +323,6 @@ public class SchedulerForm : Form
         buttonRow1.Controls.Add(_refreshStatusButton);
         buttonRow1.Controls.Add(_enableButton);
         buttonRow1.Controls.Add(_disableButton);
-        var buttonTooltip = new ToolTip();
-        buttonTooltip.SetToolTip(_enableButton, "Enable the scheduled task and clear skip flags (requires Administrator).");
-        buttonTooltip.SetToolTip(_disableButton, "Disable the scheduled task (requires Administrator).");
 
         var buttonRow2 = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight };
         buttonRow2.Controls.Add(_stopExportButton);
@@ -483,8 +452,13 @@ public class SchedulerForm : Form
         AddRow(localTable, "Server executable:", MakeBrowseRow(_llmExeBox, _browseLlmExeButton));
         AddRow(localTable, "Model file (.gguf):", MakeBrowseRow(_llmModelPathBox, _browseLlmModelButton));
         AddRow(localTable, "Port:", _llmPortBox);
+        var localButtons = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(3, 4, 3, 3) };
+        localButtons.Controls.Add(_llmStartButton);
+        localButtons.Controls.Add(_llmStopButton);
         localGroup.Controls.Add(localTable);
+        localGroup.Controls.Add(localButtons);
         localTable.Location = new Point(6, 16);
+        localButtons.Location = new Point(6, localTable.Bottom + 2);
         panel.Controls.Add(localGroup);
 
         // Remote LLM section
@@ -519,12 +493,6 @@ public class SchedulerForm : Form
 
     private async Task TestAiConnectionAsync()
     {
-        if (_llmModeLocal.Checked)
-        {
-            await TestLocalLlmAsync();
-            return;
-        }
-
         var endpoint = _aiEndpointBox.Text.Trim();
         if (endpoint.Length == 0)
         {
@@ -593,95 +561,92 @@ public class SchedulerForm : Form
         }
     }
 
-    private async Task TestLocalLlmAsync()
+    private async Task StartLlmAsync()
     {
         var exePath = _llmExeBox.Text.Trim();
         var modelPath = _llmModelPathBox.Text.Trim();
         if (exePath.Length == 0 || modelPath.Length == 0)
         {
-            _aiTestResult.Text = "Set both the LLM server executable and model file first.";
-            _aiTestResult.ForeColor = Color.Red;
+            AppendOutput("Set both LLM Server path and LLM Model path first.");
             return;
         }
         if (!File.Exists(exePath))
         {
-            _aiTestResult.Text = $"LLM server not found: {exePath}";
-            _aiTestResult.ForeColor = Color.Red;
+            AppendOutput($"LLM server not found: {exePath}");
             return;
         }
         if (!File.Exists(modelPath))
         {
-            _aiTestResult.Text = $"LLM model not found: {modelPath}";
-            _aiTestResult.ForeColor = Color.Red;
+            AppendOutput($"LLM model not found: {modelPath}");
             return;
         }
 
-        var port = (int)_llmPortBox.Value;
-        _aiTestButton.Enabled = false;
-        _aiTestButton.Text = "Starting LLM...";
-        _aiTestResult.Text = "";
-        AppendOutput($"Probe-starting LLM server: {exePath}");
-
-        var psi = new ProcessStartInfo(exePath, $"-m \"{modelPath}\" -c 4096 --port {port} --n-gpu-layers 0")
-        {
-            UseShellExecute = false,
-            CreateNoWindow = true,
-        };
+        _llmStartButton.Enabled = false;
+        _llmStartButton.Text = "Starting...";
+        AppendOutput($"Starting LLM server: {exePath}");
 
         try
         {
-            using var process = Process.Start(psi);
-            if (process == null)
+            var port = (int)_llmPortBox.Value;
+            var psi = new ProcessStartInfo(exePath, $"-m \"{modelPath}\" -c 4096 --port {port} --n-gpu-layers 0")
             {
-                _aiTestResult.Text = "Failed to start the LLM server.";
-                _aiTestResult.ForeColor = Color.Red;
-                return;
-            }
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true
+            };
+            var process = new Process { StartInfo = psi, EnableRaisingEvents = true };
+            process.Start();
 
-            var started = DateTime.UtcNow;
-            var reachable = false;
-            while ((DateTime.UtcNow - started).TotalSeconds < 90)
+            _llmProcess = process;
+            _llmStopButton.Enabled = true;
+            _llmStartButton.Text = "Running";
+            _aiEndpointBox.Text = $"http://localhost:{port}/v1";
+            AppendOutput($"LLM server started (PID {process.Id}). AI endpoint: http://localhost:{port}/v1");
+
+            // Read output in background to detect failures
+            _ = Task.Run(async () =>
             {
-                if (process.HasExited) break;
-                using var client = new TcpClient();
-                try
+                var output = await process.StandardOutput.ReadToEndAsync();
+                var error = await process.StandardError.ReadToEndAsync();
+                var fullLog = (output + error).Trim();
+                if (fullLog.Length > 0)
+                    BeginInvoke(() => AppendOutput($"LLM exited: {fullLog[..Math.Min(fullLog.Length, 500)]}"));
+
+                BeginInvoke(() =>
                 {
-                    var connectTask = client.ConnectAsync("localhost", port);
-                    if (await Task.WhenAny(connectTask, Task.Delay(1000)) == connectTask && client.Connected)
-                    {
-                        reachable = true;
-                        break;
-                    }
-                }
-                catch { /* server not up yet — keep waiting */ }
-                await Task.Delay(1000);
-            }
-
-            if (reachable)
-            {
-                _aiTestResult.Text = $"LLM reachable on http://localhost:{port}/v1";
-                _aiTestResult.ForeColor = Color.Green;
-                AppendOutput($"LLM test successful: http://localhost:{port}/v1");
-            }
-            else
-            {
-                _aiTestResult.Text = "LLM server did not accept connections within 90 seconds.";
-                _aiTestResult.ForeColor = Color.Red;
-            }
-
-            process.Kill(entireProcessTree: true);
+                    _llmProcess = null;
+                    _llmStartButton.Enabled = true;
+                    _llmStartButton.Text = "Start LLM";
+                    _llmStopButton.Enabled = false;
+                    AppendOutput("LLM server stopped.");
+                });
+            });
         }
         catch (Exception ex)
         {
-            _aiTestResult.Text = $"Error: {ex.Message}";
-            _aiTestResult.ForeColor = Color.Red;
-            AppendOutput($"LLM test failed: {ex.Message}");
+            AppendOutput($"Failed to start LLM: {ex.Message}");
+            _llmStartButton.Enabled = true;
+            _llmStartButton.Text = "Start LLM";
         }
-        finally
+    }
+
+    private void StopLlm()
+    {
+        if (_llmProcess == null || _llmProcess.HasExited) return;
+        try
         {
-            _aiTestButton.Enabled = true;
-            _aiTestButton.Text = "Test LLM Connection";
+            _llmProcess.Kill(entireProcessTree: true);
+            AppendOutput("LLM server stopped.");
         }
+        catch (Exception ex)
+        {
+            AppendOutput($"Failed to stop LLM: {ex.Message}");
+        }
+        _llmProcess = null;
+        _llmStartButton.Enabled = true;
+        _llmStartButton.Text = "Start LLM";
+        _llmStopButton.Enabled = false;
     }
 
     private void SaveAiConfig()
@@ -743,6 +708,8 @@ public class SchedulerForm : Form
         _llmModelPathBox.Enabled = local;
         _browseLlmModelButton.Enabled = local;
         _llmPortBox.Enabled = local;
+        _llmStartButton.Enabled = local;
+        _llmStopButton.Enabled = local && _llmProcess != null;
         _aiEndpointBox.Enabled = remote;
         _aiModelBox.Enabled = remote;
         _aiKeyBox.Enabled = remote;
@@ -947,38 +914,6 @@ public class SchedulerForm : Form
         }
     }
 
-    private async Task TestWebhookAsync(string channel)
-    {
-        if (_repoRoot == null) return;
-        var script = Path.Combine(_repoRoot, "scripts", "send-alert.ps1");
-        var args = new List<string> { "-Message", $"Test {channel} webhook from EAxWiki Scheduler.", "-Kind", "Test" };
-
-        switch (channel)
-        {
-            case "Slack":
-                var slack = _webhookBox.Text.Trim();
-                if (slack.Length == 0) { AppendOutput("Enter a Slack webhook URL first."); return; }
-                args.Add("-WebhookUrl"); args.Add(slack);
-                break;
-            case "Teams":
-                var teams = _teamsWebhookBox.Text.Trim();
-                if (teams.Length == 0) { AppendOutput("Enter a Teams webhook URL first."); return; }
-                args.Add("-TeamsWebhookUrl"); args.Add(teams);
-                break;
-            case "Telegram":
-                var token = _telegramBotTokenBox.Text.Trim();
-                var chatId = _telegramChatIdBox.Text.Trim();
-                if (token.Length == 0 || chatId.Length == 0) { AppendOutput("Enter the Telegram bot token and chat ID first."); return; }
-                args.Add("-TelegramBotToken"); args.Add(token);
-                args.Add("-TelegramChatId"); args.Add(chatId);
-                break;
-        }
-
-        AppendOutput($"> send-alert.ps1 ({channel} test)");
-        var result = await PowerShellRunner.RunScriptAsync(script, args, _repoRoot);
-        AppendOutput(result.Output.Length > 0 ? result.Output : $"(no output, exit code {result.ExitCode})");
-    }
-
     // Reverse of BuildRepoPath: populates the repo-type radio and its fields from a saved
     // connection string (or plain .qea path) so re-opening the form shows what's actually saved.
     private void ApplyRepoPathToFields(string repoPath)
@@ -1103,16 +1038,14 @@ public class SchedulerForm : Form
                 _stateValue.Text = "Not registered";
                 _nextRunValue.Text = "-";
                 _triggersBox.Text = "";
-                _registerButton.Enabled = false;
                 return;
             }
 
             _stateValue.Text = root.GetProperty("state").GetString() ?? "-";
             _nextRunValue.Text = root.GetProperty("nextRun").GetString() ?? "-";
-            var triggerLines = root.GetProperty("triggerDetails").EnumerateArray().Select(FormatTrigger);
+            var triggerLines = root.GetProperty("triggers").EnumerateArray().Select(t => t.GetString() ?? "");
             _triggersBox.Text = string.Join(Environment.NewLine, triggerLines);
             ApplyScheduleFromTask(root);
-            _registerButton.Enabled = false;
         }
         catch (Exception ex)
         {
@@ -1122,60 +1055,6 @@ public class SchedulerForm : Form
         {
             _refreshStatusButton.Enabled = true;
         }
-    }
-
-    private static string FormatTrigger(JsonElement t)
-    {
-        var type = t.TryGetProperty("type", out var tp) ? tp.GetString() ?? "" : "";
-        var start = t.TryGetProperty("startBoundary", out var sb) ? sb.GetString() ?? "" : "";
-        var interval = t.TryGetProperty("intervalIso", out var iv) ? iv.GetString() ?? "" : "";
-
-        var kind = type switch
-        {
-            "MSFT_TaskDailyTrigger" => "Daily",
-            "MSFT_TaskWeeklyTrigger" => "Weekly",
-            "MSFT_TaskTimeTrigger" => "Once",
-            _ => type,
-        };
-
-        var when = "";
-        if (DateTimeOffset.TryParse(start, out var startOffset))
-            when = $" — starts {startOffset.ToLocalTime():g}";
-
-        var intervalText = FormatIsoInterval(interval);
-        var tz = TimeZoneInfo.Local.StandardName;
-        return intervalText.Length > 0 ? $"{kind}, every {intervalText}{when} ({tz})" : $"{kind}{when} ({tz})";
-    }
-
-    private static string FormatIsoInterval(string iso)
-    {
-        if (string.IsNullOrEmpty(iso)) return "";
-        if (!iso.StartsWith("PT", StringComparison.Ordinal)) return iso;
-
-        var hours = 0;
-        var minutes = 0;
-        var seconds = 0;
-        var num = "";
-        foreach (var ch in iso[2..])
-        {
-            if (ch >= '0' && ch <= '9') { num += ch; continue; }
-            if (int.TryParse(num, out var v))
-            {
-                switch (ch)
-                {
-                    case 'H': hours = v; break;
-                    case 'M': minutes = v; break;
-                    case 'S': seconds = v; break;
-                }
-            }
-            num = "";
-        }
-
-        var parts = new List<string>();
-        if (hours > 0) parts.Add($"{hours}h");
-        if (minutes > 0) parts.Add($"{minutes}m");
-        if (seconds > 0) parts.Add($"{seconds}s");
-        return parts.Count > 0 ? string.Join(" ", parts) : iso;
     }
 
     // Reverse of RegisterAsync's argument construction: reconstructs the Schedule Settings tab
@@ -1350,7 +1229,7 @@ public class SchedulerForm : Form
         var repoPath = BuildRepoPath();
         if (repoPath.Length == 0)
         {
-            AppendOutput("No repository selected. Configure the repository on the Configuration tab first.");
+            AppendOutput("Configure the repository on the Configuration tab first.");
             return;
         }
 
@@ -1382,7 +1261,7 @@ public class SchedulerForm : Form
         if (_forceEveryRunRadio.Checked) args.Add("--force");
         else if (_forceEveryNRadio.Checked) { args.Add("--force-every"); args.Add(((int)_forceEveryN.Value).ToString()); }
 
-        AppendOutput($"> Starting monitor in new window (starts all configured services: exporter, wiki server, write-back, LLM)...");
+        AppendOutput($"> Starting monitor in new window...");
         var psi = new ProcessStartInfo
         {
             FileName = monitorExe,
@@ -1477,6 +1356,7 @@ Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
         var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
         AppendOutput(result.Output);
 
+        _llmProcess = null;
         UpdateAiModeEnablement();
     }
 
@@ -1514,6 +1394,7 @@ if ($sf) {{ $s = Get-Content $sf -Raw | ConvertFrom-Json; $s.skipExport = $true;
         var result = await PowerShellRunner.RunCommandAsync(cmd, _repoRoot);
         AppendOutput(result.Output);
 
+        _llmProcess = null;
         UpdateAiModeEnablement();
     }
 }
