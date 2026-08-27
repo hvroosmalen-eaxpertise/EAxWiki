@@ -43,9 +43,9 @@ internal class InfrastructureWriter(IOutputWriter writer)
         await writer.WriteFileAsync(Path.Combine(outputDir, ".pages"), string.Join(Environment.NewLine,
         [
             "nav:",
-            "  - Structure: ''",
+            "  - Repository: ''",
             "  - Diagrams: diagrams/",
-            "  - Types: types/",
+            "  - Element Types: types/",
             "  - Glossary: glossary/",
             "  - Recent: recent/",
             .. statusLines,
@@ -60,7 +60,7 @@ internal class InfrastructureWriter(IOutputWriter writer)
         var typesDir = Path.Combine(outputDir, "types");
         await writer.CreateDirectoryAsync(typesDir, ct);
         await writer.WriteFileAsync(Path.Combine(typesDir, ".pages"),
-            string.Join(Environment.NewLine, ["title: Types", string.Empty]), ct);
+            string.Join(Environment.NewLine, ["title: Element Types", string.Empty]), ct);
     }
 
 

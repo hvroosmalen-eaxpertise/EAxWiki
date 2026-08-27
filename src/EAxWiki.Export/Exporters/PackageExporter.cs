@@ -20,6 +20,14 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
         var dir = Path.Combine(outputDir, MarkdownHelpers.SanitizeName(package.Name));
         await writer.CreateDirectoryAsync(dir, ct);
 
+        // Issue #89: prefix package nav labels with a folder glyph so the
+        // repository tree in the left nav reads as a folder hierarchy.
+        // awesome-pages' `title:` field is used as-is for the nav link text.
+        await writer.WriteFileAsync(
+            Path.Combine(dir, ".pages"),
+            $"title: \U0001F4C1 {package.Name}{Environment.NewLine}",
+            ct);
+
         var indexLines = new List<string>
         {
             $"# {package.Name}",

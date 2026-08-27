@@ -31,7 +31,7 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
 
         var indexLines = new List<string>
         {
-            "# Types",
+            "# Element Types",
             string.Empty,
             "Elements grouped by modelling language:",
             string.Empty,
