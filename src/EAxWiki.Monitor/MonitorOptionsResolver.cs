@@ -39,15 +39,16 @@ public static class MonitorOptionsResolver
         {
             aiMode = "local";
         }
-        // Issue #94: if the user explicitly configured llama paths in .eaxwiki
-        // (both exe and model present on disk) and did NOT set AiMode, treat that
-        // as intent to run the LLM locally — otherwise the LLM watchdog stays
-        // disarmed and llama-server never starts. Explicit AiMode="none" is
-        // respected as an opt-out (checked via `file?.AiMode is null`).
-        if (aiMode == "none" && file?.AiMode is null &&
-            file?.LlamaExePath is { Length: > 0 } fileLlamaExe &&
-            file?.LlamaModelPath is { Length: > 0 } fileLlamaModel &&
-            File.Exists(fileLlamaExe) && File.Exists(fileLlamaModel))
+        // Issue #94: if there IS a .eaxwiki config file (user opted into
+        // configuring EAxWiki at all) and the resolved llama paths both exist
+        // on disk (from the file or from the defaults), and the user did NOT
+        // explicitly set AiMode, treat that as intent to run the LLM locally.
+        // Otherwise the LLM watchdog stays disarmed and llama-server never
+        // starts. Explicit AiMode="none" remains an opt-out. The `file != null`
+        // gate keeps "no config at all" from silently spawning a local LLM
+        // just because the default paths happen to exist on this machine.
+        if (aiMode == "none" && file != null && file.AiMode is null &&
+            File.Exists(llamaExe) && File.Exists(llamaModel))
         {
             aiMode = "local";
         }
