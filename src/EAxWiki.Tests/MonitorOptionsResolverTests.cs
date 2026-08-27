@@ -135,6 +135,69 @@ public class MonitorOptionsResolverTests
         Assert.Equal("none", o.AiMode);
     }
 
+    // Issue #94: llama paths configured in .eaxwiki with no explicit AiMode
+    // should imply local mode, so the LLM watchdog arms and starts llama-server.
+    [Fact]
+    public void AiMode_InferredLocal_FromExistingLlamaPaths_WhenAiModeUnset()
+    {
+        var dir = Path.Combine(Path.GetTempPath(), "eaxwiki_ai_" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(dir);
+        try
+        {
+            var exe = Path.Combine(dir, "llama-server.exe");
+            var model = Path.Combine(dir, "model.gguf");
+            System.IO.File.WriteAllText(exe, "x");
+            System.IO.File.WriteAllText(model, "y");
+            var o = Resolve(new CliOptions(), File(
+                aiMode: null,
+                llamaExePath: exe,
+                llamaModelPath: model));
+            Assert.Equal("local", o.AiMode);
+        }
+        finally { Directory.Delete(dir, recursive: true); }
+    }
+
+    // Explicit AiMode="none" in .eaxwiki must remain an opt-out, even when
+    // the paths exist. Prevents the inference from overriding user intent.
+    [Fact]
+    public void AiMode_NotInferred_WhenAiModeExplicitlyNone()
+    {
+        var dir = Path.Combine(Path.GetTempPath(), "eaxwiki_ai_" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(dir);
+        try
+        {
+            var exe = Path.Combine(dir, "llama-server.exe");
+            var model = Path.Combine(dir, "model.gguf");
+            System.IO.File.WriteAllText(exe, "x");
+            System.IO.File.WriteAllText(model, "y");
+            var o = Resolve(new CliOptions(), File(
+                aiMode: "none",
+                llamaExePath: exe,
+                llamaModelPath: model));
+            Assert.Equal("none", o.AiMode);
+        }
+        finally { Directory.Delete(dir, recursive: true); }
+    }
+
+    // Model file missing while exe exists — inference should NOT fire.
+    [Fact]
+    public void AiMode_NotInferred_WhenModelMissing()
+    {
+        var dir = Path.Combine(Path.GetTempPath(), "eaxwiki_ai_" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(dir);
+        try
+        {
+            var exe = Path.Combine(dir, "llama-server.exe");
+            System.IO.File.WriteAllText(exe, "x");
+            var o = Resolve(new CliOptions(), File(
+                aiMode: null,
+                llamaExePath: exe,
+                llamaModelPath: Path.Combine(dir, "missing.gguf")));
+            Assert.Equal("none", o.AiMode);
+        }
+        finally { Directory.Delete(dir, recursive: true); }
+    }
+
     [Fact]
     public void OutputDir_Absolute_StaysAbsolute()
     {
