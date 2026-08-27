@@ -30,7 +30,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
 
         var indexLines = new List<string>
         {
-            $"# {package.Name}",
+            $"# \U0001F4C1 {package.Name}",
             string.Empty,
         };
 
@@ -67,7 +67,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
             foreach (var diag in package.Diagrams)
             {
                 var diagFile = $"diagrams/{MarkdownHelpers.SanitizeName(diag.Name)}.html";
-                indexLines.Add($"- [{diag.Name}]({diagFile}) ({diag.Type})");
+                indexLines.Add($"- \U0001F5FA️ [{diag.Name}]({diagFile}) ({diag.Type})");
 
                 if (!string.IsNullOrWhiteSpace(diag.Notes))
                 {
