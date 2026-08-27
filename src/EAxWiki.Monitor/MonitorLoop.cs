@@ -163,7 +163,8 @@ public class MonitorLoop
                 () => _state.LastApiFailureTime = DateTimeOffset.Now,
                 AlertKind.ApiRecovery, AlertKind.ApiFailure,
                 "write-back API server",
-                preStart: SweepOrphanedEaProcesses);
+                preStart: SweepOrphanedEaProcesses,
+                healthProbe: ProbeApiHealth);
         }
         else
         {
@@ -214,6 +215,29 @@ public class MonitorLoop
         }
     }
 
+    private static readonly HttpClient _healthProbeClient = new() { Timeout = TimeSpan.FromSeconds(5) };
+
+    // Issue #92: probe /readyz on the API port. That endpoint calls
+    // GetStatusTypes via the STA dispatcher (with a 15s cache to avoid COM
+    // hammering), so a dead RCW manifests as a 503 here and either the STA
+    // dispatcher's built-in reconnect heals it or we return false so the
+    // watchdog kicks the API. Any network/protocol error also counts as
+    // unhealthy — the API isn't answering, restart it.
+    private bool ProbeApiHealth()
+    {
+        try
+        {
+            var url = $"http://localhost:{_options.ApiPort}/readyz";
+            using var resp = _healthProbeClient.GetAsync(url).GetAwaiter().GetResult();
+            return resp.IsSuccessStatusCode;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning("API health probe failed: {Error}", ex.Message);
+            return false;
+        }
+    }
+
     private void SweepOrphanedEaProcesses()
     {
         foreach (var proc in Process.GetProcessesByName("EA"))
@@ -250,7 +274,8 @@ public class MonitorLoop
         Action onSuccess, Action onFailure,
         AlertKind recoveryKind, AlertKind failureKind,
         string displayName,
-        Action? preStart = null)
+        Action? preStart = null,
+        Func<bool>? healthProbe = null)
     {
         if (_state.SkipServe && name == "serve")
         {
@@ -260,11 +285,25 @@ public class MonitorLoop
 
         if (_supervisor.IsAlive(spec))
         {
-            _logger.LogInformation("{Name} already running.", displayName);
-            return;
+            // Issue #92: pid-file liveness alone can miss a "walking-wounded"
+            // service — for the API that means the process is up but its EA
+            // COM handle is dead. If a healthProbe is supplied and it fails,
+            // treat the service as not-alive so we fall through to the normal
+            // restart path (and its preStart sweep hook).
+            if (healthProbe != null && !healthProbe())
+            {
+                _logger.LogWarning("{Name} pid-alive but deep health probe failed; restarting.", displayName);
+            }
+            else
+            {
+                _logger.LogInformation("{Name} already running.", displayName);
+                return;
+            }
         }
-
-        _logger.LogInformation("{Name} not running; attempting to (re)start.", displayName);
+        else
+        {
+            _logger.LogInformation("{Name} not running; attempting to (re)start.", displayName);
+        }
         preStart?.Invoke();
         var up = _supervisor.EnsureRunningAsync(spec, _options.MaxRetries, _options.RetryDelaySeconds, CancellationToken.None).GetAwaiter().GetResult();
         var attempts = _supervisor.AttemptsUsed;
