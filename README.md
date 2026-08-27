@@ -136,51 +136,47 @@ sequenceDiagram
     participant Exp as Export process
     participant API as Writeback API
     participant LLM as LLM server
-    participant EAx as EA.exe (Exporter's, transient)
-    participant EAa as EA.exe (API's, persistent)
+    participant EAx as EA.exe exporter
+    participant EAa as EA.exe API
 
-    Note over M: === Cycle start ===
+    Note over M: Cycle start
 
-    rect rgb(240,248,255)
-    Note over M,EAx: Phase 1 — Export (runs when due; full OR incremental — same EA lifecycle)
-    M->>M: exportDue? edit-lock clear?
+    Note over M,EAx: Phase 1 - Export, when due
+    M->>M: exportDue and edit-lock clear
     M->>M: snapshot EA PIDs before
-    M->>Exp: RunExportAsync(effectiveForce, ...)
-    Note over Exp: retries up to MaxRetries;<br/>each attempt opens & disposes<br/>its own EaReader
-    Exp->>EAx: new EaReader().Open() (spawns EA)
-    Exp-->>Exp: read model, render pages (incremental or full)
-    Exp->>EAx: using-block Dispose → CloseFile + FinalReleaseComObject
-    Note over EAx: SHOULD die; may linger<br/>due to known EA -Embedding quirk
-    M->>EAx: finally → KillNewEaProcesses(pidsBefore)
+    M->>Exp: RunExportAsync
+    Note over Exp: retries up to MaxRetries<br/>each attempt opens and disposes<br/>its own EaReader
+    Exp->>EAx: new EaReader Open spawns EA
+    Exp-->>Exp: read model, render pages
+    Exp->>EAx: Dispose CloseFile FinalReleaseComObject
+    Note over EAx: SHOULD die may linger<br/>due to EA Embedding quirk
+    M->>EAx: finally KillNewEaProcesses
     Note right of EAx: any EA PID that wasn't<br/>there before export is killed
-    end
 
-    Note over M: RenderAndSave (health, error, config pages)
+    Note over M: RenderAndSave health, error, config pages
 
-    rect rgb(255,250,240)
-    Note over M,LLM: Phase 2 — Watchdogs (every cycle, independent of export outcome)
-    M->>M: Watchdog "serve" (mkdocs) — no EA concern
+    Note over M,LLM: Phase 2 - Watchdogs every cycle
+    M->>M: Watchdog serve mkdocs, no EA concern
 
-    M->>API: IsAlive? (pid-file, port probe)
+    M->>API: IsAlive pid-file port probe
     alt API alive
-        Note over M,API: do nothing —<br/>no EA touched
+        Note over M,API: do nothing
     else API not alive
-        Note over M: api's EA is an orphan:<br/>graceful shutdown would have<br/>released it via reader.Dispose()<br/>at ApplicationStopping
-        M->>EAa: SweepOrphanedEaProcesses (preStart hook)
-        Note right of EAa: kills every EA.exe still<br/>running (exporter's was<br/>already killed in Phase 1)
-        M->>API: EnsureRunningAsync (spawn)
-        API->>EAa: Open() — spawns fresh EA
+        Note over M: api EA is orphan graceful<br/>shutdown would release it<br/>via reader Dispose
+        M->>EAa: SweepOrphanedEaProcesses preStart hook
+        Note right of EAa: kills every EA.exe still<br/>running exporter was<br/>already killed in Phase 1
+        M->>API: EnsureRunningAsync spawn
+        API->>EAa: Open spawns fresh EA
     end
 
-    M->>LLM: IsAlive?
+    M->>LLM: IsAlive
     alt LLM alive
         Note over M,LLM: do nothing
     else LLM not alive
-        M->>LLM: EnsureRunningAsync (no EA sweep — LLM doesn't own EA)
-    end
+        M->>LLM: EnsureRunningAsync no EA sweep LLM doesn't own EA
     end
 
-    Note over M: === Sleep, next cycle ===
+    Note over M: Sleep, next cycle
 ```
 
 **Invariants:** at most one `EA.exe` running steady-state (the API's); the exporter's EA is always killed in a `finally`; the API's orphan EA is killed exactly once, right before its replacement is started; nothing kills the API's legitimate EA while `IsAlive` returns true.
