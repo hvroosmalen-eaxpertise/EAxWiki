@@ -147,7 +147,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
             {
                 var childDir = Path.Combine(outputDir, MarkdownHelpers.SanitizeName(child.Name));
                 var childRelPath = Path.GetRelativePath(dir, Path.Combine(childDir, "index.html")).Replace('\\', '/');
-                indexLines.Add($"- [{child.Name}]({childRelPath})");
+                indexLines.Add($"- \U0001F4C1 [{child.Name}]({childRelPath})");
             }
 
             indexLines.Add(string.Empty);
