@@ -63,7 +63,13 @@ public static class MonitorApp
             Port: options.WikiPort,
             PortProbeFallback: true,
             WorkingDirectory: ResolveRepoRoot(stateDir),
-            PostStartDelaySeconds: 5);
+            PostStartDelaySeconds: 5,
+            // Issue #93: the powershell launcher spawns mkdocs.exe as its
+            // grandchild; record mkdocs's PID in serve.pid so external tooling
+            // (kill scripts, chaos tests) that reads the file can actually
+            // reach the process serving :8000.
+            LeafProcessName: "mkdocs",
+            LeafDiscoveryTimeoutSeconds: 60);
     }
 
     public static ServiceSpec BuildApiSpec(MonitorOptions options, string stateDir)

@@ -16,7 +16,14 @@ public sealed record ServiceSpec(
     bool ClearPortBeforeStart = false,
     string? WorkingDirectory = null,
     int ReadyTimeoutSeconds = 120,
-    int PostStartDelaySeconds = 5);
+    int PostStartDelaySeconds = 5,
+    // Issue #93: when the executable is a wrapper (e.g. serve.ps1 running
+    // mkdocs), record the leaf process's PID in the pid file instead of the
+    // launcher's, so external tooling that reads the pid file can actually
+    // kill the leaf. Time-based match: any process with this name started
+    // at-or-after the launcher counts as the leaf.
+    string? LeafProcessName = null,
+    int LeafDiscoveryTimeoutSeconds = 60);
 
 public interface IProcessSupervisor
 {
@@ -131,18 +138,68 @@ public class ProcessSupervisor : IProcessSupervisor
             catch { /* child already gone; ignore */ }
         });
 
-        if (spec.ReadyFile is { } ready)
+        Process? ready;
+        if (spec.ReadyFile is { } readyFile)
         {
             var deadline = DateTime.UtcNow.AddSeconds(spec.ReadyTimeoutSeconds);
-            while (DateTime.UtcNow < deadline && !File.Exists(ready))
+            while (DateTime.UtcNow < deadline && !File.Exists(readyFile))
             {
                 if (proc.HasExited) break;
                 Thread.Sleep(1000);
             }
-            return File.Exists(ready) ? proc : null;
+            ready = File.Exists(readyFile) ? proc : null;
+        }
+        else
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(spec.PostStartDelaySeconds));
+            ready = proc.HasExited ? null : proc;
         }
 
-        Thread.Sleep(TimeSpan.FromSeconds(spec.PostStartDelaySeconds));
-        return proc.HasExited ? null : proc;
+        if (ready == null) return null;
+
+        if (spec.LeafProcessName is { } leafName)
+        {
+            var leaf = WaitForLeaf(leafName, ready, spec.LeafDiscoveryTimeoutSeconds);
+            if (leaf != null)
+            {
+                _logger.LogInformation(
+                    "{Name}: recording leaf process {LeafName} PID {LeafPid} instead of launcher PID {LauncherPid}.",
+                    spec.Name, leafName, leaf.Id, ready.Id);
+                return leaf;
+            }
+            _logger.LogWarning(
+                "{Name}: leaf process {LeafName} not observed within {Timeout}s; falling back to launcher PID {LauncherPid}.",
+                spec.Name, leafName, spec.LeafDiscoveryTimeoutSeconds, ready.Id);
+        }
+
+        return ready;
+    }
+
+    private static Process? WaitForLeaf(string leafName, Process launcher, int timeoutSeconds)
+    {
+        DateTime launcherStart;
+        try { launcherStart = launcher.StartTime; }
+        catch { return null; }
+
+        var deadline = DateTime.UtcNow.AddSeconds(timeoutSeconds);
+        while (DateTime.UtcNow < deadline)
+        {
+            var leaf = Process.GetProcessesByName(leafName)
+                .Where(p =>
+                {
+                    try { return p.StartTime >= launcherStart.AddSeconds(-1); }
+                    catch { return false; }
+                })
+                .OrderByDescending(p =>
+                {
+                    try { return p.StartTime; }
+                    catch { return DateTime.MinValue; }
+                })
+                .FirstOrDefault();
+            if (leaf != null) return leaf;
+            if (launcher.HasExited) return null;
+            Thread.Sleep(500);
+        }
+        return null;
     }
 }
