@@ -125,6 +125,66 @@ MkDocs itself is cross-platform — only EXPORT and WRITE-BACK need the Sparx EA
 
 The browser talks to two servers on separate ports: **MkDocs** (`:8000`) for reading, and the **write-back server** (`:8001` on the Windows machine's IP) for live edits and AI suggestions. The write-back server calls EA COM for status/notes updates and the configured LLM endpoint for AI-generated descriptions.
 
+## Monitor lifecycle
+
+Each monitor cycle runs two phases. Phase 1 runs the export (when due) and always kills any `EA.exe -Embedding` process the exporter spawned, in a `finally` — this holds for both full and incremental exports and for every retry attempt. Phase 2 validates the long-running services; if the write-back API is down, any leftover `EA.exe` is swept as an orphan *before* a fresh API is started, so we never accumulate orphan-plus-fresh EA pairs.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant M as MonitorLoop
+    participant Exp as Export process
+    participant API as Writeback API
+    participant LLM as LLM server
+    participant EAx as EA.exe (Exporter's, transient)
+    participant EAa as EA.exe (API's, persistent)
+
+    Note over M: === Cycle start ===
+
+    rect rgb(240,248,255)
+    Note over M,EAx: Phase 1 — Export (runs when due; full OR incremental — same EA lifecycle)
+    M->>M: exportDue? edit-lock clear?
+    M->>M: snapshot EA PIDs before
+    M->>Exp: RunExportAsync(effectiveForce, ...)
+    Note over Exp: retries up to MaxRetries;<br/>each attempt opens & disposes<br/>its own EaReader
+    Exp->>EAx: new EaReader().Open() (spawns EA)
+    Exp-->>Exp: read model, render pages (incremental or full)
+    Exp->>EAx: using-block Dispose → CloseFile + FinalReleaseComObject
+    Note over EAx: SHOULD die; may linger<br/>due to known EA -Embedding quirk
+    M->>EAx: finally → KillNewEaProcesses(pidsBefore)
+    Note right of EAx: any EA PID that wasn't<br/>there before export is killed
+    end
+
+    Note over M: RenderAndSave (health, error, config pages)
+
+    rect rgb(255,250,240)
+    Note over M,LLM: Phase 2 — Watchdogs (every cycle, independent of export outcome)
+    M->>M: Watchdog "serve" (mkdocs) — no EA concern
+
+    M->>API: IsAlive? (pid-file, port probe)
+    alt API alive
+        Note over M,API: do nothing —<br/>no EA touched
+    else API not alive
+        Note over M: api's EA is an orphan:<br/>graceful shutdown would have<br/>released it via reader.Dispose()<br/>at ApplicationStopping
+        M->>EAa: SweepOrphanedEaProcesses (preStart hook)
+        Note right of EAa: kills every EA.exe still<br/>running (exporter's was<br/>already killed in Phase 1)
+        M->>API: EnsureRunningAsync (spawn)
+        API->>EAa: Open() — spawns fresh EA
+    end
+
+    M->>LLM: IsAlive?
+    alt LLM alive
+        Note over M,LLM: do nothing
+    else LLM not alive
+        M->>LLM: EnsureRunningAsync (no EA sweep — LLM doesn't own EA)
+    end
+    end
+
+    Note over M: === Sleep, next cycle ===
+```
+
+**Invariants:** at most one `EA.exe` running steady-state (the API's); the exporter's EA is always killed in a `finally`; the API's orphan EA is killed exactly once, right before its replacement is started; nothing kills the API's legitimate EA while `IsAlive` returns true.
+
 ## Installation
 
 Installer packages are available on the [GitHub Releases page](https://github.com/hvroosmalen-eaxpertise/EAxWiki/releases/latest) and are updated automatically on every push to master.

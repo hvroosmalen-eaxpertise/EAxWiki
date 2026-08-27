@@ -1,5 +1,6 @@
 using EAxWiki.Core.Monitoring;
 using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 
 namespace EAxWiki.Monitor;
 
@@ -97,25 +98,33 @@ public class MonitorLoop
         var writebackSummary = new WritebackDelta(0, new Dictionary<string, int>());
         if (exportDue)
         {
-            var effectiveForce = _exportRunner.ShouldForce(_state.RunsSinceForce);
-            _logger.LogInformation("Full export (mode={Force}).", effectiveForce ? "force" : "incremental");
+            var eaPidsBefore = SnapshotEaPids();
+            try
+            {
+                var effectiveForce = _exportRunner.ShouldForce(_state.RunsSinceForce);
+                _logger.LogInformation("Full export (mode={Force}).", effectiveForce ? "force" : "incremental");
 
-            if (_state.SkipExport)
-            {
-                _logger.LogInformation("Skipped by user request (skipExport flag).");
-                _alerts.Dispatch("Export skipped by user request.", AlertKind.UserStop);
-                _state.SkipExport = false;
+                if (_state.SkipExport)
+                {
+                    _logger.LogInformation("Skipped by user request (skipExport flag).");
+                    _alerts.Dispatch("Export skipped by user request.", AlertKind.UserStop);
+                    _state.SkipExport = false;
+                }
+                else
+                {
+                    if (_options.NotifyOnStart)
+                        _alerts.Dispatch(
+                            effectiveForce ? "Scheduled run starting (forced full rebuild)." : "Scheduled run starting (incremental).",
+                            AlertKind.Start);
+                    writebackSummary = _digestTracker.CountNewWritebacks();
+                    _ = ExportProtectedAsync(effectiveForce, writebackSummary).GetAwaiter().GetResult();
+                }
+                _lastExportTime = DateTime.UtcNow;
             }
-            else
+            finally
             {
-                if (_options.NotifyOnStart)
-                    _alerts.Dispatch(
-                        effectiveForce ? "Scheduled run starting (forced full rebuild)." : "Scheduled run starting (incremental).",
-                        AlertKind.Start);
-                writebackSummary = _digestTracker.CountNewWritebacks();
-                var _ = ExportProtectedAsync(effectiveForce, writebackSummary).GetAwaiter().GetResult();
+                KillNewEaProcesses(eaPidsBefore);
             }
-            _lastExportTime = DateTime.UtcNow;
         }
         else if (!_deferredByEditLock)
         {
@@ -142,12 +151,19 @@ public class MonitorLoop
 
         if (_options.ApiPort > 0)
         {
+            // preStart: if the API isn't alive right now, whatever EA.exe -Embedding it
+            // owned is an orphan — graceful shutdown would have released it via
+            // reader.Dispose() (WikiWritebackServer.ApplicationStopping). Sweep before
+            // starting so we don't accumulate orphan-plus-fresh EA pairs on every crash.
+            // Safe here because Phase 1 already killed the exporter's EA, so any EA
+            // still running belonged to the dead API.
             Watchdog("api", _apiSpec, () => _state.ApiConsecutiveFailures,
                 v => _state.ApiConsecutiveFailures = v,
                 () => _state.LastApiSuccessTime = DateTimeOffset.Now,
                 () => _state.LastApiFailureTime = DateTimeOffset.Now,
                 AlertKind.ApiRecovery, AlertKind.ApiFailure,
-                "write-back API server");
+                "write-back API server",
+                preStart: SweepOrphanedEaProcesses);
         }
         else
         {
@@ -170,6 +186,51 @@ public class MonitorLoop
         }
     }
 
+    private static HashSet<int> SnapshotEaPids()
+    {
+        var pids = new HashSet<int>();
+        foreach (var proc in Process.GetProcessesByName("EA"))
+        {
+            pids.Add(proc.Id);
+        }
+        return pids;
+    }
+
+    private void KillNewEaProcesses(HashSet<int> pidsBefore)
+    {
+        foreach (var proc in Process.GetProcessesByName("EA"))
+        {
+            if (pidsBefore.Contains(proc.Id)) continue;
+            try
+            {
+                _logger.LogInformation("Terminating exporter's EA.exe (PID {Pid}) spawned during export.", proc.Id);
+                proc.Kill(entireProcessTree: false);
+                proc.WaitForExit(5000);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning("Failed to terminate EA.exe (PID {Pid}): {Error}", proc.Id, ex.Message);
+            }
+        }
+    }
+
+    private void SweepOrphanedEaProcesses()
+    {
+        foreach (var proc in Process.GetProcessesByName("EA"))
+        {
+            try
+            {
+                _logger.LogInformation("Sweeping orphaned EA.exe (PID {Pid}) before API restart.", proc.Id);
+                proc.Kill(entireProcessTree: false);
+                proc.WaitForExit(5000);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning("Failed to sweep EA.exe (PID {Pid}): {Error}", proc.Id, ex.Message);
+            }
+        }
+    }
+
     private async Task<bool> ExportProtectedAsync(bool effectiveForce, WritebackDelta writebacks)
     {
         try
@@ -188,7 +249,8 @@ public class MonitorLoop
         Func<int> getFailures, Action<int> setFailures,
         Action onSuccess, Action onFailure,
         AlertKind recoveryKind, AlertKind failureKind,
-        string displayName)
+        string displayName,
+        Action? preStart = null)
     {
         if (_state.SkipServe && name == "serve")
         {
@@ -203,6 +265,7 @@ public class MonitorLoop
         }
 
         _logger.LogInformation("{Name} not running; attempting to (re)start.", displayName);
+        preStart?.Invoke();
         var up = _supervisor.EnsureRunningAsync(spec, _options.MaxRetries, _options.RetryDelaySeconds, CancellationToken.None).GetAwaiter().GetResult();
         var attempts = _supervisor.AttemptsUsed;
 
