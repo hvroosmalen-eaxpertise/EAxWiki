@@ -71,33 +71,40 @@ public class StaMarkdownExporter : IStaExporter
         {
             try
             {
-                using var reader = new EaReader(_loggerFactory.CreateLogger<EaReader>());
-                var repository = reader.Open(repoPath);
-
-                if (writeBack && Directory.Exists(outputPath))
+                // Nested block so reader.Dispose() runs INSIDE this try and BEFORE the
+                // TCS signals completion. Signalling first would let the caller race
+                // the STA thread's cleanup — e.g. MonitorLoop's finally could kill the
+                // EA.exe RCW mid-Dispose, and the resulting throw would land in the
+                // catch below and fail a second SetException on an already-completed TCS.
+                using (var reader = new EaReader(_loggerFactory.CreateLogger<EaReader>()))
                 {
-                    _logger.LogInformation("Running write-back scan...");
-                    var scanner = new WriteBackScanner(reader, _loggerFactory.CreateLogger<WriteBackScanner>());
-                    var scanResult = scanner.Scan(outputPath);
-                    if (scanResult.StatusChanges.Count == 0 && scanResult.NotesChanges.Count == 0)
-                        _logger.LogInformation("Write-back: no changes detected.");
-                    else
-                        _logger.LogInformation("Write-back: applied {Status} status and {Notes} notes change(s).",
-                            scanResult.StatusChanges.Count, scanResult.NotesChanges.Count);
-                }
+                    var repository = reader.Open(repoPath);
 
-                var writer = new FileOutputWriter();
-                var exporter = new MarkdownExporter(writer, CreateExporterLogger());
-                var result = exporter.ExportAsync(repository, null, outputPath, reader, force)
-                    .GetAwaiter().GetResult();
-                _logger.LogInformation("Export finished: {Total} pages, {Failed} failed, {Diagrams} diagrams.",
-                    result.TotalElements, result.FailedElements, result.DiagramsExported);
-                tcs.SetResult();
+                    if (writeBack && Directory.Exists(outputPath))
+                    {
+                        _logger.LogInformation("Running write-back scan...");
+                        var scanner = new WriteBackScanner(reader, _loggerFactory.CreateLogger<WriteBackScanner>());
+                        var scanResult = scanner.Scan(outputPath);
+                        if (scanResult.StatusChanges.Count == 0 && scanResult.NotesChanges.Count == 0)
+                            _logger.LogInformation("Write-back: no changes detected.");
+                        else
+                            _logger.LogInformation("Write-back: applied {Status} status and {Notes} notes change(s).",
+                                scanResult.StatusChanges.Count, scanResult.NotesChanges.Count);
+                    }
+
+                    var writer = new FileOutputWriter();
+                    var exporter = new MarkdownExporter(writer, CreateExporterLogger());
+                    var result = exporter.ExportAsync(repository, null, outputPath, reader, force)
+                        .GetAwaiter().GetResult();
+                    _logger.LogInformation("Export finished: {Total} pages, {Failed} failed, {Diagrams} diagrams.",
+                        result.TotalElements, result.FailedElements, result.DiagramsExported);
+                }
+                tcs.TrySetResult();
             }
             catch (Exception ex)
             {
                 failure = ex;
-                tcs.SetException(ex);
+                tcs.TrySetException(ex);
             }
         });
         thread.SetApartmentState(ApartmentState.STA);
