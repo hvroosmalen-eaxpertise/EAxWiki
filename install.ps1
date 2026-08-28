@@ -128,7 +128,8 @@ if ($IsWindowsOS -and -not $SkipDotnet) {
     # src\*\bin\Debug\net10.0\ (see Get-EAxWikiDllPath / Get-EAxWikiMonitorExePath).
     $projects = @(
         (Join-Path $repoRoot "src\EAxWiki\EAxWiki.csproj"),
-        (Join-Path $repoRoot "src\EAxWiki.Monitor\EAxWiki.Monitor.csproj")
+        (Join-Path $repoRoot "src\EAxWiki.Monitor\EAxWiki.Monitor.csproj"),
+        (Join-Path $repoRoot "src\EAxWiki.ProcessKiller\EAxWiki.ProcessKiller.csproj")
     )
     foreach ($srcProject in $projects) {
         if (-not (Test-Path $srcProject)) {

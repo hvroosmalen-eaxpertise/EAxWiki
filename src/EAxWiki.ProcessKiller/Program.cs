@@ -35,29 +35,51 @@ int notRunning = 0;
 
 foreach (var pidFile in pidFiles)
 {
+    int pid;
     var info = PidFile.Read(pidFile);
-    if (info == null)
+    if (info != null)
+    {
+        pid = info.Pid;
+    }
+    else if (string.Equals(Path.GetFileName(pidFile), "monitor.pid", StringComparison.OrdinalIgnoreCase)
+             && int.TryParse(File.ReadAllText(pidFile).Split('\n', '\r').FirstOrDefault()?.Trim(), out var plainPid))
+    {
+        // monitor.pid is plain PID text (see MonitorLock), not JSON.
+        pid = plainPid;
+    }
+    else
     {
         Console.WriteLine($"  SKIP: {Path.GetFileName(pidFile)} - could not read PID file.");
         continue;
     }
 
+    bool deleteStale = false;
     try
     {
-        using var proc = Process.GetProcessById(info.Pid);
+        using var proc = Process.GetProcessById(pid);
         proc.Kill(entireProcessTree: true);
-        Console.WriteLine($"  Killed PID {info.Pid} ({Path.GetFileName(pidFile)})");
+        Console.WriteLine($"  Killed PID {pid} ({Path.GetFileName(pidFile)})");
         killed++;
+        deleteStale = true;
     }
     catch (ArgumentException)
     {
-        Console.WriteLine($"  NOT RUNNING: PID {info.Pid} ({Path.GetFileName(pidFile)}) - process no longer exists.");
+        Console.WriteLine($"  NOT RUNNING: PID {pid} ({Path.GetFileName(pidFile)}) - process no longer exists.");
         notRunning++;
+        deleteStale = true;
     }
     catch (System.ComponentModel.Win32Exception)
     {
-        Console.WriteLine($"  NOT ACCESSIBLE: PID {info.Pid} ({Path.GetFileName(pidFile)}) - process inaccessible (different session/elevation).");
+        Console.WriteLine($"  NOT ACCESSIBLE: PID {pid} ({Path.GetFileName(pidFile)}) - process inaccessible (different session/elevation).");
         notRunning++;
+        // Do NOT delete: the process may still be running under another session/elevation.
+    }
+
+    if (deleteStale)
+    {
+        try { File.Delete(pidFile); }
+        catch (IOException) { /* best-effort cleanup */ }
+        catch (UnauthorizedAccessException) { /* best-effort cleanup */ }
     }
 }
 
