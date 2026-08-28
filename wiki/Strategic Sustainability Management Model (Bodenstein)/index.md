@@ -3,11 +3,11 @@ package_id: 40
 notes_hash: 9e2ef42c
 ---
 
-# Strategic Sustainability Management Model (Bodenstein)
+# 📁 Strategic Sustainability Management Model (Bodenstein)
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="40" data-kind="package" data-file-path="Strategic Sustainability Management Model (Bodenstein)/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="40" data-kind="package" data-file-path="Strategic Sustainability Management Model (Bodenstein)/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -19,13 +19,13 @@ This model integrates sustainability as a strategic variable into corporate stra
 
 ## Diagrams
 
-- [Strategic Sustainability Management Model (Bodenstein)](diagrams/Strategic Sustainability Management Model (Bodenstein).html) (Logical)
+- 🗺️ [Strategic Sustainability Management Model (Bodenstein)](diagrams/Strategic Sustainability Management Model (Bodenstein).html) (Logical)
   *This diagram shows the contents of the book in a visual way. The following sections contain the structure per Driver.*
 
 ## Sub-packages
 
-- [Stakeholder Expectations](../Stakeholder Expectations/index.html)
-- [Climate Risk](../Climate Risk/index.html)
-- [Regulatory Pressure](../Regulatory Pressure/index.html)
-- [Market Differentiation Pressure](../Market Differentiation Pressure/index.html)
-- [Reputation Risk](../Reputation Risk/index.html)
+- 📁 [Stakeholder Expectations](../Stakeholder Expectations/index.html)
+- 📁 [Climate Risk](../Climate Risk/index.html)
+- 📁 [Regulatory Pressure](../Regulatory Pressure/index.html)
+- 📁 [Market Differentiation Pressure](../Market Differentiation Pressure/index.html)
+- 📁 [Reputation Risk](../Reputation Risk/index.html)

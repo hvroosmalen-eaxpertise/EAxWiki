@@ -15,7 +15,7 @@ notes_hash: e4fedc0b
 
 [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Facilities](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="756" data-file-path="Facilities/Equipment.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="756" data-file-path="Facilities/Equipment.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->

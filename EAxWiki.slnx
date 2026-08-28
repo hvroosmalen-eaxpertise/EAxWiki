@@ -1,13 +1,13 @@
 <Solution>
   <Folder Name="/src/">
-    <Project Path="src/EAxWiki.Core/EAxWiki.Core.csproj" />
-    <Project Path="src/EAxWiki.Docs/EAxWiki.Docs.csproj" />
-    <Project Path="src/EAxWiki.EA/EAxWiki.EA.csproj" />
-    <Project Path="src/EAxWiki.Export/EAxWiki.Export.csproj" />
-    <Project Path="src/EAxWiki.SchedulerUI/EAxWiki.SchedulerUI.csproj" />
-    <Project Path="src/EAxWiki.Tests/EAxWiki.Tests.csproj" />
-    <Project Path="src/EAxWiki.Monitor/EAxWiki.Monitor.csproj" />
-    <Project Path="src/EAxWiki.ProcessKiller/EAxWiki.ProcessKiller.csproj" />
-    <Project Path="src/EAxWiki/EAxWiki.csproj" />
+    <Project Path="E:/Users/Han/Repos/EAxWiki/src/EAxWiki.Core/EAxWiki.Core.csproj" />
+    <Project Path="E:/Users/Han/Repos/EAxWiki/src/EAxWiki.Docs/EAxWiki.Docs.csproj" />
+    <Project Path="E:/Users/Han/Repos/EAxWiki/src/EAxWiki.EA/EAxWiki.EA.csproj" />
+    <Project Path="E:/Users/Han/Repos/EAxWiki/src/EAxWiki.Export/EAxWiki.Export.csproj" />
+    <Project Path="E:/Users/Han/Repos/EAxWiki/src/EAxWiki.Monitor/EAxWiki.Monitor.csproj" />
+    <Project Path="E:/Users/Han/Repos/EAxWiki/src/EAxWiki.ProcessKiller/EAxWiki.ProcessKiller.csproj" />
+    <Project Path="E:/Users/Han/Repos/EAxWiki/src/EAxWiki.SchedulerUI/EAxWiki.SchedulerUI.csproj" />
+    <Project Path="E:/Users/Han/Repos/EAxWiki/src/EAxWiki.Tests/EAxWiki.Tests.csproj" />
+    <Project Path="E:/Users/Han/Repos/EAxWiki/src/EAxWiki/EAxWiki.csproj" />
   </Folder>
 </Solution>

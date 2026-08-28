@@ -79,6 +79,7 @@
 | EquipmentInstallation | EquipmentInstallation captures the temporal fact of a piece of Equipment being installed at a Facility to perform specific operational activities | [EquipmentInstallation](../Facilities/EquipmentInstallation.html) |
 | ESG Performance Improvement | Systematically improve performance across Environmental, Social, and Governance dimensions based on recognized standards and frameworks | [ESG Performance Improvement](../Goals/ESG Performance Improvement.html) |
 | ESG Performance Management | Capability to systematically measure, monitor, and manage Environmental, Social, and Governance performance | [ESG Performance Management](../Capabilities/ESG Performance Management.html) |
+| ESG Score | The ESG Score is very handy to have | [ESG Score](../Assessments/ESG Score.html) |
 | ESG-based Risk Management | Strategic integration of ESG factors into enterprise risk management frameworks | [ESG-based Risk Management](../Courses of Action/ESG-based Risk Management.html) |
 | ESRS 1 General Requirements | ESRS 1 defines general principles to be applied for reporting | [ESRS 1 General Requirements](../ESRS 1/ESRS 1 General Requirements.html) |
 | ESRS 2 General Disclosures | ESRS 2 establishes the basic information that must be provided regardless of the sustainability topic under consideration | [ESRS 2 General Disclosures](../ESRS 2/ESRS 2 General Disclosures.html) |

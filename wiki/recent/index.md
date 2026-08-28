@@ -2,6 +2,8 @@
 
 | Name | Type | Modified | Path |
 |------|------|----------|------|
+| [ESG Score](../Assessments/ESG Score.html) | Class | 2026-08-27 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
+| [Sustainability Identity](../Purpose/Sustainability Identity.html) | Activity | 2026-08-25 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Identity](../Identity/index.html) / [Purpose](../Purpose/index.html) |
 | [Sustainable Supply Chain Management](../Capabilities/Sustainable Supply Chain Management.html) | Class | 2026-08-05 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Capabilities](../Capabilities/index.html) |
 | [SDG  1. No Poverty](../Sustainability Development Goals/SDG  1. No Poverty.html) | Activity | 2026-08-03 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](../Sustainability Development Goals/index.html) |
 | [SDG  2. Zero Hunger](../Sustainability Development Goals/SDG  2. Zero Hunger.html) | Activity | 2026-07-31 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](../Sustainability Development Goals/index.html) |
@@ -27,7 +29,6 @@
 | [Environmental Impact Map](../Asset/Environmental Impact Map.html) | Class | 2026-07-13 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Architecture](../Architecture/index.html) / [Asset](../Asset/index.html) |
 | [Emission Sources](../Asset/Emission Sources.html) | Class | 2026-07-13 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Architecture](../Architecture/index.html) / [Asset](../Asset/index.html) |
 | [Supplier Compliance Rate](../Assessments/Supplier Compliance Rate.html) | Class | 2026-07-13 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
-| [ESG Score](../Assessments/ESG Score.html) | Class | 2026-07-13 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
 | [Certification Bodies](../People/Certification Bodies.html) | Actor | 2026-07-11 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](../People/index.html) |
 | [Agricultural Suppliers](../People/Agricultural Suppliers.html) | Actor | 2026-07-11 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](../People/index.html) |
 | [Affected Communities (ESRS S3)](../People/Affected Communities (ESRS S3).html) | Actor | 2026-07-11 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](../People/index.html) |
@@ -51,4 +52,3 @@
 | [ProductCarbonFootprintFactorSource](../Products/ProductCarbonFootprintFactorSource.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [EnvironmentalProductDeclaration](../Products/EnvironmentalProductDeclaration.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
 | [ProductCategoryRule](../Products/ProductCategoryRule.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |
-| [ProductCarbonFootprint](../Products/ProductCarbonFootprint.html) | Class | 2026-05-20 | [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](../Products/index.html) |

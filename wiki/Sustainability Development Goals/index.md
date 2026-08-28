@@ -3,11 +3,11 @@ package_id: 3
 notes_hash: 0eecd5bb
 ---
 
-# Sustainability Development Goals
+# 📁 Sustainability Development Goals
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="3" data-kind="package" data-file-path="Sustainability Development Goals/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="3" data-kind="package" data-file-path="Sustainability Development Goals/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -19,7 +19,7 @@ notes_hash: 0eecd5bb
 
 ## Diagrams
 
-- [Sustainability Development Goals](diagrams/Sustainability Development Goals.html) (Custom)
+- 🗺️ [Sustainability Development Goals](diagrams/Sustainability Development Goals.html) (Custom)
   *<p>This diagram illustrates the 17 United Nations' Sustainability Development Goals (SDGs), showcasing the interconnected activities and purposes that aim to create a more equitable, sustainable, and resilient world. The diagram provides a visual representation of the goals, highlighting their relationships and dependencies, and serves as a guide for understanding the global framework for sustainable development. It is a tool for businesses, organizations, and individuals seeking to align their efforts with the SDGs and contribute to a better future.</p>*
 
 ## Elements

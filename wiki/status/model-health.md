@@ -162,7 +162,7 @@ None.
 - [Willem Krijgsman](../Introduction EurSuRA/Willem Krijgsman.html)
 - [XMI Import Definition](../Information Collection and Model Creation/XMI Import Definition.html)
 
-## Untouched 90+ Days (250)
+## Untouched 90+ Days (249)
 
 *Has a Status set, but no field on the element (Notes, tagged values, relationships, etc.) has changed in over 90 days. Does not track how long the Status value itself has been unchanged.*
 
@@ -303,7 +303,6 @@ None.
 | [Environmental Impact Story](../Story/Environmental Impact Story.html) | Proposed | 2025-12-15 |
 | [Sustainability Vision](../Story/Sustainability Vision.html) | Proposed | 2025-12-15 |
 | [Enterprise Purpose](../Purpose/Enterprise Purpose.html) | Proposed | 2025-12-15 |
-| [Sustainability Identity](../Purpose/Sustainability Identity.html) | Proposed | 2025-12-15 |
 | [Green Capabilities](../Capability/Green Capabilities.html) | Proposed | 2025-12-15 |
 | [Lifecycle & Circularity Model](../Process/Lifecycle & Circularity Model.html) | Proposed | 2025-12-15 |
 | [Reduction Initiatives](../Process/Reduction Initiatives.html) | Proposed | 2025-12-15 |

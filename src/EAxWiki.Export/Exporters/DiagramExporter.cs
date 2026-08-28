@@ -56,7 +56,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     $"notes_hash: {notesHash}",
                     "---",
                     string.Empty,
-                    $"# {diagram.Name}",
+                    $"# 🗺️ {diagram.Name}",
                     string.Empty,
                     string.Empty,
                     MarkdownHelpers.BuildBreadcrumb(diagram.PackageId, diagramsDir, ctx.OutputPath, ctx.PackageLookup,

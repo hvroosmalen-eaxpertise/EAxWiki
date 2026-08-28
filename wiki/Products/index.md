@@ -3,11 +3,11 @@ package_id: 97
 notes_hash: e3b0c442
 ---
 
-# Products
+# 📁 Products
 
 [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Products](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="97" data-kind="package" data-file-path="Products/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="97" data-kind="package" data-file-path="Products/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -18,7 +18,7 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- [Products](diagrams/Products.html) (Logical)
+- 🗺️ [Products](diagrams/Products.html) (Logical)
 
 ## Elements
 

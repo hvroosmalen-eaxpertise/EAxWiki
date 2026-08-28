@@ -3,11 +3,11 @@ package_id: 63
 notes_hash: e3b0c442
 ---
 
-# Story
+# 📁 Story
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Identity](../Identity/index.html) / [Story](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="63" data-kind="package" data-file-path="Story/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="63" data-kind="package" data-file-path="Story/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->

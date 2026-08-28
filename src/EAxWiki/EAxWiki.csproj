@@ -36,5 +36,21 @@
     </None>
   </ItemGroup>
 
+  <!-- Add top-level repo files and scripts as linked items so Solution Explorer can show them from the project -->
+  <ItemGroup>
+    <None Include="..\\README.md">
+      <Link>RepoRoot\\README.md</Link>
+    </None>
+    <None Include="..\\install.ps1">
+      <Link>RepoRoot\\install.ps1</Link>
+    </None>
+    <None Include="..\\scripts\\**\\*.ps1">
+      <Link>RepoRoot\\scripts\\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </None>
+    <None Include="..\\docs\\**\\*.md">
+      <Link>RepoRoot\\docs\\%(RecursiveDir)%(Filename)%(Extension)</Link>
+    </None>
+  </ItemGroup>
+
 
 </Project>

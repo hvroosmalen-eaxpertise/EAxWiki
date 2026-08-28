@@ -186,3 +186,8 @@
 {"timestamp":"2026-08-05T15:00:02.2448822Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/shutdown","elementId":0,"field":"shutdown","statusCode":200,"message":"Graceful shutdown requested"}
 {"timestamp":"2026-08-05T15:10:02.1858359Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/shutdown","elementId":0,"field":"shutdown","statusCode":200,"message":"Graceful shutdown requested"}
 {"timestamp":"2026-08-05T15:23:40.8634043Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/shutdown","elementId":0,"field":"shutdown","statusCode":200,"message":"Graceful shutdown requested"}
+{"timestamp":"2026-08-25T10:28:29.4189398Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/notes","elementId":123,"field":"notes","statusCode":200,"message":"Write-back completed"}
+{"timestamp":"2026-08-25T10:51:49.5648475Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/notes","elementId":123,"field":"notes","statusCode":200,"message":"Write-back completed"}
+{"timestamp":"2026-08-26T12:42:11.5016840Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/notes","elementId":1,"field":"notes","statusCode":200,"message":"Write-back completed"}
+{"timestamp":"2026-08-27T09:42:31.7001078Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/notes","elementId":463,"field":"notes","statusCode":200,"message":"Write-back completed"}
+{"timestamp":"2026-08-27T12:30:25.6540395Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/notes","elementId":463,"field":"notes","statusCode":200,"message":"Write-back completed"}

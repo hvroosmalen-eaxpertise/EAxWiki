@@ -3,11 +3,11 @@ package_id: 84
 notes_hash: e3b0c442
 ---
 
-# Information Collection and Model Creation
+# 📁 Information Collection and Model Creation
 
 [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Information Collection and Model Creation](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="84" data-kind="package" data-file-path="Information Collection and Model Creation/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="84" data-kind="package" data-file-path="Information Collection and Model Creation/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -18,7 +18,7 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.html) (Custom)
+- 🗺️ [Information Collection and Model Creation](diagrams/Information Collection and Model Creation.html) (Custom)
 
 ## Elements
 

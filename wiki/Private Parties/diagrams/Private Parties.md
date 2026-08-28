@@ -10,7 +10,7 @@ notes_hash: fc2d6b94
 
 ![Private Parties](Private Parties.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="41" data-kind="diagram" data-file-path="Private Parties/diagrams/Private Parties.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="41" data-kind="diagram" data-file-path="Private Parties/diagrams/Private Parties.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">

@@ -1,7 +1,7 @@
 nav:
-  - Structure: ''
+  - Repository: ''
   - Diagrams: diagrams/
-  - Types: types/
+  - Element Types: types/
   - Glossary: glossary/
   - Recent: recent/
   - Status: status/

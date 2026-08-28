@@ -3,23 +3,23 @@ ea_id: 463
 status: Approved
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 87b42e40
-notes_hash: 497ebe83
+notes_hash: ffeb224c
 ---
 
 # <span class="sl" data-layer="motivation">Assessment</span> ESG Score
 
 **Type:** Class  **Stereotype:** ArchiMate_Assessment  **StereotypeEx:** ArchiMate_Assessment  **FQStereotype:** ArchiMate3::ArchiMate_Assessment  
 **Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="463" data-status="Approved" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Assessments/ESG Score.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83"><span class="status-badge status-approved">Approved</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
-**Created:** 2025-12-11  **Modified:** 2026-07-13
+**Created:** 2025-12-11  **Modified:** 2026-08-27
 
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="463" data-file-path="Assessments/ESG Score.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="463" data-file-path="Assessments/ESG Score.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
-<p>Legit text</p><img src="x">
+<p>The ESG Score is very handy to have.</p>
 <!--ea-notes-end-->
 </div>
 </div>
