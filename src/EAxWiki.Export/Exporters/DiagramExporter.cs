@@ -150,7 +150,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
             .ThenBy(d => d.Diagram.Name)
             .ToList();
 
-        var lines = new List<string> { "# Diagrams", string.Empty };
+        var lines = new List<string> { "# \U0001F5FA️ Diagrams", string.Empty };
 
         if (sorted.Count == 0)
         {

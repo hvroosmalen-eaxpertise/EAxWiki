@@ -55,7 +55,7 @@ internal class InfrastructureWriter(IOutputWriter writer)
         var diagramsDir = Path.Combine(outputDir, "diagrams");
         await writer.CreateDirectoryAsync(diagramsDir, ct);
         await writer.WriteFileAsync(Path.Combine(diagramsDir, ".pages"),
-            string.Join(Environment.NewLine, ["title: Diagrams", string.Empty]), ct);
+            string.Join(Environment.NewLine, ["title: \U0001F5FA️ Diagrams", string.Empty]), ct);
 
         var typesDir = Path.Combine(outputDir, "types");
         await writer.CreateDirectoryAsync(typesDir, ct);
