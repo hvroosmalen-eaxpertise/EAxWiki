@@ -183,6 +183,12 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
         ctx.WrittenMdFiles.Add(indexMdPath);
     }
 
+    // Marker that appears in every diagram H1 emitted by the current template.
+    // Bump this whenever the diagram-page template changes in a way pre-existing files
+    // should be regenerated for, so IsDiagramUpToDate can detect stale template output
+    // even when the EA-side ModifiedDate hasn't advanced.
+    private const string CurrentH1Marker = "# \U0001F5FA️ ";
+
     private static bool IsDiagramUpToDate(string mdPath, string? modifiedDateStr)
     {
         if (string.IsNullOrWhiteSpace(modifiedDateStr)) return false;
@@ -192,7 +198,18 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
         if (fileTime <= DateTime.UnixEpoch) return false; // file does not exist
 
         var diagramTimeUtc = diagramTime.Kind == DateTimeKind.Utc ? diagramTime : diagramTime.ToUniversalTime();
-        return fileTime >= diagramTimeUtc;
+        if (fileTime < diagramTimeUtc) return false;
+
+        // Template-freshness check: if the file was generated before the current H1
+        // template, force a rewrite. Reads only the first ~20 lines (the H1 sits near
+        // the top of every diagram page).
+        try
+        {
+            foreach (var line in File.ReadLines(mdPath).Take(20))
+                if (line.StartsWith(CurrentH1Marker, StringComparison.Ordinal)) return true;
+            return false;
+        }
+        catch (IOException) { return false; }
     }
 
     /// <summary>
