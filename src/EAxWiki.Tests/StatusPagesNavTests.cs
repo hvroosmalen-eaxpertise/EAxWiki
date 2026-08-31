@@ -62,4 +62,28 @@ public class StatusPagesNavTests : IDisposable
         var pages = File.ReadAllText(Path.Combine(_outPath, ".pages"));
         Assert.Contains("  - Pipeline Health: status/health.html", pages);
     }
+
+    [Fact]
+    public async Task NoRootPackages_KeepsBareRepositoryLink()
+    {
+        await WritePages();
+
+        var pages = File.ReadAllText(Path.Combine(_outPath, ".pages"));
+        Assert.Contains("  - Repository: ''", pages);
+    }
+
+    [Fact]
+    public async Task WithRootPackages_EmitsRepositorySectionWithNestedPackages()
+    {
+        await new InfrastructureWriter(new FileOutputWriter())
+            .WritePagesFileAsync(_outPath, new[] { "PackageA", "PackageB" });
+
+        var pages = File.ReadAllText(Path.Combine(_outPath, ".pages"));
+        Assert.DoesNotContain("  - Repository: ''", pages);
+        Assert.Contains("  - Repository:", pages);
+        Assert.Contains("    - PackageA/", pages);
+        Assert.Contains("    - PackageB/", pages);
+        // Sibling nav entries survive the change.
+        Assert.Contains("  - Diagrams: diagrams/", pages);
+    }
 }

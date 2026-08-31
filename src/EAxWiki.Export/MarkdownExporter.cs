@@ -95,7 +95,7 @@ public class MarkdownExporter : IWikiExporter
                 new StatusDashboardExporter(_writer).ExportAsync(ctx, cancellationToken),
                 new ModelHealthExporter(_writer).ExportAsync(ctx, cancellationToken),
                 diagramExporter.WriteIndexAsync(ctx, cancellationToken),
-                infrastructure.WritePagesFileAsync(outputPath, cancellationToken),
+                infrastructure.WritePagesFileAsync(outputPath, packages.Select(p => MarkdownHelpers.SanitizeName(p.Name)).ToList(), cancellationToken),
                 infrastructure.WriteExtraCssAsync(outputPath, cancellationToken),
                 infrastructure.WriteBrandAssetsAsync(outputPath, brand, cancellationToken),
                 infrastructure.WriteGraphScriptsAsync(outputPath, brand, cancellationToken),

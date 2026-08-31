@@ -7,8 +7,10 @@ namespace EAxWiki.Export.Exporters;
 
 internal class InfrastructureWriter(IOutputWriter writer)
 {
-    public async Task WritePagesFileAsync(string outputDir, CancellationToken ct = default)
+    public async Task WritePagesFileAsync(string outputDir, IReadOnlyList<string>? rootPackageDirs = null, CancellationToken ct = default)
     {
+        rootPackageDirs ??= [];
+
         // wiki/status/health.md is written by EAxWiki.Monitor (issue #37/#38),
         // not by this exporter — only add its nav entry when it actually exists, so a plain export.ps1
         // run (no monitor wrapper in use) doesn't get a link to a missing page.
@@ -40,10 +42,27 @@ internal class InfrastructureWriter(IOutputWriter writer)
         if (File.Exists(Path.Combine(outputDir, "status", "config.md")))
             statusLines.Add("  - Configuration: status/config.html");
 
+        // Issue #89 item 4: Repository becomes a collapsible nav section that groups the root
+        // packages, instead of a bare link to the site home page. Awesome-pages nests entries
+        // when their `nav:` key has no value and the next lines are indented. Empty
+        // rootPackageDirs falls back to the old bare-link form (used by StatusPagesNavTests
+        // and by direct-caller code paths that don't have the package list handy).
+        List<string> repositoryLines;
+        if (rootPackageDirs.Count == 0)
+        {
+            repositoryLines = ["  - Repository: ''"];
+        }
+        else
+        {
+            repositoryLines = ["  - Repository:"];
+            foreach (var dir in rootPackageDirs)
+                repositoryLines.Add($"    - {dir}/");
+        }
+
         await writer.WriteFileAsync(Path.Combine(outputDir, ".pages"), string.Join(Environment.NewLine,
         [
             "nav:",
-            "  - Repository: ''",
+            .. repositoryLines,
             "  - Diagrams: diagrams/",
             "  - Element Types: types/",
             "  - Glossary: glossary/",
