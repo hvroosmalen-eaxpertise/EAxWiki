@@ -81,8 +81,11 @@ public class StatusPagesNavTests : IDisposable
         var pages = File.ReadAllText(Path.Combine(_outPath, ".pages"));
         Assert.DoesNotContain("  - Repository: ''", pages);
         Assert.Contains("  - Repository:", pages);
-        Assert.Contains("    - PackageA/", pages);
-        Assert.Contains("    - PackageB/", pages);
+        Assert.Contains("    - PackageA", pages);
+        Assert.Contains("    - PackageB", pages);
+        // No trailing slash — awesome-pages rejects "Name/" in nested nav entries with
+        // NavEntryNotFound. Bare name resolves to the subdirectory and inherits its .pages title.
+        Assert.DoesNotContain("    - PackageA/", pages);
         // Sibling nav entries survive the change.
         Assert.Contains("  - Diagrams: diagrams/", pages);
     }

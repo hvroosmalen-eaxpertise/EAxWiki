@@ -56,7 +56,7 @@ internal class InfrastructureWriter(IOutputWriter writer)
         {
             repositoryLines = ["  - Repository:"];
             foreach (var dir in rootPackageDirs)
-                repositoryLines.Add($"    - {dir}/");
+                repositoryLines.Add($"    - {dir}");
         }
 
         await writer.WriteFileAsync(Path.Combine(outputDir, ".pages"), string.Join(Environment.NewLine,
