@@ -236,14 +236,20 @@ internal static class WikiWritebackServer
         logger.LogInformation("Accepting requests only from origins on port {WikiPort} (pass --wiki-port to override)", wikiPort);
         logger.LogInformation("Press Ctrl+C to stop.");
 
-        // Signal readiness to the monitor by writing a "ready" file in the status dir.
-        var readyDir = Path.Combine(outputPath, "status");
-        Directory.CreateDirectory(readyDir);
-        var readyFile = Path.Combine(readyDir, "api-ready");
-        app.Lifetime.ApplicationStarted.Register(() =>
+        // Signal readiness to the monitor by writing a "ready" file at the configured path.
+        // The path MUST live outside outputPath (the mkdocs docs_dir); otherwise mkdocs's file
+        // walk races the API's start/stop delete-recreate cycle and crashes with FileNotFoundError.
+        // The monitor passes --ready-file <stateDir>/api-ready; direct-run users omit it.
+        var readyFile = config.ReadyFile;
+        if (!string.IsNullOrEmpty(readyFile))
         {
-            File.WriteAllText(readyFile, $"{Environment.ProcessId}");
-        });
+            var readyDir = Path.GetDirectoryName(readyFile);
+            if (!string.IsNullOrEmpty(readyDir)) Directory.CreateDirectory(readyDir);
+            app.Lifetime.ApplicationStarted.Register(() =>
+            {
+                File.WriteAllText(readyFile, $"{Environment.ProcessId}");
+            });
+        }
         app.Lifetime.ApplicationStopping.Register(() =>
         {
             logger.LogInformation("API server shutting down; closing EA repository.");
@@ -261,7 +267,7 @@ internal static class WikiWritebackServer
         }
         finally
         {
-            if (File.Exists(readyFile)) File.Delete(readyFile);
+            if (!string.IsNullOrEmpty(readyFile) && File.Exists(readyFile)) File.Delete(readyFile);
             reader.Dispose();
         }
     }

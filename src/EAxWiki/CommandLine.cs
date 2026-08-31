@@ -56,6 +56,10 @@ public static class CommandLine
     {
         Description = "Port the paired 'mkdocs serve' uses (default: 8000); --api only accepts requests whose Origin matches this port.",
     };
+    private static readonly Option<string?> ReadyFile = new("--ready-file")
+    {
+        Description = "Path where the API writes its readiness signal (created on start, deleted on shutdown). The monitor sets this; direct-run users can omit it.",
+    };
     private static readonly Option<string?> Cert = new("--cert")
     {
         Description = "Path to PFX certificate for HTTPS.",
@@ -101,7 +105,7 @@ public static class CommandLine
         var root = new RootCommand(Description)
         {
             RepoArg, Repo, Name, Output, Package, Verbose, Force, Json, WriteBack,
-            Api, ApiPort, WikiPort, Cert, CertPassword, AiEndpoint, AiModel, AiKey, Brand,
+            Api, ApiPort, WikiPort, ReadyFile, Cert, CertPassword, AiEndpoint, AiModel, AiKey, Brand,
         };
         // A bare positional repo is the only legitimate non-option token; anything else is a typo.
         root.TreatUnmatchedTokensAsErrors = true;
@@ -125,6 +129,7 @@ public static class CommandLine
             ApiMode = api,
             ApiPort = apiPort ?? (api ? 8001 : 0),
             WikiPort = r.GetValue(WikiPort) ?? 0,
+            ReadyFile = r.GetValue(ReadyFile),
             CertPath = r.GetValue(Cert),
             CertPassword = r.GetValue(CertPassword),
             AiEndpoint = r.GetValue(AiEndpoint) ?? "",

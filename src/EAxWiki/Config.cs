@@ -14,6 +14,13 @@ public class Config
     public int ApiPort { get; set; } = 0;
     public int WikiPort { get; set; } = 0;
     public int ApiRateLimitPerMinute { get; set; } = 60;
+    /// <summary>
+    /// Optional path where the API writes its readiness signal (created on ApplicationStarted,
+    /// deleted on shutdown). When null, no ready file is written. The monitor sets this to a path
+    /// under its state dir (outside the wiki output) so mkdocs's file walk never sees the file
+    /// flicker in/out during API restarts.
+    /// </summary>
+    public string? ReadyFile { get; set; }
     public string? CertPath { get; set; }
     public string? CertPassword { get; set; }
     public string AiEndpoint { get; set; } = "";

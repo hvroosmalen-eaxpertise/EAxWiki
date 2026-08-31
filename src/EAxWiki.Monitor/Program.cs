@@ -70,8 +70,6 @@ public static class Program
                 return 0;
             }
 
-            EnsureServePlaceholders(options.WikiDir);
-
             var healthStore = new HealthStore();
             var state = healthStore.Load(Path.Combine(stateDir, "health.json"));
             var loop = MonitorApp.Build(options, state, healthStore, stateDir, loggerFactory);
@@ -82,15 +80,6 @@ public static class Program
             MonitorLock.Release(monitorPidPath);
         }
         return 0;
-    }
-
-    private static void EnsureServePlaceholders(string wikiDir)
-    {
-        var statusDir = Path.Combine(wikiDir, "status");
-        Directory.CreateDirectory(statusDir);
-        var apiReady = Path.Combine(statusDir, "api-ready");
-        if (!File.Exists(apiReady))
-            File.WriteAllText(apiReady, "placeholder");
     }
 
     private static string Redact(string? value)

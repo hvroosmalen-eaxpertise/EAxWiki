@@ -63,53 +63,23 @@ if (-not (Test-Path $monitorExe)) {
 
 Write-Host "Using Monitor exe: $monitorExe" -ForegroundColor Green
 
-# Handle kill switch
+# Handle kill switch — delegate to kill-monitor-processes.ps1, which reads pid files from the
+# state dir and cleans them up. Do NOT read a top-level .eaxwiki-monitor/monitor.pid — that
+# file is not the real monitor pid (see comment below).
 if ($Kill) {
     Write-Host "Killing any running monitor instance..." -ForegroundColor Magenta
-
-    # Try to kill via PID file
-    $pidFile = Join-Path $RepoRoot ".eaxwiki-monitor\monitor.pid"
-    if (Test-Path $pidFile) {
-        $savedPid = Get-Content $pidFile -ErrorAction SilentlyContinue
-        if ($savedPid) {
-            Write-Host "Found saved monitor PID: $savedPid" -ForegroundColor Yellow
-            # Try taskkill
-            $result = & taskkill /f /pid $savedPid 2>$null
-            if ($result) {
-                Write-Host "Killed monitor process (PID $savedPid)." -ForegroundColor Green
-            } else {
-                Write-Host "Could not kill PID $savedPid (may already be stopped)." -ForegroundColor Yellow
-            }
-        }
-        Remove-Item $pidFile -Force -ErrorAction SilentlyContinue
-    }
-
-    # Also try to kill using the ProcessKiller
-    $killerDll = Join-Path $RepoRoot "src\EAxWiki.ProcessKiller\bin\Debug\net10.0\EAxWiki.ProcessKiller.dll"
-    if (Test-Path $killerDll) {
-        Write-Host "Using ProcessKiller to terminate monitor-related processes..." -ForegroundColor Green
-        & dotnet "$killerDll" "$RepoRoot" > $null 2>$null
+    $killScript = Join-Path $PSScriptRoot "kill-monitor-processes.ps1"
+    if (Test-Path $killScript) {
+        & $killScript -RepoRoot $RepoRoot
+    } else {
+        Write-Host "kill-monitor-processes.ps1 not found; skipping kill step." -ForegroundColor Yellow
     }
 }
 
-# Acquire monitor lock - check if another monitor is already running
-$monitorPidPath = Join-Path $RepoRoot ".eaxwiki-monitor\monitor.pid"
-if (Test-Path $monitorPidPath) {
-    $existingPid = Get-Content $monitorPidPath -ErrorAction SilentlyContinue
-    if ($existingPid) {
-        Write-Host "WARNING: A monitor instance is already running (PID $existingPid)." -ForegroundColor Red
-        Write-Host "Use -Kill flag to force-terminate it, or ensure the lock file is cleaned up." -ForegroundColor Red
-        Write-Host "Alternatively, remove the lock file manually: Remove-Item $monitorPidPath" -ForegroundColor Yellow
-        $confirm = Read-Host "Do you want to proceed anyway?"
-        if ($confirm -ne 'y' -and $confirm -ne 'Y') {
-            Write-Host "Aborted." -ForegroundColor Yellow
-            exit 1
-        }
-    }
-}
-
-# Write our PID file
-Add-Content -Path $monitorPidPath -Value $PID -Encoding UTF8
+# Duplicate-instance detection and pid-file writing are done inside the .NET monitor
+# via MonitorLock (which uses the per-wiki state dir .eaxwiki-monitor/<hash>/monitor.pid).
+# The wrapper does NOT write .eaxwiki-monitor/monitor.pid — that top-level file was a bug
+# that wrote the wrapper shell's own PID and confused kill-monitor-processes.ps1.
 
 Write-Host "" -ForegroundColor Cyan
 Write-Host "Starting EAxWiki monitor..." -ForegroundColor Cyan
@@ -128,11 +98,9 @@ if ($AiEndpoint) {
     $monitorArgs += '--ai-endpoint', $AiEndpoint
 }
 
-# Start the monitor
+# Start the monitor. The .NET Monitor's MonitorLock owns its own pid file lifecycle
+# (creates on TryAcquire, deletes on Release) in the per-wiki state dir.
 Write-Host "Launching EAxWiki.Monitor.exe..." -ForegroundColor Green
 & "$monitorExe" $monitorArgs
-
-# Clean up PID file on exit
-Remove-Item $monitorPidPath -Force -ErrorAction SilentlyContinue
 
 Write-Host "Monitor process ended." -ForegroundColor Magenta

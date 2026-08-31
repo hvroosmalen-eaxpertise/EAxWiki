@@ -76,6 +76,11 @@ public static class MonitorApp
     {
         var repoRoot = ResolveRepoRoot(stateDir);
         var projDir = Path.Combine(repoRoot, "src", "EAxWiki", "bin", "Debug", "net10.0");
+        // Ready file lives OUTSIDE the wiki dir (mkdocs never walks stateDir), so mkdocs's
+        // file walk can't race the API restart delete/recreate cycle. See issue re: mkdocs
+        // FileNotFoundError on wiki/status/api-ready.
+        var readyFilePath = Path.Combine(stateDir, "api-ready");
+
         var args = new List<string>
         {
             "exec",
@@ -85,6 +90,7 @@ public static class MonitorApp
             "--api", "--api-port", options.ApiPort.ToString(),
             "--wiki-port", options.WikiPort.ToString(),
             "--output", options.WikiDir,
+            "--ready-file", readyFilePath,
         };
         if (!string.IsNullOrEmpty(options.RepoPath))
         {
@@ -99,7 +105,7 @@ public static class MonitorApp
             args,
             Path.Combine(stateDir, "logs"),
             Port: options.ApiPort,
-            ReadyFile: Path.Combine(options.WikiDir, "status", "api-ready"),
+            ReadyFile: readyFilePath,
             ClearPortBeforeStart: true,
             WorkingDirectory: repoRoot,
             ReadyTimeoutSeconds: 120);

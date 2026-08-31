@@ -74,6 +74,7 @@ src/EAxWiki/EAxWiki.csproj.bak
 # exporter's orphan cleanup deletes any top-level directory there it doesn't recognize
 /.eaxwiki-monitor/*/
 /.eaxwiki-monitor/*.log
+/.eaxwiki-monitor/*.pid
 
 # Per-export validation report — regenerated every full export, unstable across runs
 /wiki/.validation-report.json

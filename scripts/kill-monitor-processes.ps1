@@ -65,9 +65,11 @@ if (-not (Test-Path $dllPath)) {
 Write-Host "Using ProcessKiller: $dllPath" -ForegroundColor Green
 
 # Load EAxWiki.Core so [EAxWiki.Core.Monitoring.PidFile] resolves in Phase 1.
+# Load from a byte array (not LoadFrom / LoadFile) — those memory-map and lock the DLL for the
+# lifetime of the PowerShell process, which blocks the next `dotnet build` from overwriting it.
 $coreDll = Join-Path $RepoRoot "src\EAxWiki.Core\bin\Debug\net10.0\EAxWiki.Core.dll"
 if (Test-Path $coreDll) {
-    try { [void][Reflection.Assembly]::LoadFrom($coreDll) } catch { Write-Host "  (warning) Could not load EAxWiki.Core.dll: $_" -ForegroundColor Yellow }
+    try { [void][Reflection.Assembly]::Load([System.IO.File]::ReadAllBytes($coreDll)) } catch { Write-Host "  (warning) Could not load EAxWiki.Core.dll: $_" -ForegroundColor Yellow }
 } else {
     Write-Host "  (warning) EAxWiki.Core.dll not found at $coreDll — Phase 1 will only handle monitor.pid." -ForegroundColor Yellow
 }
