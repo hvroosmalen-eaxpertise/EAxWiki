@@ -18,4 +18,4 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [ERSR S2 Workers in the Value Chain - People](diagrams/ERSR S2 Workers in the Value Chain - People.html) (Custom)
+- 🗺️ [ERSR S2 Workers in the Value Chain - People](diagrams/ERSR S2 Workers in the Value Chain - People.md) (Custom)

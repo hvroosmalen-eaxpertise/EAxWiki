@@ -3,7 +3,7 @@ diagram_id: 50
 notes_hash: 7f90f3ec
 ---
 
-# Facilities
+# 🗺️ Facilities
 
 
 [Home](../../index.html) / [Data Layer](../../Data Layer/index.html) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.html) / [Facilities](../index.html)

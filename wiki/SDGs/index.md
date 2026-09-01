@@ -18,5 +18,5 @@ notes_hash: e3b0c442
 
 ## Sub-packages
 
-- 📁 [Sustainability Development Goals](../Sustainability Development Goals/index.html)
-- 📁 [Mapping SDG to Main](../Mapping SDG to Main/index.html)
+- 📁 [Sustainability Development Goals](../Sustainability Development Goals/index.md)
+- 📁 [Mapping SDG to Main](../Mapping SDG to Main/index.md)

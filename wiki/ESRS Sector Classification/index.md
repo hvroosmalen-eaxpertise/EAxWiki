@@ -18,10 +18,10 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [ESRS Sector Classification](diagrams/ESRS Sector Classification.html) (Logical)
+- 🗺️ [ESRS Sector Classification](diagrams/ESRS Sector Classification.md) (Logical)
   *<p>The Sector Classification is important.</p>*
 
 ## Elements
 
-- <span class="sl" data-layer="uml">Uncategorized</span> [ESRS Sector Classification](ESRS Sector Classification.html)
+- <span class="sl" data-layer="uml">Uncategorized</span> [ESRS Sector Classification](ESRS Sector Classification.md)
   *<p>Sector Classification determine the Sector of the organisation.</p>*

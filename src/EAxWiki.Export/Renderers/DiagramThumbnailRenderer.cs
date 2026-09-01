@@ -19,12 +19,9 @@ internal static class DiagramThumbnailRenderer
             var diagDir = Path.Combine(pkgDir, "diagrams");
             var sanitized = MarkdownHelpers.SanitizeName(diagram.Name);
             var diagLink = Path.GetRelativePath(dir, Path.Combine(diagDir, $"{sanitized}.md")).Replace('\\', '/');
-            var diagLinkHtml = diagLink.EndsWith(".md", StringComparison.OrdinalIgnoreCase)
-                ? diagLink[..^3] + ".html" : diagLink;
-
             var pngRelPath = Path.GetRelativePath(dir, Path.Combine(diagDir, $"{sanitized}.png")).Replace('\\', '/');
 
-            yield return $"  <a href=\"{diagLinkHtml}\" class=\"diagram-thumb\"><img src=\"{pngRelPath}\" alt=\"{diagram.Name}\" loading=\"lazy\"><span>{MarkdownHelpers.EscapeCell(diagram.Name)}</span></a>";
+            yield return $"  <a href=\"{diagLink}\" class=\"diagram-thumb\"><img src=\"{pngRelPath}\" alt=\"{diagram.Name}\" loading=\"lazy\"><span>{MarkdownHelpers.EscapeCell(diagram.Name)}</span></a>";
         }
 
         yield return "</div>";

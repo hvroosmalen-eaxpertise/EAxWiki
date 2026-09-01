@@ -18,11 +18,11 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [Private Parties](diagrams/Private Parties.html) (Custom)
+- 🗺️ [Private Parties](diagrams/Private Parties.md) (Custom)
 
 ## Elements
 
-- <span class="sl" data-layer="edgy-pe">People</span> [Aligned Incentives](Aligned Incentives.html)
+- <span class="sl" data-layer="edgy-pe">People</span> [Aligned Incentives](Aligned Incentives.md)
   *https://alignedincentives.com/our-story/*
-- <span class="sl" data-layer="edgy-pe">People</span> [Impact Academy](Impact Academy.html)
+- <span class="sl" data-layer="edgy-pe">People</span> [Impact Academy](Impact Academy.md)
   *https://www.impactacademyproject.eu/ IMPACT ACADEMY has the main objective to offer a free, multilingual, high level education and training on the subject of the Impact Economy. It is addressed to university students who desire to acquire expertise about the impact skills needed to lead an entrepreneurship aware of its environmental and social responsibilities.*

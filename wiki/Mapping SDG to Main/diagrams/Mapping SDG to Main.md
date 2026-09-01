@@ -3,7 +3,7 @@ diagram_id: 7
 notes_hash: 1c17d89a
 ---
 
-# Mapping SDG to Main
+# 🗺️ Mapping SDG to Main
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [SDGs](../../SDGs/index.html) / [Mapping SDG to Main](../index.html)

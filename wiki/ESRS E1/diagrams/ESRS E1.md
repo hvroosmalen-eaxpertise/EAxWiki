@@ -3,7 +3,7 @@ diagram_id: 3
 notes_hash: fafc6797
 ---
 
-# ESRS E1
+# 🗺️ ESRS E1
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.html) / [ESRS E1](../index.html)

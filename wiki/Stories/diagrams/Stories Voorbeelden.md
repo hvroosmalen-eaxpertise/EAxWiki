@@ -3,7 +3,7 @@ diagram_id: 18
 notes_hash: d52131b3
 ---
 
-# Stories Voorbeelden
+# 🗺️ Stories Voorbeelden
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [Stories](../index.html)

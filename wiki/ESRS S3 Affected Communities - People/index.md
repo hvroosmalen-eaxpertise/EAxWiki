@@ -18,4 +18,4 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [ESRS S3 Affected Communities - People](diagrams/ESRS S3 Affected Communities - People.html) (Custom)
+- 🗺️ [ESRS S3 Affected Communities - People](diagrams/ESRS S3 Affected Communities - People.md) (Custom)

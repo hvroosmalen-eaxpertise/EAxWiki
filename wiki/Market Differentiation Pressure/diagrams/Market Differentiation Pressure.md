@@ -3,7 +3,7 @@ diagram_id: 26
 notes_hash: e3cb2aa5
 ---
 
-# Market Differentiation Pressure
+# 🗺️ Market Differentiation Pressure
 
 
 [Home](../../index.html) / [Archimate](../../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.html) / [Market Differentiation Pressure](../index.html)

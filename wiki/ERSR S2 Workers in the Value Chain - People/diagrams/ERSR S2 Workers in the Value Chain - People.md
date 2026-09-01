@@ -3,7 +3,7 @@ diagram_id: 36
 notes_hash: fafc6797
 ---
 
-# ERSR S2 Workers in the Value Chain - People
+# 🗺️ ERSR S2 Workers in the Value Chain - People
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [ESRS and People](../../ESRS and People/index.html) / [ERSR S2 Workers in the Value Chain - People](../index.html)

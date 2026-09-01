@@ -3,7 +3,7 @@ diagram_id: 40
 notes_hash: 0f551ff9
 ---
 
-# Goals and Objectives
+# 🗺️ Goals and Objectives
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.html) / [ESRS Goals and Objectives](../index.html)

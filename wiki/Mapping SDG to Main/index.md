@@ -18,4 +18,4 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [Mapping SDG to Main](diagrams/Mapping SDG to Main.html) (Custom)
+- 🗺️ [Mapping SDG to Main](diagrams/Mapping SDG to Main.md) (Custom)

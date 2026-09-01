@@ -18,11 +18,11 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [Architecture](diagrams/Architecture.html) (Custom)
+- 🗺️ [Architecture](diagrams/Architecture.md) (Custom)
   *<p>Updated diagram description from smoke test at 09:50:05</p>*
 
 ## Sub-packages
 
-- 📁 [Asset](../Asset/index.html)
-- 📁 [Capability](../Capability/index.html)
-- 📁 [Process](../Process/index.html)
+- 📁 [Asset](../Asset/index.md)
+- 📁 [Capability](../Capability/index.md)
+- 📁 [Process](../Process/index.md)

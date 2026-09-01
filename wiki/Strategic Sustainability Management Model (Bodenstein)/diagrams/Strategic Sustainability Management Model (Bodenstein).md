@@ -3,7 +3,7 @@ diagram_id: 22
 notes_hash: e0ea570d
 ---
 
-# Strategic Sustainability Management Model (Bodenstein)
+# 🗺️ Strategic Sustainability Management Model (Bodenstein)
 
 
 [Home](../../index.html) / [Archimate](../../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](../index.html)

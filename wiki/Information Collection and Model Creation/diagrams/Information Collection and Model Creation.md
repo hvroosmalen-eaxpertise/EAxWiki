@@ -3,7 +3,7 @@ diagram_id: 43
 notes_hash: d95ef852
 ---
 
-# Information Collection and Model Creation
+# 🗺️ Information Collection and Model Creation
 
 
 [Home](../../index.html) / [Model Creation](../../Model Creation/index.html) / [Information Collection and Model Creation](../index.html)

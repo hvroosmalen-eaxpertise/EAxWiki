@@ -3,7 +3,7 @@ diagram_id: 39
 notes_hash: 4ea79420
 ---
 
-# ESRS Required Companies
+# 🗺️ ESRS Required Companies
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [European Sustainability Reporting Standards](../../European Sustainability Reporting Standards/index.html) / [ESRS Required Companies](../index.html)

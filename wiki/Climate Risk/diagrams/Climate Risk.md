@@ -3,7 +3,7 @@ diagram_id: 24
 notes_hash: fa202955
 ---
 
-# Climate Risk
+# 🗺️ Climate Risk
 
 
 [Home](../../index.html) / [Archimate](../../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.html) / [Climate Risk](../index.html)

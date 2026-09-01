@@ -3,7 +3,7 @@ diagram_id: 2
 notes_hash: e26db5e1
 ---
 
-# ESRS
+# 🗺️ ESRS
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [European Sustainability Reporting Standards](../index.html)

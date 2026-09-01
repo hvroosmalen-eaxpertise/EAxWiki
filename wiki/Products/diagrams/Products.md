@@ -3,7 +3,7 @@ diagram_id: 49
 notes_hash: b4507156
 ---
 
-# Products
+# 🗺️ Products
 
 
 [Home](../../index.html) / [Data Layer](../../Data Layer/index.html) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.html) / [Products](../index.html)

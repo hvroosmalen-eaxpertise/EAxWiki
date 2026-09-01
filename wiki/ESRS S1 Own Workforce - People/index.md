@@ -18,4 +18,4 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [ESRS S1 Own Workforce - People](diagrams/ESRS S1 Own Workforce - People.html) (Custom)
+- 🗺️ [ESRS S1 Own Workforce - People](diagrams/ESRS S1 Own Workforce - People.md) (Custom)

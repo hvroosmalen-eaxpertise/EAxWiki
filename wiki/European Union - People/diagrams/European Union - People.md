@@ -3,7 +3,7 @@ diagram_id: 37
 notes_hash: acc6783b
 ---
 
-# European Union - People
+# 🗺️ European Union - People
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [ESRS and People](../../ESRS and People/index.html) / [European Union - People](../index.html)

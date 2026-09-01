@@ -18,4 +18,4 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [Reputation Risk](diagrams/Reputation Risk.html) (Logical)
+- 🗺️ [Reputation Risk](diagrams/Reputation Risk.md) (Logical)

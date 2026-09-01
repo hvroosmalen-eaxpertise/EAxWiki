@@ -18,9 +18,9 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [ESRS E2](diagrams/ESRS E2.html) (Custom)
+- 🗺️ [ESRS E2](diagrams/ESRS E2.md) (Custom)
 
 ## Elements
 
-- <span class="sl" data-layer="edgy-id">Content</span> [ESRS E2 Pollution](ESRS E2 Pollution.html)
+- <span class="sl" data-layer="edgy-id">Content</span> [ESRS E2 Pollution](ESRS E2 Pollution.md)
   *For more information: https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAssets%2F09%2520Draft%2520ESRS%2520E2%2520Pollution%2520November%25202022.pdf*

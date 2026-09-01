@@ -135,7 +135,7 @@ internal static class MarkdownHelpers
     {
         var elemName = SanitizeName(element.Name);
         var link = Path.GetRelativePath(fromDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
-        return link.EndsWith(".md", StringComparison.OrdinalIgnoreCase) ? link[..^3] + ".html" : link;
+        return link;  // Keep .md extension - .html links cause validation warnings
     }
 
     internal static string BuildBreadcrumb(int packageId, string currentPageDir, string outputDir, Dictionary<int, (string Name, int? ParentId)> packageLookup, Action<string>? onMissingPackage = null)

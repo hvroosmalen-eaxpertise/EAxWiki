@@ -3,7 +3,7 @@ diagram_id: 42
 notes_hash: ef93713e
 ---
 
-# ESRS Sector Classification
+# 🗺️ ESRS Sector Classification
 
 
 [Home](../../index.html) / [Archimate](../../Archimate/index.html) / [ESRS Classification](../../ESRS Classification/index.html) / [ESRS Sector Classification](../index.html)

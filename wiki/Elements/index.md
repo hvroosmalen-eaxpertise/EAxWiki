@@ -18,9 +18,9 @@ notes_hash: e3b0c442
 
 ## Sub-packages
 
-- 📁 [Assessments](../Assessments/index.html)
-- 📁 [Capabilities](../Capabilities/index.html)
-- 📁 [Courses of Action](../Courses of Action/index.html)
-- 📁 [Drivers](../Drivers/index.html)
-- 📁 [Goals](../Goals/index.html)
-- 📁 [Outcomes](../Outcomes/index.html)
+- 📁 [Assessments](../Assessments/index.md)
+- 📁 [Capabilities](../Capabilities/index.md)
+- 📁 [Courses of Action](../Courses of Action/index.md)
+- 📁 [Drivers](../Drivers/index.md)
+- 📁 [Goals](../Goals/index.md)
+- 📁 [Outcomes](../Outcomes/index.md)

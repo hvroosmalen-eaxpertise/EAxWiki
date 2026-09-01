@@ -18,4 +18,4 @@ notes_hash: e3b0c442
 
 ## Sub-packages
 
-- 📁 [ESRS Sector Classification](../ESRS Sector Classification/index.html)
+- 📁 [ESRS Sector Classification](../ESRS Sector Classification/index.md)

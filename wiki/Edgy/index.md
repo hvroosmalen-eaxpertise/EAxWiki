@@ -18,11 +18,11 @@ notes_hash: 762738c7
 
 ## Sub-packages
 
-- 📁 [SDGs](../SDGs/index.html)
-- 📁 [ESRS](../ESRS/index.html)
-- 📁 [Base](../Base/index.html)
-- 📁 [Identity](../Identity/index.html)
-- 📁 [Architecture](../Architecture/index.html)
-- 📁 [Experience](../Experience/index.html)
-- 📁 [Metrics](../Metrics/index.html)
-- 📁 [Stories](../Stories/index.html)
+- 📁 [SDGs](../SDGs/index.md)
+- 📁 [ESRS](../ESRS/index.md)
+- 📁 [Base](../Base/index.md)
+- 📁 [Identity](../Identity/index.md)
+- 📁 [Architecture](../Architecture/index.md)
+- 📁 [Experience](../Experience/index.md)
+- 📁 [Metrics](../Metrics/index.md)
+- 📁 [Stories](../Stories/index.md)

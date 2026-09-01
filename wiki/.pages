@@ -1,5 +1,9 @@
 nav:
-  - Repository: ''
+  - Repository:
+    - Edgy
+    - Archimate
+    - Model Creation
+    - Data Layer
   - Diagrams: diagrams/
   - Element Types: types/
   - Glossary: glossary/

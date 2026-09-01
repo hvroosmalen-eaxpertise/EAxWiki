@@ -3,7 +3,7 @@ diagram_id: 44
 notes_hash: 81393151
 ---
 
-# Introduction EDGY Presentation 13 May Event
+# 🗺️ Introduction EDGY Presentation 13 May Event
 
 
 [Home](../../index.html) / [Model Creation](../../Model Creation/index.html) / [Introduction EurSuRA](../index.html)

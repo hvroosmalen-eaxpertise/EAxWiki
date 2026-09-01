@@ -200,7 +200,7 @@ public class MarkdownExporter : IWikiExporter
         lines.Add(string.Empty);
 
         foreach (var pkg in rootPackages)
-            lines.Add($"- \U0001F4C1 [{pkg.Name}]({MarkdownHelpers.SanitizeName(pkg.Name)}/index.html)");
+            lines.Add($"- \U0001F4C1 [{pkg.Name}]({MarkdownHelpers.SanitizeName(pkg.Name)}/index.md)");
 
         lines.Add(string.Empty);
         await _writer.WriteFileAsync(Path.Combine(outputDir, "index.md"), string.Join(Environment.NewLine, lines), ct);

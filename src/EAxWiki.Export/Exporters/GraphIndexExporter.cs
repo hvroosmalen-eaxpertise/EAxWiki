@@ -19,8 +19,7 @@ internal class GraphIndexExporter(IOutputWriter writer, ILogger logger)
             var layer = MarkdownHelpers.GetLayer(elem);
             nodeLayers[elem.Id] = layer;
 
-            var relPath = Path.GetRelativePath(ctx.OutputPath, Path.Combine(pkgDir, MarkdownHelpers.SanitizeName(elem.Name) + ".md"));
-            var url = Path.ChangeExtension(relPath, ".html").Replace('\\', '/');
+            var url = Path.GetRelativePath(ctx.OutputPath, Path.Combine(pkgDir, MarkdownHelpers.SanitizeName(elem.Name) + ".md")).Replace('\\', '/');
 
             nodes.Add(new Dictionary<string, object?>
             {

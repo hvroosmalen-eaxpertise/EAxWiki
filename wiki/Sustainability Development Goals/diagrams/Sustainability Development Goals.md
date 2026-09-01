@@ -3,7 +3,7 @@ diagram_id: 1
 notes_hash: 731b4601
 ---
 
-# Sustainability Development Goals
+# 🗺️ Sustainability Development Goals
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [SDGs](../../SDGs/index.html) / [Sustainability Development Goals](../index.html)

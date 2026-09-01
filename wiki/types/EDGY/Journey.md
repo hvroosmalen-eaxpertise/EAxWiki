@@ -2,4 +2,4 @@
 
 1 element(s):
 
-- <span class="sl" data-layer="edgy-ex">Journey</span> [Green Customer Journey](../../Journey/Green Customer Journey.html)
+- <span class="sl" data-layer="edgy-ex">Journey</span> [Green Customer Journey](../../Journey/Green Customer Journey.md)

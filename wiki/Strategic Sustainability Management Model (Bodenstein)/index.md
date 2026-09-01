@@ -19,13 +19,13 @@ This model integrates sustainability as a strategic variable into corporate stra
 
 ## Diagrams
 
-- 🗺️ [Strategic Sustainability Management Model (Bodenstein)](diagrams/Strategic Sustainability Management Model (Bodenstein).html) (Logical)
+- 🗺️ [Strategic Sustainability Management Model (Bodenstein)](diagrams/Strategic Sustainability Management Model (Bodenstein).md) (Logical)
   *This diagram shows the contents of the book in a visual way. The following sections contain the structure per Driver.*
 
 ## Sub-packages
 
-- 📁 [Stakeholder Expectations](../Stakeholder Expectations/index.html)
-- 📁 [Climate Risk](../Climate Risk/index.html)
-- 📁 [Regulatory Pressure](../Regulatory Pressure/index.html)
-- 📁 [Market Differentiation Pressure](../Market Differentiation Pressure/index.html)
-- 📁 [Reputation Risk](../Reputation Risk/index.html)
+- 📁 [Stakeholder Expectations](../Stakeholder Expectations/index.md)
+- 📁 [Climate Risk](../Climate Risk/index.md)
+- 📁 [Regulatory Pressure](../Regulatory Pressure/index.md)
+- 📁 [Market Differentiation Pressure](../Market Differentiation Pressure/index.md)
+- 📁 [Reputation Risk](../Reputation Risk/index.md)

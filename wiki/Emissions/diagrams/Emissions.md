@@ -3,7 +3,7 @@ diagram_id: 51
 notes_hash: 2583101b
 ---
 
-# Emissions
+# 🗺️ Emissions
 
 
 [Home](../../index.html) / [Data Layer](../../Data Layer/index.html) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.html) / [Emissions](../index.html)

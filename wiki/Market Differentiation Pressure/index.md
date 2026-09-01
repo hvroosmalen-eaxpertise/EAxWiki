@@ -18,4 +18,4 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [Market Differentiation Pressure](diagrams/Market Differentiation Pressure.html) (Logical)
+- 🗺️ [Market Differentiation Pressure](diagrams/Market Differentiation Pressure.md) (Logical)

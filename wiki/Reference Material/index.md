@@ -18,5 +18,5 @@ notes_hash: e3b0c442
 
 ## Sub-packages
 
-- 📁 [Reference Documents](../Reference Documents/index.html)
-- 📁 [Reference Websites](../Reference Websites/index.html)
+- 📁 [Reference Documents](../Reference Documents/index.md)
+- 📁 [Reference Websites](../Reference Websites/index.md)

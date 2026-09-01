@@ -3,7 +3,7 @@ diagram_id: 25
 notes_hash: abd1369b
 ---
 
-# Regulatory Pressure
+# 🗺️ Regulatory Pressure
 
 
 [Home](../../index.html) / [Archimate](../../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.html) / [Regulatory Pressure](../index.html)

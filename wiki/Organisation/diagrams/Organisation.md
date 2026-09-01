@@ -3,7 +3,7 @@ diagram_id: 48
 notes_hash: c79075de
 ---
 
-# Organisation
+# 🗺️ Organisation
 
 
 [Home](../../index.html) / [Data Layer](../../Data Layer/index.html) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.html) / [Organisation](../index.html)

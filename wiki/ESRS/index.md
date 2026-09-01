@@ -18,5 +18,5 @@ notes_hash: e3b0c442
 
 ## Sub-packages
 
-- 📁 [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.html)
-- 📁 [ESRS and People](../ESRS and People/index.html)
+- 📁 [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.md)
+- 📁 [ESRS and People](../ESRS and People/index.md)

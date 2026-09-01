@@ -18,4 +18,4 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [ESRS E1, E2, E3, E4, E5, G1 - People](diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.html) (Custom)
+- 🗺️ [ESRS E1, E2, E3, E4, E5, G1 - People](diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md) (Custom)

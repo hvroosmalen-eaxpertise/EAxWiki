@@ -18,4 +18,4 @@ notes_hash: e3b0c442
 
 ## Sub-packages
 
-- 📁 [People](../People/index.html)
+- 📁 [People](../People/index.md)

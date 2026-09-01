@@ -18,4 +18,4 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [Stakeholder Expectations](diagrams/Stakeholder Expectations.html) (Logical)
+- 🗺️ [Stakeholder Expectations](diagrams/Stakeholder Expectations.md) (Logical)

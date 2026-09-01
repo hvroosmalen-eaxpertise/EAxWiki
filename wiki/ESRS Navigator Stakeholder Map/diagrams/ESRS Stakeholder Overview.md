@@ -3,7 +3,7 @@ diagram_id: 19
 notes_hash: 1c604c5c
 ---
 
-# ESRS Stakeholder Overview
+# 🗺️ ESRS Stakeholder Overview
 
 
 [Home](../../index.html) / [Archimate](../../Archimate/index.html) / [ESRS Navigator Stakeholder Map](../index.html)

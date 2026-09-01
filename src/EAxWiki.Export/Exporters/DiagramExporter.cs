@@ -114,7 +114,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 
                     foreach (var (elemEa, elemDir) in diagramElements.OrderBy(e => e.Element.Name))
                     {
-                        var elemLink = Path.GetRelativePath(diagramsDir, Path.Combine(elemDir, $"{MarkdownHelpers.SanitizeName(elemEa.Name)}.html")).Replace('\\', '/');
+                        var elemLink = Path.GetRelativePath(diagramsDir, Path.Combine(elemDir, $"{MarkdownHelpers.SanitizeName(elemEa.Name)}.md")).Replace('\\', '/');
                         lines.Add($"- {MarkdownHelpers.GetStereotypeLabel(elemEa)} [{elemEa.Name}]({elemLink})");
                     }
 
@@ -163,7 +163,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 
             foreach (var (diagram, pkgDir, path) in sorted)
             {
-                var diagramPage = Path.GetRelativePath(diagramsDir, Path.Combine(pkgDir, "diagrams", $"{MarkdownHelpers.SanitizeName(diagram.Name)}.html")).Replace('\\', '/');
+                var diagramPage = Path.GetRelativePath(diagramsDir, Path.Combine(pkgDir, "diagrams", $"{MarkdownHelpers.SanitizeName(diagram.Name)}.md")).Replace('\\', '/');
                 var link = $"\U0001F5FA️ [{MarkdownHelpers.EscapeCell(diagram.Name)}]({diagramPage})";
 
                 var modified = !string.IsNullOrWhiteSpace(diagram.ModifiedDate) && DateTime.TryParse(diagram.ModifiedDate, out var dt)

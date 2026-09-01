@@ -3,7 +3,7 @@ diagram_id: 27
 notes_hash: 3b97211b
 ---
 
-# Reputation Risk
+# 🗺️ Reputation Risk
 
 
 [Home](../../index.html) / [Archimate](../../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.html) / [Reputation Risk](../index.html)

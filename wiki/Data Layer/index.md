@@ -18,4 +18,4 @@ notes_hash: e3b0c442
 
 ## Sub-packages
 
-- 📁 [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html)
+- 📁 [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.md)

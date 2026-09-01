@@ -3,7 +3,7 @@ diagram_id: 8
 notes_hash: fafc6797
 ---
 
-# Metrics
+# 🗺️ Metrics
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [Metrics](../index.html)

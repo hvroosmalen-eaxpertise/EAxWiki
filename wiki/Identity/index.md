@@ -18,10 +18,10 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [Identity](diagrams/Identity.html) (Custom)
+- 🗺️ [Identity](diagrams/Identity.md) (Custom)
 
 ## Sub-packages
 
-- 📁 [Content](../Content/index.html)
-- 📁 [Purpose](../Purpose/index.html)
-- 📁 [Story](../Story/index.html)
+- 📁 [Content](../Content/index.md)
+- 📁 [Purpose](../Purpose/index.md)
+- 📁 [Story](../Story/index.md)

@@ -18,7 +18,7 @@ notes_hash: e3b0c442
 
 ## Sub-packages
 
-- 📁 [Organisation](../Organisation/index.html)
-- 📁 [Products](../Products/index.html)
-- 📁 [Facilities](../Facilities/index.html)
-- 📁 [Emissions](../Emissions/index.html)
+- 📁 [Organisation](../Organisation/index.md)
+- 📁 [Products](../Products/index.md)
+- 📁 [Facilities](../Facilities/index.md)
+- 📁 [Emissions](../Emissions/index.md)

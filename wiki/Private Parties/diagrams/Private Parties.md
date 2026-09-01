@@ -3,7 +3,7 @@ diagram_id: 41
 notes_hash: fc2d6b94
 ---
 
-# Private Parties
+# 🗺️ Private Parties
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [Base](../../Base/index.html) / [People](../../People/index.html) / [Private Parties](../index.html)

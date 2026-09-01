@@ -21,7 +21,7 @@ internal static class ReferencedByTableRenderer
             if (ctx.ElementLookup.TryGetValue(sourceId, out var srcElem))
             {
                 var srcName = MarkdownHelpers.SanitizeName(srcElem.Element.Name);
-                var relativePath = Path.GetRelativePath(dir, Path.Combine(srcElem.PackageDir, $"{srcName}.html")).Replace('\\', '/');
+                var relativePath = Path.GetRelativePath(dir, Path.Combine(srcElem.PackageDir, $"{srcName}.md")).Replace('\\', '/');
                 source = $"[{MarkdownHelpers.EscapeCell(srcElem.Element.Name)}]({relativePath})";
             }
             else

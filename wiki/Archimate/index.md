@@ -18,8 +18,8 @@ notes_hash: e3b0c442
 
 ## Sub-packages
 
-- 📁 [Elements](../Elements/index.html)
-- 📁 [ESRS Classification](../ESRS Classification/index.html)
-- 📁 [Reference Material](../Reference Material/index.html)
-- 📁 [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html)
-- 📁 [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/index.html)
+- 📁 [Elements](../Elements/index.md)
+- 📁 [ESRS Classification](../ESRS Classification/index.md)
+- 📁 [Reference Material](../Reference Material/index.md)
+- 📁 [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.md)
+- 📁 [Strategic Sustainability Management Model (Bodenstein)](../Strategic Sustainability Management Model (Bodenstein)/index.md)

@@ -18,10 +18,10 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [Experience](diagrams/Experience.html) (Custom)
+- 🗺️ [Experience](diagrams/Experience.md) (Custom)
 
 ## Sub-packages
 
-- 📁 [Channel](../Channel/index.html)
-- 📁 [Journey](../Journey/index.html)
-- 📁 [Task](../Task/index.html)
+- 📁 [Channel](../Channel/index.md)
+- 📁 [Journey](../Journey/index.md)
+- 📁 [Task](../Task/index.md)

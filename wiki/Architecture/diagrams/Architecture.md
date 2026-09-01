@@ -3,7 +3,7 @@ diagram_id: 6
 notes_hash: 5c8e309f
 ---
 
-# Architecture
+# 🗺️ Architecture
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [Architecture](../index.html)

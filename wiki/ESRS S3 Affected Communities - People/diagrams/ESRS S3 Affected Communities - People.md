@@ -3,7 +3,7 @@ diagram_id: 35
 notes_hash: fafc6797
 ---
 
-# ESRS S3 Affected Communities - People
+# 🗺️ ESRS S3 Affected Communities - People
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [ESRS and People](../../ESRS and People/index.html) / [ESRS S3 Affected Communities - People](../index.html)

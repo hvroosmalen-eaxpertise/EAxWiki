@@ -6,7 +6,7 @@ E:\Users\Han\Repos\EAxWiki\model\EurSuRA.qea
 
 ## Repository Structure
 
-- 📁 [Edgy](Edgy/index.html)
-- 📁 [Archimate](Archimate/index.html)
-- 📁 [Model Creation](Model Creation/index.html)
-- 📁 [Data Layer](Data Layer/index.html)
+- 📁 [Edgy](Edgy/index.md)
+- 📁 [Archimate](Archimate/index.md)
+- 📁 [Model Creation](Model Creation/index.md)
+- 📁 [Data Layer](Data Layer/index.md)

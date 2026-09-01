@@ -3,7 +3,7 @@ diagram_id: 45
 notes_hash: 944bd86b
 ---
 
-# ESRS Stakeholder Map
+# 🗺️ ESRS Stakeholder Map
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [ESRS and People](../index.html)

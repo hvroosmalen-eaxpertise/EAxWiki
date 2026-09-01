@@ -3,7 +3,7 @@ diagram_id: 23
 notes_hash: 60a4cdc7
 ---
 
-# Stakeholder Expectations
+# 🗺️ Stakeholder Expectations
 
 
 [Home](../../index.html) / [Archimate](../../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.html) / [Stakeholder Expectations](../index.html)
