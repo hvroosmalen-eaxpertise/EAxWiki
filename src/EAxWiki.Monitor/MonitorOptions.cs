@@ -28,6 +28,7 @@ public sealed record MonitorOptions
     public string AiMode { get; init; } = "none";
     public string? AiEndpoint { get; init; }
     public string? AiModel { get; init; }
+    public string? AiKey { get; init; }
     public string? LlamaExePath { get; init; }
     public string? LlamaModelPath { get; init; }
 }

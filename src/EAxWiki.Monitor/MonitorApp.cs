@@ -97,6 +97,24 @@ public static class MonitorApp
             args.Add("--repo");
             args.Add(options.RepoPath);
         }
+        // Forward the effective AI endpoint/model/key so the write-back API's
+        // /api/ai-suggest and /api/ai-suggest-diagram handlers know where to send
+        // requests. Without these the Suggest button 400s even when the LLM is up.
+        if (!string.IsNullOrEmpty(options.AiEndpoint))
+        {
+            args.Add("--ai-endpoint");
+            args.Add(options.AiEndpoint);
+        }
+        if (!string.IsNullOrEmpty(options.AiModel))
+        {
+            args.Add("--ai-model");
+            args.Add(options.AiModel);
+        }
+        if (!string.IsNullOrEmpty(options.AiKey))
+        {
+            args.Add("--ai-key");
+            args.Add(options.AiKey);
+        }
 
         return new ServiceSpec(
             "api",
