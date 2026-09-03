@@ -27,7 +27,7 @@ internal static class RelationshipsTableRenderer
             if (ctx.ElementLookup.TryGetValue(otherId, out var other))
             {
                 var otherName = MarkdownHelpers.SanitizeName(other.Element.Name);
-                var relativePath = Path.GetRelativePath(dir, Path.Combine(other.PackageDir, $"{otherName}.md")).Replace('\\', '/');
+                var relativePath = Path.GetRelativePath(dir, Path.Combine(other.PackageDir, $"{otherName}.html")).Replace('\\', '/');
                 connectedTo = $"[{MarkdownHelpers.EscapeCell(other.Element.Name)}]({relativePath})";
             }
             else
