@@ -601,8 +601,11 @@ public class SchedulerForm : Form
             _llmProcess = process;
             _llmStopButton.Enabled = true;
             _llmStartButton.Text = "Running";
-            _aiEndpointBox.Text = $"http://localhost:{port}/v1";
-            AppendOutput($"LLM server started (PID {process.Id}). AI endpoint: http://localhost:{port}/v1");
+            // Do NOT write the local llama URL into _aiEndpointBox. That box belongs to the
+            // Remote LLM section; leaking the local URL there made the two sections indistinguishable
+            // and persisted a phantom "remote" endpoint into .eaxwiki. Local LLM is fully addressed
+            // by _llmExeBox / _llmModelPathBox / _llmPortBox.
+            AppendOutput($"LLM server started (PID {process.Id}) on port {port}.");
 
             // Read output in background to detect failures
             _ = Task.Run(async () =>
@@ -748,8 +751,11 @@ public class SchedulerForm : Form
             _aiEndpointBox.Text = "https://api.openai.com/v1";
             _aiModelBox.Text = "gpt-4o-mini";
             _aiKeyBox.Text = "";
-            _llmExeBox.Text = "E:\\llama-cpp\\llama-server.exe";
-            _llmModelPathBox.Text = "E:\\models\\llama-3.2-3b-q4.gguf";
+            // Local LLM paths are per-machine — leave blank so the Browse buttons drive discovery.
+            // Hardcoded E:\ paths here silently activated the local LLM on one specific machine
+            // and misled every other install into saving broken paths.
+            _llmExeBox.Text = "";
+            _llmModelPathBox.Text = "";
             _llmPortBox.Value = 8080;
             return;
         }
@@ -768,11 +774,21 @@ public class SchedulerForm : Form
             _llmModeNone.Checked = aiMode == "none";
             _llmModeLocal.Checked = aiMode == "local";
             _llmModeRemote.Checked = aiMode == "remote";
-            _aiEndpointBox.Text = config.AiEndpoint is null or "" ? "https://api.openai.com/v1" : config.AiEndpoint;
-            _aiModelBox.Text = config.AiModel is null or "" or "llama-3.2-3b" ? "gpt-4o-mini" : config.AiModel;
+            // Load-time defaults must not inject values the user didn't set — they lie about
+            // config state and get silently persisted on Save. Remote endpoint / model / llama
+            // paths stay blank when the config doesn't have them; the fresh-form Reset button
+            // (below) provides sensible starting values instead. Also strip any leaked
+            // "http://localhost" AiEndpoint left over from the old StartLlmAsync bug — that
+            // value belonged to Local LLM state, not the Remote endpoint.
+            var loadedEndpoint = config.AiEndpoint ?? "";
+            if (loadedEndpoint.StartsWith("http://localhost", StringComparison.OrdinalIgnoreCase) ||
+                loadedEndpoint.StartsWith("http://127.0.0.1", StringComparison.OrdinalIgnoreCase))
+                loadedEndpoint = "";
+            _aiEndpointBox.Text = loadedEndpoint;
+            _aiModelBox.Text = config.AiModel ?? "";
             _aiKeyBox.Text = config.AiKey ?? "";
-            _llmExeBox.Text = config.LlamaExePath ?? "E:\\llama-cpp\\llama-server.exe";
-            _llmModelPathBox.Text = config.LlamaModelPath ?? "E:\\models\\llama-3.2-3b-q4.gguf";
+            _llmExeBox.Text = config.LlamaExePath ?? "";
+            _llmModelPathBox.Text = config.LlamaModelPath ?? "";
             _llmPortBox.Value = Math.Clamp(config.LlmPort ?? 8080, (int)_llmPortBox.Minimum, (int)_llmPortBox.Maximum);
         }
         catch (Exception ex)
@@ -1235,6 +1251,7 @@ public class SchedulerForm : Form
 
         // Save config so .eaxwiki has webhooks, ports, etc.
         SaveEaxwikiConfig();
+        SaveAiConfig();  // Also save AI endpoint/mode/model to .eaxwiki
         AppendOutput("Config saved to .eaxwiki.");
 
         var monitorExe = Path.Combine(_repoRoot, "src", "EAxWiki.Monitor", "bin", "Debug", "net10.0", "EAxWiki.Monitor.exe");
