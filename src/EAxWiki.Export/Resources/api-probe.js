@@ -1,6 +1,38 @@
 (function () {
   'use strict';
 
+  // Shared edit guard: while any editor widget on the page has an open textarea, we suspend
+  // page reloads (mkdocs livereload fires on every wiki file change — including status
+  // pages the monitor writes every ~10 min and every write-back save — which otherwise
+  // destroys an in-progress edit mid-typing, mid-Suggest, mid-Save). Each editor calls
+  // EAxEditGuard.acquire() on enterEditMode and .release() on exit; when the count is
+  // non-zero, location.reload() is buffered and applied when the last editor releases.
+  if (!window.EAxEditGuard) {
+    var count = 0;
+    var pending = false;
+    var origReload = window.location.reload.bind(window.location);
+    try {
+      Object.defineProperty(window.location, 'reload', {
+        configurable: true,
+        value: function () {
+          if (count > 0) { pending = true; return; }
+          return origReload.apply(this, arguments);
+        }
+      });
+    } catch (e) {
+      // Some browsers freeze the location object; if we can't override, fall back to no-op guard.
+      console.warn('EAxEditGuard: could not override location.reload:', e);
+    }
+    window.EAxEditGuard = {
+      acquire: function () { count++; },
+      release: function () {
+        if (count > 0) count--;
+        if (count === 0 && pending) { pending = false; origReload(); }
+      },
+      isActive: function () { return count > 0; }
+    };
+  }
+
   function findWidget() {
     return document.getElementById('ea-status-editor')
         || document.getElementById('ea-notes-editor')

@@ -83,6 +83,7 @@
       cancelBtn.addEventListener('click', exitEditMode);
       applyBtn.addEventListener('click', apply);
       acquireEditLock(eaId);
+      if (window.EAxEditGuard) window.EAxEditGuard.acquire();
     }
 
     function exitEditMode() {
@@ -93,6 +94,7 @@
       select = applyBtn = cancelBtn = msg = null;
       badge.style.display = '';
       editBtn.style.display = '';
+      if (window.EAxEditGuard) window.EAxEditGuard.release();
     }
 
     function apply() {
