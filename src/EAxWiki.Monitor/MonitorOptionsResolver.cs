@@ -12,8 +12,6 @@ public static class MonitorOptionsResolver
 {
     private const int DefaultPort = 8000;
     private const int DefaultLlmPort = 8080;
-    private const string DefaultLlamaExe = @"E:\llama-cpp\llama-server.exe";
-    private const string DefaultLlamaModel = @"E:\models\llama-3.2-3b-q4.gguf";
 
     public static MonitorOptions Resolve(CliOptions cli, string repoRoot,
         Func<string, string?> getEnv, LocalConfigStore.Config? file)
@@ -28,27 +26,32 @@ public static class MonitorOptionsResolver
             ? (Path.IsPathRooted(outDir) ? outDir : Path.Combine(repoRoot, outDir))
             : Path.Combine(repoRoot, "wiki");
 
-        var llamaExe = file?.LlamaExePath is { Length: > 0 } le ? le : DefaultLlamaExe;
-        var llamaModel = file?.LlamaModelPath is { Length: > 0 } lm ? lm : DefaultLlamaModel;
+        // Llama paths come only from the config file. There are no hardcoded defaults —
+        // machine-specific paths as constants would silently activate a local LLM on any
+        // machine that happens to have files at those locations. SchedulerUI / .eaxwiki
+        // is the single source of truth.
+        var llamaExe = file?.LlamaExePath is { Length: > 0 } le ? le : null;
+        var llamaModel = file?.LlamaModelPath is { Length: > 0 } lm ? lm : null;
 
         var aiMode = file?.AiMode ?? "none";
         if ((aiMode == "none") && file?.AiEndpoint is { Length: > 0 } ep &&
             (ep.StartsWith("http://localhost", StringComparison.OrdinalIgnoreCase) ||
              ep.StartsWith("http://127.0.0.1", StringComparison.OrdinalIgnoreCase)) &&
-            File.Exists(llamaExe))
+            llamaExe is not null && llamaModel is not null &&
+            File.Exists(llamaExe) && File.Exists(llamaModel))
         {
             aiMode = "local";
         }
-        // Issue #94: if there IS a .eaxwiki config file (user opted into
-        // configuring EAxWiki at all) and the resolved llama paths both exist
-        // on disk (from the file or from the defaults), and the user did NOT
-        // explicitly set AiMode, treat that as intent to run the LLM locally.
-        // Otherwise the LLM watchdog stays disarmed and llama-server never
-        // starts. Explicit AiMode="none" remains an opt-out. The `file != null`
-        // gate keeps "no config at all" from silently spawning a local LLM
-        // just because the default paths happen to exist on this machine.
-        if (aiMode == "none" && file != null && file.AiMode is null &&
-            File.Exists(llamaExe) && File.Exists(llamaModel))
+        // Issue #94: if the user configured both LlamaExePath and LlamaModelPath in .eaxwiki
+        // (paths present in the config AND resolving to real files on disk) and did NOT set
+        // AiMode, treat that as intent to run the LLM locally. Otherwise the LLM watchdog
+        // stays disarmed and llama-server never starts. Explicit AiMode="none" remains an
+        // opt-out. Requires the paths in the config itself — no filesystem-based auto-enable
+        // from defaults, since we no longer have any.
+        if (aiMode == "none" && file?.AiMode is null &&
+            file?.LlamaExePath is { Length: > 0 } fileLlamaExe &&
+            file?.LlamaModelPath is { Length: > 0 } fileLlamaModel &&
+            File.Exists(fileLlamaExe) && File.Exists(fileLlamaModel))
         {
             aiMode = "local";
         }

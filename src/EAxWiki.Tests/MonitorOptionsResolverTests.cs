@@ -113,12 +113,14 @@ public class MonitorOptionsResolverTests
         try
         {
             var exe = Path.Combine(dir, "llama-server.exe");
+            var model = Path.Combine(dir, "model.gguf");
             System.IO.File.WriteAllText(exe, "x");
+            System.IO.File.WriteAllText(model, "y");
             var o = Resolve(new CliOptions(), File(
                 aiEndpoint: "http://localhost:8080/v1",
                 aiMode: "none",
                 llamaExePath: exe,
-                llamaModelPath: Path.Combine(dir, "model.gguf")));
+                llamaModelPath: model));
             Assert.Equal("local", o.AiMode);
         }
         finally { Directory.Delete(dir, recursive: true); }
@@ -198,6 +200,52 @@ public class MonitorOptionsResolverTests
         finally { Directory.Delete(dir, recursive: true); }
     }
 
+    // Config present but no llama paths configured — inference must NOT fire even when
+    // arbitrary files happen to exist on disk. Guards against a re-introduction of
+    // hardcoded machine-specific defaults that would silently activate the LLM.
+    [Fact]
+    public void AiMode_NotInferred_WhenConfigHasNoLlamaPaths()
+    {
+        var o = Resolve(new CliOptions(), File(aiMode: null));
+        Assert.Equal("none", o.AiMode);
+        Assert.Null(o.LlamaExePath);
+        Assert.Null(o.LlamaModelPath);
+    }
+
+    // No .eaxwiki config at all — no defaults exist for llama paths, and AiMode stays
+    // none. This is the shape a fresh install must have; anything else means we're
+    // shipping machine-specific state as code.
+    [Fact]
+    public void NoConfig_LeavesLlamaPathsNullAndAiModeNone()
+    {
+        var o = Resolve(new CliOptions());
+        Assert.Equal("none", o.AiMode);
+        Assert.Null(o.LlamaExePath);
+        Assert.Null(o.LlamaModelPath);
+    }
+
+    // First inference (AiEndpoint = localhost) must require BOTH exe and model to exist,
+    // not just the exe — otherwise the watchdog spawns a llama-server that can't load a model.
+    [Fact]
+    public void AiMode_LocalHttpInference_RequiresBothExeAndModel()
+    {
+        var dir = Path.Combine(Path.GetTempPath(), "eaxwiki_ai_" + Guid.NewGuid().ToString("N"));
+        Directory.CreateDirectory(dir);
+        try
+        {
+            var exe = Path.Combine(dir, "llama-server.exe");
+            System.IO.File.WriteAllText(exe, "x");
+            // model path present in config but the file does NOT exist on disk
+            var o = Resolve(new CliOptions(), File(
+                aiMode: "none",
+                aiEndpoint: "http://localhost:8080",
+                llamaExePath: exe,
+                llamaModelPath: Path.Combine(dir, "missing.gguf")));
+            Assert.Equal("none", o.AiMode);
+        }
+        finally { Directory.Delete(dir, recursive: true); }
+    }
+
     [Fact]
     public void OutputDir_Absolute_StaysAbsolute()
     {
@@ -212,11 +260,14 @@ public class MonitorOptionsResolverTests
         Assert.Equal(Path.Combine(RepoRoot, "mywiki"), o.WikiDir);
     }
 
+    // With AiMode="local" but no llama paths in config, we no longer inject machine-
+    // specific defaults — LlamaExePath/LlamaModelPath stay null and BuildLlmSpec will
+    // decline to spawn a server. The user must configure paths via SchedulerUI.
     [Fact]
-    public void LlamaDefaults_ApplyWhenMissing()
+    public void LlamaPaths_NullWhenNotConfigured_EvenWithAiModeLocal()
     {
         var o = Resolve(new CliOptions(), File(aiMode: "local"));
-        Assert.Equal(@"E:\llama-cpp\llama-server.exe", o.LlamaExePath);
-        Assert.Equal(@"E:\models\llama-3.2-3b-q4.gguf", o.LlamaModelPath);
+        Assert.Null(o.LlamaExePath);
+        Assert.Null(o.LlamaModelPath);
     }
 }
