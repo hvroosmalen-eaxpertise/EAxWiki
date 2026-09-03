@@ -27,7 +27,7 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                     var elementTime = element.ModifiedDate.Kind == DateTimeKind.Utc
                         ? element.ModifiedDate
                         : element.ModifiedDate.ToUniversalTime();
-                    if (fileTime >= elementTime)
+                    if (fileTime >= elementTime && IsAiAttributeCurrent(filePath, ctx.AiConfigured))
                     {
                         logger.LogDebug("Skipped {ElementName}", element.Name);
                         return;
@@ -94,5 +94,27 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
 
         await writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines), ct);
         ctx.WrittenMdFiles.Add(filePath);
+    }
+
+    // Regenerate the element page when the notes-editor widget's data-ai-configured attribute
+    // in the file doesn't match the current AiConfigured state. Otherwise a page written
+    // before AI was configured (or after AI was removed) keeps the wrong flag until EA bumps
+    // the element's ModifiedDate. Cheap: reads only the first ~60 lines — the widget sits
+    // near the top of the page.
+    private static bool IsAiAttributeCurrent(string filePath, bool aiConfigured)
+    {
+        var expected = "data-ai-configured=\"" + (aiConfigured ? "true" : "false") + "\"";
+        var wrong = "data-ai-configured=\"" + (aiConfigured ? "false" : "true") + "\"";
+        try
+        {
+            foreach (var line in File.ReadLines(filePath).Take(60))
+            {
+                if (line.Contains(expected, StringComparison.Ordinal)) return true;
+                if (line.Contains(wrong, StringComparison.Ordinal)) return false;
+            }
+        }
+        catch (IOException) { return false; }
+        // No widget on this page (e.g. API not enabled at export time) — nothing to force.
+        return true;
     }
 }

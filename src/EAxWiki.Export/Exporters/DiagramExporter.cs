@@ -28,7 +28,8 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                 var pngPath = Path.Combine(diagramsDir, $"{fileName}.png");
                 var mdPath = Path.Combine(diagramsDir, $"{fileName}.md");
 
-                if (!ctx.Force && IsDiagramUpToDate(mdPath, diagram.ModifiedDate))
+                if (!ctx.Force && IsDiagramUpToDate(mdPath, diagram.ModifiedDate) &&
+                    IsAiAttributeCurrent(mdPath, ctx.AiConfigured))
                 {
                     logger.LogDebug("Skipped diagram {DiagramName}", diagram.Name);
                     continue;
@@ -210,6 +211,25 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
             return false;
         }
         catch (IOException) { return false; }
+    }
+
+    // Same as ElementPageWriter.IsAiAttributeCurrent — regenerate the diagram page when the
+    // notes-editor widget's data-ai-configured attribute doesn't match the current
+    // AiConfigured state, so pages exported before AI was configured pick up the flag flip.
+    private static bool IsAiAttributeCurrent(string mdPath, bool aiConfigured)
+    {
+        var expected = "data-ai-configured=\"" + (aiConfigured ? "true" : "false") + "\"";
+        var wrong = "data-ai-configured=\"" + (aiConfigured ? "false" : "true") + "\"";
+        try
+        {
+            foreach (var line in File.ReadLines(mdPath).Take(60))
+            {
+                if (line.Contains(expected, StringComparison.Ordinal)) return true;
+                if (line.Contains(wrong, StringComparison.Ordinal)) return false;
+            }
+        }
+        catch (IOException) { return false; }
+        return true;
     }
 
     /// <summary>
