@@ -58,17 +58,22 @@ public static class MonitorOptionsResolver
 
         var llmPort = cli.LlmPort ?? file?.LlmPort ?? DefaultLlmPort;
 
-        // In local mode the AiEndpoint is implied by LlmPort (llama-server serves an
-        // OpenAI-compatible API at http://localhost:{port}/v1) and is not stored in
-        // .eaxwiki. Materialize it here so downstream consumers — the exporter's
-        // AiConfigured flag AND the write-back API's /api/ai-suggest handler — both
-        // see a real endpoint. Explicit file?.AiEndpoint still wins.
-        var aiEndpoint = file?.AiEndpoint;
-        var aiModel = file?.AiModel;
-        if (aiMode == "local" && string.IsNullOrEmpty(aiEndpoint))
+        // AiMode is authoritative for endpoint selection. In local mode the llama-server URL
+        // is derived from LlmPort — any stale file?.AiEndpoint (e.g. a Reset-defaulted
+        // "https://api.openai.com/v1" left in .eaxwiki) is ignored so the write-back API's
+        // /api/ai-suggest doesn't send local-mode requests to a remote provider. In remote
+        // mode the stored endpoint is used as-is.
+        string? aiEndpoint;
+        string? aiModel;
+        if (aiMode == "local")
         {
             aiEndpoint = $"http://localhost:{llmPort}/v1";
-            aiModel ??= "local";
+            aiModel = file?.AiModel ?? "local";
+        }
+        else
+        {
+            aiEndpoint = file?.AiEndpoint;
+            aiModel = file?.AiModel;
         }
 
         return new MonitorOptions
@@ -95,7 +100,7 @@ public static class MonitorOptionsResolver
             AiMode = aiMode,
             AiEndpoint = aiEndpoint,
             AiModel = aiModel,
-            AiKey = file?.AiKey,
+            AiKey = aiMode == "local" ? null : file?.AiKey,
             LlamaExePath = llamaExe,
             LlamaModelPath = llamaModel,
         };
