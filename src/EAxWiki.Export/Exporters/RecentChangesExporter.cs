@@ -20,7 +20,7 @@ internal class RecentChangesExporter(IOutputWriter writer)
         foreach (var (elem, pkgDir) in ctx.Elements)
         {
             var elemName = MarkdownHelpers.SanitizeName(elem.Name);
-            var link = Path.GetRelativePath(recentDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
+            var link = Path.GetRelativePath(recentDir, Path.Combine(pkgDir, $"{elemName}.html")).Replace('\\', '/');
             var path = MarkdownHelpers.BuildBreadcrumb(elem.PackageId, recentDir, outputDir, ctx.PackageLookup);
             var modified = elem.ModifiedDate == DateTime.MinValue ? (DateTime?)null : elem.ModifiedDate;
             entries.Add(($"[{MarkdownHelpers.EscapeCell(elem.Name)}]({link})", MarkdownHelpers.EscapeCell(elem.Type), modified, path));
@@ -28,7 +28,7 @@ internal class RecentChangesExporter(IOutputWriter writer)
 
         foreach (var (diagram, pkgDir) in ctx.AllDiagrams)
         {
-            var diagramPage = Path.GetRelativePath(recentDir, Path.Combine(pkgDir, "diagrams", $"{MarkdownHelpers.SanitizeName(diagram.Name)}.md")).Replace('\\', '/');
+            var diagramPage = Path.GetRelativePath(recentDir, Path.Combine(pkgDir, "diagrams", $"{MarkdownHelpers.SanitizeName(diagram.Name)}.html")).Replace('\\', '/');
             var path = MarkdownHelpers.BuildBreadcrumb(diagram.PackageId, recentDir, outputDir, ctx.PackageLookup);
             DateTime? modified = null;
             if (!string.IsNullOrWhiteSpace(diagram.ModifiedDate) && DateTime.TryParse(diagram.ModifiedDate, out var dt))

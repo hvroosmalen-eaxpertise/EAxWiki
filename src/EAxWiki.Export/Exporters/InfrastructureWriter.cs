@@ -33,14 +33,14 @@ internal class InfrastructureWriter(IOutputWriter writer)
         var statusLines = new List<string>
         {
             "  - Status: status/",
-            "  - Model Health: status/model-health.md",
+            "  - Model Health: status/model-health.html",
         };
         if (File.Exists(Path.Combine(outputDir, "status", "health.md")))
-            statusLines.Insert(1, "  - Pipeline Health: status/health.md");
+            statusLines.Insert(1, "  - Pipeline Health: status/health.html");
         if (File.Exists(Path.Combine(outputDir, "status", "errors.md")))
-            statusLines.Add("  - Error Log: status/errors.md");
+            statusLines.Add("  - Error Log: status/errors.html");
         if (File.Exists(Path.Combine(outputDir, "status", "config.md")))
-            statusLines.Add("  - Configuration: status/config.md");
+            statusLines.Add("  - Configuration: status/config.html");
 
         // Issue #89 item 4: Repository becomes a collapsible nav section that groups the root
         // packages, instead of a bare link to the site home page. Awesome-pages nests entries

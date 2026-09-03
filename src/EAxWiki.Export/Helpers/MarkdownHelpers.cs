@@ -135,7 +135,10 @@ internal static class MarkdownHelpers
     {
         var elemName = SanitizeName(element.Name);
         var link = Path.GetRelativePath(fromDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
-        return link;  // Keep .md extension - .html links cause validation warnings
+        // Return .html: mkdocs auto-converts markdown links but many callers embed this in raw
+        // HTML (thumbnails, graph JSON, .pages nav) where it is NOT converted. Uniform .html
+        // avoids per-caller conversion and matches the awesome-pages workaround convention.
+        return link.EndsWith(".md", StringComparison.OrdinalIgnoreCase) ? link[..^3] + ".html" : link;
     }
 
     internal static string BuildBreadcrumb(int packageId, string currentPageDir, string outputDir, Dictionary<int, (string Name, int? ParentId)> packageLookup, Action<string>? onMissingPackage = null)

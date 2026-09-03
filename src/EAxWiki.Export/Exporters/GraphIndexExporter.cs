@@ -19,7 +19,9 @@ internal class GraphIndexExporter(IOutputWriter writer, ILogger logger)
             var layer = MarkdownHelpers.GetLayer(elem);
             nodeLayers[elem.Id] = layer;
 
-            var url = Path.GetRelativePath(ctx.OutputPath, Path.Combine(pkgDir, MarkdownHelpers.SanitizeName(elem.Name) + ".md")).Replace('\\', '/');
+            // Graph URLs are handed to window.location.href by the click handler and must be the
+            // served path (.html), not the source .md — a .md URL 404s on the built site (issue #95).
+            var url = Path.GetRelativePath(ctx.OutputPath, Path.Combine(pkgDir, MarkdownHelpers.SanitizeName(elem.Name) + ".html")).Replace('\\', '/');
 
             nodes.Add(new Dictionary<string, object?>
             {

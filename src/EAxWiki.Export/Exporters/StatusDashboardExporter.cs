@@ -31,7 +31,7 @@ internal class StatusDashboardExporter(IOutputWriter writer)
             var pkgName = ctx.PackageLookup.TryGetValue(elem.PackageId, out var pkg) ? pkg.Name : "Unknown";
             if (!packageRows.TryGetValue(pkgName, out var row))
             {
-                var relLink = Path.GetRelativePath(dashboardDir, Path.Combine(pkgDir, "index.md"))
+                var relLink = Path.GetRelativePath(dashboardDir, Path.Combine(pkgDir, "index.html"))
                     .Replace('\\', '/');
                 row = new PackageRow(pkgName, relLink);
                 packageRows[pkgName] = row;
@@ -125,7 +125,7 @@ internal class StatusDashboardExporter(IOutputWriter writer)
     {
         var elemName = MarkdownHelpers.SanitizeName(element.Name);
         var link = Path.GetRelativePath(fromDir, Path.Combine(pkgDir, $"{elemName}.md")).Replace('\\', '/');
-        return link;  // Keep .md extension
+        return link.EndsWith(".md", StringComparison.OrdinalIgnoreCase) ? link[..^3] + ".html" : link;
     }
 
     internal static string SanitizeForAnchor(string raw)
