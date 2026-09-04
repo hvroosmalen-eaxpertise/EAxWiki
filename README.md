@@ -4,6 +4,11 @@ This repository exports an Enterprise Architect `.qea`, or any database stored m
 
 > **Note — test data only:** The `wiki/` folder, `model/` folder, and the live site in this repository contain the **EurSuRA** model, which is used exclusively for development and testing of EAxWiki itself. They are not part of the tool and have no relation to your installation. When you use EAxWiki with your own EA model, it will write to a `wiki/` folder in your own environment.
 
+Note about runtime-generated status files
+---------------------------------------
+Some files produced under the wiki output are runtime-generated and instance-specific (for example `wiki/status/config.md` and `wiki/status/errors.md`). These files are intentionally not tracked in source control by default because they vary per deployment and would create noise and merge conflicts. See the repository's .gitignore for the exact entries.
+
+
 **Live site (test data):** https://hvroosmalen-eaxpertise.github.io/EAxWiki/ this is a read-only demo of what EAxWiki produces, using the EurSuRA model. Again: It is not your own model.
 
 ### EAxWiki is developed and maintained by EAxpertise (The Netherlands) — see [www.eaxpertise.nl](https://www.eaxpertise.nl) for more information. Contact us at sales@eaxpertise.nl.
