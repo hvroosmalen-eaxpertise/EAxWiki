@@ -83,5 +83,9 @@ src/EAxWiki/EAxWiki.csproj.bak
 /wiki/status/api-ready
 /wiki/status/.generated
 
+# Ignore specific runtime-generated wiki status files
+/wiki/status/config.md
+/wiki/status/errors.md
+
 # Visual Studio test result artifacts
 /src/EAxWiki.Tests/TestResults/
