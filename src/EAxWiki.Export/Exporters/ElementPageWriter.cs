@@ -27,7 +27,9 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
                     var elementTime = element.ModifiedDate.Kind == DateTimeKind.Utc
                         ? element.ModifiedDate
                         : element.ModifiedDate.ToUniversalTime();
-                    if (fileTime >= elementTime && IsAiAttributeCurrent(filePath, ctx.AiConfigured))
+                    if (fileTime >= elementTime
+                        && IsAiAttributeCurrent(filePath, ctx.AiConfigured)
+                        && IsTemplateCurrent(filePath))
                     {
                         logger.LogDebug("Skipped {ElementName}", element.Name);
                         return;
@@ -92,6 +94,13 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         lines.AddRange(["---", string.Empty, "## Relationship Graph", string.Empty,
             $"<div id=\"ea-graph-container\" data-focal-id=\"{element.Id}\"></div>", string.Empty]);
 
+        // Template-freshness marker (issue #96). IsTemplateCurrent looks for this on every
+        // element page — pre-issue-96 pages don't have it and get regenerated. Bump the
+        // suffix whenever the element-page template changes in a way old files should be
+        // rewritten for.
+        lines.Add(TemplateMarker);
+        lines.Add(string.Empty);
+
         await writer.WriteFileAsync(filePath, string.Join(Environment.NewLine, lines), ct);
         ctx.WrittenMdFiles.Add(filePath);
     }
@@ -116,5 +125,22 @@ internal class ElementPageWriter(IOutputWriter writer, ILogger logger)
         catch (IOException) { return false; }
         // No widget on this page (e.g. API not enabled at export time) — nothing to force.
         return true;
+    }
+
+    // Element-page template version marker. Emitted at the bottom of every page and
+    // looked for by IsTemplateCurrent. Bump the suffix whenever the element-page
+    // template changes in a way pre-existing files should be regenerated for
+    // (issue #96 introduced collapsible <details> sections, bumped to v2).
+    private const string TemplateMarker = "<!-- ea-element-template:v3 -->";
+
+    private static bool IsTemplateCurrent(string filePath)
+    {
+        try
+        {
+            foreach (var line in File.ReadLines(filePath))
+                if (line.Contains(TemplateMarker, StringComparison.Ordinal)) return true;
+        }
+        catch (IOException) { return false; }
+        return false;
     }
 }

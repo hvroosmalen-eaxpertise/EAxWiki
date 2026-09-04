@@ -10,7 +10,10 @@ internal static class DiagramThumbnailRenderer
         if (!ctx.DiagramIndex.TryGetValue(element.Id, out var elementDiagrams))
             yield break;
 
-        yield return "### Appears on Diagrams";
+        // Not collapsible (issue #96) — the diagram thumbnails are the primary visual
+        // context for an element. Promoted from ### to ## for TOC parity with the
+        // other element-page sections.
+        yield return "## Appears on Diagrams";
         yield return string.Empty;
         yield return "<div class=\"diagram-thumbs\">";
 
@@ -29,8 +32,6 @@ internal static class DiagramThumbnailRenderer
         }
 
         yield return "</div>";
-        yield return string.Empty;
-        yield return "[↑ Back to top](#)";
         yield return string.Empty;
     }
 }

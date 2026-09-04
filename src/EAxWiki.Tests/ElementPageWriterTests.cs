@@ -274,7 +274,8 @@ public class ElementPageWriterTests
     {
         var element = MakeElement(e => e.TaggedValues = [new EaTaggedValue { Name = "Tag1", Value = "Val1", Notes = "notes" }]);
         var result = string.Join("\n", TaggedValuesSectionRenderer.Render(element, PlainContext(), "/p"));
-        Assert.Contains("## Tagged Values", result);
+        Assert.Contains("data-ea-section-id=\"tagged-values\"", result);
+        Assert.Contains("<h2 id=\"tagged-values\">Tagged Values</h2>", result);
         Assert.Contains("| Tag1 | Val1 | notes |", result);
     }
 
@@ -311,7 +312,8 @@ public class ElementPageWriterTests
             [], [], [],
             new Dictionary<int, (string, int?)>()) { ApiPort = 0 };
         var result = string.Join("\n", RelationshipsTableRenderer.Render(element, @"C:\pkg", ctx));
-        Assert.Contains("## Relationships", result);
+        Assert.Contains("data-ea-section-id=\"relationships\"", result);
+        Assert.Contains("<h2 id=\"relationships\">Relationships</h2>", result);
         Assert.Contains("Association", result);
         Assert.Contains("Target", result);
     }
@@ -358,7 +360,8 @@ public class ElementPageWriterTests
             new Dictionary<int, List<(EaConnector, int)>> { [1] = [(new EaConnector { Id = 10, Type = "Flow", Stereotype = "triggers" }, 999)] },
             new Dictionary<int, (string, int?)>()) { ApiPort = 0 };
         var result = string.Join("\n", ReferencedByTableRenderer.Render(MakeElement(), @"C:\pkg", ctx));
-        Assert.Contains("### Referenced By", result);
+        Assert.Contains("data-ea-section-id=\"referenced-by\"", result);
+        Assert.Contains("<h2 id=\"referenced-by\">Referenced By</h2>", result);
         Assert.Contains("Element ID 999 (not in export)", result);
     }
 
@@ -373,7 +376,8 @@ public class ElementPageWriterTests
             new Dictionary<int, List<(EaConnector, int)>> { [1] = [(new EaConnector { Id = 10, Type = "Flow", Stereotype = "triggers" }, 2)] },
             new Dictionary<int, (string, int?)>()) { ApiPort = 0 };
         var result = string.Join("\n", ReferencedByTableRenderer.Render(MakeElement(), @"C:\pkg", ctx));
-        Assert.Contains("### Referenced By", result);
+        Assert.Contains("data-ea-section-id=\"referenced-by\"", result);
+        Assert.Contains("<h2 id=\"referenced-by\">Referenced By</h2>", result);
         Assert.Contains("Flow", result);
         Assert.Contains("Source", result);
     }

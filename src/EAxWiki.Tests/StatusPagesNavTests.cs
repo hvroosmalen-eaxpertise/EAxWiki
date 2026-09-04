@@ -86,7 +86,8 @@ public class StatusPagesNavTests : IDisposable
         // No trailing slash — awesome-pages rejects "Name/" in nested nav entries with
         // NavEntryNotFound. Bare name resolves to the subdirectory and inherits its .pages title.
         Assert.DoesNotContain("    - PackageA/", pages);
-        // Sibling nav entries survive the change.
-        Assert.Contains("  - Diagrams: diagrams/", pages);
+        // Sibling nav entries survive the change (Diagrams carries a leading 🗺️ so the
+        // sidebar-nav JS shim in ea-icons.js can swap it for a Material SVG glyph).
+        Assert.Contains("Diagrams: diagrams/", pages);
     }
 }

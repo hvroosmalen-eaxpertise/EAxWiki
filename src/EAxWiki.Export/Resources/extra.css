@@ -358,6 +358,26 @@ details.status-details li {
 .ea-nav-glyph-text {
   vertical-align: middle;
 }
+
+/* Collapsible page sections (issue #96). Element-page sections (Tagged Values,
+   Relationships, Referenced By) are wrapped in <details class="ea-section">.
+   mkdocs-material already styles <details> as its own admonition-shaped callout
+   with a disclosure chevron on the right, so we lean on that and only tweak
+   what the enclosed <h2> looks like inside the <summary>. Printing forces
+   every section open regardless of the runtime toggle. */
+details.ea-section {
+  margin: 1em 0;
+}
+details.ea-section > summary > h2 {
+  display: inline;
+  margin: 0;
+  border-bottom: none;
+  font-size: 1em;
+  font-weight: 700;
+}
+@media print {
+  details.ea-section:not([open]) > *:not(summary) { display: revert; }
+}
 .ea-notes-suggest-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .ea-notes-save-btn:disabled, .ea-notes-cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .ea-notes-msg { font-style: italic; font-size: 0.85em; }

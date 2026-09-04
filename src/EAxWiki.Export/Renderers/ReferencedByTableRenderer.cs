@@ -10,7 +10,10 @@ internal static class ReferencedByTableRenderer
         if (!ctx.IncomingIndex.TryGetValue(element.Id, out var incomingConns))
             yield break;
 
-        yield return "### Referenced By";
+        // Collapsible section (issue #96). Default: closed. Promoted from ### to ##
+        // for TOC parity with Tagged Values / Relationships / Appears on Diagrams.
+        yield return "<details class=\"ea-section\" data-ea-section-id=\"referenced-by\" markdown=\"1\">";
+        yield return "<summary><h2 id=\"referenced-by\">Referenced By</h2></summary>";
         yield return string.Empty;
         yield return "| Type | Stereotype | Source |";
         yield return "|------|------------|--------|";
@@ -33,7 +36,7 @@ internal static class ReferencedByTableRenderer
         }
 
         yield return string.Empty;
-        yield return "[↑ Back to top](#)";
+        yield return "</details>";
         yield return string.Empty;
     }
 }

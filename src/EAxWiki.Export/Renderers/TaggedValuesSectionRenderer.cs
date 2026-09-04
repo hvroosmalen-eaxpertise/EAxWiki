@@ -10,7 +10,11 @@ internal static class TaggedValuesSectionRenderer
         if (element.TaggedValues.Count == 0)
             yield break;
 
-        yield return "## Tagged Values";
+        // Collapsible section (issue #96) — see extra.css .ea-section + ea-icons.js
+        // for the wiki-wide open/closed persistence. Default: closed. The <h2> inside
+        // <summary> keeps the section in mkdocs-material's right-hand TOC.
+        yield return "<details class=\"ea-section\" data-ea-section-id=\"tagged-values\" markdown=\"1\">";
+        yield return "<summary><h2 id=\"tagged-values\">Tagged Values</h2></summary>";
         yield return string.Empty;
 
         if (ctx.ApiPort > 0)
@@ -40,7 +44,7 @@ internal static class TaggedValuesSectionRenderer
         }
 
         yield return string.Empty;
-        yield return "[↑ Back to top](#)";
+        yield return "</details>";
         yield return string.Empty;
     }
 }

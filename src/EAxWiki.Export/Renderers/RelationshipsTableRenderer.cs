@@ -10,7 +10,9 @@ internal static class RelationshipsTableRenderer
         if (element.Connectors.Count == 0)
             yield break;
 
-        yield return "## Relationships";
+        // Collapsible section (issue #96). Default: closed.
+        yield return "<details class=\"ea-section\" data-ea-section-id=\"relationships\" markdown=\"1\">";
+        yield return "<summary><h2 id=\"relationships\">Relationships</h2></summary>";
         yield return string.Empty;
         yield return "| Type | Stereotype | Connected To |";
         yield return "|------|------------|-------------|";
@@ -39,7 +41,7 @@ internal static class RelationshipsTableRenderer
         }
 
         yield return string.Empty;
-        yield return "[↑ Back to top](#)";
+        yield return "</details>";
         yield return string.Empty;
     }
 }

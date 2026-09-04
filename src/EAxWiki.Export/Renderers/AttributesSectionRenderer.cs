@@ -43,7 +43,5 @@ internal static class AttributesSectionRenderer
         }
 
         yield return string.Empty;
-        yield return "[↑ Back to top](#)";
-        yield return string.Empty;
     }
 }

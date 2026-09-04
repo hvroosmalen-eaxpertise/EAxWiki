@@ -51,3 +51,43 @@ window.EAxIcons = {
   if (typeof document$ !== 'undefined') document$.subscribe(function () { swapNavGlyphs(); });
   else document.addEventListener('DOMContentLoaded', function () { swapNavGlyphs(); });
 })();
+
+// Collapsible section persistence (issue #96). Wiki-wide open/closed preference
+// per section id — toggling once persists across every element page in this
+// wiki. localStorage keyed as ea-section:{id}. Only stored when the state
+// differs from the section's default (data-ea-default-open), so a viewer who
+// hasn't touched anything has 0 keys and the export can freely re-default.
+// Wrapped in try/catch — private-window / disabled-storage returns cleanly.
+(function () {
+  var KEY_PREFIX = 'ea-section:';
+  function readPref(sectionId) {
+    try { return localStorage.getItem(KEY_PREFIX + sectionId); }
+    catch (e) { return null; }
+  }
+  function writePref(sectionId, value) {
+    try {
+      if (value === null) localStorage.removeItem(KEY_PREFIX + sectionId);
+      else localStorage.setItem(KEY_PREFIX + sectionId, value);
+    } catch (e) { /* storage unavailable — silently drop */ }
+  }
+  function initSections(root) {
+    (root || document).querySelectorAll('details.ea-section[data-ea-section-id]').forEach(function (d) {
+      var id = d.getAttribute('data-ea-section-id');
+      // Default: closed unless the element carries data-ea-default-open="true".
+      // Restore from storage if the viewer previously overrode the default.
+      var pref = readPref(id);
+      if (pref === 'open') d.open = true;
+      else if (pref === 'closed') d.open = false;
+      if (d.__eaBound) return;
+      d.__eaBound = true;
+      d.addEventListener('toggle', function () {
+        var defaultOpen = d.getAttribute('data-ea-default-open') === 'true';
+        var currentOpen = d.open;
+        if (currentOpen === defaultOpen) writePref(id, null);      // match default → clear override
+        else writePref(id, currentOpen ? 'open' : 'closed');       // diverges → store
+      });
+    });
+  }
+  if (typeof document$ !== 'undefined') document$.subscribe(function () { initSections(); });
+  else document.addEventListener('DOMContentLoaded', function () { initSections(); });
+})();
