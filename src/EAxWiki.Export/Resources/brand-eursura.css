@@ -41,3 +41,19 @@
 .diagram-thumb:hover img {
   border-color: #103135;
 }
+
+/* Collapsible element-page sections (issue #96) — tint with the EurSuRA palette
+   instead of mkdocs-material's default admonition blue. Non-brand exports fall
+   back to Material's defaults automatically. */
+.md-typeset details.ea-section {
+  border-color: var(--md-primary-fg-color);
+  background-color: transparent;
+}
+.md-typeset details.ea-section > summary {
+  background-color: var(--md-primary-fg-color--light);
+  color: var(--md-primary-fg-color);
+}
+.md-typeset details.ea-section > summary::before,
+.md-typeset details.ea-section > summary::after {
+  background-color: var(--md-primary-fg-color);
+}
