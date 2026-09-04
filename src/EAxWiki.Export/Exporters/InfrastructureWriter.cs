@@ -63,7 +63,7 @@ internal class InfrastructureWriter(IOutputWriter writer)
         [
             "nav:",
             .. repositoryLines,
-            "  - Diagrams: diagrams/",
+            "  - \U0001F5FA️ Diagrams: diagrams/",
             "  - Element Types: types/",
             "  - Glossary: glossary/",
             "  - Recent: recent/",

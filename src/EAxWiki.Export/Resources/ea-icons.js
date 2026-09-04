@@ -12,3 +12,42 @@ window.EAxIcons = {
     btn.setAttribute('title', label);
   }
 };
+
+// Sidebar nav glyph swap: awesome-pages .pages titles are plain text (no
+// pymdownx.emoji processing), so 📁 / 🗺️ leading a nav label stay as OS-rendered
+// Unicode by default. Swap them for Material Design SVG icons so the nav
+// matches the body's :material-folder-outline: / :material-map-outline:
+// glyphs across OSes and themes. Runs on Material's document$ subscribe so
+// instant navigation still triggers it. Idempotent via data-ea-nav-glyph.
+(function () {
+  var glyph = function (svgPath) {
+    return '<svg class="ea-nav-glyph" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
+      '<path d="' + svgPath + '"/></svg>';
+  };
+  var folder = glyph('M20,18H4V8H20M20,6H12L10,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V8C22,6.89 21.1,6 20,6Z');
+  var map    = glyph('M20.5,3L20.34,3.03L15,5.1L9,3L3.36,4.9C3.15,4.97 3,5.15 3,5.38V20.5A0.5,0.5 0 0,0 3.5,21L3.66,20.97L9,18.9L15,21L20.64,19.1C20.85,19.03 21,18.85 21,18.62V3.5A0.5,0.5 0 0,0 20.5,3M10,5.47L14,6.87V18.53L10,17.13V5.47M5,6.46L8,5.45V17.15L5,18.31V6.46M19,17.54L16,18.55V6.86L19,5.7V17.54Z');
+  // Regex captures a leading 📁 or 🗺️ (with optional variation selector) plus surrounding
+  // whitespace. Material Design wraps nav-link text with formatting whitespace, so the
+  // emoji is rarely at position 0 of textContent — allow leading \s* too.
+  var LEADING = /^\s*([\uD83D][\uDCC1\uDDFA])️?\s*/;
+
+  function swapNavGlyphs(root) {
+    (root || document).querySelectorAll('.md-nav__link:not([data-ea-nav-glyph])').forEach(function (link) {
+      var textEl = link.querySelector('.md-ellipsis') || link;
+      var text = (textEl.textContent || '').trim();
+      var match = LEADING.exec(text);
+      if (!match) return;
+      var codepoint = match[1].charCodeAt(1);
+      var svg = (codepoint === 0xDCC1) ? folder : (codepoint === 0xDDFA) ? map : null;
+      if (!svg) return;
+      var rest = text.replace(LEADING, '');
+      textEl.innerHTML = svg + '<span class="ea-nav-glyph-text">' + rest.replace(/[&<>]/g, function (c) {
+        return c === '&' ? '&amp;' : c === '<' ? '&lt;' : '&gt;';
+      }) + '</span>';
+      link.setAttribute('data-ea-nav-glyph', '1');
+    });
+  }
+
+  if (typeof document$ !== 'undefined') document$.subscribe(function () { swapNavGlyphs(); });
+  else document.addEventListener('DOMContentLoaded', function () { swapNavGlyphs(); });
+})();

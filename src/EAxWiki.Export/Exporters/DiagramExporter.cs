@@ -57,7 +57,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     $"notes_hash: {notesHash}",
                     "---",
                     string.Empty,
-                    $"# 🗺️ {diagram.Name}",
+                    $"# :material-map-outline: {diagram.Name}",
                     string.Empty,
                     string.Empty,
                     MarkdownHelpers.BuildBreadcrumb(diagram.PackageId, diagramsDir, ctx.OutputPath, ctx.PackageLookup,
@@ -151,7 +151,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
             .ThenBy(d => d.Diagram.Name)
             .ToList();
 
-        var lines = new List<string> { "# \U0001F5FA️ Diagrams", string.Empty };
+        var lines = new List<string> { "# :material-map-outline: Diagrams", string.Empty };
 
         if (sorted.Count == 0)
         {
@@ -165,7 +165,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
             foreach (var (diagram, pkgDir, path) in sorted)
             {
                 var diagramPage = Path.GetRelativePath(diagramsDir, Path.Combine(pkgDir, "diagrams", $"{MarkdownHelpers.SanitizeName(diagram.Name)}.html")).Replace('\\', '/');
-                var link = $"\U0001F5FA️ [{MarkdownHelpers.EscapeCell(diagram.Name)}]({diagramPage})";
+                var link = $":material-map-outline: [{MarkdownHelpers.EscapeCell(diagram.Name)}]({diagramPage})";
 
                 var modified = !string.IsNullOrWhiteSpace(diagram.ModifiedDate) && DateTime.TryParse(diagram.ModifiedDate, out var dt)
                     ? dt.ToString("yyyy-MM-dd")
@@ -188,7 +188,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
     // Bump this whenever the diagram-page template changes in a way pre-existing files
     // should be regenerated for, so IsDiagramUpToDate can detect stale template output
     // even when the EA-side ModifiedDate hasn't advanced.
-    private const string CurrentH1Marker = "# \U0001F5FA️ ";
+    private const string CurrentH1Marker = "# :material-map-outline: ";
 
     private static bool IsDiagramUpToDate(string mdPath, string? modifiedDateStr)
     {

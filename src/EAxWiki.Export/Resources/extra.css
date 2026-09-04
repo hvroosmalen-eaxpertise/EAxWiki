@@ -344,6 +344,20 @@ details.status-details li {
 .ea-icon-spinner {
   animation: ea-spin 0.8s linear infinite;
 }
+
+/* Sidebar nav glyphs (folder / map) injected by ea-icons.js in place of the
+   Unicode emoji that .pages titles carry. Sized to match Material's nav text
+   metrics; inherits currentColor so dark mode + brand themes recolor cleanly. */
+.ea-nav-glyph {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  margin-right: 0.35em;
+  flex-shrink: 0;
+}
+.ea-nav-glyph-text {
+  vertical-align: middle;
+}
 .ea-notes-suggest-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .ea-notes-save-btn:disabled, .ea-notes-cancel-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .ea-notes-msg { font-style: italic; font-size: 0.85em; }

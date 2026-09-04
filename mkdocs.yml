@@ -15,6 +15,14 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.betterem
   - pymdownx.highlight
+  # Inline Material Design SVG icons via :material-*: shortcodes. Used for
+  # 📁 (folder-outline) / 🗺️ (map-outline) glyphs on package and diagram pages,
+  # so the wiki matches mkdocs-material's own icon vocabulary and looks the
+  # same across OSes / themes instead of relying on OS-rendered Unicode emoji.
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_css:
   - extra.css

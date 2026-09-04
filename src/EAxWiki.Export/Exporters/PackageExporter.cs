@@ -30,7 +30,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
 
         var indexLines = new List<string>
         {
-            $"# \U0001F4C1 {package.Name}",
+            $"# :material-folder-outline: {package.Name}",
             string.Empty,
         };
 
@@ -67,7 +67,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
             foreach (var diag in package.Diagrams)
             {
                 var diagFile = $"diagrams/{MarkdownHelpers.SanitizeName(diag.Name)}.html";
-                indexLines.Add($"- \U0001F5FA️ [{diag.Name}]({diagFile}) ({diag.Type})");
+                indexLines.Add($"- :material-map-outline: [{diag.Name}]({diagFile}) ({diag.Type})");
 
                 if (!string.IsNullOrWhiteSpace(diag.Notes))
                 {
@@ -147,7 +147,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
             {
                 var childDir = Path.Combine(outputDir, MarkdownHelpers.SanitizeName(child.Name));
                 var childRelPath = Path.GetRelativePath(dir, Path.Combine(childDir, "index.html")).Replace('\\', '/');
-                indexLines.Add($"- \U0001F4C1 [{child.Name}]({childRelPath})");
+                indexLines.Add($"- :material-folder-outline: [{child.Name}]({childRelPath})");
             }
 
             indexLines.Add(string.Empty);
