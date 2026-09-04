@@ -15,7 +15,7 @@ notes_hash: b196427f
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [SDGs](../SDGs/index.html) / [Sustainability Development Goals](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="16" data-file-path="Sustainability Development Goals/SDG 14. Life Below Water.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="16" data-file-path="Sustainability Development Goals/SDG 14. Life Below Water.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -24,7 +24,8 @@ notes_hash: b196427f
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -34,27 +35,28 @@ notes_hash: b196427f
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
 | Association | Link | [SDG Mapping Content](../Content/SDG Mapping Content.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="diagrams/Sustainability Development Goals.html" class="diagram-thumb"><img src="diagrams/Sustainability Development Goals.png" alt="Sustainability Development Goals" loading="lazy"><span>Sustainability Development Goals</span></a>
   <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb"><img src="../Mapping SDG to Main/diagrams/Mapping SDG to Main.png" alt="Mapping SDG to Main" loading="lazy"><span>Mapping SDG to Main</span></a>
 </div>
 
-[↑ Back to top](#)
-
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="16"></div>
+
+<!-- ea-element-template:v3 -->

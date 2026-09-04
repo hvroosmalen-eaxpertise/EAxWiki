@@ -3,14 +3,14 @@ diagram_id: 26
 notes_hash: e3cb2aa5
 ---
 
-# 🗺️ Market Differentiation Pressure
+# :material-map-outline: Market Differentiation Pressure
 
 
 [Home](../../index.html) / [Archimate](../../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.html) / [Market Differentiation Pressure](../index.html)
 
 ![Market Differentiation Pressure](Market Differentiation Pressure.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="26" data-kind="diagram" data-file-path="Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="26" data-kind="diagram" data-file-path="Market Differentiation Pressure/diagrams/Market Differentiation Pressure.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">

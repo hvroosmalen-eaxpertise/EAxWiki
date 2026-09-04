@@ -2,4 +2,4 @@
 
 1 element(s):
 
-- <span class="sl" data-layer="edgy-ix">Organisation</span> [EurSuRA](../../Introduction EurSuRA/EurSuRA.md)
+- <span class="sl" data-layer="edgy-ix">Organisation</span> [EurSuRA](../../Introduction EurSuRA/EurSuRA.html)

@@ -15,7 +15,7 @@ notes_hash: 7436e43c
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Stories](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="238" data-file-path="Stories/Duurzaamsheidsvisie.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="238" data-file-path="Stories/Duurzaamsheidsvisie.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -24,7 +24,8 @@ notes_hash: 7436e43c
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -34,18 +35,18 @@ notes_hash: 7436e43c
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="diagrams/Stories Voorbeelden.html" class="diagram-thumb"><img src="diagrams/Stories Voorbeelden.png" alt="Stories Voorbeelden" loading="lazy"><span>Stories Voorbeelden</span></a>
 </div>
-
-[↑ Back to top](#)
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="238"></div>
+
+<!-- ea-element-template:v3 -->

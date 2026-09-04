@@ -15,7 +15,7 @@ notes_hash: 66c30a16
 
 [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Organisation](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="743" data-file-path="Organisation/OrganizationAddress.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="743" data-file-path="Organisation/OrganizationAddress.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -40,9 +40,8 @@ notes_hash: 66c30a16
 </tbody>
 </table>
 
-[↑ Back to top](#)
-
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -52,9 +51,10 @@ notes_hash: 66c30a16
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
@@ -62,17 +62,16 @@ notes_hash: 66c30a16
 | Association |  | [Address](Address.html) |
 | Association |  | [Organization](Organization.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="diagrams/Organisation.html" class="diagram-thumb"><img src="diagrams/Organisation.png" alt="Organisation" loading="lazy"><span>Organisation</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
@@ -80,10 +79,12 @@ notes_hash: 66c30a16
 | Association |  | [Address](Address.html) |
 | Association |  | [OrganizationAddressType](OrganizationAddressType.html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="743"></div>
+
+<!-- ea-element-template:v3 -->

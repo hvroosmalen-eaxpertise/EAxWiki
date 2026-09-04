@@ -15,7 +15,7 @@ notes_hash: 101b93a1
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [ESRS](../ESRS/index.html) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.html) / [ESRS S4](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="44" data-file-path="ESRS S4/ESRS S4 Consumers and End-users.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="44" data-file-path="ESRS S4/ESRS S4 Consumers and End-users.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -25,7 +25,8 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -35,9 +36,10 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
@@ -49,9 +51,9 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 | Association | Link | [European Commission](../People/European Commission.html) |
 | Aggregation | Tree | [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/European Sustainability Reporting Standards.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="../European Sustainability Reporting Standards/diagrams/ESRS.html" class="diagram-thumb"><img src="../European Sustainability Reporting Standards/diagrams/ESRS.png" alt="ESRS" loading="lazy"><span>ESRS</span></a>
@@ -60,9 +62,8 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
   <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb"><img src="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.png" alt="ESRS Stakeholder Overview" loading="lazy"><span>ESRS Stakeholder Overview</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
@@ -70,10 +71,12 @@ https://www.efrag.org/Assets/Download?assetUrl=%2Fsites%2Fwebpublishing%2FSiteAs
 | Association | Link | [Consumers and End Users (ESRS S4)](../People/Consumers and End Users (ESRS S4).html) |
 | Association | Link | [European Commission](../People/European Commission.html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="44"></div>
+
+<!-- ea-element-template:v3 -->

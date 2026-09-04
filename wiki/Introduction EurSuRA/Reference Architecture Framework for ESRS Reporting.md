@@ -15,7 +15,7 @@ notes_hash: e3b0c442
 
 [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Introduction EurSuRA](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="613" data-file-path="Introduction EurSuRA/Reference Architecture Framework for ESRS Reporting.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="613" data-file-path="Introduction EurSuRA/Reference Architecture Framework for ESRS Reporting.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -24,7 +24,8 @@ notes_hash: e3b0c442
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -34,9 +35,10 @@ notes_hash: e3b0c442
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
@@ -48,27 +50,28 @@ notes_hash: e3b0c442
 | Aggregation | Tree | [Integration tools to inhouse Information](Integration tools to inhouse Information.html) |
 | ControlFlow | Flow | [Collecting Information and Create EDGY Diagrams/Model](Collecting Information and Create EDGY Diagrams_Model.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="diagrams/Introduction EDGY Presentation 13 May Event.html" class="diagram-thumb"><img src="diagrams/Introduction EDGY Presentation 13 May Event.png" alt="Introduction EDGY Presentation 13 May Event" loading="lazy"><span>Introduction EDGY Presentation 13 May Event</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association | Link | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).html) |
 | ControlFlow | Flow | [Collecting Information and Create EDGY Diagrams/Model](Collecting Information and Create EDGY Diagrams_Model.html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="613"></div>
+
+<!-- ea-element-template:v3 -->

@@ -3,14 +3,14 @@ diagram_id: 48
 notes_hash: c79075de
 ---
 
-# 🗺️ Organisation
+# :material-map-outline: Organisation
 
 
 [Home](../../index.html) / [Data Layer](../../Data Layer/index.html) / [Open Footprint Data Model LDM](../../Open Footprint Data Model LDM/index.html) / [Organisation](../index.html)
 
 ![Organisation](Organisation.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="48" data-kind="diagram" data-file-path="Organisation/diagrams/Organisation.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="48" data-kind="diagram" data-file-path="Organisation/diagrams/Organisation.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">

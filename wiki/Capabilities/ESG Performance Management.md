@@ -15,7 +15,7 @@ notes_hash: 10a5ac24
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Capabilities](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="445" data-file-path="Capabilities/ESG Performance Management.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="445" data-file-path="Capabilities/ESG Performance Management.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -26,7 +26,8 @@ Enables evidence-based sustainability management and transparent reporting to st
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -36,9 +37,10 @@ Enables evidence-based sustainability management and transparent reporting to st
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
@@ -49,9 +51,9 @@ Enables evidence-based sustainability management and transparent reporting to st
 | Association | ArchiMate_Association | [ESG Score](../Assessments/ESG Score.html) |
 | Association | ArchiMate_Association | [Energy Efficiency Index](../Assessments/Energy Efficiency Index.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb"><img src="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).png" alt="Strategic Sustainability Management Model (Bodenstein)" loading="lazy"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
@@ -62,9 +64,8 @@ Enables evidence-based sustainability management and transparent reporting to st
   <a href="../Reputation Risk/diagrams/Reputation Risk.html" class="diagram-thumb"><img src="../Reputation Risk/diagrams/Reputation Risk.png" alt="Reputation Risk" loading="lazy"><span>Reputation Risk</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
@@ -72,10 +73,12 @@ Enables evidence-based sustainability management and transparent reporting to st
 | Association | ArchiMate_Association | [ESG Score](../Assessments/ESG Score.html) |
 | Association | ArchiMate_Association | [Energy Efficiency Index](../Assessments/Energy Efficiency Index.html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="445"></div>
+
+<!-- ea-element-template:v3 -->

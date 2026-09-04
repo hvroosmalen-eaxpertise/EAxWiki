@@ -15,7 +15,7 @@ notes_hash: 7518ab2c
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Goals](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="437" data-file-path="Goals/Corporate Sustainability Integration.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="437" data-file-path="Goals/Corporate Sustainability Integration.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -25,7 +25,8 @@ Move beyond peripheral CSR initiatives toward strategic integration throughout t
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -35,9 +36,10 @@ Move beyond peripheral CSR initiatives toward strategic integration throughout t
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
@@ -46,9 +48,9 @@ Move beyond peripheral CSR initiatives toward strategic integration throughout t
 | Dependency | ArchiMate_Realization | [Integrate Sustainability into Corporate Strategy](../Courses of Action/Integrate Sustainability into Corporate Strategy.html) |
 | Dependency | ArchiMate_Realization | [Reduced Environmental Impact](../Outcomes/Reduced Environmental Impact.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb"><img src="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).png" alt="Strategic Sustainability Management Model (Bodenstein)" loading="lazy"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
@@ -56,9 +58,8 @@ Move beyond peripheral CSR initiatives toward strategic integration throughout t
   <a href="../Reputation Risk/diagrams/Reputation Risk.html" class="diagram-thumb"><img src="../Reputation Risk/diagrams/Reputation Risk.png" alt="Reputation Risk" loading="lazy"><span>Reputation Risk</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
@@ -67,10 +68,12 @@ Move beyond peripheral CSR initiatives toward strategic integration throughout t
 | ControlFlow | ArchiMate_Influence | [Reputation Risk](../Drivers/Reputation Risk.html) |
 | Dependency | ArchiMate_Realization | [Reduced Environmental Impact](../Outcomes/Reduced Environmental Impact.html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="437"></div>
+
+<!-- ea-element-template:v3 -->

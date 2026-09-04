@@ -15,7 +15,7 @@ notes_hash: db816efd
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Goals](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="438" data-file-path="Goals/ESG Performance Improvement.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="438" data-file-path="Goals/ESG Performance Improvement.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -25,7 +25,8 @@ Achieve measurable progress in ESG ratings and benchmarks relevant to the indust
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -35,9 +36,10 @@ Achieve measurable progress in ESG ratings and benchmarks relevant to the indust
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
@@ -45,18 +47,17 @@ Achieve measurable progress in ESG ratings and benchmarks relevant to the indust
 | Dependency | ArchiMate_Realization | [ESG-based Risk Management](../Courses of Action/ESG-based Risk Management.html) |
 | Dependency | ArchiMate_Realization | [Improved ESG Rating](../Outcomes/Improved ESG Rating.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb"><img src="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).png" alt="Strategic Sustainability Management Model (Bodenstein)" loading="lazy"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
   <a href="../Stakeholder Expectations/diagrams/Stakeholder Expectations.html" class="diagram-thumb"><img src="../Stakeholder Expectations/diagrams/Stakeholder Expectations.png" alt="Stakeholder Expectations" loading="lazy"><span>Stakeholder Expectations</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
@@ -64,10 +65,12 @@ Achieve measurable progress in ESG ratings and benchmarks relevant to the indust
 | ControlFlow | ArchiMate_Influence | [Stakeholder Expectations](../Drivers/Stakeholder Expectations.html) |
 | Dependency | ArchiMate_Realization | [Improved ESG Rating](../Outcomes/Improved ESG Rating.html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="438"></div>
+
+<!-- ea-element-template:v3 -->

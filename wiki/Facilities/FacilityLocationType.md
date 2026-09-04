@@ -15,7 +15,7 @@ notes_hash: 6e276453
 
 [Home](../index.html) / [Data Layer](../Data Layer/index.html) / [Open Footprint Data Model LDM](../Open Footprint Data Model LDM/index.html) / [Facilities](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="769" data-file-path="Facilities/FacilityLocationType.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="769" data-file-path="Facilities/FacilityLocationType.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -36,9 +36,8 @@ notes_hash: 6e276453
 </tbody>
 </table>
 
-[↑ Back to top](#)
-
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -48,27 +47,28 @@ notes_hash: 6e276453
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
 | Association |  | [FacilityLocationAssociation](FacilityLocationAssociation.html) |
 | Association |  | [Location](Location.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="diagrams/Facilities.html" class="diagram-thumb"><img src="diagrams/Facilities.png" alt="Facilities" loading="lazy"><span>Facilities</span></a>
 </div>
-
-[↑ Back to top](#)
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="769"></div>
+
+<!-- ea-element-template:v3 -->

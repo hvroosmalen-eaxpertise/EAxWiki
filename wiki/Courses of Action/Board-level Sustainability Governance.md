@@ -15,7 +15,7 @@ notes_hash: c640a0f7
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Courses of Action](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="455" data-file-path="Courses of Action/Board-level Sustainability Governance.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="455" data-file-path="Courses of Action/Board-level Sustainability Governance.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -26,7 +26,8 @@ Ensures top-level commitment and strategic oversight of sustainability performan
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -36,18 +37,19 @@ Ensures top-level commitment and strategic oversight of sustainability performan
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
 | Dependency | ArchiMate_Realization | [Sustainability Governance](../Capabilities/Sustainability Governance.html) |
 | ControlFlow | ArchiMate_Influence | [Improved ESG Rating](../Outcomes/Improved ESG Rating.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).html" class="diagram-thumb"><img src="../Strategic Sustainability Management Model (Bodenstein)/diagrams/Strategic Sustainability Management Model (Bodenstein).png" alt="Strategic Sustainability Management Model (Bodenstein)" loading="lazy"><span>Strategic Sustainability Management Model (Bodenstein)</span></a>
@@ -55,18 +57,19 @@ Ensures top-level commitment and strategic oversight of sustainability performan
   <a href="../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.html" class="diagram-thumb"><img src="../Market Differentiation Pressure/diagrams/Market Differentiation Pressure.png" alt="Market Differentiation Pressure" loading="lazy"><span>Market Differentiation Pressure</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Dependency | ArchiMate_Realization | [Sustainability Governance](../Capabilities/Sustainability Governance.html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="455"></div>
+
+<!-- ea-element-template:v3 -->

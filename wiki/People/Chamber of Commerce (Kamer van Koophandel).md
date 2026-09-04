@@ -15,7 +15,7 @@ notes_hash: 4b53ace6
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="521" data-file-path="People/Chamber of Commerce (Kamer van Koophandel).md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="521" data-file-path="People/Chamber of Commerce (Kamer van Koophandel).md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -24,7 +24,8 @@ notes_hash: 4b53ace6
 </div>
 </div>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
@@ -32,9 +33,9 @@ notes_hash: 4b53ace6
 | Aggregation | Tree | [Ministry of Economic Affairs](Ministry of Economic Affairs.html) |
 | Association | Link | [Company subject to CSRD](Company subject to CSRD.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="../ESRS and People/diagrams/ESRS Stakeholder Map.html" class="diagram-thumb"><img src="../ESRS and People/diagrams/ESRS Stakeholder Map.png" alt="ESRS Stakeholder Map" loading="lazy"><span>ESRS Stakeholder Map</span></a>
@@ -42,19 +43,20 @@ notes_hash: 4b53ace6
   <a href="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.html" class="diagram-thumb"><img src="../ESRS Navigator Stakeholder Map/diagrams/ESRS Stakeholder Overview.png" alt="ESRS Stakeholder Overview" loading="lazy"><span>ESRS Stakeholder Overview</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Abstraction | trace | [Chamber of Commerce/Kamer van Koophandel](../ESRS Navigator Stakeholder Map/Chamber of Commerce_Kamer van Koophandel.html) |
 | Aggregation | Tree | [Ministry of Economic Affairs](Ministry of Economic Affairs.html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="521"></div>
+
+<!-- ea-element-template:v3 -->

@@ -3,28 +3,29 @@ ea_id: 577
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
-notes_hash: e3b0c442
+notes_hash: e355c1bb
 ---
 
 # <span class="sl" data-layer="edgy-ar">Capability</span> EDGY -> XMI (Python)
 
 **Type:** Activity  **Stereotype:** Capability  **StereotypeEx:** Capability  **FQStereotype:** EDGY::Capability  
 **Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="577" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Information Collection and Model Creation/EDGY -_ XMI (Python).md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
-**Created:** 2026-05-13  **Modified:** 2026-05-13
+**Created:** 2026-05-13  **Modified:** 2026-09-03
 
 
 [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Information Collection and Model Creation](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="577" data-file-path="Information Collection and Model Creation/EDGY -_ XMI (Python).md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="577" data-file-path="Information Collection and Model Creation/EDGY -_ XMI (Python).md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
-
+<p>This element serves as a central hub for converting MD to XMI, connecting various processes such as model element relationships, compilation information, and constructor conversion. Its purpose is to facilitate the exchange of data between different systems, ensuring seamless integration and consistency. Its business significance lies in enabling the efficient management of enterprise architecture components and data.</p>
 <!--ea-notes-end-->
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -34,9 +35,10 @@ notes_hash: e3b0c442
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
@@ -44,27 +46,28 @@ notes_hash: e3b0c442
 | ControlFlow | Flow | [Compile Information Sources](Compile Information Sources.html) |
 | ControlFlow | Flow | [Constureren MD to XMI Convertor](Constureren MD to XMI Convertor.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="diagrams/Information Collection and Model Creation.html" class="diagram-thumb"><img src="diagrams/Information Collection and Model Creation.png" alt="Information Collection and Model Creation" loading="lazy"><span>Information Collection and Model Creation</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | ControlFlow | Flow | [Compile Information Sources](Compile Information Sources.html) |
 | ControlFlow | Flow | [Constureren MD to XMI Convertor](Constureren MD to XMI Convertor.html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="577"></div>
+
+<!-- ea-element-template:v3 -->

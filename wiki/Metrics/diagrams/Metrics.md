@@ -1,22 +1,21 @@
 ---
 diagram_id: 8
-notes_hash: fafc6797
+notes_hash: 054dff60
 ---
 
-# 🗺️ Metrics
+# :material-map-outline: Metrics
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [Metrics](../index.html)
 
 ![Metrics](Metrics.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="8" data-kind="diagram" data-file-path="Metrics/diagrams/Metrics.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="8" data-kind="diagram" data-file-path="Metrics/diagrams/Metrics.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
-<p>For more information:
-https://www</p>
+<p>This element measures the total CO2e emissions output for years 1-3, serving as a key metric for environmental sustainability and supporting the development of a sustainable mission</p>
 <!--ea-notes-end-->
 </div>
 </div>

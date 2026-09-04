@@ -15,7 +15,7 @@ notes_hash: 8df845a6
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Architecture](../Architecture/index.html) / [Process](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="135" data-file-path="Process/Lifecycle &amp; Circularity Model.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="135" data-file-path="Process/Lifecycle &amp; Circularity Model.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -28,7 +28,8 @@ Beschrijving van productlevenscyclus.
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -38,36 +39,38 @@ Beschrijving van productlevenscyclus.
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
 | ControlFlow | Flow | [Ontwerp producten die modulair, repareerbaar en recyclebaar zijn.](../Task/Ontwerp producten die modulair, repareerbaar en recyclebaar zijn..html) |
 | Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb"><img src="../Mapping SDG to Main/diagrams/Mapping SDG to Main.png" alt="Mapping SDG to Main" loading="lazy"><span>Mapping SDG to Main</span></a>
   <a href="../Architecture/diagrams/Architecture.html" class="diagram-thumb"><img src="../Architecture/diagrams/Architecture.png" alt="Architecture" loading="lazy"><span>Architecture</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Association | Link | [SDG 12. Responsible Consumption and Production](../Sustainability Development Goals/SDG 12. Responsible Consumption and Production.html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="135"></div>
+
+<!-- ea-element-template:v3 -->

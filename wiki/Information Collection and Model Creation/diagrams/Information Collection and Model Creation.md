@@ -1,21 +1,21 @@
 ---
 diagram_id: 43
-notes_hash: d95ef852
+notes_hash: d7c5b5a2
 ---
 
-# 🗺️ Information Collection and Model Creation
+# :material-map-outline: Information Collection and Model Creation
 
 
 [Home](../../index.html) / [Model Creation](../../Model Creation/index.html) / [Information Collection and Model Creation](../index.html)
 
 ![Information Collection and Model Creation](Information Collection and Model Creation.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="43" data-kind="diagram" data-file-path="Information Collection and Model Creation/diagrams/Information Collection and Model Creation.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="43" data-kind="diagram" data-file-path="Information Collection and Model Creation/diagrams/Information Collection and Model Creation.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
-<p>The EFRAG Website is a proposed Channel class that is responsible for collecting information and creating models</p>
+<p>This element serves as a central hub for converting MD to XMI, connecting various processes such as model element relationships, compilation information, and constructor conversion</p>
 <!--ea-notes-end-->
 </div>
 </div>

@@ -15,7 +15,7 @@ notes_hash: e3b0c442
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="185" data-file-path="Metrics/_ SDGs met meetbare KPI’s.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="185" data-file-path="Metrics/_ SDGs met meetbare KPI’s.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -24,7 +24,8 @@ notes_hash: e3b0c442
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -36,9 +37,10 @@ notes_hash: e3b0c442
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
@@ -49,18 +51,17 @@ notes_hash: e3b0c442
 | ControlFlow | Flow | [ESRS E2 Pollution](../ESRS E2/ESRS E2 Pollution.html) |
 | Association | Link | [Map bedrijfsactiviteiten op SDG’s en publiceer de bijdrage.](../Task/Map bedrijfsactiviteiten op SDG’s en publiceer de bijdrage..html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="../Identity/diagrams/Identity.html" class="diagram-thumb"><img src="../Identity/diagrams/Identity.png" alt="Identity" loading="lazy"><span>Identity</span></a>
   <a href="diagrams/Metrics.html" class="diagram-thumb"><img src="diagrams/Metrics.png" alt="Metrics" loading="lazy"><span>Metrics</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
@@ -71,10 +72,12 @@ notes_hash: e3b0c442
 | ControlFlow | Flow | [ESRS E5 Resource Use and Circular Economy](../ESRS E5/ESRS E5 Resource Use and Circular Economy.html) |
 | Association | Link | [Map bedrijfsactiviteiten op SDG’s en publiceer de bijdrage.](../Task/Map bedrijfsactiviteiten op SDG’s en publiceer de bijdrage..html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="185"></div>
+
+<!-- ea-element-template:v3 -->

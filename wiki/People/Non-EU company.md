@@ -15,7 +15,7 @@ notes_hash: 0bc9a3c2
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="557" data-file-path="People/Non-EU company.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="557" data-file-path="People/Non-EU company.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -25,16 +25,17 @@ Non-EU companies, which generate over EUR 150 million on the EU market.</p>
 </div>
 </div>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
 | Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.html) |
 | ControlFlow | Flow | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="../ESRS Required Companies/diagrams/ESRS Required Companies.html" class="diagram-thumb"><img src="../ESRS Required Companies/diagrams/ESRS Required Companies.png" alt="ESRS Required Companies" loading="lazy"><span>ESRS Required Companies</span></a>
@@ -42,19 +43,20 @@ Non-EU companies, which generate over EUR 150 million on the EU market.</p>
   <a href="../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.html" class="diagram-thumb"><img src="../Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.png" alt="Introduction EDGY Presentation 13 May Event" loading="lazy"><span>Introduction EDGY Presentation 13 May Event</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | Aggregation | Tree | [Company subject to CSRD](Company subject to CSRD.html) |
 | ControlFlow | Flow | [Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies)](../Introduction EurSuRA/Provide an EU wide reference architecture platform with Open Source information and solutions (to non-IT companies).html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="557"></div>
+
+<!-- ea-element-template:v3 -->

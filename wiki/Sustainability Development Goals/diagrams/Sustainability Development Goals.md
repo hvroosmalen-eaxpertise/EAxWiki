@@ -3,14 +3,14 @@ diagram_id: 1
 notes_hash: 731b4601
 ---
 
-# 🗺️ Sustainability Development Goals
+# :material-map-outline: Sustainability Development Goals
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [SDGs](../../SDGs/index.html) / [Sustainability Development Goals](../index.html)
 
 ![Sustainability Development Goals](Sustainability Development Goals.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="1" data-kind="diagram" data-file-path="Sustainability Development Goals/diagrams/Sustainability Development Goals.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="1" data-kind="diagram" data-file-path="Sustainability Development Goals/diagrams/Sustainability Development Goals.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->

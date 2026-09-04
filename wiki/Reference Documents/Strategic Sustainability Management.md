@@ -15,7 +15,7 @@ notes_hash: 4edefce9
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Reference Material](../Reference Material/index.html) / [Reference Documents](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="483" data-file-path="Reference Documents/Strategic Sustainability Management.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="483" data-file-path="Reference Documents/Strategic Sustainability Management.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -27,16 +27,16 @@ The book is enriched with practical tools, including checklists and insights int
 </div>
 </div>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="diagrams/Reference Documents.html" class="diagram-thumb"><img src="diagrams/Reference Documents.png" alt="Reference Documents" loading="lazy"><span>Reference Documents</span></a>
 </div>
-
-[↑ Back to top](#)
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="483"></div>
+
+<!-- ea-element-template:v3 -->

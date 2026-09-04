@@ -3,14 +3,14 @@ diagram_id: 44
 notes_hash: 81393151
 ---
 
-# 🗺️ Introduction EDGY Presentation 13 May Event
+# :material-map-outline: Introduction EDGY Presentation 13 May Event
 
 
 [Home](../../index.html) / [Model Creation](../../Model Creation/index.html) / [Introduction EurSuRA](../index.html)
 
 ![Introduction EDGY Presentation 13 May Event](Introduction EDGY Presentation 13 May Event.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="44" data-kind="diagram" data-file-path="Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="44" data-kind="diagram" data-file-path="Introduction EurSuRA/diagrams/Introduction EDGY Presentation 13 May Event.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">

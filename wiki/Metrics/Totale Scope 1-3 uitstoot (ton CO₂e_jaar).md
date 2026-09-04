@@ -3,28 +3,29 @@ ea_id: 111
 status: Proposed
 status_options: [Approved, Implemented, Mandatory, Proposed, Validated]
 ea_hash: 9b0c660b
-notes_hash: e3b0c442
+notes_hash: c47270fa
 ---
 
 # <span class="sl" data-layer="edgy-lb">Metric</span> Totale Scope 1-3 uitstoot (ton CO₂e/jaar)
 
 **Type:** Requirement  **Stereotype:** Metric  **StereotypeEx:** Metric  **FQStereotype:** EDGY::Metric  
 **Status:** <span id="ea-status-editor" class="ea-status-editor" data-ea-id="111" data-status="Proposed" data-options='[&quot;Approved&quot;,&quot;Implemented&quot;,&quot;Mandatory&quot;,&quot;Proposed&quot;,&quot;Validated&quot;]' data-file-path="Metrics/Totale Scope 1-3 uitstoot (ton CO₂e_jaar).md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83"><span class="status-badge status-proposed">Proposed</span><button class="ea-status-edit-btn" type="button" aria-label="Edit status">&#9998;</button></span>  
-**Created:** 2025-12-02  **Modified:** 2025-12-03
+**Created:** 2025-12-02  **Modified:** 2026-09-03
 
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="111" data-file-path="Metrics/Totale Scope 1-3 uitstoot (ton CO₂e_jaar).md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="111" data-file-path="Metrics/Totale Scope 1-3 uitstoot (ton CO₂e_jaar).md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
-
+<p>This element measures the total CO2e emissions output for years 1-3, serving as a key metric for environmental sustainability and supporting the development of a sustainable mission. It provides essential information for organizations aiming to reduce their carbon footprint and contribute to a more environmentally friendly future. This metric is crucial for achieving a climate-neutral status by 2030.</p>
 <!--ea-notes-end-->
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -36,37 +37,39 @@ notes_hash: e3b0c442
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
 | ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.html) |
 | Association | Link | [Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar.](../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="../Identity/diagrams/Identity.html" class="diagram-thumb"><img src="../Identity/diagrams/Identity.png" alt="Identity" loading="lazy"><span>Identity</span></a>
   <a href="diagrams/Metrics.html" class="diagram-thumb"><img src="diagrams/Metrics.png" alt="Metrics" loading="lazy"><span>Metrics</span></a>
 </div>
 
-[↑ Back to top](#)
-
-### Referenced By
+<details class="ea-section" data-ea-section-id="referenced-by" markdown="1">
+<summary><h2 id="referenced-by">Referenced By</h2></summary>
 
 | Type | Stereotype | Source |
 |------|------------|--------|
 | ControlFlow | Flow | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.html) |
 | Association | Link | [Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar.](../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..html) |
 
-[↑ Back to top](#)
+</details>
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="111"></div>
+
+<!-- ea-element-template:v3 -->

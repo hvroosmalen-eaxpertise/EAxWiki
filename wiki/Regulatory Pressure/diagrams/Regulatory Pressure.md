@@ -3,14 +3,14 @@ diagram_id: 25
 notes_hash: abd1369b
 ---
 
-# 🗺️ Regulatory Pressure
+# :material-map-outline: Regulatory Pressure
 
 
 [Home](../../index.html) / [Archimate](../../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](../../Strategic Sustainability Management Model (Bodenstein)/index.html) / [Regulatory Pressure](../index.html)
 
 ![Regulatory Pressure](Regulatory Pressure.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="25" data-kind="diagram" data-file-path="Regulatory Pressure/diagrams/Regulatory Pressure.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="25" data-kind="diagram" data-file-path="Regulatory Pressure/diagrams/Regulatory Pressure.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->

@@ -15,7 +15,7 @@ notes_hash: d0bceb96
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Base](../Base/index.html) / [People](../People/index.html) / [Private Parties](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="567" data-file-path="Private Parties/Aligned Incentives.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="567" data-file-path="Private Parties/Aligned Incentives.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -24,16 +24,16 @@ notes_hash: d0bceb96
 </div>
 </div>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="diagrams/Private Parties.html" class="diagram-thumb"><img src="diagrams/Private Parties.png" alt="Private Parties" loading="lazy"><span>Private Parties</span></a>
 </div>
-
-[↑ Back to top](#)
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="567"></div>
+
+<!-- ea-element-template:v3 -->

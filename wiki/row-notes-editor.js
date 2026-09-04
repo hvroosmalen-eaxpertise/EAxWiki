@@ -98,6 +98,7 @@
     host.appendChild(textarea);
     host.appendChild(controls);
     textarea.focus();
+    if (window.EAxEditGuard) window.EAxEditGuard.acquire();
 
     function cleanup() {
       if (textarea.parentNode) textarea.parentNode.removeChild(textarea);
@@ -108,6 +109,7 @@
         var editRow2 = document.querySelector('tr.ea-row-edit[data-row-id="' + rowId + '"]');
         if (editRow2) editRow2.style.display = 'none';
       }
+      if (window.EAxEditGuard) window.EAxEditGuard.release();
     }
 
     currentOpen = { rowId: rowId, cleanup: cleanup };

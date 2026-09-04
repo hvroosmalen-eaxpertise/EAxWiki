@@ -3,11 +3,11 @@ package_id: 78
 notes_hash: e3b0c442
 ---
 
-# 📁 ESRS Required Companies
+# :material-folder-outline: ESRS Required Companies
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [ESRS](../ESRS/index.html) / [European Sustainability Reporting Standards](../European Sustainability Reporting Standards/index.html) / [ESRS Required Companies](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="78" data-kind="package" data-file-path="ESRS Required Companies/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="78" data-kind="package" data-file-path="ESRS Required Companies/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -18,5 +18,5 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [ESRS Required Companies](diagrams/ESRS Required Companies.md) (Custom)
+- :material-map-outline: [ESRS Required Companies](diagrams/ESRS Required Companies.html) (Custom)
   *Not all companies are subjected to report according to the ESRS.*

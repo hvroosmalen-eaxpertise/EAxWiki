@@ -15,7 +15,7 @@ notes_hash: 5c88c5f6
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Classification](../ESRS Classification/index.html) / [ESRS Sector Classification](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="571" data-file-path="ESRS Sector Classification/ESRS Sector Classification.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="571" data-file-path="ESRS Sector Classification/ESRS Sector Classification.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -40,18 +40,16 @@ notes_hash: 5c88c5f6
 </tbody>
 </table>
 
-[↑ Back to top](#)
-
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="diagrams/ESRS Sector Classification.html" class="diagram-thumb"><img src="diagrams/ESRS Sector Classification.png" alt="ESRS Sector Classification" loading="lazy"><span>ESRS Sector Classification</span></a>
 </div>
-
-[↑ Back to top](#)
 
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="571"></div>
+
+<!-- ea-element-template:v3 -->

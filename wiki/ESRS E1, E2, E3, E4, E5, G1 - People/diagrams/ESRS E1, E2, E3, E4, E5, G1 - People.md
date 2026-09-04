@@ -3,14 +3,14 @@ diagram_id: 33
 notes_hash: fafc6797
 ---
 
-# 🗺️ ESRS E1, E2, E3, E4, E5, G1 - People
+# :material-map-outline: ESRS E1, E2, E3, E4, E5, G1 - People
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [ESRS and People](../../ESRS and People/index.html) / [ESRS E1, E2, E3, E4, E5, G1 - People](../index.html)
 
 ![ESRS E1, E2, E3, E4, E5, G1 - People](ESRS E1, E2, E3, E4, E5, G1 - People.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="33" data-kind="diagram" data-file-path="ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="33" data-kind="diagram" data-file-path="ESRS E1, E2, E3, E4, E5, G1 - People/diagrams/ESRS E1, E2, E3, E4, E5, G1 - People.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">

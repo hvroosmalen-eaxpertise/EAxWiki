@@ -3,11 +3,11 @@ package_id: 19
 notes_hash: e3b0c442
 ---
 
-# 📁 Identity
+# :material-folder-outline: Identity
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Identity](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="19" data-kind="package" data-file-path="Identity/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="19" data-kind="package" data-file-path="Identity/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -18,10 +18,10 @@ notes_hash: e3b0c442
 
 ## Diagrams
 
-- 🗺️ [Identity](diagrams/Identity.md) (Custom)
+- :material-map-outline: [Identity](diagrams/Identity.html) (Custom)
 
 ## Sub-packages
 
-- 📁 [Content](../Content/index.md)
-- 📁 [Purpose](../Purpose/index.md)
-- 📁 [Story](../Story/index.md)
+- :material-folder-outline: [Content](../Content/index.html)
+- :material-folder-outline: [Purpose](../Purpose/index.html)
+- :material-folder-outline: [Story](../Story/index.html)

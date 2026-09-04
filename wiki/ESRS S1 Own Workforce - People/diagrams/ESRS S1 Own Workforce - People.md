@@ -3,14 +3,14 @@ diagram_id: 32
 notes_hash: fafc6797
 ---
 
-# 🗺️ ESRS S1 Own Workforce - People
+# :material-map-outline: ESRS S1 Own Workforce - People
 
 
 [Home](../../index.html) / [Edgy](../../Edgy/index.html) / [ESRS](../../ESRS/index.html) / [ESRS and People](../../ESRS and People/index.html) / [ESRS S1 Own Workforce - People](../index.html)
 
 ![ESRS S1 Own Workforce - People](ESRS S1 Own Workforce - People.png)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="32" data-kind="diagram" data-file-path="ESRS S1 Own Workforce - People/diagrams/ESRS S1 Own Workforce - People.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="32" data-kind="diagram" data-file-path="ESRS S1 Own Workforce - People/diagrams/ESRS S1 Own Workforce - People.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit description">&#9998;</button>
 <span class="ea-notes-derived-hint">(derived)</span>
 <div class="ea-notes-content">

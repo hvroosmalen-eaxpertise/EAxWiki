@@ -3,11 +3,11 @@ package_id: 40
 notes_hash: 9e2ef42c
 ---
 
-# 📁 Strategic Sustainability Management Model (Bodenstein)
+# :material-folder-outline: Strategic Sustainability Management Model (Bodenstein)
 
 [Home](../index.html) / [Archimate](../Archimate/index.html) / [Strategic Sustainability Management Model (Bodenstein)](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="40" data-kind="package" data-file-path="Strategic Sustainability Management Model (Bodenstein)/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="40" data-kind="package" data-file-path="Strategic Sustainability Management Model (Bodenstein)/index.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-package-notes-start-->
@@ -19,13 +19,13 @@ This model integrates sustainability as a strategic variable into corporate stra
 
 ## Diagrams
 
-- 🗺️ [Strategic Sustainability Management Model (Bodenstein)](diagrams/Strategic Sustainability Management Model (Bodenstein).md) (Logical)
+- :material-map-outline: [Strategic Sustainability Management Model (Bodenstein)](diagrams/Strategic Sustainability Management Model (Bodenstein).html) (Logical)
   *This diagram shows the contents of the book in a visual way. The following sections contain the structure per Driver.*
 
 ## Sub-packages
 
-- 📁 [Stakeholder Expectations](../Stakeholder Expectations/index.md)
-- 📁 [Climate Risk](../Climate Risk/index.md)
-- 📁 [Regulatory Pressure](../Regulatory Pressure/index.md)
-- 📁 [Market Differentiation Pressure](../Market Differentiation Pressure/index.md)
-- 📁 [Reputation Risk](../Reputation Risk/index.md)
+- :material-folder-outline: [Stakeholder Expectations](../Stakeholder Expectations/index.html)
+- :material-folder-outline: [Climate Risk](../Climate Risk/index.html)
+- :material-folder-outline: [Regulatory Pressure](../Regulatory Pressure/index.html)
+- :material-folder-outline: [Market Differentiation Pressure](../Market Differentiation Pressure/index.html)
+- :material-folder-outline: [Reputation Risk](../Reputation Risk/index.html)

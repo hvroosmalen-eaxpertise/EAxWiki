@@ -15,7 +15,7 @@ notes_hash: a4a44f33
 
 [Home](../index.html) / [Edgy](../Edgy/index.html) / [Identity](../Identity/index.html) / [Purpose](index.html)
 
-<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="110" data-file-path="Purpose/Enterprise Purpose.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="false">
+<div id="ea-notes-editor" class="ea-notes-editor" data-ea-id="110" data-file-path="Purpose/Enterprise Purpose.md" data-api-port="8001" data-api-token="0a090fdc614acadb47d274812862962392b5fdee6a3e1f83" data-ai-configured="true">
 <button id="ea-notes-edit-btn" class="ea-notes-edit-btn" type="button" aria-label="Edit notes">&#9998;</button>
 <div class="ea-notes-content">
 <!--ea-notes-start-->
@@ -28,7 +28,8 @@ De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en mili
 </div>
 </div>
 
-## Tagged Values
+<details class="ea-section" data-ea-section-id="tagged-values" markdown="1">
+<summary><h2 id="tagged-values">Tagged Values</h2></summary>
 
 <table>
 <thead><tr><th>Name</th><th>Value</th><th>Notes</th></tr></thead>
@@ -38,9 +39,10 @@ De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en mili
 </tbody>
 </table>
 
-[↑ Back to top](#)
+</details>
 
-## Relationships
+<details class="ea-section" data-ea-section-id="relationships" markdown="1">
+<summary><h2 id="relationships">Relationships</h2></summary>
 
 | Type | Stereotype | Connected To |
 |------|------------|-------------|
@@ -48,19 +50,19 @@ De duurzame bestaansreden van de onderneming en de bijdrage aan klimaat- en mili
 | Association | Link | [SDG 13. Climate Action](../Sustainability Development Goals/SDG 13. Climate Action.html) |
 | ControlFlow | Flow | [Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar.](../Task/Formuleer een duurzame missie (bv. klimaatneutraal in 2030) en publiceer deze zichtbaar..html) |
 
-[↑ Back to top](#)
+</details>
 
-### Appears on Diagrams
+## Appears on Diagrams
 
 <div class="diagram-thumbs">
   <a href="../Mapping SDG to Main/diagrams/Mapping SDG to Main.html" class="diagram-thumb"><img src="../Mapping SDG to Main/diagrams/Mapping SDG to Main.png" alt="Mapping SDG to Main" loading="lazy"><span>Mapping SDG to Main</span></a>
   <a href="../Identity/diagrams/Identity.html" class="diagram-thumb"><img src="../Identity/diagrams/Identity.png" alt="Identity" loading="lazy"><span>Identity</span></a>
 </div>
 
-[↑ Back to top](#)
-
 ---
 
 ## Relationship Graph
 
 <div id="ea-graph-container" data-focal-id="110"></div>
+
+<!-- ea-element-template:v3 -->
