@@ -38,7 +38,6 @@ public class ConfigPageRendererTests : IDisposable
         MinElementFraction = 0.5,
         Force = false,
         ForceEveryNRuns = 4,
-        Brand = "ACME",
         AiMode = "openai",
         AiEndpoint = "https://api.openai.com/v1",
         AiModel = "gpt-4o-mini",

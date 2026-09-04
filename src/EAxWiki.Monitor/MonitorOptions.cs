@@ -18,7 +18,6 @@ public sealed record MonitorOptions
     public string? TeamsWebhookUrl { get; init; }
     public string? TelegramBotToken { get; init; }
     public string? TelegramChatId { get; init; }
-    public string? Brand { get; init; }
     public bool TestAlert { get; init; }
     public bool NotifyOnStart { get; init; } = true;
     public bool Force { get; init; }

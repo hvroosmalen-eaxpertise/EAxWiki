@@ -3,7 +3,9 @@ site_description: EAxWiki — EA model wiki
 docs_dir: wiki
 theme:
   name: material
-  logo: assets/eursura-logo.png
+  # Logo removed with issue #97 — branding is now user-owned via wiki/brand.css.
+  # Drop your own PNG into wiki/assets/<name>.png and re-add `logo: assets/<name>.png`
+  # here to display it in the top bar.
   features:
     - navigation.instant
     - navigation.tracking

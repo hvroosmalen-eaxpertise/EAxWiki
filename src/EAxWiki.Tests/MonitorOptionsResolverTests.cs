@@ -8,14 +8,14 @@ public class MonitorOptionsResolverTests
     private const string RepoRoot = @"C:\repos\EAxWiki";
     private static LocalConfigStore.Config File(
         int? wikiPort = null, int? apiPort = null, int? llmPort = null, string? aiMode = null,
-        string? aiEndpoint = null, string? repoPath = null, string? brand = null,
+        string? aiEndpoint = null, string? repoPath = null,
         string? llamaExePath = null, string? llamaModelPath = null)
     {
         var c = new LocalConfigStore.Config
         {
             WikiPort = wikiPort, ApiPort = apiPort, LlmPort = llmPort,
             AiMode = aiMode, AiEndpoint = aiEndpoint, RepoPath = repoPath,
-            Brand = brand, LlamaExePath = llamaExePath, LlamaModelPath = llamaModelPath,
+            LlamaExePath = llamaExePath, LlamaModelPath = llamaModelPath,
         };
         return c;
     }
@@ -79,20 +79,6 @@ public class MonitorOptionsResolverTests
         Assert.Equal(9090, Resolve(new CliOptions { LlmPort = 9090 }, File(llmPort: 8080)).LlmPort);
         Assert.Equal(8181, Resolve(new CliOptions(), File(llmPort: 8181)).LlmPort);
         Assert.Equal(8080, Resolve(new CliOptions(), File()).LlmPort);
-    }
-
-    [Fact]
-    public void Webhook_EnvBeatsFile_ButCliBeatsEnv()
-    {
-        var o = Resolve(new CliOptions(),
-            File(brand: "file-brand"),
-            _ => "env-brand");
-        Assert.Equal("env-brand", o.Brand);
-
-        var o2 = Resolve(new CliOptions { Brand = "cli-brand" },
-            File(brand: "file-brand"),
-            _ => "env-brand");
-        Assert.Equal("cli-brand", o2.Brand);
     }
 
     [Fact]

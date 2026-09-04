@@ -83,51 +83,39 @@ internal class InfrastructureWriter(IOutputWriter writer)
     }
 
 
-    public async Task WriteGraphScriptsAsync(string outputDir, string brand, CancellationToken ct = default)
+    public async Task WriteGraphScriptsAsync(string outputDir, CancellationToken ct = default)
     {
         // Extract embedded cytoscape.min.js to the wiki output so it works offline.
         await writer.WriteFileAsync(Path.Combine(outputDir, "cytoscape.min.js"),
             EmbeddedResource.ReadText("cytoscape.min.js"), ct);
 
-        var (layerColors, darkText) = brand == "eursura"
-            ? (new Dictionary<string, string>
-               {
-                   ["business"] = "#A8C6C7",
-                   ["application"] = "#103135",
-                   ["technology"] = "#C4E5E7",
-                   ["physical"] = "#6FB4B6",
-                   ["motivation"] = "#D0F391",
-                   ["strategy"] = "#7FA8A9",
-                   ["implementation"] = "#5C8A8B",
-                   ["composite"] = "#405B5C",
-                   ["uml"] = "#F3F7F7",
-                   ["edgy-id"] = "#75F0A5",
-                   ["edgy-ar"] = "#9DB9F6",
-                   ["edgy-ex"] = "#F985B4",
-                   ["edgy-ix"] = "#4ECDC4",
-                   ["edgy-pe"] = "#FFD93D",
-                   ["edgy-lb"] = "#E8E8E8",
-               },
-               new Dictionary<string, bool> { ["business"] = true, ["technology"] = true, ["physical"] = true, ["motivation"] = true, ["strategy"] = true, ["uml"] = true, ["edgy-id"] = true, ["edgy-pe"] = true, ["edgy-lb"] = true })
-            : (new Dictionary<string, string>
-               {
-                   ["business"] = "#D4A017",
-                   ["application"] = "#2E86C1",
-                   ["technology"] = "#27AE60",
-                   ["physical"] = "#17A589",
-                   ["motivation"] = "#8E44AD",
-                   ["strategy"] = "#A0682B",
-                   ["implementation"] = "#D84B79",
-                   ["composite"] = "#5D6D7E",
-                   ["uml"] = "#7F8C8D",
-                   ["edgy-id"] = "#75F0A5",
-                   ["edgy-ar"] = "#9DB9F6",
-                   ["edgy-ex"] = "#F985B4",
-                   ["edgy-ix"] = "#4ECDC4",
-                   ["edgy-pe"] = "#FFD93D",
-                   ["edgy-lb"] = "#E8E8E8",
-               },
-               new Dictionary<string, bool> { ["edgy-id"] = true, ["edgy-pe"] = true, ["edgy-lb"] = true, ["business"] = true });
+        // Default palette. Brand-specific overrides used to live here behind an
+        // `if (brand == "eursura")` gate; that gate is gone (issue #97 — brand is
+        // now a user-owned wiki/brand.css, not a first-class code concept). Users
+        // who want a different graph palette should follow the same pattern that
+        // brand.css uses for CSS variables — a future issue can expose these too.
+        var layerColors = new Dictionary<string, string>
+        {
+            ["business"] = "#D4A017",
+            ["application"] = "#2E86C1",
+            ["technology"] = "#27AE60",
+            ["physical"] = "#17A589",
+            ["motivation"] = "#8E44AD",
+            ["strategy"] = "#A0682B",
+            ["implementation"] = "#D84B79",
+            ["composite"] = "#5D6D7E",
+            ["uml"] = "#7F8C8D",
+            ["edgy-id"] = "#75F0A5",
+            ["edgy-ar"] = "#9DB9F6",
+            ["edgy-ex"] = "#F985B4",
+            ["edgy-ix"] = "#4ECDC4",
+            ["edgy-pe"] = "#FFD93D",
+            ["edgy-lb"] = "#E8E8E8",
+        };
+        var darkText = new Dictionary<string, bool>
+        {
+            ["edgy-id"] = true, ["edgy-pe"] = true, ["edgy-lb"] = true, ["business"] = true,
+        };
 
         string SerializeColors(Dictionary<string, string> map) =>
             string.Join(",\n", map.Select(kv => $"    '{kv.Key}':{new string(' ', 15 - kv.Key.Length)}'{kv.Value}'"));
@@ -172,26 +160,24 @@ internal class InfrastructureWriter(IOutputWriter writer)
         await writer.WriteFileAsync(Path.Combine(outputDir, "extra.css"), css, ct);
     }
 
-    public async Task WriteBrandAssetsAsync(string outputDir, string brand, CancellationToken ct = default)
+    // Seed wiki/brand.css on first export from the embedded brand-template.css.
+    // The file is USER-OWNED — never overwritten on subsequent exports, so users
+    // can freely edit CSS variables, add rules, add fonts, etc. and their tweaks
+    // survive every export cycle. Issue #97 replaces the old hardcoded
+    // brand=="eursura" path with this seed-once behavior; brand is no longer a
+    // first-class code concept.
+    public async Task SeedBrandCssIfMissingAsync(string outputDir, CancellationToken ct = default)
     {
-        if (brand != "eursura") return;
+        var brandCssPath = Path.Combine(outputDir, "brand.css");
+        if (File.Exists(brandCssPath)) return;
 
         var assembly = Assembly.GetExecutingAssembly();
-
         var cssResource = assembly.GetManifestResourceNames()
-            .First(n => n.EndsWith("brand-eursura.css", StringComparison.OrdinalIgnoreCase));
+            .First(n => n.EndsWith("brand-template.css", StringComparison.OrdinalIgnoreCase));
         using var cssStream = assembly.GetManifestResourceStream(cssResource)!;
         using var cssReader = new StreamReader(cssStream);
         var css = await cssReader.ReadToEndAsync(ct);
-        await writer.WriteFileAsync(Path.Combine(outputDir, "brand.css"), css, ct);
-
-        var pngResource = assembly.GetManifestResourceNames()
-            .First(n => n.EndsWith("eursura-logo.png", StringComparison.OrdinalIgnoreCase));
-        using var pngStream = assembly.GetManifestResourceStream(pngResource)!;
-        var pngBytes = new byte[pngStream.Length];
-        await pngStream.ReadAsync(pngBytes, ct);
-        Directory.CreateDirectory(Path.Combine(outputDir, "assets"));
-        await File.WriteAllBytesAsync(Path.Combine(outputDir, "assets", "eursura-logo.png"), pngBytes, ct);
+        await writer.WriteFileAsync(brandCssPath, css, ct);
     }
 
     public static async Task CleanupOrphanedFilesAsync(ExportContext ctx, CancellationToken ct = default)

@@ -144,53 +144,44 @@ public class ScriptTemplateIntegrityTests
         Assert.False(writer.Files.ContainsKey(key), $"ai-suggest.js should no longer be produced. Keys: {string.Join(", ", writer.Files.Keys)}");
     }
 
+    // Issue #97: brand.css is seeded on first export (when missing) with a
+    // commented-out template, and NEVER overwritten by subsequent exports —
+    // user-owned styling that survives every export cycle.
     [Fact]
-    public async Task BrandEursura_EmitsBrandCssLogoAndBrandColors()
+    public async Task BrandCss_SeededOnFirstExport()
+    {
+        var (writer, outPath) = await RunExportAsync();
+        var brandKey = Normalize(Path.Combine(outPath, "brand.css"));
+        Assert.True(writer.Files.ContainsKey(brandKey),
+            $"brand.css should be seeded on first export. Keys: {string.Join(", ", writer.Files.Keys)}");
+        // Template ships as commented-out CSS variable examples.
+        Assert.Contains("Your wiki's brand", writer.Files[brandKey]);
+        Assert.Contains("--md-primary-fg-color", writer.Files[brandKey]);
+    }
+
+    [Fact]
+    public async Task BrandCss_NotOverwrittenIfPresent()
     {
         var writer = new TestInMemoryWriter();
         var exporter = new MarkdownExporter(writer, NullLogger<MarkdownExporter>.Instance);
-        var outPath = Path.Combine(Path.GetTempPath(), "eaxwiki_brand_" + Guid.NewGuid().ToString("N"));
+        var outPath = Path.Combine(Path.GetTempPath(), "eaxwiki_brandseed_" + Guid.NewGuid().ToString("N"));
         try
         {
             Directory.CreateDirectory(outPath);
-            Environment.SetEnvironmentVariable("EAXWIKI_BRAND", "eursura");
-            try
-            {
-                var result = await exporter.ExportAsync(MinimalRepository(), null, outPath);
-                Assert.Equal(1, result.SucceededElements);
-            }
-            finally
-            {
-                Environment.SetEnvironmentVariable("EAXWIKI_BRAND", null);
-            }
+            var brandPath = Path.Combine(outPath, "brand.css");
+            const string userCss = "/* my custom brand */\n:root { --md-primary-fg-color: #FF00FF; }\n";
+            File.WriteAllText(brandPath, userCss);
 
-            var brandKey = Normalize(Path.Combine(outPath, "brand.css"));
-            Assert.True(writer.Files.ContainsKey(brandKey), $"brand.css should be emitted for eursura. Keys: {string.Join(", ", writer.Files.Keys)}");
+            var result = await exporter.ExportAsync(MinimalRepository(), null, outPath);
+            Assert.Equal(1, result.SucceededElements);
 
-            var graph = ReadExportedFile(writer, outPath, "graph-init.js");
-            Assert.Contains("#A8C6C7", graph);
-            Assert.Contains("'technology':     '#C4E5E7'", graph);
-            Assert.Contains("'uml':            '#F3F7F7'", graph);
-
-            Assert.True(File.Exists(Path.Combine(outPath, "assets", "eursura-logo.png")), "logo should be written to disk");
+            // File on disk is unchanged — the seeder saw it existed and skipped.
+            Assert.Equal(userCss, File.ReadAllText(brandPath));
         }
         finally
         {
             if (Directory.Exists(outPath))
                 Directory.Delete(outPath, recursive: true);
         }
-    }
-
-    [Fact]
-    public async Task BrandNeutral_DoesNotEmitBrandFiles()
-    {
-        var (writer, outPath) = await RunExportAsync();
-        var brandKey = Normalize(Path.Combine(outPath, "brand.css"));
-        Assert.False(writer.Files.ContainsKey(brandKey), $"brand.css should not exist without --brand. Keys: {string.Join(", ", writer.Files.Keys)}");
-        Assert.False(Directory.Exists(Path.Combine(outPath, "assets")));
-
-        var graph = ReadExportedFile(writer, outPath, "graph-init.js");
-        Assert.Contains("#D4A017", graph);
-        Assert.DoesNotContain("#A8C6C7", graph);
     }
 }

@@ -19,8 +19,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\cytoscape.min.js" />
     <EmbeddedResource Include="Resources\extra.css" />
-    <EmbeddedResource Include="Resources\brand-eursura.css" />
-    <EmbeddedResource Include="Resources\eursura-logo.png" />
+    <EmbeddedResource Include="Resources\brand-template.css" />
     <EmbeddedResource Include="Resources\api-probe.js" />
     <EmbeddedResource Include="Resources\ea-icons.js" />
     <EmbeddedResource Include="Resources\notes-editor.js" />

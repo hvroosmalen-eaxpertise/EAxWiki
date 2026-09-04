@@ -40,7 +40,7 @@ public class WikiOutputMetrics : IWikiOutputMetrics
 public interface IStaExporter
 {
     /// <summary>Run one full export on an STA thread (EaReader → optional write-back scan → MarkdownExporter).</summary>
-    void ExportOnSta(string repoPath, string outputPath, bool force, bool writeBack, int apiPort, string? brand, string? aiEndpoint);
+    void ExportOnSta(string repoPath, string outputPath, bool force, bool writeBack, int apiPort, string? aiEndpoint);
 }
 
 /// <summary>
@@ -63,7 +63,7 @@ public class StaMarkdownExporter : IStaExporter
     internal ILogger<MarkdownExporter> CreateExporterLogger() =>
         _loggerFactory.CreateLogger<MarkdownExporter>();
 
-    public void ExportOnSta(string repoPath, string outputPath, bool force, bool writeBack, int apiPort, string? brand, string? aiEndpoint)
+    public void ExportOnSta(string repoPath, string outputPath, bool force, bool writeBack, int apiPort, string? aiEndpoint)
     {
         Exception? failure = null;
         var tcs = new TaskCompletionSource(TaskCreationOptions.RunContinuationsAsynchronously);
@@ -152,11 +152,11 @@ public class ExportRunner : IExportRunner
 
     public async Task<bool> RunExportAsync(bool effectiveForce, WritebackDelta writebacks, CancellationToken ct)
     {
-        // Expose API port / AI endpoint / brand to MarkdownExporter exactly like EAxWiki/Program.cs.
+        // Expose API port / AI endpoint to MarkdownExporter exactly like EAxWiki/Program.cs.
+        // Brand is no longer a code concept (issue #97) — wiki/brand.css owns theming now.
         Environment.SetEnvironmentVariable("EAXWIKI_API_PORT", _options.ApiPort.ToString());
         if (!string.IsNullOrEmpty(_options.AiEndpoint))
             Environment.SetEnvironmentVariable("EAXWIKI_AI_ENDPOINT", _options.AiEndpoint);
-        Environment.SetEnvironmentVariable("EAXWIKI_BRAND", _options.Brand ?? string.Empty);
 
         _state.LastMode = effectiveForce ? "full (--force)" : "incremental";
         _logger.LogInformation("Mode: {Mode}.", _state.LastMode);
@@ -187,7 +187,6 @@ public class ExportRunner : IExportRunner
                     effectiveForce,
                     _options.ApiPort > 0,
                     _options.ApiPort,
-                    _options.Brand,
                     _options.AiEndpoint);
                 lastExitCode = 0;
 

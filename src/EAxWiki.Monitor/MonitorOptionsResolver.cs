@@ -90,7 +90,6 @@ public static class MonitorOptionsResolver
             TeamsWebhookUrl = cli.TeamsWebhookUrl ?? getEnv("EAXWIKI_ALERT_TEAMS_WEBHOOK") ?? file?.TeamsWebhookUrl,
             TelegramBotToken = cli.TelegramBotToken ?? getEnv("EAXWIKI_ALERT_TELEGRAM_BOT_TOKEN") ?? file?.TelegramBotToken,
             TelegramChatId = cli.TelegramChatId ?? getEnv("EAXWIKI_ALERT_TELEGRAM_CHAT_ID") ?? file?.TelegramChatId,
-            Brand = cli.Brand ?? getEnv("EAXWIKI_BRAND") ?? file?.Brand,
             TestAlert = cli.TestAlert,
             NotifyOnStart = cli.NotifyOnStart ?? true,
             Force = cli.Force,

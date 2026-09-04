@@ -48,21 +48,6 @@ public class LocalConfigStoreTests : IDisposable
     }
 
     [Fact]
-    public void Brand_RoundTrips()
-    {
-        var dir = Path.Combine(Path.GetTempPath(), "eaxwiki_cfg_" + Guid.NewGuid().ToString("N"));
-        Directory.CreateDirectory(dir);
-        try
-        {
-            var path = Path.Combine(dir, ".eaxwiki");
-            LocalConfigStore.Save(path, new LocalConfigStore.Config { RepoPath = "x.qea", Brand = "eursura" });
-            var loaded = LocalConfigStore.Load(path, out _);
-            Assert.Equal("eursura", loaded.Brand);
-        }
-        finally { Directory.Delete(dir, recursive: true); }
-    }
-
-    [Fact]
     public void SaveAndLoad_MinimalConfig_RoundTrips()
     {
         var config = new LocalConfigStore.Config { RepoPath = @"C:\Model.qea" };

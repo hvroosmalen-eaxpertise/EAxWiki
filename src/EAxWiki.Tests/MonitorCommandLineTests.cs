@@ -22,7 +22,6 @@ public class MonitorCommandLineTests
         Assert.Null(o.TeamsWebhookUrl);
         Assert.Null(o.TelegramBotToken);
         Assert.Null(o.TelegramChatId);
-        Assert.Null(o.Brand);
         Assert.False(o.TestAlert);
         Assert.Null(o.NotifyOnStart);
         Assert.False(o.Force);
@@ -106,12 +105,6 @@ public class MonitorCommandLineTests
         var o = Parse("--telegram-bot-token", "123:ABC", "--telegram-chat-id", "-100123");
         Assert.Equal("123:ABC", o.TelegramBotToken);
         Assert.Equal("-100123", o.TelegramChatId);
-    }
-
-    [Fact]
-    public void Brand_Parses()
-    {
-        Assert.Equal("eursura", Parse("--brand", "eursura").Brand);
     }
 
     [Fact]

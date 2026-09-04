@@ -21,7 +21,6 @@ public static class MonitorCommandLine
         var teamsWebhook = new Option<string?>("--teams-webhook-url") { Description = "Microsoft Teams webhook URL." };
         var telegramToken = new Option<string?>("--telegram-bot-token") { Description = "Telegram bot token." };
         var telegramChatId = new Option<string?>("--telegram-chat-id") { Description = "Telegram chat id (string; group ids are negative)." };
-        var brand = new Option<string?>("--brand") { Description = "Wiki brand (e.g. eursura)." };
         var testAlert = new Option<bool>("--test-alert") { Description = "Send a Test alert to every configured channel and exit." };
         var noNotifyStart = new Option<bool?>("--no-notify-start") { Description = "Suppress Start and Finish alerts." };
         var force = new Option<bool>("--force", "-f") { Description = "Full rebuild on every run." };
@@ -33,7 +32,7 @@ public static class MonitorCommandLine
         var root = new RootCommand("EAxWiki unattended monitor: export, serve, write-back API and LLM watchdogs.")
         {
             repo, output, port, maxRetries, retryDelay, minElementFraction,
-            webhook, teamsWebhook, telegramToken, telegramChatId, brand,
+            webhook, teamsWebhook, telegramToken, telegramChatId,
             testAlert, noNotifyStart, force, forceEvery, exportInterval, checkInterval, llmPort,
         };
 
@@ -62,7 +61,6 @@ public static class MonitorCommandLine
             TeamsWebhookUrl = r.GetValue((Option<string?>)r.RootCommandResult.Command.Children.First(o => o.Name == "--teams-webhook-url")),
             TelegramBotToken = r.GetValue((Option<string?>)r.RootCommandResult.Command.Children.First(o => o.Name == "--telegram-bot-token")),
             TelegramChatId = r.GetValue((Option<string?>)r.RootCommandResult.Command.Children.First(o => o.Name == "--telegram-chat-id")),
-            Brand = r.GetValue((Option<string?>)r.RootCommandResult.Command.Children.First(o => o.Name == "--brand")),
             TestAlert = r.GetValue((Option<bool>)r.RootCommandResult.Command.Children.First(o => o.Name == "--test-alert")),
             NotifyOnStart = r.GetResult("--no-notify-start") is System.CommandLine.Parsing.OptionResult { Implicit: false } ? false : null,
             Force = r.GetValue((Option<bool>)r.RootCommandResult.Command.Children.First(o => o.Name == "--force")),

@@ -46,7 +46,6 @@ public class ConfigPageRenderer
         sb.AppendLine($"| Min element fraction | {options.MinElementFraction.ToString(CultureInfo.InvariantCulture)} |");
         sb.AppendLine($"| Force | {(options.Force ? "enabled" : "disabled")} |");
         sb.AppendLine($"| Force every N runs | {(options.ForceEveryNRuns == 0 ? "off" : $"every {options.ForceEveryNRuns} runs")} |");
-        sb.AppendLine($"| Brand | {options.Brand ?? "(default)"} |");
         sb.AppendLine($"| AI mode | {options.AiMode} |");
         sb.AppendLine($"| AI endpoint | {options.AiEndpoint ?? "(not set)"} |");
         sb.AppendLine($"| AI model | {options.AiModel ?? "(not set)"} |");

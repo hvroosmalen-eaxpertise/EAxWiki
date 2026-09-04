@@ -38,7 +38,6 @@ public static class LocalConfigStore
         public string? AiEndpoint { get; set; }
         public string? AiModel { get; set; }
         public string? AiKey { get; set; }
-        public string? Brand { get; set; }
         public string? LlamaExePath { get; set; }
         public string? LlamaModelPath { get; set; }
     }

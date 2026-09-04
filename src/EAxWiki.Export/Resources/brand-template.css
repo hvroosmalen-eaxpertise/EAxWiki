@@ -1,0 +1,76 @@
+/* Your wiki's brand / theme.
+ *
+ * This file is seeded once per wiki and is NEVER overwritten by the EAxWiki
+ * exporter — edit freely. Everything below is a Material for MkDocs CSS variable
+ * or class override. Docs: https://squidfunk.github.io/mkdocs-material/customization/
+ *
+ * Uncomment and change to customize. Leaving the file as-is keeps the default
+ * Material theme colors and fonts.
+ */
+
+:root {
+  /* Header + tabs bar background. */
+  /* --md-primary-fg-color: #103135; */
+
+  /* Text color on the primary background (header title, tab labels). */
+  /* --md-primary-fg-color--light: #A8C6C7; */
+
+  /* Links, focus outlines, active nav item accent. */
+  /* --md-accent-fg-color: #D0F391; */
+
+  /* In-body link color. */
+  /* --md-typeset-a-color: #103135; */
+
+  /* Body and code fonts. */
+  /* --md-text-font: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; */
+  /* --md-code-font: 'Geist Mono', SFMono-Regular, Consolas, monospace; */
+}
+
+/* Optional web font import — uncomment along with the font variables above.
+ * @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono&display=swap');
+ */
+
+/* Header / tabs bar — bright brand color on top of the page. */
+/* .md-header, .md-tabs {
+ *   background-color: #C4E5E7;
+ *   color: #103135;
+ * }
+ * .md-header__title {
+ *   color: #103135;
+ * }
+ */
+
+/* Collapsible element-page section headers (issue #96) — tint with the brand
+ * palette. Uncomment if you set --md-primary-fg-color / --md-primary-fg-color--light
+ * above. */
+/* .md-typeset details.ea-section {
+ *   border-color: var(--md-primary-fg-color);
+ * }
+ * .md-typeset details.ea-section > summary {
+ *   background-color: var(--md-primary-fg-color--light);
+ *   color: var(--md-primary-fg-color);
+ * }
+ */
+
+/* Element status badges — colored pills next to Status: on element pages.
+ * Uncomment and pick your own accent hues. */
+/* .status-proposed    { background: #F3F7F7; color: #103135; }
+ * .status-approved    { background: #D0F391; color: #103135; }
+ * .status-implemented { background: #C4E5E7; color: #103135; }
+ * .status-mandatory   { background: #A8C6C7; color: #103135; }
+ * .status-invalid     { background: #E2E3E5; color: #103135; }
+ * .status-not-set     { background: #E2E3E5; color: #6C757D; font-style: italic; }
+ */
+
+/* ArchiMate layer chips — the small colored labels prefixing element names.
+ * Uncomment to override the default palette. */
+/* .sl[data-layer="business"]       { background: #A8C6C7; color: #103135; }
+ * .sl[data-layer="application"]    { background: #103135; color: #F3F7F7; }
+ * .sl[data-layer="technology"]     { background: #C4E5E7; color: #103135; }
+ * .sl[data-layer="physical"]       { background: #6FB4B6; color: #103135; }
+ * .sl[data-layer="motivation"]     { background: #D0F391; color: #103135; }
+ * .sl[data-layer="strategy"]       { background: #7FA8A9; color: #103135; }
+ * .sl[data-layer="implementation"] { background: #5C8A8B; color: #F3F7F7; }
+ * .sl[data-layer="composite"]      { background: #405B5C; color: #F3F7F7; }
+ * .sl[data-layer="uml"]            { background: #F3F7F7; color: #103135; }
+ */

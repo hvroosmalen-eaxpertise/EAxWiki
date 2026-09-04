@@ -27,7 +27,7 @@ public class ExportRunnerTests : IDisposable
         public bool Throw;
         public bool LastForce;
         public bool LastWriteBack;
-        public void ExportOnSta(string repoPath, string outputPath, bool force, bool writeBack, int apiPort, string? brand, string? aiEndpoint)
+        public void ExportOnSta(string repoPath, string outputPath, bool force, bool writeBack, int apiPort, string? aiEndpoint)
         {
             Calls++;
             LastForce = force;
@@ -46,10 +46,10 @@ public class ExportRunnerTests : IDisposable
         public void Dispatch(string message, AlertKind kind) => Sent.Add((kind, message));
     }
 
-    private static MonitorOptions Options(string? brand = null) => new()
+    private static MonitorOptions Options() => new()
     {
         WikiDir = "W", MaxRetries = 3, RetryDelaySeconds = 0, MinElementFraction = 0.5,
-        ApiPort = 0, NotifyOnStart = true, Brand = brand, AiEndpoint = null,
+        ApiPort = 0, NotifyOnStart = true, AiEndpoint = null,
     };
 
     private (ExportRunner Runner, FakeExporter Exporter, FakeAlerts Alerts, HealthState State, string WikiDir) Create(

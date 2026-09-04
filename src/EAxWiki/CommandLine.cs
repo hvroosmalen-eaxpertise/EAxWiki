@@ -80,11 +80,6 @@ public static class CommandLine
     {
         Description = "API key for AI endpoint (optional for local LLMs).",
     };
-    private static readonly Option<string?> Brand = new("--brand")
-    {
-        Description = "Brand theme to emit (eursura); default: none.",
-    };
-
     private const string Description = """
         EAxWiki - Sparx EA Repository to Wiki Generator
 
@@ -105,7 +100,7 @@ public static class CommandLine
         var root = new RootCommand(Description)
         {
             RepoArg, Repo, Name, Output, Package, Verbose, Force, Json, WriteBack,
-            Api, ApiPort, WikiPort, ReadyFile, Cert, CertPassword, AiEndpoint, AiModel, AiKey, Brand,
+            Api, ApiPort, WikiPort, ReadyFile, Cert, CertPassword, AiEndpoint, AiModel, AiKey,
         };
         // A bare positional repo is the only legitimate non-option token; anything else is a typo.
         root.TreatUnmatchedTokensAsErrors = true;
@@ -135,7 +130,6 @@ public static class CommandLine
             AiEndpoint = r.GetValue(AiEndpoint) ?? "",
             AiModel = r.GetValue(AiModel) ?? "llama-3.2-3b",
             AiKey = r.GetValue(AiKey) ?? "",
-            Brand = r.GetValue(Brand) ?? "",
         };
     }
 

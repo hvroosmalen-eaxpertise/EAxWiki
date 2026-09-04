@@ -28,7 +28,6 @@ public class CommandLineTests
         Assert.Equal(0, cfg.ApiPort);
         Assert.Equal(0, cfg.WikiPort);
         Assert.Equal(60, cfg.ApiRateLimitPerMinute);
-        Assert.Equal("", cfg.Brand);
         Assert.Equal("", cfg.AiEndpoint);
         Assert.Equal("llama-3.2-3b", cfg.AiModel);
         Assert.Equal("", cfg.AiKey);
@@ -174,12 +173,6 @@ public class CommandLineTests
     }
 
     [Fact]
-    public void BrandFlag_SetsBrand()
-    {
-        Assert.Equal("eursura", Parse("--brand", "eursura").Brand);
-    }
-
-    [Fact]
     public void CertAndAiFlags_SetValues()
     {
         var cfg = Parse(
@@ -197,7 +190,7 @@ public class CommandLineTests
     {
         var cfg = Parse("--repo", "r", "--output", "out", "-f", "-v", "--json",
             "--writeback", "--api", "--api-port", "9001", "--wiki-port", "8080",
-            "--package", "pkg1", "--name", "MyRepo", "--brand", "eursura");
+            "--package", "pkg1", "--name", "MyRepo");
         Assert.Equal("r", cfg.RepositoryPath);
         Assert.Equal("out", cfg.OutputPath);
         Assert.Equal("pkg1", cfg.PackageFilter);
@@ -209,7 +202,6 @@ public class CommandLineTests
         Assert.True(cfg.ApiMode);
         Assert.Equal(9001, cfg.ApiPort);
         Assert.Equal(8080, cfg.WikiPort);
-        Assert.Equal("eursura", cfg.Brand);
     }
 
     [Fact]
