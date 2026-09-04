@@ -221,7 +221,9 @@ public class PipelineResilienceTests
         cts.Cancel();
         blocker.TrySetResult();
 
-        await Assert.ThrowsAsync<OperationCanceledException>(() => task);
+        // Runtime may surface the cancellation as TaskCanceledException (a subclass);
+        // ThrowsAnyAsync accepts either exact type or subclass.
+        await Assert.ThrowsAnyAsync<OperationCanceledException>(() => task);
     }
 
     // ── Force mode ──────────────────────────────────────────────────────────────
