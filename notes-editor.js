@@ -84,6 +84,7 @@
       widget.appendChild(controls);
       textarea.focus();
       acquireEditLock(eaId);
+      if (window.EAxEditGuard) window.EAxEditGuard.acquire();
 
       cancelBtn.addEventListener('click', exitEditMode);
       saveBtn.addEventListener('click', save);
@@ -137,6 +138,7 @@
       contentDiv.style.display = '';
       editBtn.style.display = '';
       if (hint) hint.style.display = '';
+      if (window.EAxEditGuard) window.EAxEditGuard.release();
     }
 
     function save() {
