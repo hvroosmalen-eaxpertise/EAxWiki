@@ -101,6 +101,16 @@
     var textarea = widget.querySelector('.ea-brand-css-textarea');
     var msg = widget.querySelector('.ea-brand-msg');
 
+    // Hold the edit guard (issue #96) while any input inside the widget is focused so mkdocs
+    // livereload can't wipe unsaved picker changes when other status/*.md files churn.
+    widget.addEventListener('focusin', function () {
+      if (window.EAxEditGuard) window.EAxEditGuard.acquire();
+    });
+    widget.addEventListener('focusout', function (e) {
+      // Release only when focus leaves the widget entirely, not on moves between fields.
+      if (!widget.contains(e.relatedTarget) && window.EAxEditGuard) window.EAxEditGuard.release();
+    });
+
     widget.querySelectorAll('input[data-brand-color]').forEach(function (input) {
       input.addEventListener('change', function () {
         var meta = COLOR_VARS.find(function (v) { return v.key === input.dataset.brandColor; });
@@ -144,9 +154,10 @@
         method: 'POST',
         headers: { 'Content-Type': 'text/plain', 'X-EAxWiki-Token': token },
         body: textarea.value
-      }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
-        .then(function (res) {
-          msg.textContent = res.ok ? 'Saved. Reload the page to see changes.' : ('Failed: ' + (res.j && res.j.message || 'unknown'));
+      }).then(readResponse).then(function (res) {
+          msg.textContent = res.ok
+            ? 'Saved. Reload the page to see changes.'
+            : 'Failed (' + res.status + '): ' + (res.body && (res.body.message || res.body.detail || res.body.title) || res.text || 'unknown');
         })
         .catch(function (e) { msg.textContent = 'Failed: ' + e.message; });
     });
@@ -164,13 +175,15 @@
         method: 'POST',
         headers: { 'X-EAxWiki-Token': token },
         body: fd
-      }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
-        .then(function (res) {
-          msg.textContent = res.ok
-            ? 'Logo uploaded. Restart the wiki serve so mkdocs picks up the new logo.'
-            : ('Failed: ' + (res.j && res.j.message || 'unknown'));
-        })
-        .catch(function (e) { msg.textContent = 'Failed: ' + e.message; });
+      }).then(readResponse).then(function (res) {
+        console.log('[brand-editor] logo upload response', res);
+        msg.textContent = res.ok
+          ? 'Logo uploaded to ' + (res.body && res.body.path || 'assets/') + '. Restart the wiki serve so mkdocs picks up the new logo.'
+          : 'Failed (' + res.status + '): ' + (res.body && (res.body.message || res.body.detail || res.body.title) || res.text || 'unknown');
+      }).catch(function (e) {
+        console.error('[brand-editor] logo upload error', e);
+        msg.textContent = 'Failed: ' + e.message;
+      });
     });
 
     var removeBtn = widget.querySelector('.ea-brand-logo-remove');
@@ -180,11 +193,10 @@
       fetch(apiBase + '/api/brand-logo', {
         method: 'DELETE',
         headers: { 'X-EAxWiki-Token': token }
-      }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
-        .then(function (res) {
+      }).then(readResponse).then(function (res) {
           msg.textContent = res.ok
             ? 'Logo removed. Restart the wiki serve to see the change.'
-            : ('Failed: ' + (res.j && res.j.message || 'unknown'));
+            : 'Failed (' + res.status + '): ' + (res.body && (res.body.message || res.body.detail || res.body.title) || res.text || 'unknown');
         })
         .catch(function (e) { msg.textContent = 'Failed: ' + e.message; });
     });
@@ -209,6 +221,16 @@
     return css.replace(re, function (block) {
       var pattern = new RegExp('^\\s*' + escapeRegExp(name) + '\\s*:[^;]*;\\s*\\n?', 'gm');
       return block.replace(pattern, '');
+    });
+  }
+
+  // Fetch response parser that never throws: returns { ok, status, body: parsedJson | null, text }
+  // so error paths can show whatever the server actually said, even if it's HTML or plain text.
+  function readResponse(r) {
+    return r.text().then(function (text) {
+      var body = null;
+      try { body = text ? JSON.parse(text) : null; } catch (e) { /* not json */ }
+      return { ok: r.ok, status: r.status, body: body, text: text };
     });
   }
 

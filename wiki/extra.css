@@ -367,6 +367,11 @@ details.status-details li {
    every section open regardless of the runtime toggle. */
 details.ea-section {
   margin: 1em 0;
+  border-color: var(--ea-section-border, var(--md-default-fg-color--lightest));
+}
+details.ea-section > summary {
+  background-color: var(--ea-section-bg, transparent);
+  color: var(--ea-section-fg, inherit);
 }
 details.ea-section > summary > h2 {
   display: inline;
