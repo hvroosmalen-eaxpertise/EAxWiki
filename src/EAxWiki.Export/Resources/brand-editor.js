@@ -7,7 +7,9 @@
     { key: 'primary',      var: '--md-primary-fg-color',         label: 'Header / tabs background' },
     { key: 'primaryLight', var: '--md-primary-fg-color--light',  label: 'Text on primary (header title)' },
     { key: 'accent',       var: '--md-accent-fg-color',          label: 'Links, focus outlines' },
-    { key: 'link',         var: '--md-typeset-a-color',          label: 'In-body link color' }
+    { key: 'link',         var: '--md-typeset-a-color',          label: 'In-body link color' },
+    { key: 'sectionBg',    var: '--ea-section-bg',               label: 'Section header background (Relationships, Tagged Values, …)' },
+    { key: 'sectionFg',    var: '--ea-section-fg',               label: 'Section header text color' }
   ];
 
   function initBrandEditor() {
