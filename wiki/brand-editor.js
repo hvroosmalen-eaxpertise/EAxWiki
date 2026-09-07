@@ -77,7 +77,7 @@
     var font = extractVar(css, '--md-text-font');
     if (font) {
       var fontInput = widget.querySelector('.ea-brand-font-input');
-      if (fontInput) fontInput.value = font.replace(/,.*$/, '').replace(/^['"]|['"]$/g, '').trim();
+      if (fontInput) fontInput.value = font.replace(/^['"]|['"]$/g, '').replace(/,.*$/, '').trim();
     }
   }
 
