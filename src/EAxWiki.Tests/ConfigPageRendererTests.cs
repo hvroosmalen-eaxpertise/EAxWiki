@@ -96,6 +96,37 @@ public class ConfigPageRendererTests : IDisposable
     }
 
     [Fact]
+    public void Render_EmitsBrandEditorWidgetShell()
+    {
+        var wikiDir = Path.Combine(_dir, "wiki");
+        Directory.CreateDirectory(wikiDir);
+        File.WriteAllText(Path.Combine(wikiDir, "brand.css"), "/* my css */\n:root { --md-primary-fg-color: #abcdef; }");
+
+        var renderer = new ConfigPageRenderer(wikiDir, new StubSnapshot());
+        renderer.Render(Options(), DateTime.Now);
+
+        var output = File.ReadAllText(Path.Combine(wikiDir, "status", "config.md"));
+        Assert.Contains("## Brand", output);
+        Assert.Contains("<div id=\"ea-brand-editor\"", output);
+        Assert.Contains("data-api-port=\"8001\"", output);
+        Assert.Contains("data-brand-css=", output);
+        // brand.css body is inlined into a data- attribute, HTML-attr-escaped.
+        Assert.Contains("--md-primary-fg-color: #abcdef", output);
+    }
+
+    [Fact]
+    public void Render_BrandCssMissing_StillRendersEmptyEditor()
+    {
+        var wikiDir = Path.Combine(_dir, "wiki");
+        var renderer = new ConfigPageRenderer(wikiDir, new StubSnapshot());
+        renderer.Render(Options(), DateTime.Now);
+
+        var output = File.ReadAllText(Path.Combine(wikiDir, "status", "config.md"));
+        Assert.Contains("<div id=\"ea-brand-editor\"", output);
+        Assert.Contains("data-brand-css=\"\"", output);
+    }
+
+    [Fact]
     public void Render_ScheduleUnavailable_ShowsMessage()
     {
         var renderer = new ConfigPageRenderer(Path.Combine(_dir, "wiki"), new StubSnapshot());

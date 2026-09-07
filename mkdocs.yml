@@ -42,6 +42,7 @@ extra_javascript:
   - status-editor.js
   - notes-editor.js
   - row-notes-editor.js
+  - brand-editor.js
 
 plugins:
   - search

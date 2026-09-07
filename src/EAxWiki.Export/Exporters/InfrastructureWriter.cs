@@ -149,6 +149,9 @@ internal class InfrastructureWriter(IOutputWriter writer)
     public Task WriteApiProbeScriptAsync(string outputDir, CancellationToken ct = default) =>
         writer.WriteFileAsync(Path.Combine(outputDir, "api-probe.js"), EmbeddedResource.ReadText("api-probe.js"), ct);
 
+    public Task WriteBrandEditorScriptAsync(string outputDir, CancellationToken ct = default) =>
+        writer.WriteFileAsync(Path.Combine(outputDir, "brand-editor.js"), EmbeddedResource.ReadText("brand-editor.js"), ct);
+
     public async Task WriteExtraCssAsync(string outputDir, CancellationToken ct = default)
     {
         var assembly = Assembly.GetExecutingAssembly();

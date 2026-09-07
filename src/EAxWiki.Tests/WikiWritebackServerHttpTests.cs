@@ -166,6 +166,105 @@ public class WikiWritebackServerHttpTests : IAsyncLifetime
         Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
     }
 
+    // ─── brand editor (issue #98) ────────────────────────────────────────────────────────────
+
+    [Fact]
+    public async Task PostBrandCss_WithValidToken_WritesFile()
+    {
+        var req = new HttpRequestMessage(HttpMethod.Post, "/api/brand-css")
+        {
+            Content = new StringContent(":root { --md-primary-fg-color: #123456; }", System.Text.Encoding.UTF8, "text/plain")
+        };
+        req.Headers.Add("Origin", Origin);
+        req.Headers.Add("X-EAxWiki-Token", _token);
+
+        var response = await _client.SendAsync(req);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        var body = await File.ReadAllTextAsync(Path.Combine(_outputDir, "brand.css"));
+        Assert.Contains("#123456", body);
+    }
+
+    [Fact]
+    public async Task PostBrandCss_WithoutToken_Returns401()
+    {
+        var req = new HttpRequestMessage(HttpMethod.Post, "/api/brand-css")
+        {
+            Content = new StringContent("x", System.Text.Encoding.UTF8, "text/plain")
+        };
+        req.Headers.Add("Origin", Origin);
+
+        var response = await _client.SendAsync(req);
+        Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode);
+        Assert.False(File.Exists(Path.Combine(_outputDir, "brand.css")));
+    }
+
+    [Fact]
+    public async Task PostBrandCss_OverSizeCap_Returns400()
+    {
+        var big = new string('a', 513 * 1024);
+        var req = new HttpRequestMessage(HttpMethod.Post, "/api/brand-css")
+        {
+            Content = new StringContent(big, System.Text.Encoding.UTF8, "text/plain")
+        };
+        req.Headers.Add("Origin", Origin);
+        req.Headers.Add("X-EAxWiki-Token", _token);
+
+        var response = await _client.SendAsync(req);
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task PostBrandLogo_WithValidToken_SavesFileToAssets()
+    {
+        // 1x1 PNG bytes (minimum valid PNG)
+        var pngBytes = Convert.FromBase64String(
+            "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=");
+
+        var content = new MultipartFormDataContent();
+        var fileContent = new ByteArrayContent(pngBytes);
+        fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/png");
+        content.Add(fileContent, "file", "my logo.png");
+
+        var req = new HttpRequestMessage(HttpMethod.Post, "/api/brand-logo") { Content = content };
+        req.Headers.Add("Origin", Origin);
+        req.Headers.Add("X-EAxWiki-Token", _token);
+
+        var response = await _client.SendAsync(req);
+
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        // Spaces get stripped from the sanitized name.
+        Assert.True(File.Exists(Path.Combine(_outputDir, "assets", "mylogo.png")));
+    }
+
+    [Fact]
+    public async Task PostBrandLogo_RejectsUnknownExtension()
+    {
+        var content = new MultipartFormDataContent();
+        content.Add(new ByteArrayContent(new byte[] { 1, 2, 3 }), "file", "malicious.exe");
+
+        var req = new HttpRequestMessage(HttpMethod.Post, "/api/brand-logo") { Content = content };
+        req.Headers.Add("Origin", Origin);
+        req.Headers.Add("X-EAxWiki-Token", _token);
+
+        var response = await _client.SendAsync(req);
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+        Assert.False(Directory.Exists(Path.Combine(_outputDir, "assets"))
+                     && File.Exists(Path.Combine(_outputDir, "assets", "malicious.exe")));
+    }
+
+    [Fact]
+    public async Task DeleteBrandLogo_WithValidToken_Returns200()
+    {
+        var req = new HttpRequestMessage(HttpMethod.Delete, "/api/brand-logo");
+        req.Headers.Add("Origin", Origin);
+        req.Headers.Add("X-EAxWiki-Token", _token);
+
+        var response = await _client.SendAsync(req);
+        // No mkdocs.yml present in test dir → still a no-op success.
+        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+    }
+
     // ─── /readyz ─────────────────────────────────────────────────────────────────────────────
 
     [Fact]

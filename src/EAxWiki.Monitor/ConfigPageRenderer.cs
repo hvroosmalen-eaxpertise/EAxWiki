@@ -1,23 +1,28 @@
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
+using EAxWiki.Export.Helpers;
 
 namespace EAxWiki.Monitor;
 
 /// <summary>
 /// Renders {wikiDir}/status/config.md (fully code-generated — no template): resolved
 /// MonitorOptions with secrets masked, alert destinations as configured/not-configured, and the
-/// cached scheduled-task snapshot. Read-only; never contains webhook URLs, tokens, or keys.
+/// cached scheduled-task snapshot. Read-only for the operational bits at the top; a brand-editor
+/// widget shell (issue #98) is injected at the bottom so users can tint their wiki without hand-
+/// editing brand.css.
 /// </summary>
 public class ConfigPageRenderer
 {
     private static readonly Regex ConnectionStringRegex = new(@"(?i)(Password|Pwd)\s*=[^;]*", RegexOptions.Compiled);
 
+    private readonly string _wikiDir;
     private readonly string _outputPath;
     private readonly IScheduledTaskSnapshot _schedule;
 
     public ConfigPageRenderer(string wikiDir, IScheduledTaskSnapshot schedule)
     {
+        _wikiDir = wikiDir;
         _outputPath = Path.Combine(wikiDir, "status", "config.md");
         _schedule = schedule;
     }
@@ -80,13 +85,90 @@ public class ConfigPageRenderer
                 sb.AppendLine($"- {trigger}");
         }
 
+        AppendBrandEditor(sb, options);
+
         Directory.CreateDirectory(Path.GetDirectoryName(_outputPath)!);
         File.WriteAllText(_outputPath, sb.ToString());
     }
+
+    // Emits the shell for brand-editor.js (issue #98) below the read-only status tables. Seeded
+    // with the current brand.css body and the current mkdocs.yml logo path so the widget can boot
+    // the pickers to the right values. The token is read once at render time — same
+    // ApiTokenStore that the other editors already publish to widgets in exported pages.
+    private void AppendBrandEditor(StringBuilder sb, MonitorOptions options)
+    {
+        var brandCssPath = Path.Combine(_wikiDir, "brand.css");
+        var brandCss = File.Exists(brandCssPath) ? File.ReadAllText(brandCssPath) : "";
+
+        string? currentLogo = null;
+        try
+        {
+            var mkdocsPath = Path.Combine(AppContext.BaseDirectory, "mkdocs.yml");
+            if (!File.Exists(mkdocsPath))
+                mkdocsPath = Path.Combine(Directory.GetCurrentDirectory(), "mkdocs.yml");
+            if (File.Exists(mkdocsPath))
+                currentLogo = MkdocsYmlProbe.GetLogo(mkdocsPath);
+        }
+        catch { /* best-effort — widget still renders without a logo preview */ }
+
+        string token;
+        try { token = ApiTokenStore.GetOrCreate(_wikiDir); }
+        catch { token = ""; }
+
+        sb.AppendLine();
+        sb.AppendLine("## Brand");
+        sb.AppendLine();
+        sb.AppendLine("Color, font, and logo — saved to `wiki/brand.css` (and `mkdocs.yml` for the logo). Changes take effect on the next page reload; a logo change requires restarting the wiki serve.");
+        sb.AppendLine();
+
+        sb.Append("<div id=\"ea-brand-editor\"");
+        sb.Append(" data-api-port=\"").Append(options.ApiPort).Append('"');
+        sb.Append(" data-api-token=\"").Append(HtmlAttrEscape(token)).Append('"');
+        sb.Append(" data-current-logo=\"").Append(HtmlAttrEscape(currentLogo ?? "")).Append('"');
+        sb.Append(" data-brand-css=\"").Append(HtmlAttrEscape(brandCss)).Append('"');
+        sb.AppendLine("></div>");
+    }
+
+    private static string HtmlAttrEscape(string s) =>
+        s.Replace("&", "&amp;").Replace("\"", "&quot;").Replace("<", "&lt;").Replace(">", "&gt;");
 
     private static string RedactRepo(string? value)
     {
         if (string.IsNullOrEmpty(value)) return "(not set)";
         return ConnectionStringRegex.Replace(value, "$1=***");
+    }
+}
+
+// Monitor doesn't have InternalsVisibleTo for EAxWiki, so we duplicate the tiny logo-line
+// read here. Kept package-private and only used by ConfigPageRenderer's best-effort preview.
+internal static class MkdocsYmlProbe
+{
+    public static string? GetLogo(string path)
+    {
+        var lines = File.ReadAllLines(path);
+        int themeStart = -1;
+        for (int i = 0; i < lines.Length; i++)
+        {
+            if (lines[i].StartsWith("theme:"))
+            {
+                themeStart = i;
+                break;
+            }
+        }
+        if (themeStart < 0) return null;
+        for (int i = themeStart + 1; i < lines.Length; i++)
+        {
+            var line = lines[i];
+            if (line.Length == 0) continue;
+            var trimmed = line.TrimStart();
+            if (trimmed.StartsWith('#')) continue;
+            if (line[0] != ' ' && line[0] != '\t') break;
+            if (trimmed.StartsWith("logo:"))
+            {
+                var colon = line.IndexOf(':');
+                return colon < 0 ? null : line[(colon + 1)..].Trim();
+            }
+        }
+        return null;
     }
 }

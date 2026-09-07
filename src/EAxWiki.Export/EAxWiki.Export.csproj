@@ -25,6 +25,7 @@
     <EmbeddedResource Include="Resources\notes-editor.js" />
     <EmbeddedResource Include="Resources\row-notes-editor.js" />
     <EmbeddedResource Include="Resources\status-editor.js" />
+    <EmbeddedResource Include="Resources\brand-editor.js" />
     <EmbeddedResource Include="Resources\graph-init.js.tmpl" />
   </ItemGroup>
 
