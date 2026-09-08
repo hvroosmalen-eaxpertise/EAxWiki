@@ -19,7 +19,7 @@ public class MonitorLoopTests
 
     private sealed class StubDigest : IDigestTracker
     {
-        public int PageReads;
+        public int PageReads = 0;
         public int CountNewPageReads() => PageReads;
         public WritebackDelta CountNewWritebacks() => new(0, new Dictionary<string, int>());
         public string? MaybeComposeDailyDigest(DateTime now) => null;

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
 
 namespace EAxWiki;
 
@@ -862,7 +863,7 @@ internal static class WikiWritebackServer
         // Graceful shutdown for the monitor (issue #81): token-authenticated (it's under /api),
         // so Stop-ApiServer can ask the API to dispose its EA COM connection and exit 0 instead
         // of force-killing it and orphaning an EA.exe -Embedding instance per export cycle.
-        app.MapPost("/api/shutdown", async (HttpContext context, Microsoft.Extensions.Hosting.IApplicationLifetime lifetime) =>
+        app.MapPost("/api/shutdown", async (HttpContext context, IHostApplicationLifetime lifetime) =>
         {
             await AuditLogger.LogAsync(outputPath, "POST /api/shutdown", 0, "shutdown",
                 StatusCodes.Status200OK, "Graceful shutdown requested",

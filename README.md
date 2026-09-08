@@ -305,6 +305,8 @@ A typical first-time setup is just:
 | `scripts/writeback.ps1` | Scan wiki for status and notes changes and write them back to EA via COM (**Windows only**) |
 | `src/EAxWiki.Monitor` | Unattended monitor exe (`EAxWiki.Monitor.exe`): retry with backoff, Slack/Teams/Telegram alerting, health page, serve watchdog (see [Scheduling exports](#scheduling-exports), **Windows only**) |
 | `scripts/register-scheduled-task.ps1` | Register `EAxWiki.Monitor.exe` as a Windows Task Scheduler task — fixed interval or day/night mode (see [Scheduling exports](#scheduling-exports), **Windows only**) |
+| `scripts/start-monitor-wiki.ps1` | Verify the build, acquire the monitor lock (killing any stale instance), and start `EAxWiki.Monitor.exe` in the foreground — the interactive equivalent of the scheduled-task path. `--kill` force-kills a running monitor first (**Windows only**) |
+| `scripts/kill-monitor-processes.ps1` | Stop everything the monitor started (mkdocs serve, write-back API, LLM watchdog) by reading `.eaxwiki-monitor/*.pid`. `--force` additionally kills EA.exe instances not tracked via PID files (**Windows only**) |
 | `src/EAxWiki.SchedulerUI` | WinForms GUI front end for the script above — see [Scheduler GUI](#scheduler-gui), **Windows only** |
 
 Flags use Unix-style `--flag` syntax everywhere (`--force`, `--verbose`, `--repo`, ...). Only `export-and-serve.ps1` / `serve-api.ps1` additionally accept the legacy PowerShell-style aliases `-RepoPath` / `-OutputDir` / `-ApiPort` (normalized to `--repo` / `--output` / `--api-port`), and `serve.ps1` accepts `-Port`. Any other `-CamelCase` flag (e.g. `-Force`, `-Verbose`) is an unknown option — use `--force`, `--verbose` instead.
@@ -446,7 +448,16 @@ The default endpoint expects a local `llama-server` instance; any OpenAI-compati
 
 ### Branding
 
-Optional `--brand eursura` emits the EurSuRA logo, palette, fonts, and graph colors; the default (no `--brand`) stays neutral. The brand can also be set via the `EAXWIKI_BRAND` env var or the `brand` field in `.eaxwiki`.
+Each wiki owns its look through **`wiki/brand.css`** (seeded once on first export as a template of commented-out Material CSS variables, then never overwritten by the exporter — edit it freely) plus the `theme.logo` line in `mkdocs.yml`. There is no `--brand` flag; branding is per-wiki, not baked into the tool.
+
+The **Configuration page** (`/status/config.html`) has a live brand editor:
+
+- Six color pickers for the highest-signal Material CSS variables (header background, header text, links/accents, in-body links, and the collapsible-section header background + text) with a live preview against the current wiki.
+- A font input — type a Google Fonts name (e.g. `Geist`) and the editor auto-adds the matching `@import` line; type a full CSS stack and it's used verbatim.
+- Logo upload — drop a PNG/JPG/SVG/WebP/GIF/ICO (2 MB max); the file lands in `wiki/assets/` and `mkdocs.yml`'s `theme.logo` line is patched in place. **Remove logo** unsets the `logo:` line but keeps the file around.
+- A raw `brand.css` textarea as the escape hatch for anything the pickers don't cover — status badge palette, ArchiMate layer chips, sub-selectors, etc.
+
+Everything is written via the same token-authenticated write-back API as status/notes edits, so remote read-only viewers cannot change the brand. The livereload guard (issue #96) holds while any field is focused so an unrelated status refresh doesn't wipe in-progress picker changes.
 
 ### Write-back server security
 
@@ -457,7 +468,7 @@ The write-back server is a Kestrel HTTP server that runs alongside `mkdocs serve
 | **Auth token** (`X-EAxWiki-Token`) | Random 24-byte hex token per output directory, validated with constant-time comparison | Prevents unauthorized access from LAN scanning or unrelated sites |
 | **Origin/port CORS check** | Accepts cross-origin requests only from the same host on the configured `--wiki-port` | Prevents one wiki instance from reaching another's write-back server on the same machine |
 | **HTTPS** (`--cert <pfx>` / `--cert-password <pw>`) | When a PFX certificate is provided, Kestrel binds to `https://` instead of `http://` | Protects the auth token and notes/status content from network eavesdropping (see below) |
-| **Request body size limit** (1 MB) | `KestrelServerOptions.Limits.MaxRequestBodySize = 1_048_576` | Prevents OOM / disk-fill from arbitrarily large notes payloads |
+| **Request body size limit** (3 MB) | `KestrelServerOptions.Limits.MaxRequestBodySize = 3 * 1_048_576` | Prevents OOM / disk-fill from arbitrarily large payloads. 3 MB fits multipart logo uploads (client-side hard-cap 2 MB) on top of the JSON write-back endpoints, which stay well under 1 MB |
 | **Rate limiting** (60 / min / token) | In-memory sliding window per `X-EAxWiki-Token` value, returns `429 Too Many Requests` with `Retry-After: 60` | Prevents a compromised or misbehaving client from hammering the EA COM API |
 | **Audit log** | JSON-lines file at `.eaxwiki-monitor/audit.log` with timestamp, token prefix, endpoint, element ID, field name, status code | Provides a structured trail of all write-back activity for forensic review |
 | **Health endpoints** | `GET /healthz` → `{"status":"healthy", "ea":true\|false}`, `GET /readyz` → `200 {"status":"ready","ea":true}` or `503 {"status":"not ready","ea":false}` when EA COM is unreachable | Allow monitoring probes (and `api-probe.js` on every wiki page — see [Live write-back](#live-write-back--change-status-and-notes-directly-from-the-wiki-page)) to distinguish "API up + EA reachable" from "API up, EA gone" and "API down". `/readyz` reflects the current dispatcher state, not a stale startup snapshot |

@@ -92,10 +92,10 @@ public class EaReaderTests
         mock.Setup(e => e.Status).Returns(status);
         mock.Setup(e => e.Modified).Returns(modified ?? new System.DateTime(2024, 6, 1));
         mock.Setup(e => e.Created).Returns(created ?? new System.DateTime(2023, 1, 1));
-        mock.Setup(e => e.Attributes).Returns(attributes);
-        mock.Setup(e => e.Methods).Returns(methods);
-        mock.Setup(e => e.TaggedValues).Returns(taggedValues);
-        mock.Setup(e => e.Connectors).Returns(connectors);
+        mock.Setup(e => e.Attributes).Returns(attributes!);
+        mock.Setup(e => e.Methods).Returns(methods!);
+        mock.Setup(e => e.TaggedValues).Returns(taggedValues!);
+        mock.Setup(e => e.Connectors).Returns(connectors!);
         return mock;
     }
 
@@ -300,9 +300,9 @@ public class EaReaderTests
         mock.Setup(p => p.Name).Returns(name);
         mock.Setup(p => p.Notes).Returns(notes);
         mock.Setup(p => p.ParentID).Returns(parentId);
-        mock.Setup(p => p.Elements).Returns(elements);
-        mock.Setup(p => p.Diagrams).Returns(diagrams);
-        mock.Setup(p => p.Packages).Returns(packages);
+        mock.Setup(p => p.Elements).Returns(elements!);
+        mock.Setup(p => p.Diagrams).Returns(diagrams!);
+        mock.Setup(p => p.Packages).Returns(packages!);
         return mock;
     }
 

@@ -52,7 +52,6 @@ public class GraphIndexExporterTests
     [Fact]
     public async Task Produces_Valid_Json_With_Nodes_And_Edges()
     {
-        var pkg = ("Pkg", (int?)null);
         var a = MakeElement(1, "Alpha", 10, stereotype: "ArchiMate_BusinessActor");
         var b = MakeElement(2, "Beta", 10, stereotype: "ArchiMate_ApplicationComponent");
         a.Connectors.Add(new EaConnector { Id = 101, SourceId = 1, TargetId = 2, Name = "serves", Type = "Dependency" });
@@ -61,7 +60,7 @@ public class GraphIndexExporterTests
             new() { [10] = ("Pkg", null) }
         );
         var writer = new MemoryWriter();
-        var exporter = new GraphIndexExporter(writer, NullLogger<GraphIndexExporter>.Instance);
+        var exporter = new GraphIndexExporter(writer);
 
         await exporter.ExportAsync(ctx, CancellationToken.None);
 
@@ -85,7 +84,6 @@ public class GraphIndexExporterTests
     [Fact]
     public async Task Edges_Deduplicated_By_ConnectorId()
     {
-        var pkg = ("Pkg", (int?)null);
         var a = MakeElement(1, "Alpha", 10);
         var b = MakeElement(2, "Beta", 10);
         // Both endpoints reference the same connector.
@@ -96,7 +94,7 @@ public class GraphIndexExporterTests
             new() { [10] = ("Pkg", null) }
         );
         var writer = new MemoryWriter();
-        var exporter = new GraphIndexExporter(writer, NullLogger<GraphIndexExporter>.Instance);
+        var exporter = new GraphIndexExporter(writer);
 
         await exporter.ExportAsync(ctx, CancellationToken.None);
 
@@ -114,7 +112,7 @@ public class GraphIndexExporterTests
             new() { [10] = ("Pkg", null) }
         );
         var writer = new MemoryWriter();
-        var exporter = new GraphIndexExporter(writer, NullLogger<GraphIndexExporter>.Instance);
+        var exporter = new GraphIndexExporter(writer);
 
         await exporter.ExportAsync(ctx, CancellationToken.None);
 
@@ -132,7 +130,7 @@ public class GraphIndexExporterTests
             new() { [10] = ("MyPkg", null) }
         );
         var writer = new MemoryWriter();
-        var exporter = new GraphIndexExporter(writer, NullLogger<GraphIndexExporter>.Instance);
+        var exporter = new GraphIndexExporter(writer);
 
         await exporter.ExportAsync(ctx, CancellationToken.None);
 
@@ -151,7 +149,7 @@ public class GraphIndexExporterTests
             new() { [10] = ("Pkg", null) }
         );
         var writer = new MemoryWriter();
-        var exporter = new GraphIndexExporter(writer, NullLogger<GraphIndexExporter>.Instance);
+        var exporter = new GraphIndexExporter(writer);
 
         await exporter.ExportAsync(ctx, CancellationToken.None);
 
