@@ -40,10 +40,11 @@
  * }
  */
 
-/* Collapsible element-page section headers (issue #96) — tint with the brand
- * palette. Uncomment if you set --md-primary-fg-color / --md-primary-fg-color--light
- * above. */
-/* .md-typeset details.ea-section {
+/* Collapsible element-page section headers (issue #96). The stock CSS already
+ * honors --ea-section-bg / --ea-section-fg / --ea-section-border if set here —
+ * the Configuration page's brand editor exposes color pickers for the first two,
+ * or you can override the CSS directly for a more elaborate look:
+ * .md-typeset details.ea-section {
  *   border-color: var(--md-primary-fg-color);
  * }
  * .md-typeset details.ea-section > summary {

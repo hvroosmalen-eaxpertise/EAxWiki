@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Hosting;
 
 namespace EAxWiki;
 
@@ -215,7 +216,9 @@ internal static class WikiWritebackServer
 
         builder.WebHost.UseKestrel(options =>
         {
-            options.Limits.MaxRequestBodySize = 1_048_576; // 1 MB
+            // 3 MB: enough headroom for brand-editor logo uploads (client-side cap 2 MB) on top of
+            // the JSON write-back endpoints, which stay well under 1 MB in practice.
+            options.Limits.MaxRequestBodySize = 3 * 1_048_576;
 
             if (!string.IsNullOrEmpty(config.CertPath))
             {
@@ -345,7 +348,7 @@ internal static class WikiWritebackServer
             {
                 context.Response.Headers.AccessControlAllowOrigin = origin;
                 context.Response.Headers.AccessControlAllowHeaders = "Content-Type, X-EAxWiki-Token";
-                context.Response.Headers.AccessControlAllowMethods = "GET, POST";
+                context.Response.Headers.AccessControlAllowMethods = "GET, POST, DELETE";
             }
 
             if (HttpMethods.IsOptions(context.Request.Method))
@@ -737,10 +740,130 @@ internal static class WikiWritebackServer
             return HandleEditLock(outputPath, req);
         });
 
+        // ─── brand editor (issue #98) ────────────────────────────────────────────────────────
+        // wiki/brand.css is user-owned (seeded once, then never touched by the exporter — issue
+        // #97). The brand editor on the Configuration page POSTs the full file body here and we
+        // write it verbatim, atomically. Size cap keeps a runaway textarea from wedging Kestrel;
+        // the write path is confined to wiki/brand.css so a malicious body cannot escape.
+
+        app.MapPost("/api/brand-css", async (HttpContext context) =>
+        {
+            try
+            {
+                using var reader = new StreamReader(context.Request.Body);
+                var css = await reader.ReadToEndAsync(context.RequestAborted);
+                if (css == null) return Results.BadRequest(new { success = false, message = "Body is required." });
+                if (css.Length > 512 * 1024)
+                    return Results.BadRequest(new { success = false, message = "brand.css exceeds 512 KB." });
+
+                var brandCssPath = Path.Combine(outputPath, "brand.css");
+                var tmp = brandCssPath + ".tmp";
+                await File.WriteAllTextAsync(tmp, css, context.RequestAborted);
+                File.Move(tmp, brandCssPath, overwrite: true);
+
+                LogWriteback(outputPath, "brand-css");
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/brand-css", 0, "brand-css",
+                    StatusCodes.Status200OK, "brand.css updated",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
+                return Results.Ok(new { success = true, message = "brand.css saved." });
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "brand.css write failed");
+                return Results.Problem($"brand.css write failed: {ex.Message}");
+            }
+        });
+
+        app.MapPost("/api/brand-logo", async (HttpContext context) =>
+        {
+            try
+            {
+                if (!context.Request.HasFormContentType)
+                    return Results.BadRequest(new { success = false, message = "multipart/form-data required." });
+
+                var form = await context.Request.ReadFormAsync(context.RequestAborted);
+                var file = form.Files["file"] ?? form.Files.FirstOrDefault();
+                if (file == null || file.Length == 0)
+                    return Results.BadRequest(new { success = false, message = "file is required." });
+                if (file.Length > 2 * 1_048_576)
+                    return Results.BadRequest(new { success = false, message = "Logo exceeds 2 MB." });
+
+                var ext = Path.GetExtension(file.FileName).ToLowerInvariant();
+                var allowedExt = new HashSet<string> { ".png", ".jpg", ".jpeg", ".svg", ".webp", ".gif", ".ico" };
+                if (!allowedExt.Contains(ext))
+                    return Results.BadRequest(new { success = false, message = $"Unsupported image type '{ext}'." });
+
+                var baseName = Path.GetFileNameWithoutExtension(file.FileName);
+                var safeBase = new string(baseName.Where(c => char.IsLetterOrDigit(c) || c == '-' || c == '_').ToArray());
+                if (string.IsNullOrEmpty(safeBase)) safeBase = "logo";
+                var safeName = safeBase + ext;
+
+                var assetsDir = Path.Combine(outputPath, "assets");
+                Directory.CreateDirectory(assetsDir);
+                var destPath = Path.Combine(assetsDir, safeName);
+
+                // Path safety: destPath must stay inside assetsDir.
+                var assetsFull = Path.GetFullPath(assetsDir) + Path.DirectorySeparatorChar;
+                if (!Path.GetFullPath(destPath).StartsWith(assetsFull, StringComparison.OrdinalIgnoreCase))
+                    return Results.BadRequest(new { success = false, message = "Invalid file name." });
+
+                await using (var fs = File.Create(destPath))
+                    await file.CopyToAsync(fs, context.RequestAborted);
+
+                var relPath = $"assets/{safeName}";
+
+                // Patch mkdocs.yml — repo-root file (option 1 per issue #98's open decision).
+                var mkdocsPath = Path.Combine(AppContext.BaseDirectory, "mkdocs.yml");
+                if (!File.Exists(mkdocsPath))
+                {
+                    // Fall back to current directory (test/dev runs).
+                    var alt = Path.Combine(Directory.GetCurrentDirectory(), "mkdocs.yml");
+                    if (File.Exists(alt)) mkdocsPath = alt;
+                }
+                if (File.Exists(mkdocsPath)) MkdocsYmlPatcher.SetLogo(mkdocsPath, relPath);
+
+                LogWriteback(outputPath, "brand-logo");
+                _ = AuditLogger.LogAsync(outputPath, "POST /api/brand-logo", 0, "brand-logo",
+                    StatusCodes.Status200OK, $"Logo saved to {relPath}",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
+                return Results.Ok(new { success = true, path = relPath });
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "brand logo upload failed");
+                return Results.Problem($"brand logo upload failed: {ex.Message}");
+            }
+        }).DisableAntiforgery();
+
+        app.MapDelete("/api/brand-logo", (HttpContext context) =>
+        {
+            try
+            {
+                var mkdocsPath = Path.Combine(AppContext.BaseDirectory, "mkdocs.yml");
+                if (!File.Exists(mkdocsPath))
+                {
+                    var alt = Path.Combine(Directory.GetCurrentDirectory(), "mkdocs.yml");
+                    if (File.Exists(alt)) mkdocsPath = alt;
+                }
+                if (File.Exists(mkdocsPath)) MkdocsYmlPatcher.RemoveLogo(mkdocsPath);
+
+                LogWriteback(outputPath, "brand-logo-remove");
+                _ = AuditLogger.LogAsync(outputPath, "DELETE /api/brand-logo", 0, "brand-logo",
+                    StatusCodes.Status200OK, "Logo entry removed from mkdocs.yml",
+                    context.Request.Headers["X-EAxWiki-Token"].ToString());
+                return Results.Ok(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "brand logo removal failed");
+                return Results.Problem($"brand logo removal failed: {ex.Message}");
+            }
+        });
+
         // Graceful shutdown for the monitor (issue #81): token-authenticated (it's under /api),
         // so Stop-ApiServer can ask the API to dispose its EA COM connection and exit 0 instead
         // of force-killing it and orphaning an EA.exe -Embedding instance per export cycle.
-        app.MapPost("/api/shutdown", async (HttpContext context, Microsoft.Extensions.Hosting.IApplicationLifetime lifetime) =>
+        app.MapPost("/api/shutdown", async (HttpContext context, IHostApplicationLifetime lifetime) =>
         {
             await AuditLogger.LogAsync(outputPath, "POST /api/shutdown", 0, "shutdown",
                 StatusCodes.Status200OK, "Graceful shutdown requested",

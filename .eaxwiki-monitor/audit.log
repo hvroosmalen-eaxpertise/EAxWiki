@@ -202,3 +202,7 @@
 {"timestamp":"2026-09-03T16:44:05.9500425Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/notes","elementId":577,"field":"notes","statusCode":200,"message":"Write-back completed"}
 {"timestamp":"2026-09-04T16:15:03.3517703Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/notes","elementId":25,"field":"notes","statusCode":200,"message":"Write-back completed"}
 {"timestamp":"2026-09-04T16:19:58.7347976Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/notes","elementId":25,"field":"notes","statusCode":200,"message":"Write-back completed"}
+{"timestamp":"2026-09-07T08:45:36.0463320Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/brand-logo","elementId":0,"field":"brand-logo","statusCode":200,"message":"Logo saved to assets/test-logo.png"}
+{"timestamp":"2026-09-07T08:47:49.2874428Z","tokenPrefix":"0a090fdc","endpoint":"DELETE /api/brand-logo","elementId":0,"field":"brand-logo","statusCode":200,"message":"Logo entry removed from mkdocs.yml"}
+{"timestamp":"2026-09-07T12:09:42.9195932Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/brand-css","elementId":0,"field":"brand-css","statusCode":200,"message":"brand.css updated"}
+{"timestamp":"2026-09-07T12:11:38.7464709Z","tokenPrefix":"0a090fdc","endpoint":"POST /api/brand-logo","elementId":0,"field":"brand-logo","statusCode":200,"message":"Logo saved to assets/eursura-logo.png"}

@@ -7,7 +7,7 @@ using EAxWiki.Export.Helpers;
 
 namespace EAxWiki.Export.Exporters;
 
-internal class GraphIndexExporter(IOutputWriter writer, ILogger logger)
+internal class GraphIndexExporter(IOutputWriter writer)
 {
     public async Task ExportAsync(ExportContext ctx, CancellationToken ct = default)
     {

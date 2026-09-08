@@ -367,6 +367,11 @@ details.status-details li {
    every section open regardless of the runtime toggle. */
 details.ea-section {
   margin: 1em 0;
+  border-color: var(--ea-section-border, var(--md-default-fg-color--lightest));
+}
+details.ea-section > summary {
+  background-color: var(--ea-section-bg, transparent);
+  color: var(--ea-section-fg, inherit);
 }
 details.ea-section > summary > h2 {
   display: inline;
@@ -453,4 +458,92 @@ body.ea-api-ready .ea-notes-edit-btn,
 body.ea-api-ready .ea-row-notes-edit-btn {
   opacity: 1;
   cursor: pointer;
+}
+
+/* ─── Brand editor (issue #98) ────────────────────────────────────────────────── */
+#ea-brand-editor {
+  display: block;
+  margin: 1rem 0;
+}
+#ea-brand-editor .ea-brand-field,
+#ea-brand-editor .ea-brand-font,
+#ea-brand-editor .ea-brand-raw,
+#ea-brand-editor .ea-brand-actions {
+  margin: 0.75rem 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+}
+#ea-brand-editor label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+  font-size: 0.9em;
+}
+#ea-brand-editor code {
+  font-size: 0.85em;
+  color: var(--md-default-fg-color--light);
+}
+#ea-brand-editor input[type="color"] {
+  width: 3rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  vertical-align: middle;
+  cursor: pointer;
+}
+#ea-brand-editor input[type="text"],
+#ea-brand-editor input[type="file"] {
+  width: 100%;
+  max-width: 32rem;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+}
+#ea-brand-editor textarea {
+  width: 100%;
+  font-family: var(--md-code-font, monospace);
+  font-size: 0.85em;
+  padding: 0.5rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+  background: var(--md-code-bg-color, var(--md-default-bg-color));
+  color: var(--md-default-fg-color);
+  resize: vertical;
+}
+#ea-brand-editor button {
+  padding: 0.35rem 0.8rem;
+  margin-right: 0.4rem;
+  border: 1px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color, #fff);
+  cursor: pointer;
+  font-size: 0.85em;
+}
+#ea-brand-editor button.ea-brand-clear,
+#ea-brand-editor button.ea-brand-logo-remove {
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+  border-color: var(--md-default-fg-color--lightest);
+}
+#ea-brand-editor .ea-brand-logo-preview {
+  margin: 0.5rem 0;
+}
+#ea-brand-editor .ea-brand-logo-preview img {
+  max-height: 3rem;
+  max-width: 12rem;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  background: var(--md-default-bg-color);
+  padding: 0.25rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 4px;
+}
+#ea-brand-editor .ea-brand-msg {
+  margin-left: 0.75rem;
+  font-size: 0.9em;
+  color: var(--md-default-fg-color--light);
 }

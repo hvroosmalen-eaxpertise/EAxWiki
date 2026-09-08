@@ -44,6 +44,6 @@ public class PowerShellRunnerTests
     {
         var result = PowerShellRunner.GetFullPathFromPathEnv("pwsh.exe");
         Assert.NotNull(result);
-        Assert.True(result.EndsWith("pwsh.exe", StringComparison.OrdinalIgnoreCase));
+        Assert.EndsWith("pwsh.exe", result, StringComparison.OrdinalIgnoreCase);
     }
 }
