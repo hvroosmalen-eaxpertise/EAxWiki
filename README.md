@@ -671,7 +671,12 @@ The wiki has seven navigation views:
 - **Referenced By** — incoming connectors from other elements with links
 - **Appears on Diagrams** — inline thumbnail gallery of diagrams containing this element; each thumbnail links to the diagram page
 - **Attributes, Methods, Tagged Values** — detailed tabs where present. Each description also gets a pencil edit icon when `--api-port` is set (see [Live write-back](#live-write-back--change-status-and-notes-directly-from-the-wiki-page))
-- **Relationship Graph** — interactive force-directed graph showing the element's 2-hop neighbourhood (all directly connected elements, plus their neighbours). Nodes and edges are coloured by ArchiMate layer or EDGY facet, matching the stereotype label colours used throughout the wiki. The focal element is highlighted in orange. Unreachable 2-hop nodes (not in the export) appear at reduced opacity. Hover a node to see its full name and package in a tooltip. **Single-click** a node to expand it — its own neighbourhood is fetched and merged into the graph live. **Double-click** a node to navigate to its element page. Cross-package relationships are shown.
+- **Relationship Graph** — interactive force-directed graph showing the element's 2-hop neighbourhood (all directly connected elements, plus their neighbours). Nodes and edges are coloured by ArchiMate layer or EDGY facet, matching the stereotype label colours used throughout the wiki. The focal element is highlighted in orange. Unreachable 2-hop nodes (not in the export) appear at reduced opacity. Hover a node to see its full name and package in a tooltip. **Single-click** a node to expand it — its own neighbourhood is fetched and merged into the graph live. **Double-click** a node to navigate to its element page. A **Traversal depth** selector lets you widen or narrow the neighbourhood (1–9 or Full).
+- **Save / Restore layout** (issue #101) — three buttons above the graph:
+    - **Save layout** persists the current node positions to `localStorage` (per-page) *and* downloads a 2× PNG snapshot to your Downloads folder, named after the page slug (e.g. `MyElement-graph-2026-09-09T14-32-15.png`).
+    - **Restore saved layout** reapplies the last saved positions.
+    - **Clear saved** removes the stored positions so the next reload runs a fresh cose auto-layout.
+    Positions also auto-save on every drag-free, and pages with saved positions mount with `layout: preset` so the graph appears in your arrangement immediately instead of flickering through a cose settle. This is per-browser localStorage — the layout doesn't travel with the wiki.
 
 ## Diagram page features
 

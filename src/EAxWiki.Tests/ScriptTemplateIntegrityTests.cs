@@ -86,6 +86,33 @@ public class ScriptTemplateIntegrityTests
         AssertContainsAll(content, "initEaGraph", "cytoscape", "wikiBase", "script[src$=\"cytoscape.min.js\"]");
     }
 
+    // Issue #101: layout Save/Restore + auto-persist on drag must survive mkdocs
+    // instant-navigation and depth changes. Ensures the module-scoped cy handle,
+    // the dragfree auto-save, the layoutstop restore, and the preset-layout
+    // shortcut are all present (they were the specific bits the earlier attempt
+    // missed — the buttons referenced a `cy` that only existed inside
+    // renderGraph's closure and threw silently, and neither the primary nor the
+    // legacy path auto-restored on mount).
+    [Fact]
+    public async Task GraphInitScript_LayoutPersistenceWiredUp()
+    {
+        var (writer, outPath) = await RunExportAsync();
+        var content = ReadExportedFile(writer, outPath, "graph-init.js");
+        AssertContainsAll(content,
+            "_currentCy",
+            "saveLayout(_currentCy)",
+            "restoreLayout(_currentCy)",
+            "_wireLayoutPersistence",
+            "'dragfree'",
+            "hasFullSavedSet",
+            "name: 'preset'",
+            "ea-clear-layout",
+            "_downloadGraphImage",
+            "cy.png({ full: true",
+            "a.download = slug + '-graph-'",
+            "decodeURIComponent(raw)");
+    }
+
     [Fact]
     public async Task ExtraCss_ContainsCoreStyles()
     {
