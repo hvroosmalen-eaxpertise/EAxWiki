@@ -17,32 +17,41 @@ internal static class ModelMapper
             ParentId = eaPkg.ParentID
         };
 
-        if (eaPkg.Elements is EA.Collection elements)
-            for (short i = 0; i < elements.Count; i++)
+        if (eaPkg.Elements is EA.Collection elementsColl)
+        {
+            var matched = 0;
+            foreach (var eaElem in elementsColl.ToEnumerable<EA.Element>())
             {
-                if (elements.GetAt(i) is EA.Element eaElem)
-                    pkg.Elements.Add(MapElement(eaElem));
-                else
-                    logger?.LogWarning("Unexpected type in Elements of package '{Package}' at index {Index}, skipping", pkg.Name, i);
+                pkg.Elements.Add(MapElement(eaElem));
+                matched++;
             }
+            if (matched < elementsColl.Count)
+                logger?.LogWarning("Unexpected type(s) in Elements of package '{Package}', skipped {Skipped} entries", pkg.Name, elementsColl.Count - matched);
+        }
 
-        if (eaPkg.Diagrams is EA.Collection diagrams)
-            for (short i = 0; i < diagrams.Count; i++)
+        if (eaPkg.Diagrams is EA.Collection diagramsColl)
+        {
+            var matched = 0;
+            foreach (var eaDiag in diagramsColl.ToEnumerable<EA.Diagram>())
             {
-                if (diagrams.GetAt(i) is EA.Diagram eaDiag)
-                    pkg.Diagrams.Add(MapDiagram(eaDiag));
-                else
-                    logger?.LogWarning("Unexpected type in Diagrams of package '{Package}' at index {Index}, skipping", pkg.Name, i);
+                pkg.Diagrams.Add(MapDiagram(eaDiag));
+                matched++;
             }
+            if (matched < diagramsColl.Count)
+                logger?.LogWarning("Unexpected type(s) in Diagrams of package '{Package}', skipped {Skipped} entries", pkg.Name, diagramsColl.Count - matched);
+        }
 
-        if (eaPkg.Packages is EA.Collection packages)
-            for (short i = 0; i < packages.Count; i++)
+        if (eaPkg.Packages is EA.Collection packagesColl)
+        {
+            var matched = 0;
+            foreach (var eaChild in packagesColl.ToEnumerable<EA.Package>())
             {
-                if (packages.GetAt(i) is EA.Package eaChild)
-                    pkg.Children.Add(MapPackage(eaChild, logger));
-                else
-                    logger?.LogWarning("Unexpected type in Packages of package '{Package}' at index {Index}, skipping", pkg.Name, i);
+                pkg.Children.Add(MapPackage(eaChild, logger));
+                matched++;
             }
+            if (matched < packagesColl.Count)
+                logger?.LogWarning("Unexpected type(s) in Packages of package '{Package}', skipped {Skipped} entries", pkg.Name, packagesColl.Count - matched);
+        }
 
         return pkg;
     }
@@ -64,53 +73,45 @@ internal static class ModelMapper
             CreatedDate = eaElement.Created as DateTime?
         };
 
-        if (eaElement.Attributes is EA.Collection attrs)
-            for (short i = 0; i < attrs.Count; i++)
-                if (attrs.GetAt(i) is EA.Attribute eaAttr)
-                    elem.Attributes.Add(new EaAttribute
-                    {
-                        Name = eaAttr.Name,
-                        Type = eaAttr.Type,
-                        Notes = eaAttr.Notes,
-                        DefaultValue = eaAttr.Default
-                    });
+        foreach (var eaAttr in eaElement.Attributes.ToEnumerable<EA.Attribute>())
+            elem.Attributes.Add(new EaAttribute
+            {
+                Name = eaAttr.Name,
+                Type = eaAttr.Type,
+                Notes = eaAttr.Notes,
+                DefaultValue = eaAttr.Default
+            });
 
-        if (eaElement.Methods is EA.Collection methods)
-            for (short i = 0; i < methods.Count; i++)
-                if (methods.GetAt(i) is EA.Method eaMethod)
-                    elem.Methods.Add(new EaMethod
-                    {
-                        Name = eaMethod.Name,
-                        Type = eaMethod.ReturnType,
-                        Notes = eaMethod.Notes,
-                        IsStatic = eaMethod.IsStatic
-                    });
+        foreach (var eaMethod in eaElement.Methods.ToEnumerable<EA.Method>())
+            elem.Methods.Add(new EaMethod
+            {
+                Name = eaMethod.Name,
+                Type = eaMethod.ReturnType,
+                Notes = eaMethod.Notes,
+                IsStatic = eaMethod.IsStatic
+            });
 
-        if (eaElement.TaggedValues is EA.Collection taggedValues)
-            for (short i = 0; i < taggedValues.Count; i++)
-                if (taggedValues.GetAt(i) is EA.TaggedValue eaTv)
-                    elem.TaggedValues.Add(new EaTaggedValue
-                    {
-                        Name = eaTv.Name,
-                        Value = eaTv.Value,
-                        Notes = eaTv.Notes
-                    });
+        foreach (var eaTv in eaElement.TaggedValues.ToEnumerable<EA.TaggedValue>())
+            elem.TaggedValues.Add(new EaTaggedValue
+            {
+                Name = eaTv.Name,
+                Value = eaTv.Value,
+                Notes = eaTv.Notes
+            });
 
-        if (eaElement.Connectors is EA.Collection connectors)
-            for (short i = 0; i < connectors.Count; i++)
-                if (connectors.GetAt(i) is EA.Connector eaConn)
-                    elem.Connectors.Add(new EaConnector
-                    {
-                        Id = eaConn.ConnectorID,
-                        Name = eaConn.Name,
-                        Type = eaConn.Type,
-                        Stereotype = eaConn.Stereotype,
-                        StereotypeEx = eaConn.StereotypeEx,
-                        FQStereotype = eaConn.FQStereotype,
-                        Notes = eaConn.Notes,
-                        SourceId = eaConn.ClientID,
-                        TargetId = eaConn.SupplierID
-                    });
+        foreach (var eaConn in eaElement.Connectors.ToEnumerable<EA.Connector>())
+            elem.Connectors.Add(new EaConnector
+            {
+                Id = eaConn.ConnectorID,
+                Name = eaConn.Name,
+                Type = eaConn.Type,
+                Stereotype = eaConn.Stereotype,
+                StereotypeEx = eaConn.StereotypeEx,
+                FQStereotype = eaConn.FQStereotype,
+                Notes = eaConn.Notes,
+                SourceId = eaConn.ClientID,
+                TargetId = eaConn.SupplierID
+            });
 
         return elem;
     }
@@ -128,15 +129,13 @@ internal static class ModelMapper
             PackageId = eaDiagram.PackageID,
         };
 
-        if (eaDiagram.DiagramObjects is EA.Collection diagramObjects)
-            for (short i = 0; i < diagramObjects.Count; i++)
-                if (diagramObjects.GetAt(i) is EA.DiagramObject eaDO)
-                    diagram.DiagramObjects.Add(new EaDiagramObject
-                    {
-                        DiagramId = eaDO.DiagramID,
-                        ElementId = eaDO.ElementID,
-                        Sequence = eaDO.Sequence
-                    });
+        foreach (var eaDO in eaDiagram.DiagramObjects.ToEnumerable<EA.DiagramObject>())
+            diagram.DiagramObjects.Add(new EaDiagramObject
+            {
+                DiagramId = eaDO.DiagramID,
+                ElementId = eaDO.ElementID,
+                Sequence = eaDO.Sequence
+            });
 
         return diagram;
     }

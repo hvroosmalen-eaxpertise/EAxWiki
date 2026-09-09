@@ -1,4 +1,3 @@
-using System.Text.Json;
 using System.Threading;
 using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
@@ -7,8 +6,9 @@ using EAxWiki.Export.Helpers;
 
 namespace EAxWiki.Export.Exporters;
 
-internal class GraphIndexExporter(IOutputWriter writer)
+internal class GraphIndexExporter : ExporterBase
 {
+    public GraphIndexExporter(IOutputWriter writer, ILogger logger) : base(writer, logger) { }
     public async Task ExportAsync(ExportContext ctx, CancellationToken ct = default)
     {
         var nodes = new List<Dictionary<string, object?>>(ctx.Elements.Count);
@@ -64,7 +64,6 @@ internal class GraphIndexExporter(IOutputWriter writer)
             ["edges"] = edges,
         };
 
-        var json = JsonSerializer.Serialize(root, new JsonSerializerOptions { WriteIndented = false });
-        await writer.WriteFileAsync(Path.Combine(ctx.OutputPath, "graph-index.json"), json, ct);
+        await WriteJsonFileAsync(Path.Combine(ctx.OutputPath, "graph-index.json"), root, ct);
     }
 }

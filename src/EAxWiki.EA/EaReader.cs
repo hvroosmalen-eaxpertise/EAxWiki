@@ -64,15 +64,8 @@ public class EaReader : IEaReader, IDisposable
             _logger?.LogWarning("EA repository returned no models collection");
             return model;
         }
-        for (short i = 0; i < eaModels.Count; i++)
-        {
-            if (eaModels.GetAt(i) is not EA.Package eaModel)
-            {
-                _logger?.LogWarning("Unexpected type at model index {Index}, skipping", i);
-                continue;
-            }
+        foreach (var eaModel in eaModels.ToEnumerable<EA.Package>())
             model.RootPackages.Add(ModelMapper.MapPackage(eaModel, _logger));
-        }
 
         return model;
     }
@@ -184,22 +177,16 @@ public class EaReader : IEaReader, IDisposable
         if (diagram == null) return null;
 
         var elements = new List<DiagramElementInfo>();
-        if (diagram.DiagramObjects is EA.Collection diagramObjects)
+        foreach (var eaDO in diagram.DiagramObjects.ToEnumerable<EA.DiagramObject>())
         {
-            for (short i = 0; i < diagramObjects.Count; i++)
+            var el = _repository.GetElementByID(eaDO.ElementID);
+            if (el != null)
             {
-                if (diagramObjects.GetAt(i) is EA.DiagramObject eaDO)
-                {
-                    var el = _repository.GetElementByID(eaDO.ElementID);
-                    if (el != null)
-                    {
-                        elements.Add(new DiagramElementInfo(
-                            el.Name,
-                            el.Type,
-                            el.Stereotype ?? el.FQStereotype ?? string.Empty,
-                            el.Notes));
-                    }
-                }
+                elements.Add(new DiagramElementInfo(
+                    el.Name,
+                    el.Type,
+                    el.Stereotype ?? el.FQStereotype ?? string.Empty,
+                    el.Notes));
             }
         }
 
@@ -216,56 +203,46 @@ public class EaReader : IEaReader, IDisposable
     private static List<AttributeInfo> MapAttributesForSummary(EA.Element element)
     {
         var result = new List<AttributeInfo>();
-        if (element.Attributes is EA.Collection attrs)
-            for (short i = 0; i < attrs.Count; i++)
-                if (attrs.GetAt(i) is EA.Attribute attr)
-                    result.Add(new AttributeInfo(attr.Name, attr.Type));
+        foreach (var attr in element.Attributes.ToEnumerable<EA.Attribute>())
+            result.Add(new AttributeInfo(attr.Name, attr.Type));
         return result;
     }
 
     private static List<MethodInfo> MapMethodsForSummary(EA.Element element)
     {
         var result = new List<MethodInfo>();
-        if (element.Methods is EA.Collection methods)
-            for (short i = 0; i < methods.Count; i++)
-                if (methods.GetAt(i) is EA.Method method)
-                    result.Add(new MethodInfo(method.Name, method.ReturnType, method.IsStatic));
+        foreach (var method in element.Methods.ToEnumerable<EA.Method>())
+            result.Add(new MethodInfo(method.Name, method.ReturnType, method.IsStatic));
         return result;
     }
 
     private static List<TaggedValueInfo> MapTaggedValuesForSummary(EA.Element element)
     {
         var result = new List<TaggedValueInfo>();
-        if (element.TaggedValues is EA.Collection tvs)
-            for (short i = 0; i < tvs.Count; i++)
-                if (tvs.GetAt(i) is EA.TaggedValue tv)
-                    result.Add(new TaggedValueInfo(tv.Name, tv.Value));
+        foreach (var tv in element.TaggedValues.ToEnumerable<EA.TaggedValue>())
+            result.Add(new TaggedValueInfo(tv.Name, tv.Value));
         return result;
     }
 
     private List<RelationshipInfo> MapRelationshipsForSummary(EA.Element element)
     {
         var result = new List<RelationshipInfo>();
-        if (element.Connectors is EA.Collection connectors)
+        foreach (var conn in element.Connectors.ToEnumerable<EA.Connector>())
         {
-            for (short i = 0; i < connectors.Count; i++)
-            {
-                if (connectors.GetAt(i) is not EA.Connector conn) continue;
-                var isSource = conn.ClientID == element.ElementID;
-                var targetId = isSource ? conn.SupplierID : conn.ClientID;
-                var target = _repository?.GetElementByID(targetId);
-                var targetStereotype = target?.Stereotype ?? target?.FQStereotype ?? string.Empty;
-                var targetNotes = target?.Notes;
-                var connectorStereotype = conn.Stereotype ?? string.Empty;
-                result.Add(new RelationshipInfo(
-                    conn.Type,
-                    isSource ? "source→target" : "target→source",
-                    target?.Name ?? "(deleted)",
-                    target?.Type ?? "Unknown",
-                    targetStereotype,
-                    targetNotes,
-                    connectorStereotype));
-            }
+            var isSource = conn.ClientID == element.ElementID;
+            var targetId = isSource ? conn.SupplierID : conn.ClientID;
+            var target = _repository?.GetElementByID(targetId);
+            var targetStereotype = target?.Stereotype ?? target?.FQStereotype ?? string.Empty;
+            var targetNotes = target?.Notes;
+            var connectorStereotype = conn.Stereotype ?? string.Empty;
+            result.Add(new RelationshipInfo(
+                conn.Type,
+                isSource ? "source→target" : "target→source",
+                target?.Name ?? "(deleted)",
+                target?.Type ?? "Unknown",
+                targetStereotype,
+                targetNotes,
+                connectorStereotype));
         }
         return result;
     }
@@ -460,12 +437,12 @@ public class EaReader : IEaReader, IDisposable
     {
         T? match = null;
         var count = 0;
-        for (short i = 0; i < collection.Count; i++)
-            if (collection.GetAt(i) is T item && predicate(item))
-            {
-                count++;
-                match ??= item;
-            }
+        foreach (var item in collection.ToEnumerable<T>())
+        {
+            if (!predicate(item)) continue;
+            count++;
+            match ??= item;
+        }
         return (match, count);
     }
 

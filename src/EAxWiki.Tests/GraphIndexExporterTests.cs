@@ -60,7 +60,7 @@ public class GraphIndexExporterTests
             new() { [10] = ("Pkg", null) }
         );
         var writer = new MemoryWriter();
-        var exporter = new GraphIndexExporter(writer);
+        var exporter = new GraphIndexExporter(writer, NullLogger.Instance);
 
         await exporter.ExportAsync(ctx, CancellationToken.None);
 
@@ -94,7 +94,7 @@ public class GraphIndexExporterTests
             new() { [10] = ("Pkg", null) }
         );
         var writer = new MemoryWriter();
-        var exporter = new GraphIndexExporter(writer);
+        var exporter = new GraphIndexExporter(writer, NullLogger.Instance);
 
         await exporter.ExportAsync(ctx, CancellationToken.None);
 
@@ -112,7 +112,7 @@ public class GraphIndexExporterTests
             new() { [10] = ("Pkg", null) }
         );
         var writer = new MemoryWriter();
-        var exporter = new GraphIndexExporter(writer);
+        var exporter = new GraphIndexExporter(writer, NullLogger.Instance);
 
         await exporter.ExportAsync(ctx, CancellationToken.None);
 
@@ -130,7 +130,7 @@ public class GraphIndexExporterTests
             new() { [10] = ("MyPkg", null) }
         );
         var writer = new MemoryWriter();
-        var exporter = new GraphIndexExporter(writer);
+        var exporter = new GraphIndexExporter(writer, NullLogger.Instance);
 
         await exporter.ExportAsync(ctx, CancellationToken.None);
 
@@ -149,7 +149,7 @@ public class GraphIndexExporterTests
             new() { [10] = ("Pkg", null) }
         );
         var writer = new MemoryWriter();
-        var exporter = new GraphIndexExporter(writer);
+        var exporter = new GraphIndexExporter(writer, NullLogger.Instance);
 
         await exporter.ExportAsync(ctx, CancellationToken.None);
 
