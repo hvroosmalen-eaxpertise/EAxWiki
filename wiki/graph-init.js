@@ -20,21 +20,14 @@ var EA_DISTANCE_COLORS = ['#e65100', '#ff8a65', '#a1887f', '#9e9e9e', '#757575',
 
 // --- Save / restore diagram layout (issue #101) ---------------------------------
 //
-// The layout is persisted per element page under a localStorage key that is stable
-// across instant-navigation / livereload cycles. mkdocs-material's document$.subscribe
-// re-runs initEaGraph on every instant-nav → fresh cytoscape instance → drag positions
-// lost, unless we (a) auto-restore saved positions when a graph mounts and (b) auto-save
-// on every drag-free so the current arrangement is durable without the user pressing
-// Save. The two buttons stay so the user can force a save / restore explicitly.
-
-// Two separate stores per page (issue #101):
-//   * WORKING  — auto-updated on every drag-free so the arrangement survives
-//                mkdocs livereload / instant-nav / depth change without user action.
-//   * BOOKMARK — written only when the user presses Save; Restore reads this.
-// If we auto-saved to a single key, Restore would always reapply the current on-screen
-// state and feel like a no-op ("I dragged 3 nodes and pressed Restore — nothing happened").
-var _workingKey  = 'ea_graph_working_'  + location.pathname;
-var _bookmarkKey = 'ea_graph_bookmark_' + location.pathname;
+// One localStorage key per element page. Auto-saved on every drag-free so the
+// arrangement survives mkdocs's document$.subscribe (which re-runs initEaGraph on every
+// instant-nav / livereload → fresh cytoscape instance) without the user having to press
+// Save. The toolbar buttons expose explicit gestures on top of that:
+//   * Save    — snapshot + PNG download to Downloads folder.
+//   * Restore — re-run the cose auto-layout and wipe the stored positions.
+//   * Clear   — same as Restore for the storage side, but no re-layout.
+var _layoutKey = 'ea_graph_layout_' + location.pathname;
 
 // Current cytoscape instance; the toolbar buttons close over this. Refreshed on every
 // renderGraph() call so the button handlers always drive the live graph, not a stale
@@ -80,13 +73,10 @@ function saveLayout(cy) {
         appendStatus('No positions to save.');
         return;
     }
-    // Save = bookmark the current arrangement (Restore reads this) AND freshen the
-    // working state (so a refresh right after Save shows the same thing).
-    _write(_workingKey, positions);
-    var ok = _write(_bookmarkKey, positions);
+    var ok = _write(_layoutKey, positions);
     var downloaded = _downloadGraphImage(cy);
-    if (ok && downloaded) appendStatus('Layout bookmarked and image downloaded.');
-    else if (ok) appendStatus('Layout bookmarked (image download failed).');
+    if (ok && downloaded) appendStatus('Layout saved and image downloaded.');
+    else if (ok) appendStatus('Layout saved (image download failed).');
     else appendStatus('Save failed (localStorage unavailable).');
 }
 
@@ -125,7 +115,7 @@ function _downloadGraphImage(cy) {
 // user last dragged them. If there's a Save bookmark, that stays untouched — pressing
 // Save again is how you overwrite it.
 function restoreLayout(cy) {
-    try { localStorage.removeItem(_workingKey); } catch (e) { /* private mode etc. */ }
+    try { localStorage.removeItem(_layoutKey); } catch (e) { /* private mode etc. */ }
     var existing = cy.layout();
     if (existing && existing.stop) { try { existing.stop(); } catch (e) {} }
     cy.layout({
@@ -269,18 +259,15 @@ function resolveLegacyUrl(relUrl) {
 function _wireLayoutPersistence(cy) {
     _currentCy = cy;
 
-    // Prefer the working state (last drag position) so refreshes are stable; fall back
-    // to the bookmark if the working state is empty (fresh browser, first visit).
-    var mount = _read(_workingKey) || _read(_bookmarkKey);
-    if (mount) {
-        cy.one('layoutstop', function () { _applyPositions(cy, mount); cy.fit(cy.elements(), 40); });
-        _applyPositions(cy, mount);
+    var saved = _read(_layoutKey);
+    if (saved) {
+        cy.one('layoutstop', function () { _applyPositions(cy, saved); cy.fit(cy.elements(), 40); });
+        _applyPositions(cy, saved);
         cy.fit(cy.elements(), 40);
     }
 
-    // Auto-persist ONLY to the working state — the bookmark is user-explicit (Save button).
     cy.on('dragfree', 'node', function () {
-        _write(_workingKey, _collectPositions(cy));
+        _write(_layoutKey, _collectPositions(cy));
     });
 }
 
@@ -367,9 +354,8 @@ function initEaGraph() {
     });
     clearBtn.addEventListener('click', function () {
         try {
-            localStorage.removeItem(_workingKey);
-            localStorage.removeItem(_bookmarkKey);
-            appendStatus('Cleared working state and bookmark — reload for a fresh auto-layout.');
+            localStorage.removeItem(_layoutKey);
+            appendStatus('Saved layout cleared — reload for a fresh auto-layout.');
         } catch (e) { appendStatus('Clear failed.'); }
     });
 
@@ -398,7 +384,7 @@ function initEaGraph() {
             // If we already have saved positions for this page, skip the cose animation
             // entirely and mount at those positions from the start (preset layout). Nothing
             // moves under the user's cursor mid-drag from a delayed cose settle.
-            var savedForPreset = _read(_workingKey) || _read(_bookmarkKey);
+            var savedForPreset = _read(_layoutKey);
             var hasFullSavedSet = savedForPreset && sub.nodes.every(function (n) { return savedForPreset['n' + n.id]; });
 
             var cy = cytoscape({
