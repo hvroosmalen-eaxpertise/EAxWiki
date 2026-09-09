@@ -104,18 +104,28 @@ function _downloadGraphImage(cy) {
     }
 }
 
+// Reset the graph to its auto-generated layout. Any dragged positions vanish and the
+// working state is cleared so a page refresh doesn't snap the nodes back to where the
+// user last dragged them. If there's a Save bookmark, that stays untouched — pressing
+// Save again is how you overwrite it.
 function restoreLayout(cy) {
-    var positions = _read(_bookmarkKey);
-    if (!positions) { appendStatus('No bookmarked layout — press Save first.'); return false; }
-    var layout = cy.layout();
-    if (layout && layout.stop) { try { layout.stop(); } catch (e) {} }
-    var applied = _applyPositions(cy, positions);
-    cy.fit(cy.elements(), 40);
-    // Restore also resets the working state to the bookmark so a livereload right after
-    // Restore doesn't snap back to the pre-restore drag positions.
-    _write(_workingKey, positions);
-    appendStatus(applied > 0 ? ('Restored bookmark (' + applied + ' nodes).') : 'No matching nodes to restore.');
-    return applied > 0;
+    try { localStorage.removeItem(_workingKey); } catch (e) { /* private mode etc. */ }
+    var existing = cy.layout();
+    if (existing && existing.stop) { try { existing.stop(); } catch (e) {} }
+    cy.layout({
+        name: 'cose',
+        animate: true,
+        animationDuration: 400,
+        randomize: false,
+        nodeRepulsion: function () { return 400000; },
+        nodeOverlap: 20,
+        idealEdgeLength: function () { return 120; },
+        gravity: 80,
+        fit: true,
+        padding: 40
+    }).run();
+    appendStatus('Reset to auto-layout.');
+    return true;
 }
 
 var _statusTimer = null;
@@ -320,7 +330,7 @@ function initEaGraph() {
 
     if (typeof EAxIcons !== 'undefined') {
         EAxIcons.set(saveBtn,    'save-layout',    'Save layout and download image');
-        EAxIcons.set(restoreBtn, 'restore-layout', 'Restore saved layout');
+        EAxIcons.set(restoreBtn, 'restore-layout', 'Reset to auto-layout');
         EAxIcons.set(clearBtn,   'clear-layout',   'Clear saved layout');
         [saveBtn, restoreBtn, clearBtn].forEach(function (b) {
             var svg = b.querySelector('svg');
