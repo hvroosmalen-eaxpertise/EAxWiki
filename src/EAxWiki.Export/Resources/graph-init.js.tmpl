@@ -9,10 +9,17 @@ function saveLayout(cy) {
     var positions = {};
     cy.elements().forEach(function (ele) {
         var id = ele.data('id');
-        positions[id] = { x: ele.position('x'), y: ele.position('y') };
+        var pos = ele.position();
+        if (pos && pos.x !== undefined && pos.y !== undefined) {
+            positions[id] = { x: pos.x, y: pos.y };
+        }
     });
-    localStorage.setItem(_savedLayoutKey, JSON.stringify(positions));
-    appendStatus('Layout saved.');
+    if (Object.keys(positions).length > 0) {
+        localStorage.setItem(_savedLayoutKey, JSON.stringify(positions));
+        appendStatus('Layout saved.');
+    } else {
+        appendStatus('No positions to save.');
+    }
 }
 
 function restoreLayout(cy) {
@@ -28,21 +35,33 @@ function restoreLayout(cy) {
             ele.position('x', positions[id].x).position('y', positions[id].y);
         }
     });
+    // Stop the cose layout from animating positions back
+    var layout = cy.layout();
+    if (layout) layout.stop();
     cy.fit(cy.elements(), 40);
     appendStatus('Layout restored.');
     return true;
 }
 
 function appendStatus(msg) {
-    var statusDiv = document.getElementById('ea-graph-status');
-    if (!statusDiv) {
-        statusDiv = document.createElement('div');
-        statusDiv.id = 'ea-graph-status';
-        statusDiv.style.cssText = 'margin-top:8px;padding:6px 10px;font-size:12px;color:#fff;background:#333;border-radius:4px;z-index:9999;min-width:120px;';
-        var container = document.getElementById('ea-graph-container');
-        if (container) container.parentNode.insertBefore(statusDiv, container);
+    try {
+        var statusDiv = document.getElementById('ea-graph-status');
+        if (!statusDiv) {
+            statusDiv = document.createElement('div');
+            statusDiv.id = 'ea-graph-status';
+            statusDiv.style.cssText = 'margin-top:8px;padding:6px 10px;font-size:12px;color:#fff;background:#333;border-radius:4px;z-index:9999;min-width:120px;';
+            var container = document.getElementById('ea-graph-container');
+            if (container && container.parentNode) {
+                container.parentNode.insertBefore(statusDiv, container);
+            }
+        }
+        if (statusDiv) {
+            statusDiv.textContent = msg;
+            statusDiv.style.display = 'block';
+        }
+    } catch (e) {
+        console.log('Graph layout status error:', e.message);
     }
-    statusDiv.textContent = msg;
 }
 
 var _graphIndexPromise = null;
@@ -279,7 +298,7 @@ function initEaGraph() {
                 ],
                 layout: {
                     name: 'cose',
-                    animate: true,
+                    animate: false,
                     animationDuration: 400,
                     randomize: false,
                     nodeRepulsion: function () { return 400000; },
