@@ -18,6 +18,129 @@ var EA_LAYER_COLORS = {
 var EA_LAYER_DARK_TEXT = { 'edgy-id': true, 'edgy-pe': true, 'edgy-lb': true, 'business': true };
 var EA_DISTANCE_COLORS = ['#e65100', '#ff8a65', '#a1887f', '#9e9e9e', '#757575', '#616161'];
 
+// --- Save / restore diagram layout (issue #101) ---------------------------------
+//
+// The layout is persisted per element page under a localStorage key that is stable
+// across instant-navigation / livereload cycles. mkdocs-material's document$.subscribe
+// re-runs initEaGraph on every instant-nav → fresh cytoscape instance → drag positions
+// lost, unless we (a) auto-restore saved positions when a graph mounts and (b) auto-save
+// on every drag-free so the current arrangement is durable without the user pressing
+// Save. The two buttons stay so the user can force a save / restore explicitly.
+
+var _savedLayoutKey = 'ea_graph_layout_' + location.pathname;
+
+// Current cytoscape instance; the toolbar buttons close over this. Refreshed on every
+// renderGraph() call so the button handlers always drive the live graph, not a stale
+// closure from before a depth change.
+var _currentCy = null;
+
+function _readSaved() {
+    try {
+        var raw = localStorage.getItem(_savedLayoutKey);
+        return raw ? JSON.parse(raw) : null;
+    } catch (e) { return null; }
+}
+
+function _writeSaved(positions) {
+    try {
+        localStorage.setItem(_savedLayoutKey, JSON.stringify(positions));
+        return true;
+    } catch (e) { return false; }
+}
+
+function _collectPositions(cy) {
+    var positions = {};
+    cy.nodes().forEach(function (ele) {
+        var pos = ele.position();
+        if (pos && isFinite(pos.x) && isFinite(pos.y)) {
+            positions[ele.id()] = { x: pos.x, y: pos.y };
+        }
+    });
+    return positions;
+}
+
+function _applyPositions(cy, positions) {
+    if (!positions) return 0;
+    var applied = 0;
+    cy.nodes().forEach(function (ele) {
+        var p = positions[ele.id()];
+        if (p) { ele.position({ x: p.x, y: p.y }); applied++; }
+    });
+    return applied;
+}
+
+function saveLayout(cy) {
+    var positions = _collectPositions(cy);
+    if (Object.keys(positions).length === 0) {
+        appendStatus('No positions to save.');
+        return;
+    }
+    var ok = _writeSaved(positions);
+    var downloaded = _downloadGraphImage(cy);
+    if (ok && downloaded) appendStatus('Layout saved and image downloaded.');
+    else if (ok) appendStatus('Layout saved (image download failed).');
+    else appendStatus('Save failed (localStorage unavailable).');
+}
+
+// Emits a PNG snapshot of the current graph via a temporary <a download>. Filename
+// derives from the page's URL slug so multiple element pages don't collide in the
+// user's Downloads folder. Returns true on best-effort success; the browser may
+// silently no-op in restricted contexts (private mode with downloads disabled,
+// sandboxed iframes) which is why we don't throw.
+function _downloadGraphImage(cy) {
+    try {
+        if (!cy || typeof cy.png !== 'function') return false;
+        var dataUrl = cy.png({ full: true, scale: 2, bg: '#ffffff' });
+        if (!dataUrl) return false;
+        var raw = location.pathname.replace(/\.html?$/i, '').split('/').filter(Boolean).pop() || 'graph';
+        // URL-decode (%20, %C3 …) then keep only filename-safe chars — otherwise the browser
+        // saves the file with the percent-escapes baked into the name.
+        var decoded = raw;
+        try { decoded = decodeURIComponent(raw); } catch (e) { /* keep raw if malformed */ }
+        var slug = decoded.replace(/[^\w\-]+/g, '_').replace(/^_+|_+$/g, '') || 'graph';
+        var stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+        var a = document.createElement('a');
+        a.href = dataUrl;
+        a.download = slug + '-graph-' + stamp + '.png';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        return true;
+    } catch (e) {
+        console.log('graph image download failed:', e && e.message);
+        return false;
+    }
+}
+
+function restoreLayout(cy) {
+    var positions = _readSaved();
+    if (!positions) { appendStatus('No saved layout found.'); return false; }
+    var layout = cy.layout();
+    if (layout && layout.stop) { try { layout.stop(); } catch (e) {} }
+    var applied = _applyPositions(cy, positions);
+    cy.fit(cy.elements(), 40);
+    appendStatus(applied > 0 ? ('Layout restored (' + applied + ' nodes).') : 'No matching nodes to restore.');
+    return applied > 0;
+}
+
+var _statusTimer = null;
+function appendStatus(msg) {
+    try {
+        var statusDiv = document.getElementById('ea-graph-status');
+        if (!statusDiv) {
+            statusDiv = document.createElement('div');
+            statusDiv.id = 'ea-graph-status';
+            statusDiv.style.cssText = 'margin:4px 0;padding:4px 8px;font-size:12px;color:#fff;background:#333;border-radius:4px;display:inline-block;';
+            var container = document.getElementById('ea-graph-container');
+            if (container && container.parentNode) container.parentNode.insertBefore(statusDiv, container);
+        }
+        statusDiv.textContent = msg;
+        statusDiv.style.display = 'inline-block';
+        if (_statusTimer) clearTimeout(_statusTimer);
+        _statusTimer = setTimeout(function () { statusDiv.style.display = 'none'; }, 3000);
+    } catch (e) { /* nothing sane to do */ }
+}
+
 var _graphIndexPromise = null;
 
 function fetchGraphIndex() {
@@ -116,6 +239,29 @@ function resolveLegacyUrl(relUrl) {
     return a.href;
 }
 
+// After cytoscape mounts a graph, wire it into the persistence layer:
+//   * if we have saved positions, apply them once cose has finished (or immediately when
+//     cose is skipped) so the user sees their last arrangement, not a fresh cose run
+//   * every drag-free auto-saves the current positions so a livereload / instant-nav /
+//     depth change doesn't wipe unsaved arrangement
+// The buttons stay for explicit "reset to saved" or "commit current" gestures.
+function _wireLayoutPersistence(cy) {
+    _currentCy = cy;
+
+    var savedPositions = _readSaved();
+    if (savedPositions) {
+        cy.one('layoutstop', function () { _applyPositions(cy, savedPositions); cy.fit(cy.elements(), 40); });
+        // Cose may have already finished by the time we get here on very small graphs;
+        // apply positions inline as well so the fallback path is covered.
+        _applyPositions(cy, savedPositions);
+        cy.fit(cy.elements(), 40);
+    }
+
+    cy.on('dragfree', 'node', function () {
+        _writeSaved(_collectPositions(cy));
+    });
+}
+
 function initEaGraph() {
     var container = document.getElementById('ea-graph-container');
     if (!container || typeof cytoscape === 'undefined') return;
@@ -128,6 +274,8 @@ function initEaGraph() {
     if (oldTooltip) oldTooltip.remove();
     var oldDepthControl = document.getElementById('ea-graph-depth-control');
     if (oldDepthControl) oldDepthControl.remove();
+    var oldToolbar = document.getElementById('ea-graph-toolbar');
+    if (oldToolbar) oldToolbar.remove();
 
     var depthControl = document.createElement('div');
     depthControl.id = 'ea-graph-depth-control';
@@ -149,6 +297,30 @@ function initEaGraph() {
     select.appendChild(fullOpt);
     depthControl.appendChild(select);
     container.parentNode.insertBefore(depthControl, container);
+
+    // --- Save / Restore toolbar ---
+    // Handlers close over _currentCy (module-scoped) so they always drive the LIVE
+    // cytoscape instance, not whichever one was current when the DOM was built. That
+    // matters because renderGraph() creates a new instance on every depth change.
+    var toolbar = document.createElement('div');
+    toolbar.id = 'ea-graph-toolbar';
+    toolbar.style.cssText = 'margin-bottom:8px;';
+    toolbar.innerHTML =
+        '<button type="button" id="ea-save-layout" style="margin-right:4px;padding:4px 10px;font-size:12px;cursor:pointer;">Save layout</button>' +
+        '<button type="button" id="ea-restore-layout" style="margin-right:4px;padding:4px 10px;font-size:12px;cursor:pointer;">Restore saved layout</button>' +
+        '<button type="button" id="ea-clear-layout" style="padding:4px 10px;font-size:12px;cursor:pointer;background:transparent;border:1px solid #bbb;">Clear saved</button>';
+    container.parentNode.insertBefore(toolbar, container);
+
+    document.getElementById('ea-save-layout').addEventListener('click', function () {
+        if (_currentCy) saveLayout(_currentCy); else appendStatus('Graph not ready.');
+    });
+    document.getElementById('ea-restore-layout').addEventListener('click', function () {
+        if (_currentCy) restoreLayout(_currentCy); else appendStatus('Graph not ready.');
+    });
+    document.getElementById('ea-clear-layout').addEventListener('click', function () {
+        try { localStorage.removeItem(_savedLayoutKey); appendStatus('Saved layout cleared.'); }
+        catch (e) { appendStatus('Clear failed.'); }
+    });
 
     var tooltip = document.createElement('div');
     tooltip.id = 'ea-graph-tooltip';
@@ -172,11 +344,20 @@ function initEaGraph() {
                 return;
             }
 
+            // If we already have saved positions for this page, skip the cose animation
+            // entirely and mount at those positions from the start (preset layout). Nothing
+            // moves under the user's cursor mid-drag from a delayed cose settle.
+            var savedForPreset = _readSaved();
+            var hasFullSavedSet = savedForPreset && sub.nodes.every(function (n) { return savedForPreset['n' + n.id]; });
+
             var cy = cytoscape({
                 container: container,
                 elements: {
                     nodes: sub.nodes.map(function (n) {
-                        return { data: { id: 'n' + n.id, bfsDepth: n.bfsDepth, label: n.label, fullName: n.fullName, packageName: n.packageName, layer: n.layer, url: n.url } };
+                        var data = { id: 'n' + n.id, bfsDepth: n.bfsDepth, label: n.label, fullName: n.fullName, packageName: n.packageName, layer: n.layer, url: n.url };
+                        var nodeSpec = { data: data };
+                        if (hasFullSavedSet) nodeSpec.position = savedForPreset['n' + n.id];
+                        return nodeSpec;
                     }),
                     edges: sub.edges.map(function (e) {
                         return { data: { id: 'e' + e.id, source: 'n' + e.source, target: 'n' + e.target, label: e.label, sourceLayer: e.sourceLayer } };
@@ -233,19 +414,23 @@ function initEaGraph() {
                         }
                     }
                 ],
-                layout: {
-                    name: 'cose',
-                    animate: true,
-                    animationDuration: 400,
-                    randomize: false,
-                    nodeRepulsion: function () { return 400000; },
-                    nodeOverlap: 20,
-                    idealEdgeLength: function () { return 120; },
-                    gravity: 80
-                },
+                layout: hasFullSavedSet
+                    ? { name: 'preset', fit: true, padding: 40 }
+                    : {
+                        name: 'cose',
+                        animate: false,
+                        animationDuration: 400,
+                        randomize: false,
+                        nodeRepulsion: function () { return 400000; },
+                        nodeOverlap: 20,
+                        idealEdgeLength: function () { return 120; },
+                        gravity: 80
+                    },
                 minZoom: 0.2,
                 maxZoom: 3
             });
+
+            _wireLayoutPersistence(cy);
 
             cy.on('mouseover', 'node', function (evt) {
                 var d = evt.target.data();
@@ -334,6 +519,7 @@ function initEaGraph() {
                 minZoom: 0.2, maxZoom: 3
             });
             cy.fit(cy.elements(), 40);
+            _wireLayoutPersistence(cy);
             cy.on('tap', 'node', function (evt) {
                 var url = evt.target.data('url');
                 if (url) window.location.href = resolveLegacyUrl(url);
