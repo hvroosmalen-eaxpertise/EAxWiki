@@ -113,6 +113,35 @@ public class ErrorLogPageRendererTests : IDisposable
     }
 
     [Fact]
+    public void Render_RecentBlock_DropsHeartbeatNoise()
+    {
+        // Monitor logs 5 INF heartbeat lines every 30-second check cycle ("already running",
+        // "Sleeping for N seconds", "Skipping export (next due ...)"). These are pure
+        // journal-to-self noise and used to cycle in and out of Recent activity every 30s,
+        // wiggling errors.md's mtime → mkdocs livereload → every open reader page snapped to
+        // top. Recent activity now keeps INF lines that are actual events (export ran, api
+        // restarted) but drops the heartbeat trio.
+        var now = new DateTime(2026, 8, 18, 12, 0, 0);
+        var today = now.ToString("yyyy-MM-dd");
+        var renderer = Create([], today,
+            [$"{today} 10:00:00 [INF] [MonitorLoop] Export completed successfully.",
+             $"{today} 10:00:30 [INF] [MonitorLoop] mkdocs serve already running.",
+             $"{today} 10:00:30 [INF] [MonitorLoop] write-back API server already running.",
+             $"{today} 10:00:30 [INF] [MonitorLoop] LLM server already running.",
+             $"{today} 10:00:30 [INF] [MonitorLoop] Sleeping for 30 seconds.",
+             $"{today} 10:00:30 [INF] [MonitorLoop] Skipping export (next due in 30 min)."]);
+
+        renderer.Render(now);
+
+        var output = File.ReadAllText(Path.Combine(_dir, "wiki", "status", "errors.md"));
+        var recentSection = output.Substring(output.IndexOf("## Recent activity", StringComparison.Ordinal));
+        Assert.Contains("Export completed successfully", recentSection);
+        Assert.DoesNotContain("already running", recentSection);
+        Assert.DoesNotContain("Sleeping for", recentSection);
+        Assert.DoesNotContain("Skipping export", recentSection);
+    }
+
+    [Fact]
     public void Render_RedactsSecretsAndConnectionStringPassword()
     {
         var now = new DateTime(2026, 8, 18, 12, 0, 0);

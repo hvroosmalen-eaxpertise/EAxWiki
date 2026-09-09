@@ -157,7 +157,7 @@
       }).then(readResponse).then(function (res) {
           msg.textContent = res.ok
             ? 'Saved. Reload the page to see changes.'
-            : 'Failed (' + res.status + '): ' + (res.body && (res.body.message || res.body.title) || res.text || 'unknown');
+            : 'Failed (' + res.status + '): ' + (res.body && (res.body.message || res.body.detail || res.body.title) || res.text || 'unknown');
         })
         .catch(function (e) { msg.textContent = 'Failed: ' + e.message; });
     });
@@ -179,7 +179,7 @@
         console.log('[brand-editor] logo upload response', res);
         msg.textContent = res.ok
           ? 'Logo uploaded to ' + (res.body && res.body.path || 'assets/') + '. Restart the wiki serve so mkdocs picks up the new logo.'
-          : 'Failed (' + res.status + '): ' + (res.body && (res.body.message || res.body.title) || res.text || 'unknown');
+          : 'Failed (' + res.status + '): ' + (res.body && (res.body.message || res.body.detail || res.body.title) || res.text || 'unknown');
       }).catch(function (e) {
         console.error('[brand-editor] logo upload error', e);
         msg.textContent = 'Failed: ' + e.message;
@@ -196,7 +196,7 @@
       }).then(readResponse).then(function (res) {
           msg.textContent = res.ok
             ? 'Logo removed. Restart the wiki serve to see the change.'
-            : 'Failed (' + res.status + '): ' + (res.body && (res.body.message || res.body.title) || res.text || 'unknown');
+            : 'Failed (' + res.status + '): ' + (res.body && (res.body.message || res.body.detail || res.body.title) || res.text || 'unknown');
         })
         .catch(function (e) { msg.textContent = 'Failed: ' + e.message; });
     });

@@ -87,8 +87,7 @@ public class ConfigPageRenderer
 
         AppendBrandEditor(sb, options);
 
-        Directory.CreateDirectory(Path.GetDirectoryName(_outputPath)!);
-        File.WriteAllText(_outputPath, sb.ToString());
+        IdempotentWriter.WriteIfChanged(_outputPath, sb.ToString());
     }
 
     // Emits the shell for brand-editor.js (issue #98) below the read-only status tables. Seeded

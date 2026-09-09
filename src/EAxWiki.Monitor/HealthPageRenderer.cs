@@ -48,8 +48,7 @@ public class HealthPageRenderer
         template = Replace(template, "@@LAST_API_FAILURE_TIME@@", s.LastApiFailureTime);
         template = Replace(template, "@@API_CONSECUTIVE_FAILURES@@", s.ApiConsecutiveFailures);
 
-        Directory.CreateDirectory(Path.GetDirectoryName(_outputPath)!);
-        File.WriteAllText(_outputPath, template);
+        IdempotentWriter.WriteIfChanged(_outputPath, template);
     }
 
     private static string Replace(string template, string token, object? value) =>

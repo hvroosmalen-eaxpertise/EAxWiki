@@ -124,7 +124,7 @@ notes_hash: 10e47b22
 - <span class="sl" data-layer="business">BusinessObject</span> [ESRS E1 - Climate](ESRS E1 - Climate.html)
   *Climate change reporting standard*
 - <span class="sl" data-layer="business">BusinessObject</span> [ESRS E2 - Pollution](ESRS E2 - Pollution.html)
-  *Pollution reporting standard*
+  *<p>This element defines the standard for reporting pollution, outlining the requirements for companies to submit their environmental data. It is specifically relevant to large companies with over 250 employees, who must adhere to this standard starting in 2025. This element provides a framework for tracking and reporting environmental performance.</p>*
 - <span class="sl" data-layer="business">BusinessObject</span> [ESRS E3 - Water](ESRS E3 - Water.html)
   *Water and marine resources standard*
 - <span class="sl" data-layer="business">BusinessObject</span> [ESRS E4 - Biodiversity](ESRS E4 - Biodiversity.html)

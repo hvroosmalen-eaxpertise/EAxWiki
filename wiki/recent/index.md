@@ -2,6 +2,7 @@
 
 | Name | Type | Modified | Path |
 |------|------|----------|------|
+| [ESRS E2 - Pollution](../ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.html) | Class | 2026-09-08 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html) |
 | [EDGY -> XMI (Python)](../Information Collection and Model Creation/EDGY -_ XMI (Python).html) | Activity | 2026-09-03 | [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Information Collection and Model Creation](../Information Collection and Model Creation/index.html) |
 | [Totale Scope 1-3 uitstoot (ton CO₂e/jaar)](../Metrics/Totale Scope 1-3 uitstoot (ton CO₂e_jaar).html) | Requirement | 2026-09-03 | [Home](../index.html) / [Edgy](../Edgy/index.html) / [Metrics](../Metrics/index.html) |
 | [ESG Score](../Assessments/ESG Score.html) | Class | 2026-08-27 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Elements](../Elements/index.html) / [Assessments](../Assessments/index.html) |
@@ -42,7 +43,6 @@
 | [AI - LLM](../Information Collection and Model Creation/AI - LLM.html) | Activity | 2026-07-01 | [Home](../index.html) / [Model Creation](../Model Creation/index.html) / [Information Collection and Model Creation](../Information Collection and Model Creation/index.html) |
 | [ESRS Sector Classification](../ESRS Sector Classification/ESRS Sector Classification.html) | Enumeration | 2026-07-01 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Classification](../ESRS Classification/index.html) / [ESRS Sector Classification](../ESRS Sector Classification/index.html) |
 | [FreshFood B.V.](../ESRS Navigator Stakeholder Map/FreshFood B.V..html) | Class | 2026-07-01 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html) |
-| [ESRS E2 - Pollution](../ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.html) | Class | 2026-07-01 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html) |
 | [Large Companies (>250 employees)](../ESRS Navigator Stakeholder Map/Large Companies (_250 employees).html) | Class | 2026-07-01 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html) |
 | [Affected Communities (ESRS S3)](../ESRS Navigator Stakeholder Map/Affected Communities (ESRS S3).html) | Class | 2026-06-30 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [ESRS Navigator Stakeholder Map](../ESRS Navigator Stakeholder Map/index.html) |
 | [Road to Net Zero](../Reference Documents/Road to Net Zero.html) | Class | 2026-06-30 | [Home](../index.html) / [Archimate](../Archimate/index.html) / [Reference Material](../Reference Material/index.html) / [Reference Documents](../Reference Documents/index.html) |

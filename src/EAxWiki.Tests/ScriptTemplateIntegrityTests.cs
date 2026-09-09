@@ -107,6 +107,12 @@ public class ScriptTemplateIntegrityTests
             "hasFullSavedSet",
             "name: 'preset'",
             "ea-clear-layout",
+            "_workingKey",
+            "_bookmarkKey",
+            "_read(_bookmarkKey)",
+            "EAxIcons.set(saveBtn,    'save-layout'",
+            "EAxIcons.set(restoreBtn, 'restore-layout'",
+            "EAxIcons.set(clearBtn,   'clear-layout'",
             "_downloadGraphImage",
             "cy.png({ full: true",
             "a.download = slug + '-graph-'",
@@ -133,7 +139,7 @@ public class ScriptTemplateIntegrityTests
     {
         var (writer, outPath) = await RunExportAsync();
         var content = ReadExportedFile(writer, outPath, "ea-icons.js");
-        AssertContainsAll(content, "window.EAxIcons", "set: function", "aria-label", "spinner", "ea-icon-spinner", "viewBox=\"0 0 24 24\"", "save: '<svg", "cancel: '<svg", "apply: '<svg");
+        AssertContainsAll(content, "window.EAxIcons", "set: function", "aria-label", "spinner", "ea-icon-spinner", "viewBox=\"0 0 24 24\"", "save: '<svg", "cancel: '<svg", "apply: '<svg", "'save-layout':", "'restore-layout':", "'clear-layout':");
     }
 
     [Fact]

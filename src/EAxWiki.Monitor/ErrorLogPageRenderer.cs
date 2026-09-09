@@ -14,6 +14,15 @@ public class ErrorLogPageRenderer
     private static readonly Regex SeverityRegex = new(@"\[(INF|WRN|ERR)\]", RegexOptions.Compiled);
     private static readonly Regex ConnectionStringRegex = new(@"(?i)(Password|Pwd)\s*=[^;]*", RegexOptions.Compiled);
 
+    // Filters out the monitor's "I'm still alive" chatter (5 lines per 30-second check cycle)
+    // from the Recent-activity list. Without this the file changes every 30s → mkdocs
+    // livereload flips every open wiki page back to the top on a 30-second beat.
+    // Real events (export ran, api restarted, error hit) are still INF-level and kept —
+    // only the specific "still-running / sleeping / skipping" heartbeat strings are dropped.
+    private static readonly Regex HeartbeatNoisePattern = new(
+        @"already running|Sleeping for \d+ seconds|Skipping export \(next due",
+        RegexOptions.Compiled);
+
     private readonly string _templatePath;
     private readonly string _outputPath;
     private readonly string _logsDir;
@@ -37,7 +46,11 @@ public class ErrorLogPageRenderer
             .Select(l => Redact(l.Text))
             .ToList();
 
-        var recent = lines.Take(20).Select(l => Redact(l.Text)).ToList();
+        var recent = lines
+            .Where(l => l.Severity != "INF" || !HeartbeatNoisePattern.IsMatch(l.Text))
+            .Take(20)
+            .Select(l => Redact(l.Text))
+            .ToList();
 
         var template = File.ReadAllText(_templatePath);
         template = template.Replace("@@GENERATED_AT@@", now.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture));
@@ -48,8 +61,7 @@ public class ErrorLogPageRenderer
             ? "(no log lines yet)"
             : string.Join(Environment.NewLine, recent.Select(e => "- `" + e + "`")));
 
-        Directory.CreateDirectory(Path.GetDirectoryName(_outputPath)!);
-        File.WriteAllText(_outputPath, template);
+        IdempotentWriter.WriteIfChanged(_outputPath, template);
     }
 
     private List<(string Severity, string Text)> ReadLogLines(DateTime now)

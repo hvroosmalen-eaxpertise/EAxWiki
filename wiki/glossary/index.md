@@ -86,7 +86,7 @@
 | ESRS 2 General Disclosures | ESRS 2 establishes the basic information that must be provided regardless of the sustainability topic under consideration | [ESRS 2 General Disclosures](../ESRS 2/ESRS 2 General Disclosures.html) |
 | ESRS E1 - Climate | Climate change reporting standard | [ESRS E1 - Climate](../ESRS Navigator Stakeholder Map/ESRS E1 - Climate.html) |
 | ESRS E1 Climate Change | For more information: https://www | [ESRS E1 Climate Change](../ESRS E1/ESRS E1 Climate Change.html) |
-| ESRS E2 - Pollution | Pollution reporting standard | [ESRS E2 - Pollution](../ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.html) |
+| ESRS E2 - Pollution | This element defines the standard for reporting pollution, outlining the requirements for companies to submit their environmental data | [ESRS E2 - Pollution](../ESRS Navigator Stakeholder Map/ESRS E2 - Pollution.html) |
 | ESRS E2 Pollution | For more information: https://www | [ESRS E2 Pollution](../ESRS E2/ESRS E2 Pollution.html) |
 | ESRS E3 - Water | Water and marine resources standard | [ESRS E3 - Water](../ESRS Navigator Stakeholder Map/ESRS E3 - Water.html) |
 | ESRS E3 Water and Marine Resources | For more information: https://www | [ESRS E3 Water and Marine Resources](../ESRS E3/ESRS E3 Water and Marine Resources.html) |
