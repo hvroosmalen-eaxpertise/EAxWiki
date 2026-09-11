@@ -5,13 +5,15 @@ using EAxWiki.Export.Helpers;
 
 namespace EAxWiki.Export.Exporters;
 
-internal class TypesExporter(IOutputWriter writer, ILogger logger)
+internal class TypesExporter : ExporterBase
 {
+    public TypesExporter(IOutputWriter writer, ILogger logger) : base(writer, logger) { }
+
     public async Task ExportAsync(ExportContext ctx, CancellationToken ct = default)
     {
         var outputDir = ctx.OutputPath;
         var typesDir = Path.Combine(outputDir, "types");
-        await writer.CreateDirectoryAsync(typesDir, ct);
+        await Writer.CreateDirectoryAsync(typesDir, ct);
 
         var parsed = ctx.Elements
             .Select(e =>
@@ -25,9 +27,8 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
                 return (e.Element, e.PackageDir, Language: language, Type: type);
             })
             .ToList();
-
         var languages = parsed.Select(x => x.Language).Distinct().OrderBy(l => l).ToList();
-        logger.LogInformation("Generating type pages across {LanguageCount} languages", languages.Count);
+        Logger.LogInformation("Generating type pages across {LanguageCount} languages", languages.Count);
 
         var indexLines = new List<string>
         {
@@ -41,14 +42,14 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
             indexLines.Add($"- [{lang}]({MarkdownHelpers.SanitizeName(lang)}/index.html)");
 
         indexLines.Add(string.Empty);
-        await writer.WriteFileAsync(Path.Combine(typesDir, "index.md"), string.Join(Environment.NewLine, indexLines), ct);
+        await Writer.WriteFileAsync(Path.Combine(typesDir, "index.md"), string.Join(Environment.NewLine, indexLines), ct);
 
         foreach (var lang in languages)
         {
             var langDir = Path.Combine(typesDir, MarkdownHelpers.SanitizeName(lang));
-            await writer.CreateDirectoryAsync(langDir, ct);
+            await Writer.CreateDirectoryAsync(langDir, ct);
 
-            await writer.WriteFileAsync(Path.Combine(langDir, ".pages"),
+            await Writer.WriteFileAsync(Path.Combine(langDir, ".pages"),
                 string.Join(Environment.NewLine, [$"title: {lang}", string.Empty]), ct);
 
             var typeGroups = parsed
@@ -69,7 +70,7 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
                 langIndexLines.Add($"- [{group.Key}]({MarkdownHelpers.SanitizeName(group.Key)}.html)");
 
             langIndexLines.Add(string.Empty);
-            await writer.WriteFileAsync(Path.Combine(langDir, "index.md"), string.Join(Environment.NewLine, langIndexLines), ct);
+            await Writer.WriteFileAsync(Path.Combine(langDir, "index.md"), string.Join(Environment.NewLine, langIndexLines), ct);
 
             foreach (var group in typeGroups)
             {
@@ -90,10 +91,10 @@ internal class TypesExporter(IOutputWriter writer, ILogger logger)
                 }
 
                 lines.Add(string.Empty);
-                await writer.WriteFileAsync(Path.Combine(langDir, $"{MarkdownHelpers.SanitizeName(group.Key)}.md"), string.Join(Environment.NewLine, lines), ct);
+                await Writer.WriteFileAsync(Path.Combine(langDir, $"{MarkdownHelpers.SanitizeName(group.Key)}.md"), string.Join(Environment.NewLine, lines), ct);
             }
         }
 
-        logger.LogInformation("Generated type pages across {LanguageCount} languages", languages.Count);
+        Logger.LogInformation("Generated type pages across {LanguageCount} languages", languages.Count);
     }
 }
