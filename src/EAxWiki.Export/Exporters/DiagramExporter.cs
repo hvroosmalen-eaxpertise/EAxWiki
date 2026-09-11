@@ -8,12 +8,14 @@ using EAxWiki.Export.Renderers;
 
 namespace EAxWiki.Export.Exporters;
 
-internal class DiagramExporter(IOutputWriter writer, ILogger logger)
+internal class DiagramExporter : ExporterBase
 {
     private const int MaxIndexDescriptionLength = 100;
+    public DiagramExporter(IOutputWriter writer, ILogger logger) : base(writer, logger) { }
+
     public async Task ExportPagesAsync(ExportContext ctx, IEaReader reader, CancellationToken ct = default)
     {
-        logger.LogInformation("Exporting {DiagramCount} diagrams with PNG images", ctx.AllDiagrams.Count);
+        Logger.LogInformation("Exporting {DiagramCount} diagrams with PNG images", ctx.AllDiagrams.Count);
 
         var failures = new List<string>();
 
@@ -22,7 +24,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
             try
             {
                 var diagramsDir = Path.Combine(pkgDir, "diagrams");
-                await writer.CreateDirectoryAsync(diagramsDir, ct);
+                await Writer.CreateDirectoryAsync(diagramsDir, ct);
 
                 var fileName = MarkdownHelpers.SanitizeName(diagram.Name);
                 var pngPath = Path.Combine(diagramsDir, $"{fileName}.png");
@@ -31,7 +33,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                 if (!ctx.Force && IsDiagramUpToDate(mdPath, diagram.ModifiedDate) &&
                     IsAiAttributeCurrent(mdPath, ctx.AiConfigured))
                 {
-                    logger.LogDebug("Skipped diagram {DiagramName}", diagram.Name);
+                    Logger.LogDebug("Skipped diagram {DiagramName}", diagram.Name);
                     continue;
                 }
 
@@ -39,7 +41,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 
                 var pngSuccess = reader.ExportDiagramImage(diagram.Guid, pngPath);
                 if (!pngSuccess)
-                    logger.LogWarning("Failed to export PNG for diagram {DiagramName}", diagram.Name);
+                    Logger.LogWarning("Failed to export PNG for diagram {DiagramName}", diagram.Name);
 
                 var derivedText = GetDerivedDescriptionText(diagram, ctx);
                 var hasOwnNotes = !string.IsNullOrWhiteSpace(diagram.Notes);
@@ -61,7 +63,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     string.Empty,
                     string.Empty,
                     MarkdownHelpers.BuildBreadcrumb(diagram.PackageId, diagramsDir, ctx.OutputPath, ctx.PackageLookup,
-                        msg => logger.LogWarning("{Message} (diagram '{Name}')", msg, diagram.Name)),
+                        msg => Logger.LogWarning("{Message} (diagram '{Name}')", msg, diagram.Name)),
                     string.Empty,
                 };
 
@@ -122,28 +124,28 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
                     lines.Add(string.Empty);
                 }
 
-                await writer.WriteFileAsync(mdPath, string.Join(Environment.NewLine, lines), ct);
+                await Writer.WriteFileAsync(mdPath, string.Join(Environment.NewLine, lines), ct);
                 ctx.WrittenMdFiles.Add(mdPath);
 
                 sw.Stop();
-                logger.LogInformation("Exported diagram {DiagramName} in {ElapsedMs}ms", diagram.Name, sw.ElapsedMilliseconds);
+                Logger.LogInformation("Exported diagram {DiagramName} in {ElapsedMs}ms", diagram.Name, sw.ElapsedMilliseconds);
             }
             catch (Exception ex)
             {
-                logger.LogWarning(ex, "Failed to export diagram {DiagramName}", diagram.Name);
+                Logger.LogWarning(ex, "Failed to export diagram {DiagramName}", diagram.Name);
                 failures.Add(diagram.Name);
             }
         }
 
         if (failures.Count > 0)
-            logger.LogWarning("[Export] {FailureCount} diagram(s) failed to export: {DiagramNames}",
+            Logger.LogWarning("[Export] {FailureCount} diagram(s) failed to export: {DiagramNames}",
                 failures.Count, string.Join(", ", failures));
     }
 
     public async Task WriteIndexAsync(ExportContext ctx, CancellationToken ct = default)
     {
         var diagramsDir = Path.Combine(ctx.OutputPath, "diagrams");
-        await writer.CreateDirectoryAsync(diagramsDir, ct);
+        await Writer.CreateDirectoryAsync(diagramsDir, ct);
 
         var sorted = ctx.AllDiagrams
             .Select(d => (d.Diagram, d.PackageDir, Path: MarkdownHelpers.BuildBreadcrumb(d.Diagram.PackageId, diagramsDir, ctx.OutputPath, ctx.PackageLookup)))
@@ -180,7 +182,7 @@ internal class DiagramExporter(IOutputWriter writer, ILogger logger)
 
         lines.Add(string.Empty);
         var indexMdPath = Path.Combine(diagramsDir, "index.md");
-        await writer.WriteFileAsync(indexMdPath, string.Join(Environment.NewLine, lines), ct);
+        await Writer.WriteFileAsync(indexMdPath, string.Join(Environment.NewLine, lines), ct);
         ctx.WrittenMdFiles.Add(indexMdPath);
     }
 

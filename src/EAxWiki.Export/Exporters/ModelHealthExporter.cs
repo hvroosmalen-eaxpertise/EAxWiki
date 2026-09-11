@@ -1,4 +1,5 @@
 using System.Threading;
+using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Export.Helpers;
 
@@ -10,8 +11,9 @@ namespace EAxWiki.Export.Exporters;
 /// checks export/rendering mechanics, and from status/health.md, which reports export/serve
 /// pipeline health. See issue #68.
 /// </summary>
-internal class ModelHealthExporter(IOutputWriter writer)
+internal class ModelHealthExporter : ExporterBase
 {
+    public ModelHealthExporter(IOutputWriter writer, ILogger logger) : base(writer, logger) { }
     /// <summary>
     /// Elements with a Status set whose ModifiedDate is older than this many days are flagged as
     /// untouched. ModifiedDate bumps on any field change (Notes, tagged values, relationships, etc.),
@@ -23,7 +25,7 @@ internal class ModelHealthExporter(IOutputWriter writer)
     public async Task ExportAsync(ExportContext ctx, CancellationToken ct = default)
     {
         var healthDir = Path.Combine(ctx.OutputPath, "status");
-        await writer.CreateDirectoryAsync(healthDir, ct);
+        await Writer.CreateDirectoryAsync(healthDir, ct);
 
         var orphans = new List<(string Name, string Link)>();
         var missingDescriptions = new List<(string Name, string Link)>();
@@ -81,7 +83,7 @@ internal class ModelHealthExporter(IOutputWriter writer)
         {
             lines.Add("No issues found.");
             lines.Add(string.Empty);
-            await writer.WriteFileAsync(Path.Combine(healthDir, "model-health.md"), string.Join(Environment.NewLine, lines), ct);
+            await Writer.WriteFileAsync(Path.Combine(healthDir, "model-health.md"), string.Join(Environment.NewLine, lines), ct);
             return;
         }
 
@@ -90,7 +92,7 @@ internal class ModelHealthExporter(IOutputWriter writer)
         WriteStaleSection(lines, stale);
         WriteDuplicateSection(lines, duplicates);
 
-        await writer.WriteFileAsync(Path.Combine(healthDir, "model-health.md"), string.Join(Environment.NewLine, lines), ct);
+            await Writer.WriteFileAsync(Path.Combine(healthDir, "model-health.md"), string.Join(Environment.NewLine, lines), ct);
     }
 
     private static void WriteOrphanSection(List<string> lines, List<(string Name, string Link)> orphans)

@@ -10,14 +10,14 @@
 
 | Field | Value |
 |---|---|
-| Last success | 09/09/2026 18:49:14 +02:00 |
+| Last success | 09/09/2026 19:20:09 +02:00 |
 | Last failure | 08/22/2026 08:54:10 +02:00 |
 | Consecutive failures | 0 |
 | Last exit code | 0 |
 | Last page count (total) | 612 |
 | Last page count (diagrams) | 44 |
 | Last mode | incremental |
-| Runs since full rebuild | 152 |
+| Runs since full rebuild | 153 |
 
 ## Serve
 

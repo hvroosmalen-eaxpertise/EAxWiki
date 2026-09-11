@@ -89,10 +89,10 @@ public class MarkdownExporter : IWikiExporter
             var viewTasks = new List<Task>
             {
                 new TypesExporter(_writer, _logger).ExportAsync(ctx, cancellationToken),
-                new GlossaryExporter(_writer).ExportAsync(ctx, cancellationToken),
-                new RecentChangesExporter(_writer).ExportAsync(ctx, cancellationToken),
-                new StatusDashboardExporter(_writer).ExportAsync(ctx, cancellationToken),
-                new ModelHealthExporter(_writer).ExportAsync(ctx, cancellationToken),
+                new GlossaryExporter(_writer, _logger).ExportAsync(ctx, cancellationToken),
+                new RecentChangesExporter(_writer, _logger).ExportAsync(ctx, cancellationToken),
+                new StatusDashboardExporter(_writer, _logger).ExportAsync(ctx, cancellationToken),
+                new ModelHealthExporter(_writer, _logger).ExportAsync(ctx, cancellationToken),
                 diagramExporter.WriteIndexAsync(ctx, cancellationToken),
                 infrastructure.WritePagesFileAsync(outputPath, packages.Select(p => MarkdownHelpers.SanitizeName(p.Name)).ToList(), cancellationToken),
                 infrastructure.WriteExtraCssAsync(outputPath, cancellationToken),
