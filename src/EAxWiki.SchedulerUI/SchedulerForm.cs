@@ -814,6 +814,26 @@ public class SchedulerForm : Form
             return;
         }
 
+        // When using a local LLM that differs from the AI LLM tab (different server exe or
+        // different model), two separate llama-server processes must be running and therefore
+        // they need different ports.  Same exe + same model = shared instance, same port is fine.
+        if (_chatModeLocal.Checked)
+        {
+            var chatExe   = _chatServerExeBox.Text.Trim();
+            var chatModel = _chatModelFileBox.Text.Trim();
+            var llmExe    = _llmExeBox.Text.Trim();
+            var llmModel  = _llmModelPathBox.Text.Trim();
+            var sameServer = string.Equals(chatExe, llmExe, StringComparison.OrdinalIgnoreCase)
+                          && string.Equals(chatModel, llmModel, StringComparison.OrdinalIgnoreCase);
+            if (!sameServer && _chatPortBox.Value == _llmPortBox.Value)
+            {
+                AppendOutput(
+                    $"Port conflict: the chat LLM uses a different server or model than the AI LLM, " +
+                    $"so they need separate ports (both are set to {(int)_chatPortBox.Value}).");
+                return;
+            }
+        }
+
         try
         {
             var config = File.Exists(path)
