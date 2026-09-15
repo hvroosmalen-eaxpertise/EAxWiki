@@ -8,22 +8,24 @@ using EAxWiki.Export.Renderers;
 
 namespace EAxWiki.Export.Exporters;
 
-internal class PackageExporter(IOutputWriter writer, ILogger logger)
+internal class PackageExporter : ExporterBase
 {
+    public PackageExporter(IOutputWriter writer, ILogger logger) : base(writer, logger) { }
+
     public async Task<(int Succeeded, int Failed)> ExportAsync(EaPackage package, ExportContext ctx, Action<int>? onElementsWritten = null, CancellationToken ct = default)
     {
         var pkgStopwatch = Stopwatch.StartNew();
-        logger.LogInformation("Exporting package {PackageName} ({ElementCount} elements, {DiagramCount} diagrams)",
+        Logger.LogInformation("Exporting package {PackageName} ({ElementCount} elements, {DiagramCount} diagrams)",
             package.Name, package.Elements.Count, package.Diagrams.Count);
 
         var outputDir = ctx.OutputPath;
         var dir = Path.Combine(outputDir, MarkdownHelpers.SanitizeName(package.Name));
-        await writer.CreateDirectoryAsync(dir, ct);
+        await Writer.CreateDirectoryAsync(dir, ct);
 
         // Issue #89: prefix package nav labels with a folder glyph so the
         // repository tree in the left nav reads as a folder hierarchy.
         // awesome-pages' `title:` field is used as-is for the nav link text.
-        await writer.WriteFileAsync(
+            await Writer.WriteFileAsync(
             Path.Combine(dir, ".pages"),
             $"title: \U0001F4C1 {package.Name}{Environment.NewLine}",
             ct);
@@ -35,7 +37,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
         };
 
         indexLines.Add(MarkdownHelpers.BuildBreadcrumb(package.Id, dir, outputDir, ctx.PackageLookup,
-            msg => logger.LogWarning("{Message} (package '{Name}')", msg, package.Name)));
+            msg => Logger.LogWarning("{Message} (package '{Name}')", msg, package.Name)));
         indexLines.Add(string.Empty);
 
         if (ctx.ApiPort > 0)
@@ -86,19 +88,19 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
             indexLines.Add("## Elements");
             indexLines.Add(string.Empty);
 
-            var elementWriter = new ElementPageWriter(writer, logger);
+            var elementWriter = new ElementPageWriter(Writer, Logger);
 
             var seenNames = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
             var elementFileNames = new Dictionary<int, string>(package.Elements.Count);
             foreach (var elem in package.Elements)
             {
                 var sanitized = MarkdownHelpers.SanitizeName(elem.Name);
-                if (seenNames.TryGetValue(sanitized, out _))
-                {
-                    sanitized = $"{sanitized}_{elem.Id}";
-                    logger.LogWarning("Duplicate sanitized name in package '{Package}': element '{Name}' (ID {Id}) renamed to '{NewName}'",
-                        package.Name, elem.Name, elem.Id, sanitized);
-                }
+                    if (seenNames.TryGetValue(sanitized, out _))
+                    {
+                        sanitized = $"{sanitized}_{elem.Id}";
+                        Logger.LogWarning("Duplicate sanitized name in package '{Package}': element '{Name}' (ID {Id}) renamed to '{NewName}'",
+                            package.Name, elem.Name, elem.Id, sanitized);
+                    }
                 seenNames[sanitized] = elem.Id;
                 elementFileNames[elem.Id] = sanitized;
             }
@@ -129,7 +131,7 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
                 if (!t.IsFaulted) continue;
                 var ex = t.Exception?.InnerException ?? t.Exception;
                 if (ex is OperationCanceledException) throw ex;
-                logger.LogWarning(ex, "Failed to write element in package {PackageName}", package.Name);
+                Logger.LogWarning(ex, "Failed to write element in package {PackageName}", package.Name);
                 totalFailed++;
             }
 
@@ -154,20 +156,22 @@ internal class PackageExporter(IOutputWriter writer, ILogger logger)
         }
 
         var indexPath = Path.Combine(dir, "index.md");
-        await writer.WriteFileAsync(indexPath, string.Join(Environment.NewLine, indexLines), ct);
+        await Writer.WriteFileAsync(indexPath, string.Join(Environment.NewLine, indexLines), ct);
         ctx.WrittenMdFiles.Add(indexPath);
 
         pkgStopwatch.Stop();
         var succeeded = package.Elements.Count - totalFailed;
-        logger.LogInformation("Exported package {PackageName} in {ElapsedMs}ms ({Succeeded} succeeded, {Failed} failed)",
-            package.Name, pkgStopwatch.ElapsedMilliseconds, succeeded, totalFailed);
 
+        // Export child packages recursively
         foreach (var child in package.Children)
         {
             var (childSucceeded, childFailed) = await ExportAsync(child, ctx, onElementsWritten, ct);
             succeeded += childSucceeded;
             totalFailed += childFailed;
         }
+
+        Logger.LogInformation("Exported package {PackageName} in {ElapsedMs}ms ({Succeeded} succeeded, {Failed} failed)",
+            package.Name, pkgStopwatch.ElapsedMilliseconds, succeeded, totalFailed);
 
         return (succeeded, totalFailed);
     }

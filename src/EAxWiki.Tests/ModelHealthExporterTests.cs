@@ -40,7 +40,7 @@ public class ModelHealthExporterTests
     private static async Task<string> RunAsync(ExportContext ctx)
     {
         var writer = new InMemoryWriter();
-        await new ModelHealthExporter(writer).ExportAsync(ctx);
+        await new ModelHealthExporter(writer, Microsoft.Extensions.Logging.Abstractions.NullLogger.Instance).ExportAsync(ctx);
         return writer.Files[$"{OutputPath}/status/model-health.md".Replace('\\', '/')];
     }
 

@@ -51,6 +51,12 @@ public class SchedulerForm : Form
     private readonly Button _aiTestButton = new() { Text = "Test LLM Connection", AutoSize = true };
     private readonly Button _aiSaveButton = new() { Text = "Save AI Config", AutoSize = true };
     private readonly Label _aiTestResult = new() { AutoSize = true };
+    // Chatbot tab — own control instances so they are always editable and not affected by
+    // UpdateAiModeEnablement(), which disables the AI LLM tab boxes when not in remote mode.
+    private readonly CheckBox _chatEnabledCheck = new() { Text = "AI Chat Enabled", AutoSize = true };
+    private readonly TextBox _chatModelBox = new() { Width = 400 };
+    private readonly TextBox _chatEndpointBox = new() { Width = 400 };
+    private readonly TextBox _chatKeyBox = new() { Width = 400, UseSystemPasswordChar = true };
     private readonly RadioButton _llmModeNone = new() { Text = "No LLM", AutoSize = true };
     private readonly RadioButton _llmModeLocal = new() { Text = "Local LLM", AutoSize = true, Checked = true };
     private readonly RadioButton _llmModeRemote = new() { Text = "Remote LLM", AutoSize = true };
@@ -135,6 +141,7 @@ public class SchedulerForm : Form
         tabs.TabPages.Add(BuildConfigTab());
         tabs.TabPages.Add(BuildScheduleTab());
         tabs.TabPages.Add(BuildAiTab());
+        tabs.TabPages.Add(BuildChatTab());
         tabs.TabPages.Add(BuildTaskStatusTab());
         tabs.TabPages.Add(BuildDashboardTab());
         tabs.SelectedIndexChanged += (_, _) =>
@@ -483,6 +490,69 @@ public class SchedulerForm : Form
         return new TabPage("AI LLM") { Padding = new Padding(10), AutoScroll = true, Controls = { panel } };
     }
 
+    private TabPage BuildChatTab()
+    {
+        var panel = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.TopDown, WrapContents = false, AutoScroll = true };
+
+        _chatEnabledCheck.Margin = new Padding(0, 0, 0, 8);
+        panel.Controls.Add(_chatEnabledCheck);
+
+        panel.Controls.Add(new Label { Text = "Chat Model:", AutoSize = true, Margin = new Padding(12, 12, 0, 0) });
+        panel.Controls.Add(_chatModelBox);
+
+        panel.Controls.Add(new Label { Text = "Chat Endpoint:", AutoSize = true, Margin = new Padding(12, 12, 0, 0) });
+        panel.Controls.Add(_chatEndpointBox);
+
+        panel.Controls.Add(new Label { Text = "API Key:", AutoSize = true, Margin = new Padding(12, 12, 0, 0) });
+        panel.Controls.Add(_chatKeyBox);
+
+        var buttonPanel = new FlowLayoutPanel { FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(0, 8, 0, 0), AutoSize = true };
+
+        var testButton = new Button { Text = "Test Connection", AutoSize = true, Margin = new Padding(4) };
+        testButton.Click += async (_, _) =>
+        {
+            if (string.IsNullOrEmpty(_chatEndpointBox.Text))
+            {
+                AppendOutput("Chat endpoint is not configured.");
+                return;
+            }
+            try
+            {
+                using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
+                var json = System.Text.Json.JsonSerializer.Serialize(new
+                {
+                    model = _chatModelBox.Text,
+                    messages = new[] { new { role = "user", content = "Hello" } },
+                    max_tokens = 5,
+                    temperature = 0.3,
+                    stream = false
+                });
+                var req = new HttpRequestMessage(HttpMethod.Post, $"{_chatEndpointBox.Text.TrimEnd('/')}/chat/completions");
+                req.Content = new System.Net.Http.StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                if (!string.IsNullOrEmpty(_chatKeyBox.Text))
+                    req.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _chatKeyBox.Text);
+                var resp = await httpClient.SendAsync(req);
+                if (resp.IsSuccessStatusCode)
+                    AppendOutput("Connection test successful - chat endpoint is reachable.");
+                else
+                    AppendOutput($"Chat endpoint returned error: {(int)resp.StatusCode}");
+            }
+            catch (Exception ex)
+            {
+                AppendOutput($"Connection test failed: {ex.Message}");
+            }
+        };
+        buttonPanel.Controls.Add(testButton);
+
+        var saveButton = new Button { Text = "Save Config", AutoSize = true, Margin = new Padding(4) };
+        saveButton.Click += (_, _) => SaveChatConfig();
+        buttonPanel.Controls.Add(saveButton);
+
+        panel.Controls.Add(buttonPanel);
+
+        return new TabPage("Chatbot") { Padding = new Padding(10), AutoScroll = true, Controls = { panel } };
+    }
+
     private static FlowLayoutPanel MakeBrowseRow(TextBox box, Button button)
     {
         var row = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, WrapContents = false };
@@ -687,6 +757,38 @@ public class SchedulerForm : Form
         }
     }
 
+    private void SaveChatConfig()
+    {
+        if (_repoRoot == null) return;
+        var path = Path.Combine(_repoRoot, ".eaxwiki");
+
+        if (_chatEndpointBox.Text.Trim() is { Length: > 0 } endpoint &&
+            !Uri.TryCreate(endpoint, UriKind.Absolute, out _))
+        {
+            AppendOutput($"Invalid chat endpoint URL: {endpoint}");
+            return;
+        }
+
+        try
+        {
+            var config = File.Exists(path)
+                ? LocalConfigStore.Load(path, out _)
+                : new LocalConfigStore.Config();
+
+            config.AiChatEnabled = _chatEnabledCheck.Checked;
+            config.AiEndpoint = _chatEndpointBox.Text.Trim() is { Length: > 0 } ep ? ep : null;
+            config.AiModel = _chatModelBox.Text.Trim() is { Length: > 0 } model ? model : null;
+            config.AiKey = _chatKeyBox.Text is { Length: > 0 } key ? key : null;
+
+            LocalConfigStore.Save(path, config);
+            AppendOutput("Chat configuration saved.");
+        }
+        catch (Exception ex)
+        {
+            AppendOutput($"Failed to save chat config: {ex.Message}");
+        }
+    }
+
     private GroupBox BuildOutputGroup()
     {
         return new GroupBox { Text = "Output", Dock = DockStyle.Fill, Padding = new Padding(8), Controls = { _outputBox } };
@@ -751,6 +853,10 @@ public class SchedulerForm : Form
             _aiEndpointBox.Text = "https://api.openai.com/v1";
             _aiModelBox.Text = "gpt-4o-mini";
             _aiKeyBox.Text = "";
+            _chatEnabledCheck.Checked = false;
+            _chatEndpointBox.Text = "https://api.openai.com/v1";
+            _chatModelBox.Text = "gpt-4o-mini";
+            _chatKeyBox.Text = "";
             // Local LLM paths are per-machine — leave blank so the Browse buttons drive discovery.
             // Hardcoded E:\ paths here silently activated the local LLM on one specific machine
             // and misled every other install into saving broken paths.
@@ -787,6 +893,10 @@ public class SchedulerForm : Form
             _aiEndpointBox.Text = loadedEndpoint;
             _aiModelBox.Text = config.AiModel ?? "";
             _aiKeyBox.Text = config.AiKey ?? "";
+            _chatEnabledCheck.Checked = config.AiChatEnabled ?? false;
+            _chatEndpointBox.Text = loadedEndpoint;
+            _chatModelBox.Text = config.AiModel ?? "";
+            _chatKeyBox.Text = config.AiKey ?? "";
             _llmExeBox.Text = config.LlamaExePath ?? "";
             _llmModelPathBox.Text = config.LlamaModelPath ?? "";
             _llmPortBox.Value = Math.Clamp(config.LlmPort ?? 8080, (int)_llmPortBox.Minimum, (int)_llmPortBox.Maximum);

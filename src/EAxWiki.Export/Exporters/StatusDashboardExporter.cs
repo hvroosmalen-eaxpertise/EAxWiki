@@ -1,15 +1,17 @@
 using System.Threading;
+using Microsoft.Extensions.Logging;
 using EAxWiki.Core.Interfaces;
 using EAxWiki.Export.Helpers;
 
 namespace EAxWiki.Export.Exporters;
 
-internal class StatusDashboardExporter(IOutputWriter writer)
+internal class StatusDashboardExporter : ExporterBase
 {
+    public StatusDashboardExporter(IOutputWriter writer, ILogger logger) : base(writer, logger) { }
     public async Task ExportAsync(ExportContext ctx, CancellationToken ct = default)
     {
         var dashboardDir = Path.Combine(ctx.OutputPath, "status");
-        await writer.CreateDirectoryAsync(dashboardDir, ct);
+        await Writer.CreateDirectoryAsync(dashboardDir, ct);
 
         var statuses = new SortedSet<string>(StringComparer.OrdinalIgnoreCase);
         var packageRows = new Dictionary<string, PackageRow>(StringComparer.OrdinalIgnoreCase);
@@ -117,7 +119,7 @@ internal class StatusDashboardExporter(IOutputWriter writer)
 
         WriteTypeSection(lines, statusList, typeRowList, typeDrilldown);
 
-        await writer.WriteFileAsync(Path.Combine(dashboardDir, "index.md"),
+        await Writer.WriteFileAsync(Path.Combine(dashboardDir, "index.md"),
             string.Join(Environment.NewLine, lines), ct);
     }
 
