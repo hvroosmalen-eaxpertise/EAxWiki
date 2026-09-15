@@ -591,10 +591,6 @@ public class SchedulerForm : Form
         testButton.Location = new Point(6, _chatTestResult.Bottom + 2);
         panel.Controls.Add(remoteGroup);
 
-        var saveButton = new Button { Text = "Save Config", AutoSize = true, Margin = new Padding(0, 8, 0, 0) };
-        saveButton.Click += (_, _) => SaveChatConfig();
-        panel.Controls.Add(saveButton);
-
         return new TabPage("Chatbot") { Padding = new Padding(10), AutoScroll = true, Controls = { panel } };
     }
 
@@ -814,24 +810,14 @@ public class SchedulerForm : Form
             return;
         }
 
-        // When using a local LLM that differs from the AI LLM tab (different server exe or
-        // different model), two separate llama-server processes must be running and therefore
-        // they need different ports.  Same exe + same model = shared instance, same port is fine.
-        if (_chatModeLocal.Checked)
+        // Local LLM mode always runs a separate llama-server process and therefore needs its own
+        // port.  To reuse the same server as the AI LLM tab, select "Use AI LLM config" instead.
+        if (_chatModeLocal.Checked && _chatPortBox.Value == _llmPortBox.Value)
         {
-            var chatExe   = _chatServerExeBox.Text.Trim();
-            var chatModel = _chatModelFileBox.Text.Trim();
-            var llmExe    = _llmExeBox.Text.Trim();
-            var llmModel  = _llmModelPathBox.Text.Trim();
-            var sameServer = string.Equals(chatExe, llmExe, StringComparison.OrdinalIgnoreCase)
-                          && string.Equals(chatModel, llmModel, StringComparison.OrdinalIgnoreCase);
-            if (!sameServer && _chatPortBox.Value == _llmPortBox.Value)
-            {
-                AppendOutput(
-                    $"Port conflict: the chat LLM uses a different server or model than the AI LLM, " +
-                    $"so they need separate ports (both are set to {(int)_chatPortBox.Value}).");
-                return;
-            }
+            AppendOutput(
+                $"Port conflict: the chat Local LLM port ({(int)_chatPortBox.Value}) must differ " +
+                $"from the AI LLM port. To share the same server, select \"Use AI LLM config\".");
+            return;
         }
 
         try
@@ -1039,19 +1025,59 @@ public class SchedulerForm : Form
             return;
         }
 
-        var config = new LocalConfigStore.Config
+        // Also validate chat endpoint and port conflict here so the unified save catches them too.
+        if (_chatEndpointBox.Text.Trim() is { Length: > 0 } chatEndpoint &&
+            !Uri.TryCreate(chatEndpoint, UriKind.Absolute, out _))
         {
-            RepoPath = repoPath,
-            WikiPort = (int)_wikiPortConfigBox.Value,
-            ApiPort = (int)_apiPortConfigBox.Value,
-            WebhookUrl = _webhookBox.Text.Trim() is { Length: > 0 } slack ? slack : null,
-            TeamsWebhookUrl = _teamsWebhookBox.Text.Trim() is { Length: > 0 } teams ? teams : null,
-            TelegramBotToken = _telegramBotTokenBox.Text.Trim() is { Length: > 0 } token ? token : null,
-            TelegramChatId = _telegramChatIdBox.Text.Trim() is { Length: > 0 } id ? id : null,
-        };
+            AppendOutput($"Invalid chat endpoint URL: {chatEndpoint}");
+            return;
+        }
+        if (_chatModeLocal.Checked && _chatPortBox.Value == _llmPortBox.Value)
+        {
+            AppendOutput(
+                $"Port conflict: the chat Local LLM port ({(int)_chatPortBox.Value}) must differ " +
+                $"from the AI LLM port. To share the same server, select \"Use AI LLM config\".");
+            return;
+        }
 
         try
         {
+            // Load existing so we don't wipe fields that belong to other tabs.
+            var config = File.Exists(path)
+                ? LocalConfigStore.Load(path, out _)
+                : new LocalConfigStore.Config();
+
+            // Connection tab
+            config.RepoPath = repoPath;
+            config.WikiPort = (int)_wikiPortConfigBox.Value;
+            config.ApiPort = (int)_apiPortConfigBox.Value;
+            config.WebhookUrl = _webhookBox.Text.Trim() is { Length: > 0 } slack ? slack : null;
+            config.TeamsWebhookUrl = _teamsWebhookBox.Text.Trim() is { Length: > 0 } teams ? teams : null;
+            config.TelegramBotToken = _telegramBotTokenBox.Text.Trim() is { Length: > 0 } token ? token : null;
+            config.TelegramChatId = _telegramChatIdBox.Text.Trim() is { Length: > 0 } id ? id : null;
+
+            // AI LLM tab
+            config.AiMode = _llmModeNone.Checked ? "none" : _llmModeLocal.Checked ? "local" : "remote";
+            config.LlamaExePath = _llmExeBox.Text.Trim() is { Length: > 0 } exe ? exe : null;
+            config.LlamaModelPath = _llmModelPathBox.Text.Trim() is { Length: > 0 } mp ? mp : null;
+            config.LlmPort = (int)_llmPortBox.Value;
+            config.AiEndpoint = _aiEndpointBox.Text.Trim() is { Length: > 0 } ai ? ai : null;
+            config.AiModel = _aiModelBox.Text.Trim() is { Length: > 0 } model ? model : null;
+            config.AiKey = _aiKeyBox.Text is { Length: > 0 } key ? key : null;
+
+            // Chatbot tab
+            config.AiChatEnabled = _chatEnabledCheck.Checked;
+            config.ChatAiMode = _chatModeLocal.Checked ? "local" : _chatModeRemote.Checked ? "remote" : "aiLlm";
+            config.ChatLlamaExePath = _chatServerExeBox.Text.Trim() is { Length: > 0 } ce ? ce : null;
+            config.ChatLlamaModelPath = _chatModelFileBox.Text.Trim() is { Length: > 0 } cm ? cm : null;
+            config.ChatLlmPort = _chatModeLocal.Checked ? (int)_chatPortBox.Value : null;
+            if (_chatModeRemote.Checked)
+            {
+                config.AiEndpoint = _chatEndpointBox.Text.Trim() is { Length: > 0 } ep ? ep : null;
+                config.AiModel = _chatModelBox.Text.Trim() is { Length: > 0 } m ? m : null;
+                config.AiKey = _chatKeyBox.Text is { Length: > 0 } k ? k : null;
+            }
+
             LocalConfigStore.Save(path, config);
             AppendOutput($"Saved configuration to {path}.");
             LoadEaxwikiConfig();
