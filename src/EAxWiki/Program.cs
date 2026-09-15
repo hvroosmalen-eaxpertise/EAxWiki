@@ -177,6 +177,8 @@ if (savedConfig != null)
         config.AiModel = savedConfig.AiModel;
     if (string.IsNullOrEmpty(config.AiKey) && !string.IsNullOrEmpty(savedConfig.AiKey))
         config.AiKey = savedConfig.AiKey;
+    if (!config.AiChatEnabled && (savedConfig.AiChatEnabled ?? false))
+        config.AiChatEnabled = true;
 }
 
 if (string.IsNullOrWhiteSpace(config.RepositoryPath))
@@ -227,6 +229,8 @@ if (config.ApiMode)
 Environment.SetEnvironmentVariable("EAXWIKI_API_PORT", config.ApiPort.ToString());
 if (!string.IsNullOrEmpty(config.AiEndpoint))
     Environment.SetEnvironmentVariable("EAXWIKI_AI_ENDPOINT", config.AiEndpoint);
+if (config.AiChatEnabled)
+    Environment.SetEnvironmentVariable("EAXWIKI_AI_CHAT_ENABLED", "true");
 
 try
 {

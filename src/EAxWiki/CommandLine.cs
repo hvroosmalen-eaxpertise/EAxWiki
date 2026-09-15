@@ -80,6 +80,10 @@ public static class CommandLine
     {
         Description = "API key for AI endpoint (optional for local LLMs).",
     };
+    private static readonly Option<bool> AiChatEnabled = new("--ai-chat-enabled")
+    {
+        Description = "Enable the in-wiki AI chat endpoint (/api/ai-chat).",
+    };
     private const string Description = """
         EAxWiki - Sparx EA Repository to Wiki Generator
 
@@ -100,7 +104,7 @@ public static class CommandLine
         var root = new RootCommand(Description)
         {
             RepoArg, Repo, Name, Output, Package, Verbose, Force, Json, WriteBack,
-            Api, ApiPort, WikiPort, ReadyFile, Cert, CertPassword, AiEndpoint, AiModel, AiKey,
+            Api, ApiPort, WikiPort, ReadyFile, Cert, CertPassword, AiEndpoint, AiModel, AiKey, AiChatEnabled,
         };
         // A bare positional repo is the only legitimate non-option token; anything else is a typo.
         root.TreatUnmatchedTokensAsErrors = true;
@@ -130,6 +134,7 @@ public static class CommandLine
             AiEndpoint = r.GetValue(AiEndpoint) ?? "",
             AiModel = r.GetValue(AiModel) ?? "llama-3.2-3b",
             AiKey = r.GetValue(AiKey) ?? "",
+            AiChatEnabled = r.GetValue(AiChatEnabled),
         };
     }
 

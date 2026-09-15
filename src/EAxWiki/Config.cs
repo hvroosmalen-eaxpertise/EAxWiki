@@ -26,4 +26,5 @@ public class Config
     public string AiEndpoint { get; set; } = "";
     public string AiModel { get; set; } = "llama-3.2-3b";
     public string AiKey { get; set; } = "";
+    public bool AiChatEnabled { get; set; } = false;
 }

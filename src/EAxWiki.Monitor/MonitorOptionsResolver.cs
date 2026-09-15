@@ -100,6 +100,7 @@ public static class MonitorOptionsResolver
             AiEndpoint = aiEndpoint,
             AiModel = aiModel,
             AiKey = aiMode == "local" ? null : file?.AiKey,
+            AiChatEnabled = file?.AiChatEnabled ?? false,
             LlamaExePath = llamaExe,
             LlamaModelPath = llamaModel,
         };

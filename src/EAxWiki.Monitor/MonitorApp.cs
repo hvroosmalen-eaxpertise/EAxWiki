@@ -115,6 +115,8 @@ public static class MonitorApp
             args.Add("--ai-key");
             args.Add(options.AiKey);
         }
+        if (options.AiChatEnabled)
+            args.Add("--ai-chat-enabled");
 
         return new ServiceSpec(
             "api",

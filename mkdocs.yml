@@ -44,6 +44,7 @@ extra_javascript:
   - notes-editor.js
   - row-notes-editor.js
   - brand-editor.js
+  - chat.js
 
 plugins:
   - search

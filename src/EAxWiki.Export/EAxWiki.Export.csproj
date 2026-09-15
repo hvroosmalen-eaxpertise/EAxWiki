@@ -27,6 +27,7 @@
     <EmbeddedResource Include="Resources\status-editor.js" />
     <EmbeddedResource Include="Resources\brand-editor.js" />
     <EmbeddedResource Include="Resources\graph-init.js.tmpl" />
+    <EmbeddedResource Include="Resources\chat.js.tmpl" />
   </ItemGroup>
 
   <ItemGroup>

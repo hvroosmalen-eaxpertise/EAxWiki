@@ -152,6 +152,20 @@ internal class InfrastructureWriter(IOutputWriter writer)
     public Task WriteBrandEditorScriptAsync(string outputDir, CancellationToken ct = default) =>
         writer.WriteFileAsync(Path.Combine(outputDir, "brand-editor.js"), EmbeddedResource.ReadText("brand-editor.js"), ct);
 
+    /// <summary>
+    /// Writes chat.js with the API port, token, and enabled flag baked in so the widget works
+    /// on every wiki page without any page-specific HTML from the exporter.
+    /// </summary>
+    public Task WriteChatScriptAsync(string outputDir, int apiPort, string apiToken, bool enabled, CancellationToken ct = default)
+    {
+        var template = EmbeddedResource.ReadText("chat.js.tmpl");
+        var js = template
+            .Replace("{{API_PORT}}", apiPort.ToString())
+            .Replace("{{API_TOKEN}}", apiToken.Replace("'", "\\'"))
+            .Replace("{{AI_CHAT_ENABLED}}", enabled ? "true" : "false");
+        return writer.WriteFileAsync(Path.Combine(outputDir, "chat.js"), js, ct);
+    }
+
     public async Task WriteExtraCssAsync(string outputDir, CancellationToken ct = default)
     {
         var assembly = Assembly.GetExecutingAssembly();

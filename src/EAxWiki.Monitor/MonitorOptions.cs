@@ -30,4 +30,5 @@ public sealed record MonitorOptions
     public string? AiKey { get; init; }
     public string? LlamaExePath { get; init; }
     public string? LlamaModelPath { get; init; }
+    public bool AiChatEnabled { get; init; }
 }

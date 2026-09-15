@@ -23,6 +23,7 @@ internal static class WikiWritebackServer
     internal record DiagramNotesChangeRequest(int DiagramId, string NewNotes, string FilePath);
     internal record AiSuggestRequest(int ElementId);
     internal record AiSuggestDiagramRequest(int DiagramId);
+    internal record AiChatRequest(string Query);
 
     internal record RowNotesChangeRequest(
         string Kind, int ElementId, string RowId, string NewNotes, string FilePath,
@@ -735,6 +736,111 @@ internal static class WikiWritebackServer
             }
         });
 
+        // /api/ai-chat — RAG-based chat using repository markdown/HTML content only
+        app.MapPost("/api/ai-chat", async (AiChatRequest req, HttpContext context) =>
+        {
+            if (!config.AiChatEnabled)
+                return Results.Json(new { message = "AI chat is not enabled in configuration." }, statusCode: 501);
+
+            if (string.IsNullOrEmpty(config.AiEndpoint))
+                return Results.Json(new { message = "AI endpoint is not configured." }, statusCode: 501);
+
+            // Validate API token (same pattern as other /api endpoints)
+            var providedToken = context.Request.Headers["X-EAxWiki-Token"].ToString();
+            var tokenPath = Path.Combine(outputPath, ".eaxwiki-token");
+            var expectedToken = File.Exists(tokenPath) ? File.ReadAllText(tokenPath).Trim() : "";
+            if (!CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(providedToken), Encoding.UTF8.GetBytes(expectedToken)))
+            {
+                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                return Results.Json(new { success = false, message = "Missing or invalid API token." });
+            }
+
+            // Search repository markdown files for relevant content (keyword matching).
+            // Split the query into words so individual terms are found even when the full
+            // phrase doesn't appear verbatim — the snippet is anchored to the first matching word.
+            var searchLower = req.Query?.Trim().ToLowerInvariant();
+            var relevantSnippets = new List<string>();
+            if (!string.IsNullOrEmpty(searchLower))
+            {
+                try
+                {
+                    var words = searchLower.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    var allFiles = Directory.GetFiles(outputPath, "*.md", SearchOption.AllDirectories)
+                        .Concat(Directory.GetFiles(outputPath, "*.html", SearchOption.AllDirectories));
+                    foreach (var file in allFiles)
+                    {
+                        try
+                        {
+                            var content = File.ReadAllText(file);
+                            var lowerContent = content.ToLowerInvariant();
+                            // Anchor the snippet to the first word that actually appears in the file.
+                            var index = -1;
+                            foreach (var w in words)
+                            {
+                                var idx = lowerContent.IndexOf(w, StringComparison.Ordinal);
+                                if (idx >= 0) { index = idx; break; }
+                            }
+                            if (index >= 0)
+                            {
+                                var start = Math.Max(0, index - 200);
+                                var end = Math.Min(content.Length, index + 200);
+                                var snippet = content.Substring(start, end - start);
+                                if (snippet.Length > 300) snippet = snippet.Substring(0, 300) + "...";
+                                relevantSnippets.Add($"**[{Path.GetFileName(file)}]**\n{snippet}");
+                            }
+                        }
+                        catch { continue; }
+                    }
+                }
+                catch { }
+            }
+            if (relevantSnippets.Count == 0)
+                return Results.Json(new { answer = "No repository content found matching your query. The chat only queries exported markdown/HTML files from this EAxWiki instance." });
+
+            var relevantContent = string.Join("\n\n", relevantSnippets.Take(5));
+
+            // Build RAG prompt
+            var systemPrompt = "You are an AI assistant for the EAxWiki repository. Answer the user's question using ONLY the provided context from the repository's exported markdown/HTML files. Do not use external knowledge, do not mention the source of the content, and do not hallucinate beyond what is in the provided text. If the answer cannot be determined from the context, say so clearly.";
+
+            var userPrompt = $"User question: {req.Query}\n\nRepository content:\n{relevantContent}";
+
+            var llmBody = new
+            {
+                model = config.AiModel,
+                messages = new[]
+                {
+                    new { role = "system", content = systemPrompt },
+                    new { role = "user", content = userPrompt }
+                },
+                max_tokens = 500,
+                temperature = 0.3,
+                stream = false
+            };
+
+            var request = new HttpRequestMessage(HttpMethod.Post, $"{config.AiEndpoint.TrimEnd('/')}/chat/completions")
+            {
+                Content = JsonContent.Create(llmBody)
+            };
+            if (!string.IsNullOrEmpty(config.AiKey))
+                request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", config.AiKey);
+
+            var response = await AiHttpClient.SendAsync(request, context.RequestAborted);
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorBody = await response.Content.ReadAsStringAsync();
+                logger.LogWarning("AI endpoint returned {StatusCode}: {Error}", (int)response.StatusCode, errorBody);
+                return Results.Json(new { answer = "AI service returned an error." }, statusCode: 502);
+            }
+
+            var chatResult = await response.Content.ReadFromJsonAsync<LlmChatResponse>();
+            var answer = chatResult?.choices?.Length > 0 ? chatResult.choices[0].message.content?.Trim() : null;
+
+            if (string.IsNullOrEmpty(answer))
+                return Results.Json(new { answer = "AI returned no answer." }, statusCode: 422);
+
+            return Results.Json(new { answer });
+        });
+
         app.MapPost("/api/edit-lock", (EditLockRequest req) =>
         {
             return HandleEditLock(outputPath, req);
@@ -878,4 +984,4 @@ internal static class WikiWritebackServer
             return Results.Ok(new { success = true, message = "Shutting down." });
         });
     }
-    }
+}

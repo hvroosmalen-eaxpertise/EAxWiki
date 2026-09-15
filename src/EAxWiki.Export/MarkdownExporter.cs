@@ -48,12 +48,14 @@ public class MarkdownExporter : IWikiExporter
             var apiToken = apiPort > 0 ? ApiTokenStore.GetOrCreate(outputPath, _logger) : string.Empty;
             var aiEndpoint = Environment.GetEnvironmentVariable("EAXWIKI_AI_ENDPOINT");
             var aiConfigured = !string.IsNullOrEmpty(aiEndpoint);
+            var aiChatEnabled = Environment.GetEnvironmentVariable("EAXWIKI_AI_CHAT_ENABLED") == "true";
             var ctx = ContextBuilder.Build(packages, outputPath, force) with
             {
                 StatusTypes = statusTypes,
                 ApiPort = apiPort,
                 ApiToken = apiToken,
                 AiConfigured = aiConfigured,
+                AiChatEnabled = aiChatEnabled,
             };
 
             var packageExporter = new PackageExporter(_writer, _logger);
@@ -104,6 +106,7 @@ public class MarkdownExporter : IWikiExporter
                 infrastructure.WriteNotesEditorScriptAsync(outputPath, cancellationToken),
                 infrastructure.WriteRowNotesEditorScriptAsync(outputPath, cancellationToken),
                 infrastructure.WriteBrandEditorScriptAsync(outputPath, cancellationToken),
+                infrastructure.WriteChatScriptAsync(outputPath, ctx.ApiPort, ctx.ApiToken, ctx.AiChatEnabled, cancellationToken),
                 new GraphIndexExporter(_writer, _logger).ExportAsync(ctx, cancellationToken),
             };
 
