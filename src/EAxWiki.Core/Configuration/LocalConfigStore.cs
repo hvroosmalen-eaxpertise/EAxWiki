@@ -41,6 +41,10 @@ public static class LocalConfigStore
         public string? LlamaExePath { get; set; }
         public string? LlamaModelPath { get; set; }
         public bool? AiChatEnabled { get; set; }
+        public string? ChatAiMode { get; set; }
+        public int? ChatLlmPort { get; set; }
+        public string? ChatLlamaExePath { get; set; }
+        public string? ChatLlamaModelPath { get; set; }
     }
 
     public static Config Load(string path, out bool wasLegacyPlaintext)

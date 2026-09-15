@@ -54,9 +54,18 @@ public class SchedulerForm : Form
     // Chatbot tab — own control instances so they are always editable and not affected by
     // UpdateAiModeEnablement(), which disables the AI LLM tab boxes when not in remote mode.
     private readonly CheckBox _chatEnabledCheck = new() { Text = "AI Chat Enabled", AutoSize = true };
+    private readonly RadioButton _chatModeAiLlm = new() { Text = "Use AI LLM config", AutoSize = true, Checked = true };
+    private readonly RadioButton _chatModeLocal = new() { Text = "Local LLM", AutoSize = true };
+    private readonly RadioButton _chatModeRemote = new() { Text = "Remote LLM", AutoSize = true };
+    private readonly TextBox _chatServerExeBox = new() { Width = 340 };
+    private readonly Button _chatServerExeBrowseBtn = new() { Text = "Browse...", AutoSize = true };
+    private readonly TextBox _chatModelFileBox = new() { Width = 340 };
+    private readonly Button _chatModelFileBrowseBtn = new() { Text = "Browse...", AutoSize = true };
+    private readonly NumericUpDown _chatPortBox = new() { Minimum = 1, Maximum = 65535, Value = 8082, Width = 80 };
     private readonly TextBox _chatModelBox = new() { Width = 400 };
     private readonly TextBox _chatEndpointBox = new() { Width = 400 };
     private readonly TextBox _chatKeyBox = new() { Width = 400, UseSystemPasswordChar = true };
+    private readonly Label _chatTestResult = new() { AutoSize = true };
     private readonly RadioButton _llmModeNone = new() { Text = "No LLM", AutoSize = true };
     private readonly RadioButton _llmModeLocal = new() { Text = "Local LLM", AutoSize = true, Checked = true };
     private readonly RadioButton _llmModeRemote = new() { Text = "Remote LLM", AutoSize = true };
@@ -187,6 +196,9 @@ public class SchedulerForm : Form
         _llmModeNone.CheckedChanged += (_, _) => UpdateAiModeEnablement();
         _llmModeLocal.CheckedChanged += (_, _) => UpdateAiModeEnablement();
         _llmModeRemote.CheckedChanged += (_, _) => UpdateAiModeEnablement();
+        _chatModeAiLlm.CheckedChanged += (_, _) => UpdateChatFieldEnablement();
+        _chatModeLocal.CheckedChanged += (_, _) => UpdateChatFieldEnablement();
+        _chatModeRemote.CheckedChanged += (_, _) => UpdateChatFieldEnablement();
         _aiTestButton.Click += async (_, _) => await TestAiConnectionAsync();
         _aiSaveButton.Click += (_, _) => SaveAiConfig();
         _browseLlmExeButton.Click += (_, _) =>
@@ -203,6 +215,18 @@ public class SchedulerForm : Form
         };
         _llmStartButton.Click += async (_, _) => await StartLlmAsync();
         _llmStopButton.Click += (_, _) => StopLlm();
+        _chatServerExeBrowseBtn.Click += (_, _) =>
+        {
+            using var dialog = new OpenFileDialog { Filter = "llama-server.exe|llama-server.exe|All files (*.*)|*.*", CheckFileExists = true };
+            if (dialog.ShowDialog() == DialogResult.OK)
+                _chatServerExeBox.Text = dialog.FileName;
+        };
+        _chatModelFileBrowseBtn.Click += (_, _) =>
+        {
+            using var dialog = new OpenFileDialog { Filter = "GGUF models (*.gguf)|*.gguf|All files (*.*)|*.*", CheckFileExists = true };
+            if (dialog.ShowDialog() == DialogResult.OK)
+                _chatModelFileBox.Text = dialog.FileName;
+        };
 
         if (_repoRoot == null)
         {
@@ -226,6 +250,7 @@ public class SchedulerForm : Form
         if (_aiEndpointBox.Text.Length == 0) _aiEndpointBox.Text = "https://api.openai.com/v1";
         if (_aiModelBox.Text.Length == 0) _aiModelBox.Text = "gpt-4o-mini";
         UpdateAiModeEnablement();
+        UpdateChatFieldEnablement();
 
         using (var identity = System.Security.Principal.WindowsIdentity.GetCurrent())
         {
@@ -497,58 +522,78 @@ public class SchedulerForm : Form
         _chatEnabledCheck.Margin = new Padding(0, 0, 0, 8);
         panel.Controls.Add(_chatEnabledCheck);
 
-        panel.Controls.Add(new Label { Text = "Chat Model:", AutoSize = true, Margin = new Padding(12, 12, 0, 0) });
-        panel.Controls.Add(_chatModelBox);
+        // Mode selector — mirrors the AI LLM tab's No LLM / Local LLM / Remote LLM row.
+        var modeRow = new FlowLayoutPanel { AutoSize = true, FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(0, 0, 0, 8) };
+        modeRow.Controls.Add(_chatModeAiLlm);
+        modeRow.Controls.Add(_chatModeLocal);
+        modeRow.Controls.Add(_chatModeRemote);
+        panel.Controls.Add(modeRow);
 
-        panel.Controls.Add(new Label { Text = "Chat Endpoint:", AutoSize = true, Margin = new Padding(12, 12, 0, 0) });
-        panel.Controls.Add(_chatEndpointBox);
+        // Local LLM group — same structure as the AI LLM tab's Local LLM group.
+        var localGroup = new GroupBox { Text = "Local LLM", Width = 560, Height = 160, Padding = new Padding(6) };
+        var localTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
+        localTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        localTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        AddRow(localTable, "Server executable:", MakeBrowseRow(_chatServerExeBox, _chatServerExeBrowseBtn));
+        AddRow(localTable, "Model file (.gguf):", MakeBrowseRow(_chatModelFileBox, _chatModelFileBrowseBtn));
+        AddRow(localTable, "Port:", _chatPortBox);
+        localGroup.Controls.Add(localTable);
+        localTable.Location = new Point(6, 16);
+        panel.Controls.Add(localGroup);
 
-        panel.Controls.Add(new Label { Text = "API Key:", AutoSize = true, Margin = new Padding(12, 12, 0, 0) });
-        panel.Controls.Add(_chatKeyBox);
+        // Remote LLM group — same structure as the AI LLM tab's Remote LLM group.
+        var remoteGroup = new GroupBox { Text = "Remote LLM", Width = 560, Height = 180, Padding = new Padding(6) };
+        var remoteTable = new TableLayoutPanel { ColumnCount = 2, AutoSize = true };
+        remoteTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        remoteTable.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+        AddRow(remoteTable, "Endpoint:", _chatEndpointBox);
+        AddRow(remoteTable, "Model:", _chatModelBox);
+        AddRow(remoteTable, "API Key:", _chatKeyBox);
 
-        var buttonPanel = new FlowLayoutPanel { FlowDirection = FlowDirection.LeftToRight, Margin = new Padding(0, 8, 0, 0), AutoSize = true };
-
-        var testButton = new Button { Text = "Test Connection", AutoSize = true, Margin = new Padding(4) };
+        var testButton = new Button { Text = "Test Connection", AutoSize = true, Margin = new Padding(3, 4, 3, 3) };
         testButton.Click += async (_, _) =>
         {
-            if (string.IsNullOrEmpty(_chatEndpointBox.Text))
+            var endpoint = _chatEndpointBox.Text.Trim();
+            if (endpoint.Length == 0)
             {
-                AppendOutput("Chat endpoint is not configured.");
+                _chatTestResult.Text = "Enter an endpoint first.";
+                _chatTestResult.ForeColor = Color.Red;
                 return;
             }
+            testButton.Enabled = false;
+            testButton.Text = "Testing...";
+            _chatTestResult.Text = "";
             try
             {
                 using var httpClient = new HttpClient { Timeout = TimeSpan.FromSeconds(30) };
-                var json = System.Text.Json.JsonSerializer.Serialize(new
-                {
-                    model = _chatModelBox.Text,
-                    messages = new[] { new { role = "user", content = "Hello" } },
-                    max_tokens = 5,
-                    temperature = 0.3,
-                    stream = false
-                });
-                var req = new HttpRequestMessage(HttpMethod.Post, $"{_chatEndpointBox.Text.TrimEnd('/')}/chat/completions");
-                req.Content = new System.Net.Http.StringContent(json, System.Text.Encoding.UTF8, "application/json");
+                var body = new { model = _chatModelBox.Text.Trim() is { Length: > 0 } m ? m : "gpt-4o-mini",
+                    messages = new[] { new { role = "user", content = "Say OK" } }, max_tokens = 5 };
+                var req = new HttpRequestMessage(HttpMethod.Post, $"{endpoint.TrimEnd('/')}/chat/completions")
+                    { Content = JsonContent.Create(body) };
                 if (!string.IsNullOrEmpty(_chatKeyBox.Text))
                     req.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _chatKeyBox.Text);
                 var resp = await httpClient.SendAsync(req);
-                if (resp.IsSuccessStatusCode)
-                    AppendOutput("Connection test successful - chat endpoint is reachable.");
-                else
-                    AppendOutput($"Chat endpoint returned error: {(int)resp.StatusCode}");
+                _chatTestResult.Text = resp.IsSuccessStatusCode ? "LLM reachable." : $"HTTP {(int)resp.StatusCode}";
+                _chatTestResult.ForeColor = resp.IsSuccessStatusCode ? Color.Green : Color.Red;
             }
             catch (Exception ex)
             {
-                AppendOutput($"Connection test failed: {ex.Message}");
+                _chatTestResult.Text = $"Error: {ex.Message}";
+                _chatTestResult.ForeColor = Color.Red;
             }
+            finally { testButton.Enabled = true; testButton.Text = "Test Connection"; }
         };
-        buttonPanel.Controls.Add(testButton);
+        remoteGroup.Controls.Add(remoteTable);
+        remoteGroup.Controls.Add(_chatTestResult);
+        remoteGroup.Controls.Add(testButton);
+        remoteTable.Location = new Point(6, 16);
+        _chatTestResult.Location = new Point(6, remoteTable.Bottom + 4);
+        testButton.Location = new Point(6, _chatTestResult.Bottom + 2);
+        panel.Controls.Add(remoteGroup);
 
-        var saveButton = new Button { Text = "Save Config", AutoSize = true, Margin = new Padding(4) };
+        var saveButton = new Button { Text = "Save Config", AutoSize = true, Margin = new Padding(0, 8, 0, 0) };
         saveButton.Click += (_, _) => SaveChatConfig();
-        buttonPanel.Controls.Add(saveButton);
-
-        panel.Controls.Add(buttonPanel);
+        panel.Controls.Add(saveButton);
 
         return new TabPage("Chatbot") { Padding = new Padding(10), AutoScroll = true, Controls = { panel } };
     }
@@ -776,9 +821,18 @@ public class SchedulerForm : Form
                 : new LocalConfigStore.Config();
 
             config.AiChatEnabled = _chatEnabledCheck.Checked;
-            config.AiEndpoint = _chatEndpointBox.Text.Trim() is { Length: > 0 } ep ? ep : null;
-            config.AiModel = _chatModelBox.Text.Trim() is { Length: > 0 } model ? model : null;
-            config.AiKey = _chatKeyBox.Text is { Length: > 0 } key ? key : null;
+            config.ChatAiMode = _chatModeLocal.Checked ? "local" : _chatModeRemote.Checked ? "remote" : "aiLlm";
+            config.ChatLlamaExePath = _chatServerExeBox.Text.Trim() is { Length: > 0 } exe ? exe : null;
+            config.ChatLlamaModelPath = _chatModelFileBox.Text.Trim() is { Length: > 0 } mp ? mp : null;
+            config.ChatLlmPort = _chatModeLocal.Checked ? (int)_chatPortBox.Value : null;
+            // When using remote LLM settings, persist the chat-specific endpoint/model/key.
+            // When using AI LLM config or local LLM, leave those shared keys untouched.
+            if (_chatModeRemote.Checked)
+            {
+                config.AiEndpoint = _chatEndpointBox.Text.Trim() is { Length: > 0 } ep ? ep : null;
+                config.AiModel = _chatModelBox.Text.Trim() is { Length: > 0 } model ? model : null;
+                config.AiKey = _chatKeyBox.Text is { Length: > 0 } key ? key : null;
+            }
 
             LocalConfigStore.Save(path, config);
             AppendOutput("Chat configuration saved.");
@@ -822,6 +876,20 @@ public class SchedulerForm : Form
         _aiSaveButton.Enabled = !none;
     }
 
+    private void UpdateChatFieldEnablement()
+    {
+        var local = _chatModeLocal.Checked;
+        var remote = _chatModeRemote.Checked;
+        _chatServerExeBox.Enabled = local;
+        _chatServerExeBrowseBtn.Enabled = local;
+        _chatModelFileBox.Enabled = local;
+        _chatModelFileBrowseBtn.Enabled = local;
+        _chatPortBox.Enabled = local;
+        _chatEndpointBox.Enabled = remote;
+        _chatModelBox.Enabled = remote;
+        _chatKeyBox.Enabled = remote;
+    }
+
     private void UpdateModeEnablement()
     {
         var simple = _simpleModeRadio.Checked;
@@ -854,6 +922,10 @@ public class SchedulerForm : Form
             _aiModelBox.Text = "gpt-4o-mini";
             _aiKeyBox.Text = "";
             _chatEnabledCheck.Checked = false;
+            _chatModeAiLlm.Checked = true;
+            _chatServerExeBox.Text = "";
+            _chatModelFileBox.Text = "";
+            _chatPortBox.Value = 8082;
             _chatEndpointBox.Text = "https://api.openai.com/v1";
             _chatModelBox.Text = "gpt-4o-mini";
             _chatKeyBox.Text = "";
@@ -894,6 +966,15 @@ public class SchedulerForm : Form
             _aiModelBox.Text = config.AiModel ?? "";
             _aiKeyBox.Text = config.AiKey ?? "";
             _chatEnabledCheck.Checked = config.AiChatEnabled ?? false;
+            var chatMode = config.ChatAiMode ?? "aiLlm";
+            _chatModeAiLlm.Checked = chatMode == "aiLlm";
+            _chatModeLocal.Checked = chatMode == "local";
+            _chatModeRemote.Checked = chatMode == "remote";
+            // Always seed chat fields from the stored values so the display is current.
+            _chatServerExeBox.Text = config.ChatLlamaExePath ?? "";
+            _chatModelFileBox.Text = config.ChatLlamaModelPath ?? "";
+            _chatPortBox.Value = Math.Clamp(config.ChatLlmPort ?? 8082, (int)_chatPortBox.Minimum, (int)_chatPortBox.Maximum);
+            // Seed remote fields from shared AI keys (they're written back together on save).
             _chatEndpointBox.Text = loadedEndpoint;
             _chatModelBox.Text = config.AiModel ?? "";
             _chatKeyBox.Text = config.AiKey ?? "";
