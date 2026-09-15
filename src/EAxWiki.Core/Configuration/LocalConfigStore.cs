@@ -40,6 +40,7 @@ public static class LocalConfigStore
         public string? AiKey { get; set; }
         public string? LlamaExePath { get; set; }
         public string? LlamaModelPath { get; set; }
+        public bool? AiChatEnabled { get; set; }
     }
 
     public static Config Load(string path, out bool wasLegacyPlaintext)
