@@ -6,125 +6,174 @@
 
   var apiBase = window.location.protocol + '//' + window.location.hostname + ':' + CFG.port;
 
-  /* ── styles ─────────────────────────────────────────────────────────────── */
-  var style = document.createElement('style');
-  style.textContent = [
-    '#ea-chat-btn{position:fixed;bottom:24px;right:24px;z-index:9000;width:48px;height:48px;border-radius:50%;',
-    'background:var(--md-primary-fg-color,#1976d2);color:#fff;border:none;cursor:pointer;font-size:22px;',
-    'box-shadow:0 2px 8px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;}',
-    '#ea-chat-btn:hover{filter:brightness(1.15);}',
-    '#ea-chat-panel{position:fixed;bottom:84px;right:24px;z-index:9001;width:340px;max-height:480px;',
-    'display:none;flex-direction:column;border-radius:10px;overflow:hidden;',
-    'box-shadow:0 4px 20px rgba(0,0,0,.3);background:var(--md-default-bg-color,#fff);',
-    'font-family:inherit;font-size:14px;}',
-    '#ea-chat-panel.ea-open{display:flex;}',
-    '#ea-chat-header{background:var(--md-primary-fg-color,#1976d2);color:#fff;padding:10px 14px;',
-    'font-weight:600;display:flex;justify-content:space-between;align-items:center;}',
-    '#ea-chat-close{background:none;border:none;color:#fff;cursor:pointer;font-size:18px;line-height:1;padding:0;}',
-    '#ea-chat-messages{flex:1;overflow-y:auto;padding:10px;display:flex;flex-direction:column;gap:8px;',
-    'min-height:120px;max-height:320px;}',
-    '.ea-msg{padding:7px 10px;border-radius:7px;max-width:90%;line-height:1.45;white-space:pre-wrap;word-break:break-word;}',
-    '.ea-msg-user{background:var(--md-primary-fg-color,#1976d2);color:#fff;align-self:flex-end;}',
-    '.ea-msg-bot{background:var(--md-code-bg-color,#f5f5f5);color:var(--md-default-fg-color,#333);align-self:flex-start;}',
-    '.ea-msg-err{background:#fdecea;color:#b71c1c;align-self:flex-start;}',
-    '#ea-chat-form{display:flex;padding:8px;gap:6px;border-top:1px solid var(--md-default-fg-color--lightest,#e0e0e0);}',
-    '#ea-chat-input{flex:1;padding:6px 8px;border:1px solid var(--md-default-fg-color--lighter,#ccc);',
-    'border-radius:6px;font-size:13px;resize:none;background:var(--md-default-bg-color,#fff);',
-    'color:var(--md-default-fg-color,#333);}',
-    '#ea-chat-send{padding:6px 12px;background:var(--md-primary-fg-color,#1976d2);color:#fff;',
-    'border:none;border-radius:6px;cursor:pointer;font-size:13px;}',
-    '#ea-chat-send:disabled{opacity:.5;cursor:default;}',
-  ].join('');
-  document.head.appendChild(style);
+  // Material's navigation.instant feature swaps page content via fetch instead of a real
+  // browser navigation, so this script only ever runs once for the whole session — any DOM
+  // this IIFE appends to <body> is wiped out on the next virtual page (that's why the button
+  // vanished on deeper pages and only came back on "Home", the one link that happened to
+  // trigger a real reload). sessionStorage carries the conversation across that wipe, and
+  // document$ (Material's own page-change observable) re-mounts the widget after every one.
+  var HISTORY_KEY = 'ea-chat-history';
+  var OPEN_KEY = 'ea-chat-open';
+  var MAX_HISTORY = 50;
 
-  /* ── DOM ─────────────────────────────────────────────────────────────────── */
-  var btn = document.createElement('button');
-  btn.id = 'ea-chat-btn';
-  btn.title = 'Ask EAxWiki AI';
-  btn.setAttribute('aria-label', 'Open AI chat');
-  btn.innerHTML = '&#x1F4AC;'; // speech bubble
-
-  var panel = document.createElement('div');
-  panel.id = 'ea-chat-panel';
-  panel.setAttribute('role', 'dialog');
-  panel.setAttribute('aria-label', 'EAxWiki AI Chat');
-  panel.innerHTML =
-    '<div id="ea-chat-header">Ask EAxWiki' +
-      '<button id="ea-chat-close" aria-label="Close chat">\u00D7</button>' +
-    '</div>' +
-    '<div id="ea-chat-messages" aria-live="polite"></div>' +
-    '<form id="ea-chat-form">' +
-      '<textarea id="ea-chat-input" rows="2" placeholder="Ask a question about this wiki\u2026" aria-label="Chat input"></textarea>' +
-      '<button id="ea-chat-send" type="submit">Send</button>' +
-    '</form>';
-
-  document.body.appendChild(btn);
-  document.body.appendChild(panel);
-
-  var messages = document.getElementById('ea-chat-messages');
-  var input    = document.getElementById('ea-chat-input');
-  var send     = document.getElementById('ea-chat-send');
-
-  /* ── helpers ─────────────────────────────────────────────────────────────── */
-  function addMsg(text, cls) {
-    var div = document.createElement('div');
-    div.className = 'ea-msg ' + cls;
-    div.textContent = text;
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
-    return div;
+  function loadHistory() {
+    try { return JSON.parse(sessionStorage.getItem(HISTORY_KEY) || '[]'); } catch (e) { return []; }
+  }
+  function saveHistory(history) {
+    try { sessionStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(-MAX_HISTORY))); } catch (e) { /* private mode etc. */ }
+  }
+  function isPanelOpen() {
+    try { return sessionStorage.getItem(OPEN_KEY) === '1'; } catch (e) { return false; }
+  }
+  function setPanelOpen(open) {
+    try { sessionStorage.setItem(OPEN_KEY, open ? '1' : '0'); } catch (e) { /* private mode etc. */ }
   }
 
-  function setLoading(on) {
-    send.disabled = on;
-    input.disabled = on;
+  var history = loadHistory();
+
+  function injectStyleOnce() {
+    if (document.getElementById('ea-chat-style')) return;
+    var style = document.createElement('style');
+    style.id = 'ea-chat-style';
+    style.textContent = [
+      '#ea-chat-btn{position:fixed;bottom:24px;right:24px;z-index:9000;width:48px;height:48px;border-radius:50%;',
+      'background:var(--md-primary-fg-color,#1976d2);color:#fff;border:none;cursor:pointer;font-size:22px;',
+      'box-shadow:0 2px 8px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;}',
+      '#ea-chat-btn:hover{filter:brightness(1.15);}',
+      '#ea-chat-panel{position:fixed;bottom:84px;right:24px;z-index:9001;width:340px;max-height:480px;',
+      'display:none;flex-direction:column;border-radius:10px;overflow:hidden;',
+      'box-shadow:0 4px 20px rgba(0,0,0,.3);background:var(--md-default-bg-color,#fff);',
+      'font-family:inherit;font-size:14px;}',
+      '#ea-chat-panel.ea-open{display:flex;}',
+      '#ea-chat-header{background:var(--md-primary-fg-color,#1976d2);color:#fff;padding:10px 14px;',
+      'font-weight:600;display:flex;justify-content:space-between;align-items:center;}',
+      '#ea-chat-close{background:none;border:none;color:#fff;cursor:pointer;font-size:18px;line-height:1;padding:0;}',
+      '#ea-chat-messages{flex:1;overflow-y:auto;padding:10px;display:flex;flex-direction:column;gap:8px;',
+      'min-height:120px;max-height:320px;}',
+      '.ea-msg{padding:7px 10px;border-radius:7px;max-width:90%;line-height:1.45;white-space:pre-wrap;word-break:break-word;}',
+      '.ea-msg-user{background:var(--md-primary-fg-color,#1976d2);color:#fff;align-self:flex-end;}',
+      '.ea-msg-bot{background:var(--md-code-bg-color,#f5f5f5);color:var(--md-default-fg-color,#333);align-self:flex-start;}',
+      '.ea-msg-err{background:#fdecea;color:#b71c1c;align-self:flex-start;}',
+      '#ea-chat-form{display:flex;padding:8px;gap:6px;border-top:1px solid var(--md-default-fg-color--lightest,#e0e0e0);}',
+      '#ea-chat-input{flex:1;padding:6px 8px;border:1px solid var(--md-default-fg-color--lighter,#ccc);',
+      'border-radius:6px;font-size:13px;resize:none;background:var(--md-default-bg-color,#fff);',
+      'color:var(--md-default-fg-color,#333);}',
+      '#ea-chat-send{padding:6px 12px;background:var(--md-primary-fg-color,#1976d2);color:#fff;',
+      'border:none;border-radius:6px;cursor:pointer;font-size:13px;}',
+      '#ea-chat-send:disabled{opacity:.5;cursor:default;}',
+    ].join('');
+    document.head.appendChild(style);
   }
 
-  /* ── events ──────────────────────────────────────────────────────────────── */
-  btn.addEventListener('click', function () {
-    panel.classList.toggle('ea-open');
-    if (panel.classList.contains('ea-open')) input.focus();
-  });
+  function mount() {
+    // Widget already present on this page (instant nav didn't wipe it after all) — leave it be.
+    if (document.getElementById('ea-chat-btn')) return;
 
-  document.getElementById('ea-chat-close').addEventListener('click', function () {
-    panel.classList.remove('ea-open');
-  });
+    injectStyleOnce();
 
-  // Submit on Enter (Shift+Enter = newline)
-  input.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submitChat(); }
-  });
+    var btn = document.createElement('button');
+    btn.id = 'ea-chat-btn';
+    btn.title = 'Ask EAxWiki AI';
+    btn.setAttribute('aria-label', 'Open AI chat');
+    btn.innerHTML = '&#x1F4AC;'; // speech bubble
 
-  document.getElementById('ea-chat-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    submitChat();
-  });
+    var panel = document.createElement('div');
+    panel.id = 'ea-chat-panel';
+    panel.setAttribute('role', 'dialog');
+    panel.setAttribute('aria-label', 'EAxWiki AI Chat');
+    panel.innerHTML =
+      '<div id="ea-chat-header">Ask EAxWiki' +
+        '<button id="ea-chat-close" aria-label="Close chat">×</button>' +
+      '</div>' +
+      '<div id="ea-chat-messages" aria-live="polite"></div>' +
+      '<form id="ea-chat-form">' +
+        '<textarea id="ea-chat-input" rows="2" placeholder="Ask a question about this wiki…" aria-label="Chat input"></textarea>' +
+        '<button id="ea-chat-send" type="submit">Send</button>' +
+      '</form>';
 
-  function submitChat() {
-    var q = input.value.trim();
-    if (!q) return;
-    input.value = '';
-    addMsg(q, 'ea-msg-user');
-    var thinking = addMsg('\u22EF', 'ea-msg-bot');
-    setLoading(true);
+    document.body.appendChild(btn);
+    document.body.appendChild(panel);
 
-    fetch(apiBase + '/api/ai-chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-EAxWiki-Token': CFG.token
-      },
-      body: JSON.stringify({ Query: q })
-    })
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
-      thinking.remove();
-      addMsg(data.answer || data.message || 'No answer returned.', 'ea-msg-bot');
-    })
-    .catch(function (err) {
-      thinking.remove();
-      addMsg('Request failed: ' + err.message, 'ea-msg-err');
-    })
-    .finally(function () { setLoading(false); });
+    var messages = document.getElementById('ea-chat-messages');
+    var input    = document.getElementById('ea-chat-input');
+    var send     = document.getElementById('ea-chat-send');
+
+    function addMsg(text, cls, persist) {
+      var div = document.createElement('div');
+      div.className = 'ea-msg ' + cls;
+      div.textContent = text;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+      if (persist) {
+        history.push({ text: text, cls: cls });
+        saveHistory(history);
+      }
+      return div;
+    }
+
+    function setLoading(on) {
+      send.disabled = on;
+      input.disabled = on;
+    }
+
+    // Restore the conversation carried over from the page the visitor was just on.
+    history.forEach(function (m) { addMsg(m.text, m.cls, false); });
+    if (isPanelOpen()) panel.classList.add('ea-open');
+
+    btn.addEventListener('click', function () {
+      panel.classList.toggle('ea-open');
+      setPanelOpen(panel.classList.contains('ea-open'));
+      if (panel.classList.contains('ea-open')) input.focus();
+    });
+
+    document.getElementById('ea-chat-close').addEventListener('click', function () {
+      panel.classList.remove('ea-open');
+      setPanelOpen(false);
+    });
+
+    // Submit on Enter (Shift+Enter = newline)
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); submitChat(); }
+    });
+
+    document.getElementById('ea-chat-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      submitChat();
+    });
+
+    function submitChat() {
+      var q = input.value.trim();
+      if (!q) return;
+      input.value = '';
+      addMsg(q, 'ea-msg-user', true);
+      var thinking = addMsg('⋯', 'ea-msg-bot', false);
+      setLoading(true);
+
+      fetch(apiBase + '/api/ai-chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-EAxWiki-Token': CFG.token
+        },
+        body: JSON.stringify({ Query: q })
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        thinking.remove();
+        addMsg(data.answer || data.message || 'No answer returned.', 'ea-msg-bot', true);
+      })
+      .catch(function (err) {
+        thinking.remove();
+        addMsg('Request failed: ' + err.message, 'ea-msg-err', true);
+      })
+      .finally(function () { setLoading(false); });
+    }
+  }
+
+  if (window.document$ && typeof window.document$.subscribe === 'function') {
+    // Fires once for the initial page load and again after every instant-navigation swap.
+    window.document$.subscribe(mount);
+  } else {
+    mount();
   }
 })();
