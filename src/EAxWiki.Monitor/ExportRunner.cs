@@ -157,6 +157,8 @@ public class ExportRunner : IExportRunner
         Environment.SetEnvironmentVariable("EAXWIKI_API_PORT", _options.ApiPort.ToString());
         if (!string.IsNullOrEmpty(_options.AiEndpoint))
             Environment.SetEnvironmentVariable("EAXWIKI_AI_ENDPOINT", _options.AiEndpoint);
+        if (_options.AiChatEnabled)
+            Environment.SetEnvironmentVariable("EAXWIKI_AI_CHAT_ENABLED", "true");
 
         _state.LastMode = effectiveForce ? "full (--force)" : "incremental";
         _logger.LogInformation("Mode: {Mode}.", _state.LastMode);
